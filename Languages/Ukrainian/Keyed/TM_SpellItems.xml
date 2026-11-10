@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SpellItem_InvalidTarget>Виберіть допустиму ціль.</TM_SpellItem_InvalidTarget>
+  <TM_SpellItem_OutOfRange>Ціль поза межами досяжності.</TM_SpellItem_OutOfRange>
+  <TM_SpellItem_NoLineOfSight>Немає прямої видимості.</TM_SpellItem_NoLineOfSight>
+  <TM_SpellItem_NoInjuries>Немає ран, здатних загоюватися природним шляхом.</TM_SpellItem_NoInjuries>
+  <TM_SpellItem_Occupied>Місце призначення зайняте.</TM_SpellItem_Occupied>
+  <TM_SpellItem_SameCell>Виберіть інше місце призначення.</TM_SpellItem_SameCell>
+  <TM_SpellItem_HostileTarget>Не можна зцілити ворожу ціль.</TM_SpellItem_HostileTarget>
+  <TM_SpellItem_UndeadTarget>Не можна зцілити невмерлих або механоїдів.</TM_SpellItem_UndeadTarget>
+  <TM_SpellItem_NotHeld>Предмет має бути в інвентарі користувача або споряджений.</TM_SpellItem_NotHeld>
+  <TM_SpellItem_CannotUse>Цей персонаж не може використати предмет.</TM_SpellItem_CannotUse>
+  <TM_SpellItem_Empty>Не залишилося застосувань.</TM_SpellItem_Empty>
+  <TM_SpellItem_Cooldown>Предмет ще не готовий до повторного застосування.</TM_SpellItem_Cooldown>
+  <TM_SpellItem_Busy>Закляття з предмета вже застосовується.</TM_SpellItem_Busy>
+  <TM_SpellItem_Uses>Заряди: {0}/{1}</TM_SpellItem_Uses>
+  <TM_SpellItem_CastLabel>{0} {1}</TM_SpellItem_CastLabel>
+  <TM_SpellItem_Description>Застосувати закляття фіксованої сили з предмета. Не потребує мани або вивчення закляття.</TM_SpellItem_Description>
+  <TM_SpellItem_Casting>застосовує {0}.</TM_SpellItem_Casting>
+  <TM_SpellItem_NoTreatment>Немає відповідного стану для лікування або цей ефект уже діє.</TM_SpellItem_NoTreatment>
+  <TM_SpellItem_EnterPortal>Увійти в портал</TM_SpellItem_EnterPortal>
+  <TM_SpellItem_RequiredKnowledge>Для виготовлення потрібно вивчити заклинання «{0}».</TM_SpellItem_RequiredKnowledge>
+</LanguageData>

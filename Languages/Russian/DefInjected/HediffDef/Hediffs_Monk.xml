@@ -1,0 +1,13 @@
+<LanguageData><TM_ChiHD.label>Ци</TM_ChiHD.label>
+  <TM_ChiHD.description>Это объясняет уникальную энергию, используемую монахом.</TM_ChiHD.description>
+  <TM_ChiHD.stages.0.label />
+
+  <TM_MindOverBodyHD.label>Разум над телом</TM_MindOverBodyHD.label>
+  <TM_MindOverBodyHD.description>Усиливает физическую силу, преодолевая ограничения тела.</TM_MindOverBodyHD.description>
+  <TM_MindOverBodyHD.stages.0.label>I</TM_MindOverBodyHD.stages.0.label>
+  <TM_MindOverBodyHD.stages.1.label>II</TM_MindOverBodyHD.stages.1.label>
+  <TM_MindOverBodyHD.stages.2.label>III</TM_MindOverBodyHD.stages.2.label>
+  <TM_MindOverBodyHD.stages.3.label>IV</TM_MindOverBodyHD.stages.3.label>
+
+
+</LanguageData>

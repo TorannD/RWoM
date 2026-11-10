@@ -10,119 +10,51 @@ using Verse.Sound;
 
 namespace TorannMagic
 {
-    public class Verb_EarthSprites : Verb_UseAbility
+    public class Verb_EarthSprites : ClassProgression.Verb_SpiritTargetable
     {
-
-        private int verVal;
-        private int effVal;
-
-        bool validTarg;
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
-            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map))
-            {
-                if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
-                {
-                    validTarg = true;
-                }
-                else
-                {
-                    //out of range
-                    validTarg = false;
-                }
-            }
-            else
-            {
-                validTarg = false;
-            }
-            return validTarg;
+            var map = CasterPawn.Map;
+            return map != null && targ.IsValid && targ.Cell.InBounds(map) && !targ.Cell.Fogged(map)
+                && (root - targ.Cell).LengthHorizontal < verbProps.range;
         }
 
         protected override bool TryCastShot()
         {
-            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
-            //MagicPowerSkill eff = base.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthSprites_eff");
-            //MagicPowerSkill ver = base.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthSprites_ver");
-            //effVal = eff.level;
-            //verVal = ver.level;
-            effVal = TM_Calc.GetSkillEfficiencyLevel(CasterPawn, Ability.Def as TMAbilityDef);
-            verVal = TM_Calc.GetSkillVersatilityLevel(CasterPawn, Ability.Def as TMAbilityDef);
+            ApplyHostedEffect();
+            burstShotsLeft = 0;
+            return false;
+        }
 
-            if(!(comp.maxMP < .6f - (.07f * verVal)))
+        protected override bool ApplyHostedEffect()
+        {
+            var body = CasterPawn;
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(body, Ability);
+            var comp = owner?.GetCompAbilityUserMagic();
+            var map = body?.Map;
+            var cell = currentTarget.Cell;
+            if (comp == null || map == null || !cell.InBounds(map)) return false;
+            int versatility = owner == body ? TM_Calc.GetSkillVersatilityLevel(owner, Ability.Def as TMAbilityDef)
+                : ClassProgression.SpiritRebirthRuntime.SavedRank(comp.ExistingMagicData, "TM_EarthSprites_ver");
+            if (comp.maxMP < .6f - .07f * versatility)
             {
-                if(this.currentTarget.IsValid && this.currentTarget.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map))
-                {
-                    Building isBuilding = null;
-                    TerrainDef terrain = null;
-                    isBuilding = this.currentTarget.Cell.GetFirstBuilding(this.CasterPawn.Map);
-                    terrain = this.currentTarget.Cell.GetTerrain(this.CasterPawn.Map);
-                    //Log.Message("terrain type is " + terrain.defName);
-                    if (isBuilding != null)
-                    {
-                        var mineable = isBuilding as Mineable;
-                        if (mineable != null)
-                        {
-                            Area spriteArea = TM_Calc.GetSpriteArea();
-                            if(spriteArea != null && spriteArea.ActiveCells != null && spriteArea.ActiveCells.Contains(this.currentTarget.Cell))
-                            {
-                                comp.earthSpritesInArea = true;
-                            }
-                            comp.earthSprites = this.currentTarget.Cell;
-                            comp.earthSpriteType = 1;
-                            comp.earthSpriteMap = this.CasterPawn.Map;
-                            comp.nextEarthSpriteAction = Find.TickManager.TicksGame + 300;
-                        }
-                        else
-                        {
-                            Messages.Message("TM_InvalidTarget".Translate(
-                                this.CasterPawn.LabelShort,
-                                "Earth Sprites"
-                            ), MessageTypeDefOf.RejectInput);
-                        }
-                    }
-                    else if (terrain != null && (terrain.defName == "MarshyTerrain" || terrain.defName == "Mud" || terrain.defName == "Marsh" || terrain.defName == "WaterShallow" || terrain.defName == "Ice" ||
-                        terrain.defName == "Sand" || terrain.defName == "Gravel" || terrain.defName == "Soil" || terrain.defName == "MossyTerrain" || terrain.defName == "SoftSand"))
-                    {
-                        Area spriteArea = TM_Calc.GetSpriteArea();
-                        if (spriteArea != null && spriteArea.ActiveCells != null && spriteArea.ActiveCells.Contains(this.currentTarget.Cell))
-                        {
-                            comp.earthSpritesInArea = true;
-                        }
-                        comp.earthSprites = this.currentTarget.Cell;
-                        comp.earthSpriteType = 2;
-                        comp.earthSpriteMap = this.CasterPawn.Map;
-                        comp.nextEarthSpriteAction = Find.TickManager.TicksGame + 20000;
-                    }
-                    else if(terrain != null && !terrain.defName.Contains("water") && !terrain.defName.Contains("Water"))
-                    {
-                        ShatterTerrain(this.currentTarget.Cell, terrain);
-                    }
-                    else
-                    {
-                        Messages.Message("TM_InvalidTarget".Translate(
-                            this.CasterPawn.LabelShort,
-                            "Earth Sprites"
-                        ), MessageTypeDefOf.RejectInput);
-                    }
-                }
-                else
-                {
-                    Messages.Message("TM_InvalidTarget".Translate(
-                        this.CasterPawn.LabelShort,
-                        "Earth Sprites"
-                    ), MessageTypeDefOf.RejectInput);
-                }
+                Messages.Message("TM_NotEnoughMaxMana".Translate(body.LabelShort, "Earth Sprites"), MessageTypeDefOf.RejectInput);
+                return false;
             }
+            var building = cell.GetFirstBuilding(map);
+            var terrain = cell.GetTerrain(map);
+            if (building is Mineable) comp.AssignEarthSprites(map, cell, mining: true);
+            else if (building == null && terrain?.defName is "MarshyTerrain" or "Mud" or "Marsh" or "WaterShallow"
+                or "Ice" or "Sand" or "Gravel" or "Soil" or "MossyTerrain" or "SoftSand")
+                comp.AssignEarthSprites(map, cell, mining: false);
+            else if (building == null && terrain != null && terrain.defName.IndexOf("water", StringComparison.OrdinalIgnoreCase) < 0)
+                ShatterTerrain(cell, terrain);
             else
             {
-                Messages.Message("TM_NotEnoughMaxMana".Translate(
-                    this.CasterPawn.LabelShort,
-                    "Earth Sprites"
-                ), MessageTypeDefOf.RejectInput);
+                Messages.Message("TM_InvalidTarget".Translate(body.LabelShort, "Earth Sprites"), MessageTypeDefOf.RejectInput);
+                return false;
             }
-
-            this.burstShotsLeft = 0;
-            return false;
+            return true;
         }
 
         public void ShatterTerrain(IntVec3 center, TerrainDef terrainDef)
@@ -133,9 +65,10 @@ namespace TorannMagic
             for (int i = 0; i < cellList.Count; i++)
             {
                 IntVec3 cell = cellList[i];                
+                if (!cell.InBounds(CasterPawn.Map)) continue;
                 bldg = cell.GetFirstBuilding(this.CasterPawn.Map);
                 terrain = cell.GetTerrain(this.CasterPawn.Map);
-                if (cell.InBoundsWithNullCheck(this.CasterPawn.Map) && bldg == null && terrain == terrainDef)
+                if (bldg == null && terrain == terrainDef)
                 {
                     this.CasterPawn.Map.terrainGrid.SetTerrain(cell, TerrainDef.Named("Gravel"));
                     FleckMaker.ThrowSmoke(cell.ToVector3Shifted(), this.CasterPawn.Map, Rand.Range(.8f, 1.2f));

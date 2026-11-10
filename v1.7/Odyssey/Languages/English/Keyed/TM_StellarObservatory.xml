@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_StellarRitual>Begin stellar divination (ritual)</TM_StellarRitual>
+  <TM_StellarIdle>Idle: divination ritual required</TM_StellarIdle>
+  <TM_StellarSearching>Searching: {0} remaining</TM_StellarSearching>
+  <TM_StellarWaiting>Search complete: waiting for an eligible orbital destination</TM_StellarWaiting>
+  <TM_StellarCooldown>Shared magical cooldown: {0}</TM_StellarCooldown>
+  <TM_StellarUnavailable>Requires an operational observatory, a mage, 100 network mana, 50 network magofuel, an eligible orbital destination and no active shared cooldown.</TM_StellarUnavailable>
+  <TM_StellarDiscovery>Stellar divination revealed</TM_StellarDiscovery>
+</LanguageData>

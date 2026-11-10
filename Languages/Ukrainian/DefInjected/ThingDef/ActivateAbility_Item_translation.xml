@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MagicArtifact_RerollSpiritBond.label>Сувій Зв &quot;язуючого Духа</MagicArtifact_RerollSpiritBond.label>
+  <MagicArtifact_RerollSpiritBond.description>Цей сувій може бути використаний для зміни духовної тварини шамана. Новий зв&apos;язок випадково вибере новий тип духу для зв&apos;язку.</MagicArtifact_RerollSpiritBond.description>
+  <MagicArtifact_RerollSpiritBond.comps.2.useLabel>Використовувати</MagicArtifact_RerollSpiritBond.comps.2.useLabel>
+
+  <TM_Artifact_ClassExtraction.label>Осколок витягання духу</TM_Artifact_ClassExtraction.label>
+  <TM_Artifact_ClassExtraction.description>Цей таємничий осколок здатний витягувати бойові або таємні таланти пішаки і перетворювати їх на сутність. Осколок знищується після використання.
+
+* Примітка: цей предмет повністю видаляє клас пішаки і будь-які пов&apos;язані з ним здібності та навички. Пішак може вивчити інший клас після витягання духу.</TM_Artifact_ClassExtraction.description>
+  <TM_Artifact_ClassExtraction.comps.3.useLabel>Використовуйте осколок вилучення</TM_Artifact_ClassExtraction.comps.3.useLabel>
+
+  <TM_MagicArtifact_MightEssence.label>Сутність майстерності</TM_MagicArtifact_MightEssence.label>
+  <TM_MagicArtifact_MightEssence.description>Суть грубого, бойової майстерності. Поглинання сутності дає бойовий досвід.</TM_MagicArtifact_MightEssence.description>
+  <TM_MagicArtifact_MightEssence.comps.0.useLabel>Використовуйте есенцію майстерності</TM_MagicArtifact_MightEssence.comps.0.useLabel>
+
+  <TM_MagicArtifact_MagicEssence.label>Сутність магії</TM_MagicArtifact_MagicEssence.label>
+  <TM_MagicArtifact_MagicEssence.description>Суть грубої, магічної майстерності. Поглинання сутності дає таємний досвід.</TM_MagicArtifact_MagicEssence.description>
+  <TM_MagicArtifact_MagicEssence.comps.0.useLabel>Використовуйте есенцію магії</TM_MagicArtifact_MagicEssence.comps.0.useLabel>
+
+
+</LanguageData>

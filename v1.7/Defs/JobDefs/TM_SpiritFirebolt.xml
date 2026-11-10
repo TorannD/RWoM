@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritFirebolt</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting firebolt through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritIcebolt</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting icebolt through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritFireball</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting fireball through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSnowball</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting snowball through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritFireclaw</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting fireclaw through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritBlizzard</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting blizzard through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritFrostRay</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting frost ray through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritFrostRay_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting frost ray through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritFrostRay_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting frost ray through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritFrostRay_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting frost ray through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritFirestorm</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting firestorm through a spirit host.</reportString>
+  </JobDef>
+</Defs>

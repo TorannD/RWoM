@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Poison_HD.label>Veneno</TM_Poison_HD.label>
+  <TM_Poison_HD.description>Danos causados pelo veneno.</TM_Poison_HD.description>
+  <TM_Poison_HD.comps.0.labelTendedWell>vendado</TM_Poison_HD.comps.0.labelTendedWell>
+  <TM_Poison_HD.comps.0.labelTendedWellInner>costurado</TM_Poison_HD.comps.0.labelTendedWellInner>
+  <TM_Poison_HD.comps.0.labelSolidTendedWell>curado</TM_Poison_HD.comps.0.labelSolidTendedWell>
+  <TM_Poison_HD.injuryProps.destroyedLabel>seco</TM_Poison_HD.injuryProps.destroyedLabel>
+  <TM_Poison_HD.injuryProps.destroyedOutLabel>seco</TM_Poison_HD.injuryProps.destroyedOutLabel>
+
+  <TM_Poisoned_HD.label>Envenenado</TM_Poisoned_HD.label>
+  <TM_Poisoned_HD.description>Efeitos secundários do veneno.</TM_Poisoned_HD.description>
+  <TM_Poisoned_HD.stages.0.label>menor</TM_Poisoned_HD.stages.0.label>
+  <TM_Poisoned_HD.stages.1.label>moderado</TM_Poisoned_HD.stages.1.label>
+  <TM_Poisoned_HD.stages.2.label>forte</TM_Poisoned_HD.stages.2.label>
+
+
+  <TM_Poison_HD.comps.1.permanentLabel>afundado para sempre</TM_Poison_HD.comps.1.permanentLabel>
+  <TM_Poison_HD.comps.HediffComp_TendDuration.labelTendedWell>com vendagem</TM_Poison_HD.comps.HediffComp_TendDuration.labelTendedWell>
+  <TM_Poison_HD.comps.HediffComp_TendDuration.labelTendedWellInner>Usca</TM_Poison_HD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  <TM_Poison_HD.comps.HediffComp_TendDuration.labelSolidTendedWell>definir</TM_Poison_HD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  <TM_Poison_HD.comps.HediffComp_GetsPermanent.permanentLabel>Vaiado</TM_Poison_HD.comps.HediffComp_GetsPermanent.permanentLabel>
+  <TM_Poison_HD.labelNounPretty>Se você quiser um 0, um 1</TM_Poison_HD.labelNounPretty>
+
+</LanguageData>

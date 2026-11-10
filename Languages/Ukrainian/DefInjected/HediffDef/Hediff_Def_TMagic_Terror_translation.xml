@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Terror.label>Терор</TM_Terror.label>
+  <TM_Terror.description>Грубий прояв магічної сили викликає страх у цієї пішаки.</TM_Terror.description>
+  <TM_Terror.stages.0.label>Нипочем.</TM_Terror.stages.0.label>
+  <TM_Terror.stages.1.label>У паніці</TM_Terror.stages.1.label>
+  <TM_Terror.stages.2.label>В ужасе.</TM_Terror.stages.2.label>
+
+
+</LanguageData>

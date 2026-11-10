@@ -1,0 +1,8 @@
+<LanguageData><!-- v1.5\Defs\Ideology\Rituals\TM_Rituals.xml-->
+	<!--                               EN: {0} {1} want to carry out the severence ritual as soon as possible.-->
+	<TM_SeverenceRitual.ritualExpectedDesc>{0} {1} жаждут провести обряд разрыва как можно скорее.</TM_SeverenceRitual.ritualExpectedDesc>
+	<!--                             EN: {0} {1} want to carry out the gifting ritual as soon as possible.-->
+	<TM_GiftingRitual.ritualExpectedDesc>{0} {1} стремятся совершить ритуал дарения без промедления.</TM_GiftingRitual.ritualExpectedDesc>
+	<!--                                      EN: {0} {1} want to carry out the arcane path ritual as soon as possible.-->
+	<TM_BestowMagicClassRitual.ritualExpectedDesc>{0} {1} жаждут начать ритуал избранного магического пути.</TM_BestowMagicClassRitual.ritualExpectedDesc>
+</LanguageData>

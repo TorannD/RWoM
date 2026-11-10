@@ -16,7 +16,6 @@ namespace TorannMagic.Golems
         private float storedEnergyUpgradeCount = 0;
         private float conversionEfficiencyUpgradeCount = 0;
         private float energyRegenerationFactor = 1f;
-        private float storedEnergySaved;
         public bool canDrawPower = false;
 
         public bool CanDrawPower => canDrawPower || Props.canDrawPower;
@@ -24,18 +23,17 @@ namespace TorannMagic.Golems
 
         public override void PostExposeData()
         {
-            if (Scribe.mode == LoadSaveMode.Saving)
-            {
-                storedEnergySaved = this.StoredEnergy;
-            }
+            float storedEnergy = StoredEnergy;
             base.PostExposeData();
             Scribe_Values.Look(ref storedEnergyUpgradeCount, "storedEnergyUpgradeCount", 0f);
             Scribe_Values.Look(ref conversionEfficiencyUpgradeCount, "conversionEfficiencyUpgradeCount", 0f);
             Scribe_Values.Look(ref energyRegenerationFactor, "energyRegenerationFactor", 1f);
-            if (Scribe.mode == LoadSaveMode.Saving)
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
             {
-                SetEnergy(storedEnergySaved);
+                // The vanilla battery serializer clamps to its own, unupgraded capacity.
+                Scribe_Values.Look(ref storedEnergy, "storedPower", 0f);
             }
+            SetEnergy(storedEnergy);
         }
 
         public float StoredEnergyMax => Props.storedEnergyMax + (Props.storedEnergyMaxUpgradeIncrease * storedEnergyUpgradeCount);

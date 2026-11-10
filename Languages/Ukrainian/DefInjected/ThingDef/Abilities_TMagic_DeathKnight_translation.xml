@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- wave of fear -->
+
+  <Projectile_WaveOfFear.label>Хвиля страху</Projectile_WaveOfFear.label>
+
+
+  <!-- Spite -->
+
+  <Projectile_Spite.label>злоба</Projectile_Spite.label>
+
+
+  <!-- grave blade -->
+
+  <Projectile_GraveBlade.label>Могильний Клинок</Projectile_GraveBlade.label>
+  <Projectile_GraveBlade_I.label>Могильний Клинок</Projectile_GraveBlade_I.label>
+  <Projectile_GraveBlade_II.label>Могильний Клинок</Projectile_GraveBlade_II.label>
+  <Projectile_GraveBlade_III.label>Могильний Клинок</Projectile_GraveBlade_III.label>
+
+
+  <!-- GraveBlade -->
+
+</LanguageData>

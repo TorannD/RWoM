@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_WindDamageDef.label>Режущий ветер</TM_WindDamageDef.label>
+  <TM_WindDamageDef.description>Разрушительный ветер, созданный магической энергией.</TM_WindDamageDef.description>
+  <TM_WindDamageDef.comps.0.labelTendedWell>забинтованно</TM_WindDamageDef.comps.0.labelTendedWell>
+  <TM_WindDamageDef.comps.0.labelTendedWellInner>зашито</TM_WindDamageDef.comps.0.labelTendedWellInner>
+  <TM_WindDamageDef.comps.0.labelSolidTendedWell>рана</TM_WindDamageDef.comps.0.labelSolidTendedWell>
+  <TM_WindDamageDef.injuryProps.destroyedLabel>Измельченно</TM_WindDamageDef.injuryProps.destroyedLabel>
+  <TM_WindDamageDef.injuryProps.destroyedOutLabel>Разорванно в клочья</TM_WindDamageDef.injuryProps.destroyedOutLabel>
+  <TM_CardDamageDef.label>Порез</TM_CardDamageDef.label>
+  <TM_CardDamageDef.description>Порез от острой игральной карты.</TM_CardDamageDef.description>
+  <TM_CardDamageDef.comps.0.labelTendedWell>забинтованно</TM_CardDamageDef.comps.0.labelTendedWell>
+  <TM_CardDamageDef.comps.0.labelTendedWellInner>зашито</TM_CardDamageDef.comps.0.labelTendedWellInner>
+  <TM_CardDamageDef.comps.0.labelSolidTendedWell>рана</TM_CardDamageDef.comps.0.labelSolidTendedWell>
+  <TM_CardDamageDef.injuryProps.destroyedLabel>Измельченно</TM_CardDamageDef.injuryProps.destroyedLabel>
+  <TM_CardDamageDef.injuryProps.destroyedOutLabel>Разорванно в клочья</TM_CardDamageDef.injuryProps.destroyedOutLabel>
+</LanguageData>

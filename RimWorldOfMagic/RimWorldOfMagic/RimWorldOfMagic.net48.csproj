@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>TorannMagic</RootNamespace>
+    <AssemblyName>TorannMagic</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <OutputPath>..\..\v1.6\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <DefaultItemExcludes>$(DefaultItemExcludes);obj/**</DefaultItemExcludes>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <DebugType>none</DebugType>
+    <!-- 1.6 build: no HugsLib, no Multiplayer API, no 1.7 combat-log patches.
+         The main RimWorldOfMagic.csproj (net10) builds the 1.7 assembly.
+         Build with:
+           dotnet build RimWorldOfMagic.net48.csproj -c Release \
+             -p:BaseIntermediateOutputPath=obj48/
+         The custom obj folder keeps this project from clobbering the net10
+         project's obj/ assets — both files live in the same directory. -->
+    <NoWarn>$(NoWarn);CS0414;CS0169;CS0067;CS0649;SYSLIB0011</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- RimWorld 1.6 reference assemblies (game + UnityEngine) -->
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4871" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Harmony as shipped for RimWorld 1.6 -->
+    <Reference Include="0Harmony">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\2009463077\1.6\Assemblies\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- AbilityUser framework: JecsLite 1.6 assemblies (runtime dependency) -->
+    <Reference Include="AbilityUser">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\3312959701\1.6\Assemblies\AbilityUser.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="AbilityUserAI">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\3312959701\1.6\Assemblies\AbilityUserAI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="CompDeflector">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\3312959701\1.6\Assemblies\CompDeflector.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- Soft dependency: HAR (ModCheck\AlienHumanoidRaces uses it directly) -->
+    <Reference Include="AlienRace">
+      <HintPath>D:\golang\RWoM\ext\HAR\1.6\Assemblies\AlienRace.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- 1.7-only: Multiplayer compat layer (rwmt fork API) and 1.7 combat-log entry -->
+  <ItemGroup>
+    <Compile Remove="TMPCompat.cs" />
+    <Compile Remove="TMPCompatStartup.cs" />
+    <Compile Remove="BattleLogEntry_TMAbilityUsed.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+</Project>

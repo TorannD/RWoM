@@ -171,7 +171,7 @@ namespace TorannMagic
                                             bool shouldAddAbilities = bondedMagicComp.HexedPawns.Count <= 0;
                                             if (!bondedMagicComp.HexedPawns.Contains(p))
                                             {
-                                                bondedMagicComp.HexedPawns.Add(p);
+                                                bondedMagicComp.RegisterHexTarget(p);
                                                 addAbilities = true;
                                             }
                                             if (shouldAddAbilities && addAbilities)

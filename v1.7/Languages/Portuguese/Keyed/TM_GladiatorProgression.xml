@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadGladiatorSprint>Corrida — reserva 30 de vigor (30 s) · Escolha permanente</TM_ReadGladiatorSprint>
+  <TM_ReadGladiatorManeuver>Manobra — velocidade +8% durante 8 s, 12% de vigor (25 s) · Escolha permanente</TM_ReadGladiatorManeuver>
+  <TM_GladiatorReliefDrill>Exercício: alcança um aliado a 8 células</TM_GladiatorReliefDrill>
+  <TM_GladiatorDefenseChoice>Escolher técnica defensiva</TM_GladiatorDefenseChoice>
+  <TM_GladiatorChooseFortitude>Fortitude — defesa pessoal passiva (escolha permanente)</TM_GladiatorChooseFortitude>
+  <TM_GladiatorChooseCover>Cobertura — recebe até 20 de dano de tiros contra o aliado durante 6 s (escolha permanente)</TM_GladiatorChooseCover>
+  <TM_GladiatorUseCover>Cobrir aliado — 20% de vigor, recarga de 30 s</TM_GladiatorUseCover>
+  <TM_GladiatorAttackChoice>Escolher técnica de combate</TM_GladiatorAttackChoice>
+  <TM_GladiatorHoldDrill>Manter a linha: intercetar um golpe ou treinar com um aliado</TM_GladiatorHoldDrill>
+  <TM_GladiatorChooseCleave>Golpe amplo — automático (permanente)</TM_GladiatorChooseCleave>
+  <TM_GladiatorChooseSweep>Varredura — até dois inimigos (permanente)</TM_GladiatorChooseSweep>
+  <TM_GladiatorLevelGate>A ascensão exige nível marcial 30.</TM_GladiatorLevelGate>
+  <TM_GladiatorEvacTrial>Prova final: salva um ferido em combate ou treina uma evacuação.</TM_GladiatorEvacTrial>
+  <TM_GladiatorUltimateChoice>Escolher técnica final</TM_GladiatorUltimateChoice>
+  <TM_GladiatorPickWhirlwind>Redemoinho — técnica clássica (permanente)</TM_GladiatorPickWhirlwind>
+  <TM_GladiatorPickLastCircle>Último círculo — protege um raio de 4 células durante 20 s (permanente)</TM_GladiatorPickLastCircle>
+  <TM_GladiatorCastCircle>Último círculo — 60% de vigor, preparação de 5 s, recarga de 2 dias</TM_GladiatorCastCircle>
+  <TM_LastCircleDetails>Requer uma arma corpo a corpo. Cada um dos quatro aliados mais próximos absorve até 25 de dano durante 20 s. Cada um dos três golpes atinge até três inimigos. Velocidade −30%. Sair do círculo termina a postura. As explosões atravessam a proteção. Interromper a preparação custa 6% de vigor e bloqueia a técnica durante 6000 ticks.</TM_LastCircleDetails>
+</LanguageData>

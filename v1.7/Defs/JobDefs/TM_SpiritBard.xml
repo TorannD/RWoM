@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef><defName>TM_SpiritEntertain</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>preparing to entertain through a spirit host.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritBattleHymn</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>singing a battle hymn.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritLullaby</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>singing a lullaby.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritLullaby_I</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>singing a lullaby.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritLullaby_II</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>singing a lullaby.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritLullaby_III</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>singing a lullaby.</reportString></JobDef>
+</Defs>

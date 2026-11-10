@@ -1,0 +1,166 @@
+<LanguageData><!-- v1.5\Defs\HediffDefs\Hediffs_Technomancer.xml-->
+	<!--                 EN: kinetic shield-->
+	<TM_TechnoShieldHD.label>кинетический щит</TM_TechnoShieldHD.label>
+	<!--                       EN: A shield that redirects kinetic energy; the shield can be penetrated by a projectile with sufficient force.-->
+	<TM_TechnoShieldHD.description>Щит, перенаправляющий кинетическую энергию; может быть пробит снарядом с достаточной силой.</TM_TechnoShieldHD.description>
+	<!--                   EN: kinetic shield-->
+	<TM_TechnoShieldHD_I.label>кинетический щит I</TM_TechnoShieldHD_I.label>
+	<!--                         EN: A shield that redirects kinetic energy; the shield can be penetrated by a projectile with sufficient force.-->
+	<TM_TechnoShieldHD_I.description>Щит, перенаправляющий кинетическую энергию; может быть пробит снарядом с достаточной силой.</TM_TechnoShieldHD_I.description>
+	<!--                    EN: kinetic shield-->
+	<TM_TechnoShieldHD_II.label>кинетический щит II</TM_TechnoShieldHD_II.label>
+	<!--                          EN: A shield that redirects kinetic energy; the shield can be penetrated by a projectile with sufficient force.-->
+	<TM_TechnoShieldHD_II.description>Щит, перенаправляющий кинетическую энергию; может быть пробит снарядом с достаточной силой.</TM_TechnoShieldHD_II.description>
+	<!--                     EN: kinetic shield-->
+	<TM_TechnoShieldHD_III.label>кинетический щит III</TM_TechnoShieldHD_III.label>
+	<!--                           EN: A shield that redirects kinetic energy; the shield can be penetrated by a projectile with sufficient force.-->
+	<TM_TechnoShieldHD_III.description>Щит, перенаправляющий кинетическую энергию; может быть пробит снарядом с достаточной силой.</TM_TechnoShieldHD_III.description>
+	<!--              EN: Techno Bit-->
+	<TM_TechnoBitHD.label>Технобит</TM_TechnoBitHD.label>
+	<!--                    EN: A small, floating sphere that assists the Technomancer.-->
+	<TM_TechnoBitHD.description>Небольшая парящая сфера, помогающая техноманту.</TM_TechnoBitHD.description>
+	<!--              EN: bit assist-->
+	<TM_BitAssistHD.label>помощь бита</TM_BitAssistHD.label>
+	<!--                    EN: Assistance provided by the Techno Bit.-->
+	<TM_BitAssistHD.description>Помощь, предоставляемая технобитом.</TM_BitAssistHD.description>
+	<!--                       EN: I-->
+	<TM_BitAssistHD.stages.0.label>I</TM_BitAssistHD.stages.0.label>
+	<!--                       EN: II-->
+	<TM_BitAssistHD.stages.1.label>II</TM_BitAssistHD.stages.1.label>
+	<!--                       EN: III-->
+	<TM_BitAssistHD.stages.2.label>III</TM_BitAssistHD.stages.2.label>
+	<!--                       EN: IV-->
+	<TM_BitAssistHD.stages.3.label>IV</TM_BitAssistHD.stages.3.label>
+	<!--                       EN: V-->
+	<TM_BitAssistHD.stages.4.label>V</TM_BitAssistHD.stages.4.label>
+	<!--                       EN: VI-->
+	<TM_BitAssistHD.stages.5.label>VI</TM_BitAssistHD.stages.5.label>
+	<!--                       EN: VII-->
+	<TM_BitAssistHD.stages.6.label>VII</TM_BitAssistHD.stages.6.label>
+	<!--                       EN: VIII-->
+	<TM_BitAssistHD.stages.7.label>VIII</TM_BitAssistHD.stages.7.label>
+	<!--                       EN: IX-->
+	<TM_BitAssistHD.stages.8.label>IX</TM_BitAssistHD.stages.8.label>
+	<!--                       EN: X-->
+	<TM_BitAssistHD.stages.9.label>X</TM_BitAssistHD.stages.9.label>
+	<!--                        EN: XI-->
+	<TM_BitAssistHD.stages.10.label>XI</TM_BitAssistHD.stages.10.label>
+	<!--                        EN: XII-->
+	<TM_BitAssistHD.stages.11.label>XII</TM_BitAssistHD.stages.11.label>
+	<!--                        EN: XIII-->
+	<TM_BitAssistHD.stages.12.label>XIII</TM_BitAssistHD.stages.12.label>
+	<!--                        EN: XIV-->
+	<TM_BitAssistHD.stages.13.label>XIV</TM_BitAssistHD.stages.13.label>
+	<!--                        EN: XV-->
+	<TM_BitAssistHD.stages.14.label>XV</TM_BitAssistHD.stages.14.label>
+	<!--                            EN: stim withdrawal-->
+	<TM_NanoStimulantWithdrawalHD.label>ломка стимулятора</TM_NanoStimulantWithdrawalHD.label>
+	<!--                                  EN: Withdrawal after the effects of the nano stim wear off.-->
+	<TM_NanoStimulantWithdrawalHD.description>Абстинентный синдром после прекращения действия наностимулятора.</TM_NanoStimulantWithdrawalHD.description>
+	<!--              EN: overdrive-->
+	<TM_OverdriveHD.label>сверхнагрузка</TM_OverdriveHD.label>
+	<!--                    EN: Overclocked electronics and machinery are performing at hazardous rates.-->
+	<TM_OverdriveHD.description>Разогнанная электроника и механизмы работают на опасных уровнях.</TM_OverdriveHD.description>
+	<!--                       EN: I-->
+	<TM_OverdriveHD.stages.0.label>I</TM_OverdriveHD.stages.0.label>
+	<!--                       EN: II-->
+	<TM_OverdriveHD.stages.1.label>II</TM_OverdriveHD.stages.1.label>
+	<!--                       EN: III-->
+	<TM_OverdriveHD.stages.2.label>III</TM_OverdriveHD.stages.2.label>
+	<!--                       EN: IV-->
+	<TM_OverdriveHD.stages.3.label>IV</TM_OverdriveHD.stages.3.label>
+	<!--                EN: overdrive-->
+	<TM_OverdriveHD_I.label>сверхнагрузка I</TM_OverdriveHD_I.label>
+	<!--                      EN: Overclocked electronics and machinery are performing at hazardous rates.-->
+	<TM_OverdriveHD_I.description>Разогнанная электроника и механизмы работают на опасных уровнях.</TM_OverdriveHD_I.description>
+	<!--                         EN: I-->
+	<TM_OverdriveHD_I.stages.0.label>I</TM_OverdriveHD_I.stages.0.label>
+	<!--                         EN: II-->
+	<TM_OverdriveHD_I.stages.1.label>II</TM_OverdriveHD_I.stages.1.label>
+	<!--                         EN: III-->
+	<TM_OverdriveHD_I.stages.2.label>III</TM_OverdriveHD_I.stages.2.label>
+	<!--                         EN: IV-->
+	<TM_OverdriveHD_I.stages.3.label>IV</TM_OverdriveHD_I.stages.3.label>
+	<!--                 EN: overdrive-->
+	<TM_OverdriveHD_II.label>сверхнагрузка II</TM_OverdriveHD_II.label>
+	<!--                       EN: Overclocked electronics and machinery are performing at hazardous rates.-->
+	<TM_OverdriveHD_II.description>Разогнанная электроника и механизмы работают на опасных уровнях.</TM_OverdriveHD_II.description>
+	<!--                          EN: I-->
+	<TM_OverdriveHD_II.stages.0.label>I</TM_OverdriveHD_II.stages.0.label>
+	<!--                          EN: II-->
+	<TM_OverdriveHD_II.stages.1.label>II</TM_OverdriveHD_II.stages.1.label>
+	<!--                          EN: III-->
+	<TM_OverdriveHD_II.stages.2.label>III</TM_OverdriveHD_II.stages.2.label>
+	<!--                          EN: IV-->
+	<TM_OverdriveHD_II.stages.3.label>IV</TM_OverdriveHD_II.stages.3.label>
+	<!--                  EN: overdrive-->
+	<TM_OverdriveHD_III.label>сверхнагрузка III</TM_OverdriveHD_III.label>
+	<!--                        EN: Overclocked electronics and machinery are performing at hazardous rates.-->
+	<TM_OverdriveHD_III.description>Разогнанная электроника и механизмы работают на опасных уровнях.</TM_OverdriveHD_III.description>
+	<!--                           EN: I-->
+	<TM_OverdriveHD_III.stages.0.label>I</TM_OverdriveHD_III.stages.0.label>
+	<!--                           EN: II-->
+	<TM_OverdriveHD_III.stages.1.label>II</TM_OverdriveHD_III.stages.1.label>
+	<!--                           EN: III-->
+	<TM_OverdriveHD_III.stages.2.label>III</TM_OverdriveHD_III.stages.2.label>
+	<!--                           EN: IV-->
+	<TM_OverdriveHD_III.stages.3.label>IV</TM_OverdriveHD_III.stages.3.label>
+	<!--                  EN: nano stimulant-->
+	<TM_NanoStimulantHD.label>наностимулятор</TM_NanoStimulantHD.label>
+	<!--                        EN: Combat enhancing stimulant; followed by a brief withdrawal period.-->
+	<TM_NanoStimulantHD.description>Боевой стимулятор; последействие включает кратковременную ломку.</TM_NanoStimulantHD.description>
+	<!--                           EN: I-->
+	<TM_NanoStimulantHD.stages.0.label>I</TM_NanoStimulantHD.stages.0.label>
+	<!--                           EN: II-->
+	<TM_NanoStimulantHD.stages.1.label>II</TM_NanoStimulantHD.stages.1.label>
+	<!--                           EN: III-->
+	<TM_NanoStimulantHD.stages.2.label>III</TM_NanoStimulantHD.stages.2.label>
+	<!--                           EN: IV-->
+	<TM_NanoStimulantHD.stages.3.label>IV</TM_NanoStimulantHD.stages.3.label>
+	<!--                           EN: V-->
+	<TM_NanoStimulantHD.stages.4.label>V</TM_NanoStimulantHD.stages.4.label>
+	<!--                           EN: VI-->
+	<TM_NanoStimulantHD.stages.5.label>VI</TM_NanoStimulantHD.stages.5.label>
+	<!--                           EN: VII-->
+	<TM_NanoStimulantHD.stages.6.label>VII</TM_NanoStimulantHD.stages.6.label>
+	<!--                           EN: VIII-->
+	<TM_NanoStimulantHD.stages.7.label>VIII</TM_NanoStimulantHD.stages.7.label>
+	<!--                           EN: IX-->
+	<TM_NanoStimulantHD.stages.8.label>IX</TM_NanoStimulantHD.stages.8.label>
+	<!--                           EN: X-->
+	<TM_NanoStimulantHD.stages.9.label>X</TM_NanoStimulantHD.stages.9.label>
+	<!--                            EN: XI-->
+	<TM_NanoStimulantHD.stages.10.label>XI</TM_NanoStimulantHD.stages.10.label>
+	<!--                            EN: XII-->
+	<TM_NanoStimulantHD.stages.11.label>XII</TM_NanoStimulantHD.stages.11.label>
+	<!--                            EN: XIII-->
+	<TM_NanoStimulantHD.stages.12.label>XIII</TM_NanoStimulantHD.stages.12.label>
+	<!--                            EN: XIV-->
+	<TM_NanoStimulantHD.stages.13.label>XIV</TM_NanoStimulantHD.stages.13.label>
+	<!--                            EN: XV-->
+	<TM_NanoStimulantHD.stages.14.label>XV</TM_NanoStimulantHD.stages.14.label>
+	<!--                               EN: reprogrammed fibrous mechanites-->
+	<TM_ReprogrammedFibMechanites_HD.label>перепрограммированные фиброзные механиты</TM_ReprogrammedFibMechanites_HD.label>
+	<!--                                     EN: Fibrous mechanites reprogrammed to cause less stress on the host.-->
+	<TM_ReprogrammedFibMechanites_HD.description>Фиброзные механиты, перепрограммированные для меньшего стресса носителя.</TM_ReprogrammedFibMechanites_HD.description>
+	<!--                                        EN: (fibrous)-->
+	<TM_ReprogrammedFibMechanites_HD.stages.0.label>(фиброзные)</TM_ReprogrammedFibMechanites_HD.stages.0.label>
+	<!--                                        EN: (fibrous)-->
+	<TM_ReprogrammedFibMechanites_HD.stages.1.label>(фиброзные)</TM_ReprogrammedFibMechanites_HD.stages.1.label>
+	<!--                               EN: reprogrammed sensory mechanites-->
+	<TM_ReprogrammedSenMechanites_HD.label>перепрограммированные сенсорные механиты</TM_ReprogrammedSenMechanites_HD.label>
+	<!--                                     EN: Sensory mechanites reprogrammed to cause less stress on the host.-->
+	<TM_ReprogrammedSenMechanites_HD.description>Сенсорные механиты, перепрограммированные для меньшего стресса носителя.</TM_ReprogrammedSenMechanites_HD.description>
+	<!--                                        EN: (sensory)-->
+	<TM_ReprogrammedSenMechanites_HD.stages.0.label>(сенсорные)</TM_ReprogrammedSenMechanites_HD.stages.0.label>
+	<!--                                        EN: (sensory)-->
+	<TM_ReprogrammedSenMechanites_HD.stages.1.label>(сенсорные)</TM_ReprogrammedSenMechanites_HD.stages.1.label>
+	<!--                               EN: reprogrammed lymphatic mechanites-->
+	<TM_ReprogrammedLymMechanites_HD.label>перепрограммированные лимфатические механиты</TM_ReprogrammedLymMechanites_HD.label>
+	<!--                                     EN: Lymphatic mechanites reprogrammed to cause less stress on the host.-->
+	<TM_ReprogrammedLymMechanites_HD.description>Лимфатические механиты, перепрограммированные для меньшего стресса носителя.</TM_ReprogrammedLymMechanites_HD.description>
+	<!--                                        EN: (lymphatic)-->
+	<TM_ReprogrammedLymMechanites_HD.stages.0.label>(лимфатические)</TM_ReprogrammedLymMechanites_HD.stages.0.label>
+	<!--                                        EN: (lymphatic)-->
+	<TM_ReprogrammedLymMechanites_HD.stages.1.label>(лимфатические)</TM_ReprogrammedLymMechanites_HD.stages.1.label>
+</LanguageData>

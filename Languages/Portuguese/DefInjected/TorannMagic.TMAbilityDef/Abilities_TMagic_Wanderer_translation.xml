@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Wanderer -->
+
+  <TM_WandererCraft.label>Viajante</TM_WandererCraft.label>
+  <TM_WandererCraft.description>Melhore as vossas qualidades através do trabalho duro e criatividade. Consulte as habilidades para obter mais informações.</TM_WandererCraft.description>
+
+
+  <!-- Cantrips -->
+
+  <TM_Cantrips.label>Feitiços</TM_Cantrips.label>
+  <TM_Cantrips.description>Os mágicos viajantes não têm poderes de classe específicos, em vez disso possuem feitiços comuns.
+
+A maioria dos mágicos estuda feitiços como facilidades simples, que não exigem mais treinamento de habilidades, mas o viajante usa uma abordagem diferente. Investindo tempo e esforço na compreensão dos feitiços, o viajante é capaz de melhorar quase todas as capacidades gerais de utilidade, força e eficiência.
+
+Consulte as habilidades para obter mais informações.</TM_Cantrips.description>
+
+
+</LanguageData>

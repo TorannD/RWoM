@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_RangerSafeTrail</defName>
+    <label>Safe Trail</label>
+    <description>Mark a visible, walkable route up to eight cells long for eight seconds. The first two allies to enter gain 15% movement speed while on the route. A closed door or obstruction breaks the trail. Base cost: 20% stamina. Cooldown: 40 seconds.</description>
+    <spellId>rwom.tm_rangersafetrail</spellId>
+    <iconPath>UI/rangertraining</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_RangerSafeTrail</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_RangerSafeTrail</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_PhaseStrike</defaultProjectile>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>40</SecondsToRecharge>
+      <range>8</range>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

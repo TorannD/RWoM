@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_BladeServiceHint>Чтобы изучить «{0}», поражайте врагов «Проходом» или обслуживайте разное изношенное оружие. Положите оружие на землю. Обслуживание восстанавливает 10% прочности. Урон, нанесённый вашей фракцией, не засчитывается.</TM_BladeServiceHint>
+  <TM_BladeServiceProgress>Попадания «Проходом»: {0}/10 · Обслужено оружия: {1}/20</TM_BladeServiceProgress>
+  <TM_BladeServiceOrder>Обслужить оружие</TM_BladeServiceOrder>
+  <TM_BladeClaimAdept>Освоить «{0}»</TM_BladeClaimAdept>
+  <TM_BladeMasteryHint>Чтобы освоить «{0}», восемь раз нанесите ответный урон обычной атакой ближнего боя в течение четырёх секунд после попадания противника. Другой путь — лично доставить к кровати двенадцать раненых союзников, не способных идти. Одна и та же пешка может засчитаться повторно через сутки.</TM_BladeMasteryHint>
+  <TM_BladeMasteryProgress>Ответные удары: {0}/8 · Спасения: {1}/12</TM_BladeMasteryProgress>
+  <TM_BladeMasteryClaim>Освоить «{0}»</TM_BladeMasteryClaim>
+  <TM_BladeMasteryLearned>Техника мастера: «{0}»</TM_BladeMasteryLearned>
+  <TM_BladePassageRank>{0} {1}/3 · дальность {2}</TM_BladePassageRank>
+</LanguageData>

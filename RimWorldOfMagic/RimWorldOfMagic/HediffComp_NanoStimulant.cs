@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -65,7 +65,7 @@ namespace TorannMagic
                 Pawn pawn = base.Pawn as Pawn;
 
                 if (pawn == null) return;
-                TM_MoteMaker.ThrowRegenMote(pawn.DrawPos, pawn.Map, 1f);
+                if (pawn.Spawned) TM_MoteMaker.ThrowRegenMote(pawn.DrawPos, pawn.Map, 1f);
 
                 
                 int injuriesToHeal;

@@ -1,0 +1,68 @@
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName='VGE_GravjumperEngine']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities/li[text()='TM_SmallMagicalThruster']</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='VGE_GravjumperEngine']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+      <value>
+        <li>TM_SmallMagicalThruster</li>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName='VGE_GravjumperEngine']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities/li[text()='TM_LargeMagicalThruster']</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='VGE_GravjumperEngine']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+      <value>
+        <li>TM_LargeMagicalThruster</li>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName='VGE_GravhulkEngine']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities/li[text()='TM_SmallMagicalThruster']</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='VGE_GravhulkEngine']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+      <value>
+        <li>TM_SmallMagicalThruster</li>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName='VGE_GravhulkEngine']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities/li[text()='TM_LargeMagicalThruster']</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='VGE_GravhulkEngine']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+      <value>
+        <li>TM_LargeMagicalThruster</li>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='TM_SmallMagicalThruster']/comps/li[@Class='TorannMagic.Odyssey.CompProperties_MagicalThruster']/compClass</xpath>
+    <value>
+      <compClass>TorannMagic.VGE.CompMagicalThrusterVge</compClass>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='TM_SmallMagicalThruster']/comps/li[@Class='TorannMagic.Odyssey.CompProperties_MagicalThruster']/statOffsets/GravshipRange</xpath>
+    <value>
+      <GravshipRange>6</GravshipRange>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='TM_LargeMagicalThruster']/comps/li[@Class='TorannMagic.Odyssey.CompProperties_MagicalThruster']/compClass</xpath>
+    <value>
+      <compClass>TorannMagic.VGE.CompMagicalThrusterVge</compClass>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='TM_LargeMagicalThruster']/comps/li[@Class='TorannMagic.Odyssey.CompProperties_MagicalThruster']/statOffsets/GravshipRange</xpath>
+    <value>
+      <GravshipRange>10</GravshipRange>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="TM_SmallMagicalThruster"]/comps/li[@Class="TorannMagic.Odyssey.CompProperties_MagicalThruster"]/maxSimultaneous</xpath>
+    <value>
+      <maxSimultaneous>10</maxSimultaneous>
+    </value>
+  </Operation>
+</Patch>

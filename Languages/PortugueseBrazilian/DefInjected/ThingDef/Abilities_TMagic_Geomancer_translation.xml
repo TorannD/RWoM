@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Projectile_Geomancer.label>projétil padrão</Projectile_Geomancer.label>
+
+
+  <!-- Encase -->
+
+  <Projectile_Encase.label>projétil na casca</Projectile_Encase.label>
+  <Projectile_Encase_I.label>projétil na casca</Projectile_Encase_I.label>
+  <Projectile_Encase_II.label>projétil na casca</Projectile_Encase_II.label>
+  <Projectile_Encase_III.label>projétil na casca</Projectile_Encase_III.label>
+
+
+  <!-- Earthern Hammer -->
+
+  <Projectile_EarthernHammer.label>Martelo de terra</Projectile_EarthernHammer.label>
+
+
+  <!-- Sentinel -->
+
+  <Projectile_Sentinel.label>projétil de sentinela</Projectile_Sentinel.label>
+
+
+</LanguageData>

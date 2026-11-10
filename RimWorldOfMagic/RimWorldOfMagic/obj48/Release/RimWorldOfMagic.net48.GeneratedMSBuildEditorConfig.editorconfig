@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = TorannMagic
+build_property.ProjectDir = D:\golang\RWoM\RWoM\RimWorldOfMagic\RimWorldOfMagic\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

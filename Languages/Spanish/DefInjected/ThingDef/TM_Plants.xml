@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Plant_Briar.label>enredadera espinosa</TM_Plant_Briar.label>
+  
+  <TM_Plant_Briar.description>Un obstáculo de brotes leñosos enmarañados cubiertos de espinas feroces que ralentizan a quien se mueva sobre ellos. Las espinas son afiladas como navajas y pueden atravesar incluso ropa gruesa.</TM_Plant_Briar.description>
+  
+  
+  <TM_Plant_Paracyte.label>zarza de paracita</TM_Plant_Paracyte.label>
+  
+  <TM_Plant_Paracyte.description>La zarza de paracita es una planta modificada genéticamente que absorbe maná mediante un proceso de transpiración arcana y lo acumula en una crisálida. A medida que la planta madura, la crisálida se endurece hasta convertirse en magicita, que puede cosecharse. El resto de la planta consiste en espinas casi vítreas y tallos rígidos.\n\nLa paracita es difícil de cultivar y solo los herbolarios hábiles pueden plantarla y cosecharla con seguridad, pero, pese a sus dificultades, tiene una belleza delicada y emite un resplandor etéreo que refleja la luz a lo largo de sus bordes cristalinos.\n\nNOTA: las plantas de paracita reducirán la regeneración de maná de todos los magos del mapa si su número supera el límite flexible. Consulta el valor del límite en los ajustes del mod. Las plantas de paracita no afectan a la regeneración de maná cuando el total en el mapa es inferior al límite.</TM_Plant_Paracyte.description>
+  
+  
+  <TM_Plant_Pomanasyrrium.label>arbusto de pomanasirrio</TM_Plant_Pomanasyrrium.label>
+  
+  <TM_Plant_Pomanasyrrium.description>La planta de pomanasirrio está envuelta en leyendas que le atribuyen propiedades míticas para conceder sabiduría, perspicacia y claridad a quienes consumen su fruto. Sin embargo, es difícil de cultivar y no ofrece el rendimiento de otras plantas cultivadas, por lo que los cultivadores y agricultores no la favorecen.\n\nEl fruto que produce, conocido comúnmente como pomana, puede consumirse crudo y es bastante sabroso, pero tiene poco valor nutritivo. Como la ambrosía, provoca una ligera sensación de euforia y fomenta una sensación de bienestar mental.</TM_Plant_Pomanasyrrium.description>
+  
+  
+  <TM_RawPomanaMash.label>pomana machacada</TM_RawPomanaMash.label>
+  
+  <TM_RawPomanaMash.description>Un subproducto amargo y poco apetitoso de la extracción de sirrio de la pomana cruda. Conserva algo de valor nutritivo, pero se suele dejar para el consumo de animales o como base nutritiva para comidas.</TM_RawPomanaMash.description>
+  
+  
+  <TM_RawPomanasyrrium.label>fruto de pomana</TM_RawPomanasyrrium.label>
+  
+  <TM_RawPomanasyrrium.description>Un fruto del tamaño de un puño, con tonos que van del naranja del atardecer al violeta crepuscular. La pomana se considera sobre todo una delicia por su escasez y suele disfrutarse cruda como postre. Al consumirse cruda, genera una leve sensación eufórica de bienestar mental y se ha comprobado que abre vías mentales y expande la consciencia.</TM_RawPomanasyrrium.description>
+  
+  
+  <TM_Syrrium.label>sirrio</TM_Syrrium.label>
+  
+  <TM_Syrrium.description>El sirrio se destila de la pomana hirviendo el fruto machacado, lo que separa el sirrio de la pomana. El sirrio induce un efecto mucho más intenso que la pomana cruda al consumirse. Sus efectos químicos lo clasifican como droga y pueden causar una leve dependencia química; sin embargo, su atractivo más adictivo aparece cuando algunos empiezan a sentirse menos capaces sin la droga y consumen sirrio para mantener su confianza y su equilibrio mental.\n\nLa mayoría descarta como leyenda o fantasía las afirmaciones de que el pomanasirrio concede perspicacia y claridad; sin embargo, la investigación de su química ha revelado que esos efectos son reales, al menos para los magos. Los beneficios del sirrio se consideran la razón principal para cultivar pomanasirrio. Bien refinado, el sirrio amplía el acceso de un mago al maná, acelera su flujo y reflujo y reduce el esfuerzo necesario al ejercer poder arcano. Estos efectos no se acumulan con los beneficios de consumir el fruto crudo.</TM_Syrrium.description>
+  
+  <TM_Syrrium.ingestible.ingestCommandString>Beber {0}</TM_Syrrium.ingestible.ingestCommandString>
+  
+  <TM_Syrrium.ingestible.ingestReportString>Bebiendo {0}.</TM_Syrrium.ingestible.ingestReportString>
+  
+</LanguageData>

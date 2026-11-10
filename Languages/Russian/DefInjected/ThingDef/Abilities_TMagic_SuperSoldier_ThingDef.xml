@@ -1,0 +1,596 @@
+<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_SuperSoldier.xml-->
+	<!--                  EN: Grenade-->
+	<Projectile_Mk203GL.label>Граната</Projectile_Mk203GL.label>
+	<!--                   EN: buckshot pellet-->
+	<Projectile_Buckshot.label>картечина</Projectile_Buckshot.label>
+	<!--                          EN: breaching charge-->
+	<Projectile_BreachingCharge.label>проломный заряд</Projectile_BreachingCharge.label>
+	<!--                   EN: pistol spec weapon-->
+	<TM_PistolSpec_Base0.label>пистолет специалиста</TM_PistolSpec_Base0.label>
+	<!--                         EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base0.description>Пистолет в руках специалиста.</TM_PistolSpec_Base0.description>
+	<!--                           EN: ㅤ-->
+	<TM_PistolSpec_Base0.verbs.0.label>ㅤ</TM_PistolSpec_Base0.verbs.0.label>
+	<!--                           EN: pistol whip-->
+	<TM_PistolSpec_Base0.tools.0.label>удар рукоятью</TM_PistolSpec_Base0.tools.0.label>
+	<!--                   EN: pistol spec weapon-->
+	<TM_PistolSpec_Base1.label>пистолет специалиста</TM_PistolSpec_Base1.label>
+	<!--                         EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base1.description>Пистолет в руках специалиста.</TM_PistolSpec_Base1.description>
+	<!--                           EN: ㅤ-->
+	<TM_PistolSpec_Base1.verbs.0.label>ㅤ</TM_PistolSpec_Base1.verbs.0.label>
+	<!--                           EN: pistol whip-->
+	<TM_PistolSpec_Base1.tools.0.label>удар рукоятью</TM_PistolSpec_Base1.tools.0.label>
+	<!--                   EN: pistol spec weapon-->
+	<TM_PistolSpec_Base2.label>пистолет специалиста</TM_PistolSpec_Base2.label>
+	<!--                         EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base2.description>Пистолет в руках специалиста.</TM_PistolSpec_Base2.description>
+	<!--                           EN: ㅤ-->
+	<TM_PistolSpec_Base2.verbs.0.label>ㅤ</TM_PistolSpec_Base2.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_PistolSpec_Base2.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base2.verbs.Verb_Shoot.label>
+	<!--                           EN: pistol whip-->
+	<TM_PistolSpec_Base2.tools.0.label>удар рукоятью</TM_PistolSpec_Base2.tools.0.label>
+	<!--                   EN: pistol spec weapon-->
+	<TM_PistolSpec_Base3.label>пистолет специалиста</TM_PistolSpec_Base3.label>
+	<!--                         EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base3.description>Пистолет в руках специалиста.</TM_PistolSpec_Base3.description>
+	<!--                           EN: ㅤ-->
+	<TM_PistolSpec_Base3.verbs.0.label>ㅤ</TM_PistolSpec_Base3.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_PistolSpec_Base3.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base3.verbs.Verb_Shoot.label>
+	<!--                           EN: pistol whip-->
+	<TM_PistolSpec_Base3.tools.0.label>удар рукоятью</TM_PistolSpec_Base3.tools.0.label>
+	<!--                   EN: pistol spec weapon-->
+	<TM_PistolSpec_Base4.label>пистолет специалиста</TM_PistolSpec_Base4.label>
+	<!--                         EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base4.description>Пистолет в руках специалиста.</TM_PistolSpec_Base4.description>
+	<!--                           EN: ㅤ-->
+	<TM_PistolSpec_Base4.verbs.0.label>ㅤ</TM_PistolSpec_Base4.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_PistolSpec_Base4.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base4.verbs.Verb_Shoot.label>
+	<!--                           EN: pistol whip-->
+	<TM_PistolSpec_Base4.tools.0.label>удар рукоятью</TM_PistolSpec_Base4.tools.0.label>
+	<!--                   EN: pistol spec weapon-->
+	<TM_PistolSpec_Base5.label>пистолет специалиста</TM_PistolSpec_Base5.label>
+	<!--                         EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base5.description>Пистолет в руках специалиста.</TM_PistolSpec_Base5.description>
+	<!--                           EN: ㅤ-->
+	<TM_PistolSpec_Base5.verbs.0.label>ㅤ</TM_PistolSpec_Base5.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_PistolSpec_Base5.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base5.verbs.Verb_Shoot.label>
+	<!--                           EN: pistol whip-->
+	<TM_PistolSpec_Base5.tools.0.label>удар рукоятью</TM_PistolSpec_Base5.tools.0.label>
+	<!--                   EN: pistol spec weapon-->
+	<TM_PistolSpec_Base6.label>пистолет специалиста</TM_PistolSpec_Base6.label>
+	<!--                         EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base6.description>Пистолет в руках специалиста.</TM_PistolSpec_Base6.description>
+	<!--                           EN: ㅤ-->
+	<TM_PistolSpec_Base6.verbs.0.label>ㅤ</TM_PistolSpec_Base6.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_PistolSpec_Base6.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base6.verbs.Verb_Shoot.label>
+	<!--                           EN: pistol whip-->
+	<TM_PistolSpec_Base6.tools.0.label>удар рукоятью</TM_PistolSpec_Base6.tools.0.label>
+	<!--                   EN: pistol spec weapon-->
+	<TM_PistolSpec_Base7.label>пистолет специалиста</TM_PistolSpec_Base7.label>
+	<!--                         EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base7.description>Пистолет в руках специалиста.</TM_PistolSpec_Base7.description>
+	<!--                           EN: ㅤ-->
+	<TM_PistolSpec_Base7.verbs.0.label>ㅤ</TM_PistolSpec_Base7.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_PistolSpec_Base7.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base7.verbs.Verb_Shoot.label>
+	<!--                           EN: pistol whip-->
+	<TM_PistolSpec_Base7.tools.0.label>удар рукоятью</TM_PistolSpec_Base7.tools.0.label>
+	<!--                   EN: pistol spec weapon-->
+	<TM_PistolSpec_Base8.label>пистолет специалиста</TM_PistolSpec_Base8.label>
+	<!--                         EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base8.description>Пистолет в руках специалиста.</TM_PistolSpec_Base8.description>
+	<!--                           EN: ㅤ-->
+	<TM_PistolSpec_Base8.verbs.0.label>ㅤ</TM_PistolSpec_Base8.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_PistolSpec_Base8.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base8.verbs.Verb_Shoot.label>
+	<!--                           EN: pistol whip-->
+	<TM_PistolSpec_Base8.tools.0.label>удар рукоятью</TM_PistolSpec_Base8.tools.0.label>
+	<!--                   EN: pistol spec weapon-->
+	<TM_PistolSpec_Base9.label>пистолет специалиста</TM_PistolSpec_Base9.label>
+	<!--                         EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base9.description>Пистолет в руках специалиста.</TM_PistolSpec_Base9.description>
+	<!--                           EN: ㅤ-->
+	<TM_PistolSpec_Base9.verbs.0.label>ㅤ</TM_PistolSpec_Base9.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_PistolSpec_Base9.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base9.verbs.Verb_Shoot.label>
+	<!--                           EN: pistol whip-->
+	<TM_PistolSpec_Base9.tools.0.label>удар рукоятью</TM_PistolSpec_Base9.tools.0.label>
+	<!--                    EN: pistol spec weapon-->
+	<TM_PistolSpec_Base10.label>пистолет специалиста</TM_PistolSpec_Base10.label>
+	<!--                          EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base10.description>Пистолет в руках специалиста.</TM_PistolSpec_Base10.description>
+	<!--                            EN: ㅤ-->
+	<TM_PistolSpec_Base10.verbs.0.label>ㅤ</TM_PistolSpec_Base10.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_PistolSpec_Base10.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base10.verbs.Verb_Shoot.label>
+	<!--                            EN: pistol whip-->
+	<TM_PistolSpec_Base10.tools.0.label>удар рукоятью</TM_PistolSpec_Base10.tools.0.label>
+	<!--                    EN: pistol spec weapon-->
+	<TM_PistolSpec_Base11.label>пистолет специалиста</TM_PistolSpec_Base11.label>
+	<!--                          EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base11.description>Пистолет в руках специалиста.</TM_PistolSpec_Base11.description>
+	<!--                            EN: ㅤ-->
+	<TM_PistolSpec_Base11.verbs.0.label>ㅤ</TM_PistolSpec_Base11.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_PistolSpec_Base11.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base11.verbs.Verb_Shoot.label>
+	<!--                            EN: pistol whip-->
+	<TM_PistolSpec_Base11.tools.0.label>удар рукоятью</TM_PistolSpec_Base11.tools.0.label>
+	<!--                    EN: pistol spec weapon-->
+	<TM_PistolSpec_Base12.label>пистолет специалиста</TM_PistolSpec_Base12.label>
+	<!--                          EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base12.description>Пистолет в руках специалиста.</TM_PistolSpec_Base12.description>
+	<!--                            EN: ㅤ-->
+	<TM_PistolSpec_Base12.verbs.0.label>ㅤ</TM_PistolSpec_Base12.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_PistolSpec_Base12.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base12.verbs.Verb_Shoot.label>
+	<!--                            EN: pistol whip-->
+	<TM_PistolSpec_Base12.tools.0.label>удар рукоятью</TM_PistolSpec_Base12.tools.0.label>
+	<!--                    EN: pistol spec weapon-->
+	<TM_PistolSpec_Base13.label>пистолет специалиста</TM_PistolSpec_Base13.label>
+	<!--                          EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base13.description>Пистолет в руках специалиста.</TM_PistolSpec_Base13.description>
+	<!--                            EN: ㅤ-->
+	<TM_PistolSpec_Base13.verbs.0.label>ㅤ</TM_PistolSpec_Base13.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_PistolSpec_Base13.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base13.verbs.Verb_Shoot.label>
+	<!--                            EN: pistol whip-->
+	<TM_PistolSpec_Base13.tools.0.label>удар рукоятью</TM_PistolSpec_Base13.tools.0.label>
+	<!--                    EN: pistol spec weapon-->
+	<TM_PistolSpec_Base14.label>пистолет специалиста</TM_PistolSpec_Base14.label>
+	<!--                          EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base14.description>Пистолет в руках специалиста.</TM_PistolSpec_Base14.description>
+	<!--                            EN: ㅤ-->
+	<TM_PistolSpec_Base14.verbs.0.label>ㅤ</TM_PistolSpec_Base14.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_PistolSpec_Base14.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base14.verbs.Verb_Shoot.label>
+	<!--                            EN: pistol whip-->
+	<TM_PistolSpec_Base14.tools.0.label>удар рукоятью</TM_PistolSpec_Base14.tools.0.label>
+	<!--                    EN: pistol spec weapon-->
+	<TM_PistolSpec_Base15.label>пистолет специалиста</TM_PistolSpec_Base15.label>
+	<!--                          EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base15.description>Пистолет в руках специалиста.</TM_PistolSpec_Base15.description>
+	<!--                            EN: ㅤ-->
+	<TM_PistolSpec_Base15.verbs.0.label>ㅤ</TM_PistolSpec_Base15.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_PistolSpec_Base15.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base15.verbs.Verb_Shoot.label>
+	<!--                            EN: pistol whip-->
+	<TM_PistolSpec_Base15.tools.0.label>удар рукоятью</TM_PistolSpec_Base15.tools.0.label>
+	<!--                    EN: pistol spec weapon-->
+	<TM_PistolSpec_Base16.label>пистолет специалиста</TM_PistolSpec_Base16.label>
+	<!--                          EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base16.description>Пистолет в руках специалиста.</TM_PistolSpec_Base16.description>
+	<!--                            EN: ㅤ-->
+	<TM_PistolSpec_Base16.verbs.0.label>ㅤ</TM_PistolSpec_Base16.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_PistolSpec_Base16.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base16.verbs.Verb_Shoot.label>
+	<!--                            EN: pistol whip-->
+	<TM_PistolSpec_Base16.tools.0.label>удар рукоятью</TM_PistolSpec_Base16.tools.0.label>
+	<!--                    EN: pistol spec weapon-->
+	<TM_PistolSpec_Base17.label>пистолет специалиста</TM_PistolSpec_Base17.label>
+	<!--                          EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base17.description>Пистолет в руках специалиста.</TM_PistolSpec_Base17.description>
+	<!--                            EN: ㅤ-->
+	<TM_PistolSpec_Base17.verbs.0.label>ㅤ</TM_PistolSpec_Base17.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_PistolSpec_Base17.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base17.verbs.Verb_Shoot.label>
+	<!--                            EN: pistol whip-->
+	<TM_PistolSpec_Base17.tools.0.label>удар рукоятью</TM_PistolSpec_Base17.tools.0.label>
+	<!--                    EN: pistol spec weapon-->
+	<TM_PistolSpec_Base18.label>пистолет специалиста</TM_PistolSpec_Base18.label>
+	<!--                          EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base18.description>Пистолет в руках специалиста.</TM_PistolSpec_Base18.description>
+	<!--                            EN: ㅤ-->
+	<TM_PistolSpec_Base18.verbs.0.label>ㅤ</TM_PistolSpec_Base18.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_PistolSpec_Base18.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base18.verbs.Verb_Shoot.label>
+	<!--                            EN: pistol whip-->
+	<TM_PistolSpec_Base18.tools.0.label>удар рукоятью</TM_PistolSpec_Base18.tools.0.label>
+	<!--                    EN: pistol spec weapon-->
+	<TM_PistolSpec_Base19.label>пистолет специалиста</TM_PistolSpec_Base19.label>
+	<!--                          EN: A pistol in the hands of a specialist.-->
+	<TM_PistolSpec_Base19.description>Пистолет в руках специалиста.</TM_PistolSpec_Base19.description>
+	<!--                            EN: ㅤ-->
+	<TM_PistolSpec_Base19.verbs.0.label>ㅤ</TM_PistolSpec_Base19.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_PistolSpec_Base19.verbs.Verb_Shoot.label>ㅤ</TM_PistolSpec_Base19.verbs.Verb_Shoot.label>
+	<!--                            EN: pistol whip-->
+	<TM_PistolSpec_Base19.tools.0.label>удар рукоятью</TM_PistolSpec_Base19.tools.0.label>
+	<!--                  EN: rifle spec weapon-->
+	<TM_RifleSpec_Base0.label>винтовка специалиста</TM_RifleSpec_Base0.label>
+	<!--                        EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base0.description>Винтовка в руках специалиста.</TM_RifleSpec_Base0.description>
+	<!--                          EN: ㅤ-->
+	<TM_RifleSpec_Base0.verbs.0.label>ㅤ</TM_RifleSpec_Base0.verbs.0.label>
+	<!--                          EN: rifle stock-->
+	<TM_RifleSpec_Base0.tools.0.label>приклад винтовки</TM_RifleSpec_Base0.tools.0.label>
+	<!--                  EN: rifle spec weapon-->
+	<TM_RifleSpec_Base1.label>винтовка специалиста</TM_RifleSpec_Base1.label>
+	<!--                        EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base1.description>Винтовка в руках специалиста.</TM_RifleSpec_Base1.description>
+	<!--                          EN: ㅤ-->
+	<TM_RifleSpec_Base1.verbs.0.label>ㅤ</TM_RifleSpec_Base1.verbs.0.label>
+	<!--                          EN: rifle stock-->
+	<TM_RifleSpec_Base1.tools.0.label>приклад винтовки</TM_RifleSpec_Base1.tools.0.label>
+	<!--                  EN: rifle spec weapon-->
+	<TM_RifleSpec_Base2.label>винтовка специалиста</TM_RifleSpec_Base2.label>
+	<!--                        EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base2.description>Винтовка в руках специалиста.</TM_RifleSpec_Base2.description>
+	<!--                          EN: ㅤ-->
+	<TM_RifleSpec_Base2.verbs.0.label>ㅤ</TM_RifleSpec_Base2.verbs.0.label>
+	<!--                                   EN: ㅤ-->
+	<TM_RifleSpec_Base2.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base2.verbs.Verb_Shoot.label>
+	<!--                          EN: rifle stock-->
+	<TM_RifleSpec_Base2.tools.0.label>приклад винтовки</TM_RifleSpec_Base2.tools.0.label>
+	<!--                  EN: rifle spec weapon-->
+	<TM_RifleSpec_Base3.label>винтовка специалиста</TM_RifleSpec_Base3.label>
+	<!--                        EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base3.description>Винтовка в руках специалиста.</TM_RifleSpec_Base3.description>
+	<!--                          EN: ㅤ-->
+	<TM_RifleSpec_Base3.verbs.0.label>ㅤ</TM_RifleSpec_Base3.verbs.0.label>
+	<!--                                   EN: ㅤ-->
+	<TM_RifleSpec_Base3.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base3.verbs.Verb_Shoot.label>
+	<!--                          EN: rifle stock-->
+	<TM_RifleSpec_Base3.tools.0.label>приклад винтовки</TM_RifleSpec_Base3.tools.0.label>
+	<!--                  EN: rifle spec weapon-->
+	<TM_RifleSpec_Base4.label>винтовка специалиста</TM_RifleSpec_Base4.label>
+	<!--                        EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base4.description>Винтовка в руках специалиста.</TM_RifleSpec_Base4.description>
+	<!--                          EN: ㅤ-->
+	<TM_RifleSpec_Base4.verbs.0.label>ㅤ</TM_RifleSpec_Base4.verbs.0.label>
+	<!--                                   EN: ㅤ-->
+	<TM_RifleSpec_Base4.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base4.verbs.Verb_Shoot.label>
+	<!--                          EN: rifle stock-->
+	<TM_RifleSpec_Base4.tools.0.label>приклад винтовки</TM_RifleSpec_Base4.tools.0.label>
+	<!--                  EN: rifle spec weapon-->
+	<TM_RifleSpec_Base5.label>винтовка специалиста</TM_RifleSpec_Base5.label>
+	<!--                        EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base5.description>Винтовка в руках специалиста.</TM_RifleSpec_Base5.description>
+	<!--                          EN: ㅤ-->
+	<TM_RifleSpec_Base5.verbs.0.label>ㅤ</TM_RifleSpec_Base5.verbs.0.label>
+	<!--                                   EN: ㅤ-->
+	<TM_RifleSpec_Base5.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base5.verbs.Verb_Shoot.label>
+	<!--                          EN: rifle stock-->
+	<TM_RifleSpec_Base5.tools.0.label>приклад винтовки</TM_RifleSpec_Base5.tools.0.label>
+	<!--                  EN: rifle spec weapon-->
+	<TM_RifleSpec_Base6.label>винтовка специалиста</TM_RifleSpec_Base6.label>
+	<!--                        EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base6.description>Винтовка в руках специалиста.</TM_RifleSpec_Base6.description>
+	<!--                          EN: ㅤ-->
+	<TM_RifleSpec_Base6.verbs.0.label>ㅤ</TM_RifleSpec_Base6.verbs.0.label>
+	<!--                                   EN: ㅤ-->
+	<TM_RifleSpec_Base6.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base6.verbs.Verb_Shoot.label>
+	<!--                          EN: rifle stock-->
+	<TM_RifleSpec_Base6.tools.0.label>приклад винтовки</TM_RifleSpec_Base6.tools.0.label>
+	<!--                  EN: rifle spec weapon-->
+	<TM_RifleSpec_Base7.label>винтовка специалиста</TM_RifleSpec_Base7.label>
+	<!--                        EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base7.description>Винтовка в руках специалиста.</TM_RifleSpec_Base7.description>
+	<!--                          EN: ㅤ-->
+	<TM_RifleSpec_Base7.verbs.0.label>ㅤ</TM_RifleSpec_Base7.verbs.0.label>
+	<!--                                   EN: ㅤ-->
+	<TM_RifleSpec_Base7.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base7.verbs.Verb_Shoot.label>
+	<!--                          EN: rifle stock-->
+	<TM_RifleSpec_Base7.tools.0.label>приклад винтовки</TM_RifleSpec_Base7.tools.0.label>
+	<!--                  EN: rifle spec weapon-->
+	<TM_RifleSpec_Base8.label>винтовка специалиста</TM_RifleSpec_Base8.label>
+	<!--                        EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base8.description>Винтовка в руках специалиста.</TM_RifleSpec_Base8.description>
+	<!--                          EN: ㅤ-->
+	<TM_RifleSpec_Base8.verbs.0.label>ㅤ</TM_RifleSpec_Base8.verbs.0.label>
+	<!--                                   EN: ㅤ-->
+	<TM_RifleSpec_Base8.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base8.verbs.Verb_Shoot.label>
+	<!--                          EN: rifle stock-->
+	<TM_RifleSpec_Base8.tools.0.label>приклад винтовки</TM_RifleSpec_Base8.tools.0.label>
+	<!--                  EN: rifle spec weapon-->
+	<TM_RifleSpec_Base9.label>винтовка специалиста</TM_RifleSpec_Base9.label>
+	<!--                        EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base9.description>Винтовка в руках специалиста.</TM_RifleSpec_Base9.description>
+	<!--                          EN: ㅤ-->
+	<TM_RifleSpec_Base9.verbs.0.label>ㅤ</TM_RifleSpec_Base9.verbs.0.label>
+	<!--                                   EN: ㅤ-->
+	<TM_RifleSpec_Base9.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base9.verbs.Verb_Shoot.label>
+	<!--                          EN: rifle stock-->
+	<TM_RifleSpec_Base9.tools.0.label>приклад винтовки</TM_RifleSpec_Base9.tools.0.label>
+	<!--                   EN: rifle spec weapon-->
+	<TM_RifleSpec_Base10.label>винтовка специалиста</TM_RifleSpec_Base10.label>
+	<!--                         EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base10.description>Винтовка в руках специалиста.</TM_RifleSpec_Base10.description>
+	<!--                           EN: ㅤ-->
+	<TM_RifleSpec_Base10.verbs.0.label>ㅤ</TM_RifleSpec_Base10.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_RifleSpec_Base10.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base10.verbs.Verb_Shoot.label>
+	<!--                           EN: rifle stock-->
+	<TM_RifleSpec_Base10.tools.0.label>приклад винтовки</TM_RifleSpec_Base10.tools.0.label>
+	<!--                   EN: rifle spec weapon-->
+	<TM_RifleSpec_Base11.label>винтовка специалиста</TM_RifleSpec_Base11.label>
+	<!--                         EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base11.description>Винтовка в руках специалиста.</TM_RifleSpec_Base11.description>
+	<!--                           EN: ㅤ-->
+	<TM_RifleSpec_Base11.verbs.0.label>ㅤ</TM_RifleSpec_Base11.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_RifleSpec_Base11.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base11.verbs.Verb_Shoot.label>
+	<!--                           EN: rifle stock-->
+	<TM_RifleSpec_Base11.tools.0.label>приклад винтовки</TM_RifleSpec_Base11.tools.0.label>
+	<!--                   EN: rifle spec weapon-->
+	<TM_RifleSpec_Base12.label>винтовка специалиста</TM_RifleSpec_Base12.label>
+	<!--                         EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base12.description>Винтовка в руках специалиста.</TM_RifleSpec_Base12.description>
+	<!--                           EN: ㅤ-->
+	<TM_RifleSpec_Base12.verbs.0.label>ㅤ</TM_RifleSpec_Base12.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_RifleSpec_Base12.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base12.verbs.Verb_Shoot.label>
+	<!--                           EN: rifle stock-->
+	<TM_RifleSpec_Base12.tools.0.label>приклад винтовки</TM_RifleSpec_Base12.tools.0.label>
+	<!--                   EN: rifle spec weapon-->
+	<TM_RifleSpec_Base13.label>винтовка специалиста</TM_RifleSpec_Base13.label>
+	<!--                         EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base13.description>Винтовка в руках специалиста.</TM_RifleSpec_Base13.description>
+	<!--                           EN: ㅤ-->
+	<TM_RifleSpec_Base13.verbs.0.label>ㅤ</TM_RifleSpec_Base13.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_RifleSpec_Base13.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base13.verbs.Verb_Shoot.label>
+	<!--                           EN: rifle stock-->
+	<TM_RifleSpec_Base13.tools.0.label>приклад винтовки</TM_RifleSpec_Base13.tools.0.label>
+	<!--                   EN: rifle spec weapon-->
+	<TM_RifleSpec_Base14.label>винтовка специалиста</TM_RifleSpec_Base14.label>
+	<!--                         EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base14.description>Винтовка в руках специалиста.</TM_RifleSpec_Base14.description>
+	<!--                           EN: ㅤ-->
+	<TM_RifleSpec_Base14.verbs.0.label>ㅤ</TM_RifleSpec_Base14.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_RifleSpec_Base14.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base14.verbs.Verb_Shoot.label>
+	<!--                           EN: rifle stock-->
+	<TM_RifleSpec_Base14.tools.0.label>приклад винтовки</TM_RifleSpec_Base14.tools.0.label>
+	<!--                   EN: rifle spec weapon-->
+	<TM_RifleSpec_Base15.label>винтовка специалиста</TM_RifleSpec_Base15.label>
+	<!--                         EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base15.description>Винтовка в руках специалиста.</TM_RifleSpec_Base15.description>
+	<!--                           EN: ㅤ-->
+	<TM_RifleSpec_Base15.verbs.0.label>ㅤ</TM_RifleSpec_Base15.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_RifleSpec_Base15.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base15.verbs.Verb_Shoot.label>
+	<!--                           EN: rifle stock-->
+	<TM_RifleSpec_Base15.tools.0.label>приклад винтовки</TM_RifleSpec_Base15.tools.0.label>
+	<!--                   EN: rifle spec weapon-->
+	<TM_RifleSpec_Base16.label>винтовка специалиста</TM_RifleSpec_Base16.label>
+	<!--                         EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base16.description>Винтовка в руках специалиста.</TM_RifleSpec_Base16.description>
+	<!--                           EN: ㅤ-->
+	<TM_RifleSpec_Base16.verbs.0.label>ㅤ</TM_RifleSpec_Base16.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_RifleSpec_Base16.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base16.verbs.Verb_Shoot.label>
+	<!--                           EN: rifle stock-->
+	<TM_RifleSpec_Base16.tools.0.label>приклад винтовки</TM_RifleSpec_Base16.tools.0.label>
+	<!--                   EN: rifle spec weapon-->
+	<TM_RifleSpec_Base17.label>винтовка специалиста</TM_RifleSpec_Base17.label>
+	<!--                         EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base17.description>Винтовка в руках специалиста.</TM_RifleSpec_Base17.description>
+	<!--                           EN: ㅤ-->
+	<TM_RifleSpec_Base17.verbs.0.label>ㅤ</TM_RifleSpec_Base17.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_RifleSpec_Base17.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base17.verbs.Verb_Shoot.label>
+	<!--                           EN: rifle stock-->
+	<TM_RifleSpec_Base17.tools.0.label>приклад винтовки</TM_RifleSpec_Base17.tools.0.label>
+	<!--                   EN: rifle spec weapon-->
+	<TM_RifleSpec_Base18.label>винтовка специалиста</TM_RifleSpec_Base18.label>
+	<!--                         EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base18.description>Винтовка в руках специалиста.</TM_RifleSpec_Base18.description>
+	<!--                           EN: ㅤ-->
+	<TM_RifleSpec_Base18.verbs.0.label>ㅤ</TM_RifleSpec_Base18.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_RifleSpec_Base18.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base18.verbs.Verb_Shoot.label>
+	<!--                           EN: rifle stock-->
+	<TM_RifleSpec_Base18.tools.0.label>приклад винтовки</TM_RifleSpec_Base18.tools.0.label>
+	<!--                   EN: rifle spec weapon-->
+	<TM_RifleSpec_Base19.label>винтовка специалиста</TM_RifleSpec_Base19.label>
+	<!--                         EN: A rifle in the hands of a specialist.-->
+	<TM_RifleSpec_Base19.description>Винтовка в руках специалиста.</TM_RifleSpec_Base19.description>
+	<!--                           EN: ㅤ-->
+	<TM_RifleSpec_Base19.verbs.0.label>ㅤ</TM_RifleSpec_Base19.verbs.0.label>
+	<!--                                    EN: ㅤ-->
+	<TM_RifleSpec_Base19.verbs.Verb_Shoot.label>ㅤ</TM_RifleSpec_Base19.verbs.Verb_Shoot.label>
+	<!--                           EN: rifle stock-->
+	<TM_RifleSpec_Base19.tools.0.label>приклад винтовки</TM_RifleSpec_Base19.tools.0.label>
+	<!--                    EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base0.label>дробовик специалиста</TM_ShotgunSpec_Base0.label>
+	<!--                          EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base0.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base0.description>
+	<!--                            EN: ㅤ-->
+	<TM_ShotgunSpec_Base0.verbs.0.label>ㅤ</TM_ShotgunSpec_Base0.verbs.0.label>
+	<!--                            EN: weapon smash-->
+	<TM_ShotgunSpec_Base0.tools.0.label>удар прикладом</TM_ShotgunSpec_Base0.tools.0.label>
+	<!--                    EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base1.label>дробовик специалиста</TM_ShotgunSpec_Base1.label>
+	<!--                          EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base1.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base1.description>
+	<!--                            EN: ㅤ-->
+	<TM_ShotgunSpec_Base1.verbs.0.label>ㅤ</TM_ShotgunSpec_Base1.verbs.0.label>
+	<!--                            EN: weapon smash-->
+	<TM_ShotgunSpec_Base1.tools.0.label>удар прикладом</TM_ShotgunSpec_Base1.tools.0.label>
+	<!--                    EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base2.label>дробовик специалиста</TM_ShotgunSpec_Base2.label>
+	<!--                          EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base2.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base2.description>
+	<!--                            EN: ㅤ-->
+	<TM_ShotgunSpec_Base2.verbs.0.label>ㅤ</TM_ShotgunSpec_Base2.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_ShotgunSpec_Base2.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base2.verbs.Verb_Shoot.label>
+	<!--                            EN: weapon smash-->
+	<TM_ShotgunSpec_Base2.tools.0.label>удар прикладом</TM_ShotgunSpec_Base2.tools.0.label>
+	<!--                    EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base3.label>дробовик специалиста</TM_ShotgunSpec_Base3.label>
+	<!--                          EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base3.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base3.description>
+	<!--                            EN: ㅤ-->
+	<TM_ShotgunSpec_Base3.verbs.0.label>ㅤ</TM_ShotgunSpec_Base3.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_ShotgunSpec_Base3.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base3.verbs.Verb_Shoot.label>
+	<!--                            EN: weapon smash-->
+	<TM_ShotgunSpec_Base3.tools.0.label>удар прикладом</TM_ShotgunSpec_Base3.tools.0.label>
+	<!--                    EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base4.label>дробовик специалиста</TM_ShotgunSpec_Base4.label>
+	<!--                          EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base4.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base4.description>
+	<!--                            EN: ㅤ-->
+	<TM_ShotgunSpec_Base4.verbs.0.label>ㅤ</TM_ShotgunSpec_Base4.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_ShotgunSpec_Base4.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base4.verbs.Verb_Shoot.label>
+	<!--                            EN: weapon smash-->
+	<TM_ShotgunSpec_Base4.tools.0.label>удар прикладом</TM_ShotgunSpec_Base4.tools.0.label>
+	<!--                    EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base5.label>дробовик специалиста</TM_ShotgunSpec_Base5.label>
+	<!--                          EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base5.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base5.description>
+	<!--                            EN: ㅤ-->
+	<TM_ShotgunSpec_Base5.verbs.0.label>ㅤ</TM_ShotgunSpec_Base5.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_ShotgunSpec_Base5.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base5.verbs.Verb_Shoot.label>
+	<!--                            EN: weapon smash-->
+	<TM_ShotgunSpec_Base5.tools.0.label>удар прикладом</TM_ShotgunSpec_Base5.tools.0.label>
+	<!--                    EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base6.label>дробовик специалиста</TM_ShotgunSpec_Base6.label>
+	<!--                          EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base6.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base6.description>
+	<!--                            EN: ㅤ-->
+	<TM_ShotgunSpec_Base6.verbs.0.label>ㅤ</TM_ShotgunSpec_Base6.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_ShotgunSpec_Base6.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base6.verbs.Verb_Shoot.label>
+	<!--                            EN: weapon smash-->
+	<TM_ShotgunSpec_Base6.tools.0.label>удар прикладом</TM_ShotgunSpec_Base6.tools.0.label>
+	<!--                    EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base7.label>дробовик специалиста</TM_ShotgunSpec_Base7.label>
+	<!--                          EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base7.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base7.description>
+	<!--                            EN: ㅤ-->
+	<TM_ShotgunSpec_Base7.verbs.0.label>ㅤ</TM_ShotgunSpec_Base7.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_ShotgunSpec_Base7.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base7.verbs.Verb_Shoot.label>
+	<!--                            EN: weapon smash-->
+	<TM_ShotgunSpec_Base7.tools.0.label>удар прикладом</TM_ShotgunSpec_Base7.tools.0.label>
+	<!--                    EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base8.label>дробовик специалиста</TM_ShotgunSpec_Base8.label>
+	<!--                          EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base8.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base8.description>
+	<!--                            EN: ㅤ-->
+	<TM_ShotgunSpec_Base8.verbs.0.label>ㅤ</TM_ShotgunSpec_Base8.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_ShotgunSpec_Base8.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base8.verbs.Verb_Shoot.label>
+	<!--                            EN: weapon smash-->
+	<TM_ShotgunSpec_Base8.tools.0.label>удар прикладом</TM_ShotgunSpec_Base8.tools.0.label>
+	<!--                    EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base9.label>дробовик специалиста</TM_ShotgunSpec_Base9.label>
+	<!--                          EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base9.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base9.description>
+	<!--                            EN: ㅤ-->
+	<TM_ShotgunSpec_Base9.verbs.0.label>ㅤ</TM_ShotgunSpec_Base9.verbs.0.label>
+	<!--                                     EN: ㅤ-->
+	<TM_ShotgunSpec_Base9.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base9.verbs.Verb_Shoot.label>
+	<!--                            EN: weapon smash-->
+	<TM_ShotgunSpec_Base9.tools.0.label>удар прикладом</TM_ShotgunSpec_Base9.tools.0.label>
+	<!--                     EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base10.label>дробовик специалиста</TM_ShotgunSpec_Base10.label>
+	<!--                           EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base10.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base10.description>
+	<!--                             EN: ㅤ-->
+	<TM_ShotgunSpec_Base10.verbs.0.label>ㅤ</TM_ShotgunSpec_Base10.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_ShotgunSpec_Base10.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base10.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_ShotgunSpec_Base10.tools.0.label>удар прикладом</TM_ShotgunSpec_Base10.tools.0.label>
+	<!--                     EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base11.label>дробовик специалиста</TM_ShotgunSpec_Base11.label>
+	<!--                           EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base11.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base11.description>
+	<!--                             EN: ㅤ-->
+	<TM_ShotgunSpec_Base11.verbs.0.label>ㅤ</TM_ShotgunSpec_Base11.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_ShotgunSpec_Base11.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base11.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_ShotgunSpec_Base11.tools.0.label>удар прикладом</TM_ShotgunSpec_Base11.tools.0.label>
+	<!--                     EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base12.label>дробовик специалиста</TM_ShotgunSpec_Base12.label>
+	<!--                           EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base12.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base12.description>
+	<!--                             EN: ㅤ-->
+	<TM_ShotgunSpec_Base12.verbs.0.label>ㅤ</TM_ShotgunSpec_Base12.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_ShotgunSpec_Base12.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base12.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_ShotgunSpec_Base12.tools.0.label>удар прикладом</TM_ShotgunSpec_Base12.tools.0.label>
+	<!--                     EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base13.label>дробовик специалиста</TM_ShotgunSpec_Base13.label>
+	<!--                           EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base13.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base13.description>
+	<!--                             EN: ㅤ-->
+	<TM_ShotgunSpec_Base13.verbs.0.label>ㅤ</TM_ShotgunSpec_Base13.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_ShotgunSpec_Base13.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base13.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_ShotgunSpec_Base13.tools.0.label>удар прикладом</TM_ShotgunSpec_Base13.tools.0.label>
+	<!--                     EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base14.label>дробовик специалиста</TM_ShotgunSpec_Base14.label>
+	<!--                           EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base14.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base14.description>
+	<!--                             EN: ㅤ-->
+	<TM_ShotgunSpec_Base14.verbs.0.label>ㅤ</TM_ShotgunSpec_Base14.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_ShotgunSpec_Base14.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base14.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_ShotgunSpec_Base14.tools.0.label>удар прикладом</TM_ShotgunSpec_Base14.tools.0.label>
+	<!--                     EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base15.label>дробовик специалиста</TM_ShotgunSpec_Base15.label>
+	<!--                           EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base15.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base15.description>
+	<!--                             EN: ㅤ-->
+	<TM_ShotgunSpec_Base15.verbs.0.label>ㅤ</TM_ShotgunSpec_Base15.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_ShotgunSpec_Base15.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base15.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_ShotgunSpec_Base15.tools.0.label>удар прикладом</TM_ShotgunSpec_Base15.tools.0.label>
+	<!--                     EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base16.label>дробовик специалиста</TM_ShotgunSpec_Base16.label>
+	<!--                           EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base16.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base16.description>
+	<!--                             EN: ㅤ-->
+	<TM_ShotgunSpec_Base16.verbs.0.label>ㅤ</TM_ShotgunSpec_Base16.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_ShotgunSpec_Base16.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base16.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_ShotgunSpec_Base16.tools.0.label>удар прикладом</TM_ShotgunSpec_Base16.tools.0.label>
+	<!--                     EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base17.label>дробовик специалиста</TM_ShotgunSpec_Base17.label>
+	<!--                           EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base17.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base17.description>
+	<!--                             EN: ㅤ-->
+	<TM_ShotgunSpec_Base17.verbs.0.label>ㅤ</TM_ShotgunSpec_Base17.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_ShotgunSpec_Base17.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base17.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_ShotgunSpec_Base17.tools.0.label>удар прикладом</TM_ShotgunSpec_Base17.tools.0.label>
+	<!--                     EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base18.label>дробовик специалиста</TM_ShotgunSpec_Base18.label>
+	<!--                           EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base18.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base18.description>
+	<!--                             EN: ㅤ-->
+	<TM_ShotgunSpec_Base18.verbs.0.label>ㅤ</TM_ShotgunSpec_Base18.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_ShotgunSpec_Base18.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base18.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_ShotgunSpec_Base18.tools.0.label>удар прикладом</TM_ShotgunSpec_Base18.tools.0.label>
+	<!--                     EN: shotgun spec weapon-->
+	<TM_ShotgunSpec_Base19.label>дробовик специалиста</TM_ShotgunSpec_Base19.label>
+	<!--                           EN: A shotgun in the hands of a specialist.-->
+	<TM_ShotgunSpec_Base19.description>Дробовик в руках специалиста.</TM_ShotgunSpec_Base19.description>
+	<!--                             EN: ㅤ-->
+	<TM_ShotgunSpec_Base19.verbs.0.label>ㅤ</TM_ShotgunSpec_Base19.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_ShotgunSpec_Base19.verbs.Verb_Shoot.label>ㅤ</TM_ShotgunSpec_Base19.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_ShotgunSpec_Base19.tools.0.label>удар прикладом</TM_ShotgunSpec_Base19.tools.0.label>
+</LanguageData>

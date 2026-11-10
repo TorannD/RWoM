@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Dire Wolf -->
+
+  <TM_Dire_Wolf.label>Lobo maligno</TM_Dire_Wolf.label>
+  <TM_Dire_Wolf.labelPlural>lobos malignos</TM_Dire_Wolf.labelPlural>
+  <TM_Dire_Wolf.labelMale>Lobo macho maligno</TM_Dire_Wolf.labelMale>
+  <TM_Dire_Wolf.labelMalePlural>samos lobos malignos</TM_Dire_Wolf.labelMalePlural>
+  <TM_Dire_Wolf.labelFemale>fêmea lobo maligno</TM_Dire_Wolf.labelFemale>
+  <TM_Dire_Wolf.labelFemalePlural>fêmeas lobos malignos</TM_Dire_Wolf.labelFemalePlural>
+  <TM_Dire_Wolf.lifeStages.0.label>cachorro de lobo maligno</TM_Dire_Wolf.lifeStages.0.label>
+  <TM_Dire_Wolf.lifeStages.0.labelPlural>cachorros de lobo maligno</TM_Dire_Wolf.lifeStages.0.labelPlural>
+  <TM_Dire_Wolf.lifeStages.0.labelMale>cachorro macho lobo maligno</TM_Dire_Wolf.lifeStages.0.labelMale>
+  <TM_Dire_Wolf.lifeStages.0.labelMalePlural>cachorro fêmea lobo maligno</TM_Dire_Wolf.lifeStages.0.labelMalePlural>
+  <TM_Dire_Wolf.lifeStages.0.labelFemale>cachorro fêmea lobo maligno</TM_Dire_Wolf.lifeStages.0.labelFemale>
+  <TM_Dire_Wolf.lifeStages.0.labelFemalePlural>cachorro fêmea lobo maligno</TM_Dire_Wolf.lifeStages.0.labelFemalePlural>
+  <TM_Dire_Wolf.lifeStages.1.label>Lobo maligno</TM_Dire_Wolf.lifeStages.1.label>
+  <TM_Dire_Wolf.lifeStages.1.labelPlural>lobos malignos</TM_Dire_Wolf.lifeStages.1.labelPlural>
+  <TM_Dire_Wolf.lifeStages.1.labelMale>Lobo macho maligno</TM_Dire_Wolf.lifeStages.1.labelMale>
+  <TM_Dire_Wolf.lifeStages.1.labelMalePlural>samos lobos malignos</TM_Dire_Wolf.lifeStages.1.labelMalePlural>
+  <TM_Dire_Wolf.lifeStages.1.labelFemale>fêmea lobo maligno</TM_Dire_Wolf.lifeStages.1.labelFemale>
+  <TM_Dire_Wolf.lifeStages.1.labelFemalePlural>fêmeas lobos malignos</TM_Dire_Wolf.lifeStages.1.labelFemalePlural>
+  <TM_Dire_Wolf.lifeStages.2.label>Lobo maligno</TM_Dire_Wolf.lifeStages.2.label>
+  <TM_Dire_Wolf.lifeStages.2.labelPlural>lobos malignos</TM_Dire_Wolf.lifeStages.2.labelPlural>
+  <TM_Dire_Wolf.lifeStages.2.labelMale>Lobo macho maligno</TM_Dire_Wolf.lifeStages.2.labelMale>
+  <TM_Dire_Wolf.lifeStages.2.labelMalePlural>samos lobos malignos</TM_Dire_Wolf.lifeStages.2.labelMalePlural>
+  <TM_Dire_Wolf.lifeStages.2.labelFemale>fêmea lobo maligno</TM_Dire_Wolf.lifeStages.2.labelFemale>
+  <TM_Dire_Wolf.lifeStages.2.labelFemalePlural>fêmeas lobos malignos</TM_Dire_Wolf.lifeStages.2.labelFemalePlural>
+
+
+</LanguageData>

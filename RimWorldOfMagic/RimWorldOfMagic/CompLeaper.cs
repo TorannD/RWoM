@@ -176,7 +176,7 @@ namespace TorannMagic
             base.Initialize(props);
             this.initialized = true;
             Pawn pawn = this.parent as Pawn;
-            this.nextLeap = Mathf.RoundToInt(Rand.Range(Props.ticksBetweenLeapChance * .75f, 1.25f * Props.ticksBetweenLeapChance));
+            this.nextLeap = Mathf.Max(1, Mathf.RoundToInt(Rand.Range(Props.ticksBetweenLeapChance * .75f, 1.25f * Props.ticksBetweenLeapChance)));
             this.explosionRadius = this.Props.explodingLeaperRadius * Rand.Range(.8f, 1.25f);
         }
 
@@ -192,6 +192,9 @@ namespace TorannMagic
         {
             base.PostExposeData();
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", true, false);
+            // Old saves keep the values rolled by Initialize. New saves retain the spell's rank bonus.
+            Scribe_Values.Look(ref explosionRadius, "TM_leaperRadius", explosionRadius, true);
+            Scribe_Values.Look(ref nextLeap, "TM_leapInterval", nextLeap, true);
         }
 
         private bool CanHitTargetFrom(IntVec3 pawn, LocalTargetInfo target)

@@ -1,0 +1,7 @@
+<LanguageData><TM_RechargeMana.label>перезарядка маны</TM_RechargeMana.label>
+
+
+  <TM_RechargeMana.effectDesc>перезарядите от 50 до 100 единиц маны всех участвующих магов.</TM_RechargeMana.effectDesc>
+  <TM_RechargeMana.letterInfoText>Все участвующие маги перезарядили {AMOUNT} маны.</TM_RechargeMana.letterInfoText>
+
+</LanguageData>

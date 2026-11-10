@@ -9,7 +9,12 @@ using TorannMagic.Utils;
 
 namespace TorannMagic
 {
-    class Verb_ConsumeCorpse : Verb_UseAbility
+    interface ISpiritCorpseConsumer
+    {
+        bool HasConsumableTarget(LocalTargetInfo target);
+    }
+
+    class Verb_ConsumeCorpse : ClassProgression.Verb_SpiritTargetable, ISpiritCorpseConsumer
     {
 
         bool validTarg;
@@ -35,21 +40,44 @@ namespace TorannMagic
             return validTarg;
         }
 
+        internal static bool Consumable(Thing thing, Pawn excluded)
+        {
+            if (thing is Pawn pawn) return pawn != excluded && !pawn.Dead && TM_Calc.IsUndead(pawn);
+            if (!(thing is Corpse corpse) || corpse.InnerPawn == null) return false;
+            Pawn dead = corpse.InnerPawn;
+            return !TM_Calc.IsRobotPawn(dead) && (dead.RaceProps.IsFlesh || TM_Calc.IsUndead(dead))
+                && (dead.RaceProps.Humanlike || dead.RaceProps.Animal || TM_Calc.IsUndead(dead));
+        }
+
+        public bool HasConsumableTarget(LocalTargetInfo target)
+            => (target.HasThing && Consumable(target.Thing, CasterPawn)) ||
+                target.Cell.GetThingList(CasterPawn.Map).Any(t => t is Corpse && Consumable(t, null));
         protected override bool TryCastShot()
+        {
+            ApplyHostedEffect();
+            return false; // Native direct effect emits no projectile.
+        }
+
+        protected override bool ApplyHostedEffect()
         {
 
             Pawn caster = this.CasterPawn;
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            MagicPowerSkill ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ConsumeCorpse.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ConsumeCorpse_ver");
-            MagicPowerSkill manaRegen = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
+            Pawn owner = ClassProgression.SpiritRebirthCasting.SkillOwner(caster, Ability);
+            var comp = owner?.GetCompAbilityUserMagic();
+            if (comp?.Mana == null) return false;
+            MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_ConsumeCorpse.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ConsumeCorpse_ver");
+            MagicPowerSkill manaRegen = comp.MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
 
+            bool applied = false;
+            IntVec3 cell = currentTarget.Cell;
             Thing undeadThing = this.currentTarget.Thing;
             if (undeadThing is Pawn undead)
             {
                 if (!undead.Dead)
                 {
-                    if (TM_Calc.IsUndead(undead))
+                    if (Consumable(undead, owner == caster ? null : caster))
                     {
+                        applied = true;
                         if (undead.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD))
                         {
                             comp.Mana.CurLevel += (.225f * (1 + (manaRegen.level * .02f) + (ver.level * .07f)) * comp.arcaneDmg);
@@ -92,78 +120,63 @@ namespace TorannMagic
             }
 
             
-            IntVec3 target = this.currentTarget.Cell;
-            Thing corpseThing = null;
-            Corpse corpse = null;
-            List<Thing> thingList;
-            thingList = target.GetThingList(caster.Map);
-            int i=0;
-            while(i < thingList.Count)
+            foreach (Corpse corpse in cell.GetThingList(caster.Map).OfType<Corpse>().ToList())
             {
-                corpseThing = thingList[i];
-                if (corpseThing != null)
+                Pawn undeadPawn = corpse.InnerPawn;
+                if ((undeadPawn.RaceProps.IsFlesh || TM_Calc.IsUndead(undeadPawn)) && (!TM_Calc.IsRobotPawn(undeadPawn)))
                 {
-                    bool validator = corpseThing is Corpse;
-                    if (validator)
+                    if (undeadPawn.RaceProps.Humanlike && !undeadPawn.RaceProps.Animal)
                     {
-                        corpse = corpseThing as Corpse;
-                        Pawn undeadPawn = corpse.InnerPawn;
-                        if ((undeadPawn.RaceProps.IsFlesh || TM_Calc.IsUndead(undeadPawn)) && (!TM_Calc.IsRobotPawn(undeadPawn)))
+                        if (!corpse.IsNotFresh())
                         {
-                            if (undeadPawn.RaceProps.Humanlike && !undeadPawn.RaceProps.Animal)
+                            comp.Mana.CurLevel += (.13f * (1 + (manaRegen.level * .02f) + (ver.level * .07f)) * comp.arcaneDmg);
+                            if (caster.needs != null && caster.needs.rest != null) { caster.needs.rest.CurLevel += .3f; }
+                            if (caster.needs != null && caster.needs.mood != null) { caster.needs.mood.CurLevel += .3f; }
+                            ConsumeHumanoid(corpse);
+                            if (ver.level > 0)
                             {
-                                if (!corpse.IsNotFresh())
-                                {
-                                    comp.Mana.CurLevel += (.13f * (1 + (manaRegen.level * .02f) + (ver.level * .07f)) * comp.arcaneDmg);
-                                    if (caster.needs != null && caster.needs.rest != null) { caster.needs.rest.CurLevel += .3f; }
-                                    if (caster.needs != null && caster.needs.mood != null) { caster.needs.mood.CurLevel += .3f; }
-                                    ConsumeHumanoid(corpse);
-                                    if (ver.level > 0)
-                                    {
-                                        HealCaster(caster, 1 + ver.level, 1 + ver.level, (2f + ver.level) * comp.arcaneDmg);
-                                    }
-                                }
-                                else
-                                {
-                                    comp.Mana.CurLevel += (.09f * (1 + (manaRegen.level * .02f) + (ver.level * .07f)) * comp.arcaneDmg);
-                                    ConsumeHumanoid(corpse);
-                                }
-                                corpse.Destroy();
-                            }
-                            else if (undeadPawn.RaceProps.Animal || TM_Calc.IsUndead(undeadPawn))
-                            {
-                                if (!corpse.IsNotFresh())
-                                {
-                                    comp.Mana.CurLevel += (.09f * (1 + (manaRegen.level * .02f) + (ver.level * .07f)) * comp.arcaneDmg);
-                                    if (caster.needs != null && caster.needs.food != null) { caster.needs.food.CurLevel += .4f; }
-                                    ConsumeAnimalKind(corpse);
-                                    if (ver.level > 0)
-                                    {
-                                        HealCaster(caster, 1, 1, (2f + ver.level) * comp.arcaneDmg);
-                                    }
-                                }
-                                else
-                                {
-                                    comp.Mana.CurLevel += (.07f * (1 + (manaRegen.level * .02f) + (ver.level * .07f)) * comp.arcaneDmg);
-                                    ConsumeAnimalKind(corpse);
-                                }
-                                corpse.Destroy();
-                            }
-                            else
-                            {
-                                Messages.Message("TM_CannontConsumeCorpseType".Translate(), MessageTypeDefOf.RejectInput);
+                                HealCaster(caster, 1 + ver.level, 1 + ver.level, (2f + ver.level) * comp.arcaneDmg);
                             }
                         }
                         else
                         {
-                            Messages.Message("TM_InvalidCorpseType".Translate(), MessageTypeDefOf.RejectInput);
+                            comp.Mana.CurLevel += (.09f * (1 + (manaRegen.level * .02f) + (ver.level * .07f)) * comp.arcaneDmg);
+                            ConsumeHumanoid(corpse);
                         }
+                        corpse.Destroy();
+                        applied = true;
+                    }
+                    else if (undeadPawn.RaceProps.Animal || TM_Calc.IsUndead(undeadPawn))
+                    {
+                        if (!corpse.IsNotFresh())
+                        {
+                            comp.Mana.CurLevel += (.09f * (1 + (manaRegen.level * .02f) + (ver.level * .07f)) * comp.arcaneDmg);
+                            if (caster.needs != null && caster.needs.food != null) { caster.needs.food.CurLevel += .4f; }
+                            ConsumeAnimalKind(corpse);
+                            if (ver.level > 0)
+                            {
+                                HealCaster(caster, 1, 1, (2f + ver.level) * comp.arcaneDmg);
+                            }
+                        }
+                        else
+                        {
+                            comp.Mana.CurLevel += (.07f * (1 + (manaRegen.level * .02f) + (ver.level * .07f)) * comp.arcaneDmg);
+                            ConsumeAnimalKind(corpse);
+                        }
+                        corpse.Destroy();
+                        applied = true;
+                    }
+                    else
+                    {
+                        Messages.Message("TM_CannontConsumeCorpseType".Translate(), MessageTypeDefOf.RejectInput);
                     }
                 }
-                i++;
-            }        
-            
-            return false;
+                else
+                {
+                    Messages.Message("TM_InvalidCorpseType".Translate(), MessageTypeDefOf.RejectInput);
+                }
+            }
+            return applied;
         }
 
         public void ConsumeHumanoid(Pawn undead)

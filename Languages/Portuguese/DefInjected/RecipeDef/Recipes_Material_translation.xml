@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Material Resource Recipes -->
+
+  <TM_MakeManaweave.label>Manatkan</TM_MakeManaweave.label>
+  <TM_MakeManaweave.description>Mexa manu, magicita e tecido em manatcaná</TM_MakeManaweave.description>
+  <TM_MakeManaweave.jobString>wpleting maná</TM_MakeManaweave.jobString>
+
+  <TM_MakeArcalleum.label>arcalleum</TM_MakeArcalleum.label>
+  <TM_MakeArcalleum.description>Liga aço, jade, prata e magicite na liga arkalleum</TM_MakeArcalleum.description>
+  <TM_MakeArcalleum.jobString>Escoamento de arkalleum</TM_MakeArcalleum.jobString>
+
+
+</LanguageData>

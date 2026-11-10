@@ -1,0 +1,21 @@
+<LanguageData><!-- Light Lance-->
+	<Projectile_LightLance.label>световое копье</Projectile_LightLance.label>
+	<FlyingObject_LightLance.label>световое копье</FlyingObject_LightLance.label>
+	<!-- Sunfire-->
+	<Projectile_Sunfire.label>солнечный свет</Projectile_Sunfire.label>
+	<Projectile_Sunfire_I.label>солнечный свет</Projectile_Sunfire_I.label>
+	<Projectile_Sunfire_II.label>солнечный свет</Projectile_Sunfire_II.label>
+	<Projectile_Sunfire_III.label>солнечный свет</Projectile_Sunfire_III.label>
+	<!-- Light Skip-->
+	<Projectile_LightSkip.label>световой прыжок</Projectile_LightSkip.label>
+	<!-- Mass Light Skip-->
+	<Projectile_LightSkipMass.label>массовый световой прыжок</Projectile_LightSkipMass.label>
+	<!-- Refraction-->
+	<Projectile_Refraction.label>преломление</Projectile_Refraction.label>
+	<!-- Spirit of Light (SoL)-->
+	<Projectile_SpiritOfLight.label>дух света</Projectile_SpiritOfLight.label>
+	<FlyingObject_SpiritOfLight.label>дух света</FlyingObject_SpiritOfLight.label>
+	<Projectile_LightLaser.label>световой луч</Projectile_LightLaser.label>
+	<!-- Create Light-->
+	<Projectile_CreateLight.label>создайте свет</Projectile_CreateLight.label>
+</LanguageData>

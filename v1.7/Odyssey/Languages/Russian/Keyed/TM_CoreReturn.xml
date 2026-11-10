@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_CoreReturnUnavailable>Связанное ядро недоступно, выключено или больше не принадлежит вам.</TM_CoreReturnUnavailable>
+  <TM_CoreReturnUnpaid>Метки неактивны: ядру нужно манатопливо для содержания.</TM_CoreReturnUnpaid>
+  <TM_CoreReturnRebindConfirm>Заменить метку возвращения у {0} после подхода к этому ядру?</TM_CoreReturnRebindConfirm>
+  <TM_CoreReturnNoCandidates>На этой карте нет подходящих колонистов без привязки к этому ядру.</TM_CoreReturnNoCandidates>
+  <TM_CoreReturnConfirm>Вернуть {0} пешек к {2} за {1} манатоплива? Экипировка и переносимые вещи вернутся вместе с ними.</TM_CoreReturnConfirm>
+  <TM_CoreReturnStranding>Внимание: в караване останутся животные или пленники без дееспособного колониста.</TM_CoreReturnStranding>
+  <TM_CoreReturnMarkedOnly>Вернуть только помеченных</TM_CoreReturnMarkedOnly>
+  <TM_CoreReturnIncludeCaravans>Включить их караваны целиком</TM_CoreReturnIncludeCaravans>
+  <TM_CoreReturnStatus>Метки возвращения: {0}
+Содержание: {1} манатоплива/сутки
+Доступно манатоплива: {2}</TM_CoreReturnStatus>
+  <TM_CoreReturnMark>Пометить</TM_CoreReturnMark>
+  <TM_CoreReturnMarkDesc>Выберите колониста: он подойдёт к ядру и получит метку возвращения. Содержание каждой метки — 1 манатопливо в сутки.</TM_CoreReturnMarkDesc>
+  <TM_CoreReturnAll>Вернуть всех</TM_CoreReturnAll>
+  <TM_CoreReturnAllDesc>Вернуть привязанных пешек с карт и из караванов. Перед подтверждением проверьте состав и стоимость.</TM_CoreReturnAllDesc>
+  <TM_CoreReturnSingle>Вернуться к ядру</TM_CoreReturnSingle>
+  <TM_CoreReturnSingleDesc>Вернуть эту пешку с её инвентарём и переносимыми вещами. Стоимость: {0} манатоплива.</TM_CoreReturnSingleDesc>
+  <TM_CoreReturnUnbind>Снять метку</TM_CoreReturnUnbind>
+  <TM_CoreReturnUnbindDesc>Удалить привязку этой пешки и прекратить расход на её содержание.</TM_CoreReturnUnbindDesc>
+  <TM_CoreReturnUnbindConfirm>Снять метку возвращения с {0}?</TM_CoreReturnUnbindConfirm>
+  <TM_CoreReturnCaravan>Вернуть весь караван</TM_CoreReturnCaravan>
+  <TM_CoreReturnCaravanDesc>Вернуть всех участников, животных и пленников со всем грузом. Стоимость: {0} манатоплива за участника.</TM_CoreReturnCaravanDesc>
+  <TM_CoreReturnChanged>Состав изменился. Проверьте возврат заново.</TM_CoreReturnChanged>
+  <TM_CoreReturnBlockDowned>Сейчас нельзя пометить: в нокдауне.</TM_CoreReturnBlockDowned>
+  <TM_CoreReturnBlockMental>Сейчас нельзя пометить: психический срыв.</TM_CoreReturnBlockMental>
+  <TM_CoreReturnBlockCapacity>Сейчас нельзя пометить: не может двигаться.</TM_CoreReturnBlockCapacity>
+  <TM_CoreReturn_InvalidSelection>Одна из выбранных пешек больше не подходит для этого возврата.</TM_CoreReturn_InvalidSelection>
+  <TM_CoreReturn_AlreadyNear>Выбранные пешки уже находятся рядом с ядром.</TM_CoreReturn_AlreadyNear>
+  <TM_CoreReturn_NoLanding>Возле ядра недостаточно свободных безопасных клеток.</TM_CoreReturn_NoLanding>
+  <TM_CoreReturn_NoFuel>В подключённых источниках недостаточно манатоплива для всего возврата.</TM_CoreReturn_NoFuel>
+  <TM_CoreReturn_Busy>Уже выполняется другой возврат или списание топлива.</TM_CoreReturn_Busy>
+  <TM_CoreReturn_Failed>Возврат не выполнен. Подробности восстановления — в журнале.</TM_CoreReturn_Failed>
+  <TM_CoreReturn_UnsupportedTransport>Караваны с шаттлом не могут использовать возврат к ядру.</TM_CoreReturn_UnsupportedTransport>
+  <TM_CoreReturn_CarriedPawn>Перед возвратом положите переносимую пешку: пассажиров нужно учитывать отдельно.</TM_CoreReturn_CarriedPawn>
+</LanguageData>

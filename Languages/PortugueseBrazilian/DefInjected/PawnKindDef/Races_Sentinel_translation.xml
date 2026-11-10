@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Lesser Sentinel -->
+
+  <TM_Lesser_Sentinel.label>pente pequeno</TM_Lesser_Sentinel.label>
+  <TM_Lesser_Sentinel.labelPlural>sentinelas pequenas</TM_Lesser_Sentinel.labelPlural>
+  <TM_Lesser_Sentinel.lifeStages.0.label>pente pequeno</TM_Lesser_Sentinel.lifeStages.0.label>
+  <TM_Lesser_Sentinel.lifeStages.0.labelPlural>sentinelas de pedra</TM_Lesser_Sentinel.lifeStages.0.labelPlural>
+
+
+  <!-- Sentinel -->
+
+  <TM_Sentinel.label>Sentinel</TM_Sentinel.label>
+  <TM_Sentinel.labelPlural>Sentinelas</TM_Sentinel.labelPlural>
+  <TM_Sentinel.lifeStages.0.label>Sentinel</TM_Sentinel.lifeStages.0.label>
+  <TM_Sentinel.lifeStages.0.labelPlural>sentinelas de pedra</TM_Sentinel.lifeStages.0.labelPlural>
+
+
+  <!-- Greater Sentinel -->
+
+  <TM_Greater_Sentinel.label>Grande Sentinel</TM_Greater_Sentinel.label>
+  <TM_Greater_Sentinel.labelPlural>Grandes Sentinelas</TM_Greater_Sentinel.labelPlural>
+  <TM_Greater_Sentinel.lifeStages.0.label>Grande Sentinel</TM_Greater_Sentinel.lifeStages.0.label>
+  <TM_Greater_Sentinel.lifeStages.0.labelPlural>sentinelas de pedra</TM_Greater_Sentinel.lifeStages.0.labelPlural>
+
+
+</LanguageData>

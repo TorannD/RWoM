@@ -1,0 +1,7 @@
+<LanguageData><!-- Mind Ward-->
+	<MarbleMindTD.stages.0.label>ментальная защита</MarbleMindTD.stages.0.label>
+	<MarbleMindTD.stages.0.description>Мой разум словно защищён от грядущих потрясений.</MarbleMindTD.stages.0.description>
+	<!-- soul orb infusion debuff-->
+	<TM_TraitInfusion.stages.0.label>поглощённые черты характера</TM_TraitInfusion.stages.0.label>
+	<TM_TraitInfusion.stages.0.description>Из-за этих перемен я чувствую себя чужим самому себе. Понадобится время, чтобы заново понять, кто я теперь.</TM_TraitInfusion.stages.0.description>
+</LanguageData>

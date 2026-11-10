@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Ignite Blood -->
+
+  <Projectile_IgniteBlood.label>Inflamar sangue</Projectile_IgniteBlood.label>
+
+
+  <!-- Blood Moon -->
+
+  <Projectile_BloodMoon.label>Ferramentas da lua de sangue</Projectile_BloodMoon.label>
+  <Projectile_BloodMoon_I.label>Projétil de Lua de Sangue</Projectile_BloodMoon_I.label>
+  <Projectile_BloodMoon_II.label>Projétil de Lua de Sangue</Projectile_BloodMoon_II.label>
+  <Projectile_BloodMoon_III.label>Projétil de Lua de Sangue</Projectile_BloodMoon_III.label>
+
+
+</LanguageData>

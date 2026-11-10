@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Dire Wolf -->
+
+  <TM_Dire_WolfR.label>Lobo maligno</TM_Dire_WolfR.label>
+  <TM_Dire_WolfR.description>Os lobos malignos andam pelo norte com grandes manadas e não temem o homem nem o megasloto. Um predador selvagem armado com dentes e lã picantes como um fio de aço, os lobos malignos são tão ferozes como qualquer ser conhecido. Muitas vezes estão associadas a delações míticas e dizem ter uma ligação única com forças secretas.</TM_Dire_WolfR.description>
+  <TM_Dire_WolfR.tools.0.label>pata esquerda</TM_Dire_WolfR.tools.0.label>
+  <TM_Dire_WolfR.tools.1.label>pata direita</TM_Dire_WolfR.tools.1.label>
+  <TM_Dire_WolfR.tools.3.label>capítulo</TM_Dire_WolfR.tools.3.label>
+
+
+</LanguageData>

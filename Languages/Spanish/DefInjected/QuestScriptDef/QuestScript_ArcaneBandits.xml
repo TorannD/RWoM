@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.11.node.nodes.0.label>Misión expirada: [resolvedQuestName]</TM_OpportunitySite_ArcaneBandits.root.nodes.11.node.nodes.0.label>
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.11.node.nodes.0.text>Los bandidos arcanos han conseguido robar los artefactos arcanos de [asker_faction_name]. [asker_label] está descontento con vosotros.</TM_OpportunitySite_ArcaneBandits.root.nodes.11.node.nodes.0.text>
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.12.node.nodes.0.label>Misión fallida: [resolvedQuestName]</TM_OpportunitySite_ArcaneBandits.root.nodes.12.node.nodes.0.label>
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.12.node.nodes.0.text>Tras vuestro asalto fallido, los bandidos arcanos atacaron de inmediato y robaron varios artefactos. [asker_label] está decepcionado con vosotros.</TM_OpportunitySite_ArcaneBandits.root.nodes.12.node.nodes.0.text>
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.13.node.customLetterLabel>Ha llegado el pago</TM_OpportunitySite_ArcaneBandits.root.nodes.13.node.customLetterLabel>
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.13.node.customLetterText>¡Habéis derrotado a los bandidos arcanos!\n\nHa llegado el pago de [asker_faction_name].</TM_OpportunitySite_ArcaneBandits.root.nodes.13.node.customLetterText>
+  
+</LanguageData>

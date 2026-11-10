@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadShadowWalkerStrike>Emboscador — comienza con Golpe sombrío.</TM_ReadShadowWalkerStrike>
+  <TM_ReadShadowWalkerPoison>Envenenador — comienza con Belladona.</TM_ReadShadowWalkerPoison>
+  <TM_ShadowWalkerHits>Golpea o envenena a enemigos diferentes con la técnica aprendida: {0}/{1}.</TM_ShadowWalkerHits>
+  <TM_ShadowWalkerCombo>Golpea a enemigos envenenados o usa una técnica bajo el velo: {0}/{1} enemigos distintos.</TM_ShadowWalkerCombo>
+  <TM_ShadowWalkerStrongStrike>Sombra letal — Golpe sombrío inflige un 20% más de daño.</TM_ShadowWalkerStrongStrike>
+  <TM_ShadowWalkerLongVeil>Velo prolongado — Velo de sombras dura un 50% más.</TM_ShadowWalkerLongVeil>
+</LanguageData>

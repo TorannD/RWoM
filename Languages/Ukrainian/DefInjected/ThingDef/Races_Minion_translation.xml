@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Minion Race -->
+
+  <TM_MinionR.label>міньйон</TM_MinionR.label>
+  <TM_MinionR.description>Міньйони-це озорні, ліниві, жорстокі труси, які приходять з жалюгідного плану існування. Вони виглядають як плаваючі фрикадельки з гігантським оком. У них короткі руки, рот, який, здається, застиг у мерзенній посмішці, і два або три роги.
+Незрозуміло, як вони пересуваються, хоча можна тільки припустити, що це якось пов&apos;язано з гарячим, гнилим зловонієм, яке переслідує їх всюди.
+Їх корисність відкрита для обговорення; вони мало володіють бойовими здібностями і швидше втечуть, ніж вступлять в бій. Вони-можуть-виконувати прості завдання, такі як транспортування і очищення (хоча у них, здається, є інше визначення «чистого»). Тим не менш, здається більш імовірним, що вони будуть байдикувати біля телевізора або курити косяк (або і те, і інше), ніж робити що-небудь продуктивне.
+Вони можуть бути викликані легковірними... е-е, навчені маги, і в обмін на те, щоб дати їм відпочити від їх «диявольського боса», вони готові «допомагати» по всьому будинку.
+Іноді вони висловлюють бажання вдарити по предметах, і їх можна (як правило) переконати вдарити по якихось прилеглих каменях.
+Якщо їм стає занадто важко або їм стає нудно, вони тікають туди, звідки прийшли.</TM_MinionR.description>
+  <TM_MinionR.tools.0.label>роги</TM_MinionR.tools.0.label>
+  <TM_MinionR.tools.1.label>укус</TM_MinionR.tools.1.label>
+  <TM_MinionR_Leather.label>шкіра міньйону</TM_MinionR_Leather.label>
+  <TM_MinionR_Leather.description>шкіра міньйону</TM_MinionR_Leather.description>
+  <TM_MinionR_Leather.stuffProps.stuffAdjective>шкіра міньйону</TM_MinionR_Leather.stuffProps.stuffAdjective>
+  <TM_MinionR_Meat.label>таємниче м&apos;ясо</TM_MinionR_Meat.label>
+  <TM_MinionR_Meat.description>таємниче м&apos;ясо</TM_MinionR_Meat.description>
+  <TM_MinionR_Corpse.label>труп міньйону</TM_MinionR_Corpse.label>
+  <TM_MinionR_Corpse.description>труп міньйону</TM_MinionR_Corpse.description>
+
+  <TM_GreaterMinionR.label>великий міньйон</TM_GreaterMinionR.label>
+  <TM_GreaterMinionR.description>Міньйони-це озорні, ліниві, жорстокі труси, які приходять з жалюгідного плану існування. Вони виглядають як плаваючі фрикадельки з гігантським оком. У них короткі руки, рот, який, здається, застиг у мерзенній посмішці, і два або три роги.
+Незрозуміло, як вони пересуваються, хоча можна тільки припустити, що це якось пов&apos;язано з гарячим, гнилим зловонієм, яке переслідує їх всюди.
+Їх корисність відкрита для обговорення; вони мало володіють бойовими здібностями і швидше втечуть, ніж вступлять в бій. Вони-можуть-виконувати прості завдання, такі як транспортування і очищення (хоча у них, здається, є інше визначення «чистого»). Тим не менш, здається більш імовірним, що вони будуть байдикувати біля телевізора або курити косяк (або і те, і інше), ніж робити що-небудь продуктивне.
+Вони можуть бути викликані легковірними... е-е, навчені маги, і в обмін на те, щоб дати їм відпочити від їх «диявольського боса», вони готові «допомагати» по всьому будинку.
+Іноді вони висловлюють бажання вдарити по предметах, і їх можна (як правило) переконати вдарити по якихось прилеглих каменях.
+Якщо їм стає занадто важко або їм стає нудно, вони тікають туди, звідки прийшли.</TM_GreaterMinionR.description>
+  <TM_GreaterMinionR.tools.0.label>роги</TM_GreaterMinionR.tools.0.label>
+  <TM_GreaterMinionR.tools.1.label>укус</TM_GreaterMinionR.tools.1.label>
+  <TM_GreaterMinionR_Leather.label>велика шкіра міньйону</TM_GreaterMinionR_Leather.label>
+  <TM_GreaterMinionR_Leather.description>велика шкіра міньйону</TM_GreaterMinionR_Leather.description>
+  <TM_GreaterMinionR_Leather.stuffProps.stuffAdjective>велика шкіра міньйону</TM_GreaterMinionR_Leather.stuffProps.stuffAdjective>
+  <TM_GreaterMinionR_Meat.label>таємниче м&apos;ясо</TM_GreaterMinionR_Meat.label>
+  <TM_GreaterMinionR_Meat.description>таємниче м&apos;ясо</TM_GreaterMinionR_Meat.description>
+  <TM_GreaterMinionR_Corpse.label>великий труп міньйону</TM_GreaterMinionR_Corpse.label>
+  <TM_GreaterMinionR_Corpse.description>великий труп міньйону</TM_GreaterMinionR_Corpse.description>
+
+
+</LanguageData>

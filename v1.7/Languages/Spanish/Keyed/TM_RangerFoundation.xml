@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadRangerTraining>Aprender entrenamiento de guardabosques — habilidades de campo clásicas con penalizaciones al trabajo (permanente)</TM_ReadRangerTraining>
+  <TM_ReadRangerTrailLore>Aprender Conocimiento de sendas — transportar cargas más rápido a cielo abierto (permanente)</TM_ReadRangerTrailLore>
+  <TM_TrailLoreName>Conocimiento de sendas</TM_TrailLoreName>
+  <TM_TrailLoreTraining>Aumenta la velocidad de movimiento un 2% al transportar una carga a cielo abierto. Cada rango añade 2 puntos porcentuales, hasta un 10%.</TM_TrailLoreTraining>
+</LanguageData>

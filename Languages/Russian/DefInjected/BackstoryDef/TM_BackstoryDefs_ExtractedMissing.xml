@@ -1,0 +1,15 @@
+<LanguageData>
+	<TM_AncientSpiritAdultBS.description>[PAWN_nameDef] существует уже бессчётные века и давно забыл своё предназначение. Древние духи преследуют собственные цели и становятся мастерами управления духовной энергией. Максимальный запас духовной энергии увеличен на 50.</TM_AncientSpiritAdultBS.description>
+	<TM_GolemAdultBS.description>[PAWN_nameDef] — голем, созданный из сырья и оживлённый магией.</TM_GolemAdultBS.description>
+	<TM_GolemChildBS.description>[PAWN_nameDef] — голем, созданный из сырья и оживлённый магией.</TM_GolemChildBS.description>
+	<TM_LostSpiritAdultBS.description>Потерянные духи блуждают по миру в постоянной экзистенциальной муке, не понимая своего предназначения. Они легко цепляются за воспоминания смертных и терзаются чужими чувствами так же сильно, как собственными.</TM_LostSpiritAdultBS.description>
+	<TM_RegretSpiritAdultBS.description>Дух сожаления всё ещё помнит своё предназначение, но не успел исправить свои ошибки при жизни. Теперь его существование подпитывают горечь, вина и неотвязные мысли о прошлом.</TM_RegretSpiritAdultBS.description>
+	<TM_SpiritChildBS.description>[PAWN_nameDef] — блуждающий дух, удерживаемый в этом мире некой неизвестной силой. Обстоятельства происхождения [PAWN_possessive] здесь окутаны тайной.</TM_SpiritChildBS.description>
+	<TM_UndeadAdultBS.description>[PAWN_nameDef] — обычная нежить без каких-либо отклонений.</TM_UndeadAdultBS.description>
+	<TM_UndeadAdultBS_Brute.description>Нежить-громила — особая разновидность нежити с повышенными навыками ближнего боя и добычи, но настолько неуклюжая, что ремесло и готовка даются ей с большим трудом.</TM_UndeadAdultBS_Brute.description>
+	<TM_UndeadAdultBS_GhostEye.description>Призрачный глаз — особая разновидность нежити с некоторыми навыками стрельбы, но со штрафом к ближнему бою и добыче.</TM_UndeadAdultBS_GhostEye.description>
+	<TM_UndeadAdultBS_GhostMind.description>Призрачный разум — особая разновидность нежити с повышенными навыками ремесла и готовки, но со штрафом к ближнему бою и добыче.</TM_UndeadAdultBS_GhostMind.description>
+	<TM_UndeadAdultBS_Servant.description>Нежить-слуга — особая разновидность нежити, хорошо приспособленная к труду, но крайне слабая в бою.</TM_UndeadAdultBS_Servant.description>
+	<TM_UndeadChildBS.description>[PAWN_nameDef] теперь нежить; история пешки, прежде населявшей это тело, смыта и заменена волей некроманта.</TM_UndeadChildBS.description>
+	<TM_VengefulSpiritAdultBS.description>[PAWN_nameDef] — мстительный дух, исполненный злобы и ненависти и желающий лишь обрушить свои страдания на живых. Такие духи умеют высасывать духовную энергию из окружающих.</TM_VengefulSpiritAdultBS.description>
+</LanguageData>

@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef>
+    <defName>TM_BreachSealWall</defName>
+    <label>Breach Seal</label>
+    <description>Creates up to three airtight magical walls on the far edge of a selected 3×3 area, away from the ship core. Requires an owned ship platform and intact floor. Each wall has 300 hit points and lasts one day. Existing allied airtight walls are preserved; active seals cannot be refreshed. Does not repair floors or roofs and supplies no oxygen.</description>
+    <thingClass>TorannMagic.Odyssey.Building_BreachSeal</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Spells/invis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <MarketValue>0</MarketValue>
+    </statBases>
+    <size>(1,1)</size>
+    <useHitPoints>true</useHitPoints>
+    <destroyable>true</destroyable>
+    <selectable>true</selectable>
+    <rotatable>false</rotatable>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <holdsRoof>true</holdsRoof>
+    <blockWind>true</blockWind>
+    <coversFloor>true</coversFloor>
+    <tickerType>Normal</tickerType>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+    <building>
+      <isEdifice>true</isEdifice>
+      <isWall>true</isWall>
+      <isAirtight>true</isAirtight>
+      <isStuffableAirtight>false</isStuffableAirtight>
+      <expandHomeArea>false</expandHomeArea>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+    <comps>
+      <li Class="CompProperties_DestroyAfterDelay">
+        <delayTicks>60000</delayTicks>
+        <destroyMode>Vanish</destroyMode>
+      </li>
+    </comps>
+  </ThingDef>
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_BreachSeal</defName>
+    <label>Breach Seal</label>
+    <description>Creates up to three airtight magical walls on the far edge of a selected 3×3 area, away from the ship core. Requires an owned ship platform and intact floor. Each wall has 300 hit points and lasts one day. Existing allied airtight walls are preserved; active seals cannot be refreshed. Does not repair floors or roofs and supplies no oxygen. Range: 15 cells. Preparation: 1 second. Cooldown: 60 seconds. Costs 30% mana before efficiency modifiers.</description>
+    <abilityClass>TorannMagic.Odyssey.BreachSealAbility</abilityClass>
+    <uiIconPath>UI/Abilities/BreachSeal</uiIconPath>
+    <manaCost>0.3</manaCost>
+    <efficiencyReductionPercent>0.1</efficiencyReductionPercent>
+    <learnItem>SpellOf_BreachSeal</learnItem>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BreachSeal</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>true</requiresLineOfSight>
+      <defaultProjectile>Projectile_TM_SpawnThing</defaultProjectile>
+      <abilityDef>TM_BreachSeal</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>15</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  <TorannMagic.TM_CustomPowerDef>
+    <defName>TM_BreachSealPower</defName>
+    <customPower>
+      <forMage>true</forMage>
+      <maxLevel>0</maxLevel>
+      <learnCost>2</learnCost>
+      <costToLevel>1</costToLevel>
+      <requiresScroll>true</requiresScroll>
+      <chaosMageUseable>false</chaosMageUseable>
+      <abilityDefs>
+        <li>TM_BreachSeal</li>
+      </abilityDefs>
+      <skills>
+        <li>
+          <label>TM_BreachSeal_eff</label>
+          <description>TM_BreachSeal_eff_desc</description>
+          <levelMax>3</levelMax>
+          <costToLevel>1</costToLevel>
+        </li>
+        <li><label>TM_BreachSeal_ver</label><description>TM_BreachSeal_ver_desc</description><levelMax>3</levelMax><costToLevel>1</costToLevel></li>
+      </skills>
+    </customPower>
+  </TorannMagic.TM_CustomPowerDef>
+  <ThingDef ParentName="ArcaneSpellBase">
+    <defName>SpellOf_BreachSeal</defName>
+    <label>Breach Seal — learning scroll</label>
+    <description>Teaches Breach Seal to a mage able to learn general spells. Creates up to three airtight magical walls on the far edge of a selected 3×3 area, away from the ship core. Requires an owned ship platform and intact floor. Each wall has 300 hit points and lasts one day. Existing allied airtight walls are preserved; active seals cannot be refreshed. Does not repair floors or roofs and supplies no oxygen.</description>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>1075</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+    <graphicData>
+      <texPath>Books/scroll</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <RawMagicyte>200</RawMagicyte>
+      <DevilstrandCloth>40</DevilstrandCloth>
+    </costList>
+    <recipeMaker>
+      <workAmount>2000</workAmount>
+      <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <recipeUsers>
+        <li>TableMagicPrinter</li>
+      </recipeUsers>
+      <effectWorking>Smelt</effectWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>2</Crafting>
+        <Intellectual>8</Intellectual>
+      </skillRequirements>
+      <researchPrerequisite>TM_AdvancedScribing</researchPrerequisite><researchPrerequisites><li>OrbitalTech</li></researchPrerequisites>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="TM_CastScrollBase">
+    <defName>TM_CastScroll_BreachSeal</defName>
+    <label>Breach Seal — cast scroll</label>
+    <description>Creates up to three airtight magical walls on the far edge of a selected 3×3 area, away from the ship core. Requires an owned ship platform and intact floor. Each wall has 300 hit points and lasts one day. Existing allied airtight walls are preserved; active seals cannot be refreshed. Does not repair floors or roofs and supplies no oxygen. Use from inventory. Consumes one scroll only on success. Anyone can use it without mana or learned magic. Range: 15 cells. Preparation: 1 second. Cooldown: 60 seconds.</description>
+    <statBases>
+      <MarketValue>360</MarketValue>
+    </statBases>
+    <graphicData>
+      <texPath>Items/SpellItems/Scroll_BreachSeal</texPath>
+    </graphicData>
+    <comps>
+      <li Class="TorannMagic.SpellItems.CompProperties_SpellItem">
+        <spell>BreachSeal</spell>
+        <maxUses>1</maxUses>
+        <requiresEquipped>false</requiresEquipped>
+        <range>15</range>
+        <warmupTicks>60</warmupTicks>
+        <cooldownTicks>3600</cooldownTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  <RecipeDef ParentName="TM_SpellItemRecipeBase">
+    <defName>TM_MakeCastScroll_BreachSeal</defName>
+    <label>make Breach Seal — cast scroll</label>
+    <description>Requires a mage who knows Breach Seal. Creates up to three airtight magical walls on the far edge of a selected 3×3 area, away from the ship core. Requires an owned ship platform and intact floor. Each wall has 300 hit points and lasts one day. Existing allied airtight walls are preserved; active seals cannot be refreshed. Does not repair floors or roofs and supplies no oxygen. Use from inventory. Consumes one scroll only on success. Anyone can use it without mana or learned magic.</description>
+    <jobString>making Breach Seal.</jobString>
+    <researchPrerequisite>TM_AdvancedScribing</researchPrerequisite><researchPrerequisites><li>OrbitalTech</li></researchPrerequisites>
+    <workAmount>1800</workAmount>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter Inherit="False">
+      <thingDefs>
+        <li>RawMagicyte</li>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <TM_CastScroll_BreachSeal>1</TM_CastScroll_BreachSeal>
+    </products>
+    <modExtensions>
+      <li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement">
+        <requiredSpell>TM_BreachSeal</requiredSpell>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+  <ThingDef ParentName="TM_SpellStaffBase">
+    <defName>TM_SpellStaff_BreachSeal</defName>
+    <label>Breach Seal — charged staff</label>
+    <description>Creates up to three airtight magical walls on the far edge of a selected 3×3 area, away from the ship core. Requires an owned ship platform and intact floor. Each wall has 300 hit points and lasts one day. Existing allied airtight walls are preserved; active seals cannot be refreshed. Does not repair floors or roofs and supplies no oxygen. Equip as the primary weapon. Holds 10 uses, cannot recharge and disappears after its last use. Anyone can use it without mana or learned magic. Range: 15 cells. Preparation: 1 second. Cooldown: 60 seconds.</description>
+    <statBases>
+      <MarketValue>3000</MarketValue>
+    </statBases>
+    <graphicData>
+      <texPath>Items/SpellItems/Staff_BreachSeal</texPath>
+    </graphicData>
+    <comps>
+      <li Class="TorannMagic.SpellItems.CompProperties_SpellItem">
+        <spell>BreachSeal</spell>
+        <maxUses>10</maxUses>
+        <requiresEquipped>true</requiresEquipped>
+        <range>15</range>
+        <warmupTicks>60</warmupTicks>
+        <cooldownTicks>3600</cooldownTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  <RecipeDef ParentName="TM_SpellItemRecipeBase">
+    <defName>TM_MakeSpellStaff_BreachSeal</defName>
+    <label>make Breach Seal — charged staff</label>
+    <description>Requires a mage who knows Breach Seal. Creates up to three airtight magical walls on the far edge of a selected 3×3 area, away from the ship core. Requires an owned ship platform and intact floor. Each wall has 300 hit points and lasts one day. Existing allied airtight walls are preserved; active seals cannot be refreshed. Does not repair floors or roofs and supplies no oxygen. Equip as the primary weapon. Holds 10 uses, cannot recharge and disappears after its last use. Anyone can use it without mana or learned magic.</description>
+    <jobString>making Breach Seal.</jobString>
+    <researchPrerequisite>TM_AdvancedScribing</researchPrerequisite><researchPrerequisites><li>OrbitalTech</li></researchPrerequisites>
+    <workAmount>8000</workAmount>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>TM_CastScroll_BreachSeal</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>435</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Jade</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter Inherit="False">
+      <thingDefs>
+        <li>TM_CastScroll_BreachSeal</li>
+        <li>RawMagicyte</li>
+        <li>WoodLog</li>
+        <li>Jade</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <TM_SpellStaff_BreachSeal>1</TM_SpellStaff_BreachSeal>
+    </products>
+    <modExtensions>
+      <li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement">
+        <requiredSpell>TM_BreachSeal</requiredSpell>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+</Defs>

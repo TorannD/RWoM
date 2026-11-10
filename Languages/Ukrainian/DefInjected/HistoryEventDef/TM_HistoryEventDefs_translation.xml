@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_OffensiveMagic.label>образливе або вульгарне використання магії</TM_OffensiveMagic.label>
+  <TM_KilledMage.label>вбив мага</TM_KilledMage.label>
+  <TM_KilledFighter.label>убив бійця</TM_KilledFighter.label>
+  <TM_UsedMagic.label>використовував магічну здатність</TM_UsedMagic.label>
+  <TM_UsedManeuver.label>використовував бойову здатність</TM_UsedManeuver.label>
+  <TM_KilledHumanlike.label>убив когось</TM_KilledHumanlike.label>
+  <TM_SeverMagicEvent.label>відірвав мага від магії</TM_SeverMagicEvent.label>
+  <TM_BestowMagicEvent.label>наділений даром магії</TM_BestowMagicEvent.label>
+  <TM_BestowClassEvent.label>натхненний магічний клас</TM_BestowClassEvent.label>
+
+
+</LanguageData>

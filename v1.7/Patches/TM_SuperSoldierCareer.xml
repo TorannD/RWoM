@@ -1,0 +1,25 @@
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName="MedicalTendQuality" or defName="ShootingAccuracyPawn"][not(parts)]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="MedicalTendQuality" or defName="ShootingAccuracyPawn"][not(parts)]</xpath>
+      <value>
+        <parts />
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/StatDef[defName="MedicalTendQuality"]/parts</xpath>
+    <value>
+      <li Class="TorannMagic.ClassProgression.SuperSoldierDoctrineStat">
+        <fieldMedicine>true</fieldMedicine>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/StatDef[defName="ShootingAccuracyPawn"]/parts</xpath>
+    <value>
+      <li Class="TorannMagic.ClassProgression.SuperSoldierDoctrineStat" />
+    </value>
+  </Operation>
+</Patch>

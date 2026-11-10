@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_PomanaSenseTD.stages.0.label>machucado sentido</TM_PomanaSenseTD.stages.0.label>
+  <TM_PomanaSenseTD.stages.0.description>A minha mente está relaxada, os meus pensamentos são claros, sinto-me mais consciente e satisfeito com o meu lugar no Universo.</TM_PomanaSenseTD.stages.0.description>
+
+  <TM_SyrriumSenseTD.stages.0.label>sirrium sentido</TM_SyrriumSenseTD.stages.0.label>
+  <TM_SyrriumSenseTD.stages.0.description>A minha mente está descontraída, e as respostas parecem estar a fluir para mim, como se eu estivesse sintonizada com o universo.</TM_SyrriumSenseTD.stages.0.description>
+
+
+  <!-- Syrrium addiction -->
+
+  <TM_SyrriumWithdrawalTD.stages.1.label>saída de sirrium</TM_SyrriumWithdrawalTD.stages.1.label>
+  <TM_SyrriumWithdrawalTD.stages.1.description>Está tudo confuso na minha cabeça. Com o Sírio, fui óptimo. Tenho a certeza que todos ficaram impressionados com a minha inteligência. É o que eu sou. Preciso disso!</TM_SyrriumWithdrawalTD.stages.1.description>
+
+
+</LanguageData>

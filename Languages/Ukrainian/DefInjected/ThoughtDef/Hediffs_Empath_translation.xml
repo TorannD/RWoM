@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_PositiveEmpathyTD.stages.0.label>позитивні вібрації</TM_PositiveEmpathyTD.stages.0.label>
+  <TM_PositiveEmpathyTD.stages.0.description>Емоції, отримані через співпереживання.</TM_PositiveEmpathyTD.stages.0.description>
+
+  <TM_NegativeEmpathyTD.stages.0.label>негативні вібрації</TM_NegativeEmpathyTD.stages.0.label>
+  <TM_NegativeEmpathyTD.stages.0.description>Емоції, отримані через співпереживання.</TM_NegativeEmpathyTD.stages.0.description>
+
+  <TM_SuppressiveAuraTD.stages.0.label>Викрадач емоцій</TM_SuppressiveAuraTD.stages.0.label>
+  <TM_SuppressiveAuraTD.stages.0.description>Я відчуваю глибоке почуття печалі і втрати, коли позбавляю інших здатності відчувати.</TM_SuppressiveAuraTD.stages.0.description>
+
+  <TM_EmotionalWeightTD.stages.0.label>Емоційний багаж</TM_EmotionalWeightTD.stages.0.label>
+  <TM_EmotionalWeightTD.stages.0.description>Кожен, хто несе на собі тяжкість емоцій.</TM_EmotionalWeightTD.stages.0.description>
+
+  <TM_SymbiosisThought.stages.0.label>симбіоз</TM_SymbiosisThought.stages.0.label>
+  <TM_SymbiosisThought.stages.0.description>Емоційна стійкість забезпечується симбіотичним зв&apos;язком з емпатом.</TM_SymbiosisThought.stages.0.description>
+
+  <TM_OutOfBodyThought.stages.0.label>поза тілом</TM_OutOfBodyThought.stages.0.label>
+  <TM_OutOfBodyThought.stages.0.description>Емоційна енергія використовується для посилення іншої пішаки.</TM_OutOfBodyThought.stages.0.description>
+
+
+</LanguageData>

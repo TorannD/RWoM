@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef><defName>TM_InitiateWarlock</defName><driverClass>TorannMagic.ClassProgression.JobDriver_ClassInitiation</driverClass><reportString>reading a class book.</reportString><casualInterruptible>true</casualInterruptible></JobDef>
+  <JobDef><defName>TM_InitiateSuccubus</defName><driverClass>TorannMagic.ClassProgression.JobDriver_ClassInitiation</driverClass><reportString>reading a class book.</reportString><casualInterruptible>true</casualInterruptible></JobDef>
+</Defs>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Light Lance -->
+
+  <TM_LightLance.label>Lança de luz</TM_LightLance.label>
+  <TM_LightLance.description>Concentre a luz em um raio intenso que queima tudo em seu caminho. Esta capacidade é reforçada pela luz acumulada.</TM_LightLance.description>
+
+
+  <!-- Sunfire -->
+
+  <TM_Sunfire.label>Luz do Sol</TM_Sunfire.label>
+  <TM_Sunfire.description>A área do alvo é invadida por faixas de luz em chamas. Esta capacidade é reforçada pela luz acumulada.
+
+Preparação: 3s
+Alcance: 50
+Recarga: 60s
+Raio: 5
+Quantidade: 13</TM_Sunfire.description>
+
+  <TM_Sunfire_I.label>Luz do Sol (I)</TM_Sunfire_I.label>
+  <TM_Sunfire_I.description>A área do alvo é invadida por faixas de luz em chamas. Esta capacidade é reforçada pela luz acumulada.
+
+Preparação: 2.7s
+Alcance: 55
+Recarga: 60s
+Raio: 6
+Quantidade: 14</TM_Sunfire_I.description>
+
+  <TM_Sunfire_II.label>Luz do Sol (II)</TM_Sunfire_II.label>
+  <TM_Sunfire_II.description>A área do alvo é invadida por faixas de luz em chamas. Esta capacidade é reforçada pela luz acumulada.
+
+Preparação: 2.4s
+Alcance: 60
+Recarga: 50s
+Raio: 7
+Quantidade: 15</TM_Sunfire_II.description>
+
+  <TM_Sunfire_III.label>Luz do Sol (III)</TM_Sunfire_III.label>
+  <TM_Sunfire_III.description>A área do alvo é invadida por faixas de luz em chamas. Esta capacidade é reforçada pela luz acumulada.
+
+Preparação: 2.2s
+Alcance: 65
+Recarga: 45s
+Raio: 8
+Quantidade: 16</TM_Sunfire_III.description>
+
+
+  <!-- Light Burst -->
+
+  <TM_LightBurst.label>Flash de Luz</TM_LightBurst.label>
+  <TM_LightBurst.description>Cria brotos de luz que cegam e desorientam os peões que foram atingidos pela explosão. Os peões desorientados não podem distinguir um do inimigo e podem disparar sobre os peões amigos mais próximos. Esta capacidade é reforçada pela luz acumulada.</TM_LightBurst.description>
+
+
+  <!-- Light Skip -->
+
+  <TM_LightSkip.label>Salto de Luz</TM_LightSkip.label>
+  <TM_LightSkip.description>O feitiço controla a onda de luz para se mover quase instantaneamente. Nem a posição do feitiço nem a posição do alvo podem ser bloqueadas.</TM_LightSkip.description>
+
+
+  <!-- Mass Light Skip -->
+
+  <TM_LightSkipMass.label>Salto de luz em massa</TM_LightSkipMass.label>
+  <TM_LightSkipMass.description>O feitiço e todos os aliados no raio das células movem-se em ondas de luz quase instantaneamente. Os peões debaixo do telhado não serão movidos.</TM_LightSkipMass.description>
+
+
+  <!-- Global Light Skip -->
+
+  <TM_LightSkipGlobal.label>Salto Global de Luz</TM_LightSkipGlobal.label>
+  <TM_LightSkipGlobal.description>O feitiço e todos os aliados no raio das células movem-se em ondas de luz quase instantaneamente. Os peões debaixo do telhado não serão movidos.</TM_LightSkipGlobal.description>
+
+
+  <!-- Refraction -->
+
+  <TM_Refraction.label>Refino</TM_Refraction.label>
+  <TM_Refraction.description>Cria uma parede de luz que afeta os projéteis quando eles atravessam a parede. Projéteis inimigos podem desviar-se dos alvos. Projéteis amigos podem usar parte da energia luminosa para criar um espelho do projétil. A parede vai durar cerca de 25 segundos ou até a energia acabar. Esta capacidade é reforçada pela luz acumulada.</TM_Refraction.description>
+
+
+  <!-- Spirit of Light (SoL) -->
+
+  <TM_SpiritOfLight.label>Espírito da Luz</TM_SpiritOfLight.label>
+  <TM_SpiritOfLight.description>Chama o Espírito de Luz, que ajuda e protege o feitiço. Esta capacidade requer 60 manás para manter e reduz a regeneração do maná em 75%. Use essa capacidade novamente para se livrar do espírito. O Espírito de Luz é capaz de acumular energia luminosa e usa energia luminosa para executar ações.
+
+O Espírito de Luz trabalha de forma autônoma para ajudar o feitiço, e vai executar as seguintes ações:
+o Reflete ataques
+o Incendeia as feridas dos peões abatidos
+o Ataca inimigos (somente quando chamado)
+o Melhora o humor dos aliados mais próximos
+o Cria uma explosão de alegria
+o Protege os sonhos do feitiço</TM_SpiritOfLight.description>
+
+
+  <!-- Create Light -->
+
+  <TM_SoL_CreateLight.label>Crie Luz</TM_SoL_CreateLight.label>
+  <TM_SoL_CreateLight.description>Orienta o Espírito de Luz a criar luz em uma determinada área. Isso reduz a regeneração da luz do Espírito em 70%. Use esta capacidade novamente em qualquer lugar para apagar as luzes.</TM_SoL_CreateLight.description>
+
+
+  <!-- Equalize -->
+
+  <TM_SoL_Equalize.label>Equilibrar</TM_SoL_Equalize.label>
+  <TM_SoL_Equalize.description>Alinha a energia luminosa entre o Espírito de Luz e o feitiço.</TM_SoL_Equalize.description>
+
+
+</LanguageData>

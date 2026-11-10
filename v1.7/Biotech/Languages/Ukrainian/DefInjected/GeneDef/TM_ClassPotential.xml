@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaGene.label>мана</TM_ManaGene.label>
+  <TM_StaminaGene.label>витривалість</TM_StaminaGene.label>
+  <TM_ManaGene.description>Носій без класу отримує магічний потенціал і може опанувати клас мага. У пішака з уже вибраним класом цей ген позначає магію й не надає іншого класу чи потенціалу. Діти носіїв можуть народитися з геном прихованого мага.</TM_ManaGene.description>
+  <TM_StaminaGene.description>Носій без класу отримує фізичний потенціал і може опанувати клас воїна. У пішака з уже вибраним класом цей ген позначає воїнський дар і не надає іншого класу чи потенціалу. Діти носіїв можуть народитися з геном сплячого воїна.</TM_StaminaGene.description>
+</LanguageData>

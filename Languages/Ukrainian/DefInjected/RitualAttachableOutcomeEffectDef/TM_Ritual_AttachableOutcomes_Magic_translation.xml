@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_RechargeMana.label>перезарядка мани</TM_RechargeMana.label>
+
+
+  <TM_RechargeMana.effectDesc>перезарядьте від 50 до 100 одиниць мани всіх магів, що беруть участь.</TM_RechargeMana.effectDesc>
+  <TM_RechargeMana.letterInfoText>Усі маги, що беруть участь, перезарядили {AMOUNT} мани.</TM_RechargeMana.letterInfoText>
+
+</LanguageData>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Golem_StoneRepair.label>recupere a parte</TM_Golem_StoneRepair.label>
+
+  <TM_Golem_StoneMaxEnergy.label>armazenador de energia</TM_Golem_StoneMaxEnergy.label>
+  <TM_Golem_StoneMaxEnergy.description>Aumenta a energia máxima em 120 por nível. A energia máxima inicial é de 800.</TM_Golem_StoneMaxEnergy.description>
+
+  <TM_Golem_StoneEnergyEfficiency.label>eficiência energética</TM_Golem_StoneEnergyEfficiency.label>
+  <TM_Golem_StoneEnergyEfficiency.description>Aumenta a eficiência energética em 10% por nível. A eficiência energética inicial é de 50%.</TM_Golem_StoneEnergyEfficiency.description>
+
+  <TM_Golem_StoneEnergyRate.label>regeneração de energia</TM_Golem_StoneEnergyRate.label>
+  <TM_Golem_StoneEnergyRate.description>Aumenta a velocidade de carga de energia em 20% por nível. A velocidade inicial de recarga é de 20 custos de energia por hora.</TM_Golem_StoneEnergyRate.description>
+
+  <TM_Golem_StoneHardening.label>solidificação</TM_Golem_StoneHardening.label>
+  <TM_Golem_StoneHardening.description>Aumenta a proteção geral:
+Danos estúpidos: + [4,8,12]%
+Corte de danos: + [11,22,33]%
+Temperatura: + [6,12,18]%</TM_Golem_StoneHardening.description>
+
+  <TM_Golem_StoneCompactor.label>Compactador de pedra</TM_Golem_StoneCompactor.label>
+  <TM_Golem_StoneCompactor.description>Permite que o golem fracione pedaços de pedra em tijolos utilizáveis. Este processo ocorre por si só depois que os pedaços de pedra são colocados em um holem, e exige que o golem esteja em paz.</TM_Golem_StoneCompactor.description>
+
+  <TM_Golem_StoneToBricks.label>fabricação</TM_Golem_StoneToBricks.label>
+  <TM_Golem_StoneToBricks.description>Com o tempo, transforma pedaços de pedra em tijolos</TM_Golem_StoneToBricks.description>
+
+  <TM_Golem_StoneLifeStage.label>camada de esqueleto</TM_Golem_StoneLifeStage.label>
+  <TM_Golem_StoneLifeStage.description>Aumenta as estatísticas:
+Movimento: + [20 %/35 %/50%]
+Saúde: + [40 %/70 %/100%]</TM_Golem_StoneLifeStage.description>
+
+
+</LanguageData>

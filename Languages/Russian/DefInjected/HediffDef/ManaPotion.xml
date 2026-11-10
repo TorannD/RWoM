@@ -1,0 +1,9 @@
+<LanguageData><ManaPotionHigh.label>мистическая эйфория</ManaPotionHigh.label>
+	<ManaPotionHigh.description>Сознание повышается при потреблении жидкой маны.</ManaPotionHigh.description>
+	<!-- Mana potion addiction-->
+	<ManaPotionTolerance.label>толерантность к зелью маны</ManaPotionTolerance.label>
+	<ManaPotionTolerance.description>Естественная приспособление для нормализации эффекта потребления жидкой маны.</ManaPotionTolerance.description>
+	<ManaPotionAddiction.label>зависимость от зелья маны</ManaPotionAddiction.label>
+	<ManaPotionAddiction.description>Желание потреблять зелья маны переросло в потребность.</ManaPotionAddiction.description>
+	<ManaPotionAddiction.stages.1.label>выведение</ManaPotionAddiction.stages.1.label>
+</LanguageData>

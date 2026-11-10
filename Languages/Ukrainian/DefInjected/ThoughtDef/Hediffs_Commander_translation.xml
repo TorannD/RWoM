@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_CommanderTD.stages.0.label>Харизматична пішака</TM_CommanderTD.stages.0.label>
+  <TM_CommanderTD.stages.0.description>Я був емоційно заряджений! Я не впевнений, що саме, але хороші речі обов&apos;язково відбуваються навколо такого харизматичного командира.</TM_CommanderTD.stages.0.description>
+
+  <TM_CommanderTD_I.stages.0.label>Харизматичний командир</TM_CommanderTD_I.stages.0.label>
+  <TM_CommanderTD_I.stages.0.description>Я був емоційно заряджений! Хороші речі обов&apos;язково відбуваються навколо такого харизматичного командира, хоча не зовсім ясно, як саме.</TM_CommanderTD_I.stages.0.description>
+
+  <TM_CommanderTD_II.stages.0.label>Харизматичний лідер</TM_CommanderTD_II.stages.0.label>
+  <TM_CommanderTD_II.stages.0.description>Я був емоційно заряджений! Навколо такого харизматичного лідера обов&apos;язково відбуваються хороші речі.</TM_CommanderTD_II.stages.0.description>
+
+  <TM_CommanderTD_III.stages.0.label>Харизматичний провидець</TM_CommanderTD_III.stages.0.label>
+  <TM_CommanderTD_III.stages.0.description>Я був емоційно заряджений! Навколо такого харизматичного провидця обов&apos;язково відбуваються хороші речі.</TM_CommanderTD_III.stages.0.description>
+
+  <TM_TaskMasterTD.stages.0.label>Майстер завдань</TM_TaskMasterTD.stages.0.label>
+  <TM_TaskMasterTD.stages.0.description>Кожен аспект мого життя став мікрокерованим; у мене ледь вистачає часу, щоб нормально поїсти.</TM_TaskMasterTD.stages.0.description>
+
+
+</LanguageData>

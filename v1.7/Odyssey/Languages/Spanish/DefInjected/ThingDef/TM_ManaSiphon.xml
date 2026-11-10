@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaSiphon.label>sifón de maná</TM_ManaSiphon.label>
+  <TM_ManaSiphon.description>Estación pasiva donde los magos plenamente formados asignados al trabajo mágico donan maná a depósitos de combustible mágico conectados mediante balizas de maná. Por defecto, conserva el 20% del maná personal y acepta como máximo el 80% de la capacidad por visita. Ambos límites se pueden configurar del 0% al 100%. El mago debe recuperar todo su maná antes de volver. Una reserva interna de 100 puntos de maná recoge el excedente de una transferencia ya iniciada y lo envía automáticamente a los depósitos conectados cuando hay espacio. Los magos dejan de donar cuando los depósitos están llenos. El sifón no almacena combustible y no necesita electricidad.</TM_ManaSiphon.description>
+</LanguageData>

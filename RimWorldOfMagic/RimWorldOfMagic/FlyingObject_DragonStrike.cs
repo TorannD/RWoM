@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -9,8 +9,37 @@ using AbilityUser;
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class FlyingObject_DragonStrike : Projectile
+    public class FlyingObject_DragonStrike : Projectile, IThingHolder, ISuspendableThingHolder
     {
+        private readonly ThingOwner<Thing> passenger;
+        private bool returnPending, takingOff;
+        private bool impactApplied;
+        private int nextReturnAttempt;
+        private Thing carriedCargo;
+        private bool PrepareCargo(Pawn body)
+        {
+            var cargo = body.carryTracker?.CarriedThing;
+            if (cargo == null) return true;
+            if (body.inventory == null || !body.carryTracker.innerContainer.TryTransferToContainer(cargo, body.inventory.innerContainer, false)) return false;
+            carriedCargo = cargo;
+            return true;
+        }
+        private void RestoreCargo(Pawn body)
+        {
+            if (carriedCargo != null && body?.carryTracker != null && body.carryTracker.CarriedThing == null &&
+                body.inventory?.innerContainer.Contains(carriedCargo) == true)
+                body.inventory.innerContainer.TryTransferToContainer(carriedCargo, body.carryTracker.innerContainer, false);
+        }
+        public FlyingObject_DragonStrike() { passenger = new ThingOwner<Thing>(this, true); }
+        public bool IsContentsSuspended => true;
+        public ThingOwner GetDirectlyHeldThings() => passenger;
+        public void GetChildHolders(List<IThingHolder> children) => ThingOwnerUtility.AppendThingHoldersFromThings(children, passenger);
+        internal static bool ProtectsMap(Map map)
+        {
+            var definition = DefDatabase<ThingDef>.GetNamedSilentFail("FlyingObject_DragonStrike");
+            return definition != null && map?.listerThings?.ThingsOfDef(definition)
+                .Any(t => t is FlyingObject_DragonStrike flight && (flight.takingOff || flight.passenger.Count > 0)) == true;
+        }
         protected new Vector3 origin;
 
         protected new Vector3 destination;
@@ -36,6 +65,14 @@ namespace TorannMagic
 
         Pawn pawn;
         CompAbilityUserMight comp;
+        private Pawn skillOwner;
+        internal void SetSkillOwner(Pawn owner) => skillOwner = owner;
+        // DamageInfo itself is not a deep-scribed object. Keep the launch packet intact.
+        private DamageDef savedDamageDef;
+        private Thing savedInstigator;
+        private ThingDef savedWeapon;
+        private float savedAmount, savedPenetration, savedAngle;
+        private DamageInfo.SourceCategory savedCategory;
 
         protected new int StartingTicksToImpact
         {
@@ -87,6 +124,30 @@ namespace TorannMagic
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref returnPending, "dragonReturnPending");
+            Scribe_Values.Look(ref impactApplied, "dragonImpactApplied");
+            Scribe_References.Look(ref carriedCargo, "dragonCarriedCargo");
+            Scribe_Values.Look(ref drafted, "dragonDrafted");
+            if (Scribe.mode == LoadSaveMode.Saving)
+            {
+                savedDamageDef = impactDamage?.Def;
+                savedInstigator = impactDamage?.Instigator;
+                savedWeapon = impactDamage?.Weapon;
+                savedAmount = impactDamage?.Amount ?? 0;
+                savedPenetration = impactDamage?.ArmorPenetrationInt ?? 0;
+                savedAngle = impactDamage?.Angle ?? -1;
+                savedCategory = impactDamage?.Category ?? DamageInfo.SourceCategory.ThingOrUnknown;
+            }
+            Scribe_Defs.Look(ref savedDamageDef, "dragonImpactDef");
+            Scribe_References.Look(ref savedInstigator, "dragonImpactInstigator");
+            Scribe_Defs.Look(ref savedWeapon, "dragonImpactWeapon");
+            Scribe_Values.Look(ref savedAmount, "dragonImpactAmount");
+            Scribe_Values.Look(ref savedPenetration, "dragonImpactPenetration");
+            Scribe_Values.Look(ref savedAngle, "dragonImpactAngle", -1f);
+            Scribe_Values.Look(ref savedCategory, "dragonImpactCategory", DamageInfo.SourceCategory.ThingOrUnknown);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+                impactDamage = savedDamageDef == null ? (DamageInfo?)null :
+                    new DamageInfo(savedDamageDef, savedAmount, savedPenetration, savedAngle, savedInstigator, null, savedWeapon, savedCategory);
             Scribe_Values.Look<Vector3>(ref this.origin, "origin", default(Vector3), false);
             Scribe_Values.Look<Vector3>(ref this.destination, "destination", default(Vector3), false);
             Scribe_Values.Look<int>(ref this.ticksToImpact, "ticksToImpact", 0, false);
@@ -98,6 +159,13 @@ namespace TorannMagic
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
             Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
             Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && flyingThing != null && !passenger.Contains(flyingThing))
+            {
+                if (flyingThing.Spawned || flyingThing.holdingOwner != null)
+                { flyingThing = null; returnPending = true; }
+                else if (!passenger.TryAdd(flyingThing, false))
+                    throw new InvalidOperationException("Dragon strike cannot restore its saved passenger.");
+            }
         }
 
         private void Initialize()
@@ -131,11 +199,14 @@ namespace TorannMagic
 
         public void Launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo = null)
         {
+            if (passenger.Count != 0 || !Spawned || flyingThing?.Spawned != true || flyingThing.Map != Map ||
+                launcher is not Pawn || !targ.IsValid || !targ.Cell.InBounds(Map))
+            { Destroy(); return; }
             bool spawned = flyingThing.Spawned;            
             pawn = launcher as Pawn;
             drafted = pawn.Drafted;
             comp = pawn.GetCompAbilityUserMight();
-            verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_DragonStrike, true);
+            verVal = TM_Calc.GetSkillVersatilityLevel(skillOwner ?? pawn, TorannMagicDefOf.TM_DragonStrike, true);
             //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_DragonStrike, "TM_DragonStrike", "_ver", true);
             //this.verVal = comp.MightData.MightPowerSkill_DragonStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_DragonStrike_ver").level;
             //if (comp.Pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
@@ -145,7 +216,27 @@ namespace TorannMagic
             //}
             if (spawned)
             {               
-                flyingThing.DeSpawn();
+                var start = flyingThing.Position;
+                takingOff = true;
+                try
+                {
+                    if (!PrepareCargo(pawn)) { Destroy(); return; }
+                    flyingThing.DeSpawn();
+                    if (!passenger.TryAdd(flyingThing, false))
+                    {
+                        if (!flyingThing.Spawned && flyingThing.holdingOwner == null) GenSpawn.Spawn(flyingThing, start, Map);
+                        RestoreCargo(pawn);
+                        Destroy(); return;
+                    }
+                    this.flyingThing = flyingThing;
+                }
+                catch
+                {
+                    if (!flyingThing.Destroyed && !flyingThing.Spawned && flyingThing.holdingOwner == null) GenSpawn.Spawn(flyingThing, start, Map);
+                    if (flyingThing.Spawned) RestoreCargo(pawn);
+                    throw;
+                }
+                finally { takingOff = false; }
             }
             //
             ModOptions.Constants.SetPawnInFlight(true);
@@ -169,6 +260,11 @@ namespace TorannMagic
         }
         protected override void TickInterval(int delta)
         {
+            if (returnPending)
+            {
+                if (Find.TickManager.TicksGame >= nextReturnAttempt) Destroy();
+                return;
+            }
             //base.Tick();
             Vector3 exactPosition = this.ExactPosition;
             this.ticksToImpact--;
@@ -272,6 +368,8 @@ namespace TorannMagic
 
         protected new void Impact(Thing hitThing)
         {
+            if (impactApplied || returnPending) { Destroy(); return; }
+            impactApplied = true;
             bool flag = hitThing == null;
             if (flag)
             {
@@ -308,36 +406,44 @@ namespace TorannMagic
 
                 }
             }
-            try
-            {
-                SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);                
-
-                GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
-                ModOptions.Constants.SetPawnInFlight(false);
-                Pawn p = this.flyingThing as Pawn;
-                if (p.IsColonist)
-                {
-                    if (ModOptions.Settings.Instance.cameraSnap)
-                    {
-                        CameraJumper.TryJumpAndSelect(p);
-                    }
-                    p.drafter.Drafted = this.drafted;
-                }
-                this.Destroy(DestroyMode.Vanish);
-            }
-            catch
-            {
-                GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
-                ModOptions.Constants.SetPawnInFlight(false);
-                Pawn p = this.flyingThing as Pawn;
-                if (p.IsColonist)
-                {
-                    p.drafter.Drafted =this.drafted;
-                }
-                this.Destroy(DestroyMode.Vanish);
-            }
+            Destroy(DestroyMode.Vanish);
         }
 
+        private bool ReleaseNear(IntVec3 center)
+        {
+            if (passenger.Count == 0) return true;
+            var body = passenger[0];
+            foreach (var cell in GenRadial.RadialCellsAround(center, 3.9f, true))
+            {
+                if (!cell.InBounds(Map) || !cell.Standable(Map) || cell.GetFirstPawn(Map) != null) continue;
+                try
+                {
+                    if (passenger.TryDrop(body, cell, Map, ThingPlaceMode.Direct, out _, playDropSound: false)) return true;
+                }
+                catch
+                {
+                    if (!body.Destroyed && !body.Spawned && body.holdingOwner == null) passenger.TryAdd(body, false);
+                    throw;
+                }
+            }
+            return false;
+        }
+
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            returnPending = true;
+            if (passenger.Count > 0)
+            {
+                var body = passenger[0] as Pawn;
+                if (!Spawned || Map.Disposed || (!ReleaseNear(Position) && !ReleaseNear(origin.ToIntVec3())))
+                { nextReturnAttempt = Find.TickManager.TicksGame + 60; return; }
+                if (body?.IsColonist == true && body.drafter != null) body.drafter.Drafted = drafted;
+                RestoreCargo(body);
+            }
+            flyingThing = null;
+            ModOptions.Constants.SetPawnInFlight(false);
+            base.Destroy(mode);
+        }
         public void LaunchFlyingObect(IntVec3 targetCell, Pawn pawn, int force)
         {
             bool flag = targetCell != default(IntVec3);

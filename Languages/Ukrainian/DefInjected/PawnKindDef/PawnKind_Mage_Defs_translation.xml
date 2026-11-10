@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+
+
+  <SeerDefender.label>Чарівний Захисник</SeerDefender.label>
+  <SeerDefender.labelPlural>захисники магії</SeerDefender.labelPlural>
+
+  <SeerSpearman.label>Гвардієць</SeerSpearman.label>
+  <SeerSpearman.labelPlural>Списосець</SeerSpearman.labelPlural>
+
+  <SeerBowman.label>Провидець Стрілок</SeerBowman.label>
+  <SeerBowman.labelPlural>Лучники-Провидці</SeerBowman.labelPlural>
+
+  <SeerElite.label>Еліта Провідцев</SeerElite.label>
+  <SeerElite.labelPlural>Еліта Провідцев</SeerElite.labelPlural>
+
+
+</LanguageData>

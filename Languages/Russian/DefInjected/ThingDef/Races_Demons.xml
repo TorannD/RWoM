@@ -1,0 +1,35 @@
+<LanguageData>
+  <!-- demon special attack manuevers-->
+  <TM_DemonR.label>Демон</TM_DemonR.label>
+  <TM_DemonR.description>Освобожденный из преисподней, этот демон обрушит свою ничем не сдерживаемую злобу на любое существо на своем пути. Нет никакого рассудка и шансв подчинить демона; уничтожьте его или будете уничтожены.</TM_DemonR.description>
+  <TM_DemonR.tools.0.label>левая лапа</TM_DemonR.tools.0.label>
+  <TM_DemonR.tools.1.label>правая лапа</TM_DemonR.tools.1.label>
+  <TM_DemonR.tools.2.label>копыта</TM_DemonR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_DemonR_Corpse.label>Труп демона</TM_DemonR_Corpse.label>
+  <TM_DemonR_Corpse.description>Труп демона</TM_DemonR_Corpse.description>
+  <!-- demon special attack manuevers-->
+  <TM_LesserDemonR.label>Низший Демон</TM_LesserDemonR.label>
+  <TM_LesserDemonR.description>Выпущенный из преисподней, этот низший демон обрушит свою ничем не сдерживаемую злобу на все без исключения существа на своем пути. Нет никакого рассуждения или подчинения демона; уничтожьте его или будьте уничтожены.</TM_LesserDemonR.description>
+  <TM_LesserDemonR.tools.0.label>левая лапа</TM_LesserDemonR.tools.0.label>
+  <TM_LesserDemonR.tools.1.label>правая лапа</TM_LesserDemonR.tools.1.label>
+  <TM_LesserDemonR.tools.2.label>копыта</TM_LesserDemonR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_LesserDemonR_Corpse.label>Труп Меньшего Демона</TM_LesserDemonR_Corpse.label>
+  <TM_LesserDemonR_Corpse.description>Труп Меньшего Демона</TM_LesserDemonR_Corpse.description>
+  <TM_DemonR.race.meatLabel>демоническая плоть</TM_DemonR.race.meatLabel>
+	<TM_DemonR.meatLabel>демоническая плоть</TM_DemonR.meatLabel>
+  <TM_LesserDemonR.race.meatLabel>демоническая плоть</TM_LesserDemonR.race.meatLabel>
+	<TM_LesserDemonR.meatLabel>демоническая плоть</TM_LesserDemonR.meatLabel>
+
+	<TM_Base_Demon.race.meatLabel>демоническая плоть</TM_Base_Demon.race.meatLabel>
+	<TM_Base_Demon.meatLabel>демоническая плоть</TM_Base_Demon.meatLabel>
+  <TM_DemonR_Meat.label>демоническая плоть</TM_DemonR_Meat.label>
+  <TM_DemonR_Meat.description>демоническая плоть</TM_DemonR_Meat.description>
+  <TM_LesserDemonR_Meat.label>демоническая плоть</TM_LesserDemonR_Meat.label>
+  <TM_LesserDemonR_Meat.description>демоническая плоть</TM_LesserDemonR_Meat.description>
+  <TM_Base_Demon_Meat.label>демоническая плоть</TM_Base_Demon_Meat.label>
+  <TM_Base_Demon_Meat.description>демоническая плоть</TM_Base_Demon_Meat.description>
+</LanguageData>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Totems -->
+
+  <TM_Totems.label>Totem</TM_Totems.label>
+  <TM_Totems.description>Os totems são uma forma de magia que liga o espírito básico ao mundo físico, permitindo que ele influencie os objetos ao lado do totem. Essa capacidade aumenta o controle sobre todos os tipos de totems.</TM_Totems.description>
+
+
+  <!-- Create lightning totem -->
+
+  <TM_SummonTotemLightning.label>Totem: Relâmpago</TM_SummonTotemLightning.label>
+  <TM_SummonTotemLightning.description>Cria um totem relâmpago na área de destino. Dura 1 hora de jogo e descarrega as descargas elétricas em inimigos num raio de 40 metros a cada 2 ou 3 segundos.</TM_SummonTotemLightning.description>
+
+
+  <!-- Create earth totem -->
+
+  <TM_SummonTotemEarth.label>Totem: Terra</TM_SummonTotemEarth.label>
+  <TM_SummonTotemEarth.description>Cria um totem de terra na área de destino. Dura 1 hora de jogo e provoca choques a cada 3 ou 4 segundos que flutuam todos os peões dentro de 5 células.</TM_SummonTotemEarth.description>
+
+
+  <!-- Create healing totem -->
+
+  <TM_SummonTotemHealing.label>Totem: Cura</TM_SummonTotemHealing.label>
+  <TM_SummonTotemHealing.description>Cria um totem curador na localização de destino. Dura 1 hora de jogo e trata os peões nas proximidades.</TM_SummonTotemHealing.description>
+
+
+  <!-- Chain Lightning -->
+
+  <TM_ChainLightning.label>Relâmpago em cadeia</TM_ChainLightning.label>
+  <TM_ChainLightning.description>Uma grande descarga relâmpago que se espalha após atingir o seu primeiro alvo.</TM_ChainLightning.description>
+
+
+  <!-- Enrage -->
+
+  <TM_Enrage.label>Deixar furioso</TM_Enrage.label>
+  <TM_Enrage.description>Impõe ao alvo um feitiço que faz com que as emoções se tornem combustível para a fúria. O feitiço vai arder por si só, assim que as emoções forem consumidas. Alvos hostis cairão imediatamente em loucura, se a mente deles for sensível.
+
+O peão em fúria recebe melhores movimentos e manipulação, maior resistência à dor, não pode ser espantado e aumenta os danos no combate próximo em um percentual igual ao poder da fúria (bônus para urônio 20-50%).</TM_Enrage.description>
+
+
+  <!-- Hex -->
+
+  <TM_Hex.label>Maldição</TM_Hex.label>
+  <TM_Hex.description>Maldição (I) - Põe a maldição nos peões, os efeitos adicionais podem ser aplicados aos alvos malditos. Passa por 6 horas de jogo.
+
+Número máximo de alvos: 4
+Raio: 3
+Alcance: 36
+Preparação: 1 segundo.</TM_Hex.description>
+
+  <TM_Hex_I.label>Maldição</TM_Hex_I.label>
+  <TM_Hex_I.description>Maldição (II) - Põe a maldição nos peões, os efeitos adicionais podem ser aplicados aos alvos malditos. Passa por 6 horas de jogo.
+
+Número máximo de alvos: 5
+Raio: 3
+Alcance: 40
+Preparação: .8 segundos.</TM_Hex_I.description>
+
+  <TM_Hex_II.label>Maldição</TM_Hex_II.label>
+  <TM_Hex_II.description>Maldição (III) - Põe a maldição nos peões, e os efeitos adicionais podem ser aplicados aos alvos malditos. Passa por 6 horas de jogo.
+
+Número máximo de alvos: 5
+Raio: 4
+Alcance: 43
+Preparação: .7 segundos.</TM_Hex_II.description>
+
+  <TM_Hex_III.label>Maldição</TM_Hex_III.label>
+  <TM_Hex_III.description>Maldição (IV) - Põe a maldição nos peões, os efeitos adicionais podem ser aplicados aos alvos malditos. Passa por 6 horas de jogo.
+
+Número máximo de alvos: 6
+Raio: 4
+Alcance: 45
+Preparação: .6 segundos.</TM_Hex_III.description>
+
+  <TM_Hex_Pain.label>Dor (Maldição)</TM_Hex_Pain.label>
+  <TM_Hex_Pain.description>Todos os peões enfeitados sofrem muito.</TM_Hex_Pain.description>
+
+  <TM_Hex_CriticalFail.label>Falha crítica (Maldição)</TM_Hex_CriticalFail.label>
+  <TM_Hex_CriticalFail.description>Impõe uma maldição de curta duração a todos os alvos enfeitados, o que causa uma má sorte extrema.</TM_Hex_CriticalFail.description>
+
+  <TM_Hex_MentalAssault.label>Pressão mental (Maldição)</TM_Hex_MentalAssault.label>
+  <TM_Hex_MentalAssault.description>Faz com que todos os objectivos encantados experimentem uma dramática e talvez espantosa subida de emoções.</TM_Hex_MentalAssault.description>
+
+
+  <!-- Spirit Wolves -->
+
+  <TM_SpiritWolves.label>Espírito dos lobos</TM_SpiritWolves.label>
+  <TM_SpiritWolves.description>Mostra um bando de espíritos de lobos. Os espíritos dos lobos causam danos mentais que ignoram a blindagem e atordoam.
+
+Alcance: 50
+Preparação: 3 segundos
+Recarga: 120 segundos</TM_SpiritWolves.description>
+
+  <TM_SpiritWolves_I.label>Espírito dos lobos (I)</TM_SpiritWolves_I.label>
+  <TM_SpiritWolves_I.description>Mostra um bando de espíritos de lobos. Os espíritos dos lobos causam danos mentais que ignoram a blindagem e atordoam.
+
+Alcance: 55
+Preparação: 2,7 segundos
+Recarga: 110 segundos</TM_SpiritWolves_I.description>
+
+  <TM_SpiritWolves_II.label>Espírito dos lobos (II)</TM_SpiritWolves_II.label>
+  <TM_SpiritWolves_II.description>Mostra um bando de espíritos de lobos. Os espíritos dos lobos causam danos mentais que ignoram a blindagem e atordoam.
+
+Alcance: 60
+Preparação: 2.5 segundos
+Recarga: 100 segundos</TM_SpiritWolves_II.description>
+
+  <TM_SpiritWolves_III.label>Espírito dos lobos (III)</TM_SpiritWolves_III.label>
+  <TM_SpiritWolves_III.description>Mostra um bando de espíritos de lobos. Os espíritos dos lobos causam danos mentais que ignoram a blindagem e atordoam.
+
+Alcance: 65
+Preparação: 2.4 segundos
+Recarga: 90 segundos</TM_SpiritWolves_III.description>
+
+
+  <!-- Guardian Spirit -->
+
+  <TM_GuardianSpirit.label>Espírito guardião</TM_GuardianSpirit.label>
+  <TM_GuardianSpirit.description>Chama o espírito guardião. Os espíritos guardiões mostram-se como animais poderosos, com poderes e poderes únicos.
+
+O Espírito do Urso representa a proteção e a resistência; Vai emitir uma reviravolta contra qualquer um que pense em ignorar esta besta perigosa.
+
+O espírito de Manguró representa a astúcia e a agilidade; capaz de atravessar o reino dos espíritos para lançar um ataque mortal e oculto.
+
+O Espírito do Corvo representa a magia e a discernimento; impõe o feitiço aos inimigos e aumenta a sabedoria do seu pupilo.
+
+Após a definição, o tipo de espírito guardião permanece o mesmo, mas pode ser alterado forçosamente com um pergaminho de ânimo.</TM_GuardianSpirit.description>
+
+  <TM_DismissGuardianSpirit.label>Demitir o Espírito Guardião</TM_DismissGuardianSpirit.label>
+  <TM_DismissGuardianSpirit.description>Liberta o espírito guardião para regressar ao reino dos espíritos.</TM_DismissGuardianSpirit.description>
+
+
+</LanguageData>

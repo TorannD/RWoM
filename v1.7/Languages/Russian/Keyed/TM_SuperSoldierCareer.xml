@@ -1,0 +1,13 @@
+<LanguageData>
+  <TM_ReadSuperSoldierCloseQuarters>Ближний бой</TM_ReadSuperSoldierCloseQuarters>
+  <TM_ReadSuperSoldierFieldAid>Полевая медицина</TM_ReadSuperSoldierFieldAid>
+  <TM_SoldierMaintenance>Обслужите изношенное оружие ({0}/20) или перевяжите раны союзников лекарством ({1}/10).</TM_SoldierMaintenance>
+  <TM_SoldierTraining>Попадите по разным врагам из выбранного оружия ({0}/10) или перевяжите раны союзников ({1}/20).</TM_SoldierTraining>
+  <TM_SoldierShifts>Проведите восемь дней в бою или за лечением ({0}/8). Уровень воина {1}/30.</TM_SoldierShifts>
+  <TM_SoldierSurgeon>Полевой хирург (+15% к качеству лечения)</TM_SoldierSurgeon>
+  <TM_SoldierMarksman>Стрелок (+7% к точности выбранного оружия)</TM_SoldierMarksman>
+  <TM_SoldierChooseSchool>Выбрать постоянную оружейную специализацию</TM_SoldierChooseSchool>
+  <TM_SoldierAdvance>Завершить этап подготовки</TM_SoldierAdvance>
+  <TM_SoldierService>Обслужить изношенное оружие</TM_SoldierService>
+  <TM_SoldierNeedsMedicine>Нужна свежая рана и лекарство в личном инвентаре.</TM_SoldierNeedsMedicine>
+</LanguageData>

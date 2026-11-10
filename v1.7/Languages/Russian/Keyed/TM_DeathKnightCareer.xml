@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadDeathKnightDread>Ужас — начните с Волны страха.</TM_ReadDeathKnightDread>
+  <TM_ReadDeathKnightSpite>Месть — начните со Злобы.</TM_ReadDeathKnightSpite>
+  <TM_DKTrial>Дни, когда враг ранил вас рядом с союзником: {0}/{1}. Или спасите разных союзников: {2}/{3}.</TM_DKTrial>
+  <TM_DKLevel>Уровень воина {0}/30.</TM_DKLevel>
+  <TM_DKClaim>Открыть ступень</TM_DKClaim>
+  <TM_DKOath>Клятва стража — раз в 10 секунд поглотите до 25 урона за соседнего союзника, потратив 10 ненависти.</TM_DKOath>
+</LanguageData>

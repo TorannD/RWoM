@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaNetworkModeOff>Off</TM_ManaNetworkModeOff>
+  <TM_ManaNetworkModeSend>Send</TM_ManaNetworkModeSend>
+  <TM_ManaNetworkModeReceive>Receive</TM_ManaNetworkModeReceive>
+  <TM_ManaNetworkManaMode>Mana: {0}</TM_ManaNetworkManaMode>
+  <TM_ManaNetworkFuelMode>Magofuel: {0}</TM_ManaNetworkFuelMode>
+  <TM_ManaNetworkModeDesc>Choose whether this building sends, receives or ignores this resource through nearby mana beacons.</TM_ManaNetworkModeDesc>
+  <TM_ManaNetworkTarget>Mana target: {0}</TM_ManaNetworkTarget>
+  <TM_ManaNetworkTargetDesc>Set the desired mana reserve from 10% to 100% of capacity.</TM_ManaNetworkTargetDesc>
+  <TM_ManaNetworkConnected>Beacon network: connected</TM_ManaNetworkConnected>
+  <TM_ManaNetworkDisconnected>Beacon network: disconnected</TM_ManaNetworkDisconnected>
+  <TM_ManaBeaconInspect>Connected beacons: {0}\nRange: 5 cells\nNetwork transfer: 10 mana and 5 magofuel per second</TM_ManaBeaconInspect>
+  <TM_ManaNetworkUnsupportedFuel>Magofuel transfer unavailable: incompatible fuel settings.</TM_ManaNetworkUnsupportedFuel>
+  <TM_ManaNetworkManaPriority>Mana priority: {0}</TM_ManaNetworkManaPriority>
+  <TM_ManaNetworkFuelPriority>Magofuel priority: {0}</TM_ManaNetworkFuelPriority>
+  <TM_ManaNetworkPriorityDesc>Higher priorities receive automatic beacon transfers first. Equal priorities take turns. Mana and magofuel are independent. Changes apply from the next pulse.</TM_ManaNetworkPriorityDesc>
+  <TM_ManaNetworkPriority1>1: Normal</TM_ManaNetworkPriority1>
+  <TM_ManaNetworkPriority2>2: Medium</TM_ManaNetworkPriority2>
+  <TM_ManaNetworkPriority3>3: High</TM_ManaNetworkPriority3>
+</LanguageData>

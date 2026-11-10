@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using Verse;
 using AbilityUser;
@@ -9,6 +9,14 @@ namespace TorannMagic
 {
     class Verb_Disguise : Verb_UseAbility  
     {
+        internal static float Strength(Pawn caster, CompAbilityUserMight owner, int versatility)
+        {
+            float severity = Mathf.RoundToInt(30 + 8f * versatility * owner.mightPwr);
+            return ClassProgression.FacelessMartialPath.Path(caster) is { MartialAlternate: false } ? severity * 1.2f : severity;
+        }
+        internal static HediffDef Effect(int power) => power switch {
+            3 => TorannMagicDefOf.TM_DisguiseHD_III, 2 => TorannMagicDefOf.TM_DisguiseHD_II,
+            1 => TorannMagicDefOf.TM_DisguiseHD_I, _ => TorannMagicDefOf.TM_DisguiseHD };
         protected override bool TryCastShot()
         {
             Pawn caster = base.CasterPawn;
@@ -21,23 +29,7 @@ namespace TorannMagic
             bool flag = caster != null && !caster.Dead;
             if (flag)
             {
-                float sev = Mathf.RoundToInt(30 + (8f * ver.level) * comp.mightPwr);
-                if (pwr.level == 3)
-                {
-                    HealthUtility.AdjustSeverity(caster, HediffDef.Named("TM_DisguiseHD_III"),sev);
-                }
-                else if(pwr.level == 2)
-                {
-                    HealthUtility.AdjustSeverity(caster, HediffDef.Named("TM_DisguiseHD_II"), sev);
-                }
-                else if(pwr.level == 1)
-                {
-                    HealthUtility.AdjustSeverity(caster, HediffDef.Named("TM_DisguiseHD_I"), sev);
-                }
-                else
-                {
-                    HealthUtility.AdjustSeverity(caster, HediffDef.Named("TM_DisguiseHD"), sev);                    
-                }
+                HealthUtility.AdjustSeverity(caster,Effect(pwr.level),Strength(caster,comp,ver.level));
                 for(int i =0; i < 4; i++)
                 {
                     FleckMaker.ThrowDustPuff(caster.Position, caster.Map, Rand.Range(.6f, 1f));

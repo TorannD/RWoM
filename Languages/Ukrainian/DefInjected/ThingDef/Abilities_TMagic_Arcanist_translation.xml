@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Shadow start -->
+
+  <Buff_Shadow.label>Тінь</Buff_Shadow.label>
+
+
+  <!-- Magic Missile -->
+
+  <Projectile_MagicMissile.label>Чарівний снаряд</Projectile_MagicMissile.label>
+
+
+  <!-- Teleport start -->
+
+  <Projectile_Teleport.label>Телепорт</Projectile_Teleport.label>
+
+
+  <!-- Blink Start -->
+
+  <Projectile_Blink.label>Мерехтіння</Projectile_Blink.label>
+
+
+  <!-- Summon Start -->
+
+  <Projectile_Summon.label>Призов</Projectile_Summon.label>
+  <TM_SummonedPawn.label>літаючий об&apos;єкт</TM_SummonedPawn.label>
+  <MovingObject.label>рухомий об&apos;єкт</MovingObject.label>
+
+
+  <!-- Fold Reality -->
+
+  <Projectile_FoldReality.label>згорнути реальність</Projectile_FoldReality.label>
+
+
+</LanguageData>

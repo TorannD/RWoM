@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_CoreReturnUnavailable>The bound core is unavailable, disabled or no longer yours.</TM_CoreReturnUnavailable>
+  <TM_CoreReturnUnpaid>Return marks are inactive: the core needs magofuel for upkeep.</TM_CoreReturnUnpaid>
+  <TM_CoreReturnRebindConfirm>Replace the return mark on {0} after they reach this core?</TM_CoreReturnRebindConfirm>
+  <TM_CoreReturnNoCandidates>No eligible unbound colonists on this map.</TM_CoreReturnNoCandidates>
+  <TM_CoreReturnConfirm>Return {0} pawns to {2} for {1} magofuel? Their equipment and carried items will travel with them.</TM_CoreReturnConfirm>
+  <TM_CoreReturnStranding>Warning: animals or prisoners will remain in the caravan without an able colonist.</TM_CoreReturnStranding>
+  <TM_CoreReturnMarkedOnly>Return marked pawns only</TM_CoreReturnMarkedOnly>
+  <TM_CoreReturnIncludeCaravans>Include their entire caravans</TM_CoreReturnIncludeCaravans>
+  <TM_CoreReturnStatus>Return marks: {0}
+Upkeep: {1} magofuel/day
+Available magofuel: {2}</TM_CoreReturnStatus>
+  <TM_CoreReturnMark>Mark pawn</TM_CoreReturnMark>
+  <TM_CoreReturnMarkDesc>Choose a colonist to approach this core and receive a return mark. Each mark costs 1 magofuel per day.</TM_CoreReturnMarkDesc>
+  <TM_CoreReturnAll>Return all</TM_CoreReturnAll>
+  <TM_CoreReturnAllDesc>Return bound pawns from maps and caravans. Review the roster and cost before confirming.</TM_CoreReturnAllDesc>
+  <TM_CoreReturnSingle>Return to core</TM_CoreReturnSingle>
+  <TM_CoreReturnSingleDesc>Return this pawn with their own inventory and carried items. Cost: {0} magofuel.</TM_CoreReturnSingleDesc>
+  <TM_CoreReturnUnbind>Remove return mark</TM_CoreReturnUnbind>
+  <TM_CoreReturnUnbindDesc>Remove this pawn’s binding and stop its upkeep.</TM_CoreReturnUnbindDesc>
+  <TM_CoreReturnUnbindConfirm>Remove the return mark from {0}?</TM_CoreReturnUnbindConfirm>
+  <TM_CoreReturnCaravan>Return entire caravan</TM_CoreReturnCaravan>
+  <TM_CoreReturnCaravanDesc>Return all caravan members, animals, prisoners and their cargo. Cost: {0} magofuel per member.</TM_CoreReturnCaravanDesc>
+  <TM_CoreReturnChanged>The selection changed. Review the return again.</TM_CoreReturnChanged>
+  <TM_CoreReturnBlockDowned>Cannot be marked now: downed.</TM_CoreReturnBlockDowned>
+  <TM_CoreReturnBlockMental>Cannot be marked now: mental break.</TM_CoreReturnBlockMental>
+  <TM_CoreReturnBlockCapacity>Cannot be marked now: cannot move.</TM_CoreReturnBlockCapacity>
+  <TM_CoreReturn_InvalidSelection>A selected pawn is no longer eligible for this return.</TM_CoreReturn_InvalidSelection>
+  <TM_CoreReturn_AlreadyNear>The selected pawns are already near the core.</TM_CoreReturn_AlreadyNear>
+  <TM_CoreReturn_NoLanding>Not enough safe, free landing cells near the core.</TM_CoreReturn_NoLanding>
+  <TM_CoreReturn_NoFuel>Not enough connected magofuel for the whole return.</TM_CoreReturn_NoFuel>
+  <TM_CoreReturn_Busy>Another return or fuel payment is in progress.</TM_CoreReturn_Busy>
+  <TM_CoreReturn_Failed>The return failed. Check the log for recovery details.</TM_CoreReturn_Failed>
+  <TM_CoreReturn_UnsupportedTransport>Caravans carrying a shuttle cannot use core return.</TM_CoreReturn_UnsupportedTransport>
+  <TM_CoreReturn_CarriedPawn>Put down the carried pawn before returning; passengers must be accounted for separately.</TM_CoreReturn_CarriedPawn>
+</LanguageData>

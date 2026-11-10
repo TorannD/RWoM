@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <UnfinishedArcane.label>Desligado inacabado</UnfinishedArcane.label>
+  <UnfinishedArcane.description>Um script secreto preparado para ser cheio de segredos de revelação de poderes mágicos...
+
+Use um mago treinado para inscrever seus segredos secretos no Livro. Depois, este livro pode ser usado para treinar outro peão dotado como se tornar a mesma classe. Os cenários quebrados ensinarão um peão dotado para a classe mágica, mas começarão com um conjunto aleatório de habilidades de classe.
+
+Os peões magicamente dotados podem gravar suas teorias e experiências neste livro e aprender a tornar-se uma classe mágica aleatória.</UnfinishedArcane.description>
+  <UnfinishedArcane.comps.0.useLabel>Escrever</UnfinishedArcane.comps.0.useLabel>
+
+  <UnfinishedAdvArcane.label>Livro Secreto inacabado</UnfinishedAdvArcane.label>
+  <UnfinishedAdvArcane.description>Um volume secreto preparado para ser cheio de segredos de revelação de poderes mágicos...
+
+Use um mago treinado para inscrever seus segredos secretos no Livro. Depois, este livro pode ser usado para treinar outro peão dotado como se tornar a mesma classe. Os volumes secretos ensinam um peão dotado para a sala de aula mágica e todas as habilidades de classe, exceto a habilidade do mestre.
+
+Peões dotados podem escrever suas teorias e experiências neste livro e aprender a se tornar uma classe mágica aleatória.</UnfinishedAdvArcane.description>
+  <UnfinishedAdvArcane.comps.0.useLabel>Escrever</UnfinishedAdvArcane.comps.0.useLabel>
+
+  <UnfinishedMartial.label>Livro de Guerra inacabado</UnfinishedMartial.label>
+  <UnfinishedMartial.description>Um livro preparado para ser cheio de segredos de revelação de forças de combate...
+
+Use um lutador treinado para inscrever suas técnicas de combate no Livro. Então o livro pode ser usado para treinar outro peão desta técnica de combate.
+
+Fisicamente hábil peões podem gravar seus estudos e treinos neste livro para desenvolver conceitos de uma classe aleatória de lutadores.</UnfinishedMartial.description>
+  <UnfinishedMartial.comps.0.useLabel>Escrever</UnfinishedMartial.comps.0.useLabel>
+
+
+</LanguageData>

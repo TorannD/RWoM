@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperArmorFracture.label>fratura de armadura</TM_SniperArmorFracture.label>
+  <TM_SniperArmorFracture.description>Dispara uma bala normal. Um impacto abre uma brecha durante 6 segundos para todo o esquadrão. A armadura efetiva diminui 10, 15 ou 20 pontos percentuais consoante o nível. As brechas acumulam-se e expiram individualmente. Custa 20 de resistência. Recarga: 30 segundos.</TM_SniperArmorFracture.description>
+</LanguageData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritCastPistolWhip.reportString>striking TargetB with a pistol.</TM_SpiritCastPistolWhip.reportString>
+  <TM_SpiritCastMk203GL.reportString>launching a grenade at TargetB.</TM_SpiritCastMk203GL.reportString>
+  <TM_SpiritCastBreachingCharge.reportString>throwing a breaching charge at TargetB.</TM_SpiritCastBreachingCharge.reportString>
+  <TM_SpiritCastSuperSoldierFieldDressing.reportString>applying a field dressing.</TM_SpiritCastSuperSoldierFieldDressing.reportString>
+  <TM_SpiritCastBuckshot.reportString>firing buckshot at TargetB.</TM_SpiritCastBuckshot.reportString>
+  <TM_SpiritCastSuppressingFire.reportString>laying suppressing fire on TargetB.</TM_SpiritCastSuppressingFire.reportString>
+  <TM_SpiritCast60mmMortar.reportString>deploying a 60mm mortar.</TM_SpiritCast60mmMortar.reportString>
+</LanguageData>

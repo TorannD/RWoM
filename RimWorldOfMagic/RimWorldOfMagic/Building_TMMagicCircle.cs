@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -15,6 +15,15 @@ namespace TorannMagic
     public class Building_TMMagicCircle : Building_TMMagicCircleBase
     {
         private float matMagnitude = 5.2f;
+
+        public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
+        {
+            foreach (var option in base.GetFloatMenuOptions(myPawn)) yield return option;
+            foreach (var option in ClassProgression.SpellMasteryRitual.Options(myPawn, this)) yield return option;
+            foreach (var option in ClassProgression.ClassAscensionMenu.Options(myPawn, this)) yield return option;
+            foreach (var option in ClassProgression.IceAttunement.Options(myPawn, this)) yield return option;
+            foreach (var option in ClassProgression.SpiritRebirthRitualJob.Options(myPawn, this)) yield return option;
+        }
 
         public override IntVec3 GetCircleCenter
         {
@@ -198,6 +207,8 @@ namespace TorannMagic
             {
                 base.DrawAt(drawLoc, flip);
             }
+            // Active native drawing skips base.DrawAt, so dispatch the overlay exactly once.
+            if (IsActive) GetComp<Visuals.CompProductionBuildingEffects>()?.PostDraw();
         }
 
         public override IntVec3 GetMageIndexPosition(List<Pawn> allMages, Pawn mage)

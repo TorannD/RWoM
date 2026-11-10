@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Confused.label>confuso</TM_Confused.label>
+  
+  <TM_Confused.description>Provoca con frecuencia que el objetivo se quede confuso.</TM_Confused.description>
+  
+  <TM_Confused.stages.Wandering_confused.label>deambulando confuso</TM_Confused.stages.Wandering_confused.label>
+  
+</LanguageData>

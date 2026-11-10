@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Teleporter.label>Телепортер</TM_Teleporter.label>
+  <TM_Teleporter.description>Портальна платформа, що використовується для розміщення телепортаційних капсул.</TM_Teleporter.description>
+
+  <TM_Teleporter_I.label>Телепортер (I)</TM_Teleporter_I.label>
+  <TM_Teleporter_I.description>Портальна платформа, що використовується для розміщення телепортаційних капсул.</TM_Teleporter_I.description>
+
+  <TM_Teleporter_II.label>Телепортер (II)</TM_Teleporter_II.label>
+  <TM_Teleporter_II.description>Портальна платформа, що використовується для розміщення телепортаційних капсул.</TM_Teleporter_II.description>
+
+  <TM_Teleporter_III.label>Телепортер (III)</TM_Teleporter_III.label>
+  <TM_Teleporter_III.description>Портальна платформа, що використовується для розміщення телепортаційних капсул.</TM_Teleporter_III.description>
+
+  <TM_TeleportPod.label>Телепортний майданчик</TM_TeleportPod.label>
+  <TM_TeleportPod.description>Великий плоский циліндр, який використовується чаклунами для швидкого транспортування між локаціями.</TM_TeleportPod.description>
+
+  <TM_TeleportPod_I.label>Телепортний майданчик (I)</TM_TeleportPod_I.label>
+  <TM_TeleportPod_I.description>Великий плоский циліндр, який використовується чаклунами для швидкого транспортування між локаціями.</TM_TeleportPod_I.description>
+
+  <TM_TeleportPod_II.label>Телепортний майданчик (II)</TM_TeleportPod_II.label>
+  <TM_TeleportPod_II.description>Великий плоский циліндр, який використовується чаклунами для швидкого транспортування між локаціями.</TM_TeleportPod_II.description>
+
+  <TM_TeleportPod_III.label>Телепортний майданчик (III)</TM_TeleportPod_III.label>
+  <TM_TeleportPod_III.description>Великий плоский циліндр, який використовується чаклунами для швидкого транспортування між локаціями.</TM_TeleportPod_III.description>
+
+  <Portfuel.label>Паливо телепорту</Portfuel.label>
+  <Portfuel.description>Таємна енергія розливається по пляшках для палива. Використовується для зарядки порталів.</Portfuel.description>
+
+  <TM_Heater.label>магічний нагрівач</TM_Heater.label>
+  <TM_Heater.description>Активний просторовий кран у площину вогню, який можна використовувати для нагрівання замкнутих просторів. Також можна використовувати для різних кулінарних або творчих завдань. Триває близько 3 днів.</TM_Heater.description>
+
+  <TM_Cooler.label>магічний кулер</TM_Cooler.label>
+  <TM_Cooler.description>Активний розмірний кран у площину льоду, який можна використати для охолодження замкнутих просторів.</TM_Cooler.description>
+
+  <TM_PowerNode.label>Вузол магічної енергії</TM_PowerNode.label>
+  <TM_PowerNode.description>Таємний енергетичний вузол, який забезпечує харчування протягом обмеженого періоду часу.</TM_PowerNode.description>
+
+  <TM_Sunlight.label>Сонячне світло</TM_Sunlight.label>
+  <TM_Sunlight.description>Просторова кишеня, що випускає безперервне джерело світла, досить сильна, щоб виростити врожай.</TM_Sunlight.description>
+
+  <TM_Sentinel.label>Сентінел</TM_Sentinel.label>
+  <TM_Sentinel.description>Ця статуя зроблена з каменю і має форму жахливої істоти. Статуя менше середньої людини і має вигляд грубої огранки, хоча, як ви помітили, очі, вуха і кігті, здається, мають більш дрібні деталі.
+
+Коли ви наближаєтеся до статуї, страшний блиск в очах кам&apos;яного варта, здається, йде за вами, і ви відчуваєте, що за вами спостерігають.</TM_Sentinel.description>
+
+  <TM_MageLightTD.label>магічне світло</TM_MageLightTD.label>
+  <TM_MageLightTD.description>Джерело світла, створене магом.</TM_MageLightTD.description>
+
+  <TM_LightPod.label>Світловий Промінь</TM_LightPod.label>
+  <TM_LightPod.description>Пересування за променем світла.</TM_LightPod.description>
+
+
+</LanguageData>

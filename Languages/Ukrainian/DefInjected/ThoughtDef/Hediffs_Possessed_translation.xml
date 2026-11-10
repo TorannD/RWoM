@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_SpiritPossessedTD.stages.0.label>одержимий</TM_SpiritPossessedTD.stages.0.label>
+  <TM_SpiritPossessedTD.stages.0.description>Моє тіло одержиме іншим духом.</TM_SpiritPossessedTD.stages.0.description>
+
+  <TM_SpiritDrainTD.stages.0.label>Виснажений дух</TM_SpiritDrainTD.stages.0.label>
+  <TM_SpiritDrainTD.stages.0.description>Виснажений дух.</TM_SpiritDrainTD.stages.0.description>
+
+
+</LanguageData>

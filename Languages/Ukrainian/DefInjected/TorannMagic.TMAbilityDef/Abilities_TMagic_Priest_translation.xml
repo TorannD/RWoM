@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Advanced Heal -->
+
+  <TM_AdvancedHeal.label>Просунуте Зцілення</TM_AdvancedHeal.label>
+  <TM_AdvancedHeal.description>Закликає святу силу, щоб сильно зцілити рани мети. Базове зцілення відновлює 14 здоров&apos;я до 3-х ран. Негайно запечатає кровоточуючі рани від відсутніх частин тіла.</TM_AdvancedHeal.description>
+
+
+  <!-- Purify -->
+
+  <TM_Purify.label>Очищення</TM_Purify.label>
+  <TM_Purify.description>Закликає святу силу, щоб очистити шрами на тілі, розумі і душі.</TM_Purify.description>
+
+
+  <!-- Healing Circle -->
+
+  <TM_HealingCircle.label>Цілюще коло</TM_HealingCircle.label>
+  <TM_HealingCircle.description>Створює поле світла, яке зцілює дружні пішаки всередині. Базова здатність зцілює 1 рану на 10 здоров&apos;я за кожен зцілений пішак. Неможливо залікувати травми відсутніх частин тіла.
+
+Радіус кола: 3
+Дистанція: 30</TM_HealingCircle.description>
+
+  <TM_HealingCircle_I.label>Цілюще коло (I)</TM_HealingCircle_I.label>
+  <TM_HealingCircle_I.description>Створює поле світла, яке зцілює дружні пішаки всередині. Базова здатність зцілює 1 рану на 10 здоров&apos;я за кожен зцілений пішак. Неможливо залікувати травми відсутніх частин тіла.
+
+Радіус кола: 4
+Дистанція: 35</TM_HealingCircle_I.description>
+
+  <TM_HealingCircle_II.label>Цілюще коло (II)</TM_HealingCircle_II.label>
+  <TM_HealingCircle_II.description>Створює поле світла, яке зцілює дружні пішаки всередині. Базова здатність зцілює 1 рану на 10 здоров&apos;я за кожен зцілений пішак. Неможливо залікувати травми відсутніх частин тіла.
+
+Радіус кола: 5.5
+Дистанція: 40</TM_HealingCircle_II.description>
+
+  <TM_HealingCircle_III.label>Цілюще коло (III)</TM_HealingCircle_III.label>
+  <TM_HealingCircle_III.description>Створює поле світла, яке зцілює дружні пішаки всередині. Базова здатність зцілює 1 рану на 10 здоров&apos;я за кожен зцілений пішак. Неможливо залікувати травми відсутніх частин тіла.
+
+Радіус кола: 7
+Дистанція: 45</TM_HealingCircle_III.description>
+
+
+  <!-- Bestow Might -->
+
+  <TM_BestowMight.label>Дар могутності</TM_BestowMight.label>
+  <TM_BestowMight.description>Благословляє єдину мету і сильно збільшує фізичну силу.
+
+Тривалість: 		30-40s
+Фізичні можливості: 	+40%
+Фізична потреба: 	+50%
+Біль:-40%</TM_BestowMight.description>
+
+  <TM_BestowMight_I.label>Дар могутності (I)</TM_BestowMight_I.label>
+  <TM_BestowMight_I.description>Благословляє єдину мету і сильно збільшує фізичну силу.
+
+Тривалість: 		50-60s
+Фізичні можливості: 	+60%
+Фізична потреба: 	+60%
+Біль:-50%</TM_BestowMight_I.description>
+
+  <TM_BestowMight_II.label>Дар могутності (II)</TM_BestowMight_II.label>
+  <TM_BestowMight_II.description>Благословляє єдину мету і сильно збільшує фізичну силу.
+
+Тривалість: 		50-60s
+Фізичні можливості: 	+80%
+Фізична потреба: 	+70%
+Біль:-60%</TM_BestowMight_II.description>
+
+  <TM_BestowMight_III.label>Дар могутності (III)</TM_BestowMight_III.label>
+  <TM_BestowMight_III.description>Благословляє єдину мету і сильно збільшує фізичну силу.
+
+Тривалість: 		100-115s
+Фізичні можливості: 	~+100%
+Фізична потреба: 	+100%
+Біль:-70%</TM_BestowMight_III.description>
+
+
+  <!-- Resurrection -->
+
+  <TM_Resurrection.label>Воскресіння</TM_Resurrection.label>
+  <TM_Resurrection.description>Воскресіння відновлює життя недавно померлої пішаки. Це накладає величезний стрес на священика і воскреслу пішака, і обидва будуть слабкі протягом декількох днів, поки їх сила не відновиться. Воскресіння має свою ціну; воскрешена пішака втратить до 20% своїх навичок і може розвинути згубні стани здоров&apos;я.</TM_Resurrection.description>
+
+
+</LanguageData>

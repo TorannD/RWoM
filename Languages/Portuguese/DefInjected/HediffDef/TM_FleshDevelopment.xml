@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_FleshProgressHD.description>Este morto-vivo desenvolve-se ao consumir cadáveres. O nível, a experiência e os pontos de habilidade disponíveis são apresentados abaixo.</TM_FleshProgressHD.description>
+  <TM_FleshMobilityHD.description>A carne desenvolvida melhora a velocidade de movimento. O grau aprendido e o respetivo bónus são apresentados abaixo.</TM_FleshMobilityHD.description>
+  <TM_FleshStrengthHD.description>A carne desenvolvida aumenta o dano corpo a corpo. O grau aprendido e o respetivo bónus são apresentados abaixo.</TM_FleshStrengthHD.description>
+  <TM_FleshIndustryHD.description>A carne desenvolvida melhora a velocidade de trabalho geral. O grau aprendido e o respetivo bónus são apresentados abaixo.</TM_FleshIndustryHD.description>
+  <TM_FleshCapacityHD.description>A carne desenvolvida aumenta a Sede máxima. O grau aprendido e a capacidade atual são apresentados abaixo.</TM_FleshCapacityHD.description>
+  <TM_FleshEmpowerHD.description>A carne reforçada aumenta temporariamente a velocidade de movimento e de trabalho geral. O nível ativo, o bónus e o tempo restante são mostrados abaixo.</TM_FleshEmpowerHD.description>
+  <TM_FleshHardenHD.description>A pele endurecida aumenta temporariamente a armadura cortante e contundente. O nível ativo, o bónus e o tempo restante são mostrados abaixo.</TM_FleshHardenHD.description>
+  <TM_FleshFeastHD.description>O Festim de Carne está ativo. O tempo restante, a Sede e qualquer fúria descontrolada são mostrados abaixo.</TM_FleshFeastHD.description>
+</LanguageData>

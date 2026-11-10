@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Golemancy -->
+
+  <TM_Golemancy.label>Golemantia</TM_Golemancy.label>
+  <TM_Golemancy.description>A golemantia é a arte de injectar energia mágica no objeto através de runas ou sinais que criam uma ligação com o feitiço. Esta ligação de energia é geralmente usada para alcançar o objetivo de animar um objeto, converter energia ou coletar informações.
+
+O golem e o holemânter estão a melhorar a sua capacidade de casal. O golem só pode ser atribuído a um peão, mas vários holems podem ser atribuídos a um só peão. Os benefícios da golemantia só se aplicam ao golem atribuído.
+
+Os golemas podem ser criados em suas respectivas versões após a conclusão de suas respectivas pesquisas. Verifique a guia de pesquisa para cada tipo de golem e local de trabalho adequado.</TM_Golemancy.description>
+
+
+  <!-- Rune Carving -->
+
+  <TM_RuneCarving.label>Esculpir pelas runas</TM_RuneCarving.label>
+  <TM_RuneCarving.description>Esculpir as runas é uma arte mágica usada para dar poder mágico ao objeto. Este processo foi usado desde sempre para aplicar runas no equipamento e nas armas para dar-lhes propriedades mágicas. Golemant usa um processo semelhante, mas mais delicado, usando runas para melhorar a eficiência das partes do corpo. Enquanto apenas certas partes podem ser melhoradas com o corte de runas, qualquer variação dessas partes pode ser melhorada.
+
+O corte de runas requer recursos materiais adicionais na reserva marcada, como 225 objetos mágicos, poções 2 de maná e remédio 1. O corte bem-sucedido das runas é determinado pela habilidade do holemante em kraft, arte e habilidade. O trabalho médico também deve ser permitido para o feitiço, porque cortar runas é uma forma de cirurgia médica. Cortar runas nunca será um sucesso se as habilidades artesanais ou artísticas forem desligadas.
+
+Para aplicar as runas, selecione o peão que deseja encaixar e crie uma operação de corte de runas na seção parâmetros de saúde. Todos os componentes devem estar disponíveis antes que a opção de operação seja exibida.</TM_RuneCarving.description>
+
+
+  <!-- Branding -->
+
+  <TM_Branding.label>Marcação</TM_Branding.label>
+  <TM_Branding.description>A marca é usada para criar uma marca mágica do tempo no peão, que cria uma ligação entre o feitiço e o feitiço. Várias marcas podem ser colocadas em um peão, se cada marca for de outro tipo. O feitiço pode criar todas as marcas que quiser, mas cada marca é descontada da regeneração da energia do feitiço. A marca ficará inativa se o feitiço acabar com o maná. As marcas são um tipo único de feitiço, e cada marca deve ser estudada separadamente. A habilidade no branding afeta todos os tipos de marcas.</TM_Branding.description>
+
+  <TM_SiphonBrand.label>Marca: Sifon</TM_SiphonBrand.label>
+  <TM_SiphonBrand.description>A marca do sifão pode ser aplicada a outro mágico, para que o passe periodicamente ao feitiço.
+
+As marcas são uma forma de magia semi-permanente, geralmente criada usando alguma forma de marcação ou gravura muito semelhante a uma tatuagem mágica que cria uma ligação entre os dois peões. A marca requer um fluxo contínuo de maná para manter, mas a marca fica inativa se o feitiço não conseguir manter o feitiço. A marca é apagada se o feitiço morre ou decide livrar-se da marca.</TM_SiphonBrand.description>
+
+  <TM_FitnessBrand.label>Marca Fitness</TM_FitnessBrand.label>
+  <TM_FitnessBrand.description>A marca de tfitness pode ser colocada em outro peão para melhorar seu desempenho físico.
+
+As marcas são uma forma de magia semi-permanente, geralmente criada usando alguma forma de marcação ou gravura muito semelhante a uma tatuagem mágica que cria uma ligação entre os dois peões. A marca requer um fluxo contínuo de maná para manter, mas a marca fica inativa se o feitiço não conseguir manter o feitiço. A marca é apagada se o feitiço morre ou decide livrar-se da marca.</TM_FitnessBrand.description>
+
+  <TM_EmotionBrand.label>Marca: emoções</TM_EmotionBrand.label>
+  <TM_EmotionBrand.description>Uma marca emocional pode ser colocado em outro peão para melhorar o seu humor.
+
+As marcas são uma forma de magia semi-permanente, geralmente criada usando alguma forma de marcação ou gravura muito semelhante a uma tatuagem mágica que cria uma ligação entre os dois peões. A marca requer um fluxo contínuo de maná para manter, mas a marca fica inativa se o feitiço não conseguir manter o feitiço. A marca é apagada se o feitiço morre ou decide livrar-se da marca.</TM_EmotionBrand.description>
+
+  <TM_VitalityBrand.label>Marca: vitalidade</TM_VitalityBrand.label>
+  <TM_VitalityBrand.description>Tbrand sobrevivência pode ser colocado em outro peão para melhorar sua saúde geral, cura e resistência a doenças.
+
+As marcas são uma forma de magia semi-permanente, geralmente criada com qualquer forma de marketing ou gravura, muito semelhante a uma tatuagem mágica que cria uma ligação entre os dois peões. A marca requer um fluxo contínuo de maná para manter, mas a marca fica inativa se o feitiço não conseguir manter o feitiço. A marca é apagada se o feitiço morre ou decide livrar-se da marca.</TM_VitalityBrand.description>
+
+  <TM_ProtectionBrand.label>Marca: Proteção</TM_ProtectionBrand.label>
+  <TM_ProtectionBrand.description>A marca de segurança pode ser colocada em outro peão para repelir os ataques. A runa de segurança é recarregada periodicamente.
+
+As marcas são uma forma de magia semi-permanente, geralmente criada usando alguma forma de marcação ou gravura muito semelhante a uma tatuagem mágica que cria uma ligação entre os dois peões. A marca requer um fluxo contínuo de maná para manter, mas a marca fica inativa se o feitiço não conseguir manter o feitiço. A marca é apagada se o feitiço morre ou decide livrar-se da marca.</TM_ProtectionBrand.description>
+
+  <TM_AwarenessBrand.label>Marca: Reconhecimento</TM_AwarenessBrand.label>
+  <TM_AwarenessBrand.description>Uma marca de conscientização pode ser colocado em outro peão para melhorar sua visão, ouvido, fala e inteligência.
+
+As marcas são uma forma de magia semi-permanente, geralmente criada usando alguma forma de marcação ou gravura muito semelhante a uma tatuagem mágica que cria uma ligação entre os dois peões. A marca requer um fluxo contínuo de maná para manter, mas a marca fica inativa se o feitiço não conseguir manter o feitiço. A marca é apagada se o feitiço morre ou decide livrar-se da marca.</TM_AwarenessBrand.description>
+
+  <TM_DispelBranding.label>Dissipar Marcas</TM_DispelBranding.label>
+  <TM_DispelBranding.description>Dispersa todas as marcas ativas.</TM_DispelBranding.description>
+
+
+  <!-- Sigil surge -->
+
+  <TM_SigilSurge.label>Subida de Sigilos</TM_SigilSurge.label>
+  <TM_SigilSurge.description>A ativação desta capacidade faz com que todas as marcas fiquem superestimadas. Esta capacidade magoa o Golemant e triplica o consumo de energia de cada marca. Use essa capacidade novamente para parar a eclosão.</TM_SigilSurge.description>
+
+
+  <!-- Sigil drain -->
+
+  <TM_SigilDrain.label>Sílvio Sigilov</TM_SigilDrain.label>
+  <TM_SigilDrain.description>A ativação desta capacidade faz com que todas as marcas invertam os seus efeitos, oferecendo bônus para o feitiço em vez de marca. É uma habilidade para magoar moderadamente o homem e dar um bónus ao feitiço por cada marca que controla. Use essa capacidade novamente para parar o escoamento.</TM_SigilDrain.description>
+
+
+  <!-- Living Wall -->
+
+  <TM_LivingWall.label>Parede viva</TM_LivingWall.label>
+  <TM_LivingWall.description>Enfeitando a parede com um propósito específico, permitindo que ela se torne semiintelética. Uma parede viva atacará os inimigos ao seu alcance e recuperará-se com danos. A criatura vivida dentro da parede pode mover-se para qualquer parte adjacente da parede e ver toda a parte relacionada da parede como uma extensão de si mesma. Uma parede viva tentará mover-se para o segmento mais próximo da parede do inimigo mais próximo. Uma parede viva não pode mover-se entre os segmentos da parede desconectados e pode mover-se apenas para outro segmento, que é muito próximo. O feitiço só pode manter uma parede viva, independentemente do tamanho da parede que ocupa. Várias paredes vivas podem ocupar uma parede.</TM_LivingWall.description>
+
+  <TM_DispelLivingWall.label>Dissipar a Muralha Viva</TM_DispelLivingWall.label>
+  <TM_DispelLivingWall.description>Dispersa a parede viva.</TM_DispelLivingWall.description>
+
+
+</LanguageData>

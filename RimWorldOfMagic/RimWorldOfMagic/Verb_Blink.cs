@@ -1,111 +1,61 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
-using Verse;
-using AbilityUser;
-using UnityEngine;
 using System.Linq;
-using System.Collections.Generic;
+using Verse;
+using TorannMagic.Compatibility;
 
 namespace TorannMagic
 {
-    class Verb_Blink : Verb_BLOS 
+    class Verb_Blink : Verb_BLOS
     {
-        bool arg_41_0;
-        bool arg_42_0;
-        private bool validTarg = false;
-        
+        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
+        {
+            return targ.IsValid && targ.Cell != root && TM_Teleport.CanMove(CasterPawn, targ.Cell)
+                && !targ.Cell.Fogged(CasterPawn.Map) && (root - targ.Cell).LengthHorizontal < verbProps.range;
+        }
 
         protected override bool TryCastShot()
         {
-            bool result = false;
-            bool arg_40_0;
-            
-            if (this.currentTarget != null && base.CasterPawn != null)
+            Odyssey.ManualTravelSafety.BeginAttempt(Ability);
+            burstShotsLeft = 0;
+            Pawn pawn = CasterPawn;
+            Pawn owner = ClassProgression.SpiritRebirthCasting.SkillOwner(pawn, Ability);
+            if (owner == null) return false;
+            var trialMove = ClassProgression.ArcanistTrials.CaptureMove(Ability, pawn, ClassProgression.ArcanistTrials.Spell.Blink);
+            bool canPay = owner == pawn ? Odyssey.ManualTravelSafety.CanPay(Ability) :
+                ClassProgression.SpiritHostedBolt.Ready(pawn, ClassProgression.SpiritHostedBolt.Find(pawn, owner, Ability.Def as TMAbilityDef));
+            if (!canPay || !currentTarget.IsValid || !Odyssey.ManualTravelSafety.CanComplete(pawn, pawn.Map, currentTarget.Cell)
+                || !TM_Teleport.Move(pawn, currentTarget.Cell))
             {
-                IntVec3 arg_29_0 = this.currentTarget.Cell;
-                Vector3 vector = this.currentTarget.CenterVector3;
-                arg_40_0 = this.currentTarget.Cell.IsValid;
-                arg_41_0 = vector.InBoundsWithNullCheck(base.CasterPawn.Map);
-                arg_42_0 = true; // vector.ToIntVec3().Standable(base.CasterPawn.Map);
+                Messages.Message("InvalidTargetLocation".Translate(), MessageTypeDefOf.RejectInput);
+                return false;
             }
-            else
+            if (owner == pawn) Odyssey.ManualTravelSafety.Settle(Ability);
+            else Odyssey.ManualTravelSafety.SettleHosted((MagicAbility)Ability, pawn);
+            ClassProgression.ArcanistTrials.CompleteBlink(trialMove);
+
+            // Relocation never despawns the caster, so selection, draft state and
+            // the executing ability job survive without being reconstructed.
+            try
             {
-                arg_40_0 = false;
-            }
-            bool flag = arg_40_0;
-            bool flag2 = arg_41_0;
-            bool flag3 = arg_42_0;
-            if (flag)
-            {
-                if (flag2 & flag3)
+                if (owner.IsColonist && owner.GetCompAbilityUserMagic()?.MagicData.MagicPowerSkill_Cantrips
+                    .FirstOrDefault(skill => skill.label == "TM_Cantrips_ver")?.level >= 1)
                 {
-                    Pawn p = this.CasterPawn;
-                    Map map = this.CasterPawn.Map;
-                    IntVec3 cell = this.CasterPawn.Position;
-                    bool draftFlag = this.CasterPawn.Drafted;
-                    try
+                    var enemies = TM_Calc.FindPawnsNearTarget(pawn, 2, currentTarget.Cell, true);
+                    if (enemies != null)
                     {
-                        if (this.CasterPawn.IsColonist)
-                        {
-                            ModOptions.Constants.SetPawnInFlight(true);
-                            ThingSelectionUtility.SelectNextColonist();
-                            this.CasterPawn.DeSpawn();
-                            //p.SetPositionDirect(this.currentTarget.Cell);
-                            GenSpawn.Spawn(p, this.currentTarget.Cell, map);
-                            p.drafter.Drafted = draftFlag;
-                            if (base.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level >= 1)
-                            {
-                                List<Pawn> eList = TM_Calc.FindPawnsNearTarget(p, 2, this.currentTarget.Cell, true);
-                                if(eList != null && eList.Count > 0)
-                                {
-                                    for(int i = 0; i < eList.Count; i++)
-                                    {
-                                        Pawn e = eList[i];
-                                        TM_Action.DamageEntities(e, null, 5f, DamageDefOf.Stun, p);
-                                    }
-                                }
-                            }
-                            if (ModOptions.Settings.Instance.cameraSnap)
-                            {
-                                CameraJumper.TryJumpAndSelect(p);
-                            }
-                            ModOptions.Constants.SetPawnInFlight(false);
-                        }
-                        else
-                        {
-                            ModOptions.Constants.SetPawnInFlight(true);
-                            this.CasterPawn.DeSpawn();
-                            GenSpawn.Spawn(p, this.currentTarget.Cell, map);
-                            ModOptions.Constants.SetPawnInFlight(false);
-                        }
+                        foreach (Pawn enemy in enemies)
+                            TM_Action.DamageEntities(enemy, null, 5f, DamageDefOf.Stun, pawn);
                     }
-                    catch
-                    {
-                        if(!this.CasterPawn.Spawned)
-                        {
-                            GenSpawn.Spawn(p, cell, map);
-                            Log.Message("Exception occured when trying to blink - recovered pawn at position ability was used from.");
-                        }
-                    }
-                    //this.Ability.PostAbilityAttempt();
-                    //this.CasterPawn.SetPositionDirect(this.currentTarget.Cell);
-                    //base.CasterPawn.SetPositionDirect(this.currentTarget.Cell);
-                    //this.CasterPawn.pather.ResetToCurrentPosition();
-                    result = true;
-                }
-                else
-                {
-                    
-                    Messages.Message("InvalidTargetLocation".Translate(), MessageTypeDefOf.RejectInput);
                 }
             }
-            else
+            catch (Exception exception)
             {
-                Log.Warning("failed to TryCastShot");
+                // A secondary effect failure cannot undo an already completed move
+                // or report a free, failed cast after relocation succeeded.
+                TM_Log.Warning("Teleport", "Blink completed, but its secondary effect failed: " + exception);
             }
-            this.burstShotsLeft = 0;
-            //this.ability.TicksUntilCasting = (int)base.UseAbilityProps.SecondsToRecharge * 60;
-            return result;
+            return true;
         }
     }
 }

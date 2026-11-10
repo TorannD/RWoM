@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Abhorrent Thoughts -->
+
+  <TM_KilledMage_Abhorrent_Social.stages.0.label>assassino de mágicos</TM_KilledMage_Abhorrent_Social.stages.0.label>
+
+  <TM_KilledMage_Abhorrent_Mood.stages.0.label>matou o mago</TM_KilledMage_Abhorrent_Mood.stages.0.label>
+  <TM_KilledMage_Abhorrent_Mood.stages.0.description>Eu matei o mago! Há menos de uma anomalia com que devemos nos preocupar.</TM_KilledMage_Abhorrent_Mood.stages.0.description>
+
+  <TM_KilledMage_Know_Abhorrent_Mood.stages.0.label>matámos o mago</TM_KilledMage_Know_Abhorrent_Mood.stages.0.label>
+  <TM_KilledMage_Know_Abhorrent_Mood.stages.0.description>Matámos o mago! A nossa colónia prevalecerá sobre estas abominações.</TM_KilledMage_Know_Abhorrent_Mood.stages.0.description>
+
+  <TM_MagicUse_Abhorrent_Social.stages.0.label>aplicou a magia</TM_MagicUse_Abhorrent_Social.stages.0.label>
+
+  <TM_MagicUse_Know_Abhorrent_Mood.stages.0.label>usámos magia</TM_MagicUse_Know_Abhorrent_Mood.stages.0.label>
+  <TM_MagicUse_Know_Abhorrent_Mood.stages.0.description>A nossa colónia usava magia, um ato nojento e sujo.</TM_MagicUse_Know_Abhorrent_Mood.stages.0.description>
+
+  <TM_MagesInColony_Abhorrent_Mood.stages.0.label>liberdade contra mágicos</TM_MagesInColony_Abhorrent_Mood.stages.0.label>
+  <TM_MagesInColony_Abhorrent_Mood.stages.0.description>A nossa colónia está livre de fraudes horríveis de mágicos.</TM_MagesInColony_Abhorrent_Mood.stages.0.description>
+  <TM_MagesInColony_Abhorrent_Mood.stages.1.label>abominação do mago</TM_MagesInColony_Abhorrent_Mood.stages.1.label>
+  <TM_MagesInColony_Abhorrent_Mood.stages.1.description>O mago livre foi permitido para a colónia; Destruam ou trabalhem a abominação!</TM_MagesInColony_Abhorrent_Mood.stages.1.description>
+
+  <TM_MagesInColonySlave_Abhorrent_Mood.stages.0.label>escravo-mago</TM_MagesInColonySlave_Abhorrent_Mood.stages.0.label>
+  <TM_MagesInColonySlave_Abhorrent_Mood.stages.0.description>Fizemos um trabalho de mágico; Não precisamos da magia dele, é melhor ele morrer.</TM_MagesInColonySlave_Abhorrent_Mood.stages.0.description>
+
+  <TM_IsMage_Abhorrent_Social.stages.0.label>mago</TM_IsMage_Abhorrent_Social.stages.0.label>
+
+
+  <!-- Disapprove Thoughts -->
+
+  <TM_MagicUse_Disapprove_Mood.stages.0.label>o uso da magia é limitado</TM_MagicUse_Disapprove_Mood.stages.0.label>
+  <TM_MagicUse_Disapprove_Mood.stages.0.description>Limitamos o uso da magia com sucesso.</TM_MagicUse_Disapprove_Mood.stages.0.description>
+  <TM_MagicUse_Disapprove_Mood.stages.1.label>muita magia</TM_MagicUse_Disapprove_Mood.stages.1.label>
+  <TM_MagicUse_Disapprove_Mood.stages.1.description>Há muita magia usada, não é bom para uma colónia.</TM_MagicUse_Disapprove_Mood.stages.1.description>
+  <TM_MagicUse_Disapprove_Mood.stages.2.label>uso excessivo da magia</TM_MagicUse_Disapprove_Mood.stages.2.label>
+  <TM_MagicUse_Disapprove_Mood.stages.2.description>Há muita magia a ser usada!</TM_MagicUse_Disapprove_Mood.stages.2.description>
+  <TM_MagicUse_Disapprove_Mood.stages.3.label>domínio mágico</TM_MagicUse_Disapprove_Mood.stages.3.label>
+  <TM_MagicUse_Disapprove_Mood.stages.3.description>A magia domina completamente o ambiente; A nossa ideologia é uma fraude.</TM_MagicUse_Disapprove_Mood.stages.3.description>
+
+  <TM_MagesInColony_Disapprove_Mood.stages.0.label>mágicos limitados</TM_MagesInColony_Disapprove_Mood.stages.0.label>
+  <TM_MagesInColony_Disapprove_Mood.stages.0.description>Há um controlo rigoroso sobre quantos mágicos livres são permitidos na nossa colónia.</TM_MagesInColony_Disapprove_Mood.stages.0.description>
+  <TM_MagesInColony_Disapprove_Mood.stages.1.label>demais magos</TM_MagesInColony_Disapprove_Mood.stages.1.label>
+  <TM_MagesInColony_Disapprove_Mood.stages.1.description>Há muitos mágicos livres na colónia, é preciso controlá-los rapidamente. Tornem-nos escravos!</TM_MagesInColony_Disapprove_Mood.stages.1.description>
+  <TM_MagesInColony_Disapprove_Mood.stages.2.label>excesso de mágicos</TM_MagesInColony_Disapprove_Mood.stages.2.label>
+  <TM_MagesInColony_Disapprove_Mood.stages.2.description>O número de mágicos na colónia é excessivo e descontrolado; Temos de trabalhar imediatamente todos os mágicos para restaurar a ordem e a disciplina.</TM_MagesInColony_Disapprove_Mood.stages.2.description>
+  <TM_MagesInColony_Disapprove_Mood.stages.3.label>descarga de mágicos</TM_MagesInColony_Disapprove_Mood.stages.3.label>
+  <TM_MagesInColony_Disapprove_Mood.stages.3.description>Claramente falhamos na limitação do número de mágicos disponíveis na colónia.</TM_MagesInColony_Disapprove_Mood.stages.3.description>
+  <TM_MagesInColony_Disapprove_Mood.stages.4.label>maioria dos magos</TM_MagesInColony_Disapprove_Mood.stages.4.label>
+  <TM_MagesInColony_Disapprove_Mood.stages.4.description>Agora há mais mágicos livres do que não há; O que é que estamos a tentar alcançar?</TM_MagesInColony_Disapprove_Mood.stages.4.description>
+
+  <TM_IsMage_Disapprove_Social.stages.0.label>mago</TM_IsMage_Disapprove_Social.stages.0.label>
+
+
+  <!-- Approve Thoughts -->
+
+  <TM_MagicUse_Know_Approve_Mood.stages.0.label>abundância mágica</TM_MagicUse_Know_Approve_Mood.stages.0.label>
+  <TM_MagicUse_Know_Approve_Mood.stages.0.description>Estou rodeado de magia poderosa. A nossa colónia pode sobreviver a qualquer teste.</TM_MagicUse_Know_Approve_Mood.stages.0.description>
+  <TM_MagicUse_Know_Approve_Mood.stages.1.label>uso da magia</TM_MagicUse_Know_Approve_Mood.stages.1.label>
+  <TM_MagicUse_Know_Approve_Mood.stages.1.description>Vi algo de mágico e foi incrível!</TM_MagicUse_Know_Approve_Mood.stages.1.description>
+  <TM_MagicUse_Know_Approve_Mood.stages.2.label>falta de magia</TM_MagicUse_Know_Approve_Mood.stages.2.label>
+  <TM_MagicUse_Know_Approve_Mood.stages.2.description>Ultimamente, não vi nenhuma magia; Será que as minhas esperanças são em vão?</TM_MagicUse_Know_Approve_Mood.stages.2.description>
+
+  <TM_MagicUse_Approve_Mood.stages.0.label>um impulso mágico</TM_MagicUse_Approve_Mood.stages.0.label>
+  <TM_MagicUse_Approve_Mood.stages.0.description>A energia mágica passa por mim. Sinto que posso fazer qualquer coisa.</TM_MagicUse_Approve_Mood.stages.0.description>
+  <TM_MagicUse_Approve_Mood.stages.1.label>uso da magia</TM_MagicUse_Approve_Mood.stages.1.label>
+  <TM_MagicUse_Approve_Mood.stages.1.description>Usei magia e foi óptimo.</TM_MagicUse_Approve_Mood.stages.1.description>
+  <TM_MagicUse_Approve_Mood.stages.2.label>falta de magia</TM_MagicUse_Approve_Mood.stages.2.label>
+  <TM_MagicUse_Approve_Mood.stages.2.description>Ultimamente, não usei nenhuma magia; Sinto-me afastado do meu poder.</TM_MagicUse_Approve_Mood.stages.2.description>
+
+  <TM_MagesInColony_Approve_Mood.stages.0.label>domínio dos mágicos</TM_MagesInColony_Approve_Mood.stages.0.label>
+  <TM_MagesInColony_Approve_Mood.stages.0.description>O número de mágicos mostra a superioridade da nossa colónia.</TM_MagesInColony_Approve_Mood.stages.0.description>
+  <TM_MagesInColony_Approve_Mood.stages.1.label>abundância de magos</TM_MagesInColony_Approve_Mood.stages.1.label>
+  <TM_MagesInColony_Approve_Mood.stages.1.description>A nossa colónia é abençoada por muitos mágicos, o nosso sucesso está garantido!</TM_MagesInColony_Approve_Mood.stages.1.description>
+  <TM_MagesInColony_Approve_Mood.stages.2.label>equipe de magos</TM_MagesInColony_Approve_Mood.stages.2.label>
+  <TM_MagesInColony_Approve_Mood.stages.2.description>A quantidade de mágicos na colónia enriquece muitos aspectos da vida.</TM_MagesInColony_Approve_Mood.stages.2.description>
+  <TM_MagesInColony_Approve_Mood.stages.3.label>magos presentes</TM_MagesInColony_Approve_Mood.stages.3.label>
+  <TM_MagesInColony_Approve_Mood.stages.3.description>Temos alguns mágicos na colónia que nos guiam no caminho da magia.</TM_MagesInColony_Approve_Mood.stages.3.description>
+  <TM_MagesInColony_Approve_Mood.stages.4.label>sem mágicos</TM_MagesInColony_Approve_Mood.stages.4.label>
+  <TM_MagesInColony_Approve_Mood.stages.4.description>Como podemos confiar na magia se não temos um mágico na colónia?</TM_MagesInColony_Approve_Mood.stages.4.description>
+
+  <TM_IsMage_Approve_Social.stages.0.label>mago</TM_IsMage_Approve_Social.stages.0.label>
+  <TM_IsMage_Approve_Social.stages.1.label>parentesco com o mágico</TM_IsMage_Approve_Social.stages.1.label>
+  <TM_IsMage_Approve_Social.stages.2.label>não o mago</TM_IsMage_Approve_Social.stages.2.label>
+
+  <TM_PerformedSeverenceRitual_Social.stages.0.label>ritual bárbaro</TM_PerformedSeverenceRitual_Social.stages.0.label>
+  <TM_PerformedSeverenceRitual_Social.stages.1.label>ritual vilão</TM_PerformedSeverenceRitual_Social.stages.1.label>
+
+
+  <!-- Venerated Thoughts -->
+
+  <TM_KilledMage_Venerated_Social.stages.0.label>assassino de mágicos</TM_KilledMage_Venerated_Social.stages.0.label>
+
+  <TM_KilledMage_Venerated_Mood.stages.0.label>assassino de mágicos</TM_KilledMage_Venerated_Mood.stages.0.label>
+  <TM_KilledMage_Venerated_Mood.stages.0.description>Matei uma criatura com magia. Como posso viver com isso?</TM_KilledMage_Venerated_Mood.stages.0.description>
+  <TM_KilledMage_Venerated_Mood.stages.1.label>assassino de mágicos</TM_KilledMage_Venerated_Mood.stages.1.label>
+  <TM_KilledMage_Venerated_Mood.stages.1.description>Fui forçado a matar outro mágico, e essa pesada carga recai sobre a minha consciência.</TM_KilledMage_Venerated_Mood.stages.1.description>
+
+  <TM_KilledMage_Know_Venerated_Mood.stages.0.label>matou o mago</TM_KilledMage_Know_Venerated_Mood.stages.0.label>
+  <TM_KilledMage_Know_Venerated_Mood.stages.0.description>Matámos o mágico; é contra a nossa ideologia principal!</TM_KilledMage_Know_Venerated_Mood.stages.0.description>
+
+  <TM_MagicUse_Venerated_Social.stages.0.label>usou a magia</TM_MagicUse_Venerated_Social.stages.0.label>
+
+  <TM_MagicUse_Know_Venerated_Mood.stages.0.label>abundância mágica</TM_MagicUse_Know_Venerated_Mood.stages.0.label>
+  <TM_MagicUse_Know_Venerated_Mood.stages.0.description>Estou encantado e horrorizado com o poder da magia!</TM_MagicUse_Know_Venerated_Mood.stages.0.description>
+  <TM_MagicUse_Know_Venerated_Mood.stages.1.label>uso da magia</TM_MagicUse_Know_Venerated_Mood.stages.1.label>
+  <TM_MagicUse_Know_Venerated_Mood.stages.1.description>Testemunhei uma magia maravilhosa!</TM_MagicUse_Know_Venerated_Mood.stages.1.description>
+  <TM_MagicUse_Know_Venerated_Mood.stages.2.label>falta de magia</TM_MagicUse_Know_Venerated_Mood.stages.2.label>
+  <TM_MagicUse_Know_Venerated_Mood.stages.2.description>Ultimamente, não vi nenhuma magia; A ausência dela deixa-me deprimido.</TM_MagicUse_Know_Venerated_Mood.stages.2.description>
+
+  <TM_MagicUse_Venerated_Mood.stages.0.label>um impulso mágico</TM_MagicUse_Venerated_Mood.stages.0.label>
+  <TM_MagicUse_Venerated_Mood.stages.0.description>A energia mágica passa por mim. Sinto que posso fazer qualquer coisa.</TM_MagicUse_Venerated_Mood.stages.0.description>
+  <TM_MagicUse_Venerated_Mood.stages.1.label>uso da magia</TM_MagicUse_Venerated_Mood.stages.1.label>
+  <TM_MagicUse_Venerated_Mood.stages.1.description>Usei magia; é a maior parte do meu ser e reafirma a confiança na minha excelência.</TM_MagicUse_Venerated_Mood.stages.1.description>
+  <TM_MagicUse_Venerated_Mood.stages.2.label>destruição mágica</TM_MagicUse_Venerated_Mood.stages.2.label>
+  <TM_MagicUse_Venerated_Mood.stages.2.description>Ultimamente, não usei nenhuma magia; Sinto-me afastado do meu poder.</TM_MagicUse_Venerated_Mood.stages.2.description>
+
+  <TM_MagesInColony_Venerated_Mood.stages.0.label>domínio dos mágicos</TM_MagesInColony_Venerated_Mood.stages.0.label>
+  <TM_MagesInColony_Venerated_Mood.stages.0.description>O sucesso da nossa colónia é garantido pelo poder da magia.</TM_MagesInColony_Venerated_Mood.stages.0.description>
+  <TM_MagesInColony_Venerated_Mood.stages.1.label>abundância de magos</TM_MagesInColony_Venerated_Mood.stages.1.label>
+  <TM_MagesInColony_Venerated_Mood.stages.1.description>A nossa colônia é, sem dúvida, escolhida por sua grandeza enquanto está decorada com tantos mágicos; o seu poder unido é inescapável.</TM_MagesInColony_Venerated_Mood.stages.1.description>
+  <TM_MagesInColony_Venerated_Mood.stages.2.label>equipe de magos</TM_MagesInColony_Venerated_Mood.stages.2.label>
+  <TM_MagesInColony_Venerated_Mood.stages.2.description>Como uma tapeçaria, a quantidade de mágicos na colónia começou a revelar um grande plano.</TM_MagesInColony_Venerated_Mood.stages.2.description>
+  <TM_MagesInColony_Venerated_Mood.stages.3.label>magos presentes</TM_MagesInColony_Venerated_Mood.stages.3.label>
+  <TM_MagesInColony_Venerated_Mood.stages.3.description>Os mágicos da nossa colónia vão guiar-nos pelo caminho que escolhemos.</TM_MagesInColony_Venerated_Mood.stages.3.description>
+  <TM_MagesInColony_Venerated_Mood.stages.4.label>sem mágicos</TM_MagesInColony_Venerated_Mood.stages.4.label>
+  <TM_MagesInColony_Venerated_Mood.stages.4.description>A magia deixou-nos!</TM_MagesInColony_Venerated_Mood.stages.4.description>
+
+  <TM_MagesPrisoner_Venerated_Mood.stages.0.label>prisioneiro mago</TM_MagesPrisoner_Venerated_Mood.stages.0.label>
+  <TM_MagesPrisoner_Venerated_Mood.stages.0.description>Prendemos o mago, temos a certeza de que as nossas acções estão justificadas?</TM_MagesPrisoner_Venerated_Mood.stages.0.description>
+
+  <TM_MagesSlave_Venerated_Mood.stages.0.label>escravo-mago</TM_MagesSlave_Venerated_Mood.stages.0.label>
+  <TM_MagesSlave_Venerated_Mood.stages.0.description>Fizemos um trabalho como um mágico.</TM_MagesSlave_Venerated_Mood.stages.0.description>
+
+  <TM_IsMage_Venerated_Social.stages.0.label>mago</TM_IsMage_Venerated_Social.stages.0.label>
+  <TM_IsMage_Venerated_Social.stages.1.label>parentesco com o mágico</TM_IsMage_Venerated_Social.stages.1.label>
+  <TM_IsMage_Venerated_Social.stages.2.label>não o mago</TM_IsMage_Venerated_Social.stages.2.label>
+
+
+</LanguageData>

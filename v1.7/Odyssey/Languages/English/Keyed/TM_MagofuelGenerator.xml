@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MagofuelGeneratorStatus>Output: {0} W; operating consumption: {1}/day\nFuel in core: {2}\nFuel endurance while generating: {3} days</TM_MagofuelGeneratorStatus>
+</LanguageData>

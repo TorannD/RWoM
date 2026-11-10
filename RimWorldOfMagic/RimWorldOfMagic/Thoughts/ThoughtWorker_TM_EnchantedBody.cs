@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Verse;
 using RimWorld;
 using System.Linq;
@@ -19,13 +19,13 @@ namespace TorannMagic.Thoughts
                 {
                     return false;
                 }
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Undead) || pawn.story.traits.HasTrait(TorannMagicDefOf.Lich) || pawn.story.traits.HasTrait(TraitDefOf.Transhumanist) || pawn.story.traits.HasTrait(TorannMagicDefOf.Enchanter))
+                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Undead) || ClassProgression.ClassIdentity.IsLich(pawn) || pawn.story.traits.HasTrait(TraitDefOf.Transhumanist) || ClassProgression.ClassIdentity.IsEnchanter(pawn))
                 {
                     return false;
                 }
                 if (other.health.hediffSet.HasHediff(TorannMagicDefOf.TM_EnchantedBodyHD, false))
                 {
-                    CompAbilityUserMagic comp = other.GetCompAbilityUserMagic();
+                    CompAbilityUserMagic comp = HediffComp_EnchanterAspect.Owner(other.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EnchantedBodyHD))?.GetCompAbilityUserMagic();
 
                     if (comp != null)
                     {

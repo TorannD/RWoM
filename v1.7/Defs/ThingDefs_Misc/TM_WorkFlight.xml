@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef>
+    <defName>TM_WorkFlight</defName>
+    <label>flight</label>
+    <thingClass>TorannMagic.AutoCast.TM_WorkFlight</thingClass>
+    <category>Ethereal</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <drawOffscreen>true</drawOffscreen>
+    <drawerType>RealtimeOnly</drawerType>
+  </ThingDef>
+</Defs>

@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -133,7 +133,9 @@ namespace TorannMagic
                     sizeY = 0;
                 }
             }
-            Rect sRect = new Rect(rect.x, rect.y, rect.width - 36f, rect.height + 56f + sizeY);
+                        // Isekai-style theme: dark panel with bracket corners.
+            TorannMagic.Utils.TMIsekaiUI.Panel(rect);
+Rect sRect = new Rect(rect.x, rect.y, rect.width - 36f, rect.height + 56f + sizeY);
             scrollPosition = GUI.BeginScrollView(rect, scrollPosition, sRect, false, true);
                         
             bool flag = comp != null && comp.MightData != null;
@@ -142,17 +144,28 @@ namespace TorannMagic
                 float x = Text.CalcSize("TM_HeaderMight".Translate()).x;
                 Rect rect2 = new Rect(rect.width / 2f - (x/2) , rect.y, rect.width, MightCardUtility.HeaderSize); //+ MightCardUtility.SpacingOffset
                 Text.Font = GameFont.Small;
+                GUI.color = new Color(0.85f, 0.65f, 0.30f);
                 Widgets.Label(rect2, "TM_HeaderMight".Translate().CapitalizeFirst());
+                GUI.color = Color.white;
                 Text.Font = GameFont.Small;
+                // Grimoire: isekai-style character window (TMPIsekai integration UI).
+                Rect grimoireBtn = new Rect(rect.width - 104f, rect2.y - 2f, 100f, MightCardUtility.HeaderSize - 2f);
+                if (Widgets.ButtonText(grimoireBtn, "TM_Grimoire".Translate()))
+                {
+                    Window_TMGrimoire.OpenFor(pawn);
+                }
                 Widgets.DrawLineHorizontal(rect.x - 10f, rect2.yMax, rect.width - 15f);
                 Rect rect9 = new Rect(rect.x, rect2.yMax + MightCardUtility.Padding, rect2.width, MightCardUtility.SkillsColumnHeight);
+                TorannMagic.Utils.TMIsekaiUI.Panel(new Rect(rect9.x + 4f, rect9.y, rect9.width - 8f, MightCardUtility.SkillsColumnHeight + MightCardUtility.Padding * 2f));
                 Rect inRect = new Rect(rect9.x, rect9.y + MightCardUtility.Padding, MightCardUtility.SkillsColumnDivider, MightCardUtility.SkillsColumnHeight);
                 Rect inRect2 = new Rect(rect9.x + MightCardUtility.SkillsColumnDivider, rect9.y + MightCardUtility.Padding, rect9.width - MightCardUtility.SkillsColumnDivider, MightCardUtility.SkillsColumnHeight);
                 MightCardUtility.InfoPane(inRect, pawn.GetCompAbilityUserMight(), pawn);
                 float x5 = Text.CalcSize("TM_Skills".Translate()).x;
                 Rect rect10 = new Rect(rect.width / 2f - x5 / 2f, rect9.yMax - 60f, rect.width, MightCardUtility.HeaderSize);
                 Text.Font = GameFont.Small;
+                GUI.color = new Color(0.85f, 0.65f, 0.30f);
                 Widgets.Label(rect10, "TM_Skills".Translate().CapitalizeFirst());
+                GUI.color = Color.white;
                 Text.Font = GameFont.Small;
                 Widgets.DrawLineHorizontal(rect.x - 10f, rect10.yMax, rect.width - 15f);
                 Rect rect11 = new Rect(rect.x, rect10.yMax + MightCardUtility.SectionOffset, rect10.width, MightCardUtility.PowersColumnHeight);
@@ -541,7 +554,9 @@ namespace TorannMagic
 //                    Rect rect = new Rect(MightCardUtility.MightCardSize.x / 2f - MightCardUtility.MagicButtonSize, num, MightCardUtility.MagicButtonSize, MightCardUtility.MagicButtonSize);
 //                    if (itnum > 1)
 //                    {
+//                        GUI.color = new Color(0.45f, 0.38f, 0.20f, 0.8f);
 //                        Widgets.DrawLineHorizontal(0f + 20f, rect.y - 2f, 700f - 40f);
+//                        GUI.color = Color.white;
 //                    }
 //                    //power.abilityDef == TorannMagicDefOf.TM_Sprint || power.abilityDef == TorannMagicDefOf.TM_Sprint_I || power.abilityDef == TorannMagicDefOf.TM_Sprint_II ||
 //                    if (power.level < 3 && (power.abilityDef == TorannMagicDefOf.TM_Grapple || power.abilityDef == TorannMagicDefOf.TM_Grapple_I || power.abilityDef == TorannMagicDefOf.TM_Grapple_II || 
@@ -631,7 +646,9 @@ namespace TorannMagic
 //                    bool flag10 = enumerator.Current.level >= power.maxLevel || compMight.MightData.MightAbilityPoints < power.costToLevel;
 //                    //Ability label
 //                    Rect rectLabel = new Rect(0f + 20f, rect.yMin, 350f - 44f, MagicCardUtility.MagicButtonPointSize);
+//                    GUI.color = new Color(0.95f, 0.80f, 0.35f);
 //                    Widgets.Label(rectLabel, power.abilityDef.LabelCap);
+//                    GUI.color = Color.white;
 
 //                    if (enumerator.Current.learned != true)
 //                    {
@@ -1162,10 +1179,7 @@ namespace TorannMagic
 
                     Text.Font = GameFont.Small;
                     Rect rect = new Rect(MightCardUtility.MightCardSize.x / 2f - MightCardUtility.MagicButtonSize, num, MightCardUtility.MagicButtonSize, MightCardUtility.MagicButtonSize);
-                    if (itnum > 1)
-                    {
-                        Widgets.DrawLineHorizontal(0f + 20f, rect.y - 2f, 700f - 40f);
-                    }
+                    TorannMagic.Utils.TMIsekaiUI.Panel(new Rect(16f, num - 8f, MightCardUtility.MightCardSize.x - 32f, MightCardUtility.MagicButtonSize + MightCardUtility.TextSize + 14f));
                     //power.abilityDef == TorannMagicDefOf.TM_Sprint || power.abilityDef == TorannMagicDefOf.TM_Sprint_I || power.abilityDef == TorannMagicDefOf.TM_Sprint_II ||
                     if (power.level < power.maxLevel && ((power.TMabilityDefs.Count > 1) || (power.abilityDef == TorannMagicDefOf.TM_Grapple || power.abilityDef == TorannMagicDefOf.TM_Grapple_I || power.abilityDef == TorannMagicDefOf.TM_Grapple_II ||
                         power.abilityDef == TorannMagicDefOf.TM_DisablingShot || power.abilityDef == TorannMagicDefOf.TM_DisablingShot_I || power.abilityDef == TorannMagicDefOf.TM_DisablingShot_II ||
@@ -1265,7 +1279,11 @@ namespace TorannMagic
                     //}
                     //Ability label
                     Rect rectLabel = new Rect(0f + 20f, rect.yMin, 350f - 44f, MagicCardUtility.MagicButtonPointSize);
+                    GUI.color = new Color(0.95f, 0.80f, 0.35f);
+                    GUI.color = new Color(0.95f, 0.80f, 0.35f);
                     Widgets.Label(rectLabel, power.abilityDef.LabelCap);
+                    GUI.color = Color.white;
+                    GUI.color = Color.white;
 
                     if (enumerator.Current.learned != true)
                     {

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_StellarObservatory.label>magical observatory</TM_StellarObservatory.label>
+  <TM_StellarObservatory.description>A mage can perform a 60-second divination ritual to seek a random orbital expedition. Each successful ritual consumes 100 mana and 50 magofuel directly from the connected mana network, with no personal mana cost. Searching takes 8–10 active days and pauses while the observatory is off, broken or uninstalled. All magical observatories share an 18-day interval between ritual starts, independent of ordinary orbital scanners. If no eligible destination is available, the paid search waits and retries. Moving the observatory preserves its search. Research is required only for construction.</TM_StellarObservatory.description>
+</LanguageData>

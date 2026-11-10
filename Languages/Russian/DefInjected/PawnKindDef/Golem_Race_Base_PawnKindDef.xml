@@ -1,0 +1,168 @@
+<LanguageData><!-- v1.5\Defs\GolemDefs\Golem_Race_Base.xml-->
+	<!--              EN: stone-golem-->
+	<TM_StoneGolemK.label>каменный голем</TM_StoneGolemK.label>
+	<!--                                 EN: Plural stone-golem-->
+	<TM_StoneGolemK.lifeStages.0.labelPlural>каменные големы</TM_StoneGolemK.lifeStages.0.labelPlural>
+	<!--                                 EN: Plural stone-golem-->
+	<TM_StoneGolemK.lifeStages.1.labelPlural>каменные големы</TM_StoneGolemK.lifeStages.1.labelPlural>
+	<!--                                 EN: Plural stone-golem-->
+	<TM_StoneGolemK.lifeStages.2.labelPlural>каменные големы</TM_StoneGolemK.lifeStages.2.labelPlural>
+	<!--                                 EN: Plural stone-golem-->
+	<TM_StoneGolemK.lifeStages.3.labelPlural>каменные големы</TM_StoneGolemK.lifeStages.3.labelPlural>
+	<!--                  EN: sandstone-golem-->
+	<TM_SandstoneGolemK.label>песчаный голем</TM_SandstoneGolemK.label>
+	<!--                                     EN: Plural sandstone-golem-->
+	<TM_SandstoneGolemK.lifeStages.0.labelPlural>песчаные големы</TM_SandstoneGolemK.lifeStages.0.labelPlural>
+	<!--                                     EN: Plural sandstone-golem-->
+	<TM_SandstoneGolemK.lifeStages.1.labelPlural>песчаные големы</TM_SandstoneGolemK.lifeStages.1.labelPlural>
+	<!--                                     EN: Plural sandstone-golem-->
+	<TM_SandstoneGolemK.lifeStages.2.labelPlural>песчаные големы</TM_SandstoneGolemK.lifeStages.2.labelPlural>
+	<!--                                     EN: Plural sandstone-golem-->
+	<TM_SandstoneGolemK.lifeStages.3.labelPlural>песчаные големы</TM_SandstoneGolemK.lifeStages.3.labelPlural>
+	<!--                  EN: limestone-golem-->
+	<TM_LimestoneGolemK.label>известняковый голем</TM_LimestoneGolemK.label>
+	<!--                                     EN: Plural limestone-golem-->
+	<TM_LimestoneGolemK.lifeStages.0.labelPlural>известняковые големы</TM_LimestoneGolemK.lifeStages.0.labelPlural>
+	<!--                                     EN: Plural limestone-golem-->
+	<TM_LimestoneGolemK.lifeStages.1.labelPlural>известняковые големы</TM_LimestoneGolemK.lifeStages.1.labelPlural>
+	<!--                                     EN: Plural limestone-golem-->
+	<TM_LimestoneGolemK.lifeStages.2.labelPlural>известняковые големы</TM_LimestoneGolemK.lifeStages.2.labelPlural>
+	<!--                                     EN: Plural limestone-golem-->
+	<TM_LimestoneGolemK.lifeStages.3.labelPlural>известняковые големы</TM_LimestoneGolemK.lifeStages.3.labelPlural>
+	<!--                EN: granite-golem-->
+	<TM_GraniteGolemK.label>гранитный голем</TM_GraniteGolemK.label>
+	<!--                                   EN: Plural granite-golem-->
+	<TM_GraniteGolemK.lifeStages.0.labelPlural>гранитные големы</TM_GraniteGolemK.lifeStages.0.labelPlural>
+	<!--                                   EN: Plural granite-golem-->
+	<TM_GraniteGolemK.lifeStages.1.labelPlural>гранитные големы</TM_GraniteGolemK.lifeStages.1.labelPlural>
+	<!--                                   EN: Plural granite-golem-->
+	<TM_GraniteGolemK.lifeStages.2.labelPlural>гранитные големы</TM_GraniteGolemK.lifeStages.2.labelPlural>
+	<!--                                   EN: Plural granite-golem-->
+	<TM_GraniteGolemK.lifeStages.3.labelPlural>гранитные големы</TM_GraniteGolemK.lifeStages.3.labelPlural>
+	<!--              EN: slate-golem-->
+	<TM_SlateGolemK.label>сланцевый голем</TM_SlateGolemK.label>
+	<!--                                 EN: Plural slate-golem-->
+	<TM_SlateGolemK.lifeStages.0.labelPlural>сланцевые големы</TM_SlateGolemK.lifeStages.0.labelPlural>
+	<!--                                 EN: Plural slate-golem-->
+	<TM_SlateGolemK.lifeStages.1.labelPlural>сланцевые големы</TM_SlateGolemK.lifeStages.1.labelPlural>
+	<!--                                 EN: Plural slate-golem-->
+	<TM_SlateGolemK.lifeStages.2.labelPlural>сланцевые големы</TM_SlateGolemK.lifeStages.2.labelPlural>
+	<!--                                 EN: Plural slate-golem-->
+	<TM_SlateGolemK.lifeStages.3.labelPlural>сланцевые големы</TM_SlateGolemK.lifeStages.3.labelPlural>
+	<!--               EN: marble-golem-->
+	<TM_MarbleGolemK.label>мраморный голем</TM_MarbleGolemK.label>
+	<!--                                  EN: Plural marble-golem-->
+	<TM_MarbleGolemK.lifeStages.0.labelPlural>мраморные големы</TM_MarbleGolemK.lifeStages.0.labelPlural>
+	<!--                                  EN: Plural marble-golem-->
+	<TM_MarbleGolemK.lifeStages.1.labelPlural>мраморные големы</TM_MarbleGolemK.lifeStages.1.labelPlural>
+	<!--                                  EN: Plural marble-golem-->
+	<TM_MarbleGolemK.lifeStages.2.labelPlural>мраморные големы</TM_MarbleGolemK.lifeStages.2.labelPlural>
+	<!--                                  EN: Plural marble-golem-->
+	<TM_MarbleGolemK.lifeStages.3.labelPlural>мраморные големы</TM_MarbleGolemK.lifeStages.3.labelPlural>
+	<!--              EN: mecha-golem-->
+	<TM_MechaGolemK.label>меха-голем</TM_MechaGolemK.label>
+	<!--                                 EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.0.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.0.labelPlural>
+	<!--                                 EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.1.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.1.labelPlural>
+	<!--                                 EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.2.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.2.labelPlural>
+	<!--                                 EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.3.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.3.labelPlural>
+	<!--                                 EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.4.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.4.labelPlural>
+	<!--                                 EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.5.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.5.labelPlural>
+	<!--                                 EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.6.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.6.labelPlural>
+	<!--                                 EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.7.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.7.labelPlural>
+	<!--                                 EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.8.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.8.labelPlural>
+	<!--                                 EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.9.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.9.labelPlural>
+	<!--                                  EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.10.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.10.labelPlural>
+	<!--                                  EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.11.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.11.labelPlural>
+	<!--                                  EN: Plural mecha-golem-->
+	<TM_MechaGolemK.lifeStages.12.labelPlural>меха-големы</TM_MechaGolemK.lifeStages.12.labelPlural>
+	<!--              EN: flesh-golem-->
+	<TM_FleshGolemK.label>плотоядный голем</TM_FleshGolemK.label>
+	<!--                                 EN: Plural flesh-golem-->
+	<TM_FleshGolemK.lifeStages.0.labelPlural>плотоядные големы</TM_FleshGolemK.lifeStages.0.labelPlural>
+	<!--                                 EN: Plural flesh-golem-->
+	<TM_FleshGolemK.lifeStages.1.labelPlural>плотоядные големы</TM_FleshGolemK.lifeStages.1.labelPlural>
+	<!--                                 EN: Plural flesh-golem-->
+	<TM_FleshGolemK.lifeStages.2.labelPlural>плотоядные големы</TM_FleshGolemK.lifeStages.2.labelPlural>
+	<!--                                 EN: Plural flesh-golem-->
+	<TM_FleshGolemK.lifeStages.3.labelPlural>плотоядные големы</TM_FleshGolemK.lifeStages.3.labelPlural>
+	<!--               EN: hollow-golem-->
+	<TM_HollowGolemK.label>пустотный голем</TM_HollowGolemK.label>
+	<!--                                  EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.0.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.0.labelPlural>
+	<!--                                  EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.1.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.1.labelPlural>
+	<!--                                  EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.2.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.2.labelPlural>
+	<!--                                  EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.3.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.3.labelPlural>
+	<!--                                  EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.4.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.4.labelPlural>
+	<!--                                  EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.5.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.5.labelPlural>
+	<!--                                  EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.6.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.6.labelPlural>
+	<!--                                  EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.7.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.7.labelPlural>
+	<!--                                  EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.8.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.8.labelPlural>
+	<!--                                  EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.9.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.9.labelPlural>
+	<!--                                   EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.10.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.10.labelPlural>
+	<!--                                   EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.11.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.11.labelPlural>
+	<!--                                   EN: Plural hollow-golem-->
+	<TM_HollowGolemK.lifeStages.12.labelPlural>пустотные големы</TM_HollowGolemK.lifeStages.12.labelPlural>
+	<!--                EN: maharal-golem-->
+	<TM_MaharalGolemK.label>голем Махарала</TM_MaharalGolemK.label>
+	<!--                                   EN: Plural maharal-golem-->
+	<TM_MaharalGolemK.lifeStages.0.labelPlural>големы Махарала</TM_MaharalGolemK.lifeStages.0.labelPlural>
+	<!--                                   EN: Plural maharal-golem-->
+	<TM_MaharalGolemK.lifeStages.1.labelPlural>големы Махарала</TM_MaharalGolemK.lifeStages.1.labelPlural>
+	<!--                                   EN: Plural maharal-golem-->
+	<TM_MaharalGolemK.lifeStages.2.labelPlural>големы Махарала</TM_MaharalGolemK.lifeStages.2.labelPlural>
+	<!--                                   EN: Plural maharal-golem-->
+	<TM_MaharalGolemK.lifeStages.3.labelPlural>големы Махарала</TM_MaharalGolemK.lifeStages.3.labelPlural>
+	<!--              EN: straw-golem-->
+	<TM_StrawGolemK.label>соломенный голем</TM_StrawGolemK.label>
+	<!--                                 EN: Plural straw-golem-->
+	<TM_StrawGolemK.lifeStages.0.labelPlural>соломенные големы</TM_StrawGolemK.lifeStages.0.labelPlural>
+	<!--                                 EN: Plural straw-golem-->
+	<TM_StrawGolemK.lifeStages.1.labelPlural>соломенные големы</TM_StrawGolemK.lifeStages.1.labelPlural>
+	<!--                                 EN: Plural straw-golem-->
+	<TM_StrawGolemK.lifeStages.2.labelPlural>соломенные големы</TM_StrawGolemK.lifeStages.2.labelPlural>
+	<!--                                 EN: Plural straw-golem-->
+	<TM_StrawGolemK.lifeStages.3.labelPlural>соломенные големы</TM_StrawGolemK.lifeStages.3.labelPlural>
+	<!--             EN: wood-golem-->
+	<TM_WoodGolemK.label>деревянный голем</TM_WoodGolemK.label>
+	<!--                                EN: Plural wood-golem-->
+	<TM_WoodGolemK.lifeStages.0.labelPlural>деревянные големы</TM_WoodGolemK.lifeStages.0.labelPlural>
+	<!--                                EN: Plural wood-golem-->
+	<TM_WoodGolemK.lifeStages.1.labelPlural>деревянные големы</TM_WoodGolemK.lifeStages.1.labelPlural>
+	<!--                                EN: Plural wood-golem-->
+	<TM_WoodGolemK.lifeStages.2.labelPlural>деревянные големы</TM_WoodGolemK.lifeStages.2.labelPlural>
+	<!--                                EN: Plural wood-golem-->
+	<TM_WoodGolemK.lifeStages.3.labelPlural>деревянные големы</TM_WoodGolemK.lifeStages.3.labelPlural>
+	<!--             EN: silk-golem-->
+	<TM_SilkGolemK.label>шёлковый голем</TM_SilkGolemK.label>
+	<!--                                EN: Plural silk-golem-->
+	<TM_SilkGolemK.lifeStages.0.labelPlural>шёлковые големы</TM_SilkGolemK.lifeStages.0.labelPlural>
+	<!--                                EN: Plural silk-golem-->
+	<TM_SilkGolemK.lifeStages.1.labelPlural>шёлковые големы</TM_SilkGolemK.lifeStages.1.labelPlural>
+	<!--                                EN: Plural silk-golem-->
+	<TM_SilkGolemK.lifeStages.2.labelPlural>шёлковые големы</TM_SilkGolemK.lifeStages.2.labelPlural>
+	<!--                                EN: Plural silk-golem-->
+	<TM_SilkGolemK.lifeStages.3.labelPlural>шёлковые големы</TM_SilkGolemK.lifeStages.3.labelPlural>
+</LanguageData>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Portal.label>Portal</TM_Portal.label>
+  <TM_Portal.description>Viagens instantâneas entre dois portais.</TM_Portal.description>
+  <TM_Portal_Blueprint.label>Portal (projeto)</TM_Portal_Blueprint.label>
+  <TM_Portal_Frame.label>Portal (construção)</TM_Portal_Frame.label>
+  <TM_Portal_Frame.description>Viagens instantâneas entre dois portais.</TM_Portal_Frame.description>
+
+  <TM_ElementalRift.label>Fratura básica</TM_ElementalRift.label>
+  <TM_ElementalRift.description>Uma rutura causada por marginais marginais.</TM_ElementalRift.description>
+
+  <TM_ElementalRift_Defenders.label>Fratura básica</TM_ElementalRift_Defenders.label>
+  <TM_ElementalRift_Defenders.description>fenda criada por um buscador de vazio</TM_ElementalRift_Defenders.description>
+
+
+</LanguageData>

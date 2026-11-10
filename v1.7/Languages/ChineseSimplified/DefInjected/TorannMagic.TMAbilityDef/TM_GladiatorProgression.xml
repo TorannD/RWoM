@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_GladiatorManeuver.label>机动</TM_GladiatorManeuver.label>
+  <TM_GladiatorManeuver.description>移动速度提高8%，持续8秒。</TM_GladiatorManeuver.description>
+  <TM_GladiatorSweep.label>横扫</TM_GladiatorSweep.label>
+  <TM_GladiatorSweep.description>打击身旁的一个敌人及其旁边的另一名敌人，各造成65%武器伤害。</TM_GladiatorSweep.description>
+</LanguageData>

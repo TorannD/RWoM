@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <JobDriver_FleshChop.reportString>cortando plantas y árboles.</JobDriver_FleshChop.reportString>
+  
+  
+  <JobDriver_FleshHarvest.reportString>cosechando plantas.</JobDriver_FleshHarvest.reportString>
+  
+  
+  <JobDriver_GolemAbilityJob.reportString>usando habilidad.</JobDriver_GolemAbilityJob.reportString>
+  
+  
+  <JobDriver_GolemAttackStatic.reportString>apuntando a TargetA.</JobDriver_GolemAttackStatic.reportString>
+  
+  
+  <JobDriver_GolemDespawn.reportString>desactivándose.</JobDriver_GolemDespawn.reportString>
+  
+  
+  <JobDriver_GolemDespawnWait.reportString>desactivándose.</JobDriver_GolemDespawnWait.reportString>
+  
+  
+  <JobDriver_GolemSelfTend.reportString>autotratándose.</JobDriver_GolemSelfTend.reportString>
+  
+  
+  <JobDriver_MechaMine.reportString>ejecutando protocolo de minería.</JobDriver_MechaMine.reportString>
+  
+</LanguageData>

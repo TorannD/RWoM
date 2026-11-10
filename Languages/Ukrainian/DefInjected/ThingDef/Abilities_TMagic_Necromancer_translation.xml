@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Raise Undead -->
+
+  <Projectile_RaiseUndead.label>Підняти нежитло</Projectile_RaiseUndead.label>
+
+
+  <!-- death mark -->
+
+  <Projectile_DeathMark.label>Мітка смерті</Projectile_DeathMark.label>
+
+
+  <!-- fog of torment -->
+
+  <Projectile_FogOfTorment.label>туман мук</Projectile_FogOfTorment.label>
+
+
+  <!-- consume corpse -->
+
+  <Projectile_ConsumeCorpse.label>вживати труп</Projectile_ConsumeCorpse.label>
+  <Projectile_ConsumeCorpse_Mass.label>consume corpse: mass</Projectile_ConsumeCorpse_Mass.label>
+
+
+  <!-- corpse explosion -->
+
+  <Projectile_CorpseExplosion.label>вибух трупа</Projectile_CorpseExplosion.label>
+
+
+  <!-- Death Bolt -->
+
+  <Projectile_DeathBolt.label>смертельний болт</Projectile_DeathBolt.label>
+  <Projectile_DeathBolt_I.label>смертельний болт</Projectile_DeathBolt_I.label>
+  <Projectile_DeathBolt_II.label>смертельний болт</Projectile_DeathBolt_II.label>
+  <Projectile_DeathBolt_III.label>смертельний болт</Projectile_DeathBolt_III.label>
+  <FlyingObject_DeathBolt.label>вибух</FlyingObject_DeathBolt.label>
+
+
+</LanguageData>

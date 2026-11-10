@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FleckDef ParentName="FleckBase_Thrown" Name="TM_FleshFXBase" Abstract="True">
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.08</fadeInTime><solidTime>0.25</solidTime><fadeOutTime>0.65</fadeOutTime>
+  </FleckDef>
+  <FleckDef ParentName="TM_FleshFXBase">
+    <defName>TM_FleshBloodFX</defName>
+    <graphicData><texPath>Motes/BloodSquirt</texPath></graphicData>
+    <fadeInTime>0</fadeInTime>
+  </FleckDef>
+  <FleckDef ParentName="TM_FleshFXBase">
+    <defName>TM_FleshSiphonFX</defName>
+    <graphicData><texPath>Motes/SiphonMote</texPath><color>(1,0.3,0.3)</color></graphicData>
+    <solidTime>0.1</solidTime><fadeOutTime>0.5</fadeOutTime>
+  </FleckDef>
+  <FleckDef ParentName="TM_FleshFXBase">
+    <defName>TM_FleshRegenFX</defName>
+    <graphicData><texPath>Motes/RegenMote</texPath><color>(1,0.35,0.45)</color></graphicData>
+  </FleckDef>
+  <FleckDef ParentName="TM_FleshFXBase">
+    <defName>TM_FleshEmpowerFX</defName>
+    <graphicData><texPath>Motes/ArcaneCircleMote</texPath><color>(1,0.15,0.2)</color><shaderType>MoteGlow</shaderType></graphicData>
+  </FleckDef>
+  <FleckDef ParentName="TM_FleshFXBase">
+    <defName>TM_FleshHardenFX</defName>
+    <graphicData><texPath>Motes/ShieldMote</texPath><color>(0.95,0.8,0.65)</color><shaderType>MoteGlow</shaderType></graphicData>
+  </FleckDef>
+  <FleckDef ParentName="TM_FleshFXBase">
+    <defName>TM_FleshFeastFX</defName>
+    <graphicData><texPath>Motes/bloodflame</texPath><shaderType>MoteGlow</shaderType></graphicData>
+    <growthRate>0.7</growthRate>
+  </FleckDef>
+</Defs>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+    <defName>TM_SniperSingleOpening</defName>
+    <label>single opening</label>
+    <uiIconPath>UI/headshot</uiIconPath>
+    <description>Aim for five seconds, then fire three ordinary bullets at one enemy over nine seconds. Each deals 120% weapon damage. Moving, changing weapon or losing sight ends the sequence. Range is capped at 45 cells. The shooter takes 20% more incoming damage while aiming.</description>
+    <abilityClass>TorannMagic.ClassProgression.SniperOpeningAbility</abilityClass>
+    <staminaCost>0.60</staminaCost>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_SniperSingleOpening</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_SniperSingleOpening</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>TM_SniperOpeningRound</defaultProjectile>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>2000</SecondsToRecharge>
+      <range>45</range>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </MainVerb>
+    <modExtensions>
+      <li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+        <spellId>rwom.tm_snipersingleopening</spellId>
+        <domain>Might</domain>
+        <tier>0</tier>
+      </li>
+    </modExtensions>
+  </TorannMagic.TMAbilityDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>TM_SniperOpeningRound</defName>
+    <label>single opening bullet</label>
+    <thingClass>TorannMagic.ClassProgression.SniperOpeningBullet</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>1</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+</Defs>

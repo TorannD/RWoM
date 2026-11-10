@@ -1,0 +1,132 @@
+<LanguageData><!-- v1.5\Defs\BackstoryDefs\TM_BackstoryDefs.xml-->
+	<!--                EN: Undead-->
+	<TM_UndeadChildBS.title>Нежить</TM_UndeadChildBS.title>
+	<!--                     EN: Undead-->
+	<TM_UndeadChildBS.titleShort>Нежить</TM_UndeadChildBS.titleShort>
+	<!--                   EN: [PAWN_nameDef] is now undead, the story of the pawn that inhabited this body previously has been washed away - replaced by the will of a necromancer.-->
+	<TM_UndeadChildBS.baseDesc>[PAWN_nameDef] теперь нежить. История того, кто прежде жил в этом теле, стёрта и заменена волей некроманта.</TM_UndeadChildBS.baseDesc>
+	<!--                      EN: Undead-->
+	<TM_UndeadChildBS.titleFemale>Нежить</TM_UndeadChildBS.titleFemale>
+	<!--                           EN: Undead-->
+	<TM_UndeadChildBS.titleShortFemale>Нежить</TM_UndeadChildBS.titleShortFemale>
+	<!--                         EN: Ghost Eye-->
+	<TM_UndeadAdultBS_GhostEye.title>Призрачный глаз</TM_UndeadAdultBS_GhostEye.title>
+	<!--                              EN: Ghost Eye-->
+	<TM_UndeadAdultBS_GhostEye.titleShort>Призрачный глаз</TM_UndeadAdultBS_GhostEye.titleShort>
+	<!--                            EN: The Ghost Eye is a unique undead variant with some shooting skill, but suffers a penalty to melee and mining.-->
+	<TM_UndeadAdultBS_GhostEye.baseDesc>Уникальная разновидность нежити с развитым стрелковым мастерством, но слабыми навыками ближнего боя и добычи.</TM_UndeadAdultBS_GhostEye.baseDesc>
+	<!--                               EN: Ghost Eye-->
+	<TM_UndeadAdultBS_GhostEye.titleFemale>Призрачный глаз</TM_UndeadAdultBS_GhostEye.titleFemale>
+	<!--                                    EN: Ghost Eye-->
+	<TM_UndeadAdultBS_GhostEye.titleShortFemale>Призрачный глаз</TM_UndeadAdultBS_GhostEye.titleShortFemale>
+	<!--                          EN: Ghost Mind-->
+	<TM_UndeadAdultBS_GhostMind.title>Призрачный разум</TM_UndeadAdultBS_GhostMind.title>
+	<!--                               EN: Ghost Mind-->
+	<TM_UndeadAdultBS_GhostMind.titleShort>Призрачный разум</TM_UndeadAdultBS_GhostMind.titleShort>
+	<!--                             EN: The Ghost Mind is a unique undead variant with increased crafting and cooking skill but has a penalty to melee and mining.-->
+	<TM_UndeadAdultBS_GhostMind.baseDesc>Уникальная разновидность нежити, лучше остальных справляющаяся с готовкой и ремеслом, но уступающая в ближнем бою и добыче.</TM_UndeadAdultBS_GhostMind.baseDesc>
+	<!--                                EN: Ghost Mind-->
+	<TM_UndeadAdultBS_GhostMind.titleFemale>Призрачный разум</TM_UndeadAdultBS_GhostMind.titleFemale>
+	<!--                                     EN: Ghost Mind-->
+	<TM_UndeadAdultBS_GhostMind.titleShortFemale>Призрачный разум</TM_UndeadAdultBS_GhostMind.titleShortFemale>
+	<!--                      EN: Undead Brute-->
+	<TM_UndeadAdultBS_Brute.title>Нежить</TM_UndeadAdultBS_Brute.title>
+	<!--                           EN: Undead Brute-->
+	<TM_UndeadAdultBS_Brute.titleShort>Нежить-громила</TM_UndeadAdultBS_Brute.titleShort>
+	<!--                         EN: The Undead Brute is a unique undead variant with increased melee and mining, but is so ham-fisted that crafting and cooking tasks are nearly impossible.-->
+	<TM_UndeadAdultBS_Brute.baseDesc>Нежить-громила превосходно сражается вблизи и добывает ресурсы, но почти не способна к готовке и тонкой работе.</TM_UndeadAdultBS_Brute.baseDesc>
+	<!--                            EN: Undead Brute-->
+	<TM_UndeadAdultBS_Brute.titleFemale>Нежить</TM_UndeadAdultBS_Brute.titleFemale>
+	<!--                                 EN: Undead Brute-->
+	<TM_UndeadAdultBS_Brute.titleShortFemale>Нежить-громила</TM_UndeadAdultBS_Brute.titleShortFemale>
+	<!--                        EN: Undead Servant-->
+	<TM_UndeadAdultBS_Servant.title>Нежить-слуга</TM_UndeadAdultBS_Servant.title>
+	<!--                             EN: Undead Servant-->
+	<TM_UndeadAdultBS_Servant.titleShort>Нежить-слуга</TM_UndeadAdultBS_Servant.titleShort>
+	<!--                           EN: The Undead Servant is a unique undead variant that is particularly tuned for labor, with a severe disadvantage in a fight.-->
+	<TM_UndeadAdultBS_Servant.baseDesc>Нежить-слуга создана для тяжёлого труда, но в бою крайне слаба.</TM_UndeadAdultBS_Servant.baseDesc>
+	<!--                              EN: Undead Servant-->
+	<TM_UndeadAdultBS_Servant.titleFemale>Нежить-слуга</TM_UndeadAdultBS_Servant.titleFemale>
+	<!--                                   EN: Undead Servant-->
+	<TM_UndeadAdultBS_Servant.titleShortFemale>Нежить-слуга</TM_UndeadAdultBS_Servant.titleShortFemale>
+	<!--                EN: Undead-->
+	<TM_UndeadAdultBS.title>Нежить</TM_UndeadAdultBS.title>
+	<!--                     EN: Undead-->
+	<TM_UndeadAdultBS.titleShort>Нежить</TM_UndeadAdultBS.titleShort>
+	<!--                   EN: [PAWN_nameDef] is a baseline undead with no abnormalities.-->
+	<TM_UndeadAdultBS.baseDesc>[PAWN_nameDef] — обычная нежить без особых отклонений.</TM_UndeadAdultBS.baseDesc>
+	<!--                      EN: Undead-->
+	<TM_UndeadAdultBS.titleFemale>Нежить</TM_UndeadAdultBS.titleFemale>
+	<!--                           EN: Undead-->
+	<TM_UndeadAdultBS.titleShortFemale>Нежить</TM_UndeadAdultBS.titleShortFemale>
+	<!--               EN: Golem-->
+	<TM_GolemChildBS.title>Голем</TM_GolemChildBS.title>
+	<!--                    EN: Golem-->
+	<TM_GolemChildBS.titleShort>Голем</TM_GolemChildBS.titleShort>
+	<!--                  EN: [PAWN_nameDef] is a golem, crafted with raw material and animated with magic.-->
+	<TM_GolemChildBS.baseDesc>[PAWN_nameDef] - голем, изготовленный из сырья и одушевлённый магией.</TM_GolemChildBS.baseDesc>
+	<!--                     EN: Golem-->
+	<TM_GolemChildBS.titleFemale>Голем</TM_GolemChildBS.titleFemale>
+	<!--                          EN: Golem-->
+	<TM_GolemChildBS.titleShortFemale>Голем</TM_GolemChildBS.titleShortFemale>
+	<!--               EN: Golem-->
+	<TM_GolemAdultBS.title>Голем</TM_GolemAdultBS.title>
+	<!--                    EN: Golem-->
+	<TM_GolemAdultBS.titleShort>Голем</TM_GolemAdultBS.titleShort>
+	<!--                  EN: [PAWN_nameDef] is a golem, crafted with raw material and animated with magic.-->
+	<TM_GolemAdultBS.baseDesc>[PAWN_nameDef] - голем, изготовленный из сырья и одушевлённый магией.</TM_GolemAdultBS.baseDesc>
+	<!--                     EN: Golem-->
+	<TM_GolemAdultBS.titleFemale>Голем</TM_GolemAdultBS.titleFemale>
+	<!--                          EN: Golem-->
+	<TM_GolemAdultBS.titleShortFemale>Голем</TM_GolemAdultBS.titleShortFemale>
+	<!--                EN: Spirit-->
+	<TM_SpiritChildBS.title>Дух</TM_SpiritChildBS.title>
+	<!--                     EN: Spirit-->
+	<TM_SpiritChildBS.titleShort>Дух</TM_SpiritChildBS.titleShort>
+	<!--                   EN: [PAWN_nameDef] is a wandering spirit, anchored to this realm by some unknown force. The events surrounding [PAWN_possessive] origins are unknown, but powerful enough to cause [PAWN_objective] to seek answers, justice, or redemption from the living.-->
+	<TM_SpiritChildBS.baseDesc>[PAWN_nameDef] — странствующий дух, привязанный к этому миру неизвестной силой. Обстоятельства [PAWN_possessive] происхождения скрыты, но достаточно значимы, чтобы заставлять [PAWN_objective] искать ответы, справедливость или искупление среди живых.</TM_SpiritChildBS.baseDesc>
+	<!--                      EN: Spirit-->
+	<TM_SpiritChildBS.titleFemale>Дух</TM_SpiritChildBS.titleFemale>
+	<!--                           EN: Spirit-->
+	<TM_SpiritChildBS.titleShortFemale>Дух</TM_SpiritChildBS.titleShortFemale>
+	<!--                       EN: Ancient Spirit-->
+	<TM_AncientSpiritAdultBS.title>Древний дух</TM_AncientSpiritAdultBS.title>
+	<!--                            EN: Ancient Spirit-->
+	<TM_AncientSpiritAdultBS.titleShort>Древний дух</TM_AncientSpiritAdultBS.titleShort>
+	<!--                          EN: [PAWN_nameDef] has existed for countless ages and it no longer remembers [PAWN_possessive] purpose. Ancient spirits pursue their own ends and have become masters at controlling spirit energy. Maximum spirit energy is increased by 50.-->
+	<TM_AncientSpiritAdultBS.baseDesc>[PAWN_nameDef] существует бессчётные века и уже не помнит [PAWN_possessive] изначальной цели. Древние духи преследуют собственные замыслы и в совершенстве владеют духовной энергией. Максимальный запас духовной энергии увеличен на 50.</TM_AncientSpiritAdultBS.baseDesc>
+	<!--                             EN: Ancient Spirit-->
+	<TM_AncientSpiritAdultBS.titleFemale>Древний дух</TM_AncientSpiritAdultBS.titleFemale>
+	<!--                                  EN: Ancient Spirit-->
+	<TM_AncientSpiritAdultBS.titleShortFemale>Древний дух</TM_AncientSpiritAdultBS.titleShortFemale>
+	<!--                        EN: Vengeful Spirit-->
+	<TM_VengefulSpiritAdultBS.title>Дух мести</TM_VengefulSpiritAdultBS.title>
+	<!--                             EN: Vengeful Spirit-->
+	<TM_VengefulSpiritAdultBS.titleShort>Дух мести</TM_VengefulSpiritAdultBS.titleShort>
+	<!--                           EN: [PAWN_nameDef] is a vengeful spirit, full of spite and hatred, wishing only to inflict their misery onto the living. Vengeful spirits are able to exert more power during spirit distortion and spirit storm but are more difficult to harmonize with when possessing a living body. Increases attack rate of spirit storm by 25% and damage bonus of distort spirit by 6%. Reduces compatibility by 1.-->
+	<TM_VengefulSpiritAdultBS.baseDesc>[PAWN_nameDef] — мстительный дух, переполненный злобой и ненавистью, жаждущий изливать свои страдания на живых. Такие духи сильнее проявляют себя во время духовного шторма и искажения духа, но хуже гармонируют с живым телом при вселении. Скорость атак духовного шторма увеличивается на 25%, а бонус урона от искажения духа — на 6%. Совместимость снижается на 1.</TM_VengefulSpiritAdultBS.baseDesc>
+	<!--                              EN: Vengeful Spirit-->
+	<TM_VengefulSpiritAdultBS.titleFemale>Мстительный дух</TM_VengefulSpiritAdultBS.titleFemale>
+	<!--                                   EN: Vengeful Spirit-->
+	<TM_VengefulSpiritAdultBS.titleShortFemale>Мстительный дух</TM_VengefulSpiritAdultBS.titleShortFemale>
+	<!--                    EN: Lost Spirit-->
+	<TM_LostSpiritAdultBS.title>Потерянный дух</TM_LostSpiritAdultBS.title>
+	<!--                         EN: Lost Spirit-->
+	<TM_LostSpiritAdultBS.titleShort>Потерянный дух</TM_LostSpiritAdultBS.titleShort>
+	<!--                       EN: Lost spirits wander the realm in a constant state of existential anguish, unable to perceive their purpose. The lost readily attach themselves to another's cause and more easily harmonize with kindred spirits. They are also able to strengthen the power of the rally spirit ability. Increase duration, radius, max targets, and bonuses of Spirit Rally by 10%. Increases compatibility by 2.-->
+	<TM_LostSpiritAdultBS.baseDesc>Потерянные духи скитаются по миру в постоянной экзистенциальной тоске, не понимая своего предназначения. Они легко привязываются к чужому делу и проще входят в гармонию с родственными духами. Также они усиливают способность «Сплочение духа»: её длительность, радиус, максимум целей и бонусы увеличиваются на 10%. Совместимость повышается на 2.</TM_LostSpiritAdultBS.baseDesc>
+	<!--                          EN: Lost Spirit-->
+	<TM_LostSpiritAdultBS.titleFemale>Потерянный дух</TM_LostSpiritAdultBS.titleFemale>
+	<!--                               EN: Lost Spirit-->
+	<TM_LostSpiritAdultBS.titleShortFemale>Потерянный дух</TM_LostSpiritAdultBS.titleShortFemale>
+	<!--                      EN: Spirit of Regret-->
+	<TM_RegretSpiritAdultBS.title>Дух сожаления</TM_RegretSpiritAdultBS.title>
+	<!--                           EN: Spirit of Regret-->
+	<TM_RegretSpiritAdultBS.titleShort>Дух сожаления</TM_RegretSpiritAdultBS.titleShort>
+	<!--                         EN: The spirit of regret is still able to remember their purpose as a spirit, but are were unable to right their wrongs before it was too late. Now they wander the world as a spirit, full of sadness and regret, still searching for a way to fulfill their purpose. Spirits of regret enhance the drain spirit ability by 20%.-->
+	<TM_RegretSpiritAdultBS.baseDesc>Дух сожаления всё ещё помнит своё предназначение, но не сумел исправить совершённые ошибки, пока не стало слишком поздно. Теперь он бродит по миру, полный печали и раскаяния, продолжая искать способ исполнить свою цель. Духи сожаления усиливают способность «Поглощение духа» на 20%.</TM_RegretSpiritAdultBS.baseDesc>
+	<!--                            EN: Spirit of Regret-->
+	<TM_RegretSpiritAdultBS.titleFemale>Дух сожаления</TM_RegretSpiritAdultBS.titleFemale>
+	<!--                                 EN: Spirit of Regret-->
+	<TM_RegretSpiritAdultBS.titleShortFemale>Дух сожаления</TM_RegretSpiritAdultBS.titleShortFemale>
+</LanguageData>

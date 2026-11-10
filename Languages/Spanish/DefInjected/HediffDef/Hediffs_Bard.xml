@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_BattleHymnHD.label>himno de batalla</TM_BattleHymnHD.label>
+  
+  <TM_BattleHymnHD.description>Inspirado y lleno de energía gracias a un himno de batalla.</TM_BattleHymnHD.description>
+  
+  <TM_BattleHymnHD.stages.I.label>I</TM_BattleHymnHD.stages.I.label>
+  
+  <TM_BattleHymnHD.stages.II.label>II</TM_BattleHymnHD.stages.II.label>
+  
+  <TM_BattleHymnHD.stages.III.label>III</TM_BattleHymnHD.stages.III.label>
+  
+  <TM_BattleHymnHD.stages.IV.label>IV</TM_BattleHymnHD.stages.IV.label>
+  
+  <TM_BattleHymnHD.stages.V.label>V</TM_BattleHymnHD.stages.V.label>
+  
+  <TM_BattleHymnHD.stages.VI.label>VI</TM_BattleHymnHD.stages.VI.label>
+  
+  <TM_BattleHymnHD.stages.VII.label>VII</TM_BattleHymnHD.stages.VII.label>
+  
+  <TM_BattleHymnHD.stages.VIII.label>VIII</TM_BattleHymnHD.stages.VIII.label>
+  
+  <TM_BattleHymnHD.stages.IX.label>IX</TM_BattleHymnHD.stages.IX.label>
+  
+  <TM_BattleHymnHD.stages.X.label>X</TM_BattleHymnHD.stages.X.label>
+  
+  
+  <TM_DiscordHD.label>discordia</TM_DiscordHD.label>
+  
+  <TM_DiscordHD.description>Bajo una intensa presión mental.</TM_DiscordHD.description>
+  
+  <TM_DiscordHD.stages.mental_haze.label>neblina mental</TM_DiscordHD.stages.mental_haze.label>
+  
+  <TM_DiscordHD.stages.distortion.label>distorsión</TM_DiscordHD.stages.distortion.label>
+  
+  <TM_DiscordHD.stages.unstable.label>inestable</TM_DiscordHD.stages.unstable.label>
+  
+  <TM_DiscordHD.stages.insanity.label>locura</TM_DiscordHD.stages.insanity.label>
+  
+  
+  <TM_DiscordSafeHD.label>discordia</TM_DiscordSafeHD.label>
+  
+  <TM_DiscordSafeHD.description>Bajo una intensa presión mental.</TM_DiscordSafeHD.description>
+  
+  <TM_DiscordSafeHD.stages.mental_haze.label>neblina mental</TM_DiscordSafeHD.stages.mental_haze.label>
+  
+  <TM_DiscordSafeHD.stages.distortion.label>distorsión</TM_DiscordSafeHD.stages.distortion.label>
+  
+  <TM_DiscordSafeHD.stages.unstable.label>inestable</TM_DiscordSafeHD.stages.unstable.label>
+  
+  <TM_DiscordSafeHD.stages.overwhelmed.label>abrumado</TM_DiscordSafeHD.stages.overwhelmed.label>
+  
+  
+  <TM_EntertainingHD.label>animador</TM_EntertainingHD.label>
+  
+  <TM_EntertainingHD.description>Busca activamente a otros peones para animarlos y entretenerlos.</TM_EntertainingHD.description>
+  
+  <TM_EntertainingHD.stages.Bard.label>bardo</TM_EntertainingHD.stages.Bard.label>
+  
+  
+  <TM_InspirationalHD.label>inspirador</TM_InspirationalHD.label>
+  
+  <TM_InspirationalHD.description>Hace que otros obtengan inspiraciones.</TM_InspirationalHD.description>
+  
+  <TM_InspirationalHD.stages.Bard.label>bardo</TM_InspirationalHD.stages.Bard.label>
+  
+  
+  <TM_LullabyHD.label>canción de cuna</TM_LullabyHD.label>
+  
+  <TM_LullabyHD.description>Reduce la consciencia de un peón.</TM_LullabyHD.description>
+  
+  <TM_LullabyHD.stages.I.label>I</TM_LullabyHD.stages.I.label>
+  
+  <TM_LullabyHD.stages.II.label>II</TM_LullabyHD.stages.II.label>
+  
+  <TM_LullabyHD.stages.III.label>III</TM_LullabyHD.stages.III.label>
+  
+  <TM_LullabyHD.stages.IV.label>IV</TM_LullabyHD.stages.IV.label>
+  
+  
+  <TM_SingBattleHymnHD.label>canto de batalla</TM_SingBattleHymnHD.label>
+  
+  <TM_SingBattleHymnHD.description>Entona un resonante himno de batalla para impulsar a los aliados hacia la victoria.</TM_SingBattleHymnHD.description>
+  
+  <TM_SingBattleHymnHD.stages.Bard.label>bardo</TM_SingBattleHymnHD.stages.Bard.label>
+  
+</LanguageData>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Prediction -->
+
+  <TM_Prediction.label>Previsão</TM_Prediction.label>
+  <TM_Prediction.description>Inclui um esforço preditório-consciente para decifrar os acontecimentos futuros. A previsão é de dois componentes.
+
+O primeiro componente é a consciência de si mesmo e a intuição que tornam o cronômetro sobrenatural difícil de causar danos, mas isso divide a atenção do cronomante e reduz sua urgência física e velocidade.
+
+O segundo componente se concentra na previsão de eventos significativos. Indicadores como voo de pássaros, nuvem de poeira, som de vento são liberados para o cronomante e falam juntos como tapeçaria que representa o futuro possível.
+
+Nenhum destes métodos é infalível, mas a prática pode aumentar a precisão da previsão e reduzir o foco necessário para mantê-la.
+
+Esta capacidade reduz a regeneração do maná em 50%.</TM_Prediction.description>
+
+
+  <!-- Alter Fate -->
+
+  <TM_AlterFate.label>Alterar destino</TM_AlterFate.label>
+  <TM_AlterFate.description>Altere o tempo para evitar desastres previstos. Esta capacidade depende de previsões precisas para moldar o futuro. Cronomantes altamente qualificados podem alterar as condições ambientais mesmo depois que elas acontecerem.
+
+A mudança de destino é mais eficaz em relação às condições ambientais. No entanto, esta capacidade pode ter o efeito contrário, fazendo com que o evento mude, se torne mais grave ou provoque o infame «efeito borboleta».</TM_AlterFate.description>
+
+
+  <!-- Accelerate Time -->
+
+  <TM_AccelerateTime.label>Acelerar o tempo</TM_AccelerateTime.label>
+  <TM_AccelerateTime.description>A aceleração do tempo cria um campo em torno do alvo, onde toda a matéria física envelhece rapidamente.
+
+Quando aplicado a objetos inanimados, os efeitos serão instantâneos e piorarão significativamente o estado dos objetos; isso pode fazer com que a matéria seja tratada com os seus componentes básicos. Não há nenhuma área de ação para esta função, apenas objetos no centro serão afetados.
+
+O tecido vivo resistirá às mudanças instantâneas e requer uma abordagem mais gradual. Qualquer peão vivo exposto terá maior velocidade de movimento e manipulação. Os elementos neutros (plantas) experimentarão crescimento rápido.
+
+Se for usado no local ou num inimigo hostil, todos os inimigos desta área serão amaldiçoados pelo envelhecimento rápido. Isso tiraria o descanso e a energia do alvo, aceleraria outras condições de saúde e poderia causar malformações na idade.
+
+Quando usado em peões amigos, não há nenhuma área de ação, apenas o alvo principal será afetado. O processo de envelhecimento para peões amigos é muito mais gradual e pode ser cancelado pelo tempo inverso.</TM_AccelerateTime.description>
+
+
+  <!-- Reverse Time -->
+
+  <TM_ReverseTime.label>Retrocesso de tempo</TM_ReverseTime.label>
+  <TM_ReverseTime.description>O tempo contrário cria um campo em torno do alvo, onde toda a matéria física reverte a sua desintegração natural. Reverter o impacto do tempo é muito mais difícil - requer mais energia do que acelerar o tempo e só pode ser aplicado a um objetivo de uma vez só.
+
+Quando aplicado a objetos inanimados, o efeito será instantâneo e irá regenerar os objetos e restaurar o material. A retração do tempo pode ser usada para restaurar alimentos podres, equipamentos em decomposição e material estragado.
+
+O tecido vivo resistirá às mudanças instantâneas e requer uma abordagem mais gradual. Qualquer peão vivo exposto terá uma velocidade reduzida de movimento e manipulação, e seu envelhecimento biológico será revertido. Isso pode eliminar muitos males que foram causados recentemente, porque o tecido se recupera para o estado anterior à doença; isso inclui feridas, doenças e males da idade que ocorreram durante o período de circulação.
+
+O tempo oposto pode ser dissipado contra o efeito de acelerar o tempo.</TM_ReverseTime.description>
+
+
+  <!-- Chronostatic Field -->
+
+  <TM_ChronostaticField.label>Campo cronográfico</TM_ChronostaticField.label>
+  <TM_ChronostaticField.description>O campo cronográfico (também chamado bolha do tempo) coloca todos os seres vivos dentro da área influenciável fora da fase ao longo do tempo. Não é possível interagir com os seres afetados até que eles retornem ao tempo natural.
+
+Raio: 3
+Distância: 40
+Tempo de casta: 1s</TM_ChronostaticField.description>
+
+  <TM_ChronostaticField_I.label>Campo cronográfico (I)</TM_ChronostaticField_I.label>
+  <TM_ChronostaticField_I.description>O campo cronográfico (também chamado bolha do tempo) coloca todos os seres vivos dentro da área influenciável fora da fase ao longo do tempo. Não é possível interagir com os seres afetados até que eles retornem ao tempo natural.
+
+Raio: 3.5
+Distância: 44
+Tempo de casta: .8s</TM_ChronostaticField_I.description>
+
+  <TM_ChronostaticField_II.label>Campo cronográfico (II)</TM_ChronostaticField_II.label>
+  <TM_ChronostaticField_II.description>O campo cronográfico (também chamado bolha do tempo) coloca todos os seres vivos dentro da área influenciável fora da fase ao longo do tempo. Não é possível interagir com os seres afetados até que eles retornem ao tempo natural.
+
+Raio: 4
+Distância: 48
+Tempo de casta: .6s</TM_ChronostaticField_II.description>
+
+  <TM_ChronostaticField_III.label>Campo cronográfico (III)</TM_ChronostaticField_III.label>
+  <TM_ChronostaticField_III.description>O campo cronográfico (também chamado bolha do tempo) coloca todos os seres vivos dentro da área influenciável fora da fase ao longo do tempo. Não é possível interagir com os seres afetados até que eles retornem ao tempo natural.
+
+Raio: 4.5
+Distância: 50
+Tempo de casta: .5s</TM_ChronostaticField_III.description>
+
+
+  <!-- Time Mark (set recall point) -->
+
+  <TM_TimeMark.label>Marca de tempo</TM_TimeMark.label>
+  <TM_TimeMark.description>O cronomante é capaz de capturar o seu estado em um determinado momento e de se voltar para este ponto. Esta capacidade não altera o tempo e não afeta qualquer outra coisa que não seja o cronomante. O cronomante guardará todas as memórias que tinha no momento em que a marca foi ativada; A activação automática do impacto mortal pode causar quebras mentais, porque o cronomante vai lembrar-se da sua morte.
+
+A revogação tem validade limitada (£1 dia) até o vencimento do marcador temporário e deve ser aplicada novamente. Com o marcador temporal ativo, a reserva máxima de maná diminui em 40 e a regeneração do maná diminui em 30%.
+
+Ao ser instalado em uma caixa automática, o cronômetro tentará suportar o marcador de reversão a qualquer momento - o que não afeta os desencadeadores de ativação (abatido/morto) que funcionam sempre se a habilidade for estudada e o tempo marcado.
+
+Para manter a unidade física durante a retirada, o feitiço manterá todas as condições de permanência (partes do corpo ausentes ou adicionadas, lesões permanentes). Todos os feitiços do cronomante são expulsos após a retirada, exceto a crítica.</TM_TimeMark.description>
+
+
+  <!-- Activate Recall -->
+
+  <TM_Recall.label>Retorno</TM_Recall.label>
+  <TM_Recall.description>Devolve o feitiço no momento anterior. Não é possível usar uma marca de tempo ativa.</TM_Recall.description>
+
+
+</LanguageData>

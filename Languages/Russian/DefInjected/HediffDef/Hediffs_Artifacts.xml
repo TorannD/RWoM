@@ -1,0 +1,45 @@
+<LanguageData><!-- Mending-->
+	<TM_ArtifactMendingHD.label>Починка</TM_ArtifactMendingHD.label>
+	<TM_ArtifactMendingHD.description>Чинит и ремонтирует экипированную одежду и оружие.</TM_ArtifactMendingHD.description>
+	<!-- Health Charm-->
+	<TM_ArtifactHealthHD.label>Улучшение Здоровья</TM_ArtifactHealthHD.label>
+	<TM_ArtifactHealthHD.description>Увеличивает естественное заживление.</TM_ArtifactHealthHD.description>
+	<!-- Cat Eyes-->
+	<TM_ArtifactCatEyesHD.label>Темный Взгляд</TM_ArtifactCatEyesHD.label>
+	<TM_ArtifactCatEyesHD.description>Улучшает зрение и даёт незначительное ночное зрение.</TM_ArtifactCatEyesHD.description>
+	<!-- Strength of Stone-->
+	<TM_ArtifactStrengthHD.label>Прочность камня</TM_ArtifactStrengthHD.label>
+	<TM_ArtifactStrengthHD.description>Чары, усиливающие манипуляцию.</TM_ArtifactStrengthHD.description>
+	<!-- Mind Ward-->
+	<TM_ArtifactMindHD.label>Умственная Обитель</TM_ArtifactMindHD.label>
+	<TM_ArtifactMindHD.description>Уникальный талисман, который помогает Пешке разделить свои эмоции, чтобы быстро оправиться от психического срыва.</TM_ArtifactMindHD.description>
+	<!-- Renewal-->
+	<TM_ArtifactRenewalHD.label>Обновление</TM_ArtifactRenewalHD.label>
+	<TM_ArtifactRenewalHD.description>Улучшает качество сна.</TM_ArtifactRenewalHD.description>
+	<!-- Arcane Recovery-->
+	<TM_ArtifactArcaneRecoveryHD.label>Тайное Восстановление</TM_ArtifactArcaneRecoveryHD.label>
+	<TM_ArtifactArcaneRecoveryHD.description>Увеличивает скорость восстановления от тайной слабости; не уменьшает количество приобретенной тайной слабости.</TM_ArtifactArcaneRecoveryHD.description>
+	<!-- Pathfinding-->
+	<TM_ArtifactPathfindingHD.label>Новатор</TM_ArtifactPathfindingHD.label>
+	<TM_ArtifactPathfindingHD.description>Талисман, который сверхъестественно устанавливает легкий путь через любое препятствие; обходит штраф за передвижение по препятствиям и местности.</TM_ArtifactPathfindingHD.description>
+	<!-- Defensive Bracers-->
+	<TM_ArtifactBlockHD.label>Блокировка</TM_ArtifactBlockHD.label>
+	<TM_ArtifactBlockHD.description>Блокирует физические атаки; предотвращает повреждение от успешно заблокированных атак.</TM_ArtifactBlockHD.description>
+	<TM_ArtifactDeflectHD.label>Дефектная Блокировка</TM_ArtifactDeflectHD.label>
+	<TM_ArtifactDeflectHD.description>Блокирует атаки и может отклонять снаряды к ближайшим врагам; предотвращает урон от успешно отраженной атаки.</TM_ArtifactDeflectHD.description>
+	<!-- Energy Pool Boosts-->
+	<TM_Artifact_BloodBoostHD.label>Повышение Уровня Крови</TM_Artifact_BloodBoostHD.label>
+	<TM_Artifact_BloodBoostHD.description>Увеличивает максимальную магию крови, доступную магу крови.</TM_Artifact_BloodBoostHD.description>
+	<TM_Artifact_PsionicBoostHD.label>Псионный Импульс</TM_Artifact_PsionicBoostHD.label>
+	<TM_Artifact_PsionicBoostHD.description>Увеличивает максимальную пси-энергию псионика.</TM_Artifact_PsionicBoostHD.description>
+	<TM_Artifact_HateBoostHD.label>Повышение Ненависти</TM_Artifact_HateBoostHD.label>
+	<TM_Artifact_HateBoostHD.description>Увеличивает максимальную ненависть, доступную рыцарю смерти.</TM_Artifact_HateBoostHD.description>
+	<!-- soul orb infusion debuff-->
+	<TM_TraitInfusionHD.label>Вливание Черты Характера</TM_TraitInfusionHD.label>
+	<TM_TraitInfusionHD.description>Пешка приобрела черты характера благодаря магическому вливанию; это повлияет на их самоощущение.</TM_TraitInfusionHD.description>
+	<!-- Winter's Staff-->
+	<TM_WinterStaffHD.label>Зимний холод</TM_WinterStaffHD.label>
+	<TM_WinterStaffHD.description>Отводит тепло и энергию из организма; предотвращает тепловой удар. Только для магов: понижает комнатную температуру.</TM_WinterStaffHD.description>
+	<TM_ShroudOfUndeathHD.label>Саван нежити</TM_ShroudOfUndeathHD.label>
+	<TM_ShroudOfUndeathHD.description>Уменьшает количество нежити в запасе этого некроманта и увеличивает подвижность и силу атаки ближайшей нежити.</TM_ShroudOfUndeathHD.description>
+</LanguageData>

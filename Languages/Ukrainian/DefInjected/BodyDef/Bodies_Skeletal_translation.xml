@@ -1,0 +1,94 @@
+<LanguageData>
+
+  <TM_Skeletal.label>скелетоподібний</TM_Skeletal.label>
+  <TM_Skeletal.corePart.customLabel>грудна клітина</TM_Skeletal.corePart.customLabel>
+  <TM_Skeletal.corePart.parts.1.customLabel>кістки шиї</TM_Skeletal.corePart.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.1.parts.0.customLabel>череп</TM_Skeletal.corePart.parts.1.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.1.parts.0.parts.0.customLabel>щелепа</TM_Skeletal.corePart.parts.1.parts.0.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.2.customLabel>ліве плече</TM_Skeletal.corePart.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.0.customLabel>ліва ключиця</TM_Skeletal.corePart.parts.2.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.customLabel>область лівої руки</TM_Skeletal.corePart.parts.2.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.0.customLabel>ліва плечова кістка</TM_Skeletal.corePart.parts.2.parts.1.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.1.customLabel>лівий промінь</TM_Skeletal.corePart.parts.2.parts.1.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.2.customLabel>кістки лівої руки</TM_Skeletal.corePart.parts.2.parts.1.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.0.customLabel>лівий мізинець</TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.1.customLabel>Лівий безіменний палець</TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.2.customLabel>лівий середній палець</TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.3.customLabel>лівий вказівний палець</TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.3.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.4.customLabel>великий палець лівої руки</TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.4.customLabel>
+  <TM_Skeletal.corePart.parts.3.customLabel>праве плече</TM_Skeletal.corePart.parts.3.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.0.customLabel>права ключиця</TM_Skeletal.corePart.parts.3.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.customLabel>область правої руки</TM_Skeletal.corePart.parts.3.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.0.customLabel>права плечова кістка</TM_Skeletal.corePart.parts.3.parts.1.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.1.customLabel>правий промінь</TM_Skeletal.corePart.parts.3.parts.1.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.2.customLabel>кістки правої руки</TM_Skeletal.corePart.parts.3.parts.1.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.0.customLabel>правий мізинець</TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.1.customLabel>правий безіменний палець</TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.2.customLabel>правий середній палець</TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.3.customLabel>правий вказівний палець</TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.3.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.4.customLabel>великий палець правої руки</TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.4.customLabel>
+  <TM_Skeletal.corePart.parts.4.customLabel>ліва нога</TM_Skeletal.corePart.parts.4.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.0.customLabel>ліва стегнова кістка</TM_Skeletal.corePart.parts.4.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.1.customLabel>ліва великомірцева кістка</TM_Skeletal.corePart.parts.4.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.2.customLabel>ліва стопа</TM_Skeletal.corePart.parts.4.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.2.parts.0.customLabel>мізинець лівої ноги</TM_Skeletal.corePart.parts.4.parts.2.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.2.parts.1.customLabel>ліва четверта кістка пальця ноги</TM_Skeletal.corePart.parts.4.parts.2.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.2.parts.2.customLabel>ліва середня кістка пальця стопи</TM_Skeletal.corePart.parts.4.parts.2.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.2.parts.3.customLabel>ліва кістка другого пальця стопи</TM_Skeletal.corePart.parts.4.parts.2.parts.3.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.2.parts.4.customLabel>ліва кістка великого пальця стопи</TM_Skeletal.corePart.parts.4.parts.2.parts.4.customLabel>
+  <TM_Skeletal.corePart.parts.5.customLabel>права нога</TM_Skeletal.corePart.parts.5.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.0.customLabel>права стегнова кістка</TM_Skeletal.corePart.parts.5.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.1.customLabel>права великомірцева кістка</TM_Skeletal.corePart.parts.5.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.2.customLabel>права стопа</TM_Skeletal.corePart.parts.5.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.2.parts.0.customLabel>мізинець правої ноги</TM_Skeletal.corePart.parts.5.parts.2.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.2.parts.1.customLabel>права четверта кістка пальця ноги</TM_Skeletal.corePart.parts.5.parts.2.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.2.parts.2.customLabel>права середня кістка пальця стопи</TM_Skeletal.corePart.parts.5.parts.2.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.2.parts.3.customLabel>права кістка другого пальця стопи</TM_Skeletal.corePart.parts.5.parts.2.parts.3.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.2.parts.4.customLabel>права кістка великого пальця стопи</TM_Skeletal.corePart.parts.5.parts.2.parts.4.customLabel>
+
+
+<TM_Skeletal.corePart.parts.neck_bones.customLabel>шийні кістки</TM_Skeletal.corePart.parts.neck_bones.customLabel>
+<TM_Skeletal.corePart.parts.neck_bones.parts.skull.customLabel>череп</TM_Skeletal.corePart.parts.neck_bones.parts.skull.customLabel>
+<TM_Skeletal.corePart.parts.neck_bones.parts.skull.parts.jaw.customLabel>щелепа</TM_Skeletal.corePart.parts.neck_bones.parts.skull.parts.jaw.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.customLabel>ліве плече</TM_Skeletal.corePart.parts.left_shoulder.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_clavicle.customLabel>ліва ключиця</TM_Skeletal.corePart.parts.left_shoulder.parts.left_clavicle.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.customLabel>область лівої руки</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_humerus.customLabel>ліва плечова кістка</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_humerus.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_radius.customLabel>лівий радіус</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_radius.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.customLabel>кістки лівої руки</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_pinky_bone.customLabel>ліва мізинець</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_pinky_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_ring_finger_bone.customLabel>кістка безіменного пальця лівої руки</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_ring_finger_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_middle_finger_bone.customLabel>кістка середнього пальця лівої руки</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_middle_finger_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_index_finger_bone.customLabel>кістка вказівного пальця лівої руки</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_index_finger_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_thumb_bone.customLabel>кістка великого пальця лівої руки</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_thumb_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.customLabel>праве плече</TM_Skeletal.corePart.parts.right_shoulder.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_clavicle.customLabel>права ключиця</TM_Skeletal.corePart.parts.right_shoulder.parts.right_clavicle.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.customLabel>область правої руки</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_humerus.customLabel>права плечова кістка</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_humerus.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_radius.customLabel>правий радіус</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_radius.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.customLabel>кістки правої руки</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_pinky_bone.customLabel>права мізинець</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_pinky_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_ring_finger_bone.customLabel>кістка безіменного пальця правої руки</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_ring_finger_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_middle_finger_bone.customLabel>кістка правого середнього пальця</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_middle_finger_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_index_finger_bone.customLabel>кістка правого вказівного пальця</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_index_finger_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_thumb_bone.customLabel>кістка великого пальця правої руки</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_thumb_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.customLabel>ліва нога</TM_Skeletal.corePart.parts.left_leg.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_femur.customLabel>ліве стегно</TM_Skeletal.corePart.parts.left_leg.parts.left_femur.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_tibia.customLabel>ліва великомірцева кістка</TM_Skeletal.corePart.parts.left_leg.parts.left_tibia.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.customLabel>кістки лівої стопи</TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_little_toe_bone.customLabel>мізинець лівої ноги</TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_little_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_fourth_toe_bone.customLabel>кістка четвертого пальця лівої ноги</TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_fourth_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_middle_toe_bone.customLabel>кістка середнього пальця лівої ноги</TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_middle_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_second_toe_bone.customLabel>кістка другого пальця лівої ноги</TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_second_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_big_toe_bone.customLabel>великий палець лівої ноги</TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_big_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.customLabel>права нога</TM_Skeletal.corePart.parts.right_leg.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_femur.customLabel>праве стегно</TM_Skeletal.corePart.parts.right_leg.parts.right_femur.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_tibia.customLabel>права великомірцева кістка</TM_Skeletal.corePart.parts.right_leg.parts.right_tibia.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.customLabel>кістки правої стопи</TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_little_toe_bone.customLabel>кістка правого мізинця</TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_little_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_fourth_toe_bone.customLabel>кістка четвертого пальця правої ноги</TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_fourth_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_middle_toe_bone.customLabel>кістка середнього пальця правої ноги</TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_middle_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_second_toe_bone.customLabel>кістка другого пальця правої ноги</TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_second_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_big_toe_bone.customLabel>кістка великого пальця правої ноги</TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_big_toe_bone.customLabel>
+
+</LanguageData>

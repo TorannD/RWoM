@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <CutArcaneDmgGem.label>gema de fuerza</CutArcaneDmgGem.label>
+  
+  <CutArcaneDmgGem.description>Talla y refina magicita para obtener una gema encantadora capaz de aumentar la fuerza de los ataques mágicos.</CutArcaneDmgGem.description>
+  
+  <CutArcaneDmgGem.jobString>Tallando gema de fuerza.</CutArcaneDmgGem.jobString>
+  
+  
+  <CutArcaneResGem.label>gema de resistencia</CutArcaneResGem.label>
+  
+  <CutArcaneResGem.description>Talla y refina magicita para obtener una gema encantadora capaz de resistir los efectos de los ataques mágicos.</CutArcaneResGem.description>
+  
+  <CutArcaneResGem.jobString>Tallando gema de resistencia.</CutArcaneResGem.jobString>
+  
+  
+  <CutArcaneWonderGem.label>gema de prodigio</CutArcaneWonderGem.label>
+  
+  <CutArcaneWonderGem.description>Talla y refina magicita para obtener una gema encantadora capaz de aprovechar todo tipo de encantamientos.</CutArcaneWonderGem.description>
+  
+  <CutArcaneWonderGem.jobString>Tallando gema de prodigio.</CutArcaneWonderGem.jobString>
+  
+  
+  <CutCoolDownGem.label>gema de aceleración</CutCoolDownGem.label>
+  
+  <CutCoolDownGem.description>Talla y refina magicita para obtener una gema encantadora capaz de reducir el tiempo que debe pasar antes de volver a usar una habilidad.</CutCoolDownGem.description>
+  
+  <CutCoolDownGem.jobString>Tallando gema de aceleración.</CutCoolDownGem.jobString>
+  
+  
+  <CutMajorArcaneDmgGem.label>gema de fuerza mayor</CutMajorArcaneDmgGem.label>
+  
+  <CutMajorArcaneDmgGem.description>Talla y refina magicita para obtener una gema encantadora capaz de aumentar la fuerza de los ataques mágicos.</CutMajorArcaneDmgGem.description>
+  
+  <CutMajorArcaneDmgGem.jobString>Tallando gema de fuerza mayor.</CutMajorArcaneDmgGem.jobString>
+  
+  
+  <CutMajorArcaneResGem.label>gema de resistencia mayor</CutMajorArcaneResGem.label>
+  
+  <CutMajorArcaneResGem.description>Talla y refina magicita para obtener una gema encantadora capaz de resistir los efectos de los ataques mágicos.</CutMajorArcaneResGem.description>
+  
+  <CutMajorArcaneResGem.jobString>Tallando gema de resistencia mayor.</CutMajorArcaneResGem.jobString>
+  
+  
+  <CutMajorArcaneWonderGem.label>gema de prodigio mayor</CutMajorArcaneWonderGem.label>
+  
+  <CutMajorArcaneWonderGem.description>Talla y refina magicita para obtener una gema encantadora capaz de aprovechar todo tipo de encantamientos.</CutMajorArcaneWonderGem.description>
+  
+  <CutMajorArcaneWonderGem.jobString>Tallando gema de prodigio mayor.</CutMajorArcaneWonderGem.jobString>
+  
+  
+  <CutMajorCoolDownGem.label>gema de aceleración mayor</CutMajorCoolDownGem.label>
+  
+  <CutMajorCoolDownGem.description>Talla y refina magicita para obtener una gema encantadora capaz de reducir el tiempo que debe pasar antes de volver a usar una habilidad.</CutMajorCoolDownGem.description>
+  
+  <CutMajorCoolDownGem.jobString>Tallando gema de aceleración mayor.</CutMajorCoolDownGem.jobString>
+  
+  
+  <CutMajorMPCostGem.label>gema de conservación mayor</CutMajorMPCostGem.label>
+  
+  <CutMajorMPCostGem.description>Talla y refina magicita para obtener una gema encantadora capaz de reducir la cantidad de maná necesaria para usar una habilidad.</CutMajorMPCostGem.description>
+  
+  <CutMajorMPCostGem.jobString>Tallando gema de conservación mayor.</CutMajorMPCostGem.jobString>
+  
+  
+  <CutMajorMPGem.label>gema de retención mayor</CutMajorMPGem.label>
+  
+  <CutMajorMPGem.description>Talla y refina magicita para obtener una gema encantadora capaz de mantener reservas de maná.</CutMajorMPGem.description>
+  
+  <CutMajorMPGem.jobString>Tallando gema de retención mayor.</CutMajorMPGem.jobString>
+  
+  
+  <CutMajorMPRegenRateGem.label>gema de regeneración mayor</CutMajorMPRegenRateGem.label>
+  
+  <CutMajorMPRegenRateGem.description>Talla y refina magicita para obtener una gema encantadora capaz de aumentar la velocidad a la que se obtiene maná.</CutMajorMPRegenRateGem.description>
+  
+  <CutMajorMPRegenRateGem.jobString>Tallando gema de regeneración mayor.</CutMajorMPRegenRateGem.jobString>
+  
+  
+  <CutMajorXPGainGem.label>gema de aprendizaje mayor</CutMajorXPGainGem.label>
+  
+  <CutMajorXPGainGem.description>Talla y refina magicita para obtener una gema encantadora capaz de aumentar la experiencia obtenida al usar habilidades.</CutMajorXPGainGem.description>
+  
+  <CutMajorXPGainGem.jobString>Tallando gema de aprendizaje mayor.</CutMajorXPGainGem.jobString>
+  
+  
+  <CutMinorArcaneDmgGem.label>gema de fuerza menor</CutMinorArcaneDmgGem.label>
+  
+  <CutMinorArcaneDmgGem.description>Talla y refina magicita en bruto para obtener una gema encantadora capaz de aumentar la fuerza de los ataques mágicos.</CutMinorArcaneDmgGem.description>
+  
+  <CutMinorArcaneDmgGem.jobString>Tallando gema de fuerza menor.</CutMinorArcaneDmgGem.jobString>
+  
+  
+  <CutMinorArcaneResGem.label>gema de resistencia menor</CutMinorArcaneResGem.label>
+  
+  <CutMinorArcaneResGem.description>Talla y refina magicita en bruto para obtener una gema encantadora capaz de resistir los efectos de los ataques mágicos.</CutMinorArcaneResGem.description>
+  
+  <CutMinorArcaneResGem.jobString>Tallando gema de resistencia menor.</CutMinorArcaneResGem.jobString>
+  
+  
+  <CutMinorArcaneWonderGem.label>gema de prodigio menor</CutMinorArcaneWonderGem.label>
+  
+  <CutMinorArcaneWonderGem.description>Talla y refina magicita en bruto para obtener una gema encantadora capaz de aprovechar todo tipo de encantamientos.</CutMinorArcaneWonderGem.description>
+  
+  <CutMinorArcaneWonderGem.jobString>Tallando gema de prodigio menor.</CutMinorArcaneWonderGem.jobString>
+  
+  
+  <CutMinorCoolDownGem.label>gema de aceleración menor</CutMinorCoolDownGem.label>
+  
+  <CutMinorCoolDownGem.description>Talla y refina magicita en bruto para obtener una gema encantadora capaz de reducir el tiempo que debe pasar antes de volver a usar una habilidad.</CutMinorCoolDownGem.description>
+  
+  <CutMinorCoolDownGem.jobString>Tallando gema de aceleración menor.</CutMinorCoolDownGem.jobString>
+  
+  
+  <CutMinorMPCostGem.label>gema de conservación menor</CutMinorMPCostGem.label>
+  
+  <CutMinorMPCostGem.description>Talla y refina magicita en bruto para obtener una gema encantadora capaz de reducir la cantidad de maná necesaria para usar una habilidad.</CutMinorMPCostGem.description>
+  
+  <CutMinorMPCostGem.jobString>Tallando gema de conservación menor.</CutMinorMPCostGem.jobString>
+  
+  
+  <CutMinorMPGem.label>gema de retención menor</CutMinorMPGem.label>
+  
+  <CutMinorMPGem.description>Talla y refina magicita en bruto para obtener una gema encantadora capaz de mantener reservas de maná.</CutMinorMPGem.description>
+  
+  <CutMinorMPGem.jobString>Tallando gema de retención menor.</CutMinorMPGem.jobString>
+  
+  
+  <CutMinorMPRegenRateGem.label>gema de regeneración menor</CutMinorMPRegenRateGem.label>
+  
+  <CutMinorMPRegenRateGem.description>Talla y refina magicita en bruto para obtener una gema encantadora capaz de aumentar la velocidad a la que se obtiene maná.</CutMinorMPRegenRateGem.description>
+  
+  <CutMinorMPRegenRateGem.jobString>Tallando gema de regeneración menor.</CutMinorMPRegenRateGem.jobString>
+  
+  
+  <CutMinorXPGainGem.label>gema de aprendizaje menor</CutMinorXPGainGem.label>
+  
+  <CutMinorXPGainGem.description>Talla y refina magicita en bruto para obtener una gema encantadora capaz de aumentar la experiencia obtenida al usar habilidades.</CutMinorXPGainGem.description>
+  
+  <CutMinorXPGainGem.jobString>Tallando gema de aprendizaje menor.</CutMinorXPGainGem.jobString>
+  
+  
+  <CutMPCostGem.label>gema de conservación</CutMPCostGem.label>
+  
+  <CutMPCostGem.description>Talla y refina magicita para obtener una gema encantadora capaz de reducir la cantidad de maná necesaria para usar una habilidad.</CutMPCostGem.description>
+  
+  <CutMPCostGem.jobString>Tallando gema de conservación.</CutMPCostGem.jobString>
+  
+  
+  <CutMPGem.label>gema de retención</CutMPGem.label>
+  
+  <CutMPGem.description>Talla y refina magicita para obtener una gema encantadora capaz de mantener reservas de maná.</CutMPGem.description>
+  
+  <CutMPGem.jobString>Tallando gema de retención.</CutMPGem.jobString>
+  
+  
+  <CutMPRegenRateGem.label>gema de regeneración</CutMPRegenRateGem.label>
+  
+  <CutMPRegenRateGem.description>Talla y refina magicita para obtener una gema encantadora capaz de aumentar la velocidad a la que se obtiene maná.</CutMPRegenRateGem.description>
+  
+  <CutMPRegenRateGem.jobString>Tallando gema de regeneración.</CutMPRegenRateGem.jobString>
+  
+  
+  <CutXPGainGem.label>gema de aprendizaje</CutXPGainGem.label>
+  
+  <CutXPGainGem.description>Talla y refina magicita para obtener una gema encantadora capaz de aumentar la experiencia obtenida al usar habilidades.</CutXPGainGem.description>
+  
+  <CutXPGainGem.jobString>Tallando gema de aprendizaje.</CutXPGainGem.jobString>
+  
+  
+  <ManaPotion_Refined.label>poción de maná</ManaPotion_Refined.label>
+  
+  <ManaPotion_Refined.description>Se mezclan hierbas con polvo de magicita para producir 2 pociones de maná.</ManaPotion_Refined.description>
+  
+  <ManaPotion_Refined.jobString>Procesando poción de maná.</ManaPotion_Refined.jobString>
+  
+</LanguageData>

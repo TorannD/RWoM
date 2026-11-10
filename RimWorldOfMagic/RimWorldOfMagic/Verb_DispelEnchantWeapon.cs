@@ -1,55 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using RimWorld;
-using AbilityUser;
 using Verse;
-
+using TorannMagic.ClassProgression;
 
 namespace TorannMagic
 {
-    public class Verb_DispelEnchantWeapon : Verb_UseAbility
+    public class Verb_DispelEnchantWeapon : Verb_SpiritTargetable
     {
         protected override bool TryCastShot()
         {
-            bool flag = false;
-            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
-
-            if (comp.IsMagicUser)
-            {
-                if (comp.weaponEnchants.Count > 0)
-                {
-                    for(int i =0; i < comp.weaponEnchants.Count; i++)
-                    {
-                        Pawn dispellingPawn = comp.weaponEnchants[i];
-                        RemoveExistingEnchantment(dispellingPawn);
-                        i--;
-                    }
-                    comp.weaponEnchants.Clear();
-                    comp.RemovePawnAbility(TorannMagicDefOf.TM_DispelEnchantWeapon);
-                }
-            }
-
-            this.PostCastShot(flag, out flag);
-            return flag;
+            burstShotsLeft = 0;
+            var owner = SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            return owner != null && currentTarget.Pawn == CasterPawn && DispelOwned(owner.GetCompAbilityUserMagic());
         }
 
-        public static void RemoveExistingEnchantment(Pawn pawn)
+        internal static bool DispelOwned(CompAbilityUserMagic magic)
         {
-            Hediff hediff = null;
-            List<Hediff> allHediffs = new List<Hediff>();
-            allHediffs.Clear();
-            allHediffs = pawn.health.hediffSet.hediffs.ToList();
-            if (allHediffs != null && allHediffs.Count > 0)
+            if (magic?.weaponEnchants == null || magic.weaponEnchants.Count == 0) return false;
+            // Removing an effect unregisters its recipient. Snapshot once so stale entries cannot stall the cast.
+            foreach (var target in magic.weaponEnchants.ToArray()) RemoveEffects(target, magic.Pawn);
+            magic.weaponEnchants.Clear();
+            magic.SyncEnchantWeaponControl();
+            return true;
+        }
+
+        public static void RemoveExistingEnchantment(Pawn pawn) => RemoveEffects(pawn, null);
+
+        private static void RemoveEffects(Pawn target, Pawn owner)
+        {
+            if (target?.health?.hediffSet == null) return;
+            foreach (var effect in target.health.hediffSet.hediffs.ToArray())
             {
-                for (int i = 0; i < allHediffs.Count; i++)
-                {
-                    hediff = allHediffs[i];
-                    if (hediff.def.defName.Contains("TM_WeaponEnchantment"))
-                    {
-                        pawn.health.RemoveHediff(hediff);
-                    }
-                }
+                var enchantment = effect.TryGetComp<HediffComp_EnchantedWeapon>();
+                if (enchantment != null && (owner == null || enchantment.enchanterPawn == owner))
+                    target.health.RemoveHediff(effect);
             }
         }
     }

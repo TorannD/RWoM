@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_BladePassage.label>paso de la hoja</TM_BladePassage.label>
+  <TM_BladePassage.description>Avanza en línea recta hacia un enemigo a un máximo de 6/8/10 casillas y asesta un golpe con el 90% del daño del arma cuerpo a cuerpo. Requiere una casilla libre junto al objetivo. Aguante: 20%. Recarga: 30 s. Recuperación base: 1 s.</TM_BladePassage.description>
+</LanguageData>

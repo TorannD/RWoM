@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Buff_AMP.label>AMP</Buff_AMP.label>
+  
+  
+  <FlyingObject_EyeOfTheStorm.label>objeto volador</FlyingObject_EyeOfTheStorm.label>
+  
+  
+  <Laser_LightningBolt.label>Relámpago</Laser_LightningBolt.label>
+  
+  
+  <Projectile_EyeOfTheStorm.label>Ojo de la tormenta</Projectile_EyeOfTheStorm.label>
+  
+  
+  <Projectile_LightningCloud.label>Nube de tormenta</Projectile_LightningCloud.label>
+  
+  
+  <Projectile_LightningStorm.label>Tormenta de relámpagos</Projectile_LightningStorm.label>
+  
+</LanguageData>

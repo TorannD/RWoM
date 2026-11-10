@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MakeCastScroll_EtherShell.label>fabricar pergaminho de conjuração de invólucro etéreo</TM_MakeCastScroll_EtherShell.label>
+  <TM_MakeCastScroll_EtherShell.description>Requer um mago que conheça Invólucro etéreo. Protege o mago ou um peão aliado do vácuo e do frio extremo durante um dia. Concede resistência total ao vácuo, impede queimaduras de vácuo e reduz a temperatura mínima confortável em 300 °C. Não protege de balas, fogo ou calor, nem cura feridas. Não acumula nem renova enquanto estiver ativo. Usado pelo inventário. Consome um pergaminho após uma conjuração bem-sucedida. Qualquer pessoa pode usar sem mana ou conhecimento de magia. Duração fixa de um dia. Alcance: 12 células. Preparação: 1 segundo. Recarga: 60 segundos.</TM_MakeCastScroll_EtherShell.description>
+  <TM_MakeCastScroll_EtherShell.jobString>fabricando pergaminho de conjuração de invólucro etéreo.</TM_MakeCastScroll_EtherShell.jobString>
+  <TM_MakeSpellStaff_EtherShell.label>fabricar cajado carregado de invólucro etéreo</TM_MakeSpellStaff_EtherShell.label>
+  <TM_MakeSpellStaff_EtherShell.description>Requer um mago que conheça Invólucro etéreo. Protege o mago ou um peão aliado do vácuo e do frio extremo durante um dia. Concede resistência total ao vácuo, impede queimaduras de vácuo e reduz a temperatura mínima confortável em 300 °C. Não protege de balas, fogo ou calor, nem cura feridas. Não acumula nem renova enquanto estiver ativo. Equipe como arma principal. Tem 10 usos, não pode ser recarregado e desaparece após o último uso. Qualquer pessoa pode usar sem mana ou conhecimento de magia. Duração fixa de um dia. Alcance: 12 células. Preparação: 1 segundo. Recarga: 60 segundos.</TM_MakeSpellStaff_EtherShell.description>
+  <TM_MakeSpellStaff_EtherShell.jobString>fabricando cajado carregado de invólucro etéreo.</TM_MakeSpellStaff_EtherShell.jobString>
+</LanguageData>

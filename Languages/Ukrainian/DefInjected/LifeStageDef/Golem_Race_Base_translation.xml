@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- STONE GOLEM -->
+
+  <TM_StoneGolemLS.label>кам&apos;яний голем</TM_StoneGolemLS.label>
+  <TM_StoneGolemLS1.label>кам&apos;яний голем</TM_StoneGolemLS1.label>
+  <TM_StoneGolemLS2.label>кам&apos;яний голем</TM_StoneGolemLS2.label>
+  <TM_StoneGolemLS3.label>кам&apos;яний голем</TM_StoneGolemLS3.label>
+
+
+  <!-- MECHA GOLEM -->
+
+  <TM_MechaGolemLS.label>хутро-голем</TM_MechaGolemLS.label>
+  <TM_MechaGolemLS_FS1.label>Хутро-голем з осколком вогню</TM_MechaGolemLS_FS1.label>
+  <TM_MechaGolemLS_FS2.label>Хутро-голем з осколком вогню</TM_MechaGolemLS_FS2.label>
+  <TM_MechaGolemLS_FS3.label>Хутро-голем з осколком вогню</TM_MechaGolemLS_FS3.label>
+  <TM_MechaGolemLS_WS1.label>Хутро-голем з осколком води</TM_MechaGolemLS_WS1.label>
+  <TM_MechaGolemLS_WS2.label>Хутро-голем з осколком води</TM_MechaGolemLS_WS2.label>
+  <TM_MechaGolemLS_WS3.label>Хутро-голем з осколком води</TM_MechaGolemLS_WS3.label>
+  <TM_MechaGolemLS_ES1.label>Хутро-голем з осколком землі</TM_MechaGolemLS_ES1.label>
+  <TM_MechaGolemLS_ES2.label>Хутро-голем з осколком землі</TM_MechaGolemLS_ES2.label>
+  <TM_MechaGolemLS_ES3.label>Хутро-голем з осколком землі</TM_MechaGolemLS_ES3.label>
+  <TM_MechaGolemLS_LS1.label>Хутро-голем з осколком блискавки</TM_MechaGolemLS_LS1.label>
+  <TM_MechaGolemLS_LS2.label>Хутро-голем з осколком блискавки</TM_MechaGolemLS_LS2.label>
+  <TM_MechaGolemLS_LS3.label>Хутро-голем з осколком блискавки</TM_MechaGolemLS_LS3.label>
+
+
+  <!-- FLESH GOLEM -->
+
+  <TM_FleshGolemLS.label>голем з плоті</TM_FleshGolemLS.label>
+  <TM_FleshGolemLS1.label>голем з плоті</TM_FleshGolemLS1.label>
+  <TM_FleshGolemLS2.label>голем з плоті</TM_FleshGolemLS2.label>
+  <TM_FleshGolemLS3.label>голем з плоті</TM_FleshGolemLS3.label>
+
+
+  <!-- HOLLOW GOLEM -->
+
+  <TM_HollowGolemLS.label>пустотілий голем</TM_HollowGolemLS.label>
+  <TM_HollowGolemLS_FA1.label>споріднення вогню I</TM_HollowGolemLS_FA1.label>
+  <TM_HollowGolemLS_FA2.label>споріднення вогню II</TM_HollowGolemLS_FA2.label>
+  <TM_HollowGolemLS_FA3.label>споріднення вогню III</TM_HollowGolemLS_FA3.label>
+  <TM_HollowGolemLS_IA1.label>споріднення води I</TM_HollowGolemLS_IA1.label>
+  <TM_HollowGolemLS_IA2.label>споріднення води II</TM_HollowGolemLS_IA2.label>
+  <TM_HollowGolemLS_IA3.label>споріднення води III</TM_HollowGolemLS_IA3.label>
+  <TM_HollowGolemLS_AA1.label>споріднення магії I</TM_HollowGolemLS_AA1.label>
+  <TM_HollowGolemLS_AA2.label>споріднення магії II</TM_HollowGolemLS_AA2.label>
+  <TM_HollowGolemLS_AA3.label>споріднення магії III</TM_HollowGolemLS_AA3.label>
+  <TM_HollowGolemLS_DA1.label>споріднення смерті I</TM_HollowGolemLS_DA1.label>
+  <TM_HollowGolemLS_DA2.label>споріднення смерті II</TM_HollowGolemLS_DA2.label>
+  <TM_HollowGolemLS_DA3.label>споріднення смерті III</TM_HollowGolemLS_DA3.label>
+
+
+  <!-- MAHARAL GOLEM -->
+
+  <TM_MaharalGolemLS.label>голем махарала</TM_MaharalGolemLS.label>
+  <TM_MaharalGolemLS1.label>голем махарала</TM_MaharalGolemLS1.label>
+  <TM_MaharalGolemLS2.label>голем махарала</TM_MaharalGolemLS2.label>
+  <TM_MaharalGolemLS3.label>голем махарала</TM_MaharalGolemLS3.label>
+
+
+</LanguageData>

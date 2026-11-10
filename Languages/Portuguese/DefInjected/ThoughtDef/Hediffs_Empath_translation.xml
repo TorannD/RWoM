@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_PositiveEmpathyTD.stages.0.label>vibrações positivas</TM_PositiveEmpathyTD.stages.0.label>
+  <TM_PositiveEmpathyTD.stages.0.description>Emoções obtidas através da empatia.</TM_PositiveEmpathyTD.stages.0.description>
+
+  <TM_NegativeEmpathyTD.stages.0.label>vibrações negativas</TM_NegativeEmpathyTD.stages.0.label>
+  <TM_NegativeEmpathyTD.stages.0.description>Emoções obtidas através da empatia.</TM_NegativeEmpathyTD.stages.0.description>
+
+  <TM_SuppressiveAuraTD.stages.0.label>Ladrão de emoções</TM_SuppressiveAuraTD.stages.0.label>
+  <TM_SuppressiveAuraTD.stages.0.description>Sinto-me profundamente triste e perdido quando privo os outros da capacidade de sentir.</TM_SuppressiveAuraTD.stages.0.description>
+
+  <TM_EmotionalWeightTD.stages.0.label>Bagagem emocional</TM_EmotionalWeightTD.stages.0.label>
+  <TM_EmotionalWeightTD.stages.0.description>Carregando o peso das emoções de cada um.</TM_EmotionalWeightTD.stages.0.description>
+
+  <TM_SymbiosisThought.stages.0.label>simbiose</TM_SymbiosisThought.stages.0.label>
+  <TM_SymbiosisThought.stages.0.description>A resistência emocional é proporcionada pela ligação simbiótica com a empatia.</TM_SymbiosisThought.stages.0.description>
+
+  <TM_OutOfBodyThought.stages.0.label>fora do corpo</TM_OutOfBodyThought.stages.0.label>
+  <TM_OutOfBodyThought.stages.0.description>Energia emocional usada para reforçar outro peão.</TM_OutOfBodyThought.stages.0.description>
+
+
+</LanguageData>

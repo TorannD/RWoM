@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Misc jobs -->
+
+  <JobDriver_DoMagicBill.reportString>займається магією в TargetA.</JobDriver_DoMagicBill.reportString>
+  <JobDriver_AssistMagicCircle.reportString>підготовка магічного кола</JobDriver_AssistMagicCircle.reportString>
+  <PlacePoisonTrap.reportString>встановлення отруйної пастки</PlacePoisonTrap.reportString>
+  <JobDriver_PlaceLightningTrap.reportString>розміщення блискавки пастки</JobDriver_PlaceLightningTrap.reportString>
+  <JobDriver_SleepNow.reportString>спить (колискова)</JobDriver_SleepNow.reportString>
+  <JobDriver_Entertain.reportString>розважає</JobDriver_Entertain.reportString>
+  <JobDriver_DoFor.reportString>підготовка атаки</JobDriver_DoFor.reportString>
+  <JobDriver_SummonDemon.reportString>відзначає жертвопринесення</JobDriver_SummonDemon.reportString>
+  <JobDriver_PsionicBarrier.reportString>проектування псіонічного бар&apos;єру</JobDriver_PsionicBarrier.reportString>
+  <JobDriver_TM_Teach.reportString>навчання і наставництво</JobDriver_TM_Teach.reportString>
+  <JobDriver_TM_GotoAndWait.reportString>очікування на місці</JobDriver_TM_GotoAndWait.reportString>
+  <JobDriver_TM_Meditate.reportString>глибока медитація</JobDriver_TM_Meditate.reportString>
+  <JobDriver_TM_Command.reportString>мотивування</JobDriver_TM_Command.reportString>
+  <JobDriver_GotoAndCast.reportString>займаюся магічною роботою</JobDriver_GotoAndCast.reportString>
+  <JobDriver_Discord.reportString>створення розбрату</JobDriver_Discord.reportString>
+  <JobDriver_SpiritDrain.reportString>виснажливий дух</JobDriver_SpiritDrain.reportString>
+
+
+</LanguageData>

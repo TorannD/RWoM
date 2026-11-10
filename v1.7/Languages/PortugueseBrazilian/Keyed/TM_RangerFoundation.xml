@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadRangerTraining>Aprender treinamento de patrulheiro — técnicas de campo clássicas com penalidades de trabalho (permanente)</TM_ReadRangerTraining>
+  <TM_ReadRangerTrailLore>Aprender Conhecimento de trilhas — transportar cargas mais rápido a céu aberto (permanente)</TM_ReadRangerTrailLore>
+  <TM_TrailLoreName>Conhecimento de trilhas</TM_TrailLoreName>
+  <TM_TrailLoreTraining>Ao transportar carga a céu aberto, a velocidade de movimento aumenta em 2%. Cada nível acrescenta 2 pontos percentuais, até 10%.</TM_TrailLoreTraining>
+</LanguageData>

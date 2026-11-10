@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -9,11 +9,9 @@ using Verse.AI;
 
 namespace TorannMagic
 {
-    public class Verb_Symbiosis : Verb_UseAbility
+    public class Verb_Symbiosis : ClassProgression.Verb_SpiritTargetable
     {
 
-        private int verVal = 0;
-        private int pwrVal = 0;
         bool validTarg;
 
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
@@ -37,54 +35,61 @@ namespace TorannMagic
             return validTarg;
         }
 
+        internal static bool CanLink(Pawn body, Pawn other)
+        {
+            return body != null && !body.Dead && other != null && other != body && !other.Dead &&
+                body.health?.hediffSet != null && other.health?.hediffSet != null &&
+                other.RaceProps?.Humanlike == true && !TM_Calc.IsUndead(other) && other.Faction == body.Faction &&
+                !body.health.hediffSet.HasHediff(TorannMagicDefOf.TM_OutOfBodyHD) &&
+                !other.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SymbiosisHD);
+        }
+
         protected override bool TryCastShot()
         {
-            bool flag = false;
-            Pawn caster = this.CasterPawn;
-            Pawn hitPawn = this.currentTarget.Thing as Pawn;
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            if (comp != null && comp.MagicData != null)
+            bool applied = ApplyHostedEffect();
+            if (!applied)
             {
-                pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);                
+                var other = currentTarget.Pawn;
+                Messages.Message(other?.health?.hediffSet?.HasHediff(TorannMagicDefOf.TM_SymbiosisHD) == true ?
+                    "TM_AlreadyHasSymbiote".Translate(CasterPawn.LabelShort) : "TM_InvalidTarget".Translate(CasterPawn.LabelShort, Ability.Def.label),
+                    MessageTypeDefOf.RejectInput);
             }
+            PostCastShot(applied,out var fired);
+            return fired;
+        }
 
-            if(hitPawn != null && hitPawn.RaceProps != null && hitPawn.RaceProps.Humanlike && !TM_Calc.IsUndead(hitPawn) && hitPawn.Faction == caster.Faction)
+        protected override bool ApplyHostedEffect()
+        {
+            var body = CasterPawn;
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(body,Ability);
+            var other = currentTarget.Pawn;
+            if (owner == null || !CanLink(body,other)) return false;
+            var source = HediffMaker.MakeHediff(TorannMagicDefOf.TM_OutOfBodyHD,body);
+            var benefit = HediffMaker.MakeHediff(TorannMagicDefOf.TM_SymbiosisHD,other);
+            var sourceLink = source.TryGetComp<HediffComp_SymbiosisCaster>();
+            var targetLink = benefit.TryGetComp<HediffComp_SymbiosisHost>();
+            if (sourceLink == null || targetLink == null) return false;
+            sourceLink.symbiosisHost = other;
+            sourceLink.originalId = owner != body ? owner.thingIDNumber : 0;
+            targetLink.symbiote = body;
+            source.Severity = .5f;
+            benefit.Severity = .5f + TM_Calc.GetSkillPowerLevel(owner, TorannMagicDefOf.TM_Symbiosis);
+            bool linked = false;
+            try
             {
-                if (!hitPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SymbiosisHD))
+                other.health.AddHediff(benefit);
+                body.health.AddHediff(source);
+                linked = body.health.hediffSet.hediffs.Contains(source) && other.health.hediffSet.hediffs.Contains(benefit);
+                return linked;
+            }
+            finally
+            {
+                if (!linked)
                 {
-                    HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_SymbiosisHD, .5f + pwrVal);
-                    HediffWithComps hdc = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_SymbiosisHD) as HediffWithComps;
-                    if (hdc != null)
-                    {
-                        HediffComp_SymbiosisHost hd_sh = hdc.TryGetComp<HediffComp_SymbiosisHost>();
-                        if (hd_sh != null)
-                        {
-                            hd_sh.symbiote = caster;
-                        }
-                    }
-                    HealthUtility.AdjustSeverity(caster, TorannMagicDefOf.TM_OutOfBodyHD, .5f);
-                    HediffWithComps hdc2 = caster.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_OutOfBodyHD) as HediffWithComps;
-                    if (hdc2 != null)
-                    {
-                        HediffComp_SymbiosisCaster hd_sc = hdc2.TryGetComp<HediffComp_SymbiosisCaster>();
-                        if (hd_sc != null)
-                        {
-                            hd_sc.symbiosisHost = hitPawn;
-                        }
-                    }
-                }
-                else
-                {
-                    Messages.Message("TM_AlreadyHasSymbiote".Translate(CasterPawn.LabelShort), MessageTypeDefOf.RejectInput);
+                    if (other.health.hediffSet.hediffs.Contains(benefit)) other.health.RemoveHediff(benefit);
+                    if (body.health.hediffSet.hediffs.Contains(source)) body.health.RemoveHediff(source);
                 }
             }
-            else
-            {
-                Messages.Message("TM_InvalidTarget".Translate(CasterPawn.LabelShort, this.Ability.Def.label), MessageTypeDefOf.RejectInput);
-            }
-
-            this.PostCastShot(flag, out flag);
-            return flag;
-        }        
+        }
     }
 }

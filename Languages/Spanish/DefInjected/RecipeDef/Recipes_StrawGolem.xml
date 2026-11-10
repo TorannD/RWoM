@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_StrawGolem_Armor.label>armadura</TM_StrawGolem_Armor.label>
+  
+  <TM_StrawGolem_Armor.description>Cada mejora aumenta la armadura del golem según el nivel [1,2,3]:\nContundente: +[6,11,15] %\nCortante: +[5,9,13] %\nCalor: +[4,7,10] %</TM_StrawGolem_Armor.description>
+  
+  <TM_StrawGolem_Armor.jobString>Fabricando pieza de golem.</TM_StrawGolem_Armor.jobString>
+  
+  
+  <TM_StrawGolem_EnergyConverter.label>convertidor de energía</TM_StrawGolem_EnergyConverter.label>
+  
+  <TM_StrawGolem_EnergyConverter.description>Aumenta un 6 % la eficiencia con la que el golem absorbe y utiliza la energía.</TM_StrawGolem_EnergyConverter.description>
+  
+  <TM_StrawGolem_EnergyConverter.jobString>Construyendo convertidor de energía.</TM_StrawGolem_EnergyConverter.jobString>
+  
+  
+  <TM_StrawGolem_EnergyMax.label>célula de energía</TM_StrawGolem_EnergyMax.label>
+  
+  <TM_StrawGolem_EnergyMax.description>Crea una célula de energía que aumenta la energía máxima en 100 por célula.</TM_StrawGolem_EnergyMax.description>
+  
+  <TM_StrawGolem_EnergyMax.jobString>Creando célula de energía.</TM_StrawGolem_EnergyMax.jobString>
+  
+  
+  <TM_StrawGolem_EnergyRegen.label>generador de energía</TM_StrawGolem_EnergyRegen.label>
+  
+  <TM_StrawGolem_EnergyRegen.description>Aumenta un 20 % la regeneración de energía del golem.</TM_StrawGolem_EnergyRegen.description>
+  
+  <TM_StrawGolem_EnergyRegen.jobString>Construyendo generador de energía.</TM_StrawGolem_EnergyRegen.jobString>
+  
+  
+  <TM_StrawGolem_LifeStage.label>nivel de armazón</TM_StrawGolem_LifeStage.label>
+  
+  <TM_StrawGolem_LifeStage.description>Mejora y refina el armazón del golem en cada nivel [1,2,3]:\nMovimiento: +[20/30/40] %\nSalud: +[20/40/50] %</TM_StrawGolem_LifeStage.description>
+  
+  <TM_StrawGolem_LifeStage.jobString>Mejorando el armazón del golem.</TM_StrawGolem_LifeStage.jobString>
+  
+  
+  <TM_StrawGolem_RepairBlock.label>restauración de piezas</TM_StrawGolem_RepairBlock.label>
+  
+  <TM_StrawGolem_RepairBlock.description>Sustituye las partes ausentes del golem que no requieren una mejora.</TM_StrawGolem_RepairBlock.description>
+  
+  <TM_StrawGolem_RepairBlock.jobString>Fabricando pieza de golem.</TM_StrawGolem_RepairBlock.jobString>
+  
+  
+  <TM_StrawGolem_Scarecrow.label>espantapájaros</TM_StrawGolem_Scarecrow.label>
+  
+  <TM_StrawGolem_Scarecrow.description>El golem de paja ahuyenta las plagas indeseadas para aumentar la velocidad de crecimiento de las plantas cercanas.</TM_StrawGolem_Scarecrow.description>
+  
+  <TM_StrawGolem_Scarecrow.jobString>Fabricando mejora de golem.</TM_StrawGolem_Scarecrow.jobString>
+  
+  
+  <TM_StrawGolem_Seed.label>cultivo</TM_StrawGolem_Seed.label>
+  
+  <TM_StrawGolem_Seed.description>Mejora en 2 la habilidad de cultivo (plantas) del golem.</TM_StrawGolem_Seed.description>
+  
+  <TM_StrawGolem_Seed.jobString>Fabricando mejora de golem.</TM_StrawGolem_Seed.jobString>
+  
+</LanguageData>

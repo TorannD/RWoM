@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <DemonAssault.label>ataque demoníaco</DemonAssault.label>
+  
+  <DemonAssault.letterLabel>Ataque demoníaco</DemonAssault.letterLabel>
+  
+  <DemonAssault.letterText>El fin está cerca: ¡demonios desatados atacan tu colonia!\nComo un heraldo de la perdición inminente, han empezado a caer fuego y ceniza del cielo.\n\nEstos seres infernales tienen una variedad de ataques y tácticas desafiantes.\nSin embargo, los demonios no pueden permanecer en este plano durante largos periodos y se verán obligados a regresar a su plano infernal en unas 3 horas. Derrota o resiste esta pesadilla.\nHay muy poco tiempo para prepararse.\n\n¡Buena suerte!</DemonAssault.letterText>
+  
+  
+  <Disease_ManaSickness.label>enfermedad de maná</Disease_ManaSickness.label>
+  
+  <Disease_ManaSickness.letterLabel>Enfermedad de maná</Disease_ManaSickness.letterLabel>
+  
+  <Disease_ManaSickness.letterText>{0} ha enfermado por {1}.\n\nAsegúrate de tener una cama médica y un médico. Procura que {2} reciba el tratamiento adecuado y pase en cama el mayor tiempo posible. Durante este periodo, {0} no podrá ganar maná.</Disease_ManaSickness.letterText>
+  
+  
+  <ElementalAssault.label>asalto elemental</ElementalAssault.label>
+  
+  <ElementalAssault.letterLabel>Asalto elemental</ElementalAssault.letterLabel>
+  
+  <ElementalAssault.letterText>¡Unos elementales hostiles han abierto una brecha hacia tu mundo y se preparan para enviar equipos de asalto a través de la grieta!\n\nLas grietas causan estragos en la atmósfera a medida que la energía se filtra a través de ellas hacia tu mundo. Cada elemento de grieta produce los siguientes efectos:\n\nGrieta de fuego: lluvias de meteoritos y olas de calor.\nGrieta de tierra: gases tóxicos; los animales enloquecen.\nGrieta de hielo: granizadas y descenso rápido de la temperatura.\nGrieta de aire: tormentas eléctricas.\n\n¡Destruye la grieta para acabar con esta pesadilla!</ElementalAssault.letterText>
+  
+  
+  <ManaDrain.label>drenaje de maná</ManaDrain.label>
+  
+  <ManaDrain.letterLabel>Drenaje de maná</ManaDrain.letterLabel>
+  
+  <ManaDrain.letterText>La alineación celeste del planeta está cambiando y provoca un reflujo de maná.\n\nTodas las criaturas en sintonía con poderes mágicos perderán maná poco a poco.\n\nLas criaturas pueden enfermar físicamente si se quedan sin maná.</ManaDrain.letterText>
+  
+  
+  <ManaSurge.label>oleada de maná</ManaSurge.label>
+  
+  <ManaSurge.letterLabel>Oleada de maná</ManaSurge.letterLabel>
+  
+  <ManaSurge.letterText>La alineación celeste del planeta ha cambiado y provoca una oleada de maná. Todas las criaturas en sintonía con poderes mágicos ganarán maná a un ritmo mayor.</ManaSurge.letterText>
+  
+  
+  <TM_ManaStorm.label>tormenta de maná</TM_ManaStorm.label>
+  
+  <TM_ManaStorm.letterLabel>Tormenta de maná</TM_ManaStorm.letterLabel>
+  
+  <TM_ManaStorm.letterText>Fuerzas caóticas están provocando una peligrosa marea de maná.\n\nDurante una tormenta de maná, los intentos de usar maná para materializar una intención mágica externa al lanzador dañarán al lanzador en proporción al coste de maná del hechizo. Este daño se aplica antes de que comience la invocación del hechizo. El uso informe del maná y el uso interno de la magia, como la transferencia de maná o disipar un encantamiento, no se ven afectados. No se pueden usar círculos mágicos ni focos durante este evento. Mientras la tormenta de maná está activa, los costes de energía se reducen a la mitad y se elimina el límite de reducción de maná.</TM_ManaStorm.letterText>
+  
+  
+  <WanderingLich.label>Lich errante</WanderingLich.label>
+  
+  <WanderingLich.letterLabel>Lich errante</WanderingLich.letterLabel>
+  
+  <WanderingLich.letterText>Un lich ancestral ha llegado errante a la zona y se prepara para asaltar tu colonia.\n\nLos lichs son criaturas poderosas por sí solos, pero su verdadera fuerza reside en su capacidad de crear no muertos animados a partir de los cadáveres de los fallecidos.\n\nEste lich es un ser antiguo que desprecia toda forma de vida, y tu alegre grupo de -cosas- vivientes ha resistido hasta ahora a que lo apaguen. Intentará poner fin a vuestra historia de supervivencia creando una horda de no muertos que desborde vuestras defensas.\n\nEl lich creará periódicamente nuevos guerreros esqueleto para atacar la colonia; si se le permite completar un ritual cerca de un cadáver expuesto, aumentará la probabilidad de que se creen gigantes esqueleto. Al final, el lich asaltará la propia colonia si las oleadas de no muertos no logran cumplir antes la tarea.</WanderingLich.letterText>
+  
+</LanguageData>

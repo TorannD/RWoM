@@ -1,0 +1,31 @@
+﻿<LanguageData><TM_SpiritPossessorHD.label>дух</TM_SpiritPossessorHD.label>
+  <TM_SpiritPossessorHD.description>Эта пешка - дух, не способный взаимодействовать с физическим миром общими путями. Духи не могут быть физически повреждены, но потеряют силу духа, если их форма получит повреждение.</TM_SpiritPossessorHD.description>
+  <TM_SpiritPossessorHD.stages.0.label>I</TM_SpiritPossessorHD.stages.0.label>
+  <TM_SpiritPossessorHD.stages.1.label>II</TM_SpiritPossessorHD.stages.1.label>
+  <TM_SpiritPossessorHD.stages.2.label>III</TM_SpiritPossessorHD.stages.2.label>
+  <TM_SpiritPossessorHD.stages.3.label>IV</TM_SpiritPossessorHD.stages.3.label>
+
+  <TM_SpiritPossessionHD.label>духовное владение</TM_SpiritPossessionHD.label>
+  <TM_SpiritPossessionHD.description>Одержим духом.</TM_SpiritPossessionHD.description>
+  <TM_SpiritPossessionHD.stages.0.label>искаженный</TM_SpiritPossessionHD.stages.0.label>
+  <TM_SpiritPossessionHD.stages.1.label>противоречивый</TM_SpiritPossessionHD.stages.1.label>
+  <TM_SpiritPossessionHD.stages.2.label>нестабильный</TM_SpiritPossessionHD.stages.2.label>
+  <TM_SpiritPossessionHD.stages.3.label>стабильный</TM_SpiritPossessionHD.stages.3.label>
+  <TM_SpiritPossessionHD.stages.4.label>кооператив</TM_SpiritPossessionHD.stages.4.label>
+  <TM_SpiritPossessionHD.stages.5.label>гармоничный</TM_SpiritPossessionHD.stages.5.label>
+
+  <TM_SpiritDrainHD.label>спиритический сток</TM_SpiritDrainHD.label>
+  <TM_SpiritDrainHD.description>Дух этой пешки истощён, и её будущее выглядит мрачным.</TM_SpiritDrainHD.description>
+  <TM_SpiritDrainHD.stages.0.label>восстановление</TM_SpiritDrainHD.stages.0.label>
+  <TM_SpiritDrainHD.stages.1.label>незначительный</TM_SpiritDrainHD.stages.1.label>
+  <TM_SpiritDrainHD.stages.2.label>низко</TM_SpiritDrainHD.stages.2.label>
+  <TM_SpiritDrainHD.stages.3.label>умеренный</TM_SpiritDrainHD.stages.3.label>
+  <TM_SpiritDrainHD.stages.4.label>серьезный</TM_SpiritDrainHD.stages.4.label>
+  <TM_SpiritDrainHD.stages.5.label>смертельно</TM_SpiritDrainHD.stages.5.label>
+
+  <TM_SpiritDistortionHD.label>искажение духа</TM_SpiritDistortionHD.label>
+  <TM_SpiritDistortionHD.description>Дух этой пешки искажён и с трудом удерживается в теле. Она становится уязвимее, но наносит больше урона.</TM_SpiritDistortionHD.description>
+  <TM_SpiritDistortionHD.stages.0.label />
+
+
+</LanguageData>

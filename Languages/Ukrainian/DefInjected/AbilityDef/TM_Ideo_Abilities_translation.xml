@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Start_ManaStorm.label>шторм мани</TM_Start_ManaStorm.label>
+  <TM_Start_ManaStorm.description>Створює і майже відразу ж звільняє тимчасову кишеню мани. Мана намагається заповнити кишеню, але змушена швидко розсіюватися, створюючи сильне обурення мани. Стан, що виникає в результаті, відомий як шторм мани. Мана намагається швидко розсіятися під час шторму мани, що може завдати серйозної шкоди будь-кому, хто спробує використовувати ману в цей час. Мана також більш доступна для тих, хто готовий ризикнути відповідною реакцією. Шторм мани триває від 6 до 40 годин.</TM_Start_ManaStorm.description>
+
+  <TM_Start_ElementalDefenders.label>стихійні захисники</TM_Start_ElementalDefenders.label>
+  <TM_Start_ElementalDefenders.description>Створює зв&apos;язок з іншим планом існування і заманює туди елементалів для захисту колонії. Триває близько 4 годин.</TM_Start_ElementalDefenders.description>
+
+
+</LanguageData>

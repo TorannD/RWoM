@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mana potion addiction -->
+
+  <Chemical_ManaPotion.label>зілля мани</Chemical_ManaPotion.label>
+  <Chemical_ManaPotion.description>Цей чоловік став залежним від хімічних речовин і афектів зілля мани і буде страждати від серйозних симптомів утримання, якщо він не буде продовжувати споживати зілля мани.</Chemical_ManaPotion.description>
+
+
+</LanguageData>

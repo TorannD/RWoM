@@ -1,0 +1,139 @@
+<LanguageData><TM_ShadowHD.label>Тень</TM_ShadowHD.label>
+  <TM_ShadowHD.description>Теневой урон.</TM_ShadowHD.description>
+  <TM_ShadowHD.comps.0.labelTendedWell>забинтованная</TM_ShadowHD.comps.0.labelTendedWell>
+  <TM_ShadowHD.comps.0.labelTendedWellInner>зашитый</TM_ShadowHD.comps.0.labelTendedWellInner>
+  <TM_ShadowHD.comps.0.labelSolidTendedWell>набор</TM_ShadowHD.comps.0.labelSolidTendedWell>
+  <TM_ShadowHD.injuryProps.destroyedLabel>высохший</TM_ShadowHD.injuryProps.destroyedLabel>
+  <TM_ShadowHD.injuryProps.destroyedOutLabel>дезинтегрированный</TM_ShadowHD.injuryProps.destroyedOutLabel>
+
+  <TM_GravitySlowHD.label>гравитационный фонтан</TM_GravitySlowHD.label>
+  <TM_GravitySlowHD.description>Замедляется неестественным гравитационным притяжением.</TM_GravitySlowHD.description>
+  <TM_GravitySlowHD.stages.0.label>замедлился</TM_GravitySlowHD.stages.0.label>
+
+  <TM_SoulBondPhysicalHD.label>Душевная Связь</TM_SoulBondPhysicalHD.label>
+  <TM_SoulBondPhysicalHD.description>Душа привязана к суккубу.</TM_SoulBondPhysicalHD.description>
+  <TM_SoulBondPhysicalHD.stages.0.label>I</TM_SoulBondPhysicalHD.stages.0.label>
+  <TM_SoulBondPhysicalHD.stages.1.label>II</TM_SoulBondPhysicalHD.stages.1.label>
+  <TM_SoulBondPhysicalHD.stages.2.label>III</TM_SoulBondPhysicalHD.stages.2.label>
+  <TM_SoulBondPhysicalHD.stages.3.label>IV</TM_SoulBondPhysicalHD.stages.3.label>
+
+  <TM_SDSoulBondPhysicalHD.label>Душевная Связь</TM_SDSoulBondPhysicalHD.label>
+  <TM_SDSoulBondPhysicalHD.description>Поддержание контракта о связывании души с другой пешкой.</TM_SDSoulBondPhysicalHD.description>
+  <TM_SDSoulBondPhysicalHD.stages.0.label>I</TM_SDSoulBondPhysicalHD.stages.0.label>
+  <TM_SDSoulBondPhysicalHD.stages.1.label>II</TM_SDSoulBondPhysicalHD.stages.1.label>
+  <TM_SDSoulBondPhysicalHD.stages.2.label>III</TM_SDSoulBondPhysicalHD.stages.2.label>
+  <TM_SDSoulBondPhysicalHD.stages.3.label>IV</TM_SDSoulBondPhysicalHD.stages.3.label>
+
+  <TM_SoulBondMentalHD.label>Душевная Связь</TM_SoulBondMentalHD.label>
+  <TM_SoulBondMentalHD.description>Душа связана с колдуном.</TM_SoulBondMentalHD.description>
+  <TM_SoulBondMentalHD.stages.0.label>I</TM_SoulBondMentalHD.stages.0.label>
+  <TM_SoulBondMentalHD.stages.1.label>II</TM_SoulBondMentalHD.stages.1.label>
+  <TM_SoulBondMentalHD.stages.2.label>III</TM_SoulBondMentalHD.stages.2.label>
+  <TM_SoulBondMentalHD.stages.3.label>IV</TM_SoulBondMentalHD.stages.3.label>
+
+  <TM_WDSoulBondMentalHD.label>Душевная Связь</TM_WDSoulBondMentalHD.label>
+  <TM_WDSoulBondMentalHD.description>Поддержание контракта с другой пешкой, которая связывает их душу с моей.</TM_WDSoulBondMentalHD.description>
+  <TM_WDSoulBondMentalHD.stages.0.label>I</TM_WDSoulBondMentalHD.stages.0.label>
+  <TM_WDSoulBondMentalHD.stages.1.label>II</TM_WDSoulBondMentalHD.stages.1.label>
+  <TM_WDSoulBondMentalHD.stages.2.label>III</TM_WDSoulBondMentalHD.stages.2.label>
+  <TM_WDSoulBondMentalHD.stages.3.label>IV</TM_WDSoulBondMentalHD.stages.3.label>
+
+  <TM_WDDominateHD.label>Господство I</TM_WDDominateHD.label>
+  <TM_WDDominateHD.description>Ментально доминирует чернокнижник-снижает психическое состояние и может вызвать различные психические срывы.</TM_WDDominateHD.description>
+  <TM_WDDominateHD.stages.0.label>затухающий</TM_WDDominateHD.stages.0.label>
+  <TM_WDDominateHD.stages.1.label>отступление</TM_WDDominateHD.stages.1.label>
+  <TM_WDDominateHD.stages.2.label>охватывающий</TM_WDDominateHD.stages.2.label>
+  <TM_WDDominateHD.stages.3.label>подавляющий</TM_WDDominateHD.stages.3.label>
+
+  <TM_WDDominateHD_I.label>Господство II</TM_WDDominateHD_I.label>
+  <TM_WDDominateHD_I.description>Ментально доминирует чернокнижник-снижает психическое состояние и может вызвать различные психические срывы.</TM_WDDominateHD_I.description>
+  <TM_WDDominateHD_I.stages.0.label>затухающий</TM_WDDominateHD_I.stages.0.label>
+  <TM_WDDominateHD_I.stages.1.label>отступление</TM_WDDominateHD_I.stages.1.label>
+  <TM_WDDominateHD_I.stages.2.label>охватывающий</TM_WDDominateHD_I.stages.2.label>
+  <TM_WDDominateHD_I.stages.3.label>подавляющий</TM_WDDominateHD_I.stages.3.label>
+
+  <TM_WDDominateHD_II.label>Господство III</TM_WDDominateHD_II.label>
+  <TM_WDDominateHD_II.description>Ментально доминирует чернокнижник-снижает психическое состояние и может вызвать различные психические срывы.</TM_WDDominateHD_II.description>
+  <TM_WDDominateHD_II.stages.0.label>затухающий</TM_WDDominateHD_II.stages.0.label>
+  <TM_WDDominateHD_II.stages.1.label>отступление</TM_WDDominateHD_II.stages.1.label>
+  <TM_WDDominateHD_II.stages.2.label>охватывающий</TM_WDDominateHD_II.stages.2.label>
+  <TM_WDDominateHD_II.stages.3.label>подавляющий</TM_WDDominateHD_II.stages.3.label>
+
+  <TM_WDDominateHD_III.label>Господство IV</TM_WDDominateHD_III.label>
+  <TM_WDDominateHD_III.description>Ментально доминирует чернокнижник-снижает психическое состояние и может вызвать различные психические срывы.</TM_WDDominateHD_III.description>
+  <TM_WDDominateHD_III.stages.0.label>затухающий</TM_WDDominateHD_III.stages.0.label>
+  <TM_WDDominateHD_III.stages.1.label>отступление</TM_WDDominateHD_III.stages.1.label>
+  <TM_WDDominateHD_III.stages.2.label>охватывающий</TM_WDDominateHD_III.stages.2.label>
+  <TM_WDDominateHD_III.stages.3.label>подавляющий</TM_WDDominateHD_III.stages.3.label>
+
+  <TM_SDDominateHD.label>Господство I</TM_SDDominateHD.label>
+  <TM_SDDominateHD.description>Под воздействием суккуба госпожа-исполнительница всех физических действий.</TM_SDDominateHD.description>
+  <TM_SDDominateHD.stages.0.label>затухающий</TM_SDDominateHD.stages.0.label>
+  <TM_SDDominateHD.stages.1.label>отступление</TM_SDDominateHD.stages.1.label>
+  <TM_SDDominateHD.stages.2.label>охватывающий</TM_SDDominateHD.stages.2.label>
+  <TM_SDDominateHD.stages.3.label>подавляющий</TM_SDDominateHD.stages.3.label>
+
+  <TM_SDDominateHD_I.label>Господство II</TM_SDDominateHD_I.label>
+  <TM_SDDominateHD_I.description>Под воздействием суккуба госпожа-исполнительница всех физических действий.</TM_SDDominateHD_I.description>
+  <TM_SDDominateHD_I.stages.0.label>затухающий</TM_SDDominateHD_I.stages.0.label>
+  <TM_SDDominateHD_I.stages.1.label>отступление</TM_SDDominateHD_I.stages.1.label>
+  <TM_SDDominateHD_I.stages.2.label>охватывающий</TM_SDDominateHD_I.stages.2.label>
+  <TM_SDDominateHD_I.stages.3.label>подавляющий</TM_SDDominateHD_I.stages.3.label>
+
+  <TM_SDDominateHD_II.label>Господство III</TM_SDDominateHD_II.label>
+  <TM_SDDominateHD_II.description>Под воздействием суккуба госпожа-исполнительница всех физических действий.</TM_SDDominateHD_II.description>
+  <TM_SDDominateHD_II.stages.0.label>затухающий</TM_SDDominateHD_II.stages.0.label>
+  <TM_SDDominateHD_II.stages.1.label>отступление</TM_SDDominateHD_II.stages.1.label>
+  <TM_SDDominateHD_II.stages.2.label>охватывающий</TM_SDDominateHD_II.stages.2.label>
+  <TM_SDDominateHD_II.stages.3.label>подавляющий</TM_SDDominateHD_II.stages.3.label>
+
+  <TM_SDDominateHD_III.label>Господство IV</TM_SDDominateHD_III.label>
+  <TM_SDDominateHD_III.description>Под воздействием суккуба госпожа-исполнительница всех физических действий.</TM_SDDominateHD_III.description>
+  <TM_SDDominateHD_III.stages.0.label>затухающий</TM_SDDominateHD_III.stages.0.label>
+  <TM_SDDominateHD_III.stages.1.label>отступление</TM_SDDominateHD_III.stages.1.label>
+  <TM_SDDominateHD_III.stages.2.label>охватывающий</TM_SDDominateHD_III.stages.2.label>
+  <TM_SDDominateHD_III.stages.3.label>подавляющий</TM_SDDominateHD_III.stages.3.label>
+
+  <TM_VitalityDrainHD.label>Утечка Жизненных Сил</TM_VitalityDrainHD.label>
+  <TM_VitalityDrainHD.description>Физически истощенный, но умственно расслабленный близостью с суккубом.</TM_VitalityDrainHD.description>
+  <TM_VitalityDrainHD.stages.0.label>Суккуб</TM_VitalityDrainHD.stages.0.label>
+
+  <TM_VitalityBoostHD.label>Повышение Жизненной Силы</TM_VitalityBoostHD.label>
+  <TM_VitalityBoostHD.description>Физический толчок приобретается путем высасывания энергии из пешки во время близости.</TM_VitalityBoostHD.description>
+  <TM_VitalityBoostHD.stages.0.label />
+
+  <TM_DemonHD.label>Демоническое Пламя</TM_DemonHD.label>
+  <TM_DemonHD.description>Демоническое пламя, которое кружится и извивается вокруг формы демона.</TM_DemonHD.description>
+  <TM_DemonHD.stages.0.label />
+  <TM_DemonHD.stages.1.label />
+  <TM_DemonHD.stages.2.label />
+
+  <TM_DemonicPriceHD.label>Потребление Души</TM_DemonicPriceHD.label>
+  <TM_DemonicPriceHD.description>Пламя разрушения, которое никогда не прекратится, пока не поглотит душу этой пешки.</TM_DemonicPriceHD.description>
+  <TM_DemonicPriceHD.stages.0.label />
+
+  <TM_DemonScornHD.label>Презрение демона</TM_DemonScornHD.label>
+  <TM_DemonScornHD.description>Частичное превращение суккуба в демона; дарует повышенную физическую силу и поглощает урон.</TM_DemonScornHD.description>
+  <TM_DemonScornHD.stages.0.label>I</TM_DemonScornHD.stages.0.label>
+
+  <TM_DemonScornHD_I.label>Презрение демона</TM_DemonScornHD_I.label>
+  <TM_DemonScornHD_I.description>Частичное превращение суккуба в демона; дарует повышенную физическую силу и поглощает урон.</TM_DemonScornHD_I.description>
+  <TM_DemonScornHD_I.stages.0.label>II</TM_DemonScornHD_I.stages.0.label>
+
+  <TM_DemonScornHD_II.label>Презрение демона</TM_DemonScornHD_II.label>
+  <TM_DemonScornHD_II.description>Частичное превращение суккуба в демона; дарует повышенную физическую силу и поглощает урон.</TM_DemonScornHD_II.description>
+  <TM_DemonScornHD_II.stages.0.label>III</TM_DemonScornHD_II.stages.0.label>
+
+  <TM_DemonScornHD_III.label>Презрение демона</TM_DemonScornHD_III.label>
+  <TM_DemonScornHD_III.description>Частичное превращение суккуба в демона; дарует повышенную физическую силу и поглощает урон.</TM_DemonScornHD_III.description>
+  <TM_DemonScornHD_III.stages.0.label>IV</TM_DemonScornHD_III.stages.0.label>
+
+
+  <TM_ShadowHD.comps.1.permanentLabel>тронутый тенью</TM_ShadowHD.comps.1.permanentLabel>
+  <TM_ShadowHD.comps.HediffComp_TendDuration.labelTendedWell>перевязано</TM_ShadowHD.comps.HediffComp_TendDuration.labelTendedWell>
+  <TM_ShadowHD.comps.HediffComp_TendDuration.labelTendedWellInner>ушит</TM_ShadowHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  <TM_ShadowHD.comps.HediffComp_TendDuration.labelSolidTendedWell>установить</TM_ShadowHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  <TM_ShadowHD.comps.HediffComp_GetsPermanent.permanentLabel>тронут тенью</TM_ShadowHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  <TM_ShadowHD.labelNounPretty>{0} в {1}</TM_ShadowHD.labelNounPretty>
+
+</LanguageData>

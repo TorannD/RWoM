@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- STONE GOLEM -->
+
+  <TM_StoneGolemK.label>кам&apos;яний голем</TM_StoneGolemK.label>
+  <TM_StoneGolemK.labelPlural>кам&apos;яні големи</TM_StoneGolemK.labelPlural>
+
+  <TM_SandstoneGolemK.label>піщаний голем</TM_SandstoneGolemK.label>
+  <TM_SandstoneGolemK.labelPlural>піщані големи</TM_SandstoneGolemK.labelPlural>
+
+  <TM_LimestoneGolemK.label>вапняковий голем</TM_LimestoneGolemK.label>
+  <TM_LimestoneGolemK.labelPlural>вапнякові големи</TM_LimestoneGolemK.labelPlural>
+
+  <TM_GraniteGolemK.label>гранітний голем</TM_GraniteGolemK.label>
+  <TM_GraniteGolemK.labelPlural>гранітні големи</TM_GraniteGolemK.labelPlural>
+
+  <TM_SlateGolemK.label>сланцевий голем</TM_SlateGolemK.label>
+  <TM_SlateGolemK.labelPlural>сланцеві големи</TM_SlateGolemK.labelPlural>
+
+  <TM_MarbleGolemK.label>мармуровий голем</TM_MarbleGolemK.label>
+  <TM_MarbleGolemK.labelPlural>мармурові големи</TM_MarbleGolemK.labelPlural>
+
+
+  <!-- MECHA GOLEM -->
+
+  <TM_MechaGolemK.label>хутро-голем</TM_MechaGolemK.label>
+  <TM_MechaGolemK.labelPlural>хутра-големи</TM_MechaGolemK.labelPlural>
+
+
+  <!-- FLESH GOLEM -->
+
+  <TM_FleshGolemK.label>голем з плоті</TM_FleshGolemK.label>
+  <TM_FleshGolemK.labelPlural>големи з плоті</TM_FleshGolemK.labelPlural>
+
+
+  <!-- HOLLOW GOLEM -->
+
+  <TM_HollowGolemK.label>пустотілий голем</TM_HollowGolemK.label>
+  <TM_HollowGolemK.labelPlural>пустотілі големи</TM_HollowGolemK.labelPlural>
+
+
+  <!-- MAHARAL GOLEM -->
+
+  <TM_MaharalGolemK.label>махарал-голем</TM_MaharalGolemK.label>
+  <TM_MaharalGolemK.labelPlural>махарал-големи</TM_MaharalGolemK.labelPlural>
+
+
+</LanguageData>

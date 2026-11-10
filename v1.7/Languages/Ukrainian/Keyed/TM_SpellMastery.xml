@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MasteryRitual>Майстерність {0}: {1} ({2} магіциту{3})</TM_MasteryRitual>
+  <TM_Mastery_focus>Зосередження (+25% шкоди основного вибуху)</TM_Mastery_focus>
+  <TM_Mastery_reach>Розмах (+25% до радіуса основного вибуху)</TM_Mastery_reach>
+  <TM_Mastery_depth>Глибоке лікування (+25% на рану)</TM_Mastery_depth>
+  <TM_Mastery_breadth>Широке лікування (ще одна рана)</TM_Mastery_breadth>
+  <TM_MasteryCurrent>Майстерність {0}: {1}</TM_MasteryCurrent>
+  <TM_MasteryHint>Оберіть або змініть спеціалізацію за ту саму ціну на великому магічному колі. Підношення мають бути в інвентарі мага або в межах п’яти клітин від центру.</TM_MasteryHint>
+</LanguageData>

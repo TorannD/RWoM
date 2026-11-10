@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Shroud</defName>
+    <label>Shroud of Darkness</label>
+    <description>The Shroud of Darkness is a cloak of tangible malice and fear that consumes nearby energy.
+	
+The Shroud has many different functions and is a crucial component of the death knight's training. Foremost, the cloak provides a defensive bonus against all damage types and slightly increases weapon damage.
+
+It's also able to solidify and retaliate against an attack using spirit damage.
+
+Last, but not least, the Shroud is able to nullify projectiles near the death knight by consuming them in a void.  Projectiles launched from less than 6 cells away will never be nullified.
+
+All of these functions are enhanced as hate levels grow and must have a sufficient level of hate to function at all.</description>
+    <spellId>rwom.tm_shroud</spellId>
+    <iconPath>UI/shroud</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Shroud</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>0.0</warmupTime>
+      <SecondsToRecharge>0.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Waveoffear</defName>
+    <label>Wave of Fear</label>
+    <description>Release a wave of fear that sends enemies cowering. Wave of Fear also applies a significant debuff to dark/light defense, movement, and slows attack speeds.
+	
+Hate is not required to use this ability, but it's effective range is greatly increased by hate levels.</description>
+    <spellId>rwom.tm_waveoffear</spellId>
+    <iconPath>UI/waveoffear</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_WaveOfFear</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_WaveOfFear</defaultProjectile>
+      <warmupTime>0.5</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <range>0</range>
+      <soundCast />
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Spite</defName>
+    <label>Spite</label>
+    <description>Release harnessed hatred and project a wave of spite at a target. Spite must have hate to be used.
+		
+Cast time: 1s
+Cooldown : 5s
+Range: 21</description>
+    <spellId>rwom.tm_spite</spellId>
+    <iconPath>UI/spite</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_DeathKnightSpite</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Spite</defaultProjectile>
+      <abilityDef>TM_Spite</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>5</SecondsToRecharge>
+      <range>21</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Woosh</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SpiteI</defName>
+    <label>Spite I</label>
+    <description>Release harnessed hatred and project a wave of spite at a target.  Spite must have hate to be used.
+		
+Cast time: .8s
+Cooldown : 4s
+Range: 24</description>
+    <spellId>rwom.tm_spite_i</spellId>
+    <iconPath>UI/spite</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_DeathKnightSpite</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Spite</defaultProjectile>
+      <abilityDef>TM_Spite_I</abilityDef>
+      <warmupTime>.8</warmupTime>
+      <SecondsToRecharge>4</SecondsToRecharge>
+      <range>24</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Woosh</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SpiteII</defName>
+    <label>Spite II</label>
+    <description>Release harnessed hatred and project a wave of spite at a target. Spite must have hate to be used.
+		
+Cast time: .6s
+Cooldown : 3s
+Range: 27</description>
+    <spellId>rwom.tm_spite_ii</spellId>
+    <iconPath>UI/spite</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_DeathKnightSpite</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Spite</defaultProjectile>
+      <abilityDef>TM_Spite_II</abilityDef>
+      <warmupTime>.6</warmupTime>
+      <SecondsToRecharge>3</SecondsToRecharge>
+      <range>27</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Woosh</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SpiteIII</defName>
+    <label>Spite III</label>
+    <description>Release harnessed hatred and project a wave of spite at a target. Spite must have hate to be used.
+		
+Cast time: .4s
+Cooldown : 2s
+Range: 30</description>
+    <spellId>rwom.tm_spite_iii</spellId>
+    <iconPath>UI/spite</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_DeathKnightSpite</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Spite</defaultProjectile>
+      <abilityDef>TM_Spite_III</abilityDef>
+      <warmupTime>.4</warmupTime>
+      <SecondsToRecharge>2</SecondsToRecharge>
+      <range>30</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Woosh</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Lifesteal</defName>
+    <label>Life Steal</label>
+    <description>Leach spirit from enemies struck in melee combat to restore life and energy to the death knight.</description>
+    <spellId>rwom.tm_lifesteal</spellId>
+    <iconPath>UI/soulsteal</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_LifeSteal</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>0.0</warmupTime>
+      <SecondsToRecharge>0.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Graveblade</defName>
+    <label>Grave Blade</label>
+    <description>Spirit blades strike from the grave.
+
+Range: 35
+Cast time: 1.6s
+Radius: 3.0</description>
+    <spellId>rwom.tm_graveblade</spellId>
+    <iconPath>UI/graveblade</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_GraveBlade</defaultProjectile>
+      <abilityDef>TM_GraveBlade</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>1.6</warmupTime>
+      <SecondsToRecharge>60.0</SecondsToRecharge>
+      <range>35</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>TM_VibrationLow</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_GravebladeI</defName>
+    <label>Grave Blade I</label>
+    <description>Spirit blades strike from the grave.
+
+Range: 38
+Cast time: 1.4s
+Radius: 3.4</description>
+    <spellId>rwom.tm_graveblade_i</spellId>
+    <iconPath>UI/graveblade</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_GraveBlade_I</defaultProjectile>
+      <abilityDef>TM_GraveBlade_I</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>1.4</warmupTime>
+      <SecondsToRecharge>55.0</SecondsToRecharge>
+      <range>38</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>TM_VibrationLow</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_GravebladeII</defName>
+    <label>Grave Blade II</label>
+    <description>Spirit blades strike from the grave.
+
+Range: 41
+Cast time: 1.2s
+Radius: 3.8</description>
+    <spellId>rwom.tm_graveblade_ii</spellId>
+    <iconPath>UI/graveblade</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_GraveBlade_II</defaultProjectile>
+      <abilityDef>TM_GraveBlade_II</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>1.2</warmupTime>
+      <SecondsToRecharge>50.0</SecondsToRecharge>
+      <range>41</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>TM_VibrationLow</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_GravebladeIII</defName>
+    <label>Grave Blade III</label>
+    <description>Spirit blades strike from the grave.
+
+Range: 44
+Cast time: 1s
+Radius: 4.2</description>
+    <spellId>rwom.tm_graveblade_iii</spellId>
+    <iconPath>UI/graveblade</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_GraveBlade_III</defaultProjectile>
+      <abilityDef>TM_GraveBlade_III</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>45.0</SecondsToRecharge>
+      <range>44</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>TM_VibrationLow</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

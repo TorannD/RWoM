@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_RangerBreakthrough</defName>
+    <label>breakthrough hunt</label>
+    <description>Prepare a hunt with your bonded animal within 12 cells. Mark the chosen enemy and up to two nearby enemies in bow range (maximum 30 cells). After 5 seconds of aiming, release six arrows over 20 seconds for 70% bow damage each. The animal covers two hostile weapon hits, up to 25 damage per hit. Move speed falls by 20% during the volley. Base cost: 60% stamina, cooldown: two days. Interrupted preparation costs 6% stamina.</description>
+    <spellId>rwom.tm_rangerbreakthrough</spellId>
+    <iconPath>UI/arrowstorm</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_RangerBreakthrough</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_RangerBreakthrough</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>TM_RangerHuntArrow</defaultProjectile>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>2000</SecondsToRecharge>
+      <range>30</range>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>
+

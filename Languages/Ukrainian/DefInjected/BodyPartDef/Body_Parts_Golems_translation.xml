@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- GOLEM Generic -->
+
+  <Golem_Body.label>тулуб</Golem_Body.label>
+  <Golem_Back.label>спина</Golem_Back.label>
+  <Golem_Spine.label>хребет</Golem_Spine.label>
+  <Golem_Abdomen.label>черевна порожнина</Golem_Abdomen.label>
+  <Golem_Guts.label>внутрішності</Golem_Guts.label>
+  <Golem_Chest.label>груди</Golem_Chest.label>
+  <Golem_Heart.label>серце</Golem_Heart.label>
+  <Golem_Ribcage.label>грудна клітина</Golem_Ribcage.label>
+  <Golem_Lung.label>легкий</Golem_Lung.label>
+  <Golem_Neck.label>шия</Golem_Neck.label>
+  <Golem_Head.label>голова</Golem_Head.label>
+  <Golem_Skull.label>череп</Golem_Skull.label>
+  <Golem_Brain.label>мозок</Golem_Brain.label>
+  <Golem_Face.label>обличчя</Golem_Face.label>
+  <Golem_Eye.label>око</Golem_Eye.label>
+  <Golem_Ear.label>вухо</Golem_Ear.label>
+  <Golem_Nose.label>ніс</Golem_Nose.label>
+  <Golem_Jaw.label>щелепа</Golem_Jaw.label>
+  <Golem_Tongue.label>мова</Golem_Tongue.label>
+  <Golem_Shoulder.label>плече</Golem_Shoulder.label>
+  <Golem_RightArm.label>права рука</Golem_RightArm.label>
+  <Golem_LeftArm.label>ліва рука</Golem_LeftArm.label>
+  <Golem_Hand.label>рука</Golem_Hand.label>
+  <Golem_Waist.label>попереку</Golem_Waist.label>
+  <Golem_Leg.label>нога</Golem_Leg.label>
+  <Golem_Femur.label>стегнова кістка</Golem_Femur.label>
+  <Golem_Tibia.label>великомірцева кістка</Golem_Tibia.label>
+  <Golem_Foot.label>нога</Golem_Foot.label>
+
+
+  <!-- MECHA GOLEM -->
+
+  <Mecha_Body.label>тіло</Mecha_Body.label>
+  <Mecha_Back.label>задня пластина</Mecha_Back.label>
+  <Mecha_Spine.label>спинномозковий канал</Mecha_Spine.label>
+  <Mecha_Abdomen.label>черевна порожнина</Mecha_Abdomen.label>
+  <Mecha_EnergyCompactor.label>ущільнювач енергії</Mecha_EnergyCompactor.label>
+  <Mecha_Chest.label>нагрудна пластина</Mecha_Chest.label>
+  <Mecha_Core.label>ЦП</Mecha_Core.label>
+  <Mecha_CoreProcessor.label>ядро процесора</Mecha_CoreProcessor.label>
+  <Mecha_Neck.label>горжет.</Mecha_Neck.label>
+  <Mecha_Head.label>каркас голови</Mecha_Head.label>
+  <Mecha_SkullPlate.label>черепна пластина</Mecha_SkullPlate.label>
+  <Mecha_AI.label>Ядро ШІ</Mecha_AI.label>
+  <Mecha_Optics.label>оптика</Mecha_Optics.label>
+  <Mecha_Sensors.label>датчики</Mecha_Sensors.label>
+  <Mecha_Transmitter.label>передавачі</Mecha_Transmitter.label>
+  <Mecha_LeftShoulder.label>ліве плече</Mecha_LeftShoulder.label>
+  <Mecha_LeftArm.label>ліва рука</Mecha_LeftArm.label>
+  <Mecha_LeftArm_Axe.label>хутро-сокира</Mecha_LeftArm_Axe.label>
+  <Mecha_LeftArm_Sword.label>хутро-меч</Mecha_LeftArm_Sword.label>
+  <Mecha_RightShoulder.label>праве плече</Mecha_RightShoulder.label>
+  <Mecha_RightArm.label>права рука</Mecha_RightArm.label>
+  <Mecha_RightArm_Hammer.label>хутро-молот</Mecha_RightArm_Hammer.label>
+  <Mecha_Base.label>база руху автомата</Mecha_Base.label>
+
+
+  <!-- FLESH GOLEM -->
+
+  <Flesh_Body.label>тулуб</Flesh_Body.label>
+  <Flesh_Back.label>спина</Flesh_Back.label>
+  <Flesh_Spine.label>хребет</Flesh_Spine.label>
+  <Flesh_Wings.label>крила</Flesh_Wings.label>
+  <Flesh_Abdomen.label>черевна порожнина</Flesh_Abdomen.label>
+  <Flesh_Guts.label>внутрішності</Flesh_Guts.label>
+  <Flesh_Chest.label>груди</Flesh_Chest.label>
+  <Flesh_Heart.label>серце</Flesh_Heart.label>
+  <Flesh_Ribcage.label>грудна клітина</Flesh_Ribcage.label>
+  <Flesh_Lung.label>легкий</Flesh_Lung.label>
+  <Flesh_Neck.label>шия</Flesh_Neck.label>
+  <Flesh_Head.label>голова</Flesh_Head.label>
+  <Flesh_Skull.label>череп</Flesh_Skull.label>
+  <Flesh_Brain.label>мозок</Flesh_Brain.label>
+  <Flesh_Face.label>обличчя</Flesh_Face.label>
+  <Flesh_Eye.label>око</Flesh_Eye.label>
+  <Flesh_LowerEye.label>око</Flesh_LowerEye.label>
+  <Flesh_EvilEye.label>зле око</Flesh_EvilEye.label>
+  <Flesh_Tusks.label>ікла</Flesh_Tusks.label>
+  <Flesh_Ear.label>вухо</Flesh_Ear.label>
+  <Flesh_Nose.label>ніс</Flesh_Nose.label>
+  <Flesh_Jaw.label>щелепа</Flesh_Jaw.label>
+  <Flesh_Tongue.label>мова</Flesh_Tongue.label>
+  <Flesh_Horns.label>роги</Flesh_Horns.label>
+  <Flesh_Shoulder.label>плече</Flesh_Shoulder.label>
+  <Flesh_RightArm.label>права рука</Flesh_RightArm.label>
+  <Flesh_LeftArm.label>ліва рука</Flesh_LeftArm.label>
+  <Flesh_Hand.label>рука</Flesh_Hand.label>
+  <Flesh_LeftArm_Brace.label>ліва скоба</Flesh_LeftArm_Brace.label>
+  <Flesh_LeftArm_Cleaver.label>лівий тесак</Flesh_LeftArm_Cleaver.label>
+  <Flesh_RightArm_Brace.label>права скоба</Flesh_RightArm_Brace.label>
+  <Flesh_RightArm_Cleaver.label>правий тесак</Flesh_RightArm_Cleaver.label>
+  <Flesh_Waist.label>попереку</Flesh_Waist.label>
+  <Flesh_Leg.label>нога</Flesh_Leg.label>
+  <Flesh_Femur.label>стегнова кістка</Flesh_Femur.label>
+  <Flesh_Tibia.label>великомірцева кістка</Flesh_Tibia.label>
+  <Flesh_Foot.label>нога</Flesh_Foot.label>
+
+
+  <!-- HOLLOW GOLEM -->
+
+  <Hollow_Weapon.label>видовбана прорізь для зброї</Hollow_Weapon.label>
+  <Hollow_Axe.label>видовбана сокира</Hollow_Axe.label>
+  <Hollow_Staff.label>видовбаний посох</Hollow_Staff.label>
+  <Hollow_Core.label>поле ядро</Hollow_Core.label>
+  <Hollow_CoreSlotA.label>поле ядро</Hollow_CoreSlotA.label>
+  <Hollow_CoreSlotB.label>поле ядро</Hollow_CoreSlotB.label>
+
+
+  <!-- STONE GOLEM -->
+
+  <Stone_Core.label>кам&apos;яна ядро</Stone_Core.label>
+  <Stone_SlotA.label>кам&apos;яна ядро (а)</Stone_SlotA.label>
+  <Stone_SlotB.label>кам&apos;яна ядро (б)</Stone_SlotB.label>
+
+
+  <!-- MAHARAL GOLEM -->
+
+  <Maharal_Core.label>ядро махарала</Maharal_Core.label>
+  <Maharal_SlotA.label>ядро махарала (а)</Maharal_SlotA.label>
+  <Maharal_SlotB.label>ядро махарала (б)</Maharal_SlotB.label>
+
+
+</LanguageData>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+<TM_GlobalCooldown>技能冷却时间</TM_GlobalCooldown>
+<TM_GlobalWarmup>技能准备时间</TM_GlobalWarmup>
+<TM_GlobalTimingDesc>适用于所有RWoM技能，包括敌人和扩展职业。100%为正常速度；数值越低越快。已经开始的冷却不会重新计算。</TM_GlobalTimingDesc>
+</LanguageData>

@@ -1,0 +1,28 @@
+<LanguageData><Demon_Body.label>туловище демона</Demon_Body.label>
+	<Demon_Spine.label>бронированный позвоночник</Demon_Spine.label>
+	<Demon_Abdomen.label>брюхо</Demon_Abdomen.label>
+	<Demon_Chest.label>грудь демона</Demon_Chest.label>
+	<Demon_Heart.label>демоническое сердце</Demon_Heart.label>
+	<Demon_Heart_Hidden.label>теневое сердце</Demon_Heart_Hidden.label>
+	<Demon_RibCage.label>грудная клетка</Demon_RibCage.label>
+	<Demon_LeftLung.label>левое легкое</Demon_LeftLung.label>
+	<Demon_RightLung.label>правое легкое</Demon_RightLung.label>
+	<Demon_Head.label>голова</Demon_Head.label>
+	<Demon_Neck.label>шея</Demon_Neck.label>
+	<Demon_DeathMask.label>бронированная маска смерти</Demon_DeathMask.label>
+	<Demon_Skull.label>бронированный череп</Demon_Skull.label>
+	<Demon_Brain.label>мозг</Demon_Brain.label>
+	<Demon_Horn1.label>левый рог</Demon_Horn1.label>
+	<Demon_Horn2.label>левый верхний рог</Demon_Horn2.label>
+	<Demon_Horn3.label>правый верхний рог</Demon_Horn3.label>
+	<Demon_Horn4.label>правый рог</Demon_Horn4.label>
+	<Demon_SightSensor.label>внутреннее зрение</Demon_SightSensor.label>
+	<Demon_SixthSense.label>внутреннее чувство</Demon_SixthSense.label>
+	<Demon_Mandible.label>жвалы</Demon_Mandible.label>
+	<Demon_LeftWing.label>левое крыло</Demon_LeftWing.label>
+	<Demon_RightWing.label>правое крыло</Demon_RightWing.label>
+	<Demon_LeftArm.label>левая рука</Demon_LeftArm.label>
+	<Demon_RightArm.label>правая рука</Demon_RightArm.label>
+	<Demon_LeftLeg.label>левая нога</Demon_LeftLeg.label>
+	<Demon_RightLeg.label>правая нога</Demon_RightLeg.label>
+</LanguageData>

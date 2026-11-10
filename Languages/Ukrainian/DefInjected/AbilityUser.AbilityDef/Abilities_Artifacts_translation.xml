@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- orb of souls -->
+
+  <TM_Artifact_TraitThief.label>Поглинути Душу</TM_Artifact_TraitThief.label>
+  <TM_Artifact_TraitThief.description>Вкрасти риси іншої пішаки.</TM_Artifact_TraitThief.description>
+
+  <TM_Artifact_TraitInfuse.label>Наситити Душу</TM_Artifact_TraitInfuse.label>
+  <TM_Artifact_TraitInfuse.description>Вкладіть запечатані риси в людиноподібну пішака.</TM_Artifact_TraitInfuse.description>
+
+
+</LanguageData>

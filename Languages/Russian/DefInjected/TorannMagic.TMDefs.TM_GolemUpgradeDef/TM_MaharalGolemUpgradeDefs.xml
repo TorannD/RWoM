@@ -1,0 +1,30 @@
+<LanguageData><TM_Golem_MaharalRepair.label>восстановите часть</TM_Golem_MaharalRepair.label>
+
+  <TM_Golem_MaharalMaxEnergy.label>накопитель энергии</TM_Golem_MaharalMaxEnergy.label>
+  <TM_Golem_MaharalMaxEnergy.description>Увеличивает максимальную энергию на 100 за уровень. Начальная максимальная энергия составляет 800.</TM_Golem_MaharalMaxEnergy.description>
+
+  <TM_Golem_MaharalEnergyEfficiency.label>энергоэффективность</TM_Golem_MaharalEnergyEfficiency.label>
+  <TM_Golem_MaharalEnergyEfficiency.description>Повышает энергоэффективность на 10% за уровень. Начальная энергоэффективность составляет 50%.</TM_Golem_MaharalEnergyEfficiency.description>
+
+  <TM_Golem_MaharalEnergyRate.label>регенерация энергии</TM_Golem_MaharalEnergyRate.label>
+  <TM_Golem_MaharalEnergyRate.description>Увеличивает скорость заряда энергии на 20% за уровень. Начальная скорость перезарядки составляет 30 энергозатрат в час.</TM_Golem_MaharalEnergyRate.description>
+
+  <TM_Golem_MaharalArmor.label>броня</TM_Golem_MaharalArmor.label>
+  <TM_Golem_MaharalArmor.description>Повышает общую защиту:
+Тупой урон: +[9,16,21]%
+Режущий урон: +[13,22,29]%
+Температура: +[8,14,18]%</TM_Golem_MaharalArmor.description>
+
+  <TM_Golem_MaharalPower.label>Сила</TM_Golem_MaharalPower.label>
+  <TM_Golem_MaharalPower.description>Позволяет голему вырабатывать избыточную энергию в состоянии покоя.</TM_Golem_MaharalPower.description>
+
+  <TM_Golem_MaharalHeat.label>Жара</TM_Golem_MaharalHeat.label>
+  <TM_Golem_MaharalHeat.description>Позволяет голему вырабатывать тепло в состоянии покоя.</TM_Golem_MaharalHeat.description>
+
+  <TM_Golem_MaharalLifeStage.label>каркасный слой</TM_Golem_MaharalLifeStage.label>
+  <TM_Golem_MaharalLifeStage.description>Увеличивает статистику:
+Движение: +[20%/30%/40%]
+Здоровье: +[20%/40%/50%]</TM_Golem_MaharalLifeStage.description>
+
+
+</LanguageData>

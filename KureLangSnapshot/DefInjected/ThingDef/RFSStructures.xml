@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ProximityChargeBD.label>Бесконтактная мина</TM_ProximityChargeBD.label>
+  <TM_ProximityChargeBD.description>Наземная мина, взрывающаяся вручную и при любом повреждении. Она также взорвется, если по ней пройдет неосведомленная пешка.</TM_ProximityChargeBD.description>
+  <TM_MiniMineBD.label>Мини Мина</TM_MiniMineBD.label>
+  <TM_MiniMineBD.description>Наземная мина, взрывающаяся вручную и при любом повреждении. Она также взорвется, если по ней пройдет неосведомленная пешка.</TM_MiniMineBD.description>
+  <TM_MiniMineBD_I.label>Мини Мина</TM_MiniMineBD_I.label>
+  <TM_MiniMineBD_I.description>Наземная мина, взрывающаяся вручную и при любом повреждении. Она также взорвется, если по ней пройдет неосведомленная пешка.</TM_MiniMineBD_I.description>
+  <TM_MiniMineBD_II.label>Мини Мина</TM_MiniMineBD_II.label>
+  <TM_MiniMineBD_II.description>Наземная мина, взрывающаяся вручную и при любом повреждении. Она также взорвется, если по ней пройдет неосведомленная пешка.</TM_MiniMineBD_II.description>
+  <TM_MiniMineBD_III.label>Мини Мина</TM_MiniMineBD_III.label>
+  <TM_MiniMineBD_III.description>Наземная мина, взрывающаяся вручную и при любом повреждении. Она также взорвется, если по ней пройдет неосведомленная пешка.</TM_MiniMineBD_III.description>
+  <TM_BarrelBombBD.label>Большая Бомба</TM_BarrelBombBD.label>
+  <TM_BarrelBombBD.description>Массивная бочка со взрывчаткой. При любом повреждении она взорвется. Летучие взрывчатые вещества разряжаются безвредно через 12 часов.</TM_BarrelBombBD.description>
+  <TM_ExplosiveTrapBD.label>Взрывная ловушка</TM_ExplosiveTrapBD.label>
+  <TM_ExplosiveTrapBD.description>Ловушка, взрывается вручную и при любом повреждении. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_ExplosiveTrapBD.description>
+  <TM_ExplosiveTrapBD_I.label>Взрывная ловушка</TM_ExplosiveTrapBD_I.label>
+  <TM_ExplosiveTrapBD_I.description>Ловушка, взрывается вручную и при любом повреждении. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_ExplosiveTrapBD_I.description>
+  <TM_ExplosiveTrapBD_II.label>Взрывная ловушка</TM_ExplosiveTrapBD_II.label>
+  <TM_ExplosiveTrapBD_II.description>Ловушка, взрывается вручную и при любом повреждении. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_ExplosiveTrapBD_II.description>
+  <TM_ExplosiveTrapBD_III.label>Взрывная ловушка</TM_ExplosiveTrapBD_III.label>
+  <TM_ExplosiveTrapBD_III.description>Ловушка, взрывается вручную и при любом повреждении. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_ExplosiveTrapBD_III.description>
+  <TM_FlameTrapBD.label>Огненная ловушка</TM_FlameTrapBD.label>
+  <TM_FlameTrapBD.description>Огненная ловушка, взрывается вручную и при любом повреждении. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_FlameTrapBD.description>
+  <TM_FlameTrapBD_I.label>Огненная ловушка</TM_FlameTrapBD_I.label>
+  <TM_FlameTrapBD_I.description>Огненная ловушка, взрывается вручную и при любом повреждении. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_FlameTrapBD_I.description>
+  <TM_FlameTrapBD_II.label>Огненная ловушка</TM_FlameTrapBD_II.label>
+  <TM_FlameTrapBD_II.description>Огненная ловушка, взрывается вручную и при любом повреждении. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_FlameTrapBD_II.description>
+  <TM_FlameTrapBD_III.label>Огненная ловушка</TM_FlameTrapBD_III.label>
+  <TM_FlameTrapBD_III.description>Огненная ловушка, взрывается вручную и при любом повреждении. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_FlameTrapBD_III.description>
+  <TM_StunTrapBD.label>Оглушающая ловушка</TM_StunTrapBD.label>
+  <TM_StunTrapBD.description>Оглушающая ловушка, взрывается вручную и при любом повреждении. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_StunTrapBD.description>
+  <TM_StunTrapBD_I.label>Оглушающая ловушка</TM_StunTrapBD_I.label>
+  <TM_StunTrapBD_I.description>Оглушающая ловушка, взрывается вручную и при любом повреждении. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_StunTrapBD_I.description>
+  <TM_StunTrapBD_II.label>Оглушающая ловушка</TM_StunTrapBD_II.label>
+  <TM_StunTrapBD_II.description>Оглушающая ловушка, взрывается вручную и при любом повреждении. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_StunTrapBD_II.description>
+  <TM_StunTrapBD_III.label>Оглушающая ловушка</TM_StunTrapBD_III.label>
+  <TM_StunTrapBD_III.description>Оглушающая ловушка, взрывается вручную и при любом повреждении. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_StunTrapBD_III.description>
+  <TM_MiningExplosiveBD.label>Горная взрывчатка</TM_MiningExplosiveBD.label>
+  <TM_MiningExplosiveBD.description>Горно-взрывное устройство. Взрывается вручную и при любом повреждении. Взрыв наносит значительно увеличенный урон строениям и местности. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_MiningExplosiveBD.description>
+  <TM_MiningExplosiveBD_I.label>Горная взрывчатка</TM_MiningExplosiveBD_I.label>
+  <TM_MiningExplosiveBD_I.description>Горно-взрывное устройство. Взрывается вручную и при любом повреждении. Взрыв наносит значительно увеличенный урон строениям и местности. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_MiningExplosiveBD_I.description>
+  <TM_MiningExplosiveBD_II.label>Горная взрывчатка</TM_MiningExplosiveBD_II.label>
+  <TM_MiningExplosiveBD_II.description>Горно-взрывное устройство. Взрывается вручную и при любом повреждении. Взрыв наносит значительно увеличенный урон строениям и местности. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_MiningExplosiveBD_II.description>
+  <TM_MiningExplosiveBD_III.label>Горная взрывчатка</TM_MiningExplosiveBD_III.label>
+  <TM_MiningExplosiveBD_III.description>Горно-взрывное устройство. Взрывается вручную и при любом повреждении. Взрыв наносит значительно увеличенный урон строениям и местности. По ней можно безопасно ходить; ловушка должна быть повреждена для срабатывания детонации.</TM_MiningExplosiveBD_III.description>
+  <TM_LuckyLanternBD.label>Счастливый Фонарь</TM_LuckyLanternBD.label>
+  <TM_LuckyLanternBD.description>Фонарь, созданный рудокопом. Он исключительно хрупкий и при повреждении взорвется облаком пыли, оглушая всех в непосредственной близости.</TM_LuckyLanternBD.description>
+  <TM_LuckyLanternBD_I.label>Счастливый Фонарь</TM_LuckyLanternBD_I.label>
+  <TM_LuckyLanternBD_I.description>Фонарь, созданный рудокопом. Он исключительно хрупкий и при повреждении взорвется облаком пыли, оглушая всех в непосредственной близости.</TM_LuckyLanternBD_I.description>
+  <TM_LuckyLanternBD_II.label>Счастливый Фонарь</TM_LuckyLanternBD_II.label>
+  <TM_LuckyLanternBD_II.description>Фонарь, созданный рудокопом. Он исключительно хрупкий и при повреждении взорвется облаком пыли, оглушая всех в непосредственной близости.</TM_LuckyLanternBD_II.description>
+  <TM_LuckyLanternBD_III.label>Счастливый Фонарь</TM_LuckyLanternBD_III.label>
+  <TM_LuckyLanternBD_III.description>Фонарь, созданный рудокопом. Он исключительно хрупкий и при повреждении взорвется облаком пыли, оглушая всех в непосредственной близости.</TM_LuckyLanternBD_III.description>
+  <TM_HealingRockBD.label>Исцеляющая руна</TM_HealingRockBD.label>
+  <TM_HealingRockBD.description>Камень, на котором высечен загадочный узор. Периодически лечит ближайших союзников.</TM_HealingRockBD.description>
+  <TM_LightningRuneBD.label>Руна молний</TM_LightningRuneBD.label>
+  <TM_LightningRuneBD.description>Камень, на котором высечен загадочный узор. Периодически наносит урон ближайшим врагам.</TM_LightningRuneBD.description>
+  <TM_StructureSupportBD.label>Импровизированная колонна</TM_StructureSupportBD.label>
+  <TM_StructureSupportBD.description>Колонна, которая была быстро построена из каких-то материалов. Самодельная и довольно хрупкая.</TM_StructureSupportBD.description>
+  <TM_UnstableSingularityBD.label>Нестабильная сингулярность</TM_UnstableSingularityBD.label>
+  <TM_UnstableSingularityBD.description>Холодная хаотическая сингулярность, которая не может существовать долго.</TM_UnstableSingularityBD.description>
+  <TM_AmbusherTrapBD.label>Ядовитая ловушка</TM_AmbusherTrapBD.label>
+  <TM_AmbusherTrapBD.description>Ядовитая ловушка. Она взорвется, если неосведомленная пешка пройдет по ней, покрывая область ядовитым газом. Непосредственно соседние ядовитые ловушки взорвутся вместе, увеличивая токсичность газа. Ловушка не срабатывает при повреждении.</TM_AmbusherTrapBD.description>
+  <TM_WeakSupportBD.label>Обрушающаяся колонна</TM_WeakSupportBD.label>
+  <TM_WeakSupportBD.description>Колонна, которая была быстро построена из каких-то материалов. Вдобавок к своей импровизированной конструкции она, кажется, был намеренно ослаблена и рассчитана на то, чтобы развалиться - когда кто-то, идет рядом с ней.</TM_WeakSupportBD.description>
+</LanguageData>

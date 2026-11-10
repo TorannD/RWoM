@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using Verse.AI.Group;
 
 namespace TorannMagic
 {
-    public class Verb_TechnoShield : Verb_UseAbility  
+    public class Verb_TechnoShield : ClassProgression.Verb_SpiritTargetable
     {
         
         int pwrVal;
@@ -46,30 +46,14 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
-            Pawn caster = base.CasterPawn;
-            Pawn pawn = this.currentTarget.Thing as Pawn;
-
-            comp = caster.GetCompAbilityUserMagic();
-            //pwrVal = comp.MagicData.MagicPowerSkill_TechnoShield.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoShield_pwr").level;
-            //verVal = comp.MagicData.MagicPowerSkill_TechnoShield.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_TechnoShield_ver").level;
-            //
-            //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
-            //    verVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
-            //}
-            //if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
-            //{
-            //    pwrVal = 3;
-            //    verVal = 3;
-            //}
+            var caster = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            var pawn = currentTarget.Thing as Pawn;
+            comp = caster?.GetCompAbilityUserMagic();
+            if (comp == null || pawn == null || pawn.Dead || pawn.Map != CasterPawn.Map) return false;
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
 
-            if (pawn != null)
-            {
-                ApplyTechnoShield(pawn);                
-            }            
+            ApplyTechnoShield(pawn);
             return true;
         }
 
@@ -88,6 +72,7 @@ namespace TorannMagic
 
         private void ApplyHediffs(Pawn target)
         {
+            var trial = ClassProgression.TechnomancerTrials.CaptureShield(this.Ability, target, CasterPawn);
             if (this.pwrVal == 3)
             {
                 HealthUtility.AdjustSeverity(target, TorannMagicDefOf.TM_TechnoShieldHD_III, (110 + (30 * verVal))*comp.arcaneDmg);
@@ -104,6 +89,7 @@ namespace TorannMagic
             {
                 HealthUtility.AdjustSeverity(target, TorannMagicDefOf.TM_TechnoShieldHD, (110 + (30 * verVal))*comp.arcaneDmg);
             }
+            ClassProgression.TechnomancerTrials.CompleteShield(trial);
         }
     }
 }

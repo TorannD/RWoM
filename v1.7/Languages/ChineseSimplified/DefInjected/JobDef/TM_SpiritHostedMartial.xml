@@ -1,0 +1,16 @@
+<LanguageData>
+  <TM_SpiritCastManeuver.reportString>正在施展角斗士机动。</TM_SpiritCastManeuver.reportString>
+  <TM_SpiritCastFirstAid.reportString>正在处理自己的伤口。</TM_SpiritCastFirstAid.reportString>
+  <TM_SpiritCastPommelStrike.reportString>正在使用柄击。</TM_SpiritCastPommelStrike.reportString>
+  <TM_SpiritCastSprint.reportString>正在调整冲刺步伐。</TM_SpiritCastSprint.reportString>
+  <TM_SpiritCastStrongBack.reportString>正在准备负重。</TM_SpiritCastStrongBack.reportString>
+  <TM_SpiritCastHeavyBlow.reportString>正在准备重击。</TM_SpiritCastHeavyBlow.reportString>
+  <TM_SpiritCastThickSkin.reportString>正在准备抵挡冲击。</TM_SpiritCastThickSkin.reportString>
+  <TM_SpiritCastFightersFocus.reportString>正在专注于近战。</TM_SpiritCastFightersFocus.reportString>
+  <TM_SpiritCastGearRepair.reportString>正在维护穿戴的装备。</TM_SpiritCastGearRepair.reportString>
+  <TM_SpiritCastInnerHealing.reportString>正在专注于自我恢复。</TM_SpiritCastInnerHealing.reportString>
+  <TM_SpiritCastHeadshot.reportString>正在瞄准TargetB的头部。</TM_SpiritCastHeadshot.reportString>
+  <TM_SpiritCastDisablingShot.reportString>正向TargetB发射致残弹。</TM_SpiritCastDisablingShot.reportString>
+  <TM_SpiritCastAntiArmor.reportString>正向TargetB发射穿甲弹。</TM_SpiritCastAntiArmor.reportString>
+  <TM_SpiritCastShadowSlayer.reportString>正在激活暗影杀手的隐身力场。</TM_SpiritCastShadowSlayer.reportString>
+</LanguageData>

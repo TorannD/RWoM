@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- consolidated enchantments -->
+
+  <TM_HediffEnchantment_maxEnergy.label>Максимальна Енергія:</TM_HediffEnchantment_maxEnergy.label>
+  <TM_HediffEnchantment_maxEnergy.description>Здатність енергетичної ємності.</TM_HediffEnchantment_maxEnergy.description>
+  <TM_HediffEnchantment_maxEnergy.stages.0.label></TM_HediffEnchantment_maxEnergy.stages.0.label>
+
+  <TM_HediffEnchantment_coolDown.label>Перезарядка:</TM_HediffEnchantment_coolDown.label>
+  <TM_HediffEnchantment_coolDown.description>Здатність, що зменшує час повторного використання навички.</TM_HediffEnchantment_coolDown.description>
+  <TM_HediffEnchantment_coolDown.stages.0.label></TM_HediffEnchantment_coolDown.stages.0.label>
+
+  <TM_HediffEnchantment_energyCost.label>Витрата енергії:</TM_HediffEnchantment_energyCost.label>
+  <TM_HediffEnchantment_energyCost.description>Здатність, що знижує витрати енергії на використання навички.</TM_HediffEnchantment_energyCost.description>
+  <TM_HediffEnchantment_energyCost.stages.0.label></TM_HediffEnchantment_energyCost.stages.0.label>
+
+  <TM_HediffEnchantment_energyRegen.label>Реген енергії:</TM_HediffEnchantment_energyRegen.label>
+  <TM_HediffEnchantment_energyRegen.description>Здатність, що збільшує регенерацію енергії.</TM_HediffEnchantment_energyRegen.description>
+  <TM_HediffEnchantment_energyRegen.stages.0.label></TM_HediffEnchantment_energyRegen.stages.0.label>
+
+  <TM_HediffEnchantment_xpGain.label>Збільшення досвіду:</TM_HediffEnchantment_xpGain.label>
+  <TM_HediffEnchantment_xpGain.description>Здатність покращує отримання досвіду.</TM_HediffEnchantment_xpGain.description>
+  <TM_HediffEnchantment_xpGain.stages.0.label></TM_HediffEnchantment_xpGain.stages.0.label>
+
+  <TM_HediffEnchantment_dmgResistance.label>Опір:</TM_HediffEnchantment_dmgResistance.label>
+  <TM_HediffEnchantment_dmgResistance.description>Здатність протистояти магічним ефектам і зменшує втрату від магічних атак.</TM_HediffEnchantment_dmgResistance.description>
+  <TM_HediffEnchantment_dmgResistance.stages.0.label></TM_HediffEnchantment_dmgResistance.stages.0.label>
+
+  <TM_HediffEnchantment_dmgBonus.label>Сила:</TM_HediffEnchantment_dmgBonus.label>
+  <TM_HediffEnchantment_dmgBonus.description>Збільшує ефекти здібностей.</TM_HediffEnchantment_dmgBonus.description>
+  <TM_HediffEnchantment_dmgBonus.stages.0.label></TM_HediffEnchantment_dmgBonus.stages.0.label>
+
+  <TM_HediffEnchantment_arcalleumCooldown.label>Перезарядка Аркаллума</TM_HediffEnchantment_arcalleumCooldown.label>
+  <TM_HediffEnchantment_arcalleumCooldown.description>Здатність, яка може миттєво оновити час відновлення здатності.</TM_HediffEnchantment_arcalleumCooldown.description>
+  <TM_HediffEnchantment_arcalleumCooldown.stages.0.label></TM_HediffEnchantment_arcalleumCooldown.stages.0.label>
+
+
+  <!-- legacy enchantments -->
+
+  <TM_HediffEnchantment_maxMP.label>Макс Мана:</TM_HediffEnchantment_maxMP.label>
+  <TM_HediffEnchantment_maxMP.description>Здатність ємності мани.</TM_HediffEnchantment_maxMP.description>
+  <TM_HediffEnchantment_maxMP.stages.0.label></TM_HediffEnchantment_maxMP.stages.0.label>
+
+  <TM_HediffEnchantment_maxSP.label>Макс Витривалість:</TM_HediffEnchantment_maxSP.label>
+  <TM_HediffEnchantment_maxSP.description>Здатність витривалості.</TM_HediffEnchantment_maxSP.description>
+  <TM_HediffEnchantment_maxSP.stages.0.label></TM_HediffEnchantment_maxSP.stages.0.label>
+
+  <TM_HediffEnchantment_spCoolDown.label>Перезарядка:</TM_HediffEnchantment_spCoolDown.label>
+  <TM_HediffEnchantment_spCoolDown.description>Здатність, що зменшує час відновлення бойових умінь.</TM_HediffEnchantment_spCoolDown.description>
+  <TM_HediffEnchantment_spCoolDown.stages.0.label></TM_HediffEnchantment_spCoolDown.stages.0.label>
+
+  <TM_HediffEnchantment_mpCost.label>Вартість мани:</TM_HediffEnchantment_mpCost.label>
+  <TM_HediffEnchantment_mpCost.description>Здатність, що показує вартість мани вмінь.</TM_HediffEnchantment_mpCost.description>
+  <TM_HediffEnchantment_mpCost.stages.0.label></TM_HediffEnchantment_mpCost.stages.0.label>
+
+  <TM_HediffEnchantment_spCost.label>Вартість витривалості:</TM_HediffEnchantment_spCost.label>
+  <TM_HediffEnchantment_spCost.description>Здатність, що показує вартість витривалості для вмінь.</TM_HediffEnchantment_spCost.description>
+  <TM_HediffEnchantment_spCost.stages.0.label></TM_HediffEnchantment_spCost.stages.0.label>
+
+  <TM_HediffEnchantment_mpRegenRate.label>Відновлення мани:</TM_HediffEnchantment_mpRegenRate.label>
+  <TM_HediffEnchantment_mpRegenRate.description>Здатність регенерації мани.</TM_HediffEnchantment_mpRegenRate.description>
+  <TM_HediffEnchantment_mpRegenRate.stages.0.label></TM_HediffEnchantment_mpRegenRate.stages.0.label>
+
+  <TM_HediffEnchantment_spRegenRate.label>Відновлення витривалості:</TM_HediffEnchantment_spRegenRate.label>
+  <TM_HediffEnchantment_spRegenRate.description>Здатність регенерації витривалості.</TM_HediffEnchantment_spRegenRate.description>
+  <TM_HediffEnchantment_spRegenRate.stages.0.label></TM_HediffEnchantment_spRegenRate.stages.0.label>
+
+  <TM_HediffEnchantment_arcaneRes.label>Таємний Опір:</TM_HediffEnchantment_arcaneRes.label>
+  <TM_HediffEnchantment_arcaneRes.description>Здатність протистояти магічним ефектам і зменшує втрату від магічних атак.</TM_HediffEnchantment_arcaneRes.description>
+  <TM_HediffEnchantment_arcaneRes.stages.0.label></TM_HediffEnchantment_arcaneRes.stages.0.label>
+
+  <TM_HediffEnchantment_arcaneDmg.label>Магічний Бонус:</TM_HediffEnchantment_arcaneDmg.label>
+  <TM_HediffEnchantment_arcaneDmg.description>Збільшує ефекти магічних здібностей.</TM_HediffEnchantment_arcaneDmg.description>
+  <TM_HediffEnchantment_arcaneDmg.stages.0.label></TM_HediffEnchantment_arcaneDmg.stages.0.label>
+
+  <TM_HediffEnchantment_combatDmg.label>Бойовий Бонус:</TM_HediffEnchantment_combatDmg.label>
+  <TM_HediffEnchantment_combatDmg.description>Збільшує ефекти бойових здібностей.</TM_HediffEnchantment_combatDmg.description>
+  <TM_HediffEnchantment_combatDmg.stages.0.label></TM_HediffEnchantment_combatDmg.stages.0.label>
+
+  <TM_HediffEnchantment_arcaneSpectre.label>Таємний дух</TM_HediffEnchantment_arcaneSpectre.label>
+  <TM_HediffEnchantment_arcaneSpectre.description>Здатність, яка може додати додаткової шкоди від духу до будь-якої атаки.</TM_HediffEnchantment_arcaneSpectre.description>
+  <TM_HediffEnchantment_arcaneSpectre.stages.0.label></TM_HediffEnchantment_arcaneSpectre.stages.0.label>
+
+  <TM_HediffEnchantment_phantomShift.label>Фантомне зрушення</TM_HediffEnchantment_phantomShift.label>
+  <TM_HediffEnchantment_phantomShift.description>Здатність, яка переносить весь збиток від атаки в порожнечу.</TM_HediffEnchantment_phantomShift.description>
+  <TM_HediffEnchantment_phantomShift.stages.0.label></TM_HediffEnchantment_phantomShift.stages.0.label>
+
+  <TM_HediffEnchantment_fireImmunity.label>Стійкість до вогню</TM_HediffEnchantment_fireImmunity.label>
+  <TM_HediffEnchantment_fireImmunity.description>Все ще може отримувати шкоди від вогню, але більше не може загорітися.</TM_HediffEnchantment_fireImmunity.description>
+  <TM_HediffEnchantment_fireImmunity.stages.0.label></TM_HediffEnchantment_fireImmunity.stages.0.label>
+
+
+</LanguageData>

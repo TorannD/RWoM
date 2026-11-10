@@ -1,0 +1,7 @@
+<LanguageData><!-- Icebolt-->
+	<TM_Elemental_Icebolt.label>элементальный ледяной шар</TM_Elemental_Icebolt.label>
+	<TM_Elemental_Icebolt.description>Шар льда, специально созданный для того, чтобы разбиться на осколки при ударе, вызывая сильное кровотечение и повреждения в небольшой области.</TM_Elemental_Icebolt.description>
+	<!-- Firebolt-->
+	<TM_Elemental_Firebolt.label>Огненный шар</TM_Elemental_Firebolt.label>
+	<TM_Elemental_Firebolt.description>Вспышка магического огня. Поджигает цель.</TM_Elemental_Firebolt.description>
+</LanguageData>

@@ -7,7 +7,7 @@ using RimWorld;
 
 namespace TorannMagic
 {
-    public class Verb_Buckshot : Verb_UseAbility  
+    public class Verb_Buckshot : ClassProgression.Verb_SoldierBurst
     {
         private int effVal;
         private int shotcount = 0;
@@ -31,8 +31,8 @@ namespace TorannMagic
 
         public static int GetShotCount(Pawn pawn)
         {
-            int shots = 0;
-            return shots = Mathf.RoundToInt((5 + TM_Calc.GetSkillEfficiencyLevel(pawn, TorannMagicDefOf.TM_ShotgunSpec, false)) * pawn.GetCompAbilityUserMight().mightPwr);
+            var source=ClassProgression.SuperSoldierMartialPath.Owner(pawn) ?? pawn;
+            return Mathf.RoundToInt((5 + TM_Calc.GetSkillEfficiencyLevel(source, TorannMagicDefOf.TM_ShotgunSpec, false)) * source.GetCompAbilityUserMight().mightPwr);
         }
     }
 }

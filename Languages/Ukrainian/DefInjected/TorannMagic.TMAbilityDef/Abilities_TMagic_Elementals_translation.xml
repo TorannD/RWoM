@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Icebolt -->
+
+  <TM_Elemental_Icebolt.label>елементальна крижана куля</TM_Elemental_Icebolt.label>
+  <TM_Elemental_Icebolt.description>Куля льоду, спеціально створена для того, щоб розбитися на осколки при ударі, викликаючи сильну кровотечу і пошкодження в невеликій області.</TM_Elemental_Icebolt.description>
+
+
+  <!-- Firebolt -->
+
+  <TM_Elemental_Firebolt.label>Вогняна куля</TM_Elemental_Firebolt.label>
+  <TM_Elemental_Firebolt.description>Спалах магічного вогню. Підпалює ціль.</TM_Elemental_Firebolt.description>
+
+
+</LanguageData>

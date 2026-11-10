@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Earth Elemental -->
+
+  <TM_LesserEarth_ElementalR.label>Pequeno Básico da Terra</TM_LesserEarth_ElementalR.label>
+  <TM_LesserEarth_ElementalR.description>O básico de uma terra desastrada, uma criatura teimosa feita de pedra viva. Sua pele parece feita de pedra e cristal com manchas de lama e solo onde deve haver articulação. Esta criatura é a mais resistente de todos os primórdios, capaz de resistir a uma tempestade de golpes. Embora seja menos básico, ele ainda supera a maioria dos humanoides e tem uma capacidade maravilhosa de proteger o seu mestre.</TM_LesserEarth_ElementalR.description>
+  <TM_LesserEarth_ElementalR.tools.0.label>mão esquerda</TM_LesserEarth_ElementalR.tools.0.label>
+  <TM_LesserEarth_ElementalR.tools.1.label>mão direita</TM_LesserEarth_ElementalR.tools.1.label>
+  <TM_LesserEarth_ElementalR.tools.2.label>córrego</TM_LesserEarth_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserEarth_ElementalR_Corpse.label>Pequeno Básico da Terra cadáver</TM_LesserEarth_ElementalR_Corpse.label>
+  <TM_LesserEarth_ElementalR_Corpse.description>Pequeno Básico da Terra cadáver</TM_LesserEarth_ElementalR_Corpse.description>
+
+
+  <!-- Earth Elemental -->
+
+  <TM_Earth_ElementalR.label>O básico da Terra</TM_Earth_ElementalR.label>
+  <TM_Earth_ElementalR.description>O básico de uma terra desastrada, uma criatura teimosa feita de pedra viva. Sua pele parece feita de pedra e cristal com manchas de lama e solo onde deve haver articulação. Esta criatura é a mais resistente de todos os primórdios, capaz de resistir a uma tempestade de golpes. Esta criatura envergonha os tanques modernos com a sua pele invencível.</TM_Earth_ElementalR.description>
+  <TM_Earth_ElementalR.tools.0.label>mão esquerda</TM_Earth_ElementalR.tools.0.label>
+  <TM_Earth_ElementalR.tools.1.label>mão direita</TM_Earth_ElementalR.tools.1.label>
+  <TM_Earth_ElementalR.tools.2.label>córrego</TM_Earth_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_Earth_ElementalR_Corpse.label>A base da Terra do cadáver</TM_Earth_ElementalR_Corpse.label>
+  <TM_Earth_ElementalR_Corpse.description>A base da Terra do cadáver</TM_Earth_ElementalR_Corpse.description>
+
+
+  <!-- Earth Elemental -->
+
+  <TM_GreaterEarth_ElementalR.label>O Grande Básico da Terra</TM_GreaterEarth_ElementalR.label>
+  <TM_GreaterEarth_ElementalR.description>O básico de uma terra desastrada, um monstro teimoso feito de pedra viva. Sua pele parece feita de pedra e cristal com manchas de lama e solo onde deve haver articulação. A sua boca é uma caverna e pequenas árvores ou arbustos crescem sobre suas costas, como se estivesse usando um manto de vegetação. Este ser é o mais resistente de todos os primórdios, capaz de resistir a uma tempestade de golpes, e este é o dono do seu elemento. O poder deste ser vai literalmente destruir os seus inimigos. A única hipótese que eles têm é fugir.</TM_GreaterEarth_ElementalR.description>
+  <TM_GreaterEarth_ElementalR.tools.0.label>mão esquerda</TM_GreaterEarth_ElementalR.tools.0.label>
+  <TM_GreaterEarth_ElementalR.tools.1.label>mão direita</TM_GreaterEarth_ElementalR.tools.1.label>
+  <TM_GreaterEarth_ElementalR.tools.2.label>córrego</TM_GreaterEarth_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GreaterEarth_ElementalR_Corpse.label>Grande Fundamental da Terra cadáver</TM_GreaterEarth_ElementalR_Corpse.label>
+  <TM_GreaterEarth_ElementalR_Corpse.description>Grande Fundamental da Terra cadáver</TM_GreaterEarth_ElementalR_Corpse.description>
+
+
+  <!-- Fire Elemental -->
+
+  <TM_LesserFire_ElementalR.label>Pequeno Básico do Fogo</TM_LesserFire_ElementalR.label>
+  <TM_LesserFire_ElementalR.description>São criaturas malignas de chamas vivas. Eles são rápidos e violentos por natureza, especializados em destruição. A base do fogo parece ser uma mistura de insumos oleosos e derretidos, envolto em chamas e cinzas, com a pele quase fluida, como se estivesse sempre a derreter e a reformar-se. O pequeno brilho nos olhos deste ser é o único aviso que os inimigos terão antes de serem consumidos pela sua fúria.</TM_LesserFire_ElementalR.description>
+  <TM_LesserFire_ElementalR.tools.0.label>mão esquerda</TM_LesserFire_ElementalR.tools.0.label>
+  <TM_LesserFire_ElementalR.tools.1.label>mão direita</TM_LesserFire_ElementalR.tools.1.label>
+  <TM_LesserFire_ElementalR.tools.2.label>córrego</TM_LesserFire_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserFire_ElementalR_Corpse.label>Pequeno Básico do Fogo Cadáver</TM_LesserFire_ElementalR_Corpse.label>
+  <TM_LesserFire_ElementalR_Corpse.description>Pequeno Básico do Fogo Cadáver</TM_LesserFire_ElementalR_Corpse.description>
+
+
+  <!-- Fire Elemental -->
+
+  <TM_Fire_ElementalR.label>O Básico do Fogo</TM_Fire_ElementalR.label>
+  <TM_Fire_ElementalR.description>São criaturas malignas de chamas vivas. Eles são rápidos e violentos por natureza, especializados em destruição. A base do fogo parece ser uma mistura de insumos oleosos e derretidos, envolto em chamas e cinzas, com a pele quase fluida, como se estivesse sempre a derreter e a reformar-se. Há algo no rosto da criatura que parece um sorriso maligno... os inimigos devem ter cuidado ao brincar com este fogo.</TM_Fire_ElementalR.description>
+  <TM_Fire_ElementalR.tools.0.label>mão esquerda</TM_Fire_ElementalR.tools.0.label>
+  <TM_Fire_ElementalR.tools.1.label>mão direita</TM_Fire_ElementalR.tools.1.label>
+  <TM_Fire_ElementalR.tools.2.label>córrego</TM_Fire_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_Fire_ElementalR_Corpse.label>O Básico do Fogo do Cadáver</TM_Fire_ElementalR_Corpse.label>
+  <TM_Fire_ElementalR_Corpse.description>O Básico do Fogo do Cadáver</TM_Fire_ElementalR_Corpse.description>
+
+
+  <!-- Fire Elemental -->
+
+  <TM_GreaterFire_ElementalR.label>O Grande Básico do Fogo</TM_GreaterFire_ElementalR.label>
+  <TM_GreaterFire_ElementalR.description>São criaturas malignas de chamas vivas. Eles são rápidos e violentos por natureza, sabendo apenas a destruição. A base do fogo é uma mistura de substâncias oleosas e derretidas envolta em chamas e cinzas. A pele dele parece quase líquida, como se estivesse sempre a derreter e a reformar. Diante de vós, há um príncipe da destruição que usa uma coroa de fogo, e o seu peito está decorado com uma placa de óxidiano que corre nas chamas. Ele olha para ti com o seu único olho brilhante, pronto para libertar a sua maldade.</TM_GreaterFire_ElementalR.description>
+  <TM_GreaterFire_ElementalR.tools.0.label>mão esquerda</TM_GreaterFire_ElementalR.tools.0.label>
+  <TM_GreaterFire_ElementalR.tools.1.label>mão direita</TM_GreaterFire_ElementalR.tools.1.label>
+  <TM_GreaterFire_ElementalR.tools.2.label>córrego</TM_GreaterFire_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GreaterFire_ElementalR_Corpse.label>Grande Básico de Fogo cadáver</TM_GreaterFire_ElementalR_Corpse.label>
+  <TM_GreaterFire_ElementalR_Corpse.description>Grande Básico de Fogo cadáver</TM_GreaterFire_ElementalR_Corpse.description>
+
+
+  <!-- Water Elemental -->
+
+  <TM_LesserWater_ElementalR.label>Pequeno Básico da Água</TM_LesserWater_ElementalR.label>
+  <TM_LesserWater_ElementalR.description>São criaturas de água viva. Eles encarnam um espírito de paciência e solidão sem limites. Eles aparecem como uma massa de água vórbida, às vezes parecem tomar a forma de uma criatura ou de um objeto com pedaços de destroços que às vezes surgem para a superfície. Eles estão sempre em movimento e parecem deslizar ou balançar quando se movem. A criatura à sua frente tem menos forma, mas será inexoravelmente derrotada até pelo adversário mais forte.</TM_LesserWater_ElementalR.description>
+  <TM_LesserWater_ElementalR.tools.0.label>mão esquerda</TM_LesserWater_ElementalR.tools.0.label>
+  <TM_LesserWater_ElementalR.tools.1.label>mão direita</TM_LesserWater_ElementalR.tools.1.label>
+  <TM_LesserWater_ElementalR.tools.2.label>córrego</TM_LesserWater_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserWater_ElementalR_Corpse.label>Pequeno Básico da Água cadáver</TM_LesserWater_ElementalR_Corpse.label>
+  <TM_LesserWater_ElementalR_Corpse.description>Pequeno Básico da Água cadáver</TM_LesserWater_ElementalR_Corpse.description>
+
+
+  <!-- Water Elemental -->
+
+  <TM_Water_ElementalR.label>O Básico da Água</TM_Water_ElementalR.label>
+  <TM_Water_ElementalR.description>São criaturas de água viva. Eles encarnam um espírito de paciência e solidão sem limites. Eles aparecem como uma massa de água vórbida, às vezes parecem tomar a forma de uma criatura ou de um objeto com pedaços de destroços que às vezes surgem para a superfície. Eles estão sempre em movimento e parecem deslizar ou balançar quando se movem. O básico diante de vocês parece quase sereno, mas você sente um perigo oculto escondido debaixo da superfície.</TM_Water_ElementalR.description>
+  <TM_Water_ElementalR.tools.0.label>mão esquerda</TM_Water_ElementalR.tools.0.label>
+  <TM_Water_ElementalR.tools.1.label>mão direita</TM_Water_ElementalR.tools.1.label>
+  <TM_Water_ElementalR.tools.2.label>córrego</TM_Water_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_Water_ElementalR_Corpse.label>O Básico da Água do Cadáver</TM_Water_ElementalR_Corpse.label>
+  <TM_Water_ElementalR_Corpse.description>O Básico da Água do Cadáver</TM_Water_ElementalR_Corpse.description>
+
+
+  <!-- Water Elemental -->
+
+  <TM_GreaterWater_ElementalR.label>O Grande Básico da Água</TM_GreaterWater_ElementalR.label>
+  <TM_GreaterWater_ElementalR.description>São criaturas de água viva. Eles encarnam um espírito de paciência e solidão sem limites. Eles aparecem como uma massa de água vórbida, às vezes parecem tomar a forma de uma criatura ou de um objeto com pedaços de destroços que às vezes surgem para a superfície. Eles estão sempre em movimento e parecem deslizar ou balançar quando se movem. Este enorme básico à sua frente tem aquecedores para os olhos e move-se como a Onda da Quebra.</TM_GreaterWater_ElementalR.description>
+  <TM_GreaterWater_ElementalR.tools.0.label>mão esquerda</TM_GreaterWater_ElementalR.tools.0.label>
+  <TM_GreaterWater_ElementalR.tools.1.label>mão direita</TM_GreaterWater_ElementalR.tools.1.label>
+  <TM_GreaterWater_ElementalR.tools.2.label>córrego</TM_GreaterWater_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GreaterWater_ElementalR_Corpse.label>Grande Básico da Água cadáver</TM_GreaterWater_ElementalR_Corpse.label>
+  <TM_GreaterWater_ElementalR_Corpse.description>Grande Básico da Água cadáver</TM_GreaterWater_ElementalR_Corpse.description>
+
+
+  <!-- Wind Elemental -->
+
+  <TM_LesserWind_ElementalR.label>Pequeno Básico do Vento</TM_LesserWind_ElementalR.label>
+  <TM_LesserWind_ElementalR.description>Os primórdios do ar são seres de vento vivo, com velocidade e agilidade não naturais. A manifestação física do ar básico parece mudar rapidamente; Às vezes é fumo nebuloso, vórtice às vezes. Os fluxos de ar parecem formar traços pouco visíveis da forma humanóide. Enquanto o Pequeno está na natureza, este básico libertará uma chuva de malignos e apenados ataques contra os seus inimigos.</TM_LesserWind_ElementalR.description>
+  <TM_LesserWind_ElementalR.tools.0.label>mão esquerda</TM_LesserWind_ElementalR.tools.0.label>
+  <TM_LesserWind_ElementalR.tools.1.label>mão direita</TM_LesserWind_ElementalR.tools.1.label>
+  <TM_LesserWind_ElementalR.tools.2.label>córrego</TM_LesserWind_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserWind_ElementalR_Corpse.label>Pequeno Básico do Vento cadáver</TM_LesserWind_ElementalR_Corpse.label>
+  <TM_LesserWind_ElementalR_Corpse.description>Pequeno Básico do Vento cadáver</TM_LesserWind_ElementalR_Corpse.description>
+
+
+  <!-- Wind Elemental -->
+
+  <TM_Wind_ElementalR.label>A Base do Vento</TM_Wind_ElementalR.label>
+  <TM_Wind_ElementalR.description>Os primórdios do ar são seres de vento vivo, com velocidade e agilidade não naturais. A manifestação física do ar básico parece mudar rapidamente; Às vezes é fumo nebuloso, vórtice às vezes. Os fluxos de ar parecem formar traços pouco visíveis da forma humanóide. Esta criatura tem o poder da tempestade e não hesitará em derrubá-la sobre os seus inimigos.</TM_Wind_ElementalR.description>
+  <TM_Wind_ElementalR.tools.0.label>mão esquerda</TM_Wind_ElementalR.tools.0.label>
+  <TM_Wind_ElementalR.tools.1.label>mão direita</TM_Wind_ElementalR.tools.1.label>
+  <TM_Wind_ElementalR.tools.2.label>córrego</TM_Wind_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_Wind_ElementalR_Corpse.label>A Base do Vento do Cadáver</TM_Wind_ElementalR_Corpse.label>
+  <TM_Wind_ElementalR_Corpse.description>A Base do Vento do Cadáver</TM_Wind_ElementalR_Corpse.description>
+
+
+  <!-- Wind Elemental -->
+
+  <TM_GreaterWind_ElementalR.label>O Grande Básico do Vento</TM_GreaterWind_ElementalR.label>
+  <TM_GreaterWind_ElementalR.description>Os primórdios do ar são seres de vento vivo, com velocidade e agilidade não naturais. A manifestação física do ar básico parece mudar rapidamente; Às vezes é fumo nebuloso, vórtice às vezes. Os fluxos de ar parecem formar traços pouco visíveis da forma humanóide. Não há dúvida de que este ser superior é capaz de libertar a Fúria da Tempestade.</TM_GreaterWind_ElementalR.description>
+  <TM_GreaterWind_ElementalR.tools.0.label>mão esquerda</TM_GreaterWind_ElementalR.tools.0.label>
+  <TM_GreaterWind_ElementalR.tools.1.label>mão direita</TM_GreaterWind_ElementalR.tools.1.label>
+  <TM_GreaterWind_ElementalR.tools.2.label>córrego</TM_GreaterWind_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GreaterWind_ElementalR_Corpse.label>Grande Fundamental do Vento cadáver</TM_GreaterWind_ElementalR_Corpse.label>
+  <TM_GreaterWind_ElementalR_Corpse.description>Grande Fundamental do Vento cadáver</TM_GreaterWind_ElementalR_Corpse.description>
+
+
+  <!-- Элементаль Земли -->
+  <!-- Элементаль Огня -->
+  <!-- Элементаль Воды -->
+  <!-- Элементаль Ветра -->
+
+</LanguageData>

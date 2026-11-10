@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Gear Repair -->
+
+  <TM_HediffGearRepair.label>Reparação de dentes</TM_HediffGearRepair.label>
+  <TM_HediffGearRepair.description>Manutenção e manutenção do equipamento.</TM_HediffGearRepair.description>
+  <TM_HediffGearRepair.stages.0.label>I</TM_HediffGearRepair.stages.0.label>
+
+
+  <!-- Inner Healing -->
+
+  <TM_HediffInnerHealing.label>cura interna</TM_HediffInnerHealing.label>
+  <TM_HediffInnerHealing.description>Melhora a cicatrização natural das feridas.</TM_HediffInnerHealing.description>
+  <TM_HediffInnerHealing.stages.0.label>I</TM_HediffInnerHealing.stages.0.label>
+
+
+  <!-- Heavy Blow -->
+
+  <TM_HediffHeavyBlow.label>Duro Golpe</TM_HediffHeavyBlow.label>
+  <TM_HediffHeavyBlow.description>Aumenta os danos a cada impacto físico.</TM_HediffHeavyBlow.description>
+  <TM_HediffHeavyBlow.stages.0.label>I</TM_HediffHeavyBlow.stages.0.label>
+  <TM_HediffHeavyBlow.stages.1.label>II</TM_HediffHeavyBlow.stages.1.label>
+  <TM_HediffHeavyBlow.stages.2.label>III</TM_HediffHeavyBlow.stages.2.label>
+  <TM_HediffHeavyBlow.stages.3.label>IV</TM_HediffHeavyBlow.stages.3.label>
+
+
+  <!-- Strong Back -->
+
+  <TM_HediffStrongBack.label>costas fortes</TM_HediffStrongBack.label>
+  <TM_HediffStrongBack.description>Aumenta a capacidade de carga.</TM_HediffStrongBack.description>
+  <TM_HediffStrongBack.stages.0.label>I</TM_HediffStrongBack.stages.0.label>
+  <TM_HediffStrongBack.stages.1.label>II</TM_HediffStrongBack.stages.1.label>
+  <TM_HediffStrongBack.stages.2.label>III</TM_HediffStrongBack.stages.2.label>
+
+
+  <!-- Thick Skin -->
+
+  <TM_HediffThickSkin.label>Pele grossa</TM_HediffThickSkin.label>
+  <TM_HediffThickSkin.description>Fortalece a pele, tornando-a mais dura.</TM_HediffThickSkin.description>
+  <TM_HediffThickSkin.stages.0.label>I</TM_HediffThickSkin.stages.0.label>
+  <TM_HediffThickSkin.stages.1.label>II</TM_HediffThickSkin.stages.1.label>
+  <TM_HediffThickSkin.stages.2.label>III</TM_HediffThickSkin.stages.2.label>
+  <TM_HediffThickSkin.stages.3.label>IV</TM_HediffThickSkin.stages.3.label>
+
+  <TM_HediffFightersFocus.label>Foco de combate</TM_HediffFightersFocus.label>
+  <TM_HediffFightersFocus.description>Foco mental para os combatentes.</TM_HediffFightersFocus.description>
+  <TM_HediffFightersFocus.stages.0.label>I</TM_HediffFightersFocus.stages.0.label>
+  <TM_HediffFightersFocus.stages.1.label>II</TM_HediffFightersFocus.stages.1.label>
+
+
+  <!-- Sprint -->
+
+  <TM_HediffSprint.label>Sprint</TM_HediffSprint.label>
+  <TM_HediffSprint.description>Mexam-se mais depressa.</TM_HediffSprint.description>
+  <TM_HediffSprint.stages.0.label>I</TM_HediffSprint.stages.0.label>
+  <TM_HediffSprint.stages.1.label>II</TM_HediffSprint.stages.1.label>
+  <TM_HediffSprint.stages.2.label>III</TM_HediffSprint.stages.2.label>
+  <TM_HediffSprint.stages.3.label>IV</TM_HediffSprint.stages.3.label>
+
+
+  <!-- Burning Fury -->
+
+  <TM_BurningFuryHD.label>Fúria Furiosa</TM_BurningFuryHD.label>
+  <TM_BurningFuryHD.description>Emite um escudo de energia crua que ao mesmo tempo desvia os ataques e prejudica os inimigos mais próximos.</TM_BurningFuryHD.description>
+  <TM_BurningFuryHD.stages.0.label>I</TM_BurningFuryHD.stages.0.label>
+
+
+</LanguageData>

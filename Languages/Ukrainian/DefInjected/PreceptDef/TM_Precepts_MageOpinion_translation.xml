@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Abhorrent -->
+
+  <TM_Mages_Abhorrent.label>ненавидять магію</TM_Mages_Abhorrent.label>
+  <TM_Mages_Abhorrent.description>Магія - це мерзота, яку потрібно поносити і вичищати з існування. Маніпулювання енергією мага суперечить природному порядку. Вбивство ворожого мага виправдане незалежно від обставин. Дозвіл вільному магу проживати в колонії - це насмішка над нашими переконаннями. Маги повинні бути швидко віддані смерті або поневолені до тих пір, поки від них не вдасться позбутися. Використання магії категорично заборонено.</TM_Mages_Abhorrent.description>
+  <TM_Mages_Abhorrent.comps.1.description>Я убил мага.</TM_Mages_Abhorrent.comps.1.description>
+  <TM_Mages_Abhorrent.comps.2.description>Ми вбили мага</TM_Mages_Abhorrent.comps.2.description>
+  <TM_Mages_Abhorrent.comps.4.description>використання магії</TM_Mages_Abhorrent.comps.4.description>
+  <TM_Mages_Abhorrent.comps.5.description>маг у колонії</TM_Mages_Abhorrent.comps.5.description>
+  <TM_Mages_Abhorrent.comps.6.description>маг у колонії</TM_Mages_Abhorrent.comps.6.description>
+
+
+  <!-- Disapprove -->
+
+  <TM_Mages_Disapprove.label>не схвалюють магію</TM_Mages_Disapprove.label>
+  <TM_Mages_Disapprove.description>Слід уникати залежності від невідомого і непередбачуваного джерела енергії. Наука і техніка - це майбутнє, і їх перевагами можуть користуватися всі, і кожен може внести в них свій внесок. Колонія повинна обмежити кількість вільних магів до 10% або менше і тільки найбільш довіреними жителями, а кількість заклинань має бути обмежена 5 на день. Магов повинен зробити рабами, щоб вони знали своє законне місце. Дотримання цих правил дозволить нашій колонії процвітати і зробить всіх щасливішими.</TM_Mages_Disapprove.description>
+  <TM_Mages_Disapprove.comps.0.description>регульоване використання магії</TM_Mages_Disapprove.comps.0.description>
+  <TM_Mages_Disapprove.comps.1.description>кероване існування магів</TM_Mages_Disapprove.comps.1.description>
+
+
+  <!-- Approve -->
+
+  <TM_Mages_Approve.label>схвалюють магію</TM_Mages_Approve.label>
+  <TM_Mages_Approve.description>Магія - потужний і корисний ресурс, і було б божевіллям відмовлятися від її потенціалу. Маги дозволяють нам використовувати цей ресурс і можуть поліпшити якість нашого життя. Через їхню цінність для нашої колонії до магів слід ставитися з повагою, як до аристократів. Ми повинні зосередити наші зусилля і розширити наші знання про цю таємничу силу.</TM_Mages_Approve.description>
+  <TM_Mages_Approve.comps.1.description>використання магії</TM_Mages_Approve.comps.1.description>
+  <TM_Mages_Approve.comps.2.description>використання магії</TM_Mages_Approve.comps.2.description>
+  <TM_Mages_Approve.comps.3.description>маги в колонії</TM_Mages_Approve.comps.3.description>
+  <TM_Mages_Approve.comps.5.description>виконав розрив магії</TM_Mages_Approve.comps.5.description>
+
+
+  <!-- Venerated -->
+
+  <TM_Mages_Venerated.label>шанують магію</TM_Mages_Venerated.label>
+  <TM_Mages_Venerated.description>Магія чудова, містична, могутня і нескінченна. Ана здатна виконувати звичайні завдання або знищувати наших ворогів в мить ока. Це джерело як творення, так і руйнування, і воно гідне вшанування. Ті, хто може використовувати цю силу, благословлені - зворушені божественністю - і повинні бути піднесені над усіма іншими. Вбивство ворожого мага огидне і повинно бути зроблено тільки в крайньому випадку. Магія відкриває шлях до нашого порятунку! Його використання підтримує нашу працю, і ми повинні прийняти рішення поширити благословення магії на всіх.</TM_Mages_Venerated.description>
+  <TM_Mages_Venerated.comps.2.description>Я убил мага.</TM_Mages_Venerated.comps.2.description>
+  <TM_Mages_Venerated.comps.3.description>Ми вбили мага</TM_Mages_Venerated.comps.3.description>
+  <TM_Mages_Venerated.comps.5.description>використовував магію</TM_Mages_Venerated.comps.5.description>
+  <TM_Mages_Venerated.comps.6.description>свідок магії</TM_Mages_Venerated.comps.6.description>
+  <TM_Mages_Venerated.comps.7.description>маг у колонії</TM_Mages_Venerated.comps.7.description>
+  <TM_Mages_Venerated.comps.8.description>в&apos;язень маг</TM_Mages_Venerated.comps.8.description>
+  <TM_Mages_Venerated.comps.9.description>раб-маг</TM_Mages_Venerated.comps.9.description>
+  <TM_Mages_Venerated.comps.11.description>виконав розрив магії</TM_Mages_Venerated.comps.11.description>
+
+
+  <!-- Transcendent Rituals -->
+
+  <TM_SeverenceRitual.label>розірвати магію</TM_SeverenceRitual.label>
+  <TM_SeverenceRitual.description>Шукач порожнечі відсікає магію від цілі. Глядачі спостерігатимуть, як шукач порожнечі виголошує об&apos;єднавчу промову, відокремлює магію від мага і вимовляє кілька заключних слів. Мета може спробувати застосувати останнє заклинання відплати, якщо ритуал буде виконаний погано. У разі успіху мета буде вільна від магії.</TM_SeverenceRitual.description>
+
+  <TM_BestowMagicRitual.label>дарувати магію</TM_BestowMagicRitual.label>
+  <TM_BestowMagicRitual.description>Шукач порожнечі спробує встановити зв&apos;язок між метою і магією. Глядачі будуть спостерігати, як шукач порожнечі вимовляє кілька слів мудрості, намагається дарувати іскру магії, а потім вимовляє кілька заключних слів. Цей ритуал може зазнати невдачі і може бути виконаний тільки в певну дату.</TM_BestowMagicRitual.description>
+
+  <TM_BestowClassRitual.label>таємний шлях</TM_BestowClassRitual.label>
+  <TM_BestowClassRitual.description>Шукач порожнечі буде направляти пішака, що володіє даром магії, під час ритуалу, щоб стати магом. Глядачі спостерігатимуть, як маг намагається реалізувати своє натхнення під керівництвом шукача порожнечі. По завершенні мета отримає свій натхненний клас магії.</TM_BestowClassRitual.description>
+
+
+</LanguageData>

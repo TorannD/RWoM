@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_ApothecaryAntitoxin.label>Antídoto</TM_Bridge_ApothecaryAntitoxin.label>
+  <TM_Bridge_ApothecaryGoldenHour.label>Estojo da hora de ouro</TM_Bridge_ApothecaryGoldenHour.label>
+  <TM_Bridge_ApothecaryAntitoxin.description>Ao toque reduz a intoxicação alimentar em 20%. Uma vez por doença. Consome 20% da reserva máxima. Recarga de 40 segundos.</TM_Bridge_ApothecaryAntitoxin.description>
+  <TM_Bridge_ApothecaryGoldenHour.description>Sem se mover, trate quatro aliados a oito células durante 20 segundos. Cura até 20 pontos de feridas recentes por paciente e reduz a hemorragia pela metade. Consome 60% das ervas e quatro medicamentos herbais no inventário ou ao alcance. Recarga de dois dias.</TM_Bridge_ApothecaryGoldenHour.description>
+</LanguageData>

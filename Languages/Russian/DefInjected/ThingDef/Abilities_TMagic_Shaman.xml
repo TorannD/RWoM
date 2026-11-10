@@ -1,0 +1,11 @@
+<LanguageData><!-- lightning-->
+	<Projectile_Lightning.label>молния</Projectile_Lightning.label>
+	<!-- Chain Lightning-->
+	<Projectile_ChainLightning.label>цепная молния</Projectile_ChainLightning.label>
+	<!-- Spirit Wolves-->
+	<Projectile_SpiritWolves.label>дух волков</Projectile_SpiritWolves.label>
+	<Projectile_SpiritWolves_I.label>дух волков</Projectile_SpiritWolves_I.label>
+	<Projectile_SpiritWolves_II.label>дух волков</Projectile_SpiritWolves_II.label>
+	<Projectile_SpiritWolves_III.label>дух волков</Projectile_SpiritWolves_III.label>
+	<FlyingObject_SpiritWolves.label>дух волков</FlyingObject_SpiritWolves.label>
+</LanguageData>

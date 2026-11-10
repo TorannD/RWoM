@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RFSStaminaPotionHigh.label>Усилитель Выносливости</RFSStaminaPotionHigh.label>
+  <RFSStaminaPotionHigh.description>Текущая по венам энергия. Значительно увеличивает запас энергии пешки и сознание.</RFSStaminaPotionHigh.description>
+  <RFSStaminaPotionHigh.stages.0.label>2s</RFSStaminaPotionHigh.stages.0.label>
+  <RFSStaminaPotionHigh.stages.1.label>4s</RFSStaminaPotionHigh.stages.1.label>
+  <RFSStaminaPotionHigh.stages.2.label>6s</RFSStaminaPotionHigh.stages.2.label>
+  <RFSStaminaPotionHigh.stages.3.label>8s</RFSStaminaPotionHigh.stages.3.label>
+  <RFSStaminaPotionHigh.stages.4.label>10s</RFSStaminaPotionHigh.stages.4.label>
+  <RFSStaminaPotionHigh.stages.5.label>12s</RFSStaminaPotionHigh.stages.5.label>
+  <RFSStaminaPotionHigh.stages.6.label>14s</RFSStaminaPotionHigh.stages.6.label>
+  <RFSStaminaPotionHigh.stages.7.label>16s</RFSStaminaPotionHigh.stages.7.label>
+  <RFSStaminaPotionHigh.stages.8.label>18s</RFSStaminaPotionHigh.stages.8.label>
+  <RFSStaminaPotionHigh.stages.9.label>20s</RFSStaminaPotionHigh.stages.9.label>
+  <RFSStaminaPotionHigh.stages.10.label>22s</RFSStaminaPotionHigh.stages.10.label>
+  <RFSStaminaPotionHigh.stages.11.label>24s</RFSStaminaPotionHigh.stages.11.label>
+  <RFSStaminaPotionHigh.stages.12.label>26s</RFSStaminaPotionHigh.stages.12.label>
+  <RFSStaminaPotionHigh.stages.13.label>28s</RFSStaminaPotionHigh.stages.13.label>
+  <RFSStaminaPotionHigh.stages.14.label>30s</RFSStaminaPotionHigh.stages.14.label>
+  <RFSStaminaPotionHigh.stages.15.label>32s</RFSStaminaPotionHigh.stages.15.label>
+  <RFSStaminaPotionHigh.stages.16.label>34s</RFSStaminaPotionHigh.stages.16.label>
+  <RFSStaminaPotionHigh.stages.17.label>36s</RFSStaminaPotionHigh.stages.17.label>
+  <RFSStaminaPotionHigh.stages.18.label>38s</RFSStaminaPotionHigh.stages.18.label>
+  <RFSStaminaPotionHigh.stages.19.label>40s</RFSStaminaPotionHigh.stages.19.label>
+  <RFSStaminaPotionHigh.stages.20.label>42s</RFSStaminaPotionHigh.stages.20.label>
+  <RFSStaminaPotionHigh.stages.21.label>44s</RFSStaminaPotionHigh.stages.21.label>
+  <RFSStaminaPotionHigh.stages.22.label>46s</RFSStaminaPotionHigh.stages.22.label>
+  <RFSStaminaPotionHigh.stages.23.label>48s</RFSStaminaPotionHigh.stages.23.label>
+  <RFSStaminaPotionHigh.stages.24.label>50s</RFSStaminaPotionHigh.stages.24.label>
+  <RFSStaminaPotionHigh.stages.25.label>52s</RFSStaminaPotionHigh.stages.25.label>
+  <RFSStaminaPotionHigh.stages.26.label>54s</RFSStaminaPotionHigh.stages.26.label>
+  <RFSStaminaPotionHigh.stages.27.label>56s</RFSStaminaPotionHigh.stages.27.label>
+  <RFSStaminaPotionHigh.stages.28.label>58s</RFSStaminaPotionHigh.stages.28.label>
+  <RFSStaminaPotionHigh.stages.29.label>1m</RFSStaminaPotionHigh.stages.29.label>
+  <RFSStaminaPotionHigh.stages.30.label>1m30s</RFSStaminaPotionHigh.stages.30.label>
+  <RFSStaminaPotionHigh.stages.31.label>2m</RFSStaminaPotionHigh.stages.31.label>
+  <RFSStaminaPotionHigh.stages.32.label>2m30s</RFSStaminaPotionHigh.stages.32.label>
+  <RFSStaminaPotionHigh.stages.33.label>3m</RFSStaminaPotionHigh.stages.33.label>
+  <RFSStaminaPotionHigh.stages.34.label>3m30s</RFSStaminaPotionHigh.stages.34.label>
+  <RFSStaminaPotionHigh.stages.35.label>4m</RFSStaminaPotionHigh.stages.35.label>
+  <RFSStaminaPotionHigh.stages.36.label>4m30s</RFSStaminaPotionHigh.stages.36.label>
+  <RFSStaminaPotionHigh.stages.37.label>5m</RFSStaminaPotionHigh.stages.37.label>
+  <RFSStaminaPotionHigh.stages.38.label>5m30s</RFSStaminaPotionHigh.stages.38.label>
+  <RFSStaminaPotionHigh.stages.39.label>6m</RFSStaminaPotionHigh.stages.39.label>
+  <RFSStaminaPotionHigh.stages.40.label>6m30s</RFSStaminaPotionHigh.stages.40.label>
+  <RFSStaminaPotionHigh.stages.41.label>7m</RFSStaminaPotionHigh.stages.41.label>
+  <RFSStaminaPotionHigh.stages.42.label>7m30s</RFSStaminaPotionHigh.stages.42.label>
+  <RFSStaminaPotionHigh.stages.43.label>8m</RFSStaminaPotionHigh.stages.43.label>
+  <RFSStaminaPotionHigh.stages.44.label>8m30s</RFSStaminaPotionHigh.stages.44.label>
+  <RFSStaminaPotionHigh.stages.45.label>9m</RFSStaminaPotionHigh.stages.45.label>
+  <RFSStaminaPotionHigh.stages.46.label>9m30s</RFSStaminaPotionHigh.stages.46.label>
+  <RFSStaminaPotionHigh.stages.47.label>10m</RFSStaminaPotionHigh.stages.47.label>
+  <RFSStaminaPotionHigh.stages.48.label>11m</RFSStaminaPotionHigh.stages.48.label>
+  <RFSStaminaPotionHigh.stages.49.label>12m</RFSStaminaPotionHigh.stages.49.label>
+  <RFSStaminaPotionHigh.stages.50.label>13m</RFSStaminaPotionHigh.stages.50.label>
+  <RFSStaminaPotionHigh.stages.51.label>14m</RFSStaminaPotionHigh.stages.51.label>
+  <RFSStaminaPotionHigh.stages.52.label>15m</RFSStaminaPotionHigh.stages.52.label>
+  <RFSStaminaPotionTolerance.label>Толерантность к зелью выносливости</RFSStaminaPotionTolerance.label>
+  <RFSStaminaPotionTolerance.description>Организм привык к зельям выносливости - последовательное употребление будет менее эффективным.</RFSStaminaPotionTolerance.description>
+  <RFSStaminaPotionAddiction.label>Зависимость от зелья выносливости</RFSStaminaPotionAddiction.label>
+  <RFSStaminaPotionAddiction.description>У пешки выработалась серьезная зависимость от зелий выносливости - она будет двигаться и действовать медленнее, а её регенерация выносливости и максимальная выносливость снижаются, когда она не находится под действием зелья выносливости.</RFSStaminaPotionAddiction.description>
+  <RFSStaminaPotionAddiction.stages.1.label>ломка</RFSStaminaPotionAddiction.stages.1.label>
+</LanguageData>

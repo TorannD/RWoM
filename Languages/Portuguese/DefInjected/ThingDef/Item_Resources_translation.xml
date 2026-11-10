@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Manaweave -->
+
+  <TM_Manaweave.label>Manatkan</TM_Manaweave.label>
+  <TM_Manaweave.description>Manatkan é um tecido que foi alinhado ao magicismo e cuidadosamente impregnado de símbolos secretos. Manatkan herda muitas propriedades físicas do tecido, mas ganha uma reação extra à força física. O que torna o tecido único é a sua capacidade de agir como um condutor de maná, que aumenta a ação do encantamento e naturalmente oferece proteção contra a magia clara e escura.
+
+É extremamente difícil criar, só um mago talentoso e conhecedor pode fazer este material.</TM_Manaweave.description>
+  <TM_Manaweave.stuffProps.stuffAdjective>manatcaná</TM_Manaweave.stuffProps.stuffAdjective>
+
+
+  <!-- Arcalleum -->
+
+  <TM_Arcalleum.label>Arkalleum</TM_Arcalleum.label>
+  <TM_Arcalleum.description>Liga de metal composta por aço, jade, prata e magicita. A sua composição única confere-lhe propriedades místicas que aumentam a elasticidade e produzem os efeitos de qualquer energia mágica transmitida através dele. A elasticidade da liga torna-o uma excelente escolha para a defesa estúpida, mas não é adequada para o uso de armas. Arkalleum é difícil de criar e requer uma forja capaz de inflamar e combinar todos os componentes da liga.
+
+Enquanto Arkalleum é procurado por suas melhores propriedades de defesa, ele também é apreciado por combatentes e mágicos da mesma forma por sua capacidade de eliminar qualquer capacidade de recuperação. Cada quilo de arkalleum desgastado aumenta a probabilidade de que a capacidade de recarga terá um retrocesso após o uso em 1% imediatamente (no máximo 50%).</TM_Arcalleum.description>
+  <TM_Arcalleum.stuffProps.stuffAdjective>Arkalleum</TM_Arcalleum.stuffProps.stuffAdjective>
+
+
+  <!-- Demonhide -->
+
+  <TM_Demonhide.label>pele de demónio</TM_Demonhide.label>
+  <TM_Demonhide.description>A pele de um demónio. Este material é incrivelmente resistente, graças a uma malha micropara capaz de dispersar rapidamente o calor e atenuar os impactos melhor do que a maioria dos não-metais. O sangue do demónio é resistente à magia, e a pele feita da pele do demónio absorve parcialmente essa resistência. Qualquer encantamento esculpido na pele de um demónio aumenta naturalmente. Este material só tem duas falhas - a primeira é que só pode ser obtido da carcaça do demônio, tornando-o raro e dispendioso; O segundo é que está a criar um terrível isolamento térmico.</TM_Demonhide.description>
+  <TM_Demonhide.stuffProps.stuffAdjective>pele de demónio</TM_Demonhide.stuffProps.stuffAdjective>
+
+
+  <!-- Demon Scale -->
+
+  <TM_Demonscale.label>escavando o demónio</TM_Demonscale.label>
+  <TM_Demonscale.description>Retiradas do corpo do demónio, estas escamas oferecem proteção fácil e universal contra todas as formas de ataque. A escama do demônio é excelente como uma barreira natural para a magia e é um excelente fator de contenção para o calor e o fogo; um guerreiro com reservas suficientes feitas com escamas de demónio pode até tornar-se imune a tudo, exceto ao fogo mais intenso. O demónio escama pode ser derramado, e as armas forjadas a partir deste metal refinado fazem uma excelente arma fria. Os encantos capturados no equipamento de escala demoníaca aumentam naturalmente.</TM_Demonscale.description>
+  <TM_Demonscale.stuffProps.stuffAdjective>escavando o demónio</TM_Demonscale.stuffProps.stuffAdjective>
+
+
+</LanguageData>

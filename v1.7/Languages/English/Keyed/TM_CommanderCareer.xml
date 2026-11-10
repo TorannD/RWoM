@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadCommanderProvisioner>Commission: Provisioner</TM_ReadCommanderProvisioner>
+  <TM_ReadCommanderSignals>Commission: Clear Signals</TM_ReadCommanderSignals>
+  <TM_CommanderSupplyTrial>Coordinated deliveries {0}/12. Use Work Crew on an ally who completes a real haul before the order expires.</TM_CommanderSupplyTrial>
+  <TM_CommanderEvacTrial>Distinct allies led out of danger {0}/8, or assigned repairs completed {1}/16. Issue Move Out near a hostile or use Work Crew on an ally repairing a damaged building. Work Crew must be assigned while the ally repairs a colony building damaged by a hostile or an uncontrolled fire.</TM_CommanderEvacTrial>
+  <TM_CommanderServiceTrial>Service days {0}/10 or successful emergency work orders {1}/10. Complete real crew jobs. Warrior level {2}/30.</TM_CommanderServiceTrial>
+  <TM_CommanderAdvance>Advance the command course</TM_CommanderAdvance>
+  <TM_CommanderEveryoneHome>Operation: Everyone Home</TM_CommanderEveryoneHome>
+  <TM_CommanderChoseOperation>Ascended command: Everyone Home.</TM_CommanderChoseOperation>
+  <TM_CommanderChoseAura>Ascended command: Commander Aura.</TM_CommanderChoseAura>
+  <TM_CommanderOperationUnavailable>Requires an ascended command operation, 60% available stamina and a finished cooldown.</TM_CommanderOperationUnavailable>
+  <TM_CommanderDoctrineSupply>Provisioner supplies the native support aura. Work Crew bonuses apply only to the assigned job.</TM_CommanderDoctrineSupply>
+  <TM_CommanderDoctrineSignals>Clear Signals adds 2/4/6/8/10 percentage points to the chance of accepting an order, capped at 95%.</TM_CommanderDoctrineSignals>
+</LanguageData>

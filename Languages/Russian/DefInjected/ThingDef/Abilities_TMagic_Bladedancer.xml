@@ -1,0 +1,11 @@
+<LanguageData><!-- blade focus-->
+	<Projectile_BladeFocus.label>Фокус клинка</Projectile_BladeFocus.label>
+	<!-- blade art start-->
+	<Projectile_BladeArt.label>Тренировка Тела</Projectile_BladeArt.label>
+	<!-- BladeSpin Start-->
+	<Projectile_BladeSpin.label>Кручение Клинков</Projectile_BladeSpin.label>
+	<!-- Seismic Slash Start-->
+	<Projectile_SeismicSlash.label>Сейсмический раскол</Projectile_SeismicSlash.label>
+	<!-- Phase Strike Start-->
+	<Projectile_PhaseStrike.label>Фазовый удар</Projectile_PhaseStrike.label>
+</LanguageData>

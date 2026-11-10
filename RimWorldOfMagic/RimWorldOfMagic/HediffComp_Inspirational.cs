@@ -9,9 +9,13 @@ namespace TorannMagic
 {
     class HediffComp_Inspirational : HediffComp
     {
-        private bool initializing = true;
-        private int pwrVal = 0;
-        private int verVal = 0;
+        private int lastCheck = -1;
+
+        public override void CompExposeData()
+        {
+            base.CompExposeData();
+            Scribe_Values.Look(ref lastCheck, "TM_lastInspirationCheck", -1);
+        }
 
         public string labelCap
         {
@@ -29,46 +33,26 @@ namespace TorannMagic
             }
         }
 
-        private void Initialize()
-        {
-            bool spawned = base.Pawn.Spawned;
-            if (spawned)
-            {
-                MagicPowerSkill pwr = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_pwr");
-                MagicPowerSkill ver = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Inspire_ver");
-                this.pwrVal = pwr.level;
-                this.verVal = ver.level;
-            }
-        }
-
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-            if (Pawn.DestroyedOrNull()) return;
-
-            if (initializing)
+            int now = Find.TickManager.TicksGame;
+            if (now % 100 != 0 || now == lastCheck) return;
+            var body = ClassProgression.BardTrials.InspirationBody(Pawn);
+            if (body == null) return;
+            lastCheck = now;
+            var skills = Pawn.GetCompAbilityUserMagic()?.MagicData.MagicPowerSkill_Inspire;
+            int pwrVal = skills?.FirstOrDefault(s => s.label == "TM_Inspire_pwr")?.level ?? 0;
+            int verVal = skills?.FirstOrDefault(s => s.label == "TM_Inspire_ver")?.level ?? 0;
+            int interval = Math.Max(100, 1000 - pwrVal * 100);
+            Map map = body.Map;
+            if (now % interval == 0)
             {
-                initializing = false;
-                this.Initialize();
-            }
-            
-            if(Find.TickManager.TicksGame % 600 == 0)
-            {
-                MagicPowerSkill pwr = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.First((MagicPowerSkill x) => x.label == "TM_Inspire_pwr");
-                MagicPowerSkill ver = this.Pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Inspire.First((MagicPowerSkill x) => x.label == "TM_Inspire_ver");
-                this.pwrVal = pwr.level;
-                this.verVal = ver.level;
-            }
-            Map map = base.Pawn.Map;
-            int tickTimer = 1000 - (pwrVal * 100);
-            if (Find.TickManager.TicksGame % tickTimer == 0 && map != null)
-            {
-                CellRect cellRect = CellRect.CenteredOn(base.Pawn.Position, 3);
-                cellRect.ClipInsideMap(map);
+                var cellRect = CellRect.CenteredOn(body.Position, 3).ClipInsideMap(map);
 
                 IntVec3 curCell = cellRect.RandomCell;
                 Pawn inspiredPawn = curCell.GetFirstPawn(map);
-                if(inspiredPawn != null && inspiredPawn.IsColonist && inspiredPawn.RaceProps.Humanlike && !inspiredPawn.Inspired && inspiredPawn != this.Pawn && inspiredPawn.story != null && inspiredPawn.story.traits != null && inspiredPawn.workSettings != null)
+                if(inspiredPawn != null && inspiredPawn.IsColonist && inspiredPawn.RaceProps.Humanlike && !inspiredPawn.Inspired && inspiredPawn != body && inspiredPawn.story != null && inspiredPawn.story.traits != null && inspiredPawn.workSettings != null)
                 {
                     InspirationDef id = TM_Calc.GetRandomAvailableInspirationDef(inspiredPawn);
                     if (id != null)
@@ -80,23 +64,23 @@ namespace TorannMagic
                         drawPosAbove.z += .5f;
                         if (verVal == 0 && !flag1 && !flag2 && !flag3)
                         {
-                            inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
+                            ClassProgression.BardTrials.Inspire(this.parent, inspiredPawn, id);
                             TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, .5f);
                         }
                         else if (verVal == 1 && !flag2 && !flag3)
                         {
-                            inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
+                            ClassProgression.BardTrials.Inspire(this.parent, inspiredPawn, id);
                             TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, .7f);
                         }
                         else if (verVal == 2 && !flag3)
                         {
-                            inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
+                            ClassProgression.BardTrials.Inspire(this.parent, inspiredPawn, id);
                             TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
                             TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
                         }
                         else if (verVal == 3)
                         {
-                            inspiredPawn.mindState.inspirationHandler.TryStartInspiration(id);
+                            ClassProgression.BardTrials.Inspire(this.parent, inspiredPawn, id);
                             TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
                             TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));
                             TM_MoteMaker.ThrowExclamationMote(drawPosAbove, inspiredPawn.Map, Rand.Range(.5f, .7f));

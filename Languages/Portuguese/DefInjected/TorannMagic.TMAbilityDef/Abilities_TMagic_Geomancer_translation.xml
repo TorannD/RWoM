@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Stoneskin -->
+
+  <TM_Stoneskin.label>Pele de pedra</TM_Stoneskin.label>
+  <TM_Stoneskin.description>Aplica a pele de pedra ao Peão alvo. Cada carga de pedra absorve um ataque, independentemente da força ou fraqueza do ataque. A pele de pedra é uma proteção irrelevante, ou seja, as medidas de proteção que ela aplica não são físicas e não interferem nas capacidades de combate do seu pupilo.
+
+A pele de pedra requer uma reserva constante de maná para ser mantida, e cada uso do feitiço reduz a manga máxima em 15. O feitiço só pode manter um número limitado de exemplares de pele de pedra, independentemente da quantidade de manes que o feitiço tem.
+
+Aplicar a pele de pedra a um alvo que já tem pele de pedra removerá todas as cargas de pele de pedra no alvo e dissociará o feitiço (remetendo as reservas de maná para o feitiço).</TM_Stoneskin.description>
+
+  <TM_DispelStoneskin.label>Dispersar a pele de pedra</TM_DispelStoneskin.label>
+  <TM_DispelStoneskin.description>Dispersa todos os exemplares de pele de pedra apoiados por este peão.</TM_DispelStoneskin.description>
+
+
+  <!-- Encase -->
+
+  <TM_Encase.label>Conclusão</TM_Encase.label>
+  <TM_Encase.description>Encerra a área de destino em um anel de pedra que efetivamente isola a área do campo de batalha.
+
+Raio: 3
+Distância: 50
+Tempo de aplicação: 1,5s</TM_Encase.description>
+
+  <TM_Encase_I.label>Conclusão I</TM_Encase_I.label>
+  <TM_Encase_I.description>Encerra a área de destino em um anel de pedra que efetivamente isola a área do campo de batalha.
+
+Raio: 4
+Distância: 55
+Tempo de aplicação: 1.3s</TM_Encase_I.description>
+
+  <TM_Encase_II.label>Conclusão II</TM_Encase_II.label>
+  <TM_Encase_II.description>Encerra a área de destino em um anel de pedra que efetivamente isola a área do campo de batalha.
+
+Raio: 5
+Distância: 60
+Tempo de aplicação: 1.1s</TM_Encase_II.description>
+
+  <TM_Encase_III.label>Conclusão III</TM_Encase_III.label>
+  <TM_Encase_III.description>Encerra a área de destino em um anel de pedra que efetivamente isola a área do campo de batalha.
+
+Raio: 6
+Distância: 65
+Tempo de utilização: 1.0s</TM_Encase_III.description>
+
+
+  <!-- Earth Sprites -->
+
+  <TM_EarthSprites.label>Espíritos da Terra</TM_EarthSprites.label>
+  <TM_EarthSprites.description>Chama os espíritos da Terra para transformar a área. Os espíritos aparecem como manchas de luz e podem ser facilmente omitidos, mas são trabalhadores árduos capazes de quebrar uma rocha ou pedra em seu componente principal ou aumentar a riqueza e a fertilidade do solo.
+
+Após a convocação, eles continuarão a trabalhar no terreno, mesmo se deslocando para áreas vizinhas até serem demitidos por um geomante. Os espíritos da Terra só compreendem as instruções básicas e se deslocarão aleatoriamente para uma nova área para continuar seu trabalho; se nenhuma área próxima precisar de trabalho, a chamada acabará. Se os espíritos da terra forem chamados para uma área chamada «perfume da terra», eles serão movidos apenas para as células vizinhas nesta área.
+
+Em troca dos seus esforços, os espíritos da Terra esperam uma reserva constante e significativa de maná. Se o geomante falhar, os espíritos da Terra desaparecerão. Cada geomante só pode pedir ajuda uma vez, independentemente da quantidade de maná que tem.</TM_EarthSprites.description>
+
+  <TM_DismissEarthSprites.label>Libertar espíritos da terra</TM_DismissEarthSprites.label>
+  <TM_DismissEarthSprites.description>Solta os espíritos existentes da terra</TM_DismissEarthSprites.description>
+
+
+  <!-- Earthern Hammer -->
+
+  <TM_EarthernHammer.label>Martelo de Terra</TM_EarthernHammer.label>
+  <TM_EarthernHammer.description>O geomante manipula as leis da gravidade para catapultar pedras maciças da terra ao redor. Quantidade de energia gravitacional convertida, claro; pedras de superfície próximas exigem energia mínima, enquanto pedras subterrâneas exigem muito mais.
+
+A primeira e uma em cada três pedras ficarão sempre no subsolo, a menos que a energia gravitacional seja insuficiente, e, nesse caso, o geomante tentará usar o resto da energia lançando pedras próximas. A mudança extrema da gravidade desorientou temporariamente o geomante.</TM_EarthernHammer.description>
+
+
+  <!-- Sentinel -->
+
+  <TM_Sentinel.label>Sentinel</TM_Sentinel.label>
+  <TM_Sentinel.description>Cria uma guarda de pedra para proteger a área. Os Sentinels vão dormir até que o inimigo esteja dentro da Distância, e depois eles escapem da sua prisão de pedra para proteger o seu território.
+
+O uso desta capacidade por uma guarda de sono levará ao seu despedimento. Cada hora reduz o MP máximo em 20.
+
+* Nota estética: Os relógios vão sempre olhar para o feitiço.</TM_Sentinel.description>
+
+  <TM_ShatterSentinel.label>Dissipar pente</TM_ShatterSentinel.label>
+  <TM_ShatterSentinel.description>Todos os relógios apoiados por este peão partiram numa grande explosão.</TM_ShatterSentinel.description>
+
+
+  <!-- Meteor -->
+
+  <TM_Meteor.label>Meteoro</TM_Meteor.label>
+  <TM_Meteor.description>Coleta pedras, poeira e destroços da atmosfera e do espaço e forma um meteorito. O Geomant está a guiá-lo para enterrar a localização.
+
+O núcleo do meteorito é sempre composto por material valioso.
+
+Raio: 2
+Tempo de aplicação: 5s</TM_Meteor.description>
+
+  <TM_Meteor_I.label>Meteoro I</TM_Meteor_I.label>
+  <TM_Meteor_I.description>Coleta pedras, poeira e destroços da atmosfera e do espaço e forma um meteorito. O Geomant está a guiá-lo para enterrar a localização.
+
+O núcleo do meteorito é sempre composto por material valioso.
+
+Raio: 3
+Tempo de aplicação: 4.6s</TM_Meteor_I.description>
+
+  <TM_Meteor_II.label>Meteoro II</TM_Meteor_II.label>
+  <TM_Meteor_II.description>Coleta pedras, poeira e destroços da atmosfera e do espaço e forma um meteorito. O Geomant está a guiá-lo para enterrar a localização.
+
+O núcleo do meteorito é sempre composto por material valioso.
+
+Raio: 4
+Tempo de aplicação: 4.2s</TM_Meteor_II.description>
+
+  <TM_Meteor_III.label>Meteoro III</TM_Meteor_III.label>
+  <TM_Meteor_III.description>Coleta pedras, poeira e destroços da atmosfera e do espaço e forma um meteorito. O Geomant está a guiá-lo para enterrar a localização.
+
+O núcleo do meteorito é sempre composto por material valioso.
+
+Raio: 5
+Tempo de aplicação: 3.8s</TM_Meteor_III.description>
+
+
+</LanguageData>

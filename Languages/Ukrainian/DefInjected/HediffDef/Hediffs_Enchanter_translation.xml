@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_EnchantedBodyHD.label>Зачароване Тіло</TM_EnchantedBodyHD.label>
+  <TM_EnchantedBodyHD.description>Створення зачарованих частин тіла для підвищення фізичних можливостей.</TM_EnchantedBodyHD.description>
+  <TM_EnchantedBodyHD.stages.0.label>Рука</TM_EnchantedBodyHD.stages.0.label>
+  <TM_EnchantedBodyHD.stages.1.label>Дві Руки</TM_EnchantedBodyHD.stages.1.label>
+  <TM_EnchantedBodyHD.stages.2.label>Руки і очі</TM_EnchantedBodyHD.stages.2.label>
+  <TM_EnchantedBodyHD.stages.3.label>Руки і очі++</TM_EnchantedBodyHD.stages.3.label>
+
+  <TM_EnchantedAuraHD.label>Зачарована Аурою</TM_EnchantedAuraHD.label>
+  <TM_EnchantedAuraHD.description>Зачарований аспект оточує пішака, посилюючи якості, що розглядаються як краса, ніжність і привабливість.</TM_EnchantedAuraHD.description>
+  <TM_EnchantedAuraHD.stages.0.label>I</TM_EnchantedAuraHD.stages.0.label>
+  <TM_EnchantedAuraHD.stages.1.label>II</TM_EnchantedAuraHD.stages.1.label>
+  <TM_EnchantedAuraHD.stages.2.label>III</TM_EnchantedAuraHD.stages.2.label>
+  <TM_EnchantedAuraHD.stages.3.label>IV</TM_EnchantedAuraHD.stages.3.label>
+
+  <TM_ShapeshiftHD.label>Перевертень</TM_ShapeshiftHD.label>
+  <TM_ShapeshiftHD.description>Покращує силу будь-якої тваринної форми, прийнятої перевертнем.</TM_ShapeshiftHD.description>
+  <TM_ShapeshiftHD.stages.0.label>I</TM_ShapeshiftHD.stages.0.label>
+  <TM_ShapeshiftHD.stages.1.label>II</TM_ShapeshiftHD.stages.1.label>
+  <TM_ShapeshiftHD.stages.2.label>III</TM_ShapeshiftHD.stages.2.label>
+  <TM_ShapeshiftHD.stages.3.label>IV</TM_ShapeshiftHD.stages.3.label>
+
+  <TM_WeaponEnchantment_FireHD.label>Зачарована Зброя</TM_WeaponEnchantment_FireHD.label>
+  <TM_WeaponEnchantment_FireHD.description>Зачаровує в даний час оснащена зброя елементарним вогнем, який може спалити або підпалити об&apos;єкт. Це чаклунство закінчиться, якщо зброя не буде оснащена або замінена.</TM_WeaponEnchantment_FireHD.description>
+  <TM_WeaponEnchantment_FireHD.stages.0.label>Вогонь (I)</TM_WeaponEnchantment_FireHD.stages.0.label>
+  <TM_WeaponEnchantment_FireHD.stages.1.label>Вогонь (II)</TM_WeaponEnchantment_FireHD.stages.1.label>
+  <TM_WeaponEnchantment_FireHD.stages.2.label>Вогонь (III)</TM_WeaponEnchantment_FireHD.stages.2.label>
+  <TM_WeaponEnchantment_FireHD.stages.3.label>Вогонь (IV)</TM_WeaponEnchantment_FireHD.stages.3.label>
+
+  <TM_WeaponEnchantment_IceHD.label>Зачарована Зброя</TM_WeaponEnchantment_IceHD.label>
+  <TM_WeaponEnchantment_IceHD.description>Зачаровує в даний час оснащена зброя елементарним льодом, який може уповільнити об&apos;єкт. Це чаклунство закінчиться, якщо зброя не буде оснащена або замінена.</TM_WeaponEnchantment_IceHD.description>
+  <TM_WeaponEnchantment_IceHD.stages.0.label>Лід (I)</TM_WeaponEnchantment_IceHD.stages.0.label>
+  <TM_WeaponEnchantment_IceHD.stages.1.label>Лід (II)</TM_WeaponEnchantment_IceHD.stages.1.label>
+  <TM_WeaponEnchantment_IceHD.stages.2.label>Лед (III)</TM_WeaponEnchantment_IceHD.stages.2.label>
+  <TM_WeaponEnchantment_IceHD.stages.3.label>Лід (IV)</TM_WeaponEnchantment_IceHD.stages.3.label>
+
+  <TM_WeaponEnchantment_LitHD.label>Зачарована Зброя</TM_WeaponEnchantment_LitHD.label>
+  <TM_WeaponEnchantment_LitHD.description>Зачаровує в даний час оснащена зброя елементарною блискавкою, яка посилає приголомшуючі ударні хвилі через об&apos;єкт. Це чаклунство закінчиться, якщо зброя не буде оснащена або замінена.</TM_WeaponEnchantment_LitHD.description>
+  <TM_WeaponEnchantment_LitHD.stages.0.label>Оглушення (I)</TM_WeaponEnchantment_LitHD.stages.0.label>
+  <TM_WeaponEnchantment_LitHD.stages.1.label>Оглушення (II)</TM_WeaponEnchantment_LitHD.stages.1.label>
+  <TM_WeaponEnchantment_LitHD.stages.2.label>Оглушення (III)</TM_WeaponEnchantment_LitHD.stages.2.label>
+  <TM_WeaponEnchantment_LitHD.stages.3.label>Оглушення (IV)</TM_WeaponEnchantment_LitHD.stages.3.label>
+
+  <TM_WeaponEnchantment_DarkHD.label>Зачарована Зброя</TM_WeaponEnchantment_DarkHD.label>
+  <TM_WeaponEnchantment_DarkHD.description>Зачаровує в даний час оснащена зброя дотиком темряви, яка викликає сліпоту. Це чаклунство закінчиться, якщо зброя не буде оснащена або замінена.</TM_WeaponEnchantment_DarkHD.description>
+  <TM_WeaponEnchantment_DarkHD.stages.0.label>Сліпота (I)</TM_WeaponEnchantment_DarkHD.stages.0.label>
+  <TM_WeaponEnchantment_DarkHD.stages.1.label>Сліпота (II)</TM_WeaponEnchantment_DarkHD.stages.1.label>
+  <TM_WeaponEnchantment_DarkHD.stages.2.label>Сліпота (III)</TM_WeaponEnchantment_DarkHD.stages.2.label>
+  <TM_WeaponEnchantment_DarkHD.stages.3.label>Сліпота (IV)</TM_WeaponEnchantment_DarkHD.stages.3.label>
+
+
+</LanguageData>

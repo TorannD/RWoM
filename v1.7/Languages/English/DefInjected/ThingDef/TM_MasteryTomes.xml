@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MasterTomePriest.label>master tome: priest</TM_MasterTomePriest.label>
+  <TM_MasterTomePriest.description>A rare tome for a priest who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomePriest.description>
+  <TM_MasterTomePriest.comps.1.useLabel>Read {0_label}</TM_MasterTomePriest.comps.1.useLabel>
+  <TM_MasterTomeNecromancer.label>master tome: necromancer</TM_MasterTomeNecromancer.label>
+  <TM_MasterTomeNecromancer.description>A rare tome for a necromancer who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeNecromancer.description>
+  <TM_MasterTomeNecromancer.comps.1.useLabel>Read {0_label}</TM_MasterTomeNecromancer.comps.1.useLabel>
+  <TM_MasterTomeFire.label>master tome: fire mage</TM_MasterTomeFire.label>
+  <TM_MasterTomeFire.description>A rare tome for a fire mage who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeFire.description>
+  <TM_MasterTomeFire.comps.1.useLabel>Read {0_label}</TM_MasterTomeFire.comps.1.useLabel>
+  <TM_MasterTomeIce.label>master tome: ice mage</TM_MasterTomeIce.label>
+  <TM_MasterTomeIce.description>A rare tome for an ice mage who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeIce.description>
+  <TM_MasterTomeIce.comps.1.useLabel>Read {0_label}</TM_MasterTomeIce.comps.1.useLabel>
+  <TM_MasterTomeLightning.label>master tome: lightning mage</TM_MasterTomeLightning.label>
+  <TM_MasterTomeLightning.description>A rare tome for a lightning mage who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeLightning.description>
+  <TM_MasterTomeLightning.comps.1.useLabel>Read {0_label}</TM_MasterTomeLightning.comps.1.useLabel>
+  <TM_MasterTomeArcanist.label>master tome: arcanist</TM_MasterTomeArcanist.label>
+  <TM_MasterTomeArcanist.description>A rare tome for an arcanist who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeArcanist.description>
+  <TM_MasterTomeArcanist.comps.1.useLabel>Read {0_label}</TM_MasterTomeArcanist.comps.1.useLabel>
+  <TM_MasterTomePaladin.label>master tome: paladin</TM_MasterTomePaladin.label>
+  <TM_MasterTomePaladin.description>A rare tome for a paladin who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomePaladin.description>
+  <TM_MasterTomePaladin.comps.1.useLabel>Read {0_label}</TM_MasterTomePaladin.comps.1.useLabel>
+  <TM_MasterTomeSummoner.label>master tome: summoner</TM_MasterTomeSummoner.label>
+  <TM_MasterTomeSummoner.description>A rare tome for a summoner who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeSummoner.description>
+  <TM_MasterTomeSummoner.comps.1.useLabel>Read {0_label}</TM_MasterTomeSummoner.comps.1.useLabel>
+  <TM_MasterTomeDruid.label>master tome: druid</TM_MasterTomeDruid.label>
+  <TM_MasterTomeDruid.description>A rare tome for a druid who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeDruid.description>
+  <TM_MasterTomeDruid.comps.1.useLabel>Read {0_label}</TM_MasterTomeDruid.comps.1.useLabel>
+  <TM_MasterTomeBard.label>master tome: bard</TM_MasterTomeBard.label>
+  <TM_MasterTomeBard.description>A rare tome for a bard who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeBard.description>
+  <TM_MasterTomeBard.comps.1.useLabel>Read {0_label}</TM_MasterTomeBard.comps.1.useLabel>
+  <TM_MasterTomeWarlock.label>master tome: warlock</TM_MasterTomeWarlock.label>
+  <TM_MasterTomeWarlock.description>A rare mastery tome for the selected demonic branch. Reading it after completing the mastery trial advances the branch and consumes the tome. Available from traders and quest rewards; cannot be crafted.</TM_MasterTomeWarlock.description>
+  <TM_MasterTomeSuccubus.label>master tome: succubus</TM_MasterTomeSuccubus.label>
+  <TM_MasterTomeSuccubus.description>A rare mastery tome for the selected demonic branch. Reading it after completing the mastery trial advances the branch and consumes the tome. Available from traders and quest rewards; cannot be crafted.</TM_MasterTomeSuccubus.description>
+  <TM_MasterTomeWarlock.comps.1.useLabel>Read {0_label}</TM_MasterTomeWarlock.comps.1.useLabel>
+  <TM_MasterTomeSuccubus.comps.1.useLabel>Read {0_label}</TM_MasterTomeSuccubus.comps.1.useLabel>
+  <TM_MasterTomeGeomancer.label>master tome: geomancer</TM_MasterTomeGeomancer.label>
+  <TM_MasterTomeGeomancer.description>A rare tome for a geomancer who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeGeomancer.description>
+  <TM_MasterTomeGeomancer.comps.1.useLabel>Read {0_label}</TM_MasterTomeGeomancer.comps.1.useLabel>
+  <TM_MasterTomeTechnomancer.label>master tome: technomancer</TM_MasterTomeTechnomancer.label>
+  <TM_MasterTomeTechnomancer.description>A rare tome for a technomancer who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeTechnomancer.description>
+  <TM_MasterTomeTechnomancer.comps.1.useLabel>Read {0_label}</TM_MasterTomeTechnomancer.comps.1.useLabel>
+  <TM_MasterTomeBloodMage.label>master tome: blood mage</TM_MasterTomeBloodMage.label>
+  <TM_MasterTomeBloodMage.description>A rare tome for a blood mage who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeBloodMage.description>
+  <TM_MasterTomeBloodMage.comps.1.useLabel>Read {0_label}</TM_MasterTomeBloodMage.comps.1.useLabel>
+  <TM_MasterTomeEnchanter.label>master tome: enchanter</TM_MasterTomeEnchanter.label>
+  <TM_MasterTomeEnchanter.description>A rare tome for a enchanter who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeEnchanter.description>
+  <TM_MasterTomeEnchanter.comps.1.useLabel>Read {0_label}</TM_MasterTomeEnchanter.comps.1.useLabel>
+  <TM_MasterTomeChronomancer.label>master tome: chronomancer</TM_MasterTomeChronomancer.label>
+  <TM_MasterTomeChronomancer.description>A rare tome for a chronomancer who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeChronomancer.description>
+  <TM_MasterTomeChronomancer.comps.1.useLabel>Read {0_label}</TM_MasterTomeChronomancer.comps.1.useLabel>
+  <TM_MasterTomeBrightmage.label>master tome: brightmage</TM_MasterTomeBrightmage.label>
+  <TM_MasterTomeBrightmage.description>A rare tome for a brightmage who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeBrightmage.description>
+  <TM_MasterTomeBrightmage.comps.1.useLabel>Read {0_label}</TM_MasterTomeBrightmage.comps.1.useLabel>
+  <TM_MasterTomeShaman.label>master tome: shaman</TM_MasterTomeShaman.label>
+  <TM_MasterTomeShaman.description>A rare tome for a shaman who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeShaman.description>
+  <TM_MasterTomeShaman.comps.1.useLabel>Read {0_label}</TM_MasterTomeShaman.comps.1.useLabel>
+  <TM_MasterTomeGolemancer.label>master tome: golemancer</TM_MasterTomeGolemancer.label>
+  <TM_MasterTomeGolemancer.description>A rare tome for a golemancer who has met the requirements for mastery. Reading it completes the corresponding initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeGolemancer.description>
+  <TM_MasterTomeGolemancer.comps.1.useLabel>Read {0_label}</TM_MasterTomeGolemancer.comps.1.useLabel>
+  <TM_MasterTomeChaos.label>master tome: chaos mage</TM_MasterTomeChaos.label>
+  <TM_MasterTomeChaos.description>A rare tome for an adept chaos mage. Complete the trial of using spells from different draws before reading it. Obtained from traders or as a quest reward.</TM_MasterTomeChaos.description>
+  <TM_MasterTomeChaos.comps.1.useLabel>Read {0_label}</TM_MasterTomeChaos.comps.1.useLabel>
+</LanguageData>

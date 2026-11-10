@@ -1,0 +1,13 @@
+<LanguageData><!-- Dire Wolf-->
+	<TM_SpiritWolfR.label>дух волка</TM_SpiritWolfR.label>
+	<TM_SpiritWolfR.description>Духи волков объединяются в физическом мире по приказу могущественного шамана. Волки - опасное млекопитающее в одиночку, при охоте стаей их следует опасаться. Дух волка исчезнет обратно в эфир через короткий промежуток времени или если он будет побежден.</TM_SpiritWolfR.description>
+	<TM_SpiritWolfR.tools.0.label>левая лапа</TM_SpiritWolfR.tools.0.label>
+	<TM_SpiritWolfR.tools.1.label>правая лапа</TM_SpiritWolfR.tools.1.label>
+	<TM_SpiritWolfR.tools.3.label>голова</TM_SpiritWolfR.tools.3.label>
+	<TM_SpiritWolfR_Leather.label>кожа духа волка</TM_SpiritWolfR_Leather.label>
+	<TM_SpiritWolfR_Leather.description>кожа духа волка</TM_SpiritWolfR_Leather.description>
+	<TM_SpiritWolfR_Leather.stuffProps.stuffAdjective>кожа духа волка</TM_SpiritWolfR_Leather.stuffProps.stuffAdjective>
+	<!-- Meat Amount: 0-->
+	<TM_SpiritWolfR_Corpse.label>труп духа волка</TM_SpiritWolfR_Corpse.label>
+	<TM_SpiritWolfR_Corpse.description>труп духа волка</TM_SpiritWolfR_Corpse.description>
+</LanguageData>

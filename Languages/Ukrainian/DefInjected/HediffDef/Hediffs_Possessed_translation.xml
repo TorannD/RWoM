@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_SpiritPossessorHD.label>дух</TM_SpiritPossessorHD.label>
+  <TM_SpiritPossessorHD.description>Цей пішак - дух, не здатний взаємодіяти з фізичним світом спільними шляхами. Духи не можуть бути фізично пошкоджені, але втратять силу духу, якщо їх форма отримає пошкодження.</TM_SpiritPossessorHD.description>
+  <TM_SpiritPossessorHD.stages.0.label>I</TM_SpiritPossessorHD.stages.0.label>
+  <TM_SpiritPossessorHD.stages.1.label>II</TM_SpiritPossessorHD.stages.1.label>
+  <TM_SpiritPossessorHD.stages.2.label>III</TM_SpiritPossessorHD.stages.2.label>
+  <TM_SpiritPossessorHD.stages.3.label>IV</TM_SpiritPossessorHD.stages.3.label>
+
+  <TM_SpiritPossessionHD.label>духовне володіння</TM_SpiritPossessionHD.label>
+  <TM_SpiritPossessionHD.description>Одержимий духом.</TM_SpiritPossessionHD.description>
+  <TM_SpiritPossessionHD.stages.0.label>спотворений</TM_SpiritPossessionHD.stages.0.label>
+  <TM_SpiritPossessionHD.stages.1.label>суперечливий</TM_SpiritPossessionHD.stages.1.label>
+  <TM_SpiritPossessionHD.stages.2.label>нестабільний</TM_SpiritPossessionHD.stages.2.label>
+  <TM_SpiritPossessionHD.stages.3.label>стабільний</TM_SpiritPossessionHD.stages.3.label>
+  <TM_SpiritPossessionHD.stages.4.label>кооператив</TM_SpiritPossessionHD.stages.4.label>
+  <TM_SpiritPossessionHD.stages.5.label>гармонійний</TM_SpiritPossessionHD.stages.5.label>
+
+  <TM_SpiritDrainHD.label>спіритичний стік</TM_SpiritDrainHD.label>
+  <TM_SpiritDrainHD.description>Ця пішака виснажена духом, і їхнє майбутнє виглядає похмурим.</TM_SpiritDrainHD.description>
+  <TM_SpiritDrainHD.stages.0.label>відновлення</TM_SpiritDrainHD.stages.0.label>
+  <TM_SpiritDrainHD.stages.1.label>незначний</TM_SpiritDrainHD.stages.1.label>
+  <TM_SpiritDrainHD.stages.2.label>низько</TM_SpiritDrainHD.stages.2.label>
+  <TM_SpiritDrainHD.stages.3.label>помірний</TM_SpiritDrainHD.stages.3.label>
+  <TM_SpiritDrainHD.stages.4.label>серйозний</TM_SpiritDrainHD.stages.4.label>
+  <TM_SpiritDrainHD.stages.5.label>смертельно</TM_SpiritDrainHD.stages.5.label>
+
+  <TM_SpiritDistortionHD.label>спотворення духу</TM_SpiritDistortionHD.label>
+  <TM_SpiritDistortionHD.description>Дух цієї пішаки спотворений і не здатний підтримувати згуртованість зі своїм тілом. Ця пішака вразлива і завдасть більшої шкоди.</TM_SpiritDistortionHD.description>
+  <TM_SpiritDistortionHD.stages.0.label></TM_SpiritDistortionHD.stages.0.label>
+
+
+</LanguageData>

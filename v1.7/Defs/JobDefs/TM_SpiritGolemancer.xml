@@ -1,0 +1,13 @@
+<Defs>
+  <JobDef><defName>TM_SpiritAwarenessBrand</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>applying a awareness brand.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritEmotionBrand</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>applying a emotion brand.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritFitnessBrand</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>applying a fitness brand.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritProtectionBrand</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>applying a protection brand.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritVitalityBrand</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>applying a vitality brand.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritSiphonBrand</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>applying a siphon brand.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritDispelBranding</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>dispelling brands.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritSigilSurge</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>surging the brands.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritSigilDrain</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>inverting the brands.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritLivingWall</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>animating a wall.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritDispelLivingWall</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>dispelling a living wall.</reportString></JobDef>
+</Defs>

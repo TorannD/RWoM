@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Chi -->
+
+  <TM_Chi.label>Qi</TM_Chi.label>
+  <TM_Chi.description>Qi, ou espírito, é uma força vital que reside em todos os seres vivos. Os monges cultivam e usam esse poder para realizar a sua arte. O equilíbrio entre o ritmo e o fluxo de Qi leva tempo e normalmente é alcançado através de uma meditação especial.</TM_Chi.description>
+
+
+  <!-- Chi Burst -->
+
+  <TM_ChiBurst.label>Fogo de Qi</TM_ChiBurst.label>
+  <TM_ChiBurst.description>Projeta uma grande quantidade de qi na área de destino, sobrecarregando e destruindo a energia de todos os peões na área de alcance.
+
+A explosão de Qi interromperá a capacidade do lutador e do mago e causará danos baseados na quantidade de energia destruída. Isso afeta qi, Manu, magia sanguínea, resistência, ódio e energia psicónica.
+
+Tem uma baixa chance de perturbar o estado mental de qualquer peão. Podemos resistir.</TM_ChiBurst.description>
+
+
+  <!-- Mind Over Body -->
+
+  <TM_MindOverBody.label>Mente sobre o corpo</TM_MindOverBody.label>
+  <TM_MindOverBody.description>Um condicionamento mental que aumenta o controle do monge sobre as suas capacidades físicas e aumenta a resistência tanto física quanto mental. A redução do corte é reduzida em peso (kg) da armadura portável.
+
+A mente sobre o corpo é um buff passivo que melhora a consciência, o movimento, a manipulação, a chance de uma luta próxima, a chance de evasão, a blindagem, a quebra mental e os limites da dor.</TM_MindOverBody.description>
+
+
+  <!-- Meditate -->
+
+  <TM_Meditate.label>Meditação</TM_Meditate.label>
+  <TM_Meditate.description>A meditação restabelece a vitalidade do monge e é um componente vital para manter um alto nível de qi.
+
+Qualquer doença física ou mental deve ser limpa antes que a meditação possa gerar Qi. se o monge sofrer (ferimentos, doenças, mau humor, toxicodependência), a meditação concentrará Qi na tentativa de eliminar este mal-estar. O sofrimento só pode ser limpo em estado meditativo.</TM_Meditate.description>
+
+
+  <!-- Tiger Strike -->
+
+  <TM_TigerStrike.label>Choque do Tigre</TM_TigerStrike.label>
+  <TM_TigerStrike.description>Um ataque em combate próximo que fornece vários golpes rápidos contra um único inimigo. Ele tem de estar ao alcance do combate próximo e desarmado para executar este ataque.
+
+Capacidade ativada (12 qi): permite que o ataque seja 4 em uma sequência rápida. Um tigre pode ser treinado adicionalmente para adicionar mais ataques que podem abafar, esgotar a energia ou causar um impacto preciso que destrói órgãos vitais.
+
+Capacidade passiva (8 de resistência): dê vários golpes ao adversário; ataques podem ser de qualquer tipo (físico, atordoante, exaustivo, vital) que se exercitam. O ataque do Tigre tem a chance de provocar qualquer ataque normal ou a si mesmo.</TM_TigerStrike.description>
+
+
+  <!-- Dragon Strike -->
+
+  <TM_DragonStrike.label>Golpe do Dragão</TM_DragonStrike.label>
+  <TM_DragonStrike.description>Um ataque de salto que permite ao monge aproximar-se rapidamente do adversário.
+
+Capacidade de ativação (8 qi): Salte pelo ar e execute um forte ataque voador contra o adversário remoto. Quanto mais perto o inimigo se aproxima, mais o Dragão é atingido. Se o inimigo estiver dentro das células, este ataque também vai deixar o alvo para trás.
+
+Capacidade passiva (10 resistência): executa um ataque circular que atinge vários adversários. Dragon Strike tem a chance de causar qualquer ataque normal quando vários inimigos estão perto do alvo.</TM_DragonStrike.description>
+
+
+  <!-- Thunder Strike -->
+
+  <TM_ThunderStrike.label>Choque de Trovão</TM_ThunderStrike.label>
+  <TM_ThunderStrike.description>Carregando o ataque com Qi suficiente para gerar relâmpago.</TM_ThunderStrike.description>
+
+
+</LanguageData>

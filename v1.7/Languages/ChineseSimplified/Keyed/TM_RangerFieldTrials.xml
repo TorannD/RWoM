@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerMasteryHint>落入自己陷阱的不同敌人：{0}/8 · 已扑灭仓储火灾：{1}/12</TM_RangerMasteryHint>
+  <TM_RangerFireHint>亲自扑灭发生在殖民地储存的易燃物品上或其相邻格的火。物品须符合该储存区的筛选条件。每个12×12区域每天只计一次，己方纵火不计。</TM_RangerFireHint>
+  <TM_RangerMasteryClaim>习得{0}</TM_RangerMasteryClaim>
+  <TM_RangerAscensionHint>战士等级 {0}/30 · 友方沿安全小径撤退：{1}/8 · 动物护理班次：{2}/10</TM_RangerAscensionHint>
+  <TM_RangerWoundHint>执行医生工作，为殖民地动物包扎实际伤口。每天最多计入一个完成的护理班次。</TM_RangerWoundHint>
+  <TM_RangerChooseUltimate>选择飞升招式</TM_RangerChooseUltimate>
+  <TM_RangerEarnedUltimate>飞升招式：{0}</TM_RangerEarnedUltimate>
+</LanguageData>

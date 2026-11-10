@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_MagicApparel.label>vestimenta mágica</TM_MagicApparel.label>
+  
+  
+  <TM_MagicArtifacts.label>artefactos mágicos</TM_MagicArtifacts.label>
+  
+  
+  <TM_MagicEquipment.label>equipo mágico</TM_MagicEquipment.label>
+  
+  
+  <TM_MagicItems.label>Objetos mágicos</TM_MagicItems.label>
+  
+  
+  <TM_MagicWeapons.label>armas mágicas</TM_MagicWeapons.label>
+  
+  
+  <TM_MagicWeaponsFoci.label>focos mágicos</TM_MagicWeaponsFoci.label>
+  
+  
+  <TM_MagicWeaponsMelee.label>cuerpo a cuerpo</TM_MagicWeaponsMelee.label>
+  
+  
+  <TM_MagicWeaponsRanged.label>a distancia</TM_MagicWeaponsRanged.label>
+  
+  
+  <TM_Magicyte.label>magicita refinada</TM_Magicyte.label>
+  
+  
+  <TM_Scrolls.label>pergaminos</TM_Scrolls.label>
+  
+  
+  <TM_SkillBooks.label>libros de habilidades</TM_SkillBooks.label>
+  
+</LanguageData>

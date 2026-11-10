@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_AmuletOfPerception.label>Амулет восприятия</TM_AmuletOfPerception.label>
+  <TM_AmuletOfPerception.description>Магический амулет, повышающий сознание. Перезарядка способностей владельца уменьшается вдвое, но стоимость способностей удваивается.</TM_AmuletOfPerception.description>
+  <TM_AmuletOfTranquility.label>Амулет безмятежности</TM_AmuletOfTranquility.label>
+  <TM_AmuletOfTranquility.description>Магический амулет, который наполняет владельца чувством покоя. Стоимость их способностей уменьшена вдвое, но время восстановления удвоено.</TM_AmuletOfTranquility.description>
+  <TM_AmuletOfForce.label>Амулет силы</TM_AmuletOfForce.label>
+  <TM_AmuletOfForce.description>Магический амулет, значительно увеличивающий урон от способностей.</TM_AmuletOfForce.description>
+  <TM_AmuletOfClarity.label>Амулет ясности</TM_AmuletOfClarity.label>
+  <TM_AmuletOfClarity.description>Амулет, который увеличивает ясность ума, увеличивает регенерацию выносливости и маны владельца.</TM_AmuletOfClarity.description>
+  <ChildsTeddybear.label>Детский плюшевый мишка</ChildsTeddybear.label>
+  <ChildsTeddybear.description>Милый плюшевый мишка, унаследовавший чистые детские мечты. Плюшевого мишку можно обнять, чтобы вызвать снеговика в указанном месте.</ChildsTeddybear.description>
+  <ScrollOfEnceladus.label>Свиток Энцелада</ScrollOfEnceladus.label>
+  <ScrollOfEnceladus.description>Одноразовый магический свиток, способный вызвать постоянный паровой гейзер в указанном месте, волшебным образом переставляя тектонические плиты под ногами.</ScrollOfEnceladus.description>
+  <BeltOfExtravagance.label>Пояс экстравагантности</BeltOfExtravagance.label>
+  <BeltOfExtravagance.description>Волшебный пояс, инкрустированный драгоценными камнями, с замысловатым, филигранно прорисованным узором. Пояс можно активировать, чтобы вызвать плитку добываемого нефрита. Легенды гласят, что этот пояс был любимым артефактом короля-обманщика. Магию пояса нужно заправлять золотом.</BeltOfExtravagance.description>
+  <BeltOfTheWilds.label>Пояс дебрей</BeltOfTheWilds.label>
+  <BeltOfTheWilds.description>Любопытный магический артефакт, способный вызывать дерево в указанном месте, даже в тех местах, где деревья обычно не выращиваются.</BeltOfTheWilds.description>
+  <KeepersBelt.label>Пояс мастера засад</KeepersBelt.label>
+  <KeepersBelt.description>Тяжелый пояс, на котором хранится самодельная взрывчатка. Позволяет пользователю создавать мины. Любое повреждение мины приведет к ее взрыву, но они безопасны для ходьбы и не срабатывают при движении. Призванные ремнем ловушки безвредно исчезают через 12 часов игры.</KeepersBelt.description>
+  <TM_ScrollOfTriton.label>Свиток Тритона</TM_ScrollOfTriton.label>
+  <TM_ScrollOfTriton.description>Одноразовый свиток, который вызывает небольшое окно в царство холода в выбранном месте, охлаждая близлежащую область. Окно длится до тех пор, пока оно не будет разобрано или разрушено, но его нельзя переместить.</TM_ScrollOfTriton.description>
+  <TM_ScrollOfDeimos.label>Свиток Деймоса</TM_ScrollOfDeimos.label>
+  <TM_ScrollOfDeimos.description>Одноразовый свиток, который вызывает небольшое окно в царство огня в выбранном месте, нагревая близлежащую область. Окно длится до тех пор, пока оно не будет разобрано или разрушено, но его нельзя переместить.</TM_ScrollOfDeimos.description>
+  <TM_ScrollOfIo.label>Свиток Ио</TM_ScrollOfIo.label>
+  <TM_ScrollOfIo.description>Одноразовый свиток, который вызывает небольшое окно в царство молнии в целевом месте, создавая узел, который производит 600 Вт энергии. Узел существует до тех пор, пока он не будет разобран или уничтожен, но его нельзя переместить.</TM_ScrollOfIo.description>
+  <TM_ScrollOfGanymede.label>Свиток Ганимеда</TM_ScrollOfGanymede.label>
+  <TM_ScrollOfGanymede.description>Одноразовый свиток, который вызывает небольшое окно в царство света в выбранном месте, обеспечивая достаточно интенсивный свет, на котором могут расти растения. Окно длится до тех пор, пока оно не будет разобрано или разрушено, но его нельзя переместить.</TM_ScrollOfGanymede.description>
+  <TM_ScrollOfOblivion.label>Свиток Обливиона</TM_ScrollOfOblivion.label>
+  <TM_ScrollOfOblivion.description>Открывает Портал в случайное измерение элементалей. Враждебные элементали будут выливаться из портала, пока он не будет уничтожен. Когда портал активен, из воздуха может начаться дождь огня, молнии или яда. После использования свиток уничтожается.</TM_ScrollOfOblivion.description>
+  <TM_ArchmagesReceipt.label>Заказ Архимага</TM_ArchmagesReceipt.label>
+  <TM_ArchmagesReceipt.description>"Один чародейский конденсатор. Гранит. В южную сторону. Мгновенная доставка. Один экземпляр. Возврату не подлежит."
+
+(Похоже, этот свиток призовет Чародейский конденсатор в указанном месте. Поскольку он никому не принадлежит, вам нужно будет захватить его, если вы хотите использовать его для хранения маны.)</TM_ArchmagesReceipt.description>
+  <TM_SkyfallMeteor.label>Метеорит</TM_SkyfallMeteor.label>
+  <TM_DestructionSkyfall.label>Свиток разрушения: Падение небес</TM_DestructionSkyfall.label>
+  <TM_DestructionSkyfall.description>Одноразовый свиток, который вызывает с неба огромный метеор, полностью уничтожающий всё в области.</TM_DestructionSkyfall.description>
+  <TM_OblivionPortal.label>Портал Обливиона</TM_OblivionPortal.label>
+  <TM_OblivionPortal.description>Вызванный разрыв в элементальное измерение.</TM_OblivionPortal.description>
+</LanguageData>

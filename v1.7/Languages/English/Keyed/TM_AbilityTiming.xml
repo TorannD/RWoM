@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+<TM_GlobalCooldown>Ability cooldown</TM_GlobalCooldown>
+<TM_GlobalWarmup>Ability warmup</TM_GlobalWarmup>
+<TM_GlobalTimingDesc>Applies to all RWoM abilities, including enemies and class add-ons. 100% is normal; lower values are faster. Existing cooldowns are not rescaled.</TM_GlobalTimingDesc>
+</LanguageData>

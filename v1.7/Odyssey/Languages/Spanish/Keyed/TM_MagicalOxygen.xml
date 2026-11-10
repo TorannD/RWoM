@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_OxygenMode>Suministro: {0}</TM_OxygenMode>
+  <TM_OxygenModeMana>Maná</TM_OxygenModeMana>
+  <TM_OxygenModeMagicyte>Magicita</TM_OxygenModeMagicyte>
+  <TM_OxygenModeDesc>Elige maná de la reserva local o magicita del almacén local. No cambia automáticamente al otro recurso.</TM_OxygenModeDesc>
+  <TM_OxygenBuffer>Maná: {0} / {1}</TM_OxygenBuffer>
+  <TM_OxygenPaidMagicyte>Carga restante del cristal: {0} de maná</TM_OxygenPaidMagicyte>
+  <TM_OxygenStatusRunning>Campo atmosférico activo</TM_OxygenStatusRunning>
+  <TM_OxygenStatusIdle>Campo atmosférico inactivo</TM_OxygenStatusIdle>
+  <TM_OxygenStatusEmpty>Recurso seleccionado agotado</TM_OxygenStatusEmpty>
+  <TM_OxygenStatusOff>Apagado o averiado</TM_OxygenStatusOff>
+  <TM_OxygenCapacity>Área abastecida: {0} casillas; maná por segundo: {1}</TM_OxygenCapacity>
+  <TM_OxygenPressure>Intensidad del campo atmosférico: {0}</TM_OxygenPressure>
+  <TM_OxygenOutput>Salida: {0}</TM_OxygenOutput>
+  <TM_OxygenOutputDesc>Elige entre crear atmósfera mediante balizas de maná o suministrar oxígeno a los depósitos VGE conectados. Los modos son independientes. La salida requiere un depósito conectado mediante tuberías VGE; los depósitos llenos o desconectados detienen el consumo. El maná o la magicita se seleccionan por separado.</TM_OxygenOutputDesc>
+  <TM_OxygenOutputAtmosphere>Atmósfera</TM_OxygenOutputAtmosphere>
+  <TM_OxygenOutputPipe>Red de oxígeno VGE</TM_OxygenOutputPipe>
+  <TM_OxygenPipeInfo>Salida a tuberías: hasta 1 de oxígeno/s por 0,1 de maná/s. Conecta un depósito de oxígeno VGE; las bombas utilizan el oxígeno almacenado.</TM_OxygenPipeInfo>
+  <TM_OxygenPipePending>Oxígeno pagado pendiente de entrega: {0}</TM_OxygenPipePending>
+</LanguageData>

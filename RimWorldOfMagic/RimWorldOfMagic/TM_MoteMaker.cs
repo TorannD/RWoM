@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
@@ -8,8 +8,22 @@ namespace TorannMagic
 {
     public static class TM_MoteMaker
     {
+        // View-dependent cosmetic draws must not advance the simulation random stream.
+        // IDisposable also restores it when a renderer or third-party mote throws.
+        private readonly struct VisualRandomScope : IDisposable
+        {
+            public void Dispose() => Rand.PopState();
+        }
+
+        private static VisualRandomScope PreserveVisualRandom()
+        {
+            Rand.PushState();
+            return default;
+        }
+
         public static void ThrowGenericMote(ThingDef moteDef, Vector3 loc, Map map, float scale, float solidTime, float fadeIn, float fadeOut, int rotationRate, float velocity, float velocityAngle, float lookAngle)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -29,6 +43,7 @@ namespace TorannMagic
 
         public static void ThrowGenericFleck(FleckDef fleckDef, Vector3 loc, Map map, float scale, float solidTime, float fadeIn, float fadeOut, int rotationRate, float velocity, float velocityAngle, float lookAngle)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -49,6 +64,7 @@ namespace TorannMagic
         //public static void ThrowGenericMote(ThingDef moteDef, Vector3 loc, Map map, float scale, float solidTime, float fadeIn, float fadeOut, int rotationRate, float velocity, float velocityAngle, float lookAngle)
         public static Mote MakeOverlay(Thing target, ThingDef moteDef, Map map, Vector3 offset, float scale, float lookAngle, float fadeIn, float fadeOut, float solidTimeOverride, float growthRate)
         {
+            using var visualRandom = PreserveVisualRandom();
             Mote obj = (Mote)ThingMaker.MakeThing(moteDef);
             obj.Attach(target);
             obj.Scale = scale;
@@ -64,6 +80,7 @@ namespace TorannMagic
 
         public static Mote MakeOverlay(TargetInfo target, ThingDef moteDef, Map map, Vector3 offset, float scale, float lookAngle, float fadeIn, float fadeOut, float solidTimeOverride, float growthRate)
         {
+            using var visualRandom = PreserveVisualRandom();
             Mote obj = (Mote)ThingMaker.MakeThing(moteDef);
             obj.Attach(target);
             obj.Scale = scale;
@@ -79,6 +96,7 @@ namespace TorannMagic
 
         public static void ThrowManaPuff(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -93,6 +111,7 @@ namespace TorannMagic
 
         public static void ThrowBarrierMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -107,6 +126,7 @@ namespace TorannMagic
 
         public static void ThrowNoteMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -121,6 +141,7 @@ namespace TorannMagic
 
         public static void ThrowTextMote(Vector3 loc, Map map, string text, Color color, float solidTime, float timeBeforeStartFadeout = -1f)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -137,6 +158,7 @@ namespace TorannMagic
 
         public static void ThrowDeceptionMaskMote(Vector3 loc, Map map, float scale, float solidTime)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -152,6 +174,7 @@ namespace TorannMagic
 
         public static void ThrowPossessMote(Vector3 loc, Map map, float scale, float solidTime)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -167,6 +190,7 @@ namespace TorannMagic
 
         public static void ThrowExclamationMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -181,6 +205,7 @@ namespace TorannMagic
 
         public static void ThrowSparkFlashMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.Saturated)
             {
                 return;
@@ -190,6 +215,7 @@ namespace TorannMagic
 
         public static void ThrowEnchantingMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -204,6 +230,7 @@ namespace TorannMagic
 
         public static void ThrowCastingMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -218,6 +245,7 @@ namespace TorannMagic
 
         public static void ThrowCastingMote_Anti(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -232,6 +260,7 @@ namespace TorannMagic
 
         public static void ThrowCastingMote_Spirit(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -246,6 +275,7 @@ namespace TorannMagic
 
         public static void ThrowSiphonMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -260,6 +290,7 @@ namespace TorannMagic
 
         public static void ThrowBoltMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.Saturated)
             {
                 return;
@@ -274,6 +305,7 @@ namespace TorannMagic
 
         public static void ThrowPoisonMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -288,12 +320,14 @@ namespace TorannMagic
 
         public static void ThrowDiseaseMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             Mote baseMote = (Mote)ThingMaker.MakeThing(TorannMagicDefOf.Mote_Disease, null);
             ThrowDiseaseMote(loc, map, scale, baseMote.def.mote.solidTime, baseMote.def.mote.fadeInTime, baseMote.def.mote.fadeOutTime);
         }
 
         public static void ThrowDiseaseMote(Vector3 loc, Map map, float scale, float solidTime, float fadeIn, float fadeOut)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -311,12 +345,14 @@ namespace TorannMagic
 
         public static void ThrowArcaneMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             Mote baseMote = (Mote)ThingMaker.MakeThing(TorannMagicDefOf.Mote_Arcane, null);
             ThrowArcaneMote(loc, map, scale, baseMote.def.mote.solidTime, baseMote.def.mote.fadeInTime, baseMote.def.mote.fadeOutTime, 60, 1f);
         }
 
         public static void ThrowArcaneMote(Vector3 loc, Map map, float scale, float solidTime, float fadeIn, float fadeOut, int rotationRate, float velocity)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -334,6 +370,7 @@ namespace TorannMagic
 
         public static void ThrowShadowCleaveMote(Vector3 loc, Map map, float scale, float solidTime, float fadeIn, float fadeOut, int rotationRate, float velocity, float directionAngle)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -352,6 +389,7 @@ namespace TorannMagic
 
         public static void ThrowArcaneWaveMote(Vector3 loc, Map map, float scale, float solidTime, float fadeIn, float fadeOut, int rotationRate, float velocity, float velocityAngle, float lookAngle)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -370,6 +408,7 @@ namespace TorannMagic
 
         public static void ThrowRegenMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -384,6 +423,7 @@ namespace TorannMagic
 
         public static void ThrowCrossStrike(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.Saturated)
             {
                 return;
@@ -399,6 +439,7 @@ namespace TorannMagic
 
         public static void ThrowBloodSquirt(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -413,11 +454,13 @@ namespace TorannMagic
 
         public static void ThrowShadowMote(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             ThrowShadowMote(loc, map, scale, Rand.Range(-60, 60), Rand.Range(.5f, 3f), (float)Rand.Range(0, 360));
         }
 
         public static void ThrowShadowMote(Vector3 loc, Map map, float scale, int rotationRate, float velocity, float directionAngle)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -432,6 +475,7 @@ namespace TorannMagic
 
         public static void ThrowFlames(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -446,6 +490,7 @@ namespace TorannMagic
 
         public static void ThrowTwinkle(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -460,6 +505,7 @@ namespace TorannMagic
 
         public static void ThrowTwinkle(Vector3 loc, Map map, float scale, float rotationRate, float velocity, float solidTime, float fadeIn, float fadeOut)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -477,6 +523,7 @@ namespace TorannMagic
 
         public static void ThrowMultiStrike(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.Saturated)
             {
                 return;
@@ -491,6 +538,7 @@ namespace TorannMagic
 
         public static void ThrowScreamMote(Vector3 loc, Map map, float scale, int r, int g, int b)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.Saturated)
             {
                 return;
@@ -508,6 +556,7 @@ namespace TorannMagic
 
         public static void ThrowArcaneDaggers(Vector3 loc, Map map, float scale)
         {
+            using var visualRandom = PreserveVisualRandom();
             if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
@@ -522,12 +571,14 @@ namespace TorannMagic
 
         public static void MakePowerBeamMote(IntVec3 cell, Map map, float scale, float rot, float duration)
         {
+            using var visualRandom = PreserveVisualRandom();
             Mote mote = (Mote)ThingMaker.MakeThing(ThingDefOf.Mote_PowerBeam, null);
             MakePowerBeamMote(cell, map, scale, rot, duration, mote.def.mote.fadeInTime, mote.def.mote.fadeOutTime);
         }
 
         public static void MakePowerBeamMote(IntVec3 cell, Map map, float scale, float rot, float duration, float fadeIn, float fadeOut)
         {
+            using var visualRandom = PreserveVisualRandom();
             Mote mote = (Mote)ThingMaker.MakeThing(TorannMagicDefOf.Mote_PowerBeamBlue, null);
             mote.exactPosition = cell.ToVector3Shifted();
             mote.Scale = scale;
@@ -540,6 +591,7 @@ namespace TorannMagic
 
         public static void MakePowerBeamMotePsionic(IntVec3 cell, Map map, float scale, float rot, float duration, float fadeIn, float fadeOut)
         {
+            using var visualRandom = PreserveVisualRandom();
             Mote mote = (Mote)ThingMaker.MakeThing(TorannMagicDefOf.Mote_PowerBeamPsionic, null);
             mote.exactPosition = cell.ToVector3Shifted();
             mote.Scale = scale;
@@ -552,6 +604,7 @@ namespace TorannMagic
 
         public static void MakePowerBeamMoteColor(IntVec3 cell, Map map, float scale, float rot, float duration, float fadeIn, float fadeOut, Color color)
         {
+            using var visualRandom = PreserveVisualRandom();
             
             Mote mote = (Mote)ThingMaker.MakeThing(TorannMagicDefOf.Mote_PowerBeamGold, null);            
             mote.exactPosition = cell.ToVector3Shifted();
@@ -566,12 +619,14 @@ namespace TorannMagic
 
         public static void MakeBombardmentMote(IntVec3 cell, Map map, float scale, float rot, float duration)
         {
+            using var visualRandom = PreserveVisualRandom();
             Mote mote = (Mote)ThingMaker.MakeThing(ThingDefOf.Mote_Bombardment, null);
             MakeBombardmentMote(cell, map, scale, rot, duration, mote.def.mote.fadeInTime, mote.def.mote.fadeOutTime);
         }
 
         public static void MakeBombardmentMote(IntVec3 cell, Map map, float scale, float rot, float duration, float fadeIn, float fadeOut)
         {
+            using var visualRandom = PreserveVisualRandom();
             Mote mote = (Mote)ThingMaker.MakeThing(ThingDefOf.Mote_Bombardment, null);
             mote.exactPosition = cell.ToVector3Shifted();
             mote.Scale = scale * 6f;

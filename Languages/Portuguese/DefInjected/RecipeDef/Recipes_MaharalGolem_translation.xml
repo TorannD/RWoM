@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Maharal Golem upgrade recipes -->
+
+  <TM_MaharalGolem_RepairBlock.label>Restaurar peças</TM_MaharalGolem_RepairBlock.label>
+  <TM_MaharalGolem_RepairBlock.description>Substitui as partes faltantes do golem que não precisam ser atualizadas.</TM_MaharalGolem_RepairBlock.description>
+  <TM_MaharalGolem_RepairBlock.jobString>criação de uma parte do golem</TM_MaharalGolem_RepairBlock.jobString>
+
+  <TM_MaharalGolem_EnergyMax.label>elemento de energia</TM_MaharalGolem_EnergyMax.label>
+  <TM_MaharalGolem_EnergyMax.description>Cria uma célula de energia que aumenta a energia máxima em 120 por célula.</TM_MaharalGolem_EnergyMax.description>
+  <TM_MaharalGolem_EnergyMax.jobString>criação de célula de energia</TM_MaharalGolem_EnergyMax.jobString>
+
+  <TM_MaharalGolem_EnergyConverter.label>conversor de energia</TM_MaharalGolem_EnergyConverter.label>
+  <TM_MaharalGolem_EnergyConverter.description>Aumenta em 10% a eficiência de absorção e uso de energia por holem.</TM_MaharalGolem_EnergyConverter.description>
+  <TM_MaharalGolem_EnergyConverter.jobString>criação de um conversor de energia</TM_MaharalGolem_EnergyConverter.jobString>
+
+  <TM_MaharalGolem_EnergyRegen.label>gerador de energia</TM_MaharalGolem_EnergyRegen.label>
+  <TM_MaharalGolem_EnergyRegen.description>Aumenta a velocidade de regeneração da energia do golem em 4 por hora.</TM_MaharalGolem_EnergyRegen.description>
+  <TM_MaharalGolem_EnergyRegen.jobString>criação de um gerador de energia</TM_MaharalGolem_EnergyRegen.jobString>
+
+  <TM_MaharalGolem_Armor.label>Armadura</TM_MaharalGolem_Armor.label>
+  <TM_MaharalGolem_Armor.description>Cada atualização aumenta a blindagem de golem para [1,2,3]:
+Danos estúpidos: + [9,16,21]%
+Corte de danos: + [13,22,29]%
+Temperatura: + [8,14,18]%</TM_MaharalGolem_Armor.description>
+  <TM_MaharalGolem_Armor.jobString>criação de uma parte do golem</TM_MaharalGolem_Armor.jobString>
+
+  <TM_MaharalGolem_LifeStage.label>camada de esqueleto</TM_MaharalGolem_LifeStage.label>
+  <TM_MaharalGolem_LifeStage.description>Melhora e finaliza a estrutura do golem em cada nível [1,2,3]:
+Movimento: + [20.10/30]%
+Saúde: + [40/70/100]%</TM_MaharalGolem_LifeStage.description>
+  <TM_MaharalGolem_LifeStage.jobString>melhoria do esqueleto de golem</TM_MaharalGolem_LifeStage.jobString>
+
+  <TM_MaharalGolem_Power.label>Força</TM_MaharalGolem_Power.label>
+  <TM_MaharalGolem_Power.description>O shem hameforash é ainda mais reforçado, permitindo que o golem Maharal produza excesso de energia.</TM_MaharalGolem_Power.description>
+  <TM_MaharalGolem_Power.jobString>fabricação da atualização do golem</TM_MaharalGolem_Power.jobString>
+
+  <TM_MaharalGolem_Heat.label>Calor</TM_MaharalGolem_Heat.label>
+  <TM_MaharalGolem_Heat.description>O sham hameforash está reforçado, permitindo que o golem Maharal produza calor excessivo.</TM_MaharalGolem_Heat.description>
+  <TM_MaharalGolem_Heat.jobString>fabricação da atualização do golem</TM_MaharalGolem_Heat.jobString>
+
+
+</LanguageData>

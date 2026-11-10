@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_DisguiseHD.label>Fraude</TM_DisguiseHD.label>
+  <TM_DisguiseHD.description>Enfiado numa máscara astuta para enganar os adversários.</TM_DisguiseHD.description>
+  <TM_DisguiseHD.stages.0.label>I</TM_DisguiseHD.stages.0.label>
+
+  <TM_DisguiseHD_I.label>Fraude</TM_DisguiseHD_I.label>
+  <TM_DisguiseHD_I.description>Enfiado numa máscara astuta para enganar os adversários.</TM_DisguiseHD_I.description>
+  <TM_DisguiseHD_I.stages.0.label>II</TM_DisguiseHD_I.stages.0.label>
+
+  <TM_DisguiseHD_II.label>Fraude</TM_DisguiseHD_II.label>
+  <TM_DisguiseHD_II.description>Enfiado numa máscara astuta para enganar os adversários.</TM_DisguiseHD_II.description>
+  <TM_DisguiseHD_II.stages.0.label>III</TM_DisguiseHD_II.stages.0.label>
+
+  <TM_DisguiseHD_III.label>Fraude</TM_DisguiseHD_III.label>
+  <TM_DisguiseHD_III.description>Enfiado numa máscara astuta para enganar os adversários.</TM_DisguiseHD_III.description>
+  <TM_DisguiseHD_III.stages.0.label>IV</TM_DisguiseHD_III.stages.0.label>
+
+  <TM_ReversalHD.label>Posição reversível</TM_ReversalHD.label>
+  <TM_ReversalHD.description>Chama a energia do ataque de volta ao atacante.</TM_ReversalHD.description>
+  <TM_ReversalHD.stages.0.label>I</TM_ReversalHD.stages.0.label>
+
+  <TM_PossessionHD.label>Obsessão</TM_PossessionHD.label>
+  <TM_PossessionHD.description>As acções são influenciadas pelo mestre do engano.</TM_PossessionHD.description>
+  <TM_PossessionHD.stages.0.label>I</TM_PossessionHD.stages.0.label>
+
+  <TM_PossessionHD_I.label>Obsessão</TM_PossessionHD_I.label>
+  <TM_PossessionHD_I.description>As acções são influenciadas pelo mestre do engano.</TM_PossessionHD_I.description>
+  <TM_PossessionHD_I.stages.0.label>II</TM_PossessionHD_I.stages.0.label>
+
+  <TM_PossessionHD_II.label>Obsessão</TM_PossessionHD_II.label>
+  <TM_PossessionHD_II.description>As acções são influenciadas pelo mestre do engano.</TM_PossessionHD_II.description>
+  <TM_PossessionHD_II.stages.0.label>III</TM_PossessionHD_II.stages.0.label>
+
+  <TM_PossessionHD_III.label>Obsessão</TM_PossessionHD_III.label>
+  <TM_PossessionHD_III.description>As acções são influenciadas pelo mestre do engano.</TM_PossessionHD_III.description>
+  <TM_PossessionHD_III.stages.0.label>IV</TM_PossessionHD_III.stages.0.label>
+
+  <TM_CoOpPossessionHD.label>Obsessão</TM_CoOpPossessionHD.label>
+  <TM_CoOpPossessionHD.description>As acções são influenciadas pelo mestre do engano.</TM_CoOpPossessionHD.description>
+  <TM_CoOpPossessionHD.stages.0.label>I</TM_CoOpPossessionHD.stages.0.label>
+
+  <TM_CoOpPossessionHD_I.label>Obsessão</TM_CoOpPossessionHD_I.label>
+  <TM_CoOpPossessionHD_I.description>As acções são influenciadas pelo mestre do engano.</TM_CoOpPossessionHD_I.description>
+  <TM_CoOpPossessionHD_I.stages.0.label>II</TM_CoOpPossessionHD_I.stages.0.label>
+
+  <TM_CoOpPossessionHD_II.label>Obsessão</TM_CoOpPossessionHD_II.label>
+  <TM_CoOpPossessionHD_II.description>As acções são influenciadas pelo mestre do engano.</TM_CoOpPossessionHD_II.description>
+  <TM_CoOpPossessionHD_II.stages.0.label>III</TM_CoOpPossessionHD_II.stages.0.label>
+
+  <TM_CoOpPossessionHD_III.label>Obsessão</TM_CoOpPossessionHD_III.label>
+  <TM_CoOpPossessionHD_III.description>As acções são influenciadas pelo mestre do engano.</TM_CoOpPossessionHD_III.description>
+  <TM_CoOpPossessionHD_III.stages.0.label>IV</TM_CoOpPossessionHD_III.stages.0.label>
+
+  <TM_DisorientedVomit.label>desorientado</TM_DisorientedVomit.label>
+  <TM_DisorientedVomit.description>Desorientado depois de mudar de lugar com outro peão.</TM_DisorientedVomit.description>
+  <TM_DisorientedVomit.stages.0.label>I</TM_DisorientedVomit.stages.0.label>
+
+
+</LanguageData>

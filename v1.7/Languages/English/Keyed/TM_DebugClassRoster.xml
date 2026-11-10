@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_RosterPreferred>All classes (prefer new foundations)</TM_RosterPreferred>
+  <TM_RosterFoundations>New foundations only</TM_RosterFoundations>
+  <TM_RosterClassicNative>Native classics (keep Classic)</TM_RosterClassicNative>
+  <TM_RosterMigration>Native classics (allow conversion on load)</TM_RosterMigration>
+  <TM_RosterAddons>Classic add-on classes, including Kure</TM_RosterAddons>
+  <TM_RosterReport>Class roster: {0} of {1} colonists created. See the log for each class.</TM_RosterReport>
+</LanguageData>

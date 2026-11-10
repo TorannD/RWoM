@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+	<ArcaneForge_ElephantSpear.label>копьё слона</ArcaneForge_ElephantSpear.label>
+	<ArcaneForge_ElephantSpear.description>Копье слона изготовлено с использованием бивней слона и, как правило, является символом статуса, предназначенным для охотников за головами или вождей племени. На древке выгравированы незначительные чары, еще больше повышающие боевые способности пользователя.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная Энергия: +10%
+Увеличение Урона: +10%
+Тайное Сопротивление: +20%</ArcaneForge_ElephantSpear.description>
+	<ArcaneForge_ElephantSpear.jobString>Ковать копьё слона</ArcaneForge_ElephantSpear.jobString>
+	<ArcaneForge_ThrumboAxe.label>топор трумбо</ArcaneForge_ThrumboAxe.label>
+	<ArcaneForge_ThrumboAxe.description>Топор, созданный с использованием рогов Трумбо, которые сплавляются вместе с застежкой, сделанной из магицита. Эта застежка хранит тайный потенциал и передает его в виде физической силы при взмахе топора, позволяя ему наносить мощные удары, способные рассечь нескольких противников. На древке также выгравированы магические руны, чтобы увеличить силу владельца.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная Энергия: +10%
+Увеличение Урона: +20%
+Тайное Сопротивление: +30%</ArcaneForge_ThrumboAxe.description>
+	<ArcaneForge_ThrumboAxe.jobString>Ковать топор трумбо</ArcaneForge_ThrumboAxe.jobString>
+	<ArcaneForge_ThrumboSaber.label>сабля трумбо</ArcaneForge_ThrumboSaber.label>
+	<ArcaneForge_ThrumboSaber.description>Острое, как бритва, лезвие, выкованное из рога трамбо и наполненное тайной энергией. Сабля трамбо легче металлических лезвий, и ее лезвие может прорезать любую броню, кроме самой толстой. Многие мастера клинка отдают предпочтение этому оружию, поскольку оно рассчитано на скорость и смертоносность. Дополнительные заклинания также могут ускорить пользователей, удваивая их скорость атаки на короткий период.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Перезарядка способностей: -10%
+Увеличение Урона: +10%
+Скорость при ударе (25%)</ArcaneForge_ThrumboSaber.description>
+	<ArcaneForge_ThrumboSaber.jobString>Ковать саблю трумбо</ArcaneForge_ThrumboSaber.jobString>
+	<ArcaneForge_ElephantBow.label>Лук слона</ArcaneForge_ElephantBow.label>
+	<ArcaneForge_ElephantBow.description>Лук в форме слоновьих бивней. Бивни освящаются, чтобы уменьшить жесткость и уменьшить вес, и размягчаются, замачивая их в магической смеси, которая увеличивает гибкость. Лук слона предлагает значительные улучшения в дальности и точности для дальних целей над большим луком, хотя он немного сложнее в обращении.
+
+Лук слона украшен гравировкой с незначительными чарами и является предпочтительным оружием многих опытных рейнджеров и охотников.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная Энергия: +5%
+Восстановление Энергии: +5%
+Увеличение Урона: +10%
+Возможность Перезарядки: -10%</ArcaneForge_ElephantBow.description>
+	<ArcaneForge_ElephantBow.jobString>Ковать лук слона</ArcaneForge_ElephantBow.jobString>
+	<ArcaneForge_ThrumBow.label>Лук трумбо</ArcaneForge_ThrumBow.label>
+	<ArcaneForge_ThrumBow.description>Лук из рога трумбо. Рог освящают, чтобы облегчить его, а затем размягчают в магической смеси, придающей материалу редкую гибкость. Оружие дополнительно усилено чарами и арканной гравировкой. Говорят, будто лук почти разумен и через ментальную связь помогает владельцу удерживать цель. Стрелы из него почти всегда летят туда, куда были посланы, хотя такая надёжность нередко делает стрелка самоуверенным.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +20%
+Восстановление энергии: +10%
+Увеличение урона: +20%
+Перезарядка: -10%
+Прирост опыта класса: -20%</ArcaneForge_ThrumBow.description>
+	<ArcaneForge_ThrumBow.jobString>Ковать лук трумбо</ArcaneForge_ThrumBow.jobString>
+	<ArcaneForge_Replication.label>Репликационная кузня</ArcaneForge_Replication.label>
+	<ArcaneForge_Replication.description>Хранение данных для реплицирования объектов</ArcaneForge_Replication.description>
+	<ArcaneForge_Replication.jobString>репликация</ArcaneForge_Replication.jobString>
+	<ArcaneForge_Replication_Restore.label>Репликационная кузня</ArcaneForge_Replication_Restore.label>
+	<ArcaneForge_Replication_Restore.description>Хранение данных для реплицирования объектов</ArcaneForge_Replication_Restore.description>
+	<ArcaneForge_Replication_Restore.jobString>репликация</ArcaneForge_Replication_Restore.jobString>
+	<ArcaneForge_ChunkToMagicyte.jobString>Наполнение обломка маной.</ArcaneForge_ChunkToMagicyte.jobString>
+	<ArcaneForge_ChunkToMagicyte.label>наполнить обломок</ArcaneForge_ChunkToMagicyte.label>
+	<ArcaneForge_ChunkToMagicyte.description>Наполняет каменные обломки маной для создания магицита.</ArcaneForge_ChunkToMagicyte.description>
+</LanguageData>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_HasteHD.label>Celeridad</TM_HasteHD.label>
+  
+  <TM_HasteHD.description>La velocidad de ataque se duplica.</TM_HasteHD.description>
+  
+  
+  <TM_NightshadeHD.label>Recubrimiento de belladona</TM_NightshadeHD.label>
+  
+  <TM_NightshadeHD.description>Aplica toxina de belladona a armas y munición.</TM_NightshadeHD.description>
+  
+  
+  <TM_NightshadeToxinHD.label>Toxina de belladona</TM_NightshadeToxinHD.label>
+  
+  <TM_NightshadeToxinHD.description>Afectado por toxina de belladona, que causa ceguera y dificultad para respirar.</TM_NightshadeToxinHD.description>
+  
+  <TM_NightshadeToxinHD.stages.I.label>I</TM_NightshadeToxinHD.stages.I.label>
+  
+  <TM_NightshadeToxinHD.stages.II.label>II</TM_NightshadeToxinHD.stages.II.label>
+  
+  <TM_NightshadeToxinHD.stages.III.label>III</TM_NightshadeToxinHD.stages.III.label>
+  
+  <TM_NightshadeToxinHD.stages.IV.label>IV</TM_NightshadeToxinHD.stages.IV.label>
+  
+  <TM_NightshadeToxinHD.stages.V.label>V</TM_NightshadeToxinHD.stages.V.label>
+  
+  
+  <TM_ShadowCloakHD.label>Manto de sombras</TM_ShadowCloakHD.label>
+  
+  <TM_ShadowCloakHD.description>Envuelto en sombras.</TM_ShadowCloakHD.description>
+  
+  <TM_ShadowCloakHD.stages.I.label>I</TM_ShadowCloakHD.stages.I.label>
+  
+  <TM_ShadowCloakHD.stages.II.label>II</TM_ShadowCloakHD.stages.II.label>
+  
+  <TM_ShadowCloakHD.stages.III.label>III</TM_ShadowCloakHD.stages.III.label>
+  
+  <TM_ShadowCloakHD.stages.IV.label>IV</TM_ShadowCloakHD.stages.IV.label>
+  
+  <TM_ShadowCloakHD.stages.V.label>V</TM_ShadowCloakHD.stages.V.label>
+  
+</LanguageData>

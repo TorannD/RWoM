@@ -1,0 +1,8 @@
+<Defs>
+  <JobDef><defName>TM_SpiritMindKiller</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>releasing an empathic wail.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritSuppressiveAura</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>channeling a suppressive aura.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritIncitePassion</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>transferring a passion.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritHarvestPassion</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>harvesting a passion.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritFadeEmotions</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>fading painful memories.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritSymbiosis</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>entering symbiosis.</reportString></JobDef>
+</Defs>

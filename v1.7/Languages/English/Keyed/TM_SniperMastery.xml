@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SniperMasteryHint>To learn {0}, complete either route. Land Armor Fracture on hostile pawns or work at a research bench. Each shift is one game hour of research. Interrupted work still counts.</TM_SniperMasteryHint>
+  <TM_SniperMasteryHits>Armor Fracture hits: {0}/{1}</TM_SniperMasteryHits>
+  <TM_SniperMasteryResearch>Research shifts: {0}/{1}</TM_SniperMasteryResearch>
+  <TM_SniperMasteryPartial>Next shift: {0}%</TM_SniperMasteryPartial>
+  <TM_SniperMasteryClaim>Claim sniper mastery</TM_SniperMasteryClaim>
+  <TM_SniperMasteryLearned>Mastery technique learned: {0}.</TM_SniperMasteryLearned>
+</LanguageData>

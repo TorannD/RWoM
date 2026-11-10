@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="TM_MagicalOxygen"]/comps</xpath>
+    <value><li Class="PipeSystem.CompProperties_Resource"><pipeNet>VGE_OxygenNet</pipeNet></li><li><compClass>TorannMagic.VGE.CompVgeOxygenOutput</compClass></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="TM_MagicalOxygen"]</xpath>
+    <value><li Class="VEF.Buildings.GravshipLaunchExtension"><isOxygenPusher>true</isOxygenPusher></li></value>
+  </Operation>
+</Patch>

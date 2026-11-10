@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritSummonMinion.reportString>прикликає міньйона через тіло носія.</TM_SpiritSummonMinion.reportString>
+  <TM_SpiritSummonElemental.reportString>прикликає елементаля через тіло носія.</TM_SpiritSummonElemental.reportString>
+  <TM_SpiritSummonPylon.reportString>прикликає захисний пілон через тіло носія.</TM_SpiritSummonPylon.reportString>
+  <TM_SpiritSummonExplosive.reportString>прикликає манову міну через тіло носія.</TM_SpiritSummonExplosive.reportString>
+  <TM_SpiritSummonPoppi.reportString>прикликає поппі через тіло носія.</TM_SpiritSummonPoppi.reportString>
+  <TM_SpiritPack.reportString>прикликає духовних вовків через тіло носія.</TM_SpiritPack.reportString>
+  <TM_SpiritPack_I.reportString>прикликає духовних вовків через тіло носія.</TM_SpiritPack_I.reportString>
+  <TM_SpiritPack_II.reportString>прикликає духовних вовків через тіло носія.</TM_SpiritPack_II.reportString>
+  <TM_SpiritPack_III.reportString>прикликає духовних вовків через тіло носія.</TM_SpiritPack_III.reportString>
+  <TM_SpiritDismissMinion.reportString>відпускає міньйона через тіло носія.</TM_SpiritDismissMinion.reportString>
+</LanguageData>

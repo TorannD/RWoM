@@ -1,0 +1,8 @@
+<LanguageData><!-- Material Resource Recipes-->
+	<TM_MakeManaweave.label>Манаткань</TM_MakeManaweave.label>
+	<TM_MakeManaweave.description>Сплетите ману, магицит и ткань в манаткань</TM_MakeManaweave.description>
+	<TM_MakeManaweave.jobString>wплетение маны</TM_MakeManaweave.jobString>
+	<TM_MakeArcalleum.label>аркаллеум</TM_MakeArcalleum.label>
+	<TM_MakeArcalleum.description>Сплавьте сталь, нефрит, серебро и магицит в сплав аркаллеума</TM_MakeArcalleum.description>
+	<TM_MakeArcalleum.jobString>Выплавка аркаллеума</TM_MakeArcalleum.jobString>
+</LanguageData>

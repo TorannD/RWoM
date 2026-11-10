@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_FleshProgressHD.description>Нежить розвивається, поїдаючи трупи. Нижче вказано її поточний рівень, досвід і доступні очки навичок.</TM_FleshProgressHD.description>
+  <TM_FleshMobilityHD.description>Розвинена плоть підвищує швидкість пересування. Нижче вказано вивчений ранг і його бонус.</TM_FleshMobilityHD.description>
+  <TM_FleshStrengthHD.description>Розвинена плоть збільшує шкоду в ближньому бою. Нижче вказано вивчений ранг і його бонус.</TM_FleshStrengthHD.description>
+  <TM_FleshIndustryHD.description>Розвинена плоть підвищує загальну швидкість роботи. Нижче вказано вивчений ранг і його бонус.</TM_FleshIndustryHD.description>
+  <TM_FleshCapacityHD.description>Розвинена плоть збільшує максимальну Спрагу. Нижче вказано вивчений ранг і поточну місткість шкали.</TM_FleshCapacityHD.description>
+  <TM_FleshEmpowerHD.description>Посилення плоті тимчасово підвищує швидкість пересування та загальну швидкість роботи. Нижче вказані активний ранг, бонус і час, що залишився.</TM_FleshEmpowerHD.description>
+  <TM_FleshHardenHD.description>Посилення шкіри тимчасово підвищує броню від гострих і тупих ударів. Нижче вказані активний ранг, бонус і час, що залишився.</TM_FleshHardenHD.description>
+  <TM_FleshFeastHD.description>Бенкет Плоті активний. Нижче вказані час, що залишився, Спрага та стан неконтрольованої люті.</TM_FleshFeastHD.description>
+</LanguageData>

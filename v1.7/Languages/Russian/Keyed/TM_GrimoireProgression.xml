@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GrimoireClassicRules>Прежняя прогрессия: обучение и улучшения по действующим правилам класса.</TM_GrimoireClassicRules>
+  <TM_GrimoireClassicRequirements>Для этого класса нет требований посвящения. Действуют прежние правила очков навыков и обучения по свиткам.</TM_GrimoireClassicRequirements>
+  <TM_GrimoireLearningItems>Свитки для неизученных способностей</TM_GrimoireLearningItems>
+  <TM_GrimoireNoLearningItems>Среди показанных неизученных способностей нет связанных со свитками.</TM_GrimoireNoLearningItems>
+  <TM_GrimoireScrollUnspecified>Требуется свиток заклинания; его предмет не указан в данных способности.</TM_GrimoireScrollUnspecified>
+  <TM_ProgressionVocation_Mage>Маг</TM_ProgressionVocation_Mage>
+  <TM_ProgressionVocation_Warrior>Воин</TM_ProgressionVocation_Warrior>
+  <TM_ProgressionVocation_WarriorMage>Воин-маг</TM_ProgressionVocation_WarriorMage>
+  <TM_ProgressionStage_Foundation>Основа</TM_ProgressionStage_Foundation>
+  <TM_ProgressionStage_Adept>Адепт</TM_ProgressionStage_Adept>
+  <TM_ProgressionStage_Master>Мастер</TM_ProgressionStage_Master>
+  <TM_ProgressionStage_Ascended>Вознесение</TM_ProgressionStage_Ascended>
+  <TM_ProgressionSharedLearning>Направления класса используют общий запас очков навыков.</TM_ProgressionSharedLearning>
+  <TM_ProgressionStageLocked>Требуется следующая ступень посвящения</TM_ProgressionStageLocked>
+  <TM_ProgressionBookUnavailable>Эта книга пока не может продвинуть выбранный путь посвящения.</TM_ProgressionBookUnavailable>
+  <TM_ProgressionNoviceChoices>Начальные заклинания: {0}/{1}. Выберите внимательно.</TM_ProgressionNoviceChoices>
+  <TM_ProgressionOpenGrimoire>Гримуар</TM_ProgressionOpenGrimoire>
+  <TM_ProgressionOpenGrimoireDesc>Посвящение в класс, заклинания и ресурсы.</TM_ProgressionOpenGrimoireDesc>
+  <TM_ProgressionEnrollMage>Стать магом</TM_ProgressionEnrollMage>
+  <TM_ProgressionEnrollMageDesc>Начните путь мага и выберите два начальных заклинания в гримуаре. Классовые направления изучаются по книгам. Магический потенциал заменяется призванием мага.</TM_ProgressionEnrollMageDesc>
+  <TM_ProgressionFoundationBook>Чтобы начать путь «{0}», прочитайте {1}.</TM_ProgressionFoundationBook>
+  <TM_ProgressionPriestHealingTrial>Испытание исцелением: своим заклинанием «Продвинутое исцеление» вылечите другого дружественного живого гуманоида. Перед применением суммарная тяжесть его травм должна быть не менее 20; одно применение должно уменьшить её как минимум на 10.</TM_ProgressionPriestHealingTrial>
+  <TM_ProgressionTrialDone>Испытание пройдено</TM_ProgressionTrialDone>
+  <TM_ProgressionTrialPending>Испытание ещё не пройдено</TM_ProgressionTrialPending>
+  <TM_ProgressionNextBook>После испытания прочитайте {0}, чтобы перейти на следующую ступень.</TM_ProgressionNextBook>
+  <TM_ProgressionPriestVow>Обет священника: недоступна работа, связанная с насилием. Повышены скорость передвижения, выработка иммунитета, скорость медицинской работы, качество лечения и успех операций; снижен болевой порог потери сознания.</TM_ProgressionPriestVow>
+  <TM_ProgressionPriestPurificationTrial>Испытание очищением: своим заклинанием «Очищение» полностью устраните уже существующую постоянную травму или шрам у другого дружественного живого гуманоида. Частичное лечение, лечение себя и применение через предметы не засчитываются.</TM_ProgressionPriestPurificationTrial>
+  <TM_ProgressionAscensionAction>Вознесение священника</TM_ProgressionAscensionAction>
+  <TM_ProgressionAscensionNeedsOffering>Нужен доступный свиток обучения воскрешению на земле или уже переносимый персонажем.</TM_ProgressionAscensionNeedsOffering>
+  <TM_ProgressionAscensionUnavailable>Требования вознесения не выполнены или магический круг недоступен.</TM_ProgressionAscensionUnavailable>
+  <TM_ProgressionAscensionRequirements>Нужны священник ступени «Мастер», большой магический круг и свиток обучения воскрешению. Ритуал длится один игровой час. Свиток приносится в жертву только при завершении; прерывание сохраняет его.</TM_ProgressionAscensionRequirements>
+  <TM_ProgressionNecromancerControlTrial>Испытание контроля: удерживайте одного и того же принадлежащего вам слугу-нежить в течение суток. Время засчитывается, только пока вы и слуга на одной карте. Уход с карты или путешествие в караване приостанавливают прогресс; потеря или замена слуги сбрасывают его.</TM_ProgressionNecromancerControlTrial>
+  <TM_ProgressionServantTime>Контроль удерживается: {0} / 24 ч</TM_ProgressionServantTime>
+  <TM_ProgressionNecromancerDeathMarkTrial>Испытание меткой смерти: победите враждебного противника, пока на нём действует ваша собственная метка смерти. Последний удар может нанести союзник. Союзники и пленники не засчитываются.</TM_ProgressionNecromancerDeathMarkTrial>
+  <TM_ProgressionNecromancerAscensionAction>Возвыситься как некромант</TM_ProgressionNecromancerAscensionAction>
+  <TM_ProgressionNecromancerAscensionNeedsOffering>Свиток изучения формы лича должен лежать в доступном месте или уже находиться в руках.</TM_ProgressionNecromancerAscensionNeedsOffering>
+  <TM_ProgressionNecromancerAscensionRequirements>Требуются некромант ранга «Мастер», большой магический круг и свиток изучения формы лича. Ритуал длится один игровой час. Свиток расходуется только при завершении; прерывание сохраняет его. Вознесение открывает превращение в лича. Страсти и расписание сохраняются.</TM_ProgressionNecromancerAscensionRequirements>
+  <TM_ProgressionFireboltTrial>Испытание огненной стрелы: нанесите враждебным существам 100 единиц фактического урона огненной стрелой. Союзники, пленники и постройки не учитываются.</TM_ProgressionFireboltTrial>
+  <TM_ProgressionFireboltDamage>Урон огненной стрелой: {0} / 100</TM_ProgressionFireboltDamage>
+  <TM_ProgressionFireclawTrial>Нанесите урон двум разным враждебным существам одним применением огненного когтя. Союзники, пленники и постройки не учитываются.</TM_ProgressionFireclawTrial>
+  <TM_ProgressionFireAscensionAction>Возвыситься как маг огня</TM_ProgressionFireAscensionAction>
+  <TM_ProgressionFireAscensionNeedsOffering>Свиток изучения огненного шторма должен лежать в доступном месте или уже находиться в руках.</TM_ProgressionFireAscensionNeedsOffering>
+  <TM_ProgressionFireAscensionRequirements>Требуются маг огня ранга «Мастер», большой магический круг и свиток изучения огненного шторма. Ритуал длится один игровой час. Свиток расходуется только при завершении; прерывание сохраняет его. Вознесение открывает огненный шторм.</TM_ProgressionFireAscensionRequirements>
+  <TM_TomeQuestRequest>Найти том мастерства</TM_TomeQuestRequest>
+  <TM_TomeQuestView>Посмотреть задание на том</TM_TomeQuestView>
+  <TM_TomeQuestRequestDesc>Запросить необязательное задание с нападением за том мастерства. Нападающие не появятся, пока вы не примете задание. Победа принесёт книгу; для её изучения всё равно нужны классовые испытания. Том также можно купить у торговцев.</TM_TomeQuestRequestDesc>
+  <TM_TomeQuestUnavailable>Здесь нет подходящего задания на том. Попробуйте снова в своём поселении; торговцы также продают тома мастерства.</TM_TomeQuestUnavailable>
+  <TM_TomeQuestPeaceful>Боевые задания отключены настройками рассказчика. Тома мастерства по-прежнему можно купить у торговцев.</TM_TomeQuestPeaceful>
+  <TM_TomeQuestCooldown>Подождите один игровой день после последнего задания на том, прежде чем запрашивать следующее.</TM_TomeQuestCooldown>
+  <TM_TomeQuestBusy>У этого мага или поселения уже есть незавершённое задание на том.</TM_TomeQuestBusy>
+  <TM_TomeQuestTitle>Спорная рукопись: {0}</TM_TomeQuestTitle>
+  <TM_TomeQuestDescription>{0} под угрозой: приближаются гуманоидные налётчики — {1} (примерно {2} очков угрозы). Примите задание, чтобы получить один игровой час на подготовку, после чего враги придут пешком от края карты. Отразите эту группу фиксированного состава за два дня: засчитываются погибшие, поверженные, захваченные и отступившие нападающие. Сражаться могут союзники. Награда за победу — {3}, 1 шт.; выберите колониста и действие «Забрать том мастерства», чтобы указать своё поселение для доставки. Потеря или оставление карты столкновения до победы провалит задание. Провал не сбрасывает классовый прогресс. Новое задание можно запросить через день после провала или получения награды. Том не позволяет обойти классовые испытания.</TM_TomeQuestDescription>
+  <TM_ClassTomeClaim>Забрать том мастерства</TM_ClassTomeClaim>
+  <TM_ClassTomeClaimDesc>Выберите своё поселение для доставки заслуженной книги. Одну и ту же награду можно получить только один раз.</TM_ClassTomeClaimDesc>
+  <TM_ClassTomePendingDesc>Ваш том мастерства готов. Выберите любого колониста и действие «Забрать том мастерства», чтобы указать своё поселение для доставки. Награда остаётся доступной до получения.</TM_ClassTomePendingDesc>
+  <TM_ClassTomeDelivered>Том мастерства доставлен.</TM_ClassTomeDelivered>
+  <TM_ProgressionIceFoundationTrial>Нанесите врагам 20 единиц фактического урона Icebolt или примените свою успокаивающую ауру Soothe к союзнику, кроме себя.</TM_ProgressionIceFoundationTrial>
+  <TM_ProgressionIceMasteryTrial>Нанесите урон Snowball двум разным врагам или успешно измените погоду своим Rainmaker. Допускаются разные применения.</TM_ProgressionIceMasteryTrial>
+  <TM_ProgressionIceTrialProgress>Урон Icebolt: {0}/20. Цели Snowball: {1}/2.</TM_ProgressionIceTrialProgress>
+  <TM_ProgressionIceAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionIceAttunementHint>
+  <TM_ProgressionIceAscensionAction>Вознесение мага льда</TM_ProgressionIceAscensionAction>
+  <TM_ProgressionIceAscensionNeedsOffering>Обучающий свиток Blizzard должен быть доступен на земле или уже переноситься пешкой.</TM_ProgressionIceAscensionNeedsOffering>
+  <TM_ProgressionIceAscensionRequirements>Нужны маг льда ступени мастера, большой магический круг и обучающий свиток Blizzard. Ритуал длится один игровой час; свиток расходуется и Blizzard открывается только при завершении.</TM_ProgressionIceAscensionRequirements>
+  <TM_ProgressionIceAttunementAction>Настройка холода: 100 серебра, 1 час (мирное испытание)</TM_ProgressionIceAttunementAction>
+  <TM_ProgressionIceAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionIceAttunementNeedsOffering>
+  <TM_ProgressionLightningFoundationTrial>Нанесите враждебным существам 20 фактического урона LightningBolt или наложите либо усильте AMP на союзнике, кроме себя.</TM_ProgressionLightningFoundationTrial>
+  <TM_ProgressionLightningMasteryTrial>Нанесите урон двум разным враждебным существам с помощью LightningCloud. Можно за несколько применений; одно оглушение не считается.</TM_ProgressionLightningMasteryTrial>
+  <TM_ProgressionLightningTrialProgress>Урон LightningBolt: {0}/20. Цели LightningCloud: {1}/2.</TM_ProgressionLightningTrialProgress>
+  <TM_ProgressionLightningAttunementHint>Мирная альтернатива: упражнение на большом магическом круге за 100 серебра и один игровой час. Завершает только текущее испытание; книга всё ещё нужна.</TM_ProgressionLightningAttunementHint>
+  <TM_ProgressionLightningAscensionAction>Вознесение мага молнии</TM_ProgressionLightningAscensionAction>
+  <TM_ProgressionLightningAscensionNeedsOffering>Обучающий свиток «Око бури» должен быть доступен либо уже находиться в руках.</TM_ProgressionLightningAscensionNeedsOffering>
+  <TM_ProgressionLightningAscensionRequirements>Нужны мастер молнии, большой магический круг и обучающий свиток «Око бури». Ритуал длится один игровой час; свиток расходуется и ульта открывается только при завершении.</TM_ProgressionLightningAscensionRequirements>
+  <TM_ProgressionLightningAttunementAction>Настройка бури: 100 серебра, 1 час (мирное испытание)</TM_ProgressionLightningAttunementAction>
+  <TM_ProgressionLightningAttunementNeedsOffering>Нужна доступная стопка минимум из 100 серебра либо 100 серебра в руках.</TM_ProgressionLightningAttunementNeedsOffering>
+  <TM_ProgressionArcanistFoundationTrial>Нанесите враждебным существам 20 фактического урона MagicMissile либо успешно переместитесь Блинком минимум на 8 клеток.</TM_ProgressionArcanistFoundationTrial>
+  <TM_ProgressionArcanistMasteryTrial>Наложите свою ауру Shadow на другого свободного союзника либо успешно подтяните предмет минимум с 8 клеток заклинанием Summon. Неудачные касты и перемещение на месте не считаются.</TM_ProgressionArcanistMasteryTrial>
+  <TM_ProgressionArcanistTrialProgress>Урон MagicMissile: {0}/20.</TM_ProgressionArcanistTrialProgress>
+  <TM_ProgressionArcanistAscensionAction>Вознесение арканиста</TM_ProgressionArcanistAscensionAction>
+  <TM_ProgressionArcanistAscensionNeedsOffering>Обучающий свиток Fold Reality должен быть доступен либо уже находиться в руках.</TM_ProgressionArcanistAscensionNeedsOffering>
+  <TM_ProgressionArcanistAscensionRequirements>Нужны мастер-арканист, большой магический круг и обучающий свиток Fold Reality. Один игровой час; свиток расходуется и ульта открывается только при завершении.</TM_ProgressionArcanistAscensionRequirements>
+  <TM_ProgressionArcanistAttunementAction>Арканная настройка: 100 серебра, 1 час (мирное испытание)</TM_ProgressionArcanistAttunementAction>
+  <TM_ProgressionArcanistAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionArcanistAttunementHint>
+  <TM_ProgressionArcanistAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionArcanistAttunementNeedsOffering>
+  <TM_ProgressionPaladin>паладин</TM_ProgressionPaladin>
+  <TM_ProgressionPaladinFoundationTrial>Одним Heal вылечите не менее 8 фактической тяжести ран другого свободного союзника.</TM_ProgressionPaladinFoundationTrial>
+  <TM_ProgressionPaladinMasteryTrial>Наложите своё усиление Ray of Hope на другого свободного союзника, у которого этого усиления ещё нет.</TM_ProgressionPaladinMasteryTrial>
+  <TM_ProgressionPaladinAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionPaladinAttunementHint>
+  <TM_ProgressionPaladinAscensionAction>Вознесение: паладин</TM_ProgressionPaladinAscensionAction>
+  <TM_ProgressionPaladinAscensionNeedsOffering>Обучающий свиток Holy Wrath должен быть доступен либо уже находиться в руках.</TM_ProgressionPaladinAscensionNeedsOffering>
+  <TM_ProgressionPaladinAscensionRequirements>Нужны паладин ступени мастера, большой магический круг и обучающий свиток Holy Wrath. Ритуал длится один игровой час; свиток расходуется и ульта открывается только при завершении.</TM_ProgressionPaladinAscensionRequirements>
+  <TM_ProgressionPaladinAttunementAction>Настройка пути «паладин»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionPaladinAttunementAction>
+  <TM_ProgressionPaladinAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionPaladinAttunementNeedsOffering>
+  <TM_ProgressionSummoner>призыватель</TM_ProgressionSummoner>
+  <TM_ProgressionSummonerFoundationTrial>Поддерживайте одного и того же живого миньона и активный пилон, оба ваших призыва на вашей карте, 600 наблюдаемых тиков (10 секунд на обычной скорости).</TM_ProgressionSummonerFoundationTrial>
+  <TM_ProgressionSummonerMasteryTrial>Враждебное существо должно активировать вашу призванную мину и запустить её взрыватель.</TM_ProgressionSummonerMasteryTrial>
+  <TM_ProgressionSummonerAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionSummonerAttunementHint>
+  <TM_ProgressionSummonerAscensionAction>Вознесение: призыватель</TM_ProgressionSummonerAscensionAction>
+  <TM_ProgressionSummonerAscensionNeedsOffering>Обучающий свиток Summon Poppi должен быть доступен либо уже находиться в руках.</TM_ProgressionSummonerAscensionNeedsOffering>
+  <TM_ProgressionSummonerAscensionRequirements>Нужны призыватель ступени мастера, большой магический круг и обучающий свиток Summon Poppi. Ритуал длится один игровой час; свиток расходуется и ульта открывается только при завершении.</TM_ProgressionSummonerAscensionRequirements>
+  <TM_ProgressionSummonerAttunementAction>Настройка пути «призыватель»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionSummonerAttunementAction>
+  <TM_ProgressionSummonerAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionSummonerAttunementNeedsOffering>
+  <TM_ProgressionSummonerTrialProgress>Поддержание призывов: {0}/600 тиков.</TM_ProgressionSummonerTrialProgress>
+  <TM_ProgressionDruid>друид</TM_ProgressionDruid>
+  <TM_ProgressionDruidFoundationTrial>Успокойте живое животное-людоеда вне вашей фракции своим заклинанием «Успокоение животного».</TM_ProgressionDruidFoundationTrial>
+  <TM_ProgressionDruidMasteryTrial>Наложите или усильте «Регенерацию» на другом свободном живом союзнике-человеке с общей тяжестью ран не менее 8.</TM_ProgressionDruidMasteryTrial>
+  <TM_ProgressionDruidAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionDruidAttunementHint>
+  <TM_ProgressionDruidAscensionAction>Вознесение: друид</TM_ProgressionDruidAscensionAction>
+  <TM_ProgressionDruidAscensionNeedsOffering>Обучающий свиток Восстановление конечности должен быть доступен либо уже находиться в руках.</TM_ProgressionDruidAscensionNeedsOffering>
+  <TM_ProgressionDruidAscensionRequirements>Нужны друид ступени мастера, большой магический круг и обучающий свиток Восстановление конечности. Ритуал длится один игровой час; свиток расходуется и ульта открывается только при завершении.</TM_ProgressionDruidAscensionRequirements>
+  <TM_ProgressionDruidAttunementAction>Настройка пути «друид»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionDruidAttunementAction>
+  <TM_ProgressionDruidAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionDruidAttunementNeedsOffering>
+  <TM_ProgressionBard>бард</TM_ProgressionBard>
+  <TM_ProgressionBardFoundationTrial>Развлеките другого свободного живого союзника-человека, создав или обновив воспоминание о вашем выступлении.</TM_ProgressionBardFoundationTrial>
+  <TM_ProgressionBardMasteryTrial>Своей аурой вдохновения вызовите новое вдохновение у другого свободного живого союзника-человека.</TM_ProgressionBardMasteryTrial>
+  <TM_ProgressionBardAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionBardAttunementHint>
+  <TM_ProgressionBardAscensionAction>Вознесение: бард</TM_ProgressionBardAscensionAction>
+  <TM_ProgressionBardAscensionNeedsOffering>Обучающий свиток Боевой гимн должен быть доступен либо уже находиться в руках.</TM_ProgressionBardAscensionNeedsOffering>
+  <TM_ProgressionBardAscensionRequirements>Нужны бард ступени мастера, большой магический круг и обучающий свиток Боевой гимн. Ритуал длится один игровой час; свиток расходуется и ульта открывается только при завершении.</TM_ProgressionBardAscensionRequirements>
+  <TM_ProgressionBardAttunementAction>Настройка пути «бард»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionBardAttunementAction>
+  <TM_ProgressionBardAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionBardAttunementNeedsOffering>
+  <TM_ProgressionChooseDemonBranch>Выбрать {0}: прочитать {1} (расходует одну книгу)</TM_ProgressionChooseDemonBranch>
+  <TM_ProgressionWarlockFoundationTrial>Установите новую взаимную связь душ с другим свободным живым человеком вашей фракции.</TM_ProgressionWarlockFoundationTrial>
+  <TM_ProgressionWarlockMasteryTrial>Запустите живого враждебного пешку собственным Отталкиванием.</TM_ProgressionWarlockMasteryTrial>
+  <TM_ProgressionWarlockAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionWarlockAttunementHint>
+  <TM_ProgressionWarlockAscensionRequirements>Нужны чернокнижник ступени мастера, большой магический круг и обучающий свиток Психический шок. Ритуал длится один игровой час; свиток расходуется и ульта открывается только при завершении.</TM_ProgressionWarlockAscensionRequirements>
+  <TM_ProgressionSuccubusFoundationTrial>Установите новую взаимную связь душ с другим свободным живым человеком вашей фракции.</TM_ProgressionSuccubusFoundationTrial>
+  <TM_ProgressionSuccubusMasteryTrial>Усильте гравитационное замедление живой враждебной пешки собственным Притяжением.</TM_ProgressionSuccubusMasteryTrial>
+  <TM_ProgressionSuccubusAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionSuccubusAttunementHint>
+  <TM_ProgressionSuccubusAscensionRequirements>Нужны суккуб ступени мастера, большой магический круг и обучающий свиток Презрение. Ритуал длится один игровой час; свиток расходуется и ульта открывается только при завершении.</TM_ProgressionSuccubusAscensionRequirements>
+  <TM_ProgressionWarlock>чернокнижник</TM_ProgressionWarlock>
+  <TM_ProgressionWarlockAscensionAction>Вознесение: чернокнижник</TM_ProgressionWarlockAscensionAction>
+  <TM_ProgressionWarlockAscensionNeedsOffering>Обучающий свиток Психический шок должен быть доступен либо уже находиться в руках.</TM_ProgressionWarlockAscensionNeedsOffering>
+  <TM_ProgressionWarlockAttunementAction>Настройка пути «чернокнижник»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionWarlockAttunementAction>
+  <TM_ProgressionWarlockAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionWarlockAttunementNeedsOffering>
+  <TM_ProgressionSuccubus>суккуб</TM_ProgressionSuccubus>
+  <TM_ProgressionSuccubusAscensionAction>Вознесение: суккуб</TM_ProgressionSuccubusAscensionAction>
+  <TM_ProgressionSuccubusAscensionNeedsOffering>Обучающий свиток Презрение должен быть доступен либо уже находиться в руках.</TM_ProgressionSuccubusAscensionNeedsOffering>
+  <TM_ProgressionSuccubusAttunementAction>Настройка пути «суккуб»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionSuccubusAttunementAction>
+  <TM_ProgressionSuccubusAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionSuccubusAttunementNeedsOffering>
+  <TM_ProgressionGeomancer>геомант</TM_ProgressionGeomancer>
+  <TM_ProgressionGeomancerFoundationTrial>Впервые наложите собственную Каменную кожу на другого свободного живого человека-союзника.</TM_ProgressionGeomancerFoundationTrial>
+  <TM_ProgressionGeomancerMasteryTrial>Одним собственным заклинанием Заточения создайте не менее 3 различных новых клеток каменной стены.</TM_ProgressionGeomancerMasteryTrial>
+  <TM_ProgressionGeomancerAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionGeomancerAttunementHint>
+  <TM_ProgressionGeomancerAscensionAction>Вознесение: геомант</TM_ProgressionGeomancerAscensionAction>
+  <TM_ProgressionGeomancerAscensionNeedsOffering>Нужен доступный или уже переносимый обучающий свиток Метеора.</TM_ProgressionGeomancerAscensionNeedsOffering>
+  <TM_ProgressionGeomancerAscensionRequirements>Нужны геомант ступени Мастера, большой магический круг и обучающий свиток Метеора. Ритуал длится один игровой час; свиток расходуется и Метеор открывается только после завершения.</TM_ProgressionGeomancerAscensionRequirements>
+  <TM_ProgressionGeomancerAttunementAction>Настройка пути «геомант»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionGeomancerAttunementAction>
+  <TM_ProgressionGeomancerAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionGeomancerAttunementNeedsOffering>
+  <TM_ProgressionTechnomancer>техномант</TM_ProgressionTechnomancer>
+  <TM_ProgressionTechnomancerFoundationTrial>Собственный технобит должен восстановить прочность повреждённого здания вашей фракции.</TM_ProgressionTechnomancerFoundationTrial>
+  <TM_ProgressionTechnomancerMasteryTrial>Наложите или усильте собственный технощит на другом свободном живом человеке-союзнике.</TM_ProgressionTechnomancerMasteryTrial>
+  <TM_ProgressionTechnomancerAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionTechnomancerAttunementHint>
+  <TM_ProgressionTechnomancerAscensionAction>Вознесение: техномант</TM_ProgressionTechnomancerAscensionAction>
+  <TM_ProgressionTechnomancerAscensionNeedsOffering>Нужен доступный или уже переносимый обучающий свиток «Орбитальный удар».</TM_ProgressionTechnomancerAscensionNeedsOffering>
+  <TM_ProgressionTechnomancerAscensionRequirements>Нужны техномант ступени Мастера, большой магический круг и обучающий свиток «Орбитальный удар». Ритуал длится один игровой час; свиток расходуется и Орбитальный удар открывается только после завершения.</TM_ProgressionTechnomancerAscensionRequirements>
+  <TM_ProgressionTechnomancerAttunementAction>Настройка пути «техномант»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionTechnomancerAttunementAction>
+  <TM_ProgressionTechnomancerAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionTechnomancerAttunementNeedsOffering>
+  <TM_ProgressionBloodMage>маг крови</TM_ProgressionBloodMage>
+  <TM_ProgressionBloodMageFoundationTrial>Наложите или усильте собственный Кровавый щит на другом свободном живом человеке-союзнике с существующей травмой.</TM_ProgressionBloodMageFoundationTrial>
+  <TM_ProgressionBloodMageMasteryTrial>Нанесите 20 единиц фактического урона живым врагам собственным Воспламенением крови.</TM_ProgressionBloodMageMasteryTrial>
+  <TM_ProgressionBloodMageAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionBloodMageAttunementHint>
+  <TM_ProgressionBloodMageAscensionAction>Вознесение: маг крови</TM_ProgressionBloodMageAscensionAction>
+  <TM_ProgressionBloodMageAscensionNeedsOffering>Нужен доступный или уже переносимый обучающий свиток «Кровавая луна».</TM_ProgressionBloodMageAscensionNeedsOffering>
+  <TM_ProgressionBloodMageAscensionRequirements>Нужны маг крови ступени Мастера, большой магический круг и обучающий свиток «Кровавая луна». Ритуал длится один игровой час; свиток расходуется и Кровавая луна открывается только после завершения.</TM_ProgressionBloodMageAscensionRequirements>
+  <TM_ProgressionBloodMageAttunementAction>Настройка пути «маг крови»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionBloodMageAttunementAction>
+  <TM_ProgressionBloodMageAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionBloodMageAttunementNeedsOffering>
+  <TM_ProgressionBloodMageTrialProgress>Урон Воспламенения крови: {0}/20.</TM_ProgressionBloodMageTrialProgress>
+  <TM_ProgressionEnchanter>зачарователь</TM_ProgressionEnchanter>
+  <TM_ProgressionEnchanterFoundationTrial>Собственным Превращением ресурсов израсходуйте часть или всю стопку сырья и успешно разместите ненулевое количество другого ресурса.</TM_ProgressionEnchanterFoundationTrial>
+  <TM_ProgressionEnchanterMasteryTrial>Собственным Зачарованием оружия наложите новое зачарование на экипированное оружие ближнего боя другого свободного живого человека-союзника.</TM_ProgressionEnchanterMasteryTrial>
+  <TM_ProgressionEnchanterAscensionAction>Вознесение: зачарователь</TM_ProgressionEnchanterAscensionAction>
+  <TM_ProgressionEnchanterAscensionNeedsOffering>Нужен доступный или уже переносимый обучающий свиток «Смена облика».</TM_ProgressionEnchanterAscensionNeedsOffering>
+  <TM_ProgressionEnchanterAscensionRequirements>Нужны зачарователь ступени Мастера, большой магический круг и обучающий свиток «Смена облика». Ритуал длится один игровой час; свиток расходуется и Смена облика открывается только после завершения.</TM_ProgressionEnchanterAscensionRequirements>
+  <TM_ProgressionEnchanterAttunementAction>Настройка пути «зачарователь»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionEnchanterAttunementAction>
+  <TM_ProgressionEnchanterAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionEnchanterAttunementHint>
+  <TM_ProgressionEnchanterAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionEnchanterAttunementNeedsOffering>
+  <TM_ProgressionChronomancer>хрономант</TM_ProgressionChronomancer>
+  <TM_ProgressionChronomancerFoundationTrial>С активным собственным Предсказанием успешно предвидьте игровое событие и отложите его в очереди происшествий. Одного включения Предсказания недостаточно.</TM_ProgressionChronomancerFoundationTrial>
+  <TM_ProgressionChronomancerMasteryTrial>Собственным Откатом времени восстановите прочность или уменьшите гниение пищи у невраждебного предмета на своей карте.</TM_ProgressionChronomancerMasteryTrial>
+  <TM_ProgressionChronomancerAscensionAction>Вознесение: хрономант</TM_ProgressionChronomancerAscensionAction>
+  <TM_ProgressionChronomancerAscensionNeedsOffering>Нужен доступный или уже переносимый обучающий свиток «Возврат».</TM_ProgressionChronomancerAscensionNeedsOffering>
+  <TM_ProgressionChronomancerAscensionRequirements>Нужны хрономант ступени Мастера, большой магический круг и обучающий свиток «Возврат». Ритуал длится один игровой час; свиток расходуется и Возврат через Метку времени открывается только после завершения.</TM_ProgressionChronomancerAscensionRequirements>
+  <TM_ProgressionChronomancerAttunementAction>Настройка пути «хрономант»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionChronomancerAttunementAction>
+  <TM_ProgressionChronomancerAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionChronomancerAttunementHint>
+  <TM_ProgressionChronomancerAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionChronomancerAttunementNeedsOffering>
+  <TM_ProgressionBrightmage>маг света</TM_ProgressionBrightmage>
+  <TM_ProgressionBrightmageFoundationTrial>Нанесите 20 единиц фактического урона живым врагам собственным Световым копьём.</TM_ProgressionBrightmageFoundationTrial>
+  <TM_ProgressionBrightmageMasteryTrial>Собственной Вспышкой света наложите или усильте фактическое ослепление живого врага.</TM_ProgressionBrightmageMasteryTrial>
+  <TM_ProgressionBrightmageAscensionAction>Вознесение: маг света</TM_ProgressionBrightmageAscensionAction>
+  <TM_ProgressionBrightmageAscensionNeedsOffering>Нужен доступный или уже переносимый обучающий свиток «Дух света».</TM_ProgressionBrightmageAscensionNeedsOffering>
+  <TM_ProgressionBrightmageAscensionRequirements>Нужны маг света ступени Мастера, большой магический круг и обучающий свиток «Дух света». Ритуал длится один игровой час; свиток расходуется и Дух света открывается только после завершения.</TM_ProgressionBrightmageAscensionRequirements>
+  <TM_ProgressionBrightmageAttunementAction>Настройка пути «маг света»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionBrightmageAttunementAction>
+  <TM_ProgressionBrightmageTrialProgress>Урон Светового копья: {0}/20.</TM_ProgressionBrightmageTrialProgress>
+  <TM_ProgressionBrightmageAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionBrightmageAttunementHint>
+  <TM_ProgressionBrightmageAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionBrightmageAttunementNeedsOffering>
+  <TM_ProgressionShaman>шаман</TM_ProgressionShaman>
+  <TM_ProgressionShamanFoundationTrial>Вызванный лично вами Тотем исцеления должен восстановить суммарно 8 единиц тяжести реальных ран у свободных живых союзников.</TM_ProgressionShamanFoundationTrial>
+  <TM_ProgressionShamanMasteryTrial>Собственным заклинанием «Проклятие» наложите новое проклятие на живого органического врага.</TM_ProgressionShamanMasteryTrial>
+  <TM_ProgressionShamanAscensionAction>Вознесение: шаман</TM_ProgressionShamanAscensionAction>
+  <TM_ProgressionShamanAscensionNeedsOffering>Нужен доступный или уже переносимый обучающий свиток «Дух-хранитель».</TM_ProgressionShamanAscensionNeedsOffering>
+  <TM_ProgressionShamanAscensionRequirements>Нужны шаман ступени Мастера, большой магический круг и обучающий свиток «Дух-хранитель». Ритуал длится один игровой час; свиток расходуется и Дух-хранитель открывается только после завершения.</TM_ProgressionShamanAscensionRequirements>
+  <TM_ProgressionShamanAttunementAction>Настройка пути «шаман»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionShamanAttunementAction>
+  <TM_ProgressionShamanTrialProgress>Исцеление Тотемом исцеления: {0}/8.</TM_ProgressionShamanTrialProgress>
+  <TM_ProgressionShamanAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionShamanAttunementHint>
+  <TM_ProgressionShamanAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionShamanAttunementNeedsOffering>
+  <TM_ProgressionGolemancer>големант</TM_ProgressionGolemancer>
+  <TM_ProgressionGolemancerFoundationTrial>Завершите резьбу рун с затратой маны, добавив новую руну или магическую татуировку живому союзнику.</TM_ProgressionGolemancerFoundationTrial>
+  <TM_ProgressionGolemancerMasteryTrial>Лично наложите новое клеймо осознания, эмоций, физической формы, защиты или жизненной силы на другого свободного живого союзника. Обновление или присвоение существующего клейма не засчитывается.</TM_ProgressionGolemancerMasteryTrial>
+  <TM_ProgressionGolemancerAscensionAction>Вознесение: големант</TM_ProgressionGolemancerAscensionAction>
+  <TM_ProgressionGolemancerAscensionNeedsOffering>Нужен доступный или уже переносимый обучающий свиток «Живая стена».</TM_ProgressionGolemancerAscensionNeedsOffering>
+  <TM_ProgressionGolemancerAscensionRequirements>Нужны големант ступени Мастера, большой магический круг и обучающий свиток «Живая стена». Ритуал длится один игровой час; свиток расходуется и Живая стена открывается только после завершения.</TM_ProgressionGolemancerAscensionRequirements>
+  <TM_ProgressionGolemancerAttunementAction>Настройка пути «големант»: 100 серебра, 1 час (мирное испытание)</TM_ProgressionGolemancerAttunementAction>
+  <TM_ProgressionGolemancerAttunementHint>Мирная альтернатива: упражнение настройки на большом магическом круге за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionGolemancerAttunementHint>
+  <TM_ProgressionGolemancerAttunementNeedsOffering>Нужна доступная стопка не менее 100 серебра или уже переносимые 100 серебра.</TM_ProgressionGolemancerAttunementNeedsOffering>
+  <TM_ProgressionEmpath>эмпат</TM_ProgressionEmpath>
+  <TM_ProgressionEmpathFoundationTrial>Примените постоянно изученную способность «Убийца разума» и действительно снизьте настроение враждебной цели.</TM_ProgressionEmpathFoundationTrial>
+  <TM_ProgressionEmpathMasteryTrial>Своей подавляющей аурой впервые наложите эмоциональную защиту на другого свободного живого союзника. Обновление уже действующей защиты не засчитывается.</TM_ProgressionEmpathMasteryTrial>
+  <TM_ProgressionEmpathAttunementHint>Мирная альтернатива: завершите упражнение настройки у большого магического круга за 100 серебра и один игровой час. Оно завершает текущее испытание, но не заменяет книгу и не повышает ступень.</TM_ProgressionEmpathAttunementHint>
+  <TM_ProgressionEmpathAscensionAction>Вознесение эмпата</TM_ProgressionEmpathAscensionAction>
+  <TM_ProgressionEmpathAscensionNeedsOffering>Камень магической проницательности должен быть доступен или уже находиться при персонаже.</TM_ProgressionEmpathAscensionNeedsOffering>
+  <TM_ProgressionEmpathAscensionRequirements>Требуются эмпат ступени мастера, большой магический круг и один камень магической проницательности. Ритуал длится один игровой час; камень расходуется и симбиоз открывается только при завершении. Ритуал не создаёт носителя или связь симбиоза.</TM_ProgressionEmpathAscensionRequirements>
+  <TM_ProgressionEmpathAttunementAction>Настройка эмпата: 100 серебра, 1 час (мирное испытание)</TM_ProgressionEmpathAttunementAction>
+  <TM_ProgressionEmpathAttunementNeedsOffering>Требуется доступная стопка не менее чем из 100 серебра либо 100 серебра при персонаже.</TM_ProgressionEmpathAttunementNeedsOffering>
+  <TM_SpiritRebirthCastUnavailable>Эта способность недоступна в текущей форме Духа.</TM_SpiritRebirthCastUnavailable>
+</LanguageData>

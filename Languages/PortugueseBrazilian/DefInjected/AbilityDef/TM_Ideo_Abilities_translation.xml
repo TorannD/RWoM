@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Start_ManaStorm.label>tempestade maná</TM_Start_ManaStorm.label>
+  <TM_Start_ManaStorm.description>Cria e liberta quase imediatamente o bolso temporário do maná. Mana tenta preencher o bolso, mas tem de se dissipar rapidamente, criando uma forte indignação. O estado resultante é conhecido como tempestade maná. Mana tenta se dissipar rapidamente durante uma tempestade de maná, o que pode causar danos graves a qualquer um que tente usar manu neste momento. Mana também está mais disponível para aqueles que se arriscam a reagir. A tempestade de maná dura de 6 a 40 horas.</TM_Start_ManaStorm.description>
+
+  <TM_Start_ElementalDefenders.label>protetores naturais</TM_Start_ElementalDefenders.label>
+  <TM_Start_ElementalDefenders.description>Cria uma ligação com outro plano de existência e atrai os elementos básicos para proteger a colónia. Dura cerca de 4 horas.</TM_Start_ElementalDefenders.description>
+
+
+</LanguageData>

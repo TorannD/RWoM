@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_SeverMagic.reportString>Відсікання TargetA від магії.</TM_SeverMagic.reportString>
+  <TM_BestowMagic.reportString>Дарує дар магії TargetA.</TM_BestowMagic.reportString>
+  <TM_BestowClass.reportString>Направляє TargetA по його таємному шляху.</TM_BestowClass.reportString>
+
+
+</LanguageData>

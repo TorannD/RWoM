@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ItemRegeneration.label>魔法物品再生</TM_ItemRegeneration.label>
+  <TM_ItemRegeneration.description>每两秒为一个可自然愈合的伤口恢复最多5点生命值，持续二十秒。</TM_ItemRegeneration.description>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperSingleOpening.label>única oportunidad</TM_SniperSingleOpening.label>
+  <TM_SniperSingleOpening.description>Mantén la posición y la línea de visión sobre un enemigo. Tras 5 segundos de preparación, dispara tres balas en 9 segundos. Cada bala inflige el 120% del daño del arma. El alcance se limita al del arma y a 45 casillas. Mientras apunta, el tirador recibe un 20% más de daño. Coste base: 60% de aguante. Recarga: dos días. Interrumpir la preparación consume el 6% de aguante e inicia una recarga más corta.</TM_SniperSingleOpening.description>
+</LanguageData>

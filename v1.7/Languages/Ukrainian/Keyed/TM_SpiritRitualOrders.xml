@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBeginRitual>Переродження {0} у Духа (300 магіциту, 50 срібла, 4 години)</TM_SpiritBeginRitual>
+  <TM_SpiritFinishRitual>Завершити перерване переродження {0}</TM_SpiritFinishRitual>
+  <TM_SpiritRitualUnreachable>Некроманту потрібні доступні тіло, велике коло, 300 магіциту та 50 срібла.</TM_SpiritRitualUnreachable>
+  <TM_SpiritRitualUnsafeEffect>{0} — неможливо відокремити від тіла стан «{1}»</TM_SpiritRitualUnsafeEffect>
+  <TM_GrimoireRebirthCircle>Біля великого магічного кола можна перетворити загиблого колоніста-людину на Духа. Для ритуалу потрібні магіцит ({0}) і срібло ({1}). Тривалість — {2}.</TM_GrimoireRebirthCircle>
+  <TM_GrimoireSpiritStone>Виснажений Дух повертається в камінь душі. Застосуйте камінь до живого носія. Дух зможе добровільно вийти через {0} у цьому тілі. Втрата носія скидає відлік.</TM_GrimoireSpiritStone>
+  <TM_SpiritRitualRenounceNecromancy>{0} повернеться Духом і назавжди відмовиться від класу некроманта або ліча та його заклять. Загальний рівень, досвід, невитрачені очки та звичайні навички збережуться. Почати ритуал?</TM_SpiritRitualRenounceNecromancy>
+</LanguageData>

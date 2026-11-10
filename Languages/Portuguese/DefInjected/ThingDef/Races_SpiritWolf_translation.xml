@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Dire Wolf -->
+
+  <TM_SpiritWolfR.label>espírito de lobo</TM_SpiritWolfR.label>
+  <TM_SpiritWolfR.description>Os espíritos dos lobos juntam-se num mundo físico por ordem de um poderoso xamã. Os lobos são um mamífero perigoso sozinho, quando caçam, devem ser temidos. O espírito do lobo desaparecerá dentro de um curto período de tempo ou se for derrotado.</TM_SpiritWolfR.description>
+  <TM_SpiritWolfR.tools.0.label>pata esquerda</TM_SpiritWolfR.tools.0.label>
+  <TM_SpiritWolfR.tools.1.label>pata direita</TM_SpiritWolfR.tools.1.label>
+  <TM_SpiritWolfR.tools.3.label>cabeça</TM_SpiritWolfR.tools.3.label>
+  <TM_SpiritWolfR_Leather.label>pele do espírito do lobo</TM_SpiritWolfR_Leather.label>
+  <TM_SpiritWolfR_Leather.description>pele do espírito do lobo</TM_SpiritWolfR_Leather.description>
+  <TM_SpiritWolfR_Leather.stuffProps.stuffAdjective>pele do espírito do lobo</TM_SpiritWolfR_Leather.stuffProps.stuffAdjective>
+  <!-- Meat Amount: 0 -->
+  <TM_SpiritWolfR_Corpse.label>cadáver do espírito do lobo</TM_SpiritWolfR_Corpse.label>
+  <TM_SpiritWolfR_Corpse.description>cadáver do espírito do lobo</TM_SpiritWolfR_Corpse.description>
+
+
+</LanguageData>

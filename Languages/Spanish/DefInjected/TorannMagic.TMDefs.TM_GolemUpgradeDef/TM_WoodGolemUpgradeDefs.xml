@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Golem_WoodArmor.label>armadura</TM_Golem_WoodArmor.label>
+  
+  <TM_Golem_WoodArmor.description>Aumenta la protección general:\nContundente: +[9,17,23] %\nCortante: +[8,15,21] %\nCalor: +[4,7,10] %</TM_Golem_WoodArmor.description>
+  
+  
+  <TM_Golem_WoodEnergyEfficiency.label>eficiencia energética</TM_Golem_WoodEnergyEfficiency.label>
+  
+  <TM_Golem_WoodEnergyEfficiency.description>Aumenta la eficiencia energética un 5 % por nivel. La eficiencia energética inicial es del 25 %.</TM_Golem_WoodEnergyEfficiency.description>
+  
+  
+  <TM_Golem_WoodEnergyRate.label>regeneración de energía</TM_Golem_WoodEnergyRate.label>
+  
+  <TM_Golem_WoodEnergyRate.description>Aumenta la velocidad de carga de energía un 15 % por nivel. La velocidad de recarga inicial es de 25 de energía por hora.</TM_Golem_WoodEnergyRate.description>
+  
+  
+  <TM_Golem_WoodLifeStage.label>nivel de armazón</TM_Golem_WoodLifeStage.label>
+  
+  <TM_Golem_WoodLifeStage.description>Aumenta las estadísticas:\nMovimiento: +[20 %/30 %/40 %]\nSalud: +[20 %/40 %/60 %]</TM_Golem_WoodLifeStage.description>
+  
+  
+  <TM_Golem_WoodMaxEnergy.label>almacenamiento de energía</TM_Golem_WoodMaxEnergy.label>
+  
+  <TM_Golem_WoodMaxEnergy.description>Aumenta la energía máxima en 100 por nivel. La energía máxima inicial es 400.</TM_Golem_WoodMaxEnergy.description>
+  
+  
+  <TM_Golem_WoodRepair.label>restaurar parte</TM_Golem_WoodRepair.label>
+  
+  
+  <TM_Golem_WoodSkills.label>mejora de habilidades</TM_Golem_WoodSkills.label>
+  
+  <TM_Golem_WoodSkills.description>Aumenta en 2 por nivel las habilidades de construcción y de trato con animales, y en 1 por nivel la de cocina.</TM_Golem_WoodSkills.description>
+  
+</LanguageData>

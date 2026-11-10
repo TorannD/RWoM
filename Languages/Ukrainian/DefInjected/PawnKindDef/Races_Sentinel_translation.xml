@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Lesser Sentinel -->
+
+  <TM_Lesser_Sentinel.label>малий сентинел</TM_Lesser_Sentinel.label>
+  <TM_Lesser_Sentinel.labelPlural>малі сентинели</TM_Lesser_Sentinel.labelPlural>
+  <TM_Lesser_Sentinel.lifeStages.0.label>малий сентинел</TM_Lesser_Sentinel.lifeStages.0.label>
+  <TM_Lesser_Sentinel.lifeStages.0.labelPlural>кам&apos;яні сентинели</TM_Lesser_Sentinel.lifeStages.0.labelPlural>
+
+
+  <!-- Sentinel -->
+
+  <TM_Sentinel.label>Сентінел</TM_Sentinel.label>
+  <TM_Sentinel.labelPlural>Сентинели</TM_Sentinel.labelPlural>
+  <TM_Sentinel.lifeStages.0.label>Сентінел</TM_Sentinel.lifeStages.0.label>
+  <TM_Sentinel.lifeStages.0.labelPlural>кам&apos;яні сентинели</TM_Sentinel.lifeStages.0.labelPlural>
+
+
+  <!-- Greater Sentinel -->
+
+  <TM_Greater_Sentinel.label>Великий Сентінел</TM_Greater_Sentinel.label>
+  <TM_Greater_Sentinel.labelPlural>великі Сентинели</TM_Greater_Sentinel.labelPlural>
+  <TM_Greater_Sentinel.lifeStages.0.label>Великий Сентінел</TM_Greater_Sentinel.lifeStages.0.label>
+  <TM_Greater_Sentinel.lifeStages.0.labelPlural>кам&apos;яні сентинели</TM_Greater_Sentinel.lifeStages.0.labelPlural>
+
+
+</LanguageData>

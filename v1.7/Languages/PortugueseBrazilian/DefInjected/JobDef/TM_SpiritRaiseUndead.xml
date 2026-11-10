@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritRaiseUndead.reportString>erguendo mortos-vivos através do corpo possuído.</TM_SpiritRaiseUndead.reportString>
+  <TM_SpiritDeathMark.reportString>lançando uma marca da morte através do hospedeiro do espírito.</TM_SpiritDeathMark.reportString>
+  <TM_SpiritDeathMark_I.reportString>lançando uma marca da morte através do hospedeiro do espírito.</TM_SpiritDeathMark_I.reportString>
+  <TM_SpiritDeathMark_II.reportString>lançando uma marca da morte através do hospedeiro do espírito.</TM_SpiritDeathMark_II.reportString>
+  <TM_SpiritDeathMark_III.reportString>lançando uma marca da morte através do hospedeiro do espírito.</TM_SpiritDeathMark_III.reportString>
+  <TM_SpiritConsumeCorpse.reportString>consumindo cadáveres através do hospedeiro do espírito.</TM_SpiritConsumeCorpse.reportString>
+  <TM_SpiritConsumeCorpse_I.reportString>consumindo cadáveres através do hospedeiro do espírito.</TM_SpiritConsumeCorpse_I.reportString>
+  <TM_SpiritConsumeCorpse_II.reportString>consumindo cadáveres através do hospedeiro do espírito.</TM_SpiritConsumeCorpse_II.reportString>
+  <TM_SpiritConsumeCorpse_III.reportString>consumindo cadáveres através do hospedeiro do espírito.</TM_SpiritConsumeCorpse_III.reportString>
+  <TM_SpiritConsumeCorpse_Mass.reportString>consumindo cadáveres através do hospedeiro do espírito.</TM_SpiritConsumeCorpse_Mass.reportString>
+  <TM_SpiritCorpseExplosion.reportString>preparando uma explosão cadavérica através do hospedeiro do espírito.</TM_SpiritCorpseExplosion.reportString>
+  <TM_SpiritCorpseExplosion_I.reportString>preparando uma explosão cadavérica através do hospedeiro do espírito.</TM_SpiritCorpseExplosion_I.reportString>
+  <TM_SpiritCorpseExplosion_II.reportString>preparando uma explosão cadavérica através do hospedeiro do espírito.</TM_SpiritCorpseExplosion_II.reportString>
+  <TM_SpiritCorpseExplosion_III.reportString>preparando uma explosão cadavérica através do hospedeiro do espírito.</TM_SpiritCorpseExplosion_III.reportString>
+  <TM_SpiritFogOfTorment.reportString>conjurando névoa de tormento através do hospedeiro do espírito.</TM_SpiritFogOfTorment.reportString>
+  <TM_SpiritDeathBolt.reportString>lançando projéteis mortais através do hospedeiro do espírito.</TM_SpiritDeathBolt.reportString>
+  <TM_SpiritDeathBolt_I.reportString>lançando projéteis mortais através do hospedeiro do espírito.</TM_SpiritDeathBolt_I.reportString>
+  <TM_SpiritDeathBolt_II.reportString>lançando projéteis mortais através do hospedeiro do espírito.</TM_SpiritDeathBolt_II.reportString>
+  <TM_SpiritDeathBolt_III.reportString>lançando projéteis mortais através do hospedeiro do espírito.</TM_SpiritDeathBolt_III.reportString>
+</LanguageData>

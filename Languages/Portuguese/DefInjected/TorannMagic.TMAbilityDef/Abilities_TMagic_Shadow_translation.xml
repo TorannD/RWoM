@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Shadow Walk -->
+
+  <TM_ShadowWalk.label>Trilha de sombra</TM_ShadowWalk.label>
+  <TM_ShadowWalk.description>Mova-se discretamente para aparecer instantaneamente à sombra de outro peão.</TM_ShadowWalk.description>
+
+
+  <!-- Shadow Strike -->
+
+  <TM_ShadowStrike.label>Trilha de sombra</TM_ShadowStrike.label>
+  <TM_ShadowStrike.description>Move o atacante instantaneamente por um alvo e lança um ataque devastador por um alvo. O atacante tem 5 segundos de velocidade. O atacante vai voltar ao local onde iniciou o ataque dentro de 5 segundos. Este ataque pode causar ataques críticos com três vezes mais danos - a chance diminui à medida que as armas se tornam mais pesadas. As armas de combate de longa distância nunca causarão ataques críticos.</TM_ShadowStrike.description>
+
+
+  <!-- Nightshade -->
+
+  <TM_Nightshade.label>Sombra noturna</TM_Nightshade.label>
+  <TM_Nightshade.description>Ponha as suas armas ou projéteis na toxina da sombra noturna. Cada ataque causará uma porção de toxina na sombra noturna. Os ataques de longa distância são 40% mais eficazes do que os ataques de combate próximo. As vítimas sofrem de alucinações e fôlego e podem sofrer danos nos órgãos se o nível de toxicidade se tornar grave.
+
+Esta capacidade requer 30 de resistência para manter e reduz a regeneração de resistência em 50%.</TM_Nightshade.description>
+
+
+  <!-- Veil of Shadows -->
+
+  <TM_VeilOfShadows.label>Véu de sombras</TM_VeilOfShadows.label>
+  <TM_VeilOfShadows.description>Jogue a mistura que enfeita o feitiço e a área ao redor com fumo e sombras. O feitiço recebe a Capa das Sombras (Invisibilidade). A nuvem de sombra impede a mira do sistema automatizado e reduz a precisão dos ataques de longa distância em 60%.</TM_VeilOfShadows.description>
+
+
+</LanguageData>

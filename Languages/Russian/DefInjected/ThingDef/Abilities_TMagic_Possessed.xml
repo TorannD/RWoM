@@ -1,0 +1,10 @@
+<LanguageData><!-- Spirit Possession-->
+	<Projectile_SpiritPossession.label>овладевать</Projectile_SpiritPossession.label>
+	<!-- Distort Spirit-->
+	<Projectile_DistortSpirit.label>искажать дух</Projectile_DistortSpirit.label>
+	<!-- Summon Spirit Animal-->
+	<Projectile_SummonSpiritAnimals.label>вызывать животных-духов</Projectile_SummonSpiritAnimals.label>
+	<!-- Spirit Storm-->
+	<Projectile_SpiritStorm.label>духовная буря</Projectile_SpiritStorm.label>
+	<FlyingObject_SpiritStorm.label>духовная буря</FlyingObject_SpiritStorm.label>
+</LanguageData>

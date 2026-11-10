@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Artifact_Silver.label>Suspensão de mercúrio</TM_Artifact_Silver.label>
+  <TM_Artifact_Silver.description>Um colar encantado com essência de prata. Conhecido como colar de mercúrio, este artefato caro, como dizem, dá maior agilidade ao seu dono.</TM_Artifact_Silver.description>
+
+  <TM_Artifact_Slate.label>Colar de conserto</TM_Artifact_Slate.label>
+  <TM_Artifact_Slate.description>Um colar enfeitado pela essência do xisto. A suspensão para conserto vai lentamente restaurar a durabilidade de todos os equipamentos desgastados.</TM_Artifact_Slate.description>
+
+  <TM_Artifact_Medicine.label>Plano de saúde</TM_Artifact_Medicine.label>
+  <TM_Artifact_Medicine.description>Este amuleto melhora a saúde do hospedeiro, oferecendo maior imunidade a doenças e ajuda os ferimentos a cicatrizarem mais rapidamente.</TM_Artifact_Medicine.description>
+
+  <TM_Artifact_Limestone.label>O colar do Olho do Gato.</TM_Artifact_Limestone.label>
+  <TM_Artifact_Limestone.description>Um colar enfeitado com essência de calcário. O hospedeiro tem uma visão melhorada e pode ser visto no escuro. Este colar emite um brilho suave.</TM_Artifact_Limestone.description>
+
+  <TM_Artifact_Granite.label>Anel de trabalho</TM_Artifact_Granite.label>
+  <TM_Artifact_Granite.description>Um anel enfeitado pela essência do granito. Este anel dá ao portador uma maior capacidade de trabalho e manipulação.</TM_Artifact_Granite.description>
+
+  <TM_Artifact_Marble.label>Colar de proteção mental</TM_Artifact_Marble.label>
+  <TM_Artifact_Marble.description>Um colar enfeitado pela essência do mármore. Este colar melhora o estado mental dos seus portadores e fornece âncora mental. O colar às vezes permite que o seu portador saia dos seus estados mentais.</TM_Artifact_Marble.description>
+
+  <TM_Artifact_Sandstone.label>Refúgio de férias</TM_Artifact_Sandstone.label>
+  <TM_Artifact_Sandstone.description>Um colar enfeitado pela essência do grão de areia. Este colar melhora a qualidade do descanso de seus donos e impede os transeuntes de perturbar seu sono.</TM_Artifact_Sandstone.description>
+
+  <TM_Artifact_Steel.label>Amuleto de proteção</TM_Artifact_Steel.label>
+  <TM_Artifact_Steel.description>Um colar enfeitado pela essência do aço. Este colar melhora mágicamente a proteção dos seus donos.</TM_Artifact_Steel.description>
+
+  <TM_Artifact_Iron.label>Amuleto de pouca proteção</TM_Artifact_Iron.label>
+  <TM_Artifact_Iron.description>Um colar enfeitado pela essência do ferro. Este colar melhora mágicamente a proteção dos seus donos.</TM_Artifact_Iron.description>
+
+  <TM_Artifact_Jade.label>Anel de recuperação secreta</TM_Artifact_Jade.label>
+  <TM_Artifact_Jade.description>Um anel encantado pela essência de jade. Este anel aumenta a velocidade de recuperação do dono da fraqueza secreta.</TM_Artifact_Jade.description>
+
+  <TM_Artifact_Gold.label>Anel de Poder</TM_Artifact_Gold.label>
+  <TM_Artifact_Gold.description>Um anel enfeitado pela essência do ouro. Este anel aumenta a capacidade de negociação de quem o usa.</TM_Artifact_Gold.description>
+
+  <TM_Artifact_Magicyte.label>Anel de conhecimento</TM_Artifact_Magicyte.label>
+  <TM_Artifact_Magicyte.description>Um anel enfeitado por uma entidade magicita. Este anel melhora a velocidade de aprendizagem.</TM_Artifact_Magicyte.description>
+
+  <TM_Artifact_Wood.label>Anel de rastreador</TM_Artifact_Wood.label>
+  <TM_Artifact_Wood.description>Um anel enfeitado com essência de madeira. O dono deste anel não será abrandado pelo terreno e melhorou a produção de comida enquanto estava na caravana.</TM_Artifact_Wood.description>
+
+
+  <!-- Craftable Artifacts -->
+
+  <TM_Artifact_BracersOfThePacifist.label>Algemas pacifistas</TM_Artifact_BracersOfThePacifist.label>
+  <TM_Artifact_BracersOfThePacifist.description>Estas algemas não parecem ser mais do que um tecido fino enrolado na pele, mas a sua aparência nada notável é contrariada por uma força maravilhosa. Este objecto só pode ser usado por um pacifista.
+
+Magia:
+Energia máxima + 40%
+Energia de Regeneração + 40%
+Resistência secreta + 50%
+Recuperação secreta - reduz o tempo de recuperação de fraqueza secreta</TM_Artifact_BracersOfThePacifist.description>
+
+  <TM_Artifact_BracersOfDefense.label>Algemas de proteção</TM_Artifact_BracersOfDefense.label>
+  <TM_Artifact_BracersOfDefense.description>As algemas são feitas com material temperado que permite ao proprietário bloquear os ataques físicos. Há 40% de probabilidade de bloqueio.
+
+Magia:
+Resistência secreta 10%</TM_Artifact_BracersOfDefense.description>
+
+  <TM_Artifact_BracersOfDeflection.label>Algemas e desvios</TM_Artifact_BracersOfDeflection.label>
+  <TM_Artifact_BracersOfDeflection.description>As algemas são feitas com material que permite ao proprietário bloquear os ataques e desviar os projéteis. A chance de bloqueio é de 30%, todos os ataques bloqueados refletem dentro de oito células.
+
+Magia:
+Resistência secreta 10%</TM_Artifact_BracersOfDeflection.description>
+
+  <TM_Artifact_RingOfKeenIntellect.label>Anel de mente afiada</TM_Artifact_RingOfKeenIntellect.label>
+  <TM_Artifact_RingOfKeenIntellect.description>Um anel que expande a mente e aumenta a intensidade mental, mas aumenta a tensão mental.
+
+Magia:
+Crescimento XP + 25%</TM_Artifact_RingOfKeenIntellect.description>
+
+  <TM_Artifact_RingOfBlood.label>Anel de sangue</TM_Artifact_RingOfBlood.label>
+  <TM_Artifact_RingOfBlood.description>Anel com inserção de pedra escura; os fluxos de vermelho escuro e preto rondam sob sua superfície. Este tipo de anel foi criado pela primeira vez por um vampiro antigo para aumentar as reservas de sangue e pode ser usado por um mágico do sangue para armazenar magia sanguínea.
+
+A força do anel sanguíneo depende da fama do seu hospedeiro e vai crescer com cada homem morto ou derrotado.</TM_Artifact_RingOfBlood.description>
+
+  <TM_Artifact_RingOfEternalBlue.label>Anel do Brilho Eterno</TM_Artifact_RingOfEternalBlue.label>
+  <TM_Artifact_RingOfEternalBlue.description>Um anel que parece pulsar com uma luz azul suave. Este anel aumenta a sensibilidade mental e responde com reciprocidade à sensibilidade mental do seu hospedeiro.
+
+O anel de brilho eterno vai aumentar a energia dos psicônicos proporcionalmente à sua sensibilidade mental.</TM_Artifact_RingOfEternalBlue.description>
+
+  <TM_Artifact_RingOfMalice.label>Anel de maldade</TM_Artifact_RingOfMalice.label>
+  <TM_Artifact_RingOfMalice.description>Este anel emite uma aura escura e faz frio no toque. O anel de maldade aumenta a soltura e os níveis máximos de ódio do cavaleiro da morte.
+
+A força de um anel de maldade depende da fama do seu hospedeiro e vai crescer a cada ferimento sofrido ou causado.</TM_Artifact_RingOfMalice.description>
+
+  <TM_Artifact_OrbOfConviction.label>Bola de Convicção</TM_Artifact_OrbOfConviction.label>
+  <TM_Artifact_OrbOfConviction.description>Também conhecido como um traidor, uma bola de loucura e um ladrão de mente-bola de crença é um artefato poderoso e perigoso. Quando ele está cheio de convicção e magia do feitiço, ele pode ser usado para pressionar essa convicção do outro.
+
+Se for bem sucedido, o alvo se juntará imediatamente à facção de feitiços, mas estará sujeito a choques mentais.
+
+Só os mágicos mais poderosos podem controlar o poder deste artefacto, mas mesmo assim, ele será muito caro. A bola vai explodir assim que o feitiço for lançado, e só pode ser usado uma vez.</TM_Artifact_OrbOfConviction.description>
+
+  <TM_Artifact_OrbOfSouls.label>Bola de alma (vazia)</TM_Artifact_OrbOfSouls.label>
+  <TM_Artifact_OrbOfSouls.description>A bola da alma é um artefacto poderoso e perigoso. Ele não requer nenhum poder externo e pode extrair a alma de um peão com traços de caráter.
+
+Se a esfera das almas for bem sucedida, absorverá todos os traços do objeto; o objeto vai perder os traços absorvidos. Este processo é quase sempre fatal.
+
+Uma vez preenchida, a esfera das almas pode ser usada para transferir traços absorvidos para outro peão humano.</TM_Artifact_OrbOfSouls.description>
+
+  <TM_Artifact_OrbOfSouls_Full.label>Bola de alma (preenchida)</TM_Artifact_OrbOfSouls_Full.label>
+  <TM_Artifact_OrbOfSouls_Full.description>A bola da alma é um artefacto poderoso e perigoso. Esta bola absorveu os traços e pode ser usada para colocar estes traços no peão humano.
+
+Os traços conflitantes nunca vão para o peão alvo. Se o peão tiver mais de 7 sinais, há 75% de probabilidade de que um sinal acidental e existente seja substituído por um sinal que está sendo introduzido.
+
+A bola explodirá e será destruída assim que os traços forem libertados.</TM_Artifact_OrbOfSouls_Full.description>
+
+  <TM_Artifact_OrbOfEternal.label>Esfera do Eterno</TM_Artifact_OrbOfEternal.label>
+  <TM_Artifact_OrbOfEternal.description>Utilização única da injeção de energia mágica preparada para curar feridas, reparar membros e tratar doenças. A energia de cura será apontada e tratará do único estado de saúde pior que afeta alguém a qualquer momento.
+
+As esferas do Eterno foram usadas por mágicos, governantes e elites para prolongar a vida. Estas bolas são preciosas e raras principalmente devido ao segredo que rodeia o processo de criação da bola.</TM_Artifact_OrbOfEternal.description>
+  <TM_Artifact_OrbOfEternal.comps.1.useLabel>Use a bola eterna</TM_Artifact_OrbOfEternal.comps.1.useLabel>
+
+  <TM_Artifact_NecroticOrb.label>Bola Necrótica</TM_Artifact_NecroticOrb.label>
+  <TM_Artifact_NecroticOrb.description>Um artefato capaz de conter a energia necrótica necessária para manter a vida do não vivo. A bola necrótica funciona quase como uma bateria; Quando está equipado com um peão, ele absorve a energia do necromante, como se fosse um homem não vivo. Quando o necromante não recebe energia, ele dispersa-a para manter a vida viva.
+
+Apenas uma bola pode ser equipada com um peão. As bolas só entram em vigor quando estão equipadas.</TM_Artifact_NecroticOrb.description>
+
+
+</LanguageData>

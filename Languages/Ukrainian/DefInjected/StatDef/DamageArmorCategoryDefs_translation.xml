@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Armor Ratings -->
+
+  <ArmorRating_Alignment.label>Броня - Гармонія</ArmorRating_Alignment.label>
+  <ArmorRating_Alignment.description>Захист від атак магії світла, темряви і смерті.</ArmorRating_Alignment.description>
+
+  <StuffPower_Armor_Harmony.label>Броня - Гармонія</StuffPower_Armor_Harmony.label>
+  <StuffPower_Armor_Harmony.description>Захист від атак магії світла, темряви і смерті.</StuffPower_Armor_Harmony.description>
+
+
+</LanguageData>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Summon Minion Start -->
+
+  <TM_SummonMinion.label>Chamar Minion</TM_SummonMinion.label>
+  <TM_SummonMinion.description>Chame os Minions para ajudar nas tarefas diárias.</TM_SummonMinion.description>
+
+  <TM_DismissMinion.label>Soltar o Minion</TM_DismissMinion.label>
+  <TM_DismissMinion.description>Libertar o Minion chamado.</TM_DismissMinion.description>
+
+
+  <!-- Summon pylon Start -->
+
+  <TM_SummonPylon.label>Chamar pilão de proteção</TM_SummonPylon.label>
+  <TM_SummonPylon.description>Provoca e demonstra energia mágica para formar uma torre de proteção automática que está ligada à localização física. A torre dirige a corrente secreta para um ponto focal que emite picos de energia crua. Quando o cabo que mantém a torre no mundo físico se dissipar, a torre se dissolverá inofensivamente para a energia mágica. Se a torre for destruída, este evento pode ser mais devastador.</TM_SummonPylon.description>
+
+
+  <!-- Summon explosive Start -->
+
+  <TM_SummonExplosive.label>Chamar mina</TM_SummonExplosive.label>
+  <TM_SummonExplosive.description>Cria uma mina de maná comprimida, crua e a liga ao local físico. A mina vai dissolver-se inofensivamente se o cabo não tiver energia que retém a mina.</TM_SummonExplosive.description>
+
+
+  <!-- Summon Elemental Start -->
+
+  <TM_SummonElemental.label>O Apelo do Básico</TM_SummonElemental.label>
+  <TM_SummonElemental.description>Evoca um elemento tremendo do plano de poder para destruir os vossos inimigos. Estes seres protegerão o local e lutarão imediatamente contra o inimigo se ele estiver por perto. No entanto, se não há inimigos, eles começam a sentir falta rapidamente e vão vaiar a sua posição provocada. Eles não vão fazer coisas como «levar» ou «limpar», porque é trabalho de seres inferiores. Graças à força do apelo, o básico só pode existir neste reino por um curto período de tempo. O tipo de elemento é aleatório.</TM_SummonElemental.description>
+
+
+  <!-- Summon Poppi Start -->
+
+  <TM_SummonPoppi.label>Chamar Poppy</TM_SummonPoppi.label>
+  <TM_SummonPoppi.description>Chamem o bando de Poppy maléficos para fora da porta da loucura. Este bando de Poppy é raivoso e vai ser ganancioso para as fileiras inimigas.</TM_SummonPoppi.description>
+
+
+</LanguageData>

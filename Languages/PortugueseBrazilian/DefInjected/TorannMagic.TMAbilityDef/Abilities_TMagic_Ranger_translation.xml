@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Ranger training -->
+
+  <TM_RangerTraining.label>Treinamento do Ranger</TM_RangerTraining.label>
+  <TM_RangerTraining.description>Treino de Ranger. Cada nível vai aumentar a característica do Ranger para refletir a habilidade do Ranger.
+
+Rangi:
+Guarda florestal: Velocidade + 0,15 para/segundo, atraso na mira -15%, Aumento da imunidade + 20%, Komf. temperatura +\- 10ºC, sensibilidade a toxinas -10%
+Adestramento e treinamento animal + 5%, velocidade de corte de carne + 5%, velocidade de natação e construção -10%
+
+Caçador: Velocidade + 0.2 para/segundo, atraso na mira -20%, Aumento da imunidade + 25%, Komf. temperatura +\-15C., sensibilidade a toxinas -15%
+Adestramento e treinamento animal + 8%, velocidade de corte de carne + 10%, velocidade de natação e construção -15%
+
+Batedor: Velocidade + 0.25 para/segundo, atraso na mira -30%, aumento da imunidade + 30%, Komf. temperatura +\-18C., sensibilidade a toxinas -20%
+Adestramento e treinamento animal + 10%, velocidade de corte de carne + 15%, velocidade de natação e construção -18%
+
+Ranger: Velocidade + 0.3 para/segundo, atraso na mira -40%, Aumento da imunidade + 35%, Komf. temperatura +\-25C., sensibilidade a toxinas -25%
+Adestramento e treinamento animal + 12%, velocidade de corte de carne + 20%, velocidade de natação e construção -20%</TM_RangerTraining.description>
+
+
+  <!-- Bow Training -->
+
+  <TM_BowTraining.label>Treino com cebola</TM_BowTraining.label>
+  <TM_BowTraining.description>Um treino que aumenta os danos e a precisão no uso de cebolas.
+
+Nível 0: Audição e visão + 20%, + 20% danos com cebola
+Nível 1: Audição e visão + 40%, + 40% danos com cebola
+Nível 2: Audição e visão + 60%, Respiração + 15%, + 60% danos com cebola
+Nível 3: Audição e visão + 80%, Respiração + 25%, Filtragem do sangue + 10%, + 80% danos com cebola</TM_BowTraining.description>
+
+
+  <!-- Poison Trap -->
+
+  <TM_PoisonTrap.label>Armadilha venenosa</TM_PoisonTrap.label>
+  <TM_PoisonTrap.description>O Ranger usa uma dose de veneno druidiano para armar uma armadilha de madeira. As armadilhas duram indefinidamente, mas o Ranger só pode virar um número limitado de uma vez só.
+
+Os inimigos venenos receberão um ou oito ferimentos de veneno a cada 0,66 segundo. Os danos venenosos também têm um efeito desacelerador. As armadilhas nunca funcionarão por causa dos animais.</TM_PoisonTrap.description>
+
+
+  <!-- Animal Friend -->
+
+  <TM_AnimalFriend.label>Conexão com Animais</TM_AnimalFriend.label>
+  <TM_AnimalFriend.description>Em casa, na vida selvagem, o Ranger pode ligar-se a seres selvagens.
+
+Os Rangers são capazes de formar apenas uma ligação, e manter essa ligação reduz a resistência máxima do Ranger em 30; A criação de uma nova ligação rompe a ligação existente e provavelmente obrigará o animal a sair para sempre.
+
+O aumento da capacidade física refere-se apenas aos animais relacionados, por sua vez, o animal associado ajudará o Ranger em qualquer qualidade que possa.
+A ligação pode ser removida usando essa capacidade em uma entidade ligada.</TM_AnimalFriend.description>
+
+
+  <!-- Arrow storm -->
+
+  <TM_ArrowStorm.label>Granizo de flechas</TM_ArrowStorm.label>
+  <TM_ArrowStorm.description>Disparem flechas contra o alvo.
+Alcance: 32</TM_ArrowStorm.description>
+
+  <TM_ArrowStorm_I.label>Granizo de flechas (I)</TM_ArrowStorm_I.label>
+  <TM_ArrowStorm_I.description>Disparem flechas contra o alvo.
+Alcance: 34</TM_ArrowStorm_I.description>
+
+  <TM_ArrowStorm_II.label>Granizo de flechas (II)</TM_ArrowStorm_II.label>
+  <TM_ArrowStorm_II.description>Disparem 7 flechas contra o alvo.
+Alcance: 36</TM_ArrowStorm_II.description>
+
+  <TM_ArrowStorm_III.label>Granizo de flechas (III)</TM_ArrowStorm_III.label>
+  <TM_ArrowStorm_III.description>Disparem flechas contra o alvo.
+Alcance: 38</TM_ArrowStorm_III.description>
+
+
+  <!-- Дальностьr training -->
+
+</LanguageData>

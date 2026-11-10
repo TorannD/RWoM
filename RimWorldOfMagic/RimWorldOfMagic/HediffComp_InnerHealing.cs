@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using System.Collections.Generic;
 using System;
@@ -43,6 +43,12 @@ namespace TorannMagic
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
+            var origin = parent.TryGetComp<ClassProgression.HediffComp_HostedStance>();
+            if (origin?.Projected == true)
+            {
+                if (!origin.BeginPulse()) return;
+                comp = origin.TrainingOwner;
+            }
             bool flag = base.Pawn != null;
             if (flag)
             {

@@ -1,0 +1,13 @@
+<LanguageData><!-- Soothe start-->
+	<Buff_Soothe.label>Успокаивающий Ветерок</Buff_Soothe.label>
+	<!-- FrostRay-->
+	<Laser_FrostRay.label>Морозный луч</Laser_FrostRay.label>
+	<!-- Snowball-->
+	<Projectile_Snowball.label>снежный шар</Projectile_Snowball.label>
+	<!-- Icebolt-->
+	<Projectile_Icebolt.label>ледяной болт</Projectile_Icebolt.label>
+	<!-- Rainmaker Start-->
+	<Projectile_Rainmaker.label>Создатель дождя</Projectile_Rainmaker.label>
+	<!-- Blizzard-->
+	<Projectile_Blizzard.label>Метель</Projectile_Blizzard.label>
+</LanguageData>

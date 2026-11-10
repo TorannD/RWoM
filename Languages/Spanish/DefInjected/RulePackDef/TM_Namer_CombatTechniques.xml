@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.0>title-&gt;[titleBasic]</TM_Namer_CombatTechniques.rulePack.rulesStrings.0>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.1>title(p=2)-&gt;[titleAuthored]</TM_Namer_CombatTechniques.rulePack.rulesStrings.1>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.2>title(p=2)-&gt;[titleAuthoredNoSubject]</TM_Namer_CombatTechniques.rulePack.rulesStrings.2>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.3>title(length_subject_primary[less_than]20,p=4)-&gt;[titleAuthoredOneSubject]</TM_Namer_CombatTechniques.rulePack.rulesStrings.3>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.4>title(length_subject_primary[less_than]20,has_subject_secondary==true,length_subject_secondary[less_than]20,p=4)-&gt;[titleBasicTwoSubjects]</TM_Namer_CombatTechniques.rulePack.rulesStrings.4>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.5>title(length_subject_primary[less_than]20,has_subject_secondary==true,length_subject_secondary[less_than]20,p=4)-&gt;[titleAuthoredTwoSubjects]</TM_Namer_CombatTechniques.rulePack.rulesStrings.5>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.6>titleBasic(p=6)-&gt;[TM_randTopic_Might] [TM_randAdjective_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.6>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.7>titleBasic(p=6)-&gt;[TM_randNoun_Might] de [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.7>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.8>titleBasic-&gt;Lecciones sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.8>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.9>titleBasic-&gt;[TM_teachingType] de un guerrero sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.9>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.10>titleBasic-&gt;Maestría en [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.10>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.11>titleBasic-&gt;El arte marcial de [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.11>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.12>titleBasic-&gt;Técnicas avanzadas de [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.12>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.13>titleBasic-&gt;Desbloqueando el poder de [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.13>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.14>titleBasic-&gt;[TM_teachingType] práctico sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.14>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.15>titleBasic-&gt;El camino de [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.15>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.16>titleBasic-&gt;Perspectivas sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.16>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.17>titleBasic-&gt;Desentrañando [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.17>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.18>titleBasic-&gt;Secretos de [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.18>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.19>titleBasic-&gt;Dominando [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.19>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.20>titleBasic-&gt;[TM_teachingType] de héroe sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.20>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.21>titleBasic-&gt;[TM_teachingType] de señor de la guerra sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.21>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.22>titleBasic-&gt;[TM_teachingType] de guerrero sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.22>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.23>titleBasic-&gt;[TM_teachingType] de luchador sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.23>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.24>titleBasic-&gt;[TM_teachingType] antiguo sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.24>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.25>titleBasic-&gt;[TM_teachingType] de [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.25>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.26>titleBasic-&gt;Teorías antiguas sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.26>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.27>titleBasic-&gt;Estudios de guerrero sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.27>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.28>titleBasic-&gt;El [TM_teachingType] de los luchadores sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.28>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.29>titleBasic-&gt;Las técnicas ocultas de [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.29>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.30>titleBasic-&gt;Las técnicas prohibidas de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.30>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.31>titleBasic-&gt;La supervivencia de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.31>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.32>titleBasic-&gt;El [TM_teachingType] de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.32>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.33>titleBasic-&gt;Convirtiéndose en [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.33>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.34>titleAuthoredNoSubject-&gt;Batallas de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.34>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.35>titleAuthoredNoSubject-&gt;Batallas [TM_randAdjective_Might] de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.35>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.36>titleAuthoredNoSubject-&gt;Estrategias de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.36>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.37>titleAuthoredNoSubject-&gt;El legado de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.37>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.38>titleAuthoredNoSubject-&gt;El [TM_teachingType] [TM_randAdjective_Might] de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.38>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.39>titleAuthoredNoSubject-&gt;El [TM_teachingType] de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.39>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.40>titleAuthoredNoSubject-&gt;El [TM_teachingType] de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.40>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.41>titleAuthoredNoSubject-&gt;El [TM_teachingType] marcial de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.41>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.42>titleAuthoredNoSubject-&gt;El legado de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.42>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.43>titleAuthoredNoSubject-&gt;Las crónicas de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.43>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.44>titleAuthoredNoSubject-&gt;Los secretos de [ANYPAWN_nameIndef]</TM_Namer_CombatTechniques.rulePack.rulesStrings.44>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.45>titleAuthoredOneSubject-&gt;Perspectivas de [ANYPAWN_nameIndef] sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.45>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.46>titleAuthoredOneSubject-&gt;El [TM_bteachingType] de [ANYPAWN_nameIndef] sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.46>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.47>titleAuthoredOneSubject-&gt;El [TM_teachingType] [TM_randAdjective_Might] de [ANYPAWN_nameIndef] sobre [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.47>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.48>titleAuthoredOneSubject-&gt;[ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.48>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.49>titleAuthoredOneSubject-&gt;El [TM_teachingType] de [ANYPAWN_nameIndef] para [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.49>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.50>titleAuthoredOneSubject-&gt;Perspectivas de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.50>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.51>titleAuthoredOneSubject-&gt;Puntos de vista de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.51>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.52>titleAuthoredOneSubject-&gt;Análisis de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.52>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.53>titleAuthoredOneSubject-&gt;El enfoque de [ANYPAWN_nameIndef] hacia [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.53>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.54>titleAuthoredOneSubject-&gt;Descubrimientos de [ANYPAWN_nameIndef] en [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.54>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.55>titleAuthoredOneSubject-&gt;Reflexiones de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.55>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.56>titleAuthoredOneSubject-&gt;Estudio de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.56>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.57>titleAuthoredOneSubject-&gt;Investigación de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.57>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.58>titleAuthoredOneSubject-&gt;Investigación científica de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.58>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.59>titleAuthoredOneSubject-&gt;El [TM_teachingType] de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.59>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.60>titleAuthoredOneSubject-&gt;El [TM_teachingType] [TM_randAdjective_Might] de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.60>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.61>titleBasicTwoSubjects-&gt;[subjectsTuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.61>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.62>titleBasicTwoSubjects-&gt;Lecciones sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.62>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.63>titleBasicTwoSubjects-&gt;Controlando [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.63>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.64>titleBasicTwoSubjects-&gt;Guía de guerrero para [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.64>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.65>titleBasicTwoSubjects-&gt;Maestría en [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.65>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.66>titleBasicTwoSubjects-&gt;El arte marcial de [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.66>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.67>titleBasicTwoSubjects-&gt;Técnicas avanzadas en [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.67>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.68>titleBasicTwoSubjects-&gt;Desbloqueando el poder de [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.68>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.69>titleBasicTwoSubjects-&gt;Guía práctica para [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.69>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.70>titleBasicTwoSubjects-&gt;Explorando [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.70>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.71>titleBasicTwoSubjects-&gt;Comprendiendo [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.71>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.72>titleBasicTwoSubjects-&gt;Un viaje a través de [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.72>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.73>titleBasicTwoSubjects-&gt;El camino de [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.73>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.74>titleBasicTwoSubjects-&gt;Perspectivas sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.74>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.75>titleBasicTwoSubjects-&gt;Desentrañando [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.75>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.76>titleBasicTwoSubjects-&gt;Secretos de [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.76>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.77>titleBasicTwoSubjects-&gt;Dominando [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.77>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.78>titleBasicTwoSubjects-&gt;Tratado de guerrero sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.78>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.79>titleBasicTwoSubjects-&gt;Tomo de luchador sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.79>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.80>titleBasicTwoSubjects-&gt;Teorías antiguas sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.80>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.81>titleBasicTwoSubjects-&gt;Estudios de guerrero sobre [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.81>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.82>titleBasicTwoSubjects-&gt;El [subject_tuple] de los luchadores</TM_Namer_CombatTechniques.rulePack.rulesStrings.82>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.83>titleBasicTwoSubjects-&gt;Los secretos ocultos de [subject_tuple]</TM_Namer_CombatTechniques.rulePack.rulesStrings.83>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.84>subjectsTuple(has_subject_secondary==true,p=6)-&gt;[TM_randTopic_Might] y [TM_randTopic_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.84>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.85>subjectsTuple-&gt;[TM_randTopic_Might], [TM_randTopic_Might] y [TM_randTheme_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.85>
+  <TM_Namer_CombatTechniques.rulePack.rulesStrings.86>subjectsTuple-&gt;[TM_randTopic_Might] y [TM_randTheme_Might]</TM_Namer_CombatTechniques.rulePack.rulesStrings.86>
+</LanguageData>

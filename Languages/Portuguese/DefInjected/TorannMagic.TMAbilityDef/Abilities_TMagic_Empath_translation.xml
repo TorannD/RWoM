@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Empathy -->
+
+  <TM_Empathy.label>Empatia</TM_Empathy.label>
+  <TM_Empathy.description>A empatia tem a capacidade de experimentar as emoções dos outros, refletir suas emoções para compreender melhor os sentimentos dos outros ou transmitir suas próprias emoções. Estas habilidades congênitas foram reforçadas pela força secreta que aumenta o efeito da empatia. Os peões que estiverem perto da empatia, de vez em quando, experimentarão emoções decrescentes de empatias, tanto boas como ruins. Quanto mais emoções boas tiverem, maior a probabilidade de que os peões mais próximos tenham sentimentos empáticos positivos. Possuir poderes empáticos pode torná-lo um instrumento eficaz para controlar o humor, mas uma empatia pouco preparada e estressante pode causar desespero a uma colônia inteira.</TM_Empathy.description>
+
+
+  <!-- MindKiller -->
+
+  <TM_MindKiller.label>Assassino da mente</TM_MindKiller.label>
+  <TM_MindKiller.description>Faz um grito empático que enche de emoção todos os peões mais próximos. As reações podem ser diferentes, mas a maioria dos organismos vivos são difíceis de lidar com o estranho aumento de emoções. Pode fazer com que os peões hostis fiquem furiosos. Quanto maior o estado de espírito do peão atingido, mais energia emocional é liberada. Se não estiver preparado, essa habilidade pode afetar os aliados mais próximos.</TM_MindKiller.description>
+
+
+  <!-- Suppressive Aura -->
+
+  <TM_SuppressiveAura.label>Aura esmagadora</TM_SuppressiveAura.label>
+  <TM_SuppressiveAura.description>Cria uma aura em torno da empatia que suprime as emoções dos outros peões, permitindo que eles sintam apenas o que a empatia quer que eles sintam. Através do treino, a empatia pode permitir emoções positivas e suprimir emoções negativas. Os efeitos secundários da aura podem causar a transferência de emoção da empatia. Os peões deprimidos emocionalmente não terão problemas mentais.</TM_SuppressiveAura.description>
+
+
+  <!-- Harvest Passion -->
+
+  <TM_HarvestPassion.label>Paixão pela Colheita</TM_HarvestPassion.label>
+  <TM_HarvestPassion.description>Tentar roubar a paixão pelo trabalho do peão alvo. O feitiço deve sacrificar a inspiração ativa para ativar esta capacidade. Assim que toda a alegria é retirada do peão alvo, o efeito tenta transmitir a paixão ao feitiço. A alegria do feitiço também é desperdiçada com cada iteração. Se a paixão não for transmitida para o feitiço antes que a sua alegria se esgote, a capacidade acaba. Tanto o feitiço como o alvo terão ferimentos chocantes enquanto o efeito estiver ativo. A paixão montada é sempre casual.</TM_HarvestPassion.description>
+
+
+  <!-- Incite Passion -->
+
+  <TM_IncitePassion.label>Incitar Paixão</TM_IncitePassion.label>
+  <TM_IncitePassion.description>Leva a paixão pelo trabalho do feitiço para o alvo. Essa capacidade é sempre um sucesso. Essa capacidade não pode ser usada por escravos. A paixão sofrida é sempre aleatória.</TM_IncitePassion.description>
+
+
+  <!-- Symbiosis -->
+
+  <TM_Symbiosis.label>Simbiose</TM_Symbiosis.label>
+  <TM_Symbiosis.description>Põe o destino da empatia no alvo. O empate entrará num estado mentalmente devastado, incapaz de controlar o seu próprio corpo, porque projeta a sua vontade para aumentar a vontade do peão alvo. A empata continuará a apoiar qualquer efeito ou aura anterior. O alvo vai ganhar em troca resistência emocional e força mental. O simbiote pode sofrer os efeitos físicos dos ferimentos sofridos pelo seu dono. Se o hospedeiro morrer, enquanto a empatia é um simbiota, a empata também morre. A simbiose só vai acabar quando a empatia acabar.</TM_Symbiosis.description>
+
+
+  <!-- Faded Emotions -->
+
+  <TM_FadeEmotions.label>Emoções desaparecem</TM_FadeEmotions.label>
+  <TM_FadeEmotions.description>Reduz o humor da empatia e os objetivos para livrar o alvo de memórias negativas. Após a primeira memória, cada memória negativa adicional vai consumir 30% da meta remota. O efeito termina quando o alvo ainda tem menos de 30 atitudes ou nenhuma lembrança negativa. A primeira memória consome sempre 30% do alvo. Esta capacidade não afeta os modificadores de humor da situação.</TM_FadeEmotions.description>
+
+
+</LanguageData>

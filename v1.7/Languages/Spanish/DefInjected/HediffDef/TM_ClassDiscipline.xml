@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ClassDiscipline.label>disciplina de clase</TM_ClassDiscipline.label>
+  <TM_ClassDiscipline.description>Una disciplina en la que se ha completado la iniciación. Su progreso se guarda en los datos del personaje; esta entrada de salud lo muestra.</TM_ClassDiscipline.description>
+</LanguageData>

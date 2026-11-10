@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- STONE GOLEM -->
+
+  <TM_GolemSmash.label>volume</TM_GolemSmash.label>
+
+
+  <!-- HOLLOW GOLEM -->
+
+  <TM_DecayTouch.label>toque de desintegração</TM_DecayTouch.label>
+  <TM_NullCleave.label>fragmentação zero</TM_NullCleave.label>
+
+
+</LanguageData>

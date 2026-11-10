@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Raise Undead -->
+
+  <Projectile_RaiseUndead.label>Levantar sem vida</Projectile_RaiseUndead.label>
+
+
+  <!-- death mark -->
+
+  <Projectile_DeathMark.label>Marca de morte</Projectile_DeathMark.label>
+
+
+  <!-- fog of torment -->
+
+  <Projectile_FogOfTorment.label>nevoeiro de angústia</Projectile_FogOfTorment.label>
+
+
+  <!-- consume corpse -->
+
+  <Projectile_ConsumeCorpse.label>consumir um cadáver</Projectile_ConsumeCorpse.label>
+  <Projectile_ConsumeCorpse_Mass.label>consume corpse: mass</Projectile_ConsumeCorpse_Mass.label>
+
+
+  <!-- corpse explosion -->
+
+  <Projectile_CorpseExplosion.label>explosão de cadáver</Projectile_CorpseExplosion.label>
+
+
+  <!-- Death Bolt -->
+
+  <Projectile_DeathBolt.label>parafuso mortal</Projectile_DeathBolt.label>
+  <Projectile_DeathBolt_I.label>parafuso mortal</Projectile_DeathBolt_I.label>
+  <Projectile_DeathBolt_II.label>parafuso mortal</Projectile_DeathBolt_II.label>
+  <Projectile_DeathBolt_III.label>parafuso mortal</Projectile_DeathBolt_III.label>
+  <FlyingObject_DeathBolt.label>explosão</FlyingObject_DeathBolt.label>
+
+
+</LanguageData>

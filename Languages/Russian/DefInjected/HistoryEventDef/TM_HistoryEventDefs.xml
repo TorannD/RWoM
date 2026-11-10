@@ -1,0 +1,12 @@
+<LanguageData><TM_OffensiveMagic.label>оскорбительное или вульгарное использование магии</TM_OffensiveMagic.label>
+  <TM_KilledMage.label>убил мага</TM_KilledMage.label>
+  <TM_KilledFighter.label>убил бойца</TM_KilledFighter.label>
+  <TM_UsedMagic.label>использовал магическую способность</TM_UsedMagic.label>
+  <TM_UsedManeuver.label>использовал боевую способность</TM_UsedManeuver.label>
+  <TM_KilledHumanlike.label>убил кого-то</TM_KilledHumanlike.label>
+  <TM_SeverMagicEvent.label>оторвал мага от магии</TM_SeverMagicEvent.label>
+  <TM_BestowMagicEvent.label>наделен даром магии</TM_BestowMagicEvent.label>
+  <TM_BestowClassEvent.label>вдохновленный магический класс</TM_BestowClassEvent.label>
+
+
+</LanguageData>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SoulStoneOccupiedLabel>{0} ({1})</TM_SoulStoneOccupiedLabel>
+  <TM_SoulStoneContainedSpirit>Заключённая душа: {0}</TM_SoulStoneContainedSpirit>
+  <TM_SoulStoneRecoveryDebt>После внедрения: семь полных дней восстановления в живом носителе до добровольного выхода.</TM_SoulStoneRecoveryDebt>
+  <TM_SoulStoneAbandonWarning>Если оставить камни душ на этой карте, следующие души будут потеряны навсегда: {0}.</TM_SoulStoneAbandonWarning>
+</LanguageData>

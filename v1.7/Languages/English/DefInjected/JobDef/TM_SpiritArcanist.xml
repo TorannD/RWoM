@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBlink.reportString>blinking through a spirit host.</TM_SpiritBlink.reportString>
+  <TM_SpiritBlink_I.reportString>blinking through a spirit host.</TM_SpiritBlink_I.reportString>
+  <TM_SpiritBlink_II.reportString>blinking through a spirit host.</TM_SpiritBlink_II.reportString>
+  <TM_SpiritBlink_III.reportString>blinking through a spirit host.</TM_SpiritBlink_III.reportString>
+  <TM_SpiritSummon.reportString>summoning a target through a spirit host.</TM_SpiritSummon.reportString>
+  <TM_SpiritSummon_I.reportString>summoning a target through a spirit host.</TM_SpiritSummon_I.reportString>
+  <TM_SpiritSummon_II.reportString>summoning a target through a spirit host.</TM_SpiritSummon_II.reportString>
+  <TM_SpiritSummon_III.reportString>summoning a target through a spirit host.</TM_SpiritSummon_III.reportString>
+  <TM_SpiritMagicMissile.reportString>casting magic missiles through a spirit host.</TM_SpiritMagicMissile.reportString>
+  <TM_SpiritMagicMissile_I.reportString>casting magic missiles through a spirit host.</TM_SpiritMagicMissile_I.reportString>
+  <TM_SpiritMagicMissile_II.reportString>casting magic missiles through a spirit host.</TM_SpiritMagicMissile_II.reportString>
+  <TM_SpiritMagicMissile_III.reportString>casting magic missiles through a spirit host.</TM_SpiritMagicMissile_III.reportString>
+  <TM_SpiritTeleport.reportString>opening a transport portal through a spirit host.</TM_SpiritTeleport.reportString>
+  <TM_SpiritFoldReality.reportString>folding reality through a spirit host.</TM_SpiritFoldReality.reportString>
+</LanguageData>

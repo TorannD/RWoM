@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_GladiatorManeuverHD.label>маневрує</TM_GladiatorManeuverHD.label>
+  <TM_LastCircleStance.label>тримає останнє коло</TM_LastCircleStance.label>
+  <TM_GladiatorManeuverHD.description>Гладіатор ненадовго пришвидшується.</TM_GladiatorManeuverHD.description>
+  <TM_LastCircleStance.description>Гладіатор рухається повільніше, поки утримує останнє коло.</TM_LastCircleStance.description>
+</LanguageData>

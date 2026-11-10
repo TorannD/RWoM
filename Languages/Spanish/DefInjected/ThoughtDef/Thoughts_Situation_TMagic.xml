@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Thought_EnchantedAura.stages.charming.label>cautivador</Thought_EnchantedAura.stages.charming.label>
+  
+  <Thought_EnchantedAura.stages.charming.description>Tiene una presencia cautivadora.</Thought_EnchantedAura.stages.charming.description>
+  
+  <Thought_EnchantedAura.stages.enchanting.label>hechizante</Thought_EnchantedAura.stages.enchanting.label>
+  
+  <Thought_EnchantedAura.stages.enchanting.description>Tiene un aura hechizante.</Thought_EnchantedAura.stages.enchanting.description>
+  
+  <Thought_EnchantedAura.stages.powerful_allure.label>atractivo poderoso</Thought_EnchantedAura.stages.powerful_allure.label>
+  
+  <Thought_EnchantedAura.stages.powerful_allure.description>Tiene un atractivo poderoso.</Thought_EnchantedAura.stages.powerful_allure.description>
+  
+  <Thought_EnchantedAura.stages.positively_glamorous.label>decididamente glamuroso</Thought_EnchantedAura.stages.positively_glamorous.label>
+  
+  <Thought_EnchantedAura.stages.positively_glamorous.description>Es absolutamente glamuroso.</Thought_EnchantedAura.stages.positively_glamorous.description>
+  
+  
+  <Thought_EnchantedBody.stages.third_arm.label>tercer brazo</Thought_EnchantedBody.stages.third_arm.label>
+  
+  <Thought_EnchantedBody.stages.third_arm.description>Tiene un tercer brazo... es incómodo de mirar y antinatural.</Thought_EnchantedBody.stages.third_arm.description>
+  
+  <Thought_EnchantedBody.stages.four_arms.label>cuatro brazos</Thought_EnchantedBody.stages.four_arms.label>
+  
+  <Thought_EnchantedBody.stages.four_arms.description>No me importa si esos brazos extra son mágicos, es monstruoso.</Thought_EnchantedBody.stages.four_arms.description>
+  
+  <Thought_EnchantedBody.stages.strange_growth.label>crecimiento extraño</Thought_EnchantedBody.stages.strange_growth.label>
+  
+  <Thought_EnchantedBody.stages.strange_growth.description>Es absurdo ponerse a brotar partes del cuerpo extra; parece que ese tercer ojo siempre me está mirando.</Thought_EnchantedBody.stages.strange_growth.description>
+  
+  <Thought_EnchantedBody.stages.mutant.label>mutante</Thought_EnchantedBody.stages.mutant.label>
+  
+  <Thought_EnchantedBody.stages.mutant.description>¿Qué sigue, otra cabeza? Esto ha ido demasiado lejos.</Thought_EnchantedBody.stages.mutant.description>
+  
+  <Thought_EnchantedBody.stages.admiring_transhumanist.label>transhumanista admirador</Thought_EnchantedBody.stages.admiring_transhumanist.label>
+  
+  <Thought_EnchantedBody.stages.admiring_transhumanist.description>Poder transformarte en lo que quieras: ¡qué habilidad increíble!</Thought_EnchantedBody.stages.admiring_transhumanist.description>
+  
+  <Thought_EnchantedBody.stages.hateful_body_purist.label>purista corporal rencoroso</Thought_EnchantedBody.stages.hateful_body_purist.label>
+  
+  <Thought_EnchantedBody.stages.hateful_body_purist.description>Qué monstruo, creo que -eso- es asqueroso.</Thought_EnchantedBody.stages.hateful_body_purist.description>
+  
+  
+  <Thought_ObservedUndead.stages.observed_undead.label>no muerto observado</Thought_ObservedUndead.stages.observed_undead.label>
+  
+  <Thought_ObservedUndead.stages.observed_undead.description>Odio estar junto a los no muertos. No puedo evitar pensar... ¿me pasará eso cuando muera?</Thought_ObservedUndead.stages.observed_undead.description>
+  
+  
+  <Thought_WearingDemonhide.stages.demonhide.label>piel de demonio {0}</Thought_WearingDemonhide.stages.demonhide.label>
+  
+  <Thought_WearingDemonhide.stages.demonhide.description>Llevar prendas hechas con piel de demonio me hace sentir más seguro.</Thought_WearingDemonhide.stages.demonhide.description>
+  
+  <Thought_WearingDemonhide.stages.demonhide_1.label>piel de demonio {0} (+1)</Thought_WearingDemonhide.stages.demonhide_1.label>
+  
+  <Thought_WearingDemonhide.stages.demonhide_1.description>La ropa de piel de demonio es un símbolo de mi estatus de élite.</Thought_WearingDemonhide.stages.demonhide_1.description>
+  
+  <Thought_WearingDemonhide.stages.demonhide_2.label>piel de demonio {0} (+2)</Thought_WearingDemonhide.stages.demonhide_2.label>
+  
+  <Thought_WearingDemonhide.stages.demonhide_2.description>Estoy vestido con la piel de un demonio; mi estatus y mi seguridad están garantizados.</Thought_WearingDemonhide.stages.demonhide_2.description>
+  
+  
+  <TM_FemaleOpinionOfSuccubus.stages.Envious_of_succubus.label>Envidiosa del súcubo</TM_FemaleOpinionOfSuccubus.stages.Envious_of_succubus.label>
+  
+  <TM_FemaleOpinionOfSuccubus.stages.Envious_of_succubus.description>Todos le prestan atención por su aspecto, ¿acaso nada más importa?</TM_FemaleOpinionOfSuccubus.stages.Envious_of_succubus.description>
+  
+  <TM_FemaleOpinionOfSuccubus.stages.Unnatural_beauty.label>Belleza antinatural</TM_FemaleOpinionOfSuccubus.stages.Unnatural_beauty.label>
+  
+  <TM_FemaleOpinionOfSuccubus.stages.Unnatural_beauty.description>Tiene un aire de atractivo que yo nunca tendré... y la odio por eso.</TM_FemaleOpinionOfSuccubus.stages.Unnatural_beauty.description>
+  
+  
+  <TM_HolierThanThou.stages.Selfrighteous_mage.label>Mago santurrón</TM_HolierThanThou.stages.Selfrighteous_mage.label>
+  
+  
+  <TM_Lich.stages.lich.label>lich</TM_Lich.stages.lich.label>
+  
+  
+  <TM_MaleOpinionOfSuccubus.stages.Illusion_of_beauty.label>Ilusión de belleza</TM_MaleOpinionOfSuccubus.stages.Illusion_of_beauty.label>
+  
+  <TM_MaleOpinionOfSuccubus.stages.Illusion_of_beauty.description>La experiencia en las artes del combate revela la mentira en su figura y sus movimientos, pero a veces es más fácil aceptar el engaño.</TM_MaleOpinionOfSuccubus.stages.Illusion_of_beauty.description>
+  
+  <TM_MaleOpinionOfSuccubus.stages.Devilishly_attractive.label>Diabólicamente atractiva</TM_MaleOpinionOfSuccubus.stages.Devilishly_attractive.label>
+  
+  <TM_MaleOpinionOfSuccubus.stages.Devilishly_attractive.description>Sé que usa poderes demoníacos para volverse más atractiva, pero saberlo apenas disminuye el efecto.</TM_MaleOpinionOfSuccubus.stages.Devilishly_attractive.description>
+  
+  <TM_MaleOpinionOfSuccubus.stages.Alluring.label>Seductora</TM_MaleOpinionOfSuccubus.stages.Alluring.label>
+  
+  <TM_MaleOpinionOfSuccubus.stages.Alluring.description>Hay algo en ella que resulta innegable y abrumadoramente atractivo.</TM_MaleOpinionOfSuccubus.stages.Alluring.description>
+  
+  
+  <TM_Necromancer.stages.necromancer.label>nigromante</TM_Necromancer.stages.necromancer.label>
+  
+  
+  <TM_OpinionOfBoundless.stages.boundless_arrogance.label>arrogancia ilimitada</TM_OpinionOfBoundless.stages.boundless_arrogance.label>
+  
+  
+  <TM_Undead.stages.undead.label>no muerto</TM_Undead.stages.undead.label>
+  
+</LanguageData>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Projectile_TM_BitTechLaser.label>micro-laser técnico</Projectile_TM_BitTechLaser.label>
+  <Projectile_TMFragGrenade.label>mini granada de fragmentação</Projectile_TMFragGrenade.label>
+  <Projectile_TMEMPGrenade.label>mini granada de fragmentação</Projectile_TMEMPGrenade.label>
+
+
+  <!-- Techno Turret -->
+
+  <Projectile_TechnoTurret.label>Projétil Mark-IV</Projectile_TechnoTurret.label>
+
+
+  <!-- Techno Weapon -->
+
+  <Bullet_ES_Fire.label>Tiro básico - fogo</Bullet_ES_Fire.label>
+  <Bullet_ES_Ice.label>Tiro básico - gelo</Bullet_ES_Ice.label>
+  <Bullet_ES_Lit.label>Tiro básico - relâmpago</Bullet_ES_Lit.label>
+
+
+  <!-- Sabotage -->
+
+  <Projectile_Sabotage.label>projétil sabotagem</Projectile_Sabotage.label>
+
+
+  <!-- OrbitalStrike -->
+
+  <Projectile_OrbitalStrike.label>ataque orbital</Projectile_OrbitalStrike.label>
+  <Projectile_OrbitalStrike_I.label>ataque orbital</Projectile_OrbitalStrike_I.label>
+  <Projectile_OrbitalStrike_II.label>ataque orbital</Projectile_OrbitalStrike_II.label>
+  <Projectile_OrbitalStrike_III.label>ataque orbital</Projectile_OrbitalStrike_III.label>
+
+  <TM_TechnoWeapon_Base0.label>armas tecnno</TM_TechnoWeapon_Base0.label>
+  <TM_TechnoWeapon_Base0.description>Armas alteradas por um tecnomante</TM_TechnoWeapon_Base0.description>
+  <TM_TechnoWeapon_Base0.tools.0.label>Armas esmagadoras</TM_TechnoWeapon_Base0.tools.0.label>
+
+  <TM_TechnoWeapon_Base1.label>armas tecnno</TM_TechnoWeapon_Base1.label>
+  <TM_TechnoWeapon_Base1.description>Armas alteradas por um tecnomante</TM_TechnoWeapon_Base1.description>
+  <TM_TechnoWeapon_Base1.tools.0.label>Armas esmagadoras</TM_TechnoWeapon_Base1.tools.0.label>
+
+  <TM_TechnoWeapon_Base2.label>armas tecnno</TM_TechnoWeapon_Base2.label>
+  <TM_TechnoWeapon_Base2.description>Armas alteradas por um tecnomante</TM_TechnoWeapon_Base2.description>
+  <TM_TechnoWeapon_Base2.tools.0.label>Armas esmagadoras</TM_TechnoWeapon_Base2.tools.0.label>
+
+  <TM_TechnoWeapon_Base3.label>armas tecnno</TM_TechnoWeapon_Base3.label>
+  <TM_TechnoWeapon_Base3.description>Armas alteradas por um tecnomante</TM_TechnoWeapon_Base3.description>
+  <TM_TechnoWeapon_Base3.tools.0.label>Armas esmagadoras</TM_TechnoWeapon_Base3.tools.0.label>
+
+  <TM_TechnoWeapon_Base4.label>armas tecnno</TM_TechnoWeapon_Base4.label>
+  <TM_TechnoWeapon_Base4.description>Armas alteradas por um tecnomante</TM_TechnoWeapon_Base4.description>
+  <TM_TechnoWeapon_Base4.tools.0.label>Armas esmagadoras</TM_TechnoWeapon_Base4.tools.0.label>
+
+  <TM_TechnoWeapon_Base5.label>armas tecnno</TM_TechnoWeapon_Base5.label>
+  <TM_TechnoWeapon_Base5.description>Armas alteradas por um tecnomante</TM_TechnoWeapon_Base5.description>
+  <TM_TechnoWeapon_Base5.tools.0.label>Armas esmagadoras</TM_TechnoWeapon_Base5.tools.0.label>
+
+  <TM_TechnoWeapon_Base6.label>armas tecnno</TM_TechnoWeapon_Base6.label>
+  <TM_TechnoWeapon_Base6.description>Armas alteradas por um tecnomante</TM_TechnoWeapon_Base6.description>
+  <TM_TechnoWeapon_Base6.tools.0.label>Armas esmagadoras</TM_TechnoWeapon_Base6.tools.0.label>
+
+  <TM_TechnoWeapon_Base7.label>armas tecnno</TM_TechnoWeapon_Base7.label>
+  <TM_TechnoWeapon_Base7.description>Armas alteradas por um tecnomante</TM_TechnoWeapon_Base7.description>
+  <TM_TechnoWeapon_Base7.tools.0.label>Armas esmagadoras</TM_TechnoWeapon_Base7.tools.0.label>
+
+  <TM_TechnoWeapon_Base8.label>armas tecnno</TM_TechnoWeapon_Base8.label>
+  <TM_TechnoWeapon_Base8.description>Armas alteradas por um tecnomante</TM_TechnoWeapon_Base8.description>
+  <TM_TechnoWeapon_Base8.tools.0.label>Armas esmagadoras</TM_TechnoWeapon_Base8.tools.0.label>
+
+  <TM_TechnoWeapon_Base9.label>armas tecnno</TM_TechnoWeapon_Base9.label>
+  <TM_TechnoWeapon_Base9.description>Armas alteradas por um tecnomante</TM_TechnoWeapon_Base9.description>
+  <TM_TechnoWeapon_Base9.tools.0.label>Armas esmagadoras</TM_TechnoWeapon_Base9.tools.0.label>
+
+
+  <!-- техно оружие -->
+
+</LanguageData>

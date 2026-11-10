@@ -1,0 +1,112 @@
+<Patch>
+  <!-- Keep VGE power, extender rules and lifecycle; retain the approved magical core support and radius. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravEngine"]/comps/li[@Class="CompProperties_Breakdownable"]</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="TM_MagicalGravEngine"]/comps</xpath>
+      <value><li Class="CompProperties_Breakdownable" /></value>
+    </nomatch>
+  </Operation>
+<Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravEngine"]/comps</xpath>
+    <value>
+      <li><compClass>VanillaGravshipExpanded.CompAffectedByConstantGravshipFacilityBonus</compClass></li>
+      <li Class="VanillaGravshipExpanded.CompProperties_HeatManager" />
+      <li Class="VanillaGravshipExpanded.CompProperties_GravMaintainable" />
+      <li Class="CompProperties_Power">
+        <compClass>TorannMagic.VGE.CompMagicalGravEnginePower</compClass>
+        <basePowerConsumption>-4800</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li><compClass>VanillaGravshipExpanded.CompMultipleGravEnginesHandler</compClass></li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravEngine"]/statBases</xpath>
+    <value><VGE_MaintenanceSensitivity>3</VGE_MaintenanceSensitivity><VGE_GlobalMaintenanceSensitivity>0</VGE_GlobalMaintenanceSensitivity></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravEngine"]</xpath>
+    <value>
+      <notifyMapRemoved>true</notifyMapRemoved>
+      <placeWorkers><li>VanillaGravshipExpanded.PlaceWorker_OnlySingleGravEngine</li></placeWorkers>
+      <inspectorTabs><li>VanillaGravshipExpanded.ITab_GravshipFuel</li></inspectorTabs>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravEngine"]/researchPrerequisites</xpath>
+    <value><li>StandardGravtech</li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravEngine"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+    <value>
+      <li>VGE_OxygenReclaimer</li><li>VGE_SmallHeatsink</li><li>VGE_LargeHeatsink</li>
+      <li>VGE_GravheatAbsorber</li><li>VGE_GravFieldAmplifier</li><li>VGE_GiantThruster</li>
+      <li>VGE_GunnerSubpersonaCore</li><li MayRequire="Ludeon.RimWorld.Biotech">VGE_OperatorSubpersonaCore</li>
+      <li>VGE_Gravlift</li><li>VGE_GravtechConsole</li><li>VGE_GravshipBlackBox</li>
+      <li>VGE_GiantAstrofuelTank</li><li>VGE_CopilotConsole</li><li>VGE_EngineeringConsole</li>
+      <li>VGE_MaintenanceHub</li><li>VGE_FlightComputer</li><li>VGE_GravshipStructuralBeam</li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravExtender"]/comps/li[@Class="CompProperties_SubstructureFootprint"]/radius</xpath>
+    <value><radius>12.9</radius></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravExtender"]/comps/li[@Class="CompProperties_GravshipFacility"]/statOffsets/SubstructureSupport</xpath>
+    <value><SubstructureSupport>100</SubstructureSupport></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravExtender"]/comps/li[@Class="CompProperties_GravshipFacility"]/maxSimultaneous</xpath>
+    <value><maxSimultaneous>10</maxSimultaneous></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravExtender"]/comps/li[@Class="CompProperties_GravshipFacility"]/maxDistance</xpath>
+    <value><maxDistance>500</maxDistance></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravExtender"]/placeWorkers/li[text()="PlaceWorker_InRangeOfGravEngine"]</xpath>
+    <value><li>VanillaGravshipExpanded.PlaceWorker_InRangeOfGravSource</li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravExtender"]/statBases</xpath>
+    <value><VGE_MaintenanceSensitivity>2</VGE_MaintenanceSensitivity></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="TM_MagicalGravExtender"]/comps</xpath>
+    <value><li Class="VanillaGravshipExpanded.CompProperties_GravMaintainable" /><li Class="CompProperties_Breakdownable" /></value>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>Vanilla Gravship Expanded - Chapter 2</li></mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="TM_MagicalGravEngine"]/comps</xpath>
+          <value>
+            <li Class="VanillaGravshipExpanded2.CompProperties_GravEngineDestruction">
+              <explosionRadius>7.9</explosionRadius><shockwaveRadius>21.9</shockwaveRadius>
+              <substructureDamageRadius>3.9</substructureDamageRadius><gravJunkCountRange>2~5</gravJunkCountRange>
+              <implosionFleck>VGE_Fleck_GravEngineImplosion_Medium</implosionFleck>
+              <shockwaveFleck>VGE_Fleck_GravEngineShockwave_Medium</shockwaveFleck>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="TM_MagicalGravEngine"]/statBases</xpath>
+          <value><VGE_GravshipVisibilityFactor>1</VGE_GravshipVisibilityFactor><VGE_GravshipLaunchVisibilityOffset>0</VGE_GravshipLaunchVisibilityOffset></value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="TM_MagicalGravEngine"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+          <value>
+            <li>VGE_AuxiliaryAstrofuelTank</li><li>VGE_LargeGravshipShieldGenerator</li><li>VGE_EmergencyGenerator</li>
+            <li>VGE_GravlaunchCloaker</li><li>VGE_Warcomputer</li><li>VGE_GravFieldDilutor</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
+
+
+
+

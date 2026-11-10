@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_RechargeMana.label>recarga de grãos</TM_RechargeMana.label>
+
+
+  <TM_RechargeMana.effectDesc>recarregue de 50 a 100 unidades de maná de todos os magos envolvidos.</TM_RechargeMana.effectDesc>
+  <TM_RechargeMana.letterInfoText>Todos os mágicos envolvidos recarregaram-no.</TM_RechargeMana.letterInfoText>
+
+</LanguageData>

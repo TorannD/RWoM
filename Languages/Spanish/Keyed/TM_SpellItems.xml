@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SpellItem_InvalidTarget>Elige un objetivo válido.</TM_SpellItem_InvalidTarget>
+  <TM_SpellItem_OutOfRange>El objetivo está fuera de alcance.</TM_SpellItem_OutOfRange>
+  <TM_SpellItem_NoLineOfSight>No hay línea de visión.</TM_SpellItem_NoLineOfSight>
+  <TM_SpellItem_NoInjuries>No hay heridas que puedan sanar de forma natural.</TM_SpellItem_NoInjuries>
+  <TM_SpellItem_Occupied>El destino está ocupado.</TM_SpellItem_Occupied>
+  <TM_SpellItem_SameCell>Elige otro destino.</TM_SpellItem_SameCell>
+  <TM_SpellItem_HostileTarget>No se puede curar a un objetivo hostil.</TM_SpellItem_HostileTarget>
+  <TM_SpellItem_UndeadTarget>No se puede curar a no muertos ni a mecanoides.</TM_SpellItem_UndeadTarget>
+  <TM_SpellItem_NotHeld>El objeto debe estar en el inventario del usuario o equipado.</TM_SpellItem_NotHeld>
+  <TM_SpellItem_CannotUse>Este personaje no puede usar el objeto.</TM_SpellItem_CannotUse>
+  <TM_SpellItem_Empty>No quedan usos.</TM_SpellItem_Empty>
+  <TM_SpellItem_Cooldown>El objeto está en tiempo de reutilización.</TM_SpellItem_Cooldown>
+  <TM_SpellItem_Busy>Ya se está lanzando un hechizo desde un objeto.</TM_SpellItem_Busy>
+  <TM_SpellItem_Uses>Usos: {0}/{1}</TM_SpellItem_Uses>
+  <TM_SpellItem_CastLabel>{0} {1}</TM_SpellItem_CastLabel>
+  <TM_SpellItem_Description>Lanza el hechizo de potencia fija del objeto. No requiere maná ni aprender el hechizo.</TM_SpellItem_Description>
+  <TM_SpellItem_Casting>lanzando un hechizo con {0}.</TM_SpellItem_Casting>
+  <TM_SpellItem_NoTreatment>No hay ninguna afección adecuada que tratar o el efecto ya está activo.</TM_SpellItem_NoTreatment>
+  <TM_SpellItem_EnterPortal>Entrar en el portal</TM_SpellItem_EnterPortal>
+  <TM_SpellItem_RequiredKnowledge>Debe aprender {0} para fabricar este objeto.</TM_SpellItem_RequiredKnowledge>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BreachSeal.label>Sello de brecha</TM_BreachSeal.label>
+  <TM_BreachSeal.description>Crea hasta tres muros mágicos herméticos en el borde de un área de 3×3 más alejado del núcleo de la nave. Requiere una plataforma propia y suelo intacto. Cada muro tiene 300 puntos de vida y dura un día. Conserva los muros herméticos aliados; no renueva sellos activos. No repara suelos ni techos y no aporta oxígeno. Alcance: 15 casillas. Preparación: 1 segundo. Recarga: 60 segundos. Coste antes de eficiencia: 30% de maná.</TM_BreachSeal.description>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperObserve>观察：威胁 {0}/10，区域 {1}/10</TM_SniperObserve>
+  <TM_SniperChooseShot>选择射击技巧</TM_SniperChooseShot>
+  <TM_SniperPickHeadshot>爆头：经典要害射击（永久）</TM_SniperPickHeadshot>
+  <TM_SniperPickAimed>瞄准射击：一发普通子弹，110/125/140%武器伤害（永久）</TM_SniperPickAimed>
+  <TM_SniperReconHint>在原位观察3秒。辨认10名不同敌人，或侦察10个可见区域。目标距离应为12至35格。</TM_SniperReconHint>
+  <TM_SniperTrainRank>消耗1点武技点数提升一阶。</TM_SniperTrainRank>
+</LanguageData>

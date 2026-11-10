@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_LesserElemental_Lifestage.label>Pequeno básico</TM_LesserElemental_Lifestage.label>
+  <TM_Elemental_Lifestage.label>primário</TM_Elemental_Lifestage.label>
+  <TM_GreaterElemental_Lifestage.label>um grande básico</TM_GreaterElemental_Lifestage.label>
+  <TM_Minion_Lifestage.label>mignon</TM_Minion_Lifestage.label>
+  <TM_GreaterMinion_Lifestage.label>grande mignon</TM_GreaterMinion_Lifestage.label>
+  <TM_Demon_Lifestage.label>demónio</TM_Demon_Lifestage.label>
+  <TM_LesserDemon_Lifestage.label>demónio menor</TM_LesserDemon_Lifestage.label>
+  <TM_LesserSentinel_Lifestage.label>Pequeno Sentinel</TM_LesserSentinel_Lifestage.label>
+  <TM_Sentinel_Lifestage.label>Sentinel</TM_Sentinel_Lifestage.label>
+  <TM_GreaterSentinel_Lifestage.label>grande Sentinel</TM_GreaterSentinel_Lifestage.label>
+  <TM_Skeleton_Lifestage.label>esqueleto</TM_Skeleton_Lifestage.label>
+  <TM_GiantSkeleton_Lifestage.label>esqueleto gigante</TM_GiantSkeleton_Lifestage.label>
+  <TM_SkeletonLich_Lifestage.label>esqueleto de lic</TM_SkeletonLich_Lifestage.label>
+
+
+</LanguageData>

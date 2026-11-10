@@ -1,0 +1,106 @@
+<LanguageData><!-- v1.5\Defs\ResearchDefs\ResearchProjects_Magic.xml-->
+	<!--                   EN: cultivation-->
+	<TM_PlantCultivation.label>выращивание</TM_PlantCultivation.label>
+	<!--                         EN: Invest research into botany to gain an understanding of how to cultivate plants with properties relevant to magic and use their resources to supplement or fuel the arcane arts.-->
+	<TM_PlantCultivation.description>Исследуйте ботанику, чтобы получить представление о том, как выращивать растения со свойствами, имеющими отношение к магии, и использовать их ресурсы для дополнения или подпитки тайных искусств.</TM_PlantCultivation.description>
+	<!--                     EN: arcane facilities-->
+	<TM_ArcaneConstruction.label>чародейский зал</TM_ArcaneConstruction.label>
+	<!--                           EN: Opens research into various facilities and workbenches that enabled the creation of unique magical items and effects.-->
+	<TM_ArcaneConstruction.description>Открывает исследования различных объектов и верстаков, которые позволили создать уникальные магические предметы и эффекты.</TM_ArcaneConstruction.description>
+	<!--                     EN: arcane fundamentals-->
+	<TM_ArcaneFundamentals.label>основы чародейства</TM_ArcaneFundamentals.label>
+	<!--                           EN: Basic research on how arcane power is linked to the physical realm and to other mages.-->
+	<TM_ArcaneFundamentals.description>Фундаментальные исследования того, как тайная сила связана с материальным миром и другими магами.</TM_ArcaneFundamentals.description>
+	<!--              EN: Magic Circle-->
+	<TM_MagicCircle.label>магический круг</TM_MagicCircle.label>
+	<!--                    EN: Advanced research on the geometry and symmetry of ley lines that enables magic users to combine their energy to create incredible effects.-->
+	<TM_MagicCircle.description>Передовые исследования геометрии и симметрии линий, которые позволяют магам объединять свою энергию для создания невероятных эффектов.</TM_MagicCircle.description>
+	<!--          EN: portals-->
+	<TM_Portals.label>порталы</TM_Portals.label>
+	<!--                EN: Allows the construction of a portal - a powerful artifact that enables instant travel between colonies.\n\nRequires an Arcane Mage trained in Gateways to activate.-->
+	<TM_Portals.description>Позволяет построить портал - мощный артефакт, обеспечивающий мгновенные перемещения между поселениями.\n\nДля активации нужен тайный маг, обученный искусству Врат.</TM_Portals.description>
+	<!--              EN: mana storage-->
+	<TM_ManaStorage.label>хранилище маны</TM_ManaStorage.label>
+	<!--                    EN: Develops ways to store mana.-->
+	<TM_ManaStorage.description>Разрабатывает способы хранения маны.</TM_ManaStorage.description>
+	<!--                EN: Arcane Forge-->
+	<TM_ArcaneForging.label>Тайная кузница</TM_ArcaneForging.label>
+	<!--                      EN: Develop the means of using arcane power to craft various items and equipment. Completion of this research will also reveal how to make Manaweave, a unique material that enhances arcane power.-->
+	<TM_ArcaneForging.description>Развивайте средства использования тайной силы для создания различных предметов и оборудования. Завершение этого исследования также раскроет, как сделать манаткань - уникальный материал, который усиливает магическую силу.</TM_ArcaneForging.description>
+	<!--                   EN: Forge Replication-->
+	<TM_ForgeReplication.label>Кузница репликации</TM_ForgeReplication.label>
+	<!--                         EN: Enhances the Arcane Forge with a technique that allows it to extract the design from any craftable item and duplicate it at the forge.-->
+	<TM_ForgeReplication.description>Усиливает тайную кузницу техникой, позволяющей извлекать устройство любого создаваемого предмета и воспроизводить его прямо в кузнице.</TM_ForgeReplication.description>
+	<!--                 EN: arcane crafting-->
+	<TM_ArcaneCrafting.label>тайное ремесло</TM_ArcaneCrafting.label>
+	<!--                       EN: The first step in understanding the link between the arcane and physical. Enables construction of powerful gems of insight and magical equipment.-->
+	<TM_ArcaneCrafting.description>Первый шаг в понимании связи между тайным и физическим. Позволяет создавать мощные драгоценные камни прозрения и магическое оборудование.</TM_ArcaneCrafting.description>
+	<!--                EN: magical equipment-->
+	<TM_ArcaneApparel.label>магическое снаряжение</TM_ArcaneApparel.label>
+	<!--                      EN: Applies knowledge of arcane crafting and enchantments to learn how to recreate equipment with more powerful magical properties.-->
+	<TM_ArcaneApparel.description>Применяет знания тайного ремесла и чар, чтобы научиться воссоздавать оборудование с более мощными магическими свойствами.</TM_ArcaneApparel.description>
+	<!--                  EN: arcane artifacts-->
+	<TM_ArcaneArtifacts.label>тайные артефакты</TM_ArcaneArtifacts.label>
+	<!--                        EN: Enables the recreation of arcane artifacts through extensive research combining knowledge of enchantments, ancient designs, runes, and rumors.-->
+	<TM_ArcaneArtifacts.description>Позволяет воссоздавать тайные артефакты с помощью обширных исследований, объединяющих знания о чарах, древних рисунках, рунах и слухах.</TM_ArcaneArtifacts.description>
+	<!--                   EN: magicyte refining-->
+	<TM_MagicyteRefining.label>Обработка магицита</TM_MagicyteRefining.label>
+	<!--                         EN: Experimental research that identifies ways to use magicyte to create magical items. Develops recipes to create mana potions at the stove or gemcrafting table.-->
+	<TM_MagicyteRefining.description>Экспериментальное исследование, которое определяет способы использования магицита для создания магических предметов. Открывает рецепт создания зелья маны в лаборатории.</TM_MagicyteRefining.description>
+	<!--                EN: scribing-->
+	<TM_MagicScribing.label>магическое письмо</TM_MagicScribing.label>
+	<!--                      EN: Develop the knowledge to mix ink with powdered magicyte and apply it through specially design press capable of reproducing scrolls and books that can contain the power of magic comprehension.-->
+	<TM_MagicScribing.description>Развивайте знания, чтобы смешивать чернила с порошкообразным магицитом и применять его через специально сконструированный пресс, способный воспроизводить свитки и книги, которые могут содержать силу магии.</TM_MagicScribing.description>
+	<!--                   EN: advanced scribing-->
+	<TM_AdvancedScribing.label>улучшенное магическое письмо</TM_AdvancedScribing.label>
+	<!--                         EN: Allows the use of higher quality material to develop more powerful books and scrolls.-->
+	<TM_AdvancedScribing.description>Позволяет использовать более качественный материал для написания более мощных книг и свитков.</TM_AdvancedScribing.description>
+	<!--                 EN: master scribing-->
+	<TM_MasterScribing.label>мастерское магическое письмо</TM_MasterScribing.label>
+	<!--                       EN: Allows the scribing of master spells.-->
+	<TM_MasterScribing.description>Позволяет создавать свитки мастера</TM_MasterScribing.description>
+	<!--             EN: enchanting-->
+	<TM_Enchanting.label>зачарование</TM_Enchanting.label>
+	<!--                   EN: Enables construction of the gemcutting bench and the crafting of tier I enchanting gems.-->
+	<TM_Enchanting.description>Позволяет построить верстак для огранки драгоценных камней и создавать зачарованные драгоценные камни уровня I.</TM_Enchanting.description>
+	<!--                     EN: advanced enchanting-->
+	<TM_AdvancedEnchanting.label>Улучшенные зачарования</TM_AdvancedEnchanting.label>
+	<!--                           EN: Enables crafting to tier II enchanting gems.-->
+	<TM_AdvancedEnchanting.description>Позволяет создавать зачарованные камни уровня II.</TM_AdvancedEnchanting.description>
+	<!--                   EN: expert enchanting-->
+	<TM_ExpertEnchanting.label>мастер зачарований</TM_ExpertEnchanting.label>
+	<!--                         EN: Enables crafting of tier III enchanting gems.-->
+	<TM_ExpertEnchanting.description>Позволяет создавать зачарованные камни уровня III.</TM_ExpertEnchanting.description>
+	<!--               EN: golem theory-->
+	<TM_GolemCraftRD.label>теория голема</TM_GolemCraftRD.label>
+	<!--                     EN: Golem crafting is a brand of enchanting that diverges from passive enhancements and researches theories of manipulating magical enchantments for active purposes. This research will develop concepts of how to apply active enhancements to create magical creatures. This research enables construction of the stone and maharal golems at the stonecutter's table. The maharal golem can also be created at a crafting spot. Also enables additional upgrades for the Straw golem.-->
+	<TM_GolemCraftRD.description>Создание големов - это разновидность чар, которая отличается от пассивных улучшений и исследует теории манипулирования магическими чарами в активных целях. Это исследование разработает концепции того, как применять активные улучшения для создания магических существ. Это исследование позволяет создавать каменных и махаральских големов за столом каменотеса. Голема махарала также можно создать в месте крафта.</TM_GolemCraftRD.description>
+	<!--                EN: hollow golem-->
+	<TM_HollowGolemRD.label>полый голем</TM_HollowGolemRD.label>
+	<!--                      EN: A magical approach to golem crafting which researches how to animate raw energy. Crafting this type of golem will require an arcane forge.-->
+	<TM_HollowGolemRD.description>Магический подход к созданию големов, который исследует, как оживить сырую энергию. Для создания такого типа голема потребуется тайная кузница.</TM_HollowGolemRD.description>
+	<!--                         EN: hollow equipment-->
+	<TM_HollowGolemEquipmentRD.label>полое оборудование</TM_HollowGolemEquipmentRD.label>
+	<!--                               EN: Researches weapons and armor that may be attached to a hollow golem for further enhancement or capabilities.-->
+	<TM_HollowGolemEquipmentRD.description>Исследует оружие и броню, которые могут быть прикреплены к полому голему для дальнейшего улучшения или расширения возможностей.</TM_HollowGolemEquipmentRD.description>
+	<!--                         EN: hollow artifacts-->
+	<TM_HollowGolemArtifactsRD.label>полые артефакты</TM_HollowGolemArtifactsRD.label>
+	<!--                               EN: Research into the union of arcane artifacts with golem behavior allow the hollow golem to fuel artifacts with its own magical energy.-->
+	<TM_HollowGolemArtifactsRD.description>Исследования связи тайных артефактов с поведением голема позволяют полому голему подпитывать артефакты своей собственной магической энергией.</TM_HollowGolemArtifactsRD.description>
+	<!--               EN: mecha golem-->
+	<TM_MechaGolemRD.label>механический голем</TM_MechaGolemRD.label>
+	<!--                     EN: Combines electrical and mechanical engineering with golem craft to create a robotic golem. A machine table is expected to be required to craft the components of the mecha golem.-->
+	<TM_MechaGolemRD.description>Сочетает в себе электротехнику и машиностроение с големным ремеслом для создания робота-голема. Ожидаемо, что для изготовления компонентов меха-голема потребуется машинный стол.</TM_MechaGolemRD.description>
+	<!--                        EN: mecha attachments-->
+	<TM_MechaGolemEquipmentRD.label>механическое навесное оборудование</TM_MechaGolemEquipmentRD.label>
+	<!--                              EN: Researches methods of crafting attachments and armor to further enhance the mecha golem.-->
+	<TM_MechaGolemEquipmentRD.description>Исследует методы создания навесного оборудования и брони для дальнейшего улучшения меха-голема.</TM_MechaGolemEquipmentRD.description>
+	<!--               EN: flesh golem-->
+	<TM_FleshGolemRD.label>голем из плоти</TM_FleshGolemRD.label>
+	<!--                     EN: A biological approach to golems which researches how to mold the flesh and bones of dead organisms into a bipedal, animated construct. A simple butchers table should suffice for the crafting of a flesh golem.-->
+	<TM_FleshGolemRD.description>Биологический подход к големам, который исследует, как превратить плоть и кости мертвых организмов в двуногую анимированную конструкцию. Простого мясницкого стола должно хватить для создания голема из плоти.</TM_FleshGolemRD.description>
+	<!--                        EN: flesh attachments-->
+	<TM_FleshGolemEquipmentRD.label>плотские улучшения</TM_FleshGolemEquipmentRD.label>
+	<!--                              EN: Researches weapons and armor that may be attached to a flesh golem for further enhancement or capabilities.-->
+	<TM_FleshGolemEquipmentRD.description>Исследует оружие и броню, которые могут быть прикреплены к голему из плоти для дальнейшего улучшения или расширения возможностей.</TM_FleshGolemEquipmentRD.description>
+</LanguageData>

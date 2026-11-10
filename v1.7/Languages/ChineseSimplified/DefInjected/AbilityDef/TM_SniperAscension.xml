@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_SniperSingleOpening.label>一线战机</TM_Bridge_SniperSingleOpening.label>
+  <TM_Bridge_SniperSingleOpening.description>保持原地不动并持续观察一名敌人。准备5秒后，在9秒内发射三发子弹，每发造成120%的武器伤害。最大射程为45格，且不超过武器本身的射程。瞄准期间受到的伤害增加20%。基础消耗为60%耐力，冷却时间为两天。 中断准备会消耗6%耐力，并进入较短的冷却。</TM_Bridge_SniperSingleOpening.description>
+</LanguageData>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Projectile_Geomancer.label>типовий снаряд</Projectile_Geomancer.label>
+
+
+  <!-- Encase -->
+
+  <Projectile_Encase.label>снаряд в оболонці</Projectile_Encase.label>
+  <Projectile_Encase_I.label>снаряд в оболонці</Projectile_Encase_I.label>
+  <Projectile_Encase_II.label>снаряд в оболонці</Projectile_Encase_II.label>
+  <Projectile_Encase_III.label>снаряд в оболонці</Projectile_Encase_III.label>
+
+
+  <!-- Earthern Hammer -->
+
+  <Projectile_EarthernHammer.label>Земляний молот</Projectile_EarthernHammer.label>
+
+
+  <!-- Sentinel -->
+
+  <Projectile_Sentinel.label>снаряд сентинела</Projectile_Sentinel.label>
+
+
+</LanguageData>

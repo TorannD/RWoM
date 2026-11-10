@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -127,7 +127,7 @@ namespace TorannMagic.Golems
         {
             if (p.Map == null)
             {
-                if (p.ParentHolder.ToString().Contains("Caravan"))
+                if (p.ParentHolder != null && p.ParentHolder.ToString().Contains("Caravan"))
                 {
                     return true;
                 }

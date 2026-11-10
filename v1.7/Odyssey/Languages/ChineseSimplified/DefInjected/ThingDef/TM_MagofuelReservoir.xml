@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MagofuelReservoir.label>魔法燃料储罐</TM_MagofuelReservoir.label>
+  <TM_MagofuelReservoir.description>储存魔法燃料和独立的魔力充能。燃料可以转化为魔力；法师也可在保留设定的个人魔力储备的同时为储罐充能。不产生电力，也不能将魔力转回燃料。</TM_MagofuelReservoir.description>
+</LanguageData>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MasterTomePriest.label>tomo de maestría: sacerdote</TM_MasterTomePriest.label>
+  <TM_MasterTomePriest.description>Un tomo raro para un sacerdote que haya cumplido los requisitos de maestría. Leerlo completa la iniciación correspondiente y consume el tomo. Se obtiene de comerciantes o como recompensa de misiones; no se puede fabricar.</TM_MasterTomePriest.description>
+  <TM_MasterTomePriest.comps.1.useLabel>Leer {0_label}</TM_MasterTomePriest.comps.1.useLabel>
+  <TM_MasterTomeNecromancer.label>tomo de maestría: nigromante</TM_MasterTomeNecromancer.label>
+  <TM_MasterTomeNecromancer.description>Un tomo raro para un nigromante que haya cumplido los requisitos de maestría. Leerlo completa la iniciación correspondiente y consume el tomo. Se obtiene de comerciantes o como recompensa de misiones; no se puede fabricar.</TM_MasterTomeNecromancer.description>
+  <TM_MasterTomeNecromancer.comps.1.useLabel>Leer {0_label}</TM_MasterTomeNecromancer.comps.1.useLabel>
+  <TM_MasterTomeFire.label>tomo de maestría: mago de fuego</TM_MasterTomeFire.label>
+  <TM_MasterTomeFire.description>Un tomo raro para un mago de fuego que ha cumplido los requisitos de maestría. Leerlo completa la iniciación correspondiente y consume el tomo. Disponible en comerciantes y como recompensa de misiones; no se puede fabricar.</TM_MasterTomeFire.description>
+  <TM_MasterTomeFire.comps.1.useLabel>Leer {0_label}</TM_MasterTomeFire.comps.1.useLabel>
+  <TM_MasterTomeIce.label>tomo de maestría: mago de hielo</TM_MasterTomeIce.label>
+  <TM_MasterTomeIce.description>Un tomo raro para un mago de hielo que ha cumplido los requisitos de maestría. Leerlo completa la iniciación correspondiente y consume el tomo. Disponible en comerciantes y como recompensa de misiones; no se puede fabricar.</TM_MasterTomeIce.description>
+  <TM_MasterTomeIce.comps.1.useLabel>Leer {0_label}</TM_MasterTomeIce.comps.1.useLabel>
+  <TM_MasterTomeLightning.label>tomo de maestría: mago del rayo</TM_MasterTomeLightning.label>
+  <TM_MasterTomeLightning.description>Un tomo raro para un mago del rayo que ha cumplido los requisitos de maestría. Leerlo completa la iniciación correspondiente y consume el tomo. Disponible mediante comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeLightning.description>
+  <TM_MasterTomeLightning.comps.1.useLabel>Leer {0_label}</TM_MasterTomeLightning.comps.1.useLabel>
+  <TM_MasterTomeArcanist.label>tomo de maestría: arcanista</TM_MasterTomeArcanist.label>
+  <TM_MasterTomeArcanist.description>Un tomo raro para un arcanista que ha cumplido los requisitos de maestría. Leerlo completa la iniciación correspondiente y consume el tomo. Disponible de comerciantes y como recompensa de misiones; no se puede fabricar.</TM_MasterTomeArcanist.description>
+  <TM_MasterTomeArcanist.comps.1.useLabel>Leer {0_label}</TM_MasterTomeArcanist.comps.1.useLabel>
+  <TM_MasterTomePaladin.label>tomo de maestría: paladín</TM_MasterTomePaladin.label>
+  <TM_MasterTomePaladin.description>Un tomo raro para un paladín que ha completado la prueba de maestría. Su lectura completa la iniciación y consume el tomo. Disponible en comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomePaladin.description>
+  <TM_MasterTomePaladin.comps.1.useLabel>Leer {0_label}</TM_MasterTomePaladin.comps.1.useLabel>
+  <TM_MasterTomeSummoner.label>tomo de maestría: invocador</TM_MasterTomeSummoner.label>
+  <TM_MasterTomeSummoner.description>Un tomo raro para un invocador que ha completado la prueba de maestría. Su lectura completa la iniciación y consume el tomo. Disponible en comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeSummoner.description>
+  <TM_MasterTomeSummoner.comps.1.useLabel>Leer {0_label}</TM_MasterTomeSummoner.comps.1.useLabel>
+  <TM_MasterTomeDruid.label>tomo de maestría: druida</TM_MasterTomeDruid.label>
+  <TM_MasterTomeDruid.description>Un tomo raro para un druida que ha completado la prueba de maestría. Su lectura completa la iniciación y consume el tomo. Disponible en comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeDruid.description>
+  <TM_MasterTomeDruid.comps.1.useLabel>Leer {0_label}</TM_MasterTomeDruid.comps.1.useLabel>
+  <TM_MasterTomeBard.label>tomo de maestría: bardo</TM_MasterTomeBard.label>
+  <TM_MasterTomeBard.description>Un tomo raro para un bardo que ha completado la prueba de maestría. Su lectura completa la iniciación y consume el tomo. Disponible en comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeBard.description>
+  <TM_MasterTomeBard.comps.1.useLabel>Leer {0_label}</TM_MasterTomeBard.comps.1.useLabel>
+  <TM_MasterTomeWarlock.label>tomo maestro: brujo</TM_MasterTomeWarlock.label>
+  <TM_MasterTomeWarlock.description>Un raro tomo de maestría para la rama demoníaca elegida. Leerlo tras completar la prueba de maestría avanza la rama y consume el tomo. Disponible de comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeWarlock.description>
+  <TM_MasterTomeSuccubus.label>tomo maestro: súcubo</TM_MasterTomeSuccubus.label>
+  <TM_MasterTomeSuccubus.description>Un raro tomo de maestría para la rama demoníaca elegida. Leerlo tras completar la prueba de maestría avanza la rama y consume el tomo. Disponible de comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeSuccubus.description>
+  <TM_MasterTomeWarlock.comps.1.useLabel>Leer {0_label}</TM_MasterTomeWarlock.comps.1.useLabel>
+  <TM_MasterTomeSuccubus.comps.1.useLabel>Leer {0_label}</TM_MasterTomeSuccubus.comps.1.useLabel>
+  <TM_MasterTomeGeomancer.label>tomo de maestría: geomante</TM_MasterTomeGeomancer.label>
+  <TM_MasterTomeGeomancer.description>Un tomo raro para un geomante que ha completado la prueba de maestría. Su lectura completa la iniciación y consume el tomo. Disponible en comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeGeomancer.description>
+  <TM_MasterTomeGeomancer.comps.1.useLabel>Leer {0_label}</TM_MasterTomeGeomancer.comps.1.useLabel>
+  <TM_MasterTomeTechnomancer.label>tomo de maestría: tecnomante</TM_MasterTomeTechnomancer.label>
+  <TM_MasterTomeTechnomancer.description>Un tomo raro para un tecnomante que ha completado la prueba de maestría. Su lectura completa la iniciación y consume el tomo. Disponible en comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeTechnomancer.description>
+  <TM_MasterTomeTechnomancer.comps.1.useLabel>Leer {0_label}</TM_MasterTomeTechnomancer.comps.1.useLabel>
+  <TM_MasterTomeBloodMage.label>tomo de maestría: mago de sangre</TM_MasterTomeBloodMage.label>
+  <TM_MasterTomeBloodMage.description>Un tomo raro para un mago de sangre que ha completado la prueba de maestría. Su lectura completa la iniciación y consume el tomo. Disponible en comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeBloodMage.description>
+  <TM_MasterTomeBloodMage.comps.1.useLabel>Leer {0_label}</TM_MasterTomeBloodMage.comps.1.useLabel>
+  <TM_MasterTomeEnchanter.label>tomo de maestría: encantador</TM_MasterTomeEnchanter.label>
+  <TM_MasterTomeEnchanter.description>Un tomo raro para un encantador que ha completado la prueba de maestría. Su lectura completa la iniciación y consume el tomo. Disponible en comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeEnchanter.description>
+  <TM_MasterTomeEnchanter.comps.1.useLabel>Leer {0_label}</TM_MasterTomeEnchanter.comps.1.useLabel>
+  <TM_MasterTomeChronomancer.label>tomo de maestría: cronomante</TM_MasterTomeChronomancer.label>
+  <TM_MasterTomeChronomancer.description>Un tomo raro para un cronomante que ha completado la prueba de maestría. Su lectura completa la iniciación y consume el tomo. Disponible en comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeChronomancer.description>
+  <TM_MasterTomeChronomancer.comps.1.useLabel>Leer {0_label}</TM_MasterTomeChronomancer.comps.1.useLabel>
+  <TM_MasterTomeBrightmage.label>tomo de maestría: mago de luz</TM_MasterTomeBrightmage.label>
+  <TM_MasterTomeBrightmage.description>Un tomo raro para un mago de luz que ha completado la prueba de maestría. Su lectura completa la iniciación y consume el tomo. Disponible en comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeBrightmage.description>
+  <TM_MasterTomeBrightmage.comps.1.useLabel>Leer {0_label}</TM_MasterTomeBrightmage.comps.1.useLabel>
+  <TM_MasterTomeShaman.label>tomo de maestría: chamán</TM_MasterTomeShaman.label>
+  <TM_MasterTomeShaman.description>Un tomo raro para un chamán que ha completado la prueba de maestría. Su lectura completa la iniciación y consume el tomo. Disponible en comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeShaman.description>
+  <TM_MasterTomeShaman.comps.1.useLabel>Leer {0_label}</TM_MasterTomeShaman.comps.1.useLabel>
+  <TM_MasterTomeGolemancer.label>tomo de maestría: golemante</TM_MasterTomeGolemancer.label>
+  <TM_MasterTomeGolemancer.description>Un tomo raro para un golemante que ha completado la prueba de maestría. Su lectura completa la iniciación y consume el tomo. Disponible en comerciantes y recompensas de misiones; no se puede fabricar.</TM_MasterTomeGolemancer.description>
+  <TM_MasterTomeGolemancer.comps.1.useLabel>Leer {0_label}</TM_MasterTomeGolemancer.comps.1.useLabel>
+  <TM_MasterTomeChaos.label>tomo maestro del mago del caos</TM_MasterTomeChaos.label>
+  <TM_MasterTomeChaos.description>Un tomo poco común para el adepto del caos. Antes de leerlo, supera la prueba con hechizos de tiradas distintas. Disponible en el comercio y como recompensa de misiones.</TM_MasterTomeChaos.description>
+  <TM_MasterTomeChaos.comps.1.useLabel>Leer {0_label}</TM_MasterTomeChaos.comps.1.useLabel>
+</LanguageData>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Enchanted Body -->
+
+  <TM_EnchantedBody.label>Corpo encantado</TM_EnchantedBody.label>
+  <TM_EnchantedBody.description>Mais membros para melhorar a manipulação e a velocidade de combate. Este feitiço tende a fazer o feiticeiro parecer bastante horroroso e pode alarmar outros peões. Este feitiço resiste e reduz a manga máxima em 20 e a regeneração do maná em 50%.
+
+Usar esta capacidade enquanto o encantamento é ativo espalha o encantamento. Apenas um tipo de encantamento pode estar ativo neste momento.
+
+* Todas as habilidades do Corpo Encantado aplicam-se à Aura Encantada</TM_EnchantedBody.description>
+
+
+  <!-- Enchanted aura -->
+
+  <TM_EnchantedAura.label>A Aura Encantada</TM_EnchantedAura.label>
+  <TM_EnchantedAura.description>Emite uma aura encantada que remove barreiras sociais e melhora a interação social e as opiniões. Este feitiço resiste e reduz a manu máxima em 20 e a regeneração do maná em 50%.
+
+Usar esta capacidade enquanto o encantamento é ativo espalha o encantamento. Apenas um tipo de encantamento pode estar ativo neste momento.</TM_EnchantedAura.description>
+
+
+  <!-- Transmutate -->
+
+  <TM_Transmutate.label>Transmutação</TM_Transmutate.label>
+  <TM_Transmutate.description>Transforma um material em outro de valor igual ou superior. A quantidade de material novo criado com material antigo é baseada no valor do material antigo; algum material será consumido durante a conversão.
+
+Esta capacidade só funciona com produtos básicos (prata, aço, peles, tecido etc.) e tijolos padrão, mas pode ser melhorado para a transmissão de outros materiais.
+
+Verifique a descrição das habilidades para obter mais informações.</TM_Transmutate.description>
+
+
+  <!-- Enchanter Stone -->
+
+  <TM_EnchanterStone.label>Pedra do feiticeiro</TM_EnchanterStone.label>
+  <TM_EnchanterStone.description>Cria um artefato a partir da matéria-prima e confere-lhe propriedades mágicas. O feiticeiro pode ter todos os artefatos que quiser, mas cada artefato reduz a manha máxima em 20.
+
+Os benefícios do artefato são para Peão, que tem este objeto. Os artefatos têm slots exclusivos para o equipamento.
+
+Esta capacidade é usada em recursos não processados, como pedaços de pedra, aço ou prata - uma lista completa dos recursos que podem ser usados para criar a pedra do feiticeiro, veja a descrição da habilidade.</TM_EnchanterStone.description>
+
+  <TM_DismissEnchanterStones.label>Dissolver a Pedra do Feiticeiro</TM_DismissEnchanterStones.label>
+  <TM_DismissEnchanterStones.description>Destrói a pedra mais velha do feiticeiro</TM_DismissEnchanterStones.description>
+
+
+  <!-- Enchant Weapon -->
+
+  <TM_EnchantWeapon.label>Armas encantadas</TM_EnchantWeapon.label>
+  <TM_EnchantWeapon.description>Engolam as armas de combate próximo equipadas com um peão. As armas encantadas ganham propriedades básicas.
+
+Fogo causa danos adicionais ao fogo e pode atear fogo
+Encantamento gelado reduz a eficácia da parte afetada do corpo
+Um feitiço relâmpago pode abafar o inimigo.
+Os encantos escuros podem cegar o inimigo.
+
+Uma arma enfeitada requer um maná igual ao custo do feitiço para manter. O número de encantos de armas é limitado apenas pela capacidade do maná.
+
+O feitiço só vai funcionar enquanto o peão segurar a arma encantada. Se ele cair ou for substituído por outra arma, o encantamento vai se dissipar. O encantamento das armas só funciona nas armas de combate próximo.</TM_EnchantWeapon.description>
+
+  <TM_DispelEnchantWeapon.label>Desenvolver encantamento de armas</TM_DispelEnchantWeapon.label>
+  <TM_DispelEnchantWeapon.description>Remove todos os encantos de armas mantidos por este feiticeiro.</TM_DispelEnchantWeapon.description>
+
+
+  <!-- Polymorph -->
+
+  <TM_Polymorph.label>Polimórfico</TM_Polymorph.label>
+  <TM_Polymorph.description>Transforma os peões na zona alvo em animais aleatórios. A criatura polimórfica ainda vai manter o seu «eu» original suficiente para compreender as suas dificuldades e ficar furiosa. Os aliados podem ser controlados (convocados), mas eles ainda demonstrarão um comportamento animal sem uma tarefa específica.
+
+Os aliados podem ser polimórficos, mas a maioria deles ficará chateada com isso. Os feiticeiros não podem usar este método para polimorfizar eles mesmos.
+
+O uso de polimorfo em uma criatura já atingida pelo polimorfo acabará com o feitiço polimórfico existente. O encantamento do polimorfo é destruído se a criatura polimórfica morrer.
+
+Quando o alvo for polimorfizado, sua nova forma não preserva nenhum dano existente anteriormente, mas, quando retornarem à sua forma original, terão todos os seus danos iniciais, além de qualquer dano causado durante a polimorfização.
+
+Meta máxima: 4
+Raio: 3
+Distância: 36
+Tempo de aplicação: 3s</TM_Polymorph.description>
+
+  <TM_Polymorph_I.label>Polimórfico (I)</TM_Polymorph_I.label>
+  <TM_Polymorph_I.description>Transforma os peões na zona alvo em animais aleatórios. A criatura polimórfica ainda vai manter o seu «eu» original suficiente para compreender as suas dificuldades e ficar furiosa. Os aliados podem ser controlados (convocados), mas eles ainda demonstrarão um comportamento animal sem uma tarefa específica.
+
+Os aliados podem ser polimórficos, mas a maioria deles ficará chateada com isso. Os feiticeiros não podem usar este método para polimorfizar eles mesmos.
+
+O uso de polimorfo em uma criatura já atingida pelo polimorfo acabará com o feitiço polimórfico existente. O encantamento do polimorfo é destruído se a criatura polimórfica morrer.
+
+Quando o alvo for polimorfizado, sua nova forma não preserva nenhum dano existente anteriormente, mas, quando retornarem à sua forma original, terão todos os seus danos iniciais, além de qualquer dano causado durante a polimorfização.
+
+Objetivo máximo: 5
+Raio: 3
+Distância: 38
+Tempo de aplicação: 2.8s</TM_Polymorph_I.description>
+
+  <TM_Polymorph_II.label>Polimórfico (II)</TM_Polymorph_II.label>
+  <TM_Polymorph_II.description>Transforma os peões na zona alvo em animais aleatórios. A criatura polimórfica ainda vai manter o seu «eu» original suficiente para compreender as suas dificuldades e ficar furiosa. Os aliados podem ser controlados (convocados), mas eles ainda demonstrarão um comportamento animal sem uma tarefa específica.
+
+Os aliados podem ser polimórficos, mas a maioria deles ficará chateada com isso. Os feiticeiros não podem usar este método para polimorfizar eles mesmos.
+
+O uso de polimorfo em uma criatura já atingida pelo polimorfo acabará com o feitiço polimórfico existente. O encantamento do polimorfo é destruído se a criatura polimórfica morrer.
+
+Quando o alvo for polimorfizado, sua nova forma não preserva nenhum dano existente anteriormente, mas, quando retornarem à sua forma original, terão todos os seus danos iniciais, além de qualquer dano causado durante a polimorfização.
+
+Objetivo máximo: 5
+Raio: 4
+Distância: 40
+Tempo de aplicação: 2.6s</TM_Polymorph_II.description>
+
+  <TM_Polymorph_III.label>Polimórfico</TM_Polymorph_III.label>
+  <TM_Polymorph_III.description>Transforma os peões na zona alvo em animais aleatórios. A criatura polimórfica ainda vai manter o seu «eu» original suficiente para compreender as suas dificuldades e ficar furiosa. Os aliados podem ser controlados (convocados), mas eles ainda demonstrarão um comportamento animal sem uma tarefa específica.
+
+Os aliados podem ser polimórficos, mas a maioria deles ficará chateada com isso. Os feiticeiros não podem usar este método para polimorfizar eles mesmos.
+
+O uso de polimorfo em uma criatura já atingida pelo polimorfo acabará com o feitiço polimórfico existente. O encantamento do polimorfo é destruído se a criatura polimórfica morrer.
+
+Quando o alvo for polimorfizado, sua nova forma não preserva nenhum dano existente anteriormente, mas, quando retornarem à sua forma original, terão todos os seus danos iniciais, além de qualquer dano causado durante a polimorfização.
+
+Objetivo máximo: 6
+Raio: 4
+Distância: 42
+Tempo de aplicação: 2.4s</TM_Polymorph_III.description>
+
+
+  <!-- Shapeshift -->
+
+  <TM_Shapeshift.label>Mudar de aspecto</TM_Shapeshift.label>
+  <TM_Shapeshift.description>Transformar-se numa criatura aleatória. O feiticeiro manterá a sua auto-determinação e manterá o controle sobre as suas ações. O dano causado pela mudança de forma será transmitido para o feiticeiro em proporções iguais após o retorno à sua forma original.
+
+A transformação em animal não custa sem efeitos colaterais menores; a transformação em animal fará com que os feiticeiros herdem os instintos e o comportamento do animal, a não ser que tenham instruções específicas para vagar ou realizar outras tarefas aleatórias que o animal normalmente executa.</TM_Shapeshift.description>
+
+
+  <!-- Enchanted aura -->
+
+  <TM_ShapeshiftDW.label>Mudança de aspecto: Lobo Horrível</TM_ShapeshiftDW.label>
+  <TM_ShapeshiftDW.description>Transformar-se num Lobo terrível. O feiticeiro manterá a sua auto-determinação e manterá o controle sobre a maioria de suas ações. O dano causado pela mudança de forma será transmitido para o feiticeiro em proporções iguais após o retorno à sua forma original.
+
+A transformação em animal não custa sem efeitos colaterais menores; a transformação em animal fará com que os feiticeiros herdem os instintos e o comportamento do animal, a não ser que tenham instruções específicas para vagar ou realizar outras tarefas aleatórias que o animal normalmente executa.
+
+Lobos terríveis são animais únicos que têm uma ligação especial com a magia. Na forma de um Lobo terrível, os feiticeiros podem usar uma pequena quantidade de magia para permitir que um lobo terrível entre e saia da realidade por pouco tempo.</TM_ShapeshiftDW.description>
+
+
+</LanguageData>

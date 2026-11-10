@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_StellarRitual>Почати зоряне віщування (ритуал)</TM_StellarRitual>
+  <TM_StellarIdle>Очікування: потрібен ритуал віщування</TM_StellarIdle>
+  <TM_StellarSearching>Пошук: залишилося {0}</TM_StellarSearching>
+  <TM_StellarWaiting>Пошук завершено: очікування придатної орбітальної цілі</TM_StellarWaiting>
+  <TM_StellarCooldown>Спільний інтервал магічних пошуків: {0}</TM_StellarCooldown>
+  <TM_StellarUnavailable>Потрібні справна увімкнена обсерваторія, маг, 100 мани та 50 магопалива в мережі, придатна орбітальна ціль і завершений спільний інтервал між ритуалами.</TM_StellarUnavailable>
+  <TM_StellarDiscovery>Зоряне віщування розкрило</TM_StellarDiscovery>
+</LanguageData>

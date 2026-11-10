@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<TM_FieldTraining.label>entrenamiento de combate</TM_FieldTraining.label>
+
+<TM_FieldTraining.description>Los caminantes no tienen habilidades específicas de clase; en cambio, destacan en el combate general.\n\nLa mayoría de los luchadores desdeñan las técnicas de combate generales por considerarlas habilidades complementarias que no requieren entrenamiento adicional. El caminante adopta otro enfoque: al invertir tiempo y esfuerzo en comprender estas habilidades de combate, es capaz de mejorar casi todas las habilidades generales en utilidad, poder y eficiencia.\n\nConsulta las habilidades para más detalles.</TM_FieldTraining.description>
+
+<TM_WayfarerCraft.label>el caminante</TM_WayfarerCraft.label>
+
+<TM_WayfarerCraft.description>Aumenta los atributos mediante el entrenamiento y el trabajo duro. Consulta las habilidades para más detalles.</TM_WayfarerCraft.description>
+</LanguageData>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_BloodHD.label>Магія Крові</TM_BloodHD.label>
+  <TM_BloodHD.description>Це пояснює силу крові мага крові.</TM_BloodHD.description>
+  <TM_BloodHD.stages.0.label></TM_BloodHD.stages.0.label>
+
+  <TM_RendHD.label>Крововилив</TM_RendHD.label>
+  <TM_RendHD.description>Жахлива рана, що викликає сильну кровотечу.</TM_RendHD.description>
+  <TM_RendHD.stages.0.label></TM_RendHD.stages.0.label>
+
+  <TM_BloodForBloodHD.label>Відтік Крові</TM_BloodForBloodHD.label>
+  <TM_BloodForBloodHD.description>Переносить кров від цієї мети до магу крові. У процесі лікування рани заживають.</TM_BloodForBloodHD.description>
+  <TM_BloodForBloodHD.stages.0.label></TM_BloodForBloodHD.stages.0.label>
+
+  <TM_BloodShieldHD.label>Кривавий Щит</TM_BloodShieldHD.label>
+  <TM_BloodShieldHD.description>Оповитий захисною бульбашкою життєвої енергії; енергія від кожного удару по кров&apos;яному щиту відновлює здоров&apos;я захищеної Пешки.</TM_BloodShieldHD.description>
+  <TM_BloodShieldHD.stages.0.label></TM_BloodShieldHD.stages.0.label>
+
+
+</LanguageData>

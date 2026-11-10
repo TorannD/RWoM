@@ -1,0 +1,12 @@
+<LanguageData><!--v1.5/Defs/GolemDefs/Hediffs_StrawGolem.xml-->
+	<!-- armor-->
+	<TM_StrawGolem_ArmorHD.label>броня</TM_StrawGolem_ArmorHD.label>
+	<!-- Improves physical protection.-->
+	<TM_StrawGolem_ArmorHD.description>Улучшает физическую защиту.</TM_StrawGolem_ArmorHD.description>
+	<!-- I-->
+	<TM_StrawGolem_ArmorHD.stages.0.label>I</TM_StrawGolem_ArmorHD.stages.0.label>
+	<!-- II-->
+	<TM_StrawGolem_ArmorHD.stages.1.label>II</TM_StrawGolem_ArmorHD.stages.1.label>
+	<!-- III-->
+	<TM_StrawGolem_ArmorHD.stages.2.label>III</TM_StrawGolem_ArmorHD.stages.2.label>
+</LanguageData>

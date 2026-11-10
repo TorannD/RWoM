@@ -10,6 +10,7 @@ namespace TorannMagic
 
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
+            if (CasterPawn?.Spawned != true || !targ.IsValid || targ.Cell == root) return false;
             if (targ.Thing != null && targ.Thing == this.caster)
             {
                 return this.verbProps.targetParams.canTargetSelf;
@@ -35,6 +36,11 @@ namespace TorannMagic
 
         public virtual void Effect()
         {
+            if (Ability is MightAbility power && power.Def == TorannMagicDefOf.TM_Whirlwind)
+            {
+                if (TargetsAoE.Count > 0) ClassProgression.GladiatorWhirlwind.Launch(CasterPawn,power,TargetsAoE[0].Cell);
+                return;
+            }
             LocalTargetInfo t = this.TargetsAoE[0];
             bool flag = t.Cell != default(IntVec3);
             if (flag)

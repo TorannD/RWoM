@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BreachSeal_eff>效率</TM_BreachSeal_eff>
+  <TM_BreachSeal_eff_desc>每级降低10%法力消耗，最多三级。</TM_BreachSeal_eff_desc>
+  <TM_BreachSeal_Unavailable>无法使用破口封印。</TM_BreachSeal_Unavailable>
+  <TM_BreachSeal_NoCore>请选择属于己方飞船核心的平台。</TM_BreachSeal_NoCore>
+  <TM_BreachSeal_AmbiguousCore>此平台属于多个飞船核心。</TM_BreachSeal_AmbiguousCore>
+  <TM_BreachSeal_CoreOverlap>目标与飞船核心重叠。</TM_BreachSeal_CoreOverlap>
+  <TM_BreachSeal_InvalidFloor>中心及远侧边缘需要完好的飞船地板。</TM_BreachSeal_InvalidFloor>
+  <TM_BreachSeal_Blocked>远侧边缘被占用。</TM_BreachSeal_Blocked>
+  <TM_BreachSeal_AlreadySealed>此边缘已密封。</TM_BreachSeal_AlreadySealed>
+  <TM_BreachSeal_ver>持续时间</TM_BreachSeal_ver>
+  <TM_BreachSeal_ver_desc>每级增加基础持续时间的25%：30、36或42小时。卷轴和法杖仍持续24小时。</TM_BreachSeal_ver_desc>
+</LanguageData>

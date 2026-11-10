@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mecha Golem upgrade recipes -->
+
+  <TM_Mecha-Golem_RepairComponent.label>componente de reparação</TM_Mecha-Golem_RepairComponent.label>
+  <TM_Mecha-Golem_RepairComponent.description>Substitui as partes faltantes do golem que não necessitam de atualização específica.</TM_Mecha-Golem_RepairComponent.description>
+  <TM_Mecha-Golem_RepairComponent.jobString>criação de uma parte do golem</TM_Mecha-Golem_RepairComponent.jobString>
+
+  <TM_Mecha-Golem_EnergyCell.label>elemento de força</TM_Mecha-Golem_EnergyCell.label>
+  <TM_Mecha-Golem_EnergyCell.description>Cria uma célula de força e a instala em peles-golem.</TM_Mecha-Golem_EnergyCell.description>
+  <TM_Mecha-Golem_EnergyCell.jobString>criação de célula de força</TM_Mecha-Golem_EnergyCell.jobString>
+
+  <TM_Mecha-Golem_EnergyConverter.label>conversor de energia</TM_Mecha-Golem_EnergyConverter.label>
+  <TM_Mecha-Golem_EnergyConverter.description>Aumenta em 10% a eficiência de absorção e uso de energia por holem.</TM_Mecha-Golem_EnergyConverter.description>
+  <TM_Mecha-Golem_EnergyConverter.jobString>criação de um conversor de força</TM_Mecha-Golem_EnergyConverter.jobString>
+
+  <TM_Mecha-Golem_EnergyCharge.label>Núcleo neural elétrico</TM_Mecha-Golem_EnergyCharge.label>
+  <TM_Mecha-Golem_EnergyCharge.description>Aumenta a velocidade de energia do golem em 10 por hora.</TM_Mecha-Golem_EnergyCharge.description>
+  <TM_Mecha-Golem_EnergyCharge.jobString>modernização da rede neurológica elétrica</TM_Mecha-Golem_EnergyCharge.jobString>
+
+  <TM_Mecha-Golem_Axe.label>peles-machado</TM_Mecha-Golem_Axe.label>
+  <TM_Mecha-Golem_Axe.description>Forjando o machado e fixando-o na mão esquerda.</TM_Mecha-Golem_Axe.description>
+  <TM_Mecha-Golem_Axe.jobString>criação de uma parte do golem</TM_Mecha-Golem_Axe.jobString>
+
+  <TM_Mecha-Golem_Sword.label>peles-espada</TM_Mecha-Golem_Sword.label>
+  <TM_Mecha-Golem_Sword.description>Forjando a espada e fixando-a na mão esquerda.</TM_Mecha-Golem_Sword.description>
+  <TM_Mecha-Golem_Sword.jobString>criação de uma parte do golem</TM_Mecha-Golem_Sword.jobString>
+
+  <TM_Mecha-Golem_Hammer.label>peles-martelo</TM_Mecha-Golem_Hammer.label>
+  <TM_Mecha-Golem_Hammer.description>Forjando o martelo e fixando-o na mão direita.</TM_Mecha-Golem_Hammer.description>
+  <TM_Mecha-Golem_Hammer.jobString>criação de uma parte do golem</TM_Mecha-Golem_Hammer.jobString>
+
+  <TM_Mecha-Golem_GatlingCannon.label>canhão de gatling</TM_Mecha-Golem_GatlingCannon.label>
+  <TM_Mecha-Golem_GatlingCannon.description>Liga o minigão à fixação do úmero direito de peles-golem.</TM_Mecha-Golem_GatlingCannon.description>
+  <TM_Mecha-Golem_GatlingCannon.jobString>criação de uma parte do golem</TM_Mecha-Golem_GatlingCannon.jobString>
+
+  <TM_Mecha-Golem_MiningLaser.label>Laser mineiro</TM_Mecha-Golem_MiningLaser.label>
+  <TM_Mecha-Golem_MiningLaser.description>Cria um laser mineiro para se fixar à fixação do úmero esquerdo.</TM_Mecha-Golem_MiningLaser.description>
+  <TM_Mecha-Golem_MiningLaser.jobString>criação de uma parte do golem</TM_Mecha-Golem_MiningLaser.jobString>
+
+  <TM_Mecha-Golem_Extinguisher.label>extintor de incêndio</TM_Mecha-Golem_Extinguisher.label>
+  <TM_Mecha-Golem_Extinguisher.description>Adiciona buracos de ventilação integrados para soltar vapor que podem ser usados para dispersar rapidamente o fogo no holem e ao redor dele.</TM_Mecha-Golem_Extinguisher.description>
+  <TM_Mecha-Golem_Extinguisher.jobString>criação de uma parte do golem</TM_Mecha-Golem_Extinguisher.jobString>
+
+  <TM_Mecha-Golem_BallisticPlate.label>placa balística</TM_Mecha-Golem_BallisticPlate.label>
+  <TM_Mecha-Golem_BallisticPlate.description>Melhora o colete de golem com uma placa balística; É uma multa de movimento.</TM_Mecha-Golem_BallisticPlate.description>
+  <TM_Mecha-Golem_BallisticPlate.jobString>criação de uma parte do golem</TM_Mecha-Golem_BallisticPlate.jobString>
+
+  <TM_Mecha-Golem_FlameCore.label>processador de núcleo de chama</TM_Mecha-Golem_FlameCore.label>
+  <TM_Mecha-Golem_FlameCore.description>O processador do núcleo da chama oferece os seguintes benefícios para cada nível de atualização [1/2/3]:
+Movimento: + [0,5c/0,9c/1,2c]
+Processamento: + [10 %/20 %/30%]
+Dano Capacidade: + [10 %/20 %/30%]
+Custo de energia: + [10 %/20 %/30%]
+
+Além disso, o núcleo de fogo permite que o goleiro atraia e queime a lama nas proximidades, produzindo energia.</TM_Mecha-Golem_FlameCore.description>
+  <TM_Mecha-Golem_FlameCore.jobString>criação de atualizações de golem</TM_Mecha-Golem_FlameCore.jobString>
+
+  <TM_Mecha-Golem_WaterCore.label>processador com núcleo de água</TM_Mecha-Golem_WaterCore.label>
+  <TM_Mecha-Golem_WaterCore.description>O processador com núcleo de água oferece as seguintes vantagens para cada nível de atualização [1/2/3]:
+Armadura: + [5 %/10 %/15%]
+Recarga de capacidade: - [10 %/20 %/30%]
+Bónus de Cura: + [100 %/200 %/300%]
+Custo de energia: - [15 %/30 %/45%]
+
+Além disso, o núcleo aquático permite que o holema recupere rapidamente a saúde durante a atividade e restabeleça a saúde em seu estado de sono.</TM_Mecha-Golem_WaterCore.description>
+  <TM_Mecha-Golem_WaterCore.jobString>atualização do golem de craft</TM_Mecha-Golem_WaterCore.jobString>
+
+  <TM_Mecha-Golem_EarthCore.label>processador com núcleo terrestre</TM_Mecha-Golem_EarthCore.label>
+  <TM_Mecha-Golem_EarthCore.description>O processador com núcleo de terra oferece as seguintes vantagens para cada nível de atualização [1/2/3]:
+Armadura: + [10 %/18 %/25%]
+Recarga de capacidade: + [5 %/10 %/15%]
+Bónus de Cura: + [60 %/120 %/180%]
+Custo de energia: + [5 %/10 %/15%]
+Processamento: + [15 %/30 %/45%]
+
+Além disso, o núcleo da terra permite que o Holem se proteja contra danos.</TM_Mecha-Golem_EarthCore.description>
+  <TM_Mecha-Golem_EarthCore.jobString>criação de atualizações de golem</TM_Mecha-Golem_EarthCore.jobString>
+
+  <TM_Mecha-Golem_LightningCore.label>processador com núcleo relâmpago</TM_Mecha-Golem_LightningCore.label>
+  <TM_Mecha-Golem_LightningCore.description>O processador com núcleo relâmpago oferece as seguintes vantagens para cada nível de atualização [1/2/3]:
+Movimento: + [1.2c/1.8c/2.2c]
+Recarga de capacidade: - [15 %/30 %/45%]
+Custo de energia: + [10 %/20 %/30%]
+Processamento: - [5 %/10 %/15%]
+
+Além disso, o núcleo relâmpago dá ao goleiro a capacidade de retaliar os atacantes com um ataque de energia próximo, atordoando-os por um curto período de tempo.</TM_Mecha-Golem_LightningCore.description>
+  <TM_Mecha-Golem_LightningCore.jobString>criação de atualizações de golem</TM_Mecha-Golem_LightningCore.jobString>
+
+  <TM_Mecha-Golem_FlameShard.label>Base do fragmento de fogo</TM_Mecha-Golem_FlameShard.label>
+  <TM_Mecha-Golem_FlameShard.description>Uma máquina com fragmentos de chamas oferece as seguintes vantagens para cada nível de atualização [1/2/3]:
+Movimento: + [15 %/30 %/40%]
+Saúde: + [15 %/30 %/40%]</TM_Mecha-Golem_FlameShard.description>
+  <TM_Mecha-Golem_FlameShard.jobString>criação de atualizações de golem</TM_Mecha-Golem_FlameShard.jobString>
+
+  <TM_Mecha-Golem_WaterShard.label>Base do fragmento de água</TM_Mecha-Golem_WaterShard.label>
+  <TM_Mecha-Golem_WaterShard.description>A base da máquina com fragmento de água oferece as seguintes vantagens para cada nível de atualização [1/2/3]:
+Movimento: + [10 %/15 %/20%]
+Saúde: + [30 %/50 %/70%]</TM_Mecha-Golem_WaterShard.description>
+  <TM_Mecha-Golem_WaterShard.jobString>criação de atualizações de golem</TM_Mecha-Golem_WaterShard.jobString>
+
+  <TM_Mecha-Golem_EarthShard.label>Base do fragmento de terra</TM_Mecha-Golem_EarthShard.label>
+  <TM_Mecha-Golem_EarthShard.description>A base de fragmentos de terra oferece as seguintes vantagens para cada nível de atualização [1/2/3]:
+Saúde: + [40 %/80 %/120%]</TM_Mecha-Golem_EarthShard.description>
+  <TM_Mecha-Golem_EarthShard.jobString>criação de atualizações de golem</TM_Mecha-Golem_EarthShard.jobString>
+
+  <TM_Mecha-Golem_LightningShard.label>Base do fragmento relâmpago</TM_Mecha-Golem_LightningShard.label>
+  <TM_Mecha-Golem_LightningShard.description>A base da máquina com fragmentos relâmpago oferece as seguintes vantagens para cada nível de atualização [1/2/3]:
+Movimento: + [25 %/50 %/75%]</TM_Mecha-Golem_LightningShard.description>
+  <TM_Mecha-Golem_LightningShard.jobString>criação de atualizações de golem</TM_Mecha-Golem_LightningShard.jobString>
+
+
+</LanguageData>

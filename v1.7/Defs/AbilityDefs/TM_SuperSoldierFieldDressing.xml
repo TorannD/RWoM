@@ -1,0 +1,41 @@
+<Defs>
+  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+    <defName>TM_SuperSoldierFieldDressing</defName>
+    <label>field dressing</label>
+    <uiIconPath>UI/firstaid</uiIconPath>
+    <description>Spend one medicine from personal inventory to dress one of your own fresh wounds. Quality is capped at 50%.</description>
+    <staminaCost>0.20</staminaCost>
+    <efficiencyReductionPercent>.1</efficiencyReductionPercent>
+    <canCopy>false</canCopy>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_SuperSoldierFieldDressing</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_SuperSoldierFieldDressing</abilityDef>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+      <warmupTime>3.0</warmupTime>
+      <SecondsToRecharge>45.0</SecondsToRecharge>
+      <range>0</range>
+      <isViolent>false</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>MeleeHit_Metal_Sharp</soundCast>
+      <muzzleFlashScale>6</muzzleFlashScale>
+      <isPrimary>false</isPrimary>
+    </MainVerb>
+    <modExtensions>
+      <li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+        <spellId>rwom.tm_supersoldierfielddressing</spellId>
+        <domain>Might</domain>
+        <tier>0</tier>
+      </li>
+    </modExtensions>
+    <abilityClass>TorannMagic.ClassProgression.SuperSoldierDressingAbility</abilityClass>
+  </TorannMagic.TMAbilityDef>
+</Defs>

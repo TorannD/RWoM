@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GrimoireClassicRules>Попередня прогресія: навчання й покращення за чинними правилами класу.</TM_GrimoireClassicRules>
+  <TM_GrimoireClassicRequirements>Для цього класу немає вимог посвячення. Діють попередні правила очок навичок і навчання за сувоями.</TM_GrimoireClassicRequirements>
+  <TM_GrimoireLearningItems>Сувої для невивчених здібностей</TM_GrimoireLearningItems>
+  <TM_GrimoireNoLearningItems>Серед показаних невивчених здібностей немає пов’язаних із сувоями.</TM_GrimoireNoLearningItems>
+  <TM_GrimoireScrollUnspecified>Потрібен сувій заклинання; предмет не вказано в даних здібності.</TM_GrimoireScrollUnspecified>
+  <TM_ProgressionVocation_Mage>Маг</TM_ProgressionVocation_Mage>
+  <TM_ProgressionVocation_Warrior>Воїн</TM_ProgressionVocation_Warrior>
+  <TM_ProgressionVocation_WarriorMage>Воїн-маг</TM_ProgressionVocation_WarriorMage>
+  <TM_ProgressionStage_Foundation>Основа</TM_ProgressionStage_Foundation>
+  <TM_ProgressionStage_Adept>Адепт</TM_ProgressionStage_Adept>
+  <TM_ProgressionStage_Master>Майстер</TM_ProgressionStage_Master>
+  <TM_ProgressionStage_Ascended>Вознесіння</TM_ProgressionStage_Ascended>
+  <TM_ProgressionSharedLearning>Напрями класу використовують спільний запас очок навичок.</TM_ProgressionSharedLearning>
+  <TM_ProgressionStageLocked>Потрібен наступний ступінь посвяти</TM_ProgressionStageLocked>
+  <TM_ProgressionBookUnavailable>Ця книга поки не може просунути обраний шлях посвяти.</TM_ProgressionBookUnavailable>
+  <TM_ProgressionNoviceChoices>Початкові заклинання: {0}/{1}. Обирайте уважно.</TM_ProgressionNoviceChoices>
+  <TM_ProgressionOpenGrimoire>Гримуар</TM_ProgressionOpenGrimoire>
+  <TM_ProgressionOpenGrimoireDesc>Посвята в клас, заклинання та ресурси.</TM_ProgressionOpenGrimoireDesc>
+  <TM_ProgressionEnrollMage>Стати магом</TM_ProgressionEnrollMage>
+  <TM_ProgressionEnrollMageDesc>Розпочніть шлях мага та виберіть два початкові заклинання в гримуарі. Класові напрями вивчаються за книгами. Магічний потенціал замінюється покликанням мага.</TM_ProgressionEnrollMageDesc>
+  <TM_ProgressionFoundationBook>Щоб розпочати шлях «{0}», прочитайте {1}.</TM_ProgressionFoundationBook>
+  <TM_ProgressionPriestHealingTrial>Випробування зціленням: власним заклинанням «Просунуте зцілення» вилікуйте іншого дружнього живого гуманоїда. Перед застосуванням сумарна тяжкість його травм має становити щонайменше 20; одне застосування має зменшити її принаймні на 10.</TM_ProgressionPriestHealingTrial>
+  <TM_ProgressionTrialDone>Випробування пройдено</TM_ProgressionTrialDone>
+  <TM_ProgressionTrialPending>Випробування ще не пройдено</TM_ProgressionTrialPending>
+  <TM_ProgressionNextBook>Після випробування прочитайте {0}, щоб перейти на наступний ступінь.</TM_ProgressionNextBook>
+  <TM_ProgressionPriestVow>Обітниця священика: недоступна робота, пов’язана з насильством. Підвищено швидкість пересування, розвиток імунітету, швидкість медичної роботи, якість лікування й успішність операцій; знижено поріг больового шоку.</TM_ProgressionPriestVow>
+  <TM_ProgressionPriestPurificationTrial>Випробування очищенням: власним заклинанням «Очищення» повністю усуньте вже наявну постійну травму або шрам в іншого дружнього живого гуманоїда. Часткове лікування, лікування себе й застосування через предмети не зараховуються.</TM_ProgressionPriestPurificationTrial>
+  <TM_ProgressionAscensionAction>Вознесіння священика</TM_ProgressionAscensionAction>
+  <TM_ProgressionAscensionNeedsOffering>Потрібен доступний сувій навчання воскресінню на землі або той, який персонаж уже несе.</TM_ProgressionAscensionNeedsOffering>
+  <TM_ProgressionAscensionUnavailable>Вимоги вознесіння не виконано або магічне коло недоступне.</TM_ProgressionAscensionUnavailable>
+  <TM_ProgressionAscensionRequirements>Потрібні священик ступеня «Майстер», велике магічне коло та сувій навчання воскресінню. Ритуал триває одну ігрову годину. Сувій приноситься в жертву лише після завершення; переривання зберігає його.</TM_ProgressionAscensionRequirements>
+  <TM_ProgressionNecromancerControlTrial>Випробування контролю: утримуйте одного й того самого підвладного вам слугу-нежить протягом доби. Час зараховується, лише поки ви та слуга на одній мапі. Вихід із мапи або подорож караваном призупиняють поступ; втрата чи заміна слуги скидають його.</TM_ProgressionNecromancerControlTrial>
+  <TM_ProgressionServantTime>Контроль утримується: {0} / 24 год</TM_ProgressionServantTime>
+  <TM_ProgressionNecromancerDeathMarkTrial>Випробування міткою смерті: переможіть ворожого противника, поки на ньому діє ваша власна мітка смерті. Останній удар може завдати союзник. Союзники й полонені не зараховуються.</TM_ProgressionNecromancerDeathMarkTrial>
+  <TM_ProgressionNecromancerAscensionAction>Піднестися як некромант</TM_ProgressionNecromancerAscensionAction>
+  <TM_ProgressionNecromancerAscensionNeedsOffering>Сувій вивчення форми ліча має лежати в доступному місці або вже бути в руках.</TM_ProgressionNecromancerAscensionNeedsOffering>
+  <TM_ProgressionNecromancerAscensionRequirements>Потрібні некромант рангу «Майстер», велике магічне коло та сувій вивчення форми ліча. Ритуал триває одну ігрову годину. Сувій витрачається лише після завершення; переривання зберігає його. Піднесення відкриває перетворення на ліча. Пристрасті та розклад зберігаються.</TM_ProgressionNecromancerAscensionRequirements>
+  <TM_ProgressionFireboltTrial>Випробування вогняної стріли: завдайте ворожим істотам 100 одиниць фактичної шкоди вогняною стрілою. Союзники, полонені та споруди не враховуються.</TM_ProgressionFireboltTrial>
+  <TM_ProgressionFireboltDamage>Шкода вогняною стрілою: {0} / 100</TM_ProgressionFireboltDamage>
+  <TM_ProgressionFireclawTrial>Завдайте шкоди двом різним ворожим істотам одним застосуванням вогняного кігтя. Союзники, полонені та споруди не враховуються.</TM_ProgressionFireclawTrial>
+  <TM_ProgressionFireAscensionAction>Піднестися як маг вогню</TM_ProgressionFireAscensionAction>
+  <TM_ProgressionFireAscensionNeedsOffering>Сувій вивчення вогняного шторму має лежати в доступному місці або вже бути в руках.</TM_ProgressionFireAscensionNeedsOffering>
+  <TM_ProgressionFireAscensionRequirements>Потрібні маг вогню рангу «Майстер», велике магічне коло та сувій вивчення вогняного шторму. Ритуал триває одну ігрову годину. Сувій витрачається лише після завершення; переривання зберігає його. Піднесення відкриває вогняний шторм.</TM_ProgressionFireAscensionRequirements>
+  <TM_TomeQuestRequest>Знайти том майстерності</TM_TomeQuestRequest>
+  <TM_TomeQuestView>Переглянути завдання на том</TM_TomeQuestView>
+  <TM_TomeQuestRequestDesc>Запросити необов&apos;язкове завдання з нападом за том майстерності. Нападники не з&apos;являться, доки ви не приймете завдання. Перемога принесе книгу; для її вивчення все одно потрібні класові випробування. Том також можна придбати в торговців.</TM_TomeQuestRequestDesc>
+  <TM_TomeQuestUnavailable>Тут немає відповідного завдання на том. Спробуйте знову у своєму поселенні; торговці також продають томи майстерності.</TM_TomeQuestUnavailable>
+  <TM_TomeQuestPeaceful>Бойові завдання вимкнено налаштуваннями оповідача. Томи майстерності й надалі можна придбати в торговців.</TM_TomeQuestPeaceful>
+  <TM_TomeQuestCooldown>Зачекайте один ігровий день після останнього завдання на том, перш ніж запитувати наступне.</TM_TomeQuestCooldown>
+  <TM_TomeQuestBusy>Цей маг або поселення вже має незавершене завдання на том.</TM_TomeQuestBusy>
+  <TM_TomeQuestTitle>Спірний рукопис: {0}</TM_TomeQuestTitle>
+  <TM_TomeQuestDescription>{0} під загрозою: наближаються гуманоїдні нападники — {1} (приблизно {2} очок загрози). Прийміть завдання, щоб отримати одну ігрову годину на підготовку, після чого вороги прийдуть пішки від краю мапи. Відбийте цю групу фіксованого складу за два дні: зараховуються загиблі, повалені, захоплені та відступилі нападники. Битися можуть союзники. Нагорода за перемогу — {3}, 1 шт.; виберіть колоніста й дію «Забрати том майстерності», щоб указати своє поселення для доставки. Втрата або залишення мапи сутички до перемоги провалить завдання. Провал не скидає класовий прогрес. Нове завдання можна запросити через день після провалу або отримання нагороди. Том не дозволяє обійти класові випробування.</TM_TomeQuestDescription>
+  <TM_ClassTomeClaim>Забрати том майстерності</TM_ClassTomeClaim>
+  <TM_ClassTomeClaimDesc>Виберіть своє поселення для доставки заслуженої книги. Ту саму нагороду можна отримати лише один раз.</TM_ClassTomeClaimDesc>
+  <TM_ClassTomePendingDesc>Ваш том майстерності готовий. Виберіть будь-якого колоніста й дію «Забрати том майстерності», щоб указати своє поселення для доставки. Нагорода залишається доступною до отримання.</TM_ClassTomePendingDesc>
+  <TM_ClassTomeDelivered>Том майстерності доставлено.</TM_ClassTomeDelivered>
+  <TM_ProgressionIceFoundationTrial>Завдайте ворогам 20 одиниць фактичної шкоди Icebolt або застосуйте власну заспокійливу ауру Soothe до союзника, крім себе.</TM_ProgressionIceFoundationTrial>
+  <TM_ProgressionIceMasteryTrial>Завдайте шкоди Snowball двом різним ворогам або успішно змініть погоду власним Rainmaker. Можна застосовувати кілька разів.</TM_ProgressionIceMasteryTrial>
+  <TM_ProgressionIceTrialProgress>Шкода Icebolt: {0}/20. Цілі Snowball: {1}/2.</TM_ProgressionIceTrialProgress>
+  <TM_ProgressionIceAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionIceAttunementHint>
+  <TM_ProgressionIceAscensionAction>Вознесіння мага льоду</TM_ProgressionIceAscensionAction>
+  <TM_ProgressionIceAscensionNeedsOffering>Навчальний сувій Blizzard має бути доступним на землі або вже переноситися пішаком.</TM_ProgressionIceAscensionNeedsOffering>
+  <TM_ProgressionIceAscensionRequirements>Потрібні маг льоду ступеня майстра, велике магічне коло й навчальний сувій Blizzard. Ритуал триває одну ігрову годину; сувій витрачається й Blizzard відкривається лише після завершення.</TM_ProgressionIceAscensionRequirements>
+  <TM_ProgressionIceAttunementAction>Налаштування холоду: 100 срібла, 1 година (мирне випробування)</TM_ProgressionIceAttunementAction>
+  <TM_ProgressionIceAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionIceAttunementNeedsOffering>
+  <TM_ProgressionLightningFoundationTrial>Завдайте ворожим істотам 20 фактичної шкоди LightningBolt або накладіть чи посильте AMP на союзнику, крім себе.</TM_ProgressionLightningFoundationTrial>
+  <TM_ProgressionLightningMasteryTrial>Завдайте шкоди двом різним ворожим істотам за допомогою LightningCloud. Можна за кілька застосувань; саме оглушення не рахується.</TM_ProgressionLightningMasteryTrial>
+  <TM_ProgressionLightningTrialProgress>Шкода LightningBolt: {0}/20. Цілі LightningCloud: {1}/2.</TM_ProgressionLightningTrialProgress>
+  <TM_ProgressionLightningAttunementHint>Мирна альтернатива: вправа на великому магічному колі за 100 срібла й одну ігрову годину. Завершує лише поточне випробування; книга все ще потрібна.</TM_ProgressionLightningAttunementHint>
+  <TM_ProgressionLightningAscensionAction>Вознесіння мага блискавки</TM_ProgressionLightningAscensionAction>
+  <TM_ProgressionLightningAscensionNeedsOffering>Навчальний сувій «Око бурі» має бути доступний або вже в руках.</TM_ProgressionLightningAscensionNeedsOffering>
+  <TM_ProgressionLightningAscensionRequirements>Потрібні майстер блискавки, велике магічне коло й навчальний сувій «Око бурі». Одна ігрова година; сувій витрачається й ульта відкривається лише після завершення.</TM_ProgressionLightningAscensionRequirements>
+  <TM_ProgressionLightningAttunementAction>Налаштування бурі: 100 срібла, 1 година (мирне випробування)</TM_ProgressionLightningAttunementAction>
+  <TM_ProgressionLightningAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або 100 срібла в руках.</TM_ProgressionLightningAttunementNeedsOffering>
+  <TM_ProgressionArcanistFoundationTrial>Завдайте ворожим істотам 20 фактичної шкоди MagicMissile або успішно перемістіться Блінком щонайменше на 8 клітин.</TM_ProgressionArcanistFoundationTrial>
+  <TM_ProgressionArcanistMasteryTrial>Накладіть власну ауру Shadow на іншого вільного союзника або успішно підтягніть предмет щонайменше з 8 клітин заклинанням Summon. Невдалі застосування й переміщення на місці не рахуються.</TM_ProgressionArcanistMasteryTrial>
+  <TM_ProgressionArcanistTrialProgress>Шкода MagicMissile: {0}/20.</TM_ProgressionArcanistTrialProgress>
+  <TM_ProgressionArcanistAscensionAction>Вознесіння арканіста</TM_ProgressionArcanistAscensionAction>
+  <TM_ProgressionArcanistAscensionNeedsOffering>Навчальний сувій Fold Reality має бути доступний або вже в руках.</TM_ProgressionArcanistAscensionNeedsOffering>
+  <TM_ProgressionArcanistAscensionRequirements>Потрібні майстер-арканіст, велике магічне коло й навчальний сувій Fold Reality. Одна ігрова година; сувій витрачається й ульта відкривається лише після завершення.</TM_ProgressionArcanistAscensionRequirements>
+  <TM_ProgressionArcanistAttunementAction>Арканне налаштування: 100 срібла, 1 година (мирне випробування)</TM_ProgressionArcanistAttunementAction>
+  <TM_ProgressionArcanistAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionArcanistAttunementHint>
+  <TM_ProgressionArcanistAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionArcanistAttunementNeedsOffering>
+  <TM_ProgressionPaladin>паладин</TM_ProgressionPaladin>
+  <TM_ProgressionPaladinFoundationTrial>Одним Heal вилікуйте щонайменше 8 фактичної тяжкості ран іншого вільного союзника.</TM_ProgressionPaladinFoundationTrial>
+  <TM_ProgressionPaladinMasteryTrial>Накладіть власне посилення Ray of Hope на іншого вільного союзника, який ще не має цього посилення.</TM_ProgressionPaladinMasteryTrial>
+  <TM_ProgressionPaladinAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionPaladinAttunementHint>
+  <TM_ProgressionPaladinAscensionAction>Вознесіння: паладин</TM_ProgressionPaladinAscensionAction>
+  <TM_ProgressionPaladinAscensionNeedsOffering>Навчальний сувій Holy Wrath має бути доступним або вже перебувати в руках.</TM_ProgressionPaladinAscensionNeedsOffering>
+  <TM_ProgressionPaladinAscensionRequirements>Потрібні паладин ступеня майстра, велике магічне коло та навчальний сувій Holy Wrath. Ритуал триває одну ігрову годину; сувій витрачається й остаточне закляття відкривається лише після завершення.</TM_ProgressionPaladinAscensionRequirements>
+  <TM_ProgressionPaladinAttunementAction>Налаштування шляху «паладин»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionPaladinAttunementAction>
+  <TM_ProgressionPaladinAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionPaladinAttunementNeedsOffering>
+  <TM_ProgressionSummoner>закликач</TM_ProgressionSummoner>
+  <TM_ProgressionSummonerFoundationTrial>Підтримуйте того самого живого міньйона й активний пілон, обидва власні заклики на вашій карті, 600 спостережуваних тіків (10 секунд на звичайній швидкості).</TM_ProgressionSummonerFoundationTrial>
+  <TM_ProgressionSummonerMasteryTrial>Ворожа істота має активувати вашу закликану міну та запустити її підривник.</TM_ProgressionSummonerMasteryTrial>
+  <TM_ProgressionSummonerAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionSummonerAttunementHint>
+  <TM_ProgressionSummonerAscensionAction>Вознесіння: закликач</TM_ProgressionSummonerAscensionAction>
+  <TM_ProgressionSummonerAscensionNeedsOffering>Навчальний сувій Summon Poppi має бути доступним або вже перебувати в руках.</TM_ProgressionSummonerAscensionNeedsOffering>
+  <TM_ProgressionSummonerAscensionRequirements>Потрібні закликач ступеня майстра, велике магічне коло та навчальний сувій Summon Poppi. Ритуал триває одну ігрову годину; сувій витрачається й остаточне закляття відкривається лише після завершення.</TM_ProgressionSummonerAscensionRequirements>
+  <TM_ProgressionSummonerAttunementAction>Налаштування шляху «закликач»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionSummonerAttunementAction>
+  <TM_ProgressionSummonerAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionSummonerAttunementNeedsOffering>
+  <TM_ProgressionSummonerTrialProgress>Підтримання закликів: {0}/600 тіків.</TM_ProgressionSummonerTrialProgress>
+  <TM_ProgressionDruid>друїд</TM_ProgressionDruid>
+  <TM_ProgressionDruidFoundationTrial>Заспокойте живу тварину-людожера поза вашою фракцією власним закляттям заспокоєння тварини.</TM_ProgressionDruidFoundationTrial>
+  <TM_ProgressionDruidMasteryTrial>Накладіть або посильте регенерацію на іншій вільній живій людині-союзнику із загальною тяжкістю ран щонайменше 8.</TM_ProgressionDruidMasteryTrial>
+  <TM_ProgressionDruidAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionDruidAttunementHint>
+  <TM_ProgressionDruidAscensionAction>Вознесіння: друїд</TM_ProgressionDruidAscensionAction>
+  <TM_ProgressionDruidAscensionNeedsOffering>Навчальний сувій Відновлення кінцівки має бути доступним або вже перебувати в руках.</TM_ProgressionDruidAscensionNeedsOffering>
+  <TM_ProgressionDruidAscensionRequirements>Потрібні друїд ступеня майстра, велике магічне коло та навчальний сувій Відновлення кінцівки. Ритуал триває одну ігрову годину; сувій витрачається й остаточне закляття відкривається лише після завершення.</TM_ProgressionDruidAscensionRequirements>
+  <TM_ProgressionDruidAttunementAction>Налаштування шляху «друїд»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionDruidAttunementAction>
+  <TM_ProgressionDruidAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionDruidAttunementNeedsOffering>
+  <TM_ProgressionBard>бард</TM_ProgressionBard>
+  <TM_ProgressionBardFoundationTrial>Розважте іншу вільну живу людину-союзника, створивши або оновивши спогад про ваш виступ.</TM_ProgressionBardFoundationTrial>
+  <TM_ProgressionBardMasteryTrial>Власною аурою натхнення викличте нове натхнення в іншої вільної живої людини-союзника.</TM_ProgressionBardMasteryTrial>
+  <TM_ProgressionBardAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionBardAttunementHint>
+  <TM_ProgressionBardAscensionAction>Вознесіння: бард</TM_ProgressionBardAscensionAction>
+  <TM_ProgressionBardAscensionNeedsOffering>Навчальний сувій Бойовий гімн має бути доступним або вже перебувати в руках.</TM_ProgressionBardAscensionNeedsOffering>
+  <TM_ProgressionBardAscensionRequirements>Потрібні бард ступеня майстра, велике магічне коло та навчальний сувій Бойовий гімн. Ритуал триває одну ігрову годину; сувій витрачається й остаточне закляття відкривається лише після завершення.</TM_ProgressionBardAscensionRequirements>
+  <TM_ProgressionBardAttunementAction>Налаштування шляху «бард»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionBardAttunementAction>
+  <TM_ProgressionBardAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionBardAttunementNeedsOffering>
+  <TM_ProgressionChooseDemonBranch>Обрати {0}: прочитати {1} (витрачає одну книгу)</TM_ProgressionChooseDemonBranch>
+  <TM_ProgressionWarlockFoundationTrial>Установіть новий взаємний зв’язок душ з іншою вільною живою людиною вашої фракції.</TM_ProgressionWarlockFoundationTrial>
+  <TM_ProgressionWarlockMasteryTrial>Запустіть живого ворожого пішака власним Відштовхуванням.</TM_ProgressionWarlockMasteryTrial>
+  <TM_ProgressionWarlockAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionWarlockAttunementHint>
+  <TM_ProgressionWarlockAscensionRequirements>Потрібні чорнокнижник ступеня майстра, велике магічне коло та навчальний сувій Психічний шок. Ритуал триває одну ігрову годину; сувій витрачається й остаточне закляття відкривається лише після завершення.</TM_ProgressionWarlockAscensionRequirements>
+  <TM_ProgressionSuccubusFoundationTrial>Установіть новий взаємний зв’язок душ з іншою вільною живою людиною вашої фракції.</TM_ProgressionSuccubusFoundationTrial>
+  <TM_ProgressionSuccubusMasteryTrial>Посильте гравітаційне уповільнення живого ворожого пішака власним Притяганням.</TM_ProgressionSuccubusMasteryTrial>
+  <TM_ProgressionSuccubusAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionSuccubusAttunementHint>
+  <TM_ProgressionSuccubusAscensionRequirements>Потрібні суккуб ступеня майстра, велике магічне коло та навчальний сувій Презирство. Ритуал триває одну ігрову годину; сувій витрачається й остаточне закляття відкривається лише після завершення.</TM_ProgressionSuccubusAscensionRequirements>
+  <TM_ProgressionWarlock>чорнокнижник</TM_ProgressionWarlock>
+  <TM_ProgressionWarlockAscensionAction>Вознесіння: чорнокнижник</TM_ProgressionWarlockAscensionAction>
+  <TM_ProgressionWarlockAscensionNeedsOffering>Навчальний сувій Психічний шок має бути доступним або вже перебувати в руках.</TM_ProgressionWarlockAscensionNeedsOffering>
+  <TM_ProgressionWarlockAttunementAction>Налаштування шляху «чорнокнижник»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionWarlockAttunementAction>
+  <TM_ProgressionWarlockAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionWarlockAttunementNeedsOffering>
+  <TM_ProgressionSuccubus>суккуб</TM_ProgressionSuccubus>
+  <TM_ProgressionSuccubusAscensionAction>Вознесіння: суккуб</TM_ProgressionSuccubusAscensionAction>
+  <TM_ProgressionSuccubusAscensionNeedsOffering>Навчальний сувій Презирство має бути доступним або вже перебувати в руках.</TM_ProgressionSuccubusAscensionNeedsOffering>
+  <TM_ProgressionSuccubusAttunementAction>Налаштування шляху «суккуб»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionSuccubusAttunementAction>
+  <TM_ProgressionSuccubusAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionSuccubusAttunementNeedsOffering>
+  <TM_ProgressionGeomancer>геомант</TM_ProgressionGeomancer>
+  <TM_ProgressionGeomancerFoundationTrial>Уперше накладіть власну Кам’яну шкіру на іншу вільну живу людину-союзника.</TM_ProgressionGeomancerFoundationTrial>
+  <TM_ProgressionGeomancerMasteryTrial>Одним власним закляттям Ув’язнення створіть щонайменше 3 різні нові клітини кам’яної стіни.</TM_ProgressionGeomancerMasteryTrial>
+  <TM_ProgressionGeomancerAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionGeomancerAttunementHint>
+  <TM_ProgressionGeomancerAscensionAction>Вознесіння: геомант</TM_ProgressionGeomancerAscensionAction>
+  <TM_ProgressionGeomancerAscensionNeedsOffering>Потрібен доступний або вже перенесений навчальний сувій Метеора.</TM_ProgressionGeomancerAscensionNeedsOffering>
+  <TM_ProgressionGeomancerAscensionRequirements>Потрібні геомант ступеня Майстра, велике магічне коло та навчальний сувій Метеора. Ритуал триває одну ігрову годину; сувій витрачається й Метеор відкривається лише після завершення.</TM_ProgressionGeomancerAscensionRequirements>
+  <TM_ProgressionGeomancerAttunementAction>Налаштування шляху «геомант»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionGeomancerAttunementAction>
+  <TM_ProgressionGeomancerAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionGeomancerAttunementNeedsOffering>
+  <TM_ProgressionTechnomancer>техномант</TM_ProgressionTechnomancer>
+  <TM_ProgressionTechnomancerFoundationTrial>Власний технобіт має відновити міцність пошкодженої будівлі вашої фракції.</TM_ProgressionTechnomancerFoundationTrial>
+  <TM_ProgressionTechnomancerMasteryTrial>Накладіть або посильте власний технощит на іншій вільній живій людині-союзнику.</TM_ProgressionTechnomancerMasteryTrial>
+  <TM_ProgressionTechnomancerAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionTechnomancerAttunementHint>
+  <TM_ProgressionTechnomancerAscensionAction>Вознесіння: техномант</TM_ProgressionTechnomancerAscensionAction>
+  <TM_ProgressionTechnomancerAscensionNeedsOffering>Потрібен доступний або вже перенесений навчальний сувій «Орбітальний удар».</TM_ProgressionTechnomancerAscensionNeedsOffering>
+  <TM_ProgressionTechnomancerAscensionRequirements>Потрібні техномант ступеня Майстра, велике магічне коло та навчальний сувій «Орбітальний удар». Ритуал триває одну ігрову годину; сувій витрачається й Орбітальний удар відкривається лише після завершення.</TM_ProgressionTechnomancerAscensionRequirements>
+  <TM_ProgressionTechnomancerAttunementAction>Налаштування шляху «техномант»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionTechnomancerAttunementAction>
+  <TM_ProgressionTechnomancerAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionTechnomancerAttunementNeedsOffering>
+  <TM_ProgressionBloodMage>маг крові</TM_ProgressionBloodMage>
+  <TM_ProgressionBloodMageFoundationTrial>Накладіть або посильте власний Кривавий щит на іншій вільній живій людині-союзнику з наявною травмою.</TM_ProgressionBloodMageFoundationTrial>
+  <TM_ProgressionBloodMageMasteryTrial>Завдайте 20 одиниць фактичної шкоди живим ворогам власним Запалюванням крові.</TM_ProgressionBloodMageMasteryTrial>
+  <TM_ProgressionBloodMageAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionBloodMageAttunementHint>
+  <TM_ProgressionBloodMageAscensionAction>Вознесіння: маг крові</TM_ProgressionBloodMageAscensionAction>
+  <TM_ProgressionBloodMageAscensionNeedsOffering>Потрібен доступний або вже перенесений навчальний сувій «Кривавий місяць».</TM_ProgressionBloodMageAscensionNeedsOffering>
+  <TM_ProgressionBloodMageAscensionRequirements>Потрібні маг крові ступеня Майстра, велике магічне коло та навчальний сувій «Кривавий місяць». Ритуал триває одну ігрову годину; сувій витрачається й Кривавий місяць відкривається лише після завершення.</TM_ProgressionBloodMageAscensionRequirements>
+  <TM_ProgressionBloodMageAttunementAction>Налаштування шляху «маг крові»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionBloodMageAttunementAction>
+  <TM_ProgressionBloodMageAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionBloodMageAttunementNeedsOffering>
+  <TM_ProgressionBloodMageTrialProgress>Шкода Запалювання крові: {0}/20.</TM_ProgressionBloodMageTrialProgress>
+  <TM_ProgressionEnchanter>зачаровувач</TM_ProgressionEnchanter>
+  <TM_ProgressionEnchanterFoundationTrial>Власним Перетворенням ресурсів витратьте частину або весь стос сировини й успішно розмістіть ненульову кількість іншого ресурсу.</TM_ProgressionEnchanterFoundationTrial>
+  <TM_ProgressionEnchanterMasteryTrial>Власним Зачаруванням зброї накладіть нове зачарування на споряджену зброю ближнього бою іншої вільної живої людини-союзника.</TM_ProgressionEnchanterMasteryTrial>
+  <TM_ProgressionEnchanterAscensionAction>Вознесіння: зачаровувач</TM_ProgressionEnchanterAscensionAction>
+  <TM_ProgressionEnchanterAscensionNeedsOffering>Потрібен доступний або вже переносимий навчальний сувій «Зміна вигляду».</TM_ProgressionEnchanterAscensionNeedsOffering>
+  <TM_ProgressionEnchanterAscensionRequirements>Потрібні зачаровувач ступеня Майстра, велике магічне коло та навчальний сувій «Зміна вигляду». Ритуал триває одну ігрову годину; сувій витрачається й Зміна вигляду відкривається лише після завершення.</TM_ProgressionEnchanterAscensionRequirements>
+  <TM_ProgressionEnchanterAttunementAction>Налаштування шляху «зачаровувач»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionEnchanterAttunementAction>
+  <TM_ProgressionEnchanterAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionEnchanterAttunementHint>
+  <TM_ProgressionEnchanterAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionEnchanterAttunementNeedsOffering>
+  <TM_ProgressionChronomancer>хрономант</TM_ProgressionChronomancer>
+  <TM_ProgressionChronomancerFoundationTrial>З активним власним Передбаченням успішно передбачте ігрову подію та відкладіть її в черзі подій. Самого ввімкнення Передбачення недостатньо.</TM_ProgressionChronomancerFoundationTrial>
+  <TM_ProgressionChronomancerMasteryTrial>Власним Відкатом часу відновіть міцність або зменште гниття їжі в неворожого предмета на своїй мапі.</TM_ProgressionChronomancerMasteryTrial>
+  <TM_ProgressionChronomancerAscensionAction>Вознесіння: хрономант</TM_ProgressionChronomancerAscensionAction>
+  <TM_ProgressionChronomancerAscensionNeedsOffering>Потрібен доступний або вже переносимий навчальний сувій «Повернення».</TM_ProgressionChronomancerAscensionNeedsOffering>
+  <TM_ProgressionChronomancerAscensionRequirements>Потрібні хрономант ступеня Майстра, велике магічне коло та навчальний сувій «Повернення». Ритуал триває одну ігрову годину; сувій витрачається й Повернення через Мітку часу відкривається лише після завершення.</TM_ProgressionChronomancerAscensionRequirements>
+  <TM_ProgressionChronomancerAttunementAction>Налаштування шляху «хрономант»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionChronomancerAttunementAction>
+  <TM_ProgressionChronomancerAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionChronomancerAttunementHint>
+  <TM_ProgressionChronomancerAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionChronomancerAttunementNeedsOffering>
+  <TM_ProgressionBrightmage>маг світла</TM_ProgressionBrightmage>
+  <TM_ProgressionBrightmageFoundationTrial>Завдайте 20 одиниць фактичної шкоди живим ворогам власним Світловим списом.</TM_ProgressionBrightmageFoundationTrial>
+  <TM_ProgressionBrightmageMasteryTrial>Власним Спалахом світла накладіть або посильте фактичне засліплення живого ворога.</TM_ProgressionBrightmageMasteryTrial>
+  <TM_ProgressionBrightmageAscensionAction>Вознесіння: маг світла</TM_ProgressionBrightmageAscensionAction>
+  <TM_ProgressionBrightmageAscensionNeedsOffering>Потрібен доступний або вже переносимий навчальний сувій «Дух світла».</TM_ProgressionBrightmageAscensionNeedsOffering>
+  <TM_ProgressionBrightmageAscensionRequirements>Потрібні маг світла ступеня Майстра, велике магічне коло та навчальний сувій «Дух світла». Ритуал триває одну ігрову годину; сувій витрачається й Дух світла відкривається лише після завершення.</TM_ProgressionBrightmageAscensionRequirements>
+  <TM_ProgressionBrightmageAttunementAction>Налаштування шляху «маг світла»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionBrightmageAttunementAction>
+  <TM_ProgressionBrightmageTrialProgress>Шкода Світлового списа: {0}/20.</TM_ProgressionBrightmageTrialProgress>
+  <TM_ProgressionBrightmageAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionBrightmageAttunementHint>
+  <TM_ProgressionBrightmageAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionBrightmageAttunementNeedsOffering>
+  <TM_ProgressionShaman>шаман</TM_ProgressionShaman>
+  <TM_ProgressionShamanFoundationTrial>Особисто викликаний вами Тотем зцілення має відновити сумарно 8 одиниць тяжкості справжніх ран у вільних живих союзників.</TM_ProgressionShamanFoundationTrial>
+  <TM_ProgressionShamanMasteryTrial>Власним заклинанням «Прокляття» накладіть нове прокляття на живого органічного ворога.</TM_ProgressionShamanMasteryTrial>
+  <TM_ProgressionShamanAscensionAction>Вознесіння: шаман</TM_ProgressionShamanAscensionAction>
+  <TM_ProgressionShamanAscensionNeedsOffering>Потрібен доступний або вже переносимий навчальний сувій «Дух-охоронець».</TM_ProgressionShamanAscensionNeedsOffering>
+  <TM_ProgressionShamanAscensionRequirements>Потрібні шаман ступеня Майстра, велике магічне коло та навчальний сувій «Дух-охоронець». Ритуал триває одну ігрову годину; сувій витрачається й Дух-охоронець відкривається лише після завершення.</TM_ProgressionShamanAscensionRequirements>
+  <TM_ProgressionShamanAttunementAction>Налаштування шляху «шаман»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionShamanAttunementAction>
+  <TM_ProgressionShamanTrialProgress>Зцілення Тотемом зцілення: {0}/8.</TM_ProgressionShamanTrialProgress>
+  <TM_ProgressionShamanAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionShamanAttunementHint>
+  <TM_ProgressionShamanAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionShamanAttunementNeedsOffering>
+  <TM_ProgressionGolemancer>големант</TM_ProgressionGolemancer>
+  <TM_ProgressionGolemancerFoundationTrial>Завершіть різьблення рун із витратою мани, додавши нову руну або магічне татуювання живому союзнику.</TM_ProgressionGolemancerFoundationTrial>
+  <TM_ProgressionGolemancerMasteryTrial>Особисто накладіть нове тавро усвідомлення, емоцій, фізичної форми, захисту або життєвої сили на іншого вільного живого союзника. Оновлення чи привласнення наявного тавра не зараховується.</TM_ProgressionGolemancerMasteryTrial>
+  <TM_ProgressionGolemancerAscensionAction>Вознесіння: големант</TM_ProgressionGolemancerAscensionAction>
+  <TM_ProgressionGolemancerAscensionNeedsOffering>Потрібен доступний або вже переносимий навчальний сувій «Жива стіна».</TM_ProgressionGolemancerAscensionNeedsOffering>
+  <TM_ProgressionGolemancerAscensionRequirements>Потрібні големант ступеня Майстра, велике магічне коло та навчальний сувій «Жива стіна». Ритуал триває одну ігрову годину; сувій витрачається й Жива стіна відкривається лише після завершення.</TM_ProgressionGolemancerAscensionRequirements>
+  <TM_ProgressionGolemancerAttunementAction>Налаштування шляху «големант»: 100 срібла, 1 година (мирне випробування)</TM_ProgressionGolemancerAttunementAction>
+  <TM_ProgressionGolemancerAttunementHint>Мирна альтернатива: вправа налаштування на великому магічному колі за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionGolemancerAttunementHint>
+  <TM_ProgressionGolemancerAttunementNeedsOffering>Потрібна доступна стопка щонайменше 100 срібла або вже перенесені 100 срібла.</TM_ProgressionGolemancerAttunementNeedsOffering>
+  <TM_ProgressionEmpath>емпат</TM_ProgressionEmpath>
+  <TM_ProgressionEmpathFoundationTrial>Застосуйте назавжди вивчену здатність «Вбивця розуму» й справді знизьте настрій ворожої цілі.</TM_ProgressionEmpathFoundationTrial>
+  <TM_ProgressionEmpathMasteryTrial>Власною пригнічувальною аурою вперше надайте емоційний захист іншому вільному живому союзнику. Поновлення наявного захисту не зараховується.</TM_ProgressionEmpathMasteryTrial>
+  <TM_ProgressionEmpathAttunementHint>Мирна альтернатива: завершіть вправу налаштування біля великого магічного кола за 100 срібла й одну ігрову годину. Вона завершує поточне випробування, але не замінює книгу й не підвищує ступінь.</TM_ProgressionEmpathAttunementHint>
+  <TM_ProgressionEmpathAscensionAction>Вознесіння емпата</TM_ProgressionEmpathAscensionAction>
+  <TM_ProgressionEmpathAscensionNeedsOffering>Камінь магічної проникливості має бути доступним або вже перебувати при персонажі.</TM_ProgressionEmpathAscensionNeedsOffering>
+  <TM_ProgressionEmpathAscensionRequirements>Потрібні емпат ступеня майстра, велике магічне коло й один камінь магічної проникливості. Ритуал триває одну ігрову годину; камінь витрачається, а симбіоз відкривається лише після завершення. Ритуал не створює носія чи зв&apos;язку симбіозу.</TM_ProgressionEmpathAscensionRequirements>
+  <TM_ProgressionEmpathAttunementAction>Налаштування емпата: 100 срібла, 1 година (мирне випробування)</TM_ProgressionEmpathAttunementAction>
+  <TM_ProgressionEmpathAttunementNeedsOffering>Потрібна доступна купка щонайменше зі 100 срібла або 100 срібла при персонажі.</TM_ProgressionEmpathAttunementNeedsOffering>
+  <TM_SpiritRebirthCastUnavailable>Ця здібність недоступна в поточній формі Духа.</TM_SpiritRebirthCastUnavailable>
+</LanguageData>

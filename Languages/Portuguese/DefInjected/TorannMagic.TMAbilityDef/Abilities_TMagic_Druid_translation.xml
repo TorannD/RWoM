@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- poison -->
+
+  <TM_Poison.label>Veneno</TM_Poison.label>
+  <TM_Poison.description>Toxina rápida que se move para a corrente sanguínea do alvo. Quanto mais o alvo se move, mais mortífero o veneno se torna. O veneno é pouco eficaz contra os mehanoides.</TM_Poison.description>
+
+
+  <!-- soothe animal -->
+
+  <TM_SootheAnimal.label>Animal mentiroso</TM_SootheAnimal.label>
+  <TM_SootheAnimal.description>Usando o poder sobre a natureza, o druide pode suprimir o estado emocional dos animais. Esta capacidade tem um objetivo duplo - se o animal estiver calmo, ele excitará a besta na fúria do caçador; Se o animal já estiver queimado, vai acalmar a besta. Não vai trabalhar para animais que pertencem a uma facção.
+
+Distância: 65
+Retrocesso: 80s
+Objetivo máximo: 3
+Raio: 5</TM_SootheAnimal.description>
+
+  <TM_SootheAnimal_I.label>Animal mentiroso (I)</TM_SootheAnimal_I.label>
+  <TM_SootheAnimal_I.description>Usando o poder sobre a natureza, o druide pode suprimir o estado emocional dos animais. Esta capacidade tem um objetivo duplo - se o animal estiver calmo, ele excitará a besta na fúria do caçador; Se o animal já estiver queimado, vai acalmar a besta. Não vai trabalhar para animais que pertencem a uma facção.
+
+Distância: 70
+Retrocesso: 75s
+Meta máxima: 4
+Raio: 6</TM_SootheAnimal_I.description>
+
+  <TM_SootheAnimal_II.label>Animal mentiroso (II)</TM_SootheAnimal_II.label>
+  <TM_SootheAnimal_II.description>Usando o poder sobre a natureza, o druide pode suprimir o estado emocional dos animais. Esta capacidade tem um objetivo duplo - se o animal estiver calmo, ele excitará a besta na fúria do caçador; Se o animal já estiver queimado, vai acalmar a besta. Não vai trabalhar para animais que pertencem a uma facção.
+
+Distância: 75
+Retrocesso: 68s
+Objetivo máximo: 5
+Raio: 7</TM_SootheAnimal_II.description>
+
+  <TM_SootheAnimal_III.label>Animal mentiroso (III)</TM_SootheAnimal_III.label>
+  <TM_SootheAnimal_III.description>Usando o poder sobre a natureza, o druide pode suprimir o estado emocional dos animais. Esta capacidade tem um objetivo duplo - se o animal estiver calmo, ele excitará a besta na fúria do caçador; Se o animal já estiver queimado, vai acalmar a besta. Não vai trabalhar para animais que pertencem a uma facção.
+
+Distância: 80
+Retrocesso: 60s
+Objetivo máximo: 6
+Raio: 8</TM_SootheAnimal_III.description>
+
+
+  <!-- regenerate -->
+
+  <TM_Regenerate.label>Regeneração</TM_Regenerate.label>
+  <TM_Regenerate.description>A regeneração funciona como um medicamento natural ao longo do tempo e irá recuperar mesmo ferimentos graves quando o uso prolongado. Regeneração básica restabelece 4 da saúde a 1 ferida a cada 5 segundos. Só trata lesões físicas e não irá reparar ou curar partes do corpo destruídas.</TM_Regenerate.description>
+
+
+  <!-- cure disease -->
+
+  <TM_CureDisease.label>Tratamento da doença</TM_CureDisease.label>
+  <TM_CureDisease.description>Uma oportunidade para curar a maioria das doenças e infecções.</TM_CureDisease.description>
+
+
+  <!-- regrow limb -->
+
+  <TM_RegrowLimb.label>Crescimento</TM_RegrowLimb.label>
+  <TM_RegrowLimb.description>Cria a semente de vida necessária para recuperar partes do corpo. As cirurgias de crescimento só aparecerão se todos os componentes de recuperação estiverem dentro das áreas de recursos: 1x semente de vida, 1x poção de maná, 1x remédio e, em seguida, selecione uma parte do corpo para a recuperação na guia de cirurgia do paciente. Certifique-se de que este druído (ou outro com este feitiço) executa a operação, e o Druid tem 90% de mana ou mais no momento da operação.</TM_RegrowLimb.description>
+
+
+</LanguageData>

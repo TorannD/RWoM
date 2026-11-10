@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_MedicalSupply.label>Reabastecer</TM_MedicalSupply.label>
+  <TM_MedicalSupply.description>Reabastece los suministros médicos del Médico de campaña.
+
+El Médico de campaña usará un objeto de la zona de almacenamiento objetivo y lo convertirá en suministros médicos personales que puede usar para alimentar sus habilidades.
+
+La cantidad de suministros obtenidos es igual a 20 veces la potencia médica del objeto al cuadrado:
+medicina: 20 suministros médicos
+medicina herbal: 4,9 suministros médicos
+medicina de mundo brillante: 51,2 suministros médicos
+
+El Médico de campaña puede entrenarse para convertir su equipo de nuevo en medicina común.</TM_MedicalSupply.description>
+
+  <TM_Emergency.label>Emergencia</TM_Emergency.label>
+  <TM_Emergency.description>El Médico de campaña corre en auxilio de sus pacientes.
+
+El Médico de campaña gana mayor velocidad de movimiento base, velocidad de atención y calidad de atención, además de dolor reducido, durante 30 segundos.</TM_Emergency.description>
+
+  <TM_Medigel.label>Medigel</TM_Medigel.label>
+  <TM_Medigel.description>Aplica un gel curativo en las heridas de un objetivo que acelera la recuperación y combate la infección. Las heridas se curarán lentamente con el tiempo. El medigel reduce ligeramente el dolor de las heridas.</TM_Medigel.description>
+
+  <TM_CombatDrugs.label>Drogas de combate</TM_CombatDrugs.label>
+  <TM_CombatDrugs.description>Da drogas de combate a un aliado.
+
+El Médico de campaña lanza a un aliado una jeringuilla con drogas de combate improvisadas.
+Los efectos siempre son positivos, pero pueden variar.</TM_CombatDrugs.description>
+
+</LanguageData>

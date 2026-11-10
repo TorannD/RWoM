@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_BladeServiceHint>Acerte inimigos com Passagem ou conserte armas desgastadas diferentes para aprender {0}. Coloque a arma no chão. A manutenção restaura 10% da durabilidade. Danos causados pela sua facção não contam.</TM_BladeServiceHint>
+  <TM_BladeServiceProgress>Acertos com Passagem: {0}/10 · Armas consertadas: {1}/20</TM_BladeServiceProgress>
+  <TM_BladeServiceOrder>Consertar uma arma</TM_BladeServiceOrder>
+  <TM_BladeClaimAdept>Aprender {0}</TM_BladeClaimAdept>
+  <TM_BladeMasteryHint>Para aprender {0}, cause dano com oito contra-ataques corpo a corpo comuns em até quatro segundos após ser atingido pelo agressor. Outra opção é levar pessoalmente até uma cama doze aliados feridos que não conseguem andar. O mesmo aliado pode contar de novo após um dia.</TM_BladeMasteryHint>
+  <TM_BladeMasteryProgress>Contra-ataques: {0}/8 · Resgates: {1}/12</TM_BladeMasteryProgress>
+  <TM_BladeMasteryClaim>Aprender {0}</TM_BladeMasteryClaim>
+  <TM_BladeMasteryLearned>Técnica de mestre: {0}</TM_BladeMasteryLearned>
+  <TM_BladePassageRank>{0} {1}/3 · {2} células</TM_BladePassageRank>
+</LanguageData>

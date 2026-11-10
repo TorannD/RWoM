@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Earth_ElementalR.label>elemental de tierra</TM_Earth_ElementalR.label>
+  
+  <TM_Earth_ElementalR.description>El elemental de tierra es una criatura torpe y obstinada hecha de piedra viva. Su piel parece de roca y cristal, con parches de barro y tierra donde deberían estar las articulaciones. Es el más firme de todos los elementales y capaz de resistir una lluvia de golpes. Esta criatura deja en ridículo a los tanques modernos con su piel invencible.</TM_Earth_ElementalR.description>
+  
+  <TM_Earth_ElementalR.race.meatLabel>polvo elemental</TM_Earth_ElementalR.race.meatLabel>
+  
+  <TM_Earth_ElementalR.tools.left_arm.label>brazo izquierdo</TM_Earth_ElementalR.tools.left_arm.label>
+  
+  <TM_Earth_ElementalR.tools.right_arm.label>brazo derecho</TM_Earth_ElementalR.tools.right_arm.label>
+  
+  <TM_Earth_ElementalR.tools.horn.label>cuerno</TM_Earth_ElementalR.tools.horn.label>
+  
+  
+  <TM_Fire_ElementalR.label>elemental de fuego</TM_Fire_ElementalR.label>
+  
+  <TM_Fire_ElementalR.description>Los elementales de fuego son criaturas feroces de llama viva. Son rápidos y crueles por naturaleza, y están especializados en la destrucción. El elemental de fuego parece una mezcla de sustancias aceitosas y fundidas envueltas en llamas y ceniza; su piel casi parece fluida, como si se derritiera y se reformara constantemente. La criatura muestra lo que parece una sonrisa perversa... los enemigos deberían tener cuidado de no jugar con fuego.</TM_Fire_ElementalR.description>
+  
+  <TM_Fire_ElementalR.race.meatLabel>polvo elemental</TM_Fire_ElementalR.race.meatLabel>
+  
+  <TM_Fire_ElementalR.tools.left_arm.label>brazo izquierdo</TM_Fire_ElementalR.tools.left_arm.label>
+  
+  <TM_Fire_ElementalR.tools.right_arm.label>brazo derecho</TM_Fire_ElementalR.tools.right_arm.label>
+  
+  <TM_Fire_ElementalR.tools.horn.label>cuerno</TM_Fire_ElementalR.tools.horn.label>
+  
+  
+  <TM_GreaterEarth_ElementalR.label>elemental mayor de tierra</TM_GreaterEarth_ElementalR.label>
+  
+  <TM_GreaterEarth_ElementalR.description>El elemental de tierra es una monstruosidad torpe y obstinada hecha de piedra viva. Su piel parece de roca y cristal, con parches de barro y tierra donde deberían estar las articulaciones. Su boca es una caverna y sobre su espalda parecen crecer pequeños árboles o arbustos, como si llevara una capa de vegetación. Es el más firme de todos los elementales, capaz de resistir una lluvia de golpes, y este es un maestro de su elemento. El poder de esta criatura aplastará literalmente a tus enemigos; su única oportunidad es huir.</TM_GreaterEarth_ElementalR.description>
+  
+  <TM_GreaterEarth_ElementalR.race.meatLabel>polvo elemental</TM_GreaterEarth_ElementalR.race.meatLabel>
+  
+  <TM_GreaterEarth_ElementalR.tools.left_arm.label>brazo izquierdo</TM_GreaterEarth_ElementalR.tools.left_arm.label>
+  
+  <TM_GreaterEarth_ElementalR.tools.right_arm.label>brazo derecho</TM_GreaterEarth_ElementalR.tools.right_arm.label>
+  
+  <TM_GreaterEarth_ElementalR.tools.horn.label>cuerno</TM_GreaterEarth_ElementalR.tools.horn.label>
+  
+  
+  <TM_GreaterFire_ElementalR.label>elemental mayor de fuego</TM_GreaterFire_ElementalR.label>
+  
+  <TM_GreaterFire_ElementalR.description>Los elementales de fuego son criaturas feroces de llama viva. Son rápidos y crueles por naturaleza, y solo conocen la destrucción. El elemental de fuego parece una mezcla de sustancias aceitosas y fundidas envueltas en llamas y ceniza. Su piel casi parece fluida, como si se derritiera y se reformara constantemente. Ante ti se alza un príncipe de la destrucción, con una corona de llamas sobre la frente y el pecho adornado con una placa de obsidiana que se retuerce entre las llamas. Te mira con su único ojo centelleante, listo para desatar su malicia.</TM_GreaterFire_ElementalR.description>
+  
+  <TM_GreaterFire_ElementalR.race.meatLabel>polvo elemental</TM_GreaterFire_ElementalR.race.meatLabel>
+  
+  <TM_GreaterFire_ElementalR.tools.left_arm.label>brazo izquierdo</TM_GreaterFire_ElementalR.tools.left_arm.label>
+  
+  <TM_GreaterFire_ElementalR.tools.right_arm.label>brazo derecho</TM_GreaterFire_ElementalR.tools.right_arm.label>
+  
+  <TM_GreaterFire_ElementalR.tools.horn.label>cuerno</TM_GreaterFire_ElementalR.tools.horn.label>
+  
+  
+  <TM_GreaterWater_ElementalR.label>elemental mayor de agua</TM_GreaterWater_ElementalR.label>
+  
+  <TM_GreaterWater_ElementalR.description>Los elementales de agua son criaturas de agua viva. Encarnan el espíritu de la paciencia sin límites y la soledad. Parecen una masa de agua en remolino que a veces adopta la forma de una criatura u objeto, con restos flotantes que afloran de vez en cuando. Siempre están en movimiento y parecen deslizarse o balancearse al moverse. Este enorme elemental tiene torbellinos por ojos y se mueve como una ola que rompe.</TM_GreaterWater_ElementalR.description>
+  
+  <TM_GreaterWater_ElementalR.race.meatLabel>polvo elemental</TM_GreaterWater_ElementalR.race.meatLabel>
+  
+  <TM_GreaterWater_ElementalR.tools.left_arm.label>brazo izquierdo</TM_GreaterWater_ElementalR.tools.left_arm.label>
+  
+  <TM_GreaterWater_ElementalR.tools.right_arm.label>brazo derecho</TM_GreaterWater_ElementalR.tools.right_arm.label>
+  
+  <TM_GreaterWater_ElementalR.tools.horn.label>cuerno</TM_GreaterWater_ElementalR.tools.horn.label>
+  
+  
+  <TM_GreaterWind_ElementalR.label>elemental mayor de viento</TM_GreaterWind_ElementalR.label>
+  
+  <TM_GreaterWind_ElementalR.description>Los elementales de aire son seres de viento vivo y poseen una velocidad y una agilidad sobrenaturales. La manifestación física del elemental de aire cambia rápidamente: a veces es un humo difuso y otras un torbellino cortante. Las corrientes de aire parecen formar un contorno apenas perceptible de figura humanoide. No cabe duda de que este elemental es un ser supremo capaz de desatar la furia de una tormenta.</TM_GreaterWind_ElementalR.description>
+  
+  <TM_GreaterWind_ElementalR.race.meatLabel>polvo elemental</TM_GreaterWind_ElementalR.race.meatLabel>
+  
+  <TM_GreaterWind_ElementalR.tools.left_arm.label>brazo izquierdo</TM_GreaterWind_ElementalR.tools.left_arm.label>
+  
+  <TM_GreaterWind_ElementalR.tools.right_arm.label>brazo derecho</TM_GreaterWind_ElementalR.tools.right_arm.label>
+  
+  <TM_GreaterWind_ElementalR.tools.horn.label>cuerno</TM_GreaterWind_ElementalR.tools.horn.label>
+  
+  
+  <TM_LesserEarth_ElementalR.label>elemental menor de tierra</TM_LesserEarth_ElementalR.label>
+  
+  <TM_LesserEarth_ElementalR.description>El elemental de tierra es una criatura torpe y obstinada hecha de piedra viva. Su piel parece de roca y cristal, con parches de barro y tierra donde deberían estar las articulaciones. Es el más firme de todos los elementales y capaz de resistir una lluvia de golpes. Aunque es un elemental menor, empequeñece a la mayoría de los humanoides y posee una notable capacidad para defender a su amo.</TM_LesserEarth_ElementalR.description>
+  
+  <TM_LesserEarth_ElementalR.race.meatLabel>polvo elemental</TM_LesserEarth_ElementalR.race.meatLabel>
+  
+  <TM_LesserEarth_ElementalR.tools.left_arm.label>brazo izquierdo</TM_LesserEarth_ElementalR.tools.left_arm.label>
+  
+  <TM_LesserEarth_ElementalR.tools.right_arm.label>brazo derecho</TM_LesserEarth_ElementalR.tools.right_arm.label>
+  
+  <TM_LesserEarth_ElementalR.tools.horn.label>cuerno</TM_LesserEarth_ElementalR.tools.horn.label>
+  
+  
+  <TM_LesserFire_ElementalR.label>elemental menor de fuego</TM_LesserFire_ElementalR.label>
+  
+  <TM_LesserFire_ElementalR.description>Los elementales de fuego son criaturas feroces de llama viva. Son rápidos y crueles por naturaleza, y están especializados en la destrucción. El elemental de fuego parece una mezcla de sustancias aceitosas y fundidas envueltas en llamas y ceniza; su piel casi parece fluida, como si se derritiera y se reformara constantemente. De naturaleza menor, el destello en los ojos de este ser es la única advertencia que tendrán sus enemigos antes de ser consumidos por su furia.</TM_LesserFire_ElementalR.description>
+  
+  <TM_LesserFire_ElementalR.race.meatLabel>polvo elemental</TM_LesserFire_ElementalR.race.meatLabel>
+  
+  <TM_LesserFire_ElementalR.tools.left_arm.label>brazo izquierdo</TM_LesserFire_ElementalR.tools.left_arm.label>
+  
+  <TM_LesserFire_ElementalR.tools.right_arm.label>brazo derecho</TM_LesserFire_ElementalR.tools.right_arm.label>
+  
+  <TM_LesserFire_ElementalR.tools.horn.label>cuerno</TM_LesserFire_ElementalR.tools.horn.label>
+  
+  
+  <TM_LesserWater_ElementalR.label>elemental menor de agua</TM_LesserWater_ElementalR.label>
+  
+  <TM_LesserWater_ElementalR.description>Los elementales de agua son criaturas de agua viva. Encarnan el espíritu de la paciencia sin límites y la soledad. Parecen una masa de agua en remolino que a veces adopta la forma de una criatura u objeto, con restos flotantes que afloran de vez en cuando. Siempre están en movimiento y parecen deslizarse o balancearse al moverse. La criatura que tienes ante ti es una forma más pequeña, pero superará sin descanso incluso al oponente más fuerte.</TM_LesserWater_ElementalR.description>
+  
+  <TM_LesserWater_ElementalR.race.meatLabel>polvo elemental</TM_LesserWater_ElementalR.race.meatLabel>
+  
+  <TM_LesserWater_ElementalR.tools.left_arm.label>brazo izquierdo</TM_LesserWater_ElementalR.tools.left_arm.label>
+  
+  <TM_LesserWater_ElementalR.tools.right_arm.label>brazo derecho</TM_LesserWater_ElementalR.tools.right_arm.label>
+  
+  <TM_LesserWater_ElementalR.tools.horn.label>cuerno</TM_LesserWater_ElementalR.tools.horn.label>
+  
+  
+  <TM_LesserWind_ElementalR.label>elemental menor de viento</TM_LesserWind_ElementalR.label>
+  
+  <TM_LesserWind_ElementalR.description>Los elementales de aire son seres de viento vivo y poseen una velocidad y una agilidad sobrenaturales. La manifestación física del elemental de aire cambia rápidamente: a veces es un humo difuso y otras un torbellino cortante. Las corrientes de aire parecen formar un contorno apenas perceptible de figura humanoide. Aunque es de naturaleza menor, este elemental descargará sobre sus enemigos ataques crueles y punzantes como lluvia.</TM_LesserWind_ElementalR.description>
+  
+  <TM_LesserWind_ElementalR.race.meatLabel>polvo elemental</TM_LesserWind_ElementalR.race.meatLabel>
+  
+  <TM_LesserWind_ElementalR.tools.left_arm.label>brazo izquierdo</TM_LesserWind_ElementalR.tools.left_arm.label>
+  
+  <TM_LesserWind_ElementalR.tools.right_arm.label>brazo derecho</TM_LesserWind_ElementalR.tools.right_arm.label>
+  
+  <TM_LesserWind_ElementalR.tools.horn.label>cuerno</TM_LesserWind_ElementalR.tools.horn.label>
+  
+  
+  <TM_Water_ElementalR.label>elemental de agua</TM_Water_ElementalR.label>
+  
+  <TM_Water_ElementalR.description>Los elementales de agua son criaturas de agua viva. Encarnan el espíritu de la paciencia sin límites y la soledad. Parecen una masa de agua en remolino que a veces adopta la forma de una criatura u objeto, con restos flotantes que afloran de vez en cuando. Siempre están en movimiento y parecen deslizarse o balancearse al moverse. El elemental que tienes delante parece casi sereno, pero intuyes un peligro oculto acechando justo bajo la superficie.</TM_Water_ElementalR.description>
+  
+  <TM_Water_ElementalR.race.meatLabel>polvo elemental</TM_Water_ElementalR.race.meatLabel>
+  
+  <TM_Water_ElementalR.tools.left_arm.label>brazo izquierdo</TM_Water_ElementalR.tools.left_arm.label>
+  
+  <TM_Water_ElementalR.tools.right_arm.label>brazo derecho</TM_Water_ElementalR.tools.right_arm.label>
+  
+  <TM_Water_ElementalR.tools.horn.label>cuerno</TM_Water_ElementalR.tools.horn.label>
+  
+  
+  <TM_Wind_ElementalR.label>elemental de viento</TM_Wind_ElementalR.label>
+  
+  <TM_Wind_ElementalR.description>Los elementales de aire son seres de viento vivo y poseen una velocidad y una agilidad sobrenaturales. La manifestación física del elemental de aire cambia rápidamente: a veces es un humo difuso y otras un torbellino cortante. Las corrientes de aire parecen formar un contorno apenas perceptible de figura humanoide. Esta criatura posee el poder de una tormenta y no dudará en descargarlo sobre sus enemigos.</TM_Wind_ElementalR.description>
+  
+  <TM_Wind_ElementalR.race.meatLabel>polvo elemental</TM_Wind_ElementalR.race.meatLabel>
+  
+  <TM_Wind_ElementalR.tools.left_arm.label>brazo izquierdo</TM_Wind_ElementalR.tools.left_arm.label>
+  
+  <TM_Wind_ElementalR.tools.right_arm.label>brazo derecho</TM_Wind_ElementalR.tools.right_arm.label>
+  
+  <TM_Wind_ElementalR.tools.horn.label>cuerno</TM_Wind_ElementalR.tools.horn.label>
+  
+</LanguageData>

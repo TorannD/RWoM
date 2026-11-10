@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Golem_HollowRestore.label>recupere a parte</TM_Golem_HollowRestore.label>
+
+  <TM_Golem_HollowMaxEnergy.label>célula de maná</TM_Golem_HollowMaxEnergy.label>
+  <TM_Golem_HollowMaxEnergy.description>Aumenta a energia máxima em 500 por nível. A energia máxima inicial é de 2.500.</TM_Golem_HollowMaxEnergy.description>
+
+  <TM_Golem_HollowEnergyEfficiency.label>conversor de maná</TM_Golem_HollowEnergyEfficiency.label>
+  <TM_Golem_HollowEnergyEfficiency.description>Aumenta a eficiência energética em 10% por nível. A eficiência energética inicial é de 50%.</TM_Golem_HollowEnergyEfficiency.description>
+
+  <TM_Golem_HollowEnergyRate.label>atração de maná</TM_Golem_HollowEnergyRate.label>
+  <TM_Golem_HollowEnergyRate.description>Aumenta a velocidade de carga de energia em 20% por nível. A velocidade inicial de recarga é de 30 custos de energia por hora.</TM_Golem_HollowEnergyRate.description>
+
+  <TM_Golem_HollowAxe.label>Machado cativo</TM_Golem_HollowAxe.label>
+  <TM_Golem_HollowAxe.description>Adiciona um machado de guerra maciço que transporta vários adversários a cada golpe. Um machado expulso leva uma slot para armas; Apenas uma arma pode ser equipada.</TM_Golem_HollowAxe.description>
+
+  <TM_Golem_HollowStaff.label>Bastão cativo</TM_Golem_HollowStaff.label>
+  <TM_Golem_HollowStaff.description>Permite um ataque mágico de longa distância. Um bastão espremido ocupa uma slot para armas; Apenas uma arma pode ser equipada.</TM_Golem_HollowStaff.description>
+
+  <TM_Golem_HollowBreastPlate.label>Sinal de nudez</TM_Golem_HollowBreastPlate.label>
+  <TM_Golem_HollowBreastPlate.description>Aumenta a blindagem para o peito e o torso:
+Dano estúpido:	+21%
+Dano cortante:	+32%
+Temperatura:	+14%</TM_Golem_HollowBreastPlate.description>
+
+  <TM_Golem_HollowHelm.label>capacete</TM_Golem_HollowHelm.label>
+  <TM_Golem_HollowHelm.description>Protege a cabeça e o crânio:
+Dano estúpido:	+22%
+Dano cortante:	+7%
+Temperatura:	+9%</TM_Golem_HollowHelm.description>
+
+  <TM_Golem_HollowShoulders.label>escudos de tratamento</TM_Golem_HollowShoulders.label>
+  <TM_Golem_HollowShoulders.description>Protege ombros, colarinho e pescoço:
+Dano estúpido:	+8%
+Dano cortante:	+19%
+Temperatura:	+6%</TM_Golem_HollowShoulders.description>
+
+  <TM_Golem_HollowCrown.label>Coroa de despertar</TM_Golem_HollowCrown.label>
+  <TM_Golem_HollowCrown.description>Aumenta passivamente a vontade do proprietário para se proteger contra ataques mágicos e oferece pouca proteção física. A capacidade ativa detecta e anula a magia de outros feitiços.
+
+Reflexão do feitiço
+Custos de energia: 50
+Tempo de recarga: 6,6s
+Faixa: 100
+Danos e raio variam de acordo com o valor do maná do feitiço refletido</TM_Golem_HollowCrown.description>
+
+  <TM_Golem_HollowCloak.label>Capa em extinção</TM_Golem_HollowCloak.label>
+  <TM_Golem_HollowCloak.description>O manto com efeito de extinção aumenta passivamente a velocidade básica do usuário, oferecendo uma pequena taxa de proteção. Ele também permite que o proprietário se desloque instantaneamente para outro lugar no mapa, gastando energia. Se o proprietário desaparecer num local perto dos inimigos, a explosão da desintegração atingirá cada inimigo perto do destino.
+
+Danos estúpidos: + 10%
+Corte de danos: + 5%
+Temperatura: + 15%
+Harmonia: + 5%
+Velocidade de deslocamento + .4c/s
+
+Desintegração decadente
+Custos de energia: 30
+Tempo de recarga: 20 segundos
+Intervalo mínimo: 10c
+Intervalo máximo: 200c
+Raio de desintegração: 4c
+Chance de impacto: 80%</TM_Golem_HollowCloak.description>
+
+  <TM_HollowGolem_CoAFire.label>Brasão: Fogo</TM_HollowGolem_CoAFire.label>
+  <TM_HollowGolem_CoAFire.description>Aumenta passivamente as estatísticas e melhora o toque de desintegração para causar danos de bónus 10 + 5 * nível de danos causados por queimaduras.:
+Movimento: + [0.2c/0.3c/0.35c]
+Reserva térmica: + [30 %/50 %/60%]
+Recarga de capacidade: - [10 %/20 %/30%]
+Processamento: + [10 %/20 %/30%]
+
+Absorver Fogo
+Custos de energia: 0
+Tempo de recarga: 4,2s
+Intervalo: 2c
+Saúde restaurada por fogo: 7</TM_HollowGolem_CoAFire.description>
+
+  <TM_HollowGolem_CoAIce.label>Brasão: Água</TM_HollowGolem_CoAIce.label>
+  <TM_HollowGolem_CoAIce.description>Aumenta passivamente as características e melhora o toque destruidor para curar o golem de nível 8 + 4 * e outro peão nas proximidades no mesmo valor.
+Armadura: + [5 %/10 %/15%]
+Recarga: - [10 %/20 %/30%]
+Processamento: + [10 %/20 %/30%]</TM_HollowGolem_CoAIce.description>
+
+  <TM_HollowGolem_CoAArcane.label>Brasão: Secreto</TM_HollowGolem_CoAArcane.label>
+  <TM_HollowGolem_CoAArcane.description>Aumenta passivamente as estatísticas e melhora o toque de destruição, restaurando 20 + 5 * energia nível por impacto.
+Recarga de capacidade: - [12 %/24 %/36%]
+Dano Capacidade: + [10 %/20 %/30%]
+Processamento: + [15 %/30 %/45%]</TM_HollowGolem_CoAArcane.description>
+
+  <TM_HollowGolem_CoADeath.label>Brasão: Morte</TM_HollowGolem_CoADeath.label>
+  <TM_HollowGolem_CoADeath.description>Aumenta passivamente as características e melhora o toque para ser 50% mais eficiente e aplicar um golpe duplo.
+Armadura: + [5 %/10 %/15%]
+Recarga de capacidade: - [8 %/16 %/24%]
+Danos de capacidade: + [10 %/20 %/30%]
+Processamento: + [15 %/30 %/45%]</TM_HollowGolem_CoADeath.description>
+
+  <TM_Golem_HollowPGFire.label>Pedra de proteção: Fogo</TM_Golem_HollowPGFire.label>
+  <TM_Golem_HollowPGFire.description>Uma pedra de proteção contra o fogo permite que o Holem se rodeie de fogo com o escudo da fúria. A fúria acesa reduz os danos causados por todos os ataques em 35%, incendeia as feridas, impede a locomoção e queima os inimigos mais próximos.
+
+Custo de energia: 120
+Tempo de recarga: 1.200 segundos
+Duração: 100 segundos</TM_Golem_HollowPGFire.description>
+
+  <TM_Golem_HollowPGIce.label>Pedra de proteção: Água</TM_Golem_HollowPGIce.label>
+  <TM_Golem_HollowPGIce.description>Uma pedra de proteção contra a água permite que o goleiro evite os ataques. A chance de evitar um ataque é proporcional à taxa de energia do golem. Cada evasão reduz a energia dos holems em 5. Esta capacidade é mantida enquanto o limite de energia do golem for maior do que o mínimo necessário para o uso da capacidade.</TM_Golem_HollowPGIce.description>
+
+  <TM_Golem_HollowPGArcane.label>Pedra de proteção: Secreta</TM_Golem_HollowPGArcane.label>
+  <TM_Golem_HollowPGArcane.description>Uma pedra de proteção secreta permite que o golem seja cercado por camionistas inimigos por um escudo inverso chamado Poço do Desespero. Um poço de desespero deixa entrar os projéteis, mas bloqueia todos os projéteis para fora.
+
+Custos de energia: 60
+Tempo de recarga: 480
+Faixa: 50
+Duração: 20 segundos</TM_Golem_HollowPGArcane.description>
+
+  <TM_Golem_HollowPGDeath.label>A Pedra da Defesa: Morte</TM_Golem_HollowPGDeath.label>
+  <TM_Golem_HollowPGDeath.description>A pedra de protecção contra a morte é cercada por um golem amaldiçoado por uma aura. Inimigos dentro de 15 células podem ser atingidos por uma maldição que piora a força de vontade e a capacidade de combate. Os custos de energia são sempre 10, independentemente de quantos inimigos foram afetados.
+
+Faixa de aura: 15
+Taxa de impulso: 12 s
+custo de energia: 10 energia por impulso</TM_Golem_HollowPGDeath.description>
+
+  <TM_Golem_HollowPGDoom.label>A Pedra de Proteção: O Abismo da Morte</TM_Golem_HollowPGDoom.label>
+  <TM_Golem_HollowPGDoom.description>A pedra de defesa do Abismo da Morte amaldiçoa os inimigos com a gravidade da sua mortalidade. Inimigos dentro de 36 células podem ser atingidos por uma maldição que desacelera o movimento.
+
+Faixa de aura: 36
+Taxa de impulso: 10 s
+custos de energia: 8 energia por peão</TM_Golem_HollowPGDoom.description>
+
+  <TM_Golem_HollowFGFire.label>Foco de pedra: Fogo</TM_Golem_HollowFGFire.label>
+  <TM_Golem_HollowFGFire.description>A pedra de foco do fogo permite que o Holem concentre o fogo natural em uma erupção feroz de cargas de fogo. Lança 16 carregadores de fogo em inimigos dentro de 8 células do alvo.
+
+Custos de energia: 40
+Intervalo mínimo: 6
+Intervalo máximo: 50</TM_Golem_HollowFGFire.description>
+
+  <TM_Golem_HollowFGIce.label>Foco Pedra: Gelo</TM_Golem_HollowFGIce.label>
+  <TM_Golem_HollowFGIce.description>A pedra de foco de gelo permite que o golem concentre gelo básico no fluxo rápido de descargas de gelo. Lança 16 bolitas de gelo em inimigos dentro de 12 células do alvo.
+
+Custos de energia: 60
+Intervalo mínimo: 10
+Intervalo máximo: 70</TM_Golem_HollowFGIce.description>
+
+  <TM_Golem_HollowFGArcane.label>Foco Pedra Secreta</TM_Golem_HollowFGArcane.label>
+  <TM_Golem_HollowFGArcane.description>Uma pedra de foco secreto permite que o golem concentre a energia escura como uma descarga de sombra maciça. Ativa um único relâmpago de sombra para o alvo. Faixa extrema.
+
+Custos de energia: 50
+Intervalo mínimo: 10
+Alcance máximo: 150</TM_Golem_HollowFGArcane.description>
+
+  <TM_Golem_HollowFGDeath.label>Foco Pedra: Morte</TM_Golem_HollowFGDeath.label>
+  <TM_Golem_HollowFGDeath.description>A pedra do foco da morte rodeia o golem com um campo que emite a energia da morte. Ataca ocasionalmente os inimigos mais próximos. Recebe um bónus quando um peão morre dentro de 10 gaiolas de um golem.
+
+Custos de energia: 20
+Faixa: 10</TM_Golem_HollowFGDeath.description>
+
+  <TM_Golem_HollowAffinityFire.label>afinidade com fogo</TM_Golem_HollowAffinityFire.label>
+  <TM_Golem_HollowAffinityFire.description>A energia secreta dentro do nu cativo está no fogo básico. Para cada golem, apenas uma filiação é permitida. Este género faz com que os olhos do golem brilhem vermelho-laranja. A afinidade com o fogo dá-lhe mais características:
+Movimento: + [25/40/50]%
+Saúde: + [40/60/75]%</TM_Golem_HollowAffinityFire.description>
+
+  <TM_Golem_HollowAffinityIce.label>afinidade com a água</TM_Golem_HollowAffinityIce.label>
+  <TM_Golem_HollowAffinityIce.description>A energia secreta dentro do nu cativo está na água básica. Para cada golem, apenas uma filiação é permitida. Este linhagem faz os olhos do golem brilharem azuis claros. Afinidade com a água dá características adicionais ao golem:
+Movimento: + [20/30/35]%
+Saúde: + [50/75/90]%</TM_Golem_HollowAffinityIce.description>
+
+  <TM_Golem_HollowAffinityArcane.label>afinidade secreta</TM_Golem_HollowAffinityArcane.label>
+  <TM_Golem_HollowAffinityArcane.description>A energia secreta dentro do nu cativo aumenta ainda mais. Para cada golem, apenas uma filiação é permitida. Este linhagem faz com que os olhos do golem brilhem com a cor púrpura. A afinidade secreta oferece características adicionais ao gol:
+Movimento: + [15/25/30]%
+Saúde: + [55/85/100]%</TM_Golem_HollowAffinityArcane.description>
+
+  <TM_Golem_HollowAffinityDeath.label>proximidade com a morte</TM_Golem_HollowAffinityDeath.label>
+  <TM_Golem_HollowAffinityDeath.description>A energia secreta dentro do nu cativo está na magia da morte. Para cada golem, apenas uma filiação é permitida. Este género faz os olhos do golem brilharem verdes. A proximidade com a morte dá-nos mais características:
+Movimento: + [15.10.2010]%
+Saúde: + [65/90/110]%</TM_Golem_HollowAffinityDeath.description>
+
+  <TM_Golem_HollowOrbOfExtinguishedFlames.label>Bola da chama apagada</TM_Golem_HollowOrbOfExtinguishedFlames.label>
+  <TM_Golem_HollowOrbOfExtinguishedFlames.description>Os pontos da tecnologia de pesquisa ativa vão aumentar por cada peão morto no mapa. A bola também pode ser trocada para detectar e absorver qualquer fogo dentro de 25 células e emite luz prata fraca. Estes efeitos só são ativos quando o nu está em repouso.</TM_Golem_HollowOrbOfExtinguishedFlames.description>
+
+  <TM_Golem_HollowFlamesOfDevouringApathy.label>Chamas de apatia intensiva</TM_Golem_HollowFlamesOfDevouringApathy.label>
+  <TM_Golem_HollowFlamesOfDevouringApathy.description>Regulando a temperatura e destruindo qualquer sujeira dentro de 25 células. Emite luz mística fraca. Estes efeitos só são ativos quando o nu está em repouso.</TM_Golem_HollowFlamesOfDevouringApathy.description>
+
+
+</LanguageData>

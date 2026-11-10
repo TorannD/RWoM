@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TraitDef>
+    <defName>TM_VocationMage</defName>
+    <commonality>0</commonality>
+    <degreeDatas><li><label>mage</label><description>[PAWN_nameDef] has awakened to magic. Disciplines are learned through the grimoire and initiation books.</description><degree>0</degree></li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>TM_VocationWarrior</defName>
+    <commonality>0</commonality>
+    <degreeDatas><li><label>warrior</label><description>[PAWN_nameDef] follows the martial vocation.</description><degree>0</degree></li></degreeDatas>
+  </TraitDef>
+  <TraitDef>
+    <defName>TM_VocationWarriorMage</defName>
+    <commonality>0</commonality>
+    <degreeDatas><li><label>warrior-mage</label><description>[PAWN_nameDef] follows both the magical and martial vocations.</description><degree>0</degree></li></degreeDatas>
+  </TraitDef>
+</Defs>

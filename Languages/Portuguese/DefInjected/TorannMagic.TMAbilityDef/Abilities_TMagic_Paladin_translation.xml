@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Ray of Hope start -->
+
+  <TM_P_RayofHope.label>Raio de esperança</TM_P_RayofHope.label>
+  <TM_P_RayofHope.description>Cria uma aura de esperança em torno de um feitiço que aumenta periodicamente um aliado.
+
+Um reforço secreto que ajuda o trabalhador, melhorando a sua capacidade física e humor.
+
+Taxa de utilização: 80-90 hz
+Duração: 200-223 segundos
+Manipulação, Movimento: + 15%
+Aumento de humor: + 3
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_P_RayofHope.description>
+
+  <TM_P_RayofHope_I.label>Raio de esperança</TM_P_RayofHope_I.label>
+  <TM_P_RayofHope_I.description>Cria uma aura de esperança em torno de um feitiço que aumenta periodicamente um aliado.
+
+Um reforço secreto que ajuda o trabalhador, melhorando a sua capacidade física e humor.
+
+Taxa de utilização: 80-90 hz
+Duração: 200-223 segundos
+Manipulação, Movimento: + 18%
+Aumento de humor: + 4
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_P_RayofHope_I.description>
+
+  <TM_P_RayofHope_II.label>Raio de esperança</TM_P_RayofHope_II.label>
+  <TM_P_RayofHope_II.description>Cria uma aura de esperança em torno de um feitiço que aumenta periodicamente um aliado.
+
+Um reforço secreto que ajuda o trabalhador, melhorando a sua capacidade física e humor.
+
+Taxa de utilização: 80-90 hz
+Duração: 500-600 segundos
+Manipulação, Movimento: + 20%
+Aumento de humor: + 5
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_P_RayofHope_II.description>
+
+  <TM_P_RayofHope_III.label>Raio de esperança</TM_P_RayofHope_III.label>
+  <TM_P_RayofHope_III.description>Cria uma aura de esperança em torno de um feitiço que aumenta periodicamente um aliado.
+
+Um reforço secreto que ajuda o trabalhador, melhorando a sua capacidade física e humor.
+
+Taxa de utilização: 80-90 hz
+Duração: 500-600 segundos
+Manipulação, Movimento: + 22%
+Aumento de humor: + 5
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_P_RayofHope_III.description>
+
+
+  <!-- <ThingDef Class="TorannMagic.TMAbilityDef" ParentName="BaseAbility"> -->
+
+  <TM_Heal.label>Tratamento</TM_Heal.label>
+  <TM_Heal.description>Chama a força santa para curar as feridas do alvo. A cura básica restabelece o 8 de saúde para três feridas. Não é possível criar partes do corpo ausentes.</TM_Heal.description>
+
+
+  <!-- Shield start -->
+
+  <TM_Shield.label>Escudo</TM_Shield.label>
+  <TM_Shield.description>Protege o paladino de danos durante 50 segundos ou até o escudo ser quebrado.
+Absorve até 100 danos.</TM_Shield.description>
+
+  <TM_Shield_I.label>Escudo</TM_Shield_I.label>
+  <TM_Shield_I.description>Protege o paladino de danos durante 50 segundos ou até o escudo ser quebrado.
+Absorve até 120 danos
+Reduz a recarga para 30s.</TM_Shield_I.description>
+
+  <TM_Shield_II.label>Escudo</TM_Shield_II.label>
+  <TM_Shield_II.description>Protege o paladino de danos durante 50 segundos ou até o escudo ser quebrado.
+Absorve até 135 danos
+Reduz a recarga para 27s.</TM_Shield_II.description>
+
+  <TM_Shield_III.label>Escudo</TM_Shield_III.label>
+  <TM_Shield_III.description>Protege o paladino de danos durante 50 segundos ou até o escudo ser quebrado.
+Absorve até 150 danos
+Reduz a recarga para 25s.</TM_Shield_III.description>
+
+
+  <!-- Valiant Charge -->
+
+  <TM_ValiantCharge.label>Carga de bravura</TM_ValiantCharge.label>
+  <TM_ValiantCharge.description>O paladino voa com asas de anjo para chegar a um lugar distante, quebrando a terra com o poder sagrado ao pousar.</TM_ValiantCharge.description>
+
+
+  <!-- Overwhelm start -->
+
+  <TM_Overwhelm.label>Choque</TM_Overwhelm.label>
+  <TM_Overwhelm.description>A força sagrada é liberada do paladino, suprimindo os sentimentos físicos e mentais de todas as criaturas próximas.</TM_Overwhelm.description>
+
+
+  <!-- Holy Wrath -->
+
+  <TM_HolyWrath.label>Raiva Santa</TM_HolyWrath.label>
+  <TM_HolyWrath.description>Chama a raiva do santo para a terra.</TM_HolyWrath.description>
+
+
+</LanguageData>

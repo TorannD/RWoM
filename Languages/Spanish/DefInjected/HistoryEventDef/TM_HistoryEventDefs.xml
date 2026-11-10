@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_BestowClassEvent.label>inspiró una clase mágica</TM_BestowClassEvent.label>
+  
+  
+  <TM_BestowMagicEvent.label>concedió el don de la magia</TM_BestowMagicEvent.label>
+  
+  
+  <TM_KilledFighter.label>mató a un luchador</TM_KilledFighter.label>
+  
+  
+  <TM_KilledHumanlike.label>mató a alguien</TM_KilledHumanlike.label>
+  
+  
+  <TM_KilledMage.label>mató a un mago</TM_KilledMage.label>
+  
+  
+  <TM_OffensiveMagic.label>uso ofensivo o vulgar de la magia</TM_OffensiveMagic.label>
+  
+  
+  <TM_SeverMagicEvent.label>cortó a un mago de la magia</TM_SeverMagicEvent.label>
+  
+  
+  <TM_UsedMagic.label>usó una habilidad mágica</TM_UsedMagic.label>
+  
+  
+  <TM_UsedManeuver.label>usó una habilidad de combate</TM_UsedManeuver.label>
+  
+</LanguageData>

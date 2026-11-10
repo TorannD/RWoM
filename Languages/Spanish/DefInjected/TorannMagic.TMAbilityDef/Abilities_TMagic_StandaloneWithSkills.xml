@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_Explosion.label>¡Explosión!</TM_Explosion.label>
+  <TM_Explosion.description>Oscuridad envuelta en luz, llama frenética vestida de noche; en nombre de los demonios carmesí, que se manifieste el colapso de tu origen. Invoca ante mí la raíz de tu poder, oculta en el reino florecido de la perdición. ¡Explosión!</TM_Explosion.description>
+
+  
+  <TM_Taunt.label>Provocar</TM_Taunt.label>
+  <TM_Taunt.description>Provoca a los objetivos cercanos para que ataquen a este personaje.</TM_Taunt.description>
+
+  
+  <TM_ShieldOther.label>Escudo para otros</TM_ShieldOther.label>
+  <TM_ShieldOther.description>Protege al objetivo del daño durante 60 s o hasta que el escudo se rompa.\nAbsorbe hasta 80 de daño.\nEl escudo absorbe 0,5 de daño adicional por cada nivel del lanzador.</TM_ShieldOther.description>
+
+</LanguageData>

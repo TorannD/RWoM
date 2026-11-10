@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Fog_Poison.label>niebla de trampa de veneno</Fog_Poison.label>
+  
+  
+  <Fog_Shadows.label>niebla de sombras</Fog_Shadows.label>
+  
+  
+  <Fog_Torment.label>niebla de tormento</Fog_Torment.label>
+  
+  
+  <Mote_1sText.label>Mota</Mote_1sText.label>
+  
+  
+  <Mote_AlterFate.label>Mota</Mote_AlterFate.label>
+  
+  
+  <Mote_AntiCasting.label>Mota</Mote_AntiCasting.label>
+  
+  
+  <Mote_Arcane.label>Mota</Mote_Arcane.label>
+  
+  
+  <Mote_ArcaneBlast.label>Mota</Mote_ArcaneBlast.label>
+  
+  
+  <Mote_ArcaneCircle.label>Mota</Mote_ArcaneCircle.label>
+  
+  
+  <Mote_ArcaneDaggers.label>Mota</Mote_ArcaneDaggers.label>
+  
+  
+  <Mote_ArcaneFabricationA.label>Mota</Mote_ArcaneFabricationA.label>
+  
+  
+  <Mote_ArcaneFabricationB.label>Mota</Mote_ArcaneFabricationB.label>
+  
+  
+  <Mote_ArcaneFabricationC.label>Mota</Mote_ArcaneFabricationC.label>
+  
+  
+  <Mote_ArcaneFabricationD.label>Mota</Mote_ArcaneFabricationD.label>
+  
+  
+  <Mote_ArcaneFlame.label>Mota</Mote_ArcaneFlame.label>
+  
+  
+  <Mote_ArcaneStream.label>Mota</Mote_ArcaneStream.label>
+  
+  
+  <Mote_ArcaneWaves.label>Mota</Mote_ArcaneWaves.label>
+  
+  
+  <Mote_Barrier.label>Mota</Mote_Barrier.label>
+  
+  
+  <Mote_Base_Smoke.label>Mota</Mote_Base_Smoke.label>
+  
+  
+  <Mote_BlackSmoke.label>Mota</Mote_BlackSmoke.label>
+  
+  
+  <Mote_BlackSmokeLow.label>Mota</Mote_BlackSmokeLow.label>
+  
+  
+  <Mote_BladeSweep.label>Mota</Mote_BladeSweep.label>
+  
+  
+  <Mote_BloodCircle.label>Mota</Mote_BloodCircle.label>
+  
+  
+  <Mote_BloodFlame.label>Mota</Mote_BloodFlame.label>
+  
+  
+  <Mote_BloodMist.label>Mota</Mote_BloodMist.label>
+  
+  
+  <Mote_BloodSquirt.label>Mota</Mote_BloodSquirt.label>
+  
+  
+  <Mote_BloodWolfEast.label>Mota</Mote_BloodWolfEast.label>
+  
+  
+  <Mote_BloodWolfNorth.label>Mota</Mote_BloodWolfNorth.label>
+  
+  
+  <Mote_BloodWolfSouth.label>Mota</Mote_BloodWolfSouth.label>
+  
+  
+  <Mote_BloodWolfWest.label>Mota</Mote_BloodWolfWest.label>
+  
+  
+  <Mote_BlueSpireE.label>Mota</Mote_BlueSpireE.label>
+  
+  
+  <Mote_BlueSpireEs.label>Mota</Mote_BlueSpireEs.label>
+  
+  
+  <Mote_BlueSpireW.label>Mota</Mote_BlueSpireW.label>
+  
+  
+  <Mote_BlueSpireWs.label>Mota</Mote_BlueSpireWs.label>
+  
+  
+  <Mote_BlueSwirl.label>Mota</Mote_BlueSwirl.label>
+  
+  
+  <Mote_BlueTwinkle.label>Mota</Mote_BlueTwinkle.label>
+  
+  
+  <Mote_Bolt.label>Mota</Mote_Bolt.label>
+  
+  
+  <Mote_Bombardment.label>Mota</Mote_Bombardment.label>
+  
+  
+  <Mote_BoneDust.label>Mota</Mote_BoneDust.label>
+  
+  
+  <Mote_BracerBlock.label>Mota</Mote_BracerBlock.label>
+  
+  
+  <Mote_BracerBlock_NoFlash.label>Mota</Mote_BracerBlock_NoFlash.label>
+  
+  
+  <Mote_Casting.label>Mota</Mote_Casting.label>
+  
+  
+  <Mote_Chi_Grayscale.label>Mota</Mote_Chi_Grayscale.label>
+  
+  
+  <Mote_ClawSweep.label>Mota</Mote_ClawSweep.label>
+  
+  
+  <Mote_Cleave.label>Mota</Mote_Cleave.label>
+  
+  
+  <Mote_CQC.label>Mota</Mote_CQC.label>
+  
+  
+  <Mote_CrossStrike.label>Mota</Mote_CrossStrike.label>
+  
+  
+  <Mote_DeceptionMask.label>Mota</Mote_DeceptionMask.label>
+  
+  
+  <Mote_Demon_Flame.label>Mota</Mote_Demon_Flame.label>
+  
+  
+  <Mote_DirectionalDirt.label>Mota</Mote_DirectionalDirt.label>
+  
+  
+  <Mote_DirectionalDirtOverhead.label>Mota</Mote_DirectionalDirtOverhead.label>
+  
+  
+  <Mote_Disease.label>Mota</Mote_Disease.label>
+  
+  
+  <Mote_DiseaseExplosion.label>Mota</Mote_DiseaseExplosion.label>
+  
+  
+  <Mote_DragonStrike.label>Mota</Mote_DragonStrike.label>
+  
+  
+  <Mote_DWPhase_East.label>Mota</Mote_DWPhase_East.label>
+  
+  
+  <Mote_DWPhase_North.label>Mota</Mote_DWPhase_North.label>
+  
+  
+  <Mote_DWPhase_South.label>Mota</Mote_DWPhase_South.label>
+  
+  
+  <Mote_DWPhase_West.label>Mota</Mote_DWPhase_West.label>
+  
+  
+  <Mote_EarthCrack.label>Mota</Mote_EarthCrack.label>
+  
+  
+  <Mote_Enchanting.label>Mota</Mote_Enchanting.label>
+  
+  
+  <Mote_EnergyStream.label>Mota</Mote_EnergyStream.label>
+  
+  
+  <Mote_EvilEye.label>Mota</Mote_EvilEye.label>
+  
+  
+  <Mote_Exclamation.label>Mota</Mote_Exclamation.label>
+  
+  
+  <Mote_ExclamationRed.label>Mota</Mote_ExclamationRed.label>
+  
+  
+  <Mote_ExpandingFlame.label>Mota</Mote_ExpandingFlame.label>
+  
+  
+  <Mote_Flame.label>Mota</Mote_Flame.label>
+  
+  
+  <Mote_Flowers.label>Mota</Mote_Flowers.label>
+  
+  
+  <Mote_Ghost.label>Mota</Mote_Ghost.label>
+  
+  
+  <Mote_GlowingRune.label>Mota</Mote_GlowingRune.label>
+  
+  
+  <Mote_GlowingRuneA.label>Mota</Mote_GlowingRuneA.label>
+  
+  
+  <Mote_Golem_LSFA_East.label>Mota</Mote_Golem_LSFA_East.label>
+  
+  
+  <Mote_Golem_LSFA_South.label>Mota</Mote_Golem_LSFA_South.label>
+  
+  
+  <Mote_Golem_LSFA_West.label>Mota</Mote_Golem_LSFA_West.label>
+  
+  
+  <Mote_GrappleHook.label>Mota</Mote_GrappleHook.label>
+  
+  
+  <Mote_GraveBlade.label>Mota</Mote_GraveBlade.label>
+  
+  
+  <Mote_GreenTwinkle.label>Mota</Mote_GreenTwinkle.label>
+  
+  
+  <Mote_Healing_Small.label>Mota</Mote_Healing_Small.label>
+  
+  
+  <Mote_Heat.label>Mota</Mote_Heat.label>
+  
+  
+  <Mote_Hex.label>Mota</Mote_Hex.label>
+  
+  
+  <Mote_Holy.label>Mota</Mote_Holy.label>
+  
+  
+  <Mote_Ice.label>Mota</Mote_Ice.label>
+  
+  
+  <Mote_LightBarrier.label>Mota</Mote_LightBarrier.label>
+  
+  
+  <Mote_LightShield.label>Mota</Mote_LightShield.label>
+  
+  
+  <Mote_LightShield_Glow.label>Mota</Mote_LightShield_Glow.label>
+  
+  
+  <Mote_ManaPuff.label>Mota</Mote_ManaPuff.label>
+  
+  
+  <Mote_ManaVortex.label>Mota</Mote_ManaVortex.label>
+  
+  
+  <Mote_MultiStrike.label>Mota</Mote_MultiStrike.label>
+  
+  
+  <Mote_Note.label>Mota</Mote_Note.label>
+  
+  
+  <Mote_Poison.label>Mota</Mote_Poison.label>
+  
+  
+  <Mote_Possess.label>Mota</Mote_Possess.label>
+  
+  
+  <Mote_PowerBeamBlue.label>Mota</Mote_PowerBeamBlue.label>
+  
+  
+  <Mote_PowerBeamGold.label>Mota</Mote_PowerBeamGold.label>
+  
+  
+  <Mote_PowerBeamPsionic.label>Mota</Mote_PowerBeamPsionic.label>
+  
+  
+  <Mote_PowerWave.label>Mota</Mote_PowerWave.label>
+  
+  
+  <Mote_Psi.label>Mota</Mote_Psi.label>
+  
+  
+  <Mote_Psi_Arcane.label>Mota</Mote_Psi_Arcane.label>
+  
+  
+  <Mote_Psi_Black.label>Mota</Mote_Psi_Black.label>
+  
+  
+  <Mote_Psi_Grayscale.label>Mota</Mote_Psi_Grayscale.label>
+  
+  
+  <Mote_Psi_Yellow.label>Mota</Mote_Psi_Yellow.label>
+  
+  
+  <Mote_PsiBlastEnd.label>Mota</Mote_PsiBlastEnd.label>
+  
+  
+  <Mote_PsiBlastStart.label>Mota</Mote_PsiBlastStart.label>
+  
+  
+  <Mote_PsiCurrent.label>Mota</Mote_PsiCurrent.label>
+  
+  
+  <Mote_PurpleSmoke.label>Mota</Mote_PurpleSmoke.label>
+  
+  
+  <Mote_RedSwirl.label>Mota</Mote_RedSwirl.label>
+  
+  
+  <Mote_Regen.label>Mota</Mote_Regen.label>
+  
+  
+  <Mote_Rubble.label>Mota</Mote_Rubble.label>
+  
+  
+  <Mote_Scan.label>Mota</Mote_Scan.label>
+  
+  
+  <Mote_ScreamMote.label>Mota</Mote_ScreamMote.label>
+  
+  
+  <Mote_Shadow.label>Mota</Mote_Shadow.label>
+  
+  
+  <Mote_ShadowCleave.label>Mota</Mote_ShadowCleave.label>
+  
+  
+  <Mote_ShadowCloud.label>Mota</Mote_ShadowCloud.label>
+  
+  
+  <Mote_Siphon.label>Mota</Mote_Siphon.label>
+  
+  
+  <Mote_SpiritCasting.label>Mota</Mote_SpiritCasting.label>
+  
+  
+  <Mote_SpiritFlame.label>Mota</Mote_SpiritFlame.label>
+  
+  
+  <Mote_SpiritRetaliation.label>Mota</Mote_SpiritRetaliation.label>
+  
+  
+  <Mote_SpiritWolf_East.label>Mota</Mote_SpiritWolf_East.label>
+  
+  
+  <Mote_SpiritWolf_North.label>Mota</Mote_SpiritWolf_North.label>
+  
+  
+  <Mote_SpiritWolf_South.label>Mota</Mote_SpiritWolf_South.label>
+  
+  
+  <Mote_SpiritWolf_West.label>Mota</Mote_SpiritWolf_West.label>
+  
+  
+  <Mote_Strike.label>Mota</Mote_Strike.label>
+  
+  
+  <Mote_SummoningCircle.label>Mota</Mote_SummoningCircle.label>
+  
+  
+  <Mote_TechnoShield.label>Mota</Mote_TechnoShield.label>
+  
+  
+  <Mote_ThickDust.label>Mota</Mote_ThickDust.label>
+  
+  
+  <Mote_TigerStrike.label>Mota</Mote_TigerStrike.label>
+  
+  
+  <Mote_Twinkle.label>Mota</Mote_Twinkle.label>
+  
+  
+  <Mote_Twinkle_grayscale.label>Mota</Mote_Twinkle_grayscale.label>
+  
+  
+  <Mote_WallSpike.label>Mota</Mote_WallSpike.label>
+  
+  
+  <Mote_WhiteIce.label>Mota</Mote_WhiteIce.label>
+  
+  
+  <TM_Mote_PsycastAreaEffect.label>Mota</TM_Mote_PsycastAreaEffect.label>
+  
+  
+  <TM_Mote_PsycastPsychicEffect.label>Mota</TM_Mote_PsycastPsychicEffect.label>
+  
+  
+  <TM_Mote_PsycastPsychicLine.label>Mota</TM_Mote_PsycastPsychicLine.label>
+  
+</LanguageData>

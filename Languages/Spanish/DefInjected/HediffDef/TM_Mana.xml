@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_MagicUserHD.label>usuario de magia</TM_MagicUserHD.label>
+  
+  <TM_MagicUserHD.description>Dolencia necesaria para los usuarios de magia.</TM_MagicUserHD.description>
+  
+  <TM_MagicUserHD.stages.hidden.label>oculto</TM_MagicUserHD.stages.hidden.label>
+  
+</LanguageData>

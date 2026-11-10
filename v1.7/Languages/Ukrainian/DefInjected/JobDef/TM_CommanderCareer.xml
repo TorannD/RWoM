@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadCommanderProvisioner.reportString>вивчає статут командира.</TM_ReadCommanderProvisioner.reportString>
+  <TM_ReadCommanderSignals.reportString>вивчає статут командира.</TM_ReadCommanderSignals.reportString>
+  <TM_CommanderOperationJob.reportString>керує екстреною операцією.</TM_CommanderOperationJob.reportString>
+</LanguageData>

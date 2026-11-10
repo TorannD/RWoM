@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_EmpathHD.label>емпат</TM_EmpathHD.label>
+  <TM_EmpathHD.description>Це вміння емпата контролювати свої вроджені здібності.</TM_EmpathHD.description>
+  <TM_EmpathHD.stages.0.label>Неконтрольований</TM_EmpathHD.stages.0.label>
+  <TM_EmpathHD.stages.1.label>Непідготовлений</TM_EmpathHD.stages.1.label>
+  <TM_EmpathHD.stages.2.label>Знайомий</TM_EmpathHD.stages.2.label>
+  <TM_EmpathHD.stages.3.label>Тренуваний</TM_EmpathHD.stages.3.label>
+  <TM_EmpathHD.stages.4.label>Вміле</TM_EmpathHD.stages.4.label>
+  <TM_EmpathHD.stages.5.label>Майстер</TM_EmpathHD.stages.5.label>
+
+  <TM_MindKillerHD.label>емоційний шок</TM_MindKillerHD.label>
+  <TM_MindKillerHD.description>Ця пішака була переповнена потоком емоцій і не здатна думати або діяти з чітким наміром; це може призвести до того, що пішак кине свою зброю або втече в страху.</TM_MindKillerHD.description>
+  <TM_MindKillerHD.stages.0.label>відновлення</TM_MindKillerHD.stages.0.label>
+  <TM_MindKillerHD.stages.1.label>I</TM_MindKillerHD.stages.1.label>
+  <TM_MindKillerHD.stages.2.label>II</TM_MindKillerHD.stages.2.label>
+  <TM_MindKillerHD.stages.3.label>III</TM_MindKillerHD.stages.3.label>
+
+  <TM_HarvestPassionHD.label>збір пристрасті</TM_HarvestPassionHD.label>
+  <TM_HarvestPassionHD.description>Пристрасть крадеться іншою пішакою.</TM_HarvestPassionHD.description>
+  <TM_HarvestPassionHD.stages.0.label></TM_HarvestPassionHD.stages.0.label>
+
+  <TM_SuppressiveAuraHD.label>переважна аура</TM_SuppressiveAuraHD.label>
+  <TM_SuppressiveAuraHD.description>Емпат пригнічує емоції найближчих пішаків; порушені пішаки не зможуть увійти в ментальну перерву або отримати будь-які думки, пов&apos;язані з настроєм, які не дозволені емпатом.</TM_SuppressiveAuraHD.description>
+  <TM_SuppressiveAuraHD.stages.0.label></TM_SuppressiveAuraHD.stages.0.label>
+
+  <TM_EmotionSuppressionHD.label>пригнічені емоції</TM_EmotionSuppressionHD.label>
+  <TM_EmotionSuppressionHD.description>Емоції цієї пішаки пригнічуються; ця пішака не буде відчувати психічного зриву, і більшість думок, пов&apos;язаних з настроєм, будуть відфільтровані.</TM_EmotionSuppressionHD.description>
+  <TM_EmotionSuppressionHD.stages.0.label></TM_EmotionSuppressionHD.stages.0.label>
+
+  <TM_SymbiosisHD.label>симбіоз</TM_SymbiosisHD.label>
+  <TM_SymbiosisHD.description>Емоції та усвідомлення цієї пішаки були посилені і укріплені розумом емпата. По суті, розум емпата з&apos;єднаний з цією пішаком - якщо ця пішака помре, емпат теж помре.</TM_SymbiosisHD.description>
+  <TM_SymbiosisHD.stages.0.label>I</TM_SymbiosisHD.stages.0.label>
+  <TM_SymbiosisHD.stages.1.label>II</TM_SymbiosisHD.stages.1.label>
+  <TM_SymbiosisHD.stages.2.label>III</TM_SymbiosisHD.stages.2.label>
+  <TM_SymbiosisHD.stages.3.label>IV</TM_SymbiosisHD.stages.3.label>
+
+  <TM_OutOfBodyHD.label>поза тілом</TM_OutOfBodyHD.label>
+  <TM_OutOfBodyHD.description>Емоції та усвідомлення цієї пішаки були прикріплені до іншої пішаки; це тіло в даний час є порожньою оболонкою.</TM_OutOfBodyHD.description>
+  <TM_OutOfBodyHD.stages.0.label></TM_OutOfBodyHD.stages.0.label>
+
+
+</LanguageData>

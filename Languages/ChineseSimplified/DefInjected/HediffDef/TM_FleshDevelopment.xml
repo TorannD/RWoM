@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_FleshProgressHD.description>亡灵通过吞噬尸体成长。下方显示当前等级、经验和可用技能点。</TM_FleshProgressHD.description>
+  <TM_FleshMobilityHD.description>进化后的血肉提高移动速度。下方显示已学习阶级及其加成。</TM_FleshMobilityHD.description>
+  <TM_FleshStrengthHD.description>进化后的血肉增加近战伤害。下方显示已学习阶级及其加成。</TM_FleshStrengthHD.description>
+  <TM_FleshIndustryHD.description>进化后的血肉提高全局工作速度。下方显示已学习阶级及其加成。</TM_FleshIndustryHD.description>
+  <TM_FleshCapacityHD.description>进化后的血肉提高饥渴上限。下方显示已学习阶级和当前容量。</TM_FleshCapacityHD.description>
+  <TM_FleshEmpowerHD.description>强化血肉暂时提高移动速度和全局工作速度。当前等级、加成和剩余时间如下所示。</TM_FleshEmpowerHD.description>
+  <TM_FleshHardenHD.description>强化皮肤暂时增加利器与钝器护甲。当前等级、加成和剩余时间如下所示。</TM_FleshHardenHD.description>
+  <TM_FleshFeastHD.description>血肉盛宴正在生效。剩余时间、渴望和失控狂暴状态如下所示。</TM_FleshFeastHD.description>
+</LanguageData>

@@ -1,0 +1,37 @@
+<LanguageData><!-- v1.5\Defs\Ideology\Rituals\TM_RulePacks_Ritual.xml-->
+	<NamerRitualGifting.rulePack.rulesStrings><li>r_ritualName-&gt;[ritNoun] [keyDeity]</li>
+		<li>r_ritualName-&gt;[ritNoun] [chosenTheme]</li>
+		<li>r_ritualName-&gt;[ritNoun] [memeConcept]</li>
+		<li>r_ritualName-&gt;[memeAdjective] [ritNoun]</li>
+		<li>ritNoun-&gt;дарение</li>
+		<li>ritNoun-&gt;восхождение</li>
+		<li>ritNoun-&gt;превращение</li>
+		<li>ritNoun-&gt;просветление</li>
+		<li>ritNoun-&gt;соединение</li>
+		<li>ritNoun-&gt;связывание</li>
+		<li>ritNoun-&gt;слияние</li>
+		<li>ritNoun-&gt;призыв</li>
+		<li>ritNoun-&gt;ясность</li>
+		<li>ritNoun-&gt;вознесение</li>
+		<li>ritNoun-&gt;пробуждение</li>
+		<li>ritNoun-&gt;призыв</li>
+	</NamerRitualGifting.rulePack.rulesStrings>
+	<NamerRitualMindMutilation.rulePack.rulesStrings><li>r_ritualName-&gt;[ritNoun] [keyDeity]</li>
+		<li>r_ritualName-&gt;[ritNoun] [chosenTheme]</li>
+		<li>r_ritualName-&gt;[ritNoun] [memeConcept]</li>
+		<li>r_ritualName-&gt;[memeAdjective] [ritNoun]</li>
+		<li>ritNoun-&gt;увечье духа</li>
+		<li>ritNoun-&gt;рассечение души</li>
+		<li>ritNoun-&gt;расчленение души</li>
+		<li>ritNoun-&gt;разрыв</li>
+		<li>ritNoun-&gt;раздирание разума</li>
+		<li>ritNoun-&gt;разрывание сознания</li>
+		<li>ritNoun-&gt;изувечение души</li>
+		<li>ritNoun-&gt;вырезание разума</li>
+		<li>ritNoun-&gt;рассечение духа</li>
+		<li>ritNoun-&gt;разрывание души</li>
+		<li>ritNoun-&gt;заглушение</li>
+		<li>ritNoun-&gt;утишение</li>
+		<li>ritNoun-&gt;подавление</li>
+	</NamerRitualMindMutilation.rulePack.rulesStrings>
+</LanguageData>

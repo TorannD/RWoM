@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaSiphon.label>mana siphon</TM_ManaSiphon.label>
+  <TM_ManaSiphon.description>A passive station where fully trained mages assigned to magic work donate mana to magofuel reservoirs connected through mana beacons. By default, keeps 20% personal mana and accepts at most 80% of maximum mana per visit. Both limits are configurable from 0% to 100%. A mage must fully regenerate before donating again. An internal 100-mana buffer catches overflow from a transfer already in progress and automatically empties into connected reservoirs when space becomes available. Mages stop donating when the reservoirs are full. The siphon stores no fuel and needs no electricity.</TM_ManaSiphon.description>
+</LanguageData>

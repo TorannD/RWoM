@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadGladiatorSprint.reportString>正在学习角斗士战斗技巧。</TM_ReadGladiatorSprint.reportString>
+  <TM_ReadGladiatorManeuver.reportString>正在学习角斗士战斗技巧。</TM_ReadGladiatorManeuver.reportString>
+  <TM_GladiatorReliefDrill.reportString>正在支援盟友。</TM_GladiatorReliefDrill.reportString>
+  <TM_GladiatorCoverAlly.reportString>正在掩护盟友。</TM_GladiatorCoverAlly.reportString>
+  <TM_GladiatorEvacuationDrill.reportString>正在进行撤离演练。</TM_GladiatorEvacuationDrill.reportString>
+  <TM_GladiatorLastCircle.reportString>正在准备最后防线。</TM_GladiatorLastCircle.reportString>
+</LanguageData>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Speech_SeverMagic.label>розоров магічного потоку</TM_Speech_SeverMagic.label>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.0>r_logentry-&gt;[INITIATOR_nameDef] [praised] [doing] [speechtopic].</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.0>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.1>r_logentry(p=0.2)-&gt;[INITIATOR_nameDef] [crazy].</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.1>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.2>speechtopic- &gt; магія</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.2>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.3>speechtopic- &gt; світ через силу</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.3>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.4>speechtopic- &gt; маги</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.4>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.5>speechtopic- &gt; хаос</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.5>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.6>speechtopic- &gt; спокуса владою</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.6>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.7>speechtopic- &gt; магія і маги</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.7>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.8>speechtopic- &gt; спокуса магії</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.8>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.9>speechtopic- &gt; мандрівний біогенетичний рак</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.9>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.10>crazy- &gt; кричить шалено</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.10>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.11>crazy- &gt; вибухнув піснеспівом</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.11>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.12>crazy- &gt; оспіваний до небес</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.12>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.13>crazy- &gt; плюнув магу в око</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.13>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.14>crazy- &gt; засміявся</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.14>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.15>crazy- &gt; замахнувся клинком</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.15>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.16>crazy- &gt; бурмотів одне й те саме</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.16>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.17>crazy- &gt; кричить з викликом</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.17>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.18>crazy- &gt; нестримно скидається</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.18>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.19>doing- &gt; контролює</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.19>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.20>doing- &gt; балансує</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.20>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.21>doing- &gt; жертвує</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.21>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.22>doing- &gt; усуває спокуси</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.22>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.23>doing- &gt; маніпулює</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.23>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.24>doing- &gt; звільняє</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.24>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.25>doing- &gt; твердо стоїть проти</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.25>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.26>doing- &gt; відкидає</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.26>
+
+  <TM_Speech_BestowMagic.label>дар магічного потоку</TM_Speech_BestowMagic.label>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.0>r_logentry-&gt;[INITIATOR_nameDef] [praised] [doing] [speechtopic].</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.0>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.1>r_logentry(p=0.2)-&gt;[INITIATOR_nameDef] [crazy].</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.1>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.2>speechtopic- &gt; магія</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.2>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.3>speechtopic- &gt; світ через силу</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.3>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.4>speechtopic- &gt; маги</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.4>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.5>speechtopic- &gt; наказ</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.5>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.6>speechtopic- &gt; сила для захисту</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.6>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.7>speechtopic- &gt; магія і маги</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.7>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.8>speechtopic- &gt; благословення магії</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.8>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.9>speechtopic- &gt; наступний етап у еволюції людини</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.9>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.10>crazy- &gt; переможно зревів</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.10>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.11>crazy- &gt; вибухнув піснеспівом</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.11>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.12>crazy- &gt; оспіваний до небес</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.12>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.13>crazy- &gt; поклав руку переконання на мага</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.13>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.14>crazy- &gt; героїчно посміхнувся</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.14>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.15>crazy- &gt; розмахував посохом</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.15>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.16>crazy- &gt; пробурмотів мантру</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.16>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.17>crazy- &gt; запропонував благословення</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.17>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.18>crazy- &gt; потягнувся до небес</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.18>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.19>doing- &gt; досягнення</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.19>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.20>doing- &gt; навчання</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.20>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.21>doing- &gt; розумний</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.21>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.22>doing- &gt; використовує</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.22>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.23>doing- &gt; захищає</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.23>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.24>doing- &gt; звільняє</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.24>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.25>doing- &gt; допомагає</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.25>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.26>doing- &gt; отримує</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.26>
+
+
+</LanguageData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_ArcaneCapacitor.label>Condensador arcano</TM_ArcaneCapacitor.label>
+  
+  <TM_ArcaneCapacitor.description>El condensador arcano es capaz de almacenar maná en forma de energía potencial que los magos pueden utilizar más adelante. Los magos asignados a tareas mágicas cargarán la batería hasta que alcance el nivel de llenado establecido. Un mago solo realizará esta tarea si su nivel de maná es superior al 90 % de su máximo.\n\nEl condensador arcano descargará maná a cualquier peón no reclutado que esté dentro del alcance si la proporción de maná del condensador es un 250 % superior a la del mago. Los magos reclutados extraerán maná a la fuerza del condensador hasta que este quede vacío o el mago tenga un 90 % o más de maná.\n\nSe pierde algo de maná durante el proceso de descarga.\nEficiencia: 71 %</TM_ArcaneCapacitor.description>
+  
+  
+  <TM_DimensionalManaPocket.label>Bolsa de maná dimensional</TM_DimensionalManaPocket.label>
+  
+  <TM_DimensionalManaPocket.description>La bolsa de maná dimensional almacena una cantidad tremenda de maná y tiene un área de cobertura de distribución grande, pero es más lenta que el condensador arcano a la hora de redistribuir el maná cuando se necesita.\n\nLos magos asignados a tareas mágicas almacenarán maná en la bolsa dimensional hasta que alcance su nivel de llenado establecido. Un mago solo realizará esta tarea si su nivel de maná es superior al 90 % de su máximo.\n\nLa bolsa dimensional descargará maná a cualquier peón no reclutado en el rango si su maná está por debajo del 40 % y a cualquier mago reclutado con un maná inferior al 80 %.\n\nSe pierde algo de maná tanto durante el proceso de carga como de descarga.\nEficiencia: 80 %</TM_DimensionalManaPocket.description>
+  
+</LanguageData>

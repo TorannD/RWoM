@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_EtherShell_eff>Eficiência</TM_EtherShell_eff>
+  <TM_EtherShell_eff_desc>Reduz o custo de mana em 10% por nível, até três níveis.</TM_EtherShell_eff_desc>
+  <TM_EtherShell_AlreadyProtected>Este peão já tem um invólucro etéreo.</TM_EtherShell_AlreadyProtected>
+  <TM_EtherShell_Unavailable>Invólucro etéreo indisponível.</TM_EtherShell_Unavailable>
+  <TM_EtherShell_ver>Duração</TM_EtherShell_ver>
+  <TM_EtherShell_ver_desc>Aumenta a duração base em 25% por nível: 30, 36 ou 42 horas. Pergaminhos e cajados duram 24 horas.</TM_EtherShell_ver_desc>
+</LanguageData>

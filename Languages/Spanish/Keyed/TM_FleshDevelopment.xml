@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Flesh_Casting>Preparando {0}.</TM_Flesh_Casting>
+  <TM_Flesh_HealthLevel>nivel {0}</TM_Flesh_HealthLevel>
+  <TM_Flesh_HealthRank>rango {0}/{1}</TM_Flesh_HealthRank>
+  <TM_Flesh_HealthMobility>Velocidad de movimiento: +{0}%</TM_Flesh_HealthMobility>
+  <TM_Flesh_HealthStrength>Daño cuerpo a cuerpo: +{0}%</TM_Flesh_HealthStrength>
+  <TM_Flesh_HealthIndustry>Velocidad de trabajo general: +{0}% (incluye fabricación)</TM_Flesh_HealthIndustry>
+  <TM_Flesh_HealthCapacity>Sed máxima: +{0} (total: {1})</TM_Flesh_HealthCapacity>
+  <TM_Flesh_Title>Desarrollo de la carne</TM_Flesh_Title>
+  <TM_Flesh_Open>Abre la progresión permanente de la carne de este no muerto reanimado.</TM_Flesh_Open>
+  <TM_Flesh_Stats>Nivel {0}   •   Experiencia {1}/{2}   •   Puntos de habilidad: {3}</TM_Flesh_Stats>
+  <TM_Flesh_Experience>Experiencia</TM_Flesh_Experience>
+  <TM_Flesh_Thirst>Sed: {0}/{1}</TM_Flesh_Thirst>
+  <TM_Flesh_Stop>Detener el Festín de este no muerto</TM_Flesh_Stop>
+  <TM_Flesh_StopAll>Detener los Festines de todos los no muertos bajo tu control</TM_Flesh_StopAll>
+  <TM_Flesh_StopDesc>El amo detiene el Festín sin coste; la sed y la recarga se mantienen.</TM_Flesh_StopDesc>
+  <TM_Flesh_Rage>Furia del Festín: los mordiscos continúan hasta alcanzar un 20% de sed o recibir la orden de detenerse del amo.</TM_Flesh_Rage>
+  <TM_Flesh_Gate>Requisitos para desbloquear el Festín: maximiza todas estas habilidades:</TM_Flesh_Gate>
+  <TM_Flesh_Upgrade>Mejorar (1 punto)</TM_Flesh_Upgrade>
+  <TM_Flesh_Use>Usar</TM_Flesh_Use>
+  <TM_Flesh_Cooldown>Disponible en {0} segundos</TM_Flesh_Cooldown>
+  <TM_Flesh_Ready>Disponible</TM_Flesh_Ready>
+  <TM_Flesh_Active>Activo: {0} segundos</TM_Flesh_Active>
+  <TM_Flesh_Devour>Devorar carne</TM_Flesh_Devour>
+  <TM_Flesh_DevourDesc>Consume un cadáver a distancia cuerpo a cuerpo: la experiencia depende de la carne restante y su frescura. Cada 5 unidades de carne reducen la sed en 1. Objetivos orgánicos vivos: 4/6/8 de daño según el rango, sin experiencia. Recarga: 5 segundos. Los mordiscos acertados a objetivos vivos también añaden un 1% de acumulación tóxica, reducida por la resistencia tóxica.</TM_Flesh_DevourDesc>
+  <TM_Flesh_Restore>Restaurar carne</TM_Flesh_Restore>
+  <TM_Flesh_RestoreDesc>Cura por completo heridas, cicatrices y partes naturales perdidas. Conserva los implantes. Coste: TODA la experiencia acumulada en el nivel actual (debe ser mayor que cero). Conserva niveles y puntos. Recarga por rango: 1000/900/800 segundos.</TM_Flesh_RestoreDesc>
+  <TM_Flesh_Empower>Potenciar carne</TM_Flesh_Empower>
+  <TM_Flesh_EmpowerDesc>Preparación: 2 segundos; interrumpir no consume recursos. Velocidad de movimiento y trabajo general: +10/20/30% según el rango. Coste: +10 de sed. Duración y recarga: 300 segundos. Al finalizar: 10% de probabilidad de dañar las extremidades naturales por un 10% de su salud máxima.</TM_Flesh_EmpowerDesc>
+  <TM_Flesh_Harden>Endurecer piel</TM_Flesh_Harden>
+  <TM_Flesh_HardenDesc>Preparación: 2 segundos; interrumpir no consume recursos. Armadura contra daño cortante y contundente: +20/35/50 puntos porcentuales según el rango. Coste: +15 de sed. Duración y recarga: 300 segundos. Al finalizar, el torso recibe daño equivalente a la mitad de su salud máxima.</TM_Flesh_HardenDesc>
+  <TM_Flesh_Feast>Festín de carne</TM_Flesh_Feast>
+  <TM_Flesh_FeastDesc>Preparación: 5 segundos; interrumpir no consume recursos. Un rango. Requiere maximizar todas las demás habilidades. Fija la sed al 50%; +1 de sed por segundo durante 60 segundos. Los golpes cuerpo a cuerpo acertados tienen un 20% de probabilidad de consumir una parte orgánica, incluidos órganos vitales. La sed máxima provoca furia; con 0 de sed termina el Festín. Recarga: 1000 segundos. Durante el Festín, cada ataque cuerpo a cuerpo es un mordisco; los mordiscos acertados tienen una probabilidad independiente del 30% de infectar una herida orgánica que siga presente. Los fallos y los golpes totalmente absorbidos no activan estos efectos. Los mordiscos acertados a objetivos vivos también añaden un 1% de acumulación tóxica, reducida por la resistencia tóxica.</TM_Flesh_FeastDesc>
+  <TM_Flesh_Mobility>Carne ágil</TM_Flesh_Mobility>
+  <TM_Flesh_MobilityDesc>Cada rango añade +2% de velocidad de movimiento. 10 rangos: +20% en total.</TM_Flesh_MobilityDesc>
+  <TM_Flesh_Strength>Carne poderosa</TM_Flesh_Strength>
+  <TM_Flesh_StrengthDesc>Cada rango añade +3% de daño cuerpo a cuerpo. 10 rangos: +30% en total.</TM_Flesh_StrengthDesc>
+  <TM_Flesh_Industry>Carne laboriosa</TM_Flesh_Industry>
+  <TM_Flesh_IndustryDesc>Cada rango añade +2% de velocidad de trabajo general; la fabricación recibe el bono una sola vez. 10 rangos: +20% en total.</TM_Flesh_IndustryDesc>
+  <TM_Flesh_Capacity>Capacidad de la carne</TM_Flesh_Capacity>
+  <TM_Flesh_CapacityDesc>Cada rango añade 10 de sed máxima. 8 rangos: 20 → 100. Sed natural: +10 al día. Al 80%: −10% de movimiento/trabajo; al máximo: −20%.</TM_Flesh_CapacityDesc>
+  <TM_FleshRejectUnavailable>Este no muerto debe estar vivo, en pie, bajo tu control y sin un estado mental alterado.</TM_FleshRejectUnavailable>
+  <TM_FleshRejectUnlearned>Esta habilidad no se ha aprendido.</TM_FleshRejectUnlearned>
+  <TM_FleshRejectCooldown>Esta habilidad se está recargando.</TM_FleshRejectCooldown>
+  <TM_FleshRejectActive>Este efecto ya está activo.</TM_FleshRejectActive>
+  <TM_FleshRejectNoExperience>La restauración requiere experiencia del nivel actual.</TM_FleshRejectNoExperience>
+  <TM_Flesh_ActiveKind>Activa</TM_Flesh_ActiveKind>
+  <TM_Flesh_PassiveKind>Pasiva</TM_Flesh_PassiveKind>
+  <TM_Flesh_NoPoints>Puntos de habilidad insuficientes</TM_Flesh_NoPoints>
+  <TM_Flesh_MaxRank>Rango máximo</TM_Flesh_MaxRank>
+  <TM_Flesh_ThirstLabel>Sed</TM_Flesh_ThirstLabel>
+  <TM_Flesh_ThirstTip>Hambre acumulada: +10 al día. Comer carne reduce la Sed. Al 80%: −10% de movimiento/trabajo; al máximo: −20%.</TM_Flesh_ThirstTip>
+  <TM_Flesh_DebugLevelUp>+1 nivel</TM_Flesh_DebugLevelUp>
+  <TM_Flesh_StatTotal>Multiplicador combinado de la carne: {0}</TM_Flesh_StatTotal>
+  <TM_Flesh_HealthRemaining>Quedan {0} s</TM_Flesh_HealthRemaining>
+  <TM_Flesh_HealthRage>Furia descontrolada</TM_Flesh_HealthRage>
+  <TM_Flesh_HealthEmpower>Velocidad de movimiento y de trabajo general: +{0}%.</TM_Flesh_HealthEmpower>
+  <TM_Flesh_HealthHarden>Armadura cortante y contundente: +{0} puntos porcentuales.</TM_Flesh_HealthHarden>
+  <TM_Flesh_HealthFeast>El festín está activo. Sed actual: {1}/{2}. La furia continúa hasta que la Sed baje al 20% o el amo la detenga.</TM_Flesh_HealthFeast>
+  <TM_Flesh_BiteRules>Fuera del Festín, los ataques cuerpo a cuerpo de los no muertos tienen un 10% de probabilidad de convertirse en mordiscos críticos (+50% de daño). Los mordiscos acertados añaden un 1% de acumulación tóxica, reducida por la resistencia tóxica.</TM_Flesh_BiteRules>
+</LanguageData>

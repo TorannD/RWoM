@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_TomeRaidChoice>袭击者</TM_TomeRaidChoice>
+  <TM_TomeRiftChoice>单波元素裂隙</TM_TomeRiftChoice>
+  <TM_TomeRiftLocked>威胁点数不足或没有敌对元素派系</TM_TomeRiftLocked>
+  <TM_TomeRiftDescription>{0}附近将开启裂隙。游戏时间一小时后，{1}名元素守卫（约{2}威胁点数）将一同出现，裂隙随即关闭。请在两天内击退他们以领取{3}。</TM_TomeRiftDescription>
+</LanguageData>

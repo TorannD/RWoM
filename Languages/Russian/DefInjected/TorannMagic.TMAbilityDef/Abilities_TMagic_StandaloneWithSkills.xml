@@ -1,0 +1,12 @@
+<LanguageData><!-- Explosion!-->
+	<TM_Explosion.label>Взрыв!</TM_Explosion.label>
+	<TM_Explosion.description>Тьма, окутанная светом, бешеное пламя, облаченное в ночь, во имя багровых демонов, пусть проявится крах твоего происхождения. Призови передо мной корень силы, скрытый в цветущем королевстве гибели. Взрыв!</TM_Explosion.description>
+	<!-- Taunt-->
+	<TM_Taunt.label>Насмешка</TM_Taunt.label>
+	<TM_Taunt.description>Насмехается над ближайшими целями, чтобы атаковать эту пешку.</TM_Taunt.description>
+	<!-- Shield Other-->
+	<TM_ShieldOther.label>Щит</TM_ShieldOther.label>
+	<TM_ShieldOther.description>Защищает цель от повреждений в течение 60 секунд или до тех пор, пока щит не будет сломан.
+Поглощает до 80 урона.
+Щит поглощает дополнительный урон .5 за каждый уровень заклинателя.</TM_ShieldOther.description>
+</LanguageData>

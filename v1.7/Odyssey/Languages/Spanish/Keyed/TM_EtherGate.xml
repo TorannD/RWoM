@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_EtherGateSummon>Invocar sirviente etéreo</TM_EtherGateSummon>
+  <TM_EtherGateSummonDesc>Consume 100 de combustible arcano para invocar un transportista durante un día. No necesita comida, sueño ni aire. También excava con una habilidad inicial de Minería de 10 y construye con una habilidad inicial de Construcción de 5. Prioridad: construcción, minería designada y transporte.</TM_EtherGateSummonDesc>
+  <TM_EtherGateUnavailable>El portal debe estar colocado en un mapa, pertenecer a tu facción y estar encendido.</TM_EtherGateUnavailable>
+  <TM_EtherGateNoFuel>Requiere 100 de combustible arcano.</TM_EtherGateNoFuel>
+  <TM_EtherGateNoLanding>No hay espacio seguro junto al portal para el sirviente.</TM_EtherGateNoLanding>
+  <TM_EtherGateFailed>La invocación falló. No se consumió combustible arcano.</TM_EtherGateFailed>
+  <TM_EtherGateBusy>Invocación en curso.</TM_EtherGateBusy>
+  <TM_EtherServantRemaining>Tiempo restante: {0}</TM_EtherServantRemaining>
+</LanguageData>

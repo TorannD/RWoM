@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_LullabyHD.label>Berço</TM_LullabyHD.label>
+  <TM_LullabyHD.description>Diminui a consciência do peão.</TM_LullabyHD.description>
+  <TM_LullabyHD.stages.0.label>I</TM_LullabyHD.stages.0.label>
+  <TM_LullabyHD.stages.1.label>II</TM_LullabyHD.stages.1.label>
+  <TM_LullabyHD.stages.2.label>III</TM_LullabyHD.stages.2.label>
+  <TM_LullabyHD.stages.3.label>IV</TM_LullabyHD.stages.3.label>
+
+  <TM_InspirationalHD.label>Inspirador</TM_InspirationalHD.label>
+  <TM_InspirationalHD.description>Faz com que os outros ganhem inspiração.</TM_InspirationalHD.description>
+  <TM_InspirationalHD.stages.0.label>Bard</TM_InspirationalHD.stages.0.label>
+
+  <TM_EntertainingHD.label>Entretenimento</TM_EntertainingHD.label>
+  <TM_EntertainingHD.description>Procura ativamente outros peões para levantar o humor e divertir-se.</TM_EntertainingHD.description>
+  <TM_EntertainingHD.stages.0.label>Bard</TM_EntertainingHD.stages.0.label>
+
+  <TM_SingBattleHymnHD.label>bóbei de guerra</TM_SingBattleHymnHD.label>
+  <TM_SingBattleHymnHD.description>Um grande hino de guerra para empurrar os aliados para a vitória.</TM_SingBattleHymnHD.description>
+  <TM_SingBattleHymnHD.stages.0.label>Bard</TM_SingBattleHymnHD.stages.0.label>
+
+
+  <!-- Battle hymn -->
+
+  <TM_BattleHymnHD.label>Hino de Guerra</TM_BattleHymnHD.label>
+  <TM_BattleHymnHD.description>Inspirado e animado por um hino de guerra.</TM_BattleHymnHD.description>
+  <TM_BattleHymnHD.stages.0.label>I</TM_BattleHymnHD.stages.0.label>
+  <TM_BattleHymnHD.stages.1.label>II</TM_BattleHymnHD.stages.1.label>
+  <TM_BattleHymnHD.stages.2.label>III</TM_BattleHymnHD.stages.2.label>
+  <TM_BattleHymnHD.stages.3.label>IV</TM_BattleHymnHD.stages.3.label>
+  <TM_BattleHymnHD.stages.4.label>V</TM_BattleHymnHD.stages.4.label>
+  <TM_BattleHymnHD.stages.5.label>VI</TM_BattleHymnHD.stages.5.label>
+  <TM_BattleHymnHD.stages.6.label>VII</TM_BattleHymnHD.stages.6.label>
+  <TM_BattleHymnHD.stages.7.label>VIII</TM_BattleHymnHD.stages.7.label>
+  <TM_BattleHymnHD.stages.8.label>IX</TM_BattleHymnHD.stages.8.label>
+  <TM_BattleHymnHD.stages.9.label>X</TM_BattleHymnHD.stages.9.label>
+
+  <TM_DiscordHD.label>Dissonância</TM_DiscordHD.label>
+  <TM_DiscordHD.description>Sob pressão psicológica.</TM_DiscordHD.description>
+  <TM_DiscordHD.stages.0.label>nevoeiro mental</TM_DiscordHD.stages.0.label>
+  <TM_DiscordHD.stages.1.label>distorção</TM_DiscordHD.stages.1.label>
+  <TM_DiscordHD.stages.2.label>instável</TM_DiscordHD.stages.2.label>
+  <TM_DiscordHD.stages.3.label>insanidade</TM_DiscordHD.stages.3.label>
+
+  <TM_DiscordSafeHD.label>Dissonância</TM_DiscordSafeHD.label>
+  <TM_DiscordSafeHD.description>Sob pressão psicológica.</TM_DiscordSafeHD.description>
+  <TM_DiscordSafeHD.stages.0.label>nevoeiro mental</TM_DiscordSafeHD.stages.0.label>
+  <TM_DiscordSafeHD.stages.1.label>distorção</TM_DiscordSafeHD.stages.1.label>
+  <TM_DiscordSafeHD.stages.2.label>instável</TM_DiscordSafeHD.stages.2.label>
+  <TM_DiscordSafeHD.stages.3.label>espantado</TM_DiscordSafeHD.stages.3.label>
+
+
+</LanguageData>

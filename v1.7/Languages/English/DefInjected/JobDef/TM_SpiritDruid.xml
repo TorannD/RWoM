@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritCureDisease.reportString>curing disease through a spirit host.</TM_SpiritCureDisease.reportString>
+  <TM_SpiritSootheAnimal.reportString>soothing animals through a spirit host.</TM_SpiritSootheAnimal.reportString>
+  <TM_SpiritSootheAnimal_I.reportString>soothing animals through a spirit host.</TM_SpiritSootheAnimal_I.reportString>
+  <TM_SpiritSootheAnimal_II.reportString>soothing animals through a spirit host.</TM_SpiritSootheAnimal_II.reportString>
+  <TM_SpiritSootheAnimal_III.reportString>soothing animals through a spirit host.</TM_SpiritSootheAnimal_III.reportString>
+  <TM_SpiritRainmaker.reportString>changing the weather through a spirit host.</TM_SpiritRainmaker.reportString>
+  <TM_SpiritRegrowLimb.reportString>creating a seed of regrowth through a spirit host.</TM_SpiritRegrowLimb.reportString>
+  <TM_SpiritPoison.reportString>casting poison through a spirit host.</TM_SpiritPoison.reportString>
+</LanguageData>

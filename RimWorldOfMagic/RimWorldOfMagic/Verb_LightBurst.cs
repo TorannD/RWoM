@@ -17,6 +17,34 @@ namespace TorannMagic
         private float arcaneDmg = 1f;
         private float lightPotency = .5f;
 
+        internal sealed class FlashSeries : IExposable
+        {
+            public int count, power;
+            public float arcaneDamage, potency;
+            public void ExposeData()
+            {
+                Scribe_Values.Look(ref count, "count");
+                Scribe_Values.Look(ref power, "power");
+                Scribe_Values.Look(ref arcaneDamage, "arcaneDamage");
+                Scribe_Values.Look(ref potency, "potency");
+            }
+        }
+
+        internal FlashSeries BeginSeries(Pawn owner)
+        {
+            Initialize(owner);
+            return new FlashSeries { count = burstCount, power = pwrVal, arcaneDamage = arcaneDmg, potency = lightPotency };
+        }
+
+        internal void EmitHostedFlash(LocalTargetInfo target, FlashSeries series)
+        {
+            currentTarget = target;
+            pwrVal = series.power;
+            arcaneDmg = series.arcaneDamage;
+            lightPotency = series.potency;
+            EmitFlash();
+        }
+
         private void Initialize(Pawn pawn)
         {
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
@@ -52,6 +80,14 @@ namespace TorannMagic
                 this.Initialize(pawn);
             }
 
+            EmitFlash();
+            this.burstCount--;
+            result = this.burstCount > 0;
+            return result;
+        }
+
+        private void EmitFlash()
+        {
             Map map = this.CasterPawn.Map;
             IntVec3 targetVariation = this.currentTarget.Cell;
             float radius = (this.Ability.Def.MainVerb.TargetAoEProperties.range / 2f) + (.3f*pwrVal);
@@ -59,9 +95,6 @@ namespace TorannMagic
             targetVariation.z += Mathf.RoundToInt(Rand.Range(-radius, radius));
             this.CreateLightBurst(targetVariation, map, radius);
             this.ApplyEffects(targetVariation, map, radius);
-            this.burstCount--;
-            result = this.burstCount > 0;           
-            return result;
         }
 
         public void CreateLightBurst(IntVec3 center, Map map, float radius)
@@ -98,8 +131,10 @@ namespace TorannMagic
                         {
                             for (int j = 0; j < bpr.Count; j++)
                             {
-                                TM_Action.DamageEntities(p, bpr[j], distanceMultiplier * (baseDamage + (.3f * pwrVal)), TMDamageDefOf.DamageDefOf.TM_BurningLight, this.CasterPawn);                                
+                                TM_Action.DamageEntities(p, bpr[j], distanceMultiplier * (baseDamage + (.3f * pwrVal)), TMDamageDefOf.DamageDefOf.TM_BurningLight, Ability?.Pawn ?? CasterPawn);
+                                var trial = ClassProgression.BrightmageTrials.CaptureBurst(this.Ability, p);
                                 HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_LightBurstHD, distanceMultiplier * lightPotency * (.1f + (.015f * pwrVal)));
+                                ClassProgression.BrightmageTrials.CompleteBurst(trial);
                             }
                         }
                     }

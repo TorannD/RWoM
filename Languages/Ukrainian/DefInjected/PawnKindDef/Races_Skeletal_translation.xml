@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- special attack manuevers -->
+
+  <TM_SkeletonLich.label>скелет-ліч</TM_SkeletonLich.label>
+  <TM_SkeletonLich.labelPlural>скелети-лічі</TM_SkeletonLich.labelPlural>
+  <TM_SkeletonLich.lifeStages.0.label>скелет-ліч</TM_SkeletonLich.lifeStages.0.label>
+  <TM_SkeletonLich.lifeStages.0.labelPlural>скелетоподібний ліч</TM_SkeletonLich.lifeStages.0.labelPlural>
+
+  <TM_GiantSkeleton.label>гігантський скелет</TM_GiantSkeleton.label>
+  <TM_GiantSkeleton.labelPlural>гігантські скелетони</TM_GiantSkeleton.labelPlural>
+  <TM_GiantSkeleton.lifeStages.0.label>гігантський скелет</TM_GiantSkeleton.lifeStages.0.label>
+  <TM_GiantSkeleton.lifeStages.0.labelPlural>скелетоподібний</TM_GiantSkeleton.lifeStages.0.labelPlural>
+
+  <TM_Skeleton.label>скелетон</TM_Skeleton.label>
+  <TM_Skeleton.labelPlural>скелетони</TM_Skeleton.labelPlural>
+  <TM_Skeleton.lifeStages.0.label>скелетон</TM_Skeleton.lifeStages.0.label>
+  <TM_Skeleton.lifeStages.0.labelPlural>скелетоподібний</TM_Skeleton.lifeStages.0.labelPlural>
+
+
+</LanguageData>

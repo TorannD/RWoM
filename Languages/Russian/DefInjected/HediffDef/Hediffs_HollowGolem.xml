@@ -1,0 +1,46 @@
+<LanguageData><TM_DecayHD.label>Распад</TM_DecayHD.label>
+  <TM_DecayHD.description>Быстро разлагается, разъедает и растворяет материал и ткани.</TM_DecayHD.description>
+  <TM_DecayHD.stages.0.label />
+
+  <TM_DeathFieldHD.label>Поле смерти</TM_DeathFieldHD.label>
+  <TM_DeathFieldHD.description>Периодически поражает близлежащие цели магией смерти.</TM_DeathFieldHD.description>
+  <TM_DeathFieldHD.stages.0.label />
+
+  <TM_DoomFieldHD.label>Бездна смерти</TM_DoomFieldHD.label>
+  <TM_DoomFieldHD.description>Периодически замедляет близлежащие цели с их неминуемой гибелью.</TM_DoomFieldHD.description>
+  <TM_DoomFieldHD.stages.0.label />
+
+  <TM_HollowGolem_BreastPlateHD.label>нагрудный знак</TM_HollowGolem_BreastPlateHD.label>
+  <TM_HollowGolem_BreastPlateHD.description>Защищает туловище и грудь от атак.</TM_HollowGolem_BreastPlateHD.description>
+  <TM_HollowGolem_BreastPlateHD.stages.0.label />
+
+  <TM_HollowGolem_HelmHD.label>шлем</TM_HollowGolem_HelmHD.label>
+  <TM_HollowGolem_HelmHD.description>Защищает голову и череп.</TM_HollowGolem_HelmHD.description>
+  <TM_HollowGolem_HelmHD.stages.0.label />
+
+  <TM_HollowGolem_ShoulderHD.label>плечи</TM_HollowGolem_ShoulderHD.label>
+  <TM_HollowGolem_ShoulderHD.description>Защищает плечи, воротник и шею.</TM_HollowGolem_ShoulderHD.description>
+  <TM_HollowGolem_ShoulderHD.stages.0.label />
+
+  <TM_HollowGolem_CrownHD.label>венец пробуждения</TM_HollowGolem_CrownHD.label>
+  <TM_HollowGolem_CrownHD.description>Укрепляет силу воли и обеспечивает незначительную защиту от физических атак.</TM_HollowGolem_CrownHD.description>
+  <TM_HollowGolem_CrownHD.stages.0.label />
+
+  <TM_HollowGolem_CloakHD.label>исчезающий плащ</TM_HollowGolem_CloakHD.label>
+  <TM_HollowGolem_CloakHD.description>Увеличивает скорость передвижения и обеспечивает небольшую степень защиты.</TM_HollowGolem_CloakHD.description>
+  <TM_HollowGolem_CloakHD.stages.0.label />
+
+  <TM_HollowGolem_CoAFireHD.label>Герб: Огонь</TM_HollowGolem_CoAFireHD.label>
+  <TM_HollowGolem_CoAFireHD.description>Увеличивает скорость передвижения и термостойкость.</TM_HollowGolem_CoAFireHD.description>
+  <TM_HollowGolem_CoAFireHD.stages.0.label>I</TM_HollowGolem_CoAFireHD.stages.0.label>
+  <TM_HollowGolem_CoAFireHD.stages.1.label>II</TM_HollowGolem_CoAFireHD.stages.1.label>
+  <TM_HollowGolem_CoAFireHD.stages.2.label>III</TM_HollowGolem_CoAFireHD.stages.2.label>
+
+  <TM_HollowGolem_CoAIceHD.label>Гербовый щит</TM_HollowGolem_CoAIceHD.label>
+  <TM_HollowGolem_CoAIceHD.description>Увеличивает броню.</TM_HollowGolem_CoAIceHD.description>
+  <TM_HollowGolem_CoAIceHD.stages.0.label>I</TM_HollowGolem_CoAIceHD.stages.0.label>
+  <TM_HollowGolem_CoAIceHD.stages.1.label>II</TM_HollowGolem_CoAIceHD.stages.1.label>
+  <TM_HollowGolem_CoAIceHD.stages.2.label>III</TM_HollowGolem_CoAIceHD.stages.2.label>
+
+
+</LanguageData>

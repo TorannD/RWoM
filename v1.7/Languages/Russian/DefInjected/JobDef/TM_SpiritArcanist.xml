@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBlink.reportString>совершает скачок через тело носителя.</TM_SpiritBlink.reportString>
+  <TM_SpiritBlink_I.reportString>совершает скачок через тело носителя.</TM_SpiritBlink_I.reportString>
+  <TM_SpiritBlink_II.reportString>совершает скачок через тело носителя.</TM_SpiritBlink_II.reportString>
+  <TM_SpiritBlink_III.reportString>совершает скачок через тело носителя.</TM_SpiritBlink_III.reportString>
+  <TM_SpiritSummon.reportString>призывает цель через тело носителя.</TM_SpiritSummon.reportString>
+  <TM_SpiritSummon_I.reportString>призывает цель через тело носителя.</TM_SpiritSummon_I.reportString>
+  <TM_SpiritSummon_II.reportString>призывает цель через тело носителя.</TM_SpiritSummon_II.reportString>
+  <TM_SpiritSummon_III.reportString>призывает цель через тело носителя.</TM_SpiritSummon_III.reportString>
+  <TM_SpiritMagicMissile.reportString>выпускает магические стрелы через тело носителя.</TM_SpiritMagicMissile.reportString>
+  <TM_SpiritMagicMissile_I.reportString>выпускает магические стрелы через тело носителя.</TM_SpiritMagicMissile_I.reportString>
+  <TM_SpiritMagicMissile_II.reportString>выпускает магические стрелы через тело носителя.</TM_SpiritMagicMissile_II.reportString>
+  <TM_SpiritMagicMissile_III.reportString>выпускает магические стрелы через тело носителя.</TM_SpiritMagicMissile_III.reportString>
+  <TM_SpiritTeleport.reportString>открывает транспортный портал через носителя Духа.</TM_SpiritTeleport.reportString>
+  <TM_SpiritFoldReality.reportString>искажает реальность через носителя Духа.</TM_SpiritFoldReality.reportString>
+</LanguageData>

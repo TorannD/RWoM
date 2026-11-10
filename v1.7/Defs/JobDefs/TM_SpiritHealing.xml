@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritHeal</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>healing through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritAdvancedHeal</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting advanced healing through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritPurify</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>purifying through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritRegenerate</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting regeneration through a spirit host.</reportString>
+  </JobDef>
+</Defs>

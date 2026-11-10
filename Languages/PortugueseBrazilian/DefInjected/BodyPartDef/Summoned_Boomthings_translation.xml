@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+
+  <TM_PoppiBody.label>corpo</TM_PoppiBody.label>
+  <TM_PoppiTail.label>cauda</TM_PoppiTail.label>
+  <TM_PoppiPaw.label>pata</TM_PoppiPaw.label>
+  <TM_PoppiHead.label>capítulo</TM_PoppiHead.label>
+  <TM_PoppiSkull.label>crânio</TM_PoppiSkull.label>
+  <TM_PoppiBrain.label>cérebro</TM_PoppiBrain.label>
+  <TM_PoppiEye.label>olho</TM_PoppiEye.label>
+  <TM_PoppiEar.label>orelha</TM_PoppiEar.label>
+  <TM_PoppiNose.label>nariz</TM_PoppiNose.label>
+  <TM_PoppiAnimalJaw.label>mandíbulas</TM_PoppiAnimalJaw.label>
+  <TM_PoppiNeck.label>pescoço</TM_PoppiNeck.label>
+  <TM_PoppiRibcage.label>peito</TM_PoppiRibcage.label>
+  <TM_PoppiSpine.label>espinha dorsal</TM_PoppiSpine.label>
+  <TM_PoppiLeg.label>pernas</TM_PoppiLeg.label>
+  <TM_PoppiFoot.label>pernas</TM_PoppiFoot.label>
+  <TM_PoppiHeart.label>coração</TM_PoppiHeart.label>
+  <TM_PoppiLung.label>pulmões</TM_PoppiLung.label>
+  <TM_PoppiKidney.label>rins</TM_PoppiKidney.label>
+  <TM_PoppiLiver.label>fígado</TM_PoppiLiver.label>
+  <TM_PoppiStomach.label>estômago</TM_PoppiStomach.label>
+
+
+</LanguageData>

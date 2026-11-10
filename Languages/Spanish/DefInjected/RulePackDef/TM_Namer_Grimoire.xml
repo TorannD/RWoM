@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.0>title-&gt;[titleBasic]</TM_Namer_Grimoire.rulePack.rulesStrings.0>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.1>title(p=2)-&gt;[titleAuthored]</TM_Namer_Grimoire.rulePack.rulesStrings.1>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.2>title(p=2)-&gt;[titleAuthoredNoSubject]</TM_Namer_Grimoire.rulePack.rulesStrings.2>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.3>title(length_subject_primary[less_than]20,p=4)-&gt;[titleAuthoredOneSubject]</TM_Namer_Grimoire.rulePack.rulesStrings.3>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.4>title(length_subject_primary[less_than]20,has_subject_secondary==true,length_subject_secondary[less_than]20,p=4)-&gt;[titleBasicTwoSubjects]</TM_Namer_Grimoire.rulePack.rulesStrings.4>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.5>title(length_subject_primary[less_than]20,has_subject_secondary==true,length_subject_secondary[less_than]20,p=4)-&gt;[titleAuthoredTwoSubjects]</TM_Namer_Grimoire.rulePack.rulesStrings.5>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.6>titleBasic(p=6)-&gt;[TM_randTopic_Magic] [TM_randAdjective_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.6>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.7>titleBasic(p=6)-&gt;[TM_randNoun_Magic] de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.7>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.8>titleBasic-&gt;Lecciones sobre [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.8>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.9>titleBasic-&gt;Controlando [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.9>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.10>titleBasic-&gt;[TM_bookType] de un mago para [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.10>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.11>titleBasic-&gt;Maestría en [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.11>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.12>titleBasic-&gt;El arte místico de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.12>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.13>titleBasic-&gt;Técnicas avanzadas de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.13>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.14>titleBasic-&gt;Desbloqueando el poder de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.14>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.15>titleBasic-&gt;[TM_bookType] práctico para [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.15>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.16>titleBasic-&gt;Explorando [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.16>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.17>titleBasic-&gt;Comprendiendo [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.17>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.18>titleBasic-&gt;Un viaje a través de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.18>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.19>titleBasic-&gt;El camino de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.19>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.20>titleBasic-&gt;Perspectivas sobre [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.20>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.21>titleBasic-&gt;Desentrañando [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.21>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.22>titleBasic-&gt;Secretos de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.22>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.23>titleBasic-&gt;Dominando [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.23>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.24>titleBasic-&gt;Estudio antiguo sobre [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.24>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.25>titleBasic-&gt;[TM_bookType] arcano de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.25>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.26>titleBasic-&gt;[TM_bookType] astral de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.26>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.27>titleBasic-&gt;[TM_bookType] de hechicero sobre [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.27>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.28>titleBasic-&gt;[TM_bookType] de mago de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.28>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.29>titleBasic-&gt;[TM_bookType] antiguo de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.29>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.30>titleBasic-&gt;[TM_bookType] de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.30>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.31>titleBasic-&gt;Teorías antiguas sobre [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.31>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.32>titleBasic-&gt;Estudios ancestrales sobre [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.32>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.33>titleBasic-&gt;El [TM_bookType] de las brujas de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.33>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.34>titleBasic-&gt;Los secretos ocultos de [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.34>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.35>titleBasic-&gt;Los misterios prohibidos de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.35>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.36>titleBasic-&gt;El libro de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.36>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.37>titleBasic-&gt;El [TM_bookType] de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.37>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.38>titleBasic-&gt;Los secretos de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.38>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.39>titleAuthoredNoSubject-&gt;Estudios de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.39>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.40>titleAuthoredNoSubject-&gt;Estudios [TM_randAdjective_Magic] de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.40>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.41>titleAuthoredNoSubject-&gt;Reflexiones de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.41>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.42>titleAuthoredNoSubject-&gt;El legado de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.42>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.43>titleAuthoredNoSubject-&gt;El [TM_bookType] [TM_randAdjective_Magic] de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.43>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.44>titleAuthoredNoSubject-&gt;El [TM_bookType] de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.44>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.45>titleAuthoredNoSubject-&gt;El [TM_bookType] de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.45>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.46>titleAuthoredNoSubject-&gt;El [TM_bookType] ancestral de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.46>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.47>titleAuthoredNoSubject-&gt;El legado de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.47>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.48>titleAuthoredNoSubject-&gt;Las reflexiones de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.48>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.49>titleAuthoredNoSubject-&gt;Las crónicas de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.49>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.50>titleAuthoredNoSubject-&gt;Los secretos de [ANYPAWN_nameIndef]</TM_Namer_Grimoire.rulePack.rulesStrings.50>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.51>titleAuthoredOneSubject-&gt;Perspectivas de [ANYPAWN_nameIndef] sobre [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.51>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.52>titleAuthoredOneSubject-&gt;Puntos de vista de [ANYPAWN_nameIndef] sobre [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.52>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.53>titleAuthoredOneSubject-&gt;Estudio de [ANYPAWN_nameIndef] sobre [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.53>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.54>titleAuthoredOneSubject-&gt;Investigación de [ANYPAWN_nameIndef] sobre [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.54>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.55>titleAuthoredOneSubject-&gt;El [TM_bookType] de [ANYPAWN_nameIndef] sobre [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.55>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.56>titleAuthoredOneSubject-&gt;El [TM_bookType] [TM_randAdjective_Magic] de [ANYPAWN_nameIndef] sobre [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.56>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.57>titleAuthoredOneSubject-&gt;[ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.57>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.58>titleAuthoredOneSubject-&gt;El [TM_bookType] de [ANYPAWN_nameIndef] para [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.58>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.59>titleAuthoredOneSubject-&gt;Perspectivas de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.59>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.60>titleAuthoredOneSubject-&gt;Puntos de vista de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.60>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.61>titleAuthoredOneSubject-&gt;Análisis de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.61>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.62>titleAuthoredOneSubject-&gt;El enfoque de [ANYPAWN_nameIndef] hacia [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.62>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.63>titleAuthoredOneSubject-&gt;Descubrimientos de [ANYPAWN_nameIndef] en [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.63>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.64>titleAuthoredOneSubject-&gt;Reflexiones de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.64>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.65>titleAuthoredOneSubject-&gt;Estudio de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.65>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.66>titleAuthoredOneSubject-&gt;Investigación de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.66>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.67>titleAuthoredOneSubject-&gt;Investigación científica de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.67>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.68>titleAuthoredOneSubject-&gt;El [TM_bookType] de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.68>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.69>titleAuthoredOneSubject-&gt;El [TM_bookType] [TM_randAdjective_Magic] de [ANYPAWN_nameIndef] sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.69>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.70>titleBasicTwoSubjects-&gt;[subjectsTuple]</TM_Namer_Grimoire.rulePack.rulesStrings.70>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.71>titleBasicTwoSubjects-&gt;Lecciones sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.71>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.72>titleBasicTwoSubjects-&gt;Controlando [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.72>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.73>titleBasicTwoSubjects-&gt;Guía de mago para [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.73>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.74>titleBasicTwoSubjects-&gt;Maestría en [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.74>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.75>titleBasicTwoSubjects-&gt;El arte místico de [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.75>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.76>titleBasicTwoSubjects-&gt;Técnicas avanzadas en [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.76>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.77>titleBasicTwoSubjects-&gt;Desbloqueando el poder de [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.77>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.78>titleBasicTwoSubjects-&gt;Guía práctica para [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.78>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.79>titleBasicTwoSubjects-&gt;Explorando [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.79>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.80>titleBasicTwoSubjects-&gt;Comprendiendo [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.80>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.81>titleBasicTwoSubjects-&gt;Un viaje a través de [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.81>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.82>titleBasicTwoSubjects-&gt;El camino de [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.82>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.83>titleBasicTwoSubjects-&gt;Perspectivas sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.83>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.84>titleBasicTwoSubjects-&gt;Desentrañando [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.84>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.85>titleBasicTwoSubjects-&gt;Secretos de [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.85>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.86>titleBasicTwoSubjects-&gt;Dominando [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.86>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.87>titleBasicTwoSubjects-&gt;Estudio antiguo de [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.87>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.88>titleBasicTwoSubjects-&gt;Compendio arcano de [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.88>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.89>titleBasicTwoSubjects-&gt;Tratado de hechicero sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.89>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.90>titleBasicTwoSubjects-&gt;Tomo de mago sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.90>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.91>titleBasicTwoSubjects-&gt;Tomo antiguo de [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.91>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.92>titleBasicTwoSubjects-&gt;Grimorio de [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.92>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.93>titleBasicTwoSubjects-&gt;Teorías antiguas sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.93>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.94>titleBasicTwoSubjects-&gt;Estudios ancestrales sobre [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.94>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.95>titleBasicTwoSubjects-&gt;El [TM_bookType] de las brujas de [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.95>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.96>titleBasicTwoSubjects-&gt;Los secretos ocultos de [subject_tuple]</TM_Namer_Grimoire.rulePack.rulesStrings.96>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.97>subjectsTuple(has_subject_secondary==true,p=6)-&gt;[TM_randTopic_Magic] y [TM_randTopic_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.97>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.98>subjectsTuple-&gt;[TM_randTopic_Magic], [TM_randTopic_Magic] y [TM_randTheme_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.98>
+  <TM_Namer_Grimoire.rulePack.rulesStrings.99>subjectsTuple-&gt;[TM_randTopic_Magic] y [TM_randTheme_Magic]</TM_Namer_Grimoire.rulePack.rulesStrings.99>
+</LanguageData>

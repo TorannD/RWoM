@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Soothe start -->
+
+  <Buff_Soothe.label>Заспокійливий вітерець</Buff_Soothe.label>
+
+
+  <!-- FrostRay -->
+
+  <Laser_FrostRay.label>Морозний промінь</Laser_FrostRay.label>
+
+
+  <!-- Snowball -->
+
+  <Projectile_Snowball.label>сніжна куля</Projectile_Snowball.label>
+
+
+  <!-- Icebolt -->
+
+  <Projectile_Icebolt.label>крижаний болт</Projectile_Icebolt.label>
+
+
+  <!-- Rainmaker Start -->
+
+  <Projectile_Rainmaker.label>Творець дощу</Projectile_Rainmaker.label>
+
+
+  <!-- Blizzard -->
+
+  <Projectile_Blizzard.label>Завірюха</Projectile_Blizzard.label>
+
+
+</LanguageData>

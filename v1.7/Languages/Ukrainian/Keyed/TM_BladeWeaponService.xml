@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_BladeServiceHint>Щоб опанувати {0}, вражайте ворогів проходом або обслуговуйте різну зношену зброю. Покладіть зброю на землю. Обслуговування відновлює 10% міцності. Шкода від вашої фракції не зараховується.</TM_BladeServiceHint>
+  <TM_BladeServiceProgress>Влучань проходом: {0}/10 · Обслужено зброї: {1}/20</TM_BladeServiceProgress>
+  <TM_BladeServiceOrder>Обслужити зброю</TM_BladeServiceOrder>
+  <TM_BladeClaimAdept>Опанувати «{0}»</TM_BladeClaimAdept>
+  <TM_BladeMasteryHint>Щоб опанувати «{0}», вісім разів завдайте шкоди звичайною атакою ближнього бою у відповідь протягом чотирьох секунд після влучання ворога. Або особисто віднесіть до ліжка дванадцять поранених союзників, які не можуть іти. Того самого союзника можна зарахувати знову через добу.</TM_BladeMasteryHint>
+  <TM_BladeMasteryProgress>Контрудари: {0}/8 · Порятунки: {1}/12</TM_BladeMasteryProgress>
+  <TM_BladeMasteryClaim>Опанувати «{0}»</TM_BladeMasteryClaim>
+  <TM_BladeMasteryLearned>Техніка майстра: «{0}»</TM_BladeMasteryLearned>
+  <TM_BladePassageRank>{0} {1}/3 · дальність {2}</TM_BladePassageRank>
+</LanguageData>

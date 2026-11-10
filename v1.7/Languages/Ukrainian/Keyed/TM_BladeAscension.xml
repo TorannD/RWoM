@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BladeAscensionProgress>Рівень воїна: {0}/30 · Бойові маршрути: {1}/6 · Доставки ліків: {2}/10</TM_BladeAscensionProgress>
+  <TM_BladeRouteHint>Влучте проходом по одному ворогу, а потім протягом десяти секунд завдайте шкоди іншому звичайною атакою ближнього бою.</TM_BladeRouteHint>
+  <TM_BladeSupplyHint>Увімкніть роботу лікаря. Принесіть ліки з відстані щонайменше шість клітин і використайте їх для лікування союзника на медичному ліжку колонії. Зараховується фактично витрачена доза, один раз на добу.</TM_BladeSupplyHint>
+  <TM_BladeAscend>Обрати техніку Вознесіння</TM_BladeAscend>
+  <TM_BladeUltimateOption>{0} (остаточний вибір)</TM_BladeUltimateOption>
+  <TM_BladeUltimateLearned>Техніка Вознесіння: «{0}»</TM_BladeUltimateLearned>
+  <TM_BladeFormUnavailable>Потрібні форма семи кроків, зброя ближнього бою, 60% витривалості та завершена перезарядка.</TM_BladeFormUnavailable>
+</LanguageData>

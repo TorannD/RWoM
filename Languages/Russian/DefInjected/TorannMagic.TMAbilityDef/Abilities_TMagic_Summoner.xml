@@ -1,0 +1,18 @@
+<LanguageData><!-- Summon Minion Start-->
+	<TM_SummonMinion.label>Призвать миньона</TM_SummonMinion.label>
+	<TM_SummonMinion.description>Вызовите миньонов, чтобы помочь в ежедневных задачах.</TM_SummonMinion.description>
+	<TM_DismissMinion.label>Отпустить миньона</TM_DismissMinion.label>
+	<TM_DismissMinion.description>Отпустить призванного миньона.</TM_DismissMinion.description>
+	<!-- Summon pylon Start-->
+	<TM_SummonPylon.label>Призывать защитный пилон</TM_SummonPylon.label>
+	<TM_SummonPylon.description>Вызывает и проявляет магическую энергию, чтобы сформировать автоматическую защитную башню, которая привязана к физическому местоположению.  Башня направляет тайный ток в фокусную точку, которая испускает всплески сырой энергии.  Когда трос, удерживающий башенку в физическом мире, рассеется, башенка безвредно растворится обратно в магическую энергию.  Если башня будет разрушена, это событие может быть более разрушительным.</TM_SummonPylon.description>
+	<!-- Summon explosive Start-->
+	<TM_SummonExplosive.label>Вызвать мину</TM_SummonExplosive.label>
+	<TM_SummonExplosive.description>Создает мину из сжатой, сырой маны и привязывает ее к физическому месту.  Мина будет безвредно растворяться, если у троса закончится энергия, которая удерживает мину.</TM_SummonExplosive.description>
+	<!-- Summon Elemental Start-->
+	<TM_SummonElemental.label>Призыв Элементаля</TM_SummonElemental.label>
+	<TM_SummonElemental.description>Вызывает чудовищного элементаля из плана силы, чтобы сокрушить ваших врагов.  Эти существа будут защищать место и немедленно вступать в бой с врагом, если он находится поблизости.  Однако, если врагов нет, они довольно быстро начинают скучать и будут блуждать со своей вызванной позиции.  Они не будут заниматься такими делами, как "таскать" или "убирать", поскольку это работа низших существ.  Благодаря силе призыва элементал может существовать в этом царстве лишь короткое время.  Тип элемента является случайным.</TM_SummonElemental.description>
+	<!-- Summon Poppi Start-->
+	<TM_SummonPoppi.label>Призвать Поппи</TM_SummonPoppi.label>
+	<TM_SummonPoppi.description>Вызовите стаю злобных Поппи прямо из врат безумия. Эта стая Поппи бешеная и будет жадно рваться во вражеские ряды.</TM_SummonPoppi.description>
+</LanguageData>

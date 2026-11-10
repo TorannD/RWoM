@@ -1,95 +1,69 @@
-﻿using System.Linq;
-using System;
+using System.Linq;
 using RimWorld;
-using Verse;
-using AbilityUser;
 using UnityEngine;
+using Verse;
 
 namespace TorannMagic
 {
-	public class Projectile_ArrowStorm : Projectile_AbilityBase
-	{
-
-        private bool initialized = false;
-        private static int pwrVal;
-        private static int verVal;
-        Pawn pawn;
-
+    public class Projectile_ArrowStorm : Projectile_SniperRound
+    {
+        // Preserve the public entry point used by legacy callers.
         public void Initialize(Map map)
         {
-            pawn = this.launcher as Pawn;
-            initialized = true;
+            if (!shotBound && launcher is Pawn body) Capture(body,body);
         }
 
-        protected override void Impact(Thing hitThing, bool blockedByShield = false)
+        protected override void CaptureWeaponDamage(Pawn body) => Capture(body,skillOwner);
+
+        private void Capture(Pawn body,Pawn source)
         {
-            Map map = base.Map;
-            base.Impact(hitThing);
-            ThingDef def = this.def;
-            try
-            {
-                Pawn victim = hitThing as Pawn;
-                if (!initialized)
-                {
-                    Initialize(map);
-                }
-
-                int dmg = GetWeaponDmg(this.launcher as Pawn);
-                
-
-                if (victim != null && Rand.Chance(GetWeaponAccuracy(pawn)))
-                {
-                    damageEntities(victim, null, dmg, TorannMagicDefOf.Arrow);
-                    TM_MoteMaker.ThrowBloodSquirt(victim.DrawPos, victim.Map, 1f);
-                } 
-            }
-            catch(NullReferenceException ex)
-            {
-                //
-            }
+            shotBound=true;
+            skillOwner=source;
+            var weapon=body?.equipment?.Primary;
+            firedWeapon=weapon?.def;
+            if (weapon==null || source==null) return;
+            int rank=TM_Calc.GetSkillPowerLevel(source,TorannMagicDefOf.TM_ArrowStorm);
+            shotDamage=Damage(body,source,rank);
+            accuracy=Accuracy(weapon,TM_Calc.GetSkillVersatilityLevel(source,TorannMagicDefOf.TM_ArrowStorm));
         }
 
-        public static float GetWeaponAccuracy(Pawn pawn)
+        protected override void Impact(Thing hitThing,bool blockedByShield=false)
         {
-            float weaponAccuracy = pawn.equipment.Primary.GetStatValue(StatDefOf.AccuracyMedium, true);
-            verVal = TM_Calc.GetSkillVersatilityLevel(pawn, TorannMagicDefOf.TM_ArrowStorm);
-            //verVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_ArrowStorm, "TM_ArrowStorm", "_ver", true);
-            //MightPowerSkill ver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_ArrowStorm.FirstOrDefault((MightPowerSkill x) => x.label == "TM_ArrowStorm_ver");
-            //verVal = ver.level;
-            //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-            //    verVal = mver.level;
-            //}
-            weaponAccuracy = Mathf.Min(1f, (.8f * weaponAccuracy) + (.05f * verVal));
-            return weaponAccuracy;
+            // A legacy in-flight arrow did not record its weapon. Recover what is available
+            // before vanilla impact removes the projectile; new shots are already bound.
+            Initialize(Map);
+            base.Impact(hitThing,blockedByShield);
+            if (blockedByShield || hitThing is not Pawn victim || !victim.Spawned || victim.Dead ||
+                shotDamage<=0 || !Rand.Chance(accuracy)) return;
+            damageEntities(victim,null,shotDamage,TorannMagicDefOf.Arrow);
+            if (victim.Spawned) TM_MoteMaker.ThrowBloodSquirt(victim.DrawPos,victim.Map,1f);
         }
 
-        public static int GetWeaponDmg(Pawn pawn)
+        private static float Accuracy(ThingWithComps weapon,int rank) =>
+            Mathf.Clamp01(.8f*weapon.GetStatValue(StatDefOf.AccuracyMedium,true)+.05f*rank);
+
+        public static float GetWeaponAccuracy(Pawn pawn) => pawn?.equipment?.Primary is ThingWithComps weapon ?
+            Accuracy(weapon,TM_Calc.GetSkillVersatilityLevel(pawn,TorannMagicDefOf.TM_ArrowStorm)) : 0f;
+
+        public static int GetWeaponDmg(Pawn pawn) => pawn?.equipment?.Primary!=null ?
+            Damage(pawn,pawn,TM_Calc.GetSkillPowerLevel(pawn,TorannMagicDefOf.TM_ArrowStorm)) : 0;
+
+        private static int Damage(Pawn body,Pawn owner,int rank)
         {
-            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-            //pwrVal = TM_Calc.GetMightSkillLevel(pawn, pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_ArrowStorm, "TM_ArrowStorm", "_pwr", true);   
-            pwrVal = TM_Calc.GetSkillPowerLevel(pawn, TorannMagicDefOf.TM_ArrowStorm);
-
-            float dmg = comp.weaponDamage;
-            
-            if (!pawn.IsColonist && ModOptions.Settings.Instance.AIHardMode)
-            {
-                dmg += 8;
-            }
-
-            dmg = Mathf.RoundToInt(dmg * (1f + (.1f * pwrVal)) * TorannMagicDefOf.TM_ArrowStorm.weaponDamageFactor); 
-
-            return (int)Mathf.Clamp(dmg, 0, 50);
+            var comp=owner.GetCompAbilityUserMight();
+            var weapon=body.equipment.Primary;
+            float damage=body==owner && comp?.weaponDamage>1f ? comp.weaponDamage :
+                TM_Calc.RangedWeaponDamage(weapon,weapon.def.Verbs?.FirstOrDefault(),comp?.mightPwr??1f);
+            if (!body.IsColonist && ModOptions.Settings.Instance.AIHardMode) damage+=8f;
+            return Mathf.Clamp(Mathf.RoundToInt(damage*(1f+.1f*rank)*TorannMagicDefOf.TM_ArrowStorm.weaponDamageFactor),0,50);
         }
 
-        public void damageEntities(Pawn victim, BodyPartRecord hitPart, int amt, DamageDef type)
+        public void damageEntities(Pawn victim,BodyPartRecord hitPart,int amt,DamageDef type)
         {
-            DamageInfo dinfo;
-            amt = (int)((float)amt * Rand.Range(.7f, 1.3f));
-            dinfo = new DamageInfo(type, amt, 0, (float)-1, pawn, hitPart, null, DamageInfo.SourceCategory.ThingOrUnknown);
-            dinfo.SetAllowDamagePropagation(false);
-            victim.TakeDamage(dinfo);
+            amt=(int)(amt*Rand.Range(.7f,1.3f));
+            var info=new DamageInfo(type,amt,0,-1,launcher as Pawn,hitPart,null,DamageInfo.SourceCategory.ThingOrUnknown);
+            info.SetAllowDamagePropagation(false);
+            victim.TakeDamage(info);
         }
     }
 }

@@ -1,0 +1,6 @@
+<LanguageData><ManaPotionHigh.stages.0.label>всплеск маны</ManaPotionHigh.stages.0.label>
+	<ManaPotionHigh.stages.0.description>Эта сила... это ошеломляет. Я чувствую силу космоса на кончиках пальцев, но она превращает мои кости в пепел.</ManaPotionHigh.stages.0.description>
+	<!-- Mana potion addiction-->
+	<ManaPotionWithdrawal.stages.1.label>ломка по зелью маны</ManaPotionWithdrawal.stages.1.label>
+	<ManaPotionWithdrawal.stages.1.description>Тьфу... Всё вокруг будто в тумане. Я с трудом могу сосредоточиться и словно теряю власть над собственным телом. Мне нужно снова почувствовать, как мана наполняет мою душу.</ManaPotionWithdrawal.stages.1.description>
+</LanguageData>

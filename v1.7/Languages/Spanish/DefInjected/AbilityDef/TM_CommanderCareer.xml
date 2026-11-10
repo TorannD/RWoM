@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_CommanderWorkCrew.label>Cuadrilla de trabajo</TM_Bridge_CommanderWorkCrew.label>
+  <TM_Bridge_CommanderWorkCrew.description>Hasta tres aliados que acepten trabajan un 10/15/20% más rápido durante 10 segundos. Coste 20%, recarga 45 segundos.</TM_Bridge_CommanderWorkCrew.description>
+  <TM_Bridge_CommanderRally.label>Punto de reunión</TM_Bridge_CommanderRally.label>
+  <TM_Bridge_CommanderRally.description>Alcance 12. Hasta 2/3/4 aliados en un radio de tres casillas reciben 15 de protección durante 8 segundos. Coste 25%, recarga 40 segundos.</TM_Bridge_CommanderRally.description>
+  <TM_Bridge_CommanderOperationEvac.label>Todos a casa: evacuación</TM_Bridge_CommanderOperationEvac.label>
+  <TM_Bridge_CommanderOperationEvac.description>Tras 5 segundos, hasta cuatro aliados ganan 20% de velocidad y 25 de protección durante 20 segundos. Requiere línea de visión. Coste 60%, recarga compartida de dos días.</TM_Bridge_CommanderOperationEvac.description>
+  <TM_Bridge_CommanderOperationAid.label>Todos a casa: trabajo urgente</TM_Bridge_CommanderOperationAid.label>
+  <TM_Bridge_CommanderOperationAid.description>Tras 5 segundos, hasta cuatro aliados rescatan, curan o reparan más rápido durante 20 segundos. Se consumen materiales. Recarga compartida de dos días.</TM_Bridge_CommanderOperationAid.description>
+</LanguageData>

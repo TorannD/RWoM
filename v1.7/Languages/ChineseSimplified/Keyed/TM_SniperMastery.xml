@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SniperMasteryHint>任选一种方式即可学会「{0}」：用破甲射击命中敌人，或在研究台进行研究。每班为游戏内一小时，中断研究也会保留已累计的时间。</TM_SniperMasteryHint>
+  <TM_SniperMasteryHits>破甲射击命中次数：{0}/{1}</TM_SniperMasteryHits>
+  <TM_SniperMasteryResearch>研究班次：{0}/{1}</TM_SniperMasteryResearch>
+  <TM_SniperMasteryPartial>当前班次：{0}%</TM_SniperMasteryPartial>
+  <TM_SniperMasteryClaim>取得狙击大师资格</TM_SniperMasteryClaim>
+  <TM_SniperMasteryLearned>已习得大师技能：「{0}」。</TM_SniperMasteryLearned>
+</LanguageData>

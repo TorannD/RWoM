@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Stone Golem upgrade recipes -->
+
+  <TM_StoneGolem_RepairBlock.label>Restaurar peças</TM_StoneGolem_RepairBlock.label>
+  <TM_StoneGolem_RepairBlock.description>Substitui as partes faltantes do golem que não precisam ser atualizadas.</TM_StoneGolem_RepairBlock.description>
+  <TM_StoneGolem_RepairBlock.jobString>criação de uma parte do golem</TM_StoneGolem_RepairBlock.jobString>
+
+  <TM_StoneGolem_EnergyMax.label>elemento de energia</TM_StoneGolem_EnergyMax.label>
+  <TM_StoneGolem_EnergyMax.description>Cria uma célula de energia que aumenta a energia máxima em 120 por célula.</TM_StoneGolem_EnergyMax.description>
+  <TM_StoneGolem_EnergyMax.jobString>criação de célula de energia</TM_StoneGolem_EnergyMax.jobString>
+
+  <TM_StoneGolem_EnergyConverter.label>conversor de energia</TM_StoneGolem_EnergyConverter.label>
+  <TM_StoneGolem_EnergyConverter.description>Aumenta em 10% a eficiência de absorção e uso de energia por holem.</TM_StoneGolem_EnergyConverter.description>
+  <TM_StoneGolem_EnergyConverter.jobString>dispositivo de conversor de energia</TM_StoneGolem_EnergyConverter.jobString>
+
+  <TM_StoneGolem_EnergyRegen.label>gerador de energia</TM_StoneGolem_EnergyRegen.label>
+  <TM_StoneGolem_EnergyRegen.description>Aumenta a velocidade de regeneração da energia do golem em 4 por hora.</TM_StoneGolem_EnergyRegen.description>
+  <TM_StoneGolem_EnergyRegen.jobString>criação de um gerador de energia</TM_StoneGolem_EnergyRegen.jobString>
+
+  <TM_StoneGolem_Armor.label>Solidificação</TM_StoneGolem_Armor.label>
+  <TM_StoneGolem_Armor.description>Cada atualização aumenta a blindagem de golem:
+Danos estúpidos: + 4%
+Corte: + 11%
+Temperatura: + 6%</TM_StoneGolem_Armor.description>
+  <TM_StoneGolem_Armor.jobString>criação de uma parte do golem</TM_StoneGolem_Armor.jobString>
+
+  <TM_StoneGolem_LifeStage.label>camada de esqueleto</TM_StoneGolem_LifeStage.label>
+  <TM_StoneGolem_LifeStage.description>Melhora e fortalece a estrutura do golem em cada nível [1,2,3]:
+Movimento: + [20.10/30]%
+Saúde: + [40/70/100]%</TM_StoneGolem_LifeStage.description>
+  <TM_StoneGolem_LifeStage.jobString>melhoria do esqueleto de golem</TM_StoneGolem_LifeStage.jobString>
+
+  <TM_StoneGolem_Compactor.label>Compactador</TM_StoneGolem_Compactor.label>
+  <TM_StoneGolem_Compactor.description>Forneça uma cavidade de holem com compactador de pedra capaz de fracionar pedaços de pedra em tijolos utilizáveis.</TM_StoneGolem_Compactor.description>
+  <TM_StoneGolem_Compactor.jobString>criação de atualizações de golem</TM_StoneGolem_Compactor.jobString>
+
+  <TM_StoneGolem_SandstoneBricks.label>fracionar arenito</TM_StoneGolem_SandstoneBricks.label>
+  <TM_StoneGolem_SandstoneBricks.description>Coloca pedaços de arenito em um holem para que possam ser divididos em blocos utilizáveis.</TM_StoneGolem_SandstoneBricks.description>
+  <TM_StoneGolem_SandstoneBricks.jobString>carregar grãos de areia</TM_StoneGolem_SandstoneBricks.jobString>
+
+  <TM_StoneGolem_GraniteBricks.label>fracionar o granito</TM_StoneGolem_GraniteBricks.label>
+  <TM_StoneGolem_GraniteBricks.description>Coloca pedaços de granito em um holem que serão triturados em blocos utilizáveis.</TM_StoneGolem_GraniteBricks.description>
+  <TM_StoneGolem_GraniteBricks.jobString>carregar grãos de areia</TM_StoneGolem_GraniteBricks.jobString>
+
+  <TM_StoneGolem_LimestoneBricks.label>fracionar calcário</TM_StoneGolem_LimestoneBricks.label>
+  <TM_StoneGolem_LimestoneBricks.description>Coloca pedaços de calcário em um golem que serão triturados em blocos utilizáveis.</TM_StoneGolem_LimestoneBricks.description>
+  <TM_StoneGolem_LimestoneBricks.jobString>carregamento de calcário</TM_StoneGolem_LimestoneBricks.jobString>
+
+  <TM_StoneGolem_SlateBricks.label>fracionar xisto de safra</TM_StoneGolem_SlateBricks.label>
+  <TM_StoneGolem_SlateBricks.description>Coloca pedaços de xisto em um holem que serão triturados em blocos utilizáveis.</TM_StoneGolem_SlateBricks.description>
+  <TM_StoneGolem_SlateBricks.jobString>carregar a cifra</TM_StoneGolem_SlateBricks.jobString>
+
+  <TM_StoneGolem_MarbleBricks.label>fracionar o mármore</TM_StoneGolem_MarbleBricks.label>
+  <TM_StoneGolem_MarbleBricks.description>Coloca pedaços de mármore em um holem que serão triturados em blocos utilizáveis.</TM_StoneGolem_MarbleBricks.description>
+  <TM_StoneGolem_MarbleBricks.jobString>carregar mármore</TM_StoneGolem_MarbleBricks.jobString>
+
+
+</LanguageData>

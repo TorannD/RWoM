@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SEVER MAGIC -->
+
+  <TM_Botched_SeverMagicTD.stages.0.label>невдалий ритуал відсікання</TM_Botched_SeverMagicTD.stages.0.label>
+  <TM_Botched_SeverMagicTD.stages.0.description>Ритуал відсікання був невдалим і дав магу шанс завдати удару у відповідь.</TM_Botched_SeverMagicTD.stages.0.description>
+
+  <TM_Lethal_SeverMagicTD.stages.0.label>смертельний ритуал відсікання</TM_Lethal_SeverMagicTD.stages.0.label>
+  <TM_Lethal_SeverMagicTD.stages.0.description>У цьому ритуалі не було порядку, а техніка була жахливою і вбила мага.</TM_Lethal_SeverMagicTD.stages.0.description>
+
+  <TM_Success_SeverMagicTD.stages.0.label>успішний ритуал відсікання</TM_Success_SeverMagicTD.stages.0.label>
+  <TM_Success_SeverMagicTD.stages.0.description>Ритуал відсікання пройшов успішно, звільнивши нас від гніту іншого мага.</TM_Success_SeverMagicTD.stages.0.description>
+
+  <TM_Flawless_SeverMagicTD.stages.0.label>бездоганний ритуал відсікання</TM_Flawless_SeverMagicTD.stages.0.label>
+  <TM_Flawless_SeverMagicTD.stages.0.description>Хор голосів, інтенсивність повелителя порожнечі, вираз неминучості на обличчі мага - ніщо не може зупинити наш бойовий похід!</TM_Flawless_SeverMagicTD.stages.0.description>
+
+  <TM_MagicSeverenceTD.stages.0.label>Відірваний від магії</TM_MagicSeverenceTD.stages.0.label>
+  <TM_MagicSeverenceTD.stages.0.description>Я втратив щось, що колись визначало, ким я був; Я відчуваю суміш відчаю і порожнечі.</TM_MagicSeverenceTD.stages.0.description>
+
+  <TM_SeverMagic_ForApproveTD.stages.0.label>вдалося розірвати магію</TM_SeverMagic_ForApproveTD.stages.0.label>
+  <TM_SeverMagic_ForApproveTD.stages.0.description>У нашій колонії був проведений ритуал, щоб позбавити мага магії; який підлий і варварський акт.</TM_SeverMagic_ForApproveTD.stages.0.description>
+
+  <TM_SeverMagic_ForVeneratedTD.stages.0.label>вдалося розірвати магію</TM_SeverMagic_ForVeneratedTD.stages.0.label>
+  <TM_SeverMagic_ForVeneratedTD.stages.0.description>У нашій колонії був проведений ритуал, щоб позбавити мага магії; цей огидний акт варварства суперечить усьому, у що ми віримо.</TM_SeverMagic_ForVeneratedTD.stages.0.description>
+
+
+  <!-- BESTOW MAGIC -->
+
+  <TM_Botched_BestowMagicTD.stages.0.label>невдалий ритуал дарування</TM_Botched_BestowMagicTD.stages.0.label>
+  <TM_Botched_BestowMagicTD.stages.0.description>Ритуал дарування був зіпсований, і магічна іскра не була дарована.</TM_Botched_BestowMagicTD.stages.0.description>
+
+  <TM_Success_BestowMagicTD.stages.0.label>вдалий ритуал дарування</TM_Success_BestowMagicTD.stages.0.label>
+  <TM_Success_BestowMagicTD.stages.0.description>Ритуал дарування успішно дарував магічну іскру.</TM_Success_BestowMagicTD.stages.0.description>
+
+  <TM_Flawless_BestowMagicTD.stages.0.label>просвітлений ритуал дарування</TM_Flawless_BestowMagicTD.stages.0.label>
+  <TM_Flawless_BestowMagicTD.stages.0.description>Ніби небеса розверзлися, щоб благословити ритуал, і хор голосів оспівав славу нашої справи!</TM_Flawless_BestowMagicTD.stages.0.description>
+
+
+  <!-- BESTOW MAGIC CLASS -->
+
+  <TM_Poor_BestowMagicClassTD.stages.0.label>слабкий ритуал таємного шляху</TM_Poor_BestowMagicClassTD.stages.0.label>
+  <TM_Poor_BestowMagicClassTD.stages.0.description>Ритуал, що направляє мага до їх таємного шляху, був нудним і нецікавим.</TM_Poor_BestowMagicClassTD.stages.0.description>
+
+  <TM_Moderate_BestowMagicClassTD.stages.0.label>успішний ритуал таємного шляху</TM_Moderate_BestowMagicClassTD.stages.0.label>
+  <TM_Moderate_BestowMagicClassTD.stages.0.description>Ритуал таємного шляху був обнадійливим і цікавим.</TM_Moderate_BestowMagicClassTD.stages.0.description>
+
+  <TM_Good_BestowMagicClassTD.stages.0.label>надихаючий ритуал таємного шляху</TM_Good_BestowMagicClassTD.stages.0.label>
+  <TM_Good_BestowMagicClassTD.stages.0.description>Ритуал таємного шляху був фантастичним, емоційно і магічно зарядженим - завжди приємно бачити, як хтось досягає своєї мрії!</TM_Good_BestowMagicClassTD.stages.0.description>
+
+
+  <TM_MagicSeverenceHD.label>Чарівний відсік</TM_MagicSeverenceHD.label>
+  <TM_MagicSeverenceHD.description>Ця пішака нещодавно втратила зв&apos;язок з магією і буде страждати від втрати напрямку і мети, поки не зможе заповнити порожнечу іншою метою.</TM_MagicSeverenceHD.description>
+  <TM_BestowMagicClassHD.stages.0.label>Дар чарівності</TM_BestowMagicClassHD.stages.0.label>
+  <TM_BestowMagicClassHD.stages.0.description>Цій пішці нещодавно була дарована іскра магії.</TM_BestowMagicClassHD.stages.0.description>
+
+</LanguageData>

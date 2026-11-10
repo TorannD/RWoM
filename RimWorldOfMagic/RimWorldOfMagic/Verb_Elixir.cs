@@ -9,7 +9,7 @@ using Verse.Sound;
 
 namespace TorannMagic
 {
-    public class Verb_Elixir : Verb_UseAbility
+    public class Verb_Elixir : ClassProgression.Verb_SpiritTargetable
     {
         bool validTarg;
         //Used specifically for non-unique verbs that ignore LOS (can be used with shield belt)
@@ -36,20 +36,30 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
+            ApplyEffect();
             bool flag = false;
+            PostCastShot(flag, out flag);
+            return flag;
+        }
 
+        protected override bool ApplyHostedEffect() => ApplyEffect();
+
+        private bool ApplyEffect()
+        {
+            if (CasterPawn?.Spawned != true || currentTarget.Pawn?.Spawned != true ||
+                currentTarget.Pawn.Map != CasterPawn.Map || currentTarget.Pawn.Dead) return false;
             Map map = this.CasterPawn.Map;
 
             Pawn hitPawn = this.currentTarget.Thing as Pawn;
             Pawn caster = this.CasterPawn;
-            CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
+            Pawn source = Ability?.Pawn ?? caster;
 
-            int verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef, false);
-            int pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef, false);
+            int verVal = TM_Calc.GetSkillVersatilityLevel(source, TorannMagicDefOf.TM_Elixir, false);
+            int pwrVal = TM_Calc.GetSkillPowerLevel(source, TorannMagicDefOf.TM_Elixir, false);
 
             try
             {
-                if (!hitPawn.DestroyedOrNull() & !hitPawn.Dead && hitPawn.Spawned && map != null && hitPawn.health != null && hitPawn.health.hediffSet != null)
+                if (!hitPawn.DestroyedOrNull() && !hitPawn.Dead && hitPawn.Spawned && map != null && hitPawn.health != null && hitPawn.health.hediffSet != null)
                 {
                     HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_HerbalElixirHD, .7f + (.1f * pwrVal));
                     HediffComp_HerbalElixir hdhe = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_HerbalElixirHD, false).TryGetComp<HediffComp_HerbalElixir>();
@@ -59,7 +69,8 @@ namespace TorannMagic
                         hdhe.verVal = verVal;
                     }
                     SoundInfo info = SoundInfo.InMap(new TargetInfo(caster.Position, caster.Map, false), MaintenanceType.None);
-                    TorannMagicDefOf.TM_Powerup.PlayOneShot(info);
+                    TorannMagicDefOf.TM_Powerup?.PlayOneShot(info);
+                    return true;
                 }
                 else
                 {
@@ -68,10 +79,9 @@ namespace TorannMagic
             }
             catch (NullReferenceException ex)
             {
-                //ex
+                Compatibility.TM_Log.Error("Herbal Elixir failed: " + ex);
             }
-            this.PostCastShot(flag, out flag);
-            return flag;
+            return false;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Verse;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,25 +21,61 @@ namespace TorannMagic
     public static class TM_Calc
     {
         //Extensions
-        // Non-generic GetComp<CompAbilityUserMagic> for performance since isInst against generic T is slow
+        // Non-generic GetComp<CompAbilityUserMagic> for performance since isInst against generic T is slow.
+        // The comps list of a ThingWithComps is fixed at spawn, so the lookup result is cached per
+        // thing in a ConditionalWeakTable: entries die with the thing, nothing is saved, MP-safe.
+        private static readonly object NoComp = new object();
+
+        /// <summary>
+        /// RWoM adds the ability comps to pawns at runtime (spawn patch, Give
+        /// Class). A earlier lookup would have cached the NoComp sentinel for
+        /// such a pawn — call this whenever a comp is added to clear it.
+        /// </summary>
+        public static void InvalidateCompCache(ThingWithComps thing)
+        {
+            if (thing == null)
+            {
+                return;
+            }
+            magicCompCache.Remove(thing);
+            mightCompCache.Remove(thing);
+        }
+        private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<ThingWithComps, object> magicCompCache =
+            new System.Runtime.CompilerServices.ConditionalWeakTable<ThingWithComps, object>();
+
         public static CompAbilityUserMagic GetCompAbilityUserMagic(this ThingWithComps thingWithComps)
         {
+            if (thingWithComps == null) return null;
+            if (magicCompCache.TryGetValue(thingWithComps, out object cached)) return cached as CompAbilityUserMagic;
             for (int i = 0; i < thingWithComps.AllComps.Count; i++)
             {
-                if (thingWithComps.AllComps[i] is CompAbilityUserMagic comp) return comp;
+                if (thingWithComps.AllComps[i] is CompAbilityUserMagic comp)
+                {
+                    magicCompCache.Add(thingWithComps, comp);
+                    return comp;
+                }
             }
-
+            magicCompCache.Add(thingWithComps, NoComp);
             return null;
         }
 
-        // Non-generic GetComp<CompAbilityUserMight> for performance since isInst against generic T is slow
+        private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<ThingWithComps, object> mightCompCache =
+            new System.Runtime.CompilerServices.ConditionalWeakTable<ThingWithComps, object>();
+
+        // Non-generic GetComp<CompAbilityUserMight> for performance since isInst against generic T is slow (cached, see above)
         public static CompAbilityUserMight GetCompAbilityUserMight(this ThingWithComps thingWithComps)
         {
+            if (thingWithComps == null) return null;
+            if (mightCompCache.TryGetValue(thingWithComps, out object cached)) return cached as CompAbilityUserMight;
             for (int i = 0; i < thingWithComps.AllComps.Count; i++)
             {
-                if (thingWithComps.AllComps[i] is CompAbilityUserMight comp) return comp;
+                if (thingWithComps.AllComps[i] is CompAbilityUserMight comp)
+                {
+                    mightCompCache.Add(thingWithComps, comp);
+                    return comp;
+                }
             }
-
+            mightCompCache.Add(thingWithComps, NoComp);
             return null;
         }
 
@@ -47,8 +83,10 @@ namespace TorannMagic
         {
             if (pawn.GetCompAbilityUserMagic()?.customClass != null) return true;
             if (pawn.GetCompAbilityUserMight()?.customClass != null) return true;
-            return pawn.story.traits.allTraits.Select(t => t.def.index).Any(index =>
-                TM_ClassUtility.NonCustomMagicAndMightTraitIndexes.Contains(index));
+            // Def references, not database indexes: trait mods that mutate the
+            // TraitDef database during pawn generation shift every index.
+            return pawn.story.traits.allTraits.Any(t =>
+                TM_ClassUtility.NonCustomMagicAndMightTraitIndexes.Contains(t.def));
         }
 
         public static bool IsRobotPawn(Pawn pawn)
@@ -83,28 +121,23 @@ namespace TorannMagic
 
         public static bool IsNecromancer(Pawn pawn)
         {
+            if (pawn == null) return false;
             if (pawn.def == TorannMagicDefOf.TM_SkeletonLichR) return true;
-            
-            for (int i = 0; i < pawn.story?.traits?.allTraits.Count; i++)
-            {
-                if (pawn.story.traits.allTraits[i].def == TorannMagicDefOf.Necromancer
-                    || pawn.story.traits.allTraits[i].def == TorannMagicDefOf.Lich) return true;
-            }            
-
-            CompAbilityUserMight compMight = pawn.GetCompAbilityUserMight();
-            if (compMight != null && compMight.customClass != null && compMight.customClass.isNecromancer)
-            {
-                return true;
-            }
-            CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
-            if (compMagic != null && compMagic.customClass != null && compMagic.customClass.isNecromancer)
-            {
-                return true;
-            }            
-            return false;
+            return ClassProgression.ClassIdentity.IsNecromancer(pawn);
         }
 
-        public static bool IsUndead(Pawn pawn)
+        // TM_Sprint_II -> TM_Sprint: level variants share the base def name
+        public static string BaseAbilityDefName(string defName)
+        {
+            if (defName.EndsWith("_III")) return defName.Substring(0, defName.Length - 4);
+            if (defName.EndsWith("_II")) return defName.Substring(0, defName.Length - 3);
+            if (defName.EndsWith("_I")) return defName.Substring(0, defName.Length - 2);
+            return defName;
+        }
+
+        public static bool IsUndead(Pawn pawn) => IsUndead(pawn, false);
+
+        internal static bool IsUndead(Pawn pawn, bool ignoreLichForm)
         {
             if (pawn == null) return false;
 
@@ -113,7 +146,7 @@ namespace TorannMagic
             if (pawn.health?.hediffSet != null && pawn.health.hediffSet.hediffs.Any(hediff =>
                 hediff.def == TorannMagicDefOf.TM_UndeadAnimalHD
                 || hediff.def == TorannMagicDefOf.TM_UndeadHD
-                || hediff.def == TorannMagicDefOf.TM_LichHD
+                || (!ignoreLichForm && hediff.def == TorannMagicDefOf.TM_LichHD)
                 || hediff.def == TorannMagicDefOf.TM_UndeadStageHD
                 || hediff.def.defName.StartsWith("ROM_Vamp")
             ))
@@ -165,23 +198,30 @@ namespace TorannMagic
 
         public static bool IsGolem(Pawn p)
         {
-            if (p?.health.hediffSet == null) return false;
+            // Adapted from ZalARoM's optimized golem checks.
+            // Check live state rather than retaining pawn references and stale classifications.
+            if (p is TMPawnGolem)
+                return true;
 
-            TMPawnGolem pg = p as TMPawnGolem;
-            if(pg != null)
+            var comps = p?.AllComps;
+            if (comps != null)
             {
-                return true;
-            }
-            CompGolem cg = p.TryGetComp<CompGolem>();
-            if(cg != null)
-            {
-                return true;
-            }
-            if(p.health.hediffSet.HasHediff(TorannMagicDefOf.TM_GolemHD))
-            {
-                return true;
+                for (int i = 0; i < comps.Count; i++)
+                {
+                    if (comps[i] is CompGolem)
+                        return true;
+                }
             }
 
+            var hediffs = p?.health?.hediffSet?.hediffs;
+            if (hediffs != null)
+            {
+                for (int i = 0; i < hediffs.Count; i++)
+                {
+                    if (hediffs[i].def == TorannMagicDefOf.TM_GolemHD)
+                        return true;
+                }
+            }
             return false;
         }
 
@@ -765,52 +805,15 @@ namespace TorannMagic
 
         public static bool HasRuneCarverOnMap(Faction faction, Map map, bool countSlaves = false)
         {
-            if (faction == null)
-            {
-                return false;
-            }
-            foreach (Pawn p in map.mapPawns.AllPawnsSpawned)
-            {
-                if(IsMagicUser(p) && p.IsSlave ? countSlaves : true)
-                {
-                    CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
-                    if(comp!= null && comp.MagicData != null)
-                    {
-                        MagicPower mp = comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_RuneCarving);
-                        if(mp != null && mp.learned)
-                        {
-                            return true;
-                        }                            
-                    }
-                }
-            }
-            return false;
+            return faction != null && map != null && map.mapPawns.AllPawnsSpawned.Any(p =>
+                p.Faction == faction && !p.Dead && !p.IsPrisoner && (countSlaves || !p.IsSlave) &&
+                ClassProgression.GolemancerLifecycle.RuneOwner(p) != null);
         }
 
         public static List<Pawn> GolemancersInFaction(Faction faction)
         {
-            if (faction == null)
-            {
-                return null;
-            }
-            List<Pawn> tmpList = new List<Pawn>();
-            tmpList.Clear();
-            foreach (Pawn p in PawnsFinder.AllMapsCaravansAndTravellingTransporters_AliveSpawned_FreeColonists)
-            {
-                if (IsMagicUser(p))
-                {
-                    CompAbilityUserMagic comp = p.GetCompAbilityUserMagic();
-                    if (comp != null && comp.MagicData != null)
-                    {
-                        MagicPower mp = comp.MagicData.ReturnMatchingMagicPower(TorannMagicDefOf.TM_Golemancy);
-                        if (mp != null && mp.learned)
-                        {
-                            tmpList.Add(p);
-                        }
-                    }
-                }
-            }
-            return tmpList;
+            return ClassProgression.GolemancerLifecycle.Masters(
+                PawnsFinder.AllMapsCaravansAndTravellingTransporters_AliveSpawned_FreeColonists, faction).Distinct().ToList();
         }
 
         public static int GetFightersInFactionCount(Faction faction, bool countSlaves = false)
@@ -928,6 +931,57 @@ namespace TorannMagic
                 .OfType<Hediff_Injury>()
                 .Where(injury => injury.CanHealNaturally())
                 .Sum(injury => injury.Severity) > minInjurySeverity;
+        }
+
+        // JobGiver_MonkMeditate decision core (Ф4): the knowledge store gates
+        // this path exactly like the dispatch, and the chi hediff / runtime
+        // ability may lag the scan (60-tick grant cadence) — skip quietly
+        // instead of NRE-ing. Extracted so the contract is testable.
+        public static bool MonkMeditateJobGate(Pawn pawn, MightPower mightPower, PawnAbility ability, Hediff chi)
+        {
+            if (mightPower == null) return false;
+            // Safe comp lookup: 1.7 TryGetComp throws on an EMPTY comps list.
+            TorannMagic.AbilityKnowledgeComp knowledge = pawn?.AllComps?
+                .OfType<TorannMagic.AbilityKnowledgeComp>().FirstOrDefault();
+            if (!AutoCast.AutocastPolicy.EnabledForAutocast(mightPower, knowledge))
+            {
+                return false;
+            }
+            if (ability == null || chi == null) return false;
+            if (ability.CooldownTicksLeft > 0) return false;
+            if (ClassProgression.MonkMartialPath.Path(pawn)?.MartialAlternate == true && !CultivationIdle(pawn)) return false;
+            if (chi.Severity >= 70) return false;
+            return true;
+        }
+
+        // Autocast utility gate for the monk's Meditate (player report: the autocast
+        // re-proc'd its activation every cooldown even mid-task). The cast heals
+        // wounds, purges afflictions and addictions, lifts break risk, and only
+        // otherwise builds chi and trickles rest/joy — so it fires when any of that
+        // utility exists, and for a healthy rested pawn only when idle with chi to
+        // gain. A working pawn is never interrupted for a chi trickle.
+        private static bool CultivationIdle(Pawn pawn) => !pawn.Drafted && (pawn.CurJob == null ||
+            (pawn.CurJob.def?.isIdle == true && !pawn.CurJob.playerForced && pawn.CurJob.workGiverDef == null));
+
+        public static bool MonkMeditateWorthAutocast(Pawn pawn)
+        {
+            if (pawn?.health?.hediffSet == null) return false;
+            if (ClassProgression.MonkMartialPath.Path(pawn)?.MartialAlternate == true)
+                return CultivationIdle(pawn) && ClassProgression.MonkMartialPath.Chi(pawn)?.Severity < 70f;
+            if (IsPawnInjured(pawn, 0)) return true;
+            if ((GetPawnAfflictions(pawn)?.Count ?? 0) > 0) return true;
+            if ((GetPawnAddictions(pawn)?.Count ?? 0) > 0) return true;
+            if (BreakRiskAlertUtility.PawnsAtRiskMinor.Contains(pawn)
+                || BreakRiskAlertUtility.PawnsAtRiskMajor.Contains(pawn)
+                || BreakRiskAlertUtility.PawnsAtRiskExtreme.Contains(pawn)) return true;
+            Hediff chi = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD);
+            // No chi hediff yet (just gained the class, grant tick pending): the
+            // meditate job cannot track chi and would error — skip until it exists.
+            if (chi == null) return false;
+            if (chi.Severity >= 70f) return false;   // chi already high
+            float rest = pawn.needs?.rest?.CurLevelPercentage ?? 1f;
+            if (rest < 0.5f) return true;                           // tired: the rest trickle helps
+            return pawn.CurJob?.workGiverDef == null;               // idle: building chi is fine; don't interrupt work
         }
 
         public static List<Hediff> GetPawnAfflictions(Pawn targetPawn)
@@ -1369,6 +1423,27 @@ namespace TorannMagic
             return pawnList.Count > 0 ? pawnList.RandomElement() : null;
         }
 
+        public static Pawn FindNearbyAutocastCureTarget(Pawn caster, TMAbilityDef ability, int radius)
+        {
+            if (caster.Map == null) return null;
+            IReadOnlyList<Pawn> pawns = caster.Map.mapPawns.AllPawnsSpawned;
+            Pawn found = null;
+            int candidates = 0;
+            for (int i = 0; i < pawns.Count; i++)
+            {
+                Pawn target = pawns[i];
+                if (target == null || target.Faction == null || target.Faction != caster.Faction ||
+                    !(target.RaceProps.Humanlike || ModOptions.Settings.Instance.autocastAnimals) ||
+                    (target.Position - caster.Position).LengthHorizontal > radius ||
+                    !AutocastTargetAcceptable(caster, ability, target)) continue;
+                // Filter before sampling, including high-power CureDisease. An
+                // immunity buff does not turn an unsupported wound into a cure.
+                candidates++;
+                if (Rand.Value <= 1f / candidates) found = target;
+            }
+            return found;
+        }
+
         public static Pawn FindNearbyAfflictedPawnAny(Pawn pawn, int radius)
         {
             List<Pawn> mapPawns = pawn.Map.mapPawns.AllPawnsSpawned.ToList();
@@ -1775,9 +1850,14 @@ namespace TorannMagic
 
         public static Thing GetTransmutableThingFromCell(IntVec3 cell, Pawn enchanter, out bool flagRawResource, out bool flagStuffItem, out bool flagNoStuffItem, out bool flagNutrition, out bool flagCorpse, bool manualCast = false)
         {
-            CompAbilityUserMagic comp = enchanter.GetCompAbilityUserMagic();
-            int pwrVal = enchanter.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_pwr").level;
-            int verVal = enchanter.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_ver").level;
+            return FindTransmutationSource(cell, enchanter, enchanter, null, out flagRawResource, out flagStuffItem,
+                out flagNoStuffItem, out flagNutrition, out flagCorpse, manualCast);
+        }
+
+        internal static Thing FindTransmutationSource(IntVec3 cell, Pawn enchanter, Pawn owner, Thing selected,
+            out bool flagRawResource, out bool flagStuffItem, out bool flagNoStuffItem, out bool flagNutrition, out bool flagCorpse, bool manualCast)
+        {
+            int verVal = owner.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Transmutate.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Transmutate_ver").level;
 
             List<Thing> thingList = cell.GetThingList(enchanter.Map);
             Thing transmutateThing = null;
@@ -1790,7 +1870,7 @@ namespace TorannMagic
 
             for (int i = 0; i < thingList.Count; i++)
             {
-                if (thingList[i] != null && !(thingList[i] is Pawn) && !(thingList[i] is Building) && (manualCast || !thingList[i].IsForbidden(enchanter)))
+                if ((selected == null || thingList[i] == selected) && thingList[i] != null && !(thingList[i] is Pawn) && !(thingList[i] is Building) && (manualCast || !thingList[i].IsForbidden(enchanter)))
                 {
                     //if (thingList[i].def.thingCategories != null && thingList[i].def.thingCategories.Count > 0 && (thingList[i].def.thingCategories.Contains(ThingCategoryDefOf.ResourcesRaw) || thingList[i].def.thingCategories.Contains(ThingCategoryDefOf.StoneBlocks) || thingList[i].def.defName == "RawMagicyte"))                    
                     if (thingList[i].def.MadeFromStuff && verVal >= 3)
@@ -1957,6 +2037,9 @@ namespace TorannMagic
         }
 
         public static float GetSpellPenetration(Pawn pawn)
+            => GetSpellPenetrationFrom(pawn, pawn);
+
+        internal static float GetSpellPenetrationFrom(Pawn pawn, Pawn body)
         {
             float penetration = 0;
             CompAbilityUserMagic compMagic = pawn.GetCompAbilityUserMagic();
@@ -1975,9 +2058,9 @@ namespace TorannMagic
                 penetration += (compMight.mightPwr - 1);
             }
 
-            if (pawn.health != null && pawn.health.capacities != null)
+            if (body.health != null && body.health.capacities != null)
             {
-                penetration += (pawn.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness) - 1);
+                penetration += (body.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness) - 1);
             }
 
             return penetration;
@@ -2028,29 +2111,6 @@ namespace TorannMagic
                 }                
             }
             return null;
-        }
-
-        public static T Clone<T>(T source)
-        {
-            if (!typeof(T).IsSerializable)
-            {
-                throw new ArgumentException("The type must be serializable.", "source");
-            }
-
-            // Don't serialize a null object, simply return the default for that object
-            if (System.Object.ReferenceEquals(source, null))
-            {
-                return default(T);
-            }
-
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new MemoryStream();
-            using (stream)
-            {
-                formatter.Serialize(stream, source);
-                stream.Seek(0, SeekOrigin.Begin);
-                return (T)formatter.Deserialize(stream);
-            }
         }
 
         //Rand.Chance(((ModOptions.Settings.Instance.baseFighterChance * 6) + (ModOptions.Settings.Instance.baseMageChance * 6) + (8 * ModOptions.Settings.Instance.advFighterChance) + (16 * ModOptions.Settings.Instance.advMageChance)) / (allTraits.Count))
@@ -2129,6 +2189,14 @@ namespace TorannMagic
                 //}
             }
             return spriteArea;
+        }
+
+        public static bool TryPickAutocastAreaCell(Area area, out IntVec3 cell)
+        {
+            if (area?.InnerGrid != null && area.TrueCount > 0 && area.ActiveCells.TryRandomElement(out cell))
+                return true;
+            cell = IntVec3.Invalid;
+            return false;
         }
 
         public static Area GetTransmutateArea(Map map = null, bool makeNewArea = true)
@@ -2235,7 +2303,7 @@ namespace TorannMagic
                     }
                 }
             }
-            else if (pawn.ParentHolder.ToString().Contains("Caravan"))
+            else if (pawn.ParentHolder != null && pawn.ParentHolder.ToString().Contains("Caravan"))
             {
                 foreach (Thing currentThing in pawn.holdingOwner)
                 {
@@ -2592,7 +2660,29 @@ namespace TorannMagic
             CompAbilityUserMagic magicPawn = targetPawn.GetCompAbilityUserMagic();
             CompAbilityUserMagic casterComp = caster.GetCompAbilityUserMagic();
             TMAbilityDef tempAbility = null;
-            if (magicPawn.customClass != null && magicPawn.customClass.isMage)
+            bool newModel = ClassProgression.ClassIdentity.TryGetState(targetPawn, out _);
+            // All six native Golemancer families explicitly prohibit Mimic.
+            if (newModel && (ClassProgression.ClassIdentity.IsGolemancer(targetPawn) || ClassProgression.ClassIdentity.IsEmpath(targetPawn))) return null;
+            if (newModel && (ClassProgression.ClassIdentity.IsBrightmage(targetPawn) || ClassProgression.ClassIdentity.IsShaman(targetPawn)))
+            {
+                bool shaman = ClassProgression.ClassIdentity.IsShaman(targetPawn);
+                var sourcePool = shaman ? magicPawn.MagicData.MagicPowersShaman : magicPawn.MagicData.MagicPowersBrightmage;
+                var candidates = sourcePool.Where(power => power.learned
+                    && (power.TMabilityDefs.FirstOrDefault() as TMAbilityDef)?.canCopy == true
+                    && !casterComp.MagicData.AllMagicPowers.Any(known => known.learned
+                        && known.TMabilityDefs.Contains(power.TMabilityDefs[0]))).ToList();
+                if (candidates.Count == 0) return null;
+                var selected = candidates.RandomElement();
+                var recipientPool = shaman ? casterComp.MagicData.MagicPowersShaman : casterComp.MagicData.MagicPowersBrightmage;
+                var recipient = recipientPool.FirstOrDefault(power =>
+                    power.TMabilityDefs.Contains(selected.TMabilityDefs[0]));
+                if (recipient == null) return null;
+                recipient.level = selected.level;
+                return selected.abilityDef as TMAbilityDef;
+            }
+            if (ClassProgression.ClassIdentity.TryGetDemonBranch(targetPawn, out _))
+                TM_ClassState.RestoreSharedMagicProgression(magicPawn);
+            if (!newModel && magicPawn.customClass != null && magicPawn.customClass.isMage)
             {
                 List<TMAbilityDef> copyAbilities = new List<TMAbilityDef>();
                 copyAbilities.Clear();
@@ -2615,7 +2705,7 @@ namespace TorannMagic
             {
                 if (magicPawn != null)
                 {
-                    if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.Arcanist))
+                    if (ClassProgression.ClassIdentity.IsArcanist(targetPawn))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -2706,7 +2796,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.StormBorn))
+                    else if (ClassProgression.ClassIdentity.IsLightningMage(targetPawn))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -2749,7 +2839,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.InnerFire))
+                    else if (ClassProgression.ClassIdentity.IsFireMage(targetPawn))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -2792,7 +2882,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.HeartOfFrost))
+                    else if (ClassProgression.ClassIdentity.IsIceMage(targetPawn))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -2856,7 +2946,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.Druid))
+                    else if (ClassProgression.ClassIdentity.IsDruid(targetPawn))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -2899,7 +2989,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer))
+                    else if ((newModel ? ClassProgression.ClassIdentity.IsNecromancer(targetPawn) : targetPawn.story.traits.HasTrait(TorannMagicDefOf.Necromancer)))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -2953,7 +3043,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.Paladin))
+                    else if (ClassProgression.ClassIdentity.IsPaladin(targetPawn))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -2996,7 +3086,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.Priest))
+                    else if (ClassProgression.ClassIdentity.IsPriest(targetPawn))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -3055,7 +3145,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.Summoner))
+                    else if (ClassProgression.ClassIdentity.IsSummoner(targetPawn))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -3077,8 +3167,9 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.TM_Bard))
+                    else if (ClassProgression.ClassIdentity.IsBard(targetPawn))
                     {
+                        if (newModel && !magicPawn.MagicData.MagicPowersB[3].learned) return null;
                         int level = magicPawn.MagicData.MagicPowersB[3].level;
                         caster.GetCompAbilityUserMagic().MagicData.MagicPowersB[3].level = level;
                         switch (level)
@@ -3097,7 +3188,7 @@ namespace TorannMagic
                                 break;
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.Warlock))
+                    else if ((newModel ? (ClassProgression.ClassIdentity.TryGetDemonBranch(targetPawn, out bool isWarlock) && isWarlock == true) : targetPawn.story.traits.HasTrait(TorannMagicDefOf.Warlock)))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -3151,7 +3242,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.Succubus))
+                    else if ((newModel ? (ClassProgression.ClassIdentity.TryGetDemonBranch(targetPawn, out bool isSuccubus) && isSuccubus == false) : targetPawn.story.traits.HasTrait(TorannMagicDefOf.Succubus)))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -3205,7 +3296,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.Geomancer))
+                    else if (ClassProgression.ClassIdentity.IsGeomancer(targetPawn))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -3247,7 +3338,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.Technomancer))
+                    else if (ClassProgression.ClassIdentity.IsTechnomancer(targetPawn))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -3269,7 +3360,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.Enchanter))
+                    else if (ClassProgression.ClassIdentity.IsEnchanter(targetPawn))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -3296,7 +3387,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.Chronomancer))
+                    else if (ClassProgression.ClassIdentity.IsChronomancer(targetPawn))
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -3334,7 +3425,7 @@ namespace TorannMagic
                             }
                         }
                     }
-                    else if (targetPawn.story.traits.HasTrait(TorannMagicDefOf.BloodMage))
+                    else if (ClassProgression.ClassIdentity.IsBloodMage(targetPawn))
                     {
                         Messages.Message("TM_CannotMimicBloodMage".Translate(
                             ), MessageTypeDefOf.RejectInput);
@@ -3644,42 +3735,28 @@ namespace TorannMagic
             
             if (comp != null)
             {
-                int count = 2 + comp.MagicData.MagicPowerSkill_ChaosTradition.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ChaosTradition_ver").level;
-                for(int x =0; x < comp.MagicData.AllMagicPowersForChaosMage.Count; x++)
-                {
-                    MagicPower mp = comp.MagicData.AllMagicPowersForChaosMage[x];
-                    mp.level = 0;
-                    mp.autocast = false;
-                }
-                comp.MagicData.ResetAllSkills();
+                var data = comp.MagicData;
+                if (data == null || !data.AllMagicPowersForChaosMage.Any(p => p?.TMabilityDefs?.Count > 0 && p.abilityDef is TMAbilityDef)) return;
+                int count = 2 + (data.MagicPowerSkill_ChaosTradition.FirstOrDefault(s => s.label == "TM_ChaosTradition_ver")?.level ?? 0);
+                TM_ChaosProgression.ReleasePowers(comp);
                 comp.chaosPowers = new List<TM_ChaosPowers>();
-                comp.chaosPowers.Clear();
-                comp.RemovePowers(false);
-                comp.MagicData.MagicAbilityPoints = comp.MagicData.MagicUserLevel;
-                if(forAI)
+                if (forAI)
                 {
-                    MagicPower p = comp.MagicData.AllMagicPowersForChaosMage.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Heal);
-                    p.learned = true;
-                    comp.chaosPowers.Add(new TM_ChaosPowers((TMAbilityDef)p.abilityDef, TM_ClassUtility.GetAssociatedMagicPowerSkill(comp, p)));
-                    comp.AddPawnAbility(p.abilityDef);
-                    p = comp.MagicData.AllMagicPowersForChaosMage.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_LightningBolt);
-                    p.learned = true;
-                    comp.chaosPowers.Add(new TM_ChaosPowers((TMAbilityDef)p.abilityDef, TM_ClassUtility.GetAssociatedMagicPowerSkill(comp, p)));
-                    comp.AddPawnAbility(p.abilityDef);
-                    p = comp.MagicData.AllMagicPowersForChaosMage.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Shield);
-                    p.learned = true;
-                    comp.chaosPowers.Add(new TM_ChaosPowers((TMAbilityDef)p.abilityDef, TM_ClassUtility.GetAssociatedMagicPowerSkill(comp, p)));
-                    comp.AddPawnAbility(p.abilityDef);
-                    p = comp.MagicData.AllMagicPowersForChaosMage.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Fireball);
-                    p.learned = true;
-                    comp.chaosPowers.Add(new TM_ChaosPowers((TMAbilityDef)p.abilityDef, TM_ClassUtility.GetAssociatedMagicPowerSkill(comp, p)));
-                    comp.AddPawnAbility(p.abilityDef);
-                    p = TM_Calc.GetRandomMagicPower(comp);
-                    comp.chaosPowers.Add(new TM_ChaosPowers((TMAbilityDef)p.abilityDef, null));
+                    foreach (var def in new[] { TorannMagicDefOf.TM_Heal, TorannMagicDefOf.TM_LightningBolt, TorannMagicDefOf.TM_Shield, TorannMagicDefOf.TM_Fireball })
+                    {
+                        var fixedPower = data.AllMagicPowersForChaosMage.FirstOrDefault(p => def != null && p?.abilityDef == def);
+                        if (fixedPower == null) continue;
+                        fixedPower.learned = true;
+                        comp.chaosPowers.Add(new TM_ChaosPowers(def, TM_ClassUtility.GetAssociatedMagicPowerSkill(comp, fixedPower)));
+                        comp.AddPawnAbility(def);
+                    }
+                    var preview = GetRandomMagicPower(comp);
+                    if (preview != null) comp.chaosPowers.Add(new TM_ChaosPowers((TMAbilityDef)preview.abilityDef, null));
                 }
                 for (int i = 0; i < 5; i++)
                 {
                     MagicPower power = TM_Calc.GetRandomMagicPower(comp);
+                    if (power == null) break;
                     if (i < count)
                     {
                         power.learned = true;
@@ -3715,21 +3792,11 @@ namespace TorannMagic
 
         public static MagicPower GetRandomMagicPower(CompAbilityUserMagic comp, bool includeMasterPower = false)
         {
-            bool isDuplicate = true;
-            MagicPower power = null;
-            while (isDuplicate)
-            {
-                isDuplicate = false;
-                power = comp.MagicData.AllMagicPowersForChaosMage.RandomElement();
-                for (int i = 0; i < comp.chaosPowers.Count; i++)
-                {
-                    if (comp.chaosPowers[i].Ability == power.abilityDef)
-                    {
-                        isDuplicate = true;
-                    }
-                }
-            }
-            return power;
+            var pool = comp?.MagicData?.AllMagicPowersForChaosMage;
+            if (pool == null) return null;
+            var candidates = pool.Where(p => p?.TMabilityDefs?.Count > 0 && p.abilityDef is TMAbilityDef
+                && comp.chaosPowers?.Any(slot => slot?.Ability == p.abilityDef) != true).ToList();
+            return candidates.Count == 0 ? null : candidates.RandomElement();
         }
 
         public static bool IsUsingRanged(Pawn p)
@@ -4049,18 +4116,9 @@ namespace TorannMagic
             VerbProperties vp = p.equipment.Primary.def.Verbs?.FirstOrDefault();
             if (vp == null) return 0;
 
-            //const QualityCategory qc = QualityCategory.Normal;
-            //p.equipment.Primary.TryGetQuality(out qc);
-            //float qc_m = GetQualityMultiplier(qc);
-            const float qc_m = 1f;
-
             try
             {
-                float result = (
-                    qc_m * vp.defaultProjectile.projectile.GetDamageAmount(p.equipment.Primary)
-                    - 2 * (vp.warmupTime + vp.defaultCooldownTime)
-                    + 3 * vp.defaultProjectile.projectile.stoppingPower
-                ) * strFactor;
+                float result = RangedWeaponDamage(p.equipment.Primary,vp,strFactor);
                 DamageCache_Ranged.Add(p, result);
                 return result;
             }
@@ -4069,6 +4127,14 @@ namespace TorannMagic
                 DamageCache_Ranged.Add(p, 0);
                 return 0;
             }            
+        }
+
+        internal static float RangedWeaponDamage(ThingWithComps weapon,VerbProperties verb,float strength)
+        {
+            var projectile=verb?.defaultProjectile?.projectile;
+            if (weapon==null || projectile==null) return 0f;
+            return (projectile.GetDamageAmount(weapon) - 2f*(verb.warmupTime+verb.defaultCooldownTime) +
+                3f*projectile.stoppingPower)*strength;
         }
 
         public static float GetQualityMultiplier(QualityCategory qc)
@@ -4309,7 +4375,7 @@ namespace TorannMagic
                         (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Construction) ||
                         pawn.workSettings.WorkIsActive(WorkTypeDefOf.Crafting) ||
                         pawn.workSettings.WorkIsActive(TorannMagicDefOf.Art) ||
-                        pawn.story.traits.HasTrait(TorannMagicDefOf.Enchanter)))
+                        ClassProgression.ClassIdentity.IsEnchanter(pawn)))
                     {
                         idList.Add(i);
                         continue;
@@ -4371,7 +4437,142 @@ namespace TorannMagic
             return id;
         }
 
+        /// <summary>
+        /// Mirror of the cure checks in Verb_CureDisease / Verb_MechaniteReprogramming:
+        /// the target must actually carry a sickness these spells can remove,
+        /// otherwise the cast is rejected with a toast.
+        /// </summary>
+        public static bool HasCurableSickness(Pawn p)
+        {
+            List<Hediff> hediffs = p?.health?.hediffSet?.hediffs;
+            if (hediffs == null)
+            {
+                return false;
+            }
+            for (int i = 0; i < hediffs.Count; i++)
+            {
+                HediffDef d = hediffs[i].def;
+                if (d == null)
+                {
+                    continue;
+                }
+                if (d.defName == "WoundInfection" || d.defName.Contains("Flu") || d.defName.Contains("Infection") ||
+                    d.defName == "GutWorms" || d.defName == "Malaria" || d.defName == "FoodPoisoning" ||
+                    d.defName == "SleepingSickness" || d.defName == "MuscleParasites" || d.defName == "Scaria" ||
+                    d.defName == "BloodRot" || (d.makesSickThought && d.isBad))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Automatic casts validate the real target kind and the executing caster's
+        /// skills. Manual verbs deliberately keep their existing behavior.
+        /// </summary>
+        public static bool AutocastTargetAcceptable(Pawn caster, TMAbilityDef ability, LocalTargetInfo target)
+        {
+            if (ability == null || !target.IsValid || TM_AutocastDefaults.IsManualOnly(ability))
+            {
+                return false;
+            }
+#if RW17
+            if (!Compatibility.AbilityCastSafety.AllowsSelfTarget(caster, ability, target)) return false;
+#endif
+            string baseName = BaseAbilityDefName(ability.defName);
+            if (baseName == "TM_Blink") return false; // destination evaluator only, never a generic cast job
+            if (baseName == "TM_ConsumeCorpse" || baseName == "TM_CorpseExplosion" || baseName == "TM_RaiseUndead")
+            {
+                return target.Thing is Corpse corpse && !corpse.Destroyed;
+            }
+            Pawn pawn = target.Pawn;
+            if (baseName == "TM_CureDisease" || baseName == "TM_MechaniteReprogramming")
+            {
+                if (pawn == null || pawn.Dead || pawn.Destroyed || pawn.health?.hediffSet == null) return false;
+                return baseName == "TM_CureDisease" ? CanAutocastCureDisease(caster, ability, pawn) : CanAutocastReprogramMechanites(pawn);
+            }
+            return pawn == null ? target.Thing == null || !target.Thing.Destroyed : !pawn.Dead && !pawn.Destroyed;
+        }
+
+        // Compatibility for callers without a caster: do not assume upgraded skills.
+        public static bool AutocastTargetAcceptable(TMAbilityDef ability, Pawn target)
+        {
+            return AutocastTargetAcceptable(null, ability, target);
+        }
+
+        private static bool CanAutocastCureDisease(Pawn caster, TMAbilityDef ability, Pawn target)
+        {
+            int versatility = caster != null ? GetSkillVersatilityLevel(caster, ability) : 0;
+            foreach (Hediff hediff in target.health.hediffSet.hediffs)
+            {
+                HediffDef def = hediff.def;
+                if (def == null || hediff is Hediff_Injury) continue;
+                // The verb enters the category branch only for its AddictionList;
+                // do not promise cures for arbitrary category entries it never uses.
+                if (TM_Data.AddictionList().Contains(def))
+                {
+                    if (CategoryCureSupported(caster, HediffCategoryList.Named("TM_Category_Hediffs").diseases, def, versatility)) return true;
+                    continue;
+                }
+                string name = def.defName;
+                if (name == "WoundInfection" || name.Contains("Flu") || name.Contains("Infection")) return true;
+                if (versatility >= 1 && (name == "GutWorms" || name == "Malaria" || def == HediffDefOf.FoodPoisoning)) return true;
+                // Scaria is unconditional in the current manual verb (operator precedence).
+                if ((versatility >= 2 && (name == "SleepingSickness" || name == "MuscleParasites")) || def == HediffDefOf.Scaria) return true;
+                if (versatility == 3 && def.makesSickThought && def.isBad && name != "Abasia") return true;
+            }
+            return false;
+        }
+
+        private static bool CanAutocastReprogramMechanites(Pawn target)
+        {
+            foreach (Hediff hediff in target.health.hediffSet.hediffs)
+            {
+                HediffDef def = hediff.def;
+                if (def == null || hediff is Hediff_Injury) continue;
+                if (TM_Data.MechaniteList().Contains(def))
+                {
+                    // Verb_MechaniteReprogramming reads category skills from the
+                    // recipient, not the caster. Keep that existing contract here.
+                    if (CategoryCureSupported(target, HediffCategoryList.Named("TM_Category_Hediffs").mechanites, def, 0)) return true;
+                    continue;
+                }
+                if (def.defName == "SensoryMechanites" || def.defName == "FibrousMechanites" || def.defName == "LymphaticMechanites") return true;
+            }
+            return false;
+        }
+
+        private static bool CategoryCureSupported(Pawn skillOwner, List<TM_CategoryHediff> categories, HediffDef def, int defaultLevel)
+        {
+            CompAbilityUserMagic comp = skillOwner?.GetCompAbilityUserMagic();
+            foreach (TM_CategoryHediff category in categories)
+            {
+                // Match the verb, including its direction of Contains.
+                if (!category.hediffDefname.Contains(def.defName)) continue;
+                int level = defaultLevel;
+                if (comp != null && category.requiredSkillName != "TM_Purify_ver")
+                {
+                    MagicPowerSkill skill = comp.MagicData.AllMagicPowerSkills.FirstOrDefault(x => x.label == category.requiredSkillName);
+                    if (skill == null) continue;
+                    level = skill.level;
+                }
+                if (level >= category.requiredSkillLevel) return true;
+            }
+            return false;
+        }
+
         public static LocalTargetInfo GetAutocastTarget(Pawn caster, TM_Autocast autocasting, LocalTargetInfo potentialTarget)
+        {
+            return GetAutocastTarget(caster, autocasting, potentialTarget, null);
+        }
+
+        public static LocalTargetInfo GetAutocastTarget(Pawn caster, TM_Autocast autocasting, LocalTargetInfo potentialTarget, TMAbilityDef ability)
+        {
+            return GetAutocastTarget(caster, autocasting, potentialTarget, ability, null);
+        }
+
+        public static LocalTargetInfo GetAutocastTarget(Pawn caster, TM_Autocast autocasting, LocalTargetInfo potentialTarget, TMAbilityDef ability, Verb castingVerb)
         {
             LocalTargetInfo target = new LocalTargetInfo();
 
@@ -4387,43 +4588,69 @@ namespace TorannMagic
             {
                 if (autocasting.GetTargetType == typeof(Pawn))
                 {
-                    IEnumerable<Pawn> nearbyThings = from x in caster.Map.mapPawns.AllPawnsSpawned
-                                                     where (x.GetType() == typeof(Pawn) &&
-                                                     (x.Position - caster.Position).LengthHorizontal >= autocasting.minRange &&
-                                                     autocasting.maxRange > 0 ? (x.Position - caster.Position).LengthHorizontal <= autocasting.maxRange : true &&
-                                                     autocasting.includeSelf ? true : x != caster)                                                     
-                                                     select x;
-                    List<Pawn> potentialPawns = new List<Pawn>();
-                    potentialPawns.Clear();
-                    foreach(Pawn p in nearbyThings)
+                    // single bounded pass, reservoir-sampled pick, no list allocations:
+                    // this runs per OnNearby power on every autocast evaluation
+                    IReadOnlyList<Pawn> spawned = caster.Map.mapPawns.AllPawnsSpawned;
+                    Pawn found = null;
+                    int candidates = 0;
+                    for (int i = 0; i < spawned.Count; i++)
                     {
-                        if(p.Faction == null)
+                        Pawn p = spawned[i];
+                        if (p == caster && !autocasting.includeSelf)
                         {
-                            if(autocasting.targetNeutral)
+                            continue;
+                        }
+                        float dist = (p.Position - caster.Position).LengthHorizontal;
+                        if (dist < autocasting.minRange)
+                        {
+                            continue;
+                        }
+                        if (autocasting.maxRange > 0 && dist > autocasting.maxRange)
+                        {
+                            continue;
+                        }
+                        if (p.Faction == null)
+                        {
+                            if (!autocasting.targetNeutral)
                             {
-                                potentialPawns.Add(p);
+                                continue;
                             }
                         }
-                        else
+                        else if (p.Faction != caster.Faction && !p.IsPrisoner)
                         {
-                            if (p.Faction != caster.Faction && !p.IsPrisoner)
+                            if (p.Faction.HostileTo(caster.Faction))
                             {
-                                if (autocasting.targetNeutral && !p.Faction.HostileTo(caster.Faction))
+                                if (!autocasting.targetEnemy)
                                 {
-                                    potentialPawns.Add(p);
-                                }
-                                else if (autocasting.targetEnemy && p.Faction.HostileTo(caster.Faction))
-                                {
-                                    potentialPawns.Add(p);
+                                    continue;
                                 }
                             }
-                            else if(autocasting.targetFriendly)
+                            else if (!autocasting.targetNeutral)
                             {
-                                potentialPawns.Add(p);
+                                continue;
                             }
+                        }
+                        else if (!autocasting.targetFriendly)
+                        {
+                            continue;
+                        }
+                        if (ability != null && (!AutocastTargetAcceptable(caster, ability, p) || !autocasting.ValidConditions(caster, p)))
+                        {
+                            continue;
+                        }
+#if RW17
+                        if (castingVerb != null && !Compatibility.AbilityCastSafety.CanAutocast(castingVerb, p)) continue;
+#endif
+                        candidates++;
+                        if (Rand.Value <= 1f / candidates)
+                        {
+                            found = p;
                         }
                     }
-                    target = potentialPawns.Count > 0 ? potentialPawns.RandomElement() : null;
+                    if (found != null)
+                    {
+                        target = found;
+                    }
                 }
                 else if (autocasting.GetTargetType == typeof(Building))
                 {
@@ -4496,7 +4723,10 @@ namespace TorannMagic
             {
                 target = potentialTarget.Cell;
             }
-            return target;
+#if RW17
+            if (castingVerb != null && !Compatibility.AbilityCastSafety.CanAutocast(castingVerb, target)) return LocalTargetInfo.Invalid;
+#endif
+            return ability == null || AutocastTargetAcceptable(caster, ability, target) ? target : LocalTargetInfo.Invalid;
         }
 
         public static List<Building> FindConnectedWalls(Building start, float maxAllowedDistance = 1.4f, float maxDistanceFromStart = 50, bool matchFaction = true)
@@ -4791,3 +5021,4 @@ namespace TorannMagic
         }
     }
 }
+

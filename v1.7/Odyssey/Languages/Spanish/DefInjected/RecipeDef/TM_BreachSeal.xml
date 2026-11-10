@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MakeCastScroll_BreachSeal.label>crear Sello de brecha — pergamino de lanzamiento</TM_MakeCastScroll_BreachSeal.label>
+  <TM_MakeCastScroll_BreachSeal.description>Requiere un mago que conozca Sello de brecha. Crea hasta tres muros mágicos herméticos en el borde de un área de 3×3 más alejado del núcleo de la nave. Requiere una plataforma propia y suelo intacto. Cada muro tiene 300 puntos de vida y dura un día. Conserva los muros herméticos aliados; no renueva sellos activos. No repara suelos ni techos y no aporta oxígeno. Se usa desde el inventario. Consume un pergamino solo al tener éxito. Cualquiera puede usarlo sin maná ni magia aprendida.</TM_MakeCastScroll_BreachSeal.description>
+  <TM_MakeCastScroll_BreachSeal.jobString>creando Sello de brecha.</TM_MakeCastScroll_BreachSeal.jobString>
+  <TM_MakeSpellStaff_BreachSeal.label>crear Sello de brecha — bastón cargado</TM_MakeSpellStaff_BreachSeal.label>
+  <TM_MakeSpellStaff_BreachSeal.description>Requiere un mago que conozca Sello de brecha. Crea hasta tres muros mágicos herméticos en el borde de un área de 3×3 más alejado del núcleo de la nave. Requiere una plataforma propia y suelo intacto. Cada muro tiene 300 puntos de vida y dura un día. Conserva los muros herméticos aliados; no renueva sellos activos. No repara suelos ni techos y no aporta oxígeno. Equípalo como arma principal. Tiene 10 usos, no se recarga y desaparece tras el último. Cualquiera puede usarlo sin maná ni magia aprendida.</TM_MakeSpellStaff_BreachSeal.description>
+  <TM_MakeSpellStaff_BreachSeal.jobString>creando Sello de brecha.</TM_MakeSpellStaff_BreachSeal.jobString>
+</LanguageData>

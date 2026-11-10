@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_DecayHD.label>Desintegração</TM_DecayHD.label>
+  <TM_DecayHD.description>Decompõe rapidamente, corrói e dissolve material e tecidos.</TM_DecayHD.description>
+  <TM_DecayHD.stages.0.label></TM_DecayHD.stages.0.label>
+
+  <TM_DeathFieldHD.label>Campo de morte</TM_DeathFieldHD.label>
+  <TM_DeathFieldHD.description>Ocasionalmente atinge alvos próximos com a magia da morte.</TM_DeathFieldHD.description>
+  <TM_DeathFieldHD.stages.0.label></TM_DeathFieldHD.stages.0.label>
+
+  <TM_DoomFieldHD.label>O abismo da morte</TM_DoomFieldHD.label>
+  <TM_DoomFieldHD.description>Abranda ocasionalmente os alvos próximos com a morte iminente deles.</TM_DoomFieldHD.description>
+  <TM_DoomFieldHD.stages.0.label></TM_DoomFieldHD.stages.0.label>
+
+  <TM_HollowGolem_BreastPlateHD.label>Sinal de nudez</TM_HollowGolem_BreastPlateHD.label>
+  <TM_HollowGolem_BreastPlateHD.description>Protege o torso e os seios contra ataques.</TM_HollowGolem_BreastPlateHD.description>
+  <TM_HollowGolem_BreastPlateHD.stages.0.label></TM_HollowGolem_BreastPlateHD.stages.0.label>
+
+  <TM_HollowGolem_HelmHD.label>capacete</TM_HollowGolem_HelmHD.label>
+  <TM_HollowGolem_HelmHD.description>Protege a cabeça e o crânio.</TM_HollowGolem_HelmHD.description>
+  <TM_HollowGolem_HelmHD.stages.0.label></TM_HollowGolem_HelmHD.stages.0.label>
+
+  <TM_HollowGolem_ShoulderHD.label>ombros</TM_HollowGolem_ShoulderHD.label>
+  <TM_HollowGolem_ShoulderHD.description>Protege os ombros, o colarinho e o pescoço.</TM_HollowGolem_ShoulderHD.description>
+  <TM_HollowGolem_ShoulderHD.stages.0.label></TM_HollowGolem_ShoulderHD.stages.0.label>
+
+  <TM_HollowGolem_CrownHD.label>coroa de despertar</TM_HollowGolem_CrownHD.label>
+  <TM_HollowGolem_CrownHD.description>Fortalece a força de vontade e oferece pouca proteção contra ataques físicos.</TM_HollowGolem_CrownHD.description>
+  <TM_HollowGolem_CrownHD.stages.0.label></TM_HollowGolem_CrownHD.stages.0.label>
+
+  <TM_HollowGolem_CloakHD.label>capa em extinção</TM_HollowGolem_CloakHD.label>
+  <TM_HollowGolem_CloakHD.description>Aumenta a velocidade de movimento e oferece pouca proteção.</TM_HollowGolem_CloakHD.description>
+  <TM_HollowGolem_CloakHD.stages.0.label></TM_HollowGolem_CloakHD.stages.0.label>
+
+  <TM_HollowGolem_CoAFireHD.label>Brasão: Fogo</TM_HollowGolem_CoAFireHD.label>
+  <TM_HollowGolem_CoAFireHD.description>Aumenta a velocidade de movimento e resistência térmica.</TM_HollowGolem_CoAFireHD.description>
+  <TM_HollowGolem_CoAFireHD.stages.0.label>I</TM_HollowGolem_CoAFireHD.stages.0.label>
+  <TM_HollowGolem_CoAFireHD.stages.1.label>II</TM_HollowGolem_CoAFireHD.stages.1.label>
+  <TM_HollowGolem_CoAFireHD.stages.2.label>III</TM_HollowGolem_CoAFireHD.stages.2.label>
+
+  <TM_HollowGolem_CoAIceHD.label>Escudo de Herba</TM_HollowGolem_CoAIceHD.label>
+  <TM_HollowGolem_CoAIceHD.description>Aumenta a blindagem.</TM_HollowGolem_CoAIceHD.description>
+  <TM_HollowGolem_CoAIceHD.stages.0.label>I</TM_HollowGolem_CoAIceHD.stages.0.label>
+  <TM_HollowGolem_CoAIceHD.stages.1.label>II</TM_HollowGolem_CoAIceHD.stages.1.label>
+  <TM_HollowGolem_CoAIceHD.stages.2.label>III</TM_HollowGolem_CoAIceHD.stages.2.label>
+
+
+</LanguageData>

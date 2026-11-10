@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_BullChargeHD.label>carga</TM_BullChargeHD.label>
+  
+  <TM_BullChargeHD.description>Cargando hacia la batalla.</TM_BullChargeHD.description>
+  
+  
+  <TM_FleshGolem_BracerGuardHD.label>brazal protector</TM_FleshGolem_BracerGuardHD.label>
+  
+  <TM_FleshGolem_BracerGuardHD.description>Probabilidad de bloquear ataques.</TM_FleshGolem_BracerGuardHD.description>
+  
+  
+  <TM_FleshGolem_ChestCageHD.label>jaula torácica</TM_FleshGolem_ChestCageHD.label>
+  
+  <TM_FleshGolem_ChestCageHD.description>Desvía los ataques dirigidos al pecho y al torso; funciona mejor contra armas de gran tamaño.</TM_FleshGolem_ChestCageHD.description>
+  
+  
+  <TM_FleshGolem_EyesT1HD.label>visión cuádruple</TM_FleshGolem_EyesT1HD.label>
+  
+  <TM_FleshGolem_EyesT1HD.description>La visión mejora gracias a cuatro ojos.</TM_FleshGolem_EyesT1HD.description>
+  
+  
+  <TM_FleshGolem_HasteHD.label>presteza</TM_FleshGolem_HasteHD.label>
+  
+  <TM_FleshGolem_HasteHD.description>Las alas le confieren agilidad de movimiento.</TM_FleshGolem_HasteHD.description>
+  
+  
+  <TM_FleshGolem_LegPlatesHD.label>placas de pierna</TM_FleshGolem_LegPlatesHD.label>
+  
+  <TM_FleshGolem_LegPlatesHD.description>Mejora la armadura alrededor de las piernas.</TM_FleshGolem_LegPlatesHD.description>
+  
+  
+  <TM_FleshGolem_ShoulderPlatesHD.label>hombreras</TM_FleshGolem_ShoulderPlatesHD.label>
+  
+  <TM_FleshGolem_ShoulderPlatesHD.description>Mejora la armadura alrededor de los hombros.</TM_FleshGolem_ShoulderPlatesHD.description>
+  
+  
+  <TM_FleshGolem_SkullPlateHD.label>placa craneal</TM_FleshGolem_SkullPlateHD.label>
+  
+  <TM_FleshGolem_SkullPlateHD.description>Mejora la armadura sobre el cráneo.</TM_FleshGolem_SkullPlateHD.description>
+  
+  
+  <TM_FleshGolem_SpineGuardHD.label>protector de columna</TM_FleshGolem_SpineGuardHD.label>
+  
+  <TM_FleshGolem_SpineGuardHD.description>Desvía los ataques dirigidos a la espalda.</TM_FleshGolem_SpineGuardHD.description>
+  
+  
+  <TM_FrailtyCurseHD.label>maldito</TM_FrailtyCurseHD.label>
+  
+  <TM_FrailtyCurseHD.description>La mirada de un mal de ojo ha lanzado esta maldición.</TM_FrailtyCurseHD.description>
+  
+  <TM_FrailtyCurseHD.stages.frail.label>frágil</TM_FrailtyCurseHD.stages.frail.label>
+  
+  <TM_FrailtyCurseHD.stages.crippled.label>lisiado</TM_FrailtyCurseHD.stages.crippled.label>
+  
+</LanguageData>

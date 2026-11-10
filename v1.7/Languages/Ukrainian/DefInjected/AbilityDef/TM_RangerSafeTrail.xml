@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_RangerSafeTrail.label>Безпечна стежка</TM_Bridge_RangerSafeTrail.label>
+  <TM_Bridge_RangerSafeTrail.description>Позначає на 8 секунд видимий прохідний маршрут завдовжки до 8 клітин. Перші два союзники, які ступили на стежку, рухаються нею на 15% швидше. Зачинені двері або перешкода обривають стежку. Витрата витривалості — 20%, відновлення — 40 секунд.</TM_Bridge_RangerSafeTrail.description>
+</LanguageData>

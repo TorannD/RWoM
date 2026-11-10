@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritSunfire</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>calling down sunfire through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSunfire_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>calling down sunfire through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSunfire_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>calling down sunfire through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritSunfire_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>calling down sunfire through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritLightBurst</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting light burst through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritLightLance</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting light lance through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritRefraction</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting refraction through a spirit host.</reportString>
+  </JobDef>
+  <JobDef><defName>TM_SpiritLightSkip</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>traveling by light through a spirit host.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritLightSkipMass</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>traveling by light through a spirit host.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritLightSkipGlobal</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>choosing a world destination for light travel.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritSoL_CreateLight</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>directing a spirit of light.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritSoL_Equalize</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>sharing light with a spirit of light.</reportString></JobDef>
+  <JobDef><defName>TM_SpiritSpiritOfLight</defName><driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass><reportString>summoning a spirit of light through a host.</reportString></JobDef>
+</Defs>

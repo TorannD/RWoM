@@ -1,34 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using RimWorld;
-using AbilityUser;
+using TorannMagic.ClassProgression;
 using Verse;
-using UnityEngine;
-
 
 namespace TorannMagic
 {
-    public class Verb_DismissEnchanterStones : Verb_UseAbility
+    public class Verb_DismissEnchanterStones : Verb_SpiritTargetable
     {
         protected override bool TryCastShot()
         {
-            Pawn caster = base.CasterPawn;
-            Pawn pawn = this.currentTarget.Thing as Pawn;
-
-            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            if(comp.IsMagicUser)
-            {
-                if(comp.enchanterStones.Count > 0)
-                {
-                    Thing stone = comp.enchanterStones[0];
-                    stone.Destroy(DestroyMode.Vanish);
-                }
-                else
-                {
-                    Messages.Message("Found no enchanter stones to destroy.", MessageTypeDefOf.RejectInput);
-                }
-            }
+            burstShotsLeft = 0;
+            var body = CasterPawn;
+            var magic = SpiritRebirthCasting.SkillOwner(body, Ability)?.GetCompAbilityUserMagic();
+            if (currentTarget.Pawn != body || magic == null) return false;
+            var oldest = magic.enchanterStones?.FirstOrDefault(s => !s.DestroyedOrNull());
+            if (oldest == null) return false;
+            oldest.Destroy(DestroyMode.Vanish);
+            magic.SyncEnchanterStoneControl();
             return true;
         }
     }

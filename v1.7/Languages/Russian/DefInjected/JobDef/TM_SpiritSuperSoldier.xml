@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritCastPistolWhip.reportString>бьёт TargetB пистолетом.</TM_SpiritCastPistolWhip.reportString>
+  <TM_SpiritCastMk203GL.reportString>стреляет гранатой по TargetB.</TM_SpiritCastMk203GL.reportString>
+  <TM_SpiritCastBreachingCharge.reportString>бросает подрывной заряд в TargetB.</TM_SpiritCastBreachingCharge.reportString>
+  <TM_SpiritCastSuperSoldierFieldDressing.reportString>накладывает полевую повязку.</TM_SpiritCastSuperSoldierFieldDressing.reportString>
+  <TM_SpiritCastBuckshot.reportString>стреляет картечью по TargetB.</TM_SpiritCastBuckshot.reportString>
+  <TM_SpiritCastSuppressingFire.reportString>ведёт подавляющий огонь по TargetB.</TM_SpiritCastSuppressingFire.reportString>
+  <TM_SpiritCast60mmMortar.reportString>развёртывает 60-мм миномёт.</TM_SpiritCast60mmMortar.reportString>
+</LanguageData>

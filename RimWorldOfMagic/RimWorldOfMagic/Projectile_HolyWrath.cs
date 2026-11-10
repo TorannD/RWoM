@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using Verse.Sound;
 using RimWorld;
 using AbilityUser;
@@ -11,15 +11,16 @@ using TorannMagic.Utils;
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class Projectile_HolyWrath : Projectile_AbilityBase
+    public class Projectile_HolyWrath : ClassProgression.Projectile_SpiritBolt
     {
         private bool initialized = false;
-        private int verVal = 0;
-        private int pwrVal = 0;
+        protected override List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_HolyWrath;
+        protected override string SkillStem => "TM_HolyWrath";
+
         private int timeToSmite = 360;
         private int strikeNum;
         private int age = -1;
-        private float arcaneDmg = 1;
+
         List<int> wrathAge = new List<int>();
         List<IntVec3> smitePos = new List<IntVec3>();
         Pawn caster;
@@ -64,18 +65,16 @@ namespace TorannMagic
             ThingDef def = this.def;
             if (!this.initialized)
             {
-                caster = this.launcher as Pawn;
-                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-                MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_HolyWrath.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_HolyWrath_pwr");
-                MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_HolyWrath.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_HolyWrath_ver");
-                verVal = ver.level;
-                pwrVal = pwr.level;
-                this.arcaneDmg = comp.arcaneDmg;
-                
-                if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
+                caster = SpellInstigator as Pawn;
+                if (!projected)
                 {
-                    pwrVal = 1;
-                    verVal = 1;
+                    var comp = caster.GetCompAbilityUserMagic();
+                    var skills = Skills(comp.MagicData);
+                    verVal = skills.First(s => s.label == "TM_HolyWrath_ver").level;
+                    pwrVal = skills.First(s => s.label == "TM_HolyWrath_pwr").level;
+                    arcaneDmg = comp.arcaneDmg;
+                    if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
+                        verVal = pwrVal = 1;
                 }
                 this.angle = Rand.Range(-12f, 12f);
                 this.strikeNum = 5 + pwrVal;
@@ -102,9 +101,7 @@ namespace TorannMagic
                 if (wrathAge[j] == this.timeToSmite/strikeNum)
                 {
                     TM_MoteMaker.MakePowerBeamMoteColor(smitePos[j], base.Map, this.radius * 3f, 2f, .5f, .1f, .5f, colorInt.ToColor);
-                    this.caster = this.launcher as Pawn;
-                    CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-                    GenExplosion.DoExplosion(smitePos[j], map, 3f, TMDamageDefOf.DamageDefOf.TM_Overwhelm, this.launcher as Pawn, Mathf.RoundToInt((12 + TMDamageDefOf.DamageDefOf.TM_Overwhelm.defaultDamage + 3*pwrVal) * this.arcaneDmg), 0, TorannMagicDefOf.TM_Lightning, def, this.equipmentDef, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0f, false);
+                    GenExplosion.DoExplosion(smitePos[j], map, 3f, TMDamageDefOf.DamageDefOf.TM_Overwhelm, SpellInstigator, Mathf.RoundToInt((12 + TMDamageDefOf.DamageDefOf.TM_Overwhelm.defaultDamage + 3*pwrVal) * this.arcaneDmg), 0, TorannMagicDefOf.TM_Lightning, def, this.equipmentDef, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0f, false);
                 }
             }
         }
@@ -128,10 +125,10 @@ namespace TorannMagic
                 if (p.Dead) continue;
                 if (TM_Calc.IsUndead(p))
                 {
-                    TM_Action.DamageUndead(p, Rand.Range(5f, 12f) * this.arcaneDmg, this.launcher);
+                    TM_Action.DamageUndead(p, Rand.Range(5f, 12f) * this.arcaneDmg, SpellInstigator);
                     continue;
                 }
-                if (p.Faction != caster.Faction) continue;
+                if (caster == null || p.Faction != caster.Faction) continue;
                 if(p.Position.DistanceTo(center) <= def.projectile.explosionRadius)
                 {
                     if (verVal >= 1)

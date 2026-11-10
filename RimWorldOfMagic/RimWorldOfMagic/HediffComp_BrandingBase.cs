@@ -121,10 +121,12 @@ namespace TorannMagic
                     comp = branderPawn.GetCompAbilityUserMagic();
                     if (!BranderPawn.DestroyedOrNull() && !BranderPawn.Dead && comp != null && comp.Mana != null)
                     {
-                        if(BranderPawn.Downed)
+                        var body = ClassProgression.GolemancerLifecycle.MasterBody(branderPawn);
+                        if (body == null || body.Downed || (comp.Mana.CurLevel <= .01f && comp.sigilSurging))
+                            comp.sigilSurging = false;
+                        if (body == null || body.Downed)
                         {
                             comp.sigilDraining = false;
-                            comp.sigilSurging = false;                            
                         }
                         if (comp.Mana.CurLevel >= .01f)
                         {
@@ -137,7 +139,7 @@ namespace TorannMagic
                                 pwrVal = TM_Calc.GetSkillPowerLevel(BranderPawn, TorannMagicDefOf.TM_SigilSurge, true);
                                 verVal = TM_Calc.GetSkillVersatilityLevel(BranderPawn, TorannMagicDefOf.TM_SigilSurge);
                                 brandSeverity += .4f + (.05f * pwrVal);
-                                HealthUtility.AdjustSeverity(branderPawn, TorannMagicDefOf.TM_SigilPainHD, brandSeverity * (.4f - (.04f * verVal)));                                    
+                                HealthUtility.AdjustSeverity(body, TorannMagicDefOf.TM_SigilPainHD, brandSeverity * (.4f - (.04f * verVal)));
                             }                                
 
                             if (comp.sigilDraining)
@@ -145,7 +147,7 @@ namespace TorannMagic
                                 pwrVal = TM_Calc.GetSkillPowerLevel(BranderPawn, TorannMagicDefOf.TM_SigilDrain);
                                 verVal = TM_Calc.GetSkillVersatilityLevel(BranderPawn, TorannMagicDefOf.TM_SigilDrain);
                                 this.parent.Severity = .05f;
-                                HealthUtility.AdjustSeverity(branderPawn, this.Def, brandSeverity * .2f);
+                                HealthUtility.AdjustSeverity(body, this.Def, brandSeverity * .2f);
                                 HealthUtility.AdjustSeverity(base.Pawn, TorannMagicDefOf.TM_SigilPainHD, (.4f - (.04f * verVal)));
                             }
                             else
@@ -161,7 +163,7 @@ namespace TorannMagic
                         if(Rand.Chance(.05f))
                         {
                             bool non = false;
-                            for(int i =0; i < comp.BrandPawns.Count; i++)
+                            for(int i =0; i < System.Math.Min(comp.BrandPawns.Count, comp.BrandDefs.Count); i++)
                             {
                                 if(comp.BrandPawns[i] == this.Pawn && comp.BrandDefs[i] == this.parent.def)
                                 {

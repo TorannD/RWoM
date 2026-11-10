@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadShadowWalkerStrike>Засідка — почніть із Тіньового удару.</TM_ReadShadowWalkerStrike>
+  <TM_ReadShadowWalkerPoison>Отруйник — почніть із Пасльону.</TM_ReadShadowWalkerPoison>
+  <TM_ShadowWalkerHits>Застосуйте вивчений удар або отруту до різних ворогів: {0}/{1}.</TM_ShadowWalkerHits>
+  <TM_ShadowWalkerCombo>Уразьте отруєного ворога Тіньовим ударом або застосуйте удар чи отруту під покровом: {0}/{1} різних ворогів.</TM_ShadowWalkerCombo>
+  <TM_ShadowWalkerStrongStrike>Смертоносна тінь — Тіньовий удар завдає на 20% більше шкоди.</TM_ShadowWalkerStrongStrike>
+  <TM_ShadowWalkerLongVeil>Довгий покров — Завіса тіней діє на 50% довше.</TM_ShadowWalkerLongVeil>
+</LanguageData>

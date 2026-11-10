@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Chemfuel delivery job for the magofuel reservoir's synthesis hopper.
+       Pawns with the "Magic" work type haul chemfuel from stockpiles to the
+       reservoir, feeding the auto-synthesis conversion (mana + chemfuel -> magofuel). -->
+  <JobDef>
+    <defName>TM_LoadSynthChemfuel</defName>
+    <driverClass>TorannMagic.Odyssey.JobDriver_LoadSynthChemfuel</driverClass>
+    <reportString>loading chemfuel into magofuel reservoir.</reportString>
+  </JobDef>
+  <WorkGiverDef>
+    <defName>TM_LoadSynthChemfuel</defName>
+    <label>load chemfuel into magofuel reservoir</label>
+    <giverClass>TorannMagic.Odyssey.WorkGiver_LoadSynthChemfuel</giverClass>
+    <workType>TM_Magic</workType>
+    <priorityInType>90</priorityInType>
+    <verb>load chemfuel</verb>
+    <gerund>loading chemfuel into magofuel reservoir</gerund>
+    <requiredCapacities><li>Manipulation</li></requiredCapacities>
+  </WorkGiverDef>
+</Defs>

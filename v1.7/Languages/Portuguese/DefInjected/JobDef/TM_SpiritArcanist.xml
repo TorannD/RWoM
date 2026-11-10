@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBlink.reportString>se teletransporta através do corpo do hospedeiro.</TM_SpiritBlink.reportString>
+  <TM_SpiritBlink_I.reportString>se teletransporta através do corpo do hospedeiro.</TM_SpiritBlink_I.reportString>
+  <TM_SpiritBlink_II.reportString>se teletransporta através do corpo do hospedeiro.</TM_SpiritBlink_II.reportString>
+  <TM_SpiritBlink_III.reportString>se teletransporta através do corpo do hospedeiro.</TM_SpiritBlink_III.reportString>
+  <TM_SpiritSummon.reportString>invoca um alvo através do corpo do hospedeiro.</TM_SpiritSummon.reportString>
+  <TM_SpiritSummon_I.reportString>invoca um alvo através do corpo do hospedeiro.</TM_SpiritSummon_I.reportString>
+  <TM_SpiritSummon_II.reportString>invoca um alvo através do corpo do hospedeiro.</TM_SpiritSummon_II.reportString>
+  <TM_SpiritSummon_III.reportString>invoca um alvo através do corpo do hospedeiro.</TM_SpiritSummon_III.reportString>
+  <TM_SpiritMagicMissile.reportString>lança projéteis mágicos através do corpo do hospedeiro.</TM_SpiritMagicMissile.reportString>
+  <TM_SpiritMagicMissile_I.reportString>lança projéteis mágicos através do corpo do hospedeiro.</TM_SpiritMagicMissile_I.reportString>
+  <TM_SpiritMagicMissile_II.reportString>lança projéteis mágicos através do corpo do hospedeiro.</TM_SpiritMagicMissile_II.reportString>
+  <TM_SpiritMagicMissile_III.reportString>lança projéteis mágicos através do corpo do hospedeiro.</TM_SpiritMagicMissile_III.reportString>
+  <TM_SpiritTeleport.reportString>abrindo um portal de transporte através do hospedeiro do espírito.</TM_SpiritTeleport.reportString>
+  <TM_SpiritFoldReality.reportString>dobrando a realidade através do hospedeiro do espírito.</TM_SpiritFoldReality.reportString>
+</LanguageData>

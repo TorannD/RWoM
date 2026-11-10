@@ -81,6 +81,8 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
             base.ExposeData();
+            Scribe_Values.Look(ref nextSearch,"TM_totemNextPulse");
+            Scribe_Values.Look(ref initialized,"TM_totemPulseStarted");
         }
     }
 }

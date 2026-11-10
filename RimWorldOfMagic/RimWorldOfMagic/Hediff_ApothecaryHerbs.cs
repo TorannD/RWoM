@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using UnityEngine;
 using System.Collections.Generic;
@@ -32,6 +32,13 @@ namespace TorannMagic
         public override float MaxSeverity => def.maxSeverity + (10 * herbPwr);
         public override bool ShouldRemove => this.removeNow;
 
+        private Pawn PhysicalWorker()
+        {
+            if (!ClassProgression.SpiritRebirthState.TryGet(pawn, out var spirit)) return pawn;
+            return !spirit.DepletionPending && spirit.HasValidHost(pawn) &&
+                ClassProgression.ApothecaryMartialPath.Owner(spirit.Host) == pawn ? spirit.Host : null;
+        }
+
         private void Initialize()
         {
             bool spawned = pawn.Spawned;
@@ -54,21 +61,25 @@ namespace TorannMagic
             }
             if(Find.TickManager.TicksGame % 150 == 0)
             {
-                this.Severity -= .015f * (1f - (.1f * herbEff));
+                var fresh = ClassProgression.ApothecaryMartialPath.Path(pawn)?.MartialAlternate == true;
+                this.Severity -= .015f * (1f - (.1f * herbEff)) * (fresh ? .9f : 1f);
                 if(Find.TickManager.TicksGame % 3000 == 0)
                 {
                     Initialize();
                 }
-                if(this.pawn.CurJob != null && this.pawn.CurJobDef.defName == "PruneGauranlenTree")
+                // The original keeps stock, training and decay; only the physical
+                // worker can earn pruning/foraging income while possessed.
+                var worker = PhysicalWorker();
+                if(worker?.CurJob != null && worker.CurJobDef.defName == "PruneGauranlenTree")
                 {
                     this.Severity += .4f * (1f + (.1f * herbVer));
                 }
-                if(this.pawn.Map == null && this.pawn.ParentHolder is Caravan car)
+                if(worker != null && worker.Map == null && worker.ParentHolder is Caravan car)
                 {
                     bool flag;
                     if (!car.NightResting)
                     {
-                        this.Severity += (ForagedFoodPerDayCalculator.GetBaseForagedNutritionPerDay(this.pawn, out flag)/50f) * (1f + (.05f * herbVer));
+                        this.Severity += (ForagedFoodPerDayCalculator.GetBaseForagedNutritionPerDay(worker, out flag)/50f) * (1f + (.05f * herbVer));
                     }                    
                 }
             }

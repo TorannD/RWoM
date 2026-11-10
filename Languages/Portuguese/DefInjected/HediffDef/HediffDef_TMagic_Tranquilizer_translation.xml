@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Tranquilizer_HD.label>Acalmado</TM_Tranquilizer_HD.label>
+  <TM_Tranquilizer_HD.description>Efeitos tranquilizantes.</TM_Tranquilizer_HD.description>
+  <TM_Tranquilizer_HD.stages.0.label>Desacelerado</TM_Tranquilizer_HD.stages.0.label>
+  <TM_Tranquilizer_HD.stages.1.label>Acalmado</TM_Tranquilizer_HD.stages.1.label>
+  <TM_Tranquilizer_HD.stages.2.label>Paralisado</TM_Tranquilizer_HD.stages.2.label>
+
+  <TM_Slow_HD.label>Desacelerado</TM_Slow_HD.label>
+  <TM_Slow_HD.description>Efeitos de capacidade que reduzem a mobilidade física e mental.</TM_Slow_HD.description>
+  <TM_Slow_HD.stages.0.label>menor</TM_Slow_HD.stages.0.label>
+  <TM_Slow_HD.stages.1.label>forte</TM_Slow_HD.stages.1.label>
+  <TM_Slow_HD.stages.2.label>extremo</TM_Slow_HD.stages.2.label>
+
+
+</LanguageData>

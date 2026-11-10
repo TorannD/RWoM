@@ -1,0 +1,14 @@
+<LanguageData><!-- v1.5\Defs\PawnDefs\Races_Demons.xml-->
+	<!--        EN: demon-->
+	<TM_Demon.label>демон</TM_Demon.label>
+	<!--                     EN: demon-->
+	<TM_Demon.lifeStages.0.label>демон</TM_Demon.lifeStages.0.label>
+	<!--                           EN: demons-->
+	<TM_Demon.lifeStages.0.labelPlural>демоны</TM_Demon.lifeStages.0.labelPlural>
+	<!--              EN: lesser demon-->
+	<TM_LesserDemon.label>низший демон</TM_LesserDemon.label>
+	<!--                           EN: demon-->
+	<TM_LesserDemon.lifeStages.0.label>демон</TM_LesserDemon.lifeStages.0.label>
+	<!--                                 EN: demons-->
+	<TM_LesserDemon.lifeStages.0.labelPlural>демоны</TM_LesserDemon.lifeStages.0.labelPlural>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <AdministerShardOfExtraction.label>керувати осколком вилучення</AdministerShardOfExtraction.label>
+  <AdministerShardOfExtraction.description>Витягує бойову і таємну сутність з пішаки. Це одноразовий предмет, який назавжди видалить клас пішаки і перетворює його на сутність. Есенція може бути використана для отримання класового досвіду. Осколок знищується після процесу вилучення.</AdministerShardOfExtraction.description>
+  <AdministerShardOfExtraction.jobString>Використання осколка вилучення</AdministerShardOfExtraction.jobString>
+
+
+</LanguageData>

@@ -1,0 +1,104 @@
+<LanguageData><TM_Golem_FleshRestore.label>восстановите часть</TM_Golem_FleshRestore.label>
+
+  <TM_Golem_FleshMaxEnergy.label>мышечная выносливость</TM_Golem_FleshMaxEnergy.label>
+  <TM_Golem_FleshMaxEnergy.description>Увеличивает максимальную энергию на 400 за уровень. Начальная максимальная энергия составляет 800.</TM_Golem_FleshMaxEnergy.description>
+
+  <TM_Golem_FleshEnergyEfficiency.label>мышечная эффективность</TM_Golem_FleshEnergyEfficiency.label>
+  <TM_Golem_FleshEnergyEfficiency.description>Повышает энергоэффективность на 10% за уровень. Начальная энергоэффективность составляет 50%.</TM_Golem_FleshEnergyEfficiency.description>
+
+  <TM_Golem_FleshEnergyRate.label>синтез энергии</TM_Golem_FleshEnergyRate.label>
+  <TM_Golem_FleshEnergyRate.description>Увеличивает скорость заряда энергии на 20% за уровень. Начальная скорость перезарядки составляет 100 энергозатрат в час.</TM_Golem_FleshEnergyRate.description>
+
+  <TM_Golem_Flesh_LeftArmBrace.label>бандаж для левой руки</TM_Golem_Flesh_LeftArmBrace.label>
+  <TM_Golem_Flesh_LeftArmBrace.description>Увеличивает шанс блокировки на 20%, складывается с правым наручом.</TM_Golem_Flesh_LeftArmBrace.description>
+
+  <TM_Golem_Flesh_LeftArmCleaver.label>тесак для левой руки</TM_Golem_Flesh_LeftArmCleaver.label>
+  <TM_Golem_Flesh_LeftArmCleaver.description>Позволяет голему собирать растения и включает атаку AoE-расщепления.
+
+Раскалывать
+Стоимость ярости: 15
+Урон: 15
+Всплеск: 2c</TM_Golem_Flesh_LeftArmCleaver.description>
+
+  <TM_Golem_Flesh_RightArmBrace.label>бандаж для правой руки</TM_Golem_Flesh_RightArmBrace.label>
+  <TM_Golem_Flesh_RightArmBrace.description>Увеличивает шанс блокировки на 20%, складывается с левым наручом.</TM_Golem_Flesh_RightArmBrace.description>
+
+  <TM_Golem_Flesh_RightArmCleaver.label>тесак для правой руки</TM_Golem_Flesh_RightArmCleaver.label>
+  <TM_Golem_Flesh_RightArmCleaver.description>Позволяет голему срезать растения и включает атаку AoE-расщепления.
+
+Раскалывать
+Стоимость ярости: 15
+Урон: 15
+Всплеск: 2c</TM_Golem_Flesh_RightArmCleaver.description>
+
+  <TM_Golem_Flesh_Tusks.label>клыки</TM_Golem_Flesh_Tusks.label>
+  <TM_Golem_Flesh_Tusks.description>Добавляет мощную атаку укуса.</TM_Golem_Flesh_Tusks.description>
+
+  <TM_Golem_Flesh_Horns.label>рога</TM_Golem_Flesh_Horns.label>
+  <TM_Golem_Flesh_Horns.description>Добавляет способность к пронзительной атаке и атаке.
+
+Бычья атака
+Стоимость ярости: 5
+Время перезарядки: 10 секунд</TM_Golem_Flesh_Horns.description>
+
+  <TM_Golem_Flesh_EyesT1.label>тетрагональный прицел</TM_Golem_Flesh_EyesT1.label>
+  <TM_Golem_Flesh_EyesT1.description>Увеличивает зрение на 100%.</TM_Golem_Flesh_EyesT1.description>
+
+  <TM_Golem_Flesh_EyesT2.label>злой глаз</TM_Golem_Flesh_EyesT2.label>
+  <TM_Golem_Flesh_EyesT2.description>Даёт способность, которая пугает и замедляет врагов.
+
+Злой глаз
+Стоимость ярости: 10
+Время перезарядки: 2,2с
+Диапазон: 40</TM_Golem_Flesh_EyesT2.description>
+
+  <TM_Golem_Flesh_Wings.label>крылья</TM_Golem_Flesh_Wings.label>
+  <TM_Golem_Flesh_Wings.description>Даёт способность, временно ускоряющую голема.
+
+Поспешность
+Стоимость ярости: 15
+Время перезарядки: 6 секунд
+Двойная атака и скорость перемещения</TM_Golem_Flesh_Wings.description>
+
+  <TM_Golem_Flesh_SkullPlate.label>черепная пластина</TM_Golem_Flesh_SkullPlate.label>
+  <TM_Golem_Flesh_SkullPlate.description>Увеличивает броню:
+Тупой урон: 12%
+режущий урон: 18%
+температура: 8%</TM_Golem_Flesh_SkullPlate.description>
+
+  <TM_Golem_Flesh_ShoulderPlates.label>плечевые пластины</TM_Golem_Flesh_ShoulderPlates.label>
+  <TM_Golem_Flesh_ShoulderPlates.description>Увеличивает броню:
+Тупой урон: 14%
+режущий урон: 12%
+температура: На 10%</TM_Golem_Flesh_ShoulderPlates.description>
+
+  <TM_Golem_Flesh_ChestCage.label>грудная клетка</TM_Golem_Flesh_ChestCage.label>
+  <TM_Golem_Flesh_ChestCage.description>Увеличивает броню:
+Тупой урон:	28%
+режущий урон: 10%
+температура: 5%</TM_Golem_Flesh_ChestCage.description>
+
+  <TM_Golem_Flesh_SpineGuard.label>защита позвоночника</TM_Golem_Flesh_SpineGuard.label>
+  <TM_Golem_Flesh_SpineGuard.description>Увеличивает броню:
+Тупой урон:	12%
+режущий урон: 14%
+температура: 5%</TM_Golem_Flesh_SpineGuard.description>
+
+  <TM_Golem_Flesh_LegPlates.label>ножные пластины</TM_Golem_Flesh_LegPlates.label>
+  <TM_Golem_Flesh_LegPlates.description>Увеличивает броню:
+Тупой урон: 10%
+режущий урон: 15%
+температура: 8%</TM_Golem_Flesh_LegPlates.description>
+
+  <TM_Golem_FleshLifeStage.label>мощность автомата</TM_Golem_FleshLifeStage.label>
+  <TM_Golem_FleshLifeStage.description>Увеличивает статистику и добавляет способность расчленять.
+Движение: +[20%/35%/50%]
+Здоровье: +[30%/50%/70%]
+
+Расчленять
+Стоимость ярости: 25
+Перезарядка: 13 секунд
+Диапазон: 1с</TM_Golem_FleshLifeStage.description>
+
+
+</LanguageData>

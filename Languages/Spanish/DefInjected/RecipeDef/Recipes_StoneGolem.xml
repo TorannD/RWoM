@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_StoneGolem_Armor.label>endurecimiento</TM_StoneGolem_Armor.label>
+  
+  <TM_StoneGolem_Armor.description>Cada mejora aumenta la armadura del golem:\nContundente: +4 %\nCortante: +11 %\nCalor: +6 %</TM_StoneGolem_Armor.description>
+  
+  <TM_StoneGolem_Armor.jobString>Fabricando pieza de golem.</TM_StoneGolem_Armor.jobString>
+  
+  
+  <TM_StoneGolem_Compactor.label>compactadora</TM_StoneGolem_Compactor.label>
+  
+  <TM_StoneGolem_Compactor.description>Dota al golem hueco de una compactadora de piedra capaz de triturar trozos de piedra y convertirlos en ladrillos utilizables.</TM_StoneGolem_Compactor.description>
+  
+  <TM_StoneGolem_Compactor.jobString>Fabricando mejora de golem.</TM_StoneGolem_Compactor.jobString>
+  
+  
+  <TM_StoneGolem_EnergyConverter.label>convertidor de energía</TM_StoneGolem_EnergyConverter.label>
+  
+  <TM_StoneGolem_EnergyConverter.description>Aumenta un 10 % la eficiencia con la que el golem absorbe y utiliza la energía.</TM_StoneGolem_EnergyConverter.description>
+  
+  <TM_StoneGolem_EnergyConverter.jobString>Construyendo convertidor de energía.</TM_StoneGolem_EnergyConverter.jobString>
+  
+  
+  <TM_StoneGolem_EnergyMax.label>célula de energía</TM_StoneGolem_EnergyMax.label>
+  
+  <TM_StoneGolem_EnergyMax.description>Crea una célula de energía que aumenta la energía máxima en 120 por célula.</TM_StoneGolem_EnergyMax.description>
+  
+  <TM_StoneGolem_EnergyMax.jobString>Creando célula de energía.</TM_StoneGolem_EnergyMax.jobString>
+  
+  
+  <TM_StoneGolem_EnergyRegen.label>generador de energía</TM_StoneGolem_EnergyRegen.label>
+  
+  <TM_StoneGolem_EnergyRegen.description>Aumenta la regeneración de energía del golem en 4 por hora.</TM_StoneGolem_EnergyRegen.description>
+  
+  <TM_StoneGolem_EnergyRegen.jobString>Construyendo generador de energía.</TM_StoneGolem_EnergyRegen.jobString>
+  
+  
+  <TM_StoneGolem_GraniteBricks.label>triturar granito</TM_StoneGolem_GraniteBricks.label>
+  
+  <TM_StoneGolem_GraniteBricks.description>Deposita trozos de granito en el golem para triturarlos y convertirlos en bloques utilizables.</TM_StoneGolem_GraniteBricks.description>
+  
+  <TM_StoneGolem_GraniteBricks.jobString>Cargando arenisca.</TM_StoneGolem_GraniteBricks.jobString>
+  
+  
+  <TM_StoneGolem_LifeStage.label>nivel de armazón</TM_StoneGolem_LifeStage.label>
+  
+  <TM_StoneGolem_LifeStage.description>Mejora y refina el armazón del golem en cada nivel [1,2,3]:\nMovimiento: +[10/20/30] %\nSalud: +[40/70/100] %</TM_StoneGolem_LifeStage.description>
+  
+  <TM_StoneGolem_LifeStage.jobString>Mejorando el armazón del golem.</TM_StoneGolem_LifeStage.jobString>
+  
+  
+  <TM_StoneGolem_LimestoneBricks.label>triturar caliza</TM_StoneGolem_LimestoneBricks.label>
+  
+  <TM_StoneGolem_LimestoneBricks.description>Deposita trozos de caliza en el golem para triturarlos y convertirlos en bloques utilizables.</TM_StoneGolem_LimestoneBricks.description>
+  
+  <TM_StoneGolem_LimestoneBricks.jobString>Cargando caliza.</TM_StoneGolem_LimestoneBricks.jobString>
+  
+  
+  <TM_StoneGolem_MarbleBricks.label>triturar mármol</TM_StoneGolem_MarbleBricks.label>
+  
+  <TM_StoneGolem_MarbleBricks.description>Deposita trozos de mármol en el golem para triturarlos y convertirlos en bloques utilizables.</TM_StoneGolem_MarbleBricks.description>
+  
+  <TM_StoneGolem_MarbleBricks.jobString>Cargando mármol.</TM_StoneGolem_MarbleBricks.jobString>
+  
+  
+  <TM_StoneGolem_RepairBlock.label>restauración de piezas</TM_StoneGolem_RepairBlock.label>
+  
+  <TM_StoneGolem_RepairBlock.description>Sustituye las partes ausentes del golem que no requieren una mejora.</TM_StoneGolem_RepairBlock.description>
+  
+  <TM_StoneGolem_RepairBlock.jobString>Fabricando pieza de golem.</TM_StoneGolem_RepairBlock.jobString>
+  
+  
+  <TM_StoneGolem_SandstoneBricks.label>triturar arenisca</TM_StoneGolem_SandstoneBricks.label>
+  
+  <TM_StoneGolem_SandstoneBricks.description>Deposita trozos de arenisca en el golem para triturarlos y convertirlos en bloques utilizables.</TM_StoneGolem_SandstoneBricks.description>
+  
+  <TM_StoneGolem_SandstoneBricks.jobString>Cargando arenisca.</TM_StoneGolem_SandstoneBricks.jobString>
+  
+  
+  <TM_StoneGolem_SlateBricks.label>triturar pizarra</TM_StoneGolem_SlateBricks.label>
+  
+  <TM_StoneGolem_SlateBricks.description>Deposita trozos de pizarra en el golem para triturarlos y convertirlos en bloques utilizables.</TM_StoneGolem_SlateBricks.description>
+  
+  <TM_StoneGolem_SlateBricks.jobString>Cargando pizarra.</TM_StoneGolem_SlateBricks.jobString>
+  
+</LanguageData>

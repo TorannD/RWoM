@@ -1,0 +1,79 @@
+<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_Gladiator.xml-->
+	<!--         EN: Sprint-->
+	<TM_Sprint.label>Спринт</TM_Sprint.label>
+	<!--               EN: Activates or deactivates the sustained combat skill Sprint - greatly increases movement speed but causes exhaustion. Requires 30 Stamina to sustain and reduces stamina regen by 20%.-->
+	<TM_Sprint.description>Активирует или деактивирует устойчивый боевой навык спринт - значительно увеличивающий скорость движения, но вызывает истощение. Требуется 30 выносливости для поддержания</TM_Sprint.description>
+	<!--           EN: Sprint-->
+	<TM_Sprint_I.label>Спринт</TM_Sprint_I.label>
+	<!--                 EN: Activates or deactivates the sustained combat skill Sprint - greatly increases movement speed but causes exhaustion. Requires 30 Stamina to sustain and reduces stamina regen by 20%.
+
+Activating sprint grants the user 10s of evasion (25% dodge chance) and 5s of adrenaline.
+Deactivating sprint instantly returns 20 stamina and applies 5s of +20% energy regeneration.-->
+	<TM_Sprint_I.description>Активирует или деактивирует устойчивый боевой навык спринт - значительно увеличивающий скорость движения, но вызывает истощение. Требуется 30 выносливости для поддержания</TM_Sprint_I.description>
+	<!--            EN: Sprint-->
+	<TM_Sprint_II.label>Спринт</TM_Sprint_II.label>
+	<!--                  EN: Activates or deactivates the sustained combat skill Sprint - greatly increases movement speed but causes exhaustion. Requires 30 Stamina to sustain and reduces stamina regen by 20%.
+
+Activating sprint grants the user 10s of 35% evasion, 8s of adrenaline, and all friendly pawns within 5 cells 10s of 25% evasion.
+Deactivating sprint instantly returns 35 stamina and applies 8s of +30% energy regeneration.-->
+	<TM_Sprint_II.description>Активирует или деактивирует устойчивый боевой навык спринт - значительно увеличивающий скорость движения, но вызывает истощение. Требуется 30 выносливости для поддержания</TM_Sprint_II.description>
+	<!--             EN: Sprint-->
+	<TM_Sprint_III.label>Спринт</TM_Sprint_III.label>
+	<!--                   EN: Activates or deactivates the sustained combat skill Sprint - greatly increases movement speed but causes exhaustion. Requires 30 Stamina to sustain and reduces stamina regen by 20%.
+
+Activating sprint grants the user 10s of 40% evasion, 10s of adrenaline, and all friendly pawns within 10 cells 10s of 30% evasion.
+Deactivating sprint instantly returns 40 stamina and applies 10s of +40% energy regeneration.-->
+	<TM_Sprint_III.description>Активирует или деактивирует устойчивый боевой навык спринт - значительно увеличивающий скорость движения, но вызывает истощение. Требуется 30 выносливости для поддержания</TM_Sprint_III.description>
+	<!--            EN: Fortitude-->
+	<TM_Fortitude.label>Стойкость</TM_Fortitude.label>
+	<!--                  EN: Mitigates a set amount of damage each hit.
+Base mitigation: 5-->
+	<TM_Fortitude.description>Смягчает урон на установленное значение при каждом ранении.
+Базовое смягчение: 2</TM_Fortitude.description>
+	<!--          EN: Grapple-->
+	<TM_Grapple.label>Захват</TM_Grapple.label>
+	<!--                EN: Forcefully hooks and yanks an opponent to the Gladiator, followed by a violent leg sweep, knocking the opponent down.
+
+Casting time: 1s
+Range: 15-->
+	<TM_Grapple.description>С силой зацепляет и дергает противника к Гладиатору, а затем яростно размахивает ногой, сбивая противника с ног.
+
+Время применения: 1s
+Дистанция: 12</TM_Grapple.description>
+	<!--            EN: Grapple-->
+	<TM_Grapple_I.label>Захват</TM_Grapple_I.label>
+	<!--                  EN: Forcefully hooks and yanks an opponent to the Gladiator, followed by a violent leg sweep, knocking the opponent down.
+Casting time: .6s
+Range: 17-->
+	<TM_Grapple_I.description>С силой зацепляет и дергает противника к Гладиатору, а затем яростно размахивает ногой, сбивая противника с ног.
+Время применения: .6s
+Дистанция: 14</TM_Grapple_I.description>
+	<!--             EN: Grapple-->
+	<TM_Grapple_II.label>Захват</TM_Grapple_II.label>
+	<!--                   EN: Forcefully hooks and yanks an opponent to the Gladiator, followed by a violent leg sweep, knocking the opponent down.
+
+Casting time: .4s
+Range: 20-->
+	<TM_Grapple_II.description>С силой зацепляет и дергает противника к Гладиатору, а затем яростно размахивает ногой, сбивая противника с ног.
+
+Время применения: .4s
+Дистанция: 17</TM_Grapple_II.description>
+	<!--              EN: Grapple-->
+	<TM_Grapple_III.label>Захват</TM_Grapple_III.label>
+	<!--                    EN: Forcefully hooks and yanks an opponent to the Gladiator, followed by a violent leg sweep, knocking the opponent down.
+
+Casting time: .2s
+Range: 23-->
+	<TM_Grapple_III.description>С силой зацепляет и дергает противника к Гладиатору, а затем яростно размахивает ногой, сбивая противника с ног.
+
+Время применения: .2s
+Дистанция: 20</TM_Grapple_III.description>
+	<!--         EN: Cleave-->
+	<TM_Cleave.label>Рассечение</TM_Cleave.label>
+	<!--               EN: Executes a powerful, sweeping blow that can strike multiple enemies adjacent to the target. As long as the gladiator has enough stamina, this ability works automatically whenever the gladiator performs a melee attack. Cleave chance is calculated from weapon mass - heavier weapons are more likely to cleave.-->
+	<TM_Cleave.description>Выполняет мощный, размашистый удар, который может поразить несколько врагов, расположенных рядом с целью. Пока Гладиатор обладает достаточной выносливостью, эта способность срабатывает автоматически, когда гладиатор выполняет атаку ближнего боя. Шанс раскола рассчитывается исходя из массы оружия - более тяжелое оружие с большей вероятностью сделает раскол.</TM_Cleave.description>
+	<!--            EN: Whirlwind-->
+	<TM_Whirlwind.label>Смерч</TM_Whirlwind.label>
+	<!--                  EN: The Gladiator launches into a frenzied attack, dancing forward in a furious whirlwind of steel and death.-->
+	<TM_Whirlwind.description>Гладиатор бросается в бешеную атаку, танцуя вперед в яростном вихре стали и смерти.</TM_Whirlwind.description>
+</LanguageData>

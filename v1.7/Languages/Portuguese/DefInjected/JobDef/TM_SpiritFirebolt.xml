@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritFirebolt.reportString>a lançar um projétil de fogo através do hospedeiro.</TM_SpiritFirebolt.reportString>
+  <TM_SpiritIcebolt.reportString>a lançar um projétil de gelo através do hospedeiro.</TM_SpiritIcebolt.reportString>
+  <TM_SpiritFireball.reportString>a lançar uma bola de fogo através do hospedeiro.</TM_SpiritFireball.reportString>
+  <TM_SpiritSnowball.reportString>a lançar uma bola de neve através do hospedeiro.</TM_SpiritSnowball.reportString>
+  <TM_SpiritFireclaw.reportString>lança garra de fogo através do corpo do hospedeiro.</TM_SpiritFireclaw.reportString>
+  <TM_SpiritBlizzard.reportString>a invocar uma nevasca através do hospedeiro do espírito.</TM_SpiritBlizzard.reportString>
+  <TM_SpiritFrostRay.reportString>a lançar um raio de gelo através do hospedeiro do espírito.</TM_SpiritFrostRay.reportString>
+  <TM_SpiritFrostRay_I.reportString>a lançar um raio de gelo através do hospedeiro do espírito.</TM_SpiritFrostRay_I.reportString>
+  <TM_SpiritFrostRay_II.reportString>a lançar um raio de gelo através do hospedeiro do espírito.</TM_SpiritFrostRay_II.reportString>
+  <TM_SpiritFrostRay_III.reportString>a lançar um raio de gelo através do hospedeiro do espírito.</TM_SpiritFrostRay_III.reportString>
+  <TM_SpiritFirestorm.reportString>a invocar uma tempestade de fogo através do hospedeiro do espírito.</TM_SpiritFirestorm.reportString>
+</LanguageData>

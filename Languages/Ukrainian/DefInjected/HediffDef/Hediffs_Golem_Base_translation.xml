@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- These go in natural parts, but don't replace them -->
+
+  <TM_GolemHD.label>Голем</TM_GolemHD.label>
+  <TM_GolemHD.description>Ефекти здоров&apos;я застосовуються до всіх голем.</TM_GolemHD.description>
+  <TM_GolemHD.stages.0.label></TM_GolemHD.stages.0.label>
+
+
+</LanguageData>

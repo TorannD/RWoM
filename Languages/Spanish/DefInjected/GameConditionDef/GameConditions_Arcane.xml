@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <DarkClouds.label>nubes oscuras</DarkClouds.label>
+  
+  <DarkClouds.description>Una sombra ominosa se ha extendido sobre la tierra; hay una presencia siniestra en la oscuridad de estas nubes que maldice a los vivos.</DarkClouds.description>
+  
+  <DarkClouds.endMessage>Las nubes oscuras se están dispersando.</DarkClouds.endMessage>
+  
+  <DarkClouds.letterText>Una sombra ominosa se ha extendido sobre la tierra; hay una presencia siniestra en la oscuridad de estas nubes que maldice a los vivos.</DarkClouds.letterText>
+  
+  
+  <DarkThunderstorm.label>Tormenta violenta</DarkThunderstorm.label>
+  
+  <DarkThunderstorm.description>Hay una energía maliciosa oculta en estas nubes oscuras.</DarkThunderstorm.description>
+  
+  <DarkThunderstorm.endMessage>La tormenta eléctrica violenta está remitiendo.</DarkThunderstorm.endMessage>
+  
+  
+  <DemonAssault.label>ataque demoníaco</DemonAssault.label>
+  
+  <DemonAssault.description>El fin está cerca: ¡demonios desatados atacan tu colonia!\nComo un heraldo de la perdición inminente, han empezado a caer fuego y ceniza del cielo.\n\nEstos seres infernales tienen una variedad de ataques y tácticas desafiantes.\nSin embargo, los demonios no pueden permanecer en este plano durante largos periodos y se verán obligados a regresar a su plano infernal en unas 3 horas. Derrota o resiste esta pesadilla.\nHay muy poco tiempo para prepararse.\n\n¡Buena suerte!</DemonAssault.description>
+  
+  <DemonAssault.endMessage>Los demonios han regresado a su plano infernal.</DemonAssault.endMessage>
+  
+  <DemonAssault.letterText>El fin está cerca: ¡demonios desatados atacan tu colonia!\nComo un heraldo de la perdición inminente, han empezado a caer fuego y ceniza del cielo.\n\nEstos seres infernales tienen una variedad de ataques y tácticas desafiantes.\nSin embargo, los demonios no pueden permanecer en este plano durante largos periodos y se verán obligados a regresar a su plano infernal en unas 3 horas. Derrota o resiste esta pesadilla.\nHay muy poco tiempo para prepararse.\n\n¡Buena suerte!</DemonAssault.letterText>
+  
+  
+  <DivineBlessing.label>bendición divina</DivineBlessing.label>
+  
+  <DivineBlessing.description>Un poder superior responde a tu súplica de misericordia.</DivineBlessing.description>
+  
+  <DivineBlessing.endMessage>La presencia benévola se desvanece.</DivineBlessing.endMessage>
+  
+  <DivineBlessing.letterText>Tu súplica de misericordia ha sido atendida por un poder superior. Se han concedido diversas bendiciones para combatir los males existentes.</DivineBlessing.letterText>
+  
+  
+  <ElementalAssault.label>asalto elemental</ElementalAssault.label>
+  
+  <ElementalAssault.description>¡Unos elementales hostiles han abierto una brecha hacia tu mundo y se preparan para enviar equipos de asalto a través de la grieta!\n\nLas grietas causan estragos en la atmósfera a medida que la energía se filtra a través de ellas hacia tu mundo. Cada elemento de grieta produce los siguientes efectos:\n\nGrieta de fuego: lluvias de meteoritos y olas de calor.\nGrieta de tierra: gases tóxicos; los animales enloquecen.\nGrieta de hielo: granizadas y descenso rápido de la temperatura.\nGrieta de aire: tormentas eléctricas.</ElementalAssault.description>
+  
+  <ElementalAssault.endMessage>La grieta se ha cerrado.</ElementalAssault.endMessage>
+  
+  <ElementalAssault.letterText>¡Unos elementales hostiles han abierto una brecha hacia tu mundo y se preparan para enviar equipos de asalto a través de la grieta!\n\nLas grietas causan estragos en la atmósfera a medida que la energía se filtra a través de ellas hacia tu mundo. Cada elemento de grieta produce los siguientes efectos:\n\nGrieta de fuego: lluvias de meteoritos y olas de calor.\nGrieta de tierra: gases tóxicos; los animales enloquecen.\nGrieta de hielo: granizadas y descenso rápido de la temperatura.\nGrieta de aire: tormentas eléctricas.\n\n¡Destruye la grieta para acabar con esta pesadilla!</ElementalAssault.letterText>
+  
+  
+  <ManaDrain.label>drenaje de maná</ManaDrain.label>
+  
+  <ManaDrain.description>La alineación celeste del planeta está provocando un reflujo de maná. Todas las criaturas en sintonía con poderes mágicos perderán poder poco a poco.</ManaDrain.description>
+  
+  <ManaDrain.endMessage>La magia vuelve a la normalidad.</ManaDrain.endMessage>
+  
+  <ManaDrain.letterText>La alineación celeste del planeta está cambiando y provoca un reflujo de maná.\n\nTodas las criaturas en sintonía con poderes mágicos perderán maná poco a poco y enfermarán físicamente si se quedan sin maná.</ManaDrain.letterText>
+  
+  
+  <ManaSurge.label>oleada de maná</ManaSurge.label>
+  
+  <ManaSurge.description>La alineación celeste del planeta está provocando una oleada de maná. Todas las criaturas en sintonía con poderes mágicos ganarán maná a un ritmo mayor.</ManaSurge.description>
+  
+  <ManaSurge.endMessage>La magia vuelve a la normalidad.</ManaSurge.endMessage>
+  
+  <ManaSurge.letterText>La alineación celeste del planeta ha cambiado y provoca una oleada de maná. Todas las criaturas en sintonía con poderes mágicos ganarán maná a un ritmo mayor.</ManaSurge.letterText>
+  
+  
+  <TargetedPredatorInsanity.label>locura de depredadores</TargetedPredatorInsanity.label>
+  
+  <TargetedPredatorInsanity.description>Un pulso psíquico enfurece a los depredadores cercanos... y los empuja hacia los humanos agresivos.</TargetedPredatorInsanity.description>
+  
+  <TargetedPredatorInsanity.endMessage>El pulso de los depredadores se desvanece.</TargetedPredatorInsanity.endMessage>
+  
+  <TargetedPredatorInsanity.letterText>Has enfurecido a todos los depredadores cercanos y los has dirigido contra tus enemigos. Ten cuidado: los animales enfurecidos seguirán cazando incluso cuando tus enemigos hayan desaparecido.</TargetedPredatorInsanity.letterText>
+  
+  
+  <TM_ManaStorm.label>tormenta de maná</TM_ManaStorm.label>
+  
+  <TM_ManaStorm.description>Fuerzas caóticas están provocando una peligrosa tormenta de maná. Durante una tormenta de maná, los intentos de usar maná para materializar una intención mágica externa al lanzador dañarán al lanzador en proporción al coste de maná del hechizo. Este daño se aplica antes de que comience la invocación del hechizo. El uso informe del maná y el uso interno de la magia, como la transferencia de maná o disipar un encantamiento, no se ven afectados. No se pueden usar círculos mágicos ni focos durante este evento. Mientras la tormenta de maná está activa, los costes de energía se reducen a la mitad y se elimina el límite de reducción de maná.</TM_ManaStorm.description>
+  
+  <TM_ManaStorm.endMessage>La magia vuelve a la normalidad.</TM_ManaStorm.endMessage>
+  
+  <TM_ManaStorm.letterText>Fuerzas caóticas están provocando una peligrosa marea de maná.\n\nDurante una tormenta de maná, los intentos de usar maná para materializar una intención mágica externa al lanzador dañarán al lanzador en proporción al coste de maná del hechizo. Este daño se aplica antes de que comience la invocación del hechizo. El uso informe del maná y el uso interno de la magia, como la transferencia de maná o disipar un encantamiento, no se ven afectados. No se pueden usar círculos mágicos ni focos durante este evento. Mientras la tormenta de maná está activa, los costes de energía se reducen a la mitad y se elimina el límite de reducción de maná.</TM_ManaStorm.letterText>
+  
+  
+  <WanderingLich.label>Lich errante</WanderingLich.label>
+  
+  <WanderingLich.description>Un lich ancestral ha llegado errante a la zona y se prepara para asaltar tu colonia.\n\nLos lichs son criaturas poderosas por sí solos, pero su verdadera fuerza reside en su capacidad de crear no muertos animados a partir de los cadáveres de los fallecidos.\n\nEste lich es un ser antiguo que desprecia toda forma de vida, y tu alegre grupo de -cosas- vivientes ha resistido hasta ahora a que lo apaguen. Intentará poner fin a vuestra historia de supervivencia creando una horda de no muertos que desborde vuestras defensas.\n\nEl lich creará periódicamente nuevos guerreros esqueleto para atacar la colonia; si se le permite completar un ritual cerca de un cadáver expuesto, aumentará la probabilidad de que se creen gigantes esqueleto. Al final, el lich asaltará la propia colonia si las oleadas de no muertos no logran cumplir antes la tarea.</WanderingLich.description>
+  
+  <WanderingLich.endMessage>El asalto del lich está llegando a su fin.</WanderingLich.endMessage>
+  
+  <WanderingLich.letterText>Un lich ancestral ha llegado errante a la zona y se prepara para asaltar tu colonia.\n\nLos lichs son criaturas poderosas por sí solos, pero su verdadera fuerza reside en su capacidad de crear no muertos animados a partir de los cadáveres de los fallecidos.\n\nEste lich es un ser antiguo que desprecia toda forma de vida, y tu alegre grupo de -cosas- vivientes ha resistido hasta ahora a que lo apaguen. Intentará poner fin a vuestra historia de supervivencia creando una horda de no muertos que desborde vuestras defensas.\n\nEl lich creará periódicamente nuevos guerreros esqueleto para atacar la colonia; si se le permite completar un ritual cerca de un cadáver expuesto, aumentará la probabilidad de que se creen gigantes esqueleto. Al final, el lich asaltará la propia colonia si las oleadas de no muertos no logran cumplir antes la tarea.</WanderingLich.letterText>
+  
+</LanguageData>

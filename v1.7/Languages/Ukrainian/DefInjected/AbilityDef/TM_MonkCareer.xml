@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_MonkPalmSeal.label>Печатка долоні</TM_Bridge_MonkPalmSeal.label>
+  <TM_Bridge_MonkPalmSeal.description>Удар по сусідньому ворогу без зброї: 16/22/28 духовної шкоди й переривання на секунду. Базова ціна — 20 ці, перезарядка — 30 секунд.</TM_Bridge_MonkPalmSeal.description>
+  <TM_Bridge_MonkSilentMeridian.label>Безмовний меридіан</TM_Bridge_MonkSilentMeridian.label>
+  <TM_Bridge_MonkSilentMeridian.description>Стійте на місці без зброї. Після п’яти секунд підготовки три імпульси за дванадцять секунд завдають по 12 духовної шкоди чотирьом видимим ворогам у межах п’яти клітин. Перший оглушує на дві секунди й знімає до 15% одного ресурсу. Ціна — 60% ці, перезарядка — дві доби.</TM_Bridge_MonkSilentMeridian.description>
+</LanguageData>

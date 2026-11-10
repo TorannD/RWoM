@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_BladePassage.label>passagem da lâmina</TM_BladePassage.label>
+  <TM_BladePassage.description>Avança em linha reta até um inimigo a até 6/8/10 células e desfere um golpe com 90% do dano da arma corpo a corpo. Requer uma célula livre ao lado do alvo. Vigor: 20%. Recarga: 30 s. Recuperação básica: 1 s.</TM_BladePassage.description>
+</LanguageData>

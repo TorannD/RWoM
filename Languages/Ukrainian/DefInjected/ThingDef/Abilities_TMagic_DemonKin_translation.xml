@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Projectile_Warlock.label>типовий снаряд</Projectile_Warlock.label>
+
+
+  <!-- ShadowBolt -->
+
+  <Projectile_ShadowBolt.label>Темний болт</Projectile_ShadowBolt.label>
+  <FlyingObject_ShadowBolt.label>Темний болт</FlyingObject_ShadowBolt.label>
+
+
+  <!-- Attraction -->
+
+  <Projectile_Attraction.label>залучення</Projectile_Attraction.label>
+
+
+  <!-- Repulsion -->
+
+  <Projectile_Repulsion.label>відображення</Projectile_Repulsion.label>
+  <Projectile_Repulsion_I.label>відображення</Projectile_Repulsion_I.label>
+  <Projectile_Repulsion_II.label>відображення</Projectile_Repulsion_II.label>
+  <Projectile_Repulsion_III.label>відображення</Projectile_Repulsion_III.label>
+
+
+  <!-- Scorn -->
+
+  <Projectile_Scorn.label>презирство</Projectile_Scorn.label>
+
+
+  <!-- PsychicShock -->
+
+  <Projectile_PsychicShock.label>психічний шок</Projectile_PsychicShock.label>
+
+
+  <!-- SummonDemon -->
+
+  <Projectile_SummonDemon.label>виклик фонової служби</Projectile_SummonDemon.label>
+  <FlyingObject_DemonFlight.label>літаючий об&apos;єкт</FlyingObject_DemonFlight.label>
+  <FlyingObject_DemonBolt.label>демонічне полум&apos;я</FlyingObject_DemonBolt.label>
+
+
+</LanguageData>

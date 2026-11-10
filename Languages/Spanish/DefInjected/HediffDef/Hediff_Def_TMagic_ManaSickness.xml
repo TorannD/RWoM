@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_ArcaneSickness.label>enfermedad arcana</TM_ArcaneSickness.label>
+  
+  <TM_ArcaneSickness.description>Una enfermedad causada por magia contaminada.</TM_ArcaneSickness.description>
+  
+  <TM_ArcaneSickness.stages.minor-0.label>leve</TM_ArcaneSickness.stages.minor-0.label>
+  
+  <TM_ArcaneSickness.stages.minor-1.label>leve</TM_ArcaneSickness.stages.minor-1.label>
+  
+  <TM_ArcaneSickness.stages.moderate.label>moderada</TM_ArcaneSickness.stages.moderate.label>
+  
+  <TM_ArcaneSickness.stages.major.label>grave</TM_ArcaneSickness.stages.major.label>
+  
+  <TM_ArcaneSickness.stages.extreme-0.label>extrema</TM_ArcaneSickness.stages.extreme-0.label>
+  
+  <TM_ArcaneSickness.stages.extreme-1.label>extrema</TM_ArcaneSickness.stages.extreme-1.label>
+  
+  
+  <TM_ManaSickness.label>enfermedad de maná</TM_ManaSickness.label>
+  
+  <TM_ManaSickness.description>La enfermedad de maná afecta a los magos cuando tienen 0 de maná y su regeneración es negativa. Si no se revierte, acabará matando al mago. Puedes consultar la regeneración de maná de un mago en la pestaña de magia, pasando el cursor sobre el valor de regeneración de maná para ver una descripción con los factores que influyen en ella.</TM_ManaSickness.description>
+  
+  <TM_ManaSickness.stages.weakened.label>debilitado</TM_ManaSickness.stages.weakened.label>
+  
+  <TM_ManaSickness.stages.ailing.label>achacoso</TM_ManaSickness.stages.ailing.label>
+  
+  <TM_ManaSickness.stages.near_death.label>al borde de la muerte</TM_ManaSickness.stages.near_death.label>
+  
+</LanguageData>

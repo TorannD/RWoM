@@ -1,0 +1,88 @@
+﻿<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_Bladedancer.xml-->
+	<!--             EN: Blade training-->
+	<TM_BladeFocus.label>Тренировка клинка</TM_BladeFocus.label>
+	<!--                   EN: Training that improves technique and skill with melee weapons and raises the status of the bladedancer. Each level will change the trait of the bladedancer to reflect their skill level.
+
+Ranks:
+Bladesman: Speed +0.15c/s, MBT -3%, Hit chance +3%, Dodge +5%, Shooting Acc. -20%, Global Workspeed -10%
+Blademaster: Speed +0.2c/s, MBT -5%, Hit chance +6%, Dodge +10%, Shooting Acc. -25%, Global Workspeed -8%
+Bladedancer: Speed +0.3c/s, MBT -8%, Hit chance +10%, Dodge +15%, Shooting Acc. -28%, Global Workspeed -6%, Pain threshold +5%
+Legendary Bladedancer: Speed +0.4c/s, MBT -10%, Hit chance +15%, Dodge +20%, Shooting Acc. -30%, Global Workspeed -5%, Pain threshold +10%-->
+	<TM_BladeFocus.description>Тренировка, которая улучшает технику и мастерство владения оружием ближнего боя и повышает статус меченосца. Каждый уровень будет изменять черту танцующего с клинками, чтобы отразить их уровень мастерства.
+
+Ранги:
+Мечник: Скорость +0.15c/s, MBT -3%, Шанс попадания +3%, Уклон +5%, Точность стрельбы. -20%, Общая скорость работы -10%
+Мастер клинка: Скорость +0.2c/s, MBT -5%, Шанс попадания +6%, Уклон +10%, Точность стрельбы. -25%, Общая скорость работы -8%
+Танцующий с клинками: Скорость +0.3c/s, MBT -8%, Шанс попадания +10%, Уклон +15%, Точность стрельбы. -28%, Общая скорость работы -6%, Болевой порог +5%
+Легендарный танцующий с клинками: Скорость +0.4c/s, MBT -10%, Шанс попадания +15%, Уклон +20%, Точность стрельбы. -30%, Общая скорость работы -5%, Болевой порог +10%</TM_BladeFocus.description>
+	<!--           EN: Body Training-->
+	<TM_BladeArt.label>Тренировка Тела</TM_BladeArt.label>
+	<!--                 EN: Training that enhances physical capabilities.
+
+Level 0: Moving +10%, Manipulation +10%
+Level 1: Moving +15%, Manipulation +15%
+Level 2: Moving +20%, Manipulation +20%, Breathing +10%
+Level 3: Moving +25%, Manipulation +25%, Breathing +15%, Blood pumping +10%, Blood filtration +10%-->
+	<TM_BladeArt.description>Тренировка, повышающая физические возможности.
+
+Уровень 0: Движение +10%, Манипуляции +10%
+Уровень 1: Движение +15%, Манипуляции +15%
+Уровень 2: Движение +20%, Манипуляции +20%, Дыхание +10%
+Уровень 3: Движение +25%, Манипуляции +25%, Дыхание +15%, Перекачивание крови +10%, Фильтрация крови +10%</TM_BladeArt.description>
+	<!--            EN: Blade Spin-->
+	<TM_BladeSpin.label>Вращение Клинков</TM_BladeSpin.label>
+	<!--                  EN: The blademaster seems to blur for a split second, striking all nearby targets in a flurry of steel.-->
+	<TM_BladeSpin.description>Мастер клинка, кажется, расплывается на долю секунды, поражая все ближайшие цели шквалом стали.</TM_BladeSpin.description>
+	<!--               EN: Seismic Slash-->
+	<TM_SeismicSlash.label>Сейсмический Разрез</TM_SeismicSlash.label>
+	<!--                     EN: Harnessing the emotionless soul of the blade, the bladedancer unleashes a strike that rends the fabric of space along a line.-->
+	<TM_SeismicSlash.description>Обуздав бесчувственную душу клинка, меченосец наносит удар, который разрывает ткань пространства вдоль линии.</TM_SeismicSlash.description>
+	<!-- Удар сквозь реальность-->
+	<TM_PhaseStrike.label>Удар сквозь реальность</TM_PhaseStrike.label>
+	<!--                    EN: Melds the bladedancer's razor focus with the edge of a blade to slip between reality, appearing at a chosen location to execute a vicious strike on unsuspecting enemies.
+
+Warmup: .3s
+Cooldown: 25s
+Range: 30-->
+	<TM_PhaseStrike.description>Танцующий с клинками размывает свой фокус, чтобы проскользнуть между реальностью, появляясь в выбранном месте, чтобы выполнить резкий удар по ничего не подозревающим врагам.
+
+Подготовка: .3s
+Откат: 25s
+Радиус: 30</TM_PhaseStrike.description>
+	<!--                EN: Phase Strike (I)-->
+	<TM_PhaseStrike_I.label>Фазовый удар (I)</TM_PhaseStrike_I.label>
+	<!--                      EN: Melds the bladedancer's razor focus with the edge of a blade to slip between reality, appearing at a chosen location to execute a vicious strike on unsuspecting enemies.
+
+Warmup: .2s
+Cooldown: 23s
+Range: 35-->
+	<TM_PhaseStrike_I.description>Танцующий с клинками размывает свой фокус, чтобы проскользнуть между реальностью, появляясь в выбранном месте, чтобы выполнить резкий удар по ничего не подозревающим врагам.
+
+Подготовка: .2s
+Откат: 23s
+Радиус: 35</TM_PhaseStrike_I.description>
+	<!--                 EN: Phase Strike (II)-->
+	<TM_PhaseStrike_II.label>Фазовый удар (II)</TM_PhaseStrike_II.label>
+	<!--                       EN: Melds the bladedancer's razor focus with the edge of a blade to slip between reality, appearing at a chosen location to execute a vicious strike on unsuspecting enemies.
+
+Warmup: .1s
+Cooldown: 21s
+Range: 40-->
+	<TM_PhaseStrike_II.description>Танцующий с клинками размывает свой фокус, чтобы проскользнуть между реальностью, появляясь в выбранном месте, чтобы выполнить резкий удар по ничего не подозревающим врагам.
+
+Подготовка: .1s
+Откат: 21s
+Радиус: 40</TM_PhaseStrike_II.description>
+	<!--                  EN: Phase Strike (III)-->
+	<TM_PhaseStrike_III.label>Фазовый удар (III)</TM_PhaseStrike_III.label>
+	<!--                        EN: Melds the bladedancer's razor focus with the edge of a blade to slip between reality, appearing at a chosen location to execute a vicious strike on unsuspecting enemies.
+
+Warmup: 0s
+Cooldown: 20s
+Range: 45-->
+	<TM_PhaseStrike_III.description>Танцующий с клинками размывает свой фокус, чтобы проскользнуть между реальностью, появляясь в выбранном месте, чтобы выполнить резкий удар по ничего не подозревающим врагам.
+
+Подготовка: 0s
+Откат: 20s
+Радиус: 45</TM_PhaseStrike_III.description>
+</LanguageData>

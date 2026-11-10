@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +28,7 @@ namespace TorannMagic
         public float lastGainPct = 0f;
 
         private int lastGainTick;
+        private int lastSpiritIntervalTick = -1;
 
         public float baseStaminaGain;
         public float modifiedStaminaGain;
@@ -78,10 +79,28 @@ namespace TorannMagic
         public override float CurLevel
         {
             get => base.CurLevel;
-            set => base.CurLevel = Mathf.Clamp(value, 0f, this.pawn.GetCompAbilityUserMight().maxSP);
+            set
+            {
+                // the might comp is added to pawns at runtime — see Need_Mana
+                CompAbilityUserMight comp = this.pawn?.GetCompAbilityUserMight();
+                float max = (comp != null ? comp.maxSP : 1f) - ClassProgression.SpiritHostedStance.Cost(pawn, false);
+                base.CurLevel = Mathf.Clamp(value, 0f, max);
+            }
         }
 
-        public override float MaxLevel => this.pawn.ageTracker.AgeBiologicalYears < 13 ? this.pawn.GetCompAbilityUserMight().maxSP - ((12f - this.pawn.ageTracker.AgeBiologicalYearsFloat)/10f) : this.pawn.GetCompAbilityUserMight().maxSP;
+        public override float MaxLevel
+        {
+            get
+            {
+                CompAbilityUserMight comp = this.pawn?.GetCompAbilityUserMight();
+                float maxSP = (comp != null ? comp.maxSP : 1f) - ClassProgression.SpiritHostedStance.Cost(pawn, false);
+                if (this.pawn.ageTracker.AgeBiologicalYears < 13)
+                {
+                    maxSP -= (12f - this.pawn.ageTracker.AgeBiologicalYearsFloat) / 10f;
+                }
+                return maxSP;
+            }
+        }
 
         public override int GUIChangeArrow
         {
@@ -166,7 +185,13 @@ namespace TorannMagic
 
         public override void SetInitialLevel()
         {
-            this.CurLevel = 0.8f;
+            this.CurLevel = ClassProgression.SpiritRebirthEnergy.Marked(pawn) ? 0f : 0.8f;
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref lastSpiritIntervalTick, "TM_spiritStaminaInterval", -1);
         }
 
         public void GainNeed(float amount)
@@ -180,21 +205,24 @@ namespace TorannMagic
                     
                     amount = amount * (0.015f);
                     this.baseStaminaGain = amount * ModOptions.Settings.Instance.needMultiplier;
-                    amount *= comp.spRegenRate;
+                    amount *= comp.spRegenRate - ClassProgression.SpiritHostedStance.Cost(pawn, true);
                     if (pawn.health != null && pawn.health.hediffSet != null)
                     {
-                        Hediff hdRegen = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EnergyRegenHD);
+                        Hediff hdRegen = ClassProgression.SpiritHostedStance.Regen(pawn, pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EnergyRegenHD));
                         if (hdRegen != null)
                         {
                             amount *= hdRegen.Severity;
                         }
                     }
                     this.modifiedStaminaGain = amount - this.baseStaminaGain;
-                    amount = Mathf.Min(amount, this.MaxLevel - this.CurLevel);
-                    this.curLevelInt += amount;
+                    // Upkeep can reduce capacity between need ticks (e.g. a new animal bond).
+                    // Clamp the excess once, before applying the ordinary regeneration rate.
+                    float maxLevel = Mathf.Max(0f, MaxLevel);
+                    curLevelInt = Mathf.Min(curLevelInt, maxLevel);
+                    amount = Mathf.Min(amount, maxLevel - curLevelInt);
                     this.lastGainPct = amount;
                     this.lastGainTick = Find.TickManager.TicksGame;
-                    comp.Stamina.curLevelInt = Mathf.Clamp(comp.Stamina.curLevelInt += amount, 0f, this.MaxLevel);
+                    curLevelInt = Mathf.Clamp(curLevelInt + 2f * amount, 0f, maxLevel);
 
                 }
                 AdjustThresh();
@@ -203,11 +231,19 @@ namespace TorannMagic
 
         public void UseMightPower(float amount)
         {
-            this.curLevelInt = Mathf.Clamp(this.curLevelInt - amount, 0f, this.pawn.GetCompAbilityUserMight().maxSP); //change for max sp
+            float max = this.pawn.GetCompAbilityUserMight().maxSP - ClassProgression.SpiritHostedStance.Cost(pawn, false);
+            this.curLevelInt = Mathf.Clamp(this.curLevelInt - amount, 0f, Mathf.Max(0f, max));
         }
 
         public override void NeedInterval()
         {
+            if (ClassProgression.SpiritRebirthEnergy.Marked(pawn))
+            {
+                if (!ClassProgression.SpiritRebirthBody.RetainsNeeds(pawn)) return;
+                int now = Find.TickManager.TicksGame;
+                if (lastSpiritIntervalTick >= 0 && now - lastSpiritIntervalTick < 150) return;
+                lastSpiritIntervalTick = now;
+            }
             this.GainNeed(1f);
         }
 

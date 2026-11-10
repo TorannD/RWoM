@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- demon special attack manuevers -->
+
+  <TM_Demon.label>demónio</TM_Demon.label>
+  <TM_Demon.labelPlural>demónios</TM_Demon.labelPlural>
+  <TM_Demon.lifeStages.0.label>demónio</TM_Demon.lifeStages.0.label>
+  <TM_Demon.lifeStages.0.labelPlural>demónios</TM_Demon.lifeStages.0.labelPlural>
+
+  <TM_LesserDemon.label>demónio menor</TM_LesserDemon.label>
+  <TM_LesserDemon.labelPlural>demónios menores</TM_LesserDemon.labelPlural>
+  <TM_LesserDemon.lifeStages.0.label>demónio</TM_LesserDemon.lifeStages.0.label>
+  <TM_LesserDemon.lifeStages.0.labelPlural>demónios</TM_LesserDemon.lifeStages.0.labelPlural>
+
+
+</LanguageData>

@@ -61,7 +61,8 @@ namespace TorannMagic
             }
             if(Find.TickManager.TicksGame % tickFrequency == 0 && shieldInternalCells != null && shieldBlockCells != null && this.Map != null)
             {
-                List<Thing> tmpProjs = this.Map.listerThings.AllThings.Where(t => t is Projectile).ToList();
+                // Snapshot only projectiles: interception destroys entries in the live registry.
+                List<Thing> tmpProjs = ReverseShieldProjectiles.Snapshot(this.Map);
                 if (tmpProjs != null)
                 {
                     foreach (Thing t in tmpProjs)
@@ -112,7 +113,12 @@ namespace TorannMagic
             }
         }
 
-    }    
+    }
+
+    internal static class ReverseShieldProjectiles
+    {
+        internal static List<Thing> Snapshot(Map map) => map.listerThings.ThingsInGroup(ThingRequestGroup.Projectile).ToList();
+    }
 }
 
 

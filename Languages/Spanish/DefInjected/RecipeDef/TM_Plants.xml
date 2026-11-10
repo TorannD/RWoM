@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_ExtractSyrrium.label>extraer sirrio</TM_ExtractSyrrium.label>
+  
+  <TM_ExtractSyrrium.description>Hierve pomanasirrio hasta poder extraer el sirrio de la pomana machacada.</TM_ExtractSyrrium.description>
+  
+  <TM_ExtractSyrrium.jobString>Extrayendo sirrio.</TM_ExtractSyrrium.jobString>
+  
+</LanguageData>

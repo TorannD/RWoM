@@ -1,4 +1,4 @@
-﻿using AbilityUser;
+using AbilityUser;
 using RimWorld;
 using Verse;
 using System;
@@ -38,7 +38,19 @@ namespace TorannMagic
         private bool initialized = false;
         int duration = 500;
         public List<ThingDef> bloodTypes = new List<ThingDef>();
-        private ThingDef pawnBloodDef = null;
+        private Pawn projectedOwner;
+        internal Pawn SpellOwner => projectedOwner ?? launcher as Pawn;
+
+        internal void PrepareHosted(MagicAbility ability)
+        {
+            projectedOwner = ability.Pawn;
+            var data = ability.MagicUser.ExistingMagicData;
+            pwrVal = ClassProgression.SpiritRebirthRuntime.SavedRank(data,"TM_IgniteBlood_pwr");
+            verVal = ClassProgression.SpiritRebirthRuntime.SavedRank(data,"TM_IgniteBlood_ver");
+            int gift = ClassProgression.SpiritRebirthRuntime.SavedRank(data,"TM_BloodGift_pwr");
+            arcaneDmg = ability.MagicUser.arcaneDmg * (1f + .1f * gift);
+        }
+
 
         List<BloodFire> BF = new List<BloodFire>();       
 
@@ -48,6 +60,8 @@ namespace TorannMagic
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_References.Look(ref projectedOwner,"TM_igniteOwner");
+            Scribe_Values.Look(ref arcaneDmg,"TM_ignitePotency",1f);
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
             Scribe_Values.Look<int>(ref this.age, "age", -1, false);
             Scribe_Values.Look<int>(ref this.duration, "duration", 500, false);
@@ -57,6 +71,12 @@ namespace TorannMagic
             Scribe_Values.Look<Vector3>(ref this.direction, "direction", default(Vector3), false);
             Scribe_Collections.Look<ThingDef>(ref this.bloodTypes, "bloodTypes", LookMode.Def);
             Scribe_Collections.Look<BloodFire>(ref this.BF, "BF", LookMode.Deep);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                BF ??= new List<BloodFire>();
+                bloodTypes ??= new List<ThingDef>();
+                spreadRate = Math.Max(1,spreadRate);
+            }
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
@@ -86,54 +106,50 @@ namespace TorannMagic
                 this.BF.Clear();
                 
                 Pawn pawn = this.launcher as Pawn;
-                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                MagicPowerSkill bpwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr");
-                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_IgniteBlood.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_IgniteBlood_pwr");
-                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_IgniteBlood.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_IgniteBlood_ver");
-                pwrVal = pwr.level;
-                verVal = ver.level;
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                if (projectedOwner == null && pawn != null)
                 {
-                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                    pwrVal = mpwr.level;
-                    verVal = mver.level;
+                    var comp = pawn.GetCompAbilityUserMagic();
+                    var data = comp?.MagicData;
+                    pwrVal = data?.MagicPowerSkill_IgniteBlood.FirstOrDefault(x => x.label == "TM_IgniteBlood_pwr")?.level ?? 0;
+                    verVal = data?.MagicPowerSkill_IgniteBlood.FirstOrDefault(x => x.label == "TM_IgniteBlood_ver")?.level ?? 0;
+                    if (pawn.story?.traits?.HasTrait(TorannMagicDefOf.Faceless) == true)
+                    {
+                        var mimic = pawn.GetCompAbilityUserMight()?.MightData.MightPowerSkill_Mimic;
+                        pwrVal = mimic?.FirstOrDefault(x => x.label == "TM_Mimic_pwr")?.level ?? 0;
+                        verVal = mimic?.FirstOrDefault(x => x.label == "TM_Mimic_ver")?.level ?? 0;
+                    }
+                    int gift = data?.MagicPowerSkill_BloodGift.FirstOrDefault(x => x.label == "TM_BloodGift_pwr")?.level ?? 0;
+                    arcaneDmg = (comp?.arcaneDmg ?? 1f) * (1f + .1f * gift);
                 }
-                this.arcaneDmg = comp.arcaneDmg;
-                this.arcaneDmg *= (1 + (.1f * bpwr.level));
-                this.spreadRate -= 2 * verVal;
-                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+                spreadRate = Math.Max(1,12 - 2 * verVal);
+                if (pawn != null && ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
                 {
                     pwrVal = 3;
                     verVal = 3;
                 }
-                this.bloodTypes = new List<ThingDef>();
-                this.bloodTypes.Clear();
+                var pawnBloodDef = ThingDefOf.Filth_Blood;
+                bloodTypes.Clear();
                 if (ModOptions.Settings.Instance.unrestrictedBloodTypes)
                 {
-                    this.pawnBloodDef = pawn.RaceProps.BloodDef;
-                    this.bloodTypes = TM_Calc.GetAllRaceBloodTypes();
+                    pawnBloodDef = pawn?.RaceProps?.BloodDef ?? pawnBloodDef;
+                    bloodTypes = TM_Calc.GetAllRaceBloodTypes();
                 }
-                else
-                {
-                    this.pawnBloodDef = ThingDefOf.Filth_Blood;
-                    this.bloodTypes.Add(this.pawnBloodDef);
-                }
-                
+                else bloodTypes.Add(pawnBloodDef);
+
                 List<IntVec3> cellList = GenRadial.RadialCellsAround(base.Position, this.def.projectile.explosionRadius, true).ToList();
 
-                Filth filth = (Filth)ThingMaker.MakeThing(this.pawnBloodDef);
-                GenSpawn.Spawn(filth, base.Position, pawn.Map);
+                Filth filth = (Filth)ThingMaker.MakeThing(pawnBloodDef);
+                GenSpawn.Spawn(filth, base.Position, Map);
                 //FilthMaker.MakeFilth(base.Position, this.Map, ThingDefOf.Filth_Blood, 1);
                 for (int i = 0; i < 30; i++)
                 {
                     IntVec3 randomCell = cellList.RandomElement();
-                    if (randomCell.IsValid && randomCell.InBoundsWithNullCheck(pawn.Map) && !randomCell.Fogged(pawn.Map) && randomCell.Walkable(pawn.Map))
+                    if (randomCell.IsValid && randomCell.InBounds(Map) && !randomCell.Fogged(Map) && randomCell.Walkable(Map))
                     {
                         //FilthMaker.MakeFilth(randomCell, this.Map, ThingDefOf.Filth_Blood, 1);
                         //Log.Message("creating blood at " + randomCell);
-                        Filth filth2 = (Filth)ThingMaker.MakeThing(this.pawnBloodDef);
-                        GenSpawn.Spawn(filth2, randomCell, pawn.Map);
+                        Filth filth2 = (Filth)ThingMaker.MakeThing(pawnBloodDef);
+                        GenSpawn.Spawn(filth2, randomCell, Map);
                     }
                 }
                 this.BF.Add(new BloodFire(base.Position, 0));
@@ -161,7 +177,7 @@ namespace TorannMagic
             for (int i = 0; i < this.BF.Count; i++)
             {
                 List<Thing> thingList = this.BF[i].position.GetThingList(this.Map);
-                for (int j = 0; j < thingList.Count; j++)
+                for (int j = thingList.Count - 1; j >= 0; j--)
                 {
                     if (thingList[j] != null && this.bloodTypes.Contains(thingList[j].def))
                     {
@@ -169,10 +185,15 @@ namespace TorannMagic
                     }
                 }
                 this.BF[i] = new BloodFire(this.BF[i].position, this.BF[i].pulseCount + 1);
-                GenExplosion.DoExplosion(this.BF[i].position, this.Map, .2f + (.4f * BF[i].pulseCount), TMDamageDefOf.DamageDefOf.TM_BloodBurn, this.launcher, Mathf.RoundToInt((Rand.Range(2.8f, 4.5f) * (1 + (.12f * pwrVal))) * this.arcaneDmg), .5f, TorannMagicDefOf.TM_FireWooshSD, null, null, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0.0f, false);
+                var trial = ClassProgression.BloodMageTrials.BeginExplosion(this, this.BF[i].position);
+                try
+                {
+                    GenExplosion.DoExplosion(this.BF[i].position, this.Map, .2f + (.4f * BF[i].pulseCount), TMDamageDefOf.DamageDefOf.TM_BloodBurn, SpellOwner, Mathf.RoundToInt((Rand.Range(2.8f, 4.5f) * (1 + (.12f * pwrVal))) * this.arcaneDmg), .5f, TorannMagicDefOf.TM_FireWooshSD, null, null, null, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0.0f, false);
+                }
+                finally { ClassProgression.BloodMageTrials.EndExplosion(trial); }
                 if(this.BF[i].pulseCount >= 3)
                 {                    
-                    this.BF.Remove(this.BF[i]);
+                    this.BF.RemoveAt(i--);
                 }                
             }
         }
@@ -216,7 +237,7 @@ namespace TorannMagic
         {
             if (!this.initialized)
             {
-                if (this.age < 2)
+                if (this.age < 2 && launcher?.Map == Map && launcher.Spawned)
                 {
                     this.direction = TM_Calc.GetVector(this.launcher.DrawPos, base.Position.ToVector3Shifted());
                 }

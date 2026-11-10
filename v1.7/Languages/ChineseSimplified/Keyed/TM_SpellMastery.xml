@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MasteryRitual>专精{0}：{1}（{2}魔晶{3}）</TM_MasteryRitual>
+  <TM_Mastery_focus>聚焦（主爆炸伤害+25%）</TM_Mastery_focus>
+  <TM_Mastery_reach>扩散（主爆炸半径+25%）</TM_Mastery_reach>
+  <TM_Mastery_depth>深度治疗（每处伤口治疗量+25%）</TM_Mastery_depth>
+  <TM_Mastery_breadth>广域治疗（额外治疗一处伤口）</TM_Mastery_breadth>
+  <TM_MasteryCurrent>{0}专精：{1}</TM_MasteryCurrent>
+  <TM_MasteryHint>在大型魔法阵选择或以相同代价更换专精。将祭品放入法师物品栏，或放在魔法阵中心五格范围内。</TM_MasteryHint>
+</LanguageData>

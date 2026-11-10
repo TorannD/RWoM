@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Research into magic -->
+
+  <TM_PlantCultivation.label>cultivo</TM_PlantCultivation.label>
+  <TM_PlantCultivation.description>Explore o botânico para ter uma ideia de como cultivar plantas com propriedades relevantes para a magia e usar seus recursos para complementar ou alimentar as artes secretas.</TM_PlantCultivation.description>
+
+  <TM_ArcaneConstruction.label>Sala de feijoada</TM_ArcaneConstruction.label>
+  <TM_ArcaneConstruction.description>Abre pesquisas sobre vários objetos e verstacos que permitiram criar objetos e efeitos mágicos únicos.</TM_ArcaneConstruction.description>
+
+  <TM_ArcaneFundamentals.label>fundamentos da feiticaria</TM_ArcaneFundamentals.label>
+  <TM_ArcaneFundamentals.description>Estudos fundamentais sobre como o poder mágico está ligado aos magos físicos.</TM_ArcaneFundamentals.description>
+
+  <TM_MagicCircle.label>Círculo mágico</TM_MagicCircle.label>
+  <TM_MagicCircle.description>Estudos avançados de geometria e simetria de linhas que permitem que os magos combinem sua energia para criar efeitos incríveis.</TM_MagicCircle.description>
+
+  <TM_Portals.label>portais</TM_Portals.label>
+  <TM_Portals.description>Permite construir um portal, um artefato poderoso que permite que você navegue instantaneamente entre as colónias .\n\n Requer mágicos secretos treinados para ativar o portão.</TM_Portals.description>
+
+  <TM_ManaStorage.label>armazenamento de maná</TM_ManaStorage.label>
+  <TM_ManaStorage.description>Desenvolve formas de armazenar maná.</TM_ManaStorage.description>
+
+  <TM_ArcaneForging.label>Forja secreta</TM_ArcaneForging.label>
+  <TM_ArcaneForging.description>Desenvolva ferramentas de uso de poder secreto para criar vários itens e equipamentos. A conclusão deste estudo também revelará como fazer manatkan - um material único que reforça o poder mágico.</TM_ArcaneForging.description>
+
+  <TM_ForgeReplication.label>Forja de replicação</TM_ForgeReplication.label>
+  <TM_ForgeReplication.description>Reforça a forja secreta com uma técnica que lhe permite extrair o design de qualquer objeto artesanal e duplicá-lo na forja.</TM_ForgeReplication.description>
+
+  <TM_ArcaneCrafting.label>artesanato secreto</TM_ArcaneCrafting.label>
+  <TM_ArcaneCrafting.description>O primeiro passo para compreender a ligação entre o segredo e o físico. Permite a criação de pedras preciosas de epifania e equipamentos mágicos.</TM_ArcaneCrafting.description>
+
+  <TM_ArcaneApparel.label>Equipamento mágico</TM_ArcaneApparel.label>
+  <TM_ArcaneApparel.description>Aplica conhecimento de artesanato secreto e encantamento para aprender a recriar equipamentos com propriedades mágicas mais poderosas.</TM_ArcaneApparel.description>
+
+  <TM_ArcaneArtifacts.label>artífacto secreto</TM_ArcaneArtifacts.label>
+  <TM_ArcaneArtifacts.description>Permite recriar artefatos secretos através de vastas pesquisas que combinam conhecimento sobre encantos, desenhos antigos, runas e boatos.</TM_ArcaneArtifacts.description>
+
+  <TM_MagicyteRefining.label>Processamento de Magicita</TM_MagicyteRefining.label>
+  <TM_MagicyteRefining.description>Um estudo experimental que define formas de usar o Magicite para criar objetos mágicos. Abre uma receita para criar uma poção de maná no laboratório.</TM_MagicyteRefining.description>
+
+  <TM_MagicScribing.label>Gravação!</TM_MagicScribing.label>
+  <TM_MagicScribing.description>Desenvolva o conhecimento para misturar tinta com magicismo em pó e usá-lo através de um abdominal especialmente construído, capaz de reproduzir pergaminhos e livros que podem conter o poder da magia.</TM_MagicScribing.description>
+
+  <TM_AdvancedScribing.label>Gravura melhorada</TM_AdvancedScribing.label>
+  <TM_AdvancedScribing.description>Permite usar melhor material para escrever livros e pergaminhos mais potentes.</TM_AdvancedScribing.description>
+
+  <TM_MasterScribing.label>Assistente de gravação</TM_MasterScribing.label>
+  <TM_MasterScribing.description>Permite criar pergaminhos do assistente</TM_MasterScribing.description>
+
+  <TM_Enchanting.label>Encantamento!</TM_Enchanting.label>
+  <TM_Enchanting.description>Permite construir uma verstaca de corte de pedras preciosas e criar pedras preciosas de nível I.</TM_Enchanting.description>
+
+  <TM_AdvancedEnchanting.label>Encantamentos melhorados</TM_AdvancedEnchanting.label>
+  <TM_AdvancedEnchanting.description>Permite criar pedras de nível II encantadas</TM_AdvancedEnchanting.description>
+
+  <TM_ExpertEnchanting.label>mestre de enchentes</TM_ExpertEnchanting.label>
+  <TM_ExpertEnchanting.description>Permite criar pedras encantadas de nível III</TM_ExpertEnchanting.description>
+
+  <TM_GolemCraftRD.label>teoria do golem</TM_GolemCraftRD.label>
+  <TM_GolemCraftRD.description>A criação de holemas é um tipo de encantamento que difere de melhorias passivas e explora teorias de manipulação de encantos mágicos para fins ativos. Este estudo desenvolverá conceitos de como aplicar melhorias ativas para criar seres mágicos. Este estudo permite criar golos de pedra e maharal à mesa da pedreira. O golem maharala também pode ser criado no local do kraft.</TM_GolemCraftRD.description>
+
+  <TM_HollowGolemRD.label>vazio nu</TM_HollowGolemRD.label>
+  <TM_HollowGolemRD.description>Uma abordagem mágica para a criação de golems que explora como reanimar a energia crua. É preciso uma forja secreta para criar este tipo de golem.</TM_HollowGolemRD.description>
+
+  <TM_HollowGolemEquipmentRD.label>Equipamento cativo</TM_HollowGolemEquipmentRD.label>
+  <TM_HollowGolemEquipmentRD.description>Pesquisa de armas e armaduras que podem ser fixadas no holofote para melhorar ou expandir as capacidades.</TM_HollowGolemEquipmentRD.description>
+
+  <TM_HollowGolemArtifactsRD.label>artefatos cativos</TM_HollowGolemArtifactsRD.label>
+  <TM_HollowGolemArtifactsRD.description>A investigação da ligação dos artefatos secretos com o comportamento do golem permite que o Holem alimente os artefatos com a sua própria energia mágica.</TM_HollowGolemArtifactsRD.description>
+
+  <TM_MechaGolemRD.label>golem mecânico</TM_MechaGolemRD.label>
+  <TM_MechaGolemRD.description>Combina engenharia elétrica e engenharia mecânica com artesanato holograma para criar um robô golem. Espera-se que os componentes de peles-golem precisem de uma mesa de máquinas.</TM_MechaGolemRD.description>
+
+  <TM_MechaGolemEquipmentRD.label>Equipamento de cabeceira mecânica</TM_MechaGolemEquipmentRD.label>
+  <TM_MechaGolemEquipmentRD.description>Pesquisa técnicas de construção de equipamentos e armaduras para melhorar ainda mais peles-golem.</TM_MechaGolemEquipmentRD.description>
+
+  <TM_FleshGolemRD.label>golem de carne</TM_FleshGolemRD.label>
+  <TM_FleshGolemRD.description>Uma abordagem biológica dos golems que explora como transformar carne e ossos de organismos mortos em uma estrutura animada de duas pernas. Uma simples mesa de carne deve ser suficiente para criar um golem de carne.</TM_FleshGolemRD.description>
+
+  <TM_FleshGolemEquipmentRD.label>anexos de densidade</TM_FleshGolemEquipmentRD.label>
+  <TM_FleshGolemEquipmentRD.description>Pesquisa armas e armaduras que podem ser fixadas em um golem de carne para melhorar ou potencializar ainda mais.</TM_FleshGolemEquipmentRD.description>
+
+
+</LanguageData>

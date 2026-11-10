@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SpellItem_InvalidTarget>请选择有效目标。</TM_SpellItem_InvalidTarget>
+  <TM_SpellItem_OutOfRange>目标超出施法范围。</TM_SpellItem_OutOfRange>
+  <TM_SpellItem_NoLineOfSight>视线受阻。</TM_SpellItem_NoLineOfSight>
+  <TM_SpellItem_NoInjuries>没有可自然愈合的伤口。</TM_SpellItem_NoInjuries>
+  <TM_SpellItem_Occupied>目的地已被占据。</TM_SpellItem_Occupied>
+  <TM_SpellItem_SameCell>请选择其他目的地。</TM_SpellItem_SameCell>
+  <TM_SpellItem_HostileTarget>无法治疗敌对目标。</TM_SpellItem_HostileTarget>
+  <TM_SpellItem_UndeadTarget>无法治疗亡灵或机械族。</TM_SpellItem_UndeadTarget>
+  <TM_SpellItem_NotHeld>物品必须在使用者的物品栏中或已装备。</TM_SpellItem_NotHeld>
+  <TM_SpellItem_CannotUse>此角色无法使用该物品。</TM_SpellItem_CannotUse>
+  <TM_SpellItem_Empty>剩余使用次数为零。</TM_SpellItem_Empty>
+  <TM_SpellItem_Cooldown>物品正在冷却。</TM_SpellItem_Cooldown>
+  <TM_SpellItem_Busy>正在使用魔法物品施法。</TM_SpellItem_Busy>
+  <TM_SpellItem_Uses>剩余次数：{0}/{1}</TM_SpellItem_Uses>
+  <TM_SpellItem_CastLabel>{0} {1}</TM_SpellItem_CastLabel>
+  <TM_SpellItem_Description>施放物品内的固定强度法术，无需魔力或学习该法术。</TM_SpellItem_Description>
+  <TM_SpellItem_Casting>正在使用{0}施法。</TM_SpellItem_Casting>
+  <TM_SpellItem_NoTreatment>没有适用的治疗目标，或该效果已生效。</TM_SpellItem_NoTreatment>
+  <TM_SpellItem_EnterPortal>进入传送门</TM_SpellItem_EnterPortal>
+  <TM_SpellItem_RequiredKnowledge>制作此物品需要学会{0}。</TM_SpellItem_RequiredKnowledge>
+</LanguageData>

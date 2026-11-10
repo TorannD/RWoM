@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadDeathKnightDread>Dread — begin with Wave of Fear.</TM_ReadDeathKnightDread>
+  <TM_ReadDeathKnightSpite>Vengeance — begin with Spite.</TM_ReadDeathKnightSpite>
+  <TM_DKTrial>Days wounded by an enemy while guarding an adjacent ally: {0}/{1}, or different allies rescued: {2}/{3}.</TM_DKTrial>
+  <TM_DKLevel>Might level {0}/30.</TM_DKLevel>
+  <TM_DKClaim>Claim next stage</TM_DKClaim>
+  <TM_DKOath>Guardian's oath — intercept up to 25 damage for an adjacent ally for 10 hate, once every 10 seconds.</TM_DKOath>
+</LanguageData>

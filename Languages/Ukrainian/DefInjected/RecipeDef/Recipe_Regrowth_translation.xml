@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Regrowth.label>відновіть частину тіла (тільки Друїд, потрібно 90% мани)</Regrowth.label>
+  <Regrowth.description>Використовуйте друїдські сили для відновлення частин тіла.</Regrowth.description>
+  <Regrowth.jobString>відновлення частини тіла.</Regrowth.jobString>
+
+  <UniversalRegrowth.label>відновіть частину тіла (тільки Друїд, потрібно 90% мани)</UniversalRegrowth.label>
+  <UniversalRegrowth.description>Використовуйте друїдські сили для відновлення частин тіла.</UniversalRegrowth.description>
+  <UniversalRegrowth.jobString>відновлення частини тіла.</UniversalRegrowth.jobString>
+
+
+</LanguageData>

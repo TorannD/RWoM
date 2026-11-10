@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <SoulBondPhysical.stages.0.label>felicidade (física)</SoulBondPhysical.stages.0.label>
+  <SoulBondPhysical.stages.0.description>A minha dor já passou. Nado num mar de euforia.</SoulBondPhysical.stages.0.description>
+
+  <SoulBondMental.stages.0.label>felicidade (mental)</SoulBondMental.stages.0.label>
+  <SoulBondMental.stages.0.description>Os meus ânimos e ansiedades foram apagados. O que costumava preocupar-me, agora, não passa de distrações que desaparecem na neblina de remo e realidade.</SoulBondMental.stages.0.description>
+
+  <VitalityDrainTD.stages.0.label>Fuga de Forças Vitais</VitalityDrainTD.stages.0.label>
+  <VitalityDrainTD.stages.0.description>Esta sucuba foi incrível. A minha ansiedade é uma lembrança, e sinto-me descontraído, até um pouco fraco.</VitalityDrainTD.stages.0.description>
+
+
+</LanguageData>

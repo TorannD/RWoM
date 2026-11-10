@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ApothecaryHerbsHD.label>ervas de farmácia</TM_ApothecaryHerbsHD.label>
+  <TM_ApothecaryHerbsHD.description>Ervas, sementes e outros ingredientes usados pelo farmacêutico para preparar vários itens.</TM_ApothecaryHerbsHD.description>
+  <TM_ApothecaryHerbsHD.stages.0.label></TM_ApothecaryHerbsHD.stages.0.label>
+
+  <TM_HerbalElixirHD.label>elixir de ervas</TM_HerbalElixirHD.label>
+  <TM_HerbalElixirHD.description>Elixir de ervas que aumenta a recuperação da saúde e combate doenças e melhora a saúde mental e reduz o cansaço.</TM_HerbalElixirHD.description>
+  <TM_HerbalElixirHD.stages.0.label>leve</TM_HerbalElixirHD.stages.0.label>
+  <TM_HerbalElixirHD.stages.1.label>ativo</TM_HerbalElixirHD.stages.1.label>
+  <TM_HerbalElixirHD.stages.2.label>forte</TM_HerbalElixirHD.stages.2.label>
+
+  <TM_SoothingBalmHD.label>bálsamo de acalmar</TM_SoothingBalmHD.label>
+  <TM_SoothingBalmHD.description>Um bálsamo para uso local usado para parar a hemorragia, cicatrizar feridas e reduzir a dor. O balsamo acalma funciona como um anestésico suave e reduz a consciência do paciente.</TM_SoothingBalmHD.description>
+
+  <TM_HerbalClarityHD.label>Claridade</TM_HerbalClarityHD.label>
+  <TM_HerbalClarityHD.description>Uma poção que ajuda o consumidor a descobrir o segredo. A regeneração do maná foi aumentada para 300% e a sensibilidade mental aumentou para 50%. Os efeitos também reduzem a resistência mental. Esta droga dura vários dias, mas perde força com o tempo.</TM_HerbalClarityHD.description>
+  <TM_HerbalClarityHD.stages.0.label>leve</TM_HerbalClarityHD.stages.0.label>
+  <TM_HerbalClarityHD.stages.1.label>ativo</TM_HerbalClarityHD.stages.1.label>
+  <TM_HerbalClarityHD.stages.2.label>vibrante</TM_HerbalClarityHD.stages.2.label>
+
+  <TM_HerbalBlissHD.label>Felicidade</TM_HerbalBlissHD.label>
+  <TM_HerbalBlissHD.description>Introduz o utilizador em um estado de felicidade capaz de disfarçar quase totalmente as emoções e a dor. Esta droga levará o consumidor lentamente a perder habilidades, e a aquisição de habilidades sob a influência desta droga é severamente suprimida.</TM_HerbalBlissHD.description>
+
+
+</LanguageData>

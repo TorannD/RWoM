@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Technobit</defName>
+    <label>Techno-Bit</label>
+    <description>The techno-bit is a small, autonomous orb that assists the technomancer in many tasks and provides the technomancer with additional support capabilities. The techno-bit assist can be toggled and will not perform any task while disabled.
+	
+Undrafted: the techno-bit assists in crafting, mining and construction tasks. It will also repair nearby buildings, androids, and mechanoids.
+
+Drafted: uses an internal focus-LED to fire micro lasers at the technomancers target. Performs accelerated repairs to nearby robotic pawns or buildings.</description>
+    <spellId>rwom.tm_technobit</spellId>
+    <iconPath>UI/bit_c</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_TechnoBit</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Ranger</defaultProjectile>
+      <warmupTime>0.1</warmupTime>
+      <SecondsToRecharge>60.0</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Technoturret</defName>
+    <label>Mark-IV Turret</label>
+    <description>Deploys and establishes a neural link to the Mark-IV turret. The Mark-IV is remotely controlled by the caster. Rockets and mortars consume mana per shot.
+
+The Mark-IV will automatically miniaturize itself when it takes critical damage and can cause neural feedback to the technomancer controlling the system.</description>
+    <spellId>rwom.tm_technoturret</spellId>
+    <iconPath>Other/TechnoTurret</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_TechnoTurret</abilityDef>
+      <isViolent>true</isViolent>
+      <AlwaysHits>true</AlwaysHits>
+      <defaultProjectile>Projectile_TechnoTurret</defaultProjectile>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>600</SecondsToRecharge>
+      <range>18</range>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Technoweapon</defName>
+    <label>Engineer Weapon</label>
+    <description>The technomancer applies their knowledge of engineering and magic to create a modified version of an existing weapon.  This weapon is molded out of raw mana and physically anchored to the technomancer as an extension of their body.
+Because of this, the weapon will disintegrate if separated from the technomancer.  This weapon will be automatically equipped by the technomancer once created.
+
+Weapon specialists also have access to modified ammunition and nano stimulants for improved combat capabilities.
+
+To create a techno weapon: target a weapon on the ground. Targeted weapon must be ranged, with an industrial or higher tech level, and use standard firing action.</description>
+    <spellId>rwom.tm_technoweapon</spellId>
+    <iconPath>Items/weapons/technoweapon</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_TechnoWeapon</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_TechnoWeapon</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_Blink</defaultProjectile>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>600</SecondsToRecharge>
+      <range>10</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Nanostimulant</defName>
+    <label>Nano Stimulant</label>
+    <description>An injection of nanites that temporarily enhances the combat capabilities of the user. This stimulant is specially synthesized by the technomancer for their own unique biological and genetic makeup. It isn't chemically addictive, but is harmful for any other pawn. 
+
+The nanites are fueled by mana and energy within the body and will rapidly cause fatigue. 
+
+When the nanites burn out, they will form platelets to cauterize and stop bleeding and even heal small wounds. Use of nano stimulants will accelerate any active disease or infection.</description>
+    <spellId>rwom.tm_nanostimulant</spellId>
+    <iconPath>UI/nano_stim</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_NanoStimulant</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_NanoStimulant</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Blink</defaultProjectile>
+      <warmupTime>.5</warmupTime>
+      <SecondsToRecharge>300</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>1</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Technoshield</defName>
+    <label>Kinetic Shield</label>
+    <description>Surrounds the target in a kinetic field that repels inbound projectiles. The kinetic shield is able to deflect projectiles depending on their kinetic energy, heavier projectiles are more difficult to deflect and will penetrate low powered shields. 
+		
+The amount of kinetic energy involved in a deflection is determined by the amount of damage that would be caused by the projectile.</description>
+    <spellId>rwom.tm_technoshield</spellId>
+    <iconPath>UI/technoshield</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_TechnoShield</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Blink</defaultProjectile>
+      <abilityDef>TM_TechnoShield</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <range>30</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>1</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Sabotage</defName>
+    <label>Sabotage</label>
+    <description>Sabotage overrides the targets mechanical failsafes, logic functions, and any other exploitable system within a small area. The effects of sabotage can range from reduced mechanical performance, temporary shutdown, self destruction, catastrophic failure and even loss of ability to determine friend from foe.
+
+Can be applied to: batteries, power generators, turrets, robots, androids, and mechanoids.</description>
+    <spellId>rwom.tm_sabotage</spellId>
+    <iconPath>UI/sabotage</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_Sabotage</defaultProjectile>
+      <abilityDef>TM_Sabotage</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>45</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>1</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Overdrive</defName>
+    <label>Overdrive</label>
+    <description>Overdrive the targeted mechanical, electrical, or AI system with fabricated nanites that pushes the system beyond its limits. Overdrive will cause damage to the system periodically.
+
+Can be applied to: power generators, turrets, robots, androids, and mechanoids.</description>
+    <spellId>rwom.tm_overdrive</spellId>
+    <iconPath>UI/overdrive</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Overdrive</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_Blink</defaultProjectile>
+      <abilityDef>TM_Overdrive</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>300</SecondsToRecharge>
+      <range>40</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>1</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Orbitalstrike</defName>
+    <label>Orbital Strike</label>
+    <description>Hack into a network of orbital bombardment satellites and enter a target designation. By using random, arcane signatures to mask their activity, technomancers can continually manipulate advanced systems without being positively identified and locked out.
+		
+Range: 70
+Warmup: 3s
+Radius: 2.5</description>
+    <spellId>rwom.tm_orbitalstrike</spellId>
+    <iconPath>UI/orbitalstrike</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_OrbitalStrike</defaultProjectile>
+      <abilityDef>TM_OrbitalStrike</abilityDef>
+      <warmupTime>2.5</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <range>70</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>true</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_OrbitalstrikeI</defName>
+    <label>Orbital Strike I</label>
+    <description>Hack into a network of orbital bombardment satellites and enter a target designation. By using random, arcane signatures to mask their activity, technomancers can continually manipulate advanced systems without being positively identified and locked out.
+		
+Range: 80
+Warmup: 2.1s
+Radius: 4.2</description>
+    <spellId>rwom.tm_orbitalstrike_i</spellId>
+    <iconPath>UI/orbitalstrike</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_OrbitalStrike_I</defaultProjectile>
+      <abilityDef>TM_OrbitalStrike_I</abilityDef>
+      <warmupTime>2.1</warmupTime>
+      <SecondsToRecharge>110</SecondsToRecharge>
+      <range>80</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>true</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_OrbitalstrikeII</defName>
+    <label>Orbital Strike II</label>
+    <description>Hack into a network of orbital bombardment satellites and enter a target designation. By using random, arcane signatures to mask their activity, technomancers can continually manipulate advanced systems without being positively identified and locked out.
+		
+Range: 90
+Warmup: 1.8s
+Radius: 5.0</description>
+    <spellId>rwom.tm_orbitalstrike_ii</spellId>
+    <iconPath>UI/orbitalstrike</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_OrbitalStrike_II</defaultProjectile>
+      <abilityDef>TM_OrbitalStrike_II</abilityDef>
+      <warmupTime>1.8</warmupTime>
+      <SecondsToRecharge>100</SecondsToRecharge>
+      <range>90</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>true</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_OrbitalstrikeIII</defName>
+    <label>Orbital Strike III</label>
+    <description>Hack into a network of orbital bombardment satellites and enter a target designation. By using random, arcane signatures to mask their activity, technomancers can continually manipulate advanced systems without being positively identified and locked out.
+		
+Range: 100
+Warmup: 1.6s
+Radius: 5.6</description>
+    <spellId>rwom.tm_orbitalstrike_iii</spellId>
+    <iconPath>UI/orbitalstrike</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_OrbitalStrike_III</defaultProjectile>
+      <abilityDef>TM_OrbitalStrike_III</abilityDef>
+      <warmupTime>1.6</warmupTime>
+      <SecondsToRecharge>90</SecondsToRecharge>
+      <range>100</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>true</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

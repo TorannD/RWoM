@@ -1,0 +1,7 @@
+<LanguageData>
+  <TM_SoulStoneChooseHost>为{0}选择宿主</TM_SoulStoneChooseHost>
+  <TM_SoulStoneCannotImplant>需要一名活着且可以接近的殖民者、殖民地动物、囚犯或访客。</TM_SoulStoneCannotImplant>
+  <TM_SoulStoneHarmful>要让{0}附身于{1}吗？附身囚犯或访客属于敌对行为。成功转移后，对方派系可能与你敌对。</TM_SoulStoneHarmful>
+  <TM_SoulStoneRecoveryRemaining>灵魂还需在这个身体里恢复{0}。</TM_SoulStoneRecoveryRemaining>
+  <TM_SoulStoneNoExitCell>宿主附近没有能让灵魂现身的空地。</TM_SoulStoneNoExitCell>
+</LanguageData>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Summon Minion Start -->
+
+  <TM_SummonMinion.label>Закликати міньйон</TM_SummonMinion.label>
+  <TM_SummonMinion.description>Викличте міньйонів, щоб допомогти в щоденних завданнях.</TM_SummonMinion.description>
+
+  <TM_DismissMinion.label>Відпустити міньйон</TM_DismissMinion.label>
+  <TM_DismissMinion.description>Відпустити покликаного міньйона.</TM_DismissMinion.description>
+
+
+  <!-- Summon pylon Start -->
+
+  <TM_SummonPylon.label>Закликати захисний пілон</TM_SummonPylon.label>
+  <TM_SummonPylon.description>Викликає і проявляє магічну енергію, щоб сформувати автоматичну захисну вежу, яка прив&apos;язана до фізичного місця розташування. Вежа направляє таємний струм у фокусну точку, яка випускає сплески сирої енергії. Коли трос, що утримує башточку у фізичному світі, розсіється, вежа нешкідливо розчиниться назад у магічну енергію. Якщо вежа буде зруйнована, ця подія може бути більш руйнівною.</TM_SummonPylon.description>
+
+
+  <!-- Summon explosive Start -->
+
+  <TM_SummonExplosive.label>Викликати міну</TM_SummonExplosive.label>
+  <TM_SummonExplosive.description>Створює міну зі стисненої, сирої мани і прив&apos;язує її до фізичного місця. Міна буде нешкідливо розчинятися, якщо у троса закінчиться енергія, яка утримує міну.</TM_SummonExplosive.description>
+
+
+  <!-- Summon Elemental Start -->
+
+  <TM_SummonElemental.label>Заклик Елементаля</TM_SummonElemental.label>
+  <TM_SummonElemental.description>Викликає жахливого елементаля з плану сили, щоб розтрощити ваших ворогів. Ці істоти будуть захищати місце і негайно вступати в бій з ворогом, якщо він знаходиться поблизу. Однак, якщо ворогів немає, вони досить швидко починають нудьгувати і будуть блукати зі своєї викликаної позиції. Вони не будуть займатися такими справами, як «тягати» або «прибирати», оскільки це робота нижчих істот. Завдяки силі заклику елементал може існувати в цьому царстві лише короткий час. Тип елемента є випадковим.</TM_SummonElemental.description>
+
+
+  <!-- Summon Poppi Start -->
+
+  <TM_SummonPoppi.label>Закликати Поппі</TM_SummonPoppi.label>
+  <TM_SummonPoppi.description>Вызовите стаю злобных Поппи прямо из врат безумия. Ця зграя Поппі шалена і буде жадібно рватися у ворожі ряди.</TM_SummonPoppi.description>
+
+
+</LanguageData>

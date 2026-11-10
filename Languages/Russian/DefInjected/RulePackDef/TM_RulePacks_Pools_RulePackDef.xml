@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+	<TM_Book_Pools.rulePack.rulesStrings><li>subject_bookType-&gt;гримуар</li>
+		<li>subject_bookType-&gt;том</li>
+		<li>subject_bookType-&gt;кодекс</li>
+		<li>subject_bookType-&gt;антология</li>
+		<li>subject_bookType-&gt;свиток</li>
+		<li>subject_bookType-&gt;хроника</li>
+		<li>subject_bookType-&gt;руководство</li>
+
+		<li>subject_teachingType-&gt;кодекс</li>
+		<li>subject_teachingType-&gt;атлас</li>
+		<li>subject_teachingType-&gt;сборник</li>
+		<li>subject_teachingType-&gt;свиток</li>
+		<li>subject_teachingType-&gt;хроника</li>
+		<li>subject_teachingType-&gt;руководство</li>
+		<li>subject_teachingType-&gt;техника</li>
+
+		<li>TM_randNoun_Magic-&gt;Смерть</li>
+		<li>TM_randNoun_Magic-&gt;Жизнь</li>
+		<li>TM_randNoun_Magic-&gt;Любовь</li>
+		<li>TM_randNoun_Magic-&gt;Мудрость</li>
+		<li>TM_randNoun_Magic-&gt;Заклинание</li>
+		<li>TM_randNoun_Magic-&gt;Амулет</li>
+		<li>TM_randNoun_Magic-&gt;Зелье</li>
+		<li>TM_randNoun_Magic-&gt;Жезл</li>
+		<li>TM_randNoun_Magic-&gt;Заклятие</li>
+		<li>TM_randNoun_Magic-&gt;Ритуал</li>
+		<li>TM_randNoun_Magic-&gt;Алхимия</li>
+		<li>TM_randNoun_Magic-&gt;Чародейство</li>
+		<li>TM_randNoun_Magic-&gt;Волшебник</li>
+		<li>TM_randNoun_Magic-&gt;Ведьма</li>
+		<li>TM_randNoun_Magic-&gt;Чародейка</li>
+		<li>TM_randNoun_Magic-&gt;Мистик</li>
+		<li>TM_randNoun_Magic-&gt;Призыв</li>
+		<li>TM_randNoun_Magic-&gt;Талисман</li>
+		<li>TM_randNoun_Magic-&gt;Оберег</li>
+		<li>TM_randNoun_Magic-&gt;Символ</li>
+		<li>TM_randNoun_Magic-&gt;Гримуар</li>
+		<li>TM_randNoun_Magic-&gt;Тайны</li>
+		<li>TM_randNoun_Magic-&gt;Вызов</li>
+		<li>TM_randNoun_Magic-&gt;Проклятие</li>
+		<li>TM_randNoun_Magic-&gt;Порча</li>
+		<li>TM_randNoun_Magic-&gt;Гадание</li>
+		<li>TM_randNoun_Magic-&gt;Некромантия</li>
+		<li>TM_randNoun_Magic-&gt;Книга заклинаний</li>
+		<li>TM_randNoun_Magic-&gt;Фамилиар</li>
+		<li>TM_randNoun_Magic-&gt;Эликсир</li>
+		<li>TM_randNoun_Magic-&gt;Ковен</li>
+		<li>TM_randNoun_Magic-&gt;Оракул</li>
+		<li>TM_randNoun_Magic-&gt;Провидец</li>
+		<li>TM_randNoun_Magic-&gt;Руны</li>
+
+		<li>subject_Magic-&gt;Смерть</li>
+		<li>subject_Magic-&gt;Жизнь</li>
+		<li>subject_Magic-&gt;Сила</li>
+		<li>subject_Magic-&gt;Огонь</li>
+		<li>subject_Magic-&gt;Лёд</li>
+		<li>subject_Magic-&gt;Молния</li>
+		<li>subject_Magic-&gt;Тайное знание</li>
+		<li>subject_Magic-&gt;Магия</li>
+		<li>subject_Magic-&gt;Ветер</li>
+		<li>subject_Magic-&gt;Земля</li>
+		<li>subject_Magic-&gt;Вода</li>
+		<li>subject_Magic-&gt;Дух</li>
+		<li>subject_Magic-&gt;Тьма</li>
+		<li>subject_Magic-&gt;Свет</li>
+		<li>subject_Magic-&gt;Время</li>
+		<li>subject_Magic-&gt;Иллюзия</li>
+		<li>subject_Magic-&gt;Исцеление</li>
+		<li>subject_Magic-&gt;Превращение</li>
+		<li>subject_Magic-&gt;Призыв</li>
+		<li>subject_Magic-&gt;Алхимия</li>
+		<li>subject_Magic-&gt;Некромантия</li>
+		<li>subject_Magic-&gt;Чары</li>
+		<li>subject_Magic-&gt;Руны</li>
+		<li>subject_Magic-&gt;Гадание</li>
+		<li>subject_Magic-&gt;Мистицизм</li>
+		<li>subject_Magic-&gt;Астральная проекция</li>
+		<li>subject_Magic-&gt;Телекинез</li>
+		<li>subject_Magic-&gt;Телепатия</li>
+		<li>subject_Magic-&gt;Оборотничество</li>
+		<li>subject_Magic-&gt;Стихии</li>
+		<li>subject_Magic-&gt;Порталы</li>
+		<li>subject_Magic-&gt;Сновидение</li>
+		<li>subject_Magic-&gt;Печати</li>
+		<li>subject_Magic-&gt;Фамилиары</li>
+		<li>subject_Magic-&gt;Порчи</li>
+		<li>subject_Magic-&gt;Проклятия</li>
+		<li>subject_Magic-&gt;Зелья</li>
+		<li>subject_Magic-&gt;Амулеты</li>
+
+		<li>TM_randAdjective_Magic-&gt;Древний</li>
+		<li>TM_randAdjective_Magic-&gt;Волшебный</li>
+		<li>TM_randAdjective_Magic-&gt;Вдохновенный</li>
+		<li>TM_randAdjective_Magic-&gt;Рьяный</li>
+		<li>TM_randAdjective_Magic-&gt;Зловещий</li>
+		<li>TM_randAdjective_Magic-&gt;Хаотичный</li>
+		<li>TM_randAdjective_Magic-&gt;Таинственный</li>
+		<li>TM_randAdjective_Magic-&gt;Загадочный</li>
+		<li>TM_randAdjective_Magic-&gt;Темный</li>
+		<li>TM_randAdjective_Magic-&gt;Могущественный</li>
+		<li>TM_randAdjective_Magic-&gt;Эфирный</li>
+		<li>TM_randAdjective_Magic-&gt;Запретный</li>
+		<li>TM_randAdjective_Magic-&gt;Замысловатый</li>
+		<li>TM_randAdjective_Magic-&gt;Эзотерический</li>
+		<li>TM_randAdjective_Magic-&gt;Божественный</li>
+		<li>TM_randAdjective_Magic-&gt;Призрачный</li>
+
+		<li>TM_randTheme_Magic-&gt;знание</li>
+		<li>TM_randTheme_Magic-&gt;понимание</li>
+		<li>TM_randTheme_Magic-&gt;сила</li>
+		<li>TM_randTheme_Magic-&gt;преображение</li>
+		<li>TM_randTheme_Magic-&gt;тайна</li>
+		<li>TM_randTheme_Magic-&gt;просветление</li>
+		<li>TM_randTheme_Magic-&gt;равновесие</li>
+		<li>TM_randTheme_Magic-&gt;защита</li>
+		<li>TM_randTheme_Magic-&gt;исцеление</li>
+		<li>TM_randTheme_Magic-&gt;мудрость</li>
+		<li>TM_randTheme_Magic-&gt;открытие</li>
+		<li>TM_randTheme_Magic-&gt;творение</li>
+		<li>TM_randTheme_Magic-&gt;наследие</li>
+		<li>TM_randTheme_Magic-&gt;алхимия</li>
+		<li>TM_randTheme_Magic-&gt;судьба</li>
+		<li>TM_randTheme_Magic-&gt;гармония</li>
+		<li>TM_randTheme_Magic-&gt;природа</li>
+
+		<li>TM_randNoun_Might-&gt;Битва</li>
+		<li>TM_randNoun_Might-&gt;Война</li>
+		<li>TM_randNoun_Might-&gt;Схватка</li>
+		<li>TM_randNoun_Might-&gt;Борьба</li>
+		<li>TM_randNoun_Might-&gt;Конфликт</li>
+		<li>TM_randNoun_Might-&gt;Завоевание</li>
+		<li>TM_randNoun_Might-&gt;Победа</li>
+		<li>TM_randNoun_Might-&gt;Триумф</li>
+		<li>TM_randNoun_Might-&gt;Слава</li>
+		<li>TM_randNoun_Might-&gt;Доблесть</li>
+		<li>TM_randNoun_Might-&gt;Героизм</li>
+		<li>TM_randNoun_Might-&gt;Оружие</li>
+		<li>TM_randNoun_Might-&gt;Щит</li>
+		<li>TM_randNoun_Might-&gt;Доспехи</li>
+		<li>TM_randNoun_Might-&gt;Меч</li>
+		<li>TM_randNoun_Might-&gt;Топор</li>
+		<li>TM_randNoun_Might-&gt;Копье</li>
+		<li>TM_randNoun_Might-&gt;Лук</li>
+		<li>TM_randNoun_Might-&gt;Стрела</li>
+		<li>TM_randNoun_Might-&gt;Испытание</li>
+		<li>TM_randNoun_Might-&gt;Бой</li>
+		<li>TM_randNoun_Might-&gt;Воин</li>
+		<li>TM_randNoun_Might-&gt;Гладиатор</li>
+		<li>TM_randNoun_Might-&gt;Наемник</li>
+		<li>TM_randNoun_Might-&gt;Рыцарь</li>
+		<li>TM_randNoun_Might-&gt;Чемпион</li>
+		<li>TM_randNoun_Might-&gt;Солдат</li>
+		<li>TM_randNoun_Might-&gt;Боец</li>
+		<li>TM_randNoun_Might-&gt;Самурай</li>
+		<li>TM_randNoun_Might-&gt;Ниндзя</li>
+		<li>TM_randNoun_Might-&gt;Убийца</li>
+		<li>TM_randNoun_Might-&gt;Коммандос</li>
+		<li>TM_randNoun_Might-&gt;Берсерк</li>
+		<li>TM_randNoun_Might-&gt;Паладин</li>
+
+		<li>subject_Might-&gt;Битва</li>
+		<li>subject_Might-&gt;Война</li>
+		<li>subject_Might-&gt;Конфликт</li>
+		<li>subject_Might-&gt;Бой</li>
+		<li>subject_Might-&gt;Схватка</li>
+		<li>subject_Might-&gt;Борьба</li>
+		<li>subject_Might-&gt;Завоевание</li>
+		<li>subject_Might-&gt;Победа</li>
+		<li>subject_Might-&gt;Триумф</li>
+		<li>subject_Might-&gt;Слава</li>
+		<li>subject_Might-&gt;Доблесть</li>
+		<li>subject_Might-&gt;Героизм</li>
+		<li>subject_Might-&gt;Оружие</li>
+		<li>subject_Might-&gt;Тактика</li>
+		<li>subject_Might-&gt;Стратегия</li>
+		<li>subject_Might-&gt;Военное дело</li>
+		<li>subject_Might-&gt;Стычка</li>
+		<li>subject_Might-&gt;Штурм</li>
+		<li>subject_Might-&gt;Оборона</li>
+		<li>subject_Might-&gt;Боевые искусства</li>
+		<li>subject_Might-&gt;Поединок</li>
+		<li>subject_Might-&gt;Аренные бои</li>
+		<li>subject_Might-&gt;Военное дело</li>
+		<li>subject_Might-&gt;Фехтование</li>
+		<li>subject_Might-&gt;Стрельба из лука</li>
+		<li>subject_Might-&gt;Рукопашный бой</li>
+		<li>subject_Might-&gt;Ближний бой</li>
+		<li>subject_Might-&gt;Кодекс воина</li>
+		<li>subject_Might-&gt;Командование</li>
+		<li>subject_Might-&gt;Засада</li>
+		<li>subject_Might-&gt;Осада</li>
+		<li>subject_Might-&gt;Партизанская война</li>
+		<li>subject_Might-&gt;Построение</li>
+		<li>subject_Might-&gt;Поле боя</li>
+		<li>subject_Might-&gt;Дух воина</li>
+
+		<li>TM_randAdjective_Might-&gt;Легендарный</li>
+		<li>TM_randAdjective_Might-&gt;Героический</li>
+		<li>TM_randAdjective_Might-&gt;Бесстрашный</li>
+		<li>TM_randAdjective_Might-&gt;Доблестный</li>
+		<li>TM_randAdjective_Might-&gt;Искусный</li>
+		<li>TM_randAdjective_Might-&gt;Храбрый</li>
+		<li>TM_randAdjective_Might-&gt;Свирепый</li>
+		<li>TM_randAdjective_Might-&gt;Грозный</li>
+		<li>TM_randAdjective_Might-&gt;Могучий</li>
+		<li>TM_randAdjective_Might-&gt;Быстрый</li>
+		<li>TM_randAdjective_Might-&gt;Проворный</li>
+		<li>TM_randAdjective_Might-&gt;Хитрый</li>
+		<li>TM_randAdjective_Might-&gt;Упорный</li>
+		<li>TM_randAdjective_Might-&gt;Живучий</li>
+		<li>TM_randAdjective_Might-&gt;Стойкий</li>
+		<li>TM_randAdjective_Might-&gt;Отважный</li>
+		<li>TM_randAdjective_Might-&gt;Решительный</li>
+		<li>TM_randAdjective_Might-&gt;Смелый</li>
+		<li>TM_randAdjective_Might-&gt;Несгибаемый</li>
+		<li>TM_randAdjective_Might-&gt;Бдительный</li>
+		<li>TM_randAdjective_Might-&gt;Неудержимый</li>
+		<li>TM_randAdjective_Might-&gt;Неумолимый</li>
+		<li>TM_randAdjective_Might-&gt;Беспощадный</li>
+		<li>TM_randAdjective_Might-&gt;Тактический</li>
+		<li>TM_randAdjective_Might-&gt;Стратегический</li>
+		<li>TM_randAdjective_Might-&gt;Дисциплинированный</li>
+		<li>TM_randAdjective_Might-&gt;Благородный</li>
+		<li>TM_randAdjective_Might-&gt;Жестокий</li>
+		<li>TM_randAdjective_Might-&gt;Смертоносный</li>
+		<li>TM_randAdjective_Might-&gt;Благородный</li>
+		<li>TM_randAdjective_Might-&gt;Безжалостный</li>
+
+		<li>TM_randTheme_Might-&gt;Победа</li>
+		<li>TM_randTheme_Might-&gt;Честь</li>
+		<li>TM_randTheme_Might-&gt;Доблесть</li>
+		<li>TM_randTheme_Might-&gt;Мужество</li>
+		<li>TM_randTheme_Might-&gt;Слава</li>
+		<li>TM_randTheme_Might-&gt;Стратегия</li>
+		<li>TM_randTheme_Might-&gt;Тактика</li>
+		<li>TM_randTheme_Might-&gt;Лидерство</li>
+		<li>TM_randTheme_Might-&gt;Братство</li>
+		<li>TM_randTheme_Might-&gt;Жертвенность</li>
+		<li>TM_randTheme_Might-&gt;Единство</li>
+		<li>TM_randTheme_Might-&gt;Храбрость</li>
+		<li>TM_randTheme_Might-&gt;Стойкость</li>
+		<li>TM_randTheme_Might-&gt;Долг</li>
+		<li>TM_randTheme_Might-&gt;Справедливость</li>
+		<li>TM_randTheme_Might-&gt;Уважение</li>
+		<li>TM_randTheme_Might-&gt;Товарищество</li>
+		<li>TM_randTheme_Might-&gt;Верность</li>
+		<li>TM_randTheme_Might-&gt;Тренировка</li>
+		<li>TM_randTheme_Might-&gt;Подготовка</li>
+		<li>TM_randTheme_Might-&gt;Боеготовность</li>
+		<li>TM_randTheme_Might-&gt;Разрешение конфликтов</li>
+		<li>TM_randTheme_Might-&gt;Выносливость</li>
+		<li>TM_randTheme_Might-&gt;Мастерство</li>
+		<li>TM_randTheme_Might-&gt;Дух воина</li>
+		<li>TM_randTheme_Might-&gt;Поле боя</li>
+		<li>TM_randTheme_Might-&gt;Командование</li>
+		<li>TM_randTheme_Might-&gt;Наследие</li>
+		<li>TM_randTheme_Might-&gt;Боевые искусства</li>
+		<li>TM_randTheme_Might-&gt;Мастерство оружия</li>
+		<li>TM_randTheme_Might-&gt;Выживание</li>
+		<li>TM_randTheme_Might-&gt;Тренировочный режим</li>
+		<li>TM_randTheme_Might-&gt;Боевая дисциплина</li>
+		<li>TM_randTheme_Might-&gt;Сила</li>
+		<li>TM_randTheme_Might-&gt;Выносливость</li>
+		<li>TM_randTheme_Might-&gt;Настойчивость</li>
+		<li>TM_randTheme_Might-&gt;Умение</li>
+		<li>TM_randTheme_Might-&gt;Тренировка</li>
+	</TM_Book_Pools.rulePack.rulesStrings>
+</LanguageData>

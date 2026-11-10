@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManaDrain.label>saída de maná</ManaDrain.label>
+  <ManaDrain.letterLabel>saída de maná</ManaDrain.letterLabel>
+  <ManaDrain.letterText>A orientação celestial do planeta desloca-se, provocando a fuga de maná. Todos os seres configurados para a força mágica vão lentamente perder Manu .\n\n Seres podem ficar fisicamente doentes se não tiverem maná.</ManaDrain.letterText>
+
+  <ManaSurge.label>maré de maná</ManaSurge.label>
+  <ManaSurge.letterLabel>maré de maná</ManaSurge.letterLabel>
+  <ManaSurge.letterText>A orientação celestial do planeta mudou-se, provocando uma maré de maná. Todos os seres configurados para a força mágica receberão Manu a uma velocidade maior.</ManaSurge.letterText>
+
+  <Disease_ManaSickness.label>doença do maná</Disease_ManaSickness.label>
+  <Disease_ManaSickness.letterLabel>doença do maná</Disease_ManaSickness.letterLabel>
+  <Disease_ManaSickness.letterText>Se você tiver uma cama médica e um médico, fique doente por causa de 0 1 .\n\n. Certifique-se de que o se recebe o tratamento adequado e passa o máximo de tempo na cama possível. Não será possível acumular manu durante esse período.</Disease_ManaSickness.letterText>
+
+  <ElementalAssault.label>ataque básico</ElementalAssault.label>
+  <ElementalAssault.letterLabel>ataque básico</ElementalAssault.letterLabel>
+  <ElementalAssault.letterText>Os primórdios hostis criaram uma brecha no vosso mundo e preparam-se para enviar comandos de assalto através de uma rutura !\n\n A rutura provoca o caos na atmosfera, porque a energia é derramada através da rutura para o vosso mundo. Cada elemento do rift tem os seguintes efeitos :\n\n Rutura de fogo: chuvas de meteoros e ondas de calor .\n Fenda de terra: sedimentos tóxicos e faz os animais enlouquecerem\n Rutura de gelo: granizo e redução rápida da temperatura\n espaçamento: tempestades de tempestade\n\n</ElementalAssault.letterText>
+
+  <WanderingLich.label>Lente itinerante</WanderingLich.label>
+  <WanderingLich.letterLabel>Lente itinerante</WanderingLich.letterLabel>
+  <WanderingLich.letterText>Um velho leque entrou nesta área e está a preparar-se para atacar a sua colónia .\n\n Leach, é um ser poderoso em si mesmo, mas o seu verdadeiro poder é a capacidade de criar uma vida animada a partir dos cadáveres dos mortos. Este leque é um ser antigo que despreza tudo o que é vivo, e a vossa companhia divertida de seres vivos ainda resistiu a ser destruída. Ele se esforçará para terminar a sua história de sobrevivência, criando uma horda de não vida para esmagar a vossa defesa. Leek irá criar novos esqueletos guerreiros periodicamente para atacar a colônia; Ao permitir que a larva complete o ritual ao lado de um cadáver nu, aumentará a possibilidade de um esqueleto gigante. Em última análise, o leque atacará a própria colônia se as ondas de não vida não conseguirem realizar esta tarefa primeiro.</WanderingLich.letterText>
+
+  <DemonAssault.label>Ataque demoníaco</DemonAssault.label>
+  <DemonAssault.letterLabel>Ataque demoníaco</DemonAssault.letterLabel>
+  <DemonAssault.letterText>O fim está perto. Um demónio louco está a atacar a sua colónia! Esta besta tem uma série de ataques e táticas complexas. Fogo e cinzas cairão do céu. Não tem muito tempo para se preparar .\n\n Boa sorte!</DemonAssault.letterText>
+
+  <TM_ManaStorm.label>tempestade de maná</TM_ManaStorm.label>
+  <TM_ManaStorm.letterLabel>Tempestade de maná</TM_ManaStorm.letterLabel>
+  <TM_ManaStorm.letterText>Durante a tempestade, as manas de tentar usar manu para realizar uma intenção mágica externa ao feitiço, prejudicarão o feitiço proporcionalmente ao custo do feitiço. Este estrago é feito antes do feitiço começar. O uso informalizado do maná e o uso interno da magia, tais como a transmissão de maná ou a dispersão de encantos, não são afetados. Círculos mágicos ou truques não podem ser usados durante este evento. Enquanto a tempestade maná está ativa, os custos de energia são reduzidos pela metade e a limitação da redução do maná é removida.</TM_ManaStorm.letterText>
+
+
+</LanguageData>

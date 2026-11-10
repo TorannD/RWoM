@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Sprint start -->
+
+  <TM_Sprint.label>Спринт</TM_Sprint.label>
+  <TM_Sprint.description>Активує або деактивує стійкий бойовий навик спринт - значно збільшує швидкість руху, але викликає виснаження. Потрібно 30 витривалості для підтримки</TM_Sprint.description>
+
+  <TM_Sprint_I.label>Спринт</TM_Sprint_I.label>
+  <TM_Sprint_I.description>Активує або деактивує стійкий бойовий навик спринт - значно збільшує швидкість руху, але викликає виснаження. Потрібно 30 витривалості для підтримки</TM_Sprint_I.description>
+
+  <TM_Sprint_II.label>Спринт</TM_Sprint_II.label>
+  <TM_Sprint_II.description>Активує або деактивує стійкий бойовий навик спринт - значно збільшує швидкість руху, але викликає виснаження. Потрібно 30 витривалості для підтримки</TM_Sprint_II.description>
+
+  <TM_Sprint_III.label>Спринт</TM_Sprint_III.label>
+  <TM_Sprint_III.description>Активує або деактивує стійкий бойовий навик спринт - значно збільшує швидкість руху, але викликає виснаження. Потрібно 30 витривалості для підтримки</TM_Sprint_III.description>
+
+
+  <!-- Fortitude start -->
+
+  <TM_Fortitude.label>Стійкість</TM_Fortitude.label>
+  <TM_Fortitude.description>Пом&apos;якшує збитки на встановлене значення при кожному пораненні.
+Базове пом&apos;якшення: 2</TM_Fortitude.description>
+
+
+  <!-- Grapple Start -->
+
+  <TM_Grapple.label>Захоплення</TM_Grapple.label>
+  <TM_Grapple.description>З силою зачіпає і смикає противника до Гладіатора, а потім люто розмахує ногою, збиваючи противника з ніг.
+
+Час застосування: 1s
+Дистанція: 12</TM_Grapple.description>
+
+  <TM_Grapple_I.label>Захоплення</TM_Grapple_I.label>
+  <TM_Grapple_I.description>З силою зачіпає і смикає противника до Гладіатора, а потім люто розмахує ногою, збиваючи противника з ніг.
+Час застосування: .6s
+Дистанція: 14</TM_Grapple_I.description>
+
+  <TM_Grapple_II.label>Захоплення</TM_Grapple_II.label>
+  <TM_Grapple_II.description>З силою зачіпає і смикає противника до Гладіатора, а потім люто розмахує ногою, збиваючи противника з ніг.
+
+Час застосування: .4s
+Дистанція: 17</TM_Grapple_II.description>
+
+  <TM_Grapple_III.label>Захоплення</TM_Grapple_III.label>
+  <TM_Grapple_III.description>З силою зачіпає і смикає противника до Гладіатора, а потім люто розмахує ногою, збиваючи противника з ніг.
+
+Час застосування: .2s
+Дистанція: 20</TM_Grapple_III.description>
+
+
+  <!-- Cleave Start -->
+
+  <TM_Cleave.label>Розкол</TM_Cleave.label>
+  <TM_Cleave.description>Виконує потужний, розмашистий удар, який може вразити кілька ворогів, розташованих поруч з метою. Поки Гладіатор володіє достатньою витривалістю, ця здатність спрацьовує автоматично, коли гладіатор виконує атаку ближнього бою. Шанс розколу розраховується виходячи з маси зброї - більш важка зброя з більшою ймовірністю зробить розкол.</TM_Cleave.description>
+
+
+  <!-- Whirlwind -->
+
+  <TM_Whirlwind.label>Вихор</TM_Whirlwind.label>
+  <TM_Whirlwind.description>Гладіатор кидається в шалену атаку, танцюючи вперед в лютому вихорі сталі і смерті.</TM_Whirlwind.description>
+
+
+</LanguageData>

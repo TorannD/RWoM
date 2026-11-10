@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- leap as a flying object -->
+
+  <FlyingObject_Spinning.label>літаючий об&apos;єкт, який обертається</FlyingObject_Spinning.label>
+  <FlyingObject_SpinningBone.label>літаючий об&apos;єкт, який обертається</FlyingObject_SpinningBone.label>
+  <FlyingObject_Advanced.label>літаючий об&apos;єкт, який робить багато речей</FlyingObject_Advanced.label>
+  <Projectile_Default.label>типово</Projectile_Default.label>
+
+
+  <TM_CompVerb.label>вторинний цілевказівник</TM_CompVerb.label>
+  <TM_CompVerb.description>слово, що використовується у вторинному цілевказуванні</TM_CompVerb.description>
+
+</LanguageData>

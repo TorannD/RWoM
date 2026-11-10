@@ -1,0 +1,102 @@
+<LanguageData>
+  <TM_RuneCarvedPartHD.label>Вырезанная руна</TM_RuneCarvedPartHD.label>
+  <TM_RuneCarvedPartHD.description>Наделяет часть тела рунической энергией.</TM_RuneCarvedPartHD.description>
+  <TM_RuneCarvedPartHD.stages.0.label>Рунический (I)</TM_RuneCarvedPartHD.stages.0.label>
+  <TM_RuneCarvedPartHD.stages.1.label>Рунический (II)</TM_RuneCarvedPartHD.stages.1.label>
+  <TM_RuneCarvedPartHD.stages.2.label>Рунический (III)</TM_RuneCarvedPartHD.stages.2.label>
+  <TM_RuneCarvedPartHD.stages.3.label>Рунический (IV)</TM_RuneCarvedPartHD.stages.3.label>
+  <TM_ArcaneTatooPartHD.label>руническое тело</TM_ArcaneTatooPartHD.label>
+  <TM_ArcaneTatooPartHD.description>На теле выгравированы тайные символы и знаки.</TM_ArcaneTatooPartHD.description>
+  <TM_ArcaneTatooPartHD.stages.0.label>I</TM_ArcaneTatooPartHD.stages.0.label>
+  <TM_ArcaneTatooPartHD.stages.1.label>II</TM_ArcaneTatooPartHD.stages.1.label>
+  <TM_ArcaneTatooPartHD.stages.2.label>III</TM_ArcaneTatooPartHD.stages.2.label>
+  <TM_ArcaneTatooPartHD.stages.3.label>IV</TM_ArcaneTatooPartHD.stages.3.label>
+  <TM_SigilPainHD.label>печать сигилов</TM_SigilPainHD.label>
+  <TM_SigilPainHD.description>Поддержание сигилов сверх их обычных возможностей напрягает заклинателя, причиняя боль.</TM_SigilPainHD.description>
+  <TM_SigilPainHD.stages.0.label>незначительный</TM_SigilPainHD.stages.0.label>
+  <TM_SigilPainHD.stages.1.label>I</TM_SigilPainHD.stages.1.label>
+  <TM_SigilPainHD.stages.2.label>II</TM_SigilPainHD.stages.2.label>
+  <TM_SigilPainHD.stages.3.label>III</TM_SigilPainHD.stages.3.label>
+  <TM_SigilPainHD.stages.4.label>IV</TM_SigilPainHD.stages.4.label>
+  <TM_SigilPainHD.stages.5.label>V</TM_SigilPainHD.stages.5.label>
+  <TM_SigilPainHD.stages.6.label>VI</TM_SigilPainHD.stages.6.label>
+  <TM_SigilPainHD.stages.7.label>VII</TM_SigilPainHD.stages.7.label>
+  <TM_SiphonBrandHD.label>Клеймо сифона</TM_SiphonBrandHD.label>
+  <TM_SiphonBrandHD.description>Медленно передаёт ману получателю клейма.</TM_SiphonBrandHD.description>
+  <TM_SiphonBrandHD.stages.0.label>бездействующий</TM_SiphonBrandHD.stages.0.label>
+  <TM_SiphonBrandHD.stages.1.label />
+  <TM_SiphonBrandHD.stages.2.label>бурлящий</TM_SiphonBrandHD.stages.2.label>
+  <TM_ProtectionBrandHD.label>Защитное клеймо</TM_ProtectionBrandHD.label>
+  <TM_ProtectionBrandHD.description>Руна защиты способна предотвратить нанесение урона носителю, но при этом использует часть или весь свой заряд; эта руна перезаряжается с течением времени.</TM_ProtectionBrandHD.description>
+  <TM_ProtectionBrandHD.stages.0.label>бездействующий</TM_ProtectionBrandHD.stages.0.label>
+  <TM_ProtectionBrandHD.stages.1.label />
+  <TM_ProtectionBrandHD.stages.2.label>бурлящий</TM_ProtectionBrandHD.stages.2.label>
+  <TM_EmotionBrandHD.label>Клеймо эмоций</TM_EmotionBrandHD.label>
+  <TM_EmotionBrandHD.description>Заставляет настроение повышаться быстрее и снижаться медленнее; имеет шанс восстановить пешку после психического срыва при срыве.</TM_EmotionBrandHD.description>
+  <TM_EmotionBrandHD.stages.0.label>бездействующий</TM_EmotionBrandHD.stages.0.label>
+  <TM_EmotionBrandHD.stages.1.label />
+  <TM_EmotionBrandHD.stages.2.label>бурлящий</TM_EmotionBrandHD.stages.2.label>
+  <TM_FitnessBrandHD.label>Клеймо физической формы</TM_FitnessBrandHD.label>
+  <TM_FitnessBrandHD.description>Увеличивает перемещение и манипуляции.</TM_FitnessBrandHD.description>
+  <TM_FitnessBrandHD.stages.0.label>бездействующий</TM_FitnessBrandHD.stages.0.label>
+  <TM_FitnessBrandHD.stages.1.label>I</TM_FitnessBrandHD.stages.1.label>
+  <TM_FitnessBrandHD.stages.2.label>II</TM_FitnessBrandHD.stages.2.label>
+  <TM_FitnessBrandHD.stages.3.label>III</TM_FitnessBrandHD.stages.3.label>
+  <TM_FitnessBrandHD.stages.4.label>IV</TM_FitnessBrandHD.stages.4.label>
+  <TM_FitnessBrandHD.stages.5.label>бурлящий I</TM_FitnessBrandHD.stages.5.label>
+  <TM_FitnessBrandHD.stages.6.label>бурлящий II</TM_FitnessBrandHD.stages.6.label>
+  <TM_FitnessBrandHD.stages.7.label>бурлящий III</TM_FitnessBrandHD.stages.7.label>
+  <TM_FitnessBrandHD.stages.8.label>бурлящий IV</TM_FitnessBrandHD.stages.8.label>
+  <TM_FitnessBrandHD.stages.9.label>бурлящий V</TM_FitnessBrandHD.stages.9.label>
+  <TM_FitnessBrandHD.stages.10.label>бурлящий VI</TM_FitnessBrandHD.stages.10.label>
+  <TM_AwarenessBrandHD.label>Клеймо восприятия</TM_AwarenessBrandHD.label>
+  <TM_AwarenessBrandHD.description>Усиливает чувства и восприятие.</TM_AwarenessBrandHD.description>
+  <TM_AwarenessBrandHD.stages.0.label>неактивно</TM_AwarenessBrandHD.stages.0.label>
+  <TM_AwarenessBrandHD.stages.1.label>I</TM_AwarenessBrandHD.stages.1.label>
+  <TM_AwarenessBrandHD.stages.2.label>II</TM_AwarenessBrandHD.stages.2.label>
+  <TM_AwarenessBrandHD.stages.3.label>III</TM_AwarenessBrandHD.stages.3.label>
+  <TM_AwarenessBrandHD.stages.4.label>IV</TM_AwarenessBrandHD.stages.4.label>
+  <TM_AwarenessBrandHD.stages.5.label>бурлящий I</TM_AwarenessBrandHD.stages.5.label>
+  <TM_AwarenessBrandHD.stages.6.label>бурлящий II</TM_AwarenessBrandHD.stages.6.label>
+  <TM_AwarenessBrandHD.stages.7.label>бурлящий III</TM_AwarenessBrandHD.stages.7.label>
+  <TM_AwarenessBrandHD.stages.8.label>бурлящий IV</TM_AwarenessBrandHD.stages.8.label>
+  <TM_AwarenessBrandHD.stages.9.label>бурлящий V</TM_AwarenessBrandHD.stages.9.label>
+  <TM_AwarenessBrandHD.stages.10.label>бурлящий VI</TM_AwarenessBrandHD.stages.10.label>
+  <TM_VitalityBrandHD.label>Клеймо жизненной силы</TM_VitalityBrandHD.label>
+  <TM_VitalityBrandHD.description>Повышает жизненный тонус и восстановление.</TM_VitalityBrandHD.description>
+  <TM_VitalityBrandHD.stages.0.label>бездействующий</TM_VitalityBrandHD.stages.0.label>
+  <TM_VitalityBrandHD.stages.1.label>I</TM_VitalityBrandHD.stages.1.label>
+  <TM_VitalityBrandHD.stages.2.label>II</TM_VitalityBrandHD.stages.2.label>
+  <TM_VitalityBrandHD.stages.3.label>III</TM_VitalityBrandHD.stages.3.label>
+  <TM_VitalityBrandHD.stages.4.label>IV</TM_VitalityBrandHD.stages.4.label>
+  <TM_VitalityBrandHD.stages.5.label>бурлящий I</TM_VitalityBrandHD.stages.5.label>
+  <TM_VitalityBrandHD.stages.6.label>бурлящий II</TM_VitalityBrandHD.stages.6.label>
+  <TM_VitalityBrandHD.stages.7.label>бурлящий III</TM_VitalityBrandHD.stages.7.label>
+  <TM_VitalityBrandHD.stages.8.label>бурлящий IV</TM_VitalityBrandHD.stages.8.label>
+  <TM_VitalityBrandHD.stages.9.label>бурлящий V</TM_VitalityBrandHD.stages.9.label>
+  <TM_VitalityBrandHD.stages.10.label>бурлящий VI</TM_VitalityBrandHD.stages.10.label>
+  <TM_GolemancyEfficiencyHD.label>Мысленная связь</TM_GolemancyEfficiencyHD.label>
+  <TM_GolemancyEfficiencyHD.description>Голем связан с големантом и приобрел более высокое состояние осознания.</TM_GolemancyEfficiencyHD.description>
+  <TM_GolemancyEfficiencyHD.stages.0.label />
+  <TM_GolemancyEfficiencyHD.stages.1.label>I</TM_GolemancyEfficiencyHD.stages.1.label>
+  <TM_GolemancyEfficiencyHD.stages.2.label>II</TM_GolemancyEfficiencyHD.stages.2.label>
+  <TM_GolemancyEfficiencyHD.stages.3.label>III</TM_GolemancyEfficiencyHD.stages.3.label>
+  <TM_GolemancyEfficiencyHD.stages.4.label>IV</TM_GolemancyEfficiencyHD.stages.4.label>
+  <TM_GolemancyEfficiencyHD.stages.5.label>V</TM_GolemancyEfficiencyHD.stages.5.label>
+  <TM_GolemancyVersatilityHD.label>Связь с големом</TM_GolemancyVersatilityHD.label>
+  <TM_GolemancyVersatilityHD.description>Големант связан с големом и способен откачивать часть его энергии для личного использования.</TM_GolemancyVersatilityHD.description>
+  <TM_GolemancyVersatilityHD.stages.0.label />
+  <TM_GolemancyVersatilityHD.stages.1.label>I</TM_GolemancyVersatilityHD.stages.1.label>
+  <TM_GolemancyVersatilityHD.stages.2.label>II</TM_GolemancyVersatilityHD.stages.2.label>
+  <TM_GolemancyVersatilityHD.stages.3.label>III</TM_GolemancyVersatilityHD.stages.3.label>
+  <TM_GolemancyVersatilityHD.stages.4.label>IV</TM_GolemancyVersatilityHD.stages.4.label>
+  <TM_GolemancyVersatilityHD.stages.5.label>V</TM_GolemancyVersatilityHD.stages.5.label>
+  <TM_GolemancyPowerHD.label>Аугментация голема</TM_GolemancyPowerHD.label>
+  <TM_GolemancyPowerHD.description>Голем связан с големантом, способным увеличивать мощность и выносливость голема.</TM_GolemancyPowerHD.description>
+  <TM_GolemancyPowerHD.stages.0.label />
+  <TM_GolemancyPowerHD.stages.1.label>I</TM_GolemancyPowerHD.stages.1.label>
+  <TM_GolemancyPowerHD.stages.2.label>II</TM_GolemancyPowerHD.stages.2.label>
+  <TM_GolemancyPowerHD.stages.3.label>III</TM_GolemancyPowerHD.stages.3.label>
+  <TM_GolemancyPowerHD.stages.4.label>IV</TM_GolemancyPowerHD.stages.4.label>
+  <TM_GolemancyPowerHD.stages.5.label>V</TM_GolemancyPowerHD.stages.5.label>
+</LanguageData>

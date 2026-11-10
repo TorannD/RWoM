@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ApothecaryAntitoxin.label>Антидот</TM_ApothecaryAntitoxin.label>
+  <TM_ApothecaryGoldenHour.label>Набір золотої години</TM_ApothecaryGoldenHour.label>
+  <TM_ApothecaryAntitoxin.description>Дотиком послаблює харчове отруєння на 20%. Раз на випадок хвороби. Витрачає 20% запасу трав. Відновлення 40 секунд.</TM_ApothecaryAntitoxin.description>
+  <TM_ApothecaryGoldenHour.description>Не рухаючись, лікуйте до чотирьох союзників у межах восьми клітин 20 секунд. Лікує до 20 одиниць свіжих ран кожного та вдвічі знижує кровотечу. Витрати: 60% трав і чотири рослинні ліки в інвентарі чи поруч. Відновлення дві доби.</TM_ApothecaryGoldenHour.description>
+</LanguageData>

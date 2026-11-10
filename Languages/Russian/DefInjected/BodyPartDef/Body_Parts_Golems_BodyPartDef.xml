@@ -1,0 +1,236 @@
+<LanguageData><!-- v1.5\Defs\GolemDefs\Body_Parts_Golems.xml-->
+	<!--          EN: torso-->
+	<Golem_Body.label>туловище</Golem_Body.label>
+	<!--          EN: back-->
+	<Golem_Back.label>спина</Golem_Back.label>
+	<!--           EN: spine-->
+	<Golem_Spine.label>позвоночник</Golem_Spine.label>
+	<!--             EN: abdomen-->
+	<Golem_Abdomen.label>брюшная полость</Golem_Abdomen.label>
+	<!--          EN: guts-->
+	<Golem_Guts.label>внутренности</Golem_Guts.label>
+	<!--           EN: chest-->
+	<Golem_Chest.label>грудь</Golem_Chest.label>
+	<!--           EN: heart-->
+	<Golem_Heart.label>сердце</Golem_Heart.label>
+	<!--             EN: ribcage-->
+	<Golem_Ribcage.label>грудная клетка</Golem_Ribcage.label>
+	<!--          EN: lung-->
+	<Golem_Lung.label>легкое</Golem_Lung.label>
+	<!--          EN: neck-->
+	<Golem_Neck.label>шея</Golem_Neck.label>
+	<!--          EN: head-->
+	<Golem_Head.label>голова</Golem_Head.label>
+	<!--           EN: skull-->
+	<Golem_Skull.label>череп</Golem_Skull.label>
+	<!--           EN: brain-->
+	<Golem_Brain.label>мозг</Golem_Brain.label>
+	<!--          EN: face-->
+	<Golem_Face.label>лицо</Golem_Face.label>
+	<!--         EN: eye-->
+	<Golem_Eye.label>глаз</Golem_Eye.label>
+	<!--         EN: ear-->
+	<Golem_Ear.label>ухо</Golem_Ear.label>
+	<!--          EN: nose-->
+	<Golem_Nose.label>нос</Golem_Nose.label>
+	<!--         EN: jaw-->
+	<Golem_Jaw.label>челюсть</Golem_Jaw.label>
+	<!--            EN: tongue-->
+	<Golem_Tongue.label>язык</Golem_Tongue.label>
+	<!--              EN: shoulder-->
+	<Golem_Shoulder.label>плечо</Golem_Shoulder.label>
+	<!--              EN: right arm-->
+	<Golem_RightArm.label>правая рука</Golem_RightArm.label>
+	<!--             EN: left arm-->
+	<Golem_LeftArm.label>левая рука</Golem_LeftArm.label>
+	<!--          EN: hand-->
+	<Golem_Hand.label>рука</Golem_Hand.label>
+	<!--           EN: waist-->
+	<Golem_Waist.label>поясница</Golem_Waist.label>
+	<!--         EN: leg-->
+	<Golem_Leg.label>нога</Golem_Leg.label>
+	<!--           EN: femur-->
+	<Golem_Femur.label>бедренная кость</Golem_Femur.label>
+	<!--           EN: tibia-->
+	<Golem_Tibia.label>большеберцовая кость</Golem_Tibia.label>
+	<!--          EN: foot-->
+	<Golem_Foot.label>нога</Golem_Foot.label>
+	<!--          EN: body-->
+	<Mecha_Body.label>тело</Mecha_Body.label>
+	<!--          EN: back plate-->
+	<Mecha_Back.label>задняя пластина</Mecha_Back.label>
+	<!--           EN: spinal-pathway-->
+	<Mecha_Spine.label>спинномозговой канал</Mecha_Spine.label>
+	<!--             EN: abdomen-->
+	<Mecha_Abdomen.label>брюшная полость</Mecha_Abdomen.label>
+	<!--                     EN: energy compactor-->
+	<Mecha_EnergyCompactor.label>уплотнитель энергии</Mecha_EnergyCompactor.label>
+	<!--           EN: chest plate-->
+	<Mecha_Chest.label>нагрудная пластина</Mecha_Chest.label>
+	<!--          EN: CPU-->
+	<Mecha_Core.label>ЦП</Mecha_Core.label>
+	<!--                   EN: processor core-->
+	<Mecha_CoreProcessor.label>ядро процессора</Mecha_CoreProcessor.label>
+	<!--          EN: gorget-->
+	<Mecha_Neck.label>горжет</Mecha_Neck.label>
+	<!--          EN: head frame-->
+	<Mecha_Head.label>каркас головы</Mecha_Head.label>
+	<!--                EN: skull plate-->
+	<Mecha_SkullPlate.label>черепная пластина</Mecha_SkullPlate.label>
+	<!--        EN: AI core-->
+	<Mecha_AI.label>Ядро ИИ</Mecha_AI.label>
+	<!--            EN: optics-->
+	<Mecha_Optics.label>оптика</Mecha_Optics.label>
+	<!--             EN: sensors-->
+	<Mecha_Sensors.label>датчики</Mecha_Sensors.label>
+	<!--                 EN: transmitters-->
+	<Mecha_Transmitter.label>передатчики</Mecha_Transmitter.label>
+	<!--                  EN: left shoulder-->
+	<Mecha_LeftShoulder.label>левое плечо</Mecha_LeftShoulder.label>
+	<!--             EN: left arm-->
+	<Mecha_LeftArm.label>левая рука</Mecha_LeftArm.label>
+	<!--                 EN: mecha-axe-->
+	<Mecha_LeftArm_Axe.label>меха-топор</Mecha_LeftArm_Axe.label>
+	<!--                   EN: mecha-sword-->
+	<Mecha_LeftArm_Sword.label>меха-меч</Mecha_LeftArm_Sword.label>
+	<!--                   EN: right shoulder-->
+	<Mecha_RightShoulder.label>правое плечо</Mecha_RightShoulder.label>
+	<!--              EN: right arm-->
+	<Mecha_RightArm.label>правая рука</Mecha_RightArm.label>
+	<!--                     EN: mecha-hammer-->
+	<Mecha_RightArm_Hammer.label>механический молот</Mecha_RightArm_Hammer.label>
+	<!--          EN: automoton movement base-->
+	<Mecha_Base.label>разбитое тело</Mecha_Base.label>
+	<!--          EN: torso-->
+	<Flesh_Body.label>туловище</Flesh_Body.label>
+	<!--          EN: back-->
+	<Flesh_Back.label>спина</Flesh_Back.label>
+	<!--           EN: spine-->
+	<Flesh_Spine.label>позвоночник</Flesh_Spine.label>
+	<!--           EN: wings-->
+	<Flesh_Wings.label>крылья</Flesh_Wings.label>
+	<!--             EN: abdomen-->
+	<Flesh_Abdomen.label>брюшная полость</Flesh_Abdomen.label>
+	<!--          EN: guts-->
+	<Flesh_Guts.label>внутренности</Flesh_Guts.label>
+	<!--           EN: chest-->
+	<Flesh_Chest.label>грудь</Flesh_Chest.label>
+	<!--           EN: heart-->
+	<Flesh_Heart.label>сердце</Flesh_Heart.label>
+	<!--             EN: ribcage-->
+	<Flesh_Ribcage.label>грудная клетка</Flesh_Ribcage.label>
+	<!--          EN: lung-->
+	<Flesh_Lung.label>легкое</Flesh_Lung.label>
+	<!--          EN: neck-->
+	<Flesh_Neck.label>шея</Flesh_Neck.label>
+	<!--          EN: head-->
+	<Flesh_Head.label>голова</Flesh_Head.label>
+	<!--           EN: skull-->
+	<Flesh_Skull.label>череп</Flesh_Skull.label>
+	<!--           EN: brain-->
+	<Flesh_Brain.label>мозг</Flesh_Brain.label>
+	<!--          EN: face-->
+	<Flesh_Face.label>лицо</Flesh_Face.label>
+	<!--         EN: eye-->
+	<Flesh_Eye.label>глаз</Flesh_Eye.label>
+	<!--              EN: eye-->
+	<Flesh_LowerEye.label>глаз</Flesh_LowerEye.label>
+	<!--             EN: evil eye-->
+	<Flesh_EvilEye.label>злой глаз</Flesh_EvilEye.label>
+	<!--           EN: tusks-->
+	<Flesh_Tusks.label>клыки</Flesh_Tusks.label>
+	<!--         EN: ear-->
+	<Flesh_Ear.label>ухо</Flesh_Ear.label>
+	<!--          EN: nose-->
+	<Flesh_Nose.label>нос</Flesh_Nose.label>
+	<!--         EN: jaw-->
+	<Flesh_Jaw.label>челюсть</Flesh_Jaw.label>
+	<!--            EN: tongue-->
+	<Flesh_Tongue.label>язык</Flesh_Tongue.label>
+	<!--           EN: horns-->
+	<Flesh_Horns.label>рога</Flesh_Horns.label>
+	<!--              EN: shoulder-->
+	<Flesh_Shoulder.label>плечо</Flesh_Shoulder.label>
+	<!--              EN: right arm-->
+	<Flesh_RightArm.label>правая рука</Flesh_RightArm.label>
+	<!--             EN: left arm-->
+	<Flesh_LeftArm.label>левая рука</Flesh_LeftArm.label>
+	<!--          EN: hand-->
+	<Flesh_Hand.label>рука</Flesh_Hand.label>
+	<!--                   EN: left brace-->
+	<Flesh_LeftArm_Brace.label>наруч</Flesh_LeftArm_Brace.label>
+	<!--                     EN: left cleaver-->
+	<Flesh_LeftArm_Cleaver.label>дровокол</Flesh_LeftArm_Cleaver.label>
+	<!--                    EN: right brace-->
+	<Flesh_RightArm_Brace.label>наруч</Flesh_RightArm_Brace.label>
+	<!--                      EN: right cleaver-->
+	<Flesh_RightArm_Cleaver.label>дровокол</Flesh_RightArm_Cleaver.label>
+	<!--           EN: waist-->
+	<Flesh_Waist.label>поясница</Flesh_Waist.label>
+	<!--         EN: leg-->
+	<Flesh_Leg.label>нога</Flesh_Leg.label>
+	<!--           EN: femur-->
+	<Flesh_Femur.label>бедренная кость</Flesh_Femur.label>
+	<!--           EN: tibia-->
+	<Flesh_Tibia.label>большеберцовая кость</Flesh_Tibia.label>
+	<!--          EN: foot-->
+	<Flesh_Foot.label>нога</Flesh_Foot.label>
+	<!--             EN: hollowed weapon slot-->
+	<Hollow_Weapon.label>выдолбленная прорезь для оружия</Hollow_Weapon.label>
+	<!--          EN: hollowed axe-->
+	<Hollow_Axe.label>выдолбленный топор</Hollow_Axe.label>
+	<!--            EN: hollowed staff-->
+	<Hollow_Staff.label>выдолбленный посох</Hollow_Staff.label>
+	<!--           EN: hollow core-->
+	<Hollow_Core.label>полое ядро</Hollow_Core.label>
+	<!--                EN: hollow core-->
+	<Hollow_CoreSlotA.label>полое ядро</Hollow_CoreSlotA.label>
+	<!--                EN: hollow core-->
+	<Hollow_CoreSlotB.label>полое ядро</Hollow_CoreSlotB.label>
+	<!--          EN: stone core-->
+	<Stone_Core.label>каменная ядро</Stone_Core.label>
+	<!--           EN: stone core(a)-->
+	<Stone_SlotA.label>каменная ядро(а)</Stone_SlotA.label>
+	<!--           EN: stone core(b)-->
+	<Stone_SlotB.label>каменная ядро(б)</Stone_SlotB.label>
+	<!--            EN: maharal core-->
+	<Maharal_Core.label>ядро махарала</Maharal_Core.label>
+	<!--             EN: maharal core(a)-->
+	<Maharal_SlotA.label>ядро махарала(а)</Maharal_SlotA.label>
+	<!--             EN: maharal core(b)-->
+	<Maharal_SlotB.label>ядро махарала(б)</Maharal_SlotB.label>
+	<!--          EN: face-->
+	<Straw_Face.label>лицо</Straw_Face.label>
+	<!--          EN: straw golem core-->
+	<Straw_Core.label>ядро голема</Straw_Core.label>
+	<!--           EN: straw core(a)-->
+	<Straw_SlotA.label>ядро голема(a)</Straw_SlotA.label>
+	<!--           EN: straw core(b)-->
+	<Straw_SlotB.label>ядро голема(b)</Straw_SlotB.label>
+	<!--            EN: body-->
+	<TM_Wood_Body.label>тело</TM_Wood_Body.label>
+	<!--            EN: back plate-->
+	<TM_Wood_Back.label>спина</TM_Wood_Back.label>
+	<!--             EN: chest plate-->
+	<TM_Wood_Chest.label>грудь</TM_Wood_Chest.label>
+	<!--            EN: magic core-->
+	<TM_Wood_Core.label>Волшебное ядро</TM_Wood_Core.label>
+	<!--             EN: awareness source-->
+	<TM_Wood_Focus.label>источник осознанности</TM_Wood_Focus.label>
+	<!--                EN: energy reserves-->
+	<TM_Wood_Reserves.label>резервы энергии</TM_Wood_Reserves.label>
+	<!--          EN: wood core(a)-->
+	<Wood_SlotA.label>древесное ядро(a)</Wood_SlotA.label>
+	<!--          EN: wood core(b)-->
+	<Wood_SlotB.label>древесное ядро(b)</Wood_SlotB.label>
+	<!--                   EN: force projector-->
+	<TM_Wood_Manipulator.label>Деревянный манипулятор</TM_Wood_Manipulator.label>
+	<!--            EN: movement base-->
+	<TM_Wood_Base.label>.</TM_Wood_Base.label>
+	<!--            EN: magic core-->
+	<TM_Silk_Core.label>магическое ядро</TM_Silk_Core.label>
+	<!--          EN: silk core(a)-->
+	<Silk_SlotA.label>шёлковое ядро(a)</Silk_SlotA.label>
+	<!--          EN: silk core(b)-->
+	<Silk_SlotB.label>шёлковое ядро(b)</Silk_SlotB.label>
+</LanguageData>

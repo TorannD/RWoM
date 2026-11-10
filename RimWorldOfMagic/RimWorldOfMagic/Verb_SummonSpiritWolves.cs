@@ -10,101 +10,74 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-    public class Verb_SummonSpiritWolves : Verb_UseAbility
+    public class Verb_SummonSpiritWolves : ClassProgression.Verb_SpiritTargetable
     {
-        bool validTarg;
-        //Used for non-unique abilities that can be used with shieldbelt
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
-            if (targ.Thing != null && targ.Thing == this.caster)
-            {
-                return this.verbProps.targetParams.canTargetSelf;
-            }
-            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
-            {
-                if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
-                {
-                    ShootLine shootLine;
-                    validTarg = this.TryFindShootLineFromTo(root, targ, out shootLine);
-                }
-                else
-                {
-                    validTarg = false;
-                }
-            }
-            else
-            {
-                validTarg = false;
-            }
-            return validTarg;
+            var map = CasterPawn?.Map;
+            return targ.IsValid && (targ.Thing != CasterPawn || verbProps.targetParams.canTargetSelf) &&
+                map != null && targ.Cell.InBounds(map) && !targ.Cell.Fogged(map) &&
+                targ.Cell.Walkable(map) && (root-targ.Cell).LengthHorizontal < verbProps.range &&
+                TryFindShootLineFromTo(root,targ,out _);
         }
-
-        int pwrVal = 0;
-        int verVal = 0;
-        int effVal = 0;
-        List<IntVec3> cellList = new List<IntVec3>();
 
         protected override bool TryCastShot()
         {
-            Pawn caster = base.CasterPawn;
-            Map map = caster.Map;
-            cellList.Clear();
-            List<IntVec3> tmpList = GenRadial.RadialCellsAround(currentTarget.Cell, this.Projectile.projectile.explosionRadius, true).ToList();
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_SpiritWolves, "TM_SpiritWolves", "_pwr", true);
-            //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_SpiritWolves, "TM_SpiritWolves", "_ver", true);
-            //effVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_SpiritWolves, "TM_SpiritWolves", "_eff", true);
-            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
-            verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
-            effVal = TM_Calc.GetSkillEfficiencyLevel(caster, this.Ability.Def as TMAbilityDef);
-            if (tmpList != null && tmpList.Count > 0)
-            {
-                foreach (IntVec3 c in tmpList)
-                {
-                    if (c.IsValid && (c.IsValid && c.Standable(map) && c.InBoundsWithNullCheck(map)))
-                    {
-                        cellList.Add(c);
-                    }
-                }
-                int summonCount = 5 + verVal;
-                for (int i = 0; i < summonCount; i++)
-                {
-                    FleckMaker.ThrowSmoke(cellList.RandomElement().ToVector3Shifted(), map, Rand.Range(3f, 4f));
-                    IntVec3 cell = cellList.RandomElement();
+            burstShotsLeft = 0;
+            if (SpawnPack(CasterPawn,CasterPawn.Map)) return true;
+            Messages.Message("InvalidSummon".Translate(),MessageTypeDefOf.RejectInput);
+            return false;
+        }
 
-                    AbilityUser.SpawnThings tempPod = new SpawnThings();
-                    tempPod.def = TorannMagicDefOf.TM_SpiritWolfR;
-                    tempPod.kindDef = TorannMagicDefOf.TM_SpiritWolf;
-                    tempPod.spawnCount = 1;
-                    tempPod.temporary = true;
-                    
-                    Thing newPawn = null;
-                    newPawn = TM_Action.SingleSpawnLoop(caster, tempPod, cell, map, Rand.Range(1000,1200) + (120 * effVal), true, false, caster.Faction, false);
-                    Pawn animal = newPawn as Pawn;
-                    if (animal.playerSettings != null)
-                    {
-                        animal.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
-                        animal.playerSettings.medCare = MedicalCareCategory.NoCare;
-                    }
-                    HealthUtility.AdjustSeverity(animal, TorannMagicDefOf.TM_EnrageHD, .2f + (.1f * pwrVal));
-                    for (int j = 0; j < 3; j++)
-                    {
-                        FleckMaker.ThrowSmoke(animal.Position.ToVector3Shifted(), map, Rand.Range(.5f, 1.1f));                        
-                    }
-                    Pawn enemy = TM_Calc.FindNearbyEnemy(animal, 30);
-                    if (enemy != null)
-                    {
-                        Job defendJob = new Job(JobDefOf.AttackMelee, enemy);
-                        animal.jobs.TryTakeOrderedJob(defendJob);
-                    }
+        protected override bool ApplyHostedEffect()
+        {
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn,Ability);
+            return owner != null && SpawnPack(owner,CasterPawn.Map);
+        }
+
+        private bool SpawnPack(Pawn caster, Map map)
+        {
+            bool hosted = caster != CasterPawn;
+            var shot = hosted ? verbProps.defaultProjectile : Projectile;
+            if (shot?.projectile == null || !currentTarget.IsValid || !currentTarget.Cell.InBounds(map)) return false;
+            var cellList = GenRadial.RadialCellsAround(currentTarget.Cell, shot.projectile.explosionRadius, true)
+                .Where(c => c.InBounds(map) && c.Standable(map)).ToList();
+            if (cellList.Count == 0) return false;
+            var def = (TMAbilityDef)Ability.Def;
+            int Rank(string suffix) => hosted ? ClassProgression.SpiritHostedSummons.PackRank(caster, def, suffix)
+                : TM_Calc.GetSkillLevel(caster, def, suffix);
+            int pwrVal = Rank("_pwr"), verVal = Rank("_ver"), effVal = Rank("_eff");
+            int summonCount = 5 + verVal;
+            var enemies = map.mapPawns.AllPawnsSpawned.Where(p => !p.Dead && !p.Downed && !p.IsPrisoner &&
+                p.Faction != null && p.Faction.HostileTo(caster.Faction)).ToList();
+            var openCells = cellList.Where(c => c.GetFirstPawn(map) == null).InRandomOrder().Take(summonCount).ToList();
+            var wolf = new SpawnThings { def=TorannMagicDefOf.TM_SpiritWolfR, kindDef=TorannMagicDefOf.TM_SpiritWolf, spawnCount=1, temporary=true };
+            int spawned = 0;
+            for (int i = 0; i < summonCount; i++)
+            {
+                var cell = i < openCells.Count ? openCells[i] : cellList.RandomElement();
+                FleckMaker.ThrowSmoke(cell.ToVector3Shifted(),map,Rand.Range(3f,4f));
+                var newPawn = TM_Action.SingleSpawnLoop(caster,wolf,cell,map,Rand.Range(1000,1200) + 120*effVal,true,false,caster.Faction,false);
+                if (!(newPawn is Pawn animal) || !animal.Spawned) continue;
+                spawned++;
+                if (animal.playerSettings != null)
+                {
+                    animal.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
+                    animal.playerSettings.medCare = MedicalCareCategory.NoCare;
+                }
+                HealthUtility.AdjustSeverity(animal, TorannMagicDefOf.TM_EnrageHD, .2f + (.1f * pwrVal));
+                for (int j = 0; j < 3; j++)
+                {
+                    FleckMaker.ThrowSmoke(animal.Position.ToVector3Shifted(), map, Rand.Range(.5f, 1.1f));
+                }
+                if (enemies.Where(p => p.Spawned && p.Map == map && !p.Downed && p.Position != animal.Position &&
+                    p.Position.InHorDistOf(animal.Position,30)).TryRandomElement(out Pawn enemy))
+                {
+                    Job defendJob = new Job(JobDefOf.AttackMelee, enemy);
+                    animal.jobs.TryTakeOrderedJob(defendJob);
                 }
             }
-            else
-            {
-                Messages.Message("InvalidSummon".Translate(), MessageTypeDefOf.RejectInput);
-                comp.Mana.GainNeed(comp.ActualManaCost(TorannMagicDefOf.TM_SpiritWolves));
-            }      
-            return false;
+            return spawned > 0;
         }
     }
 }

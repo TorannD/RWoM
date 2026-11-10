@@ -1,0 +1,30 @@
+<LanguageData><!-- v1.5\Defs\ThingDefs\ActivateAbility_Item.xml-->
+	<!--                              EN: Scroll of Spirit Binding-->
+	<MagicArtifact_RerollSpiritBond.label>Свиток Связующего Духа</MagicArtifact_RerollSpiritBond.label>
+	<!--                                    EN: This scroll may be used to change the shaman's spirit animal. The new bond will randomly select a new spirit type to bond.-->
+	<MagicArtifact_RerollSpiritBond.description>Этот свиток может быть использован для изменения духовного животного шамана. Новая связь случайным образом выберет новый тип духа для связи.</MagicArtifact_RerollSpiritBond.description>
+	<!--                                         EN: Use-->
+	<MagicArtifact_RerollSpiritBond.comps.2.useLabel>Использовать</MagicArtifact_RerollSpiritBond.comps.2.useLabel>
+	<!--                                 EN: Use shard of extraction-->
+	<TM_Artifact_ClassExtraction.li.useLabel>Используйте осколок извлечения</TM_Artifact_ClassExtraction.li.useLabel>
+	<!--                           EN: Shard of Spirit Extraction-->
+	<TM_Artifact_ClassExtraction.label>Осколок извлечения духа</TM_Artifact_ClassExtraction.label>
+	<!--                                 EN: This mysterious shard is capable of extracting the martial or arcane talents of a pawn and converting it to essence. The shard is destroyed after use.
+
+*Note: this item completely removes a pawn's class and any associated abilities and skills. The pawn may learn another class following a spirit extraction.-->
+	<TM_Artifact_ClassExtraction.description>Этот таинственный осколок способен извлекать боевые или тайные таланты пешки и превращать их в сущность. Осколок уничтожается после использования.
+
+* Примечание: этот предмет полностью удаляет класс пешки и любые связанные с ним способности и навыки. Пешка может выучить другой класс после извлечения духа.</TM_Artifact_ClassExtraction.description>
+	<!--                             EN: Essence of Might-->
+	<TM_MagicArtifact_MightEssence.label>Сущность мастерства</TM_MagicArtifact_MightEssence.label>
+	<!--                                   EN: The essence of raw, martial skill. Absorbing the essence grants martial experience.-->
+	<TM_MagicArtifact_MightEssence.description>Суть грубого, боевого мастерства. Поглощение сущности дает боевой опыт.</TM_MagicArtifact_MightEssence.description>
+	<!--                                        EN: Use essence of might-->
+	<TM_MagicArtifact_MightEssence.comps.0.useLabel>Используйте эссенцию мастерства</TM_MagicArtifact_MightEssence.comps.0.useLabel>
+	<!--                             EN: Essence of Magic-->
+	<TM_MagicArtifact_MagicEssence.label>Сущность магии</TM_MagicArtifact_MagicEssence.label>
+	<!--                                   EN: The essence of raw, magical skill. Absorbing the essence grants arcane experience.-->
+	<TM_MagicArtifact_MagicEssence.description>Суть грубого, магического мастерства. Поглощение сущности дает тайный опыт.</TM_MagicArtifact_MagicEssence.description>
+	<!--                                        EN: Use essence of magic-->
+	<TM_MagicArtifact_MagicEssence.comps.0.useLabel>Используйте эссенцию магии</TM_MagicArtifact_MagicEssence.comps.0.useLabel>
+</LanguageData>

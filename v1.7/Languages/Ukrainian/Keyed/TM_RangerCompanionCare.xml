@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerCareHint>Доглядайте за однією пов’язаною твариною 12 днів ({0}/12). Відвідуйте її на одній мапі раз на добу. Зміна супутника скидає незавершене випробування. Розірвання або заміна зв’язку може назавжди видалити попередню тварину.</TM_RangerCareHint>
+  <TM_RangerCareOrder>Подбати про {0}</TM_RangerCareOrder>
+  <TM_RangerClaimTrap>Вивчити отруйну пастку</TM_RangerClaimTrap>
+</LanguageData>

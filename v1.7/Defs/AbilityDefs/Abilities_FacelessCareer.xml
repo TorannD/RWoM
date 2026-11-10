@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+    <defName>TM_FacelessEcho</defName>
+    <label>Borrowed technique</label>
+    <description>Echo the last imitated technique at a range of 18. Elemental and martial echoes inflict 12 damage. A medical echo heals 4 points of one wound. Costs 20% stamina; 30-second cooldown.</description>
+    <uiIconPath>UI/mimic</uiIconPath>
+    <staminaCost>.20</staminaCost>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_FacelessEcho</verbClass>
+      <abilityDef>TM_FacelessEcho</abilityDef>
+      <isViolent>false</isViolent>
+      <hasStandardCommand>true</hasStandardCommand>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>18</range>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </MainVerb>
+    <modExtensions>
+      <li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+        <spellId>rwom.tm_facelessecho</spellId>
+        <domain>Might</domain>
+        <tier>0</tier>
+      </li>
+    </modExtensions>
+  </TorannMagic.TMAbilityDef>
+</Defs>

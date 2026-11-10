@@ -1,0 +1,42 @@
+<LanguageData><!-- v1.5\Defs\GolemDefs\TM_StrawGolemUpgradeDefs.xml-->
+	<!--                    EN: restore part-->
+	<TM_Golem_StrawRepair.label>починка детали</TM_Golem_StrawRepair.label>
+	<!--                       EN: energy storage-->
+	<TM_Golem_StrawMaxEnergy.label>запас энергии</TM_Golem_StrawMaxEnergy.label>
+	<!--                             EN: Increases maximum energy by 100 per level. Starting max energy is 300.-->
+	<TM_Golem_StrawMaxEnergy.description>Увеличивает максимальный запас энергии на 100 за уровень. Базовый запас: 300 ед.</TM_Golem_StrawMaxEnergy.description>
+	<!--                              EN: energy efficiency-->
+	<TM_Golem_StrawEnergyEfficiency.label>эффективность энергии</TM_Golem_StrawEnergyEfficiency.label>
+	<!--                                    EN: Increases energy efficiency by 6% per level. Starting energy efficiency is 30%.-->
+	<TM_Golem_StrawEnergyEfficiency.description>Повышает эффективность использования энергии на 6% за уровень. Базовый показатель: 30%.</TM_Golem_StrawEnergyEfficiency.description>
+	<!--                        EN: energy regeneration-->
+	<TM_Golem_StrawEnergyRate.label>восстановление энергии</TM_Golem_StrawEnergyRate.label>
+	<!--                              EN: Increases energy charge rate by 20% per level. Starting recharge rate is 20 energy/hour.-->
+	<TM_Golem_StrawEnergyRate.description>Ускоряет восстановление энергии на 20% за уровень. Базовая скорость: 20 ед./час.</TM_Golem_StrawEnergyRate.description>
+	<!--                   EN: armor-->
+	<TM_Golem_StrawArmor.label>броня</TM_Golem_StrawArmor.label>
+	<!--                         EN: Increases overall protection:
+Blunt:	+[6,11,15]%
+Sharp:	+[5,9,13]%
+Heat:	+[4,7,10]%-->
+	<TM_Golem_StrawArmor.description>Повышает общую защиту:
+Дробящая:	+[6,11,15]%
+Режущая:	+[5,9,13]%
+Термическая:	+[4,7,10]%</TM_Golem_StrawArmor.description>
+	<!--                       EN: Scarecrow-->
+	<TM_Golem_StrawScarecrow.label>Пугало</TM_Golem_StrawScarecrow.label>
+	<!--                             EN: Wards away unwanted pests. Increases crop growth rate in a 6 cell radius.-->
+	<TM_Golem_StrawScarecrow.description>Отпугивает вредителей. Ускоряет рост растений в радиусе 6 клеток.</TM_Golem_StrawScarecrow.description>
+	<!--                  EN: Farming-->
+	<TM_Golem_StrawSeed.label>Фермерство</TM_Golem_StrawSeed.label>
+	<!--                        EN: Increases the Plants skill of the golem by 2 per level. Starts with a planting skill of 0.-->
+	<TM_Golem_StrawSeed.description>Повышает навык Растениеводства голема на 2 за уровень. Начальный уровень: 0.</TM_Golem_StrawSeed.description>
+	<!--                       EN: frame tier-->
+	<TM_Golem_StrawLifeStage.label>уровень каркаса</TM_Golem_StrawLifeStage.label>
+	<!--                             EN: Increases stats:
+Movement:	+[20%/30%/40%]
+Health:		+[20%/40%/50%]-->
+	<TM_Golem_StrawLifeStage.description>Улучшает характеристики:
+Скорость:	+[20%/30%/40%]
+Здоровье:	+[20%/40%/50%]</TM_Golem_StrawLifeStage.description>
+</LanguageData>

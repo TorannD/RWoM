@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_OxygenMode>供能：{0}</TM_OxygenMode>
+  <TM_OxygenModeMana>法力</TM_OxygenModeMana>
+  <TM_OxygenModeMagicyte>魔晶</TM_OxygenModeMagicyte>
+  <TM_OxygenModeDesc>选择使用本机储存的法力或魔晶。不会自动切换到另一种资源。</TM_OxygenModeDesc>
+  <TM_OxygenBuffer>法力：{0} / {1}</TM_OxygenBuffer>
+  <TM_OxygenPaidMagicyte>晶体剩余能量：{0}法力</TM_OxygenPaidMagicyte>
+  <TM_OxygenStatusRunning>大气场已启用</TM_OxygenStatusRunning>
+  <TM_OxygenStatusIdle>大气场未启用</TM_OxygenStatusIdle>
+  <TM_OxygenStatusEmpty>所选资源已耗尽</TM_OxygenStatusEmpty>
+  <TM_OxygenStatusOff>已关闭或故障</TM_OxygenStatusOff>
+  <TM_OxygenCapacity>支持面积：{0}格；每秒法力消耗：{1}</TM_OxygenCapacity>
+  <TM_OxygenPressure>大气场强度：{0}</TM_OxygenPressure>
+  <TM_OxygenOutput>输出：{0}</TM_OxygenOutput>
+  <TM_OxygenOutputDesc>选择通过魔力信标维持大气，或向相连的 VGE 储氧罐供应氧气。两种模式独立运行。管道输出需要通过 VGE 管道连接储氧罐；储氧罐已满或断开时停止消耗。魔力或魔晶另行选择。</TM_OxygenOutputDesc>
+  <TM_OxygenOutputAtmosphere>大气</TM_OxygenOutputAtmosphere>
+  <TM_OxygenOutputPipe>VGE 氧气管网</TM_OxygenOutputPipe>
+  <TM_OxygenPipeInfo>管道输出：每秒消耗 0.1 魔力，最多供应 1 单位氧气。请连接 VGE 储氧罐；普通氧气泵使用储存的氧气。</TM_OxygenPipeInfo>
+  <TM_OxygenPipePending>已付费、等待输送的氧气：{0}</TM_OxygenPipePending>
+</LanguageData>

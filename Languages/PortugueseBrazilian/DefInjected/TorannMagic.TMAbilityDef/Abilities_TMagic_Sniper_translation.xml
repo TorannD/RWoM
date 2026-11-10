@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Sniper focus -->
+
+  <TM_SniperFocus.label>Treino de atirador</TM_SniperFocus.label>
+  <TM_SniperFocus.description>Treinamento que melhora a técnica e o status de atirador. Cada nível vai alterar a linha do atirador para refletir o seu nível de habilidade.
+
+Níveis:
+Atirador: Velocidade + 0.1c/s, Pontaria atrasada -10%, Precisão de tiro + 2%, Velocidade de trabalho e pesquisa -10%, Domação e treinamento de animais -10%
+Atirador: Velocidade + 0.15c/s, Pontaria atrasada -15%, Precisão de tiro + 4%, Velocidade de trabalho e pesquisa -13%, Domar e treinar animais -13%
+Atirador magistral: Velocidade + 0.2c/s, Pontaria atrasada -22%, Precisão de tiro + 6%, Velocidade de trabalho e pesquisa -15%, Domação e treinamento de animais -15%
+Atirador lendário: Velocidade + 0.25c/s, Pontaria atrasada -30%, Precisão de tiro + 8%, Velocidade de trabalho e pesquisa -16%, Domação e treinamento de animais -16%</TM_SniperFocus.description>
+
+
+  <!-- Headshot start -->
+
+  <TM_Headshot.label>Tiro na cabeça</TM_Headshot.label>
+  <TM_Headshot.description>Um tiro fatal que visa partes vitais do corpo, como a cabeça ou o coração. É eficaz tanto para os humanoides como para os humanóides. As hipóteses de um tiro na cabeça são reduzidas contra alvos com armaduras gordas que protegem seus órgãos vitais.</TM_Headshot.description>
+
+
+  <!-- Disabling shot start -->
+
+  <TM_DisablingShot.label>Tiro de desativação</TM_DisablingShot.label>
+  <TM_DisablingShot.description>Um tiro que tem como objetivo desativar o inimigo, não matar. O atirador disparou projéteis não letais que libertam a descarga elétrica, paralisando o alvo por pouco tempo. Alvos blindados não serão afetados.
+
+Distância: 20
+Atraso no disparo: 2.5s
+Recarga 45s</TM_DisablingShot.description>
+
+  <TM_DisablingShot_I.label>Bala ensurdecedora (I)</TM_DisablingShot_I.label>
+  <TM_DisablingShot_I.description>Um tiro que tem como objetivo desativar o inimigo, não matar. O atirador disparou projéteis não letais que libertam a descarga elétrica, paralisando o alvo por pouco tempo. Alvos blindados não serão afetados.
+
+Distância: 22
+Atraso no disparo: 2.3s
+Recarga 43s</TM_DisablingShot_I.description>
+
+  <TM_DisablingShot_II.label>Bala ensurdecedora (II)</TM_DisablingShot_II.label>
+  <TM_DisablingShot_II.description>Um tiro que tem como objetivo desativar o inimigo, não matar. O atirador disparou projéteis não letais que libertam a descarga elétrica, paralisando o alvo por pouco tempo. Alvos blindados não serão afetados.
+
+Distância: 25
+Atraso no disparo: 2.1s
+Recarga 41s</TM_DisablingShot_II.description>
+
+  <TM_DisablingShot_III.label>Bala ensurdecedora (III)</TM_DisablingShot_III.label>
+  <TM_DisablingShot_III.description>Um tiro que tem como objetivo desativar o inimigo, não matar. O atirador disparou projéteis não letais que libertam a descarga elétrica, paralisando o alvo por pouco tempo. Alvos blindados não serão afetados.
+
+Distância: 27
+Atraso no disparo: 2s
+Recarga 40s</TM_DisablingShot_III.description>
+
+
+  <!-- Anti Armor -->
+
+  <TM_AntiArmor.label>Anti-armadura</TM_AntiArmor.label>
+  <TM_AntiArmor.description>O atirador leva munições antitanque para estas ocasiões especiais. Quando esta munição se espalha, ele libera nanitos que rompem qualquer armadura com a qual eles se toquem. É relativamente ineficaz contra objetivos não construídos, mas causa danos duplos a todo o resto.</TM_AntiArmor.description>
+
+
+  <!-- Shadow slayer -->
+
+  <TM_ShadowSlayer.label>Inviz</TM_ShadowSlayer.label>
+  <TM_ShadowSlayer.description>Um atirador experiente é um especialista em discrição e posicionamento, e sabe a hora e o local certos para atacar.
+
+O campo de disfarce do assassino de sombras é uma forma duradoura de invisibilidade. Ao contrário da tecnologia de camuflagem convencional, este campo de discrição depende em grande medida da forma de disfarce de previsão, que desaparece rapidamente quando o usuário executa ações rápidas ou violentas (por exemplo, dispara uma arma).</TM_ShadowSlayer.description>
+
+
+</LanguageData>

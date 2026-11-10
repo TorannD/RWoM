@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_SniperArmorFracture.label>破甲射击</TM_Bridge_SniperArmorFracture.label>
+  <TM_Bridge_SniperArmorFracture.description>发射一颗普通子弹。命中后造成持续6秒的装甲缺口，全队都能利用。根据技能等级，每处缺口使有效护甲降低10、15或20个百分点。多处缺口可叠加，分别计时。消耗20耐力，冷却30秒。</TM_Bridge_SniperArmorFracture.description>
+</LanguageData>

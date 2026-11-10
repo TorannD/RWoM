@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mental breaks: extreme -->
+
+  <TM_Berserk.label>Берсерк</TM_Berserk.label>
+  <TM_Berserk.recoveryMessage>У {0} лють берсерка підійшла до кінця.</TM_Berserk.recoveryMessage>
+  <TM_Berserk.baseInspectLine>Психічний стан: Берсерк</TM_Berserk.baseInspectLine>
+
+  <TM_PanicFlee.label>панічна втеча</TM_PanicFlee.label>
+  <TM_PanicFlee.baseInspectLine>Психічний стан: панічний біг</TM_PanicFlee.baseInspectLine>
+
+
+  <TM_WanderPsychotic.label>блукання в психозі</TM_WanderPsychotic.label>
+  <TM_WanderPsychotic.recoveryMessage>{0} більше не блукає в психотичному стані.</TM_WanderPsychotic.recoveryMessage>
+  <TM_WanderPsychotic.baseInspectLine>Психічний стан: блукання в психозі</TM_WanderPsychotic.baseInspectLine>
+
+
+  <TM_WanderSad.label>сумно бродить</TM_WanderSad.label>
+  <TM_WanderSad.recoveryMessage>{0} більше не блукає в смутку.</TM_WanderSad.recoveryMessage>
+  <TM_WanderSad.baseInspectLine>Психічний стан: сумно бродить</TM_WanderSad.baseInspectLine>
+
+  <TM_WanderConfused.label>розгублено бродить</TM_WanderConfused.label>
+  <TM_WanderConfused.recoveryMessage>{0} більше не збентежений.</TM_WanderConfused.recoveryMessage>
+  <TM_WanderConfused.baseInspectLine>Психічний стан: розгублено бродить</TM_WanderConfused.baseInspectLine>
+
+
+</LanguageData>

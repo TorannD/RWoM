@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_BladePassage.label>blade passage</TM_BladePassage.label>
+  <TM_BladePassage.description>Cross a clear path toward an enemy within 6/8/10 cells and strike once for 90% melee weapon damage. Requires an empty landing cell beside the target. Stamina: 20%. Cooldown: 30 seconds. Base recovery: 1 second.</TM_BladePassage.description>
+</LanguageData>

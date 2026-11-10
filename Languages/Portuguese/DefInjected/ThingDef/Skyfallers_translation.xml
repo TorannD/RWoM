@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_LightPodLeaving.label>raio de luz (fora)</TM_LightPodLeaving.label>
+  <TM_LightPodIncoming.label>raio de luz (entrada)</TM_LightPodIncoming.label>
+  <TM_ActiveLightPod.label>feixe de luz</TM_ActiveLightPod.label>
+  <TM_Firestorm_Large.label>tempestade de fogo (grande)</TM_Firestorm_Large.label>
+  <TM_Firestorm_Small.label>tempestade de fogo (pequena)</TM_Firestorm_Small.label>
+  <TM_Firestorm_Tiny.label>tempestade de fogo (minúsculo)</TM_Firestorm_Tiny.label>
+  <TM_Blizzard_Tiny.label>tempestade (minúsculo)</TM_Blizzard_Tiny.label>
+  <TM_Blizzard_Small.label>tempestade (pequena)</TM_Blizzard_Small.label>
+  <TM_Blizzard_Large.label>tempestade (grande)</TM_Blizzard_Large.label>
+  <TM_ArrowStorm.label>flechas de granizo</TM_ArrowStorm.label>
+  <TM_ScornLeaving.label>cuidados desprezíveis</TM_ScornLeaving.label>
+  <TM_ScornIncoming.label>cuidados desprezíveis</TM_ScornIncoming.label>
+  <TM_Meteorite.label>meteorito</TM_Meteorite.label>
+  <TM_Meteorite_I.label>meteorito</TM_Meteorite_I.label>
+  <TM_Meteorite_II.label>meteorito</TM_Meteorite_II.label>
+  <TM_Meteorite_III.label>meteorito</TM_Meteorite_III.label>
+  <TM_Hail.label>granizo</TM_Hail.label>
+
+
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_RangerBreakthrough.label>协同突猎</TM_Bridge_RangerBreakthrough.label>
+  <TM_Bridge_RangerBreakthrough.description>需要装备弓，且有羁绊的动物在12格内。标记选定敌人和附近最多两名弓射程内（上限30格）的敌人。瞄准5秒后，在20秒内射出6箭，每箭造成弓伤害的70%。齐射期间，伙伴可为游侠抵挡两次敌方武器攻击，每次最多吸收25点伤害；游侠移动速度降低20%。基础消耗60%耐力，冷却两天。准备时被打断会消耗6%耐力。</TM_Bridge_RangerBreakthrough.description>
+</LanguageData>

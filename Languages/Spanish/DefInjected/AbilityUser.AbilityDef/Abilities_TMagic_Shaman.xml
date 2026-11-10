@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_ChainLightning.label>rayo en cadena</TM_ChainLightning.label>
+  
+  <TM_ChainLightning.description>Un potente rayo que se bifurca tras golpear a su primer objetivo.</TM_ChainLightning.description>
+
+  
+  <TM_DismissGuardianSpirit.label>despedir espíritu guardián</TM_DismissGuardianSpirit.label>
+  
+  <TM_DismissGuardianSpirit.description>Libera al espíritu guardián para que regrese al plano espiritual.</TM_DismissGuardianSpirit.description>
+
+  
+  <TM_Enrage.label>enfurecer</TM_Enrage.label>
+  
+  <TM_Enrage.description>Coloca un maleficio sobre un objetivo que convierte sus emociones (estado de ánimo) en combustible para la furia de batalla. El maleficio se agota por sí solo cuando se han consumido todas las emociones. Los objetivos hostiles entrarán de inmediato en estado de frenesí si su mente es susceptible.\n\nUn peón enfurecido gana movimiento y manipulación, aumenta su resistencia al dolor, no puede ser desestabilizado y aumenta su daño cuerpo a cuerpo en un porcentaje igual a la gravedad de la furia (bonificación de daño del 20-50 %).</TM_Enrage.description>
+
+  
+  <TM_GuardianSpirit.label>espíritu guardián</TM_GuardianSpirit.label>
+  
+  <TM_GuardianSpirit.description>Invoca a un espíritu guardián. Los espíritus guardianes se manifiestan como animales poderosos con fortalezas y habilidades únicas.\n\nOso espiritual: representa la defensa y la entereza; lanzará un rugido desafiante contra cualquiera que piense en ignorar a esta peligrosa bestia.\n\nMangosta espiritual: representa la astucia y la agilidad; es capaz de deslizarse por el plano espiritual para asestar un ataque letal y oculto.\n\nCuervo espiritual: representa la magia y la perspicacia; colocará un maleficio sobre los enemigos y aumentará la sabiduría de su protegido.\n\nUna vez determinado, el tipo de espíritu guardián se mantiene, aunque se puede cambiar por la fuerza mediante un pergamino de vinculación espiritual.</TM_GuardianSpirit.description>
+
+  
+  <TM_Hex.label>maleficio</TM_Hex.label>
+  
+  <TM_Hex.description>Maleficio I: coloca un maleficio sobre los peones; se pueden aplicar efectos adicionales a los objetivos maleficiados. Desaparece tras 6 horas de juego.\n\nObjetivos máximos: 4\nRadio: 3\nAlcance: 36\nTiempo de lanzamiento: 1 s</TM_Hex.description>
+
+  
+  <TM_Hex_CriticalFail.label>fallo crítico (maleficio)</TM_Hex_CriticalFail.label>
+  
+  <TM_Hex_CriticalFail.description>Coloca una maldición de corta duración sobre todos los objetivos maleficiados que les provoca una suerte pésima.</TM_Hex_CriticalFail.description>
+
+  
+  <TM_Hex_I.label>maleficio I</TM_Hex_I.label>
+  
+  <TM_Hex_I.description>Maleficio II: coloca un maleficio sobre los peones; se pueden aplicar efectos adicionales a los objetivos maleficiados. Desaparece tras 6 horas de juego.\n\nObjetivos máximos: 5\nRadio: 3\nAlcance: 40\nTiempo de lanzamiento: 0,8 s</TM_Hex_I.description>
+
+  
+  <TM_Hex_II.label>maleficio II</TM_Hex_II.label>
+  
+  <TM_Hex_II.description>Maleficio III: coloca un maleficio sobre los peones; se pueden aplicar efectos adicionales a los objetivos maleficiados. Desaparece tras 6 horas de juego.\n\nObjetivos máximos: 5\nRadio: 4\nAlcance: 43\nTiempo de lanzamiento: 0,7 s</TM_Hex_II.description>
+
+  
+  <TM_Hex_III.label>maleficio III</TM_Hex_III.label>
+  
+  <TM_Hex_III.description>Maleficio IV: coloca un maleficio sobre los peones; se pueden aplicar efectos adicionales a los objetivos maleficiados. Desaparece tras 6 horas de juego.\n\nObjetivos máximos: 6\nRadio: 4\nAlcance: 45\nTiempo de lanzamiento: 0,6 s</TM_Hex_III.description>
+
+  
+  <TM_Hex_MentalAssault.label>asalto mental (maleficio)</TM_Hex_MentalAssault.label>
+  
+  <TM_Hex_MentalAssault.description>Hace que todos los objetivos maleficiados experimenten una oleada de emociones dramática y, posiblemente, abrumadora.</TM_Hex_MentalAssault.description>
+
+  
+  <TM_Hex_Pain.label>dolor (maleficio)</TM_Hex_Pain.label>
+  
+  <TM_Hex_Pain.description>Todos los peones maleficiados sufren un dolor extremo.</TM_Hex_Pain.description>
+
+  
+  <TM_SpiritWolves.label>lobos espirituales</TM_SpiritWolves.label>
+  
+  <TM_SpiritWolves.description>Manifiesta una manada de lobos espirituales. Los lobos espirituales infligen daño espiritual, que ignora la armadura y aturde.\n\nAlcance: 50\nTiempo de lanzamiento: 3 s\nEnfriamiento: 120 s</TM_SpiritWolves.description>
+
+  
+  <TM_SpiritWolves_I.label>lobos espirituales I</TM_SpiritWolves_I.label>
+  
+  <TM_SpiritWolves_I.description>Manifiesta una manada de lobos espirituales. Los lobos espirituales infligen daño espiritual, que ignora la armadura y aturde.\n\nAlcance: 55\nTiempo de lanzamiento: 2,7 s\nEnfriamiento: 110 s</TM_SpiritWolves_I.description>
+
+  
+  <TM_SpiritWolves_II.label>lobos espirituales II</TM_SpiritWolves_II.label>
+  
+  <TM_SpiritWolves_II.description>Manifiesta una manada de lobos espirituales. Los lobos espirituales infligen daño espiritual, que ignora la armadura y aturde.\n\nAlcance: 60\nTiempo de lanzamiento: 2,5 s\nEnfriamiento: 100 s</TM_SpiritWolves_II.description>
+
+  
+  <TM_SpiritWolves_III.label>lobos espirituales III</TM_SpiritWolves_III.label>
+  
+  <TM_SpiritWolves_III.description>Manifiesta una manada de lobos espirituales. Los lobos espirituales infligen daño espiritual, que ignora la armadura y aturde.\n\nAlcance: 65\nTiempo de lanzamiento: 2,4 s\nEnfriamiento: 90 s</TM_SpiritWolves_III.description>
+
+  
+  <TM_SummonTotemEarth.label>tótem: tierra</TM_SummonTotemEarth.label>
+  
+  <TM_SummonTotemEarth.description>Crea un tótem de tierra en la ubicación objetivo. Dura 1 hora de juego y provoca temblores cada 3-4 segundos que hacen tambalearse a todos los peones en un radio de 5 casillas.</TM_SummonTotemEarth.description>
+
+  
+  <TM_SummonTotemHealing.label>tótem: curación</TM_SummonTotemHealing.label>
+  
+  <TM_SummonTotemHealing.description>Crea un tótem de curación en la ubicación objetivo. Dura 1 hora de juego y cura periódicamente a los peones cercanos.</TM_SummonTotemHealing.description>
+
+  
+  <TM_SummonTotemLightning.label>tótem: rayo</TM_SummonTotemLightning.label>
+  
+  <TM_SummonTotemLightning.description>Crea un tótem de rayos en la ubicación objetivo. Dura 1 hora de juego y descarga rayos eléctricos contra los enemigos situados a menos de 40 m cada 2-3 segundos.</TM_SummonTotemLightning.description>
+
+  
+  <TM_Totems.label>tótems</TM_Totems.label>
+  
+  <TM_Totems.description>Los tótems son una forma de magia que ancla a un espíritu elemental al mundo físico, permitiéndole influir en los objetos cercanos al tótem. Esta habilidad aumenta el control sobre todos los tipos de tótems.</TM_Totems.description>
+
+</LanguageData>

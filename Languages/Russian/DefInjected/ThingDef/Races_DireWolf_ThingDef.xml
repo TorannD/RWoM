@@ -1,0 +1,22 @@
+<LanguageData><!-- v1.5\Defs\PawnDefs\Races_DireWolf.xml-->
+	<!--             EN: dire wolf-->
+	<TM_Dire_WolfR.label>зловещий волк</TM_Dire_WolfR.label>
+	<!--                   EN: Dire wolves roam the north in great packs and fear neither man nor megasloth. A savage predator armed with razor sharp teeth and a coat like steel thread, dire wolves are as fierce as any known creature. They are often tied to mythical lore and are said to possess a unique link to arcane powers.-->
+	<TM_Dire_WolfR.description>Зловещие волки бродят по северу большими стаями и не боятся ни человека, ни мегаслота. Дикий хищник, вооруженный острыми как бритва зубами и шерстью, похожей на стальную нить, зловещие волки столь же свирепы, как и любое известное существо. Они часто связаны с мифическими преданиями и, как говорят, обладают уникальной связью с тайными силами.</TM_Dire_WolfR.description>
+	<!--                     EN: левый коготь-->
+	<TM_Dire_WolfR.tools.0.label>левая лапа</TM_Dire_WolfR.tools.0.label>
+	<!--                     EN: правый коготь-->
+	<TM_Dire_WolfR.tools.1.label>правая лапа</TM_Dire_WolfR.tools.1.label>
+	<!--                     EN: голова-->
+	<TM_Dire_WolfR.tools.3.label>голова</TM_Dire_WolfR.tools.3.label>
+	<!--                      EN: wolfmeat-->
+	<TM_Dire_WolfR.race.meatLabel>мясо волка</TM_Dire_WolfR.race.meatLabel>
+	<TM_Dire_WolfR.meatLabel>мясо волка</TM_Dire_WolfR.meatLabel>
+
+	<TM_DireWolf.race.meatLabel>мясо волка</TM_DireWolf.race.meatLabel>
+	<TM_DireWolf.meatLabel>мясо волка</TM_DireWolf.meatLabel>
+  <TM_Dire_WolfR_Meat.label>мясо волка</TM_Dire_WolfR_Meat.label>
+  <TM_Dire_WolfR_Meat.description>мясо волка</TM_Dire_WolfR_Meat.description>
+  <TM_Dire_Wolf_Meat.label>мясо волка</TM_Dire_Wolf_Meat.label>
+  <TM_Dire_Wolf_Meat.description>мясо волка</TM_Dire_Wolf_Meat.description>
+</LanguageData>

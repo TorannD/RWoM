@@ -1,0 +1,47 @@
+﻿<LanguageData><!-- Soothe start-->
+	<TM_Soothe.label>Успокаивающий Ветерок</TM_Soothe.label>
+	<TM_Soothe.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_Soothe.description>
+	<TM_Soothe_I.label>Успокаивающий Ветерок</TM_Soothe_I.label>
+	<TM_Soothe_I.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_Soothe_I.description>
+	<TM_Soothe_II.label>Успокаивающий Ветерок</TM_Soothe_II.label>
+	<TM_Soothe_II.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_Soothe_II.description>
+	<TM_Soothe_III.label>Успокаивающий Ветерок</TM_Soothe_III.label>
+	<TM_Soothe_III.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_Soothe_III.description>
+	<!-- FrostRay-->
+	<TM_FrostRay.label>Морозный луч</TM_FrostRay.label>
+	<TM_FrostRay.description>Быстро распространяющийся луч переохлажденных частиц, который повреждает и замораживает цели.
+
+Подготовка: 12с
+Дальность: 28
+Ударов: 1</TM_FrostRay.description>
+	<TM_FrostRay_I.label>Морозный луч</TM_FrostRay_I.label>
+	<TM_FrostRay_I.description>Быстро распространяющийся луч переохлажденных частиц, который повреждает и замораживает цели.
+
+Подготовка: 10с
+Дальность: 30
+Ударов: 1</TM_FrostRay_I.description>
+	<TM_FrostRay_II.label>Морозный луч</TM_FrostRay_II.label>
+	<TM_FrostRay_II.description>Быстро распространяющийся луч переохлажденных частиц, который повреждает и замораживает цели.
+
+Подготовка: 8с
+Дальность: 32
+Ударов: 2</TM_FrostRay_II.description>
+	<TM_FrostRay_III.label>Морозный луч</TM_FrostRay_III.label>
+	<TM_FrostRay_III.description>Быстро распространяющийся луч переохлажденных частиц, который повреждает и замораживает цели.
+
+Подготовка: 8с
+Дальность: 34
+Ударов: 3</TM_FrostRay_III.description>
+	<!-- Snowball-->
+	<TM_Snowball.label>Снежный шар</TM_Snowball.label>
+	<TM_Snowball.description>Запустите массивный шар изо льда и снега, который при ударе повреждает и замораживает большую площадь.</TM_Snowball.description>
+	<!-- Icebolt-->
+	<TM_Icebolt.label>ледяной болт</TM_Icebolt.label>
+	<TM_Icebolt.description>Запускает заряд льда, специально созданный для того, чтобы при ударе разлетаться на осколки, похожие на стекло, вызывая повреждения и сильное кровотечение.</TM_Icebolt.description>
+	<!-- Rainmaker Start-->
+	<TM_Rainmaker.label>Создатель дождя</TM_Rainmaker.label>
+	<TM_Rainmaker.description>Изменяет условия в атмосфере, вызывая дождь. Если уже идет дождь, эта способность остановит дождь.</TM_Rainmaker.description>
+	<!-- Blizzard-->
+	<TM_Blizzard.label>Метель</TM_Blizzard.label>
+	<TM_Blizzard.description>Вызывает смертельную метель, чтобы похоронить ваших врагов во льду.</TM_Blizzard.description>
+</LanguageData>

@@ -1,0 +1,9 @@
+<LanguageData><!-- Sniper focus-->
+	<Projectile_SniperFocus.label>Фокусировка снайпера</Projectile_SniperFocus.label>
+	<!-- Headshot start-->
+	<Projectile_Headshot.label>Выстрел в голову</Projectile_Headshot.label>
+	<!-- Disabling shot start-->
+	<Projectile_DisablingShot.label>Обездвиживающий выстрел</Projectile_DisablingShot.label>
+	<!-- Anti Armor-->
+	<Projectile_AntiArmor.label>Анти-броня</Projectile_AntiArmor.label>
+</LanguageData>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Torann Magic poppi thingdef -->
+
+  <TM_Poppi.label>Poppy</TM_Poppi.label>
+  <TM_Poppi.labelPlural>Poppy</TM_Poppi.labelPlural>
+  <TM_Poppi.lifeStages.0.label>Poppy</TM_Poppi.lifeStages.0.label>
+  <TM_Poppi.lifeStages.0.labelPlural>Poppy</TM_Poppi.lifeStages.0.labelPlural>
+  <TM_Poppi.lifeStages.1.label>Poppy</TM_Poppi.lifeStages.1.label>
+  <TM_Poppi.lifeStages.1.labelPlural>Poppy</TM_Poppi.lifeStages.1.labelPlural>
+  <TM_Poppi.lifeStages.2.label>Poppy</TM_Poppi.lifeStages.2.label>
+  <TM_Poppi.lifeStages.2.labelPlural>Poppy</TM_Poppi.lifeStages.2.labelPlural>
+
+
+</LanguageData>

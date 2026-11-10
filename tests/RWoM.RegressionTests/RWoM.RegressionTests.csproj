@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <DefaultItemExcludes>$(DefaultItemExcludes);obj/**;bin/**</DefaultItemExcludes>
+    <RestoreSources>$(MSBuildThisFileDirectory)</RestoreSources>
+    <NuGetAudit>false</NuGetAudit>
+  </PropertyGroup>
+  <!-- No test-framework packages or runtime copies: use the user's installed assemblies read-only. -->
+  <ItemGroup>
+    <Reference Include="TorannMagic" HintPath="$(ModAssemblyPath)" Private="false" />
+    <Reference Include="Assembly-CSharp" HintPath="$(GameDir)/Assembly-CSharp.dll" Private="false" />
+    <Reference Include="UnityStubs" HintPath="$(GameDir)/UnityStubs.dll" Private="false" />
+    <Reference Include="AbilityUser" HintPath="$(JecsDir)/AbilityUser.dll" Private="false" />
+    <Reference Include="Brutal.Core.Logging" HintPath="$(GameDir)/Brutal.Core.Logging.dll" Private="false" />
+    <Reference Include="Microsoft.Extensions.Logging" HintPath="$(GameDir)/Microsoft.Extensions.Logging.dll" Private="false" />
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions" HintPath="$(GameDir)/Microsoft.Extensions.Logging.Abstractions.dll" Private="false" />
+  </ItemGroup>
+</Project>

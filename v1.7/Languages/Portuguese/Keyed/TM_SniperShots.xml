@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperObserve>Observar: ameaças {0}/10, setores {1}/10</TM_SniperObserve>
+  <TM_SniperChooseShot>Escolher disparo</TM_SniperChooseShot>
+  <TM_SniperPickHeadshot>Tiro na cabeça — atinge órgãos vitais (permanente)</TM_SniperPickHeadshot>
+  <TM_SniperPickAimed>Tiro de precisão — uma bala normal, 110/125/140% de dano (permanente)</TM_SniperPickAimed>
+  <TM_SniperReconHint>Observa 3 s sem te moveres. Identifica 10 inimigos diferentes ou examina 10 setores visíveis a 12–35 células.</TM_SniperReconHint>
+  <TM_SniperTrainRank>Gasta 1 ponto de poder marcial para subir de grau.</TM_SniperTrainRank>
+</LanguageData>

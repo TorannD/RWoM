@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
@@ -65,6 +65,10 @@ namespace TorannMagic.ModOptions
             Rect rowRect1ShiftRight = UIHelper.GetRowRect(rowRect1, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect1ShiftRight, "showLevelUpMessage".Translate(), ref Settings.Instance.showLevelUpMessage, false);
             num++;
+            Rect rowRectGrimoire = UIHelper.GetRowRect(rect1, rowHeight, num);
+            Widgets.CheckboxLabeled(rowRectGrimoire, "TM_GrimoireTabMode".Translate(), ref Settings.Instance.grimoireOnAbilityBar, false);
+            TooltipHandler.TipRegion(rowRectGrimoire, "TM_GrimoireTabModeDesc".Translate());
+            num++;
             Rect rowRect2 = UIHelper.GetRowRect(rect1, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect2, "AIMarking".Translate(), ref Settings.Instance.AIMarking, false);
             TooltipHandler.TipRegion(rowRect2, "TM_AIMarkingDesc".Translate());
@@ -75,7 +79,7 @@ namespace TorannMagic.ModOptions
             num++;
             Rect rowRect3 = UIHelper.GetRowRect(rect1, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect3, "AIFriendlyMarking".Translate(), ref Settings.Instance.AIFriendlyMarking, false);
-            TooltipHandler.TipRegion(rowRect21, "TM_AIFriendlyMarkingDesc".Translate());
+            TooltipHandler.TipRegion(rowRect3, "TM_AIFriendlyMarkingDesc".Translate());
             num++;
             Rect rowRect4 = UIHelper.GetRowRect(rect1, rowHeight, num);
             Widgets.CheckboxLabeled(rowRect4, "showClassIconOnColonistBar".Translate(), ref Settings.Instance.showClassIconOnColonistBar, false);

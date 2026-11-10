@@ -7,39 +7,27 @@ using System.Collections.Generic;
 
 namespace TorannMagic
 {
-    class Projectile_Overwhelm : Projectile_AbilityBase
+    class Projectile_Overwhelm : ClassProgression.Projectile_SpiritBolt
     {
 
         IntVec3 pos;
-        MagicPowerSkill pwr;
-        MagicPowerSkill ver;
-        private int verVal;
-        private int pwrVal;
-        private float arcaneDmg = 1;
+        protected override string SkillStem => "TM_Overwhelm";
+        protected override List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_Overwhelm;
+        private int lastStrikeTick = -1;
         private int strikeNum = 1;
         private bool initialized = false;
 
         private void Initialize(Pawn pawn)
         {
             GenClamor.DoClamor(this.launcher, 5f, ClamorDefOf.Impact);
-            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Overwhelm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Overwhelm_pwr");
-            ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Overwhelm.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Overwhelm_ver");
-            
-            pwrVal = pwr.level;
-            verVal = ver.level;
-            if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            if (!projected)
             {
-                MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
-            }
-            this.arcaneDmg = comp.arcaneDmg;
-            if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-            {
-                pwrVal = 3;
-                verVal = 3;
+                var comp = pawn.GetCompAbilityUserMagic();
+                var skills = Skills(comp.MagicData);
+                pwrVal = SpellRank(pawn, skills, SkillStem, "_pwr");
+                verVal = SpellRank(pawn, skills, SkillStem, "_ver");
+                arcaneDmg = comp.arcaneDmg;
+                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist) pwrVal = verVal = 3;
             }
             this.strikeNum = 1;
             initialized = true;
@@ -50,71 +38,84 @@ namespace TorannMagic
             //base.Impact(hitThing);
             
             Pawn pawn = this.launcher as Pawn;
-            Map map = pawn.Map;
+            Map map = Map;
+            if (!HasValidCaster(pawn, map))
+            {
+                Destroy();
+                return;
+            }
             if(!initialized)
             {
                 Initialize(pawn);
                 TM_Action.InvulnerableAoEFor(pawn.Position, map, 3 + verVal, Mathf.RoundToInt((90 + (10 * pwrVal)) * arcaneDmg), pawn.Faction);
             }
 
-            if (pawn != null)
+            int now = Find.TickManager.TicksGame;
+            if (now != lastStrikeTick && now % 3 == 0)
             {
-                if (Find.TickManager.TicksGame % 3 == 0)
-                {
-                    DoBurstExplosion(pawn, map);
-                    this.strikeNum++;
-                }
-                if(strikeNum > 3 + verVal)
-                {
-                    Destroy();
-                }
+                lastStrikeTick = now;
+                DoBurstExplosion(pawn, map);
+                this.strikeNum++;
             }
-            else
+            if(strikeNum > 3 + verVal)
             {
-                Log.Warning("failed to cast");
                 Destroy();
             }
 
         }        
 
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref initialized, "TM_overwhelmInitialized");
+            Scribe_Values.Look(ref strikeNum, "TM_overwhelmRing", 1);
+            Scribe_Values.Look(ref lastStrikeTick, "TM_overwhelmLastTick", -1);
+            if (projected) return; // base saves the projected ranks and damage scale.
+            Scribe_Values.Look(ref pwrVal, "TM_overwhelmPower");
+            Scribe_Values.Look(ref verVal, "TM_overwhelmVersatility");
+            Scribe_Values.Look(ref arcaneDmg, "TM_overwhelmScale", 1f);
+        }
+
         private void DoBurstExplosion(Pawn pawn, Map map)
-        {            
-            List<IntVec3> targets;
-            if (strikeNum == 1)
+        {
+            if (!HasValidCaster(pawn, map)) return;
+            foreach (var cell in GetBurstCells(pawn.Position, strikeNum, map))
+                HolyExplosion(pwrVal, verVal, cell, map, 0.4f);
+        }
+
+        private static bool HasValidCaster(Pawn pawn, Map map)
+        {
+            return !pawn.DestroyedOrNull() && pawn.Spawned && !pawn.Dead &&
+                map != null && pawn.Map == map && pawn.Position.InBounds(map);
+        }
+
+        internal static IEnumerable<IntVec3> GetBurstCells(IntVec3 center, int radius, Map map)
+        {
+            if (map == null || !center.InBounds(map) || radius < 1) yield break;
+            // Both circles must follow the same caster position, including when
+            // the caster has moved away from the projectile between strikes.
+            var inner = radius > 1
+                ? new HashSet<IntVec3>(GenRadial.RadialCellsAround(center, radius - 1, false))
+                : null;
+            foreach (var cell in GenRadial.RadialCellsAround(center, radius, false))
             {
-                targets = GenRadial.RadialCellsAround(pawn.Position, this.strikeNum, false).ToList();
+                // Rings crossing the map boundary are normal, not a failure.
+                if (cell.InBounds(map) && (inner == null || !inner.Contains(cell)))
+                    yield return cell;
             }
-            else
-            {
-                IEnumerable<IntVec3> oldTargets = GenRadial.RadialCellsAround(base.Position, this.strikeNum - 1, false);
-                targets = GenRadial.RadialCellsAround(pawn.Position, this.strikeNum, false).Except(oldTargets).ToList();
-            }
-            for (int j = 0; j < targets.Count; j++)
-            {
-                IntVec3 curCell = targets[j];
-                if (map != null && curCell.IsValid && curCell.InBoundsWithNullCheck(map))
-                {
-                    HolyExplosion(pwrVal, verVal, curCell, map, 0.4f);
-                }
-                else
-                {
-                    Log.Message("failed map check");
-                }
-            }                
-            
-        }        
+        }
 
         protected void HolyExplosion(int pwr, int ver, IntVec3 pos, Map map, float radius)
         {
             ThingDef def = this.def;
-            Explosion(pwr, pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Overwhelm, this.launcher, null, def, this.equipmentDef, null, 0.4f, 1, false, null, 0f, 1);
+            Explosion(pwr, pos, map, radius, TMDamageDefOf.DamageDefOf.TM_Overwhelm, SpellInstigator, null, def, this.equipmentDef, null, 0.4f, 1, false, null, 0f, 1);
             
             if (ver >= 2)
             {
                 int rnd = Rand.Range(3, 12);
                 if (rnd >= 5)
                 {
-                    Explosion(pwr, pos, map, radius, DamageDefOf.Stun, this.launcher, null, def, this.equipmentDef, null, 0.0f, 1, false, null, 0f, 1);
+                    Explosion(pwr, pos, map, radius, DamageDefOf.Stun, SpellInstigator, null, def, this.equipmentDef, null, 0.0f, 1, false, null, 0f, 1);
                 }
             }
             //MoteMaker.MakeStaticMote(pos, map, ThingDefOf.Mote_HeatGlow, 2f);
@@ -123,14 +124,15 @@ namespace TorannMagic
 
         public void Explosion(int pwr, IntVec3 center, Map map, float radius, DamageDef damType, Thing instigator, SoundDef explosionSound = null, ThingDef projectile = null, ThingDef source = null, ThingDef postExplosionSpawnThingDef = null, float postExplosionSpawnChance = 0f, int postExplosionSpawnThingCount = 1, bool applyDamageToExplosionCellsNeighbors = false, ThingDef preExplosionSpawnThingDef = null, float preExplosionSpawnChance = 0f, int preExplosionSpawnThingCount = 1)
         {
-            System.Random rnd = new System.Random();
-            int modDamAmountRand = (pwr * 3) + GenMath.RoundRandom(rnd.Next(5, projectile.projectile.GetDamageAmount(1,null)));
-            modDamAmountRand = Mathf.RoundToInt(modDamAmountRand * this.arcaneDmg);
             if (map == null)
             {
                 Log.Warning("Tried to do explosion in a null map.");
                 return;
             }
+            if (!center.InBounds(map)) return;
+            System.Random rnd = new System.Random();
+            int modDamAmountRand = (pwr * 3) + GenMath.RoundRandom(rnd.Next(5, projectile.projectile.GetDamageAmount(1,null)));
+            modDamAmountRand = Mathf.RoundToInt(modDamAmountRand * this.arcaneDmg);
             Explosion explosion = (Explosion)GenSpawn.Spawn(ThingDefOf.Explosion, center, map);
             explosion.damageFalloff = false;
             explosion.chanceToStartFire = 0.0f;

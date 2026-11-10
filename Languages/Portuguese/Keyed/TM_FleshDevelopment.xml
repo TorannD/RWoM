@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Flesh_Casting>A preparar {0}.</TM_Flesh_Casting>
+  <TM_Flesh_HealthLevel>nível {0}</TM_Flesh_HealthLevel>
+  <TM_Flesh_HealthRank>grau {0}/{1}</TM_Flesh_HealthRank>
+  <TM_Flesh_HealthMobility>Velocidade de movimento: +{0}%</TM_Flesh_HealthMobility>
+  <TM_Flesh_HealthStrength>Dano corpo a corpo: +{0}%</TM_Flesh_HealthStrength>
+  <TM_Flesh_HealthIndustry>Velocidade de trabalho geral: +{0}% (inclui fabrico)</TM_Flesh_HealthIndustry>
+  <TM_Flesh_HealthCapacity>Sede máxima: +{0} (total: {1})</TM_Flesh_HealthCapacity>
+  <TM_Flesh_Title>Desenvolvimento da Carne</TM_Flesh_Title>
+  <TM_Flesh_Open>Abre a progressão permanente da carne deste morto-vivo reanimado.</TM_Flesh_Open>
+  <TM_Flesh_Stats>Nível {0}   •   Experiência {1}/{2}   •   Pontos de habilidade: {3}</TM_Flesh_Stats>
+  <TM_Flesh_Experience>Experiência</TM_Flesh_Experience>
+  <TM_Flesh_Thirst>Sede: {0}/{1}</TM_Flesh_Thirst>
+  <TM_Flesh_Stop>Parar o Festim deste morto-vivo</TM_Flesh_Stop>
+  <TM_Flesh_StopAll>Parar os Festins de todos os mortos-vivos sob o teu controlo</TM_Flesh_StopAll>
+  <TM_Flesh_StopDesc>O mestre para o Festim sem custo; a sede e o tempo de recarga mantêm-se.</TM_Flesh_StopDesc>
+  <TM_Flesh_Rage>Fúria do Festim: as mordidas continuam até a sede descer a 20% ou o mestre ordenar a paragem.</TM_Flesh_Rage>
+  <TM_Flesh_Gate>Requisitos para desbloquear o Festim — maximiza todas as habilidades abaixo:</TM_Flesh_Gate>
+  <TM_Flesh_Upgrade>Melhorar (1 ponto)</TM_Flesh_Upgrade>
+  <TM_Flesh_Use>Usar</TM_Flesh_Use>
+  <TM_Flesh_Cooldown>Disponível em {0} segundos</TM_Flesh_Cooldown>
+  <TM_Flesh_Ready>Disponível</TM_Flesh_Ready>
+  <TM_Flesh_Active>Ativo: {0} segundos</TM_Flesh_Active>
+  <TM_Flesh_Devour>Devorar Carne</TM_Flesh_Devour>
+  <TM_Flesh_DevourDesc>Consome um cadáver à distância de combate corpo a corpo: a experiência depende da carne restante e da frescura. Cada 5 unidades de carne reduzem a sede em 1. Alvos orgânicos vivos: 4/6/8 de dano conforme o grau, sem experiência. Recarga: 5 segundos. As mordidas bem-sucedidas em alvos vivos também acrescentam 1% de acumulação tóxica, reduzida pela resistência tóxica.</TM_Flesh_DevourDesc>
+  <TM_Flesh_Restore>Restaurar Carne</TM_Flesh_Restore>
+  <TM_Flesh_RestoreDesc>Cura totalmente feridas, cicatrizes e partes naturais em falta. Mantém os implantes. Custo: TODA a experiência acumulada no nível atual (tem de ser superior a zero). Mantém níveis e pontos. Recarga por grau: 1000/900/800 segundos.</TM_Flesh_RestoreDesc>
+  <TM_Flesh_Empower>Fortalecer Carne</TM_Flesh_Empower>
+  <TM_Flesh_EmpowerDesc>Preparação: 2 segundos; interromper não consome recursos. Velocidade de movimento e trabalho geral: +10/20/30% conforme o grau. Custo: +10 de sede. Duração e recarga: 300 segundos. Ao terminar: 10% de probabilidade de ferir os membros naturais em 10% da sua saúde máxima.</TM_Flesh_EmpowerDesc>
+  <TM_Flesh_Harden>Endurecer Pele</TM_Flesh_Harden>
+  <TM_Flesh_HardenDesc>Preparação: 2 segundos; interromper não consome recursos. Armadura contra dano cortante e contundente: +20/35/50 pontos percentuais conforme o grau. Custo: +15 de sede. Duração e recarga: 300 segundos. Ao terminar, o tronco sofre dano equivalente a metade da sua saúde máxima.</TM_Flesh_HardenDesc>
+  <TM_Flesh_Feast>Festim de Carne</TM_Flesh_Feast>
+  <TM_Flesh_FeastDesc>Preparação: 5 segundos; interromper não consome recursos. Um grau. Exige todas as outras habilidades no máximo. Define a sede em 50%; +1 de sede por segundo durante 60 segundos. Golpes corpo a corpo bem-sucedidos: 20% de probabilidade de consumir uma parte orgânica, incluindo órgãos vitais. A sede máxima provoca fúria; com 0 de sede o Festim termina. Recarga: 1000 segundos. Durante o Festim, cada ataque corpo a corpo é uma mordida; as mordidas bem-sucedidas têm uma probabilidade independente de 30% de infetar uma ferida orgânica que ainda exista. Ataques falhados ou totalmente absorvidos não ativam estes efeitos. As mordidas bem-sucedidas em alvos vivos também acrescentam 1% de acumulação tóxica, reduzida pela resistência tóxica.</TM_Flesh_FeastDesc>
+  <TM_Flesh_Mobility>Carne Ágil</TM_Flesh_Mobility>
+  <TM_Flesh_MobilityDesc>Cada grau acrescenta +2% de velocidade de movimento. 10 graus: +20% no total.</TM_Flesh_MobilityDesc>
+  <TM_Flesh_Strength>Carne Poderosa</TM_Flesh_Strength>
+  <TM_Flesh_StrengthDesc>Cada grau acrescenta +3% de dano corpo a corpo. 10 graus: +30% no total.</TM_Flesh_StrengthDesc>
+  <TM_Flesh_Industry>Carne Laboriosa</TM_Flesh_Industry>
+  <TM_Flesh_IndustryDesc>Cada grau acrescenta +2% de velocidade de trabalho geral, aplicando o bónus ao fabrico apenas uma vez. 10 graus: +20% no total.</TM_Flesh_IndustryDesc>
+  <TM_Flesh_Capacity>Capacidade da Carne</TM_Flesh_Capacity>
+  <TM_Flesh_CapacityDesc>Cada grau acrescenta 10 de sede máxima. 8 graus: 20 → 100. Sede natural: +10 por dia. Aos 80%: −10% de movimento/trabalho; no máximo: −20%.</TM_Flesh_CapacityDesc>
+  <TM_FleshRejectUnavailable>Este morto-vivo tem de estar vivo, de pé, sob o teu controlo e sem um estado mental alterado.</TM_FleshRejectUnavailable>
+  <TM_FleshRejectUnlearned>Esta habilidade ainda não foi aprendida.</TM_FleshRejectUnlearned>
+  <TM_FleshRejectCooldown>Esta habilidade está a recarregar.</TM_FleshRejectCooldown>
+  <TM_FleshRejectActive>Este efeito já está ativo.</TM_FleshRejectActive>
+  <TM_FleshRejectNoExperience>A restauração requer experiência do nível atual.</TM_FleshRejectNoExperience>
+  <TM_Flesh_ActiveKind>Ativa</TM_Flesh_ActiveKind>
+  <TM_Flesh_PassiveKind>Passiva</TM_Flesh_PassiveKind>
+  <TM_Flesh_NoPoints>Pontos de habilidade insuficientes</TM_Flesh_NoPoints>
+  <TM_Flesh_MaxRank>Grau máximo</TM_Flesh_MaxRank>
+  <TM_Flesh_ThirstLabel>Sede</TM_Flesh_ThirstLabel>
+  <TM_Flesh_ThirstTip>Fome acumulada: +10 por dia. Comer carne reduz a Sede. Aos 80%: −10% de movimento/trabalho; no máximo: −20%.</TM_Flesh_ThirstTip>
+  <TM_Flesh_DebugLevelUp>+1 nível</TM_Flesh_DebugLevelUp>
+  <TM_Flesh_StatTotal>Multiplicador combinado da carne: {0}</TM_Flesh_StatTotal>
+  <TM_Flesh_HealthRemaining>Restam {0} s</TM_Flesh_HealthRemaining>
+  <TM_Flesh_HealthRage>Fúria descontrolada</TM_Flesh_HealthRage>
+  <TM_Flesh_HealthEmpower>Velocidade de movimento e de trabalho geral: +{0}%.</TM_Flesh_HealthEmpower>
+  <TM_Flesh_HealthHarden>Armadura cortante e contundente: +{0} pontos percentuais.</TM_Flesh_HealthHarden>
+  <TM_Flesh_HealthFeast>O festim está ativo. Sede atual: {1}/{2}. A fúria continua até a Sede descer para 20% ou o dono a parar.</TM_Flesh_HealthFeast>
+  <TM_Flesh_BiteRules>Fora do Festim, os ataques corpo a corpo dos mortos-vivos têm 10% de probabilidade de se tornarem mordidas críticas (+50% de dano). As mordidas bem-sucedidas acrescentam 1% de acumulação tóxica, reduzida pela resistência tóxica.</TM_Flesh_BiteRules>
+</LanguageData>

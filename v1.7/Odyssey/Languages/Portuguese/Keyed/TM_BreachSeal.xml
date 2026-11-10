@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BreachSeal_eff>Eficiência</TM_BreachSeal_eff>
+  <TM_BreachSeal_eff_desc>Reduz o custo de mana em 10% por nível, até três níveis.</TM_BreachSeal_eff_desc>
+  <TM_BreachSeal_Unavailable>Selo de brecha indisponível.</TM_BreachSeal_Unavailable>
+  <TM_BreachSeal_NoCore>Seleciona uma plataforma do teu núcleo de nave.</TM_BreachSeal_NoCore>
+  <TM_BreachSeal_AmbiguousCore>Vários núcleos partilham esta plataforma.</TM_BreachSeal_AmbiguousCore>
+  <TM_BreachSeal_CoreOverlap>O alvo sobrepõe-se ao núcleo.</TM_BreachSeal_CoreOverlap>
+  <TM_BreachSeal_InvalidFloor>O centro e a margem afastada requerem chão intacto da nave.</TM_BreachSeal_InvalidFloor>
+  <TM_BreachSeal_Blocked>A margem afastada está bloqueada.</TM_BreachSeal_Blocked>
+  <TM_BreachSeal_AlreadySealed>Esta margem já está selada.</TM_BreachSeal_AlreadySealed>
+  <TM_BreachSeal_ver>Duração</TM_BreachSeal_ver>
+  <TM_BreachSeal_ver_desc>Aumenta a duração base em 25% por nível: 30, 36 ou 42 horas. Pergaminhos e cajados duram 24 horas.</TM_BreachSeal_ver_desc>
+</LanguageData>

@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using Verse;
 using AbilityUser;
@@ -7,7 +7,7 @@ using TorannMagic.Conditions;
 
 namespace TorannMagic
 {
-    public class Verb_Rainmaker : Verb_UseAbility
+    public class Verb_Rainmaker : ClassProgression.Verb_SpiritTargetable
     {
         public Type eventClass;
         private bool isViolent = false;
@@ -16,7 +16,9 @@ namespace TorannMagic
         {
             Map map = base.CasterPawn.Map; 
             WeatherDef rainMakerDef = new WeatherDef();
-            CompAbilityUserMagic comp = base.CasterPawn.GetCompAbilityUserMagic();
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            if (owner == null) return false;
+            CompAbilityUserMagic comp = owner.GetCompAbilityUserMagic();
             if (map != null && comp != null && comp.MagicData != null)
             {
 
@@ -32,7 +34,7 @@ namespace TorannMagic
                         if (map.weatherManager.curWeather.defName == "SnowHard" || map.weatherManager.curWeather.defName == "SnowGentle")
                         {
                             rainMakerDef = WeatherDef.Named("Clear");
-                            map.weatherManager.TransitionTo(rainMakerDef);
+                            ClassProgression.IceTrials.TransitionWeather(owner, map, rainMakerDef);
                             return true;
                         }
                         else
@@ -46,7 +48,7 @@ namespace TorannMagic
                                 rainMakerDef = WeatherDef.Named("SnowHard");
                             }
                             map.weatherDecider.DisableRainFor(0);
-                            map.weatherManager.TransitionTo(rainMakerDef);
+                            ClassProgression.IceTrials.TransitionWeather(owner, map, rainMakerDef);
                             return true;
                         }
                     }
@@ -70,7 +72,7 @@ namespace TorannMagic
                             rainMakerDef = WeatherDef.Named("Clear");
                             isViolent = false;
                         }
-                        map.weatherManager.TransitionTo(rainMakerDef);
+                        ClassProgression.IceTrials.TransitionWeather(owner, map, rainMakerDef);
 
                     }
                     else
@@ -96,7 +98,7 @@ namespace TorannMagic
                             }
                         }
                         map.weatherDecider.DisableRainFor(0);
-                        map.weatherManager.TransitionTo(rainMakerDef);
+                        ClassProgression.IceTrials.TransitionWeather(owner, map, rainMakerDef);
                     }
                     if (isViolent)
                     {

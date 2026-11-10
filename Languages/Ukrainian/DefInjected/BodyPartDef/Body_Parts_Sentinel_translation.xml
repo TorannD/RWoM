@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Sentinel_Body.label>тіло</Sentinel_Body.label>
+  <Sentinel_Head.label>голова</Sentinel_Head.label>
+  <Sentinel_Skull.label>череп</Sentinel_Skull.label>
+  <Sentinel_Brain.label>мозок</Sentinel_Brain.label>
+
+
+  <Sentinel_LeftArm.label>ліва рука</Sentinel_LeftArm.label>
+  <Sentinel_RightArm.label>права рука</Sentinel_RightArm.label>
+  <Sentinel_LeftEye.label>ліве око</Sentinel_LeftEye.label>
+  <Sentinel_RightEye.label>праве око</Sentinel_RightEye.label>
+  <Sentinel_LeftEar.label>ліве вухо</Sentinel_LeftEar.label>
+  <Sentinel_RightEar.label>праве вухо</Sentinel_RightEar.label>
+  <Sentinel_Jaw.label>щелепи</Sentinel_Jaw.label>
+  <Sentinel_Neck.label>шия</Sentinel_Neck.label>
+  <Sentinel_Spine.label>хребет</Sentinel_Spine.label>
+  <Sentinel_Abdomen.label>черевець</Sentinel_Abdomen.label>
+  <Sentinel_Chest.label>груди</Sentinel_Chest.label>
+  <Sentinel_Base.label>ноги часового</Sentinel_Base.label>
+
+
+</LanguageData>

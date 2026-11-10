@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Magic.description>realizar tareas arcanas y que dependen de la magia</TM_Magic.description>
+  
+  <TM_Magic.gerundLabel>manipulación de magia</TM_Magic.gerundLabel>
+  
+  <TM_Magic.labelShort>Magia</TM_Magic.labelShort>
+  
+  <TM_Magic.pawnLabel>Magia</TM_Magic.pawnLabel>
+  
+  <TM_Magic.verb>Realizar magia</TM_Magic.verb>
+  
+</LanguageData>

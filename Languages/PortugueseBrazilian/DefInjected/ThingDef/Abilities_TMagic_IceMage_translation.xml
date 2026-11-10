@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Soothe start -->
+
+  <Buff_Soothe.label>Brisa calmante</Buff_Soothe.label>
+
+
+  <!-- FrostRay -->
+
+  <Laser_FrostRay.label>Raio de frio</Laser_FrostRay.label>
+
+
+  <!-- Snowball -->
+
+  <Projectile_Snowball.label>bola de neve</Projectile_Snowball.label>
+
+
+  <!-- Icebolt -->
+
+  <Projectile_Icebolt.label>parafuso de gelo</Projectile_Icebolt.label>
+
+
+  <!-- Rainmaker Start -->
+
+  <Projectile_Rainmaker.label>Criador da chuva</Projectile_Rainmaker.label>
+
+
+  <!-- Blizzard -->
+
+  <Projectile_Blizzard.label>Tempestade de neve</Projectile_Blizzard.label>
+
+
+</LanguageData>

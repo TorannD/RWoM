@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManaPotionHigh.stages.0.label>сплеск мани</ManaPotionHigh.stages.0.label>
+  <ManaPotionHigh.stages.0.description>Ця сила... це приголомшує. Я відчуваю силу космосу на кінчиках пальців, але вона перетворює мої кістки на попіл.</ManaPotionHigh.stages.0.description>
+
+
+  <!-- Mana potion addiction -->
+
+  <ManaPotionWithdrawal.stages.1.label>Відтік мани</ManaPotionWithdrawal.stages.1.label>
+  <ManaPotionWithdrawal.stages.1.description>Тьху... все навколо як у тумані. Мені здається, що я не можу зосередитися або контролювати своє тіло, я відчуваю себе відокремленим від реальності. Мені потрібно відчути, як мана тече в мою душу.</ManaPotionWithdrawal.stages.1.description>
+
+
+</LanguageData>

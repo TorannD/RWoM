@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-    public class Projectile_Poison : Projectile_AbilityBase
+    public class Projectile_Poison : ClassProgression.Projectile_SpiritImpact
     {
         BodyPartRecord[] vulnerableParts = new BodyPartRecord[10];
         private bool initialized = false;
@@ -20,11 +20,8 @@ namespace TorannMagic
         Pawn hitPawn = null;
         Pawn caster = null;
 
-        MagicPowerSkill pwr;
-        MagicPowerSkill ver;
-        private int verVal;
-        private int pwrVal;
-        private float arcaneDmg = 1;
+        protected override string SkillStem => "TM_Poison";
+        protected override List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_Poison;
 
         public override void ExposeData()
         {
@@ -36,37 +33,33 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.poisonRate, "poisonRate", 270, false);
             Scribe_Values.Look<IntVec3>(ref this.oldPosition, "oldPosition", default(IntVec3), false);
             Scribe_References.Look<Pawn>(ref this.hitPawn, "hitPawn", false);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && initialized) Initialize(hitPawn);
         }
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
             base.Impact(hitThing);
-            ThingDef def = this.def;
-                        
-            caster = this.launcher as Pawn;
-            pwr = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Poison.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Poison_pwr");
-            ver = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Poison.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Poison_ver");
-            
-            pwrVal = pwr.level;
-            verVal = ver.level;
-            if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            caster = SourcePawn;
+            if (caster == null || Destroyed)
             {
-                MightPowerSkill mpwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                MightPowerSkill mver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                pwrVal = mpwr.level;
-                verVal = mver.level;
+                if (!Destroyed) { age = duration; Destroy(); }
+                return;
             }
-            this.arcaneDmg = caster.GetCompAbilityUserMagic().arcaneDmg;
-            if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
+            if (!projected)
             {
-                pwrVal = 3;
-                verVal = 3;
+                var magic = caster.GetCompAbilityUserMagic();
+                if (magic?.MagicData == null) { age = duration; Destroy(); return; }
+                var skills = Skills(magic.MagicData);
+                pwrVal = SpellRank(caster, skills, SkillStem, "_pwr");
+                verVal = SpellRank(caster, skills, SkillStem, "_ver");
+                arcaneDmg = magic.arcaneDmg;
+                if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist) pwrVal = verVal = 3;
             }
             if (!initialized)
             {
                 hitPawn = hitThing as Pawn;
-                if (hitThing != null && hitPawn.needs.food != null)
+                if (hitPawn?.needs?.food != null && !hitPawn.Dead)
                 {
                     duration += (verVal * 180);                    
                     Initialize(hitPawn);
@@ -85,6 +78,7 @@ namespace TorannMagic
                     Log.Message("No target found for poison or target not susceptable to poison.");
                     this.age = this.duration + 1;
                     this.Destroy(DestroyMode.Vanish);
+                    return;
                 }
             }
 
@@ -92,7 +86,7 @@ namespace TorannMagic
             {
                 try
                 {
-                    if (hitPawn != null && !hitPawn.Dead && caster != null && !caster.Dead)
+                    if (hitPawn != null && !hitPawn.Dead && hitPawn.Spawned && hitPawn.Map == map && !caster.Dead)
                     {
                         if (hitPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_Poisoned_HD, false))
                         {

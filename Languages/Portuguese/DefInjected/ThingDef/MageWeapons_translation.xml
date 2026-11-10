@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Melee Weapons -->
+
+  <TM_ElephantSpear.label>Lança elefante</TM_ElephantSpear.label>
+  <TM_ElephantSpear.description>A lança de elefante é feita com o uso de bicos de elefante e geralmente é um símbolo de status destinado a caçadores de recompensas ou líderes tribais. A árvore tem encantos menores que aumentam ainda mais a capacidade de combate do usuário.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 10%
+Aumento do Urano: + 10%
+Resistência secreta: + 20%</TM_ElephantSpear.description>
+  <TM_ElephantSpear.tools.0.label>manivela</TM_ElephantSpear.tools.0.label>
+  <TM_ElephantSpear.tools.1.label>ponta</TM_ElephantSpear.tools.1.label>
+  <TM_ElephantSpear.tools.2.label>borda</TM_ElephantSpear.tools.2.label>
+
+
+  <!-- Elephant Tusk -->
+
+  <TM_ElephantTusk.label>bico de marfim</TM_ElephantTusk.label>
+  <TM_ElephantTusk.description>Este marfim foi transformado em uma faca longa, útil em combate próximo, tanto para bater ou cortar. A manga é ajustada pela pele e tem um pequeno contraponto para melhorar a governabilidade, e o peso leve da lâmina permite ataques rápidos. No entanto, um peso pequeno e uma lâmina mais suave tornam-no uma má escolha contra um adversário pesado.</TM_ElephantTusk.description>
+  <TM_ElephantTusk.tools.0.label>manivela</TM_ElephantTusk.tools.0.label>
+  <TM_ElephantTusk.tools.1.label>ponta</TM_ElephantTusk.tools.1.label>
+  <TM_ElephantTusk.tools.2.label>borda</TM_ElephantTusk.tools.2.label>
+
+
+  <!-- Elephant Bow -->
+
+  <Projectile_ElephantBow.label>Flecha arco de marfim</Projectile_ElephantBow.label>
+
+  <TM_ElephantBow.label>Cebola de elefante</TM_ElephantBow.label>
+  <TM_ElephantBow.description>Cebola em forma de marfim. As batedeiras são consagradas para reduzir a rigidez e reduzir o peso, e amolecem-se, molhando-as em um composto mágico que aumenta a flexibilidade. Cebola de elefante oferece melhorias significativas no alcance e precisão para os objetivos distantes sobre a cebola grande, embora seja um pouco mais difícil de manusear.
+
+Cebola de elefante decorado com gravura com poucos encantos e é a arma preferida de muitos rangers experientes e caçadores.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 5%
+Recuperação de Energia: + 5%
+Aumento do Urano: + 10%
+Capacidade de recarga: -10%</TM_ElephantBow.description>
+  <TM_ElephantBow.tools.0.label>membro</TM_ElephantBow.tools.0.label>
+
+  <TM_ThrumboAxe.label>Machado de trumbo</TM_ThrumboAxe.label>
+  <TM_ThrumboAxe.description>Um machado criado com os chifres de Trumbo que se ligam com o fecho feito de magicita. Este fecho armazena o potencial secreto e transmite-o como uma força física ao bater o machado, permitindo-lhe aplicar golpes poderosos capazes de cortar vários adversários. A árvore também tem runas mágicas gravadas para aumentar a força do proprietário.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 10%
+Aumento do Urano: + 20%
+Resistência secreta: + 30%</TM_ThrumboAxe.description>
+  <TM_ThrumboAxe.tools.0.label>manivelada</TM_ThrumboAxe.tools.0.label>
+  <TM_ThrumboAxe.tools.1.label>ponta</TM_ThrumboAxe.tools.1.label>
+  <TM_ThrumboAxe.tools.2.label>chifres</TM_ThrumboAxe.tools.2.label>
+
+
+  <!-- Thrumbo Saber -->
+
+  <TM_ThrumboSaber.label>Sabre trumbo</TM_ThrumboSaber.label>
+  <TM_ThrumboSaber.description>Uma lâmina afiada como um barbear, forjada a partir do chifre de Trumbo e cheia de energia secreta. O sabre de Trumbo é mais leve que as lâminas de metal, e a sua lâmina pode cortar qualquer armadura que não seja a mais grossa. Muitos dos mestres da lâmina preferem esta arma, porque é projetada para ser rápida e letal. Feitiços adicionais também podem acelerar os usuários, dobrando sua velocidade de ataque por um curto período.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Tempo de recuperação de capacidades: -10%
+Aumento de danos: + 10%
+Velocidade de ataque (+ 25%)</TM_ThrumboSaber.description>
+  <TM_ThrumboSaber.tools.0.label>manivelada</TM_ThrumboSaber.tools.0.label>
+  <TM_ThrumboSaber.tools.1.label>ponta</TM_ThrumboSaber.tools.1.label>
+  <TM_ThrumboSaber.tools.2.label>borda</TM_ThrumboSaber.tools.2.label>
+
+
+  <!-- Glory Maul -->
+
+  <TM_GloryMaul.label>Martelo da Glória</TM_GloryMaul.label>
+  <TM_GloryMaul.description>Um broche de mão única projetado para combater os mais diversos inimigos. A Ponta do Martelo da Glória tem um fim contundente, com formação escura, para distribuir o peso do impacto em vários pontos, e a outra ponta está equilibrada com uma espinha curva de garra usada para picar uma armadura grossa. O martelo da Glória é chamado assim por causa dos seus encantos, que podem dar ao dono uma bênção poderosa do poder.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia máxima: + 20
+Resistência secreta: + 20%
+Aumento de danos: + 10%
+Dá força ao entrar (15%)</TM_GloryMaul.description>
+  <TM_GloryMaul.tools.0.label>espinha de garra</TM_GloryMaul.tools.0.label>
+  <TM_GloryMaul.tools.1.label>Parte de choque</TM_GloryMaul.tools.1.label>
+
+
+  <!-- Decimation -->
+
+  <TM_Decimation.label>Destruidor</TM_Decimation.label>
+  <TM_Decimation.description>Um broche de duas mãos, tão enfeitado, que quebra a embreagem de qualquer material que entra. Ele é forjado, aparentemente, com um pedaço integral de metal e controlado com uma manga envolta em pele simples. As runas finamente gravadas cobrem a superfície do bulbo, dando-lhe uma aparência quase delicada. Quando é mantido, a qualidade do design fica evidente, com equilíbrio perfeito e uma governabilidade confiável, apesar do peso impressionante. Cada ataque tem a chance de causar danos ao alvo, o que a fará sofrer mais danos com ataques posteriores.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia máxima: + 40
+Resistência secreta: + 40%
+Aumento de danos: + 30%
+Fragilidade de entrada (50%)</TM_Decimation.description>
+  <TM_Decimation.tools.0.label>manivelada</TM_Decimation.tools.0.label>
+  <TM_Decimation.tools.1.label>Parte de choque</TM_Decimation.tools.1.label>
+
+
+  <!-- The rune blade -->
+
+  <TM_Ruunbled.label>Lâmina rónica</TM_Ruunbled.label>
+  <TM_Ruunbled.description>Esta lâmina maciça está coberta de rumas planeadas de manga a ponta. Ele é forjado com material desconhecido, afiado como um barbear, e pesa apenas uma pequena parte do que se pode supor. Apesar do seu tamanho, as armas são fáceis de manusear e praticamente emitem poder. Você só pode adivinhar a origem desta arma, talvez fabricada com tecnologias antigas que foram perdidas no tempo, ou fabricadas com algum poder misterioso. A única dica é uma pequena palavra escrita com uma letra elegante e impressionada com uma manilha chamada «Ruunbled». Não tem certeza se é uma empresa fabricante, o nome do fabricante ou o nome da lâmina. Seja o que for, não há dúvida de que esta arma é o topo da sua classe.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Tempo de recuperação de capacidades: -20%
+Custos de energia: -20%
+Aumento de danos: + 25%
+Resistência secreta: + 25%
+Velocidade de ataque (+ 20%)
+Evasão (+ 30%)
+Impacto de dissecação</TM_Ruunbled.description>
+  <TM_Ruunbled.tools.0.label>recompensadas</TM_Ruunbled.tools.0.label>
+  <TM_Ruunbled.tools.1.label>ponta</TM_Ruunbled.tools.1.label>
+  <TM_Ruunbled.tools.2.label>borda</TM_Ruunbled.tools.2.label>
+
+
+  <!-- Thrum Bow -->
+
+  <Projectile_ThrumArrow.label>Flecha arco de trumbo</Projectile_ThrumArrow.label>
+
+  <TM_ThrumBow.label>Cebola trumbo</TM_ThrumBow.label>
+  <TM_ThrumBow.description>Cebola feita com um córrego de trumbo. O chifre consagra-se para reduzir o peso e amolece-se, molhando-o numa mistura mágica que dá ao córrego uma flexibilidade surpreendente. A cebola é reforçada por meio de encantos integrados e gravuras secretas que se movem por todo o comprimento da cebola. Dizem que a cebola é quase sensível e capaz de determinar o alvo através da ligação mental com o proprietário. As flechas disparadas com este arco quase sempre atingiram o alvo. No entanto, esse efeito tende a enganar os próprios usuários.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 20%
+Recuperação de Energia: + 10%
+Aumento do Urano: + 20%
+Capacidade de recarga: -10%
+Classe de reforço XP: -20%</TM_ThrumBow.description>
+  <TM_ThrumBow.tools.0.label>membro</TM_ThrumBow.tools.0.label>
+
+
+  <!-- Demon's Fang -->
+
+  <TM_DemonFang.label>canja de demónio</TM_DemonFang.label>
+  <TM_DemonFang.description>Uma lâmina curta letal que pode causar toxina na sombra noturna. O canil do demônio é leve, tem ataques rápidos e beneficiará do tipo de material usado na sua fabricação. No entanto, os danos não processados a estas armas são inferiores aos de outras armas de alto nível. Devido à natureza da sua criação, ele realmente ganha de vários feitiços poderosos que aumentam as habilidades do seu usuário.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Custos de energia: -10%
+Tempo de recuperação de capacidades: -15%
+Aumento de danos: + 25%
+Toxina de sombra noturna quando atingido (20%)</TM_DemonFang.description>
+  <TM_DemonFang.tools.0.label>ponta</TM_DemonFang.tools.0.label>
+  <TM_DemonFang.tools.1.label>borda</TM_DemonFang.tools.1.label>
+
+
+  <!-- Fire Wand -->
+
+  <Projectile_FireWand.label>vara de fogo</Projectile_FireWand.label>
+
+  <TM_FireWand.label>Vara de fogo</TM_FireWand.label>
+  <TM_FireWand.description>Uma varinha capaz de converter lentamente a energia mágica nas proximidades em fogo. As varinhas são usadas como ferramentas de foco para usar a força congênita mais do que a arma em si.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 5%
+Recuperação de Energia: + 5%
+Aumento do Urano: + 15%</TM_FireWand.description>
+  <TM_FireWand.tools.0.label>vara</TM_FireWand.tools.0.label>
+
+
+  <!-- Ice Wand -->
+
+  <Projectile_IceWand.label>vara de gelo</Projectile_IceWand.label>
+
+  <TM_IceWand.label>Vara de gelo</TM_IceWand.label>
+  <TM_IceWand.description>Uma varinha capaz de converter lentamente a energia mágica nas proximidades para o gelo. As varinhas são usadas como ferramentas de foco para usar a força congênita mais do que a arma em si.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 5%
+Recuperação de Energia: + 5%
+Aumento do Urano: + 15%</TM_IceWand.description>
+  <TM_IceWand.tools.0.label>vara</TM_IceWand.tools.0.label>
+
+
+  <!-- Lightning Wand -->
+
+  <Projectile_LightningWand.label>vara relâmpago</Projectile_LightningWand.label>
+
+  <TM_LightningWand.label>Vara relâmpago</TM_LightningWand.label>
+  <TM_LightningWand.description>Uma varinha capaz de converter lentamente a energia mágica nas proximidades em uma força relâmpago. As varinhas são usadas como ferramentas de foco para usar a força congênita mais do que a arma em si.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 5%
+Recuperação de Energia: + 5%
+Aumento do Urano: + 15%</TM_LightningWand.description>
+  <TM_LightningWand.tools.0.label>vara</TM_LightningWand.tools.0.label>
+
+  <TM_DefenderStaff.label>Bastão do protetor</TM_DefenderStaff.label>
+  <TM_DefenderStaff.description>Um bastão feito de um desenho antigo que carrega uma aura tangível de sabedoria. Este bastão é capaz de penetrar no reino espiritual e permitir que o proprietário se comunique com os espíritos de seus ancestrais, que podem mostrar sua força na forma de uma barreira física. A energia para realizar esta ação vem dos próprios espíritos e não recebe energia do utilizador, embora os espíritos precisem de tempo para descansar entre os pedidos.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 30%
+Recuperação de Energia: + 20%
+Resistência secreta: + 20%
+
+Augmentação acrescenta capacidade: barreira secreta</TM_DefenderStaff.description>
+  <TM_DefenderStaff.tools.0.label>vara</TM_DefenderStaff.tools.0.label>
+  <TM_DefenderStaff.tools.1.label>parte superior</TM_DefenderStaff.tools.1.label>
+
+
+  <!-- Staff of Blazing Power -->
+
+  <Projectile_BlazingPower.label>poder de fogo</Projectile_BlazingPower.label>
+
+  <TM_BlazingPowerStaff.label>Bastão da força ardente</TM_BlazingPowerStaff.label>
+  <TM_BlazingPowerStaff.description>Um bastão que cria uma ligação mental com o proprietário para usar a energia focada que pode ser usada para lançar o fluxo de projéteis em chamas ou criar uma barreira reforçada em torno do proprietário que pode desviar projéteis. Os mágicos têm um enorme aumento de feitiços mágicos quando possuem este bastão, mas para um peão do mundo, não é nada mais do que uma arma estúpida.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 20%
+Recuperação de Energia: + 10%
+Aumento do Urano: + 40%</TM_BlazingPowerStaff.description>
+  <TM_BlazingPowerStaff.tools.0.label>vara</TM_BlazingPowerStaff.tools.0.label>
+  <TM_BlazingPowerStaff.tools.1.label>parte superior</TM_BlazingPowerStaff.tools.1.label>
+
+
+  <!-- Staff of Winter's Reign -->
+
+  <Projectile_FreezingWinds.label>vento glacial</Projectile_FreezingWinds.label>
+  <FlyingObject_FreezingWinds.label>vento glacial</FlyingObject_FreezingWinds.label>
+
+  <TM_WinterStaff.label>Anel do Inverno</TM_WinterStaff.label>
+  <TM_WinterStaff.description>Uma barra de aço azul decorada com coroa de pedaços de cristal. O toque deste material nunca aquece, como se lembrasse ao proprietário de sua soberania gelada. O poder do bastão é duplo - ele aumenta significativamente o poder mágico congênito do mago e é capaz de causar granizo em qualquer ambiente. A força do bastão tem um preço - quando é mantido, o bastão suga o calor e a energia do dono, e se for mantido por um mágico, espalha esse efeito sobre a atmosfera ao redor. Apenas os mágicos podem projetar o poder desta substância.
+
+Estas armas são enfeitadas e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia máxima: + 80
+Tempo de recuperação de capacidades: -30%
+Resistência secreta: + 20%
+Danos mágicos: + 50%
+
+Capacidade: Grão</TM_WinterStaff.description>
+  <TM_WinterStaff.tools.0.label>barra</TM_WinterStaff.tools.0.label>
+  <TM_WinterStaff.tools.1.label>recompensadas</TM_WinterStaff.tools.1.label>
+
+
+  <!-- Seer ring - Fire -->
+
+  <Projectile_SeerRing_Fire.label>Força do fogo</Projectile_SeerRing_Fire.label>
+
+  <Seer_FireRing.label>Anel de poder de fogo</Seer_FireRing.label>
+  <Seer_FireRing.description>Um artefato antigo, ligado ao proprietário, que permite que correntes básicas fluam pelo meio. Se o hospedeiro estiver separado do anel, o contrato que o liga a este reino será cancelado, destruindo o artefato.</Seer_FireRing.description>
+  <Seer_FireRing.tools.0.label>Impacto básico</Seer_FireRing.tools.0.label>
+
+
+  <!-- Seer ring - Ice -->
+
+  <Projectile_SeerRing_Ice.label>Poder do gelo</Projectile_SeerRing_Ice.label>
+
+  <Seer_IceRing.label>Anel de poder do gelo</Seer_IceRing.label>
+  <Seer_IceRing.description>Um artefato antigo, ligado ao proprietário, que permite que correntes básicas fluam pelo meio. Se o hospedeiro estiver separado do anel, o contrato que o liga a este reino será cancelado, destruindo o artefato.</Seer_IceRing.description>
+  <Seer_IceRing.tools.0.label>Impacto básico</Seer_IceRing.tools.0.label>
+
+
+  <!-- Seer ring - Lightning -->
+
+  <Laser_SeerRing_Lightning.label>força relâmpago</Laser_SeerRing_Lightning.label>
+
+  <Seer_LightningRing.label>Anel de poder relâmpago</Seer_LightningRing.label>
+  <Seer_LightningRing.description>Um artefato antigo, ligado ao proprietário, que permite que correntes básicas fluam pelo meio. Se o hospedeiro estiver separado do anel, o contrato que o liga a este reino será cancelado, destruindo o artefato.</Seer_LightningRing.description>
+  <Seer_LightningRing.tools.0.label>Impacto básico</Seer_LightningRing.tools.0.label>
+
+
+</LanguageData>

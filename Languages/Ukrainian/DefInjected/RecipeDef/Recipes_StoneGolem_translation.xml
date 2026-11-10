@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Stone Golem upgrade recipes -->
+
+  <TM_StoneGolem_RepairBlock.label>Відновлення деталей</TM_StoneGolem_RepairBlock.label>
+  <TM_StoneGolem_RepairBlock.description>Замінює відсутні частини голема, які не потребують оновлення.</TM_StoneGolem_RepairBlock.description>
+  <TM_StoneGolem_RepairBlock.jobString>створення частини голему</TM_StoneGolem_RepairBlock.jobString>
+
+  <TM_StoneGolem_EnergyMax.label>енергетичний елемент</TM_StoneGolem_EnergyMax.label>
+  <TM_StoneGolem_EnergyMax.description>Створює енергетичний осередок, який збільшує максимальну енергію на 120 на осередок.</TM_StoneGolem_EnergyMax.description>
+  <TM_StoneGolem_EnergyMax.jobString>створення енергетичного осередку</TM_StoneGolem_EnergyMax.jobString>
+
+  <TM_StoneGolem_EnergyConverter.label>перетворювач енергії</TM_StoneGolem_EnergyConverter.label>
+  <TM_StoneGolem_EnergyConverter.description>Збільшує ефективність поглинання та використання енергії големом на 10%.</TM_StoneGolem_EnergyConverter.description>
+  <TM_StoneGolem_EnergyConverter.jobString>пристрій перетворювача енергії</TM_StoneGolem_EnergyConverter.jobString>
+
+  <TM_StoneGolem_EnergyRegen.label>генератор енергії</TM_StoneGolem_EnergyRegen.label>
+  <TM_StoneGolem_EnergyRegen.description>Збільшує швидкість регенерації енергії голему на 4 на годину.</TM_StoneGolem_EnergyRegen.description>
+  <TM_StoneGolem_EnergyRegen.jobString>створення генератора енергії</TM_StoneGolem_EnergyRegen.jobString>
+
+  <TM_StoneGolem_Armor.label>Затвердження</TM_StoneGolem_Armor.label>
+  <TM_StoneGolem_Armor.description>Кожне оновлення збільшує броню голему:
+Тупий збиток: +4%
+Ріжучий: +11%
+Температура: +6%</TM_StoneGolem_Armor.description>
+  <TM_StoneGolem_Armor.jobString>створення частини голему</TM_StoneGolem_Armor.jobString>
+
+  <TM_StoneGolem_LifeStage.label>каркасний шар</TM_StoneGolem_LifeStage.label>
+  <TM_StoneGolem_LifeStage.description>Покращує і підсилює каркас голему на кожному рівні [1,2,3]:
+Рух: +[20.10/30]%
+Здоров&apos;я: +[40/70/100]%</TM_StoneGolem_LifeStage.description>
+  <TM_StoneGolem_LifeStage.jobString>поліпшення каркасу голему</TM_StoneGolem_LifeStage.jobString>
+
+  <TM_StoneGolem_Compactor.label>Ущільнювач</TM_StoneGolem_Compactor.label>
+  <TM_StoneGolem_Compactor.description>Забезпечте порожнину голема кам&apos;яним ущільнювачем, здатним дробити кам&apos;яні шматки в придатну для використання цеглу.</TM_StoneGolem_Compactor.description>
+  <TM_StoneGolem_Compactor.jobString>Створення оновлення голема</TM_StoneGolem_Compactor.jobString>
+
+  <TM_StoneGolem_SandstoneBricks.label>дробити пісковик</TM_StoneGolem_SandstoneBricks.label>
+  <TM_StoneGolem_SandstoneBricks.description>Розміщує шматки пісковика в голему, щоб їх можна було роздробити на придатні для використання блоки.</TM_StoneGolem_SandstoneBricks.description>
+  <TM_StoneGolem_SandstoneBricks.jobString>завантаження пісковика</TM_StoneGolem_SandstoneBricks.jobString>
+
+  <TM_StoneGolem_GraniteBricks.label>дробити граніт</TM_StoneGolem_GraniteBricks.label>
+  <TM_StoneGolem_GraniteBricks.description>Розміщує гранітні шматки в голема, які будуть подрібнені в придатні для використання блоки.</TM_StoneGolem_GraniteBricks.description>
+  <TM_StoneGolem_GraniteBricks.jobString>завантаження пісковика</TM_StoneGolem_GraniteBricks.jobString>
+
+  <TM_StoneGolem_LimestoneBricks.label>дробити вапняк</TM_StoneGolem_LimestoneBricks.label>
+  <TM_StoneGolem_LimestoneBricks.description>Розміщує шматки вапняку в голему, які будуть подрібнені в придатні для використання блоки.</TM_StoneGolem_LimestoneBricks.description>
+  <TM_StoneGolem_LimestoneBricks.jobString>завантаження вапняку</TM_StoneGolem_LimestoneBricks.jobString>
+
+  <TM_StoneGolem_SlateBricks.label>подрібнити шиферний сланець</TM_StoneGolem_SlateBricks.label>
+  <TM_StoneGolem_SlateBricks.description>Розміщує шматки сланцю в голема, які будуть подрібнені в придатні для використання блоки.</TM_StoneGolem_SlateBricks.description>
+  <TM_StoneGolem_SlateBricks.jobString>завантаження шиферу</TM_StoneGolem_SlateBricks.jobString>
+
+  <TM_StoneGolem_MarbleBricks.label>дробити мармур</TM_StoneGolem_MarbleBricks.label>
+  <TM_StoneGolem_MarbleBricks.description>Розміщує шматки мармуру в голема, які будуть подрібнені в придатні для використання блоки.</TM_StoneGolem_MarbleBricks.description>
+  <TM_StoneGolem_MarbleBricks.jobString>завантаження мармуру</TM_StoneGolem_MarbleBricks.jobString>
+
+
+</LanguageData>

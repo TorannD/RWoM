@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef Name="TM_SoulStoneImplantBase" Abstract="True">
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SoulStoneImplant</driverClass>
+    <reportString>implanting a spirit from a soul stone.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+  <JobDef ParentName="TM_SoulStoneImplantBase"><defName>TM_SoulStoneImplant</defName></JobDef>
+  <JobDef ParentName="TM_SoulStoneImplantBase"><defName>TM_SoulStoneImplantHostile</defName></JobDef>
+</Defs>

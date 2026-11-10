@@ -1,0 +1,66 @@
+<LanguageData><!-- consolidated enchantments-->
+	<TM_HediffEnchantment_maxEnergy.label>Максимальная Энергия:</TM_HediffEnchantment_maxEnergy.label>
+	<TM_HediffEnchantment_maxEnergy.description>Повышает запас энергии.</TM_HediffEnchantment_maxEnergy.description>
+	<TM_HediffEnchantment_maxEnergy.stages.0.label />
+	<TM_HediffEnchantment_coolDown.label>Перезарядка:</TM_HediffEnchantment_coolDown.label>
+	<TM_HediffEnchantment_coolDown.description>Сокращает время восстановления умения.</TM_HediffEnchantment_coolDown.description>
+	<TM_HediffEnchantment_coolDown.stages.0.label />
+	<TM_HediffEnchantment_energyCost.label>Расход энергии:</TM_HediffEnchantment_energyCost.label>
+	<TM_HediffEnchantment_energyCost.description>Снижает затраты энергии на использование способностей.</TM_HediffEnchantment_energyCost.description>
+	<TM_HediffEnchantment_energyCost.stages.0.label />
+	<TM_HediffEnchantment_energyRegen.label>Реген энергии:</TM_HediffEnchantment_energyRegen.label>
+	<TM_HediffEnchantment_energyRegen.description>Ускоряет восстановление энергии.</TM_HediffEnchantment_energyRegen.description>
+	<TM_HediffEnchantment_energyRegen.stages.0.label />
+	<TM_HediffEnchantment_xpGain.label>Увеличение опыта:</TM_HediffEnchantment_xpGain.label>
+	<TM_HediffEnchantment_xpGain.description>Ускоряет получение опыта.</TM_HediffEnchantment_xpGain.description>
+	<TM_HediffEnchantment_xpGain.stages.0.label />
+	<TM_HediffEnchantment_dmgResistance.label>Сопротивление:</TM_HediffEnchantment_dmgResistance.label>
+	<TM_HediffEnchantment_dmgResistance.description>Повышает защиту от магических эффектов и снижает получаемый магический урон.</TM_HediffEnchantment_dmgResistance.description>
+	<TM_HediffEnchantment_dmgResistance.stages.0.label />
+	<TM_HediffEnchantment_dmgBonus.label>Сила:</TM_HediffEnchantment_dmgBonus.label>
+	<TM_HediffEnchantment_dmgBonus.description>Усиливает способности.</TM_HediffEnchantment_dmgBonus.description>
+	<TM_HediffEnchantment_dmgBonus.stages.0.label />
+	<TM_HediffEnchantment_arcalleumCooldown.label>Перезарядка аркаллеума:</TM_HediffEnchantment_arcalleumCooldown.label>
+	<TM_HediffEnchantment_arcalleumCooldown.description>Даёт шанс мгновенно сбросить время восстановления способности.</TM_HediffEnchantment_arcalleumCooldown.description>
+	<TM_HediffEnchantment_arcalleumCooldown.stages.0.label />
+	<!-- legacy enchantments-->
+	<TM_HediffEnchantment_maxMP.label>Макс Мана:</TM_HediffEnchantment_maxMP.label>
+	<TM_HediffEnchantment_maxMP.description>Повышает запас маны.</TM_HediffEnchantment_maxMP.description>
+	<TM_HediffEnchantment_maxMP.stages.0.label />
+	<TM_HediffEnchantment_maxSP.label>Макс Выносливость:</TM_HediffEnchantment_maxSP.label>
+	<TM_HediffEnchantment_maxSP.description>Повышает запас выносливости.</TM_HediffEnchantment_maxSP.description>
+	<TM_HediffEnchantment_maxSP.stages.0.label />
+	<TM_HediffEnchantment_spCoolDown.label>Перезарядка:</TM_HediffEnchantment_spCoolDown.label>
+	<TM_HediffEnchantment_spCoolDown.description>Сокращает время восстановления боевых умений.</TM_HediffEnchantment_spCoolDown.description>
+	<TM_HediffEnchantment_spCoolDown.stages.0.label />
+	<TM_HediffEnchantment_mpCost.label>Стоимость маны:</TM_HediffEnchantment_mpCost.label>
+	<TM_HediffEnchantment_mpCost.description>Снижает расход маны на умения.</TM_HediffEnchantment_mpCost.description>
+	<TM_HediffEnchantment_mpCost.stages.0.label />
+	<TM_HediffEnchantment_spCost.label>Стоимость выносливости:</TM_HediffEnchantment_spCost.label>
+	<TM_HediffEnchantment_spCost.description>Снижает расход выносливости на умения.</TM_HediffEnchantment_spCost.description>
+	<TM_HediffEnchantment_spCost.stages.0.label />
+	<TM_HediffEnchantment_mpRegenRate.label>Восстановление маны:</TM_HediffEnchantment_mpRegenRate.label>
+	<TM_HediffEnchantment_mpRegenRate.description>Ускоряет восстановление маны.</TM_HediffEnchantment_mpRegenRate.description>
+	<TM_HediffEnchantment_mpRegenRate.stages.0.label />
+	<TM_HediffEnchantment_spRegenRate.label>Восстановление выносливости:</TM_HediffEnchantment_spRegenRate.label>
+	<TM_HediffEnchantment_spRegenRate.description>Ускоряет восстановление выносливости.</TM_HediffEnchantment_spRegenRate.description>
+	<TM_HediffEnchantment_spRegenRate.stages.0.label />
+	<TM_HediffEnchantment_arcaneRes.label>Тайная защита:</TM_HediffEnchantment_arcaneRes.label>
+	<TM_HediffEnchantment_arcaneRes.description>Повышает защиту от магических эффектов и уменьшает получаемый магический урон.</TM_HediffEnchantment_arcaneRes.description>
+	<TM_HediffEnchantment_arcaneRes.stages.0.label />
+	<TM_HediffEnchantment_arcaneDmg.label>Магическая мощь:</TM_HediffEnchantment_arcaneDmg.label>
+	<TM_HediffEnchantment_arcaneDmg.description>Усиливает магические способности.</TM_HediffEnchantment_arcaneDmg.description>
+	<TM_HediffEnchantment_arcaneDmg.stages.0.label />
+	<TM_HediffEnchantment_combatDmg.label>Боевая мощь:</TM_HediffEnchantment_combatDmg.label>
+	<TM_HediffEnchantment_combatDmg.description>Усиливает боевые способности.</TM_HediffEnchantment_combatDmg.description>
+	<TM_HediffEnchantment_combatDmg.stages.0.label />
+	<TM_HediffEnchantment_arcaneSpectre.label>Тайный дух</TM_HediffEnchantment_arcaneSpectre.label>
+	<TM_HediffEnchantment_arcaneSpectre.description>Даёт шанс добавить к любой атаке дополнительный духовный урон.</TM_HediffEnchantment_arcaneSpectre.description>
+	<TM_HediffEnchantment_arcaneSpectre.stages.0.label />
+	<TM_HediffEnchantment_phantomShift.label>Фантомный сдвиг</TM_HediffEnchantment_phantomShift.label>
+	<TM_HediffEnchantment_phantomShift.description>Полностью уводит урон от атаки в пустоту.</TM_HediffEnchantment_phantomShift.description>
+	<TM_HediffEnchantment_phantomShift.stages.0.label />
+	<TM_HediffEnchantment_fireImmunity.label>Устойчивость к огню</TM_HediffEnchantment_fireImmunity.label>
+	<TM_HediffEnchantment_fireImmunity.description>Носитель всё ещё получает урон от огня, но больше не воспламеняется.</TM_HediffEnchantment_fireImmunity.description>
+	<TM_HediffEnchantment_fireImmunity.stages.0.label />
+</LanguageData>

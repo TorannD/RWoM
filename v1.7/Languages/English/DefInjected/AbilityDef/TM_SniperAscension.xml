@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_SniperSingleOpening.label>single opening</TM_Bridge_SniperSingleOpening.label>
+  <TM_Bridge_SniperSingleOpening.description>Hold position and keep sight of one hostile target while aiming. After 5 seconds of preparation, fire three single bullets at 120% weapon damage over 9 seconds. Range is limited to 45 cells or the weapon’s range, whichever is shorter. Take 20% more damage while aiming. Base cost: 60% stamina. Cooldown: two days. Interrupting preparation costs 6% stamina and starts a shorter cooldown.</TM_Bridge_SniperSingleOpening.description>
+</LanguageData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBeginRitual>Renascimento de {0} como espírito (300 de magicita, 50 de prata, 4 horas)</TM_SpiritBeginRitual>
+  <TM_SpiritFinishRitual>Concluir o renascimento interrompido de {0}</TM_SpiritFinishRitual>
+  <TM_SpiritRitualUnreachable>O necromante precisa de um cadáver, um círculo maior, 300 de magicita e 50 de prata ao seu alcance.</TM_SpiritRitualUnreachable>
+  <TM_SpiritRitualUnsafeEffect>{0} — não é possível separar {1} do corpo</TM_SpiritRitualUnsafeEffect>
+  <TM_GrimoireRebirthCircle>Num grande círculo mágico, ordena o renascimento espiritual de um colono humano morto. São necessários {0} de magicita e {1} de prata. O ritual demora {2}.</TM_GrimoireRebirthCircle>
+  <TM_GrimoireSpiritStone>Quando o espírito se esgota, a pedra da alma guarda o colono original. Usa a pedra num hospedeiro vivo. O espírito pode sair voluntariamente após {0} nesse corpo. A perda do hospedeiro reinicia a recuperação.</TM_GrimoireSpiritStone>
+  <TM_SpiritRitualRenounceNecromancy>{0} renascerá como Espírito e perderá permanentemente a classe de Necromante ou Lich e os seus feitiços. O nível geral, a experiência, os pontos por gastar e as perícias normais serão preservados. Iniciar o ritual?</TM_SpiritRitualRenounceNecromancy>
+</LanguageData>

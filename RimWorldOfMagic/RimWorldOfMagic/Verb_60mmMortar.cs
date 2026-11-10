@@ -12,6 +12,35 @@ namespace TorannMagic
 {
     public class Verb_60mmMortar : Verb_UseAbility
     {
+        internal static bool DeployFromHost(Pawn body, MightAbility power)
+        {
+            if (body?.Spawned != true || power == null ||
+                ClassProgression.SuperSoldierMartialPath.Owner(body) != power.Pawn || !body.Position.Standable(body.Map)) return false;
+            var cell = TM_Calc.GetEmptyCellForNewBuilding(body.Position, body.Map, 1.6f, false, 0);
+            if (cell == default(IntVec3) || !cell.IsValid) return false;
+            var created = TM_Action.SingleSpawnLoop(body,
+                new SpawnThings { def = TorannMagicDefOf.TM_60mmMortar_Base, spawnCount = 1 },
+                cell, body.Map, 1200, true, false, body.Faction) as Building_60mmMortar;
+            if (created?.Spawned != true) return false;
+            if (!created.CaptureTraining(body, power.Pawn))
+            {
+                created.Destroy(DestroyMode.Vanish);
+                return false;
+            }
+            // This hosted job has not prepaid. Failure never grants a refund, and success pays once.
+            power.PostAbilityAttempt();
+            for (int i = 0; i < 3; i++)
+            {
+                var pos = created.Position.ToVector3Shifted();
+                pos.x += Rand.Range(-.5f, .5f); pos.z += Rand.Range(-.5f, .5f);
+                TM_MoteMaker.ThrowGenericFleck(TorannMagicDefOf.SparkFlash, pos, body.Map, Rand.Range(.6f, .8f), .1f, .05f, .05f, 0, 0, 0, Rand.Range(0, 360));
+                FleckMaker.ThrowSmoke(pos, body.Map, Rand.Range(.8f, 1.2f));
+            }
+            // Use the building's ordinary interaction cell; never change a shared ThingDef for one deployment.
+            body.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.ManTurret, created), JobTag.Misc);
+            return true;
+        }
+
         int pwrVal = 0;
         int verVal = 0;
         int effVal = 0;
@@ -43,6 +72,8 @@ namespace TorannMagic
                     try
                     {
                         this.mortar = TM_Action.SingleSpawnLoop(pawn, tempPod, shiftPos, map, 1200, true, false, pawn.Faction);
+                        if (this.mortar is Building_60mmMortar deployed && this.Ability?.Pawn != pawn)
+                            deployed.CaptureTraining(pawn, this.Ability?.Pawn);
 
                         for (int i = 0; i < 3; i++)
                         {

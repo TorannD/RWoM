@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<TM_PsionicAugmentation.label>aumento psiónico</TM_PsionicAugmentation.label>
+
+<TM_PsionicAugmentation.description>El poder psiónico es una manifestación física de la energía mental en forma de energía cinética o potencial. Un psiónico puede aprovechar este poder de la manera más eficiente dirigiéndolo por todo su cuerpo para reforzar la acción física.\n\nUn psiónico bien entrenado es capaz de lograr hazañas físicas increíbles combinando fuerza psiónica y fuerza física. El aumento psiónico se vuelve algo natural y se produce de forma espontánea tanto dentro como fuera del combate.</TM_PsionicAugmentation.description>
+
+<TM_PsionicBarrier.label>barrera psiónica</TM_PsionicBarrier.label>
+
+<TM_PsionicBarrier.description>El psiónico forma una barrera psíquica que repele la energía cinética en una zona pequeña alrededor del usuario. Usar esta habilidad requiere una concentración constante para mantener la barrera, y el psiónico no podrá realizar ninguna otra acción mientras esté activa.\n\nEsta habilidad requiere 2 puntos para subir de nivel.</TM_PsionicBarrier.description>
+
+<TM_PsionicBarrier_Projected.label>barrera psiónica</TM_PsionicBarrier_Projected.label>
+
+<TM_PsionicBarrier_Projected.description>El psiónico forma una barrera psíquica que repele la energía cinética en una zona pequeña alrededor del usuario. Usar esta habilidad requiere una concentración constante para mantener la barrera, y el psiónico no podrá realizar ninguna otra acción mientras esté activa.\n\nEsta barrera se puede proyectar a una ubicación designada.</TM_PsionicBarrier_Projected.description>
+
+<TM_PsionicBlast.label>ráfaga psiónica</TM_PsionicBlast.label>
+
+<TM_PsionicBlast.description>Proyecta energía psiónica volátil que crea una pequeña detonación al chocar con un objeto físico. Se pueden proyectar hasta cinco estallidos, según la energía de la que disponga el psiónico.\n\nTiempo de lanzamiento: 2 s\nEnfriamiento: 12 s\nAlcance: 28</TM_PsionicBlast.description>
+
+<TM_PsionicBlast_I.label>ráfaga psiónica I</TM_PsionicBlast_I.label>
+
+<TM_PsionicBlast_I.description>Proyecta energía psiónica volátil que crea una pequeña detonación al chocar con un objeto físico. Se pueden proyectar hasta cinco estallidos, según la energía de la que disponga el psiónico.\n\nTiempo de lanzamiento: 1,6 s\nEnfriamiento: 10 s\nAlcance: 34</TM_PsionicBlast_I.description>
+
+<TM_PsionicBlast_II.label>ráfaga psiónica II</TM_PsionicBlast_II.label>
+
+<TM_PsionicBlast_II.description>Proyecta energía psiónica volátil que crea una pequeña detonación al chocar con un objeto físico. Se pueden proyectar hasta cinco estallidos, según la energía de la que disponga el psiónico.\n\nTiempo de lanzamiento: 1,2 s\nEnfriamiento: 8 s\nAlcance: 40</TM_PsionicBlast_II.description>
+
+<TM_PsionicBlast_III.label>ráfaga psiónica III</TM_PsionicBlast_III.label>
+
+<TM_PsionicBlast_III.description>Proyecta energía psiónica volátil que crea una pequeña detonación al chocar con un objeto físico. Se pueden proyectar hasta cinco estallidos, según la energía de la que disponga el psiónico.\n\nTiempo de lanzamiento: 0,8 s\nEnfriamiento: 6 s\nAlcance: 46</TM_PsionicBlast_III.description>
+
+<TM_PsionicDash.label>carrera psiónica</TM_PsionicDash.label>
+
+<TM_PsionicDash.description>El psiónico infunde a su cuerpo una enorme cantidad de energía y la utiliza para propulsarse en un movimiento rápido y explosivo. Cada paso emite ondas de choque de energía.</TM_PsionicDash.description>
+
+<TM_PsionicStorm.label>tormenta psiónica</TM_PsionicStorm.label>
+
+<TM_PsionicStorm.description>El psiónico baja todas sus barreras mentales y libera su poder psiónico sin restricciones. Por la naturaleza de este ataque, el psiónico gastará una enorme cantidad de energía y quedará vulnerable, incapaz de ejercer poder psiónico, durante un periodo posterior al ataque.</TM_PsionicStorm.description>
+</LanguageData>

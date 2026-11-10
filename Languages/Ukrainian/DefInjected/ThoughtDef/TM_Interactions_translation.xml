@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Learning interactions -->
+
+  <TM_MagicLoreTD.stages.0.label>отримав таємні знання</TM_MagicLoreTD.stages.0.label>
+  <TM_MagicLoreTD.stages.0.description>Мене просвітили слова могутнього мага, і тепер я просто повинен застосувати це знання...</TM_MagicLoreTD.stages.0.description>
+
+  <TM_MightLoreTD.stages.0.label>набутий бойовий досвід</TM_MightLoreTD.stages.0.label>
+  <TM_MightLoreTD.stages.0.description>Більш досвідчений боєць навчив мене, як поліпшити свої бойові прийоми.</TM_MightLoreTD.stages.0.description>
+
+
+  <!-- Social interactions -->
+
+  <TM_EntertainedTD.stages.0.label>розважений</TM_EntertainedTD.stages.0.label>
+  <TM_EntertainedTD.stages.0.description>Це місце не так вже й погано; тут є люди, які змушують мене забути про свої тривоги і трохи посміятися.</TM_EntertainedTD.stages.0.description>
+
+  <TM_EntertainedAuraTD.stages.0.label>соціальні розваги</TM_EntertainedAuraTD.stages.0.label>
+  <TM_EntertainedAuraTD.stages.0.description>Мені було дуже весело спілкуватися з іншими людьми.</TM_EntertainedAuraTD.stages.0.description>
+
+  <TM_EntertainerAuraTD.stages.0.label>соціальна взаємодія</TM_EntertainerAuraTD.stages.0.label>
+  <TM_EntertainerAuraTD.stages.0.description>Мені дуже подобається спілкуватися з оточуючими людьми, це робить мене щасливим, щоб принести трохи радості іншим.</TM_EntertainerAuraTD.stages.0.description>
+
+
+</LanguageData>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_AdvancedEnchanting.label>encantamiento avanzado</TM_AdvancedEnchanting.label>
+  
+  <TM_AdvancedEnchanting.description>Permite fabricar gemas de encantamiento de nivel II.</TM_AdvancedEnchanting.description>
+  
+  
+  <TM_AdvancedScribing.label>transcripción avanzada</TM_AdvancedScribing.label>
+  
+  <TM_AdvancedScribing.description>Permite usar materiales de mayor calidad para desarrollar libros y pergaminos más poderosos.</TM_AdvancedScribing.description>
+  
+  
+  <TM_ArcaneApparel.label>equipo mágico</TM_ArcaneApparel.label>
+  
+  <TM_ArcaneApparel.description>Aplica los conocimientos de artesanía arcana y encantamientos para aprender a recrear equipo con propiedades mágicas más poderosas.</TM_ArcaneApparel.description>
+  
+  
+  <TM_ArcaneArtifacts.label>artefactos arcanos</TM_ArcaneArtifacts.label>
+  
+  <TM_ArcaneArtifacts.description>Permite recrear artefactos arcanos mediante una extensa investigación que combina conocimientos sobre encantamientos, diseños antiguos, runas y rumores.</TM_ArcaneArtifacts.description>
+  
+  
+  <TM_ArcaneConstruction.label>instalaciones arcanas</TM_ArcaneConstruction.label>
+  
+  <TM_ArcaneConstruction.description>Abre la investigación de diversas instalaciones y mesas de trabajo que permiten crear objetos y efectos mágicos únicos.</TM_ArcaneConstruction.description>
+  
+  
+  <TM_ArcaneCrafting.label>artesanía arcana</TM_ArcaneCrafting.label>
+  
+  <TM_ArcaneCrafting.description>El primer paso para comprender el vínculo entre lo arcano y lo físico. Permite construir poderosas gemas de conocimiento y equipo mágico.</TM_ArcaneCrafting.description>
+  
+  
+  <TM_ArcaneForging.label>forja arcana</TM_ArcaneForging.label>
+  
+  <TM_ArcaneForging.description>Desarrolla los medios para usar el poder arcano en la fabricación de diversos objetos y equipo. Al completar esta investigación también se descubrirá cómo hacer tejido de maná, un material único que potencia el poder arcano.</TM_ArcaneForging.description>
+  
+  
+  <TM_ArcaneFundamentals.label>fundamentos arcanos</TM_ArcaneFundamentals.label>
+  
+  <TM_ArcaneFundamentals.description>Investigación básica sobre cómo el poder arcano se vincula con el plano físico y con otros magos.</TM_ArcaneFundamentals.description>
+  
+  
+  <TM_Enchanting.label>encantamiento</TM_Enchanting.label>
+  
+  <TM_Enchanting.description>Permite construir el banco de talla de gemas y fabricar gemas de encantamiento de nivel I.</TM_Enchanting.description>
+  
+  
+  <TM_ExpertEnchanting.label>encantamiento experto</TM_ExpertEnchanting.label>
+  
+  <TM_ExpertEnchanting.description>Permite fabricar gemas de encantamiento de nivel III.</TM_ExpertEnchanting.description>
+  
+  
+  <TM_FleshGolemEquipmentRD.label>accesorios de carne</TM_FleshGolemEquipmentRD.label>
+  
+  <TM_FleshGolemEquipmentRD.description>Investiga armas y armaduras que pueden acoplarse a un gólem de carne para mejorarlo o dotarlo de nuevas capacidades.</TM_FleshGolemEquipmentRD.description>
+  
+  
+  <TM_FleshGolemRD.label>gólem de carne</TM_FleshGolemRD.label>
+  
+  <TM_FleshGolemRD.description>Un enfoque biológico de los gólems que investiga cómo moldear la carne y los huesos de organismos muertos para formar una construcción bípeda animada. Una simple mesa de carnicero debería bastar para fabricar un gólem de carne.</TM_FleshGolemRD.description>
+  
+  
+  <TM_ForgeReplication.label>replicación de forja</TM_ForgeReplication.label>
+  
+  <TM_ForgeReplication.description>Mejora la forja arcana con una técnica que le permite extraer el diseño de cualquier objeto fabricable y duplicarlo en la forja.</TM_ForgeReplication.description>
+  
+  
+  <TM_GolemCraftRD.label>teoría de gólems</TM_GolemCraftRD.label>
+  
+  <TM_GolemCraftRD.description>La fabricación de gólems es una rama del encantamiento que se aparta de las mejoras pasivas e investiga teorías para manipular encantamientos mágicos con fines activos. Esta investigación desarrollará conceptos sobre cómo aplicar mejoras activas para crear criaturas mágicas. Permite construir los gólems de piedra y maharal en la mesa de cantería. El gólem maharal también puede crearse en un punto de fabricación. Además, habilita mejoras adicionales para el gólem de paja.</TM_GolemCraftRD.description>
+  
+  
+  <TM_HollowGolemArtifactsRD.label>artefactos huecos</TM_HollowGolemArtifactsRD.label>
+  
+  <TM_HollowGolemArtifactsRD.description>La investigación de la unión entre los artefactos arcanos y el comportamiento de los gólems permite que el gólem hueco alimente artefactos con su propia energía mágica.</TM_HollowGolemArtifactsRD.description>
+  
+  
+  <TM_HollowGolemEquipmentRD.label>equipo hueco</TM_HollowGolemEquipmentRD.label>
+  
+  <TM_HollowGolemEquipmentRD.description>Investiga armas y armaduras que pueden acoplarse a un gólem hueco para mejorarlo o dotarlo de nuevas capacidades.</TM_HollowGolemEquipmentRD.description>
+  
+  
+  <TM_HollowGolemRD.label>gólem hueco</TM_HollowGolemRD.label>
+  
+  <TM_HollowGolemRD.description>Un enfoque mágico de la fabricación de gólems que investiga cómo animar energía en bruto. Fabricar este tipo de gólem requerirá una forja arcana.</TM_HollowGolemRD.description>
+  
+  
+  <TM_MagicCircle.label>círculo mágico</TM_MagicCircle.label>
+  
+  <TM_MagicCircle.description>Investigación avanzada sobre la geometría y la simetría de las líneas de poder, que permite a los usuarios de magia combinar su energía para crear efectos increíbles.</TM_MagicCircle.description>
+  
+  
+  <TM_MagicScribing.label>transcripción</TM_MagicScribing.label>
+  
+  <TM_MagicScribing.description>Desarrolla el conocimiento para mezclar tinta con magicita en polvo y aplicarla mediante una prensa especialmente diseñada, capaz de reproducir pergaminos y libros que contengan el poder de la comprensión mágica.</TM_MagicScribing.description>
+  
+  
+  <TM_MagicyteRefining.label>refinado de magicita</TM_MagicyteRefining.label>
+  
+  <TM_MagicyteRefining.description>Investigación experimental que identifica formas de usar la magicita para crear objetos mágicos. Desarrolla recetas para crear pociones de maná en la cocina o en la mesa de gemas.</TM_MagicyteRefining.description>
+  
+  
+  <TM_ManaStorage.label>almacenamiento de maná</TM_ManaStorage.label>
+  
+  <TM_ManaStorage.description>Desarrolla formas de almacenar maná.</TM_ManaStorage.description>
+  
+  
+  <TM_MasterScribing.label>transcripción maestra</TM_MasterScribing.label>
+  
+  <TM_MasterScribing.description>Permite transcribir hechizos maestros.</TM_MasterScribing.description>
+  
+  
+  <TM_MechaGolemEquipmentRD.label>accesorios mecánicos</TM_MechaGolemEquipmentRD.label>
+  
+  <TM_MechaGolemEquipmentRD.description>Investiga métodos para fabricar accesorios y armaduras que mejoren aún más al gólem mecánico.</TM_MechaGolemEquipmentRD.description>
+  
+  
+  <TM_MechaGolemRD.label>gólem mecánico</TM_MechaGolemRD.label>
+  
+  <TM_MechaGolemRD.description>Combina la ingeniería eléctrica y mecánica con la fabricación de gólems para crear un gólem robótico. Es de esperar que se necesite una mesa de máquinas para fabricar los componentes del gólem mecánico.</TM_MechaGolemRD.description>
+  
+  
+  <TM_PlantCultivation.label>cultivo</TM_PlantCultivation.label>
+  
+  <TM_PlantCultivation.description>Invierte investigación en botánica para comprender cómo cultivar plantas con propiedades relevantes para la magia y usar sus recursos para complementar o alimentar las artes arcanas.</TM_PlantCultivation.description>
+  
+  
+  <TM_Portals.label>portales</TM_Portals.label>
+  
+  <TM_Portals.description>Permite construir un portal: un poderoso artefacto que permite viajar al instante entre colonias.\n\nRequiere un mago arcano entrenado en puertas de enlace para activarlo.</TM_Portals.description>
+  
+</LanguageData>

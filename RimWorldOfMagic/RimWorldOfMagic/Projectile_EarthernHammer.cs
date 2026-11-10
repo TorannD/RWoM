@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using Verse.Sound;
 using RimWorld;
 using AbilityUser;
@@ -12,7 +12,7 @@ namespace TorannMagic
     class Projectile_EarthernHammer : Projectile_AbilityBase
     {
 
-        private IntVec3 strikeLoc = IntVec3.Invalid;
+        private HashSet<string> legacyTargetIds;
 
         private int age = -1;
         private bool initialized = false;
@@ -21,11 +21,21 @@ namespace TorannMagic
         private int verVal;
         private int pwrVal;
         Pawn caster;
+        private Pawn projectedOwner;
+        internal IEnumerable<Thing> StoneTargets => launchableThings ?? Enumerable.Empty<Thing>();
+
+        internal void PrepareHosted(MagicAbility power)
+        {
+            projectedOwner = power.Pawn;
+            pwrVal = ClassProgression.SpiritRebirthRuntime.SavedRank(power.MagicUser.ExistingMagicData,"TM_EarthernHammer_pwr");
+            verVal = ClassProgression.SpiritRebirthRuntime.SavedRank(power.MagicUser.ExistingMagicData,"TM_EarthernHammer_ver");
+            arcaneDmg = power.MagicUser.arcaneDmg;
+        }
         Thing launchableThing = null;
         List<IntVec3> launchCells = new List<IntVec3>();
         List<Thing> launchableThings = new List<Thing>();
 
-        //non-saved vars
+
         private int nextStrike = 0;
         private int radius = 4;
         private float arcaneDmg = 1;
@@ -37,6 +47,7 @@ namespace TorannMagic
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_References.Look(ref projectedOwner,"TM_hammerOwner");
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", true, false);
             Scribe_Values.Look<int>(ref this.age, "age", -1, false);            
             Scribe_Values.Look<int>(ref this.gravityPoints, "gravityPoints", 0, false);
@@ -44,7 +55,25 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
             Scribe_References.Look<Pawn>(ref this.caster, "caster", false);
             Scribe_Collections.Look<IntVec3>(ref this.launchCells, "launchCells", LookMode.Value);
-            Scribe_Collections.Look<Thing>(ref this.launchableThings, "launchableThings", LookMode.Deep);
+            Scribe_Values.Look(ref gravityStep, "TM_hammerStep");
+            Scribe_Values.Look(ref nextStrike, "TM_hammerNextStrike");
+            Scribe_Values.Look(ref arcaneDmg, "TM_hammerPotency", 1f);
+            if (Scribe.mode == LoadSaveMode.Saving)
+            {
+                RestoreLegacyTargets();
+                launchableThings.RemoveAll(t => !AvailableStone(t));
+            }
+            Scribe_Collections.Look(ref launchableThings, "TM_hammerTargets", LookMode.Reference);
+            // Legacy entries were deep copies of map items. Read only their IDs, never instantiate another stack.
+            if (Scribe.mode == LoadSaveMode.LoadingVars && Scribe.loader.curXmlParent["TM_hammerTargets"] == null &&
+                Scribe.loader.curXmlParent["launchableThings"] is System.Xml.XmlElement oldList)
+                legacyTargetIds = oldList.ChildNodes.OfType<System.Xml.XmlElement>().Select(n => n["id"]?.InnerText)
+                    .Where(id => !string.IsNullOrEmpty(id)).ToHashSet();
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                launchableThings ??= new List<Thing>();
+                if (legacyTargetIds != null) LongEventHandler.ExecuteWhenFinished(RestoreLegacyTargets);
+            }
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
@@ -59,70 +88,64 @@ namespace TorannMagic
         private void Initialize()
         {
             caster = this.launcher as Pawn;
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            pwrVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EarthernHammer.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthernHammer_pwr").level;
-            verVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EarthernHammer.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthernHammer_ver").level;
-            
-            if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            if (projectedOwner == null)
             {
-                pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
-                verVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
-            }
-            this.arcaneDmg = comp.arcaneDmg;
-            if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
-            {
-                pwrVal = 3;
-                verVal = 3;
+                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
+                pwrVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EarthernHammer.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthernHammer_pwr").level;
+                verVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EarthernHammer.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthernHammer_ver").level;
+                if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                {
+                    pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
+                    verVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
+                }
+                this.arcaneDmg = comp.arcaneDmg;
+                if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
+                {
+                    pwrVal = 3;
+                    verVal = 3;
+                }
             }
             this.gravityPoints = this.baseGravityPoints + (pwrVal * 2);
 
-            this.launchCells = new List<IntVec3>();
-            this.launchCells.Clear();
-
-            this.launchCells = GenRadial.RadialCellsAround(caster.Position, this.radius, false).ToList();
-            for (int i = 0; i < launchCells.Count(); i++)
+            launchCells.Clear();
+            foreach (var cell in GenRadial.RadialCellsAround(caster.Position, radius, false))
             {
-                if (launchCells[i].IsValid && launchCells[i].InBoundsWithNullCheck(caster.Map))
-                {
-                    List<Thing> cellList = launchCells[i].GetThingList(caster.Map);
-                    bool invalidCell = false;
-                    for (int j = 0; j < cellList.Count(); j++)
-                    {
-                        try
-                        {
-                            if (cellList[j].def.designationCategory != null)
-                            {
-                                if (cellList[j].def.designationCategory == TorannMagicDefOf.Structure || cellList[j].def.altitudeLayer == AltitudeLayer.Building || cellList[j].def.altitudeLayer == AltitudeLayer.Item || cellList[j].def.altitudeLayer == AltitudeLayer.ItemImportant)
-                                {
-                                    invalidCell = true;
-                                }
-                            }
-
-                            if (cellList[j].def.thingCategories != null)
-                            {
-                                if (cellList[j].def.thingCategories.Contains(ThingCategoryDefOf.StoneChunks) || cellList[j].def.thingCategories.Contains(ThingCategoryDefOf.StoneBlocks))
-                                {
-                                    this.launchableThings.Add(cellList[j]);
-                                }
-                            }
-                        }
-                        catch (NullReferenceException ex)
-                        {
-                            //Log.Message("threw exception " + ex);
-                        }
-                    }
-                    if (invalidCell)
-                    {
-                        launchCells.Remove(launchCells[i]);
-                    }
-                }
+                if (!cell.InBounds(Map)) continue;
+                var contents = cell.GetThingList(Map);
+                launchableThings.AddRange(contents.Where(IsStone));
+                if (!contents.Any(BlocksSource)) launchCells.Add(cell);
             }
+        }
+
+        private static bool IsStone(Thing thing) => thing?.def.thingCategories is { } categories &&
+            (categories.Contains(ThingCategoryDefOf.StoneChunks) || categories.Contains(ThingCategoryDefOf.StoneBlocks));
+
+        private static bool BlocksSource(Thing thing) => thing.def.designationCategory != null &&
+            (thing.def.designationCategory == TorannMagicDefOf.Structure || thing.def.altitudeLayer == AltitudeLayer.Building ||
+             thing.def.altitudeLayer == AltitudeLayer.Item || thing.def.altitudeLayer == AltitudeLayer.ItemImportant);
+
+        private bool AvailableStone(Thing thing) => thing?.Spawned == true && thing.Map == Map && thing.stackCount > 0 && IsStone(thing);
+
+        private void RestoreLegacyTargets()
+        {
+            if (legacyTargetIds == null || Map == null) return;
+            if (legacyTargetIds.Count != 0)
+                launchableThings.AddRange(Map.listerThings.ThingsInGroup(ThingRequestGroup.HaulableEver)
+                    .Where(t => legacyTargetIds.Contains(t.ThingID) && AvailableStone(t)));
+            legacyTargetIds = null;
         }
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             base.Impact(hitThing);                       
 
+            if (launcher is not Pawn physical || !physical.Spawned || physical.Map != Map || physical.Dead || physical.Downed ||
+                projectedOwner != null && (!ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(physical,out var held) || held != projectedOwner))
+            {
+                age = duration;
+                return;
+            }
+            RestoreLegacyTargets();
             if (!initialized)
             {
                 Initialize();
@@ -134,6 +157,7 @@ namespace TorannMagic
             {
                 if (this.age > this.nextStrike)
                 {
+                    launchableThings.RemoveAll(t => !AvailableStone(t));
                     if (this.gravityStep == 0 || this.gravityStep % 3 == 0)
                     {
                         if (this.gravityPoints >= 3)
@@ -176,12 +200,18 @@ namespace TorannMagic
 
         public void SpawnAndThrow()
         {
+            launchCells.RemoveAll(c => !c.InBounds(Map) || c.GetThingList(Map).Any(BlocksSource));
+            if (!launchCells.TryRandomElement(out var origin))
+            {
+                if (launchableThings.Count != 0) SearchAndThrow();
+                else age = duration;
+                return;
+            }
             this.gravityPoints -= 3;
 
             AbilityUser.SpawnThings tempPod = new SpawnThings();
             tempPod.def = ThingDef.Named("ChunkSandstone");
             tempPod.spawnCount = 1;
-            IntVec3 origin = this.launchCells.RandomElement();          
             SingleSpawnLoop(tempPod, origin, this.caster.Map);
 
             float magnitude = (origin.ToVector3Shifted() - Find.Camera.transform.position).magnitude;
@@ -192,9 +222,9 @@ namespace TorannMagic
 
         public void SearchAndThrow()
         {
-            this.gravityPoints--;            
-
-            this.launchableThing = this.launchableThings.RandomElement();
+            launchableThings.RemoveAll(t => !AvailableStone(t));
+            if (!launchableThings.TryRandomElement(out launchableThing)) return;
+            this.gravityPoints--;
             this.launchableThings.Remove(this.launchableThing);
             IntVec3 origin = this.launchableThing.Position;
 
@@ -221,6 +251,7 @@ namespace TorannMagic
                 }
                 FlyingObject_Spinning flyingObject = (FlyingObject_Spinning)GenSpawn.Spawn(ThingDef.Named("FlyingObject_Spinning"), origin, this.caster.Map);
                 flyingObject.force = this.arcaneDmg + .2f;
+                flyingObject.hammerOwner = projectedOwner;
                 flyingObject.Launch(this.caster, destination, this.launchableThing.SplitOff(1), this.spinRate);
             }
         }

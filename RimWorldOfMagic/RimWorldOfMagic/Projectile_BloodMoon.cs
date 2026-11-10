@@ -25,6 +25,18 @@ namespace TorannMagic
         List<IntVec3> bloodCircleOuterCells = new List<IntVec3>();
         
         Pawn caster;
+        private Vector2 shadow;
+        private bool restoreWeather;
+        internal void PrepareHosted(MagicAbility ability)
+        {
+            caster = ability.Pawn;
+            var data = ability.MagicUser.ExistingMagicData;
+            pwrVal = ClassProgression.SpiritRebirthRuntime.SavedRank(data,"TM_BloodMoon_pwr");
+            verVal = ClassProgression.SpiritRebirthRuntime.SavedRank(data,"TM_BloodMoon_ver");
+            effVal = ClassProgression.SpiritRebirthRuntime.SavedRank(data,"TM_BloodMoon_eff");
+            int gift = ClassProgression.SpiritRebirthRuntime.SavedRank(data,"TM_BloodGift_pwr");
+            arcaneDmg = ability.MagicUser.arcaneDmg * (1f + .1f * gift);
+        }
         List<Pawn> victims = new List<Pawn>();
         List<int> victimHitTick = new List<int>();
         List<float> wolfDmg = new List<float>();
@@ -46,6 +58,11 @@ namespace TorannMagic
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref nextAttack,"TM_moonNextAttack");
+            Scribe_Values.Look(ref angle,"TM_moonAngle");
+            Scribe_Values.Look(ref shadow,"TM_moonShadow");
+            Scribe_Values.Look(ref verVal,"TM_moonVersatility");
+            Scribe_Values.Look(ref effVal,"TM_moonEfficiency");
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
             Scribe_Values.Look<int>(ref this.age, "age", -1, false);
             Scribe_Values.Look<int>(ref this.duration, "duration", 1200, false);
@@ -59,6 +76,19 @@ namespace TorannMagic
             Scribe_Collections.Look<float>(ref this.wolfDmg, "wolfDmg", LookMode.Value);
             Scribe_Collections.Look<IntVec3>(ref this.bloodCircleOuterCells, "bloodCircleOuterCells", LookMode.Value);
             Scribe_Collections.Look<IntVec3>(ref this.bloodCircleCells, "bloodCircleCells", LookMode.Value);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                victims ??= new List<Pawn>();
+                victimHitTick ??= new List<int>();
+                wolfDmg ??= new List<float>();
+                int count = Mathf.Min(victims.Count, Mathf.Min(victimHitTick.Count, wolfDmg.Count));
+                victims.RemoveRange(count, victims.Count - count);
+                victimHitTick.RemoveRange(count, victimHitTick.Count - count);
+                wolfDmg.RemoveRange(count, wolfDmg.Count - count);
+                bloodCircleCells ??= new List<IntVec3>();
+                bloodCircleOuterCells ??= new List<IntVec3>();
+                restoreWeather = initialized && age < duration;
+            }
         }
 
         private int TicksLeft
@@ -87,14 +117,17 @@ namespace TorannMagic
                 this.wolfDmg = new List<float>();
                 this.wolfDmg.Clear();
 
-                caster = this.launcher as Pawn;
-                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-                MagicPowerSkill bpwr = comp.MagicData.MagicPowerSkill_BloodGift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodGift_pwr");
-                pwrVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_BloodMoon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodMoon_pwr").level;
-                verVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_BloodMoon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodMoon_ver").level;
-                effVal = caster.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_BloodMoon.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_BloodMoon_eff").level;
-                this.arcaneDmg = comp.arcaneDmg;
-                this.arcaneDmg *= (1f + (.1f * bpwr.level));
+                if (caster == null)
+                {
+                    caster = launcher as Pawn;
+                    var magic = caster?.GetCompAbilityUserMagic();
+                    var data = magic?.MagicData;
+                    int gift = data?.MagicPowerSkill_BloodGift.FirstOrDefault(x => x.label == "TM_BloodGift_pwr")?.level ?? 0;
+                    pwrVal = data?.MagicPowerSkill_BloodMoon.FirstOrDefault(x => x.label == "TM_BloodMoon_pwr")?.level ?? 0;
+                    verVal = data?.MagicPowerSkill_BloodMoon.FirstOrDefault(x => x.label == "TM_BloodMoon_ver")?.level ?? 0;
+                    effVal = data?.MagicPowerSkill_BloodMoon.FirstOrDefault(x => x.label == "TM_BloodMoon_eff")?.level ?? 0;
+                    arcaneDmg = (magic?.arcaneDmg ?? 1f) * (1f + .1f * gift);
+                }
                 this.attackFrequency *= (1 - (.05f * effVal));
                 this.duration = Mathf.RoundToInt(this.duration + (this.duration * .1f * verVal));
 
@@ -130,10 +163,11 @@ namespace TorannMagic
                     this.bloodCircleOuterCells = outerRing.Except(this.bloodCircleCells).ToList();
                 }
 
-                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodCircle, base.Position.ToVector3Shifted(), caster.Map, this.radius + 2, (this.duration/60) *.9f, (this.duration / 60) * .06f, (this.duration / 60) * .08f, Rand.Range(-50, -50), 0, 0, Rand.Range(0, 360));
-                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodCircle, base.Position.ToVector3Shifted(), caster.Map, this.radius + 2, (this.duration / 60) * .9f, (this.duration / 60) * .06f, (this.duration / 60) * .08f, Rand.Range(50, 50), 0, 0, Rand.Range(0, 360));
-                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodCircle, base.Position.ToVector3Shifted(), caster.Map, this.radius + 2, (this.duration / 60) * .9f, (this.duration / 60) * .06f, (this.duration / 60) * .08f, Rand.Range(-50,50), 0, 0, Rand.Range(0, 360));
-                caster.Map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_BloodMoon(caster.Map, this.duration, 2f - (this.pwrVal * .1f)));
+                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodCircle, base.Position.ToVector3Shifted(), map, this.radius + 2, (this.duration/60) *.9f, (this.duration / 60) * .06f, (this.duration / 60) * .08f, Rand.Range(-50, -50), 0, 0, Rand.Range(0, 360));
+                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodCircle, base.Position.ToVector3Shifted(), map, this.radius + 2, (this.duration / 60) * .9f, (this.duration / 60) * .06f, (this.duration / 60) * .08f, Rand.Range(50, 50), 0, 0, Rand.Range(0, 360));
+                TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodCircle, base.Position.ToVector3Shifted(), map, this.radius + 2, (this.duration / 60) * .9f, (this.duration / 60) * .06f, (this.duration / 60) * .08f, Rand.Range(-50,50), 0, 0, Rand.Range(0, 360));
+                shadow = new Vector2(Rand.Range(-5f,5f),Rand.Range(-5f,0f));
+                AddWeather(map,0);
                 this.initialized = true;
             }            
 
@@ -145,32 +179,31 @@ namespace TorannMagic
                     {
                         if (this.victimHitTick[i] < this.age)
                         {
-                            TM_Action.DamageEntities(victims[i], null, Mathf.RoundToInt((Rand.Range(5, 8) * this.wolfDmg[i])*this.arcaneDmg), DamageDefOf.Bite, this.launcher);
-                            TM_MoteMaker.ThrowBloodSquirt(victims[i].DrawPos, victims[i].Map, Rand.Range(.6f, 1f));
-                            this.victims.Remove(this.victims[i]);
-                            this.victimHitTick.Remove(this.victimHitTick[i]);
-                            this.wolfDmg.Remove(this.wolfDmg[i]);
+                            var target = victims[i];
+                            if (target?.Spawned == true && !target.Dead && target.Map == map)
+                            {
+                                TM_Action.DamageEntities(target,null,Mathf.RoundToInt(Rand.Range(5,8) * wolfDmg[i] * arcaneDmg),DamageDefOf.Bite,caster);
+                                if (target.Spawned) TM_MoteMaker.ThrowBloodSquirt(target.DrawPos,map,Rand.Range(.6f,1f));
+                            }
+                            victims.RemoveAt(i);
+                            victimHitTick.RemoveAt(i);
+                            wolfDmg.RemoveAt(i--);
                         }
                     }
                 }
 
-                if (Find.TickManager.TicksGame % this.bloodFrequency == 0)
+                if (Find.TickManager.TicksGame % this.bloodFrequency == 0 && bloodCircleOuterCells.TryRandomElement(out var bloodCell))
                 {
                     Filth filth = (Filth)ThingMaker.MakeThing(ThingDefOf.Filth_Blood);
-                    GenSpawn.Spawn(filth, this.bloodCircleOuterCells.RandomElement(), this.Map);
+                    GenSpawn.Spawn(filth,bloodCell,map);
                 }
 
                 if(this.nextAttack < this.age && !this.caster.DestroyedOrNull() && !this.caster.Dead)
                 {
 
                     Pawn victim = TM_Calc.FindNearbyEnemy(base.Position, this.Map, this.caster.Faction, this.radius, 0);
-                    if (victim != null)
+                    if (victim != null && bloodCircleCells.Where(c => c != victim.Position).TryRandomElement(out var rndPos))
                     {
-                        IntVec3 rndPos = victim.Position;
-                        while (rndPos == victim.Position)
-                        {
-                            rndPos = this.bloodCircleCells.RandomElement();
-                        }
                         Vector3 wolf = rndPos.ToVector3Shifted();
                         Vector3 direction = TM_Calc.GetVector(wolf, victim.DrawPos);
                         float angle = direction.ToAngleFlat();
@@ -260,6 +293,13 @@ namespace TorannMagic
 
         protected override void Tick()
         {
+            if (restoreWeather && Spawned)
+            {
+                restoreWeather = false;
+                AddWeather(Map,age);
+                CheckSpawnSustainer();
+            }
+            sustainer?.Maintain();
             base.Tick();
             this.age++;            
         }
@@ -269,8 +309,14 @@ namespace TorannMagic
             bool flag = this.age < this.duration;
             if (!flag)
             {
+                sustainer?.End();
                 base.Destroy(mode);
             }
+        }
+
+        private void AddWeather(Map map, int elapsed)
+        {
+            map.weatherManager.eventHandler.AddEvent(new TM_WeatherEvent_BloodMoon(map,duration,2f - .1f * pwrVal,elapsed,shadow));
         }
 
         private void CheckSpawnSustainer()
@@ -279,6 +325,7 @@ namespace TorannMagic
             {
                 LongEventHandler.ExecuteWhenFinished(delegate
                 {
+                    if (!Spawned || Destroyed || TicksLeft <= 0) return;
                     this.sustainer = SoundDef.Named("OrbitalBeam").TrySpawnSustainer(SoundInfo.InMap(this.selectedTarget, MaintenanceType.PerTick));
                 });
             }

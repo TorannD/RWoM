@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_AccelerateTimeHD.label>Envelhecimento</TM_AccelerateTimeHD.label>
+  <TM_AccelerateTimeHD.description>O peão está a envelhecer rapidamente. Qualquer outra condição que afete o peão também irá acelerar suas tendências naturais. Peões com idade superior à sua expectativa de vida normal são frequentemente afetados por doenças ou estados de idade.</TM_AccelerateTimeHD.description>
+  <TM_AccelerateTimeHD.stages.0.label>I</TM_AccelerateTimeHD.stages.0.label>
+  <TM_AccelerateTimeHD.stages.1.label>II</TM_AccelerateTimeHD.stages.1.label>
+  <TM_AccelerateTimeHD.stages.2.label>III</TM_AccelerateTimeHD.stages.2.label>
+  <TM_AccelerateTimeHD.stages.3.label>IV</TM_AccelerateTimeHD.stages.3.label>
+
+  <TM_ReverseTimeBadHD.label>Inverso Envelhecimento</TM_ReverseTimeBadHD.label>
+  <TM_ReverseTimeBadHD.description>A idade do peão muda rapidamente. Qualquer outro ambiente que afete o peão também reverte suas tendências naturais. As condições invertidas depois do momento em que foram adquiridas deixarão de existir. Os peões invertidos até ao momento em que foram gerados também deixarão de existir.</TM_ReverseTimeBadHD.description>
+  <TM_ReverseTimeBadHD.stages.0.label>I</TM_ReverseTimeBadHD.stages.0.label>
+  <TM_ReverseTimeBadHD.stages.1.label>II</TM_ReverseTimeBadHD.stages.1.label>
+  <TM_ReverseTimeBadHD.stages.2.label>III</TM_ReverseTimeBadHD.stages.2.label>
+  <TM_ReverseTimeBadHD.stages.3.label>IV</TM_ReverseTimeBadHD.stages.3.label>
+
+  <TM_ReverseTimeHD.label>Inverso Envelhecimento</TM_ReverseTimeHD.label>
+  <TM_ReverseTimeHD.description>A idade do peão muda rapidamente. Qualquer outro ambiente que afete o peão também reverte suas tendências naturais. As condições invertidas depois do momento em que foram adquiridas deixarão de existir. Os peões invertidos até ao momento em que foram gerados também deixarão de existir.</TM_ReverseTimeHD.description>
+  <TM_ReverseTimeHD.stages.0.label>I</TM_ReverseTimeHD.stages.0.label>
+  <TM_ReverseTimeHD.stages.1.label>II</TM_ReverseTimeHD.stages.1.label>
+  <TM_ReverseTimeHD.stages.2.label>III</TM_ReverseTimeHD.stages.2.label>
+  <TM_ReverseTimeHD.stages.3.label>IV</TM_ReverseTimeHD.stages.3.label>
+
+  <TM_PredictionHD.label>Previsão</TM_PredictionHD.label>
+  <TM_PredictionHD.description>Permite prever eventos ou ações futuras.
+
+Nota do administrador: Esta capacidade prevê e atrasa qualquer evento. Algumas modas usam estes tipos de eventos como desencadeadores para efeitos ou resultados, isso pode causar erros se a situação mudar e determinados objetos, itens ou condições já não são válidos quando um evento previsto acontece.</TM_PredictionHD.description>
+  <TM_PredictionHD.stages.0.label>I</TM_PredictionHD.stages.0.label>
+  <TM_PredictionHD.stages.1.label>II</TM_PredictionHD.stages.1.label>
+  <TM_PredictionHD.stages.2.label>III</TM_PredictionHD.stages.2.label>
+  <TM_PredictionHD.stages.3.label>IV</TM_PredictionHD.stages.3.label>
+  <TM_PredictionHD.stages.4.label>V</TM_PredictionHD.stages.4.label>
+  <TM_PredictionHD.stages.5.label>VI</TM_PredictionHD.stages.5.label>
+
+
+</LanguageData>

@@ -1,0 +1,12 @@
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritCastAimedShot</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>taking aim at TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastArmorFracture</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>firing an armor-fracturing shot at TargetB.</reportString>
+  </JobDef>
+</Defs>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_BullChargeHD.label>carregar</TM_BullChargeHD.label>
+  <TM_BullChargeHD.description>Lançando-se à batalha.</TM_BullChargeHD.description>
+  <TM_BullChargeHD.stages.0.label></TM_BullChargeHD.stages.0.label>
+
+  <TM_FrailtyCurseHD.label>Maldito</TM_FrailtyCurseHD.label>
+  <TM_FrailtyCurseHD.description>O olhar de mau olho pôs essa maldição.</TM_FrailtyCurseHD.description>
+  <TM_FrailtyCurseHD.stages.0.label>hilário</TM_FrailtyCurseHD.stages.0.label>
+  <TM_FrailtyCurseHD.stages.1.label>magoado</TM_FrailtyCurseHD.stages.1.label>
+
+  <TM_FleshGolem_SkullPlateHD.label>placa craniana</TM_FleshGolem_SkullPlateHD.label>
+  <TM_FleshGolem_SkullPlateHD.description>Melhora a blindagem sobre o crânio.</TM_FleshGolem_SkullPlateHD.description>
+  <TM_FleshGolem_SkullPlateHD.stages.0.label></TM_FleshGolem_SkullPlateHD.stages.0.label>
+
+  <TM_FleshGolem_ShoulderPlatesHD.label>Placas de úmero</TM_FleshGolem_ShoulderPlatesHD.label>
+  <TM_FleshGolem_ShoulderPlatesHD.description>Melhora a blindagem em torno dos ombros.</TM_FleshGolem_ShoulderPlatesHD.description>
+  <TM_FleshGolem_ShoulderPlatesHD.stages.0.label></TM_FleshGolem_ShoulderPlatesHD.stages.0.label>
+
+  <TM_FleshGolem_ChestCageHD.label>peito</TM_FleshGolem_ChestCageHD.label>
+  <TM_FleshGolem_ChestCageHD.description>Reflete ataques do peito e do torso, e funciona melhor contra armas maiores.</TM_FleshGolem_ChestCageHD.description>
+  <TM_FleshGolem_ChestCageHD.stages.0.label></TM_FleshGolem_ChestCageHD.stages.0.label>
+
+  <TM_FleshGolem_SpineGuardHD.label>proteção da coluna</TM_FleshGolem_SpineGuardHD.label>
+  <TM_FleshGolem_SpineGuardHD.description>Reflete os ataques das costas.</TM_FleshGolem_SpineGuardHD.description>
+  <TM_FleshGolem_SpineGuardHD.stages.0.label></TM_FleshGolem_SpineGuardHD.stages.0.label>
+
+  <TM_FleshGolem_LegPlatesHD.label>placas de faca</TM_FleshGolem_LegPlatesHD.label>
+  <TM_FleshGolem_LegPlatesHD.description>Melhora a blindagem ao redor das pernas.</TM_FleshGolem_LegPlatesHD.description>
+  <TM_FleshGolem_LegPlatesHD.stages.0.label></TM_FleshGolem_LegPlatesHD.stages.0.label>
+
+  <TM_FleshGolem_BracerGuardHD.label>Proteção de algemas</TM_FleshGolem_BracerGuardHD.label>
+  <TM_FleshGolem_BracerGuardHD.description>capacidade de bloquear ataques</TM_FleshGolem_BracerGuardHD.description>
+  <TM_FleshGolem_BracerGuardHD.stages.0.label></TM_FleshGolem_BracerGuardHD.stages.0.label>
+
+  <TM_FleshGolem_HasteHD.label>rapidez</TM_FleshGolem_HasteHD.label>
+  <TM_FleshGolem_HasteHD.description>As asas dão agilidade ao movimento.</TM_FleshGolem_HasteHD.description>
+  <TM_FleshGolem_HasteHD.stages.0.label></TM_FleshGolem_HasteHD.stages.0.label>
+
+  <TM_FleshGolem_EyesT1HD.label>Mira de quadrilátero</TM_FleshGolem_EyesT1HD.label>
+  <TM_FleshGolem_EyesT1HD.description>A visão melhora com quatro olhos.</TM_FleshGolem_EyesT1HD.description>
+  <TM_FleshGolem_EyesT1HD.stages.0.label></TM_FleshGolem_EyesT1HD.stages.0.label>
+
+
+</LanguageData>

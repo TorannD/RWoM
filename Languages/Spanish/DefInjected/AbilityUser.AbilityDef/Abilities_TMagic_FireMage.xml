@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<TM_Fireball.label>bola de fuego</TM_Fireball.label>
+
+<TM_Fireball.description>Lanza una enorme bola de fuego de movimiento lento. Causa estragos y provoca una explosión en llamas en la zona objetivo.</TM_Fireball.description>
+
+<TM_Firebolt.label>rayo de fuego</TM_Firebolt.label>
+
+<TM_Firebolt.description>Lanza un rayo de magma sobrecalentado que daña al objetivo y puede prenderle fuego.</TM_Firebolt.description>
+
+<TM_Fireclaw.label>garra de fuego</TM_Fireclaw.label>
+
+<TM_Fireclaw.description>Crea zarcillos de fuego que desgarran a tus enemigos y dejan destrucción y llamas a su paso.</TM_Fireclaw.description>
+
+<TM_Firestorm.label>tormenta de fuego</TM_Firestorm.label>
+
+<TM_Firestorm.description>Invoca toda la furia del fuego elemental en una tormenta de meteoros que siembra muerte y destrucción.</TM_Firestorm.description>
+
+<TM_RayofHope.label>fuego interior</TM_RayofHope.label>
+
+<TM_RayofHope.description>Crea un aura cálida alrededor del lanzador que refuerza periódicamente el espíritu de un aliado.\n\nFuego interior: potenciación arcana que enciende un fuego interno y mejora la resistencia y las defensas de un peón.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 200-223 s\nNecesidades de descanso y hambre: -10 %\nCuración natural: +20 %\nResistencia a crisis mentales: +3 %\nResistencia al frío: +6 °C\n\nRequiere 40 de maná para mantenerse activo y reduce la regeneración de maná un 30 %. Vuelve a lanzar el hechizo para desactivarlo. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_RayofHope.description>
+
+<TM_RayofHope_I.label>fuego interior I</TM_RayofHope_I.label>
+
+<TM_RayofHope_I.description>Crea un aura cálida alrededor del lanzador que refuerza periódicamente el espíritu de un aliado.\n\nFuego interior I: potenciación arcana que enciende un fuego interno y mejora la resistencia y las defensas de un peón.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 200-223 s\nNecesidades de descanso y hambre: -14 %\nCuración natural: +25 %\nResistencia a crisis mentales: +4 %\nResistencia al frío: +8 °C\n\nRequiere 40 de maná para mantenerse activo y reduce la regeneración de maná un 30 %. Vuelve a lanzar el hechizo para desactivarlo. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_RayofHope_I.description>
+
+<TM_RayofHope_II.label>fuego interior II</TM_RayofHope_II.label>
+
+<TM_RayofHope_II.description>Crea un aura cálida alrededor del lanzador que refuerza periódicamente el espíritu de un aliado.\n\nFuego interior II: potenciación arcana que enciende un fuego interno y mejora la resistencia y las defensas de un peón.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 500-600 s\nNecesidades de descanso y hambre: -17 %\nCuración natural: +28 %\nResistencia a crisis mentales: +4 %\nResistencia al frío: +9 °C\n\nRequiere 40 de maná para mantenerse activo y reduce la regeneración de maná un 30 %. Vuelve a lanzar el hechizo para desactivarlo. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_RayofHope_II.description>
+
+<TM_RayofHope_III.label>fuego interior III</TM_RayofHope_III.label>
+
+<TM_RayofHope_III.description>Crea un aura cálida alrededor del lanzador que refuerza periódicamente el espíritu de un aliado.\n\nFuego interior III: potenciación arcana que enciende un fuego interno y mejora la resistencia y las defensas de un peón.\n\nFrecuencia de aplicación: 80-90 s\nDuración: 500-600 s\nNecesidades de descanso y hambre: -20 %\nCuración natural: +30 %\nResistencia a crisis mentales: +5 %\nResistencia al frío: +10 °C\n\nRequiere 40 de maná para mantenerse activo y reduce la regeneración de maná un 30 %. Vuelve a lanzar el hechizo para desactivarlo. El lanzador gana experiencia cada vez que potencia a un aliado.</TM_RayofHope_III.description>
+</LanguageData>

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Uncertainty.label>Невизначене майбутнє</TM_Uncertainty.label>
+  <TM_Uncertainty.description>Використовується для контролю просування магів по званню.</TM_Uncertainty.description>
+
+
+  <!-- Soothing Breeze -->
+
+  <TM_SoothingBreeze_AuraHD.label>Заспокійлива fypa</TM_SoothingBreeze_AuraHD.label>
+  <TM_SoothingBreeze_AuraHD.description>Аура, яка створює і дарує заспокійливе почуття на найближчих пішаках.</TM_SoothingBreeze_AuraHD.description>
+  <TM_SoothingBreeze_AuraHD.stages.0.label>I</TM_SoothingBreeze_AuraHD.stages.0.label>
+  <TM_SoothingBreeze_AuraHD.stages.1.label>II</TM_SoothingBreeze_AuraHD.stages.1.label>
+  <TM_SoothingBreeze_AuraHD.stages.2.label>III</TM_SoothingBreeze_AuraHD.stages.2.label>
+  <TM_SoothingBreeze_AuraHD.stages.3.label>IV</TM_SoothingBreeze_AuraHD.stages.3.label>
+
+  <SoothingBreeze.label>Заспокійливий бриз</SoothingBreeze.label>
+  <SoothingBreeze.description>Перебування, яке заспокоює душу</SoothingBreeze.description>
+  <SoothingBreeze.stages.0.label>I</SoothingBreeze.stages.0.label>
+
+  <SoothingBreeze_I.label>Заспокійливий бриз</SoothingBreeze_I.label>
+  <SoothingBreeze_I.description>Перебування, яке заспокоює душу</SoothingBreeze_I.description>
+  <SoothingBreeze_I.stages.0.label>II</SoothingBreeze_I.stages.0.label>
+
+  <SoothingBreeze_II.label>Заспокійливий бриз</SoothingBreeze_II.label>
+  <SoothingBreeze_II.description>Перебування, яке заспокоює душу</SoothingBreeze_II.description>
+  <SoothingBreeze_II.stages.0.label>III</SoothingBreeze_II.stages.0.label>
+
+  <SoothingBreeze_III.label>Заспокійливий бриз</SoothingBreeze_III.label>
+  <SoothingBreeze_III.description>Перебування, яке заспокоює душу</SoothingBreeze_III.description>
+  <SoothingBreeze_III.stages.0.label>IV</SoothingBreeze_III.stages.0.label>
+
+
+  <!-- (Fire Mage) Inner Fire -->
+
+  <TM_InnerFire_AuraHD.label>Аура тепла</TM_InnerFire_AuraHD.label>
+  <TM_InnerFire_AuraHD.description>Аура, яка генерує і дарує тепло і впевненість.</TM_InnerFire_AuraHD.description>
+  <TM_InnerFire_AuraHD.stages.0.label>I</TM_InnerFire_AuraHD.stages.0.label>
+  <TM_InnerFire_AuraHD.stages.1.label>II</TM_InnerFire_AuraHD.stages.1.label>
+  <TM_InnerFire_AuraHD.stages.2.label>III</TM_InnerFire_AuraHD.stages.2.label>
+  <TM_InnerFire_AuraHD.stages.3.label>IV</TM_InnerFire_AuraHD.stages.3.label>
+
+  <InnerFireHD.label>Внутрішній Вогонь</InnerFireHD.label>
+  <InnerFireHD.description>Зміцнює дух, надаючи пішки підвищену витривалість і опірність.</InnerFireHD.description>
+  <InnerFireHD.stages.0.label>I</InnerFireHD.stages.0.label>
+
+  <InnerFire_IHD.label>Внутрішній Вогонь</InnerFire_IHD.label>
+  <InnerFire_IHD.description>Зміцнює дух, надаючи пішки підвищену витривалість і опірність.</InnerFire_IHD.description>
+  <InnerFire_IHD.stages.0.label>II</InnerFire_IHD.stages.0.label>
+
+  <InnerFire_IIHD.label>Внутрішній Вогонь</InnerFire_IIHD.label>
+  <InnerFire_IIHD.description>Зміцнює дух, надаючи пішки підвищену витривалість і опірність.</InnerFire_IIHD.description>
+  <InnerFire_IIHD.stages.0.label>III</InnerFire_IIHD.stages.0.label>
+
+  <InnerFire_IIIHD.label>Внутрішній Вогонь</InnerFire_IIIHD.label>
+  <InnerFire_IIIHD.description>Зміцнює дух, надаючи пішки підвищену витривалість і опірність.</InnerFire_IIIHD.description>
+  <InnerFire_IIIHD.stages.0.label>IV</InnerFire_IIIHD.stages.0.label>
+
+
+  <!-- (Paladin) Ray of Hope -->
+
+  <TM_RayOfHope_AuraHD.label>Аура надії</TM_RayOfHope_AuraHD.label>
+  <TM_RayOfHope_AuraHD.description>Аура, яка породжує і дарує надихаюче відчуття.</TM_RayOfHope_AuraHD.description>
+  <TM_RayOfHope_AuraHD.stages.0.label>I</TM_RayOfHope_AuraHD.stages.0.label>
+  <TM_RayOfHope_AuraHD.stages.1.label>II</TM_RayOfHope_AuraHD.stages.1.label>
+  <TM_RayOfHope_AuraHD.stages.2.label>III</TM_RayOfHope_AuraHD.stages.2.label>
+  <TM_RayOfHope_AuraHD.stages.3.label>IV</TM_RayOfHope_AuraHD.stages.3.label>
+
+  <RayofHope.label>Промінь надії</RayofHope.label>
+  <RayofHope.description>Перебування, що бадьорить душу.</RayofHope.description>
+  <RayofHope.stages.0.label>I</RayofHope.stages.0.label>
+
+  <RayofHope_I.label>Промінь надії</RayofHope_I.label>
+  <RayofHope_I.description>Перебування, що бадьорить душу.</RayofHope_I.description>
+  <RayofHope_I.stages.0.label>II</RayofHope_I.stages.0.label>
+
+  <RayofHope_II.label>Промінь надії</RayofHope_II.label>
+  <RayofHope_II.description>Перебування, що бадьорить душу.</RayofHope_II.description>
+  <RayofHope_II.stages.0.label>III</RayofHope_II.stages.0.label>
+
+  <RayofHope_III.label>Промінь надії</RayofHope_III.label>
+  <RayofHope_III.description>Перебування, що бадьорить душу.</RayofHope_III.description>
+  <RayofHope_III.stages.0.label>IV</RayofHope_III.stages.0.label>
+
+  <AMP_I.label>AMP</AMP_I.label>
+  <AMP_I.description>Вибух енергії, який посилює фізичні властивості.</AMP_I.description>
+  <AMP_I.stages.0.label>I</AMP_I.stages.0.label>
+
+  <AMP_II.label>AMP</AMP_II.label>
+  <AMP_II.description>Вибух енергії, який посилює фізичні властивості.</AMP_II.description>
+  <AMP_II.stages.0.label>II</AMP_II.stages.0.label>
+
+  <AMP_III.label>AMP</AMP_III.label>
+  <AMP_III.description>Вибух енергії, який посилює фізичні властивості.</AMP_III.description>
+  <AMP_III.stages.0.label>III</AMP_III.stages.0.label>
+
+  <TM_Shadow_AuraHD.label>Ореол темряви</TM_Shadow_AuraHD.label>
+  <TM_Shadow_AuraHD.description>Аура, яка породжує і дарує тіньову присутність.</TM_Shadow_AuraHD.description>
+  <TM_Shadow_AuraHD.stages.0.label>I</TM_Shadow_AuraHD.stages.0.label>
+  <TM_Shadow_AuraHD.stages.1.label>II</TM_Shadow_AuraHD.stages.1.label>
+  <TM_Shadow_AuraHD.stages.2.label>III</TM_Shadow_AuraHD.stages.2.label>
+  <TM_Shadow_AuraHD.stages.3.label>IV</TM_Shadow_AuraHD.stages.3.label>
+
+  <Shadow.label>Таємнича тінь</Shadow.label>
+  <Shadow.description>Примарна присутність, яка прискорює дії.</Shadow.description>
+  <Shadow.stages.0.label></Shadow.stages.0.label>
+
+  <Shadow_I.label>Таємнича тінь</Shadow_I.label>
+  <Shadow_I.description>Примарна присутність, яка прискорює дії.</Shadow_I.description>
+  <Shadow_I.stages.0.label>I</Shadow_I.stages.0.label>
+
+  <Shadow_II.label>Таємнича тінь</Shadow_II.label>
+  <Shadow_II.description>Примарна присутність, яка прискорює дії.</Shadow_II.description>
+  <Shadow_II.stages.0.label>II</Shadow_II.stages.0.label>
+
+  <Shadow_III.label>Таємнича тінь</Shadow_III.label>
+  <Shadow_III.description>Примарна присутність, яка прискорює дії.</Shadow_III.description>
+  <Shadow_III.stages.0.label>III</Shadow_III.stages.0.label>
+
+
+  <!-- Bestow Might -->
+
+  <BestowMightHD.label>Дар могутності</BestowMightHD.label>
+  <BestowMightHD.description>Могутній бойовий дар.</BestowMightHD.description>
+  <BestowMightHD.stages.0.label>I</BestowMightHD.stages.0.label>
+
+  <BestowMightHD_I.label>Дар могутності</BestowMightHD_I.label>
+  <BestowMightHD_I.description>Могутній бойовий дар.</BestowMightHD_I.description>
+  <BestowMightHD_I.stages.0.label>II</BestowMightHD_I.stages.0.label>
+
+  <BestowMightHD_II.label>Дар могутності</BestowMightHD_II.label>
+  <BestowMightHD_II.description>Могутній бойовий дар.</BestowMightHD_II.description>
+  <BestowMightHD_II.stages.0.label>III</BestowMightHD_II.stages.0.label>
+
+  <BestowMightHD_III.label>Дар могутності</BestowMightHD_III.label>
+  <BestowMightHD_III.description>Могутній бойовий дар.</BestowMightHD_III.description>
+  <BestowMightHD_III.stages.0.label>IV</BestowMightHD_III.stages.0.label>
+
+
+  <!-- Ranger Pet Bond -->
+
+  <TM_RangerBondHD.label>Зв&apos;язок рейнджера</TM_RangerBondHD.label>
+  <TM_RangerBondHD.description>Це зв&apos;язок, який ця тварина розділяє з рейнджером. Збільшує фізичні властивості і посилює зцілення.</TM_RangerBondHD.description>
+  <TM_RangerBondHD.stages.0.label>I</TM_RangerBondHD.stages.0.label>
+  <TM_RangerBondHD.stages.1.label>II</TM_RangerBondHD.stages.1.label>
+  <TM_RangerBondHD.stages.2.label>III</TM_RangerBondHD.stages.2.label>
+  <TM_RangerBondHD.stages.3.label>IV</TM_RangerBondHD.stages.3.label>
+
+
+  <!-- Shield -->
+
+  <TM_HediffShield.label>Щит</TM_HediffShield.label>
+  <TM_HediffShield.description>Поглинає шкоди.</TM_HediffShield.description>
+
+
+  <!-- Magic Shield (same thing as shield but can be applied to any pawn) -->
+
+  <TM_MagicShieldHD.label>Щит</TM_MagicShieldHD.label>
+  <TM_MagicShieldHD.description>Поглинає шкоди.</TM_MagicShieldHD.description>
+
+
+  <!-- Sprint -->
+
+  <TM_HediffSprint_I.label>Спринт (I)</TM_HediffSprint_I.label>
+  <TM_HediffSprint_I.description>Збільшує пересування.</TM_HediffSprint_I.description>
+
+  <TM_HediffSprint_II.label>Спринт (II)</TM_HediffSprint_II.label>
+  <TM_HediffSprint_II.description>Збільшує пересування.</TM_HediffSprint_II.description>
+
+  <TM_HediffSprint_III.label>Спринт (III)</TM_HediffSprint_III.label>
+  <TM_HediffSprint_III.description>Збільшує пересування.</TM_HediffSprint_III.description>
+
+  <TM_HediffInvulnerable.label>Невразливий</TM_HediffInvulnerable.label>
+  <TM_HediffInvulnerable.description>Запобігає пошкодженню, коли активний.</TM_HediffInvulnerable.description>
+
+  <TM_HediffTimedInvulnerable.label>Невразливий</TM_HediffTimedInvulnerable.label>
+  <TM_HediffTimedInvulnerable.description>Запобігає пошкодженню, коли активний.</TM_HediffTimedInvulnerable.description>
+
+  <TM_HediffFortitude.label>Витривалість духу</TM_HediffFortitude.label>
+  <TM_HediffFortitude.description>Зменшує весь збиток на певну величину.</TM_HediffFortitude.description>
+
+  <TM_ManaShieldHD.label>Щит мани</TM_ManaShieldHD.label>
+  <TM_ManaShieldHD.description>Жертвує магічною енергією, щоб поглинути збиток.</TM_ManaShieldHD.description>
+
+
+  <!-- Blind -->
+
+  <TM_Blind.label>Засліплений</TM_Blind.label>
+  <TM_Blind.description>Знижує зір.</TM_Blind.description>
+  <TM_Blind.stages.0.label>I</TM_Blind.stages.0.label>
+  <TM_Blind.stages.1.label>II</TM_Blind.stages.1.label>
+  <TM_Blind.stages.2.label>III</TM_Blind.stages.2.label>
+
+  <TM_Regeneration.label>Регенерація</TM_Regeneration.label>
+  <TM_Regeneration.description>Відновлює здоров &quot;я і з часом загоюється рани. Кожен тик буде відновлювати здоров&apos;я до тих пір, поки травма не буде зцілена.</TM_Regeneration.description>
+
+  <TM_Regeneration_I.label>Регенерація (I)</TM_Regeneration_I.label>
+  <TM_Regeneration_I.description>Відновлює здоров &quot;я і з часом загоюється рани. Кожен тик буде відновлювати здоров&apos;я до тих пір, поки травма не буде зцілена.</TM_Regeneration_I.description>
+
+  <TM_Regeneration_II.label>Регенерація (II)</TM_Regeneration_II.label>
+  <TM_Regeneration_II.description>Відновлює здоров &quot;я і з часом загоюється рани. Кожен тик буде відновлювати здоров&apos;я до тих пір, поки травма не буде зцілена.</TM_Regeneration_II.description>
+
+  <TM_Regeneration_III.label>Регенерація (III)</TM_Regeneration_III.label>
+  <TM_Regeneration_III.description>Відновлює здоров &quot;я і з часом загоюється рани. Кожен тик буде відновлювати здоров&apos;я до тих пір, поки травма не буде зцілена.</TM_Regeneration_III.description>
+
+  <TM_BladeArtHD.label>Танцюючий з клинком</TM_BladeArtHD.label>
+  <TM_BladeArtHD.description>Дар танцюючого з клинками</TM_BladeArtHD.description>
+  <TM_BladeArtHD.stages.0.label>I</TM_BladeArtHD.stages.0.label>
+  <TM_BladeArtHD.stages.1.label>II</TM_BladeArtHD.stages.1.label>
+  <TM_BladeArtHD.stages.2.label>III</TM_BladeArtHD.stages.2.label>
+  <TM_BladeArtHD.stages.3.label>IV</TM_BladeArtHD.stages.3.label>
+
+  <TM_BowTrainingHD.label>Майстерність лука</TM_BowTrainingHD.label>
+  <TM_BowTrainingHD.description>Статы рейнджера и мастерство лука повышены.</TM_BowTrainingHD.description>
+  <TM_BowTrainingHD.stages.0.label>I</TM_BowTrainingHD.stages.0.label>
+  <TM_BowTrainingHD.stages.1.label>II</TM_BowTrainingHD.stages.1.label>
+  <TM_BowTrainingHD.stages.2.label>III</TM_BowTrainingHD.stages.2.label>
+  <TM_BowTrainingHD.stages.3.label>IV</TM_BowTrainingHD.stages.3.label>
+
+  <SpellMendingHD.label>Починка</SpellMendingHD.label>
+  <SpellMendingHD.description>Швидкий ремонт екіпірованого одягу і зброї.</SpellMendingHD.description>
+  <SpellMendingHD.stages.0.label>активний</SpellMendingHD.stages.0.label>
+  <SpellMendingHD.stages.1.label>розширений</SpellMendingHD.stages.1.label>
+
+
+  <!-- Resurrection Debuff -->
+
+  <TM_ResurrectionHD.label>Слабкість після воскресіння</TM_ResurrectionHD.label>
+  <TM_ResurrectionHD.description>Результат воскресіння за допомогою магії.</TM_ResurrectionHD.description>
+  <TM_ResurrectionHD.stages.0.label>I</TM_ResurrectionHD.stages.0.label>
+  <TM_ResurrectionHD.stages.1.label>II</TM_ResurrectionHD.stages.1.label>
+  <TM_ResurrectionHD.stages.2.label>III</TM_ResurrectionHD.stages.2.label>
+
+
+  <!-- Resurrection via reverse time Debuff -->
+
+  <TM_DeathReversalHD.label>Воскрешений з Мертвих</TM_DeathReversalHD.label>
+  <TM_DeathReversalHD.description>Зворотна реакція, викликана зверненням смерті назад.</TM_DeathReversalHD.description>
+  <TM_DeathReversalHD.stages.0.label>I</TM_DeathReversalHD.stages.0.label>
+  <TM_DeathReversalHD.stages.1.label>II</TM_DeathReversalHD.stages.1.label>
+  <TM_DeathReversalHD.stages.2.label>III</TM_DeathReversalHD.stages.2.label>
+
+  <TM_DiseaseImmunityHD.label>Підвищений імунітет</TM_DiseaseImmunityHD.label>
+  <TM_DiseaseImmunityHD.description>Підвищує природний рівень імунітету до хвороб.</TM_DiseaseImmunityHD.description>
+  <TM_DiseaseImmunityHD.stages.0.label>I</TM_DiseaseImmunityHD.stages.0.label>
+
+  <TM_DiseaseImmunity2HD.label>Підвищений імунітет</TM_DiseaseImmunity2HD.label>
+  <TM_DiseaseImmunity2HD.description>Підвищує природний рівень імунітету до хвороб.</TM_DiseaseImmunity2HD.description>
+  <TM_DiseaseImmunity2HD.stages.0.label>II</TM_DiseaseImmunity2HD.stages.0.label>
+
+  <TM_BlurHD.label>Розмитість</TM_BlurHD.label>
+  <TM_BlurHD.description>Маніпуляція світлом для можливості уникнути пошкодження</TM_BlurHD.description>
+
+  <TM_InvisibilityHD.label>Невидимість</TM_InvisibilityHD.label>
+  <TM_InvisibilityHD.description>Призводить до того, що пішак стає невидимим для найближчих ворогів.</TM_InvisibilityHD.description>
+  <TM_InvisibilityHD.stages.0.label>I</TM_InvisibilityHD.stages.0.label>
+
+  <TM_MageLightHD.label>Магічне світло</TM_MageLightHD.label>
+  <TM_MageLightHD.description>Маленький вогник, підтримуваний магією.</TM_MageLightHD.description>
+  <TM_MageLightHD.stages.0.label></TM_MageLightHD.stages.0.label>
+
+  <TM_FrostSlowHD.label>Уповільнено</TM_FrostSlowHD.label>
+  <TM_FrostSlowHD.description>Уповільнені через мороз кінцівки</TM_FrostSlowHD.description>
+  <TM_FrostSlowHD.stages.0.label>мороз</TM_FrostSlowHD.stages.0.label>
+
+  <TM_CoolHD.label>Захист від тепла</TM_CoolHD.label>
+  <TM_CoolHD.description>Невелике благо, яке охолоджує і підвищує стійкість до високих температур.</TM_CoolHD.description>
+  <TM_CoolHD.stages.0.label>Кулер</TM_CoolHD.stages.0.label>
+
+  <TM_RefreshedHD.label>Оновлений</TM_RefreshedHD.label>
+  <TM_RefreshedHD.description>Освіжає пішака, зменшуючи втому.</TM_RefreshedHD.description>
+  <TM_RefreshedHD.stages.0.label>Кулер</TM_RefreshedHD.stages.0.label>
+
+  <TM_WarmHD.label>Захист від холоду</TM_WarmHD.label>
+  <TM_WarmHD.description>Невелике благо, яке нагріває і підвищує стійкість до холодних температур</TM_WarmHD.description>
+  <TM_WarmHD.stages.0.label>Нагрівач</TM_WarmHD.stages.0.label>
+
+  <TM_ShockTherapyHD.label>Шокова терапія</TM_ShockTherapyHD.label>
+  <TM_ShockTherapyHD.description>Тренує розум, щоб поліпшити вчинки.</TM_ShockTherapyHD.description>
+  <TM_ShockTherapyHD.stages.0.label>Енергетична нода</TM_ShockTherapyHD.stages.0.label>
+
+  <TM_JoltHD.label>Поштовх</TM_JoltHD.label>
+  <TM_JoltHD.description>Невелике благо, яке збільшує фізичну енергію.</TM_JoltHD.description>
+  <TM_JoltHD.stages.0.label>I</TM_JoltHD.stages.0.label>
+  <TM_JoltHD.stages.1.label>II</TM_JoltHD.stages.1.label>
+  <TM_JoltHD.stages.2.label>III</TM_JoltHD.stages.2.label>
+
+
+  <!-- Energy Regen - increases stamina/mana regeneration rates by multiplying the HD severity -->
+
+  <TM_EnergyRegenHD.label>Регенерація енергії</TM_EnergyRegenHD.label>
+  <TM_EnergyRegenHD.description>Збільшує швидкість регенерації енергії в декілька разів, залежно від рівня баффа.</TM_EnergyRegenHD.description>
+  <TM_EnergyRegenHD.stages.0.label></TM_EnergyRegenHD.stages.0.label>
+
+
+  <!-- Super Soldier Serum -->
+
+  <TM_SS_SerumHD.label>Сироватка СС</TM_SS_SerumHD.label>
+  <TM_SS_SerumHD.description>Хімічна речовина, що підвищує фізичні здібності та магічну стійкість; зменшує магічну силу і регенерацію енергії. Сила дії цієї хімічної речовини зростає в 3 етапи і займає 100 днів, щоб повністю дозріти.</TM_SS_SerumHD.description>
+  <TM_SS_SerumHD.stages.0.label>Стадія 0</TM_SS_SerumHD.stages.0.label>
+  <TM_SS_SerumHD.stages.1.label>Стадія 1</TM_SS_SerumHD.stages.1.label>
+  <TM_SS_SerumHD.stages.2.label>Стадія 2</TM_SS_SerumHD.stages.2.label>
+  <TM_SS_SerumHD.stages.3.label>Стадія 3</TM_SS_SerumHD.stages.3.label>
+
+  <TM_ShadowSlayerCloakHD.label>Плеолог Вбивці Тіней</TM_ShadowSlayerCloakHD.label>
+  <TM_ShadowSlayerCloakHD.description>Маскуюче поле Вбивці Тіней активно - виконання дій, які механізм прогнозування не може відстежити, швидко зруйнує маскуюче поле.</TM_ShadowSlayerCloakHD.description>
+  <TM_ShadowSlayerCloakHD.stages.0.label></TM_ShadowSlayerCloakHD.stages.0.label>
+
+  <TM_SeverityHasteHD.label>Поспішність</TM_SeverityHasteHD.label>
+  <TM_SeverityHasteHD.description>Швидкість атаки подвоюється.</TM_SeverityHasteHD.description>
+  <TM_SeverityHasteHD.stages.0.label></TM_SeverityHasteHD.stages.0.label>
+
+  <TM_HeatShieldHD.label>Тепловий екран</TM_HeatShieldHD.label>
+  <TM_HeatShieldHD.description>Підвищує термостійкість і не може загорітися.</TM_HeatShieldHD.description>
+  <TM_HeatShieldHD.stages.0.label></TM_HeatShieldHD.stages.0.label>
+
+  <TM_EvasionHD.label>Evasion</TM_EvasionHD.label>
+  <TM_EvasionHD.description>Allows the pawn the ability to dodge any non-explosive attack. The dodge rate corresponds to the severity of the buff.</TM_EvasionHD.description>
+  <TM_EvasionHD.stages.0.label></TM_EvasionHD.stages.0.label>
+
+  <TM_AdrenalineHD.label>Adrenaline</TM_AdrenalineHD.label>
+  <TM_AdrenalineHD.description>A burst of adrenaline that boosts physical performance.</TM_AdrenalineHD.description>
+  <TM_AdrenalineHD.stages.0.label></TM_AdrenalineHD.stages.0.label>
+  <TM_AdrenalineHD.stages.1.label></TM_AdrenalineHD.stages.1.label>
+  <TM_AdrenalineHD.stages.2.label></TM_AdrenalineHD.stages.2.label>
+  <TM_AdrenalineHD.stages.3.label></TM_AdrenalineHD.stages.3.label>
+
+
+  <!-- Успокаивающий бриз -->
+  <!-- Луч надежды -->
+  <!-- Дар могущества -->
+
+</LanguageData>

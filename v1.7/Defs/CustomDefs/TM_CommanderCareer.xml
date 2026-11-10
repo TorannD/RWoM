@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TorannMagic.ClassProgression.ClassDisciplineDef><defName>TM_DisciplineCommander</defName><label>commander</label><profileId>rwom.commander</profileId><domain>Might</domain></TorannMagic.ClassProgression.ClassDisciplineDef>
+</Defs>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BreachSeal_eff>Эффективность</TM_BreachSeal_eff>
+  <TM_BreachSeal_eff_desc>Снижает расход маны на 10% за уровень, до трёх уровней.</TM_BreachSeal_eff_desc>
+  <TM_BreachSeal_Unavailable>Печать герметизации недоступна.</TM_BreachSeal_Unavailable>
+  <TM_BreachSeal_NoCore>Выберите платформу своего ядра корабля.</TM_BreachSeal_NoCore>
+  <TM_BreachSeal_AmbiguousCore>Эта платформа относится к нескольким ядрам.</TM_BreachSeal_AmbiguousCore>
+  <TM_BreachSeal_CoreOverlap>Цель перекрывает ядро корабля.</TM_BreachSeal_CoreOverlap>
+  <TM_BreachSeal_InvalidFloor>В центре и на дальнем краю нужен целый пол корабля.</TM_BreachSeal_InvalidFloor>
+  <TM_BreachSeal_Blocked>Дальний край занят.</TM_BreachSeal_Blocked>
+  <TM_BreachSeal_AlreadySealed>Этот край уже герметичен.</TM_BreachSeal_AlreadySealed>
+  <TM_BreachSeal_ver>Длительность</TM_BreachSeal_ver>
+  <TM_BreachSeal_ver_desc>Добавляет 25% базовой длительности за уровень: 30, 36 или 42 часа. Свитки и посохи действуют 24 часа.</TM_BreachSeal_ver_desc>
+</LanguageData>

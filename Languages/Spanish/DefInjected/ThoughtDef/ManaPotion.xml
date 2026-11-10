@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <ManaPotionHigh.stages.mana_surge.label>oleada de maná</ManaPotionHigh.stages.mana_surge.label>
+  
+  <ManaPotionHigh.stages.mana_surge.description>Este poder... es abrumador. Siento el poder del cosmos en la punta de mis dedos, pero me está convirtiendo los huesos en ceniza.</ManaPotionHigh.stages.mana_surge.description>
+  
+  
+  <ManaPotionWithdrawal.stages.mana_withdrawal.label>abstinencia de maná</ManaPotionWithdrawal.stages.mana_withdrawal.label>
+  
+  <ManaPotionWithdrawal.stages.mana_withdrawal.description>Uf... todo es borroso. No consigo concentrarme ni controlar mi cuerpo, me siento separado de la realidad. Necesito sentir el maná fluyendo hacia mi alma.</ManaPotionWithdrawal.stages.mana_withdrawal.description>
+  
+</LanguageData>

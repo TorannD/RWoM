@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Bullet_ES_Fire.label>disparo elemental - fuego</Bullet_ES_Fire.label>
+  
+  
+  <Bullet_ES_Ice.label>disparo elemental - hielo</Bullet_ES_Ice.label>
+  
+  
+  <Bullet_ES_Lit.label>disparo elemental - rayo</Bullet_ES_Lit.label>
+  
+  
+  <Projectile_OrbitalStrike.label>bombardeo orbital</Projectile_OrbitalStrike.label>
+  
+  
+  <Projectile_OrbitalStrike_I.label>bombardeo orbital I</Projectile_OrbitalStrike_I.label>
+  
+  
+  <Projectile_OrbitalStrike_II.label>bombardeo orbital II</Projectile_OrbitalStrike_II.label>
+  
+  
+  <Projectile_OrbitalStrike_III.label>bombardeo orbital III</Projectile_OrbitalStrike_III.label>
+  
+  
+  <Projectile_Sabotage.label>proyectil de sabotaje</Projectile_Sabotage.label>
+  
+  
+  <Projectile_TechnoTurret.label>proyectil Mark-IV</Projectile_TechnoTurret.label>
+  
+  
+  <Projectile_TM_BitTechLaser.label>microláser tecnológico</Projectile_TM_BitTechLaser.label>
+  
+  
+  <Projectile_TMEMPGrenade.label>minigranada de fragmentación</Projectile_TMEMPGrenade.label>
+  
+  
+  <Projectile_TMFragGrenade.label>minigranada de fragmentación</Projectile_TMFragGrenade.label>
+  
+  
+  <TM_TechnoWeapon_Base0.label>arma tecno</TM_TechnoWeapon_Base0.label>
+  
+  <TM_TechnoWeapon_Base0.description>Un arma modificada por un tecnomante.</TM_TechnoWeapon_Base0.description>
+  
+  <TM_TechnoWeapon_Base0.tools.weapon_smash.label>culatazo</TM_TechnoWeapon_Base0.tools.weapon_smash.label>
+  
+  <TM_TechnoWeapon_Base0.verbs.Verb_Shoot.label>disparo de arma tecno</TM_TechnoWeapon_Base0.verbs.Verb_Shoot.label>
+  
+  
+  <TM_TechnoWeapon_Base1.label>arma tecno</TM_TechnoWeapon_Base1.label>
+  
+  <TM_TechnoWeapon_Base1.description>Un arma modificada por un tecnomante.</TM_TechnoWeapon_Base1.description>
+  
+  <TM_TechnoWeapon_Base1.tools.weapon_smash.label>culatazo</TM_TechnoWeapon_Base1.tools.weapon_smash.label>
+  
+  <TM_TechnoWeapon_Base1.verbs.Verb_Shoot.label>disparo de arma tecno</TM_TechnoWeapon_Base1.verbs.Verb_Shoot.label>
+  
+  
+  <TM_TechnoWeapon_Base2.label>arma tecno</TM_TechnoWeapon_Base2.label>
+  
+  <TM_TechnoWeapon_Base2.description>Un arma modificada por un tecnomante.</TM_TechnoWeapon_Base2.description>
+  
+  <TM_TechnoWeapon_Base2.tools.weapon_smash.label>culatazo</TM_TechnoWeapon_Base2.tools.weapon_smash.label>
+  
+  <TM_TechnoWeapon_Base2.verbs.Verb_Shoot.label>disparo de arma tecno</TM_TechnoWeapon_Base2.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_TechnoWeapon_Base3.label>arma tecno</TM_TechnoWeapon_Base3.label>
+  
+  <TM_TechnoWeapon_Base3.description>Un arma modificada por un tecnomante.</TM_TechnoWeapon_Base3.description>
+  
+  <TM_TechnoWeapon_Base3.tools.weapon_smash.label>culatazo</TM_TechnoWeapon_Base3.tools.weapon_smash.label>
+  
+  <TM_TechnoWeapon_Base3.verbs.Verb_Shoot.label>disparo de arma tecno</TM_TechnoWeapon_Base3.verbs.Verb_Shoot.label>
+  
+  
+  <TM_TechnoWeapon_Base4.label>arma tecno</TM_TechnoWeapon_Base4.label>
+  
+  <TM_TechnoWeapon_Base4.description>Un arma modificada por un tecnomante.</TM_TechnoWeapon_Base4.description>
+  
+  <TM_TechnoWeapon_Base4.tools.weapon_smash.label>culatazo</TM_TechnoWeapon_Base4.tools.weapon_smash.label>
+  
+  <TM_TechnoWeapon_Base4.verbs.Verb_Shoot.label>disparo de arma tecno</TM_TechnoWeapon_Base4.verbs.Verb_Shoot.label>
+  
+  
+  <TM_TechnoWeapon_Base5.label>arma tecno</TM_TechnoWeapon_Base5.label>
+  
+  <TM_TechnoWeapon_Base5.description>Un arma modificada por un tecnomante.</TM_TechnoWeapon_Base5.description>
+  
+  <TM_TechnoWeapon_Base5.tools.weapon_smash.label>culatazo</TM_TechnoWeapon_Base5.tools.weapon_smash.label>
+  
+  <TM_TechnoWeapon_Base5.verbs.Verb_Shoot.label>disparo de arma tecno</TM_TechnoWeapon_Base5.verbs.Verb_Shoot.label>
+  
+  
+  <TM_TechnoWeapon_Base6.label>arma tecno</TM_TechnoWeapon_Base6.label>
+  
+  <TM_TechnoWeapon_Base6.description>Un arma modificada por un tecnomante.</TM_TechnoWeapon_Base6.description>
+  
+  <TM_TechnoWeapon_Base6.tools.weapon_smash.label>culatazo</TM_TechnoWeapon_Base6.tools.weapon_smash.label>
+  
+  <TM_TechnoWeapon_Base6.verbs.Verb_Shoot.label>disparo de arma tecno</TM_TechnoWeapon_Base6.verbs.Verb_Shoot.label>
+  
+  
+  <TM_TechnoWeapon_Base7.label>arma tecno</TM_TechnoWeapon_Base7.label>
+  
+  <TM_TechnoWeapon_Base7.description>Un arma modificada por un tecnomante.</TM_TechnoWeapon_Base7.description>
+  
+  <TM_TechnoWeapon_Base7.tools.weapon_smash.label>culatazo</TM_TechnoWeapon_Base7.tools.weapon_smash.label>
+  
+  <TM_TechnoWeapon_Base7.verbs.Verb_Shoot.label>disparo de arma tecno</TM_TechnoWeapon_Base7.verbs.Verb_Shoot.label>
+  
+  
+  <TM_TechnoWeapon_Base8.label>arma tecno</TM_TechnoWeapon_Base8.label>
+  
+  <TM_TechnoWeapon_Base8.description>Un arma modificada por un tecnomante.</TM_TechnoWeapon_Base8.description>
+  
+  <TM_TechnoWeapon_Base8.tools.weapon_smash.label>culatazo</TM_TechnoWeapon_Base8.tools.weapon_smash.label>
+  
+  <TM_TechnoWeapon_Base8.verbs.Verb_Shoot.label>disparo de arma tecno</TM_TechnoWeapon_Base8.verbs.Verb_Shoot.label>
+  
+  
+  <TM_TechnoWeapon_Base9.label>arma tecno</TM_TechnoWeapon_Base9.label>
+  
+  <TM_TechnoWeapon_Base9.description>Un arma modificada por un tecnomante.</TM_TechnoWeapon_Base9.description>
+  
+  <TM_TechnoWeapon_Base9.tools.weapon_smash.label>culatazo</TM_TechnoWeapon_Base9.tools.weapon_smash.label>
+  
+  <TM_TechnoWeapon_Base9.verbs.Verb_Shoot.label>disparo de arma tecno</TM_TechnoWeapon_Base9.verbs.Verb_Shoot.label>
+
+  
+</LanguageData>

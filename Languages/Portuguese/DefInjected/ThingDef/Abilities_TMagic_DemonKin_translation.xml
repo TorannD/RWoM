@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Projectile_Warlock.label>projétil padrão</Projectile_Warlock.label>
+
+
+  <!-- ShadowBolt -->
+
+  <Projectile_ShadowBolt.label>Parafuso escuro</Projectile_ShadowBolt.label>
+  <FlyingObject_ShadowBolt.label>Parafuso escuro</FlyingObject_ShadowBolt.label>
+
+
+  <!-- Attraction -->
+
+  <Projectile_Attraction.label>atração</Projectile_Attraction.label>
+
+
+  <!-- Repulsion -->
+
+  <Projectile_Repulsion.label>reflexão</Projectile_Repulsion.label>
+  <Projectile_Repulsion_I.label>reflexão</Projectile_Repulsion_I.label>
+  <Projectile_Repulsion_II.label>reflexão</Projectile_Repulsion_II.label>
+  <Projectile_Repulsion_III.label>reflexão</Projectile_Repulsion_III.label>
+
+
+  <!-- Scorn -->
+
+  <Projectile_Scorn.label>desprezo</Projectile_Scorn.label>
+
+
+  <!-- PsychicShock -->
+
+  <Projectile_PsychicShock.label>choque mental</Projectile_PsychicShock.label>
+
+
+  <!-- SummonDemon -->
+
+  <Projectile_SummonDemon.label>chamada de demónio</Projectile_SummonDemon.label>
+  <FlyingObject_DemonFlight.label>objeto voador</FlyingObject_DemonFlight.label>
+  <FlyingObject_DemonBolt.label>Chama demoníaca</FlyingObject_DemonBolt.label>
+
+
+</LanguageData>

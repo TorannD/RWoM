@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_EtherShell_eff>Эффективность</TM_EtherShell_eff>
+  <TM_EtherShell_eff_desc>Снижает расход маны на 10% за уровень, до трёх уровней.</TM_EtherShell_eff_desc>
+  <TM_EtherShell_AlreadyProtected>Эта пешка уже защищена эфирной оболочкой.</TM_EtherShell_AlreadyProtected>
+  <TM_EtherShell_Unavailable>Эфирная оболочка недоступна.</TM_EtherShell_Unavailable>
+  <TM_EtherShell_ver>Длительность</TM_EtherShell_ver>
+  <TM_EtherShell_ver_desc>Добавляет 25% базовой длительности за уровень: 30, 36 или 42 часа. Свитки и посохи действуют 24 часа.</TM_EtherShell_ver_desc>
+</LanguageData>

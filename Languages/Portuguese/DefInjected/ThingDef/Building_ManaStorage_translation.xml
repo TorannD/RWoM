@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ArcaneCapacitor.label>Armazenador mágico</TM_ArcaneCapacitor.label>
+  <TM_ArcaneCapacitor.description>O armazenador mágico é capaz de armazenar Manu como uma forma de energia potencial que os mágicos podem usar mais tarde. Os mágicos designados para tarefas mágicas carregarão a bateria até que chegue ao nível de preenchimento. O mago só cumprirá esta tarefa se o seu nível de maná for superior a 90% do seu nível máximo.
+
+O armazenador mágico vai descarregar o manu em qualquer peão não testado na faixa se o coeficiente de maná do condensador for superior a 250% do mago. Os magos chamados serão forçados a tirar Manu do armazenador até que o armazenador esteja vazio ou o mago tenha 90% ou mais de maná.
+
+Parte do maná é perdida durante a descarga.
+Eficiência: 71%</TM_ArcaneCapacitor.description>
+  <TM_ArcaneCapacitor_Blueprint.label>Armazenador mágico (projeto)</TM_ArcaneCapacitor_Blueprint.label>
+  <TM_ArcaneCapacitor_Frame.label>Armazenador mágico (construção)</TM_ArcaneCapacitor_Frame.label>
+  <TM_ArcaneCapacitor_Frame.description>O armazenador mágico é capaz de armazenar Manu como uma forma de energia potencial que os mágicos podem usar mais tarde. Os mágicos designados para tarefas mágicas carregarão a bateria até que chegue ao nível de preenchimento. O mago só cumprirá esta tarefa se o seu nível de maná for superior a 90% do seu nível máximo.
+
+O armazenador mágico vai descarregar o manu em qualquer peão não testado na faixa se o coeficiente de maná do condensador for superior a 250% do mago. Os magos chamados serão forçados a tirar Manu do armazenador até que o armazenador esteja vazio ou o mago tenha 90% ou mais de maná.
+
+Parte do maná é perdida durante a descarga.
+Eficiência: 71%</TM_ArcaneCapacitor_Frame.description>
+
+  <TM_DimensionalManaPocket.label>Bolso Espacial de Mana</TM_DimensionalManaPocket.label>
+  <TM_DimensionalManaPocket.description>O Bolso Espacial de Mana armazena uma grande quantidade de maná e tem uma área de distribuição maior, mas mais lento que o armazenador mágico
+
+Os mágicos designados para as tarefas mágicas vão transferir a Manu para o bolso espacial até que ela chegue ao nível de preenchimento estabelecido. O mago só cumprirá esta tarefa se o seu nível de maná for superior a 90% do seu nível máximo.
+
+O bolso vai descarregar manu em qualquer peão não testado na faixa, se o Mana for inferior a 40%, e em qualquer mago chamado com uma massa inferior a 80%.
+
+Uma parte do maná é perdido tanto durante a carga como durante a descarga.
+Eficiência: 80%</TM_DimensionalManaPocket.description>
+  <TM_DimensionalManaPocket_Blueprint.label>Espaço Bolso de Mana (projeto)</TM_DimensionalManaPocket_Blueprint.label>
+  <TM_DimensionalManaPocket_Frame.label>Bolso Espacial de Mana (construção)</TM_DimensionalManaPocket_Frame.label>
+  <TM_DimensionalManaPocket_Frame.description>O Bolso Espacial de Mana armazena uma grande quantidade de maná e tem uma área de distribuição maior, mas mais lento que o armazenador mágico
+
+Os mágicos designados para as tarefas mágicas vão transferir a Manu para o bolso espacial até que ela chegue ao nível de preenchimento estabelecido. O mago só cumprirá esta tarefa se o seu nível de maná for superior a 90% do seu nível máximo.
+
+O bolso vai descarregar manu em qualquer peão não testado na faixa, se o Mana for inferior a 40%, e em qualquer mago chamado com uma massa inferior a 80%.
+
+Uma parte do maná é perdido tanto durante a carga como durante a descarga.
+Eficiência: 80%</TM_DimensionalManaPocket_Frame.description>
+
+
+</LanguageData>

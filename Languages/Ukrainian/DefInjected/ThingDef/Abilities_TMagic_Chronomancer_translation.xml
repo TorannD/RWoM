@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Accelerate Time -->
+
+  <Projectile_AccelerateTime.label>Прискорення часу</Projectile_AccelerateTime.label>
+
+
+  <!-- Chronostatic Field -->
+
+  <Projectile_ChronostaticField.label>Бульбашка часу</Projectile_ChronostaticField.label>
+  <Projectile_ChronostaticField_I.label>Бульбашка часу</Projectile_ChronostaticField_I.label>
+  <Projectile_ChronostaticField_II.label>Бульбашка часу</Projectile_ChronostaticField_II.label>
+  <Projectile_ChronostaticField_III.label>Бульбашка часу</Projectile_ChronostaticField_III.label>
+  <FlyingObject_TimeDelay.label>Бульбашка часу</FlyingObject_TimeDelay.label>
+
+
+</LanguageData>

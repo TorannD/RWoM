@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MasteryRitual>Мастерство {0}: {1} ({2} магицита{3})</TM_MasteryRitual>
+  <TM_Mastery_focus>Концентрация (+25% урона основного взрыва)</TM_Mastery_focus>
+  <TM_Mastery_reach>Размах (+25% к радиусу основного взрыва)</TM_Mastery_reach>
+  <TM_Mastery_depth>Глубокое лечение (+25% на рану)</TM_Mastery_depth>
+  <TM_Mastery_breadth>Широкое лечение (ещё одна рана)</TM_Mastery_breadth>
+  <TM_MasteryCurrent>Мастерство {0}: {1}</TM_MasteryCurrent>
+  <TM_MasteryHint>Выберите или замените специализацию за ту же цену на большом магическом круге. Подношения должны быть в инвентаре мага или в пяти клетках от центра круга.</TM_MasteryHint>
+</LanguageData>

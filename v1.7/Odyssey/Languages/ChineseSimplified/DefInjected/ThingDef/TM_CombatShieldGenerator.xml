@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_CombatShieldGenerator.label>战斗护盾发生器</TM_CombatShieldGenerator.label>
+  <TM_CombatShieldGenerator.description>在自身及已连接魔力信标周围5格内生成战斗护盾。每个连通网络仅有一台发生器运行，其余待机。发生器提供1000点护盾值；每台增幅器额外提供250点，受击时优先消耗增幅器的护盾值。新建来源的护盾值为零，必须消耗魔力充能。每个来源在断开或搬迁后保留自身护盾值。连续10秒未受击后，全网每秒恢复25点护盾值，每点消耗0.01魔力。护盾崩溃后等待30秒再充能。维持费用为每个受保护格每秒0.0005魔力。魔力缓存容量为100，不使用燃料。友方射击、向外射击及始于护盾内部的射击均可通过。可与热能护盾同时工作。 地图连续60秒没有敌对生物且护盾未受到攻击时，维持消耗降至10%。护盾强度与修复费用不变。</TM_CombatShieldGenerator.description>
+  <TM_CombatShieldBooster.label>战斗护盾增幅器</TM_CombatShieldBooster.label>
+  <TM_CombatShieldBooster.description>为同一魔力信标网络中的运行中战斗护盾额外提供250点护盾值。受击时先消耗增幅器护盾值，再消耗发生器护盾值。初始为空，断开或搬迁后保留自身护盾值。通过运行中的发生器充能，共享全网恢复速率。不扩大覆盖范围，不储存魔力，也不使用燃料。没有发生器时无法生成护盾。</TM_CombatShieldBooster.description>
+</LanguageData>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Golem_StrawArmor.label>armadura</TM_Golem_StrawArmor.label>
+  
+  <TM_Golem_StrawArmor.description>Aumenta la protección general:\nContundente: +[6,11,15] %\nCortante: +[5,9,13] %\nCalor: +[4,7,10] %</TM_Golem_StrawArmor.description>
+  
+  
+  <TM_Golem_StrawEnergyEfficiency.label>eficiencia energética</TM_Golem_StrawEnergyEfficiency.label>
+  
+  <TM_Golem_StrawEnergyEfficiency.description>Aumenta la eficiencia energética un 6 % por nivel. La eficiencia energética inicial es del 30 %.</TM_Golem_StrawEnergyEfficiency.description>
+  
+  
+  <TM_Golem_StrawEnergyRate.label>regeneración de energía</TM_Golem_StrawEnergyRate.label>
+  
+  <TM_Golem_StrawEnergyRate.description>Aumenta la velocidad de carga de energía un 20 % por nivel. La velocidad de recarga inicial es de 20 de energía por hora.</TM_Golem_StrawEnergyRate.description>
+  
+  
+  <TM_Golem_StrawLifeStage.label>nivel de armazón</TM_Golem_StrawLifeStage.label>
+  
+  <TM_Golem_StrawLifeStage.description>Aumenta las estadísticas:\nMovimiento: +[20 %/30 %/40 %]\nSalud: +[20 %/40 %/50 %]</TM_Golem_StrawLifeStage.description>
+  
+  
+  <TM_Golem_StrawMaxEnergy.label>almacenamiento de energía</TM_Golem_StrawMaxEnergy.label>
+  
+  <TM_Golem_StrawMaxEnergy.description>Aumenta la energía máxima en 100 por nivel. La energía máxima inicial es 300.</TM_Golem_StrawMaxEnergy.description>
+  
+  
+  <TM_Golem_StrawRepair.label>restaurar parte</TM_Golem_StrawRepair.label>
+  
+  
+  <TM_Golem_StrawScarecrow.label>espantapájaros</TM_Golem_StrawScarecrow.label>
+  
+  <TM_Golem_StrawScarecrow.description>Ahuyenta las plagas indeseadas. Aumenta la velocidad de crecimiento de los cultivos en un radio de 6 casillas.</TM_Golem_StrawScarecrow.description>
+  
+  
+  <TM_Golem_StrawSeed.label>cultivo</TM_Golem_StrawSeed.label>
+  
+  <TM_Golem_StrawSeed.description>Aumenta en 2 por nivel la habilidad de plantas del golem. Empieza con una habilidad de plantación de 0.</TM_Golem_StrawSeed.description>
+  
+</LanguageData>

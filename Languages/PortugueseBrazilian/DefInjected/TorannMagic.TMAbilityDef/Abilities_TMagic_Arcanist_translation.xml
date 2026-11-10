@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Shadow start -->
+
+  <TM_Shadow.label>Sombra</TM_Shadow.label>
+  <TM_Shadow.description>Cria uma aura obscura em torno de um feitiço que aumenta os aliados periodicamente.
+
+Sombra: Um reforço secreto que ajuda o trabalhador a melhorar sua capacidade física, mas provoca uma diminuição de humor.
+
+Taxa de aplicação: 80-90 segundos
+Duração: 500-600 segundos
+Manipulação, Visão, Ouvidoria, Filtragem sanguínea: + 10%
+Mover, Consciência: + 5%
+Redução de humor: -3
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_Shadow.description>
+
+  <TM_Shadow_I.label>Sombra</TM_Shadow_I.label>
+  <TM_Shadow_I.description>Cria uma aura obscura em torno de um feitiço que aumenta os aliados periodicamente.
+
+Sombra: Um reforço secreto que ajuda o trabalhador a melhorar sua capacidade física, mas provoca uma diminuição de humor.
+
+Taxa de aplicação: 80-90 segundos
+Duração: 500-600 segundos
+Manipulação, Visão, Ouvidoria, Conversa: + 20%
+Movimento, Consciência, Metabolismo, Filtragem sanguínea: + 10%
+Redução de humor: -4
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_Shadow_I.description>
+
+  <TM_Shadow_II.label>Sombra</TM_Shadow_II.label>
+  <TM_Shadow_II.description>Cria uma aura obscura em torno de um feitiço que aumenta os aliados periodicamente.
+
+Sombra: Um reforço secreto que ajuda o trabalhador a melhorar sua capacidade física, mas provoca uma diminuição de humor.
+
+Taxa de aplicação: 80-90 segundos
+Duração: 1100-1250 segundos
+Manipulação, Visão, Ouvidoria, Conversa: + 25%
+Movimento, Metabolismo, Filtragem sanguínea: + 15%
+Consciência: + 10%
+Redução de humor: -6
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_Shadow_II.description>
+
+  <TM_Shadow_III.label>Sombra</TM_Shadow_III.label>
+  <TM_Shadow_III.description>Cria uma aura obscura em torno de um feitiço que aumenta os aliados periodicamente.
+
+Sombra: Um reforço secreto que ajuda o trabalhador a melhorar sua capacidade física, mas provoca uma diminuição de humor.
+
+Taxa de aplicação: 80-90 segundos
+Duração: 1100-1250 segundos
+Manipulação, Visão, Ouvidoria, Conversa: + 25%
+Movimento, Metabolismo, Filtragem sanguínea: + 20%
+Consciência: + 15%
+Redução de humor: -8
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_Shadow_III.description>
+
+
+  <!-- Magic Missile -->
+
+  <TM_MagicMissile.label>Projétil mágico</TM_MagicMissile.label>
+  <TM_MagicMissile.description>Disparem foguetes mágicos contra os inimigos.
+
+Chance de falhar: 3%
+Preparação: 2,5 s
+Distância: 24
+Número de projéteis: 14 em 2,8s
+Danos: 4</TM_MagicMissile.description>
+
+  <TM_MagicMissile_I.label>Projétil mágico</TM_MagicMissile_I.label>
+  <TM_MagicMissile_I.description>Disparem foguetes mágicos contra os inimigos.
+
+Chance de falhar: 5%
+Preparação: 2 s
+Distância: 28
+Número de projéteis: 17 em 2,83s
+Danos: 5</TM_MagicMissile_I.description>
+
+  <TM_MagicMissile_II.label>Projétil mágico</TM_MagicMissile_II.label>
+  <TM_MagicMissile_II.description>Disparem foguetes mágicos contra os inimigos.
+
+Chance de falhar: 7%
+Preparação: 1.5 c
+Distância: 32
+Número de projéteis: 20 por 2,67s
+Danos: 6</TM_MagicMissile_II.description>
+
+  <TM_MagicMissile_III.label>Projétil mágico</TM_MagicMissile_III.label>
+  <TM_MagicMissile_III.description>Disparem foguetes mágicos contra os inimigos.
+
+Chance de falhar: 9%
+Preparação: 1 s
+Distância: 36
+Número de projéteis: 24 em 2,4s
+Danos: 7</TM_MagicMissile_III.description>
+
+
+  <!-- Teleport start -->
+
+  <TM_Teleport.label>Teletransporte</TM_Teleport.label>
+  <TM_Teleport.description>Feitiço de teletransporte em massa. Cria uma forma temporária de transporte a longas distâncias; Tenha em mente que o portal é destruído através de um curto intervalo de tempo, causando a explosão do feedback no ponto de criação do portal.</TM_Teleport.description>
+
+
+  <!-- Blink Start -->
+
+  <TM_Blink.label>Parafernália</TM_Blink.label>
+  <TM_Blink.description>Move instantaneamente o feitiço para a localização de destino.
+
+Preparação: .5s
+Retrocesso: 10s
+Alcance: 30</TM_Blink.description>
+
+  <TM_Blink_I.label>Parafernália</TM_Blink_I.label>
+  <TM_Blink_I.description>Move instantaneamente o feitiço para a localização de destino.
+
+Preparação: .3s
+Retrocesso: 8s
+Alcance: 50</TM_Blink_I.description>
+
+  <TM_Blink_II.label>Parafernália</TM_Blink_II.label>
+  <TM_Blink_II.description>Move instantaneamente o feitiço para a localização de destino.
+
+Preparação: .1s
+Retrocesso: 6s
+Alcance: 70</TM_Blink_II.description>
+
+  <TM_Blink_III.label>Parafernália</TM_Blink_III.label>
+  <TM_Blink_III.description>Move instantaneamente o feitiço para a localização de destino.
+
+Preparação: 0s
+Retrocesso: 5s
+Alcance: 90</TM_Blink_III.description>
+
+
+  <!-- Summon Start -->
+
+  <TM_Summon.label>Apelo</TM_Summon.label>
+  <TM_Summon.description>Chame os objetos para a localização dos feitiços.
+
+Preparação: 3s
+Retrocesso: 20s
+Alcance: 70</TM_Summon.description>
+
+  <TM_Summon_I.label>Apelo</TM_Summon_I.label>
+  <TM_Summon_I.description>Chame os objetos para a localização dos feitiços.
+
+Preparação: 2.7s
+Retrocesso: 18s
+Alcance: 80</TM_Summon_I.description>
+
+  <TM_Summon_II.label>Apelo</TM_Summon_II.label>
+  <TM_Summon_II.description>Chame os objetos para a localização dos feitiços.
+
+Preparação: 2.5s
+Retrocesso: 16s
+Alcance: 90</TM_Summon_II.description>
+
+  <TM_Summon_III.label>Apelo</TM_Summon_III.label>
+  <TM_Summon_III.description>Chame os objetos para a localização dos feitiços.
+
+Preparação: 2.4s
+Retrocesso: 15s
+Alcance: 100</TM_Summon_III.description>
+
+
+  <!-- Fold Reality -->
+
+  <TM_FoldReality.label>Porta</TM_FoldReality.label>
+  <TM_FoldReality.description>Dobre a realidade para abrir o portal para outra localização controlada pelo jogador e move instantaneamente todos os peões e objetos no raio de células em torno da célula de destino para o feitiço.</TM_FoldReality.description>
+
+
+</LanguageData>

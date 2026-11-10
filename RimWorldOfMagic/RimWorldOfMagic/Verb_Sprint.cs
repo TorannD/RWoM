@@ -1,103 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using RimWorld;
+using System;
 using AbilityUser;
+using RimWorld;
 using Verse;
-using UnityEngine;
-
 
 namespace TorannMagic
 {
     public class Verb_Sprint : Verb_UseAbility
     {
+        internal static int Rank(TMAbilityDef def)
+        {
+            if (def == null) return -1;
+            if (def == TorannMagicDefOf.TM_Sprint) return 0;
+            if (def == TorannMagicDefOf.TM_Sprint_I) return 1;
+            if (def == TorannMagicDefOf.TM_Sprint_II) return 2;
+            return def == TorannMagicDefOf.TM_Sprint_III ? 3 : -1;
+        }
 
-        private int pwrVal = 0;
+        internal static void Burst(Pawn pawn, int rank, Func<Pawn,HediffDef,float,Hediff> add)
+        {
+            if (rank <= 0) return;
+            add(pawn, TorannMagicDefOf.TM_EvasionHD, rank == 1 ? .25f : .1f);
+            var adrenaline = add(pawn, TorannMagicDefOf.TM_AdrenalineHD, rank == 1 ? .2f : rank == 2 ? .3f : .55f);
+            if (rank < 3 && adrenaline?.TryGetComp<HediffComp_SetDuration>() is HediffComp_SetDuration timed)
+                timed.duration = rank == 1 ? 5 : 8;
+            if (rank < 2) return;
+            var allies = TM_Calc.FindAllPawnsAround(pawn.Map, pawn.Position, rank == 2 ? 5f : 10f, pawn.Faction, true);
+            if (allies != null)
+                foreach (var ally in allies) add(ally, TorannMagicDefOf.TM_EvasionHD, rank == 2 ? .25f : .3f);
+        }
+
+        internal static void Refund(Pawn pawn, CompAbilityUserMight owner, int rank, Func<Pawn,HediffDef,float,Hediff> add)
+        {
+            if (rank <= 0 || owner?.Stamina == null) return;
+            float bonus = rank == 1 ? .2f : rank == 2 ? .3f : .4f;
+            owner.Stamina.CurLevel += bonus;
+            var regen = add(pawn, TorannMagicDefOf.TM_EnergyRegenHD, 1f + bonus);
+            if (regen?.TryGetComp<HediffComp_SetDuration>() is HediffComp_SetDuration timed)
+                timed.duration = rank == 1 ? 5 : rank == 2 ? 8 : 10;
+        }
+
+        private static Hediff Native(Pawn target,HediffDef def,float amount)
+        {
+            HealthUtility.AdjustSeverity(target,def,amount);
+            return target.health.hediffSet.GetFirstHediffOfDef(def);
+        }
 
         protected override bool TryCastShot()
         {
-            Pawn caster = base.CasterPawn;
-            Pawn pawn = this.currentTarget.Thing as Pawn;
-
-            //MightPowerSkill pwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Sprint.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Sprint_pwr");
-            //pwrVal = pwr.level;
-            //if(pwrVal == 0)
-            //{
-            //    pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_FieldTraining.FirstOrDefault((MightPowerSkill x) => x.label == "TM_FieldTraining_pwr").level;
-            //}
-            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
-            if (pawn == null || pawn.Dead) return true;
-
-            CompAbilityUserMight comp = TM_Calc.GetCompAbilityUserMight(pawn);
-            if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HediffSprint))
+            if (currentTarget.Thing is not Pawn pawn || pawn.Dead) return true;
+            var def = Ability.Def as TMAbilityDef;
+            var comp = pawn.GetCompAbilityUserMight();
+            var buff = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_HediffSprint);
+            if (buff?.TryGetComp<ClassProgression.HediffComp_HostedStance>()?.Projected == true)
             {
-                Hediff hd = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_HediffSprint);
-                pawn.health.RemoveHediff(hd);
-                   
-                if (comp == null || comp.MightData == null) return true;
-                if (this.Ability.Def == TorannMagicDefOf.TM_Sprint_I)
-                {
-                    comp.Stamina.CurLevel += .2f;
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_EnergyRegenHD, 1.2f);
-                    HediffComp_SetDuration hd2 = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EnergyRegenHD, false).TryGetComp<HediffComp_SetDuration>();
-                    hd2.duration = 5;
-                }
-                else if (this.Ability.Def == TorannMagicDefOf.TM_Sprint_II)
-                {
-                    comp.Stamina.CurLevel += .3f;
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_EnergyRegenHD, 1.3f);
-                    HediffComp_SetDuration hd2 = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EnergyRegenHD, false).TryGetComp<HediffComp_SetDuration>();
-                    hd2.duration = 8;
-                }
-                else if (this.Ability.Def == TorannMagicDefOf.TM_Sprint_III)
-                {
-                    comp.Stamina.CurLevel += .4f;
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_EnergyRegenHD, 1.4f);
-                    HediffComp_SetDuration hd2 = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EnergyRegenHD, false).TryGetComp<HediffComp_SetDuration>();
-                    hd2.duration = 10;
-                }
+                pawn.health.RemoveHediff(buff);
+                buff = null;
+            }
+            if (buff != null)
+            {
+                pawn.health.RemoveHediff(buff);
+                if (comp?.MightData != null) Refund(pawn, comp, Rank(def), Native);
             }
             else
             {
-                HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_HediffSprint, .5f + pwrVal);
+                Native(pawn, TorannMagicDefOf.TM_HediffSprint, .5f + TM_Calc.GetSkillPowerLevel(CasterPawn, def));
                 FleckMaker.ThrowDustPuff(pawn.Position, pawn.Map, 1f);
-                if (comp == null || comp.MightData == null) return true;
-                if (this.Ability.Def == TorannMagicDefOf.TM_Sprint_I)
-                {
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_EvasionHD, .25f);
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_AdrenalineHD, .2f);
-                    HediffComp_SetDuration hd2 = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_AdrenalineHD, false).TryGetComp<HediffComp_SetDuration>();
-                    hd2.duration = 5;
-                }
-                else if (this.Ability.Def == TorannMagicDefOf.TM_Sprint_II)
-                {
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_EvasionHD, .1f);
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_AdrenalineHD, .3f);
-                    HediffComp_SetDuration hd2 = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_AdrenalineHD, false).TryGetComp<HediffComp_SetDuration>();
-                    hd2.duration = 8;
-                    List<Pawn> pList = TM_Calc.FindAllPawnsAround(pawn.Map, pawn.Position, 5f, pawn.Faction, true);
-                    if(pList != null && pList.Count > 0)
-                    {
-                        foreach(Pawn p in pList)
-                        {
-                            HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_EvasionHD, .25f);
-                        }
-                    }
-                }
-                else if (this.Ability.Def == TorannMagicDefOf.TM_Sprint_III)
-                {
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_EvasionHD, .1f);
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_AdrenalineHD, .55f);
-                    List<Pawn> pList = TM_Calc.FindAllPawnsAround(pawn.Map, pawn.Position, 10f, pawn.Faction, true);
-                    if (pList != null && pList.Count > 0)
-                    {
-                        foreach (Pawn p in pList)
-                        {                                
-                            HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_EvasionHD, .3f);
-                        }
-                    }
-                }
-            }            
+                if (comp?.MightData != null) Burst(pawn, Rank(def), Native);
+            }
             return true;
         }
     }

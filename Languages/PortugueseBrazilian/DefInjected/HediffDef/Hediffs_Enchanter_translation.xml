@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_EnchantedBodyHD.label>Corpo encantado</TM_EnchantedBodyHD.label>
+  <TM_EnchantedBodyHD.description>Criar partes do corpo encantadas para melhorar a capacidade física.</TM_EnchantedBodyHD.description>
+  <TM_EnchantedBodyHD.stages.0.label>Mão</TM_EnchantedBodyHD.stages.0.label>
+  <TM_EnchantedBodyHD.stages.1.label>Duas Mãos</TM_EnchantedBodyHD.stages.1.label>
+  <TM_EnchantedBodyHD.stages.2.label>Mãos e olhos</TM_EnchantedBodyHD.stages.2.label>
+  <TM_EnchantedBodyHD.stages.3.label>Mãos e olhos++</TM_EnchantedBodyHD.stages.3.label>
+
+  <TM_EnchantedAuraHD.label>Encantada por Aura</TM_EnchantedAuraHD.label>
+  <TM_EnchantedAuraHD.description>O aspecto encantado cerca o peão, reforçando as qualidades vistas como beleza, carinho e atratividade.</TM_EnchantedAuraHD.description>
+  <TM_EnchantedAuraHD.stages.0.label>I</TM_EnchantedAuraHD.stages.0.label>
+  <TM_EnchantedAuraHD.stages.1.label>II</TM_EnchantedAuraHD.stages.1.label>
+  <TM_EnchantedAuraHD.stages.2.label>III</TM_EnchantedAuraHD.stages.2.label>
+  <TM_EnchantedAuraHD.stages.3.label>IV</TM_EnchantedAuraHD.stages.3.label>
+
+  <TM_ShapeshiftHD.label>Lobisomem</TM_ShapeshiftHD.label>
+  <TM_ShapeshiftHD.description>Melhora o poder de qualquer forma animal adotada por um lobisomem.</TM_ShapeshiftHD.description>
+  <TM_ShapeshiftHD.stages.0.label>I</TM_ShapeshiftHD.stages.0.label>
+  <TM_ShapeshiftHD.stages.1.label>II</TM_ShapeshiftHD.stages.1.label>
+  <TM_ShapeshiftHD.stages.2.label>III</TM_ShapeshiftHD.stages.2.label>
+  <TM_ShapeshiftHD.stages.3.label>IV</TM_ShapeshiftHD.stages.3.label>
+
+  <TM_WeaponEnchantment_FireHD.label>Armas Encantadas</TM_WeaponEnchantment_FireHD.label>
+  <TM_WeaponEnchantment_FireHD.description>Enfeitou uma arma equipada com fogo básico que pode queimar ou incendiar um objeto. Esta bruxaria vai acabar se as armas não forem equipadas ou substituídas.</TM_WeaponEnchantment_FireHD.description>
+  <TM_WeaponEnchantment_FireHD.stages.0.label>Fogo (I)</TM_WeaponEnchantment_FireHD.stages.0.label>
+  <TM_WeaponEnchantment_FireHD.stages.1.label>Fogo (II)</TM_WeaponEnchantment_FireHD.stages.1.label>
+  <TM_WeaponEnchantment_FireHD.stages.2.label>Fogo (III)</TM_WeaponEnchantment_FireHD.stages.2.label>
+  <TM_WeaponEnchantment_FireHD.stages.3.label>Fogo (IV)</TM_WeaponEnchantment_FireHD.stages.3.label>
+
+  <TM_WeaponEnchantment_IceHD.label>Armas Encantadas</TM_WeaponEnchantment_IceHD.label>
+  <TM_WeaponEnchantment_IceHD.description>Enfeitou as armas com gelo básico que podem abrandar o objeto. Esta bruxaria vai acabar se as armas não forem equipadas ou substituídas.</TM_WeaponEnchantment_IceHD.description>
+  <TM_WeaponEnchantment_IceHD.stages.0.label>Gelo (I)</TM_WeaponEnchantment_IceHD.stages.0.label>
+  <TM_WeaponEnchantment_IceHD.stages.1.label>Gelo (II)</TM_WeaponEnchantment_IceHD.stages.1.label>
+  <TM_WeaponEnchantment_IceHD.stages.2.label>Gelo (III)</TM_WeaponEnchantment_IceHD.stages.2.label>
+  <TM_WeaponEnchantment_IceHD.stages.3.label>Gelo (IV)</TM_WeaponEnchantment_IceHD.stages.3.label>
+
+  <TM_WeaponEnchantment_LitHD.label>Armas Encantadas</TM_WeaponEnchantment_LitHD.label>
+  <TM_WeaponEnchantment_LitHD.description>Enfeitou as armas com um relâmpago básico que envia ondas de choque deslumbrantes através do objeto. Esta bruxaria vai acabar se as armas não forem equipadas ou substituídas.</TM_WeaponEnchantment_LitHD.description>
+  <TM_WeaponEnchantment_LitHD.stages.0.label>Atordoamento (I)</TM_WeaponEnchantment_LitHD.stages.0.label>
+  <TM_WeaponEnchantment_LitHD.stages.1.label>Atordoamento (II)</TM_WeaponEnchantment_LitHD.stages.1.label>
+  <TM_WeaponEnchantment_LitHD.stages.2.label>Atordoamento (III)</TM_WeaponEnchantment_LitHD.stages.2.label>
+  <TM_WeaponEnchantment_LitHD.stages.3.label>Atordoamento (IV)</TM_WeaponEnchantment_LitHD.stages.3.label>
+
+  <TM_WeaponEnchantment_DarkHD.label>Armas Encantadas</TM_WeaponEnchantment_DarkHD.label>
+  <TM_WeaponEnchantment_DarkHD.description>Enfeitou uma arma atualmente equipada com um toque de escuridão que causa cegueira. Esta bruxaria vai acabar se as armas não forem equipadas ou substituídas.</TM_WeaponEnchantment_DarkHD.description>
+  <TM_WeaponEnchantment_DarkHD.stages.0.label>Cegueira (I)</TM_WeaponEnchantment_DarkHD.stages.0.label>
+  <TM_WeaponEnchantment_DarkHD.stages.1.label>Cegueira (II)</TM_WeaponEnchantment_DarkHD.stages.1.label>
+  <TM_WeaponEnchantment_DarkHD.stages.2.label>Cegueira (III)</TM_WeaponEnchantment_DarkHD.stages.2.label>
+  <TM_WeaponEnchantment_DarkHD.stages.3.label>Cegueira (IV)</TM_WeaponEnchantment_DarkHD.stages.3.label>
+
+
+</LanguageData>

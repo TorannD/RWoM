@@ -1,0 +1,12 @@
+<LanguageData><!-- AMP start-->
+	<Buff_AMP.label>УМС</Buff_AMP.label>
+	<!-- Lightning Cloud-->
+	<Projectile_LightningCloud.label>Грозовое облако</Projectile_LightningCloud.label>
+	<!-- Lightning Bolt-->
+	<Laser_LightningBolt.label>Удар молнии</Laser_LightningBolt.label>
+	<!-- Lightning Storm-->
+	<Projectile_LightningStorm.label>Грозовой шторм</Projectile_LightningStorm.label>
+	<!-- Eye of the Storm-->
+	<FlyingObject_EyeOfTheStorm.label>летающий объект</FlyingObject_EyeOfTheStorm.label>
+	<Projectile_EyeOfTheStorm.label>Око бури</Projectile_EyeOfTheStorm.label>
+</LanguageData>

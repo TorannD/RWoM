@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+	<TM_Teleporter.label>Телепортер</TM_Teleporter.label>
+
+	<TM_Teleporter.description>Портальная платформа, используемая для размещения телепортационных капсул.</TM_Teleporter.description>
+
+	<TM_Teleporter_I.label>Телепортер (I)</TM_Teleporter_I.label>
+
+	<TM_Teleporter_I.description>Портальная платформа, используемая для размещения телепортационных капсул.</TM_Teleporter_I.description>
+
+	<TM_Teleporter_II.label>Телепортер (II)</TM_Teleporter_II.label>
+
+	<TM_Teleporter_II.description>Портальная платформа, используемая для размещения телепортационных капсул.</TM_Teleporter_II.description>
+
+	<TM_Teleporter_III.label>Телепортер (III)</TM_Teleporter_III.label>
+
+	<TM_Teleporter_III.description>Портальная платформа, используемая для размещения телепортационных капсул.</TM_Teleporter_III.description>
+
+	<TM_TeleportPod.label>Телепортная площадка</TM_TeleportPod.label>
+
+	<TM_TeleportPod.description>Большой плоский цилиндр, используемый колдунами для быстрой транспортировки между локациями.</TM_TeleportPod.description>
+
+	<TM_TeleportPod_I.label>Телепортная площадка (I)</TM_TeleportPod_I.label>
+
+	<TM_TeleportPod_I.description>Большой плоский цилиндр, используемый колдунами для быстрой транспортировки между локациями.</TM_TeleportPod_I.description>
+
+	<TM_TeleportPod_II.label>Телепортная площадка (II)</TM_TeleportPod_II.label>
+
+	<TM_TeleportPod_II.description>Большой плоский цилиндр, используемый колдунами для быстрой транспортировки между локациями.</TM_TeleportPod_II.description>
+
+	<TM_TeleportPod_III.label>Телепортная площадка (III)</TM_TeleportPod_III.label>
+
+	<TM_TeleportPod_III.description>Большой плоский цилиндр, используемый колдунами для быстрой транспортировки между локациями.</TM_TeleportPod_III.description>
+
+	<Portfuel.label>Топливо телепорта</Portfuel.label>
+
+	<Portfuel.description>Тайная энергия разливается по бутылкам для топлива. Используется для зарядки порталов.</Portfuel.description>
+
+	<TM_Heater.label>Магический нагреватель</TM_Heater.label>
+
+	<TM_Heater.description>Создает пространственный карман, который входит в плоскость огня, генерируя постоянное тепло в ограниченном пространстве. Нагреватель должен быть поддержан магом - уменьшает максимальную ману на 25 при активном режиме.</TM_Heater.description>
+
+	<TM_Cooler.label>Магический кулер</TM_Cooler.label>
+
+	<TM_Cooler.description>Создает пространственный карман, который врезается в плоскость льда, уменьшая тепло в замкнутом пространстве. Кулер должен быть поддержан магом - уменьшает максимальную ману на 25 при активном режиме.</TM_Cooler.description>
+
+	<TM_PowerNode.label>Мистическая энергетическая нода</TM_PowerNode.label>
+
+	<TM_PowerNode.description>Создает энергетический узел, который медленно высвобождает тайную энергию в виде электричества. Может использоваться в качестве источника питания. Силовой узел должен быть поддержан магом-уменьшает максимальную ману на 25 и восстанавление маны на 25% при активном режиме.</TM_PowerNode.description>
+
+	<TM_Sunlight.label>Солнечный свет</TM_Sunlight.label>
+
+	<TM_Sunlight.description>Создает Маяк солнечного света, достаточно сильный, чтобы вырастить растения. Маяк должен быть поддержан магом - уменьшает максимальную ману на 40 и регенерацию маны на 40% при активном режиме.</TM_Sunlight.description>
+
+	<TM_Sentinel.label>страж</TM_Sentinel.label>
+
+	<TM_Sentinel.description>Создаёт каменного стража для охраны выбранной территории. Страж дремлет до тех пор, пока враг не войдёт в радиус действия, а затем вырывается из каменной оболочки и защищает назначенную область. Если применить способность к уже спящему стражу, он будет развеян. Каждый такой страж уменьшает максимальный запас маны на 20. * Эстетическое примечание: стражи всегда будут смотреть в сторону от заклинателя.</TM_Sentinel.description>
+
+	<TM_MageLightTD.label>магический свет</TM_MageLightTD.label>
+
+	<TM_MageLightTD.description>Источник света, созданный магом.</TM_MageLightTD.description>
+
+	<TM_LightPod.label>Световой Луч</TM_LightPod.label>
+
+	<TM_LightPod.description>Перемещение по лучу света.</TM_LightPod.description>
+</LanguageData>

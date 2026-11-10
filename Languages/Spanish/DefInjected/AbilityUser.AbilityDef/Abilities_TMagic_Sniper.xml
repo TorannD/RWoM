@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_AntiArmor.label>antiarmadura</TM_AntiArmor.label>
+  
+  <TM_AntiArmor.description>El francotirador lleva munición antiarmadura para las ocasiones especiales. Cuando esta munición se rompe, libera nanitas que destrozan cualquier armadura con la que entran en contacto. Es relativamente ineficaz contra objetivos blandos, pero causa daño adicional a los objetivos con armadura, siempre que la resistencia al impacto active las nanitas. Los objetivos con armadura pueden ser cualquier mecanoide o un objetivo con una armadura contra daño cortante superior al 100 %.</TM_AntiArmor.description>
+
+  
+  <TM_DisablingShot.label>disparo incapacitante</TM_DisablingShot.label>
+  
+  <TM_DisablingShot.description>Un disparo que busca incapacitar al oponente en lugar de matarlo. El francotirador dispara proyectiles no letales que liberan una descarga eléctrica y paralizan brevemente al objetivo durante varios segundos. Los objetivos con armadura no se ven afectados.\n\nAlcance: 20\nRetardo de disparo: 2,5 s\nRecarga: 45 s</TM_DisablingShot.description>
+
+  
+  <TM_DisablingShot_I.label>disparo incapacitante I</TM_DisablingShot_I.label>
+  
+  <TM_DisablingShot_I.description>Un disparo que busca incapacitar al oponente en lugar de matarlo. El francotirador dispara proyectiles no letales que liberan una descarga eléctrica y paralizan brevemente al objetivo durante varios segundos. Los objetivos con armadura no se ven afectados.\n\nAlcance: 22\nRetardo de disparo: 2,3 s\nRecarga: 43 s</TM_DisablingShot_I.description>
+
+  
+  <TM_DisablingShot_II.label>disparo incapacitante II</TM_DisablingShot_II.label>
+  
+  <TM_DisablingShot_II.description>Un disparo que busca incapacitar al oponente en lugar de matarlo. El francotirador dispara proyectiles no letales que liberan una descarga eléctrica y paralizan brevemente al objetivo durante varios segundos. Los objetivos con armadura no se ven afectados.\n\nAlcance: 25\nRetardo de disparo: 2,1 s\nRecarga: 41 s</TM_DisablingShot_II.description>
+
+  
+  <TM_DisablingShot_III.label>disparo incapacitante III</TM_DisablingShot_III.label>
+  
+  <TM_DisablingShot_III.description>Un disparo que busca incapacitar al oponente en lugar de matarlo. El francotirador dispara proyectiles no letales que liberan una descarga eléctrica y paralizan brevemente al objetivo durante varios segundos. Los objetivos con armadura no se ven afectados.\n\nAlcance: 27\nRetardo de disparo: 2 s\nRecarga: 40 s</TM_DisablingShot_III.description>
+
+  
+  <TM_Headshot.label>disparo a la cabeza</TM_Headshot.label>
+  
+  <TM_Headshot.description>Un disparo letal dirigido a una parte vital del cuerpo, como la cabeza o el corazón. Es eficaz tanto contra no humanoides como contra humanoides. La probabilidad de éxito del disparo a la cabeza se reduce contra objetivos con armadura gruesa que protege sus órganos vitales.</TM_Headshot.description>
+
+  
+  <TM_ShadowSlayer.label>asesino de las sombras</TM_ShadowSlayer.label>
+  
+  <TM_ShadowSlayer.description>Un francotirador entrenado es un experto en sigilo y posicionamiento, y sabe cuál es el momento y el lugar adecuados para atacar.\n\nEl campo de camuflaje del asesino de las sombras es una forma de invisibilidad de larga duración. A diferencia de la tecnología de camuflaje normal, este campo de sigilo depende en gran medida de un camuflaje predictivo que se desvanece rápidamente cuando el usuario realiza acciones rápidas o violentas (como disparar un arma).</TM_ShadowSlayer.description>
+
+  
+  <TM_SniperFocus.label>entrenamiento de francotirador</TM_SniperFocus.label>
+  
+  <TM_SniperFocus.description>Entrenamiento que mejora la técnica y la categoría como francotirador. Cada nivel cambia el rasgo del francotirador para reflejar su nivel de habilidad.\n\nRangos:\nTirador certero: velocidad +0,1 c/s, retardo de apuntado -10 %, precisión de disparo +2 %, velocidad de investigación y trabajo -10 %, domar y entrenar animales -10 %\nFrancotirador: velocidad +0,15 c/s, retardo de apuntado -15 %, precisión de disparo +4 %, velocidad de investigación y trabajo -13 %, domar y entrenar animales -13 %\nFrancotirador maestro: velocidad +0,2 c/s, retardo de apuntado -22 %, precisión de disparo +6 %, velocidad de investigación y trabajo -15 %, domar y entrenar animales -15 %\nFrancotirador legendario: velocidad +0,25 c/s, retardo de apuntado -30 %, precisión de disparo +8 %, velocidad de investigación y trabajo -16 %, domar y entrenar animales -16 %</TM_SniperFocus.description>
+
+</LanguageData>

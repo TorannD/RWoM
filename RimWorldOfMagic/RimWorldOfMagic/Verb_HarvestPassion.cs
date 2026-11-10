@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -8,7 +8,7 @@ using Verse;
 
 namespace TorannMagic
 {
-    public class Verb_HarvestPassion : Verb_UseAbility
+    public class Verb_HarvestPassion : ClassProgression.Verb_SpiritTargetable
     {
         bool validTarg;
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
@@ -36,42 +36,39 @@ namespace TorannMagic
             return validTarg;
         }
 
+        internal static bool CanHarvest(Pawn body, Pawn owner, Pawn target)
+        {
+            return body?.Spawned == true && body.Inspired && owner?.skills != null && target?.Spawned == true &&
+                target != body && target != owner && target.Map == body.Map && !target.Dead && target.RaceProps.Humanlike &&
+                !TM_Calc.IsUndead(target) && target.health?.hediffSet != null &&
+                !target.health.hediffSet.HasHediff(TorannMagicDefOf.TM_HarvestPassionHD) &&
+                target.skills?.skills?.Any(skill => skill.passion > owner.skills.GetSkill(skill.def).passion) == true;
+        }
+
         protected override bool TryCastShot()
         {
-            Map map = base.CasterPawn.Map;
-            Pawn hitPawn = (Pawn)this.currentTarget;
-            Pawn caster = base.CasterPawn;
+            bool applied = ApplyHostedEffect();
+            if (!applied)
+                Messages.Message(CasterPawn.Inspired ? "TM_InvalidTarget".Translate(CasterPawn.LabelShort,Ability.Def.label) :
+                    "TM_MustHaveInspiration".Translate(CasterPawn.LabelShort,Ability.Def.label), MessageTypeDefOf.RejectInput);
+            PostCastShot(applied,out var fired);
+            return fired;
+        }
 
-            bool flag = hitPawn != null && !hitPawn.Dead && !hitPawn.RaceProps.Animal && hitPawn.skills != null && hitPawn.health != null && hitPawn.health.hediffSet != null;
-            if (flag && !TM_Calc.IsUndead(hitPawn))
-            {
-                if (caster.Inspired)
-                {
-                    HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_HarvestPassionHD, .5f);
-                    hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_HarvestPassionHD).TryGetComp<HediffComp_HarvestPassion>().caster = caster;
-                    caster.mindState.inspirationHandler.EndInspiration(caster.Inspiration);
-                    if(!hitPawn.HostileTo(caster.Faction))
-                    {
-                        
-                    }
-                }
-                else
-                {
-                    Messages.Message("TM_MustHaveInspiration".Translate(
-                    this.CasterPawn.LabelShort,
-                    this.Ability.Def.label
-                ), MessageTypeDefOf.RejectInput);
-                }
-            }
-            else
-            {
-                Messages.Message("TM_InvalidTarget".Translate(
-                    this.CasterPawn.LabelShort,
-                    this.Ability.Def.label
-                ), MessageTypeDefOf.RejectInput);
-            }
-            this.PostCastShot(flag, out flag);
-            return false;
+        protected override bool ApplyHostedEffect()
+        {
+            var body = CasterPawn;
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(body, Ability);
+            var target = currentTarget.Pawn;
+            if (!CanHarvest(body, owner, target)) return false;
+            var effect = HediffMaker.MakeHediff(TorannMagicDefOf.TM_HarvestPassionHD, target);
+            var harvest = effect.TryGetComp<HediffComp_HarvestPassion>();
+            if (harvest == null) return false;
+            harvest.caster = body;
+            harvest.originalId = owner != body ? owner.thingIDNumber : 0;
+            effect.Severity = .5f;
+            target.health.AddHediff(effect);
+            return target.health.hediffSet.hediffs.Contains(effect);
         }
     }
 }

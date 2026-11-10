@@ -1,0 +1,94 @@
+<LanguageData><!-- Totems-->
+	<TM_Totems.label>Тотемы</TM_Totems.label>
+	<TM_Totems.description>Тотемы - это форма магии, которая привязывает элементальный дух к физическому миру, позволяя ему влиять на объекты рядом с тотемом. Эта способность увеличивает контроль над всеми типами тотемов.</TM_Totems.description>
+	<!-- Create lightning totem-->
+	<TM_SummonTotemLightning.label>Тотем: Молния</TM_SummonTotemLightning.label>
+	<TM_SummonTotemLightning.description>Создает тотем молнии в целевой области. Длится 1 игровой час и разряжает электрические разряды во врагов в радиусе 40 метров каждые 2-3 секунды.</TM_SummonTotemLightning.description>
+	<!-- Create earth totem-->
+	<TM_SummonTotemEarth.label>Тотем: Земля</TM_SummonTotemEarth.label>
+	<TM_SummonTotemEarth.description>Создает тотем земли в целевой области. Длится 1 игровой час и вызывает толчки каждые 3-4 секунды, которые шатают все пешки в пределах 5 клеток.</TM_SummonTotemEarth.description>
+	<!-- Create healing totem-->
+	<TM_SummonTotemHealing.label>Тотем: Исцеление</TM_SummonTotemHealing.label>
+	<TM_SummonTotemHealing.description>Создает исцеляющий тотем в целевом местоположении. Длится 1 игровой час и периодически лечит близлежащие пешки.</TM_SummonTotemHealing.description>
+	<!-- Chain Lightning-->
+	<TM_ChainLightning.label>Цепная молния</TM_ChainLightning.label>
+	<TM_ChainLightning.description>Мощный разряд молнии, который разветвляется после попадания в свою первую цель.</TM_ChainLightning.description>
+	<!-- Enrage-->
+	<TM_Enrage.label>Приводить в ярость</TM_Enrage.label>
+	<TM_Enrage.description>Накладывает на цель заклятие, которое заставляет их эмоции (настроение) становиться топливом для боевой ярости. Заклинание сгорит само по себе, как только все эмоции будут израсходованы. Враждебные цели немедленно впадут в неистовство, если их разум восприимчив.
+
+Разъяренная пешка получает улучшенные движения и манипуляции, повышенную устойчивость к боли, не может быть ошеломлена и увеличивает урон в ближнем бою на процент, равный силе ярости (бонус к урону 20-50%).</TM_Enrage.description>
+	<!-- Hex-->
+	<TM_Hex.label>Проклятие</TM_Hex.label>
+	<TM_Hex.description>Проклятие (I) - вешает проклятие на пешки, дополнительные эффекты могут быть применены к проклятым целям. Проходит через 6 игровых часов.
+
+Максимальное количество целей: 4
+Радиус: 3
+Дальность: 36
+Подготовка: 1 сек.</TM_Hex.description>
+	<TM_Hex_I.label>Проклятие</TM_Hex_I.label>
+	<TM_Hex_I.description>Проклятие (II) - вешает проклятие на пешки, дополнительные эффекты могут быть применены к проклятым целям. Проходит через 6 игровых часов.
+
+Максимальное количество целей: 5
+Радиус: 3
+Дальность: 40
+Подготовка: .8 сек.</TM_Hex_I.description>
+	<TM_Hex_II.label>Проклятие</TM_Hex_II.label>
+	<TM_Hex_II.description>Проклятие (III) - вешает проклятие на пешки, дополнительные эффекты могут быть применены к проклятым целям. Проходит через 6 игровых часов.
+
+Максимальное количество целей: 5
+Радиус: 4
+Дальность: 43
+Подготовка: .7 сек.</TM_Hex_II.description>
+	<TM_Hex_III.label>Проклятие</TM_Hex_III.label>
+	<TM_Hex_III.description>Проклятие (IV) - вешает проклятие на пешки, дополнительные эффекты могут быть применены к проклятым целям. Проходит через 6 игровых часов.
+
+Максимальное количество целей: 6
+Радиус: 4
+Дальность: 45
+Подготовка: .6 сек.</TM_Hex_III.description>
+	<TM_Hex_Pain.label>Боль (Проклятие)</TM_Hex_Pain.label>
+	<TM_Hex_Pain.description>Все заколдованные пешки испытывают сильную боль.</TM_Hex_Pain.description>
+	<TM_Hex_CriticalFail.label>Критический промах (Проклятие)</TM_Hex_CriticalFail.label>
+	<TM_Hex_CriticalFail.description>Накладывает недолговечное проклятие на все заколдованные цели, что вызывает крайнее невезение.</TM_Hex_CriticalFail.description>
+	<TM_Hex_MentalAssault.label>Психическое давление (Проклятие)</TM_Hex_MentalAssault.label>
+	<TM_Hex_MentalAssault.description>Заставляет все заколдованные цели испытывать драматический и, возможно, ошеломляющий всплеск эмоций.</TM_Hex_MentalAssault.description>
+	<!-- Spirit Wolves-->
+	<TM_SpiritWolves.label>Дух волков</TM_SpiritWolves.label>
+	<TM_SpiritWolves.description>Проявляет стаю духов волков. Духи волки наносят ментальный урон, который игнорирует броню и оглушает.
+
+Дальность: 50
+Подготовка: 3 секунды
+Перезарядка: 120 секунд</TM_SpiritWolves.description>
+	<TM_SpiritWolves_I.label>Дух волков (I)</TM_SpiritWolves_I.label>
+	<TM_SpiritWolves_I.description>Проявляет стаю духов волков. Духи волки наносят ментальный урон, который игнорирует броню и оглушает.
+
+Дальность: 55
+Подготовка: 2.7 сек
+Перезарядка: 110 сек</TM_SpiritWolves_I.description>
+	<TM_SpiritWolves_II.label>Дух волков (II)</TM_SpiritWolves_II.label>
+	<TM_SpiritWolves_II.description>Проявляет стаю духов волков. Духи волки наносят ментальный урон, который игнорирует броню и оглушает.
+
+Дальность: 60
+Подготовка: 2.5 сек
+Перезарядка: 100 сек</TM_SpiritWolves_II.description>
+	<TM_SpiritWolves_III.label>Дух волков (III)</TM_SpiritWolves_III.label>
+	<TM_SpiritWolves_III.description>Проявляет стаю духов волков. Духи волки наносят ментальный урон, который игнорирует броню и оглушает.
+
+Дальность: 65
+Подготовка: 2.4 сек
+Перезарядка: 90 сек</TM_SpiritWolves_III.description>
+	<!-- Guardian Spirit-->
+	<TM_GuardianSpirit.label>Дух-хранитель</TM_GuardianSpirit.label>
+	<TM_GuardianSpirit.description>Вызывает духа-хранителя. Духи-хранители проявляются как могущественные животные с уникальными силами и способностями.
+
+Дух Медведя - олицетворяет защиту и стойкость; издаст вызывающий рев против любого, кто подумает игнорировать этого опасного зверя.
+
+Дух Мангуста - олицетворяет хитрость и ловкость; способен проскользнуть сквозь царство духов, чтобы нанести смертельную скрытую атаку.
+
+Дух Ворона - олицетворяет магию и проницательность; накладывает заклятие на врагов и усиливает мудрость своего подопечного.
+
+После определения тип духа-хранителя остается прежним, однако его можно принудительно изменить с помощью свитка привязки духа.</TM_GuardianSpirit.description>
+	<TM_DismissGuardianSpirit.label>Развеять духа-хранителя</TM_DismissGuardianSpirit.label>
+	<TM_DismissGuardianSpirit.description>Освобождает духа-хранителя, чтобы вернуться в царство духов.</TM_DismissGuardianSpirit.description>
+</LanguageData>

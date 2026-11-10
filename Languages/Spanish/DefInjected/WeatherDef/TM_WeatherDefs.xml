@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_HailstormWD.label>tormenta de granizo</TM_HailstormWD.label>
+  
+  <TM_HailstormWD.description>Una feroz tormenta de granizo que cubre grandes extensiones de terreno con oleadas mortales de hielo. El movimiento y la puntería se ven gravemente entorpecidos.</TM_HailstormWD.description>
+  
+  
+  <TM_HealingRainWD.label>lluvia curativa</TM_HealingRainWD.label>
+  
+  <TM_HealingRainWD.description>Una lluvia suave con propiedades curativas. Cualquier criatura expuesta a la lluvia curativa regenerará lentamente sus heridas.</TM_HealingRainWD.description>
+  
+</LanguageData>

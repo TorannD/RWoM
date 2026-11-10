@@ -1,0 +1,5 @@
+<LanguageData>
+  <TM_MagicalThrusterFuelName>Magocombustible</TM_MagicalThrusterFuelName>
+  <TM_MagicalThrusterFuelAmount>{0} / {1} de magocombustible</TM_MagicalThrusterFuelAmount>
+  <TM_MagicalThrusterFuelRange>Alcance con magocombustible: {0} / {1}</TM_MagicalThrusterFuelRange>
+</LanguageData>

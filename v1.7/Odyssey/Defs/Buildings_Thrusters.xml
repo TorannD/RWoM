@@ -1,0 +1,168 @@
+<Defs>
+  <ThingDef ParentName="ThrusterBase">
+    <designationCategory>TM_RWoM</designationCategory>
+    <defName>TM_SmallMagicalThruster</defName>
+    <label>small magical thruster</label>
+    <description>A magofuel thruster that increases gravship range. Draws magofuel through connected mana beacons from reservoirs carried on the same gravship. Has no built-in tank and cannot use mana, chemfuel or astrofuel. Requires a linked grav engine, substructure and an unobstructed exhaust facing outdoors. Fuel is spent when the gravship launches.</description>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Buildings/SmallMagicalThruster</texPath>
+      <drawSize>(1.1, 2.2)</drawSize>
+      <shadowData>
+        <volume>(1, 1, 2)</volume>
+      </shadowData>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>-10</Beauty>
+      <WorkToBuild>10000</WorkToBuild>
+      <Mass>20</Mass>
+    </statBases>
+    <size>(1, 2)</size>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <costList>
+      <Steel>120</Steel>
+      <GravlitePanel>40</GravlitePanel>
+      <RawMagicyte>80</RawMagicyte>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>BasicGravtech</li>
+      <li>TM_MagofuelRefining</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="TorannMagic.Odyssey.CompProperties_MagicalThruster">
+        <statOffsets>
+          <GravshipRange>10</GravshipRange>
+        </statOffsets>
+        <componentTypeDef>Thruster</componentTypeDef>
+        <exclusionAreaSize>(1, 0, 5)</exclusionAreaSize>
+        <exclusionAreaOffset>(0, 0, -5)</exclusionAreaOffset>
+        <directionInfluence>20</directionInfluence>
+        <flameSize>4.0</flameSize>
+        <flameOffsetsPerDirection>
+          <li>(0, 0, 0.5)</li>
+          <li>(0, 0, 0.5)</li>
+          <li>(0, 0, 0.5)</li>
+          <li>(0, 0, 0.5)</li>
+        </flameOffsetsPerDirection>
+        <flameShaderType>MoteGlow</flameShaderType>
+        <flameShaderParameters>
+          <!-- M1 soft flame, 140% baked brightness. Keep native _Color2 animation. -->
+          <_MainTex>/Things/Mote/TM_SmallMagicalThruster_Burn</_MainTex>
+        </flameShaderParameters>
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>4</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+        <exhaustSettings>
+          <exhaustFleckDef>GravshipThrusterExhaust</exhaustFleckDef>
+          <emissionsPerSecond>40.0</emissionsPerSecond>
+          <spawnRadiusRange>0.0~0.5</spawnRadiusRange>
+          <velocity>(0.0,0.0,-20.0)</velocity>
+          <velocityRotationRange>-10.0~10.0</velocityRotationRange>
+          <velocityMultiplierRange>0.8~1.2</velocityMultiplierRange>
+          <rotationOverTimeRange>-180.0~180.0</rotationOverTimeRange>
+          <scaleRange>1.5~3.0</scaleRange>
+        </exhaustSettings>
+        <compClass>TorannMagic.Odyssey.CompMagicalThruster</compClass>
+        <providesFuel>true</providesFuel>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="TorannMagic.Odyssey.CompProperties_ManaNetworkEndpoint">
+        <supportsMana>false</supportsMana>
+        <supportsFuel>true</supportsFuel>
+        <defaultManaMode>Off</defaultManaMode>
+        <defaultFuelMode>Receive</defaultFuelMode>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>TorannMagic.Odyssey.PlaceWorker_ManaNetwork</li>
+    </placeWorkers>
+  </ThingDef>
+  <ThingDef ParentName="ThrusterBase">
+    <designationCategory>TM_RWoM</designationCategory>
+    <defName>TM_LargeMagicalThruster</defName>
+    <label>large magical thruster</label>
+    <description>A magofuel thruster that increases gravship range. Draws magofuel through connected mana beacons from reservoirs carried on the same gravship. Has no built-in tank and cannot use mana, chemfuel or astrofuel. Requires a linked grav engine, substructure and an unobstructed exhaust facing outdoors. Fuel is spent when the gravship launches.</description>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Buildings/LargeMagicalThruster</texPath>
+      <drawSize>(2.2, 2.2)</drawSize>
+      <shadowData>
+        <volume>(1.8, 0.75, 1.8)</volume>
+      </shadowData>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>-10</Beauty>
+      <WorkToBuild>13200</WorkToBuild>
+      <Mass>30</Mass>
+    </statBases>
+    <size>(2, 2)</size>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <costList>
+      <Steel>180</Steel>
+      <GravlitePanel>70</GravlitePanel>
+      <RawMagicyte>140</RawMagicyte>
+      <BlocksVacstone>50</BlocksVacstone>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>StandardGravtech</li>
+      <li>TM_MagofuelRefining</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="TorannMagic.Odyssey.CompProperties_MagicalThruster">
+        <statOffsets>
+          <GravshipRange>16</GravshipRange>
+        </statOffsets>
+        <componentTypeDef>Thruster</componentTypeDef>
+        <exclusionAreaSize>(2, 0, 7)</exclusionAreaSize>
+        <exclusionAreaOffset>(0, 0, -7)</exclusionAreaOffset>
+        <directionInfluence>30</directionInfluence>
+        <flameSize>4.0</flameSize>
+        <flameOffsetsPerDirection>
+          <li>(0, 0, 1.0)</li>
+          <li>(0, 0, 0.5)</li>
+          <li>(0, 0, 0.5)</li>
+          <li>(0, 0, 0.5)</li>
+        </flameOffsetsPerDirection>
+        <flameShaderType>MoteGlow</flameShaderType>
+        <flameShaderParameters>
+          <!-- B1 broad flame, 140% baked brightness. Keep native _Color2 animation. -->
+          <_MainTex>/Things/Mote/TM_LargeMagicalThruster_Burn</_MainTex>
+        </flameShaderParameters>
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>6</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+        <exhaustSettings>
+          <exhaustFleckDef>GravshipThrusterExhaust</exhaustFleckDef>
+          <emissionsPerSecond>40.0</emissionsPerSecond>
+          <spawnRadiusRange>0.0~0.5</spawnRadiusRange>
+          <velocity>(0.0,0.0,-20.0)</velocity>
+          <velocityRotationRange>-10.0~10.0</velocityRotationRange>
+          <velocityMultiplierRange>0.8~1.2</velocityMultiplierRange>
+          <rotationOverTimeRange>-180.0~180.0</rotationOverTimeRange>
+          <scaleRange>3.0~5.0</scaleRange>
+        </exhaustSettings>
+        <compClass>TorannMagic.Odyssey.CompMagicalThruster</compClass>
+        <providesFuel>true</providesFuel>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="TorannMagic.Odyssey.CompProperties_ManaNetworkEndpoint">
+        <supportsMana>false</supportsMana>
+        <supportsFuel>true</supportsFuel>
+        <defaultManaMode>Off</defaultManaMode>
+        <defaultFuelMode>Receive</defaultFuelMode>
+      </li>
+    </comps>
+    <uiOrder>2205</uiOrder>
+    <placeWorkers>
+      <li>TorannMagic.Odyssey.PlaceWorker_ManaNetwork</li>
+    </placeWorkers>
+  </ThingDef>
+</Defs>

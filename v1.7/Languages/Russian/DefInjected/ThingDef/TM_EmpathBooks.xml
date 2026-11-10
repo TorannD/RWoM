@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Torn_BookOfEmpathy.label>обрывок рукописи: эмпат</Torn_BookOfEmpathy.label>
+  <Torn_BookOfEmpathy.description>Обучает нового мага сочувствию и убийце разума. Прочтение завершает начальное посвящение и расходует рукопись.</Torn_BookOfEmpathy.description>
+  <Torn_BookOfEmpathy.comps.1.useLabel>Прочитать {0_label}</Torn_BookOfEmpathy.comps.1.useLabel>
+  <BookOfEmpathy.label>магический фолиант: эмпат</BookOfEmpathy.label>
+  <BookOfEmpathy.description>Обучает подавляющей ауре эмпата, прошедшего начальное испытание. Прочтение завершает посвящение в адепты и расходует фолиант.</BookOfEmpathy.description>
+  <BookOfEmpathy.comps.1.useLabel>Прочитать {0_label}</BookOfEmpathy.comps.1.useLabel>
+  <TM_MasterTomeEmpath.label>фолиант мастера: эмпат</TM_MasterTomeEmpath.label>
+  <TM_MasterTomeEmpath.description>Обучает эмпата, прошедшего испытание мастерства, сбору страсти и связанной способности разжигания страсти. Прочтение завершает посвящение в мастера и расходует фолиант. Доступен у торговцев и в наградах за задания; изготовить его нельзя.</TM_MasterTomeEmpath.description>
+  <TM_MasterTomeEmpath.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeEmpath.comps.1.useLabel>
+</LanguageData>

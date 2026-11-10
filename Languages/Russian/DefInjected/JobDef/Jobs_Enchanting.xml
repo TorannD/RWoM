@@ -1,0 +1,5 @@
+<LanguageData><!-- Enchanting jobs-->
+	<JobDriver_RemoveEnchantingGem.reportString>снимает зачаровывающий камень с TargetA</JobDriver_RemoveEnchantingGem.reportString>
+	<JobDriver_AddEnchantingGem.reportString>подготавливает TargetA к зачарованию</JobDriver_AddEnchantingGem.reportString>
+	<JobDriver_EnchantItem.reportString>накладывает чары на TargetA</JobDriver_EnchantItem.reportString>
+</LanguageData>

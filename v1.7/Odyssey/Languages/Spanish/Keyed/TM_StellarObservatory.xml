@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_StellarRitual>Iniciar adivinación estelar (ritual)</TM_StellarRitual>
+  <TM_StellarIdle>Inactivo: requiere un ritual de adivinación</TM_StellarIdle>
+  <TM_StellarSearching>Buscando: quedan {0}</TM_StellarSearching>
+  <TM_StellarWaiting>Búsqueda completada: esperando un destino orbital válido</TM_StellarWaiting>
+  <TM_StellarCooldown>Intervalo mágico compartido: {0}</TM_StellarCooldown>
+  <TM_StellarUnavailable>Requiere un observatorio operativo, un mago, 100 de maná y 50 de magocombustible en la red, un destino orbital válido y que haya terminado el intervalo compartido.</TM_StellarUnavailable>
+  <TM_StellarDiscovery>La adivinación estelar reveló</TM_StellarDiscovery>
+</LanguageData>

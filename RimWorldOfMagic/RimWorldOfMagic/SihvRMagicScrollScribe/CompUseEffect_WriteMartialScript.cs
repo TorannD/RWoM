@@ -18,7 +18,7 @@ namespace TorannMagic.SihvRMagicScrollScribe
             List<TMDefs.TM_CustomClass> cFighters = TM_ClassUtility.CustomFighterClasses;
             
             CompAbilityUserMight comp = user.GetCompAbilityUserMight();
-            if (parent.def != null && comp != null && user.IsSlave)
+            if (parent.def != null && comp != null && user.IsSlave && !ModOptions.Settings.Instance.SlavesCanScribe)
             {
                 Messages.Message("TM_SlaveScribeFail".Translate(
                         parent.def.label

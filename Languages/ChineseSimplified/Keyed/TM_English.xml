@@ -698,4 +698,60 @@
   <!--<TM_增强>闪电风暴增强</TM_增强>-->
   <!--<TM_功能性增强>闪电风暴功能性增强</TM_功能性增强>-->
 
+  <AU_DISABLED>已禁用</AU_DISABLED>
+<TM_NewProgressionBeta>新职业进阶（测试版）</TM_NewProgressionBeta>
+  <TM_NewProgressionBetaDesc>启用实验性的新职业进阶系统。仅在游戏启动时读取：更改此选项需要重启游戏。关闭时，模组使用经典职业系统。</TM_NewProgressionBetaDesc>
+  <TM_GrimoireTabMode>能力栏中的魔典</TM_GrimoireTabMode>
+  <TM_GrimoireTabModeDesc>启用时在能力栏显示魔典按钮；禁用时通过检视面板中的魔典标签打开同一个窗口。</TM_GrimoireTabModeDesc>
+  <TM_GrimoireOpen>打开魔典</TM_GrimoireOpen>
+  <TM_GrimoireTabHint>魔典窗口已经打开。</TM_GrimoireTabHint>
+  <TM_AIMarkingDesc>在非殖民者的法师和战士上方显示职业图标，包括中立和友好访客。</TM_AIMarkingDesc>
+  <TM_AIFighterMarkingDesc>旧版选项，无独立效果。非殖民者战士的图标目前由 AI 法师标记设置控制。</TM_AIFighterMarkingDesc>
+  <TM_AIFriendlyMarkingDesc>在你的殖民者法师和战士上方显示职业图标。</TM_AIFriendlyMarkingDesc>
+  <XPMultiplierDesc>使用能力获得的魔法和战斗经验倍率。</XPMultiplierDesc>
+  <NeedMultiplierDesc>法力恢复速度倍率。</NeedMultiplierDesc>
+  <MagicyteChanceDesc>采矿时获得原始魔晶的概率。</MagicyteChanceDesc>
+  <TM_DeathRetaliationIsLethalDesc>允许反击对反击者自身造成致命伤害，恢复效果除外。关闭此项不会使对其他角色的伤害变为非致命伤害。</TM_DeathRetaliationIsLethalDesc>
+  <TM_DeathRetaliationChanceDesc>倒地的敌对法师或战士准备反击的概率。囚犯无法反击。</TM_DeathRetaliationChanceDesc>
+  <TM_DeathRetaliationDelayDesc>反击开始后的倒计时倍率；数值越高，效果越晚触发。</TM_DeathRetaliationDelayDesc>
+  <TM_enableAutocastDesc>允许殖民者自动使用已开启 AC 开关的魔法和战斗能力。</TM_enableAutocastDesc>
+  <TM_autocastUndraftedThresholdDesc>未征召时自动施法所需的最低法力或体力百分比。普通 NPC 自动施法检查也使用此值。</TM_autocastUndraftedThresholdDesc>
+  <TM_autocastDraftedThresholdDesc>征召且允许自由开火时自动施法所需的最低法力或体力百分比。武僧不受体力阈值限制。</TM_autocastDraftedThresholdDesc>
+  <TM_autocastEvaluationFrequencyDesc>自动施法检查的基础间隔，单位为游戏秒。数值越高，检查越少；实际间隔会随机变化。</TM_autocastEvaluationFrequencyDesc>
+  <TM_autocastAnimalsDesc>在支持的自动目标搜索中纳入动物，例如治疗目标搜索。</TM_autocastAnimalsDesc>
+  <AICanCastDesc>允许非殖民者法师和战士使用 AI 控制的能力。</AICanCastDesc>
+  <AIHardModeDesc>增强 NPC 的许多魔法和战斗能力，并提高 NPC 法师掌握大师法术的概率。</AIHardModeDesc>
+  <TM_AggressiveAICastingDesc>提高 NPC 施法活跃度，并将基础冷却时间和法力或体力消耗减半。</TM_AggressiveAICastingDesc>
+  <TM_SlavesCanScribeDesc>允许奴隶在满足通常职业要求时编写职业典籍和残缺的职业手稿。</TM_SlavesCanScribeDesc>
+  <TM_UndeadUpkeepMultiplierDesc>维持亡灵时法力恢复速度惩罚的倍率；设为零可取消此惩罚。</TM_UndeadUpkeepMultiplierDesc>
+  <TM_ParacyteSoftCapDesc>法力恢复减慢前可承受的本地寄生植物负荷。每株植物计为 1；启用相应设置后，每名法师计为 2。</TM_ParacyteSoftCapDesc>
+  <TM_ParacyteMagesCountDesc>计算法力恢复惩罚时，将地图上的每名法师计为两株寄生植物；不计动物、野人和无面者。</TM_ParacyteMagesCountDesc>
+  <unrestrictedBloodTypesForBloodMagicDesc>允许采血和引燃血液使用其他种族的血型，但仍须满足法术的其他要求。</unrestrictedBloodTypesForBloodMagicDesc>
+  <TM_UnrestrictedWeaponCopyDesc>允许科技法师复制工业级以下或使用非标准射击动作的远程武器。仍不能复制近战武器。</TM_UnrestrictedWeaponCopyDesc>
+  <TM_ClassOptionsDesc>选择启用的魔法职业、战斗职业和辅助特性，并调整其生成概率。</TM_ClassOptionsDesc>
+  <TM_FactionOptionsDesc>调整各阵营的法师和战士生成倍率。</TM_FactionOptionsDesc>
+  <TM_EventOptionsDesc>打开裂隙、游荡巫妖和恶魔袭击事件的难度设置。</TM_EventOptionsDesc>
+  <TM_GolemOptionsDesc>配置魔像显示：休眠框架、殖民者栏图标和屏幕震动。</TM_GolemOptionsDesc>
+  <TM_DisplayOptionsDesc>配置图标、镜头行为、魔典位置、亡灵外观和服装绘制。</TM_DisplayOptionsDesc>
+  <TM_GrimoireDesc>打开此角色的魔典，查看职业等级、资源和能力。</TM_GrimoireDesc>
+  <TM_GrimoireIsekaiHint>Jelly Creative 制作的 Isekai Leveling 原生联动提供法力与体力上限、恢复速度、能力冷却和资源消耗加成。</TM_GrimoireIsekaiHint>
+  <TM_Grimoire>魔典</TM_Grimoire>
+
+  <!-- Grimoire classic-mode strings. -->
+  <TM_GrimoireClassicRequirements>经典规则：法术在魔导书中用职业点数学习；部分法术还需先阅读对应的卷轴或书籍。</TM_GrimoireClassicRequirements>
+  <TM_GrimoireClassicRules>经典规则</TM_GrimoireClassicRules>
+  <TM_GrimoireLearningItems>所需学习物品：</TM_GrimoireLearningItems>
+  <TM_GrimoireNoLearningItems>无需学习物品。</TM_GrimoireNoLearningItems>
+  <TM_GrimoireLearned>已学习</TM_GrimoireLearned>
+  <TM_GrimoireRankMax>最高等级</TM_GrimoireRankMax>
+  <TM_GrimoireRank>等级</TM_GrimoireRank>
+  <TM_GrimoireScrollUnspecified>未指定卷轴</TM_GrimoireScrollUnspecified>
+
+  <!-- Magofuel synthesizer UI strings. -->
+  <TM_SynthToggleLabel>自动合成：魔力 + 化学燃料</TM_SynthToggleLabel>
+  <TM_SynthToggleDesc>缓慢地将储存的魔力和化学燃料转化为魔燃料（约每天50个）。当油罐达到目标或缺少原料时暂停。</TM_SynthToggleDesc>
+  <TM_SynthLoad>装载化学燃料 ({0})</TM_SynthLoad>
+  <TM_SynthLoadDesc>从储液罐附近的堆栈中获取化学燃料装入料斗。</TM_SynthLoadDesc>
+  <TM_SynthInspect>化学燃料料斗：{0} — 每天合成50个魔燃料</TM_SynthInspect>
+  <TM_PoolInspect>信标网络池：法力 {0}/{1}，魔燃料 {2}/{3}（{4} 个储罐）</TM_PoolInspect>
 </LanguageData>

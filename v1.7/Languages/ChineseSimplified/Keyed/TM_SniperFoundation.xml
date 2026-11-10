@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadSniperFocus>狙击专注：提高射击能力，降低工作速度（永久选择）</TM_ReadSniperFocus>
+  <TM_ReadSniperPatientAim>耐心瞄准：静止3秒后加快瞄准（永久选择）</TM_ReadSniperPatientAim>
+  <TM_PatientAimName>耐心瞄准</TM_PatientAimName>
+  <TM_PatientAimDescription>静止3秒后，瞄准时间缩短2%。移动会取消加成。</TM_PatientAimDescription>
+  <TM_PatientAimTraining>每级再缩短2个百分点，最高10%。</TM_PatientAimTraining>
+</LanguageData>

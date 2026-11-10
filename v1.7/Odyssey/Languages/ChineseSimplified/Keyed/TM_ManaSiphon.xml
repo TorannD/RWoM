@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SiphonReserveDesc>捐献后保留的最低法力比例，可在0%至100%之间设置。</TM_SiphonReserveDesc>
+  <TM_SiphonDonationDesc>单次捐献占法力上限的最大比例，可在0%至100%之间设置。再次捐献前必须完全恢复法力。</TM_SiphonDonationDesc>
+  <TM_SiphonNeedsFullMana>再次捐献前必须完全恢复法力。</TM_SiphonNeedsFullMana>
+  <TM_SiphonReserveLabel>个人法力保留比例</TM_SiphonReserveLabel>
+  <TM_SiphonNoTanks>没有已连接的储罐能够接收法力。</TM_SiphonNoTanks>
+  <TM_SiphonDonationLabel>每次捐献上限</TM_SiphonDonationLabel>
+  <TM_SiphonInspect>个人保留：{0}；每次捐献上限：{1}</TM_SiphonInspect>
+</LanguageData>

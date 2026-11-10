@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+
+
+  <SeerDefender.label>Protetor mágico</SeerDefender.label>
+  <SeerDefender.labelPlural>defensores da magia</SeerDefender.labelPlural>
+
+  <SeerSpearman.label>Guarda</SeerSpearman.label>
+  <SeerSpearman.labelPlural>Lança Lança</SeerSpearman.labelPlural>
+
+  <SeerBowman.label>Visionário Atirador</SeerBowman.label>
+  <SeerBowman.labelPlural>Arqueiros Providentes</SeerBowman.labelPlural>
+
+  <SeerElite.label>Elite dos Providentes</SeerElite.label>
+  <SeerElite.labelPlural>Elite dos Providentes</SeerElite.labelPlural>
+
+
+</LanguageData>

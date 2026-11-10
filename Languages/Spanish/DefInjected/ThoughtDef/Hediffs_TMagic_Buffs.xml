@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <AMP_I.stages.pumped.label>revitalizado</AMP_I.stages.pumped.label>
+  
+  <AMP_I.stages.pumped.description>Me siento genial. Esto es mejor que el Go-Juice.</AMP_I.stages.pumped.description>
+  
+  
+  <AMP_II.stages.amped.label>amplificado</AMP_II.stages.amped.label>
+  
+  <AMP_II.stages.amped.description>¡Esto es increíble! Podría correr como el viento y luchar como un león: ¡nada puede detenerme!</AMP_II.stages.amped.description>
+  
+  
+  <AMP_III.stages.surging_energy.label>energía desbordante</AMP_III.stages.surging_energy.label>
+  
+  <AMP_III.stages.surging_energy.description>Estoy rebosante de poder, me siento imparable.</AMP_III.stages.surging_energy.description>
+  
+  
+  <RayofHope.stages.Shadow_of_hope.label>sombra de esperanza</RayofHope.stages.Shadow_of_hope.label>
+  
+  <RayofHope.stages.Shadow_of_hope.description>Donde hay sombra, hay luz.</RayofHope.stages.Shadow_of_hope.description>
+  
+  
+  <RayofHope_I.stages.Glimmer_of_hope.label>destello de esperanza</RayofHope_I.stages.Glimmer_of_hope.label>
+  
+  <RayofHope_I.stages.Glimmer_of_hope.description>¡Tengo un destello de esperanza que antes no estaba!</RayofHope_I.stages.Glimmer_of_hope.description>
+  
+  
+  <RayofHope_II.stages.Ray_of_hope.label>rayo de esperanza</RayofHope_II.stages.Ray_of_hope.label>
+  
+  <RayofHope_II.stages.Ray_of_hope.description>Un rayo de luz se abre paso entre este ánimo sombrío; por fin siento que tenemos una oportunidad.</RayofHope_II.stages.Ray_of_hope.description>
+  
+  
+  <RayofHope_III.stages.Beacon_of_hope.label>faro de esperanza</RayofHope_III.stages.Beacon_of_hope.label>
+  
+  <RayofHope_III.stages.Beacon_of_hope.description>Toda la desgracia que nos ha golpeado se está quemando bajo una luz brillante. ¡Tengo un estallido de energía y me siento increíble!</RayofHope_III.stages.Beacon_of_hope.description>
+  
+  
+  <Shadow.stages.twitchy.label>inquieto</Shadow.stages.twitchy.label>
+  
+  <Shadow.stages.twitchy.description>Algo no va bien...</Shadow.stages.twitchy.description>
+  
+  
+  <Shadow_I.stages.anxious.label>ansioso</Shadow_I.stages.anxious.label>
+  
+  <Shadow_I.stages.anxious.description>Siento un cosquilleo en la nuca, como si siempre me vigilaran... es espeluznante.</Shadow_I.stages.anxious.description>
+  
+  
+  <Shadow_II.stages.nervous.label>nervioso</Shadow_II.stages.nervous.label>
+  
+  <Shadow_II.stages.nervous.description>Sigo viendo algo por el rabillo del ojo; siento que hay alguien justo detrás de mí y estoy al límite.</Shadow_II.stages.nervous.description>
+  
+  
+  <Shadow_III.stages.distraught.label>angustiado</Shadow_III.stages.distraught.label>
+  
+  <Shadow_III.stages.distraught.description>Hay otra presencia a mi lado, ayudándome en todo lo que hago. Sabe lo que hay que hacer antes que yo. ¿Estaré poseído?</Shadow_III.stages.distraught.description>
+  
+  
+  <SoothingBreeze.stages.soothing_breeze.label>brisa calmante</SoothingBreeze.stages.soothing_breeze.label>
+  
+  <SoothingBreeze.stages.soothing_breeze.description>Algo me está calmando, pienso con claridad y malgasto menos energía preocupándome por cosas sin sentido.</SoothingBreeze.stages.soothing_breeze.description>
+  
+  
+  <SoothingBreeze_I.stages.soothing_breeze.label>brisa calmante</SoothingBreeze_I.stages.soothing_breeze.label>
+  
+  <SoothingBreeze_I.stages.soothing_breeze.description>Algo me está calmando, pienso con claridad y malgasto menos energía preocupándome por cosas sin sentido.</SoothingBreeze_I.stages.soothing_breeze.description>
+  
+  
+  <SoothingBreeze_II.stages.soothing_breeze.label>brisa calmante</SoothingBreeze_II.stages.soothing_breeze.label>
+  
+  <SoothingBreeze_II.stages.soothing_breeze.description>Con el viento a mi espalda me siento tranquilo, relajado y concentrado, y tengo energía para seguir adelante.</SoothingBreeze_II.stages.soothing_breeze.description>
+  
+  
+  <SoothingBreeze_III.stages.soothing_breeze.label>brisa calmante</SoothingBreeze_III.stages.soothing_breeze.label>
+  
+  <SoothingBreeze_III.stages.soothing_breeze.description>Todas las distracciones se han esfumado, estoy totalmente concentrado y tengo la confianza para ejecutar todas las tareas a la perfección.</SoothingBreeze_III.stages.soothing_breeze.description>
+  
+  
+  <TM_Blind.stages.blinded.label>cegado</TM_Blind.stages.blinded.label>
+  
+  <TM_Blind.stages.blinded.description>Hubo un destello de luz y lo que me reveló... no puedo... ¡no quiero ver más!</TM_Blind.stages.blinded.description>
+  
+</LanguageData>

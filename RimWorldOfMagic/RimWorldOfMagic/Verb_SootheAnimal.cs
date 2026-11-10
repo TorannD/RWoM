@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -9,7 +9,7 @@ using Verse.AI;
 
 namespace TorannMagic
 {
-    public class Verb_SootheAnimal : Verb_UseAbility
+    public class Verb_SootheAnimal : ClassProgression.Verb_SpiritTargetable
     {
 
         private int verVal;
@@ -37,6 +37,13 @@ namespace TorannMagic
             return validTarg;
         }
 
+        protected override bool ApplyHostedEffect()
+        {
+            // This verb returns false to the projectile system even on a successful direct cast.
+            TryCastShot();
+            return true;
+        }
+
         protected override bool TryCastShot()
         {
             bool flag = false;
@@ -50,7 +57,9 @@ namespace TorannMagic
             //    MightPowerSkill mpwr = base.CasterPawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
             //    pwrVal = mpwr.level;
             //}
-            pwrVal = TM_Calc.GetSkillPowerLevel(CasterPawn, this.Ability.Def as TMAbilityDef);
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            if (owner == null) return false;
+            pwrVal = TM_Calc.GetSkillPowerLevel(owner, this.Ability.Def as TMAbilityDef);
             bool flag2 = this.UseAbilityProps.AbilityTargetCategory != AbilityTargetCategory.TargetAoE && this.TargetsAoE.Count > 1;
             if (flag2)
             {
@@ -67,7 +76,9 @@ namespace TorannMagic
                     {
                         if(newPawn.kindDef.RaceProps.Animal)
                         {
+                            var druidTrial = ClassProgression.DruidTrials.CaptureAnimal(this.Ability, newPawn);
                             newPawn.mindState.mentalStateHandler.Reset();
+                            ClassProgression.DruidTrials.Complete(druidTrial);
                             newPawn.jobs.StopAll();
                             FleckMaker.ThrowMicroSparks(newPawn.Position.ToVector3().normalized, newPawn.Map);
                             float sev = Rand.Range(pwrVal, 2 * pwrVal);
@@ -107,7 +118,7 @@ namespace TorannMagic
                             for (int j = 0; j < newPawn.Map.mapPawns.AllPawnsSpawned.Count; j++)
                             {
                                 Pawn hostile = newPawn.Map.mapPawns.AllPawnsSpawned[j];
-                                if (hostile.Faction.HostileTo(Faction.OfPlayerSilentFail))
+                                if (hostile.Faction?.HostileTo(Faction.OfPlayerSilentFail) == true)
                                 {
                                     potentialHostiles.AddDistinct(hostile);
                                 }
@@ -191,3 +202,4 @@ namespace TorannMagic
         }
     }
 }
+

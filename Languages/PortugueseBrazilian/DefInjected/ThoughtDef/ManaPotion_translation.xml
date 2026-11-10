@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManaPotionHigh.stages.0.label>saliência de maná</ManaPotionHigh.stages.0.label>
+  <ManaPotionHigh.stages.0.description>Este poder... É espantoso. Sinto a força do espaço na ponta dos dedos, mas transforma os meus ossos em cinzas.</ManaPotionHigh.stages.0.description>
+
+
+  <!-- Mana potion addiction -->
+
+  <ManaPotionWithdrawal.stages.1.label>Saída de maná</ManaPotionWithdrawal.stages.1.label>
+  <ManaPotionWithdrawal.stages.1.description>Às trevas... Está tudo à volta do nevoeiro. Sinto que não consigo concentrar-me ou controlar o meu corpo. Sinto-me separado da realidade. Preciso de sentir a maná a fluir para a minha alma.</ManaPotionWithdrawal.stages.1.description>
+
+
+</LanguageData>

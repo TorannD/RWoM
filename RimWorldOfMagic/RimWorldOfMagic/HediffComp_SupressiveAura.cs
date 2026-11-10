@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using UnityEngine;
 using System.Collections.Generic;
@@ -11,6 +11,13 @@ namespace TorannMagic
     [StaticConstructorOnStartup]
     public class HediffComp_SuppressiveAura : HediffComp
     {
+
+        public bool ownTrialActivation;
+        public Pawn trialCaster;
+        internal MagicPower trialOwner;
+        internal int SourceId;
+        internal Pawn SkillOwner => SourceId == 0 ? Pawn :
+            ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(Pawn, out var soul) && soul.thingIDNumber == SourceId ? soul : null;
 
         private bool initialized = false;
         private bool removeNow = false;
@@ -27,6 +34,9 @@ namespace TorannMagic
         public override void CompExposeData()
         {
             base.CompExposeData();
+            Scribe_Values.Look(ref ownTrialActivation, "empathOwnTrialActivation", false);
+            Scribe_Values.Look(ref SourceId, "empathAuraSourceId", 0);
+            Scribe_References.Look(ref trialCaster, "empathTrialCaster");
         }
 
         public string labelCap
@@ -48,8 +58,8 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
-            if (spawned && comp != null && comp.IsMagicUser)
+            CompAbilityUserMagic comp = SkillOwner?.GetCompAbilityUserMagic();
+            if (spawned && comp != null && (SourceId != 0 || comp.IsMagicUser))
             {
                 pwrVal = comp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_SuppressiveAura).level;
                 verVal = comp.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_SuppressiveAura).level;
@@ -70,13 +80,15 @@ namespace TorannMagic
             bool flag = base.Pawn != null && base.Pawn.Map != null && !Pawn.InMentalState;
             if (flag)
             {
+                if (SourceId != 0 && SkillOwner == null) { removeNow = true; return; }
                 if(Find.TickManager.TicksGame % this.burdenFrequency == 0)
                 {
-                    this.Pawn.needs.mood.thoughts.memories.TryGainMemory(TorannMagicDefOf.TM_EmotionalWeightTD);
+                    this.Pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(TorannMagicDefOf.TM_EmotionalWeightTD);
                 }
                 if (Find.TickManager.TicksGame % this.eventFrequency == 0)
                 {
-                    this.Initialize();                    
+                    this.Initialize();
+                    if (removeNow) return;
 
                     if (base.Pawn.Map != null)
                     {
@@ -87,7 +99,9 @@ namespace TorannMagic
                             {
                                 if (p != Pawn && !TM_Calc.IsEmpath(p) && Rand.Chance(TM_Calc.GetSpellSuccessChance(Pawn, p, true)))
                                 {
+                                    var trial = ClassProgression.EmpathTrials.CaptureSuppression(this, p);
                                     HealthUtility.AdjustSeverity(p, TorannMagicDefOf.TM_EmotionSuppressionHD, .5f + (.1f * pwrVal));
+                                    ClassProgression.EmpathTrials.CompleteSuppression(trial);
                                     if(p.needs != null)
                                     {
                                         if (p.needs.joy != null)

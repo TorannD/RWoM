@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritChainLightning.reportString>casting chain lightning.</TM_SpiritChainLightning.reportString>
+  <TM_SpiritSummonTotemEarth.reportString>summoning an earth totem.</TM_SpiritSummonTotemEarth.reportString>
+  <TM_SpiritSummonTotemLightning.reportString>summoning a lightning totem.</TM_SpiritSummonTotemLightning.reportString>
+  <TM_SpiritSummonTotemHealing.reportString>summoning a healing totem.</TM_SpiritSummonTotemHealing.reportString>
+  <TM_SpiritEnrage.reportString>casting enrage.</TM_SpiritEnrage.reportString>
+  <TM_SpiritHex.reportString>casting hex.</TM_SpiritHex.reportString>
+  <TM_SpiritHex_I.reportString>casting hex.</TM_SpiritHex_I.reportString>
+  <TM_SpiritHex_II.reportString>casting hex.</TM_SpiritHex_II.reportString>
+  <TM_SpiritHex_III.reportString>casting hex.</TM_SpiritHex_III.reportString>
+  <TM_SpiritHex_Pain.reportString>inflicting pain.</TM_SpiritHex_Pain.reportString>
+  <TM_SpiritHex_CriticalFail.reportString>invoking misfortune.</TM_SpiritHex_CriticalFail.reportString>
+  <TM_SpiritHex_MentalAssault.reportString>assaulting the mind.</TM_SpiritHex_MentalAssault.reportString>
+  <TM_SpiritGuardianSpirit.reportString>summoning a guardian spirit.</TM_SpiritGuardianSpirit.reportString>
+  <TM_SpiritDismissGuardianSpirit.reportString>dismissing a guardian spirit.</TM_SpiritDismissGuardianSpirit.reportString>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ThermalShieldGenerator.label>gerador de escudo térmico</TM_ThermalShieldGenerator.label>
+  <TM_ThermalShieldGenerator.description>Protege contra o frio num raio de 5 células em redor de si e dos sinalizadores de mana ligados, em terra ou no espaço. Usa apenas mana da sua reserva de 100. Apenas um gerador funciona por rede ligada; os restantes ficam em espera. Consome 0,001 de mana por célula fria por segundo (0,1 por segundo para 100 células frias). Com força total, a temperatura efetiva de exposição ao frio é de pelo menos 21°C. Mana insuficiente oferece proteção parcial em direção a 21°C. Não arrefece zonas quentes, não fornece oxigénio nem aquece fisicamente as divisões.</TM_ThermalShieldGenerator.description>
+</LanguageData>

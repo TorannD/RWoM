@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Bard Training -->
+
+  <TM_BardTraining.label>Treino do Bardo</TM_BardTraining.label>
+  <TM_BardTraining.description>Aperfeiçoe a habilidade do bardo, através da formação de artes, comédia, comunicação e inspiração. Cada nível vai alterar a linha do bardo para refletir seu nível de habilidade.
+
+Níveis:
+Conferance: Influência Social + 10%, Negociações + 20%, Comércio + 10%,
+Limite de dor -10%, Carga -10, Velocidade de funcionamento -10%
+
+Executor: Influência Social + 20%, Negociações + 30%, Comércio + 15%,
+Limite de dor -12%, Carga -15, Velocidade de funcionamento -12%
+
+Menestrel: Influência Social + 30%, Negociações + 35%, Comércio + 20%,
+Limite de dor -14%, Carga -18, Velocidade de funcionamento -14%
+
+Bard: Influência Social + 35%, Negociações + 40%, Comércio + 25%,
+Limite de dor -15%, Carga -20, Velocidade de funcionamento -15%</TM_BardTraining.description>
+
+
+  <!-- Entertain -->
+
+  <TM_Entertain.label>Divertir</TM_Entertain.label>
+  <TM_Entertain.description>Divirtam os seus colegas colonos usando uma variedade de técnicas. Esta habilidade consiste em dois componentes: habilidade passiva e habilidade ativa. A habilidade passiva permite que o bardo divirta outros colonos com conversas fugitivas.
+
+Este comando ativa ou desliga a habilidade ativa.
+
+Ativar a capacidade lança a rede na colônia e permite que o bardo detecta os peões problemáticos e tente entretê-los. Bard ganhará pontos de experiência quando a diversão ativa for um sucesso. Manter esta capacidade ativa reduz a manha máxima em 30. Bard executa a diversão como um tipo de trabalho, e vai realizar um entretenimento baseado na prioridade do tipo de trabalho «supervisor».</TM_Entertain.description>
+
+
+  <!-- Inspire -->
+
+  <TM_Inspire.label>Inspirar</TM_Inspire.label>
+  <TM_Inspire.description>O Bard inspira outros peões por perto. Essa capacidade é sempre ativa.</TM_Inspire.description>
+
+
+  <!-- Lullaby -->
+
+  <TM_Lullaby.label>Berço</TM_Lullaby.label>
+  <TM_Lullaby.description>Projeta uma onda emocionalmente apaziguadora que esvazia as preocupações. Pode sedar qualquer ser na área de destino. Não trabalha em mehanoides.</TM_Lullaby.description>
+
+  <TM_Lullaby_I.label>berço (I)</TM_Lullaby_I.label>
+  <TM_Lullaby_I.description>Projeta uma onda emocionalmente apaziguadora que esvazia as preocupações. Pode sedar qualquer ser na área de destino. Não trabalha em mehanoides.</TM_Lullaby_I.description>
+
+  <TM_Lullaby_II.label>Berço (II)</TM_Lullaby_II.label>
+  <TM_Lullaby_II.description>Projeta uma onda emocionalmente apaziguadora que esvazia as preocupações. Pode sedar qualquer ser na área de destino. Não trabalha em mehanoides.</TM_Lullaby_II.description>
+
+  <TM_Lullaby_III.label>Berço</TM_Lullaby_III.label>
+  <TM_Lullaby_III.description>Projeta uma onda emocionalmente apaziguadora que esvazia as preocupações. Pode sedar qualquer ser na área de destino. Não trabalha em mehanoides.</TM_Lullaby_III.description>
+
+
+  <!-- Battle Hymn -->
+
+  <TM_BattleHymn.label>Hino de Guerra</TM_BattleHymn.label>
+  <TM_BattleHymn.description>Toca um hino de guerra incendiário para motivar e potencializar os aliados mais próximos. Cada verso do hino aumenta o efeito e fortalece ainda mais o poder de combate dos aliados. Cada versículo consome 9% de maná extra (reduzido por treinamento).
+
+O hino de guerra tem uma pequena chance de causar inspiração que aumentará ainda mais a capacidade de combate.
+
+Use a habilidade para ativar ou desativar esta habilidade.</TM_BattleHymn.description>
+
+
+</LanguageData>

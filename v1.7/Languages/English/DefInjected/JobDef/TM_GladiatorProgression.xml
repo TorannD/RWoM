@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadGladiatorSprint.reportString>studying the gladiator combat form.</TM_ReadGladiatorSprint.reportString>
+  <TM_ReadGladiatorManeuver.reportString>studying the gladiator combat form.</TM_ReadGladiatorManeuver.reportString>
+  <TM_GladiatorReliefDrill.reportString>relieving an ally.</TM_GladiatorReliefDrill.reportString>
+  <TM_GladiatorCoverAlly.reportString>covering an ally.</TM_GladiatorCoverAlly.reportString>
+  <TM_GladiatorEvacuationDrill.reportString>practising an evacuation.</TM_GladiatorEvacuationDrill.reportString>
+  <TM_GladiatorLastCircle.reportString>preparing the last circle.</TM_GladiatorLastCircle.reportString>
+</LanguageData>

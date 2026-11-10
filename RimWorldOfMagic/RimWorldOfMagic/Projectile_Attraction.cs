@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using AbilityUser;
 using UnityEngine;
 using System.Linq;
@@ -7,19 +7,13 @@ using System;
 
 namespace TorannMagic
 {
-    class Projectile_Attraction : Projectile_AbilityBase
+    class Projectile_Attraction : ClassProgression.Projectile_DemonField
     {
-        int age = -1;
-        int duration = 1200;
-        int verVal = 0;
-        int pwrVal = 0;
-        float arcaneDmg = 1;
+        protected override TMAbilityDef RankSpell => TorannMagicDefOf.TM_Attraction;
+        public Projectile_Attraction() => duration = 1200;
         int strikeDelay = 6;
-        float radius = 5;
-        bool initialized = false;
         List<IntVec3> cellList;
         List<IntVec3> hediffCellList;
-        Pawn pawn;
 
         public override void ExposeData()
         {
@@ -28,84 +22,44 @@ namespace TorannMagic
             Scribe_Values.Look<int>(ref this.age, "age", -1, false);
             Scribe_Values.Look<int>(ref this.duration, "duration", 1800, false);
             Scribe_Values.Look<int>(ref this.strikeDelay, "strikeDelay", 0, false);
-            Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
-            Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
-            Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
             Scribe_Collections.Look<IntVec3>(ref this.cellList, "cellList", LookMode.Value);
             Scribe_Collections.Look<IntVec3>(ref this.hediffCellList, "hediffCellList", LookMode.Value);
         }
 
-        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        protected override void TickField()
         {
-            bool flag = this.age < duration;
-            if (!flag)
-            {
-                base.Destroy(mode);
-            }
-        }
-
-        protected override void Tick()
-        {
-            base.Tick();
-            this.age++;
-        }
-
-        protected override void Impact(Thing hitThing, bool blockedByShield = false)
-        {            
-            base.Impact(hitThing);
-           
-            ThingDef def = this.def;
             Pawn victim = null;
 
             if (!this.initialized)
             {
-                pawn = this.launcher as Pawn;
-                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Attraction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Attraction_pwr");
-                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Attraction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Attraction_ver");
-                
-                pwrVal = pwr.level;
-                verVal = ver.level;
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                {
-                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                    pwrVal = mpwr.level;
-                    verVal = mver.level;
-                }
-                this.arcaneDmg = comp.arcaneDmg;
-                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-                {
-                    pwrVal = 3;
-                    verVal = 3;
-                }
+                InitializeRanks(TorannMagicDefOf.TM_Attraction);
+                if (SkillOwner == null) { Destroy(); return; }
                 this.duration = this.duration + (120 * verVal);
-                this.strikeDelay = this.strikeDelay - verVal;
-                this.radius = this.def.projectile.explosionRadius + (1.5f * pwrVal);
-                //GenExplosion.DoExplosion(base.Position, this.Map, this.radius, TMDamageDefOf.DamageDefOf.TM_Shadow, this.pawn, (int)((this.def.projectile.GetDamageAmount(1, null) * (1 + .15 * pwrVal)) * this.arcaneDmg * Rand.Range(.75f, 1.25f)), 0, TorannMagicDefOf.TM_SoftExplosion, def, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                this.strikeDelay = Math.Max(1,this.strikeDelay - verVal);
+                float radius = this.def.projectile.explosionRadius + (1.5f * pwrVal);
 
                 this.initialized = true;
                 IEnumerable<IntVec3> hediffCells = GenRadial.RadialCellsAround(base.Position, 2, true);
                 hediffCellList = hediffCells.ToList<IntVec3>();
-                IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(base.Position, this.radius, false).Except(hediffCells);
+                IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(base.Position, radius, false).Except(hediffCells);
                 cellList = targets.ToList<IntVec3>();
                 for(int i = 0; i < cellList.Count(); i ++)
                 {
-                    if (cellList[i].IsValid && cellList[i].InBoundsWithNullCheck(pawn.Map))
+                    if (cellList[i].IsValid && cellList[i].InBoundsWithNullCheck(Map))
                     {
-                        victim = cellList[i].GetFirstPawn(pawn.Map);
+                        victim = cellList[i].GetFirstPawn(Map);
                         if (victim != null && !victim.Dead && !victim.Downed)
                         {
-                            HealthUtility.AdjustSeverity(victim, TorannMagicDefOf.TM_GravitySlowHD, .5f);
+                            ClassProgression.DemonTrials.AdjustSlow(this, victim, .5f);
                         }
                     }
                 }
             }
-            IntVec3 curCell = cellList.RandomElement();
+            IntVec3 curCell;
             //Vector3 angle = GetVector(base.Position, curCell);
             //TM_MoteMaker.ThrowArcaneWaveMote(curCell.ToVector3(), base.Map, .4f * (curCell - base.Position).LengthHorizontal, .1f, .05f, .5f, 0, Rand.Range(1, 2), (Quaternion.AngleAxis(90, Vector3.up) * angle).ToAngleFlat(), (Quaternion.AngleAxis(-90, Vector3.up) * angle).ToAngleFlat());
 
-            if (Find.TickManager.TicksGame % this.strikeDelay == 0 && this.Map != null)
+            if (Find.TickManager.TicksGame % Math.Max(1,this.strikeDelay) == 0 && this.Map != null)
             {
                 if (this.pwrVal == 0)
                 {
@@ -133,16 +87,17 @@ namespace TorannMagic
                 }
                 for (int i = 0; i < 3; i++)
                 {
+                    if (cellList.Count == 0) break;
                     curCell = cellList.RandomElement();
                     if (curCell.IsValid && curCell.InBoundsWithNullCheck(base.Map))
                     {
                         victim = curCell.GetFirstPawn(base.Map);
                         if (victim != null && !victim.Dead && victim.RaceProps.IsFlesh && victim != this.pawn)
                         {                            
-                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.pawn, victim) - .4f))
+                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(SkillOwner, victim) - .4f))
                             {
                                 Vector3 launchVector = GetVector(base.Position, victim.Position);
-                                HealthUtility.AdjustSeverity(victim, TorannMagicDefOf.TM_GravitySlowHD, (.4f + (.1f * verVal)));
+                                ClassProgression.DemonTrials.AdjustSlow(this, victim, (.4f + (.1f * verVal)));
                                 LaunchFlyingObect(victim.Position + (2f * (1 + (.4f * pwrVal)) * launchVector).ToIntVec3(), victim);
                             }
                         }
@@ -160,9 +115,9 @@ namespace TorannMagic
                         victim = curCell.GetFirstPawn(base.Map);
                         if (victim != null && !victim.Dead && victim != this.pawn)
                         {
-                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.pawn, victim) - .4f))
+                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(SkillOwner, victim) - .4f))
                             {
-                                HealthUtility.AdjustSeverity(victim, TorannMagicDefOf.TM_GravitySlowHD, .3f + (.1f * verVal));
+                                ClassProgression.DemonTrials.AdjustSlow(this, victim, .3f + (.1f * verVal));
                             }
                         }
                     }
@@ -175,7 +130,7 @@ namespace TorannMagic
             bool flag = targetCell.IsValid && targetCell != default(IntVec3);
             if (flag)
             {
-                if (pawn != null && pawn.Position.IsValid && pawn.Spawned && pawn.Map != null && !pawn.Downed && !pawn.Dead)
+                if (pawn != null && pawn.Spawned && targetCell != pawn.Position && targetCell.InBounds(pawn.Map) && !pawn.Downed && !pawn.Dead)
                 {
                     if (ModCheck.Validate.GiddyUp.Core_IsInitialized())
                     {
@@ -190,9 +145,7 @@ namespace TorannMagic
         public Vector3 GetVector(IntVec3 center, IntVec3 objectPos)
         {
             Vector3 heading = (center - objectPos).ToVector3();
-            float distance = heading.magnitude;
-            Vector3 direction = heading / distance;
-            return direction;
+            return heading.normalized;
         }
 
         public void damageEntities(Pawn e, float d, DamageDef type)

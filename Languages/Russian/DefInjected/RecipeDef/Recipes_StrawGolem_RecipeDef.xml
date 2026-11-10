@@ -1,0 +1,60 @@
+<LanguageData><!-- v1.5\Defs\GolemDefs\Recipes_StrawGolem.xml-->
+	<!--                         EN: Part restoration-->
+	<TM_StrawGolem_RepairBlock.label>Ремонт компонентов</TM_StrawGolem_RepairBlock.label>
+	<!--                               EN: Replaces missing golem parts that do not require an upgrade.-->
+	<TM_StrawGolem_RepairBlock.description>Заменяет отсутствующие части голема, не требующие улучшения.</TM_StrawGolem_RepairBlock.description>
+	<!--                             EN: crafting golem part-->
+	<TM_StrawGolem_RepairBlock.jobString>изготовление части голема</TM_StrawGolem_RepairBlock.jobString>
+	<!--                       EN: energy cell-->
+	<TM_StrawGolem_EnergyMax.label>Энергоячейка</TM_StrawGolem_EnergyMax.label>
+	<!--                             EN: Creates an energy cell that increases maximum energy by 100 per cell.-->
+	<TM_StrawGolem_EnergyMax.description>Создаёт энергоячейку, увеличивающую максимальный запас энергии на 100 единиц.</TM_StrawGolem_EnergyMax.description>
+	<!--                           EN: creating energy cell-->
+	<TM_StrawGolem_EnergyMax.jobString>создание энергоячейки</TM_StrawGolem_EnergyMax.jobString>
+	<!--                             EN: energy converter-->
+	<TM_StrawGolem_EnergyConverter.label>Энергоконвертер</TM_StrawGolem_EnergyConverter.label>
+	<!--                                   EN: Increases the efficiency of energy absorbed and used by the golem by 6%.-->
+	<TM_StrawGolem_EnergyConverter.description>Увеличивает эффективность поглощения и использования энергии големом на 6%.</TM_StrawGolem_EnergyConverter.description>
+	<!--                                 EN: constructing energy converter-->
+	<TM_StrawGolem_EnergyConverter.jobString>сборка энергоконвертера</TM_StrawGolem_EnergyConverter.jobString>
+	<!--                         EN: energy generator-->
+	<TM_StrawGolem_EnergyRegen.label>Генератор энергии</TM_StrawGolem_EnergyRegen.label>
+	<!--                               EN: Increases the energy regeneration rate of the golem by 20%.-->
+	<TM_StrawGolem_EnergyRegen.description>Увеличивает скорость восстановления энергии голема на 20%.</TM_StrawGolem_EnergyRegen.description>
+	<!--                             EN: constructing energy generator-->
+	<TM_StrawGolem_EnergyRegen.jobString>сборка генератора энергии</TM_StrawGolem_EnergyRegen.jobString>
+	<!--                   EN: Armor-->
+	<TM_StrawGolem_Armor.label>Броня</TM_StrawGolem_Armor.label>
+	<!--                         EN: Each upgrade increases the armor of the golem per level [1,2,3]:
+Blunt:	+[6,11,15]%
+Sharp:	+[5,9,13]%
+Heat:	+[4,7,10]%-->
+	<TM_StrawGolem_Armor.description>Каждое улучшение повышает защиту голема по уровням [1,2,3]:
+Дробящая:	+[6,11,15]%
+Режущая:	+[5,9,13]%
+Термическая:	+[4,7,10]%</TM_StrawGolem_Armor.description>
+	<!--                       EN: crafting golem part-->
+	<TM_StrawGolem_Armor.jobString>изготовление части голема</TM_StrawGolem_Armor.jobString>
+	<!--                       EN: frame tier-->
+	<TM_StrawGolem_LifeStage.label>Уровень каркаса</TM_StrawGolem_LifeStage.label>
+	<!--                             EN: Improves and refines the golem's frame each level [1,2,3]:
+Movement:	+[20/30/40]%
+Health:		+[20/40/50]%-->
+	<TM_StrawGolem_LifeStage.description>Улучшает и модернизирует каркас голема на каждом уровне [1,2,3]:
+Скорость:	+[20/30/40]%
+Здоровье:	+[20/40/50]%</TM_StrawGolem_LifeStage.description>
+	<!--                           EN: improving golem frame-->
+	<TM_StrawGolem_LifeStage.jobString>улучшение каркаса голема</TM_StrawGolem_LifeStage.jobString>
+	<!--                       EN: Scarecrow-->
+	<TM_StrawGolem_Scarecrow.label>Пугало</TM_StrawGolem_Scarecrow.label>
+	<!--                             EN: The straw golem wards off unwanted pests to increase the growing speed of nearby plants.-->
+	<TM_StrawGolem_Scarecrow.description>Соломенный голем отпугивает вредителей, увеличивая скорость роста ближайших растений.</TM_StrawGolem_Scarecrow.description>
+	<!--                           EN: crafting golem upgrade-->
+	<TM_StrawGolem_Scarecrow.jobString>изготовление улучшения голема</TM_StrawGolem_Scarecrow.jobString>
+	<!--                  EN: Farming-->
+	<TM_StrawGolem_Seed.label>Фермерство</TM_StrawGolem_Seed.label>
+	<!--                        EN: Enhances the farming (plants) skill of the golem by 2.-->
+	<TM_StrawGolem_Seed.description>Повышает навык растениеводства голема на 2 уровня.</TM_StrawGolem_Seed.description>
+	<!--                      EN: crafting golem upgrade-->
+	<TM_StrawGolem_Seed.jobString>изготовление улучшения голема</TM_StrawGolem_Seed.jobString>
+</LanguageData>

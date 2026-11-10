@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadApothecaryHerbalist>Study field harvesting</TM_ReadApothecaryHerbalist>
+  <TM_ReadApothecaryFreshStock>Study fresh stock</TM_ReadApothecaryFreshStock>
+  <TM_ApothecaryGatherInfo>Harvest yields +5%.</TM_ApothecaryGatherInfo>
+  <TM_ApothecaryFreshInfo>Herb spoilage −10%.</TM_ApothecaryFreshInfo>
+  <TM_ApothecaryStock>Herbs: {0}/{1}</TM_ApothecaryStock>
+  <TM_ApothecaryTrialGather>Harvest 30 different healthy, mature plants and gain herbs ({0}/30).</TM_ApothecaryTrialGather>
+  <TM_ApothecaryTrialTreat>Treat 20 distinct recent wounds ({0}/20) or relieve 12 food poisonings with antitoxin ({1}/12).</TM_ApothecaryTrialTreat>
+  <TM_ApothecaryTrialShift>Complete 12 days of medical service ({0}/12). Ascension requires might level 30 ({1}/30).</TM_ApothecaryTrialShift>
+  <TM_ApothecaryClaim>Claim next stage</TM_ApothecaryClaim>
+  <TM_ApothecaryKitUnavailable>Requires four herbal medicines within reach and 60% herbs.</TM_ApothecaryKitUnavailable>
+  <TM_ApothecaryAntitoxinLow>Requires 20% herbs.</TM_ApothecaryAntitoxinLow>
+</LanguageData>

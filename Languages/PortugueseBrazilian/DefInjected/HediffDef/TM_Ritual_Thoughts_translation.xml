@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SEVER MAGIC -->
+
+  <TM_MagicSeverenceHD.label>Separação mágica</TM_MagicSeverenceHD.label>
+  <TM_MagicSeverenceHD.description>Este peão recentemente perdeu o contacto com a magia e sofrerá com a perda de direção e propósito até conseguir preencher o vazio com outro objetivo.</TM_MagicSeverenceHD.description>
+  <TM_MagicSeverenceHD.stages.0.label></TM_MagicSeverenceHD.stages.0.label>
+
+
+  <!-- BESTOW MAGIC -->
+
+  <TM_BestowMagicClassHD.label>Dom da magia</TM_BestowMagicClassHD.label>
+  <TM_BestowMagicClassHD.description>Este peão foi recentemente dado a uma faísca de magia.</TM_BestowMagicClassHD.description>
+  <TM_BestowMagicClassHD.stages.0.label></TM_BestowMagicClassHD.stages.0.label>
+
+
+</LanguageData>

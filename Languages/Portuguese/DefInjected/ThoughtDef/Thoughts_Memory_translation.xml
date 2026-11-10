@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- ah, the memories -->
+
+  <TM_TakingOrdersTD.stages.0.label>aceito pedidos</TM_TakingOrdersTD.stages.0.label>
+  <TM_TakingOrdersTD.stages.0.description>Outro peão deu-me ordens. Pode ser irritante.</TM_TakingOrdersTD.stages.0.description>
+
+  <RangerSoldBondedPet.stages.0.label>Vendido Animal Associado</RangerSoldBondedPet.stages.0.label>
+  <RangerSoldBondedPet.stages.0.description>Deixei-me vender o meu satélite animal como escravo. O reino animal não me perdoará em breve. (a comunicação com animais foi desligada enquanto este efeito de humor estiver ativo)</RangerSoldBondedPet.stages.0.description>
+
+  <RangerPetDied.stages.0.label>Animal amarrado morto</RangerPetDied.stages.0.label>
+  <RangerPetDied.stages.0.description>O meu fiel companheiro animal morreu. Sinto que perdi um pedaço de mim mesmo.</RangerPetDied.stages.0.description>
+
+  <Polymorphed.stages.0.label>polimórfico contra a vontade</Polymorphed.stages.0.label>
+  <Polymorphed.stages.0.description>Fui polimorfizado e forçado a existir no corpo de um animal, como é desumano.</Polymorphed.stages.0.description>
+
+  <Polymorphed_Transhumanist.stages.0.label>polimórfico!</Polymorphed_Transhumanist.stages.0.label>
+  <Polymorphed_Transhumanist.stages.0.description>Fui transformado num animal selvagem e foi incrível!</Polymorphed_Transhumanist.stages.0.description>
+
+  <WarlockEmpathy.stages.0.label>Empatia</WarlockEmpathy.stages.0.label>
+  <WarlockEmpathy.stages.0.description>Posso sentir a emoção de quem me rodeia.</WarlockEmpathy.stages.0.description>
+
+  <PsychicEmpathy.stages.0.label>Empatia</PsychicEmpathy.stages.0.label>
+  <PsychicEmpathy.stages.0.description>Não sei explicar porque estou a sentir emoções tão fortes.</PsychicEmpathy.stages.0.description>
+
+  <TM_MemoryWipe.stages.0.label>de novo</TM_MemoryWipe.stages.0.label>
+  <TM_MemoryWipe.stages.0.description>Não me lembro dos últimos dias. Talvez seja melhor.</TM_MemoryWipe.stages.0.description>
+
+  <AteMysteryMeatDirect.stages.0.label>comeu carne de minion</AteMysteryMeatDirect.stages.0.label>
+  <AteMysteryMeatDirect.stages.0.description>Comi uma espécie de carne misteriosa nojenta de um mignon morto. Estava misturado com sujeira e outras coisas em decomposição que eu não conseguia identificar. Foi mesmo uma unha?</AteMysteryMeatDirect.stages.0.description>
+
+  <AteMysteryMeatAsIngredient.stages.0.label>comeu carne de minião cozida</AteMysteryMeatAsIngredient.stages.0.label>
+  <AteMysteryMeatAsIngredient.stages.0.description>Comi um almoço feito com carne de mignon. Nenhum tipo de adição ou especiaria pode ter evitado a impressão de que estou a comer algo nojento.</AteMysteryMeatAsIngredient.stages.0.description>
+
+  <TM_PhantomLimb.stages.0.label>membro fantasma</TM_PhantomLimb.stages.0.label>
+  <TM_PhantomLimb.stages.0.description>Estas partes do corpo são mesmo minhas? Sinto-me um convidado no meu próprio corpo.</TM_PhantomLimb.stages.0.description>
+
+  <TM_PleasantDreamsTD.stages.0.label>sonhos agradáveis</TM_PleasantDreamsTD.stages.0.label>
+  <TM_PleasantDreamsTD.stages.0.description>Os meus sonhos estão cheios de memórias e acontecimentos que me fazem feliz.</TM_PleasantDreamsTD.stages.0.description>
+
+  <TM_BrightDayTD.stages.0.label>Dia de luz</TM_BrightDayTD.stages.0.label>
+  <TM_BrightDayTD.stages.0.description>O Espírito da Luz iluminou o meu dia.</TM_BrightDayTD.stages.0.description>
+
+
+</LanguageData>

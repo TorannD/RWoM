@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Partial Scripts -->
+
+  <BookOfQuestion.label>Таємний Скрипт: ???</BookOfQuestion.label>
+  <BookOfQuestion.description>Вчить обдаровану пішаку, як використовувати магічні сили...</BookOfQuestion.description>
+  <BookOfQuestion.comps.0.useLabel>Читати</BookOfQuestion.comps.0.useLabel>
+
+  <Torn_BookOfInnerFire.label>Порваний рукопис: Маг вогню</Torn_BookOfInnerFire.label>
+  <Torn_BookOfInnerFire.description>Навчає обдарованих пешкек, як використовувати стихію вогню.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfInnerFire.description>
+  <Torn_BookOfInnerFire.comps.0.useLabel>Читати</Torn_BookOfInnerFire.comps.0.useLabel>
+
+  <Torn_BookOfHeartOfFrost.label>Порваний рукопис: Маг льоду</Torn_BookOfHeartOfFrost.label>
+  <Torn_BookOfHeartOfFrost.description>Навчає обдарованих пешкек, як використовувати стихію льоду і води.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfHeartOfFrost.description>
+  <Torn_BookOfHeartOfFrost.comps.0.useLabel>Читати</Torn_BookOfHeartOfFrost.comps.0.useLabel>
+
+  <Torn_BookOfStormBorn.label>Порваний рукопис: Маг блискавок</Torn_BookOfStormBorn.label>
+  <Torn_BookOfStormBorn.description>Навчає обдарованих пешкек, як використовувати стихію блискавки.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfStormBorn.description>
+  <Torn_BookOfStormBorn.comps.0.useLabel>Читати</Torn_BookOfStormBorn.comps.0.useLabel>
+
+  <Torn_BookOfArcanist.label>Порваний рукопис: Маг таємної магії</Torn_BookOfArcanist.label>
+  <Torn_BookOfArcanist.description>Навчає обдарованих пешкек, як використовувати таємну силу.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) таємні заклинання.</Torn_BookOfArcanist.description>
+  <Torn_BookOfArcanist.comps.0.useLabel>Читати</Torn_BookOfArcanist.comps.0.useLabel>
+
+  <Torn_BookOfValiant.label>Порваний рукопис: Паладін</Torn_BookOfValiant.label>
+  <Torn_BookOfValiant.description>Навчає обдарованих пешкек, як використовувати святу силу.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfValiant.description>
+  <Torn_BookOfValiant.comps.0.useLabel>Читати</Torn_BookOfValiant.comps.0.useLabel>
+
+  <Torn_BookOfSummoner.label>Порваний рукопис: Призовник</Torn_BookOfSummoner.label>
+  <Torn_BookOfSummoner.description>Навчає обдарованих пешкек, як закликати потойбічні сили і керувати ними в різних вимірах.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfSummoner.description>
+  <Torn_BookOfSummoner.comps.0.useLabel>Читати</Torn_BookOfSummoner.comps.0.useLabel>
+
+  <Torn_BookOfNature.label>Порваний рукопис: Друїд</Torn_BookOfNature.label>
+  <Torn_BookOfNature.description>Навчає обдарованих пешкек, як використовувати стихію природи.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfNature.description>
+  <Torn_BookOfNature.comps.0.useLabel>Читати</Torn_BookOfNature.comps.0.useLabel>
+
+  <Torn_BookOfUndead.label>Порваний рукопис: Некромантія</Torn_BookOfUndead.label>
+  <Torn_BookOfUndead.description>Навчає обдарованих пешкек, як керувати силами життя і смерті. некромант може стати особистим на більш пізньому етапі, личі нездатні до будь-якої діяльності, крім боротьби і досліджень. Багато інших магічних класів не люблять некромантів. Будьте пильні.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfUndead.description>
+  <Torn_BookOfUndead.comps.0.useLabel>Читати</Torn_BookOfUndead.comps.0.useLabel>
+
+  <Torn_BookOfPriest.label>Порваний рукопис: Священик</Torn_BookOfPriest.label>
+  <Torn_BookOfPriest.description>Навчає обдарованих пешкек, як дарувати сили життя і зцілення. Священики не здатні до насильства.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfPriest.description>
+  <Torn_BookOfPriest.comps.0.useLabel>Читати</Torn_BookOfPriest.comps.0.useLabel>
+
+  <Torn_BookOfBard.label>Порваний рукопис: Бард</Torn_BookOfBard.label>
+  <Torn_BookOfBard.description>Навчає обдарованих пешкек, як стати професійним бардом. Барди не пристосовані звичайній праці, і цей тип роботи буде відключений.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfBard.description>
+  <Torn_BookOfBard.comps.0.useLabel>Читати</Torn_BookOfBard.comps.0.useLabel>
+
+  <Torn_BookOfDemons.label>Порваний рукопис: Демонологія</Torn_BookOfDemons.label>
+  <Torn_BookOfDemons.description>Детально описано процес укладення угоди з демоном для отримання влади. Цей договір пов&apos;язує покровителя, в буквальному сенсі, з демонічною сутністю, яка впливає на їх генетичний склад. Це зв&apos;язування впливає на чоловіків і жінок по-різному. Демони погоджуються на контракт тільки в тому випадку, якщо користувач володіє магічним даром.
+
+Примітка, нацарапанное в нижній частині першої сторінки * цей сценарій не зовсім ясний, що саме демон отримує від угоди... використовуйте з обережністю.
+
+Цей таінстенний скрипт є неповним і не пояснює весь процес укладення контракту; результат може не відразу забезпечити повний доступ до всіх здібностей.</Torn_BookOfDemons.description>
+  <Torn_BookOfDemons.comps.0.useLabel>Читати</Torn_BookOfDemons.comps.0.useLabel>
+
+  <Torn_BookOfEarth.label>Порваний рукопис: Геомант</Torn_BookOfEarth.label>
+  <Torn_BookOfEarth.description>Навчає обдарованих пешкек, як поєднувати закони фізики і магію разом
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfEarth.description>
+  <Torn_BookOfEarth.comps.0.useLabel>Читати</Torn_BookOfEarth.comps.0.useLabel>
+
+  <Torn_BookOfMagitech.label>Порваний рукопис: Техномант</Torn_BookOfMagitech.label>
+  <Torn_BookOfMagitech.description>Вчить обдарований пішак шляхам Техноманта, здатного бачити зв&apos;язок між наукою і магією.
+Цей таємничий скрипт є неповним, і читач не дізнається жодних допоміжних здібностей техномагів, але все ж може вибрати свій основний шлях техномагії.</Torn_BookOfMagitech.description>
+  <Torn_BookOfMagitech.comps.0.useLabel>Читати</Torn_BookOfMagitech.comps.0.useLabel>
+
+  <Torn_BookOfHemomancy.label>Порваний рукопис: Маг крові</Torn_BookOfHemomancy.label>
+  <Torn_BookOfHemomancy.description>Вчить обдаровану пішаку, як стати гемомантом, або магом крові, і використовувати силу крові для підживлення своєї магії.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfHemomancy.description>
+  <Torn_BookOfHemomancy.comps.0.useLabel>Читати</Torn_BookOfHemomancy.comps.0.useLabel>
+
+  <Torn_BookOfEnchanter.label>Порваний рукопис: Чаклун</Torn_BookOfEnchanter.label>
+  <Torn_BookOfEnchanter.description>Навчає обдарованого пішака, як стати чаклуном, здатним маніпулювати матерією і матеріалом, щоб служити своїй меті.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfEnchanter.description>
+  <Torn_BookOfEnchanter.comps.0.useLabel>Читати</Torn_BookOfEnchanter.comps.0.useLabel>
+
+  <Torn_BookOfChronomancer.label>Порваний рукопис: Хрономант</Torn_BookOfChronomancer.label>
+  <Torn_BookOfChronomancer.description>Вчить обдаровану пішаку, як стати хрономантом, здатним бачити і маніпулювати реальностями в часі.
+Цей таємничий скрипт є неповним, і читач, можливо, не зможе дізнатися деякі (або навіть всі) заклинання.</Torn_BookOfChronomancer.description>
+  <Torn_BookOfChronomancer.comps.0.useLabel>Читати</Torn_BookOfChronomancer.comps.0.useLabel>
+
+  <Torn_BookOfChaos.label>Порваний рукопис: Хаос маг</Torn_BookOfChaos.label>
+  <Torn_BookOfChaos.description>Вчить обдаровану пішаку традиціям хаосу.</Torn_BookOfChaos.description>
+  <Torn_BookOfChaos.comps.0.useLabel>Читати</Torn_BookOfChaos.comps.0.useLabel>
+
+  <Torn_BookOfTheSun.label>Порваний рукопис: Маг світла</Torn_BookOfTheSun.label>
+  <Torn_BookOfTheSun.description>Вчить обдаровану пішаку, як стати магом світла. Маги світла маніпулюють силою сонячного світла, створюючи потужну, руйнівну магію.</Torn_BookOfTheSun.description>
+  <Torn_BookOfTheSun.comps.0.useLabel>Читати</Torn_BookOfTheSun.comps.0.useLabel>
+
+  <Torn_BookOfShamanism.label>Порваний рукопис: Шаман.</Torn_BookOfShamanism.label>
+  <Torn_BookOfShamanism.description>Вчить обдаровану пішаку, як стати шаманом; вождь племені зосередився на ритуальній магії, щоб створювати могутні прокляття і чари, і розширює їх вплив через тотеми.</Torn_BookOfShamanism.description>
+  <Torn_BookOfShamanism.comps.0.useLabel>Читати</Torn_BookOfShamanism.comps.0.useLabel>
+
+  <Torn_BookOfGolemancy.label>Порваний рукопис: Големант</Torn_BookOfGolemancy.label>
+  <Torn_BookOfGolemancy.description>Вчить обдаровану пішаку, як стати големантом; маг-затворник, який спрямовує таємну енергію в звичайні предмети, використовуючи символи і руни.</Torn_BookOfGolemancy.description>
+  <Torn_BookOfGolemancy.comps.0.useLabel>Читати</Torn_BookOfGolemancy.comps.0.useLabel>
+
+
+  <!-- Arcane Scripts -->
+
+  <BookOfInnerFire.label>Таємна збірка: Маг вогню</BookOfInnerFire.label>
+  <BookOfInnerFire.description>Навчає обдарованих пешкек, як використовувати стихію вогню.</BookOfInnerFire.description>
+  <BookOfInnerFire.comps.0.useLabel>Читати</BookOfInnerFire.comps.0.useLabel>
+
+  <BookOfHeartOfFrost.label>Таємна збірка: Маг льоду</BookOfHeartOfFrost.label>
+  <BookOfHeartOfFrost.description>Навчає обдарованих пешкек, як використовувати стихію льоду і води.</BookOfHeartOfFrost.description>
+  <BookOfHeartOfFrost.comps.0.useLabel>Читати</BookOfHeartOfFrost.comps.0.useLabel>
+
+  <BookOfStormBorn.label>Таємна збірка: Маг блискавок</BookOfStormBorn.label>
+  <BookOfStormBorn.description>Навчає обдарованих пешкек, як використовувати стихію льоду.</BookOfStormBorn.description>
+  <BookOfStormBorn.comps.0.useLabel>Читати</BookOfStormBorn.comps.0.useLabel>
+
+  <BookOfArcanist.label>Таємна збірка: Маг таємної магії</BookOfArcanist.label>
+  <BookOfArcanist.description>Навчає обдарованих пешкек, як використовувати таємну силу.</BookOfArcanist.description>
+  <BookOfArcanist.comps.0.useLabel>Читати</BookOfArcanist.comps.0.useLabel>
+
+  <BookOfValiant.label>Божественна збірка: Паладін</BookOfValiant.label>
+  <BookOfValiant.description>Вчить обдаровану пішаку, як стати паладином.</BookOfValiant.description>
+  <BookOfValiant.comps.0.useLabel>Читати</BookOfValiant.comps.0.useLabel>
+
+  <BookOfSummoner.label>Таємна збірка: Призовник</BookOfSummoner.label>
+  <BookOfSummoner.description>Вчить обдаровану пішаку, як стати призовником.</BookOfSummoner.description>
+  <BookOfSummoner.comps.0.useLabel>Читати</BookOfSummoner.comps.0.useLabel>
+
+  <BookOfDruid.label>Таємна збірка: Друїд</BookOfDruid.label>
+  <BookOfDruid.description>Вчить обдарований пішак, як стати Друїдом.</BookOfDruid.description>
+  <BookOfDruid.comps.0.useLabel>Читати</BookOfDruid.comps.0.useLabel>
+
+  <BookOfNecromancer.label>Таємна збірка: Некромантія</BookOfNecromancer.label>
+  <BookOfNecromancer.description>Вчить обдаровану пішаку, як стати Некромантом * Примітка: некромант може стати особистим на більш пізньому етапі, личі нездатні до будь-якої діяльності, крім боротьби і досліджень. Багато інших магічних класів не люблять некромантів. Будьте пильні.</BookOfNecromancer.description>
+  <BookOfNecromancer.comps.0.useLabel>Читати</BookOfNecromancer.comps.0.useLabel>
+
+  <BookOfPriest.label>Таємна збірка: Священик</BookOfPriest.label>
+  <BookOfPriest.description>Навчає обдарований пішак, як стати священиком. Священики не здатні до насильства.</BookOfPriest.description>
+  <BookOfPriest.comps.0.useLabel>Читати</BookOfPriest.comps.0.useLabel>
+
+  <BookOfBard.label>Таємна збірка: Бард</BookOfBard.label>
+  <BookOfBard.description>Вчить обдаровану пішаку, як стати бардом. Барди не здатні виконувати звичайну працю.</BookOfBard.description>
+  <BookOfBard.comps.0.useLabel>Читати</BookOfBard.comps.0.useLabel>
+
+  <BookOfDemons.label>Таємна збірка: Демонологія</BookOfDemons.label>
+  <BookOfDemons.description>Детально описано процес укладення угоди з демоном для отримання влади. Цей договір пов&apos;язує покровителя, в буквальному сенсі, з демонічною сутністю, яка впливає на їх генетичний склад. Це зв&apos;язування впливає на чоловіків і жінок по-різному. Демони погоджуються на контракт тільки в тому випадку, якщо користувач володіє магічним даром.
+
+Примітка, нацарапанное в нижній частині першої сторінки * цей сценарій не зовсім зрозумілий, що саме демон отримує від угоди... використовуйте з обережністю.</BookOfDemons.description>
+  <BookOfDemons.comps.0.useLabel>Читати</BookOfDemons.comps.0.useLabel>
+
+  <BookOfEarth.label>Таємна збірка: Геомант</BookOfEarth.label>
+  <BookOfEarth.description>Вчить обдаровану пішаку володіти землею, поєднуючи і змінюючи фізичні закони.</BookOfEarth.description>
+  <BookOfEarth.comps.0.useLabel>Читати</BookOfEarth.comps.0.useLabel>
+
+  <BookOfMagitech.label>Таємна збірка: Техномант</BookOfMagitech.label>
+  <BookOfMagitech.description>Вчить обдарований пішак шляхам Техноманта, здатного бачити зв&apos;язок між наукою і магією.</BookOfMagitech.description>
+  <BookOfMagitech.comps.0.useLabel>Читати</BookOfMagitech.comps.0.useLabel>
+
+  <BookOfHemomancy.label>Таємна збірка: Маг крові</BookOfHemomancy.label>
+  <BookOfHemomancy.description>Вчить обдаровану пішаку, як стати гемомантом, він же маг крові, що використовує кров для посилення магії.</BookOfHemomancy.description>
+  <BookOfHemomancy.comps.0.useLabel>Читати</BookOfHemomancy.comps.0.useLabel>
+
+  <BookOfEnchanter.label>Таємна збірка: Чаклун</BookOfEnchanter.label>
+  <BookOfEnchanter.description>Навчає обдарованого пішака, як стати чаклуном, здатним маніпулювати матерією і матеріалом, щоб служити своїй меті.</BookOfEnchanter.description>
+  <BookOfEnchanter.comps.0.useLabel>Читати</BookOfEnchanter.comps.0.useLabel>
+
+  <BookOfChronomancer.label>Таємна збірка: Хрономант</BookOfChronomancer.label>
+  <BookOfChronomancer.description>Вчить обдаровану пішаку, як стати хрономантом, маніпулюючим реальністю.</BookOfChronomancer.description>
+  <BookOfChronomancer.comps.0.useLabel>Читати</BookOfChronomancer.comps.0.useLabel>
+
+  <BookOfChaos.label>Таємна збірка: Хаос маг</BookOfChaos.label>
+  <BookOfChaos.description>Вчить обдаровану пішаку, як стати магом хаосу - адептом всіх магічних класів.</BookOfChaos.description>
+  <BookOfChaos.comps.0.useLabel>Читати</BookOfChaos.comps.0.useLabel>
+
+  <BookOfTheSun.label>Таємна збірка: Маг світла</BookOfTheSun.label>
+  <BookOfTheSun.description>Вчить обдаровану пішаку, як стати магом світла. Маги світла маніпулюють силою сонячного світла, створюючи потужну, руйнівну магію.</BookOfTheSun.description>
+  <BookOfTheSun.comps.0.useLabel>Читати</BookOfTheSun.comps.0.useLabel>
+
+  <BookOfShamanism.label>Таємна збірка: Шаман.</BookOfShamanism.label>
+  <BookOfShamanism.description>Вчить обдаровану пішаку, як стати шаманом; вождь племені зосередився на ритуальній магії, щоб створювати могутні прокляття і чари, і розширює їх вплив через тотеми.</BookOfShamanism.description>
+  <BookOfShamanism.comps.0.useLabel>Читати</BookOfShamanism.comps.0.useLabel>
+
+  <BookOfGolemancy.label>Таємна збірка: Големант</BookOfGolemancy.label>
+  <BookOfGolemancy.description>Вчить обдаровану пішаку, як стати големантом; маг-затворник, який спрямовує таємну енергію в звичайні предмети, використовуючи символи і руни.</BookOfGolemancy.description>
+  <BookOfGolemancy.comps.0.useLabel>Читати</BookOfGolemancy.comps.0.useLabel>
+
+
+  <!-- Combat Forms -->
+
+  <BookOfGladiator.label>Бойова форма: Гладіатор</BookOfGladiator.label>
+  <BookOfGladiator.description>Вчить фізично майстерну пішаку, як навчитися мистецтву гладіатора.</BookOfGladiator.description>
+  <BookOfGladiator.comps.0.useLabel>Читати</BookOfGladiator.comps.0.useLabel>
+
+  <BookOfPsionic.label>Бойова сила: Псионик</BookOfPsionic.label>
+  <BookOfPsionic.description>Вчить фізично майстерну пішаку, як використовувати псіонічну енергію.
+
+* внизу сторінки вугіллям вигравірувано виноску: &quot;здається, тільки ті, хто володіє високою психічною чутливістю, можуть навчитися маніпулювати псіонічною енергією... або це, або знайти спосіб для швидкого початку психічної діяльності &quot;</BookOfPsionic.description>
+  <BookOfPsionic.comps.0.useLabel>Читати</BookOfPsionic.comps.0.useLabel>
+
+  <BookOfFaceless.label>Бойова форма: Безликий</BookOfFaceless.label>
+  <BookOfFaceless.description>Вчить фізично майстерну пішаку, як адаптувати свою форму і стиль бою для будь-якої ситуації</BookOfFaceless.description>
+  <BookOfFaceless.comps.0.useLabel>Читати</BookOfFaceless.comps.0.useLabel>
+
+  <BookOfSniper.label>Бойовий стиль: Снайпер</BookOfSniper.label>
+  <BookOfSniper.description>Вчить фізично майстерну пішаку, як бути найвлучнішим стрільцем.</BookOfSniper.description>
+  <BookOfSniper.comps.0.useLabel>Читати</BookOfSniper.comps.0.useLabel>
+
+  <BookOfBladedancer.label>Бойовий стиль: Танцюючий з клинками</BookOfBladedancer.label>
+  <BookOfBladedancer.description>Вчить фізично майстерну пішаку, як майстерно володіти клинками</BookOfBladedancer.description>
+  <BookOfBladedancer.comps.0.useLabel>Читати</BookOfBladedancer.comps.0.useLabel>
+
+  <BookOfRanger.label>Бойовий стиль: Рейнджер</BookOfRanger.label>
+  <BookOfRanger.description>Вчить фізично майстерну пішаку, як стати рейнджером</BookOfRanger.description>
+  <BookOfRanger.comps.0.useLabel>Читати</BookOfRanger.comps.0.useLabel>
+
+  <BookOfDeathKnight.label>Бойовий стиль: Лицар смерті</BookOfDeathKnight.label>
+  <BookOfDeathKnight.description>Навчає фізично майстерного пішака прийняти неминуче і стати лицарем смерті.</BookOfDeathKnight.description>
+  <BookOfDeathKnight.comps.0.useLabel>Читати</BookOfDeathKnight.comps.0.useLabel>
+
+  <BookOfMonk.label>Бойовий стиль: Монах.</BookOfMonk.label>
+  <BookOfMonk.description>Вчить фізично майстерну пішаку відточувати свій розум і тіло в смертоносну зброю.</BookOfMonk.description>
+  <BookOfMonk.comps.0.useLabel>Читати</BookOfMonk.comps.0.useLabel>
+
+  <BookOfCommander.label>Бойовий стиль: Воєначальник</BookOfCommander.label>
+  <BookOfCommander.description>Вчить фізично майстерну пішаку, як стати харизматичним лідером.</BookOfCommander.description>
+  <BookOfCommander.comps.0.useLabel>Читати</BookOfCommander.comps.0.useLabel>
+
+  <BookOfSuperSoldier.label>Сироватка: Суперсолдат</BookOfSuperSoldier.label>
+  <BookOfSuperSoldier.description>Вколіть Пішці сироватку, яка підсилює їх фізичний стан. Виводить пішака з ладу на пару днів, поки сироватка вступає в дію і розвивається протягом декількох етапів. Будь-яка пішака може прийняти сироватку, але тільки фізично майстерні пішаки можуть придбати межу суперсолдата. Ця сироватка зменшить магічний потенціал.</BookOfSuperSoldier.description>
+  <BookOfSuperSoldier.comps.0.useLabel>Ввести</BookOfSuperSoldier.comps.0.useLabel>
+
+
+  <!-- Custom class books -->
+
+  <BookOfShadow.label>Таємний том: Тінь</BookOfShadow.label>
+  <BookOfShadow.description>Глибокою ночі страх проявляється у відображенні клинка - тінь пробуджується.</BookOfShadow.description>
+  <BookOfShadow.comps.0.useLabel>Читати</BookOfShadow.comps.0.useLabel>
+
+  <BookOfApothecary.label>Бойовий стиль: Аптекар</BookOfApothecary.label>
+  <BookOfApothecary.description>Вчить фізично досвідчену пішаку, як стати аптекарем.</BookOfApothecary.description>
+  <BookOfApothecary.comps.0.useLabel>Читати</BookOfApothecary.comps.0.useLabel>
+
+
+  <!-- Magic Spells - Single -->
+
+  <SpellOf_ArcaneBolt.label>Магічне заклинання: магічний болт</SpellOf_ArcaneBolt.label>
+  <SpellOf_ArcaneBolt.description>Вчить мага, як з силою проектувати таємну енергію.</SpellOf_ArcaneBolt.description>
+  <SpellOf_ArcaneBolt.comps.0.useLabel>Читати</SpellOf_ArcaneBolt.comps.0.useLabel>
+
+  <SpellOf_Blink.label>Магічне заклинання: Млинець</SpellOf_Blink.label>
+  <SpellOf_Blink.description>Вчить мага, як швидко переміщатися на короткі дистанції</SpellOf_Blink.description>
+  <SpellOf_Blink.comps.0.useLabel>Читати</SpellOf_Blink.comps.0.useLabel>
+
+  <SpellOf_Blur.label>Магічне заклинання: Розмиття</SpellOf_Blur.label>
+  <SpellOf_Blur.description>Вчить мага, як спотворити світло навколо свого тіла</SpellOf_Blur.description>
+  <SpellOf_Blur.comps.0.useLabel>Читати</SpellOf_Blur.comps.0.useLabel>
+
+  <SpellOf_Cooler.label>Магічне заклинання: Ресять тепло</SpellOf_Cooler.label>
+  <SpellOf_Cooler.description>Вчить мага, як створити тимчасове джерело охолодження</SpellOf_Cooler.description>
+  <SpellOf_Cooler.comps.0.useLabel>Читати</SpellOf_Cooler.comps.0.useLabel>
+
+  <SpellOf_DirtDevil.label>Магічне заклинання: Земляний диявол</SpellOf_DirtDevil.label>
+  <SpellOf_DirtDevil.description>Вчить мага, як створити вихор, який очищає бруд всередині будинку</SpellOf_DirtDevil.description>
+  <SpellOf_DirtDevil.comps.0.useLabel>Читати</SpellOf_DirtDevil.comps.0.useLabel>
+
+  <SpellOf_EMP.label>Магічне заклинання: ЕМІ</SpellOf_EMP.label>
+  <SpellOf_EMP.description>Вчить мага, як створити електро-магнітрий імпульс в певній області.</SpellOf_EMP.description>
+  <SpellOf_EMP.comps.0.useLabel>Читати</SpellOf_EMP.comps.0.useLabel>
+
+  <SpellOf_Extinguish.label>Магічне заклинання: Гасіння</SpellOf_Extinguish.label>
+  <SpellOf_Extinguish.description>Вчить мага, як видалити стихію вогню в певній області, розсіює вогонь.</SpellOf_Extinguish.description>
+  <SpellOf_Extinguish.comps.0.useLabel>Читати</SpellOf_Extinguish.comps.0.useLabel>
+
+  <SpellOf_Heal.label>Магічне заклинання: Зцілення</SpellOf_Heal.label>
+  <SpellOf_Heal.description>Вчить мага, як маніпулювати таємними силами для зцілення ран.</SpellOf_Heal.description>
+  <SpellOf_Heal.comps.0.useLabel>Читати</SpellOf_Heal.comps.0.useLabel>
+
+  <SpellOf_HeatShield.label>Fire Spell: Heat Shield</SpellOf_HeatShield.label>
+  <SpellOf_HeatShield.description>Teaches a fire mage how to create a protective barrier against heat and fire.</SpellOf_HeatShield.description>
+  <SpellOf_HeatShield.comps.0.useLabel>Read</SpellOf_HeatShield.comps.0.useLabel>
+
+  <SpellOf_Heater.label>Магічне заклинання: Нагрівач</SpellOf_Heater.label>
+  <SpellOf_Heater.description>Вчить мага, як створити джерело тимчасового тепла.</SpellOf_Heater.description>
+  <SpellOf_Heater.comps.0.useLabel>Читати</SpellOf_Heater.comps.0.useLabel>
+
+  <SpellOf_Ignite.label>Магічне заклинання: Підпалювання</SpellOf_Ignite.label>
+  <SpellOf_Ignite.description>Вчить мага, як сконцентрувати тепло в точці.</SpellOf_Ignite.description>
+  <SpellOf_Ignite.comps.0.useLabel>Читати</SpellOf_Ignite.comps.0.useLabel>
+
+  <SpellOf_MageLight.label>Магічне заклинання: Магічне світло</SpellOf_MageLight.label>
+  <SpellOf_MageLight.description>Вчить мага, як створити маленьку кулю світла.</SpellOf_MageLight.description>
+  <SpellOf_MageLight.comps.0.useLabel>Читати</SpellOf_MageLight.comps.0.useLabel>
+
+  <SpellOf_PowerNode.label>Магічне заклинання: Енергетична нода</SpellOf_PowerNode.label>
+  <SpellOf_PowerNode.description>Вчить мага, як створити енергетичну ноду, яка буде трансформувати таємну енергію в електрику. Виробляє 600 од. енергії</SpellOf_PowerNode.description>
+  <SpellOf_PowerNode.comps.0.useLabel>Читати</SpellOf_PowerNode.comps.0.useLabel>
+
+  <SpellOf_Rain.label>Магічне заклинання: Дощ</SpellOf_Rain.label>
+  <SpellOf_Rain.description>Вчить мага, як сконцентрувати енергію в атмосфері для створення дощу</SpellOf_Rain.description>
+  <SpellOf_Rain.comps.0.useLabel>Читати</SpellOf_Rain.comps.0.useLabel>
+
+  <SpellOf_SnapFreeze.label>Магічне заклинання: Прив &quot;язка заморожування</SpellOf_SnapFreeze.label>
+  <SpellOf_SnapFreeze.description>Вчить мага, як видалити все тепло в зазначеному місці.</SpellOf_SnapFreeze.description>
+  <SpellOf_SnapFreeze.comps.0.useLabel>Читати</SpellOf_SnapFreeze.comps.0.useLabel>
+
+  <SpellOf_SmokeCloud.label>Магічне заклинання: Хмара диму</SpellOf_SmokeCloud.label>
+  <SpellOf_SmokeCloud.description>Вчить мага, як підпалити частинки повітря, щоб створити хмару диму в зазначеному місці</SpellOf_SmokeCloud.description>
+  <SpellOf_SmokeCloud.comps.0.useLabel>Читати</SpellOf_SmokeCloud.comps.0.useLabel>
+
+  <SpellOf_Sunlight.label>Магічне заклинання: Сонячне світло</SpellOf_Sunlight.label>
+  <SpellOf_Sunlight.description>Вчить мага, як створити в зазначеному місці світло такої яскравості, що рослини зможуть рости. Підтримується магом, що зменшує макс. об&apos;єм і регенерацію мани у носія.</SpellOf_Sunlight.description>
+  <SpellOf_Sunlight.comps.0.useLabel>Читати</SpellOf_Sunlight.comps.0.useLabel>
+
+  <SpellOf_BrandSiphon.label>Заклинання Големанта: Марка Сіфона</SpellOf_BrandSiphon.label>
+  <SpellOf_BrandSiphon.description>Навчає големанта сигилі для створення сифонуючого бренду.</SpellOf_BrandSiphon.description>
+  <SpellOf_BrandSiphon.comps.0.useLabel>Читати</SpellOf_BrandSiphon.comps.0.useLabel>
+
+  <SpellOf_BrandFitness.label>Заклинання Големанта: Фітнес-бренд</SpellOf_BrandFitness.label>
+  <SpellOf_BrandFitness.description>Навчає големанта символу для створення фітнес-бренду.</SpellOf_BrandFitness.description>
+  <SpellOf_BrandFitness.comps.0.useLabel>Читати</SpellOf_BrandFitness.comps.0.useLabel>
+
+  <SpellOf_BrandEmotion.label>Заклинання Големанта: Бренд емоцій</SpellOf_BrandEmotion.label>
+  <SpellOf_BrandEmotion.description>Навчає големанта сигилі для створення емоційного бренду.</SpellOf_BrandEmotion.description>
+  <SpellOf_BrandEmotion.comps.0.useLabel>Читати</SpellOf_BrandEmotion.comps.0.useLabel>
+
+  <SpellOf_BrandVitality.label>Заклинання Големанта: Бренд життєвої сили</SpellOf_BrandVitality.label>
+  <SpellOf_BrandVitality.description>Навчає големанта сигилі для створення бренду життєвої сили.</SpellOf_BrandVitality.description>
+  <SpellOf_BrandVitality.comps.0.useLabel>Читати</SpellOf_BrandVitality.comps.0.useLabel>
+
+  <SpellOf_BrandProtection.label>Заклинання Големанта: Захисне Клеймо</SpellOf_BrandProtection.label>
+  <SpellOf_BrandProtection.description>Навчає големанта сигилі для створення захисного клейма.</SpellOf_BrandProtection.description>
+  <SpellOf_BrandProtection.comps.0.useLabel>Читати</SpellOf_BrandProtection.comps.0.useLabel>
+
+  <SpellOf_BrandAwareness.label>Заклинання Големанта: Впізнаваний бренд</SpellOf_BrandAwareness.label>
+  <SpellOf_BrandAwareness.description>Навчає големанта сигилі для створення впізнаваного бренду.</SpellOf_BrandAwareness.description>
+  <SpellOf_BrandAwareness.comps.0.useLabel>Читати</SpellOf_BrandAwareness.comps.0.useLabel>
+
+  <SpellOf_ChargeBattery.label>Заклинання блискавки: зарядка батареї</SpellOf_ChargeBattery.label>
+  <SpellOf_ChargeBattery.description>Вчить мага блискавки заряджати акумулятор, наповнюючи його магічною енергією.
+Виробляє 400Wd.</SpellOf_ChargeBattery.description>
+  <SpellOf_ChargeBattery.comps.0.useLabel>Читати</SpellOf_ChargeBattery.comps.0.useLabel>
+
+  <SpellOf_CauterizeWound.label>Заклинання вогню: розпалити рану</SpellOf_CauterizeWound.label>
+  <SpellOf_CauterizeWound.description>Вчить вогняного мага, як використовувати силу вогня, щоб миттєво очистити і закрити рани - може залишити шрами від опіків.</SpellOf_CauterizeWound.description>
+  <SpellOf_CauterizeWound.comps.0.useLabel>Читати</SpellOf_CauterizeWound.comps.0.useLabel>
+
+  <SpellOf_ConsumeCorpse_Mass.label>Заклинання некроманта: Масове поглинання трупа</SpellOf_ConsumeCorpse_Mass.label>
+  <SpellOf_ConsumeCorpse_Mass.description>Навчає некроманта, як використовувати «Поглинання трупа» для націлювання на кілька трупів в межах області дії..</SpellOf_ConsumeCorpse_Mass.description>
+  <SpellOf_ConsumeCorpse_Mass.comps.0.useLabel>Читати</SpellOf_ConsumeCorpse_Mass.comps.0.useLabel>
+
+  <SpellOf_Discord.label>Заклинання Барда: Розбрат</SpellOf_Discord.label>
+  <SpellOf_Discord.description>Вчить барда, як порушити ментальну гармонію цільової пішаки.</SpellOf_Discord.description>
+  <SpellOf_Discord.comps.0.useLabel>Читати</SpellOf_Discord.comps.0.useLabel>
+
+  <SpellOf_DryGround.label>Заклинання вогню: суха земля</SpellOf_DryGround.label>
+  <SpellOf_DryGround.description>Вчить вогняного мага, як наповнити землю теплом, випарюючи більшу частину води з маленького клаптика землі.</SpellOf_DryGround.description>
+  <SpellOf_DryGround.comps.0.useLabel>Читати</SpellOf_DryGround.comps.0.useLabel>
+
+  <SpellOf_WetGround.label>Заклинання льоду: зволожений ґрунт</SpellOf_WetGround.label>
+  <SpellOf_WetGround.description>Вчить крижаного мага, як наповнити землю вологою і поживними речовинами, перетворюючи пісок на придатний для використання ґрунт.</SpellOf_WetGround.description>
+  <SpellOf_WetGround.comps.0.useLabel>Читати</SpellOf_WetGround.comps.0.useLabel>
+
+
+  <!-- Advanced Scribing -->
+
+  <SpellOf_MagicWardrobe.label>Заклинання Мага: Чарівна шафа</SpellOf_MagicWardrobe.label>
+  <SpellOf_MagicWardrobe.description>Вчить користувача чарівництвом, як створити об&apos;ємну кишеню для зберігання резервного набору спорядження.</SpellOf_MagicWardrobe.description>
+  <SpellOf_MagicWardrobe.comps.0.useLabel>Читати</SpellOf_MagicWardrobe.comps.0.useLabel>
+
+  <SpellOf_Invisibility.label>Магічне заклинання: Невидимість</SpellOf_Invisibility.label>
+  <SpellOf_Invisibility.description>Вчить мага, як маніпулювати світлом, щоб стати невидимим.</SpellOf_Invisibility.description>
+  <SpellOf_Invisibility.comps.0.useLabel>Читати</SpellOf_Invisibility.comps.0.useLabel>
+
+  <SpellOf_LightningTrap.label>Магічне заклинання: пастка з блискавкою</SpellOf_LightningTrap.label>
+  <SpellOf_LightningTrap.description>Вчить мага, як створити пастку, заповнену зарядом блискавки.</SpellOf_LightningTrap.description>
+  <SpellOf_LightningTrap.comps.0.useLabel>Читати</SpellOf_LightningTrap.comps.0.useLabel>
+
+  <SpellOf_ManaShield.label>Магічне заклинання: Щит мани</SpellOf_ManaShield.label>
+  <SpellOf_ManaShield.description>Вчить мага, як створити захищаючий бар&apos;єр з мани.</SpellOf_ManaShield.description>
+  <SpellOf_ManaShield.comps.0.useLabel>Читати</SpellOf_ManaShield.comps.0.useLabel>
+
+  <SpellOf_ShieldOther.label>Заклинання Святого Заклинателя: Щит Іншого</SpellOf_ShieldOther.label>
+  <SpellOf_ShieldOther.description>Вчить святого заклинателя (паладіна, священика тощо), як захистити іншого від урона.</SpellOf_ShieldOther.description>
+  <SpellOf_ShieldOther.comps.0.useLabel>Читати</SpellOf_ShieldOther.comps.0.useLabel>
+
+  <SpellOf_SpellMending.label>Магічне заклинання: Починка</SpellOf_SpellMending.label>
+  <SpellOf_SpellMending.description>Вчить мага, як реконструювати і ремонтувати зношене спорядження на пішаку.</SpellOf_SpellMending.description>
+  <SpellOf_SpellMending.comps.0.useLabel>Читати</SpellOf_SpellMending.comps.0.useLabel>
+
+  <SpellOf_SiphonMana.label>Магічне заклинання: Сифон мани</SpellOf_SiphonMana.label>
+  <SpellOf_SiphonMana.description>Вчить мага, як викачати Ману з іншого мага. При використанні на суті, яке не володіє маною, їх фізичні риси будуть виснажені (ніяка мана не буде отримана). Ефект потенційно смертельний.</SpellOf_SiphonMana.description>
+  <SpellOf_SiphonMana.comps.0.useLabel>Читати</SpellOf_SiphonMana.comps.0.useLabel>
+
+  <SpellOf_SummonMinion.label>Магічне заклинання: Призов міньйону</SpellOf_SummonMinion.label>
+  <SpellOf_SummonMinion.description>Вчить мага, як закликати міньйона для допомоги в повсякденних справах.</SpellOf_SummonMinion.description>
+  <SpellOf_SummonMinion.comps.0.useLabel>Читати</SpellOf_SummonMinion.comps.0.useLabel>
+
+  <SpellOf_Teleport.label>Магічне заклинання: Телепорт</SpellOf_Teleport.label>
+  <SpellOf_Teleport.description>Вчить мага, як маніпулювати таємною енергією для створення порталу для швидкого переміщення.</SpellOf_Teleport.description>
+  <SpellOf_Teleport.comps.0.useLabel>Читати</SpellOf_Teleport.comps.0.useLabel>
+
+  <SpellOf_TransferMana.label>Магічне заклинання: Передача мани</SpellOf_TransferMana.label>
+  <SpellOf_TransferMana.description>Вчить мага, як передати Ману іншому магу. Якщо сира Мана вливається в реципієнта, який не є магом, його фізичні властивості тимчасово посилюються.</SpellOf_TransferMana.description>
+  <SpellOf_TransferMana.comps.0.useLabel>Читати</SpellOf_TransferMana.comps.0.useLabel>
+
+  <SpellOf_FadeEmotions.label>Здатність до Емпатії: Пригнічувати Емоції</SpellOf_FadeEmotions.label>
+  <SpellOf_FadeEmotions.description>У цьому сувої описується, як емпат може використовувати свої здібності, щоб сфокусувати емоції негативного спогаду, щоб цільова пішака могла відпустити емоції і рухатися далі.</SpellOf_FadeEmotions.description>
+  <SpellOf_FadeEmotions.comps.0.useLabel>Читати</SpellOf_FadeEmotions.comps.0.useLabel>
+
+  <SpellOf_BlankMind.label>Закляття чародія: Чистий розум</SpellOf_BlankMind.label>
+  <SpellOf_BlankMind.description>Вчить чародія, як стерти спогади і вивести пішака з ментального стану або викликати тривале оглушення ворогів.</SpellOf_BlankMind.description>
+  <SpellOf_BlankMind.comps.0.useLabel>Читати</SpellOf_BlankMind.comps.0.useLabel>
+
+  <SpellOf_BriarPatch.label>Заклинання друїда: заросли тернівника</SpellOf_BriarPatch.label>
+  <SpellOf_BriarPatch.description>Вчить друїда, як швидко виростити перешкоду, зроблену з колючих лоз.</SpellOf_BriarPatch.description>
+  <SpellOf_BriarPatch.comps.0.useLabel>Читати</SpellOf_BriarPatch.comps.0.useLabel>
+
+  <SpellOf_FertileLands.label>Заклинання друїда: родючий ґрунт</SpellOf_FertileLands.label>
+  <SpellOf_FertileLands.description>Навчає друїда, як зробити ґрунт більш насиченим і родючим</SpellOf_FertileLands.description>
+  <SpellOf_FertileLands.comps.0.useLabel>Читати</SpellOf_FertileLands.comps.0.useLabel>
+
+  <SpellOf_AlterStorm.label>Крижане заклинання: Змінний Шторм</SpellOf_AlterStorm.label>
+  <SpellOf_AlterStorm.description>Вчить крижаного мага, як змінювати умови шторму для отримання різних ефектів.</SpellOf_AlterStorm.description>
+  <SpellOf_AlterStorm.comps.0.useLabel>Читати</SpellOf_AlterStorm.comps.0.useLabel>
+
+  <SpellOf_MechaniteReprogramming.label>Заклинання техноманта: перепрограмування механітів</SpellOf_MechaniteReprogramming.label>
+  <SpellOf_MechaniteReprogramming.description>Вчить техноманта перепрограмувати волоконні або сенсорні механіти таким чином, щоб посилити властивості носія.</SpellOf_MechaniteReprogramming.description>
+  <SpellOf_MechaniteReprogramming.comps.0.useLabel>Читати</SpellOf_MechaniteReprogramming.comps.0.useLabel>
+
+  <SpellOf_Overdrive.label>Заклинання техноманта: перевантаження</SpellOf_Overdrive.label>
+  <SpellOf_Overdrive.description>Навчає техноманта тому, як розганяти або обходити захисні функції механічних, електричних і роботизованих пристроїв, змушуючи їх працювати з різко збільшеною швидкістю протягом короткого періоду часу.</SpellOf_Overdrive.description>
+  <SpellOf_Overdrive.comps.0.useLabel>Читати</SpellOf_Overdrive.comps.0.useLabel>
+
+  <SpellOf_Sabotage.label>Заклинання техноманта: саботаж</SpellOf_Sabotage.label>
+  <SpellOf_Sabotage.description>Вчить техноманта створювати контур зворотного зв&apos;язку практично в будь-якій механічній системі, приводячи її до катастрофічних збоїв.</SpellOf_Sabotage.description>
+  <SpellOf_Sabotage.comps.0.useLabel>Читати</SpellOf_Sabotage.comps.0.useLabel>
+
+  <SpellOf_TechnoShield.label>Заклинання техноманта: кінетичний щит</SpellOf_TechnoShield.label>
+  <SpellOf_TechnoShield.description>Навчає техноманта, як створити односпрямоване силове поле навколо цілі, здатне відштовхувати вхідні снаряди або збільшувати швидкість вихідних снарядів.</SpellOf_TechnoShield.description>
+  <SpellOf_TechnoShield.comps.0.useLabel>Читати</SpellOf_TechnoShield.comps.0.useLabel>
+
+
+  <!-- Master Scribing -->
+
+  <SpellOf_BattleHymn.label>Заклинання барда: бойовий гімн</SpellOf_BattleHymn.label>
+  <SpellOf_BattleHymn.description>Вчить барда бойовому гімну.</SpellOf_BattleHymn.description>
+  <SpellOf_BattleHymn.comps.0.useLabel>Читати</SpellOf_BattleHymn.comps.0.useLabel>
+
+  <SpellOf_Blizzard.label>Заклинання льоду: завірюха</SpellOf_Blizzard.label>
+  <SpellOf_Blizzard.description>Вчить мага льоду і води концентрувати енергію в небі таким чином, що викликає заметіль.</SpellOf_Blizzard.description>
+  <SpellOf_Blizzard.comps.0.useLabel>Читати</SpellOf_Blizzard.comps.0.useLabel>
+
+  <SpellOf_BloodMoon.label>Заклинання: кривавий місяць</SpellOf_BloodMoon.label>
+  <SpellOf_BloodMoon.description>Вчить мага крові, як викликати злісну зграю кривавих демонів.</SpellOf_BloodMoon.description>
+  <SpellOf_BloodMoon.comps.0.useLabel>Читати</SpellOf_BloodMoon.comps.0.useLabel>
+
+  <SpellOf_EyeOfTheStorm.label>Заклинання блискавки: око бурі</SpellOf_EyeOfTheStorm.label>
+  <SpellOf_EyeOfTheStorm.description>Вчить мага блискавки, як стримувати необуздану лють грози в невеликій сфері і проектувати її за заданою траєкторією.</SpellOf_EyeOfTheStorm.description>
+  <SpellOf_EyeOfTheStorm.comps.0.useLabel>Читати</SpellOf_EyeOfTheStorm.comps.0.useLabel>
+
+  <SpellOf_Firestorm.label>Заклинання вогню: вогняний шторм</SpellOf_Firestorm.label>
+  <SpellOf_Firestorm.description>Вчить мага вогню створювати вогняний шторм.</SpellOf_Firestorm.description>
+  <SpellOf_Firestorm.comps.0.useLabel>Читати</SpellOf_Firestorm.comps.0.useLabel>
+
+  <SpellOf_FoldReality.label>Заклинання темного мага: ворота</SpellOf_FoldReality.label>
+  <SpellOf_FoldReality.description>Вчить темного мага складати реальність, щоб відкрити тимчасове вікно між колоніями.</SpellOf_FoldReality.description>
+  <SpellOf_FoldReality.comps.0.useLabel>Читати</SpellOf_FoldReality.comps.0.useLabel>
+
+  <SpellOf_GuardianSpirit.label>Заклинання шамана: Дух-Хранитель</SpellOf_GuardianSpirit.label>
+  <SpellOf_GuardianSpirit.description>Вчить шамана, як викликати свого духу-охоронця.</SpellOf_GuardianSpirit.description>
+  <SpellOf_GuardianSpirit.comps.0.useLabel>Читати</SpellOf_GuardianSpirit.comps.0.useLabel>
+
+  <SpellOf_HolyWrath.label>Заклинання паладіну: святий гнів</SpellOf_HolyWrath.label>
+  <SpellOf_HolyWrath.description>Навчає паладіна викликати гнів богів.</SpellOf_HolyWrath.description>
+  <SpellOf_HolyWrath.comps.0.useLabel>Читати</SpellOf_HolyWrath.comps.0.useLabel>
+
+  <SpellOf_LichForm.label>Заклинання некроманта: форма ліча</SpellOf_LichForm.label>
+  <SpellOf_LichForm.description>Навчає некроманта формі ліча.</SpellOf_LichForm.description>
+  <SpellOf_LichForm.comps.0.useLabel>Читати</SpellOf_LichForm.comps.0.useLabel>
+
+  <SpellOf_LivingWall.label>Заклинання Големанта: Жива стіна</SpellOf_LivingWall.label>
+  <SpellOf_LivingWall.description>Вчить големанта, як надати стіні власну волю.</SpellOf_LivingWall.description>
+  <SpellOf_LivingWall.comps.0.useLabel>Читати</SpellOf_LivingWall.comps.0.useLabel>
+
+  <SpellOf_Meteor.label>Заклинання геоманта: метеорит</SpellOf_Meteor.label>
+  <SpellOf_Meteor.description>Вчить геоманта, як викликати масивний метеорит, щоб поховати область в каменях і уламках.</SpellOf_Meteor.description>
+  <SpellOf_Meteor.comps.0.useLabel>Читати</SpellOf_Meteor.comps.0.useLabel>
+
+  <SpellOf_OrbitalStrike.label>Заклинання техноманта: орбітальний постріл</SpellOf_OrbitalStrike.label>
+  <SpellOf_OrbitalStrike.description>Вчить техноманта, як отримати доступ до стародавніх супутників і орбітальних систем і використовувати їх для запуску орбітального удару.</SpellOf_OrbitalStrike.description>
+  <SpellOf_OrbitalStrike.comps.0.useLabel>Читати</SpellOf_OrbitalStrike.comps.0.useLabel>
+
+  <SpellOf_PsychicShock.label>Закляття чародія: психічний шок</SpellOf_PsychicShock.label>
+  <SpellOf_PsychicShock.description>Вчить чародія, як використовувати свої екстрасенсорні здібності, щоб випустити потужний психічний шок, який розтрощує і відбивається від найближчої пішаки.</SpellOf_PsychicShock.description>
+  <SpellOf_PsychicShock.comps.0.useLabel>Читати</SpellOf_PsychicShock.comps.0.useLabel>
+
+  <SpellOf_Recall.label>Заклинання хрономанта: повернення</SpellOf_Recall.label>
+  <SpellOf_Recall.description>Вчить хрономанта як повернути своє фізичне буття до минулого стану.</SpellOf_Recall.description>
+  <SpellOf_Recall.comps.0.useLabel>Читати</SpellOf_Recall.comps.0.useLabel>
+
+  <SpellOf_RegrowLimb.label>Заклинання друїда: виростити кінцівку</SpellOf_RegrowLimb.label>
+  <SpellOf_RegrowLimb.description>Навчає друїда, як відновлювати кінцівки, поєднуючи природу, таємні сили і медицину.</SpellOf_RegrowLimb.description>
+  <SpellOf_RegrowLimb.comps.0.useLabel>Читати</SpellOf_RegrowLimb.comps.0.useLabel>
+
+  <SpellOf_Resurrection.label>Заклинання священика: воскресіння</SpellOf_Resurrection.label>
+  <SpellOf_Resurrection.description>Вчить священика, як повернути іскру життя недавно померлому.</SpellOf_Resurrection.description>
+  <SpellOf_Resurrection.comps.0.useLabel>Читати</SpellOf_Resurrection.comps.0.useLabel>
+
+  <SpellOf_Scorn.label>Заклинання суккуба: презирство</SpellOf_Scorn.label>
+  <SpellOf_Scorn.description>Навчає сукуба, як вивільнити всю злобу, що таїться в їхньому демонічному серці.</SpellOf_Scorn.description>
+  <SpellOf_Scorn.comps.0.useLabel>Читати</SpellOf_Scorn.comps.0.useLabel>
+
+  <SpellOf_Shapeshift.label>Закляття чародія: зміна вигляду</SpellOf_Shapeshift.label>
+  <SpellOf_Shapeshift.description>Вчить чародія тому, як здійснювати перетворення над самим собою, не втрачаючи при цьому своєї індивідуальності.</SpellOf_Shapeshift.description>
+  <SpellOf_Shapeshift.comps.0.useLabel>Читати</SpellOf_Shapeshift.comps.0.useLabel>
+
+  <SpellOf_SummonPoppi.label>Заклінаїні призовника: закликати Поппі</SpellOf_SummonPoppi.label>
+  <SpellOf_SummonPoppi.description>Вчить заклика, як викликати групу милих і приємних Поппі.</SpellOf_SummonPoppi.description>
+  <SpellOf_SummonPoppi.comps.0.useLabel>Читати</SpellOf_SummonPoppi.comps.0.useLabel>
+
+  <SpellOf_SpiritOfLight.label>Заклинання Світлої Магії: Дух Світла</SpellOf_SpiritOfLight.label>
+  <SpellOf_SpiritOfLight.description>Вчить Світлого Мага, як викликати Духа Світла.</SpellOf_SpiritOfLight.description>
+  <SpellOf_SpiritOfLight.comps.0.useLabel>Читати</SpellOf_SpiritOfLight.comps.0.useLabel>
+
+
+  <!-- Fighter Skills - Single -->
+
+  <SkillOf_ThrowingKnife.label>Бойовий навик: метальний ніж</SkillOf_ThrowingKnife.label>
+  <SkillOf_ThrowingKnife.description>Вчить клас бійця навичку метання ножа. Пацифісти не можуть навчитися цій навичці.</SkillOf_ThrowingKnife.description>
+  <SkillOf_ThrowingKnife.comps.0.useLabel>Читати</SkillOf_ThrowingKnife.comps.0.useLabel>
+
+  <SkillOf_BurningFury.label>Бойовий навик: пекуча лють</SkillOf_BurningFury.label>
+  <SkillOf_BurningFury.description>Вчить клас бійця активувати ауру пекучої люті.</SkillOf_BurningFury.description>
+  <SkillOf_BurningFury.comps.0.useLabel>Читати</SkillOf_BurningFury.comps.0.useLabel>
+
+  <SkillOf_FightersFocus.label>Бойовий навик: фокусування бійця</SkillOf_FightersFocus.label>
+  <SkillOf_FightersFocus.description>Вчить клас бійців, як присвятити себе виділенню витривалості, щоб витримати велике розумове і фізичне навантаження.</SkillOf_FightersFocus.description>
+  <SkillOf_FightersFocus.comps.0.useLabel>Читати</SkillOf_FightersFocus.comps.0.useLabel>
+
+  <SkillOf_GearRepair.label>Бойовий навик: зубчастий ремонт</SkillOf_GearRepair.label>
+  <SkillOf_GearRepair.description>Вчить клас бійців, як присвятити частину своєї витривалості підтримці та ремонту зношеного обладнання.</SkillOf_GearRepair.description>
+  <SkillOf_GearRepair.comps.0.useLabel>Читати</SkillOf_GearRepair.comps.0.useLabel>
+
+  <SkillOf_HeavyBlow.label>Бойовий навик: важкий удар</SkillOf_HeavyBlow.label>
+  <SkillOf_HeavyBlow.description>Вчить клас бійців, як виділяти частину витривалості, щоб збільшити силу кожної атаки.</SkillOf_HeavyBlow.description>
+  <SkillOf_HeavyBlow.comps.0.useLabel>Читати</SkillOf_HeavyBlow.comps.0.useLabel>
+
+  <SkillOf_InnerHealing.label>Бойовий навик: внутрішнє зцілення</SkillOf_InnerHealing.label>
+  <SkillOf_InnerHealing.description>Вчить клас бійців, як виділяти витривалість і фізичну енергію для збільшення швидкості загоєння і поліпшення імунітету до хвороб.</SkillOf_InnerHealing.description>
+  <SkillOf_InnerHealing.comps.0.useLabel>Читати</SkillOf_InnerHealing.comps.0.useLabel>
+
+  <SkillOf_Legion.label>Бойовий навик: легіон</SkillOf_Legion.label>
+  <SkillOf_Legion.description>Вчить бійця, як повторити бій заклинання.з іншого класу винищувачів.</SkillOf_Legion.description>
+  <SkillOf_Legion.comps.0.useLabel>Читати</SkillOf_Legion.comps.0.useLabel>
+
+  <SkillOf_PommelStrike.label>Бойовий навик: Атака Напевно</SkillOf_PommelStrike.label>
+  <SkillOf_PommelStrike.description>Вчить клас бійців, як виконати несмертельний удар, щоб оглушити або нокаутувати ціль.</SkillOf_PommelStrike.description>
+  <SkillOf_PommelStrike.comps.0.useLabel>Читати</SkillOf_PommelStrike.comps.0.useLabel>
+
+  <SkillOf_Sprint.label>Бойовий навик: спринт</SkillOf_Sprint.label>
+  <SkillOf_Sprint.description>Вчить клас бійців, як пересуватися з підвищеною швидкістю.</SkillOf_Sprint.description>
+  <SkillOf_Sprint.comps.0.useLabel>Читати</SkillOf_Sprint.comps.0.useLabel>
+
+  <SkillOf_StrongBack.label>Бойовий навик: міцна спина</SkillOf_StrongBack.label>
+  <SkillOf_StrongBack.description>Вчить клас бійців тому, як виділяти запас витривалості для збільшення вантажопідйомності.</SkillOf_StrongBack.description>
+  <SkillOf_StrongBack.comps.0.useLabel>Читати</SkillOf_StrongBack.comps.0.useLabel>
+
+  <SkillOf_Taunt.label>Бойовий навик: насмішка</SkillOf_Taunt.label>
+  <SkillOf_Taunt.description>Вчить клас бійців, як насміхатися над найближчими ворогами.</SkillOf_Taunt.description>
+  <SkillOf_Taunt.comps.0.useLabel>Читати</SkillOf_Taunt.comps.0.useLabel>
+
+  <SkillOf_TempestStrike.label>Бойовий навик: штормовий удар</SkillOf_TempestStrike.label>
+  <SkillOf_TempestStrike.description>Навчає бійця класу А техніці нанесення ударів у швидкій послідовності з використанням своєї зброї.</SkillOf_TempestStrike.description>
+  <SkillOf_TempestStrike.comps.0.useLabel>Читати</SkillOf_TempestStrike.comps.0.useLabel>
+
+  <SkillOf_ThickSkin.label>Бойовий навик: товста шкіра</SkillOf_ThickSkin.label>
+  <SkillOf_ThickSkin.description>Вчить клас бійців тому, як виділяти запас витривалості для збільшення значень броні і температурного порогу.</SkillOf_ThickSkin.description>
+  <SkillOf_ThickSkin.comps.0.useLabel>Читати</SkillOf_ThickSkin.comps.0.useLabel>
+
+  <SkillOf_HerbalBliss.label>Аптекарський рецепт: Блаженство</SkillOf_HerbalBliss.label>
+  <SkillOf_HerbalBliss.description>Вчить аптекаря, як створити Блаженство - ліки, що викликають стан блаженства, здатні повністю замаскувати майже всі емоції і біль. Цей препарат також викликає втрату навичок і різко уповільнює їх придбання.</SkillOf_HerbalBliss.description>
+  <SkillOf_HerbalBliss.comps.0.useLabel>Читати</SkillOf_HerbalBliss.comps.0.useLabel>
+
+  <SkillOf_HerbalClarity.label>Аптекарський рецепт: Ясність</SkillOf_HerbalClarity.label>
+  <SkillOf_HerbalClarity.description>Вчить аптекаря, як створювати Ясність - ліки, які знижують опірність магії, дає магам великий імпульс до регенерації мани і підвищує психічну чутливість. Може також спричинити погіршення психічної стійкості.</SkillOf_HerbalClarity.description>
+  <SkillOf_HerbalClarity.comps.0.useLabel>Читати</SkillOf_HerbalClarity.comps.0.useLabel>
+
+
+  <!-- Gems of Insight -->
+
+  <GemstoneOfInsight_Magic.label>Камінь магічної проникливості</GemstoneOfInsight_Magic.label>
+  <GemstoneOfInsight_Magic.description>Наповнює користувача магічним духом, наділяючи його «магічно обдарованою» рисою характеру.
+
+* * Примітка: використання цього предмета замінить випадкову ознаку, якщо користувач має не більше 7 ознак. І не може бути використаний пішаком з існуючими рисами мага або бійця * *</GemstoneOfInsight_Magic.description>
+  <GemstoneOfInsight_Magic.comps.0.useLabel>Використовувати</GemstoneOfInsight_Magic.comps.0.useLabel>
+
+  <GemstoneOfInsight_Might.label>Камінь фізичної проникливості</GemstoneOfInsight_Might.label>
+  <GemstoneOfInsight_Might.description>Наповнює користувача духом воїна, наділяючи його рисою «фізичного адепта».
+
+* * Примітка: використання цього предмета замінить випадкову ознаку, якщо користувач має не більше 7 ознак. І не може бути використаний пішаком з існуючими рисами магії або бійця * *</GemstoneOfInsight_Might.description>
+  <GemstoneOfInsight_Might.comps.0.useLabel>Використовувати</GemstoneOfInsight_Might.comps.0.useLabel>
+
+
+</LanguageData>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Ф5: shared abstract base for generated vanilla-bridge ability defs
+       (scripts/generate-ability-bridges.py). The bridge defs are data-only
+       shims: the spell content stays in the original TorannMagic.TMAbilityDef,
+       resolved through the stable spellId via the core registry. Bridges are
+       dormant until their family is enabled in VanillaBridgeSync. -->
+
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" Name="TMBridgeAbilityBase" Abstract="true">
+    <abilityClass>TorannMagic.TMBridgeAbility</abilityClass>
+    <!-- JecsLite applies the original spell's violence and casting rules. -->
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <description>Bridge placeholder — the description is taken from the original spell def at runtime.</description>
+  </AbilityDef>
+
+</Defs>

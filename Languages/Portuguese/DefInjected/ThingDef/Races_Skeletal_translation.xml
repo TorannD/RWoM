@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- special attack manuevers -->
+
+  <TM_SkeletonLichR.label>Esqueleto de larva</TM_SkeletonLichR.label>
+  <TM_SkeletonLichR.description>Ossos desviados de uma antiga face encarnada por um espírito de maldade e ódio; Seja quem for ou seja o que for, ele já não existe; O seu único objetivo é destruir tudo o que é vivo e substituí-lo por um homem sem vida.</TM_SkeletonLichR.description>
+  <TM_SkeletonLichR.tools.0.label>mão esquerda</TM_SkeletonLichR.tools.0.label>
+  <TM_SkeletonLichR.tools.1.label>mão direita</TM_SkeletonLichR.tools.1.label>
+  <TM_SkeletonLichR.tools.2.label>Olhar morto</TM_SkeletonLichR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_SkeletonLichR_Corpse.label>Esqueleto de larva cadáver</TM_SkeletonLichR_Corpse.label>
+  <TM_SkeletonLichR_Corpse.description>Esqueleto de larva cadáver</TM_SkeletonLichR_Corpse.description>
+
+
+  <!-- special attack manuevers -->
+
+  <TM_GiantSkeletonR.label>Esqueleto gigante</TM_GiantSkeletonR.label>
+  <TM_GiantSkeletonR.description>Um esqueleto enorme; esta abominação foi criada a partir dos ossos de uma criatura gigante ou juntando os ossos de seres menores. Este esqueleto é animado por necromantismo e personificado por um espírito vingativo que percorreu o mundo durante séculos, tempo suficiente para desenvolver um simples e determinado ódio à vida.</TM_GiantSkeletonR.description>
+  <TM_GiantSkeletonR.tools.0.label>punho esquerdo</TM_GiantSkeletonR.tools.0.label>
+  <TM_GiantSkeletonR.tools.1.label>punho direito</TM_GiantSkeletonR.tools.1.label>
+  <TM_GiantSkeletonR.tools.2.label>dentes</TM_GiantSkeletonR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GiantSkeletonR_Corpse.label>Esqueleto de corpo gigante</TM_GiantSkeletonR_Corpse.label>
+  <TM_GiantSkeletonR_Corpse.description>Esqueleto de corpo gigante</TM_GiantSkeletonR_Corpse.description>
+
+
+  <!-- special attack manuevers -->
+
+  <TM_SkeletonR.label>Esqueleto</TM_SkeletonR.label>
+  <TM_SkeletonR.description>A casca física das criaturas levantadas pela força da necromântica; O seu único instinto de obedecer ao seu mestre e destruir tudo o que é vivo.</TM_SkeletonR.description>
+  <TM_SkeletonR.tools.0.label>punho esquerdo</TM_SkeletonR.tools.0.label>
+  <TM_SkeletonR.tools.1.label>punho direito</TM_SkeletonR.tools.1.label>
+  <TM_SkeletonR.tools.2.label>dentes</TM_SkeletonR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_SkeletonR_Corpse.label>Esqueleto do cadáver</TM_SkeletonR_Corpse.label>
+  <TM_SkeletonR_Corpse.description>Esqueleto do cadáver</TM_SkeletonR_Corpse.description>
+
+
+</LanguageData>

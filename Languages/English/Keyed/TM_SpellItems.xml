@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpellItem_InvalidTarget>Choose a valid target.</TM_SpellItem_InvalidTarget>
+  <TM_SpellItem_OutOfRange>Target is out of range.</TM_SpellItem_OutOfRange>
+  <TM_SpellItem_NoLineOfSight>No line of sight.</TM_SpellItem_NoLineOfSight>
+  <TM_SpellItem_NoInjuries>No naturally healing wounds to heal.</TM_SpellItem_NoInjuries>
+  <TM_SpellItem_Occupied>Destination is occupied.</TM_SpellItem_Occupied>
+  <TM_SpellItem_SameCell>Choose a different destination.</TM_SpellItem_SameCell>
+  <TM_SpellItem_HostileTarget>Cannot heal a hostile target.</TM_SpellItem_HostileTarget>
+  <TM_SpellItem_UndeadTarget>Cannot heal undead or mechanoids.</TM_SpellItem_UndeadTarget>
+  <TM_SpellItem_NotHeld>The item must be in the user's inventory or equipped.</TM_SpellItem_NotHeld>
+  <TM_SpellItem_CannotUse>This pawn cannot use the item.</TM_SpellItem_CannotUse>
+  <TM_SpellItem_Empty>No uses remaining.</TM_SpellItem_Empty>
+  <TM_SpellItem_Cooldown>The item is cooling down.</TM_SpellItem_Cooldown>
+  <TM_SpellItem_Busy>Already casting an item spell.</TM_SpellItem_Busy>
+  <TM_SpellItem_Uses>Uses: {0}/{1}</TM_SpellItem_Uses>
+  <TM_SpellItem_CastLabel>{0} {1}</TM_SpellItem_CastLabel>
+  <TM_SpellItem_Description>Cast the item's fixed spell. No mana cost or spell training is required.</TM_SpellItem_Description>
+  <TM_SpellItem_Casting>casting with {0}.</TM_SpellItem_Casting>
+<TM_SpellItem_NoTreatment>No suitable condition to treat, or this effect is already active.</TM_SpellItem_NoTreatment><TM_SpellItem_EnterPortal>Enter portal</TM_SpellItem_EnterPortal>
+  <TM_SpellItem_RequiredKnowledge>Must learn {0} to craft this item.</TM_SpellItem_RequiredKnowledge>
+</LanguageData>

@@ -1,0 +1,280 @@
+﻿<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_Necromancer.xml-->
+	<!--              EN: Raise Undead-->
+	<TM_RaiseUndead.label>Поднять Нежить</TM_RaiseUndead.label>
+	<!--                    EN: Raise undead from corpses. Only works on biological creatures that were once living.
+
+Undead will remain under the Necromancers control indefinitely. The necromancer will incur a mana upkeep cost of 30% of base mana regeneration for each undead, humanlike pawn. Undead animals incur an upkeep cost of 15% for every 100 combat power.
+
+There is no limit to the number of undead a necromancer may control, however, when the necromancer no longer has mana to maintain undead, they will automatically be consumed until the number of active undead is reduced to a manageable amount.-->
+	<TM_RaiseUndead.description>Поднимите нежить из трупов. Работает только на биологических существах, которые когда-то были живыми.
+
+Нежить останется под контролем некромантов на неопределенный срок. Каждая нежить будет нести расходы на содержание в размере 30% от базовой регенерации маны. Нежить - животные несут расходы на содержание в размере 15% за каждые 100 боевых сил.
+
+Нет никаких ограничений на количество нежити, которое некромант может контролировать, однако, когда у некроманта больше нет маны для поддержания нежити, они будут автоматически потребляться до тех пор, пока количество активной нежити не уменьшится до управляемого количества.</TM_RaiseUndead.description>
+	<!--                EN: Dismiss Undead-->
+	<TM_DismissUndead.label>Отпустить нежить</TM_DismissUndead.label>
+	<!--                      EN: Dismisses an undead.-->
+	<TM_DismissUndead.description>Отпустить всю нежить.</TM_DismissUndead.description>
+	<!--            EN: Death Mark-->
+	<TM_DeathMark.label>Метка смерти</TM_DeathMark.label>
+	<!--                  EN: Mark a victim with a curse that causes their life to flash before their eyes. Cursed victims will lose focus and the will to fight, reducing the attack rate. Marking targets for death empowers Death Bolt. Does not work on mechanoids.
+
+Max Targets: 4
+Cast Time: 3s
+Cooldown: 120s
+Range: 34-->
+	<TM_DeathMark.description>Пометьте жертву проклятием, которое заставит их жизнь пронестись перед их глазами. Проклятые жертвы потеряют концентрацию и волю к борьбе, снизив скорость атаки. Помеченные цели получают увеличенный урон от смерьельного болта. Не работает на механоидах.
+
+Максимум целей: 4
+Время применения: 3s
+Откат: 120s
+Дистанция: 34</TM_DeathMark.description>
+	<!--              EN: Death Mark (I)-->
+	<TM_DeathMark_I.label>Метка смерти (I)</TM_DeathMark_I.label>
+	<!--                    EN: Mark a victim with a curse that causes their life to flash before their eyes. Cursed victims will lose focus and the will to fight, reducing the attack rate. Marking targets for death empowers Death Bolt. Does not work on mechanoids.
+
+Max Targets: 5
+Cast Time: 2.5s
+Cooldown: 90s
+Range: 38-->
+	<TM_DeathMark_I.description>Пометьте жертву проклятием, которое заставит их жизнь пронестись перед их глазами. Проклятые жертвы потеряют концентрацию и волю к борьбе, снизив скорость атаки. Помеченные цели получают увеличенный урон от смерьельного болта. Не работает на механоидах.
+
+Максимум целей: 5
+Время применения: 2.5s
+Откат: 90s
+Дистанция: 38</TM_DeathMark_I.description>
+	<!--               EN: Death Mark (II)-->
+	<TM_DeathMark_II.label>Метка смерти (II)</TM_DeathMark_II.label>
+	<!--                     EN: Mark a victim with a curse that causes their life to flash before their eyes. Cursed victims will lose focus and the will to fight, reducing the attack rate. Marking targets for death empowers Death Bolt. Does not work on mechanoids.
+
+Max Targets: 6
+Cast Time: 2s
+Cooldown: 60s
+Range: 42-->
+	<TM_DeathMark_II.description>Пометьте жертву проклятием, которое заставит их жизнь пронестись перед их глазами. Проклятые жертвы потеряют концентрацию и волю к борьбе, снизив скорость атаки. Помеченные цели получают увеличенный урон от смерьельного болта. Не работает на механоидах.
+
+Максимум целей: 6
+Время применения: 2 с
+Откат: 60s
+Дистанция: 42</TM_DeathMark_II.description>
+	<!--                EN: Death Mark (III)-->
+	<TM_DeathMark_III.label>Метка смерти (III)</TM_DeathMark_III.label>
+	<!--                      EN: Mark a victim with a curse that causes their life to flash before their eyes. Cursed victims will lose focus and the will to fight, reducing the attack rate. Marking targets for death empowers Death Bolt. Does not work on mechanoids.
+
+Max Targets: 7
+Cast Time: 1.8s
+Cooldown: 45s
+Range: 46-->
+	<TM_DeathMark_III.description>Пометьте жертву проклятием, которое заставит их жизнь пронестись перед их глазами. Проклятые жертвы потеряют концентрацию и волю к борьбе, снизив скорость атаки. Помеченные цели получают увеличенный урон от смерьельного болта. Не работает на механоидах.
+
+Максимум целей: 7
+Время применения: 1.8s
+Откат: 45s
+Дистанция: 46</TM_DeathMark_III.description>
+	<!--               EN: Fog of Torment-->
+	<TM_FogOfTorment.label>Туман мучений</TM_FogOfTorment.label>
+	<!--                     EN: Creates a fog that causes pain and suffering to every living creature within. Undead within the fog are slowly healed and suffer no penalties from the fog.-->
+	<TM_FogOfTorment.description>Создает туман, который причиняет боль и страдания каждому живому существу внутри. Нежить в тумане медленно исцеляется и не получает никаких наказаний от тумана.</TM_FogOfTorment.description>
+	<!--                EN: Consume Corpse-->
+	<TM_ConsumeCorpse.label>Поглощение трупа</TM_ConsumeCorpse.label>
+	<!--                      EN: Consume a corpse or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather)
+
+Mana Cost: 3
+Range: 50
+Cooldown: 20s
+Cast Time: 2s-->
+	<TM_ConsumeCorpse.description>Потребляйте труп или нежить, чтобы пополнить запас маны. Одежда, предметы и оборудование остаются, но все материалы, принадлежащие трупу, потребляются (мясо / кожа)
+
+Восполнение маны: 3%
+Дистанция: 50
+Откат: 20s
+Время применения: 2 с</TM_ConsumeCorpse.description>
+	<!--                  EN: Consume Corpse (I)-->
+	<TM_ConsumeCorpse_I.label>Поглощение трупа (I)</TM_ConsumeCorpse_I.label>
+	<!--                        EN: Consume a corpse or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather)
+
+Mana Cost: 2.5
+Range: 60
+Cooldown: 18s
+Cast Time: 1.8s-->
+	<TM_ConsumeCorpse_I.description>Потребляйте труп или нежить, чтобы пополнить запас маны. Одежда, предметы и оборудование остаются, но все материалы, принадлежащие трупу, потребляются (мясо / кожа)
+
+Восполнение маны: 2.5%
+Дистанция: 60
+Откат: 18s
+Время применения: 1.8s</TM_ConsumeCorpse_I.description>
+	<!--                   EN: Consume Corpse (II)-->
+	<TM_ConsumeCorpse_II.label>Поглощение трупа (II)</TM_ConsumeCorpse_II.label>
+	<!--                         EN: Consume a corpse or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather)
+
+Mana Cost: 2
+Range: 70
+Cooldown: 16s
+Cast Time: 1.5s-->
+	<TM_ConsumeCorpse_II.description>Потребляйте труп или нежить, чтобы пополнить запас маны. Одежда, предметы и оборудование остаются, но все материалы, принадлежащие трупу, потребляются (мясо / кожа)
+
+Восполнение маны: 2%
+Дистанция: 70
+Откат: 16s
+Время применения: 1,5 с</TM_ConsumeCorpse_II.description>
+	<!--                    EN: Consume Corpse (III)-->
+	<TM_ConsumeCorpse_III.label>Поглощение трупа (III)</TM_ConsumeCorpse_III.label>
+	<!--                          EN: Consume a corpse or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather)
+
+Mana Cost: 1.5
+Range: 80
+Cooldown: 15s
+Cast Time: 1.2s-->
+	<TM_ConsumeCorpse_III.description>Потребляйте труп или нежить, чтобы пополнить запас маны. Одежда, предметы и оборудование остаются, но все материалы, принадлежащие трупу, потребляются (мясо / кожа)
+
+Восполнение маны: 1.5%
+Дистанция: 80
+Откат: 15s
+Время применения: 1.2s</TM_ConsumeCorpse_III.description>
+	<!--                     EN: Consume Corpse: Mass-->
+	<TM_ConsumeCorpse_Mass.label>Массовое поглощение трупов</TM_ConsumeCorpse_Mass.label>
+	<!--                           EN: Consume a group of corpses or undead to replenish mana. Apparel, items, and equipment remain behind but all material belonging to the corpse is consumed (meat/leather).-->
+	<TM_ConsumeCorpse_Mass.description>Потребляйте группу трупов или нежити для восполнения маны. Одежда, предметы и снаряжение остаются, но все материалы, принадлежащие трупу, съедаются (мясо/кожа).</TM_ConsumeCorpse_Mass.description>
+	<!--                  EN: Corpse Explosion-->
+	<TM_CorpseExplosion.label>Взрыв трупа</TM_CorpseExplosion.label>
+	<!--                        EN: Mixes arcane energy with chemicals inside a corpse or undead to cause the body to explode after a short delay. Equipment will not automatically be consumed by the explosion, but may be destroyed in the explosion.
+
+Mana Cost: 20%
+Range: 40
+Cooldown: 10s
+Cast time: 2s-->
+	<TM_CorpseExplosion.description>Смешивает тайную энергию с химическими веществами внутри трупа или нежити, чтобы заставить тело взорваться после короткой задержки. Оборудование не будет автоматически уничтожено взрывом, но может быть уничтожено в результате взрыва.
+
+Стоимость маны: 20%
+Дистанция: 40
+Откат: 10 с
+Время применения: 2 с</TM_CorpseExplosion.description>
+	<!--                    EN: Corpse Explosion (I)-->
+	<TM_CorpseExplosion_I.label>Взрыв трупа (I)</TM_CorpseExplosion_I.label>
+	<!--                          EN: Mixes arcane energy with chemicals inside a corpse or undead to cause the body to explode after a short delay. Equipment will not automatically be consumed by the explosion, but may be destroyed in the explosion.
+
+Mana Cost: 22%
+Range: 50
+Cooldown: 7s
+Cast time: 1.5s-->
+	<TM_CorpseExplosion_I.description>Смешивает тайную энергию с химическими веществами внутри трупа или нежити, чтобы заставить тело взорваться после короткой задержки. Оборудование не будет автоматически уничтожено взрывом, но может быть уничтожено в результате взрыва.
+
+Стоимость маны: 22%
+Дистанция: 50
+Откат: 7 с
+Время применения: 1,5 с</TM_CorpseExplosion_I.description>
+	<!--                     EN: Corpse Explosion (II)-->
+	<TM_CorpseExplosion_II.label>Взрыв трупа (II)</TM_CorpseExplosion_II.label>
+	<!--                           EN: Mixes arcane energy with chemicals inside a corpse or undead to cause the body to explode after a short delay. Equipment will not automatically be consumed by the explosion, but may be destroyed in the explosion.
+
+Mana Cost: 24%
+Range: 60
+Cooldown: 5s
+Cast time: 1s-->
+	<TM_CorpseExplosion_II.description>Смешивает тайную энергию с химическими веществами внутри трупа или нежити, чтобы заставить тело взорваться после короткой задержки. Оборудование не будет автоматически уничтожено взрывом, но может быть уничтожено в результате взрыва.
+
+Стоимость маны: 24%
+Дистанция: 60
+Откат: 5 с
+Время применения: 1 с</TM_CorpseExplosion_II.description>
+	<!--                      EN: Corpse Explosion (III)-->
+	<TM_CorpseExplosion_III.label>Взрыв трупа (III)</TM_CorpseExplosion_III.label>
+	<!--                            EN: Mixes arcane energy with chemicals inside a corpse or undead to cause the body to explode after a short delay. Equipment will not automatically be consumed by the explosion, but may be destroyed in the explosion.
+
+Mana Cost: 25%
+Range: 70
+Cooldown: 4s
+Cast time: .5s-->
+	<TM_CorpseExplosion_III.description>Смешивает тайную энергию с химическими веществами внутри трупа или нежити, чтобы заставить тело взорваться после короткой задержки. Оборудование не будет автоматически уничтожено взрывом, но может быть уничтожено в результате взрыва.
+
+Стоимость маны: 25%
+Дистанция: 70
+Откат: 4 с
+Время применения: 0,5 с</TM_CorpseExplosion_III.description>
+	<!--           EN: Lich Form-->
+	<TM_LichForm.label>Форма Лича</TM_LichForm.label>
+	<!--                 EN: Transforms the necromancer into an undead lich gaining an immortal existence and arcane power. Once used, there is no return.
+
+Benefits:
+Maximum Mana: +50
+Mana Regeneration: +50%
+Gains unnatural immunities to diseases, resistances to damage, health regeneration, and is sustained by mana (no longer required to sleep or eat)
+Gains ability: Flight
+Gains ability: Death Bolt
+
+Penalties:
+Can no longer perform work involving Caring, Social, Animals, Firefighting, Artistic, or Dumb Labor.
+Loses all passion for work except fighting and research.
+Reduced learning speed by 40% and global work speed by 75%
+Movement speed: -2.0 c/s-->
+	<TM_LichForm.description>Превращает некроманта в Лича, обретающего бессмертное существование и тайную силу. После того, как он был использован, возврата нет.
+
+Выгоды:
+Максимальная Мана: +50
+Регенерация Маны: +50%
+Приобретает противоестественный иммунитет к болезням, сопротивляемость повреждениям, регенерацию здоровья и больше не нуждается в пище или отдыхе.
+Обретает способность: полет
+Обретает способность: смертельный Болт
+
+Штрафы:
+Больше не может выполнять работу, связанную с уходом, социальную, животноводство, пожаротушение, художественную или простой труд.
+Теряет всякую страсть к работе, кроме борьбы и исследований.
+Снижение скорости обучения на 40% и общую скорость работы на 75%
+Скорость движения: -2.0 к/сек</TM_LichForm.description>
+	<!-- Болт Смерти-->
+	<TM_DeathBolt.label>Болт Смерти</TM_DeathBolt.label>
+	<!--                  EN: Launches bolts of power carrying the anguish of the dead; causes intense pain to any living creatures caught in the blast.
+
+Explosion Radius: 1.6m
+Cooldown: 15s
+Bolts: 2
+Range: 40-->
+	<TM_DeathBolt.description>Запускает заряды силы, несущие страдания мертвых; причиняет сильную боль любому живому существу, попавшему в зону взрыва.
+
+Радиус взрыва: 1.6m
+Откат: 15s
+Болтов: 2
+Дистанция: 40</TM_DeathBolt.description>
+	<!--              EN: Death Bolt (I)-->
+	<TM_DeathBolt_I.label>Смертельный болт (I)</TM_DeathBolt_I.label>
+	<!--                    EN: Launches bolts of power carrying the anguish of the dead; causes intense pain to any living creatures caught in the blast.
+
+Explosion Radius: 2m
+Cooldown: 14s
+Bolts: 2
+Range 40-->
+	<TM_DeathBolt_I.description>Запускает заряды силы, несущие страдания мертвых; причиняет сильную боль любому живому существу, попавшему в зону взрыва.
+
+Радиус взрыва: 2m
+Откат: 14s
+Болтов: 2
+Дистанция 40</TM_DeathBolt_I.description>
+	<!--               EN: Death Bolt (II)-->
+	<TM_DeathBolt_II.label>Смертельный болт (II)</TM_DeathBolt_II.label>
+	<!--                     EN: Launches bolts of power carrying the anguish of the dead; causes intense pain to any living creatures caught in the blast.
+
+Explosion Radius: 2m
+Cooldown: 13s
+Bolts: 3
+Range 40-->
+	<TM_DeathBolt_II.description>Запускает заряды силы, несущие страдания мертвых; причиняет сильную боль любому живому существу, попавшему в зону взрыва.
+
+Радиус взрыва: 2m
+Откат: 13s
+Болтов: 3
+Дистанция 40</TM_DeathBolt_II.description>
+	<!--                EN: Death Bolt (III)-->
+	<TM_DeathBolt_III.label>Смертельный болт (III)</TM_DeathBolt_III.label>
+	<!--                      EN: Launches bolts of power carrying the anguish of the dead; causes intense pain to any living creatures caught in the blast.
+
+Explosion Radius: 2.4m
+Cooldown: 12s
+Bolts: 3
+Range: 50-->
+	<TM_DeathBolt_III.description>Запускает заряды силы, несущие страдания мертвых; причиняет сильную боль любому живому существу, попавшему в зону взрыва.
+
+Радиус взрыва: 2.4m
+Откат: 12s
+Болтов: 3
+Дистанция: 50</TM_DeathBolt_III.description>
+</LanguageData>

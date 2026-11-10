@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ProvisionerAuraHD.label>Aura Provisioner</TM_ProvisionerAuraHD.label>
+  <TM_ProvisionerAuraHD.description>Melhora a disponibilidade de mantimentos para os peões mais próximos.</TM_ProvisionerAuraHD.description>
+  <TM_ProvisionerAuraHD.stages.0.label></TM_ProvisionerAuraHD.stages.0.label>
+
+  <TM_TaskMasterAuraHD.label>Mestre Tarefas Aura</TM_TaskMasterAuraHD.label>
+  <TM_TaskMasterAuraHD.description>Controla as tarefas e prioridades dos peões mais próximos, aumentando o esforço, mas diminuindo o humor.</TM_TaskMasterAuraHD.description>
+  <TM_TaskMasterAuraHD.stages.0.label></TM_TaskMasterAuraHD.stages.0.label>
+
+  <TM_CommanderAuraHD.label>Comandante Aura</TM_CommanderAuraHD.label>
+  <TM_CommanderAuraHD.description>O comandante da aura inspira os peões mais próximos com carisma e liderança.</TM_CommanderAuraHD.description>
+  <TM_CommanderAuraHD.stages.0.label></TM_CommanderAuraHD.stages.0.label>
+
+  <TM_StayAlertHD.label>Alarme</TM_StayAlertHD.label>
+  <TM_StayAlertHD.description>Recebi ordens para ativar os níveis de alerta.</TM_StayAlertHD.description>
+  <TM_StayAlertHD.stages.0.label></TM_StayAlertHD.stages.0.label>
+
+  <TM_MoveOutHD.label>duplo trabalho</TM_MoveOutHD.label>
+  <TM_MoveOutHD.description>Recebi ordens para ir rápido.</TM_MoveOutHD.description>
+  <TM_MoveOutHD.stages.0.label>Restauração</TM_MoveOutHD.stages.0.label>
+  <TM_MoveOutHD.stages.1.label></TM_MoveOutHD.stages.1.label>
+  <TM_MoveOutHD.stages.2.label></TM_MoveOutHD.stages.2.label>
+  <TM_MoveOutHD.stages.3.label></TM_MoveOutHD.stages.3.label>
+  <TM_MoveOutHD.stages.4.label></TM_MoveOutHD.stages.4.label>
+
+  <TM_HoldTheLineHD.label>Balcão de segurança</TM_HoldTheLineHD.label>
+  <TM_HoldTheLineHD.description>Recebi ordens para manter a posição e lutar corajosamente.</TM_HoldTheLineHD.description>
+  <TM_HoldTheLineHD.stages.0.label></TM_HoldTheLineHD.stages.0.label>
+  <TM_HoldTheLineHD.stages.1.label></TM_HoldTheLineHD.stages.1.label>
+  <TM_HoldTheLineHD.stages.2.label></TM_HoldTheLineHD.stages.2.label>
+  <TM_HoldTheLineHD.stages.3.label></TM_HoldTheLineHD.stages.3.label>
+
+  <TM_HTLShieldHD.label>Escudo de qualidade</TM_HTLShieldHD.label>
+  <TM_HTLShieldHD.description>Maior resistência à ordem de defesa.</TM_HTLShieldHD.description>
+  <TM_HTLShieldHD.stages.0.label></TM_HTLShieldHD.stages.0.label>
+
+  <TM_CommanderHD.label>Emocionalmente Inspirado (I)</TM_CommanderHD.label>
+  <TM_CommanderHD.description>Inspirado pelo Comandante.</TM_CommanderHD.description>
+  <TM_CommanderHD.stages.0.label>Commander</TM_CommanderHD.stages.0.label>
+
+  <TM_CommanderHD_I.label>Emocionalmente Inspirado (II)</TM_CommanderHD_I.label>
+  <TM_CommanderHD_I.description>Inspirado pelo Comandante.</TM_CommanderHD_I.description>
+  <TM_CommanderHD_I.stages.0.label></TM_CommanderHD_I.stages.0.label>
+
+  <TM_CommanderHD_II.label>Emocionalmente Inspirado (III)</TM_CommanderHD_II.label>
+  <TM_CommanderHD_II.description>Inspirado pelo Comandante.</TM_CommanderHD_II.description>
+  <TM_CommanderHD_II.stages.0.label></TM_CommanderHD_II.stages.0.label>
+
+  <TM_CommanderHD_III.label>Emocionalmente Inspirado (IV)</TM_CommanderHD_III.label>
+  <TM_CommanderHD_III.description>Inspirado pelo Comandante.</TM_CommanderHD_III.description>
+  <TM_CommanderHD_III.stages.0.label></TM_CommanderHD_III.stages.0.label>
+
+  <TM_ProvisionerHD.label>Provisões</TM_ProvisionerHD.label>
+  <TM_ProvisionerHD.description>Recebi mantimentos e informações do Comandante.</TM_ProvisionerHD.description>
+  <TM_ProvisionerHD.stages.0.label>I</TM_ProvisionerHD.stages.0.label>
+  <TM_ProvisionerHD.stages.1.label>II</TM_ProvisionerHD.stages.1.label>
+  <TM_ProvisionerHD.stages.2.label>III</TM_ProvisionerHD.stages.2.label>
+  <TM_ProvisionerHD.stages.3.label>IV</TM_ProvisionerHD.stages.3.label>
+
+  <TM_TaskMasterHD.label>Assistente de tarefas</TM_TaskMasterHD.label>
+  <TM_TaskMasterHD.description>As tarefas e prioridades são controladas pelo comandante.</TM_TaskMasterHD.description>
+  <TM_TaskMasterHD.stages.0.label>I</TM_TaskMasterHD.stages.0.label>
+  <TM_TaskMasterHD.stages.1.label>II</TM_TaskMasterHD.stages.1.label>
+  <TM_TaskMasterHD.stages.2.label>III</TM_TaskMasterHD.stages.2.label>
+  <TM_TaskMasterHD.stages.3.label>IV</TM_TaskMasterHD.stages.3.label>
+
+
+</LanguageData>

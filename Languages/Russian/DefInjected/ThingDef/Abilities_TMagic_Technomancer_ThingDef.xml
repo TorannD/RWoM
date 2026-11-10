@@ -1,0 +1,122 @@
+<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_Technomancer.xml-->
+	<!--                          EN: tech micro laser-->
+	<Projectile_TM_BitTechLaser.label>технический микро-лазер</Projectile_TM_BitTechLaser.label>
+	<!--                        EN: mini frag grenade-->
+	<Projectile_TMFragGrenade.label>мини осколочная граната</Projectile_TMFragGrenade.label>
+	<!--                       EN: mini frag grenade-->
+	<Projectile_TMEMPGrenade.label>мини осколочная граната</Projectile_TMEMPGrenade.label>
+	<!--                       EN: Mark-IV projectile-->
+	<Projectile_TechnoTurret.label>снаряд «Марк-IV»</Projectile_TechnoTurret.label>
+	<!--              EN: elemental shot - fire-->
+	<Bullet_ES_Fire.label>элементарный выстрел - огонь</Bullet_ES_Fire.label>
+	<!--             EN: elemental shot - ice-->
+	<Bullet_ES_Ice.label>элементарный выстрел - лёд</Bullet_ES_Ice.label>
+	<!--             EN: elemental shot - lightning-->
+	<Bullet_ES_Lit.label>элементарный выстрел - молния</Bullet_ES_Lit.label>
+	<!--                   EN: sabotage projectile-->
+	<Projectile_Sabotage.label>снаряд саботаж</Projectile_Sabotage.label>
+	<!--                        EN: orbital strike-->
+	<Projectile_OrbitalStrike.label>орбитальный удар</Projectile_OrbitalStrike.label>
+	<!--                          EN: orbital strike-->
+	<Projectile_OrbitalStrike_I.label>орбитальный удар</Projectile_OrbitalStrike_I.label>
+	<!--                           EN: orbital strike-->
+	<Projectile_OrbitalStrike_II.label>орбитальный удар</Projectile_OrbitalStrike_II.label>
+	<!--                            EN: orbital strike-->
+	<Projectile_OrbitalStrike_III.label>орбитальный удар</Projectile_OrbitalStrike_III.label>
+	<!--                     EN: techno weapon-->
+	<TM_TechnoWeapon_Base0.label>техно оружие</TM_TechnoWeapon_Base0.label>
+	<!--                           EN: A weapon modified by a technomancer-->
+	<TM_TechnoWeapon_Base0.description>Оружие изменено техномантом</TM_TechnoWeapon_Base0.description>
+	<!--                             EN: ㅤ-->
+	<TM_TechnoWeapon_Base0.verbs.0.label>ㅤ</TM_TechnoWeapon_Base0.verbs.0.label>
+	<!--                             EN: weapon smash-->
+	<TM_TechnoWeapon_Base0.tools.0.label>Сокрушающее оружие</TM_TechnoWeapon_Base0.tools.0.label>
+	<!--                     EN: techno weapon-->
+	<TM_TechnoWeapon_Base1.label>техно оружие</TM_TechnoWeapon_Base1.label>
+	<!--                           EN: A weapon modified by a technomancer-->
+	<TM_TechnoWeapon_Base1.description>Оружие изменено техномантом</TM_TechnoWeapon_Base1.description>
+	<!--                             EN: ㅤ-->
+	<TM_TechnoWeapon_Base1.verbs.0.label>ㅤ</TM_TechnoWeapon_Base1.verbs.0.label>
+	<!--                             EN: weapon smash-->
+	<TM_TechnoWeapon_Base1.tools.0.label>Сокрушающее оружие</TM_TechnoWeapon_Base1.tools.0.label>
+	<!--                     EN: techno weapon-->
+	<TM_TechnoWeapon_Base2.label>техно оружие</TM_TechnoWeapon_Base2.label>
+	<!--                           EN: A weapon modified by a technomancer-->
+	<TM_TechnoWeapon_Base2.description>Оружие изменено техномантом</TM_TechnoWeapon_Base2.description>
+	<!--                             EN: ㅤ-->
+	<TM_TechnoWeapon_Base2.verbs.0.label>ㅤ</TM_TechnoWeapon_Base2.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_TechnoWeapon_Base2.verbs.Verb_Shoot.label>ㅤ</TM_TechnoWeapon_Base2.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_TechnoWeapon_Base2.tools.0.label>Сокрушающее оружие</TM_TechnoWeapon_Base2.tools.0.label>
+	<!--                     EN: techno weapon-->
+	<TM_TechnoWeapon_Base3.label>техно оружие</TM_TechnoWeapon_Base3.label>
+	<!--                           EN: A weapon modified by a technomancer-->
+	<TM_TechnoWeapon_Base3.description>Оружие изменено техномантом</TM_TechnoWeapon_Base3.description>
+	<!--                             EN: ㅤ-->
+	<TM_TechnoWeapon_Base3.verbs.0.label>ㅤ</TM_TechnoWeapon_Base3.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_TechnoWeapon_Base3.verbs.Verb_Shoot.label>ㅤ</TM_TechnoWeapon_Base3.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_TechnoWeapon_Base3.tools.0.label>Сокрушающее оружие</TM_TechnoWeapon_Base3.tools.0.label>
+	<!--                     EN: techno weapon-->
+	<TM_TechnoWeapon_Base4.label>техно оружие</TM_TechnoWeapon_Base4.label>
+	<!--                           EN: A weapon modified by a technomancer-->
+	<TM_TechnoWeapon_Base4.description>Оружие изменено техномантом</TM_TechnoWeapon_Base4.description>
+	<!--                             EN: ㅤ-->
+	<TM_TechnoWeapon_Base4.verbs.0.label>ㅤ</TM_TechnoWeapon_Base4.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_TechnoWeapon_Base4.verbs.Verb_Shoot.label>ㅤ</TM_TechnoWeapon_Base4.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_TechnoWeapon_Base4.tools.0.label>Сокрушающее оружие</TM_TechnoWeapon_Base4.tools.0.label>
+	<!--                     EN: techno weapon-->
+	<TM_TechnoWeapon_Base5.label>техно оружие</TM_TechnoWeapon_Base5.label>
+	<!--                           EN: A weapon modified by a technomancer-->
+	<TM_TechnoWeapon_Base5.description>Оружие изменено техномантом</TM_TechnoWeapon_Base5.description>
+	<!--                             EN: ㅤ-->
+	<TM_TechnoWeapon_Base5.verbs.0.label>ㅤ</TM_TechnoWeapon_Base5.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_TechnoWeapon_Base5.verbs.Verb_Shoot.label>ㅤ</TM_TechnoWeapon_Base5.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_TechnoWeapon_Base5.tools.0.label>Сокрушающее оружие</TM_TechnoWeapon_Base5.tools.0.label>
+	<!--                     EN: techno weapon-->
+	<TM_TechnoWeapon_Base6.label>техно оружие</TM_TechnoWeapon_Base6.label>
+	<!--                           EN: A weapon modified by a technomancer-->
+	<TM_TechnoWeapon_Base6.description>Оружие изменено техномантом</TM_TechnoWeapon_Base6.description>
+	<!--                             EN: ㅤ-->
+	<TM_TechnoWeapon_Base6.verbs.0.label>ㅤ</TM_TechnoWeapon_Base6.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_TechnoWeapon_Base6.verbs.Verb_Shoot.label>ㅤ</TM_TechnoWeapon_Base6.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_TechnoWeapon_Base6.tools.0.label>Сокрушающее оружие</TM_TechnoWeapon_Base6.tools.0.label>
+	<!--                     EN: techno weapon-->
+	<TM_TechnoWeapon_Base7.label>техно оружие</TM_TechnoWeapon_Base7.label>
+	<!--                           EN: A weapon modified by a technomancer-->
+	<TM_TechnoWeapon_Base7.description>Оружие изменено техномантом</TM_TechnoWeapon_Base7.description>
+	<!--                             EN: ㅤ-->
+	<TM_TechnoWeapon_Base7.verbs.0.label>ㅤ</TM_TechnoWeapon_Base7.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_TechnoWeapon_Base7.verbs.Verb_Shoot.label>ㅤ</TM_TechnoWeapon_Base7.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_TechnoWeapon_Base7.tools.0.label>Сокрушающее оружие</TM_TechnoWeapon_Base7.tools.0.label>
+	<!--                     EN: techno weapon-->
+	<TM_TechnoWeapon_Base8.label>техно оружие</TM_TechnoWeapon_Base8.label>
+	<!--                           EN: A weapon modified by a technomancer-->
+	<TM_TechnoWeapon_Base8.description>Оружие изменено техномантом</TM_TechnoWeapon_Base8.description>
+	<!--                             EN: ㅤ-->
+	<TM_TechnoWeapon_Base8.verbs.0.label>ㅤ</TM_TechnoWeapon_Base8.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_TechnoWeapon_Base8.verbs.Verb_Shoot.label>ㅤ</TM_TechnoWeapon_Base8.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_TechnoWeapon_Base8.tools.0.label>Сокрушающее оружие</TM_TechnoWeapon_Base8.tools.0.label>
+	<!--                     EN: techno weapon-->
+	<TM_TechnoWeapon_Base9.label>техно оружие</TM_TechnoWeapon_Base9.label>
+	<!--                           EN: A weapon modified by a technomancer-->
+	<TM_TechnoWeapon_Base9.description>Оружие изменено техномантом</TM_TechnoWeapon_Base9.description>
+	<!--                             EN: ㅤ-->
+	<TM_TechnoWeapon_Base9.verbs.0.label>ㅤ</TM_TechnoWeapon_Base9.verbs.0.label>
+	<!--                                      EN: ㅤ-->
+	<TM_TechnoWeapon_Base9.verbs.Verb_Shoot.label>ㅤ</TM_TechnoWeapon_Base9.verbs.Verb_Shoot.label>
+	<!--                             EN: weapon smash-->
+	<TM_TechnoWeapon_Base9.tools.0.label>Сокрушающее оружие</TM_TechnoWeapon_Base9.tools.0.label>
+</LanguageData>

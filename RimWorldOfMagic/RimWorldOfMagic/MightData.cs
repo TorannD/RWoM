@@ -1,4 +1,4 @@
-﻿using AbilityUser;
+using AbilityUser;
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,65 +22,53 @@ namespace TorannMagic
 
 
         public bool customPowersInitialized = false;
+        private int initializedCustomPowerDefCount = -1;
         public List<MightPower> mightPowerCustom;
-        public List<MightPower> MightPowersCustom  //supports customs abilities
+        public List<MightPower> MightPowersCustom
         {
             get
             {
-                bool flag = this.mightPowerCustom == null; // || !this.customPowersInitialized;
-                if (flag)
+                if (mightPowerCustom == null || !customPowersInitialized ||
+                    initializedCustomPowerDefCount != DefDatabase<TM_CustomPowerDef>.DefCount)
                 {
-                    this.customPowersInitialized = true;
-                    IEnumerable<TM_CustomPowerDef> enumerable = TM_Data.CustomFighterPowerDefs();
-
-                    if (mightPowerCustom == null || mightPowerCustom.Count <= 0)
+                    if (mightPowerCustom == null) mightPowerCustom = new List<MightPower>();
+                    foreach (TM_CustomPowerDef definition in TM_Data.CustomFighterPowerDefs())
                     {
-                        this.mightPowerCustom = new List<MightPower>();
-                        this.mightPowerCustom.Clear();
-                    }                    
-                    foreach (TM_CustomPowerDef current in enumerable)
-                    {
-                        bool newPower = false;
-                        List<AbilityUser.AbilityDef> abilityList = current.customPower.abilityDefs;
-                        MightPower mp = new MightPower(abilityList);
-                        mp.maxLevel = current.customPower.maxLevel;
-                        mp.learnCost = current.customPower.learnCost;
-                        mp.costToLevel = current.customPower.costToLevel;
-                        mp.autocasting = current.customPower.autocasting;
-                        if (!mightPowerCustom.Any(a => a.GetAbilityDef(0) == mp.GetAbilityDef(0)))
+                        TM_CustomPower power = definition.customPower;
+                        if (power?.abilityDefs == null || power.abilityDefs.Count == 0 || power.abilityDefs[0] == null) continue;
+                        bool hasSkills = power.skills != null && power.skills.Any(skill => skill != null);
+                        if (hasSkills)
                         {
-                            newPower = true;
-                        }                         
-                        bool hasSkills = false;
-                        if (current.customPower.skills != null)
-                        {
-                            foreach (TM_CustomSkill skill in current.customPower.skills)
+                            foreach (TM_CustomSkill skill in power.skills)
                             {
-                                MightPowerSkill mps = new MightPowerSkill(skill.label, skill.description);
-                                mps.levelMax = skill.levelMax;
-                                mps.costToLevel = skill.costToLevel;
-                                if (!AllMightPowerSkills.Any(b => b.label == mps.label) && !MightPowerSkill_Custom.Any(b => b.label == mps.label))
-                                {
-                                    MightPowerSkill_Custom.Add(mps);
-                                }
-                                hasSkills = true;
+                                if (skill == null || string.IsNullOrEmpty(skill.label)) continue;
+                                string label = TM_CustomSkillLabels.Canonical(skill.label);
+                                bool saved = MightPowerSkill_Custom.Any(existing => existing != null && existing.label == label)
+                                    || AllMightPowerSkills.Any(existing => existing != null && existing.label == label);
+                                if (!saved)
+                                    MightPowerSkill_Custom.Add(new MightPowerSkill(label, skill.description)
+                                    { levelMax = skill.levelMax, costToLevel = skill.costToLevel });
                             }
                         }
-                        if (newPower)
+                        List<MightPower> owners = hasSkills ? mightPowerCustom : MightPowersCustomStandalone;
+                        if (!owners.Any(existing => existing?.TMabilityDefs?.FirstOrDefault() == power.abilityDefs[0]))
                         {
-                            if (hasSkills)
-                            {
-                                mightPowerCustom.Add(mp);
-                            }
-                            else if(!MightPowersCustomStandalone.Any((a => a.GetAbilityDef(0) == mp.GetAbilityDef(0))))
-                            {
-                                mightPowerCustomStandalone.Add(mp);
-                            }
+                            MightPower owner = new MightPower(power.abilityDefs)
+                            { maxLevel = power.maxLevel, learnCost = power.learnCost, costToLevel = power.costToLevel };
+                            if (power.autocasting != null) owner.autocasting = power.autocasting;
+                            owners.Add(owner);
                         }
                     }
-                    this.allMightPowerSkills = null; //force rediscovery and caching to include custom defs
+                    allMightPowerSkills = null;
+                    allMightPowersList = null;
+                    allMightPowersWithSkills = null;
+                    mightPowerCustomAll = null;
+                    uniquePowersCount = 0;
+                    ClearSkill_Dictionaries();
+                    customPowersInitialized = true;
+                    initializedCustomPowerDefCount = DefDatabase<TM_CustomPowerDef>.DefCount;
                 }
-                return this.mightPowerCustom;
+                return mightPowerCustom;
             }
         }
 
@@ -104,12 +92,12 @@ namespace TorannMagic
         {
             get
             {
+                List<MightPower> custom = MightPowersCustom;
                 if(mightPowerCustomAll == null)
                 {
                     mightPowerCustomAll = new List<MightPower>();
-                    mightPowerCustomAll.Clear();
-                    mightPowerCustomAll.AddRange(MightPowersCustom);
-                    mightPowerCustomAll.AddRange(MightPowersCustomStandalone);                    
+                    mightPowerCustomAll.AddRange(custom.Where(p => p?.TMabilityDefs?.Any(def => def != null) == true));
+                    mightPowerCustomAll.AddRange(MightPowersCustomStandalone.Where(p => p?.TMabilityDefs?.Any(def => def != null) == true));
                 }
                 return mightPowerCustomAll;
             }
@@ -1352,6 +1340,13 @@ namespace TorannMagic
                             TorannMagicDefOf.TM_Whirlwind
                         }),
                     };
+                    // Beta gladiator path choices (Adept attack and the
+                    // Reforged foundation) own their single-def powers so the
+                    // grimoire can render and rank them.
+                    var gladiatorSweep = DefDatabase<TMAbilityDef>.GetNamedSilentFail("TM_GladiatorSweep");
+                    if (gladiatorSweep != null) this.mightPowerG.Add(new MightPower(new List<AbilityUser.AbilityDef> { gladiatorSweep }));
+                    var gladiatorManeuver = DefDatabase<TMAbilityDef>.GetNamedSilentFail("TM_GladiatorManeuver");
+                    if (gladiatorManeuver != null) this.mightPowerG.Add(new MightPower(new List<AbilityUser.AbilityDef> { gladiatorManeuver }));
                 }
                 return this.mightPowerG;
             }
@@ -1998,13 +1993,13 @@ namespace TorannMagic
         {
             get
             {
+                List<MightPower> learnedPowers = AllMightPowersWithSkills;
                 if (allMightPowersList == null || allMightPowersList.Count <= 0)
                 {
                     allMightPowersList = new List<MightPower>();
-                    allMightPowersList.Clear();
-                    allMightPowersList.AddRange(AllMightPowersWithSkills);
+                    allMightPowersList.AddRange(learnedPowers);
                     allMightPowersList.AddRange(this.MightPowersStandalone);
-                    allMightPowersList.AddRange(this.MightPowersCustomStandalone);
+                    allMightPowersList.AddRange(this.MightPowersCustomStandalone.Where(p => p?.TMabilityDefs?.Any(def => def != null) == true));
                 }
                 return allMightPowersList;
             }
@@ -2015,11 +2010,11 @@ namespace TorannMagic
         {
             get
             {
+                List<MightPower> custom = MightPowersCustom;
                 if (allMightPowersWithSkills == null || allMightPowersWithSkills.Count <= 0)
                 {
                     allMightPowersWithSkills = new List<MightPower>();
-                    allMightPowersWithSkills.Clear();
-                    allMightPowersWithSkills.AddRange(this.MightPowersCustom);
+                    allMightPowersWithSkills.AddRange(custom.Where(p => p?.TMabilityDefs?.Any(def => def != null) == true));
                     allMightPowersWithSkills.AddRange(this.MightPowersW);
                     allMightPowersWithSkills.AddRange(this.MightPowersM);
                     allMightPowersWithSkills.AddRange(this.MightPowersDK);
@@ -2126,9 +2121,20 @@ namespace TorannMagic
             skillEfficiency.Clear();
         }
 
+        private int skillLookupDefCount = -1;
+        private void RefreshSkillLookup()
+        {
+            if (skillLookupDefCount == DefDatabase<TM_CustomPowerDef>.DefCount) return;
+            _ = MightPowersCustom;
+            ClearSkill_Dictionaries();
+            skillLookupDefCount = DefDatabase<TM_CustomPowerDef>.DefCount;
+        }
+
         private Dictionary<TMAbilityDef, MightPowerSkill> skillEfficiency = new Dictionary<TMAbilityDef, MightPowerSkill>();
         public MightPowerSkill GetSkill_Efficiency(TMAbilityDef ability)
-        {            
+        {
+            if (ability == null) return null;
+            RefreshSkillLookup();
             if (!skillEfficiency.ContainsKey(ability))
             {
                 bool hasSkill = false;
@@ -2181,6 +2187,8 @@ namespace TorannMagic
         private Dictionary<TMAbilityDef, MightPowerSkill> skillVersatility = new Dictionary<TMAbilityDef, MightPowerSkill>();
         public MightPowerSkill GetSkill_Versatility(TMAbilityDef ability)
         {
+            if (ability == null) return null;
+            RefreshSkillLookup();
             if (!skillVersatility.ContainsKey(ability))
             {
                 bool hasSkill = false;
@@ -2234,6 +2242,8 @@ namespace TorannMagic
         private Dictionary<TMAbilityDef, MightPowerSkill> skillPower = new Dictionary<TMAbilityDef, MightPowerSkill>();
         public MightPowerSkill GetSkill_Power(TMAbilityDef ability)
         {
+            if (ability == null) return null;
+            RefreshSkillLookup();
             if (!skillPower.ContainsKey(ability))
             {
                 bool hasSkill = false;
@@ -2394,6 +2404,17 @@ namespace TorannMagic
             this.initialized = false;
         }
 
+        public int RestoreMissingRecords()
+        {
+            int added = Compatibility.TM_LegacyRecovery.FillMissingRecords(this);
+            this.allMightPowerSkills = null;
+            this.allMightPowersList = null;
+            this.allMightPowersWithSkills = null;
+            this.uniquePowersCount = 0;
+            ClearSkill_Dictionaries();
+            return added;
+        }
+
         public void ExposeData()
         {
             //Scribe_Deep.Look(ref this.equipmentContainer, "equipmentContainer", new object[] { this });
@@ -2487,6 +2508,40 @@ namespace TorannMagic
             Scribe_Collections.Look<MightPowerSkill>(ref this.mightPowerSkill_PoisonFlask, "mightPowerSkill_PoisonFlask", (LookMode)2, new object[0]);
             Scribe_Collections.Look<MightPowerSkill>(ref this.mightPowerSkill_Elixir, "mightPowerSkill_Elixir", (LookMode)2, new object[0]);
             Scribe_Collections.Look<MightPowerSkill>(ref this.mightPowerSkill_SoothingBalm, "mightPowerSkill_SoothingBalm", (LookMode)2, new object[0]);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && this.mightPowerSkill_Custom != null)
+            {
+                Dictionary<string, int> indices = new Dictionary<string, int>();
+                for (int i = 0; i < this.mightPowerSkill_Custom.Count; i++)
+                {
+                    MightPowerSkill skill = this.mightPowerSkill_Custom[i];
+                    if (skill == null || string.IsNullOrEmpty(skill.label)) continue;
+                    skill.label = TM_CustomSkillLabels.Canonical(skill.label);
+                    int index;
+                    if (indices.TryGetValue(skill.label, out index))
+                    {
+                        if (skill.level > this.mightPowerSkill_Custom[index].level)
+                        {
+                            this.mightPowerSkill_Custom[index] = skill;
+                        }
+                        this.mightPowerSkill_Custom.RemoveAt(i--);
+                    }
+                    else indices.Add(skill.label, i);
+                }
+                this.allMightPowerSkills = null;
+            }
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                RestoreMissingRecords();
+                this.allMightPowerSkills = null;
+                this.allMightPowersList = null;
+                this.allMightPowersWithSkills = null;
+                this.mightPowerCustomAll = null;
+                this.uniquePowersCount = 0;
+                this.customPowersInitialized = false;
+                this.initializedCustomPowerDefCount = -1;
+                this.skillLookupDefCount = -1;
+                ClearSkill_Dictionaries();
+            }
         }
     }
 }

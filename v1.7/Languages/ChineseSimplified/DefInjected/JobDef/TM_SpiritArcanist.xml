@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBlink.reportString>正通过宿主施展闪现。</TM_SpiritBlink.reportString>
+  <TM_SpiritBlink_I.reportString>正通过宿主施展闪现。</TM_SpiritBlink_I.reportString>
+  <TM_SpiritBlink_II.reportString>正通过宿主施展闪现。</TM_SpiritBlink_II.reportString>
+  <TM_SpiritBlink_III.reportString>正通过宿主施展闪现。</TM_SpiritBlink_III.reportString>
+  <TM_SpiritSummon.reportString>正通过宿主召来目标。</TM_SpiritSummon.reportString>
+  <TM_SpiritSummon_I.reportString>正通过宿主召来目标。</TM_SpiritSummon_I.reportString>
+  <TM_SpiritSummon_II.reportString>正通过宿主召来目标。</TM_SpiritSummon_II.reportString>
+  <TM_SpiritSummon_III.reportString>正通过宿主召来目标。</TM_SpiritSummon_III.reportString>
+  <TM_SpiritMagicMissile.reportString>正通过宿主施展魔法飞弹。</TM_SpiritMagicMissile.reportString>
+  <TM_SpiritMagicMissile_I.reportString>正通过宿主施展魔法飞弹。</TM_SpiritMagicMissile_I.reportString>
+  <TM_SpiritMagicMissile_II.reportString>正通过宿主施展魔法飞弹。</TM_SpiritMagicMissile_II.reportString>
+  <TM_SpiritMagicMissile_III.reportString>正通过宿主施展魔法飞弹。</TM_SpiritMagicMissile_III.reportString>
+  <TM_SpiritTeleport.reportString>正通过灵魂宿主开启运输传送门。</TM_SpiritTeleport.reportString>
+  <TM_SpiritFoldReality.reportString>正通过灵魂宿主折叠现实。</TM_SpiritFoldReality.reportString>
+</LanguageData>

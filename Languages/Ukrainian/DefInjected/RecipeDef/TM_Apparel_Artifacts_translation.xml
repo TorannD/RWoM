@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Craftable Artifacts -->
+
+  <AdministerOrbOfTheEternal.label>небесна куля вічної</AdministerOrbOfTheEternal.label>
+  <AdministerOrbOfTheEternal.description>Застосовує силу Сфери Вічного. Це одноразове вливання магічної енергії, яке загоїть рани, відновить кінцівки і вилікує хвороби. Цілюща енергія націлиться і зцілить єдиний найгірший стан здоров&apos;я, що зачіпає когось у будь-який момент часу.</AdministerOrbOfTheEternal.description>
+  <AdministerOrbOfTheEternal.jobString>Використання Сфери Вічного.</AdministerOrbOfTheEternal.jobString>
+
+
+</LanguageData>

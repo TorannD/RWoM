@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritResurrection</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting resurrection through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritHealingCircle</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting circle of healing through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritHealingCircle_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting circle of healing through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritHealingCircle_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting circle of healing through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritHealingCircle_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting circle of healing through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritBestowMight</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>bestowing might through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritBestowMight_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>bestowing might through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritBestowMight_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>bestowing might through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritBestowMight_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>bestowing might through a spirit host.</reportString>
+  </JobDef>
+</Defs>

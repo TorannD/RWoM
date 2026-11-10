@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Ignite Blood -->
+
+  <Projectile_IgniteBlood.label>Запалити кров</Projectile_IgniteBlood.label>
+
+
+  <!-- Blood Moon -->
+
+  <Projectile_BloodMoon.label>Знаряддя кривавого місяця</Projectile_BloodMoon.label>
+  <Projectile_BloodMoon_I.label>Снаряд кривавого Місяця</Projectile_BloodMoon_I.label>
+  <Projectile_BloodMoon_II.label>Снаряд кривавого Місяця</Projectile_BloodMoon_II.label>
+  <Projectile_BloodMoon_III.label>Снаряд кривавого Місяця</Projectile_BloodMoon_III.label>
+
+
+</LanguageData>

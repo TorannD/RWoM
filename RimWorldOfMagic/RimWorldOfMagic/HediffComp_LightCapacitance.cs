@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using UnityEngine;
 using System.Collections.Generic;
@@ -7,13 +7,14 @@ namespace TorannMagic
 {
     public class HediffComp_LightCapacitance : HediffComp
     {
-        private bool initialized = false;
+        private int lastChargeTick = -1;
         private float lightEnergy = 10f;
         private string lightPowerString = "";
 
         public override void CompExposeData()
         {
             base.CompExposeData();
+            Scribe_Values.Look(ref lastChargeTick, "TM_lastLightChargeTick", -1);
             Scribe_Values.Look<float>(ref this.lightEnergy, "lightEnergy", 10f, false);
         }
 
@@ -68,10 +69,12 @@ namespace TorannMagic
         {
             get
             {
-                if (base.Pawn.Spawned && base.Pawn.Map != null)
+                var body = Pawn;
+                if (ClassProgression.SpiritRebirthState.TryGet(Pawn,out var state) && state.HasValidHost(Pawn)) body = state.Host;
+                if (body?.Spawned == true)
                 {
                     CompAbilityUserMagic comp = base.Pawn.GetCompAbilityUserMagic();
-                    if (comp != null && comp.SoL != null)
+                    if (comp?.SoL?.Spawned == true && comp.SoL.Map == body.Map)
                     {
                         return comp.SoL;
                     }
@@ -97,16 +100,22 @@ namespace TorannMagic
         {
             get
             {
-                float val = .01f;
-                if (this.Pawn.Map != null)
+                var body = Pawn;
+                if (ClassProgression.SpiritRebirthState.TryGet(Pawn, out var state))
                 {
-                    if (this.Pawn.Map.weatherManager?.curWeather?.defName != "Clear")
+                    if (!state.HasValidHost(Pawn) || state.DepletionPending || !state.Host.Spawned) return 0f;
+                    body = state.Host;
+                }
+                float val = .01f;
+                if (body.Map != null)
+                {
+                    if (body.Map.weatherManager?.curWeather?.defName != "Clear")
                     {
                         val *= .8f;
                     }
-                    if (this.Pawn.Map.GameConditionManager?.ActiveConditions?.Count > 0)
+                    if (body.Map.GameConditionManager?.ActiveConditions?.Count > 0)
                     {
-                        List<GameCondition> gcList = this.Pawn.Map.GameConditionManager.ActiveConditions;
+                        List<GameCondition> gcList = body.Map.GameConditionManager.ActiveConditions;
                         for (int i = 0; i < gcList.Count; i++)
                         {
                             if (gcList[i].def == GameConditionDefOf.Aurora)
@@ -135,11 +144,11 @@ namespace TorannMagic
                             }
                         }
                     }
-                    if (this.Pawn.Position.Roofed(this.Pawn.Map))
+                    if (body.Position.Roofed(body.Map))
                     {
                         val -= .004f;
                     }
-                    int mapTime = GenLocalDate.HourOfDay(this.Pawn.Map);
+                    int mapTime = GenLocalDate.HourOfDay(body.Map);
                     if (mapTime < 20 && mapTime > 5)
                     {
                         float amt = 0;
@@ -172,37 +181,17 @@ namespace TorannMagic
             }
         }
 
-        private void Initialize()
-        {
-            bool spawned = base.Pawn.Spawned;
-            if (spawned && base.Pawn.Map != null)
-            {
-
-            }
-        }
-
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-            bool flag = base.Pawn != null;
-            if (flag)
-            {
-                if(!initialized)
-                {
-                    this.initialized = true;
-                    Initialize();
-                }
+            if (Pawn != null) TickCharge(Find.TickManager.TicksGame);
+        }
 
-                if(Find.TickManager.TicksGame % Get_ChargeFrequency == 0)
-                {
-                    UpdateCharge();
-                }
-
-                if(Find.TickManager.TicksGame % 345 == 0)
-                {
-                    Initialize();
-                }
-            }            
+        internal void TickCharge(int now)
+        {
+            if (now % Get_ChargeFrequency != 0 || lastChargeTick == now) return;
+            lastChargeTick = now;
+            UpdateCharge();
         }
 
         private void UpdateCharge()

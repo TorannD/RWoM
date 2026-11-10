@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="TM_BuildingBase">
+    <defName>TM_GrandAtmosphereDome</defName>
+    <label>great atmosphere dome</label>
+    <description>Maintains breathable atmosphere across the entire local map, including open vacuum. A mage must perform a 60-second activation ritual, spending 10% of personal maximum mana on completion while retaining at least 20%. Uses 100 magofuel per day regardless of map area, with a local capacity of 200. Refuel by hauling or through connected mana beacons. Only one dome operates per map; other activated domes remain on standby without consuming fuel. Switching off, breakdown, ownership loss or fuel exhaustion requires a new ritual. Supports breathing, plants and fire in vacuum. Provides no heat, combat protection or terrain.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Buildings/GrandAtmosphereDome</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4.4,4.4)</drawSize>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <size>(4,4)</size>
+    <rotatable>false</rotatable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>BuildingsMisc</li></thingCategories>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>TM_RWoM</designationCategory>
+    <placeWorkers><li>TorannMagic.Odyssey.PlaceWorker_ManaNetwork</li></placeWorkers>
+    <statBases><MaxHitPoints>700</MaxHitPoints><WorkToBuild>30000</WorkToBuild><Mass>120</Mass><Flammability>0.2</Flammability></statBases>
+    <costList><Steel>400</Steel><RawMagicyte>500</RawMagicyte><ComponentIndustrial>8</ComponentIndustrial><GravlitePanel>100</GravlitePanel></costList>
+    <researchPrerequisites><li>TM_GrandAtmosphereDomes</li></researchPrerequisites>
+    <comps>
+      <li Class="TorannMagic.Odyssey.CompProperties_CrystalGlow"><state>Dome</state><diameter>1.4</diameter><north>(0.5,0.46)</north><east>(0.5,0.46)</east><south>(0.5,0.46)</south><west>(0.5,0.46)</west></li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>200</fuelCapacity><initialFuelPercent>0</initialFuelPercent><fuelConsumptionRate>0</fuelConsumptionRate>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><functionsInVacuum>true</functionsInVacuum><fuelMultiplier>1</fuelMultiplier>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable><initialConfigurableTargetFuelLevel>200</initialConfigurableTargetFuelLevel>
+        <initialAllowAutoRefuel>true</initialAllowAutoRefuel><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><showFuelGizmo>true</showFuelGizmo><drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <fuelFilter><thingDefs><li>TM_Magofuel</li></thingDefs></fuelFilter>
+      </li>
+      <li Class="TorannMagic.Odyssey.CompProperties_GrandAtmosphereDome"><fuelPerDay>100</fuelPerDay><ritualTicks>3600</ritualTicks><ritualManaFraction>0.1</ritualManaFraction><personalReserve>0.2</personalReserve></li>
+      <li Class="TorannMagic.Odyssey.CompProperties_ManaNetworkEndpoint"><supportsMana>false</supportsMana><supportsFuel>true</supportsFuel><defaultManaMode>Off</defaultManaMode><defaultFuelMode>Receive</defaultFuelMode></li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+  </ThingDef>
+  <ResearchProjectDef>
+    <defName>TM_GrandAtmosphereDomes</defName><label>great atmosphere domes</label>
+    <description>Construct ritual-activated domes that sustain breathable atmosphere across an entire local map using magofuel.</description>
+    <baseCost>6000</baseCost><techLevel>Spacer</techLevel><tab>TMagic</tab>
+    <prerequisites><li>TM_MagofuelRefining</li><li>TM_MagicCircle</li><li>OrbitalTech</li></prerequisites>
+    <researchViewX>5</researchViewX><researchViewY>5</researchViewY>
+  </ResearchProjectDef>
+  <JobDef><defName>TM_ActivateGrandDome</defName><driverClass>TorannMagic.Odyssey.JobDriver_ActivateGrandDome</driverClass><reportString>performing the atmosphere dome activation ritual.</reportString></JobDef>
+</Defs>

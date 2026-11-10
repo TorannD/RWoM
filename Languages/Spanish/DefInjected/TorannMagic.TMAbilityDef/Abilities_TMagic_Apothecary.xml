@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Herbalist.label>Herbolario</TM_Herbalist.label>
+  <TM_Herbalist.description>La formación en herbolaria permite al boticario identificar y cosechar con eficiencia los ingredientes de sus brebajes.</TM_Herbalist.description>
+
+  <TM_PoisonFlask.label>Frasco de veneno</TM_PoisonFlask.label>
+  <TM_PoisonFlask.description>Lanza un brebaje nocivo que estalla en una densa nube de gas venenoso. El gas permanece en la zona durante un breve tiempo antes de dispersarse. Quien inhale los vapores sufrirá daños corrosivos en la garganta y los pulmones.</TM_PoisonFlask.description>
+
+  <TM_Elixir.label>Elixir</TM_Elixir.label>
+  <TM_Elixir.description>Los elixires herbales se crean mezclando hierbas potentes, extractos herbales y otra materia orgánica. La potencia del elixir proviene de la reacción inmediata de los ingredientes al combinarse. Esa reacción química tiene una vida media corta, lo que la hace poco práctica y poco rentable para la producción y distribución en masa. Si se consume de inmediato, los potentes beneficios del elixir para la salud bastan para traer a un peón de vuelta del borde de la muerte. Sus efectos duran casi un día.</TM_Elixir.description>
+
+  <TM_SoothingBalm.label>Bálsamo calmante</TM_SoothingBalm.label>
+  <TM_SoothingBalm.description>El bálsamo calmante del boticario se aplica sobre heridas abiertas para combatir la infección, favorecer la coagulación y reducir el dolor. Entre los efectos secundarios pueden aparecer alucinaciones, sensación de euforia y pérdida del conocimiento.</TM_SoothingBalm.description>
+
+  <TM_FireSuppressionFlask.label>Frasco extintor</TM_FireSuppressionFlask.label>
+  <TM_FireSuppressionFlask.description>Lanza un recipiente con líquido supresor de fuego que sofoca rápidamente las llamas.
+
+Alcance: 20
+Enfriamiento: 30
+Radio: 6</TM_FireSuppressionFlask.description>
+
+  <TM_FireSuppressionFlask_I.label>Frasco extintor</TM_FireSuppressionFlask_I.label>
+  <TM_FireSuppressionFlask_I.description>Lanza un recipiente con líquido supresor de fuego que sofoca rápidamente las llamas.
+
+Alcance: 25
+Enfriamiento: 20
+Radio: 8</TM_FireSuppressionFlask_I.description>
+
+  <TM_FireSuppressionFlask_II.label>Frasco extintor</TM_FireSuppressionFlask_II.label>
+  <TM_FireSuppressionFlask_II.description>Lanza un recipiente con líquido supresor de fuego que sofoca rápidamente las llamas.
+
+Alcance: 30
+Enfriamiento: 15
+Radio: 10</TM_FireSuppressionFlask_II.description>
+
+  <TM_FireSuppressionFlask_III.label>Frasco extintor</TM_FireSuppressionFlask_III.label>
+  <TM_FireSuppressionFlask_III.description>Lanza un recipiente con líquido supresor de fuego que sofoca rápidamente las llamas.
+
+Alcance: 34
+Enfriamiento: 10
+Radio: 11</TM_FireSuppressionFlask_III.description>
+
+  <TM_HerbalClarity.label>Claridad</TM_HerbalClarity.label>
+  <TM_HerbalClarity.description>Administra un preparado que ayuda a quien lo consume a abrirse a lo arcano. La regeneración de maná aumenta hasta un 300 % y la sensibilidad psíquica hasta un 50 %. Los efectos reducen la estabilidad mental. La claridad dura varios días, pero pierde potencia con el tiempo. El uso de esta droga puede ser arriesgado, incluso mortal para un mago, si coincide con un evento de drenaje de maná: úsala con precaución.
+
+*La habilidad puede activarse automáticamente cuando un mago cercano tiene menos de 20 de maná.</TM_HerbalClarity.description>
+
+  <TM_HerbalBliss.label>Éxtasis</TM_HerbalBliss.label>
+  <TM_HerbalBliss.description>Administra una de las drogas más peligrosas de la región, quizá solo superada por la luciferum. El éxtasis sumerge al usuario en un estado de dicha que enmascara casi todas las emociones y el dolor. Se elabora con una mezcla creativa de extractos de plantas locales y otros ingredientes. Fiel al dicho «la ignorancia es la felicidad», esta droga hace que el usuario pierda poco a poco sus habilidades aprendidas, y la ganancia de habilidades bajo su influencia queda muy reducida.
+
+*La habilidad puede activarse automáticamente cuando un peón cercano tiene menos de un 5 % de ánimo.</TM_HerbalBliss.description>
+
+</LanguageData>

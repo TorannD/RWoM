@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ShadowCloakHD.label>Тіньовий плеолог</TM_ShadowCloakHD.label>
+  <TM_ShadowCloakHD.description>Оповитий тінями.</TM_ShadowCloakHD.description>
+  <TM_ShadowCloakHD.stages.0.label></TM_ShadowCloakHD.stages.0.label>
+  <TM_ShadowCloakHD.stages.1.label>I</TM_ShadowCloakHD.stages.1.label>
+  <TM_ShadowCloakHD.stages.2.label>II</TM_ShadowCloakHD.stages.2.label>
+  <TM_ShadowCloakHD.stages.3.label>III</TM_ShadowCloakHD.stages.3.label>
+  <TM_ShadowCloakHD.stages.4.label>IV</TM_ShadowCloakHD.stages.4.label>
+  <TM_ShadowCloakHD.stages.5.label>V</TM_ShadowCloakHD.stages.5.label>
+
+  <TM_NightshadeHD.label>Шар Нічної тіні</TM_NightshadeHD.label>
+  <TM_NightshadeHD.description>Наносить токсин нічної тіні на зброю і боєприпаси.</TM_NightshadeHD.description>
+  <TM_NightshadeHD.stages.0.label></TM_NightshadeHD.stages.0.label>
+
+  <TM_HasteHD.label>Поспішність</TM_HasteHD.label>
+  <TM_HasteHD.description>Швидкість атаки подвоюється.</TM_HasteHD.description>
+  <TM_HasteHD.stages.0.label></TM_HasteHD.stages.0.label>
+
+  <TM_NightshadeToxinHD.label>Токсин нічної тіні</TM_NightshadeToxinHD.label>
+  <TM_NightshadeToxinHD.description>Поразка токсином паслена, що викликає сліпоту і утруднене дихання.</TM_NightshadeToxinHD.description>
+  <TM_NightshadeToxinHD.stages.0.label></TM_NightshadeToxinHD.stages.0.label>
+  <TM_NightshadeToxinHD.stages.1.label>I</TM_NightshadeToxinHD.stages.1.label>
+  <TM_NightshadeToxinHD.stages.2.label>II</TM_NightshadeToxinHD.stages.2.label>
+  <TM_NightshadeToxinHD.stages.3.label>III</TM_NightshadeToxinHD.stages.3.label>
+  <TM_NightshadeToxinHD.stages.4.label>IV</TM_NightshadeToxinHD.stages.4.label>
+  <TM_NightshadeToxinHD.stages.5.label>V</TM_NightshadeToxinHD.stages.5.label>
+
+
+</LanguageData>

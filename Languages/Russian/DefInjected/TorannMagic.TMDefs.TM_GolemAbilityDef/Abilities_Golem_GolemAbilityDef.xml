@@ -1,0 +1,34 @@
+<LanguageData><!-- v1.5\Defs\GolemDefs\Abilities_Golem.xml-->
+	<!-- Гатлинг-пушка на плече меха-голема-->
+	<TM_Mecha-Golem_GatlingCannon.label>Гатлинг-пушка на плече меха-голема</TM_Mecha-Golem_GatlingCannon.label>
+	<!-- Горный лазер на плече меха-голема-->
+	<TM_Mecha-Golem_MiningLaser.label>Горный лазер на плече меха-голема</TM_Mecha-Golem_MiningLaser.label>
+	<!-- Модуль самовосстановления-->
+	<TM_Mecha-Golem_HealSelf.label>Модуль самовосстановления</TM_Mecha-Golem_HealSelf.label>
+	<!-- Модуль энергощита-->
+	<TM_Mecha-Golem_ShieldSelf.label>Модуль энергощита</TM_Mecha-Golem_ShieldSelf.label>
+	<!-- Утилизатор отходов-->
+	<TM_Mecha-Golem_AbsorbFilth.label>Утилизатор отходов</TM_Mecha-Golem_AbsorbFilth.label>
+	<!-- Таранный рывок-->
+	<TM_FleshGolem_BullCharge.label>Таранный рывок</TM_FleshGolem_BullCharge.label>
+	<!-- Рассечение (лев.)-->
+	<TM_FleshGolem_LeftCleave.label>Рассечение (лев.)</TM_FleshGolem_LeftCleave.label>
+	<!-- Рассечение (прав.)-->
+	<TM_FleshGolem_RightCleave.label>Рассечение (прав.)</TM_FleshGolem_RightCleave.label>
+	<!-- Мясорубка-->
+	<TM_FleshGolem_Dismember.label>Мясорубка</TM_FleshGolem_Dismember.label>
+	<!-- Вихрь скорости-->
+	<TM_FleshGolem_WingHaste.label>Вихрь скорости</TM_FleshGolem_WingHaste.label>
+	<!-- Сглаз-->
+	<TM_FleshGolem_EyeCurse.label>Сглаз</TM_FleshGolem_EyeCurse.label>
+	<!-- Фантомный шаг-->
+	<TM_HollowGolem_Fade.label>Фантомный шаг</TM_HollowGolem_Fade.label>
+	<!-- Пробуждение-->
+	<TM_HollowGolem_Awakening.label>Пробуждение</TM_HollowGolem_Awakening.label>
+	<!-- Пожирание пламени-->
+	<TM_HollowGolem_AbsorbFire.label>Пожирание пламени</TM_HollowGolem_AbsorbFire.label>
+	<!-- Ярость феникса-->
+	<TM_HollowGolem_BurningFury.label>Ярость феникса</TM_HollowGolem_BurningFury.label>
+	<!-- Бездонное отчаяние-->
+	<TM_HollowGolem_WellOfDespair.label>Бездонное отчаяние</TM_HollowGolem_WellOfDespair.label>
+</LanguageData>

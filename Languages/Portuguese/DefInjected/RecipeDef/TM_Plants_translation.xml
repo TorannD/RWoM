@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ExtractSyrrium.label>extrair sirrium</TM_ExtractSyrrium.label>
+  <TM_ExtractSyrrium.description>Ferva o poanasirium até que o sirrium possa ser drenado da mistura de pomado.</TM_ExtractSyrrium.description>
+  <TM_ExtractSyrrium.jobString>Retire o sirrium.</TM_ExtractSyrrium.jobString>
+
+
+</LanguageData>

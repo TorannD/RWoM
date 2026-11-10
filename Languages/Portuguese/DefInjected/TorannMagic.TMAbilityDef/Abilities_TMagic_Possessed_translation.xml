@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Spirit Possession -->
+
+  <TM_SpiritPossession.label>Dominar</TM_SpiritPossession.label>
+  <TM_SpiritPossession.description>Dominar o corpo físico, morto ou vivo, reduz a taxa de perda de energia espiritual. Os corpos ou animais mortos podem ser livremente possuídos, mas não geram energia espiritual por si só um outro corpo com um portador espiritual existente gerará energia espiritual. No entanto, o corpo que já está ocupado é mais difícil de possuir, e o espírito proprietário pode lutar contra o espírito original do dono. Se o espírito ainda tiver energia, ele sairá do corpo e voltará a ser um espírito vagabundo. Se a energia do espírito estiver completamente esgotada, ela não existirá. Quando o espírito abandona o corpo, o corpo volta ao seu estado original ou dono. A energia do Espírito pode ser produzida através da drenagem da energia através do dano físico, através da Ressecação do Espírito ou através da meditação. Matar um outro peão com um pouco de ânimo absorve uma grande quantidade de espírito. O corpo do peão obcecado não se recupera naturalmente, mas só trata ferimentos e doenças quando recebe energia espiritual.</TM_SpiritPossession.description>
+
+
+  <!-- Spirit Drain -->
+
+  <TM_SpiritDrain.label>Esgotamento do espírito</TM_SpiritDrain.label>
+  <TM_SpiritDrain.description>Sugar o espírito do ser vivo para restaurar a energia espiritual do feitiço.</TM_SpiritDrain.description>
+
+
+  <!-- Distort Spirit -->
+
+  <TM_DistortSpirit.label>Distorção de espírito (I)</TM_DistortSpirit.label>
+  <TM_DistortSpirit.description>Quebra o equilíbrio entre o espírito e o corpo dos peões vivos numa grande área. Os peões que sofrem de distorção de espírito recebem 20% mais danos de todas as fontes.
+
+Alcance: 35
+Tempo de casta: 3s
+Recarga: 60 ​​s</TM_DistortSpirit.description>
+
+  <TM_DistortSpirit_I.label>Espírito distorcido (II)</TM_DistortSpirit_I.label>
+  <TM_DistortSpirit_I.description>Quebra o equilíbrio entre o espírito e o corpo dos peões vivos numa grande área. Os peões que sofrem de distorção de espírito recebem 20% mais danos de todas as fontes.
+
+Faixa: 40
+Tempo de casta: 2s
+Recarga: 45 s</TM_DistortSpirit_I.description>
+
+  <TM_DistortSpirit_II.label>Espírito distorcido (III)</TM_DistortSpirit_II.label>
+  <TM_DistortSpirit_II.description>Quebra o equilíbrio entre o espírito e o corpo dos peões vivos numa grande área. Os peões que sofrem de distorção de espírito recebem 20% mais danos de todas as fontes.
+
+Faixa: 45
+Tempo de casta: 1,5 c
+Recarga: 30 s</TM_DistortSpirit_II.description>
+
+  <TM_DistortSpirit_III.label>Espírito distorcido (IV)</TM_DistortSpirit_III.label>
+  <TM_DistortSpirit_III.description>Quebra o equilíbrio entre o espírito e o corpo dos peões vivos numa grande área. Os peões que sofrem de distorção de espírito recebem 20% mais danos de todas as fontes.
+
+Faixa: 50
+Tempo de casta: 1s
+Recarga: 20 s</TM_DistortSpirit_III.description>
+
+
+  <!-- Summon Spirit Animal -->
+
+  <TM_SummonSpiritAnimalMass.label>Animais espirituais</TM_SummonSpiritAnimalMass.label>
+  <TM_SummonSpiritAnimalMass.description>Chama 1 espírito de cada animal por um curto período de tempo..</TM_SummonSpiritAnimalMass.description>
+
+
+  <!-- Spirit Rally -->
+
+  <TM_SpiritRally.label>Coesão de espírito (I)</TM_SpiritRally.label>
+  <TM_SpiritRally.description>Consegue o apoio de peões recém-falecidos para tomar a forma de lobo espiritual e ajudar o feitiço por um curto período de tempo. O apelo espiritual só é eficaz quando usado perto dos corpos. Todos os corpos podem gerar um espírito.
+
+Tempo de casta: 2s
+Recarga: 45 s</TM_SpiritRally.description>
+
+  <TM_SpiritRally_I.label>Coesão de espírito (II)</TM_SpiritRally_I.label>
+  <TM_SpiritRally_I.description>Consegue o apoio de peões recém-falecidos para tomar a forma de lobo espiritual e ajudar o feitiço por um curto período de tempo. O apelo espiritual só é eficaz quando usado perto dos corpos. Todos os corpos podem gerar um espírito.
+
+Tempo de casta: 1s
+Recarga: 30 s.</TM_SpiritRally_I.description>
+
+  <TM_SpiritRally_II.label>Coesão de espírito (III)</TM_SpiritRally_II.label>
+  <TM_SpiritRally_II.description>Consegue o apoio de peões recém-falecidos para tomar a forma de lobo espiritual e ajudar o feitiço por um curto período de tempo. O apelo espiritual só é eficaz quando usado perto dos corpos. Todos os corpos podem gerar um espírito.
+
+Tempo de casta: 0,5s
+Recarga: 20 s.</TM_SpiritRally_II.description>
+
+  <TM_SpiritRally_III.label>Coesão de espírito (IV)</TM_SpiritRally_III.label>
+  <TM_SpiritRally_III.description>Consegue o apoio de peões recém-falecidos para tomar a forma de lobo espiritual e ajudar o feitiço por um curto período de tempo. O apelo espiritual só é eficaz quando usado perto dos corpos. Todos os corpos podem gerar um espírito.
+
+Tempo de casta: 0s
+Recarga: 15 s.</TM_SpiritRally_III.description>
+
+
+  <!-- Spirit Storm -->
+
+  <TM_SpiritStorm.label>Tempestade Espiritual</TM_SpiritStorm.label>
+  <TM_SpiritStorm.description>Crie um farol espiritual que atraia espíritos de perda, maldade e vingança. O Roy dos Espíritos Furiosos vai rapidamente tornar-se num aqueduto que leva a realidade e a esperança. Os espíritos malignos nesta tempestade vão procurar os espíritos dos seres vivos para os magoar. A direção da tempestade espiritual pode ser controlada num curto período de tempo após a sua criação.</TM_SpiritStorm.description>
+
+  <TM_ControlSpiritStorm.label>Controle da tempestade de espírito</TM_ControlSpiritStorm.label>
+  <TM_ControlSpiritStorm.description>Guia a tempestade espiritual para o local indicado.</TM_ControlSpiritStorm.description>
+
+
+</LanguageData>

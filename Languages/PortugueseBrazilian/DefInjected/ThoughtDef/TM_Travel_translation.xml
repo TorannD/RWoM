@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_NeedTravel.stages.0.label>trancado</TM_NeedTravel.stages.0.label>
+  <TM_NeedTravel.stages.0.description>Estou preso aqui para sempre. Tenho de sair daqui e ver o mundo!</TM_NeedTravel.stages.0.description>
+  <TM_NeedTravel.stages.1.label>aventura</TM_NeedTravel.stages.1.label>
+  <TM_NeedTravel.stages.1.description>Nada como estar na estrada e ver lugares novos.</TM_NeedTravel.stages.1.description>
+
+
+</LanguageData>

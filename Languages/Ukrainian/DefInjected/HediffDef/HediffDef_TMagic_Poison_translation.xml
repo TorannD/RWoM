@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Poison_HD.label>Отрута</TM_Poison_HD.label>
+  <TM_Poison_HD.description>Пошкодження, спричинені отрутою.</TM_Poison_HD.description>
+  <TM_Poison_HD.comps.0.labelTendedWell>перев&apos;язаний</TM_Poison_HD.comps.0.labelTendedWell>
+  <TM_Poison_HD.comps.0.labelTendedWellInner>зашитий</TM_Poison_HD.comps.0.labelTendedWellInner>
+  <TM_Poison_HD.comps.0.labelSolidTendedWell>зажило</TM_Poison_HD.comps.0.labelSolidTendedWell>
+  <TM_Poison_HD.injuryProps.destroyedLabel>висохлий</TM_Poison_HD.injuryProps.destroyedLabel>
+  <TM_Poison_HD.injuryProps.destroyedOutLabel>висохлий</TM_Poison_HD.injuryProps.destroyedOutLabel>
+
+  <TM_Poisoned_HD.label>Отруєний</TM_Poisoned_HD.label>
+  <TM_Poisoned_HD.description>Побічні ефекти отрути.</TM_Poisoned_HD.description>
+  <TM_Poisoned_HD.stages.0.label>незначний</TM_Poisoned_HD.stages.0.label>
+  <TM_Poisoned_HD.stages.1.label>помірний</TM_Poisoned_HD.stages.1.label>
+  <TM_Poisoned_HD.stages.2.label>сильний</TM_Poisoned_HD.stages.2.label>
+
+
+  <TM_Poison_HD.comps.1.permanentLabel>повядлий назавжди</TM_Poison_HD.comps.1.permanentLabel>
+  <TM_Poison_HD.comps.HediffComp_TendDuration.labelTendedWell>з перев&apos;язкою</TM_Poison_HD.comps.HediffComp_TendDuration.labelTendedWell>
+  <TM_Poison_HD.comps.HediffComp_TendDuration.labelTendedWellInner>ушить</TM_Poison_HD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  <TM_Poison_HD.comps.HediffComp_TendDuration.labelSolidTendedWell>встановити</TM_Poison_HD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  <TM_Poison_HD.comps.HediffComp_GetsPermanent.permanentLabel>зів&apos;яло</TM_Poison_HD.comps.HediffComp_GetsPermanent.permanentLabel>
+  <TM_Poison_HD.labelNounPretty>{0} у {1}</TM_Poison_HD.labelNounPretty>
+
+</LanguageData>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_WindMagicR.label>Режущий ветер</TM_WindMagicR.label>
+  <TM_WindMagicR.deathMessage>{0} был растерзан ветром.</TM_WindMagicR.deathMessage>
+  <TM_CardDamage.label>Лорд Корон</TM_CardDamage.label>
+  <TM_CardDamage.deathMessage>{0} был разорван Лордом Корон.</TM_CardDamage.deathMessage>
+  <TM_ShapedCharge.label>Кумулятивный заряд</TM_ShapedCharge.label>
+  <TM_ShapedCharge.deathMessage>{0} умер от взрыва.</TM_ShapedCharge.deathMessage>
+  <TM_MiningExplosiveDD.label>Кумулятивный заряд</TM_MiningExplosiveDD.label>
+  <TM_MiningExplosiveDD.deathMessage>{0} умер от взрыва.</TM_MiningExplosiveDD.deathMessage>
+  <TM_ExplosiveTrapDD.deathMessage>{0} был убит.</TM_ExplosiveTrapDD.deathMessage>
+  <TM_BarrelBombDD.deathMessage>{0} был убит.</TM_BarrelBombDD.deathMessage>
+  <RFS_Chomp.label>Ошеломление</RFS_Chomp.label>
+  <RFS_Chomp.deathMessage>{0} был ошеломлен до смерти.</RFS_Chomp.deathMessage>
+</LanguageData>

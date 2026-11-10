@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+	<TableGemcutting.label>стол для изготовления драгоценных камней</TableGemcutting.label>
+	<TableGemcutting.description>Верстак для обработки драгоценных камней</TableGemcutting.description>
+	<TableGemcutting_Blueprint.label>стол для изготовления драгоценных камней (проект)</TableGemcutting_Blueprint.label>
+	<TableGemcutting_Blueprint_Install.label>стол для изготовления драгоценных камней (проект)</TableGemcutting_Blueprint_Install.label>
+	<TableGemcutting_Frame.label>стол для изготовления драгоценных камней (постройка)</TableGemcutting_Frame.label>
+	<TableGemcutting_Frame.description>Верстак для обработки драгоценных камней</TableGemcutting_Frame.description>
+	<TableMagicPrinter.label>писчий стол</TableMagicPrinter.label>
+	<TableMagicPrinter.description>Печатный станок, используемый для изготовления книг и свитков.</TableMagicPrinter.description>
+	<TableMagicPrinter_Blueprint.label>писчий стол (проект)</TableMagicPrinter_Blueprint.label>
+	<TableMagicPrinter_Blueprint_Install.label>писчий стол (проект)</TableMagicPrinter_Blueprint_Install.label>
+	<TableMagicPrinter_Frame.label>писчий стол (постройка)</TableMagicPrinter_Frame.label>
+	<TableMagicPrinter_Frame.description>Печатный станок, используемый для изготовления книг и свитков.</TableMagicPrinter_Frame.description>
+	<TableArcaneForge.label>мистическая кузница</TableArcaneForge.label>
+	<TableArcaneForge.description>Мистическая кузница позволяет магу направлять необузданную тайную силу на создание материальных предметов.
+
+С научной точки зрения её можно описать как фабрикатор материи, хотя точный механизм работы до сих пор не разгадан. Пользоваться кузницей способны лишь те, кто умеет управлять тайной энергией.
+
+Работа за кузницей резко ускоряет изготовление предметов, но расходует ману. Качество результата зависит от интеллекта мага и уровня его класса.</TableArcaneForge.description>
+	<TableArcaneForge_Blueprint.label>мистическая кузница (проект)</TableArcaneForge_Blueprint.label>
+	<TableArcaneForge_Blueprint_Install.label>мистическая кузница (проект)</TableArcaneForge_Blueprint_Install.label>
+	<TableArcaneForge_Frame.label>мистическая кузница (постройка)</TableArcaneForge_Frame.label>
+	<TableArcaneForge_Frame.description>Мистическая кузница позволяет магу направлять необузданную тайную силу на создание материальных предметов.
+
+С научной точки зрения её можно описать как фабрикатор материи, хотя точный механизм работы до сих пор не разгадан. Пользоваться кузницей способны лишь те, кто умеет управлять тайной энергией.
+
+Работа за кузницей резко ускоряет изготовление предметов, но расходует ману. Качество результата зависит от интеллекта мага и уровня его класса.</TableArcaneForge_Frame.description>
+	<TableMagicCircle.label>магический круг</TableMagicCircle.label>
+	<TableMagicCircle.description>Магический круг усиливает магию за счёт сложной рунической геометрии. Его используют, чтобы увеличить собственную мощь или объединить силы нескольких магов ради редких и особенно сильных эффектов. Круг рассчитан максимум на шестерых участников.
+
+Материал влияет на качество круга.
+Камень / сталь / дерево: без бонусов
+Нефрит: шанс успеха +30%
+Серебро: возврат 25% стоимости материалов
+Пласталь: очки событий +15%, длительность +10%
+Золото: очки событий +20%, длительность +20%, возврат 15% стоимости материалов
+Уран: длительность и шанс успеха +20%
+Аркаллеум: шанс успеха +15%, возврат 25% стоимости маны</TableMagicCircle.description>
+	<TableMagicCircle_Blueprint.label>магический круг (проект)</TableMagicCircle_Blueprint.label>
+	<TableMagicCircle_Frame.label>магический круг (постройка)</TableMagicCircle_Frame.label>
+	<TableMagicCircle_Frame.description>Магический круг усиливает магию за счёт сложной рунической геометрии. Его используют, чтобы увеличить собственную мощь или объединить силы нескольких магов ради редких и особенно сильных эффектов. Круг рассчитан максимум на шестерых участников.
+
+Материал влияет на качество круга.
+Камень / сталь / дерево: без бонусов
+Нефрит: шанс успеха +30%
+Серебро: возврат 25% стоимости материалов
+Пласталь: очки событий +15%, длительность +10%
+Золото: очки событий +20%, длительность +20%, возврат 15% стоимости материалов
+Уран: длительность и шанс успеха +20%
+Аркаллеум: шанс успеха +15%, возврат 25% стоимости маны</TableMagicCircle_Frame.description>
+	<TableSmallMagicCircle.label>магический фокус</TableSmallMagicCircle.label>
+	<TableSmallMagicCircle.description>Магический фокус помогает яснее ощущать связь с Гаей и другими магами, а также объединять силы для мощных ритуалов. Он способен связать тайную энергию двух магов.
+
+Материал влияет на качество фокуса.
+Камень / сталь / дерево: без бонусов
+Нефрит: шанс успеха +15%
+Серебро: возврат 15% стоимости материалов
+Пласталь: очки событий +15%
+Золото: очки событий +10%, длительность +15%, возврат 10% стоимости материалов
+Уран: длительность и шанс успеха +10%
+Аркаллеум: шанс успеха +10%, возврат 10% стоимости маны</TableSmallMagicCircle.description>
+	<TableSmallMagicCircle_Blueprint.label>магический фокус (проект)</TableSmallMagicCircle_Blueprint.label>
+	<TableSmallMagicCircle_Frame.label>магический фокус (постройка)</TableSmallMagicCircle_Frame.label>
+	<TableSmallMagicCircle_Frame.description>Магический фокус помогает яснее ощущать связь с Гаей и другими магами, а также объединять силы для мощных ритуалов. Он способен связать тайную энергию двух магов.
+
+Материал влияет на качество фокуса.
+Камень / сталь / дерево: без бонусов
+Нефрит: шанс успеха +15%
+Серебро: возврат 15% стоимости материалов
+Пласталь: очки событий +15%
+Золото: очки событий +10%, длительность +15%, возврат 10% стоимости материалов
+Уран: длительность и шанс успеха +10%
+Аркаллеум: шанс успеха +10%, возврат 10% стоимости маны</TableSmallMagicCircle_Frame.description>
+</LanguageData>

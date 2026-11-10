@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Elemental_Icebolt.label>rayo de hielo elemental</TM_Elemental_Icebolt.label>
+  <TM_Elemental_Icebolt.description>Rayo de hielo creado especialmente para romperse en esquirlas similares al cristal al impactar, causando hemorragias graves y daño en un área pequeña.</TM_Elemental_Icebolt.description>
+
+  <TM_Elemental_Firebolt.label>Rayo de fuego</TM_Elemental_Firebolt.label>
+  <TM_Elemental_Firebolt.description>Rayo de fuego mágico. Prende fuego al objetivo.</TM_Elemental_Firebolt.description>
+
+</LanguageData>

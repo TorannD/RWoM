@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ExtractSyrrium.label>витягти сирріум</TM_ExtractSyrrium.label>
+  <TM_ExtractSyrrium.description>Кип&apos;ятіть поанасіріум до тих пір, поки сирріум не може бути відкачаний з суміші помани.</TM_ExtractSyrrium.description>
+  <TM_ExtractSyrrium.jobString>Витягувати сирріум.</TM_ExtractSyrrium.jobString>
+
+
+</LanguageData>

@@ -1,0 +1,15 @@
+<LanguageData>
+  <TM_SummonedPawn.race.meatLabel>мясо</TM_SummonedPawn.race.meatLabel>
+	<TM_SummonedPawn.meatLabel>мясо</TM_SummonedPawn.meatLabel>
+  <TM_SummonedPawnLife.race.meatLabel>мясо</TM_SummonedPawnLife.race.meatLabel>
+	<TM_SummonedPawnLife.meatLabel>мясо</TM_SummonedPawnLife.meatLabel>
+
+	<TM_Base_SummonedPawn.race.meatLabel>мясо</TM_Base_SummonedPawn.race.meatLabel>
+	<TM_Base_SummonedPawn.meatLabel>мясо</TM_Base_SummonedPawn.meatLabel>
+  <TM_SummonedPawn_Meat.label>мясо</TM_SummonedPawn_Meat.label>
+  <TM_SummonedPawn_Meat.description>мясо</TM_SummonedPawn_Meat.description>
+  <TM_SummonedPawnLife_Meat.label>мясо</TM_SummonedPawnLife_Meat.label>
+  <TM_SummonedPawnLife_Meat.description>мясо</TM_SummonedPawnLife_Meat.description>
+  <TM_Base_SummonedPawn_Meat.label>мясо</TM_Base_SummonedPawn_Meat.label>
+  <TM_Base_SummonedPawn_Meat.description>мясо</TM_Base_SummonedPawn_Meat.description>
+</LanguageData>

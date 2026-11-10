@@ -1,0 +1,21 @@
+<LanguageData><TM_SkeletalFaction.label>скелетообразный</TM_SkeletalFaction.label>
+  <TM_SkeletalFaction.description>Скелеты и мертвяки, поднятые магической энергии.</TM_SkeletalFaction.description>
+  <TM_SkeletalFaction.pawnsPlural>скелетообразный</TM_SkeletalFaction.pawnsPlural>
+  <TM_SkeletalFaction.fixedName>скелетообразный</TM_SkeletalFaction.fixedName>
+
+  <TM_ElementalFaction.label>элементарный</TM_ElementalFaction.label>
+  <TM_ElementalFaction.description>Элементальные духи, вызванные из своих слоев силы.</TM_ElementalFaction.description>
+  <TM_ElementalFaction.pawnsPlural>элементарный</TM_ElementalFaction.pawnsPlural>
+  <TM_ElementalFaction.fixedName>элементарный</TM_ElementalFaction.fixedName>
+
+  <TM_SummonedFaction.label>Вызванное существо</TM_SummonedFaction.label>
+  <TM_SummonedFaction.description>Существа, вызванные из других измерений или уровней существования с помощью тайной силы.</TM_SummonedFaction.description>
+  <TM_SummonedFaction.pawnsPlural>Вызванный</TM_SummonedFaction.pawnsPlural>
+  <TM_SummonedFaction.fixedName>Вызванный</TM_SummonedFaction.fixedName>
+
+
+  <TM_SkeletalFaction.pawnSingular>скелет</TM_SkeletalFaction.pawnSingular>
+  <TM_ElementalFaction.pawnSingular>элементаль</TM_ElementalFaction.pawnSingular>
+  <TM_SummonedFaction.pawnSingular>призван</TM_SummonedFaction.pawnSingular>
+
+</LanguageData>

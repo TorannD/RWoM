@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Poison Flask -->
+
+  <Projectile_PoisonFlask.label>Chafariz com veneno</Projectile_PoisonFlask.label>
+
+
+  <!-- Fire suppression Flask -->
+
+  <Projectile_FireDousingFlask.label>Colba de combate a incêndio</Projectile_FireDousingFlask.label>
+  <Projectile_FireDousingFlask_I.label>Colba de combate a incêndio</Projectile_FireDousingFlask_I.label>
+  <Projectile_FireDousingFlask_II.label>Colba de combate a incêndio</Projectile_FireDousingFlask_II.label>
+  <Projectile_FireDousingFlask_III.label>Colba de combate a incêndio</Projectile_FireDousingFlask_III.label>
+
+
+</LanguageData>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_BullChargeHD.label>заряджати</TM_BullChargeHD.label>
+  <TM_BullChargeHD.description>Кидаючись у бій.</TM_BullChargeHD.description>
+  <TM_BullChargeHD.stages.0.label></TM_BullChargeHD.stages.0.label>
+
+  <TM_FrailtyCurseHD.label>Проклятий</TM_FrailtyCurseHD.label>
+  <TM_FrailtyCurseHD.description>Погляд поганого ока наклав це прокляття.</TM_FrailtyCurseHD.description>
+  <TM_FrailtyCurseHD.stages.0.label>хилий</TM_FrailtyCurseHD.stages.0.label>
+  <TM_FrailtyCurseHD.stages.1.label>покалічений</TM_FrailtyCurseHD.stages.1.label>
+
+  <TM_FleshGolem_SkullPlateHD.label>черепна пластина</TM_FleshGolem_SkullPlateHD.label>
+  <TM_FleshGolem_SkullPlateHD.description>Покращує броню над черепом.</TM_FleshGolem_SkullPlateHD.description>
+  <TM_FleshGolem_SkullPlateHD.stages.0.label></TM_FleshGolem_SkullPlateHD.stages.0.label>
+
+  <TM_FleshGolem_ShoulderPlatesHD.label>плечові пластини</TM_FleshGolem_ShoulderPlatesHD.label>
+  <TM_FleshGolem_ShoulderPlatesHD.description>Покращує броню навколо плечей.</TM_FleshGolem_ShoulderPlatesHD.description>
+  <TM_FleshGolem_ShoulderPlatesHD.stages.0.label></TM_FleshGolem_ShoulderPlatesHD.stages.0.label>
+
+  <TM_FleshGolem_ChestCageHD.label>грудна клітина</TM_FleshGolem_ChestCageHD.label>
+  <TM_FleshGolem_ChestCageHD.description>Відбиває атаки від грудей і тулуба, найкраще працює проти більш великої зброї.</TM_FleshGolem_ChestCageHD.description>
+  <TM_FleshGolem_ChestCageHD.stages.0.label></TM_FleshGolem_ChestCageHD.stages.0.label>
+
+  <TM_FleshGolem_SpineGuardHD.label>захист хребта</TM_FleshGolem_SpineGuardHD.label>
+  <TM_FleshGolem_SpineGuardHD.description>Відбиває атаки від спини.</TM_FleshGolem_SpineGuardHD.description>
+  <TM_FleshGolem_SpineGuardHD.stages.0.label></TM_FleshGolem_SpineGuardHD.stages.0.label>
+
+  <TM_FleshGolem_LegPlatesHD.label>ножні пластини</TM_FleshGolem_LegPlatesHD.label>
+  <TM_FleshGolem_LegPlatesHD.description>Покращує броню навколо ніг.</TM_FleshGolem_LegPlatesHD.description>
+  <TM_FleshGolem_LegPlatesHD.stages.0.label></TM_FleshGolem_LegPlatesHD.stages.0.label>
+
+  <TM_FleshGolem_BracerGuardHD.label>наручний захист</TM_FleshGolem_BracerGuardHD.label>
+  <TM_FleshGolem_BracerGuardHD.description>можливість блокувати атаки</TM_FleshGolem_BracerGuardHD.description>
+  <TM_FleshGolem_BracerGuardHD.stages.0.label></TM_FleshGolem_BracerGuardHD.stages.0.label>
+
+  <TM_FleshGolem_HasteHD.label>стрімкість</TM_FleshGolem_HasteHD.label>
+  <TM_FleshGolem_HasteHD.description>Крила надають руху спритність.</TM_FleshGolem_HasteHD.description>
+  <TM_FleshGolem_HasteHD.stages.0.label></TM_FleshGolem_HasteHD.stages.0.label>
+
+  <TM_FleshGolem_EyesT1HD.label>чотирикутний приціл</TM_FleshGolem_EyesT1HD.label>
+  <TM_FleshGolem_EyesT1HD.description>Зір поліпшується за допомогою чотирьох очей.</TM_FleshGolem_EyesT1HD.description>
+  <TM_FleshGolem_EyesT1HD.stages.0.label></TM_FleshGolem_EyesT1HD.stages.0.label>
+
+
+</LanguageData>

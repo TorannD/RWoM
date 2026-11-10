@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<TM_DismissMinion.label>despedir esbirro</TM_DismissMinion.label>
+
+<TM_DismissMinion.description>Despide a un esbirro invocado.</TM_DismissMinion.description>
+
+<TM_SummonElemental.label>invocar elemental</TM_SummonElemental.label>
+
+<TM_SummonElemental.description>Convoca desde un plano de poder a un elemental monstruoso que aplastará a tus enemigos. Estos seres defienden un lugar y atacan de inmediato a cualquier enemigo cercano. Sin embargo, si no hay enemigos, tienden a aburrirse muy pronto y se alejarán de la posición en la que fueron invocados. No realizarán tareas tan mundanas como «acarrear» o «limpiar», pues son trabajos de seres inferiores. Debido al poder de la invocación, el elemental solo puede existir en este plano durante un breve periodo. El tipo de elemental es aleatorio.</TM_SummonElemental.description>
+
+<TM_SummonExplosive.label>invocar explosivo</TM_SummonExplosive.label>
+
+<TM_SummonExplosive.description>Crea una mina de maná en bruto comprimido y la ancla a un lugar físico. La mina se disolverá sin causar daño si el anclaje que la sujeta se queda sin energía.</TM_SummonExplosive.description>
+
+<TM_SummonMinion.label>invocar esbirro</TM_SummonMinion.label>
+
+<TM_SummonMinion.description>Invoca esbirros que ayudan en las tareas diarias.</TM_SummonMinion.description>
+
+<TM_SummonPoppi.label>invocar poppis</TM_SummonPoppi.label>
+
+<TM_SummonPoppi.description>Invoca una manada de poppis despiadados, llegados directamente de las puertas de la locura. Esta manada de poppis está rabiosa y se lanzará con ansia sobre las formaciones enemigas.</TM_SummonPoppi.description>
+
+<TM_SummonPylon.label>invocar pilón de defensa</TM_SummonPylon.label>
+
+<TM_SummonPylon.description>Invoca y manifiesta energía mágica para formar una torreta de defensa automática anclada a un lugar físico. La torreta canaliza corriente arcana hacia un punto focal que emite ráfagas de energía en bruto. Cuando el anclaje que sujeta la torreta al mundo físico se disipa, la torreta se disuelve sin causar daño y vuelve a ser energía mágica. Si la torreta es destruida, este suceso puede ser más destructivo.</TM_SummonPylon.description>
+</LanguageData>

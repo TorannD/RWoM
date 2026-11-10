@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- TM_HeatWaveMR example contains all possible fields with default values
+  mageCount can be any value, but there is only designated room for 6 mages, 3 for the focus point (small circle)
+  manaCost is divided by mageCount to determine how much mana each mage must have to perform the ritual; this is the amount of mana subtracted following the ritual -->
+
+  <TM_HeatWaveMR.label>Mudança: onda de calor</TM_HeatWaveMR.label>
+  <TM_HeatWaveMR.description>Onda de calor envolve mapa
+Casters: 3
+Mana: 50 ea.
+Chance de fracasso: 5%
+Resposta ao erro: 0</TM_HeatWaveMR.description>
+  <TM_HeatWaveMR.jobString>provoca onda de calor</TM_HeatWaveMR.jobString>
+
+  <TM_ColdSnapMR.label>Alteração: resfriamento</TM_ColdSnapMR.label>
+  <TM_ColdSnapMR.description>Resfriamento empurra o mapa
+Casters: 3
+Mana: 50 ea.
+Chance de fracasso: 5%
+Resposta ao erro: 0</TM_ColdSnapMR.description>
+  <TM_ColdSnapMR.jobString>provoca uma onda fria</TM_ColdSnapMR.jobString>
+
+  <TM_NameWindMR.label>Alteração: nome do vento</TM_NameWindMR.label>
+  <TM_NameWindMR.description>provoca ventos fortes em todo o mapa durante vários dias
+Casters: 1
+Mana: 40 ea.
+Chance de fracasso: 10%
+Resposta ao erro: 6</TM_NameWindMR.description>
+  <TM_NameWindMR.jobString>provoca o vento</TM_NameWindMR.jobString>
+
+  <TM_PsychicSootheMR.label>Mudança: calma mental</TM_PsychicSootheMR.label>
+  <TM_PsychicSootheMR.description>Crie emanações mentais relaxantes
+Casters: 3
+Mana: 50 ea.
+Chance de fracasso: 25%
+Resposta ao erro: 10</TM_PsychicSootheMR.description>
+  <TM_PsychicSootheMR.jobString>acalmar-se mentalmente</TM_PsychicSootheMR.jobString>
+
+  <TM_HealingRainMR.label>Alteração: chuva de cura</TM_HealingRainMR.label>
+  <TM_HealingRainMR.description>Mapa é varrido por chuva de cura
+Casters: 1
+Mana: 60 ea.
+Chance de fracasso: 20%
+Resposta ao erro: 10</TM_HealingRainMR.description>
+  <TM_HealingRainMR.jobString>formação de chuva de cura</TM_HealingRainMR.jobString>
+
+  <TM_NaturesGiftMR.label>Mudança: dom da natureza</TM_NaturesGiftMR.label>
+  <TM_NaturesGiftMR.description>Causas de eventos aleatórios
+Casters: 3
+Mana: 40 ea.
+Chance de fracasso: 25%
+Resposta ao erro: 12</TM_NaturesGiftMR.description>
+  <TM_NaturesGiftMR.jobString>alteração da probabilidade do evento</TM_NaturesGiftMR.jobString>
+
+  <TM_CallOfTheWildMR.label>Mudança: chamamentos da vida selvagem</TM_CallOfTheWildMR.label>
+  <TM_CallOfTheWildMR.description>Chama a atenção de animais selvagens
+Casters: 2
+Mana: 60 ea.
+Chance de fracasso: 20%
+Resposta ao erro: 12</TM_CallOfTheWildMR.description>
+  <TM_CallOfTheWildMR.jobString>alteração da probabilidade do evento</TM_CallOfTheWildMR.jobString>
+
+  <TM_TerrestrialBeaconMR.label>Alteração: Farol terrestre</TM_TerrestrialBeaconMR.label>
+  <TM_TerrestrialBeaconMR.description>Altera a trajetória dos objetos em queda para pousar perto
+Casters: 2
+Mana: 60 ea.
+Chance de fracasso: 25%
+Resposta ao erro: 12</TM_TerrestrialBeaconMR.description>
+  <TM_TerrestrialBeaconMR.jobString>alteração da probabilidade do evento</TM_TerrestrialBeaconMR.jobString>
+
+  <TM_MeteorFallMR.label>Feitiço: atração de meteoros</TM_MeteorFallMR.label>
+  <TM_MeteorFallMR.description>Causa colisão de vários meteoritos nas proximidades
+Casters: 3
+Mana: 60 ea.
+Chance de fracasso: 15%
+Resposta ao erro: 0</TM_MeteorFallMR.description>
+  <TM_MeteorFallMR.jobString>Chama meteoritos</TM_MeteorFallMR.jobString>
+
+  <TM_CreateSkeletonMR.label>Feitiço: esqueleto</TM_CreateSkeletonMR.label>
+  <TM_CreateSkeletonMR.description>Cria um esqueleto animado a partir de um único cadáver; o esqueleto protegerá a colónia durante 5 dias ou até ser destruído.
+Casters: 1
+Mana: 50 ea.
+Chance de fracasso: 10%
+Resposta ao erro: 8</TM_CreateSkeletonMR.description>
+  <TM_CreateSkeletonMR.jobString>criação de um esqueleto</TM_CreateSkeletonMR.jobString>
+
+  <TM_CreateGiantSkeletonMR.label>Feitiço: esqueleto gigante</TM_CreateGiantSkeletonMR.label>
+  <TM_CreateGiantSkeletonMR.description>Cria um esqueleto gigante e animado a partir de um monte de cadáveres; o esqueleto protegerá a colónia durante 5 dias ou até ser destruído.
+Casters: 4
+Mana: 50 ea.
+Chance de fracasso: 25%
+Resposta ao erro: 12</TM_CreateGiantSkeletonMR.description>
+  <TM_CreateGiantSkeletonMR.jobString>Revitalizar esqueleto</TM_CreateGiantSkeletonMR.jobString>
+
+  <TM_SummonSpiritMR.label>Feitiço: Espírito proprietário</TM_SummonSpiritMR.label>
+  <TM_SummonSpiritMR.description>Chama o espírito errante.
+Rolos: 3
+Mana: 40.
+Chance de fracasso: 25%
+Luft fracassado: 15</TM_SummonSpiritMR.description>
+  <TM_SummonSpiritMR.jobString>espírito errante</TM_SummonSpiritMR.jobString>
+
+  <TM_RuunbledMR.label>Feitiço: arma mística</TM_RuunbledMR.label>
+  <TM_RuunbledMR.description>Evoca armas místicas
+Casters: 3
+Mana: 60 ea.
+Chance de fracasso: 50%
+Resposta ao erro: 10</TM_RuunbledMR.description>
+  <TM_RuunbledMR.jobString>chamada de armas místicas</TM_RuunbledMR.jobString>
+
+  <TM_ArcaneAugmentationMR.label>Feitiço: aumento secreto</TM_ArcaneAugmentationMR.label>
+  <TM_ArcaneAugmentationMR.description>Aplica muitos buffs secretos aos colonatos.
+Casters: 3
+Target max: 10
+Mana: 40 ea.
+Chance de fracasso: 15%
+Resposta ao erro: 6</TM_ArcaneAugmentationMR.description>
+  <TM_ArcaneAugmentationMR.jobString>aplicação de bafas secretos</TM_ArcaneAugmentationMR.jobString>
+
+  <TM_BlightWildlifeMR.label>Feitiço: declínio da vida selvagem</TM_BlightWildlifeMR.label>
+  <TM_BlightWildlifeMR.description>Impressiona toda a natureza viva.
+Casters: 3
+Mana: 40 ea.
+Chance de fracasso: 15%
+Resposta ao erro: 6</TM_BlightWildlifeMR.description>
+  <TM_BlightWildlifeMR.jobString>feitiço da vida selvagem</TM_BlightWildlifeMR.jobString>
+
+  <TM_BeastialRageMR.label>Feitiço: fúria do predador</TM_BeastialRageMR.label>
+  <TM_BeastialRageMR.description>Furiem os animais predadores no mapa e empurrem sua fúria para os seus inimigos.
+Casters: 2
+Mana: 40 ea.
+Chance de fracasso: 35%
+Resposta ao erro: 10</TM_BeastialRageMR.description>
+  <TM_BeastialRageMR.jobString>predadores furiosos</TM_BeastialRageMR.jobString>
+
+  <TM_ArcaneInspirationMR.label>Feitiço: inspiração secreta</TM_ArcaneInspirationMR.label>
+  <TM_ArcaneInspirationMR.description>procura revelações secretas para inspiração
+Casters: 1
+Mana: 50 ea.
+Chance de fracasso: 15%
+Resposta ao erro: 6</TM_ArcaneInspirationMR.description>
+  <TM_ArcaneInspirationMR.jobString>mergulhar no mistério</TM_ArcaneInspirationMR.jobString>
+
+  <TM_DivineBlessingMR.label>Feitiço: Bênção divina</TM_DivineBlessingMR.label>
+  <TM_DivineBlessingMR.description>Implore ao poder superior para mostrar misericórdia aos peões doentes
+Casters: 3
+Mana: 60 ea.
+Chance de fracasso: 40%
+Resposta ao erro: 0</TM_DivineBlessingMR.description>
+  <TM_DivineBlessingMR.jobString>em busca da bênção divina</TM_DivineBlessingMR.jobString>
+
+  <TM_SummonDemonMR.label>Feitiço: chamar demónio * challenge *</TM_SummonDemonMR.label>
+  <TM_SummonDemonMR.description>Combater o inimigo demoníaco
+Casters: 6
+Mana: 40 ea.
+Chance de fracasso: 20%
+Resposta ao erro: 20</TM_SummonDemonMR.description>
+  <TM_SummonDemonMR.jobString>chamada de demónio</TM_SummonDemonMR.jobString>
+
+  <TM_SummonWanderingLichMR.label>Feitiço: chamada de larva errante * challenge *</TM_SummonWanderingLichMR.label>
+  <TM_SummonWanderingLichMR.description>Chamar a atenção do vagabundo
+Casters: 6
+Mana: 40 ea.
+Chance de fracasso: 20%
+Resposta ao erro: 20</TM_SummonWanderingLichMR.description>
+  <TM_SummonWanderingLichMR.jobString>chamada de larva</TM_SummonWanderingLichMR.jobString>
+
+
+</LanguageData>

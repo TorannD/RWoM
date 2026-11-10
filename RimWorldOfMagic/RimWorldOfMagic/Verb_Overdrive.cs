@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using Verse.AI.Group;
 
 namespace TorannMagic
 {
-    public class Verb_Overdrive : Verb_UseAbility  
+    public class Verb_Overdrive : ClassProgression.Verb_SpiritTargetable
     {        
         int pwrVal;
         int verVal;
@@ -41,80 +41,28 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
-            Pawn caster = base.CasterPawn;           
-
-            comp = caster.GetCompAbilityUserMagic();
-            //pwrVal = comp.MagicData.MagicPowerSkill_Overdrive.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Overdrive_pwr").level;
-            //verVal = comp.MagicData.MagicPowerSkill_Overdrive.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Overdrive_ver").level;
-            //
-            //if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    pwrVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr").level;
-            //    verVal = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver").level;
-            //}
-            //if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
-            //{
-            //    pwrVal = 3;
-            //    verVal = 3;
-            //}
+            var caster = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            comp = caster?.GetCompAbilityUserMagic();
+            if (comp == null) return false;
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
             verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
-            Thing targetThing = null;
-            if(this.currentTarget.Thing != null)
+            var target = currentTarget.Thing ?? currentTarget.Cell.GetFirstBuilding(CasterPawn.Map);
+            if (target is Pawn pawn)
             {
-                targetThing = this.currentTarget.Thing;
+                if (pawn.Dead || !TM_Calc.IsRobotPawn(pawn)) return false;
+                ApplyOverdriveHD(pawn);
+                return true;
             }
-            else
-            {
-                targetThing = this.currentTarget.Cell.GetFirstBuilding(this.CasterPawn.Map);
-            }
-            if (targetThing != null)
-            {
-                Pawn pawn = targetThing as Pawn;
-                if (pawn != null)
-                {
-                    if (TM_Calc.IsRobotPawn(pawn))
-                    {
-                        ApplyOverdriveHD(pawn);
-                    }
-                    else
-                    {
-                        Log.Message("pawn not a robot, mechanoid, or android");
-                    }
-                }
-
-                Building bldg = targetThing as Building;
-                if(bldg != null)
-                {                    
-                    CompPower compP = bldg.GetComp<CompPower>();
-                    CompPowerTrader cpt = bldg.GetComp<CompPowerTrader>();
-                    if(compP != null && compP.Props.PowerConsumption != 0 && cpt != null && cpt.powerOutputInt != 0)
-                    {
-                        comp.overdriveBuilding = bldg;
-                        comp.overdrivePowerOutput = Mathf.RoundToInt(cpt.powerOutputInt * (2 + .6f * pwrVal * comp.arcaneDmg));
-                        comp.overdriveDuration = Mathf.RoundToInt((20 + 2*pwrVal) * comp.arcaneDmg);
-                        //compP.Props.basePowerConsumption *= 2;
-                    }
-
-                    Building_TurretGun bldgTurret = targetThing as Building_TurretGun;
-                    if(bldgTurret != null && bldgTurret.gun != null)
-                    {
-                        comp.overdriveBuilding = bldgTurret;
-                        comp.overdriveDuration = Mathf.RoundToInt((10 + pwrVal) * comp.arcaneDmg);
-                    }
-                    List<Pawn> odPawns = ModOptions.Constants.GetOverdrivePawnList();
-                    if(odPawns != null)
-                    {
-                        odPawns.AddDistinct(caster);
-                        ModOptions.Constants.SetOverdrivePawnList(odPawns);
-                    }
-                }
-            }
-            else
-            {
-                Log.Message("no thing targeted");
-            }
-            return true;
+            if (!(target is Building building)) return false;
+            var trader = building.GetComp<CompPowerTrader>();
+            bool powered = building.GetComp<CompPower>() is CompPower power && power.Props.PowerConsumption != 0 &&
+                trader != null && trader.powerOutputInt != 0;
+            bool turret = building is Building_TurretGun gun && gun.gun != null;
+            if (!powered && !turret) return false;
+            comp.overdriveBuilding = building;
+            comp.overdrivePowerOutput = powered ? Mathf.RoundToInt(trader.powerOutputInt * (2 + .6f * pwrVal * comp.arcaneDmg)) : 0;
+            comp.overdriveDuration = Mathf.RoundToInt((turret ? 10 + pwrVal : 20 + 2 * pwrVal) * comp.arcaneDmg);
+            return comp.RefreshTechnomancerOverdrive();
         }
 
         public void ApplyOverdriveHD(Pawn pawn)

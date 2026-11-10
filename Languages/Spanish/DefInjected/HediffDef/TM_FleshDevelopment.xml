@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_FleshProgressHD.description>Este no muerto se desarrolla al consumir cadáveres. Abajo se muestran su nivel, experiencia y puntos de habilidad disponibles.</TM_FleshProgressHD.description>
+  <TM_FleshMobilityHD.description>La carne desarrollada mejora la velocidad de movimiento. Abajo se muestran el rango aprendido y su bonificación.</TM_FleshMobilityHD.description>
+  <TM_FleshStrengthHD.description>La carne desarrollada aumenta el daño cuerpo a cuerpo. Abajo se muestran el rango aprendido y su bonificación.</TM_FleshStrengthHD.description>
+  <TM_FleshIndustryHD.description>La carne desarrollada mejora la velocidad de trabajo general. Abajo se muestran el rango aprendido y su bonificación.</TM_FleshIndustryHD.description>
+  <TM_FleshCapacityHD.description>La carne desarrollada aumenta la Sed máxima. Abajo se muestran el rango aprendido y la capacidad actual.</TM_FleshCapacityHD.description>
+  <TM_FleshEmpowerHD.description>La carne potenciada aumenta temporalmente la velocidad de movimiento y de trabajo general. Abajo se muestran el rango activo, la bonificación y el tiempo restante.</TM_FleshEmpowerHD.description>
+  <TM_FleshHardenHD.description>La piel endurecida añade temporalmente armadura cortante y contundente. Abajo se muestran el rango activo, la bonificación y el tiempo restante.</TM_FleshHardenHD.description>
+  <TM_FleshFeastHD.description>El Festín de Carne está activo. Abajo se muestran el tiempo restante, la Sed y cualquier furia descontrolada.</TM_FleshFeastHD.description>
+</LanguageData>

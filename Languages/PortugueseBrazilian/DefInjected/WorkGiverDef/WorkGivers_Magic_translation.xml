@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Gemcutting -->
+
+  <DoBillsGemcutting.label>trabalho à mesa de corte de pedras preciosas</DoBillsGemcutting.label>
+  <DoBillsGemcutting.verb>criação</DoBillsGemcutting.verb>
+  <DoBillsGemcutting.gerund>corte de pedras preciosas</DoBillsGemcutting.gerund>
+
+
+  <!-- Printing -->
+
+  <DoBillsPrintingPress.label>trabalho na mesa de escrever</DoBillsPrintingPress.label>
+  <DoBillsPrintingPress.verb>criação</DoBillsPrintingPress.verb>
+  <DoBillsPrintingPress.gerund>impressão</DoBillsPrintingPress.gerund>
+
+
+  <!-- Bard Entertain -->
+
+  <DoEntertain.label>divertir o colono</DoEntertain.label>
+  <DoEntertain.verb>divertir</DoEntertain.verb>
+  <DoEntertain.gerund>diversão</DoEntertain.gerund>
+
+
+  <!-- Commander Motivate -->
+
+  <DoCommanderMotivate.label>motiva o peão</DoCommanderMotivate.label>
+  <DoCommanderMotivate.verb>motivação</DoCommanderMotivate.verb>
+  <DoCommanderMotivate.gerund>motivação</DoCommanderMotivate.gerund>
+
+
+  <!-- Magic Work Related -->
+
+  <ChargeStructure.label>carga de um objeto mágico</ChargeStructure.label>
+  <ChargeStructure.verb>carga de um objeto mágico</ChargeStructure.verb>
+  <ChargeStructure.gerund>carregar um objeto mágico</ChargeStructure.gerund>
+
+  <DoBillsArcaneForge.label>trabalhar com a magia</DoBillsArcaneForge.label>
+  <DoBillsArcaneForge.verb>trabalhar com a magia</DoBillsArcaneForge.verb>
+  <DoBillsArcaneForge.gerund>trabalhar com a magia</DoBillsArcaneForge.gerund>
+
+
+  <!-- Golem Work Related -->
+
+  <DoBillsGolemBuilding.label>trabalho de hólem</DoBillsGolemBuilding.label>
+  <DoBillsGolemBuilding.verb>trabalho de golem</DoBillsGolemBuilding.verb>
+  <DoBillsGolemBuilding.gerund>trabalhando em holems</DoBillsGolemBuilding.gerund>
+
+
+</LanguageData>

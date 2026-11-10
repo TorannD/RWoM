@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBeginRitual>Renacer a {0} como espíritu (300 de magicita, 50 de plata, 4 horas)</TM_SpiritBeginRitual>
+  <TM_SpiritFinishRitual>Completar el renacimiento interrumpido de {0}</TM_SpiritFinishRitual>
+  <TM_SpiritRitualUnreachable>El nigromante necesita un cadáver, un círculo mayor, 300 de magicita y 50 de plata a su alcance.</TM_SpiritRitualUnreachable>
+  <TM_SpiritRitualUnsafeEffect>{0} — no se puede separar {1} del cuerpo</TM_SpiritRitualUnsafeEffect>
+  <TM_GrimoireRebirthCircle>En un círculo mágico grande, ordena el renacimiento espiritual de un colono humano muerto. Se necesitan {0} de magicita y {1} de plata. El ritual dura {2}.</TM_GrimoireRebirthCircle>
+  <TM_GrimoireSpiritStone>Cuando el espíritu se agota, su piedra del alma conserva al colono original. Usa la piedra en un huésped vivo. El espíritu podrá salir voluntariamente tras pasar {0} en ese cuerpo. Perder al huésped reinicia la recuperación.</TM_GrimoireSpiritStone>
+  <TM_SpiritRitualRenounceNecromancy>{0} renacerá como espíritu y renunciará para siempre a la clase de nigromante o liche y a sus hechizos. Conservará su nivel general, experiencia, puntos disponibles y habilidades normales. ¿Iniciar el ritual?</TM_SpiritRitualRenounceNecromancy>
+</LanguageData>

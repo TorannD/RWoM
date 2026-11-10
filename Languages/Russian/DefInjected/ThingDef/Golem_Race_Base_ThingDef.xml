@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+	<TM_StoneGolem.description>Простой голем, созданный из камня и оживленный магией.</TM_StoneGolem.description>
+
+	<TM_StoneGolem.label>Каменный голем</TM_StoneGolem.label>
+
+	<TM_StoneGolem.tools.0.label>разбить</TM_StoneGolem.tools.0.label>
+
+	<TM_StoneGolem.tools.1.label>левый кулак</TM_StoneGolem.tools.1.label>
+
+	<TM_StoneGolem.tools.2.label>правый кулак</TM_StoneGolem.tools.2.label>
+
+	<TM_SandstoneGolem.description>Простой голем, созданный из камня и оживленный магией.</TM_SandstoneGolem.description>
+
+	<TM_SandstoneGolem.label>голем из песчаника</TM_SandstoneGolem.label>
+
+	<TM_SandstoneGolem.tools.0.label>разбить</TM_SandstoneGolem.tools.0.label>
+
+	<TM_SandstoneGolem.tools.1.label>левый кулак</TM_SandstoneGolem.tools.1.label>
+
+	<TM_SandstoneGolem.tools.2.label>правый кулак</TM_SandstoneGolem.tools.2.label>
+
+	<TM_LimestoneGolem.description>Простой голем, созданный из камня и оживленный магией.</TM_LimestoneGolem.description>
+
+	<TM_LimestoneGolem.label>известняковый голем</TM_LimestoneGolem.label>
+
+	<TM_LimestoneGolem.tools.0.label>разбить</TM_LimestoneGolem.tools.0.label>
+
+	<TM_LimestoneGolem.tools.1.label>левый кулак</TM_LimestoneGolem.tools.1.label>
+
+	<TM_LimestoneGolem.tools.2.label>правый кулак</TM_LimestoneGolem.tools.2.label>
+
+	<TM_GraniteGolem.description>Простой голем, созданный из камня и оживленный магией.</TM_GraniteGolem.description>
+
+	<TM_GraniteGolem.label>гранитный голем</TM_GraniteGolem.label>
+
+	<TM_GraniteGolem.tools.0.label>разбить</TM_GraniteGolem.tools.0.label>
+
+	<TM_GraniteGolem.tools.1.label>левый кулак</TM_GraniteGolem.tools.1.label>
+
+	<TM_GraniteGolem.tools.2.label>правый кулак</TM_GraniteGolem.tools.2.label>
+
+	<TM_SlateGolem.description>Простой голем, созданный из камня и оживленный магией.</TM_SlateGolem.description>
+
+	<TM_SlateGolem.label>сланцевый голем</TM_SlateGolem.label>
+
+	<TM_SlateGolem.tools.0.label>разбить</TM_SlateGolem.tools.0.label>
+
+	<TM_SlateGolem.tools.1.label>левый кулак</TM_SlateGolem.tools.1.label>
+
+	<TM_SlateGolem.tools.2.label>правый кулак</TM_SlateGolem.tools.2.label>
+
+	<TM_MarbleGolem.description>Простой голем, созданный из камня и оживленный магией.</TM_MarbleGolem.description>
+
+	<TM_MarbleGolem.label>мраморный голем</TM_MarbleGolem.label>
+
+	<TM_MarbleGolem.tools.0.label>разбить</TM_MarbleGolem.tools.0.label>
+
+	<TM_MarbleGolem.tools.1.label>левый кулак</TM_MarbleGolem.tools.1.label>
+
+	<TM_MarbleGolem.tools.2.label>правый кулак</TM_MarbleGolem.tools.2.label>
+
+	<TM_MechaGolem.label>меха-голем</TM_MechaGolem.label>
+
+	<TM_MechaGolem.description>Голем, созданный из необработанного материала и получивший базовую автономию благодаря сочетанию схем и магии.</TM_MechaGolem.description>
+
+	<TM_MechaGolem.tools.0.label>разбитое тело</TM_MechaGolem.tools.0.label>
+
+	<TM_MechaGolem.tools.1.label>левый кулак</TM_MechaGolem.tools.1.label>
+
+	<TM_MechaGolem.tools.2.label>меха-топор</TM_MechaGolem.tools.2.label>
+
+	<TM_MechaGolem.tools.3.label>меха-меч</TM_MechaGolem.tools.3.label>
+
+	<TM_MechaGolem.tools.4.label>правый кулак</TM_MechaGolem.tools.4.label>
+
+	<TM_MechaGolem.tools.5.label>меха-молот</TM_MechaGolem.tools.5.label>
+
+	<TM_FleshGolem.label>голем из плоти</TM_FleshGolem.label>
+
+	<TM_FleshGolem.description>Голем, созданный из плоти, костей и органов других существ и получивший базовую автономию благодаря сочетанию биоинженерии и магии.</TM_FleshGolem.description>
+
+	<TM_FleshGolem.tools.0.label>кровь</TM_FleshGolem.tools.0.label>
+
+	<TM_FleshGolem.tools.1.label>клыки</TM_FleshGolem.tools.1.label>
+
+	<TM_FleshGolem.tools.2.label>левый кулак</TM_FleshGolem.tools.2.label>
+
+	<TM_FleshGolem.tools.3.label>левый щиток</TM_FleshGolem.tools.3.label>
+
+	<TM_FleshGolem.tools.4.label>левый тесак</TM_FleshGolem.tools.4.label>
+
+	<TM_FleshGolem.tools.5.label>правый кулак</TM_FleshGolem.tools.5.label>
+
+	<TM_FleshGolem.tools.6.label>правый щиток</TM_FleshGolem.tools.6.label>
+
+	<TM_FleshGolem.tools.7.label>правый тесак</TM_FleshGolem.tools.7.label>
+
+	<TM_HollowGolem.label>пустотный голем</TM_HollowGolem.label>
+
+	<TM_HollowGolem.description>Голем, созданный из конденсированной магии и тайных катализаторов. Броня, окружающая полого голема, привязывает магический центр к физическому месту и защищает его от внешних воздействий. Несмотря на необычную природу, такой голем способен выполнять множество задач и использовать формы энергии, недоступные обычным живым существам.</TM_HollowGolem.description>
+
+	<TM_HollowGolem.verbs.0.label>пылающая энергия</TM_HollowGolem.verbs.0.label>
+
+	<TM_HollowGolem.verbs.1.label>молнии</TM_HollowGolem.verbs.1.label>
+
+	<TM_HollowGolem.verbs.2.label>осколки льда</TM_HollowGolem.verbs.2.label>
+
+	<TM_HollowGolem.verbs.3.label>молния тьмы</TM_HollowGolem.verbs.3.label>
+
+
+	<TM_HollowGolem.tools.0.label>лапа</TM_HollowGolem.tools.0.label>
+
+	<TM_HollowGolem.tools.1.label>прикосновение к распаду</TM_HollowGolem.tools.1.label>
+
+	<TM_HollowGolem.tools.2.label>полый топор</TM_HollowGolem.tools.2.label>
+
+	<TM_HollowGolem.tools.3.label>полый посох</TM_HollowGolem.tools.3.label>
+
+	<TM_MaharalGolem.label>голем Махарала</TM_MaharalGolem.label>
+
+	<TM_MaharalGolem.description>Голем, созданный из формованного камня, обтянутого кожей. Прочная конструкция сочетает магию и ремесленное мастерство.</TM_MaharalGolem.description>
+
+	<TM_MaharalGolem.tools.0.label>левый кулак</TM_MaharalGolem.tools.0.label>
+
+	<TM_MaharalGolem.tools.1.label>правый кулак</TM_MaharalGolem.tools.1.label>
+
+	<TM_StrawGolem.label>соломенный голем</TM_StrawGolem.label>
+
+	<TM_StrawGolem.description>Голем, собранный из подручных материалов в человеческом обличье. Хлипкий, но полезный работник для простых задач.</TM_StrawGolem.description>
+
+	<TM_StrawGolem.tools.0.label>левый кулак</TM_StrawGolem.tools.0.label>
+
+	<TM_StrawGolem.tools.1.label>правый кулак</TM_StrawGolem.tools.1.label>
+
+	<TM_WoodGolem.label>деревянный голем</TM_WoodGolem.label>
+
+	<TM_WoodGolem.description>Магическая энергия, заключённая в деревянно-каменный каркас. Универсальный, но недолговечный помощник.</TM_WoodGolem.description>
+
+	<TM_WoodGolem.tools.0.label>удар духа</TM_WoodGolem.tools.0.label>
+
+	<TM_WoodGolem.tools.1.label>разрушитель каркасов</TM_WoodGolem.tools.1.label>
+
+	<TM_SilkGolem.label>шёлковый голем</TM_SilkGolem.label>
+
+	<TM_SilkGolem.description>Бесформенная масса из ткани и нитей, напоминающая слизня, с дружелюбной выразительной мордочкой.</TM_SilkGolem.description>
+
+	<TM_SilkGolem.tools.0.label>тяжёлый удар</TM_SilkGolem.tools.0.label>
+	<TM_FleshGolem_Corpse.label>труп голема из плоти</TM_FleshGolem_Corpse.label>
+	<TM_FleshGolem_Corpse.description>труп голема из плоти</TM_FleshGolem_Corpse.description>
+	<TM_FleshGolem_Leather.label>плоть голема из плоти</TM_FleshGolem_Leather.label>
+	<TM_FleshGolem_Leather.description>плоть голема из плоти</TM_FleshGolem_Leather.description>
+	<TM_FleshGolem_Leather.stuffProps.stuffAdjective>плоть голема из плоти</TM_FleshGolem_Leather.stuffProps.stuffAdjective>
+	<TM_GraniteGolem_Corpse.label>труп гранитного голема</TM_GraniteGolem_Corpse.label>
+	<TM_GraniteGolem_Corpse.description>труп гранитного голема</TM_GraniteGolem_Corpse.description>
+	<TM_GraniteGolem_Leather.label>гранитная шкура голема</TM_GraniteGolem_Leather.label>
+	<TM_GraniteGolem_Leather.description>гранитная шкура голема</TM_GraniteGolem_Leather.description>
+	<TM_GraniteGolem_Leather.stuffProps.stuffAdjective>гранитная шкура голема</TM_GraniteGolem_Leather.stuffProps.stuffAdjective>
+	<TM_HollowGolem_Corpse.label>труп пустотного голема</TM_HollowGolem_Corpse.label>
+	<TM_HollowGolem_Corpse.description>труп пустотного голема</TM_HollowGolem_Corpse.description>
+	<TM_LimestoneGolem_Corpse.label>труп известнякового голема</TM_LimestoneGolem_Corpse.label>
+	<TM_LimestoneGolem_Corpse.description>труп известнякового голема</TM_LimestoneGolem_Corpse.description>
+	<TM_LimestoneGolem_Leather.label>известняковая шкура голема</TM_LimestoneGolem_Leather.label>
+	<TM_LimestoneGolem_Leather.description>известняковая шкура голема</TM_LimestoneGolem_Leather.description>
+	<TM_LimestoneGolem_Leather.stuffProps.stuffAdjective>известняковая шкура голема</TM_LimestoneGolem_Leather.stuffProps.stuffAdjective>
+	<TM_MaharalGolem_Corpse.label>труп голема Махарала</TM_MaharalGolem_Corpse.label>
+	<TM_MaharalGolem_Corpse.description>труп голема Махарала</TM_MaharalGolem_Corpse.description>
+	<TM_MarbleGolem_Corpse.label>труп мраморного голема</TM_MarbleGolem_Corpse.label>
+	<TM_MarbleGolem_Corpse.description>труп мраморного голема</TM_MarbleGolem_Corpse.description>
+	<TM_MarbleGolem_Leather.label>мраморная шкура голема</TM_MarbleGolem_Leather.label>
+	<TM_MarbleGolem_Leather.description>мраморная шкура голема</TM_MarbleGolem_Leather.description>
+	<TM_MarbleGolem_Leather.stuffProps.stuffAdjective>мраморная шкура голема</TM_MarbleGolem_Leather.stuffProps.stuffAdjective>
+	<TM_MechaGolem_Corpse.label>труп меха-голема</TM_MechaGolem_Corpse.label>
+	<TM_MechaGolem_Corpse.description>труп меха-голема</TM_MechaGolem_Corpse.description>
+	<TM_MechaGolem_Meat.label>мясо меха-голема</TM_MechaGolem_Meat.label>
+	<TM_MechaGolem_Meat.description>мясо меха-голема</TM_MechaGolem_Meat.description>
+	<TM_SandstoneGolem_Corpse.label>труп голема из песчаника</TM_SandstoneGolem_Corpse.label>
+	<TM_SandstoneGolem_Corpse.description>труп голема из песчаника</TM_SandstoneGolem_Corpse.description>
+	<TM_SandstoneGolem_Leather.label>песчаниковая шкура голема</TM_SandstoneGolem_Leather.label>
+	<TM_SandstoneGolem_Leather.description>песчаниковая шкура голема</TM_SandstoneGolem_Leather.description>
+	<TM_SandstoneGolem_Leather.stuffProps.stuffAdjective>песчаниковая шкура голема</TM_SandstoneGolem_Leather.stuffProps.stuffAdjective>
+	<TM_SlateGolem_Corpse.label>труп сланцевого голема</TM_SlateGolem_Corpse.label>
+	<TM_SlateGolem_Corpse.description>труп сланцевого голема</TM_SlateGolem_Corpse.description>
+	<TM_SlateGolem_Leather.label>сланцевая шкура голема</TM_SlateGolem_Leather.label>
+	<TM_SlateGolem_Leather.description>сланцевая шкура голема</TM_SlateGolem_Leather.description>
+	<TM_SlateGolem_Leather.stuffProps.stuffAdjective>сланцевая шкура голема</TM_SlateGolem_Leather.stuffProps.stuffAdjective>
+	<TM_StoneGolem_Corpse.label>труп каменного голема</TM_StoneGolem_Corpse.label>
+	<TM_StoneGolem_Corpse.description>труп каменного голема</TM_StoneGolem_Corpse.description>
+	<TM_StoneGolem_Leather.label>каменная шкура голема</TM_StoneGolem_Leather.label>
+	<TM_StoneGolem_Leather.description>каменная шкура голема</TM_StoneGolem_Leather.description>
+	<TM_StoneGolem_Leather.stuffProps.stuffAdjective>каменная шкура голема</TM_StoneGolem_Leather.stuffProps.stuffAdjective>
+</LanguageData>

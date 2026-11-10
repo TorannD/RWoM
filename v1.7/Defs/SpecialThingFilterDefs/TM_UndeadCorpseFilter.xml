@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SpecialThingFilterDef>
+    <defName>TM_AllowUndeadCorpse</defName>
+    <label>allow undead corpses</label>
+    <description>Allow corpses of pawns raised as undead by necromancers. Such corpses carry the "Undead" status, visible on the corpse's health tab; the colonist/stranger corpse toggles do not apply to them. When unchecked, undead corpses are excluded from hauling and butcher bills.</description>
+    <parentCategory>CorpsesHumanlike</parentCategory>
+    <allowedByDefault>false</allowedByDefault>
+    <saveKey>allowUndeadCorpses</saveKey>
+    <workerClass>TorannMagic.SpecialThingFilterWorker_UndeadCorpse</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>TM_AllowUndeadAnimalCorpse</defName>
+    <label>allow undead animal corpses</label>
+    <description>Allow corpses of animals raised as undead by necromancers. Such corpses carry the "Undead" status, visible on the corpse's health tab. When unchecked, undead animal corpses are excluded from hauling and butcher bills.</description>
+    <parentCategory>CorpsesAnimal</parentCategory>
+    <allowedByDefault>false</allowedByDefault>
+    <saveKey>allowUndeadAnimalCorpses</saveKey>
+    <workerClass>TorannMagic.SpecialThingFilterWorker_UndeadCorpse</workerClass>
+  </SpecialThingFilterDef>
+
+</Defs>

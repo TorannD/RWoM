@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- consolidated enchantments -->
+
+  <TM_HediffEnchantment_maxEnergy.label>Energia Máxima:</TM_HediffEnchantment_maxEnergy.label>
+  <TM_HediffEnchantment_maxEnergy.description>Capacidade de energia.</TM_HediffEnchantment_maxEnergy.description>
+  <TM_HediffEnchantment_maxEnergy.stages.0.label></TM_HediffEnchantment_maxEnergy.stages.0.label>
+
+  <TM_HediffEnchantment_coolDown.label>Recarga:</TM_HediffEnchantment_coolDown.label>
+  <TM_HediffEnchantment_coolDown.description>Capacidade que reduz o tempo de reutilização da habilidade.</TM_HediffEnchantment_coolDown.description>
+  <TM_HediffEnchantment_coolDown.stages.0.label></TM_HediffEnchantment_coolDown.stages.0.label>
+
+  <TM_HediffEnchantment_energyCost.label>Consumo de energia:</TM_HediffEnchantment_energyCost.label>
+  <TM_HediffEnchantment_energyCost.description>Capacidade para reduzir os custos de energia do uso da habilidade.</TM_HediffEnchantment_energyCost.description>
+  <TM_HediffEnchantment_energyCost.stages.0.label></TM_HediffEnchantment_energyCost.stages.0.label>
+
+  <TM_HediffEnchantment_energyRegen.label>Regen da energia:</TM_HediffEnchantment_energyRegen.label>
+  <TM_HediffEnchantment_energyRegen.description>Capacidade que aumenta a regeneração de energia.</TM_HediffEnchantment_energyRegen.description>
+  <TM_HediffEnchantment_energyRegen.stages.0.label></TM_HediffEnchantment_energyRegen.stages.0.label>
+
+  <TM_HediffEnchantment_xpGain.label>Maior experiência:</TM_HediffEnchantment_xpGain.label>
+  <TM_HediffEnchantment_xpGain.description>A capacidade melhora a experiência.</TM_HediffEnchantment_xpGain.description>
+  <TM_HediffEnchantment_xpGain.stages.0.label></TM_HediffEnchantment_xpGain.stages.0.label>
+
+  <TM_HediffEnchantment_dmgResistance.label>Resistência:</TM_HediffEnchantment_dmgResistance.label>
+  <TM_HediffEnchantment_dmgResistance.description>A capacidade de resistir aos efeitos mágicos e reduz os danos causados por ataques mágicos.</TM_HediffEnchantment_dmgResistance.description>
+  <TM_HediffEnchantment_dmgResistance.stages.0.label></TM_HediffEnchantment_dmgResistance.stages.0.label>
+
+  <TM_HediffEnchantment_dmgBonus.label>Força:</TM_HediffEnchantment_dmgBonus.label>
+  <TM_HediffEnchantment_dmgBonus.description>Aumenta os efeitos da capacidade.</TM_HediffEnchantment_dmgBonus.description>
+  <TM_HediffEnchantment_dmgBonus.stages.0.label></TM_HediffEnchantment_dmgBonus.stages.0.label>
+
+  <TM_HediffEnchantment_arcalleumCooldown.label>Recarga de Arkallum</TM_HediffEnchantment_arcalleumCooldown.label>
+  <TM_HediffEnchantment_arcalleumCooldown.description>Capacidade que pode atualizar instantaneamente o tempo de recuperação da capacidade.</TM_HediffEnchantment_arcalleumCooldown.description>
+  <TM_HediffEnchantment_arcalleumCooldown.stages.0.label></TM_HediffEnchantment_arcalleumCooldown.stages.0.label>
+
+
+  <!-- legacy enchantments -->
+
+  <TM_HediffEnchantment_maxMP.label>Max Mana:</TM_HediffEnchantment_maxMP.label>
+  <TM_HediffEnchantment_maxMP.description>Capacidade de capacidade de maná.</TM_HediffEnchantment_maxMP.description>
+  <TM_HediffEnchantment_maxMP.stages.0.label></TM_HediffEnchantment_maxMP.stages.0.label>
+
+  <TM_HediffEnchantment_maxSP.label>Max Resistência:</TM_HediffEnchantment_maxSP.label>
+  <TM_HediffEnchantment_maxSP.description>Capacidade de resistência.</TM_HediffEnchantment_maxSP.description>
+  <TM_HediffEnchantment_maxSP.stages.0.label></TM_HediffEnchantment_maxSP.stages.0.label>
+
+  <TM_HediffEnchantment_spCoolDown.label>Recarga:</TM_HediffEnchantment_spCoolDown.label>
+  <TM_HediffEnchantment_spCoolDown.description>Capacidade que reduz o tempo de recuperação das habilidades de combate.</TM_HediffEnchantment_spCoolDown.description>
+  <TM_HediffEnchantment_spCoolDown.stages.0.label></TM_HediffEnchantment_spCoolDown.stages.0.label>
+
+  <TM_HediffEnchantment_mpCost.label>Valor do maná:</TM_HediffEnchantment_mpCost.label>
+  <TM_HediffEnchantment_mpCost.description>Capacidade que mostra o valor do maná de habilidades.</TM_HediffEnchantment_mpCost.description>
+  <TM_HediffEnchantment_mpCost.stages.0.label></TM_HediffEnchantment_mpCost.stages.0.label>
+
+  <TM_HediffEnchantment_spCost.label>Custo de resistência:</TM_HediffEnchantment_spCost.label>
+  <TM_HediffEnchantment_spCost.description>Capacidade que mostra o custo de resistência das habilidades.</TM_HediffEnchantment_spCost.description>
+  <TM_HediffEnchantment_spCost.stages.0.label></TM_HediffEnchantment_spCost.stages.0.label>
+
+  <TM_HediffEnchantment_mpRegenRate.label>Restaurar maná:</TM_HediffEnchantment_mpRegenRate.label>
+  <TM_HediffEnchantment_mpRegenRate.description>Capacidade de regeneração do maná.</TM_HediffEnchantment_mpRegenRate.description>
+  <TM_HediffEnchantment_mpRegenRate.stages.0.label></TM_HediffEnchantment_mpRegenRate.stages.0.label>
+
+  <TM_HediffEnchantment_spRegenRate.label>Recuperação da resistência:</TM_HediffEnchantment_spRegenRate.label>
+  <TM_HediffEnchantment_spRegenRate.description>Capacidade de regeneração de resistência.</TM_HediffEnchantment_spRegenRate.description>
+  <TM_HediffEnchantment_spRegenRate.stages.0.label></TM_HediffEnchantment_spRegenRate.stages.0.label>
+
+  <TM_HediffEnchantment_arcaneRes.label>Resistência secreta:</TM_HediffEnchantment_arcaneRes.label>
+  <TM_HediffEnchantment_arcaneRes.description>A capacidade de resistir aos efeitos mágicos e reduz os danos causados por ataques mágicos.</TM_HediffEnchantment_arcaneRes.description>
+  <TM_HediffEnchantment_arcaneRes.stages.0.label></TM_HediffEnchantment_arcaneRes.stages.0.label>
+
+  <TM_HediffEnchantment_arcaneDmg.label>Bónus mágico:</TM_HediffEnchantment_arcaneDmg.label>
+  <TM_HediffEnchantment_arcaneDmg.description>Aumenta os efeitos das capacidades mágicas.</TM_HediffEnchantment_arcaneDmg.description>
+  <TM_HediffEnchantment_arcaneDmg.stages.0.label></TM_HediffEnchantment_arcaneDmg.stages.0.label>
+
+  <TM_HediffEnchantment_combatDmg.label>Bónus de Guerra:</TM_HediffEnchantment_combatDmg.label>
+  <TM_HediffEnchantment_combatDmg.description>Aumenta os efeitos da capacidade de combate.</TM_HediffEnchantment_combatDmg.description>
+  <TM_HediffEnchantment_combatDmg.stages.0.label></TM_HediffEnchantment_combatDmg.stages.0.label>
+
+  <TM_HediffEnchantment_arcaneSpectre.label>Espírito secreto</TM_HediffEnchantment_arcaneSpectre.label>
+  <TM_HediffEnchantment_arcaneSpectre.description>Uma capacidade que pode adicionar danos adicionais do espírito a qualquer ataque.</TM_HediffEnchantment_arcaneSpectre.description>
+  <TM_HediffEnchantment_arcaneSpectre.stages.0.label></TM_HediffEnchantment_arcaneSpectre.stages.0.label>
+
+  <TM_HediffEnchantment_phantomShift.label>Mudança fantasma</TM_HediffEnchantment_phantomShift.label>
+  <TM_HediffEnchantment_phantomShift.description>Uma capacidade que transporta todos os danos do ataque para o vazio.</TM_HediffEnchantment_phantomShift.description>
+  <TM_HediffEnchantment_phantomShift.stages.0.label></TM_HediffEnchantment_phantomShift.stages.0.label>
+
+  <TM_HediffEnchantment_fireImmunity.label>Resistência ao fogo</TM_HediffEnchantment_fireImmunity.label>
+  <TM_HediffEnchantment_fireImmunity.description>Ainda pode ser prejudicado pelo fogo, mas não pode pegar fogo.</TM_HediffEnchantment_fireImmunity.description>
+  <TM_HediffEnchantment_fireImmunity.stages.0.label></TM_HediffEnchantment_fireImmunity.stages.0.label>
+
+
+</LanguageData>

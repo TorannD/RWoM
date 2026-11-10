@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- TM_HeatWaveMR example contains all possible fields with default values
+  mageCount can be any value, but there is only designated room for 6 mages, 3 for the focus point (small circle)
+  manaCost is divided by mageCount to determine how much mana each mage must have to perform the ritual; this is the amount of mana subtracted following the ritual -->
+
+  <TM_HeatWaveMR.label>Зміна: теплова хвиля</TM_HeatWaveMR.label>
+  <TM_HeatWaveMR.description>Теплова хвиля огортає карту
+Кастеров: 3
+Мани: 50 ea.
+Шанс невдачі: 5%
+Реакція на помилку: 0</TM_HeatWaveMR.description>
+  <TM_HeatWaveMR.jobString>викликає теплову хвилю</TM_HeatWaveMR.jobString>
+
+  <TM_ColdSnapMR.label>Зміна: похолодання</TM_ColdSnapMR.label>
+  <TM_ColdSnapMR.description>Похолодання обволокує карту
+Кастеров: 3
+Мани: 50 ea.
+Шанс невдачі: 5%
+Реакція на помилку: 0</TM_ColdSnapMR.description>
+  <TM_ColdSnapMR.jobString>викликає холодну хвилю</TM_ColdSnapMR.jobString>
+
+  <TM_NameWindMR.label>Зміна: назва вітру</TM_NameWindMR.label>
+  <TM_NameWindMR.description>викликає сильні вітри по всій карті протягом декількох днів
+Кастеров: 1
+Мани: 40 ea.
+Шанс невдачі: 10%
+Реакція на помилку: 6</TM_NameWindMR.description>
+  <TM_NameWindMR.jobString>викликає вітер</TM_NameWindMR.jobString>
+
+  <TM_PsychicSootheMR.label>Зміна: психічне заспокоєння</TM_PsychicSootheMR.label>
+  <TM_PsychicSootheMR.description>Створюйте заспокійливі психічні еманації
+Кастеров: 3
+Мани: 50 ea.
+Шанс невдачі: 25%
+Реакція на помилку: 10</TM_PsychicSootheMR.description>
+  <TM_PsychicSootheMR.jobString>створення психічного заспокоєння</TM_PsychicSootheMR.jobString>
+
+  <TM_HealingRainMR.label>Зміна: цілющий дощ</TM_HealingRainMR.label>
+  <TM_HealingRainMR.description>Карта омивається цілющим дощем
+Кастеров: 1
+Мани: 60 ea.
+Шанс невдачі: 20%
+Реакція на помилку: 10</TM_HealingRainMR.description>
+  <TM_HealingRainMR.jobString>формування цілющого дощу</TM_HealingRainMR.jobString>
+
+  <TM_NaturesGiftMR.label>Зміна: дар природи</TM_NaturesGiftMR.label>
+  <TM_NaturesGiftMR.description>Причини виникнення випадкових подій
+Кастеров: 3
+Мани: 40 ea.
+Шанс невдачі: 25%
+Реакція на помилку: 12</TM_NaturesGiftMR.description>
+  <TM_NaturesGiftMR.jobString>зміна ймовірності події</TM_NaturesGiftMR.jobString>
+
+  <TM_CallOfTheWildMR.label>Зміна: поклик дикої природи</TM_CallOfTheWildMR.label>
+  <TM_CallOfTheWildMR.description>Привертає увагу диких тварин
+Кастеров: 2
+Мани: 60 ea.
+Шанс невдачі: 20%
+Реакція на помилку: 12</TM_CallOfTheWildMR.description>
+  <TM_CallOfTheWildMR.jobString>зміна ймовірності події</TM_CallOfTheWildMR.jobString>
+
+  <TM_TerrestrialBeaconMR.label>Зміна: наземний Маяк</TM_TerrestrialBeaconMR.label>
+  <TM_TerrestrialBeaconMR.description>Змінює траєкторію польоту падаючих об&apos;єктів, щоб приземлитися поруч
+Кастеров: 2
+Мани: 60 ea.
+Шанс невдачі: 25%
+Реакція на помилку: 12</TM_TerrestrialBeaconMR.description>
+  <TM_TerrestrialBeaconMR.jobString>зміна ймовірності події</TM_TerrestrialBeaconMR.jobString>
+
+  <TM_MeteorFallMR.label>Заклинання: притягування метеорів</TM_MeteorFallMR.label>
+  <TM_MeteorFallMR.description>Викликає зіткнення декількох метеоритів поблизу
+Кастеров: 3
+Мани: 60 ea.
+Шанс невдачі: 15%
+Реакція на помилку: 0</TM_MeteorFallMR.description>
+  <TM_MeteorFallMR.jobString>Закликає метеорити</TM_MeteorFallMR.jobString>
+
+  <TM_CreateSkeletonMR.label>Заклинання: скелет</TM_CreateSkeletonMR.label>
+  <TM_CreateSkeletonMR.description>Створює анімований скелет з одного трупа; скелет захищатиме колонію протягом 5 днів або до тих пір, поки не буде знищений.
+Кастеров: 1
+Мани: 50 ea.
+Шанс невдачі: 10%
+Реакція на помилку: 8</TM_CreateSkeletonMR.description>
+  <TM_CreateSkeletonMR.jobString>Створення скелета</TM_CreateSkeletonMR.jobString>
+
+  <TM_CreateGiantSkeletonMR.label>Заклинання: гігантський скелет</TM_CreateGiantSkeletonMR.label>
+  <TM_CreateGiantSkeletonMR.description>Створює гігантський, анімований скелет з купи трупів; скелет захищатиме колонію протягом 5 днів або до тих пір, поки не буде знищений.
+Кастеров: 4
+Мани: 50 ea.
+Шанс невдачі: 25%
+Реакція на помилку: 12</TM_CreateGiantSkeletonMR.description>
+  <TM_CreateGiantSkeletonMR.jobString>Пожвавлення скелета</TM_CreateGiantSkeletonMR.jobString>
+
+  <TM_SummonSpiritMR.label>Заклинання: дух-власник</TM_SummonSpiritMR.label>
+  <TM_SummonSpiritMR.description>Закликає блукаючого духу.
+Ролики: 3
+Мана: 40 шт.
+Шанс провалу: 25%
+Невдалий люфт: 15</TM_SummonSpiritMR.description>
+  <TM_SummonSpiritMR.jobString>дух блукаючий</TM_SummonSpiritMR.jobString>
+
+  <TM_RuunbledMR.label>Заклинання: містична зброя</TM_RuunbledMR.label>
+  <TM_RuunbledMR.description>Викликає містичну зброю
+Кастеров: 3
+Мани: 60 ea.
+Шанс невдачі: 50%
+Реакція на помилку: 10</TM_RuunbledMR.description>
+  <TM_RuunbledMR.jobString>виклик містичної зброї</TM_RuunbledMR.jobString>
+
+  <TM_ArcaneAugmentationMR.label>Заклинання: таємне збільшення</TM_ArcaneAugmentationMR.label>
+  <TM_ArcaneAugmentationMR.description>Застосовує численні таємні баффи до колоністів.
+Кастеров: 3
+Target max: 10
+Мани: 40 ea.
+Шанс невдачі: 15%
+Реакція на помилку: 6</TM_ArcaneAugmentationMR.description>
+  <TM_ArcaneAugmentationMR.jobString>застосування таємних баф</TM_ArcaneAugmentationMR.jobString>
+
+  <TM_BlightWildlifeMR.label>Заклинання: занепад дикої природи</TM_BlightWildlifeMR.label>
+  <TM_BlightWildlifeMR.description>Вражає чумою всю живу природу.
+Кастеров: 3
+Мани: 40 ea.
+Шанс невдачі: 15%
+Реакція на помилку: 6</TM_BlightWildlifeMR.description>
+  <TM_BlightWildlifeMR.jobString>закляття дикої природи</TM_BlightWildlifeMR.jobString>
+
+  <TM_BeastialRageMR.label>Заклинання: лють хижака</TM_BeastialRageMR.label>
+  <TM_BeastialRageMR.description>Розгнівайте хижих звірів на карті і підштовхніть їх лють до ваших ворогів.
+Кастеров: 2
+Мани: 40 ea.
+Шанс невдачі: 35%
+Реакція на помилку: 10</TM_BeastialRageMR.description>
+  <TM_BeastialRageMR.jobString>розлючені хижаки</TM_BeastialRageMR.jobString>
+
+  <TM_ArcaneInspirationMR.label>Заклинання: таємне натхнення</TM_ArcaneInspirationMR.label>
+  <TM_ArcaneInspirationMR.description>шукає таємні одкровення для натхнення
+Кастеров: 1
+Мани: 50 ea.
+Шанс невдачі: 15%
+Реакція на помилку: 6</TM_ArcaneInspirationMR.description>
+  <TM_ArcaneInspirationMR.jobString>занурення в таємницю</TM_ArcaneInspirationMR.jobString>
+
+  <TM_DivineBlessingMR.label>Заклинання: божественне благословення</TM_DivineBlessingMR.label>
+  <TM_DivineBlessingMR.description>Моліть вищу силу виявити милосердя до хворих пішаків
+Кастеров: 3
+Мани: 60 ea.
+Шанс невдачі: 40%
+Реакція на помилку: 0</TM_DivineBlessingMR.description>
+  <TM_DivineBlessingMR.jobString>у пошуках божественного благословення</TM_DivineBlessingMR.jobString>
+
+  <TM_SummonDemonMR.label>Заклинання: викликати фонову службу * челендж *</TM_SummonDemonMR.label>
+  <TM_SummonDemonMR.description>Боротьба з демонічним ворогом
+Кастеров: 6
+Мани: 40 ea.
+Шанс невдачі: 20%
+Реакція на помилку: 20</TM_SummonDemonMR.description>
+  <TM_SummonDemonMR.jobString>виклик фонової служби</TM_SummonDemonMR.jobString>
+
+  <TM_SummonWanderingLichMR.label>Заклинання: виклик блукаючого ліча * челендж *</TM_SummonWanderingLichMR.label>
+  <TM_SummonWanderingLichMR.description>Привернути увагу бродячого ліча
+Кастеров: 6
+Мани: 40 ea.
+Шанс невдачі: 20%
+Реакція на помилку: 20</TM_SummonWanderingLichMR.description>
+  <TM_SummonWanderingLichMR.jobString>виклик ліча</TM_SummonWanderingLichMR.jobString>
+
+
+</LanguageData>

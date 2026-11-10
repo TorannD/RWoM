@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ShieldManaBuffer>法力缓冲池：{0} / {1}</TM_ShieldManaBuffer>
+  <TM_ThermalFieldStrength>御寒强度：{0}</TM_ThermalFieldStrength>
+  <TM_ThermalStatusStandby>待机：另一台热能发生器正在运行</TM_ThermalStatusStandby>
+</LanguageData>

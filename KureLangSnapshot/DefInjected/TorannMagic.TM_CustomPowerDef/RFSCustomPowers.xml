@@ -1,0 +1,1227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Scattershot.customPower.skills.0.label />
+  <TM_Scattershot.customPower.skills.0.description />
+  <TM_PointBlank.customPower.skills.0.label />
+  <TM_PointBlank.customPower.skills.0.description />
+  <TM_FlashpowderShells.customPower.skills.0.label />
+  <TM_FlashpowderShells.customPower.skills.0.description />
+  <TM_DragonsBreathShells.customPower.skills.0.label />
+  <TM_DragonsBreathShells.customPower.skills.0.description />
+  <TM_HiExplosiveShells.customPower.skills.0.label />
+  <TM_HiExplosiveShells.customPower.skills.0.description />
+  <TM_Medigel1.customPower.skills.0.label />
+  <TM_Medigel1.customPower.skills.0.description />
+  <TM_Emergency1.customPower.skills.0.label />
+  <TM_Emergency1.customPower.skills.0.description />
+  <TM_CombatDrugPain.customPower.skills.0.label />
+  <TM_CombatDrugPain.customPower.skills.0.description />
+  <TM_CombatDrugMoving.customPower.skills.0.label />
+  <TM_CombatDrugMoving.customPower.skills.0.description />
+  <TM_CombatDrugAwareness.customPower.skills.0.label />
+  <TM_CombatDrugAwareness.customPower.skills.0.description />
+  <TM_CombatDrugAccuracy.customPower.skills.0.label />
+  <TM_CombatDrugAccuracy.customPower.skills.0.description />
+  <TM_Purity.customPower.skills.0.label />
+  <TM_Purity.customPower.skills.0.description />
+  <TM_Equality.customPower.skills.0.label />
+  <TM_Equality.customPower.skills.0.description />
+  <TM_Malice.customPower.skills.0.label>TM_Scorn_pwr</TM_Malice.customPower.skills.0.label>
+  <TM_Malice.customPower.skills.0.description>TM_Scorn_pwr_desc</TM_Malice.customPower.skills.0.description>
+  <TM_MassPossess.customPower.skills.0.label />
+  <TM_MassPossess.customPower.skills.0.description />
+  <TM_MiniBomb.customPower.skills.0.label />
+  <TM_MiniBomb.customPower.skills.0.description />
+  <TM_ClearingCharge.customPower.skills.0.label />
+  <TM_ClearingCharge.customPower.skills.0.description />
+  <TM_IgnitionCharge.customPower.skills.0.label />
+  <TM_IgnitionCharge.customPower.skills.0.description />
+  <TM_FlashCharge.customPower.skills.0.label />
+  <TM_FlashCharge.customPower.skills.0.description />
+  <TM_EMPCharge.customPower.skills.0.label />
+  <TM_EMPCharge.customPower.skills.0.description />
+  <TM_SiegeExplosive.customPower.skills.0.label />
+  <TM_SiegeExplosive.customPower.skills.0.description />
+  <TM_CarpetBomb.customPower.skills.0.label />
+  <TM_CarpetBomb.customPower.skills.0.description />
+  <TM_Somnolence.customPower.skills.0.label />
+  <TM_Somnolence.customPower.skills.0.description />
+  <TM_Dementia.customPower.skills.0.label />
+  <TM_Dementia.customPower.skills.0.description />
+  <TM_PhysicalShapeshift.customPower.skills.0.label />
+  <TM_PhysicalShapeshift.customPower.skills.0.description />
+  <TM_Antidepressants.customPower.skills.0.label />
+  <TM_Antidepressants.customPower.skills.0.description />
+  <TM_ThermoPills.customPower.skills.0.label />
+  <TM_ThermoPills.customPower.skills.0.description />
+  <TM_Iai.customPower.skills.0.label>TM_SeismicSlash_pwr</TM_Iai.customPower.skills.0.label>
+  <TM_Iai.customPower.skills.0.description>TM_SeismicSlash_pwr_desc</TM_Iai.customPower.skills.0.description>
+  <TM_Iai.customPower.skills.1.label>TM_SeismicSlash_ver</TM_Iai.customPower.skills.1.label>
+  <TM_Iai.customPower.skills.1.description>TM_SeismicSlash_ver_desc</TM_Iai.customPower.skills.1.description>
+  <TM_BoosterShot.customPower.skills.0.label />
+  <TM_BoosterShot.customPower.skills.0.description />
+  <TM_BloodTransfusion.customPower.skills.0.label />
+  <TM_BloodTransfusion.customPower.skills.0.description />
+  <TM_Antitoxin.customPower.skills.0.label />
+  <TM_Antitoxin.customPower.skills.0.description />
+  <TM_ImbueEnergy.customPower.skills.0.label />
+  <TM_ImbueEnergy.customPower.skills.0.description />
+  <TM_BackupGrenade.customPower.skills.0.label />
+  <TM_BackupGrenade.customPower.skills.0.description />
+  <TM_EMPBomb.customPower.skills.0.label />
+  <TM_EMPBomb.customPower.skills.0.description />
+  <TM_Barkskin.customPower.skills.0.label />
+  <TM_Barkskin.customPower.skills.0.description />
+  <TM_Rejuvenation.customPower.skills.0.label />
+  <TM_Rejuvenation.customPower.skills.0.description />
+  <TM_Serenity.customPower.skills.0.label />
+  <TM_Serenity.customPower.skills.0.description />
+  <TM_Glare.customPower.skills.0.label />
+  <TM_Glare.customPower.skills.0.description />
+  <TM_TouchOfDeath.customPower.skills.0.label />
+  <TM_TouchOfDeath.customPower.skills.0.description />
+  <TM_Berserk.customPower.skills.0.label />
+  <TM_Berserk.customPower.skills.0.description />
+  <TM_ThrillOfBattle.customPower.skills.0.label />
+  <TM_ThrillOfBattle.customPower.skills.0.description />
+  <TM_RecklessCharge.customPower.skills.0.label />
+  <TM_RecklessCharge.customPower.skills.0.description />
+  <TM_Infuriate.customPower.skills.0.label />
+  <TM_Infuriate.customPower.skills.0.description />
+  <TM_Provoke.customPower.skills.0.label />
+  <TM_Provoke.customPower.skills.0.description />
+  <TM_BramblePatch.customPower.skills.0.label />
+  <TM_BramblePatch.customPower.skills.0.description />
+  <TM_ArcaneWall.customPower.skills.0.label />
+  <TM_ArcaneWall.customPower.skills.0.description />
+  <TM_ClearMind.customPower.skills.0.label />
+  <TM_ClearMind.customPower.skills.0.description />
+  <TM_EvasiveLeap.customPower.skills.0.label />
+  <TM_EvasiveLeap.customPower.skills.0.description />
+  <TM_Haste.customPower.skills.0.label />
+  <TM_Haste.customPower.skills.0.description />
+  <TM_FireAtWill.customPower.skills.0.label />
+  <TM_FireAtWill.customPower.skills.0.description />
+  <TM_Tailwind.customPower.skills.0.label />
+  <TM_Tailwind.customPower.skills.0.description />
+  <TM_GrandFinale.customPower.skills.0.label />
+  <TM_GrandFinale.customPower.skills.0.description />
+  <TM_Diffraction.customPower.skills.0.label />
+  <TM_Diffraction.customPower.skills.0.description />
+  <TM_Shadowsong.customPower.skills.0.label />
+  <TM_Shadowsong.customPower.skills.0.description />
+  <TM_ExperimentalIncision.customPower.skills.0.label />
+  <TM_ExperimentalIncision.customPower.skills.0.description />
+  <TM_InvoluntaryInoculation.customPower.skills.0.label />
+  <TM_InvoluntaryInoculation.customPower.skills.0.description />
+  <TM_CallousSurgery.customPower.skills.0.label />
+  <TM_CallousSurgery.customPower.skills.0.description />
+  <TM_VileTransfusion.customPower.skills.0.label />
+  <TM_VileTransfusion.customPower.skills.0.description />
+  <TM_Bloodletting.customPower.skills.0.label />
+  <TM_Bloodletting.customPower.skills.0.description />
+  <TM_PlagueKnife.customPower.skills.0.label />
+  <TM_PlagueKnife.customPower.skills.0.description />
+  <TM_GleefulButchery.customPower.skills.0.label />
+  <TM_GleefulButchery.customPower.skills.0.description />
+  <TM_FetidFumes.customPower.skills.0.label />
+  <TM_FetidFumes.customPower.skills.0.description />
+  <TM_ProperDisposal.customPower.skills.0.label />
+  <TM_ProperDisposal.customPower.skills.0.description />
+  <TM_PsychicBarrier.customPower.skills.0.label />
+  <TM_PsychicBarrier.customPower.skills.0.description />
+  <TM_DeathsCharge.customPower.skills.0.label />
+  <TM_DeathsCharge.customPower.skills.0.description />
+  <TM_Eviscerate.customPower.skills.0.label />
+  <TM_Eviscerate.customPower.skills.0.description />
+  <TM_CloakAndDagger.customPower.skills.0.label />
+  <TM_CloakAndDagger.customPower.skills.0.description />
+  <TM_CancelCloak.customPower.skills.0.label />
+  <TM_CancelCloak.customPower.skills.0.description />
+  <TM_ShadowClone.customPower.skills.0.label />
+  <TM_ShadowClone.customPower.skills.0.description />
+  <TM_ShadowShuriken.customPower.skills.0.label />
+  <TM_ShadowShuriken.customPower.skills.0.description />
+  <TM_Hyoton.customPower.skills.0.label />
+  <TM_Hyoton.customPower.skills.0.description />
+  <TM_Katon.customPower.skills.0.label />
+  <TM_Katon.customPower.skills.0.description />
+  <TM_Ketsuekiton.customPower.skills.0.label>TM_IgniteBlood_pwr</TM_Ketsuekiton.customPower.skills.0.label>
+  <TM_Ketsuekiton.customPower.skills.0.description>TM_IgniteBlood_pwr_desc</TM_Ketsuekiton.customPower.skills.0.description>
+  <TM_IntentB.customPower.skills.0.label />
+  <TM_IntentB.customPower.skills.0.description />
+  <TM_FlowB.customPower.skills.0.label />
+  <TM_FlowB.customPower.skills.0.description />
+  <TM_LunarArcB.customPower.skills.0.label />
+  <TM_LunarArcB.customPower.skills.0.description />
+  <TM_Yukikaze.customPower.skills.0.label />
+  <TM_Yukikaze.customPower.skills.0.description />
+  <TM_Temperance.customPower.skills.0.label />
+  <TM_Temperance.customPower.skills.0.description />
+  <TM_BladeParry.customPower.skills.0.label />
+  <TM_BladeParry.customPower.skills.0.description />
+  <TM_DoubleTap.customPower.skills.0.label />
+  <TM_DoubleTap.customPower.skills.0.description />
+  <TM_IgnitionShot.customPower.skills.0.label />
+  <TM_IgnitionShot.customPower.skills.0.description />
+  <TM_FrostShot.customPower.skills.0.label />
+  <TM_FrostShot.customPower.skills.0.description />
+  <TM_LightningShot.customPower.skills.0.label />
+  <TM_LightningShot.customPower.skills.0.description />
+  <TM_LucentShot.customPower.skills.0.label />
+  <TM_LucentShot.customPower.skills.0.description />
+  <TM_ExplosiveEntrance.customPower.skills.0.label>TM_PsionicDash_ver</TM_ExplosiveEntrance.customPower.skills.0.label>
+  <TM_ExplosiveEntrance.customPower.skills.0.description>TM_PsionicDash_ver_desc</TM_ExplosiveEntrance.customPower.skills.0.description>
+  <TM_Backdraft.customPower.skills.0.label />
+  <TM_Backdraft.customPower.skills.0.description />
+  <TM_StrikeZone.customPower.skills.0.label />
+  <TM_StrikeZone.customPower.skills.0.description />
+  <TM_InfernoBreaker.customPower.skills.0.label />
+  <TM_InfernoBreaker.customPower.skills.0.description />
+  <TM_Redpoint.customPower.skills.0.label />
+  <TM_Redpoint.customPower.skills.0.description />
+  <TM_BlitzCharge.customPower.skills.0.label />
+  <TM_BlitzCharge.customPower.skills.0.description />
+  <TM_BlastShield.customPower.skills.0.label />
+  <TM_BlastShield.customPower.skills.0.description />
+  <TM_QilinStance.customPower.skills.0.label />
+  <TM_QilinStance.customPower.skills.0.description />
+  <TM_TurtleStance.customPower.skills.0.label />
+  <TM_TurtleStance.customPower.skills.0.description />
+  <TM_PhoenixStance.customPower.skills.0.label />
+  <TM_PhoenixStance.customPower.skills.0.description />
+  <TM_DragonStance.customPower.skills.0.label />
+  <TM_DragonStance.customPower.skills.0.description />
+  <TM_AscendedStance.customPower.skills.0.label />
+  <TM_AscendedStance.customPower.skills.0.description />
+  <TM_CancelStance.customPower.skills.0.label />
+  <TM_CancelStance.customPower.skills.0.description />
+  <TM_Shadowstep.customPower.skills.0.label />
+  <TM_Shadowstep.customPower.skills.0.description />
+  <TM_Scan.customPower.skills.0.label />
+  <TM_Scan.customPower.skills.0.description />
+  <TM_HydratedWater.customPower.skills.0.label />
+  <TM_HydratedWater.customPower.skills.0.description />
+  <TM_PocketSand.customPower.skills.0.label />
+  <TM_PocketSand.customPower.skills.0.description />
+  <TM_SpareBatteries.customPower.skills.0.label />
+  <TM_SpareBatteries.customPower.skills.0.description />
+  <TM_OldHeadlight.customPower.skills.0.label />
+  <TM_OldHeadlight.customPower.skills.0.description />
+  <TM_AutoSpanner.customPower.skills.0.label />
+  <TM_AutoSpanner.customPower.skills.0.description />
+  <TM_MysteriousAmulet.customPower.skills.0.label />
+  <TM_MysteriousAmulet.customPower.skills.0.description />
+  <TM_DisguiseKit.customPower.skills.0.label>TM_Disguise_pwr</TM_DisguiseKit.customPower.skills.0.label>
+  <TM_DisguiseKit.customPower.skills.0.description>TM_Disguise_pwr_desc</TM_DisguiseKit.customPower.skills.0.description>
+  <TM_DisguiseKit.customPower.skills.1.label>TM_Disguise_ver</TM_DisguiseKit.customPower.skills.1.label>
+  <TM_DisguiseKit.customPower.skills.1.description>TM_Disguise_ver_desc</TM_DisguiseKit.customPower.skills.1.description>
+  <TM_StickyBombs.customPower.skills.0.label />
+  <TM_StickyBombs.customPower.skills.0.description />
+  <TM_C45Explosives.customPower.skills.0.label />
+  <TM_C45Explosives.customPower.skills.0.description />
+  <TM_TimedCharge.customPower.skills.0.label />
+  <TM_TimedCharge.customPower.skills.0.description />
+  <TM_Flashbang.customPower.skills.0.label />
+  <TM_Flashbang.customPower.skills.0.description />
+  <TM_CloakingDevice.customPower.skills.0.label />
+  <TM_CloakingDevice.customPower.skills.0.description />
+  <TM_BangedUpHeater.customPower.skills.0.label />
+  <TM_BangedUpHeater.customPower.skills.0.description />
+  <TM_RustyACUnit.customPower.skills.0.label />
+  <TM_RustyACUnit.customPower.skills.0.description />
+  <TM_FloatingLamp.customPower.skills.0.label />
+  <TM_FloatingLamp.customPower.skills.0.description />
+  <TM_PocketExtinguisher.customPower.skills.0.label />
+  <TM_PocketExtinguisher.customPower.skills.0.description />
+  <TM_GiantMagnifyingGlass.customPower.skills.0.label />
+  <TM_GiantMagnifyingGlass.customPower.skills.0.description />
+  <TM_ScratchyGramophone.customPower.skills.0.label />
+  <TM_ScratchyGramophone.customPower.skills.0.description />
+  <TM_BrokenStopwatch.customPower.skills.0.label />
+  <TM_BrokenStopwatch.customPower.skills.0.description />
+  <TM_RocketBoots.customPower.skills.0.label />
+  <TM_RocketBoots.customPower.skills.0.description />
+  <TM_DisposableGoggles.customPower.skills.0.label />
+  <TM_DisposableGoggles.customPower.skills.0.description />
+  <TM_DeathsJudgment.customPower.skills.0.label />
+  <TM_DeathsJudgment.customPower.skills.0.description />
+  <TM_StimShot.customPower.skills.0.label />
+  <TM_StimShot.customPower.skills.0.description />
+  <TM_InflatableWall.customPower.skills.0.label />
+  <TM_InflatableWall.customPower.skills.0.description />
+  <TM_BiotechBrambles.customPower.skills.0.label />
+  <TM_BiotechBrambles.customPower.skills.0.description />
+  <TM_Jetpack.customPower.skills.0.label />
+  <TM_Jetpack.customPower.skills.0.description />
+  <TM_FertileTest.customPower.skills.0.label />
+  <TM_FertileTest.customPower.skills.0.description />
+  <TM_SpareBattery.customPower.skills.0.label />
+  <TM_SpareBattery.customPower.skills.0.description />
+  <TM_HaywireSnowmaker.customPower.skills.0.label />
+  <TM_HaywireSnowmaker.customPower.skills.0.description />
+  <TM_GiantMagnet.customPower.skills.0.label />
+  <TM_GiantMagnet.customPower.skills.0.description />
+  <TM_Taser.customPower.skills.0.label />
+  <TM_Taser.customPower.skills.0.description />
+  <TM_Silence.customPower.skills.0.label />
+  <TM_Silence.customPower.skills.0.description />
+  <TM_DisruptingBurst.customPower.skills.0.label />
+  <TM_DisruptingBurst.customPower.skills.0.description />
+  <TM_Dispel.customPower.skills.0.label />
+  <TM_Dispel.customPower.skills.0.description />
+  <TM_FastHeal.customPower.skills.0.label>TM_AdvancedHeal_pwr</TM_FastHeal.customPower.skills.0.label>
+  <TM_FastHeal.customPower.skills.0.description>TM_AdvancedHeal_pwr_desc</TM_FastHeal.customPower.skills.0.description>
+  <TM_FastHeal.customPower.skills.1.label>TM_AdvancedHeal_ver</TM_FastHeal.customPower.skills.1.label>
+  <TM_FastHeal.customPower.skills.1.description>TM_AdvancedHeal_ver_desc</TM_FastHeal.customPower.skills.1.description>
+  <TM_Protect.customPower.skills.0.label />
+  <TM_Protect.customPower.skills.0.description />
+  <TM_Sap.customPower.skills.0.label />
+  <TM_Sap.customPower.skills.0.description />
+  <TM_LumenShot.customPower.skills.0.label>TM_Sunfire_pwr</TM_LumenShot.customPower.skills.0.label>
+  <TM_LumenShot.customPower.skills.0.description>TM_Sunfire_pwr_desc</TM_LumenShot.customPower.skills.0.description>
+  <TM_LumenShot.customPower.skills.1.label>TM_Sunfire_ver</TM_LumenShot.customPower.skills.1.label>
+  <TM_LumenShot.customPower.skills.1.description>TM_Sunfire_ver_desc</TM_LumenShot.customPower.skills.1.description>
+  <TM_MindShock.customPower.skills.0.label />
+  <TM_MindShock.customPower.skills.0.description />
+  <TM_GreaterDispel.customPower.skills.0.label />
+  <TM_GreaterDispel.customPower.skills.0.description />
+  <TM_Channeling.customPower.skills.0.label />
+  <TM_Channeling.customPower.skills.0.description />
+  <TM_Coupe.customPower.skills.0.label />
+  <TM_Coupe.customPower.skills.0.description />
+  <TM_Fleche.customPower.skills.0.label />
+  <TM_Fleche.customPower.skills.0.description />
+  <TM_Engagement.customPower.skills.0.label>TM_PhaseStrike_pwr</TM_Engagement.customPower.skills.0.label>
+  <TM_Engagement.customPower.skills.0.description>TM_PhaseStrike_pwr_desc</TM_Engagement.customPower.skills.0.description>
+  <TM_ParryingStance.customPower.skills.0.label>TM_Reversal_ver</TM_ParryingStance.customPower.skills.0.label>
+  <TM_ParryingStance.customPower.skills.0.description>TM_Reversal_ver_desc</TM_ParryingStance.customPower.skills.0.description>
+  <TM_NullZone.customPower.skills.0.label />
+  <TM_NullZone.customPower.skills.0.description />
+  <TM_Garrote.customPower.skills.0.label />
+  <TM_Garrote.customPower.skills.0.description />
+  <TM_JaggedStrike.customPower.skills.0.label />
+  <TM_JaggedStrike.customPower.skills.0.description />
+  <TM_VenomStrike.customPower.skills.0.label />
+  <TM_VenomStrike.customPower.skills.0.description />
+  <TM_DarkFlight.customPower.skills.0.label />
+  <TM_DarkFlight.customPower.skills.0.description />
+  <TM_AdvancedFlight.customPower.skills.0.label />
+  <TM_AdvancedFlight.customPower.skills.0.description />
+  <TM_Stifle.customPower.skills.0.label />
+  <TM_Stifle.customPower.skills.0.description />
+  <TM_UpdraftB.customPower.skills.0.label />
+  <TM_UpdraftB.customPower.skills.0.description />
+  <TM_Windstep.customPower.skills.0.label />
+  <TM_Windstep.customPower.skills.0.description />
+  <TM_Gust.customPower.skills.0.label />
+  <TM_Gust.customPower.skills.0.description />
+  <TM_FeyWinds.customPower.skills.0.label />
+  <TM_FeyWinds.customPower.skills.0.description />
+  <TM_Gale.customPower.skills.0.label />
+  <TM_Gale.customPower.skills.0.description />
+  <TM_PutridBile.customPower.skills.0.label />
+  <TM_PutridBile.customPower.skills.0.description />
+  <TM_ShadowFetters.customPower.skills.0.label />
+  <TM_ShadowFetters.customPower.skills.0.description />
+  <TM_Paranoia.customPower.skills.0.label />
+  <TM_Paranoia.customPower.skills.0.description />
+  <TM_BloodCurse.customPower.skills.0.label />
+  <TM_BloodCurse.customPower.skills.0.description />
+  <TM_RendSoul.customPower.skills.0.label />
+  <TM_RendSoul.customPower.skills.0.description />
+  <TM_WailOfDoom.customPower.skills.0.label />
+  <TM_WailOfDoom.customPower.skills.0.description />
+  <TM_ZealousDevotion.customPower.skills.0.label />
+  <TM_ZealousDevotion.customPower.skills.0.description />
+  <TM_BlindFaith.customPower.skills.0.label />
+  <TM_BlindFaith.customPower.skills.0.description />
+  <TM_Thunderbolt.customPower.skills.0.label>TM_LightningBolt_pwr</TM_Thunderbolt.customPower.skills.0.label>
+  <TM_Thunderbolt.customPower.skills.0.description>TM_LightningBolt_pwr_desc</TM_Thunderbolt.customPower.skills.0.description>
+  <TM_Thunderbolt.customPower.skills.1.label>TM_LightningBolt_ver</TM_Thunderbolt.customPower.skills.1.label>
+  <TM_Thunderbolt.customPower.skills.1.description>TM_LightningBolt_ver_desc</TM_Thunderbolt.customPower.skills.1.description>
+  <TM_ManaMine.customPower.skills.0.label />
+  <TM_ManaMine.customPower.skills.0.description />
+  <TM_TestF1.customPower.skills.0.label />
+  <TM_TestF1.customPower.skills.0.description />
+  <TM_TestF2.customPower.skills.0.label />
+  <TM_TestF2.customPower.skills.0.description />
+  <TM_TestM1.customPower.skills.0.label />
+  <TM_TestM1.customPower.skills.0.description />
+  <TM_TestM2.customPower.skills.0.label />
+  <TM_TestM2.customPower.skills.0.description />
+  <TM_OmniShield.customPower.skills.0.label />
+  <TM_OmniShield.customPower.skills.0.description />
+  <TM_ChantOfArchmage.customPower.skills.0.label />
+  <TM_ChantOfArchmage.customPower.skills.0.description />
+  <TM_VerdantTraversal.customPower.skills.0.label />
+  <TM_VerdantTraversal.customPower.skills.0.description />
+  <TM_VerdantTraversalB.customPower.skills.0.label />
+  <TM_VerdantTraversalB.customPower.skills.0.description />
+  <TM_ElementalOrigin.customPower.skills.0.label>TM_SummonElemental_ver</TM_ElementalOrigin.customPower.skills.0.label>
+  <TM_ElementalOrigin.customPower.skills.0.description>TM_SummonElemental_ver_desc</TM_ElementalOrigin.customPower.skills.0.description>
+  <TM_Healberry.customPower.skills.0.label>TM_HealingCircle_pwr</TM_Healberry.customPower.skills.0.label>
+  <TM_Healberry.customPower.skills.0.description>TM_HealingCircle_pwr_desc</TM_Healberry.customPower.skills.0.description>
+  <TM_Healberry.customPower.skills.1.label>TM_HealingCircle_ver</TM_Healberry.customPower.skills.1.label>
+  <TM_Healberry.customPower.skills.1.description>TM_HealingCircle_ver_desc</TM_Healberry.customPower.skills.1.description>
+  <TM_Honeytrap.customPower.skills.0.label>TM_Attraction_pwr</TM_Honeytrap.customPower.skills.0.label>
+  <TM_Honeytrap.customPower.skills.0.description>TM_Attraction_pwr_desc</TM_Honeytrap.customPower.skills.0.description>
+  <TM_Honeytrap.customPower.skills.1.label>TM_Attraction_ver</TM_Honeytrap.customPower.skills.1.label>
+  <TM_Honeytrap.customPower.skills.1.description>TM_Attraction_ver_desc</TM_Honeytrap.customPower.skills.1.description>
+  <TM_Suncall.customPower.skills.0.label>TM_Sunfire_pwr</TM_Suncall.customPower.skills.0.label>
+  <TM_Suncall.customPower.skills.0.description>TM_Sunfire_pwr_desc</TM_Suncall.customPower.skills.0.description>
+  <TM_SuncallIndicator.customPower.skills.0.label />
+  <TM_SuncallIndicator.customPower.skills.0.description />
+  <TM_Bloodsoak.customPower.skills.0.label />
+  <TM_Bloodsoak.customPower.skills.0.description />
+  <TM_Combust.customPower.skills.0.label>TM_Fireball_pwr</TM_Combust.customPower.skills.0.label>
+  <TM_Combust.customPower.skills.0.description>TM_Fireball_pwr_desc</TM_Combust.customPower.skills.0.description>
+  <TM_CombustIndicator.customPower.skills.0.label />
+  <TM_CombustIndicator.customPower.skills.0.description />
+  <TM_RemoteExplosiveIndicator.customPower.skills.0.label />
+  <TM_RemoteExplosiveIndicator.customPower.skills.0.description />
+  <TM_FlashTrapIndicator.customPower.skills.0.label />
+  <TM_FlashTrapIndicator.customPower.skills.0.description />
+  <TM_ChainStrike.customPower.skills.0.label>TM_Whirlwind_pwr</TM_ChainStrike.customPower.skills.0.label>
+  <TM_ChainStrike.customPower.skills.0.description>TM_Whirlwind_pwr_desc</TM_ChainStrike.customPower.skills.0.description>
+  <TM_ChainStrike.customPower.skills.1.label>TM_Whirlwind_ver</TM_ChainStrike.customPower.skills.1.label>
+  <TM_ChainStrike.customPower.skills.1.description>TM_Whirlwind_ver_desc</TM_ChainStrike.customPower.skills.1.description>
+  <TM_ChainDash.customPower.skills.0.label />
+  <TM_ChainDash.customPower.skills.0.description />
+  <TM_ChainClimb.customPower.skills.0.label />
+  <TM_ChainClimb.customPower.skills.0.description />
+  <TM_ChainJail.customPower.skills.0.label />
+  <TM_ChainJail.customPower.skills.0.description />
+  <TM_Condemn.customPower.skills.0.label />
+  <TM_Condemn.customPower.skills.0.description />
+  <TM_ChainFlurry.customPower.skills.0.label />
+  <TM_ChainFlurry.customPower.skills.0.description />
+  <TM_ChainWard.customPower.skills.0.label />
+  <TM_ChainWard.customPower.skills.0.description />
+  <TM_MedigelW.customPower.skills.0.label />
+  <TM_MedigelW.customPower.skills.0.description />
+  <TM_CombatDrugPainW.customPower.skills.0.label />
+  <TM_CombatDrugPainW.customPower.skills.0.description />
+  <TM_ThermoPillsW.customPower.skills.0.label />
+  <TM_ThermoPillsW.customPower.skills.0.description />
+  <TM_CloakingDeviceW.customPower.skills.0.label />
+  <TM_CloakingDeviceW.customPower.skills.0.description />
+  <TM_RemoteExplosive.customPower.skills.0.label />
+  <TM_RemoteExplosive.customPower.skills.0.description />
+  <TM_FlashTrap.customPower.skills.0.label />
+  <TM_FlashTrap.customPower.skills.0.description />
+  <TM_ExplosiveTrap.customPower.skills.0.label />
+  <TM_ExplosiveTrap.customPower.skills.0.description />
+  <TM_FlameTrap.customPower.skills.0.label />
+  <TM_FlameTrap.customPower.skills.0.description />
+  <TM_StunTrap.customPower.skills.0.label />
+  <TM_StunTrap.customPower.skills.0.description />
+  <TM_MiniMine.customPower.skills.0.label />
+  <TM_MiniMine.customPower.skills.0.description />
+  <TM_GrapplingHook.customPower.skills.0.label>TM_Whirlwind_pwr</TM_GrapplingHook.customPower.skills.0.label>
+  <TM_GrapplingHook.customPower.skills.0.description>TM_Whirlwind_pwr_desc</TM_GrapplingHook.customPower.skills.0.description>
+  <TM_GrapplingHook.customPower.skills.1.label>TM_Whirlwind_ver</TM_GrapplingHook.customPower.skills.1.label>
+  <TM_GrapplingHook.customPower.skills.1.description>TM_Whirlwind_ver_desc</TM_GrapplingHook.customPower.skills.1.description>
+  <TM_Assassinate.customPower.skills.0.label />
+  <TM_Assassinate.customPower.skills.0.description />
+  <TM_TargetPractice.customPower.skills.0.label>TM_SummonPoppi_ver</TM_TargetPractice.customPower.skills.0.label>
+  <TM_TargetPractice.customPower.skills.0.description>TM_SummonPoppi_ver_desc</TM_TargetPractice.customPower.skills.0.description>
+  <TM_StalkersGaze.customPower.skills.0.label />
+  <TM_StalkersGaze.customPower.skills.0.description />
+  <TM_ClarionCall.customPower.skills.0.label />
+  <TM_ClarionCall.customPower.skills.0.description />
+  <TM_EnergyChanneling.customPower.skills.0.label>TM_SummonExplosive_pwr</TM_EnergyChanneling.customPower.skills.0.label>
+  <TM_EnergyChanneling.customPower.skills.0.description>TM_SummonExplosive_pwr_desc</TM_EnergyChanneling.customPower.skills.0.description>
+  <TM_EnergyChanneling.customPower.skills.1.label>TM_SummonExplosive_ver</TM_EnergyChanneling.customPower.skills.1.label>
+  <TM_EnergyChanneling.customPower.skills.1.description>TM_SummonExplosive_ver_desc</TM_EnergyChanneling.customPower.skills.1.description>
+  <TM_Fortify.customPower.skills.0.label>TM_Encase_pwr</TM_Fortify.customPower.skills.0.label>
+  <TM_Fortify.customPower.skills.0.description>TM_Encase_pwr_desc</TM_Fortify.customPower.skills.0.description>
+  <TM_Fortify.customPower.skills.1.label>TM_Encase_ver</TM_Fortify.customPower.skills.1.label>
+  <TM_Fortify.customPower.skills.1.description>TM_Encase_ver_desc</TM_Fortify.customPower.skills.1.description>
+  <TM_EssenceChanneling.customPower.skills.0.label>TM_SummonPylon_pwr</TM_EssenceChanneling.customPower.skills.0.label>
+  <TM_EssenceChanneling.customPower.skills.0.description>TM_SummonPylon_pwr_desc</TM_EssenceChanneling.customPower.skills.0.description>
+  <TM_EssenceChanneling.customPower.skills.1.label>TM_SummonPylon_ver</TM_EssenceChanneling.customPower.skills.1.label>
+  <TM_EssenceChanneling.customPower.skills.1.description>TM_SummonPylon_ver_desc</TM_EssenceChanneling.customPower.skills.1.description>
+  <TM_AspectChanneling.customPower.skills.0.label />
+  <TM_AspectChanneling.customPower.skills.0.description />
+  <TM_Lightshow.customPower.skills.0.label />
+  <TM_Lightshow.customPower.skills.0.description />
+  <TM_PartyTrick.customPower.skills.0.label />
+  <TM_PartyTrick.customPower.skills.0.description />
+  <TM_OldWivesChant.customPower.skills.0.label />
+  <TM_OldWivesChant.customPower.skills.0.description />
+  <TM_LesserLesserFirebolt.customPower.skills.0.label />
+  <TM_LesserLesserFirebolt.customPower.skills.0.description />
+  <TM_Whiteout.customPower.skills.0.label />
+  <TM_Whiteout.customPower.skills.0.description />
+  <TM_StaticShock.customPower.skills.0.label />
+  <TM_StaticShock.customPower.skills.0.description />
+  <TM_Daydream.customPower.skills.0.label />
+  <TM_Daydream.customPower.skills.0.description />
+  <TM_BarbedArrow.customPower.skills.0.label />
+  <TM_BarbedArrow.customPower.skills.0.description />
+  <TM_PoisonArrow.customPower.skills.0.label />
+  <TM_PoisonArrow.customPower.skills.0.description />
+  <TM_FireArrow.customPower.skills.0.label />
+  <TM_FireArrow.customPower.skills.0.description />
+  <TM_ArcingArrow.customPower.skills.0.label />
+  <TM_ArcingArrow.customPower.skills.0.description />
+  <TM_ChokingGas.customPower.skills.0.label />
+  <TM_ChokingGas.customPower.skills.0.description />
+  <TM_NeedlingShot.customPower.skills.0.label />
+  <TM_NeedlingShot.customPower.skills.0.description />
+  <TM_CalledShot.customPower.skills.0.label />
+  <TM_CalledShot.customPower.skills.0.description />
+  <TM_CripplingShot.customPower.skills.0.label />
+  <TM_CripplingShot.customPower.skills.0.description />
+  <TM_QuickShot.customPower.skills.0.label />
+  <TM_QuickShot.customPower.skills.0.description />
+  <TM_Multishot.customPower.skills.0.label>TM_ArrowStorm_pwr</TM_Multishot.customPower.skills.0.label>
+  <TM_Multishot.customPower.skills.0.description>TM_ArrowStorm_pwr_desc</TM_Multishot.customPower.skills.0.description>
+  <TM_Multishot.customPower.skills.1.label>TM_ArrowStorm_ver</TM_Multishot.customPower.skills.1.label>
+  <TM_Multishot.customPower.skills.1.description>TM_ArrowStorm_ver_desc</TM_Multishot.customPower.skills.1.description>
+  <TM_Barrage.customPower.skills.0.label>TM_ArrowStorm_pwr</TM_Barrage.customPower.skills.0.label>
+  <TM_Barrage.customPower.skills.0.description>TM_ArrowStorm_pwr_desc</TM_Barrage.customPower.skills.0.description>
+  <TM_Barrage.customPower.skills.1.label>TM_ArrowStorm_ver</TM_Barrage.customPower.skills.1.label>
+  <TM_Barrage.customPower.skills.1.description>TM_ArrowStorm_ver_desc</TM_Barrage.customPower.skills.1.description>
+  <TM_GrappleArrow.customPower.skills.0.label />
+  <TM_GrappleArrow.customPower.skills.0.description />
+  <TM_MarksmansVow.customPower.skills.0.label />
+  <TM_MarksmansVow.customPower.skills.0.description />
+  <TM_Thwack.customPower.skills.0.label />
+  <TM_Thwack.customPower.skills.0.description />
+  <TM_TentativeStep.customPower.skills.0.label />
+  <TM_TentativeStep.customPower.skills.0.description />
+  <TM_PebbleToss.customPower.skills.0.label />
+  <TM_PebbleToss.customPower.skills.0.description />
+  <TM_KindWords.customPower.skills.0.label />
+  <TM_KindWords.customPower.skills.0.description />
+  <TM_MeanWords.customPower.skills.0.label />
+  <TM_MeanWords.customPower.skills.0.description />
+  <TM_FetalPose.customPower.skills.0.label />
+  <TM_FetalPose.customPower.skills.0.description />
+  <TM_TinyBandAid.customPower.skills.0.label />
+  <TM_TinyBandAid.customPower.skills.0.description />
+  <TM_ManaDrain.customPower.skills.0.label />
+  <TM_ManaDrain.customPower.skills.0.description />
+  <TM_AtronachsTouch.customPower.skills.0.label />
+  <TM_AtronachsTouch.customPower.skills.0.description />
+  <TM_GrimRitual.customPower.skills.0.label />
+  <TM_GrimRitual.customPower.skills.0.description />
+  <TM_OverloadMana.customPower.skills.0.label />
+  <TM_OverloadMana.customPower.skills.0.description />
+  <TM_CurseOfTheAtronach.customPower.skills.0.label />
+  <TM_CurseOfTheAtronach.customPower.skills.0.description />
+  <TM_Cleanse.customPower.skills.0.label />
+  <TM_Cleanse.customPower.skills.0.description />
+  <TM_AtronachsShadowstep.customPower.skills.0.label>TM_ShadowWalk_pwr</TM_AtronachsShadowstep.customPower.skills.0.label>
+  <TM_AtronachsShadowstep.customPower.skills.0.description>TM_ShadowWalk_pwr_desc</TM_AtronachsShadowstep.customPower.skills.0.description>
+  <TM_AtronachsShadowstep.customPower.skills.1.label>TM_ShadowWalk_ver</TM_AtronachsShadowstep.customPower.skills.1.label>
+  <TM_AtronachsShadowstep.customPower.skills.1.description>TM_ShadowWalk_ver_desc</TM_AtronachsShadowstep.customPower.skills.1.description>
+  <TM_MindBlast.customPower.skills.0.label />
+  <TM_MindBlast.customPower.skills.0.description />
+  <TM_EldritchBarrage.customPower.skills.0.label>TM_ShadowBolt_pwr</TM_EldritchBarrage.customPower.skills.0.label>
+  <TM_EldritchBarrage.customPower.skills.0.description>TM_ShadowBolt_pwr_desc</TM_EldritchBarrage.customPower.skills.0.description>
+  <TM_EldritchBarrage.customPower.skills.1.label>TM_ShadowBolt_ver</TM_EldritchBarrage.customPower.skills.1.label>
+  <TM_EldritchBarrage.customPower.skills.1.description>TM_ShadowBolt_ver_desc</TM_EldritchBarrage.customPower.skills.1.description>
+  <TM_BrawlingBlock.customPower.skills.0.label />
+  <TM_BrawlingBlock.customPower.skills.0.description />
+  <TM_Jab.customPower.skills.0.label />
+  <TM_Jab.customPower.skills.0.description />
+  <TM_LeftHook.customPower.skills.0.label />
+  <TM_LeftHook.customPower.skills.0.description />
+  <TM_Uppercut.customPower.skills.0.label />
+  <TM_Uppercut.customPower.skills.0.description />
+  <TM_BodySlam.customPower.skills.0.label />
+  <TM_BodySlam.customPower.skills.0.description />
+  <TM_Headbutt.customPower.skills.0.label />
+  <TM_Headbutt.customPower.skills.0.description />
+  <TM_Haymaker.customPower.skills.0.label />
+  <TM_Haymaker.customPower.skills.0.description />
+  <TM_CrushingBlow.customPower.skills.0.label />
+  <TM_CrushingBlow.customPower.skills.0.description />
+  <TM_RockThrow.customPower.skills.0.label />
+  <TM_RockThrow.customPower.skills.0.description />
+  <TM_SuckerPunch.customPower.skills.0.label />
+  <TM_SuckerPunch.customPower.skills.0.description />
+  <TM_Takedown.customPower.skills.0.label />
+  <TM_Takedown.customPower.skills.0.description />
+  <TM_FalkenPunch.customPower.skills.0.label />
+  <TM_FalkenPunch.customPower.skills.0.description />
+  <TM_SerumOverload.customPower.skills.0.label />
+  <TM_SerumOverload.customPower.skills.0.description />
+  <TM_DiplomaticNegotiations.customPower.skills.0.label />
+  <TM_DiplomaticNegotiations.customPower.skills.0.description />
+  <TM_Overcharge.customPower.skills.0.label />
+  <TM_Overcharge.customPower.skills.0.description />
+  <TM_FrostArmor.customPower.skills.0.label />
+  <TM_FrostArmor.customPower.skills.0.description />
+  <TM_Incinerate.customPower.skills.0.label />
+  <TM_Incinerate.customPower.skills.0.description />
+  <TM_GrandChallenge.customPower.skills.0.label />
+  <TM_GrandChallenge.customPower.skills.0.description />
+  <TM_ShieldStance.customPower.skills.0.label />
+  <TM_ShieldStance.customPower.skills.0.description />
+  <TM_HuntersShot.customPower.skills.0.label />
+  <TM_HuntersShot.customPower.skills.0.description />
+  <TM_TrollUnguent.customPower.skills.0.label />
+  <TM_TrollUnguent.customPower.skills.0.description />
+  <TM_PoisonVolleyIndicator.customPower.skills.0.label />
+  <TM_PoisonVolleyIndicator.customPower.skills.0.description />
+  <TM_PoisonVolley.customPower.skills.0.label />
+  <TM_PoisonVolley.customPower.skills.0.description />
+  <TM_BladesEdge.customPower.skills.0.label />
+  <TM_BladesEdge.customPower.skills.0.description />
+  <TM_TestAbility.customPower.skills.0.label />
+  <TM_TestAbility.customPower.skills.0.description />
+  <TM_MartialTraining.customPower.skills.0.label />
+  <TM_MartialTraining.customPower.skills.0.description />
+  <TM_MagicTraining.customPower.skills.0.label />
+  <TM_MagicTraining.customPower.skills.0.description />
+  <TM_ChromaticFlash.customPower.skills.0.label />
+  <TM_ChromaticFlash.customPower.skills.0.description />
+  <TM_Vengeance.customPower.skills.0.label />
+  <TM_Vengeance.customPower.skills.0.description />
+  <TM_Effulgence.customPower.skills.0.label />
+  <TM_Effulgence.customPower.skills.0.description />
+  <TM_HammerBolt.customPower.skills.0.label />
+  <TM_HammerBolt.customPower.skills.0.description />
+  <TM_Retribution.customPower.skills.0.label />
+  <TM_Retribution.customPower.skills.0.description />
+  <TM_AstralFlames.customPower.skills.0.label />
+  <TM_AstralFlames.customPower.skills.0.description />
+  <TM_BlackStar.customPower.skills.0.label />
+  <TM_BlackStar.customPower.skills.0.description />
+  <TM_HeavenlySeal.customPower.skills.0.label />
+  <TM_HeavenlySeal.customPower.skills.0.description />
+  <TM_Horoscope.customPower.skills.0.label />
+  <TM_Horoscope.customPower.skills.0.description />
+  <TM_Divination.customPower.skills.0.label />
+  <TM_Divination.customPower.skills.0.description />
+  <TM_CelestialGuidance.customPower.skills.0.label>TM_AdvancedHeal_pwr</TM_CelestialGuidance.customPower.skills.0.label>
+  <TM_CelestialGuidance.customPower.skills.0.description>TM_AdvancedHeal_pwr_desc</TM_CelestialGuidance.customPower.skills.0.description>
+  <TM_CelestialGuidance.customPower.skills.1.label>TM_AdvancedHeal_ver</TM_CelestialGuidance.customPower.skills.1.label>
+  <TM_CelestialGuidance.customPower.skills.1.description>TM_AdvancedHeal_ver_desc</TM_CelestialGuidance.customPower.skills.1.description>
+  <TM_PlanetaryForce.customPower.skills.0.label />
+  <TM_PlanetaryForce.customPower.skills.0.description />
+  <TM_GrandExpanse.customPower.skills.0.label />
+  <TM_GrandExpanse.customPower.skills.0.description />
+  <TM_Ohajiki.customPower.skills.0.label />
+  <TM_Ohajiki.customPower.skills.0.description />
+  <TM_Shizukesa.customPower.skills.0.label />
+  <TM_Shizukesa.customPower.skills.0.description />
+  <TM_Exorcise.customPower.skills.0.label />
+  <TM_Exorcise.customPower.skills.0.description />
+  <TM_SmellingSalts.customPower.skills.0.label />
+  <TM_SmellingSalts.customPower.skills.0.description />
+  <TM_WardAgainstEvil.customPower.skills.0.label />
+  <TM_WardAgainstEvil.customPower.skills.0.description />
+  <TM_SealOfPurging.customPower.skills.0.label />
+  <TM_SealOfPurging.customPower.skills.0.description />
+  <TM_ExplosiveSeal.customPower.skills.0.label />
+  <TM_ExplosiveSeal.customPower.skills.0.description />
+  <TM_Absolution.customPower.skills.0.label />
+  <TM_Absolution.customPower.skills.0.description />
+  <TM_OfudaStor.customPower.skills.0.label />
+  <TM_OfudaStor.customPower.skills.0.description />
+  <TM_Disarm.customPower.skills.0.label />
+  <TM_Disarm.customPower.skills.0.description />
+  <TM_DisarmingShot.customPower.skills.0.label />
+  <TM_DisarmingShot.customPower.skills.0.description />
+  <TM_SacrificialPact.customPower.skills.0.label />
+  <TM_SacrificialPact.customPower.skills.0.description />
+  <TM_FlashHeal.customPower.skills.0.label />
+  <TM_FlashHeal.customPower.skills.0.description />
+  <TM_VowOfSilenceHediff.customPower.skills.0.label />
+  <TM_VowOfSilenceHediff.customPower.skills.0.description />
+  <TM_VowOfSilence.customPower.skills.0.label />
+  <TM_VowOfSilence.customPower.skills.0.description />
+  <TM_Shadowbind.customPower.skills.0.label />
+  <TM_Shadowbind.customPower.skills.0.description />
+  <TM_DisarmingBlow.customPower.skills.0.label />
+  <TM_DisarmingBlow.customPower.skills.0.description />
+  <TM_CheapShot.customPower.skills.0.label />
+  <TM_CheapShot.customPower.skills.0.description />
+  <TM_MagebaneTether.customPower.skills.0.label />
+  <TM_MagebaneTether.customPower.skills.0.description />
+  <TM_Reposition.customPower.skills.0.label />
+  <TM_Reposition.customPower.skills.0.description />
+  <TM_DistractingDaggers.customPower.skills.0.label />
+  <TM_DistractingDaggers.customPower.skills.0.description />
+  <TM_EnergySurge.customPower.skills.0.label>TM_Chi_pwr</TM_EnergySurge.customPower.skills.0.label>
+  <TM_EnergySurge.customPower.skills.0.description>TM_Chi_pwr_desc</TM_EnergySurge.customPower.skills.0.description>
+  <TM_ExpelEnergy.customPower.skills.0.label />
+  <TM_ExpelEnergy.customPower.skills.0.description />
+  <TM_StaminaRegenHediff.customPower.skills.0.label />
+  <TM_StaminaRegenHediff.customPower.skills.0.description />
+  <TM_StaminaRegenHediffA.customPower.skills.0.label />
+  <TM_StaminaRegenHediffA.customPower.skills.0.description />
+  <TM_ManaRegenHediff.customPower.skills.0.label />
+  <TM_ManaRegenHediff.customPower.skills.0.description />
+  <TM_ManaRegenHediffA.customPower.skills.0.label />
+  <TM_ManaRegenHediffA.customPower.skills.0.description />
+  <TM_MaxStaminaHediff.customPower.skills.0.label />
+  <TM_MaxStaminaHediff.customPower.skills.0.description />
+  <TM_AuraOfLightHediff.customPower.skills.0.label />
+  <TM_AuraOfLightHediff.customPower.skills.0.description />
+  <TM_AuraOfLight.customPower.skills.0.label />
+  <TM_AuraOfLight.customPower.skills.0.description />
+  <TM_WreathOfDarknessHediff.customPower.skills.0.label />
+  <TM_WreathOfDarknessHediff.customPower.skills.0.description />
+  <TM_WreathOfDarkness.customPower.skills.0.label />
+  <TM_WreathOfDarkness.customPower.skills.0.description />
+  <TM_Twilight.customPower.skills.0.label />
+  <TM_Twilight.customPower.skills.0.description />
+  <TM_FleetingLight.customPower.skills.0.label />
+  <TM_FleetingLight.customPower.skills.0.description />
+  <TM_Radiance.customPower.skills.0.label>TM_Overwhelm_pwr</TM_Radiance.customPower.skills.0.label>
+  <TM_Radiance.customPower.skills.0.description>TM_Overwhelm_pwr_desc</TM_Radiance.customPower.skills.0.description>
+  <TM_Radiance.customPower.skills.1.label>TM_Overwhelm_ver</TM_Radiance.customPower.skills.1.label>
+  <TM_Radiance.customPower.skills.1.description>TM_Overwhelm_ver_desc</TM_Radiance.customPower.skills.1.description>
+  <TM_Refulgence.customPower.skills.0.label>TM_LightLance_pwr</TM_Refulgence.customPower.skills.0.label>
+  <TM_Refulgence.customPower.skills.0.description>TM_LanceLance_pwr</TM_Refulgence.customPower.skills.0.description>
+  <TM_Refulgence.customPower.skills.1.label>TM_LightLance_ver</TM_Refulgence.customPower.skills.1.label>
+  <TM_Refulgence.customPower.skills.1.description>TM_LanceLance_ver</TM_Refulgence.customPower.skills.1.description>
+  <TM_Daybreak.customPower.skills.0.label>TM_HolyWrath_pwr</TM_Daybreak.customPower.skills.0.label>
+  <TM_Daybreak.customPower.skills.0.description>TM_HolyWrath_pwr_desc</TM_Daybreak.customPower.skills.0.description>
+  <TM_Duskstep.customPower.skills.0.label />
+  <TM_Duskstep.customPower.skills.0.description />
+  <TM_Eclipse.customPower.skills.0.label />
+  <TM_Eclipse.customPower.skills.0.description />
+  <TM_Umbra.customPower.skills.0.label />
+  <TM_Umbra.customPower.skills.0.description />
+  <TM_Nightfall.customPower.skills.0.label>TM_ShadowBolt_pwr</TM_Nightfall.customPower.skills.0.label>
+  <TM_Nightfall.customPower.skills.0.description>TM_ShadowBolt_pwr_desc</TM_Nightfall.customPower.skills.0.description>
+  <TM_Nightfall.customPower.skills.1.label>TM_ShadowBolt_ver</TM_Nightfall.customPower.skills.1.label>
+  <TM_Nightfall.customPower.skills.1.description>TM_ShadowBolt_ver_desc</TM_Nightfall.customPower.skills.1.description>
+  <TM_LesserAnimalBond.customPower.skills.0.label>TM_AnimalFriend_pwr</TM_LesserAnimalBond.customPower.skills.0.label>
+  <TM_LesserAnimalBond.customPower.skills.0.description>TM_AnimalFriend_pwr_desc</TM_LesserAnimalBond.customPower.skills.0.description>
+  <TM_LesserAnimalBond.customPower.skills.1.label>TM_AnimalFriend_eff</TM_LesserAnimalBond.customPower.skills.1.label>
+  <TM_LesserAnimalBond.customPower.skills.1.description>TM_AnimalFriend_eff_desc</TM_LesserAnimalBond.customPower.skills.1.description>
+  <TM_Renew.customPower.skills.0.label />
+  <TM_Renew.customPower.skills.0.description />
+  <TM_ForceMissile.customPower.skills.0.label />
+  <TM_ForceMissile.customPower.skills.0.description />
+  <TM_ApproachingStorm.customPower.skills.0.label />
+  <TM_ApproachingStorm.customPower.skills.0.description />
+  <TM_Discharge.customPower.skills.0.label />
+  <TM_Discharge.customPower.skills.0.description />
+  <TM_Levinflight.customPower.skills.0.label>TM_Whirlwind_pwr</TM_Levinflight.customPower.skills.0.label>
+  <TM_Levinflight.customPower.skills.0.description>TM_Whirlwind_pwr_desc</TM_Levinflight.customPower.skills.0.description>
+  <TM_Levinflight.customPower.skills.1.label>TM_Whirlwind_ver</TM_Levinflight.customPower.skills.1.label>
+  <TM_Levinflight.customPower.skills.1.description>TM_Whirlwind_ver_desc</TM_Levinflight.customPower.skills.1.description>
+  <TM_ThunderCall.customPower.skills.0.label />
+  <TM_ThunderCall.customPower.skills.0.description />
+  <TM_Fulmination.customPower.skills.0.label />
+  <TM_Fulmination.customPower.skills.0.description />
+  <TM_ThunderAegis.customPower.skills.0.label />
+  <TM_ThunderAegis.customPower.skills.0.description />
+  <TM_ChronoShot.customPower.skills.0.label />
+  <TM_ChronoShot.customPower.skills.0.description />
+  <TM_Kneel.customPower.skills.0.label />
+  <TM_Kneel.customPower.skills.0.description />
+  <TM_FreeAction.customPower.skills.0.label />
+  <TM_FreeAction.customPower.skills.0.description />
+  <TM_DrainShot.customPower.skills.0.label />
+  <TM_DrainShot.customPower.skills.0.description />
+  <TM_Hipfire.customPower.skills.0.label />
+  <TM_Hipfire.customPower.skills.0.description />
+  <TM_Unload.customPower.skills.0.label />
+  <TM_Unload.customPower.skills.0.description />
+  <TM_DeathsJudgmentD.customPower.skills.0.label>TM_Headshot_pwr</TM_DeathsJudgmentD.customPower.skills.0.label>
+  <TM_DeathsJudgmentD.customPower.skills.0.description>TM_Headshot_pwr_desc</TM_DeathsJudgmentD.customPower.skills.0.description>
+  <TM_DeathsJudgmentD.customPower.skills.1.label>TM_Headshot_ver</TM_DeathsJudgmentD.customPower.skills.1.label>
+  <TM_DeathsJudgmentD.customPower.skills.1.description>TM_Headshot_ver_desc</TM_DeathsJudgmentD.customPower.skills.1.description>
+  <TM_ThreeRoundBurst.customPower.skills.0.label />
+  <TM_ThreeRoundBurst.customPower.skills.0.description />
+  <TM_GhostShot.customPower.skills.0.label />
+  <TM_GhostShot.customPower.skills.0.description />
+  <TM_TargetMarker.customPower.skills.0.label>TM_OrbitalStrike_pwr</TM_TargetMarker.customPower.skills.0.label>
+  <TM_TargetMarker.customPower.skills.0.description>TM_OrbitalStrike_pwr_desc</TM_TargetMarker.customPower.skills.0.description>
+  <TM_TargetMarker.customPower.skills.1.label>TM_OrbitalStrike_ver</TM_TargetMarker.customPower.skills.1.label>
+  <TM_TargetMarker.customPower.skills.1.description>TM_OrbitalStrike_ver_desc</TM_TargetMarker.customPower.skills.1.description>
+  <TM_PolaricShot.customPower.skills.0.label>TM_ChainLightning_pwr</TM_PolaricShot.customPower.skills.0.label>
+  <TM_PolaricShot.customPower.skills.0.description>TM_ChainLightning_pwr_desc</TM_PolaricShot.customPower.skills.0.description>
+  <TM_PolaricShot.customPower.skills.1.label>TM_ChainLightning_ver</TM_PolaricShot.customPower.skills.1.label>
+  <TM_PolaricShot.customPower.skills.1.description>TM_ChainLightning_ver_desc</TM_PolaricShot.customPower.skills.1.description>
+  <TM_OneInTheChamber.customPower.skills.0.label />
+  <TM_OneInTheChamber.customPower.skills.0.description />
+  <TM_GrapplingHookD.customPower.skills.0.label />
+  <TM_GrapplingHookD.customPower.skills.0.description />
+  <TM_BulletTime.customPower.skills.0.label />
+  <TM_BulletTime.customPower.skills.0.description />
+  <TM_InertiaHediff.customPower.skills.0.label />
+  <TM_InertiaHediff.customPower.skills.0.description />
+  <TM_Spellsteal.customPower.skills.0.label>TM_Mimic_pwr</TM_Spellsteal.customPower.skills.0.label>
+  <TM_Spellsteal.customPower.skills.0.description>TM_Mimic_pwr_desc</TM_Spellsteal.customPower.skills.0.description>
+  <TM_Spellsteal.customPower.skills.1.label>TM_Mimic_ver</TM_Spellsteal.customPower.skills.1.label>
+  <TM_Spellsteal.customPower.skills.1.description>TM_Mimic_ver_desc</TM_Spellsteal.customPower.skills.1.description>
+  <TM_Absorb.customPower.skills.0.label />
+  <TM_Absorb.customPower.skills.0.description />
+  <TM_Tease.customPower.skills.0.label />
+  <TM_Tease.customPower.skills.0.description />
+  <TM_ShadowCloak.customPower.skills.0.label>TM_VeilOfShadows_pwr</TM_ShadowCloak.customPower.skills.0.label>
+  <TM_ShadowCloak.customPower.skills.0.description>TM_VeilOfShadows_pwr_desc</TM_ShadowCloak.customPower.skills.0.description>
+  <TM_ShadowCloak.customPower.skills.1.label>TM_VeilOfShadows_ver</TM_ShadowCloak.customPower.skills.1.label>
+  <TM_ShadowCloak.customPower.skills.1.description>TM_VeilOfShadows_ver_desc</TM_ShadowCloak.customPower.skills.1.description>
+  <TM_Imbue.customPower.skills.0.label />
+  <TM_Imbue.customPower.skills.0.description />
+  <TM_IllusionOfPain.customPower.skills.0.label />
+  <TM_IllusionOfPain.customPower.skills.0.description />
+  <TM_ArcaneOverload.customPower.skills.0.label />
+  <TM_ArcaneOverload.customPower.skills.0.description />
+  <TM_Shadowblade.customPower.skills.0.label />
+  <TM_Shadowblade.customPower.skills.0.description />
+  <TM_Blackout.customPower.skills.0.label />
+  <TM_Blackout.customPower.skills.0.description />
+  <TM_Distortion.customPower.skills.0.label />
+  <TM_Distortion.customPower.skills.0.description />
+  <TM_Jump.customPower.skills.0.label />
+  <TM_Jump.customPower.skills.0.description />
+  <TM_SpineshatterDive.customPower.skills.0.label />
+  <TM_SpineshatterDive.customPower.skills.0.description />
+  <TM_DragonfireDive.customPower.skills.0.label />
+  <TM_DragonfireDive.customPower.skills.0.description />
+  <TM_SpiralDive.customPower.skills.0.label>TM_Whirlwind_pwr</TM_SpiralDive.customPower.skills.0.label>
+  <TM_SpiralDive.customPower.skills.0.description>TM_Whirlwind_pwr_desc</TM_SpiralDive.customPower.skills.0.description>
+  <TM_SpiralDive.customPower.skills.1.label>TM_Whirlwind_ver</TM_SpiralDive.customPower.skills.1.label>
+  <TM_SpiralDive.customPower.skills.1.description>TM_Whirlwind_ver_desc</TM_SpiralDive.customPower.skills.1.description>
+  <TM_MirageDive.customPower.skills.0.label>TM_PsionicDash_ver</TM_MirageDive.customPower.skills.0.label>
+  <TM_MirageDive.customPower.skills.0.description>TM_PsionicDash_ver_desc</TM_MirageDive.customPower.skills.0.description>
+  <TM_SonicThrust.customPower.skills.0.label />
+  <TM_SonicThrust.customPower.skills.0.description />
+  <TM_Disembowel.customPower.skills.0.label />
+  <TM_Disembowel.customPower.skills.0.description />
+  <TM_Geirskogul.customPower.skills.0.label>TM_SeismicSlash_ver</TM_Geirskogul.customPower.skills.0.label>
+  <TM_Geirskogul.customPower.skills.0.description>TM_SeismicSlash_ver_desc</TM_Geirskogul.customPower.skills.0.description>
+  <TM_ElusiveJump.customPower.skills.0.label />
+  <TM_ElusiveJump.customPower.skills.0.description />
+  <TM_BloodOfTheDragon.customPower.skills.0.label />
+  <TM_BloodOfTheDragon.customPower.skills.0.description />
+  <TM_BloodOfTheDragonHediffA.customPower.skills.0.label />
+  <TM_BloodOfTheDragonHediffA.customPower.skills.0.description />
+  <TM_BloodOfTheDragonHediffB.customPower.skills.0.label />
+  <TM_BloodOfTheDragonHediffB.customPower.skills.0.description />
+  <TM_Stardiver.customPower.skills.0.label />
+  <TM_Stardiver.customPower.skills.0.description />
+  <TM_Doton.customPower.skills.0.label />
+  <TM_Doton.customPower.skills.0.description />
+  <TM_UmbralIceHediff.customPower.skills.0.label />
+  <TM_UmbralIceHediff.customPower.skills.0.description />
+  <TM_UmbralIceHediffB.customPower.skills.0.label />
+  <TM_UmbralIceHediffB.customPower.skills.0.description />
+  <TM_AstralFireHediff.customPower.skills.0.label />
+  <TM_AstralFireHediff.customPower.skills.0.description />
+  <TM_FlareHediff.customPower.skills.0.label />
+  <TM_FlareHediff.customPower.skills.0.description />
+  <TM_XenoglossyHediff.customPower.skills.0.label />
+  <TM_XenoglossyHediff.customPower.skills.0.description />
+  <TM_BlackBlizzard.customPower.skills.0.label />
+  <TM_BlackBlizzard.customPower.skills.0.description />
+  <TM_BlackFire.customPower.skills.0.label />
+  <TM_BlackFire.customPower.skills.0.description />
+  <TM_BlackThunder.customPower.skills.0.label />
+  <TM_BlackThunder.customPower.skills.0.description />
+  <TM_Blizzaga.customPower.skills.0.label />
+  <TM_Blizzaga.customPower.skills.0.description />
+  <TM_Firaga.customPower.skills.0.label />
+  <TM_Firaga.customPower.skills.0.description />
+  <TM_Thundaga.customPower.skills.0.label />
+  <TM_Thundaga.customPower.skills.0.description />
+  <TM_Flare.customPower.skills.0.label />
+  <TM_Flare.customPower.skills.0.description />
+  <TM_UmbralSoul.customPower.skills.0.label />
+  <TM_UmbralSoul.customPower.skills.0.description />
+  <TM_AetherialManipulation.customPower.skills.0.label />
+  <TM_AetherialManipulation.customPower.skills.0.description />
+  <TM_Manaward.customPower.skills.0.label />
+  <TM_Manaward.customPower.skills.0.description />
+  <TM_Despair.customPower.skills.0.label />
+  <TM_Despair.customPower.skills.0.description />
+  <TM_Sharpcast.customPower.skills.0.label />
+  <TM_Sharpcast.customPower.skills.0.description />
+  <TM_Xenoglossy.customPower.skills.0.label />
+  <TM_Xenoglossy.customPower.skills.0.description />
+  <TM_ContreSixte.customPower.skills.0.label />
+  <TM_ContreSixte.customPower.skills.0.description />
+  <TM_Pickpocket.customPower.skills.0.label />
+  <TM_Pickpocket.customPower.skills.0.description />
+  <TM_Adloquium.customPower.skills.0.label />
+  <TM_Adloquium.customPower.skills.0.description />
+  <TM_DeploymentTactics.customPower.skills.0.label />
+  <TM_DeploymentTactics.customPower.skills.0.description />
+  <TM_SacredShield.customPower.skills.0.label>TM_Refraction_pwr</TM_SacredShield.customPower.skills.0.label>
+  <TM_SacredShield.customPower.skills.0.description>TM_Refraction_pwr_desc</TM_SacredShield.customPower.skills.0.description>
+  <TM_SacredShield.customPower.skills.1.label>TM_Refraction_ver</TM_SacredShield.customPower.skills.1.label>
+  <TM_SacredShield.customPower.skills.1.description>TM_Refraction_ver_desc</TM_SacredShield.customPower.skills.1.description>
+  <TM_Luminosity.customPower.skills.0.label>TM_LightBurst_pwr</TM_Luminosity.customPower.skills.0.label>
+  <TM_Luminosity.customPower.skills.0.description>TM_LightBurst_pwr_desc</TM_Luminosity.customPower.skills.0.description>
+  <TM_Luminosity.customPower.skills.1.label>TM_LightBurst_ver</TM_Luminosity.customPower.skills.1.label>
+  <TM_Luminosity.customPower.skills.1.description>TM_LightBurst_ver_desc</TM_Luminosity.customPower.skills.1.description>
+  <TM_Bio.customPower.skills.0.label>TM_Poison_pwr</TM_Bio.customPower.skills.0.label>
+  <TM_Bio.customPower.skills.0.description>TM_Poison_pwr_desc</TM_Bio.customPower.skills.0.description>
+  <TM_Bio.customPower.skills.1.label>TM_Poison_ver</TM_Bio.customPower.skills.1.label>
+  <TM_Bio.customPower.skills.1.description>TM_Poison_ver_desc</TM_Bio.customPower.skills.1.description>
+  <TM_Broil.customPower.skills.0.label />
+  <TM_Broil.customPower.skills.0.description />
+  <TM_ChainStratagem.customPower.skills.0.label />
+  <TM_ChainStratagem.customPower.skills.0.description />
+  <TM_SummonSeraph.customPower.skills.0.label>TM_SpiritOfLight_pwr</TM_SummonSeraph.customPower.skills.0.label>
+  <TM_SummonSeraph.customPower.skills.0.description>TM_SpiritOfLight_pwr_desc</TM_SummonSeraph.customPower.skills.0.description>
+  <TM_SummonSeraph.customPower.skills.1.label>TM_SpiritOfLight_ver</TM_SummonSeraph.customPower.skills.1.label>
+  <TM_SummonSeraph.customPower.skills.1.description>TM_SpiritOfLight_ver_desc</TM_SummonSeraph.customPower.skills.1.description>
+  <TM_FeyBlessing.customPower.skills.0.label />
+  <TM_FeyBlessing.customPower.skills.0.description />
+  <TM_GuidingLight.customPower.skills.0.label />
+  <TM_GuidingLight.customPower.skills.0.description />
+  <TM_CartridgeHediff.customPower.skills.0.label />
+  <TM_CartridgeHediff.customPower.skills.0.description />
+  <TM_GunbreakerRegenHediff.customPower.skills.0.label />
+  <TM_GunbreakerRegenHediff.customPower.skills.0.description />
+  <TM_AetherHediff.customPower.skills.0.label />
+  <TM_AetherHediff.customPower.skills.0.description />
+  <TM_Reload.customPower.skills.0.label />
+  <TM_Reload.customPower.skills.0.description />
+  <TM_Aethercall.customPower.skills.0.label />
+  <TM_Aethercall.customPower.skills.0.description />
+  <TM_DangerZone.customPower.skills.0.label />
+  <TM_DangerZone.customPower.skills.0.description />
+  <TM_BrutalShell.customPower.skills.0.label />
+  <TM_BrutalShell.customPower.skills.0.description />
+  <TM_RoughDivide.customPower.skills.0.label />
+  <TM_RoughDivide.customPower.skills.0.description />
+  <TM_SonicBreak.customPower.skills.0.label />
+  <TM_SonicBreak.customPower.skills.0.description />
+  <TM_BowShock.customPower.skills.0.label />
+  <TM_BowShock.customPower.skills.0.description />
+  <TM_JugularRip.customPower.skills.0.label />
+  <TM_JugularRip.customPower.skills.0.description />
+  <TM_Nebula.customPower.skills.0.label />
+  <TM_Nebula.customPower.skills.0.description />
+  <TM_Continuation.customPower.skills.0.label />
+  <TM_Continuation.customPower.skills.0.description />
+  <TM_Superbolide.customPower.skills.0.label />
+  <TM_Superbolide.customPower.skills.0.description />
+  <TM_NomadRegenHediff.customPower.skills.0.label />
+  <TM_NomadRegenHediff.customPower.skills.0.description />
+  <TM_HookShot.customPower.skills.0.label>TM_Whirlwind_pwr</TM_HookShot.customPower.skills.0.label>
+  <TM_HookShot.customPower.skills.0.description>TM_Whirlwind_pwr_desc</TM_HookShot.customPower.skills.0.description>
+  <TM_HookShot.customPower.skills.1.label>TM_Whirlwind_ver</TM_HookShot.customPower.skills.1.label>
+  <TM_HookShot.customPower.skills.1.description>TM_Whirlwind_ver_desc</TM_HookShot.customPower.skills.1.description>
+  <TM_SandStrike.customPower.skills.0.label />
+  <TM_SandStrike.customPower.skills.0.description />
+  <TM_NomadsGrit.customPower.skills.0.label>TM_Chi_ver</TM_NomadsGrit.customPower.skills.0.label>
+  <TM_NomadsGrit.customPower.skills.0.description>TM_Chi_ver_desc</TM_NomadsGrit.customPower.skills.0.description>
+  <TM_OffhandStab.customPower.skills.0.label />
+  <TM_OffhandStab.customPower.skills.0.description />
+  <TM_HeartStab.customPower.skills.0.label />
+  <TM_HeartStab.customPower.skills.0.description />
+  <TM_PointBlankShot.customPower.skills.0.label />
+  <TM_PointBlankShot.customPower.skills.0.description />
+  <TM_HailOfBlades.customPower.skills.0.label />
+  <TM_HailOfBlades.customPower.skills.0.description />
+  <TM_BroadheadArrow.customPower.skills.0.label />
+  <TM_BroadheadArrow.customPower.skills.0.description />
+  <TM_ShadowShot.customPower.skills.0.label />
+  <TM_ShadowShot.customPower.skills.0.description />
+  <TM_SunShotIndicator.customPower.skills.0.label />
+  <TM_SunShotIndicator.customPower.skills.0.description />
+  <TM_SunShot.customPower.skills.0.label />
+  <TM_SunShot.customPower.skills.0.description />
+  <TM_CombustionShot.customPower.skills.0.label />
+  <TM_CombustionShot.customPower.skills.0.description />
+  <TM_GustArrow.customPower.skills.0.label />
+  <TM_GustArrow.customPower.skills.0.description />
+  <TM_SkirmishersShot.customPower.skills.0.label />
+  <TM_SkirmishersShot.customPower.skills.0.description />
+  <TM_RiddleOfFlame.customPower.skills.0.label />
+  <TM_RiddleOfFlame.customPower.skills.0.description />
+  <TM_LightArrow.customPower.skills.0.label />
+  <TM_LightArrow.customPower.skills.0.description />
+  <TM_BatteryHediff.customPower.skills.0.label />
+  <TM_BatteryHediff.customPower.skills.0.description />
+  <TM_DischargingHediff.customPower.skills.0.label />
+  <TM_DischargingHediff.customPower.skills.0.description />
+  <TM_DrillHediff.customPower.skills.0.label />
+  <TM_DrillHediff.customPower.skills.0.description />
+  <TM_HotShot.customPower.skills.0.label />
+  <TM_HotShot.customPower.skills.0.description />
+  <TM_HeatBlast.customPower.skills.0.label>TM_Headshot_pwr</TM_HeatBlast.customPower.skills.0.label>
+  <TM_HeatBlast.customPower.skills.0.description>TM_Headshot_pwr_desc</TM_HeatBlast.customPower.skills.0.description>
+  <TM_HeatBlast.customPower.skills.1.label>TM_Headshot_ver</TM_HeatBlast.customPower.skills.1.label>
+  <TM_HeatBlast.customPower.skills.1.description>TM_Headshot_ver_desc</TM_HeatBlast.customPower.skills.1.description>
+  <TM_GaussRound.customPower.skills.0.label>TM_AntiArmor_pwr</TM_GaussRound.customPower.skills.0.label>
+  <TM_GaussRound.customPower.skills.0.description>TM_AntiArmor_pwr_desc</TM_GaussRound.customPower.skills.0.description>
+  <TM_GaussRound.customPower.skills.1.label>TM_AntiArmor_ver</TM_GaussRound.customPower.skills.1.label>
+  <TM_GaussRound.customPower.skills.1.description>TM_AntiArmor_ver_desc</TM_GaussRound.customPower.skills.1.description>
+  <TM_Drill.customPower.skills.0.label />
+  <TM_Drill.customPower.skills.0.description />
+  <TM_DrillMk2.customPower.skills.0.label />
+  <TM_DrillMk2.customPower.skills.0.description />
+  <TM_SplitShot.customPower.skills.0.label />
+  <TM_SplitShot.customPower.skills.0.description />
+  <TM_Reassemble.customPower.skills.0.label />
+  <TM_Reassemble.customPower.skills.0.description />
+  <TM_CleanReload.customPower.skills.0.label />
+  <TM_CleanReload.customPower.skills.0.description />
+  <TM_HeadGraze.customPower.skills.0.label />
+  <TM_HeadGraze.customPower.skills.0.description />
+  <TM_Detonator.customPower.skills.0.label />
+  <TM_Detonator.customPower.skills.0.description />
+  <TM_NaniteShot.customPower.skills.0.label />
+  <TM_NaniteShot.customPower.skills.0.description />
+  <TM_FlameSplitter.customPower.skills.0.label />
+  <TM_FlameSplitter.customPower.skills.0.description />
+  <TM_BarrelStabilizer.customPower.skills.0.label />
+  <TM_BarrelStabilizer.customPower.skills.0.description />
+  <TM_OpeningRitual.customPower.skills.0.label />
+  <TM_OpeningRitual.customPower.skills.0.description />
+  <TM_DarkGrasp.customPower.skills.0.label />
+  <TM_DarkGrasp.customPower.skills.0.description />
+  <TM_AbyssalDrain.customPower.skills.0.label />
+  <TM_AbyssalDrain.customPower.skills.0.description />
+  <TM_TheBlackestNight.customPower.skills.0.label />
+  <TM_TheBlackestNight.customPower.skills.0.description />
+  <TM_WhistlingWind.customPower.skills.0.label />
+  <TM_WhistlingWind.customPower.skills.0.description />
+  <TM_Tomahawk.customPower.skills.0.label />
+  <TM_Tomahawk.customPower.skills.0.description />
+  <TM_StormsEye.customPower.skills.0.label />
+  <TM_StormsEye.customPower.skills.0.description />
+  <TM_Holmgang.customPower.skills.0.label />
+  <TM_Holmgang.customPower.skills.0.description />
+  <TM_ColdFury.customPower.skills.0.label />
+  <TM_ColdFury.customPower.skills.0.description />
+  <TM_Equilibrium.customPower.skills.0.label>TM_Chi_eff</TM_Equilibrium.customPower.skills.0.label>
+  <TM_Equilibrium.customPower.skills.0.description>TM_Chi_eff_desc</TM_Equilibrium.customPower.skills.0.description>
+  <TM_RawIntuition.customPower.skills.0.label>TM_Reversal_ver</TM_RawIntuition.customPower.skills.0.label>
+  <TM_RawIntuition.customPower.skills.0.description>TM_Reversal_ver_desc</TM_RawIntuition.customPower.skills.0.description>
+  <TM_Reprisal.customPower.skills.0.label />
+  <TM_Reprisal.customPower.skills.0.description />
+  <TM_FellCleave.customPower.skills.0.label />
+  <TM_FellCleave.customPower.skills.0.description />
+  <TM_Upheaval.customPower.skills.0.label />
+  <TM_Upheaval.customPower.skills.0.description />
+  <TM_Sheltron.customPower.skills.0.label />
+  <TM_Sheltron.customPower.skills.0.description />
+  <TM_Onslaught.customPower.skills.0.label />
+  <TM_Onslaught.customPower.skills.0.description />
+  <TM_InfuriateW.customPower.skills.0.label />
+  <TM_InfuriateW.customPower.skills.0.description />
+  <TM_InnerChaos.customPower.skills.0.label />
+  <TM_InnerChaos.customPower.skills.0.description />
+  <TM_ShakeItOff.customPower.skills.0.label />
+  <TM_ShakeItOff.customPower.skills.0.description />
+  <TM_SwordOathHediff.customPower.skills.0.label />
+  <TM_SwordOathHediff.customPower.skills.0.description />
+  <TM_SwordOathHediffB.customPower.skills.0.label />
+  <TM_SwordOathHediffB.customPower.skills.0.description />
+  <TM_SwordOath.customPower.skills.0.label />
+  <TM_SwordOath.customPower.skills.0.description />
+  <TM_GlacialHeart.customPower.skills.0.label />
+  <TM_GlacialHeart.customPower.skills.0.description />
+  <TM_Bulwark.customPower.skills.0.label />
+  <TM_Bulwark.customPower.skills.0.description />
+  <TM_OverwhelmG.customPower.skills.0.label>TM_Overwhelm_pwr</TM_OverwhelmG.customPower.skills.0.label>
+  <TM_OverwhelmG.customPower.skills.0.description>TM_Overwhelm_pwr_desc</TM_OverwhelmG.customPower.skills.0.description>
+  <TM_OverwhelmG.customPower.skills.1.label>TM_Overwhelm_ver</TM_OverwhelmG.customPower.skills.1.label>
+  <TM_OverwhelmG.customPower.skills.1.description>TM_Overwhelm_ver_desc</TM_OverwhelmG.customPower.skills.1.description>
+  <TM_Intervene.customPower.skills.0.label />
+  <TM_Intervene.customPower.skills.0.description />
+  <TM_Clemency.customPower.skills.0.label />
+  <TM_Clemency.customPower.skills.0.description />
+  <TM_SentinelG.customPower.skills.0.label />
+  <TM_SentinelG.customPower.skills.0.description />
+  <TM_Atonement.customPower.skills.0.label />
+  <TM_Atonement.customPower.skills.0.description />
+  <TM_DivineVeil.customPower.skills.0.label>TM_PsionicBarrier_ver</TM_DivineVeil.customPower.skills.0.label>
+  <TM_DivineVeil.customPower.skills.0.description>TM_PsionicBarrier_ver_desc</TM_DivineVeil.customPower.skills.0.description>
+  <TM_TemperedWill.customPower.skills.0.label />
+  <TM_TemperedWill.customPower.skills.0.description />
+  <TM_Confiteor.customPower.skills.0.label />
+  <TM_Confiteor.customPower.skills.0.description />
+  <TM_CircleOfScorn.customPower.skills.0.label />
+  <TM_CircleOfScorn.customPower.skills.0.description />
+  <TM_PhotonForgeHediff.customPower.skills.0.label />
+  <TM_PhotonForgeHediff.customPower.skills.0.description />
+  <TM_ColdOpenHediff.customPower.skills.0.label />
+  <TM_ColdOpenHediff.customPower.skills.0.description />
+  <TM_EngagePhotonForge.customPower.skills.0.label />
+  <TM_EngagePhotonForge.customPower.skills.0.description />
+  <TM_FlashCutter.customPower.skills.0.label />
+  <TM_FlashCutter.customPower.skills.0.description />
+  <TM_HoloLeap.customPower.skills.0.label />
+  <TM_HoloLeap.customPower.skills.0.description />
+  <TM_CoronaBurst.customPower.skills.0.label />
+  <TM_CoronaBurst.customPower.skills.0.description />
+  <TM_PhotonBlitz.customPower.skills.0.label />
+  <TM_PhotonBlitz.customPower.skills.0.description />
+  <TM_HolographicShockwave.customPower.skills.0.label />
+  <TM_HolographicShockwave.customPower.skills.0.description />
+  <TM_LaserDisk.customPower.skills.0.label />
+  <TM_LaserDisk.customPower.skills.0.description />
+  <TM_CoolantBlast.customPower.skills.0.label />
+  <TM_CoolantBlast.customPower.skills.0.description />
+  <TM_ColdOpen.customPower.skills.0.label />
+  <TM_ColdOpen.customPower.skills.0.description />
+  <TM_PhotonWall.customPower.skills.0.label />
+  <TM_PhotonWall.customPower.skills.0.description />
+  <TM_PrimeLightCannon.customPower.skills.0.label />
+  <TM_PrimeLightCannon.customPower.skills.0.description />
+  <TM_ArmysPaeon.customPower.skills.0.label />
+  <TM_ArmysPaeon.customPower.skills.0.description />
+  <TM_MagesBallad.customPower.skills.0.label />
+  <TM_MagesBallad.customPower.skills.0.description />
+  <TM_WanderersMinuet.customPower.skills.0.label />
+  <TM_WanderersMinuet.customPower.skills.0.description />
+  <TM_NaturesMinne.customPower.skills.0.label />
+  <TM_NaturesMinne.customPower.skills.0.description />
+  <TM_PitchPerfectHediff.customPower.skills.0.label />
+  <TM_PitchPerfectHediff.customPower.skills.0.description />
+  <TM_PitchPerfect.customPower.skills.0.label />
+  <TM_PitchPerfect.customPower.skills.0.description />
+  <TM_Shadowbite.customPower.skills.0.label />
+  <TM_Shadowbite.customPower.skills.0.description />
+  <TM_RainOfDeath.customPower.skills.0.label />
+  <TM_RainOfDeath.customPower.skills.0.description />
+  <TM_Serenade.customPower.skills.0.label />
+  <TM_Serenade.customPower.skills.0.description />
+  <TM_EmpyrealArrow.customPower.skills.0.label />
+  <TM_EmpyrealArrow.customPower.skills.0.description />
+  <TM_Swiftsong.customPower.skills.0.label />
+  <TM_Swiftsong.customPower.skills.0.description />
+  <TM_WardensPaean.customPower.skills.0.label />
+  <TM_WardensPaean.customPower.skills.0.description />
+  <TM_ImpromptuHediff.customPower.skills.0.label />
+  <TM_ImpromptuHediff.customPower.skills.0.description />
+  <TM_Impromptu.customPower.skills.0.label />
+  <TM_Impromptu.customPower.skills.0.description />
+  <TM_MiserysEnd.customPower.skills.0.label />
+  <TM_MiserysEnd.customPower.skills.0.description />
+  <TM_BurstShot.customPower.skills.0.label />
+  <TM_BurstShot.customPower.skills.0.description />
+  <TM_ApexArrow.customPower.skills.0.label />
+  <TM_ApexArrow.customPower.skills.0.description />
+  <TM_DrawStaminaHediff.customPower.skills.0.label />
+  <TM_DrawStaminaHediff.customPower.skills.0.description />
+  <TM_DrawManaHediff.customPower.skills.0.label />
+  <TM_DrawManaHediff.customPower.skills.0.description />
+  <TM_Draw.customPower.skills.0.label>TM_Chi_eff</TM_Draw.customPower.skills.0.label>
+  <TM_Draw.customPower.skills.0.description>TM_Chi_eff_desc</TM_Draw.customPower.skills.0.description>
+  <TM_Draw.customPower.skills.1.label>TM_Chi_ver</TM_Draw.customPower.skills.1.label>
+  <TM_Draw.customPower.skills.1.description>TM_Chi_ver_desc</TM_Draw.customPower.skills.1.description>
+  <TM_TheSpire.customPower.skills.0.label />
+  <TM_TheSpire.customPower.skills.0.description />
+  <TM_Joker.customPower.skills.0.label />
+  <TM_Joker.customPower.skills.0.description />
+  <TM_VoidCard.customPower.skills.0.label />
+  <TM_VoidCard.customPower.skills.0.description />
+  <TM_TheBole.customPower.skills.0.label />
+  <TM_TheBole.customPower.skills.0.description />
+  <TM_LordOfCrowns.customPower.skills.0.label />
+  <TM_LordOfCrowns.customPower.skills.0.description />
+  <TM_TheEwer.customPower.skills.0.label />
+  <TM_TheEwer.customPower.skills.0.description />
+  <TM_LadyOfCrowns.customPower.skills.0.label>TM_AdvancedHeal_pwr</TM_LadyOfCrowns.customPower.skills.0.label>
+  <TM_LadyOfCrowns.customPower.skills.0.description>TM_AdvancedHeal_pwr_desc</TM_LadyOfCrowns.customPower.skills.0.description>
+  <TM_LadyOfCrowns.customPower.skills.1.label>TM_AdvancedHeal_ver</TM_LadyOfCrowns.customPower.skills.1.label>
+  <TM_LadyOfCrowns.customPower.skills.1.description>TM_AdvancedHeal_ver_desc</TM_LadyOfCrowns.customPower.skills.1.description>
+  <TM_HoldEm.customPower.skills.0.label>TM_Encase_pwr</TM_HoldEm.customPower.skills.0.label>
+  <TM_HoldEm.customPower.skills.0.description>TM_Encase_pwr_desc</TM_HoldEm.customPower.skills.0.description>
+  <TM_HoldEm.customPower.skills.1.label>TM_Encase_ver</TM_HoldEm.customPower.skills.1.label>
+  <TM_HoldEm.customPower.skills.1.description>TM_Encase_ver_desc</TM_HoldEm.customPower.skills.1.description>
+  <TM_SleightOfHand.customPower.skills.0.label />
+  <TM_SleightOfHand.customPower.skills.0.description />
+  <TM_RoyalRoad.customPower.skills.0.label />
+  <TM_RoyalRoad.customPower.skills.0.description />
+  <TM_Spread.customPower.skills.0.label />
+  <TM_Spread.customPower.skills.0.description />
+  <TM_DeckBlast.customPower.skills.0.label />
+  <TM_DeckBlast.customPower.skills.0.description />
+  <TM_Destiny.customPower.skills.0.label />
+  <TM_Destiny.customPower.skills.0.description />
+  <TM_SleeveDraw.customPower.skills.0.label />
+  <TM_SleeveDraw.customPower.skills.0.description />
+  <TM_JumpShot.customPower.skills.0.label />
+  <TM_JumpShot.customPower.skills.0.description />
+  <TM_HandheldRocket.customPower.skills.0.label />
+  <TM_HandheldRocket.customPower.skills.0.description />
+  <TM_Erase.customPower.skills.0.label />
+  <TM_Erase.customPower.skills.0.description />
+  <TM_StiflingWinds.customPower.skills.0.label />
+  <TM_StiflingWinds.customPower.skills.0.description />
+  <TM_HyoshoRanryu.customPower.skills.0.label />
+  <TM_HyoshoRanryu.customPower.skills.0.description />
+  <TM_HomeCooking.customPower.skills.0.label />
+  <TM_HomeCooking.customPower.skills.0.description />
+  <TM_MedicinalCooking.customPower.skills.0.label />
+  <TM_MedicinalCooking.customPower.skills.0.description />
+  <TM_HunterRoast.customPower.skills.0.label />
+  <TM_HunterRoast.customPower.skills.0.description />
+  <TM_FreshRoastedCoffee.customPower.skills.0.label />
+  <TM_FreshRoastedCoffee.customPower.skills.0.description />
+  <TM_SichuanSpice.customPower.skills.0.label />
+  <TM_SichuanSpice.customPower.skills.0.description />
+  <TM_KnifeToss.customPower.skills.0.label />
+  <TM_KnifeToss.customPower.skills.0.description />
+  <TM_SlowCooker.customPower.skills.0.label />
+  <TM_SlowCooker.customPower.skills.0.description />
+  <TM_BrazenProspector.customPower.skills.0.label />
+  <TM_BrazenProspector.customPower.skills.0.description />
+  <TM_LuckyLantern.customPower.skills.0.label />
+  <TM_LuckyLantern.customPower.skills.0.description />
+  <TM_MiningExplosive.customPower.skills.0.label />
+  <TM_MiningExplosive.customPower.skills.0.description />
+  <TM_StructureSupport.customPower.skills.0.label />
+  <TM_StructureSupport.customPower.skills.0.description />
+  <TM_Firestarter.customPower.skills.0.label />
+  <TM_Firestarter.customPower.skills.0.description />
+  <TM_PickClean.customPower.skills.0.label />
+  <TM_PickClean.customPower.skills.0.description />
+  <TM_CalidStrike.customPower.skills.0.label />
+  <TM_CalidStrike.customPower.skills.0.description />
+  <TM_Ambush.customPower.skills.0.label />
+  <TM_Ambush.customPower.skills.0.description />
+  <TM_CollapsingColumn.customPower.skills.0.label />
+  <TM_CollapsingColumn.customPower.skills.0.description />
+  <TM_TruthOfMountains.customPower.skills.0.label />
+  <TM_TruthOfMountains.customPower.skills.0.description />
+  <TM_RuneOfLightning.customPower.skills.0.label />
+  <TM_RuneOfLightning.customPower.skills.0.description />
+  <TM_ProximityCharge.customPower.skills.0.label />
+  <TM_ProximityCharge.customPower.skills.0.description />
+  <TM_AmbusherPoisonTrap.customPower.skills.0.label>TM_PoisonTrap_ver</TM_AmbusherPoisonTrap.customPower.skills.0.label>
+  <TM_AmbusherPoisonTrap.customPower.skills.0.description>TM_PoisonTrap_ver_desc</TM_AmbusherPoisonTrap.customPower.skills.0.description>
+  <TM_TheBigOne.customPower.skills.0.label />
+  <TM_TheBigOne.customPower.skills.0.description />
+  <TM_AmbushC.customPower.skills.0.label />
+  <TM_AmbushC.customPower.skills.0.description />
+  <TM_UnstableSingularity.customPower.skills.0.label />
+  <TM_UnstableSingularity.customPower.skills.0.description />
+  <TM_MartialSpirit.customPower.skills.0.label>TM_Chi_eff</TM_MartialSpirit.customPower.skills.0.label>
+  <TM_MartialSpirit.customPower.skills.0.description>TM_Chi_eff_desc</TM_MartialSpirit.customPower.skills.0.description>
+  <TM_MartialSpirit.customPower.skills.1.label>TM_Chi_ver</TM_MartialSpirit.customPower.skills.1.label>
+  <TM_MartialSpirit.customPower.skills.1.description>TM_Chi_ver_desc</TM_MartialSpirit.customPower.skills.1.description>
+  <TM_DemolisherStrike.customPower.skills.0.label />
+  <TM_DemolisherStrike.customPower.skills.0.description />
+  <TM_FlameUprising.customPower.skills.0.label />
+  <TM_FlameUprising.customPower.skills.0.description />
+  <TM_LightningKick.customPower.skills.0.label />
+  <TM_LightningKick.customPower.skills.0.description />
+  <TM_Thunderclap.customPower.skills.0.label />
+  <TM_Thunderclap.customPower.skills.0.description />
+  <TM_DestructionWave.customPower.skills.0.label />
+  <TM_DestructionWave.customPower.skills.0.description />
+  <TM_BrotherhoodHediff.customPower.skills.0.label />
+  <TM_BrotherhoodHediff.customPower.skills.0.description />
+  <TM_Brotherhood.customPower.skills.0.label />
+  <TM_Brotherhood.customPower.skills.0.description />
+  <TM_HowlingFist.customPower.skills.0.label />
+  <TM_HowlingFist.customPower.skills.0.description />
+  <TM_Rockbreaker.customPower.skills.0.label />
+  <TM_Rockbreaker.customPower.skills.0.description />
+  <RFS_StaminaPotion.customPower.skills.0.label />
+  <RFS_StaminaPotion.customPower.skills.0.description />
+  <RFS_StaminaPotionWithdrawal.customPower.skills.0.label />
+  <RFS_StaminaPotionWithdrawal.customPower.skills.0.description />
+</LanguageData>

@@ -1,0 +1,162 @@
+﻿<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_Geomancer.xml-->
+	<!--            EN: Stoneskin-->
+	<TM_Stoneskin.label>Каменная кожа</TM_Stoneskin.label>
+	<!--                  EN: Applies stoneskin to the target pawn. Each charge of stoneskin absorbs a single attack, regardless of how powerful, or weak, the attack is. Stoneskin is an unsubstantial defense, meaning the defensive measures it employs are not physical and will not interfere with the combat capabilities of its ward.
+
+Stoneskin requires a constant reserve of mana to maintain, each application will reduce the casters maximum mana by 15. The caster can only maintain a limited number of stoneskin instances regardless of how much mana the caster has available.
+
+Applying stoneskin to a target that already has stoneskin will remove all charges of stoneskin on the target and dissipate the spell (returning mana reserves back to the caster).-->
+	<TM_Stoneskin.description>Применяет каменную кожу к целевой Пешке. Каждый заряд каменной кожи поглощает одну атаку, независимо от того, насколько сильна или слаба эта атака. Каменная кожа-это несущественная защита, то есть защитные меры, которые она применяет, не являются физическими и не будут мешать боевым возможностям ее подопечного.
+
+Каменная кожа требует постоянного запаса маны для поддержания, каждое применение заклинателем уменьшит максимальную ману на 15. Заклинатель может поддерживать только ограниченное число экземпляров каменной кожи, независимо от того, сколько маны у заклинателя имеется.
+
+Применение каменной кожи к цели, у которой уже есть каменная кожа, удалит все заряды каменной кожи на цели и рассеет заклинание (возвращая запасы маны обратно заклинателю).</TM_Stoneskin.description>
+	<!--                  EN: Dispel Stoneskin-->
+	<TM_DispelStoneskin.label>Рассеять каменную кожу</TM_DispelStoneskin.label>
+	<!--                        EN: Dispels all instances of stoneskin maintained by this pawn.-->
+	<TM_DispelStoneskin.description>Рассеивает все экземпляры каменной кожи, поддерживаемые этой пешкой.</TM_DispelStoneskin.description>
+	<!--         EN: Encase-->
+	<TM_Encase.label>Заключение</TM_Encase.label>
+	<!--               EN: Encloses a target area in a ring of stone, effective at isolating sections of the battlefield.
+
+Radius: 3
+Range: 50
+Cast time: 1.5s-->
+	<TM_Encase.description>Заключает целевую зону в каменное кольцо, эффективно изолирующее участок поля боя.
+
+Радиус: 3
+Дистанция: 50
+Время применения: 1.5s</TM_Encase.description>
+	<!--           EN: Encase I-->
+	<TM_Encase_I.label>Каменное кольцо (I)</TM_Encase_I.label>
+	<!--                 EN: Encloses a target area in a ring of stone, effective at isolating sections of the battlefield.
+
+Radius: 4
+Range: 55
+Cast time: 1.3s-->
+	<TM_Encase_I.description>Заключает целевую зону в каменное кольцо, эффективно изолирующее участок поля боя.
+
+Радиус: 4
+Дистанция: 55
+Время применения: 1.3s</TM_Encase_I.description>
+	<!--            EN: Encase II-->
+	<TM_Encase_II.label>Каменное кольцо (II)</TM_Encase_II.label>
+	<!--                  EN: Encloses a target area in a ring of stone, effective at isolating sections of the battlefield.
+
+Radius: 5
+Range: 60
+Cast time: 1.1s-->
+	<TM_Encase_II.description>Заключает целевую зону в каменное кольцо, эффективно изолирующее участок поля боя.
+
+Радиус: 5
+Дистанция: 60
+Время применения: 1.1s</TM_Encase_II.description>
+	<!--             EN: Encase III-->
+	<TM_Encase_III.label>Каменное кольцо (II)I</TM_Encase_III.label>
+	<!--                   EN: Encloses a target area in a ring of stone, effective at isolating sections of the battlefield.
+
+Radius: 6
+Range: 65
+Cast time: 1.0s-->
+	<TM_Encase_III.description>Заключает целевую зону в каменное кольцо, эффективно изолирующее участок поля боя.
+
+Радиус: 6
+Дистанция: 65
+Время применения: 1.0s</TM_Encase_III.description>
+	<!--               EN: Earth Sprites-->
+	<TM_EarthSprites.label>Земные духи</TM_EarthSprites.label>
+	<!--                     EN: Calls forth earth sprites to transform the terrain. Sprites appear as flecks of light and can easily be missed by the inattentive, but they are diligent workers capable of breaking rock or stone down into its base component or increase the richness and fertility of soil.
+
+Once summoned, they will continue to work on the terrain, even moving to nearby area's, until dismissed by the geomancer. Earth sprites only understand basic instructions and will move randomly to a new area to continue their work; if no nearby area needs work, the summoning will end. If earth sprites are summoned into an area named "earth sprites" then they will only move to nearby cells within this area.
+
+In exchange for their efforts, earth sprites expect a steady and substantial supply of mana. If the geomancer fails to meet this request, the earth sprites will fade away. Each geomancer can only request the help of a single earth sprite, regardless of how much mana they have.-->
+	<TM_EarthSprites.description>Вызывает земных духов, чтобы преобразить местность. Духи появляются в виде пятнышек света и могут быть легко пропущены невнимательными, но они являются усердными работниками, способными разбить скалу или камень на его основной компонент или увеличить богатство и плодородие почвы.
+
+После вызова они будут продолжать работать на местности, даже перемещаясь в соседние области, пока не будут уволены геомантом. Земные духи понимают только основные инструкции и будут случайным образом перемещаться в новую область, чтобы продолжить свою работу; если никакая близлежащая область не нуждается в работе, вызов закончится. Если духи земли будут вызваны в область, называемую "духи земли", то они будут перемещаться только в соседние ячейки в этой области.
+
+В обмен на свои усилия земные духи ожидают постоянного и значительного запаса маны. Если геомант не выполнит эту просьбу, земные духи исчезнут. Каждый геомант может обратиться за помощью только один раз, независимо от того, сколько у него маны.</TM_EarthSprites.description>
+	<!--                      EN: Dismiss Earth Sprites-->
+	<TM_DismissEarthSprites.label>Отпустить духов земли</TM_DismissEarthSprites.label>
+	<!--                            EN: Dismisses a active earth sprite.-->
+	<TM_DismissEarthSprites.description>Отпускает существующих духов земли</TM_DismissEarthSprites.description>
+	<!--                 EN: Earthern Hammer-->
+	<TM_EarthernHammer.label>Земляной Молот</TM_EarthernHammer.label>
+	<!--                       EN: The geomancer manipulates the laws of gravity to catapult massive stones from the surrounding earth. The amount of gravitational energy reversed is finite; nearby surface stones require minimal energy while subterranean stones require significantly more.
+
+The first, and every third stone after, will always be subterranean unless there is insufficient gravitational energy in which case the geomancer will attempt to use the remaining energy throwing nearby stones. The extreme shift in gravity will temporarily disorient the geomancer.-->
+	<TM_EarthernHammer.description>Геомант манипулирует законами гравитации, чтобы катапультировать массивные камни из окружающей земли. Количество обращенной гравитационной энергии конечно; близкие поверхностные камни требуют минимальной энергии, в то время как подземные камни требуют значительно больше.
+
+Первый и каждый третий камень после него всегда будут находиться под землей, если только не будет недостаточно гравитационной энергии, и в этом случае геомант попытается использовать оставшуюся энергию, бросая близлежащие камни. Экстремальный сдвиг гравитации временно дезориентирует геоманта.</TM_EarthernHammer.description>
+	<!--           EN: Sentinel-->
+	<TM_Sentinel.label>Каменный дозорный</TM_Sentinel.label>
+	<!-- Создает каменного стража для защиты территории. Стражи остаются в неактивном состоянии, пока враг не окажется в радиусе действия, после чего они разбивают свои каменные оболочки и вступают в бой.
+
+Использование способности на неактивном страже уничтожает его. Каждый страж уменьшает максимальный запас маны на 20.
+
+*Примечание: стражи всегда поворачиваются спиной к заклинателю.-->
+	<TM_Sentinel.description>Создает каменного стража для защиты территории. Стражи остаются в неактивном состоянии, пока враг не окажется в радиусе действия, после чего они разбивают свои каменные оболочки и вступают в бой.
+
+Использование способности на неактивном страже уничтожает его. Каждый страж уменьшает максимальный запас маны на 20.
+
+*Примечание: стражи всегда поворачиваются спиной к заклинателю.</TM_Sentinel.description>
+	<!--                  EN: Shatter Sentinel-->
+	<TM_ShatterSentinel.label>Развеять сентинела</TM_ShatterSentinel.label>
+	<!--                        EN: All sentinels maintained by this pawn are shattered in a violent eruption.-->
+	<TM_ShatterSentinel.description>Все часовые, которых поддерживает эта пешка, разбиваются в сильном взрыве.</TM_ShatterSentinel.description>
+	<!--         EN: Meteor-->
+	<TM_Meteor.label>Метеор</TM_Meteor.label>
+	<!--               EN: Collects rock, dust, and debris from the atmosphere and space and forms it into a meteorite. The geomancer directs its descent to bury a target location.
+
+The core of the meteorite is always composed of valuable material.
+
+Radius: 2
+Cast time: 5s-->
+	<TM_Meteor.description>Собирает камни, пыль и обломки из атмосферы и космоса и формирует из них метеорит. Геомант направляет его, чтобы похоронить целевое местоположение.
+
+Ядро метеорита всегда состоит из ценного материала.
+
+Радиус: 2
+Время применения: 5s</TM_Meteor.description>
+	<!--           EN: Meteor I-->
+	<TM_Meteor_I.label>Метеор I</TM_Meteor_I.label>
+	<!--                 EN: Collects rock, dust, and debris from the atmosphere and space and forms it into a meteorite. The geomancer directs its descent to bury a target location.
+
+The core of the meteorite is always composed of valuable material.
+
+Radius: 3
+Cast time: 4.6s-->
+	<TM_Meteor_I.description>Собирает камни, пыль и обломки из атмосферы и космоса и формирует из них метеорит. Геомант направляет его, чтобы похоронить целевое местоположение.
+
+Ядро метеорита всегда состоит из ценного материала.
+
+Радиус: 3
+Время применения: 4.6s</TM_Meteor_I.description>
+	<!--            EN: Meteor II-->
+	<TM_Meteor_II.label>Метеор II</TM_Meteor_II.label>
+	<!--                  EN: Collects rock, dust, and debris from the atmosphere and space and forms it into a meteorite. The geomancer directs its descent to bury a target location.
+
+The core of the meteorite is always composed of valuable material.
+
+Radius: 4
+Cast time: 4.2s-->
+	<TM_Meteor_II.description>Собирает камни, пыль и обломки из атмосферы и космоса и формирует из них метеорит. Геомант направляет его, чтобы похоронить целевое местоположение.
+
+Ядро метеорита всегда состоит из ценного материала.
+
+Радиус: 4
+Время применения: 4.2s</TM_Meteor_II.description>
+	<!--             EN: Meteor III-->
+	<TM_Meteor_III.label>Метеор III</TM_Meteor_III.label>
+	<!--                   EN: Collects rock, dust, and debris from the atmosphere and space and forms it into a meteorite. The geomancer directs its descent to bury a target location.
+
+The core of the meteorite is always composed of valuable material.
+
+Radius: 5
+Cast time: 3.8s-->
+	<TM_Meteor_III.description>Собирает камни, пыль и обломки из атмосферы и космоса и формирует из них метеорит. Геомант направляет его, чтобы похоронить целевое местоположение.
+
+Ядро метеорита всегда состоит из ценного материала.
+
+Радиус: 5
+Время применения: 3.8s</TM_Meteor_III.description>
+</LanguageData>

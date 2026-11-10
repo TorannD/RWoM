@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerCareHint>Cuida do mesmo animal vinculado durante 12 dias ({0}/12). Visita-o no mesmo mapa uma vez por dia. Trocar de companheiro reinicia a prova em curso. Libertar ou substituir o animal pode fazê-lo desaparecer para sempre.</TM_RangerCareHint>
+  <TM_RangerCareOrder>Cuidar de {0}</TM_RangerCareOrder>
+  <TM_RangerClaimTrap>Aprender armadilha venenosa</TM_RangerClaimTrap>
+</LanguageData>

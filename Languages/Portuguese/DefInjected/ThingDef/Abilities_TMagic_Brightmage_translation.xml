@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Light Lance -->
+
+  <Projectile_LightLance.label>lança de luz</Projectile_LightLance.label>
+  <FlyingObject_LightLance.label>lança de luz</FlyingObject_LightLance.label>
+
+
+  <!-- Sunfire -->
+
+  <Projectile_Sunfire.label>luz solar</Projectile_Sunfire.label>
+  <Projectile_Sunfire_I.label>luz solar</Projectile_Sunfire_I.label>
+  <Projectile_Sunfire_II.label>luz solar</Projectile_Sunfire_II.label>
+  <Projectile_Sunfire_III.label>luz solar</Projectile_Sunfire_III.label>
+
+
+  <!-- Light Skip -->
+
+  <Projectile_LightSkip.label>salto de luz</Projectile_LightSkip.label>
+
+
+  <!-- Mass Light Skip -->
+
+  <Projectile_LightSkipMass.label>salto de luz em massa</Projectile_LightSkipMass.label>
+
+
+  <!-- Refraction -->
+
+  <Projectile_Refraction.label>refratamento</Projectile_Refraction.label>
+
+
+  <!-- Spirit of Light (SoL) -->
+
+  <Projectile_SpiritOfLight.label>espírito de luz</Projectile_SpiritOfLight.label>
+  <FlyingObject_SpiritOfLight.label>espírito de luz</FlyingObject_SpiritOfLight.label>
+  <Projectile_LightLaser.label>raio de luz</Projectile_LightLaser.label>
+
+
+  <!-- Create Light -->
+
+  <Projectile_CreateLight.label>crie luz</Projectile_CreateLight.label>
+
+
+</LanguageData>

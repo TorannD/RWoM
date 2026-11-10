@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Projectile_TM_BitTechLaser.label>технічний мікро-лазер</Projectile_TM_BitTechLaser.label>
+  <Projectile_TMFragGrenade.label>міні осколкова граната</Projectile_TMFragGrenade.label>
+  <Projectile_TMEMPGrenade.label>міні осколкова граната</Projectile_TMEMPGrenade.label>
+
+
+  <!-- Techno Turret -->
+
+  <Projectile_TechnoTurret.label>Mark-IV снаряд</Projectile_TechnoTurret.label>
+
+
+  <!-- Techno Weapon -->
+
+  <Bullet_ES_Fire.label>елементарний постріл - вогонь</Bullet_ES_Fire.label>
+  <Bullet_ES_Ice.label>елементарний постріл - лід</Bullet_ES_Ice.label>
+  <Bullet_ES_Lit.label>елементарний постріл - блискавка</Bullet_ES_Lit.label>
+
+
+  <!-- Sabotage -->
+
+  <Projectile_Sabotage.label>снаряд саботаж</Projectile_Sabotage.label>
+
+
+  <!-- OrbitalStrike -->
+
+  <Projectile_OrbitalStrike.label>орбітальний удар</Projectile_OrbitalStrike.label>
+  <Projectile_OrbitalStrike_I.label>орбітальний удар</Projectile_OrbitalStrike_I.label>
+  <Projectile_OrbitalStrike_II.label>орбітальний удар</Projectile_OrbitalStrike_II.label>
+  <Projectile_OrbitalStrike_III.label>орбітальний удар</Projectile_OrbitalStrike_III.label>
+
+  <TM_TechnoWeapon_Base0.label>техно зброя</TM_TechnoWeapon_Base0.label>
+  <TM_TechnoWeapon_Base0.description>Зброю змінено техномантом</TM_TechnoWeapon_Base0.description>
+  <TM_TechnoWeapon_Base0.tools.0.label>Нищівна зброя</TM_TechnoWeapon_Base0.tools.0.label>
+
+  <TM_TechnoWeapon_Base1.label>техно зброя</TM_TechnoWeapon_Base1.label>
+  <TM_TechnoWeapon_Base1.description>Зброю змінено техномантом</TM_TechnoWeapon_Base1.description>
+  <TM_TechnoWeapon_Base1.tools.0.label>Нищівна зброя</TM_TechnoWeapon_Base1.tools.0.label>
+
+  <TM_TechnoWeapon_Base2.label>техно зброя</TM_TechnoWeapon_Base2.label>
+  <TM_TechnoWeapon_Base2.description>Зброю змінено техномантом</TM_TechnoWeapon_Base2.description>
+  <TM_TechnoWeapon_Base2.tools.0.label>Нищівна зброя</TM_TechnoWeapon_Base2.tools.0.label>
+
+  <TM_TechnoWeapon_Base3.label>техно зброя</TM_TechnoWeapon_Base3.label>
+  <TM_TechnoWeapon_Base3.description>Зброю змінено техномантом</TM_TechnoWeapon_Base3.description>
+  <TM_TechnoWeapon_Base3.tools.0.label>Нищівна зброя</TM_TechnoWeapon_Base3.tools.0.label>
+
+  <TM_TechnoWeapon_Base4.label>техно зброя</TM_TechnoWeapon_Base4.label>
+  <TM_TechnoWeapon_Base4.description>Зброю змінено техномантом</TM_TechnoWeapon_Base4.description>
+  <TM_TechnoWeapon_Base4.tools.0.label>Нищівна зброя</TM_TechnoWeapon_Base4.tools.0.label>
+
+  <TM_TechnoWeapon_Base5.label>техно зброя</TM_TechnoWeapon_Base5.label>
+  <TM_TechnoWeapon_Base5.description>Зброю змінено техномантом</TM_TechnoWeapon_Base5.description>
+  <TM_TechnoWeapon_Base5.tools.0.label>Нищівна зброя</TM_TechnoWeapon_Base5.tools.0.label>
+
+  <TM_TechnoWeapon_Base6.label>техно зброя</TM_TechnoWeapon_Base6.label>
+  <TM_TechnoWeapon_Base6.description>Зброю змінено техномантом</TM_TechnoWeapon_Base6.description>
+  <TM_TechnoWeapon_Base6.tools.0.label>Нищівна зброя</TM_TechnoWeapon_Base6.tools.0.label>
+
+  <TM_TechnoWeapon_Base7.label>техно зброя</TM_TechnoWeapon_Base7.label>
+  <TM_TechnoWeapon_Base7.description>Зброю змінено техномантом</TM_TechnoWeapon_Base7.description>
+  <TM_TechnoWeapon_Base7.tools.0.label>Нищівна зброя</TM_TechnoWeapon_Base7.tools.0.label>
+
+  <TM_TechnoWeapon_Base8.label>техно зброя</TM_TechnoWeapon_Base8.label>
+  <TM_TechnoWeapon_Base8.description>Зброю змінено техномантом</TM_TechnoWeapon_Base8.description>
+  <TM_TechnoWeapon_Base8.tools.0.label>Нищівна зброя</TM_TechnoWeapon_Base8.tools.0.label>
+
+  <TM_TechnoWeapon_Base9.label>техно зброя</TM_TechnoWeapon_Base9.label>
+  <TM_TechnoWeapon_Base9.description>Зброю змінено техномантом</TM_TechnoWeapon_Base9.description>
+  <TM_TechnoWeapon_Base9.tools.0.label>Нищівна зброя</TM_TechnoWeapon_Base9.tools.0.label>
+
+
+  <!-- техно оружие -->
+
+</LanguageData>

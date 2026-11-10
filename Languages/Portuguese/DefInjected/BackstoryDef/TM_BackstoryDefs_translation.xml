@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_UndeadChildBS.title>Não morar</TM_UndeadChildBS.title>
+  <TM_UndeadChildBS.titleShort>Não morar</TM_UndeadChildBS.titleShort>
+  <TM_UndeadChildBS.baseDesc>Agora, a história do peão que habitou este corpo já foi removida, substituída pela vontade do necromante.</TM_UndeadChildBS.baseDesc>
+
+  <TM_UndeadAdultBS_GhostEye.title>Olho fantasma</TM_UndeadAdultBS_GhostEye.title>
+  <TM_UndeadAdultBS_GhostEye.titleShort>Olho fantasma</TM_UndeadAdultBS_GhostEye.titleShort>
+  <TM_UndeadAdultBS_GhostEye.baseDesc>Aumenta a habilidade de disparar a piorar o combate.</TM_UndeadAdultBS_GhostEye.baseDesc>
+
+  <TM_UndeadAdultBS_GhostMind.title>Mente fantasma</TM_UndeadAdultBS_GhostMind.title>
+  <TM_UndeadAdultBS_GhostMind.titleShort>Mente fantasma</TM_UndeadAdultBS_GhostMind.titleShort>
+  <TM_UndeadAdultBS_GhostMind.baseDesc>Aumenta a habilidade de cozinha e artesanato em troca reduz a mineração</TM_UndeadAdultBS_GhostMind.baseDesc>
+
+  <TM_UndeadAdultBS_Brute.title>Não morar</TM_UndeadAdultBS_Brute.title>
+  <TM_UndeadAdultBS_Brute.titleShort>Trabalhar sem vida</TM_UndeadAdultBS_Brute.titleShort>
+  <TM_UndeadAdultBS_Brute.baseDesc>Um trabalhador sem vida é uma opção única de não vida, com maior habilidade de combate próximo e mineração, e em troca não pode cozinhar e fazer arte.</TM_UndeadAdultBS_Brute.baseDesc>
+
+  <TM_UndeadAdultBS_Servant.title>Empregado sem vida</TM_UndeadAdultBS_Servant.title>
+  <TM_UndeadAdultBS_Servant.titleShort>Empregado sem vida</TM_UndeadAdultBS_Servant.titleShort>
+  <TM_UndeadAdultBS_Servant.baseDesc>Empregado sem vida - Melhor trabalho, mas muito fraco em combate</TM_UndeadAdultBS_Servant.baseDesc>
+
+  <TM_UndeadAdultBS.title>Não morar</TM_UndeadAdultBS.title>
+  <TM_UndeadAdultBS.titleShort>Não morar</TM_UndeadAdultBS.titleShort>
+  <TM_UndeadAdultBS.baseDesc>[PAWN_nameDef] é um precário básico sem anomalias.</TM_UndeadAdultBS.baseDesc>
+
+  <TM_GolemChildBS.title>Golem</TM_GolemChildBS.title>
+  <TM_GolemChildBS.titleShort>Golem</TM_GolemChildBS.titleShort>
+  <TM_GolemChildBS.baseDesc>[PAWN_nameDef] é um golem feito de matéria-prima e animado pela magia.</TM_GolemChildBS.baseDesc>
+
+  <TM_GolemAdultBS.title>Golem</TM_GolemAdultBS.title>
+  <TM_GolemAdultBS.titleShort>Golem</TM_GolemAdultBS.titleShort>
+  <TM_GolemAdultBS.baseDesc>[PAWN_nameDef] é um golem feito de matéria-prima e animado pela magia.</TM_GolemAdultBS.baseDesc>
+
+  <TM_SpiritChildBS.title>Espírito</TM_SpiritChildBS.title>
+  <TM_SpiritChildBS.titleShort>Espírito</TM_SpiritChildBS.titleShort>
+  <TM_SpiritChildBS.baseDesc>[PAWN_nameDef] é um espírito itinerante ligado a este domínio por algum poder desconhecido. Os eventos em torno de [PAWN _ postessive] são desconhecidos, mas são fortes o suficiente para forçar [PAWN _ objectiva] a procurar respostas, justiça ou redenção dos vivos.</TM_SpiritChildBS.baseDesc>
+
+  <TM_AncientSpiritAdultBS.title>Espírito antigo</TM_AncientSpiritAdultBS.title>
+  <TM_AncientSpiritAdultBS.titleShort>Espírito antigo</TM_AncientSpiritAdultBS.titleShort>
+  <TM_AncientSpiritAdultBS.baseDesc>[PAWN_nameDef] Há inúmeros anos e não se lembra mais do objetivo [PAWN _ postessive]. Os espíritos antigos têm seus próprios objetivos e tornaram-se donos no controle da energia espiritual. A energia máxima do espírito aumenta 50.</TM_AncientSpiritAdultBS.baseDesc>
+
+  <TM_VengefulSpiritAdultBS.title>Espírito de vingança</TM_VengefulSpiritAdultBS.title>
+  <TM_VengefulSpiritAdultBS.titleShort>Espírito de vingança</TM_VengefulSpiritAdultBS.titleShort>
+  <TM_VengefulSpiritAdultBS.baseDesc>[PAWN_nameDef] é um espírito vingativo, cheio de raiva e ódio, que só quer causar problemas aos vivos. Os espíritos vingativos são mais fortes durante a distorção espiritual e a tempestade espiritual, mas são mais difíceis de harmonizar com o corpo vivo. Aumenta a velocidade de ataque de uma tempestade de sopro em 25% e bónus danos ao espírito distorcido em 6%. Reduz a compatibilidade em 1.</TM_VengefulSpiritAdultBS.baseDesc>
+
+  <TM_LostSpiritAdultBS.title>Espírito perdido</TM_LostSpiritAdultBS.title>
+  <TM_LostSpiritAdultBS.titleShort>Espírito perdido</TM_LostSpiritAdultBS.titleShort>
+  <TM_LostSpiritAdultBS.baseDesc>Os espíritos perdidos percorrem o mundo em constante estado de sofrimento existencial, incapazes de compreender o seu destino. Os perdidos são facilmente ligados à causa do outro e mais facilmente harmonizados com os espíritos familiares. Eles também são capazes de reforçar o poder do espírito unido. Ampliação de 10% da duração, raio, metas máximas e bônus de coesão de espírito. Aumenta a compatibilidade em 2.</TM_LostSpiritAdultBS.baseDesc>
+
+  <TM_RegretSpiritAdultBS.title>Espírito de arrependimento</TM_RegretSpiritAdultBS.title>
+  <TM_RegretSpiritAdultBS.titleShort>Espírito de arrependimento</TM_RegretSpiritAdultBS.titleShort>
+  <TM_RegretSpiritAdultBS.baseDesc>O espírito de pesar ainda é capaz de lembrar o seu plano como espírito, mas eles não são capazes de reparar os seus pecados antes que seja tarde demais. Agora eles andam pelo mundo como um espírito cheio de tristeza e arrependimento, ainda procurando uma maneira de realizar o seu destino. Os espíritos do arrependimento aumentam a capacidade de escoar o espírito em 20%.</TM_RegretSpiritAdultBS.baseDesc>
+
+
+</LanguageData>

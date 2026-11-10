@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mind Ward -->
+
+  <MarbleMindTD.stages.0.label>Proteção mental</MarbleMindTD.stages.0.label>
+  <MarbleMindTD.stages.0.description>A vossa mente está fortalecida contra os problemas.</MarbleMindTD.stages.0.description>
+
+
+  <!-- soul orb infusion debuff -->
+
+  <TM_TraitInfusion.stages.0.label>Traços de caráter absorvidos</TM_TraitInfusion.stages.0.label>
+  <TM_TraitInfusion.stages.0.description>Esta mudança faz-me sentir estranho a mim mesmo, e vai demorar um pouco para redescobrir quem sou.</TM_TraitInfusion.stages.0.description>
+
+
+</LanguageData>

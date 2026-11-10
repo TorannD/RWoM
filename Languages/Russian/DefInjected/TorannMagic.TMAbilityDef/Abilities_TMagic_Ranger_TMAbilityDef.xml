@@ -1,0 +1,89 @@
+﻿<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_Ranger.xml-->
+	<!--                 EN: Ranger Training-->
+	<TM_RangerTraining.label>Обучение рейнджера</TM_RangerTraining.label>
+	<!--                       EN: Training that the ranger's professional skills. Each level will increase the ranger trait to reflect the skill of the ranger.
+
+Ranks:
+Woodsman: Speed +0.15c/s, Aiming Delay -15%, Immunity Gain +20%, Comf. Temperature +-10C., Toxic Sensitivity -10%
+Tame and train animal +5%, butchering speed +5%, smelting and construction speed -10%
+
+Hunter: Speed +0.2c/s, Aiming Delay -20%, Immunity Gain +25%, Comf. Temperature +-15C., Toxic Sensitivity -15%
+Tame and train animal +8%, butchering speed +10%, smelting and construction speed -15%
+
+Scout: Speed +0.25c/s, Aiming Delay -30%, Immunity Gain +30%, Comf. Temperature +-18C., Toxic Sensitivity -20%
+Tame and train animal +10%, butchering speed +15%, smelting and construction speed -18%
+
+Ranger: Speed +0.3c/s, Aiming Delay -40%, Immunity Gain +35%, Comf. Temperature +-25C., Toxic Sensitivity -25%
+Tame and train animal +12%, butchering speed +20%, smelting and construction speed -20%-->
+	<TM_RangerTraining.description>Тренировка рейнджера. Каждый уровень будет увеличивать характеристику рейнджера, чтобы отразить мастерство рейнджера.
+
+Ранги:
+Лесник: скорость +0,15 к/сек, задержка прицеливания -15%, Усиление иммунитета +20%, Комф. температура +\- 10С., чувствительность к токсинам -10%
+Приручение и обучение животного +5%, скорость разделки мяса +5%, скорость плавки и строительства -10%
+
+Охотник: Скорость +0.2 к/сек, задержка прицеливания -20%, Усиление иммунитета +25%, Комф. температура +\-15C., чувствительность к токсинам -15%
+Приручение и обучение животного +8%, скорость разделки мяса +10%, скорость плавки и строительства -15%
+
+Разведчик: Скорость +0.25 к/сек, задержка прицеливания -30%, Усиление иммунитета +30%, Комф. температура +\-18C., чувствительность к токсинам -20%
+Приручение и обучение животного +10%, скорость разделки мяса +15%, скорость плавки и строительства -18%
+
+Рейнджер: Скорость +0.3 к/сек, задержка прицеливания -40%, Усиление иммунитета +35%, Комф. температура +\-25C., чувствительность к токсинам -25%
+Приручение и обучение животного +12%, скорость разделки мяса +20%, скорость плавки и строительства -20%</TM_RangerTraining.description>
+	<!--              EN: Bow Training-->
+	<TM_BowTraining.label>Тренировка с луком</TM_BowTraining.label>
+	<!--                    EN: Training that increases damage and accuracy when using a bow.
+
+Level 0: Hearing and Sight +20%, +20% bow damage
+Level 1: Hearing and Sight +40%, +40% bow damage
+Level 2: Hearing and Sight +60%, Breathing +15%, +60% bow damage
+Level 3: Hearing and Sight +80%, Breathing +25%, Blood filtration +10%, +80% bow damage-->
+	<TM_BowTraining.description>Тренировка, которая увеличивает урон и точность при использовании лука.
+
+Уровень 0: Слух и зрение +20%, +20% урон с лука
+Уровень 1: Слух и зрение +40%, +40% урон с лука
+Уровень 2: Слух и зрение +60%, Дыхание +15%, +60% урон с лука
+Уровень 3: Слух и зрение +80%, Дыхание +25%, Фильтрация крови +10%, +80% урон с лука</TM_BowTraining.description>
+	<!--             EN: Poison Trap-->
+	<TM_PoisonTrap.label>Ядовитая ловушка</TM_PoisonTrap.label>
+	<TM_PoisonTrap.description>Следопыт использует дозу друидского яда для установки деревянной ловушки. Ловушки остаются активными неограниченное время, но следопыт может разместить лишь ограниченное количество одновременно.
+
+Попавшие в яд враги получают 1-8 урона каждые 0.66 секунды. Яд также замедляет жертв. Животные никогда не активируют эти ловушки.</TM_PoisonTrap.description>
+	<!--               EN: Animal Bond-->
+	<TM_AnimalFriend.label>Связь С Животными</TM_AnimalFriend.label>
+	<!--                     EN: At home in the wild, the ranger is able to form a bond with creatures of the wild.
+
+Rangers are only able to form a single bond and maintaining the bond reduces the ranger's max stamina by 30; making a new bond breaks an existing bond and will cause the animal with a broken bond to leave forever. Failed attempts may cause the animal to turn manhunter. When using animal bond on the bonded animal may allow the animal to remain in the colony - the chance the animal remains is based on its wildness and how long it had a bond with the ranger.
+
+The increase in physical capability applies to the animal kin only, in return, the bonded animal will assist the ranger in whatever capacity the animal is capable.
+A bond can be removed by using this ability on a bonded creature.-->
+	<TM_AnimalFriend.description>Дома, в дикой природе, рейнджер способен установить связь с дикими существами.
+
+Рейнджеры способны сформировать только одну связь, и поддержание этой связи снижает максимальную выносливость рейнджера на 30; создание новой связи нарушает существующую связь и, скорее всего, заставит животное с разорванной связью уйти навсегда.
+
+Увеличение физических возможностей относится только к связанным животным, в свою очередь, связанное животное будет помогать рейнджеру в любом качестве, на которое оно способно.
+Связь может быть удалена, используя эту способность на связанном существе.</TM_AnimalFriend.description>
+	<!-- Шторм Стрел-->
+	<TM_ArrowStorm.label>Шквал стрел</TM_ArrowStorm.label>
+	<!--                   EN: Fire a volley of 5 arrows at a target.
+Range: 32-->
+	<TM_ArrowStorm.description>Стреляйте залпом из 5 стрел в цель.
+Дальность: 32</TM_ArrowStorm.description>
+	<!--               EN: Arrow Storm (I)-->
+	<TM_ArrowStorm_I.label>Шквал стрел (I)</TM_ArrowStorm_I.label>
+	<!--                     EN: Fire a volley of 6 arrows at a target.
+Range: 34-->
+	<TM_ArrowStorm_I.description>Стреляйте залпом из 6 стрел в цель.
+Дальность: 34</TM_ArrowStorm_I.description>
+	<!--                EN: Arrow Storm (II)-->
+	<TM_ArrowStorm_II.label>Шквал стрел (II)</TM_ArrowStorm_II.label>
+	<!--                      EN: Fire a rapid volley of 7 arrows at a target.
+Range: 36-->
+	<TM_ArrowStorm_II.description>Стреляйте залпом из 7 стрел в цель.
+Дальность: 36</TM_ArrowStorm_II.description>
+	<!--                 EN: Arrow Storm (III)-->
+	<TM_ArrowStorm_III.label>Шквал стрел (III)</TM_ArrowStorm_III.label>
+	<!--                       EN: Fire a rapid volley of 8 arrows at a target.
+Range: 38-->
+	<TM_ArrowStorm_III.description>Стреляйте залпом из 8 стрел в цель.
+Дальность: 38</TM_ArrowStorm_III.description>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperAimedShot.label>tiro de precisão</TM_SniperAimedShot.label>
+  <TM_SniperAimedShot.description>Uma bala normal com o alcance e a precisão da arma, respeitando a cobertura. Dano de 110/125/140%, custo base de 25 de vigor, recarga de 30 s.</TM_SniperAimedShot.description>
+</LanguageData>

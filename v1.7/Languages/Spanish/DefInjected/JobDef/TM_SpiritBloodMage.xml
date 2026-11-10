@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBloodShield.reportString>forma un escudo de sangre.</TM_SpiritBloodShield.reportString>
+  <TM_SpiritBloodMoon.reportString>invoca una luna de sangre.</TM_SpiritBloodMoon.reportString>
+  <TM_SpiritBloodMoon_I.reportString>invoca una luna de sangre.</TM_SpiritBloodMoon_I.reportString>
+  <TM_SpiritBloodMoon_II.reportString>invoca una luna de sangre.</TM_SpiritBloodMoon_II.reportString>
+  <TM_SpiritBloodMoon_III.reportString>invoca una luna de sangre.</TM_SpiritBloodMoon_III.reportString>
+  <TM_SpiritRend.reportString>desgarra a sus objetivos.</TM_SpiritRend.reportString>
+  <TM_SpiritRend_I.reportString>desgarra a sus objetivos.</TM_SpiritRend_I.reportString>
+  <TM_SpiritRend_II.reportString>desgarra a sus objetivos.</TM_SpiritRend_II.reportString>
+  <TM_SpiritRend_III.reportString>desgarra a sus objetivos.</TM_SpiritRend_III.reportString>
+  <TM_SpiritBloodForBlood.reportString>transfiere sangre.</TM_SpiritBloodForBlood.reportString>
+  <TM_SpiritIgniteBlood.reportString>prende fuego a la sangre.</TM_SpiritIgniteBlood.reportString>
+</LanguageData>

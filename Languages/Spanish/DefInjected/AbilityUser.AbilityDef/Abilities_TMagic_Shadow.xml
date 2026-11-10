@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_Nightshade.label>hierba sombría</TM_Nightshade.label>
+  
+  <TM_Nightshade.description>Recubre tus armas o proyectiles con la toxina de la hierba sombría. Cada ataque aplica una parte de la toxina. Los ataques a distancia la aplican con un 40 % de la eficacia de los ataques cuerpo a cuerpo. Las víctimas afectadas sufren alucinaciones y dificultad para respirar. Si la toxicidad alcanza niveles graves, también sufrirán daños en los órganos.\n\nEsta habilidad requiere 30 puntos de resistencia para mantenerse activa y reduce la regeneración de resistencia en un 50 %.</TM_Nightshade.description>
+
+  
+  <TM_ShadowStrike.label>golpe sombrío</TM_ShadowStrike.label>
+  
+  <TM_ShadowStrike.description>Te desplazas instantáneamente detrás del objetivo y ejecutas un ataque devastador contra un único objetivo. Obtienes celeridad durante 5 segundos. Después de ese tiempo, regresas al lugar desde el que iniciaste el ataque. Este ataque puede asestar golpes críticos que infligen 3 veces el daño normal. La probabilidad de golpe crítico disminuye cuanto más pesada sea el arma. Las armas a distancia nunca asestan golpes críticos.</TM_ShadowStrike.description>
+
+  
+  <TM_ShadowWalk.label>paso sombrío</TM_ShadowWalk.label>
+  
+  <TM_ShadowWalk.description>Muévete sin ser visto para reaparecer instantáneamente en la sombra de otro peón.</TM_ShadowWalk.description>
+
+  
+  <TM_VeilOfShadows.label>velo de sombras</TM_VeilOfShadows.label>
+  
+  <TM_VeilOfShadows.description>Lanza una mezcla que envuelve al lanzador y el área circundante en humo y sombras. El lanzador obtiene Manto de Sombras (invisibilidad). La nube de sombras impide que los sistemas de selección automática apunten a objetivos y reduce la precisión de los ataques a distancia en un 60 %.</TM_VeilOfShadows.description>
+
+</LanguageData>

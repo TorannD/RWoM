@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ArcaneConduitTD.degreeDatas.0.label>Магічний Провідник</TM_ArcaneConduitTD.degreeDatas.0.label>
+  <TM_ArcaneConduitTD.degreeDatas.0.description>[PAWN_nameDef] аномально сприйнятливий до припливів і відливів мани, [PAWN_pronoun] отримуватиме ману на 40% швидше, ніж зазвичай, але [PAWN_possessive] максимальна ємність мани зменшується на 20.</TM_ArcaneConduitTD.degreeDatas.0.description>
+
+  <TM_ManaWellTD.degreeDatas.0.label>Колодязь Мани</TM_ManaWellTD.degreeDatas.0.label>
+  <TM_ManaWellTD.degreeDatas.0.description>[PAWN_nameDef] має підвищену стійкість до припливів і відливів мани, що дозволяє [PAWN_objective] утримувати додаткові 40 мани, але зменшує регенерацію мани [PAWN_possessive] на 20%.</TM_ManaWellTD.degreeDatas.0.description>
+
+  <TM_BoundlessTD.degreeDatas.0.label>Безмежний</TM_BoundlessTD.degreeDatas.0.label>
+  <TM_BoundlessTD.degreeDatas.0.description>[PAWN_nameDef] досягає успіху в бойових мистецтвах і здатний виконувати бойові маневри на 40% частіше, проте талант [PAWN_possessive] виховав зарозуміле ставлення, яке зменшує приріст досвіду [PAWN_possessive] на 25% і викликає неприязнь у інших бійців [PAWN_objective].</TM_BoundlessTD.degreeDatas.0.description>
+
+  <TM_FaeBloodTD.degreeDatas.0.label>Кров фейрі</TM_FaeBloodTD.degreeDatas.0.label>
+  <TM_FaeBloodTD.degreeDatas.0.description>[PAWN_nameDef] є нащадком народу фейрі і має природний зв&apos;язок з таємницею. [PAWN_possessive] опір таємницям зменшено на 40%, але регенерація мани і максимальна мана збільшені на 20%. Витрати на заклинання знижуються на 10%.</TM_FaeBloodTD.degreeDatas.0.description>
+
+  <TM_GiantsBloodTD.degreeDatas.0.label>Кров гігантів</TM_GiantsBloodTD.degreeDatas.0.label>
+  <TM_GiantsBloodTD.degreeDatas.0.description>[PAWN_nameDef] - нащадок гігантів, наділений величезною силою і витривалістю, хоча і повільно відновлюється. [PAWN_possessive] максимальна витривалість збільшується на 80%, але регенерація витривалості зменшується на 40%. Будь-яка атака, здійснена з використанням зброї ближнього бою або без зброї, завдає додаткової шкоди в розмірі 25%.</TM_GiantsBloodTD.degreeDatas.0.description>
+
+  <TM_EnlightenedTD.degreeDatas.0.label>Освічений</TM_EnlightenedTD.degreeDatas.0.label>
+  <TM_EnlightenedTD.degreeDatas.0.description>[PAWN_nameDef] благословлений магією, здатний використовувати її силу, не відчуваючи всіх побічних ефектів. Екстрасенсорна чутливість збільшується на 50%, і будь-яка використовувана магічна здатність викликає тільки половину звичайної магічної слабкості.</TM_EnlightenedTD.degreeDatas.0.description>
+
+  <TM_CursedTD.degreeDatas.0.label>Проклятий</TM_CursedTD.degreeDatas.0.label>
+  <TM_CursedTD.degreeDatas.0.description>[PAWN_nameDef] проклятий магією - мучиться від постійного, пекучого припливу сили через істоту [PAWN_possessive] і може отримати полегшення, тільки витрачаючи таємну енергію. [PAWN_nameDef] буде повільно накопичувати таємну слабкість до тих пір, поки [PAWN_pronoun] не стане кататонічним, і може стати кататонічним в будь-який момент, перебуваючи на цьому порозі. Використання магічних здібностей, які зазвичай призводять до таємної слабкості, замість цього пропорційно зменшить таємну слабкість, а також наслідки прокляття.</TM_CursedTD.degreeDatas.0.description>
+
+  <TM_OKWithDeath.degreeDatas.0.label>Не схильний до впливу смерті</TM_OKWithDeath.degreeDatas.0.label>
+  <TM_OKWithDeath.degreeDatas.0.description>[PAWN_nameDef] визнав, що смерть - це ще одна частина життя, і не засмучується, коли дізнається про мертвого союзника або бачить одного з неживих.</TM_OKWithDeath.degreeDatas.0.description>
+
+  <Undead.degreeDatas.0.label>Ніжити</Undead.degreeDatas.0.label>
+  <Undead.degreeDatas.0.description>[PAWN_nameDef] був реанімований як ніжити.</Undead.degreeDatas.0.description>
+
+  <TM_Gifted.degreeDatas.0.label>магічно обдарований</TM_Gifted.degreeDatas.0.label>
+  <TM_Gifted.degreeDatas.0.description>[PAWN_nameDef] має магічний дар. [PAWN_pronoun] може використовувати цей дар, щоб стати магом, вивчаючи таємничі секрети в таємних письменах.</TM_Gifted.degreeDatas.0.description>
+
+  <TM_Empath.degreeDatas.0.label>Емпат</TM_Empath.degreeDatas.0.label>
+  <TM_Empath.degreeDatas.0.description>[PAWN_nameDef] - емпат, здатний відчувати і маніпулювати емоціями оточуючих [PAWN_objective]. Здібності [PAWN_possessive] пов &quot;язані з магією, але вплинули на [PAWN_objective] на більш вродженому рівні. Однак, пройшовши навчання, [PAWN_nameDef] все ще може стати майстерним користувачем магії. Добре це чи погано, але емпати мають дуже сильну присутність і можуть легко розпізнавати присутність інших; ефективність їх здібностей тісно пов&apos;язана з їх здатністю долати чужий захист.</TM_Empath.degreeDatas.0.description>
+
+  <TM_Wanderer.degreeDatas.0.label>Мандрівник</TM_Wanderer.degreeDatas.0.label>
+  <TM_Wanderer.degreeDatas.0.description>[PAWN_nameDef] - мандрівник; ізгой, клас магів-напівкровок, часто званий живим магом. [PAWN_possessive] безтурботна особа втримала [PAWN_possessive] від розвитку класових здібностей. Замість цього [PAWN_pronoun] навчився вдосконалювати величезну кількість корисних здібностей, які дозволяють [PAWN_objective] адаптуватися до будь-якої ситуації.
+
+Мандрівники воліють відкриту дорогу і отримують заряд бадьорості від перебування в каравані. Каравани з мандрівником ігноруватимуть штрафи за пересування будь-якою місцевістю. Однак їхня спрага мандрівок призведе до того, що вони страждатимуть від перебування в колонії.</TM_Wanderer.degreeDatas.0.description>
+
+  <InnerFire.degreeDatas.0.label>Маг вогню</InnerFire.degreeDatas.0.label>
+  <InnerFire.degreeDatas.0.description>[PAWN_nameDef] налаштований на стихію вогню.</InnerFire.degreeDatas.0.description>
+
+  <HeartOfFrost.degreeDatas.0.label>Маг льоду</HeartOfFrost.degreeDatas.0.label>
+  <HeartOfFrost.degreeDatas.0.description>[PAWN_nameDef] знаходиться в гармонії з елементами води.</HeartOfFrost.degreeDatas.0.description>
+
+  <StormBorn.degreeDatas.0.label>Маг блискавок</StormBorn.degreeDatas.0.label>
+  <StormBorn.degreeDatas.0.description>[PAWN_nameDef] налаштований на елементи блискавок.</StormBorn.degreeDatas.0.description>
+
+  <Arcanist.degreeDatas.0.label>Таємничий маг</Arcanist.degreeDatas.0.label>
+  <Arcanist.degreeDatas.0.description>[PAWN_nameDef] налаштований на таємні сили, взаємодіючи безпосередньо з необробленою таємною силою, щоб переміщати матерію і енергію за своїм бажанням.</Arcanist.degreeDatas.0.description>
+
+  <Druid.degreeDatas.0.label>Друїд</Druid.degreeDatas.0.label>
+  <Druid.degreeDatas.0.description>[PAWN_nameDef] знаходиться в гармонії з силами природи.</Druid.degreeDatas.0.description>
+
+  <Paladin.degreeDatas.0.label>Паладін</Paladin.degreeDatas.0.label>
+  <Paladin.degreeDatas.0.description>[PAWN_nameDef] був наділений божественною міццю і поклявся підтримувати справедливість скрізь, де знаходиться [PAWN_pronoun].</Paladin.degreeDatas.0.description>
+
+  <Summoner.degreeDatas.0.label>Призовник</Summoner.degreeDatas.0.label>
+  <Summoner.degreeDatas.0.description>[PAWN_nameDef] здатний викликати істот і матеріалізувати об&apos;єкти з інших світів.</Summoner.degreeDatas.0.description>
+
+  <Necromancer.degreeDatas.0.label>Некромант</Necromancer.degreeDatas.0.label>
+  <Necromancer.degreeDatas.0.description>[PAWN_nameDef] перебуває в гармонії з силами смерті.</Necromancer.degreeDatas.0.description>
+
+  <Lich.degreeDatas.0.label>Ліч</Lich.degreeDatas.0.label>
+  <Lich.degreeDatas.0.description>[PAWN_nameDef] перетворився на ліча, відмовившись від життя в обмін на силу і безсмертне існування, вирішивши використовувати ніжити для виконання чорної роботи.</Lich.degreeDatas.0.description>
+
+  <Priest.degreeDatas.0.label>Священик</Priest.degreeDatas.0.label>
+  <Priest.degreeDatas.0.description>[PAWN_nameDef] налаштований на сили життя і зцілення і дав обітницю не завдавати шкоди іншим.</Priest.degreeDatas.0.description>
+
+  <TM_Bard.degreeDatas.0.label>Конферансьє</TM_Bard.degreeDatas.0.label>
+  <TM_Bard.degreeDatas.0.description>[PAWN_nameDef] - це природжений артист, здатний підняти настрій і підняти настрій усім навколо [PAWN_objective].</TM_Bard.degreeDatas.0.description>
+  <TM_Bard.degreeDatas.1.label>Актор естради</TM_Bard.degreeDatas.1.label>
+  <TM_Bard.degreeDatas.1.description>[PAWN_nameDef] - виконавець; розвиваючи свій природний талант, [PAWN_pronoun] почав відігравати свідому роль, щоб поліпшити настрій інших колоністів.</TM_Bard.degreeDatas.1.description>
+  <TM_Bard.degreeDatas.2.label>Менестрель</TM_Bard.degreeDatas.2.label>
+  <TM_Bard.degreeDatas.2.description>Всі люблять бути поруч з [PAWN_nameDef]. [PAWN_pronoun] має талант, дотепність і майстерність у багатьох видах розваг і здатний встановити особистий зв&apos;язок майже з усіма.</TM_Bard.degreeDatas.2.description>
+  <TM_Bard.degreeDatas.3.label>Бард</TM_Bard.degreeDatas.3.label>
+  <TM_Bard.degreeDatas.3.description>[PAWN_nameDef] майстер конферансьє. Гострий розум, спритні руки і сухий гумор - це зброя [PAWN_possessive], а [PAWN_pronoun] - майстер всього [PAWN_possessive] зброї.</TM_Bard.degreeDatas.3.description>
+
+  <Succubus.degreeDatas.0.label>Суккуб</Succubus.degreeDatas.0.label>
+  <Succubus.degreeDatas.0.description>[PAWN_nameDef] має дивний генетичний штам, який дає їй підвищені фізичні характеристики. Вона також надзвичайно приваблива з екзотичною структурою обличчя, яка захоплює око. Суккуб з більшою ймовірністю використовує свої фізичні переваги і змушує інших робити за неї її роботу. [PAWN_possessive] чарівність сукуба має свої недоліки і може змусити деяких ревнувати і навіть зневажати [PAWN_objective].</Succubus.degreeDatas.0.description>
+
+  <Warlock.degreeDatas.0.label>Чорнокнижник</Warlock.degreeDatas.0.label>
+  <Warlock.degreeDatas.0.description>[PAWN_nameDef] - чаклун, здатний проявляти фізичні та демонічні сили, використовуючи свій унікальний доступ до таємної сили. Чаклун поділяє ту ж генетичну суміш, що і суккуб, але як чоловік, [PAWN_pronoun] схильний до ментальних поліпшень, які включають ясновидіння і телекінез. Чаклун може іноді впливати на результат соціальної взаємодії, використовуючи свої розумові здібності, незалежно від того, як ця взаємодія насправді відбулася.</Warlock.degreeDatas.0.description>
+
+  <Geomancer.degreeDatas.0.label>Геомант</Geomancer.degreeDatas.0.label>
+  <Geomancer.degreeDatas.0.description>[PAWN_nameDef] знаходиться в гармонії із Землею і природним порядком, черпаючи силу з фізичної сфери і переплітаючи її з таємною енергією. [PAWN_pronoun] здатний посилювати фізичні елементи і згинати їх, як це необхідно [PAWN_pronoun].</Geomancer.degreeDatas.0.description>
+
+  <Technomancer.degreeDatas.0.label>Техномант</Technomancer.degreeDatas.0.label>
+  <Technomancer.degreeDatas.0.description>[PAWN_nameDef] навчився бачити магію і науку як дві частини однієї і тієї ж сили і здатний використовувати таємну силу для безпосередньої взаємодії з компонентами технології. [PAWN_pronoun] здатний маніпулювати об&apos;єктами за допомогою просунутої механіки, електроніки або обчислювати їх для досягнення цілей [PAWN_possessive], але має труднощі у взаємодії з біологічними системами.</Technomancer.degreeDatas.0.description>
+
+  <BloodMage.degreeDatas.0.label>Маг крові</BloodMage.degreeDatas.0.label>
+  <BloodMage.degreeDatas.0.description>[PAWN_nameDef] - маг крові, присвятив себе темному мистецтву маніпулювання життєвою кров&apos;ю живих істот як засобом збільшення [PAWN_possessive] влади .\n\n Будучи магом крові, [PAWN_nameDef] навчився контролювати життєву силу всередині себе і командувати нею з [PAWN_possessive] волі. [PAWN_possessive] зв&apos;язок з життям полегшує спілкування з іншими живими істотами, але не цінує зусиль без негайних результатів.</BloodMage.degreeDatas.0.description>
+
+  <Enchanter.degreeDatas.0.label>Чаклун</Enchanter.degreeDatas.0.label>
+  <Enchanter.degreeDatas.0.description>[PAWN_nameDef] - це чаклун, налаштований на склад матерії і матеріалів. [PAWN_pronoun] може маніпулювати матерією відповідно до волі [PAWN_possessive], часто неприродним чином, і [PAWN_possessive] сили трансмутації можуть бути постійними, коли докладаються достатні зусилля.</Enchanter.degreeDatas.0.description>
+
+  <Chronomancer.degreeDatas.0.label>Хрономант</Chronomancer.degreeDatas.0.label>
+  <Chronomancer.degreeDatas.0.description>[PAWN_nameDef] - хрономант. За допомогою таємного зору [PAWN_pronoun] здатний бачити реальність такою, якою вона колись була і якою вона могла б бути, і може маніпулювати об&apos;єктами між цими реальностями.</Chronomancer.degreeDatas.0.description>
+
+  <ChaosMage.degreeDatas.0.label>Маг Хаоса</ChaosMage.degreeDatas.0.label>
+  <ChaosMage.degreeDatas.0.description>[PAWN_nameDef] відкидає всі визначені магічні шляхи і відмовляється приписувати об&apos;єктивну реальність у [PAWN_possessive] пошуку сили; немає ніяких істин, вся магія дозволена. Ця традиція дозволила [PAWN_nameDef] вивчати будь - який тип магії, хоча [PAWN_pronoun] ніколи не опановуватиме жодної з них.</ChaosMage.degreeDatas.0.description>
+
+
+  <!-- Custom Class -->
+
+  <TM_TheShadow.degreeDatas.0.label>Тінь</TM_TheShadow.degreeDatas.0.label>
+  <TM_TheShadow.degreeDatas.0.description>[PAWN_nameDef] - демон-напівкровка зі схильністю до магії тіней. [PAWN_pronoun] розвинув [PAWN_possessive] унікальні таланти завдяки бойовій підготовці та фізичній підготовці, що робить [PAWN_objective] ідеальним вбивцею.</TM_TheShadow.degreeDatas.0.description>
+
+  <TM_Brightmage.degreeDatas.0.label>Маг світла</TM_Brightmage.degreeDatas.0.label>
+  <TM_Brightmage.degreeDatas.0.description>[PAWN_nameDef] - маг світла, здатний використовувати сили світла для очищення від зла. [PAWN_pronoun] підходить до будь-якого завдання з неперевершеним завзяттям, яке зазвичай ставить [PAWN_objective] на перший план. Бути Світлим Магом призводить до залежності від сонця і світла, через це [PAWN_nameDef] розвинув сильну ненависть до тінь і темних пародій.</TM_Brightmage.degreeDatas.0.description>
+
+  <TM_Shaman.degreeDatas.0.label>Шаман.</TM_Shaman.degreeDatas.0.label>
+  <TM_Shaman.degreeDatas.0.description>Шамани дотримуються більш гармонійного підходу до таємних сил, ніж більшість магів, вибираючи шлях, який працює з припливами і відливами магії, щоб компенсувати або посилити природний порядок. [PAWN_nameDef] споріднений царству духів і більш налаштований на природу та її елементи.</TM_Shaman.degreeDatas.0.description>
+
+  <TM_Golemancer.degreeDatas.0.label>Големант</TM_Golemancer.degreeDatas.0.label>
+  <TM_Golemancer.degreeDatas.0.description>Големанти воліють використовувати свою магію за допомогою потужних рун і символів, які здатні передавати мету в об&apos;єкт. [PAWN_nameDef] не є винятком; [PAWN_pronoun] може створювати руни, які покращують базову механіку, змінюють хімічні речовини в біологічній матерії і пожвавлюють матеріал у живих жахливих істот. Големанти найбільш ефективні, коли направляють свою магію через символи, і їм важче безпосередньо перетворювати ману в енергію, але вони також володіють більш високим магічним опором. Більшість големантів, як правило, знаходять каміння більш цікавими, ніж люди, і мало піклуються про чистоту.</TM_Golemancer.degreeDatas.0.description>
+
+  <TM_Possessed.degreeDatas.0.label>одержимий</TM_Possessed.degreeDatas.0.label>
+  <TM_Possessed.degreeDatas.0.description>У тіло [PAWN_nameDef] вселився дух іншої пішаки. Володіння в живій пішаку створює внутрішній конфлікт, оскільки функції тіла діляться між двома душами. Цей конфлікт може бути зменшений, якщо особи збігаються, але ще більше погіршиться, якщо вони протилежні. Одержимий померлою пішаком не буде відчувати психічних конфліктів, але буде повільно виснажувати енергію одержимого духу. Дух можна зарядити за допомогою медитації або поглинання.</TM_Possessed.degreeDatas.0.description>
+
+  <TM_Possessor.degreeDatas.0.label>Дух</TM_Possessor.degreeDatas.0.label>
+  <TM_Possessor.degreeDatas.0.description>У тіло [PAWN_nameDef] вселився дух іншої пішаки. Володіння в живій пішаку створює внутрішній конфлікт, оскільки функції тіла діляться між двома душами. Цей конфлікт може бути зменшений, якщо особи збігаються, але ще більше погіршиться, якщо вони протилежні. Одержимий померлою пішаком не буде відчувати психічних конфліктів, але буде повільно виснажувати енергію одержимого духу. Дух може бути заряджений через медитацію або поглинання.</TM_Possessor.degreeDatas.0.description>
+
+
+  <!-- Might Classes -->
+
+  <PhysicalProdigy.degreeDatas.0.label>фізичний адепт</PhysicalProdigy.degreeDatas.0.label>
+  <PhysicalProdigy.degreeDatas.0.description>[PAWN_nameDef] фізичний адепт і має потенціал для вивчення спеціальних бойових форм.</PhysicalProdigy.degreeDatas.0.description>
+
+  <TM_Wayfarer.degreeDatas.0.label>Путінник</TM_Wayfarer.degreeDatas.0.label>
+  <TM_Wayfarer.degreeDatas.0.description>[PAWN_nameDef] - путнік; самодисциплінований боєць, який досягає успіху в трюках і брудних боях. [PAWN_possessive] безтурботна особа втримала [PAWN_objective] від розвитку класових здібностей. Замість цього [PAWN_pronoun] навчився покращувати величезну кількість корисних здібностей, які дозволяють [PAWN_objective] адаптуватися до будь-якої ситуації.
+
+Подорожники воліють відкриту дорогу і отримають заряд бадьорості від перебування в каравані, а будь-який караван з путником пересувається на 25% швидше. Однак шляховики будуть відчувати засмучення, якщо залишаться в колонії занадто довго.</TM_Wayfarer.degreeDatas.0.description>
+
+  <TM_Apothecary.degreeDatas.0.label>Аптекар</TM_Apothecary.degreeDatas.0.label>
+  <TM_Apothecary.degreeDatas.0.description>[PAWN_nameDef] - аптекар, навчений приготуванню ліків, бальзамів, настоянок і ліків. Професія [PAWN_possessive] демонструє сувору дисципліну і самовідданість, а [PAWN_pronoun] навчився застосовувати дисципліну [PAWN_possessive] до більш загальних фізичних навичок. З навчанням [Pawn_proonoun] може стати здатним у багатьох бойових прийомах, щоб збільшити навик [PAWN_possessive] у травах.</TM_Apothecary.degreeDatas.0.description>
+
+  <Gladiator.degreeDatas.0.label>Гладіатор</Gladiator.degreeDatas.0.label>
+  <Gladiator.degreeDatas.0.description>[PAWN_nameDef] навчився тренувати бойовий стиль гладіаторів.</Gladiator.degreeDatas.0.description>
+
+  <Ranger.degreeDatas.0.label>Лісник</Ranger.degreeDatas.0.label>
+  <Ranger.degreeDatas.0.description>[PAWN_nameDef] - навчений лісник; віддаючи перевагу мовчанню і смертоносності цибулі і озброєний польовим ремеслом і хитрістю, [PAWN_pronoun] готовий захищати [PAWN_possessive] землю від загарбників.</Ranger.degreeDatas.0.description>
+  <Ranger.degreeDatas.1.label>Мисливець</Ranger.degreeDatas.1.label>
+  <Ranger.degreeDatas.1.description>[PAWN_nameDef] - мисливець; [PAWN_pronoun] використовує польове ремесло, хитрість і вміння поводження з цибулею, щоб захистити [PAWN_possessive] землю від загарбників.</Ranger.degreeDatas.1.description>
+  <Ranger.degreeDatas.2.label>Розвідник</Ranger.degreeDatas.2.label>
+  <Ranger.degreeDatas.2.description>[PAWN_nameDef] - розвідник; йому зручно в дикій місцевості, і він може бути очима і вухами колонії. [PAWN_pronoun] використовує досвід роботи в польових умовах, хитрість і цибулю, щоб захистити [PAWN_possessive] землю від загарбників.</Ranger.degreeDatas.2.description>
+  <Ranger.degreeDatas.3.label>Рейнджер</Ranger.degreeDatas.3.label>
+  <Ranger.degreeDatas.3.description>[PAWN_nameDef] - рейнджер, господар диких земель. [PAWN_pronoun] - майстер [PAWN_possessive] ремесла і захисник [PAWN_possessive] землі.</Ranger.degreeDatas.3.description>
+
+  <TM_Sniper.degreeDatas.0.label>Стрілець-снайпер</TM_Sniper.degreeDatas.0.label>
+  <TM_Sniper.degreeDatas.0.description>[PAWN_nameDef] пройшов навчання, щоб стати стрільцем, досвідченим у точності дальнього бою із застосуванням стрілецької зброї. Підготовка до того, щоб стати стрілком, змусила деяких колоністів відчувати себе некомфортно поруч з ним, але це не те, про що снайпер піклується.</TM_Sniper.degreeDatas.0.description>
+  <TM_Sniper.degreeDatas.1.label>Снайпер</TM_Sniper.degreeDatas.1.label>
+  <TM_Sniper.degreeDatas.1.description>[PAWN_nameDef] пройшов навчання, щоб стати снайпером, досвідченим в економіці і точності дальнього бою із застосуванням стрілецької зброї. Становлення снайпером призвело до того, що [PAWN_objective] став віддаленим від інших колоністів і дещо неприступним, але це не те, про що снайпер піклується.</TM_Sniper.degreeDatas.1.description>
+  <TM_Sniper.degreeDatas.2.label>Майстерний снайпер</TM_Sniper.degreeDatas.2.label>
+  <TM_Sniper.degreeDatas.2.description>[PAWN_nameDef] - це майстер-снайпер, досвідчений в економіці і точності дальнього бою зі стрілецькою зброєю. Будучи снайпером, змушує [PAWN_objective] уникати інших колоністів, але це їх не хвилює.</TM_Sniper.degreeDatas.2.description>
+  <TM_Sniper.degreeDatas.3.label>Легендарний снайпер</TM_Sniper.degreeDatas.3.label>
+  <TM_Sniper.degreeDatas.3.description>[PAWN_nameDef] - легендарний снайпер, досвідчений в економіці і точності дальнього бою із застосуванням стрілецької зброї. Інші колоністи уникають зорового контакту і шепочуться кутами, як небезпечний [PAWN_pronoun], і це цілком влаштовує [PAWN_objective].</TM_Sniper.degreeDatas.3.description>
+
+  <Bladedancer.degreeDatas.0.label>Мечник</Bladedancer.degreeDatas.0.label>
+  <Bladedancer.degreeDatas.0.description>[PAWN_nameDef] тренується, щоб стати майстром клинка і досягає успіху в боротьбі в ближньому бою.</Bladedancer.degreeDatas.0.description>
+  <Bladedancer.degreeDatas.1.label>Майстер клінку</Bladedancer.degreeDatas.1.label>
+  <Bladedancer.degreeDatas.1.description>[PAWN_nameDef] навчився, щоб стати Майстром клинка, небезпечно майстерним у ближньому бою.</Bladedancer.degreeDatas.1.description>
+  <Bladedancer.degreeDatas.2.label>Танцюючий з клинками</Bladedancer.degreeDatas.2.label>
+  <Bladedancer.degreeDatas.2.description>[PAWN_nameDef] - танцюючий з клинками, дуже досвідчений у ближньому бою. Спостереження за боєм [PAWN_objective] подібне до спостереження за танцем, кожна дія точно і бездоганно, коли вона перетікає з однієї форми в іншу.</Bladedancer.degreeDatas.2.description>
+  <Bladedancer.degreeDatas.3.label>Легендарний танцюючий з клинками</Bladedancer.degreeDatas.3.label>
+  <Bladedancer.degreeDatas.3.description>[PAWN_nameDef] став легендою, [PAWN_possessive] вміння в ближньому бою відоме в усьому світі. [PAWN_possessive] вміння в бою змушує його виглядати так, наче кожен рух, кожен удар - це просто стібок на гобелені, який зображує перемогу [PAWN_possessive].</Bladedancer.degreeDatas.3.description>
+
+  <Faceless.degreeDatas.0.label>Безликий</Faceless.degreeDatas.0.label>
+  <Faceless.degreeDatas.0.description>[PAWN_nameDef] - це майстер маскування і наслідування; здатний маніпулювати і захоплювати м&apos;язові та розумові дії іншої людини і вивільняти їх як свої власні.</Faceless.degreeDatas.0.description>
+
+  <TM_Psionic.degreeDatas.0.label>Псионик</TM_Psionic.degreeDatas.0.label>
+  <TM_Psionic.degreeDatas.0.description>[PAWN_nameDef] - це псіонік, здатний проявляти ментальну силу волі в сиру енергію без використання психічного підсилювача. [PAWN_pronoun] здатний проектувати псіонічну енергію, але вважає легшим і ефективнішим застосовувати її як розширення і збільшення тіла [PAWN_possessive]. З цієї причини [PAWN_pronoun] воліє бути вільним від обтяжливої зброї.
+
+[PAWN_nameDef] став менш соціальним відтоді, як розвинув псіонічні здібності, оскільки [PAWN_objective] може виконувати будь-яке завдання на [PAWN_possessive] самостійно і може обходитися без заздрості до інших.
+
+* Швидкість регенерації псіонічної енергії заснована на психічній чутливості - зниження чутливості до 0 буде перешкоджати регенерації псіонічної енергії.</TM_Psionic.degreeDatas.0.description>
+
+  <DeathKnight.degreeDatas.0.label>Лицар смерті</DeathKnight.degreeDatas.0.label>
+  <DeathKnight.degreeDatas.0.description>[PAWN_nameDef] - Лицар смерті, провісник року і представник неминучої неминучості смерті. [PAWN_possessive] величне ставлення робить більшість пішаків незручними і ще менше схвалює методи [PAWN_possessive].</DeathKnight.degreeDatas.0.description>
+
+  <TM_Monk.degreeDatas.0.label>Монах.</TM_Monk.degreeDatas.0.label>
+  <TM_Monk.degreeDatas.0.description>[PAWN_nameDef] - це монах, який присвятив себе оволодінню Ци-енергією, яка з&apos;єднує все живе у Всесвіті. [PAWN_pronoun] використовує Ци для створення магічних ефектів і перевершує фізичні можливості [PAWN_possessive]. [PAWN_nameDef] також здатний порушувати ці в інших, впливаючи на їхнє командування заклинаннями і здібностями.</TM_Monk.degreeDatas.0.description>
+
+  <TM_Commander.degreeDatas.0.label>Командор</TM_Commander.degreeDatas.0.label>
+  <TM_Commander.degreeDatas.0.description>Як командор, [PAWN_nameDef] виявляє харизматичну особистість і стійку присутність, яка змушує інших пішаків хотіти слідувати за [PAWN_possessive]. Командири використовують вагу своєї присутності, щоб надихнути найближчих пішаків, і коли цього недостатньо, вони можуть віддавати накази, які ведуть їх послідовників до перемоги. Оскільки [PAWN_nameDef] використовується для того, щоб усі робили [PAWN_possessive] торги, [PAWN_pronoun] вважає чорну роботу нижчою за статус [PAWN_possessive] і зазвичай є поганим працівником.</TM_Commander.degreeDatas.0.description>
+
+  <TM_SuperSoldier.degreeDatas.0.label>Супер Солдат</TM_SuperSoldier.degreeDatas.0.label>
+  <TM_SuperSoldier.degreeDatas.0.description>[PAWN_nameDef] - це добре навчений солдат, який спеціалізується на пістолетах, дробовиках або гвинтівках. [PAWN_possessive] спеціалізація зброї доповнюється стандартним набором бойової підготовки. Суперсолдати навчені бути агресивними і вважають насильство природним вирішенням будь-якої суперечки.</TM_SuperSoldier.degreeDatas.0.description>
+
+</LanguageData>

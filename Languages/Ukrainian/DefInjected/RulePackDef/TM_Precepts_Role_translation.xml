@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Base -->
+
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.0>r_roleName(p=7)-&gt;[firstPart][secondPart]</TM_NamerRoleVoidseeker.rulePack.rulesStrings.0>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.1>firstPart- &gt; порожнеча</TM_NamerRoleVoidseeker.rulePack.rulesStrings.1>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.2>firstPart- &gt; нульовий</TM_NamerRoleVoidseeker.rulePack.rulesStrings.2>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.3>firstPart- &gt; прихований</TM_NamerRoleVoidseeker.rulePack.rulesStrings.3>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.4>firstPart- &gt; зірка</TM_NamerRoleVoidseeker.rulePack.rulesStrings.4>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.5>firstPart- &gt; ланка</TM_NamerRoleVoidseeker.rulePack.rulesStrings.5>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.6>firstPart- &gt; душа</TM_NamerRoleVoidseeker.rulePack.rulesStrings.6>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.7>firstPart- &gt; дух</TM_NamerRoleVoidseeker.rulePack.rulesStrings.7>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.8>firstPart- &gt; розум</TM_NamerRoleVoidseeker.rulePack.rulesStrings.8>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.9>secondPart- &gt; майстер</TM_NamerRoleVoidseeker.rulePack.rulesStrings.9>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.10>secondPart- &gt; шукач</TM_NamerRoleVoidseeker.rulePack.rulesStrings.10>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.11>secondPart- &gt; зворушений</TM_NamerRoleVoidseeker.rulePack.rulesStrings.11>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.12>secondPart- &gt; називається</TM_NamerRoleVoidseeker.rulePack.rulesStrings.12>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.13>secondPart- &gt; шукач</TM_NamerRoleVoidseeker.rulePack.rulesStrings.13>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.14>secondPart- &gt; маніпулятор</TM_NamerRoleVoidseeker.rulePack.rulesStrings.14>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.15>secondPart- &gt; охолоджувальний</TM_NamerRoleVoidseeker.rulePack.rulesStrings.15>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.16>secondPart- &gt; стиратель</TM_NamerRoleVoidseeker.rulePack.rulesStrings.16>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.17>secondPart- &gt; розум</TM_NamerRoleVoidseeker.rulePack.rulesStrings.17>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.18>secondPart- &gt; шепочучий</TM_NamerRoleVoidseeker.rulePack.rulesStrings.18>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.19>secondPart- &gt; приносить</TM_NamerRoleVoidseeker.rulePack.rulesStrings.19>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.20>secondPart- &gt; балакучий</TM_NamerRoleVoidseeker.rulePack.rulesStrings.20>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.21>secondPart- &gt; зустрічний</TM_NamerRoleVoidseeker.rulePack.rulesStrings.21>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.22>secondPart- &gt; раб</TM_NamerRoleVoidseeker.rulePack.rulesStrings.22>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.23>secondPart- &gt; існування</TM_NamerRoleVoidseeker.rulePack.rulesStrings.23>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.24>secondPart- &gt; один</TM_NamerRoleVoidseeker.rulePack.rulesStrings.24>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.25>secondPart- &gt; підручник</TM_NamerRoleVoidseeker.rulePack.rulesStrings.25>
+
+
+</LanguageData>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,6 +50,17 @@ namespace TorannMagic.Golems
             glowerProps.glowRadius = glowRadius;
             glower.parent = this;
             glower.Initialize(glowerProps);
+        }
+
+        public void ToggleHoldFire()
+        {
+            holdFire = !holdFire;
+        }
+
+        public void ToggleGlow()
+        {
+            glowingInt = !glowingInt;
+            ToggleGlowing();
         }
 
         public void ToggleGlowing()
@@ -679,15 +690,19 @@ namespace TorannMagic.Golems
                 if(cg != null)
                 {
                     cg.dormantThing = this;
+                    // A dormant state bound to a destroyed map (gravship flight
+                    // destroys the old ship map) cannot survive the trip: re-point
+                    // the rest place to this building's position on the live map.
+                    if (cg.dormantMap == null || !Find.Maps.Contains(cg.dormantMap))
+                    {
+                        cg.dormantMap = this.Map;
+                        cg.dormantPosition = this.Position;
+                    }
                     if (cg.dormantPosition == IntVec3.Zero)
                     {
                         cg.dormantPosition = this.Position;
                     }
                     cg.dormantRotation = this.Rotation;
-                    if (cg.dormantMap == null)
-                    {
-                        cg.dormantMap = this.Map;
-                    }
                     if (!cg.GolemName.ToString().Contains("Blank"))
                     {
                         spawnedThing.Name = cg.GolemName;
@@ -862,10 +877,7 @@ namespace TorannMagic.Golems
                 command_Toggle.defaultDesc = "CommandHoldFireDesc".Translate();
                 command_Toggle.icon = ContentFinder<Texture2D>.Get("UI/Commands/HoldFire");
                 command_Toggle.hotKey = KeyBindingDefOf.Misc6;
-                command_Toggle.toggleAction = delegate
-                {
-                    holdFire = !holdFire;
-                };
+                command_Toggle.toggleAction = ToggleHoldFire;
                 command_Toggle.isActive = (() => holdFire);
                 yield return (Gizmo)command_Toggle;
 
@@ -890,11 +902,7 @@ namespace TorannMagic.Golems
                     command_Glow.defaultLabel = "TM_GolemLight".Translate();
                     command_Glow.defaultDesc = "TM_GolemLightDesc".Translate();
                     command_Glow.icon = ContentFinder<Texture2D>.Get("UI/lightbulb");
-                    command_Glow.toggleAction = delegate
-                    {
-                        glowingInt = !glowingInt;
-                        ToggleGlowing();
-                    };
+                    command_Glow.toggleAction = ToggleGlow;
                     command_Glow.isActive = (() => glowingInt);
                     yield return (Gizmo)command_Glow;
                 }

@@ -14,6 +14,38 @@ namespace TorannMagic
     internal class JobDriver_Meditate : JobDriver
     {
         private int age = -1;
+        private int focusedTicks;
+        private bool cultivationCompleted;
+        private bool activationPaid;
+        internal const string HostedJob = "TM_SpiritMeditate";
+        private bool Hosted => job.def.defName == HostedJob;
+        private Pawn SkillOwner => Hosted ? job.targetB.Pawn : pawn;
+        private bool ValidSkillOwner => !Hosted ||
+            SkillOwner != null && ClassProgression.MonkMartialPath.Owner(pawn) == SkillOwner;
+        private bool BeginHosted()
+        {
+            if (!Hosted) return true;
+            if (!ValidSkillOwner || !pawn.Spawned || pawn.DeadOrDowned) return false;
+            if (activationPaid) return true;
+            var power = ClassProgression.SpiritHostedMartial.Find(pawn, SkillOwner, HostedJob);
+            if (!ClassProgression.SpiritHostedMartial.Ready(pawn, power, HostedJob)) return false;
+            power.PostAbilityAttempt();
+            activationPaid = true;
+            return true;
+        }
+        private void CompleteCultivation()
+        {
+            if (cultivationCompleted || !ValidSkillOwner) return;
+            cultivationCompleted = ClassProgression.MonkMeditation.Finish(pawn);
+        }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref focusedTicks,"monkFocusedTicks");
+            Scribe_Values.Look(ref age,"monkMeditationAge",-1);
+            Scribe_Values.Look(ref cultivationCompleted,"monkCultivationCompleted");
+            Scribe_Values.Look(ref activationPaid,"monkHostedActivationPaid");
+        }
         public int durationTicks = 8000;
         Hediff chiHD = null;
         int effVal = 0;
@@ -21,40 +53,51 @@ namespace TorannMagic
         int pwrVal = 0;
         int chiMultiplier = 1;
 
+        private bool RefreshTraining()
+        {
+            chiHD = SkillOwner?.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD, false);
+            var comp = SkillOwner?.GetCompAbilityUserMight();
+            if (comp == null || chiHD == null) return false;
+            effVal = comp.MightData.MightPowerSkill_Meditate.FirstOrDefault(x => x.label == "TM_Meditate_eff")?.level ?? 0;
+            pwrVal = comp.MightData.MightPowerSkill_Meditate.FirstOrDefault(x => x.label == "TM_Meditate_pwr")?.level ?? 0;
+            verVal = comp.MightData.MightPowerSkill_Meditate.FirstOrDefault(x => x.label == "TM_Meditate_ver")?.level ?? 0;
+            return true;
+        }
+
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return true;
+            return ValidSkillOwner;
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
+            this.FailOn(() => !ValidSkillOwner);
             Toil gotoSpot = new Toil()
             {
                 initAction = () =>
                 {
+                    if (!BeginHosted()) { EndJobWith(JobCondition.Incompletable); return; }
                     pawn.pather.StartPath(TargetLocA, PathEndMode.OnCell);
                 },
                 defaultCompleteMode = ToilCompleteMode.PatherArrival
             };
             yield return gotoSpot;
 
+            if (ClassProgression.MonkMartialPath.Path(SkillOwner) is ClassProgression.DisciplineProgress career)
+            {
+                this.FailOn(() => pawn.Dead || pawn.Downed || !pawn.Spawned || pawn.Position != TargetLocA && pawn.jobs.curDriver == this && CurToilIndex > 0);
+                if (career.MartialAlternate)
+                {
+                    yield return Toils_General.Wait(600).WithProgressBarToilDelay(TargetIndex.A);
+                    yield return Toils_General.Do(CompleteCultivation);
+                    yield break;
+                }
+            }
             Toil doFor = new Toil()
             {
                 initAction = () =>
                 {
-                    chiHD = this.pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD, false);
-                    CompAbilityUserMight comp = this.pawn.GetCompAbilityUserMight();
-                    if(comp != null && chiHD != null)
-                    {
-                        effVal = comp.MightData.MightPowerSkill_Meditate.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Meditate_eff").level;
-                        pwrVal = comp.MightData.MightPowerSkill_Meditate.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Meditate_pwr").level;
-                        verVal = comp.MightData.MightPowerSkill_Meditate.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Meditate_ver").level;                        
-                    }
-                    else
-                    {
-                        Log.Warning("No Chi Hediff or Might Comp found.");
-                        this.EndJobWith(JobCondition.Errored);
-                    }
+                    if (!RefreshTraining()) { EndJobWith(JobCondition.Incompletable); return; }
                     if(this.age > this.durationTicks)
                     {
                         this.EndJobWith(JobCondition.InterruptForced);
@@ -62,6 +105,12 @@ namespace TorannMagic
                 },
                 tickAction = () =>
                 {
+                    if (!ValidSkillOwner || chiHD == null && !RefreshTraining()) { EndJobWith(JobCondition.Incompletable); return; }
+                    if (ClassProgression.MonkMartialPath.Path(SkillOwner)?.Stage == ClassProgression.InitiationStage.Adept && ++focusedTicks >= 600)
+                    {
+                        ClassProgression.MonkMartialPath.Cultivated(SkillOwner);
+                        focusedTicks = 0;
+                    }
                     if(Find.TickManager.TicksGame % 12 == 0)
                     {
                         Vector3 rndPos = this.pawn.DrawPos;
@@ -89,14 +138,14 @@ namespace TorannMagic
                         }
                         else
                         {
-                            chiHD = this.pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD, false);
+                            chiHD = SkillOwner?.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD, false);
                             if(chiHD == null)
                             {
                                 Log.Warning("No chi found on pawn performing meditate job");
                                 this.EndJobWith(JobCondition.InterruptForced);
                             }
                         }
-                        CompAbilityUserMight comp = this.pawn.GetCompAbilityUserMight();
+                        CompAbilityUserMight comp = SkillOwner?.GetCompAbilityUserMight();
                         if (TM_Calc.IsPawnInjured(this.pawn, 0))
                         {
                             TM_Action.DoAction_HealPawn(this.pawn, this.pawn, 1, Rand.Range(.25f, .4f) * chiMultiplier * (1+ (.1f *pwrVal)));

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_ArcaneAugmentationMR.label>Encantamiento: aumento arcano</TM_ArcaneAugmentationMR.label>
+  
+  <TM_ArcaneAugmentationMR.description>Aplica numerosas mejoras arcanas a los colonos.\nLanzadores: 3\nObjetivos máx.: 10\nManá: 40 c/u\nProbabilidad de fallo: 15 %\nRetroceso por fallo: 6</TM_ArcaneAugmentationMR.description>
+  
+  <TM_ArcaneAugmentationMR.jobString>Aplicando aumentos arcanos.</TM_ArcaneAugmentationMR.jobString>
+  
+  
+  <TM_ArcaneInspirationMR.label>Encantamiento: inspiración arcana</TM_ArcaneInspirationMR.label>
+  
+  <TM_ArcaneInspirationMR.description>Busca inspiración en las revelaciones arcanas.\nLanzadores: 1\nManá: 50 c/u\nProbabilidad de fallo: 15 %\nRetroceso por fallo: 6</TM_ArcaneInspirationMR.description>
+  
+  <TM_ArcaneInspirationMR.jobString>Adentrándose en lo arcano.</TM_ArcaneInspirationMR.jobString>
+  
+  
+  <TM_BeastialRageMR.label>Encantamiento: furia del depredador</TM_BeastialRageMR.label>
+  
+  <TM_BeastialRageMR.description>Enfurece a las bestias depredadoras del mapa y dirige su ira hacia tus enemigos.\nLanzadores: 2\nManá: 40 c/u\nProbabilidad de fallo: 35 %\nRetroceso por fallo: 10</TM_BeastialRageMR.description>
+  
+  <TM_BeastialRageMR.jobString>Enfureciendo a los depredadores.</TM_BeastialRageMR.jobString>
+
+  
+  <TM_BlightWildlifeMR.label>Encantamiento: asolar la fauna</TM_BlightWildlifeMR.label>
+  
+  <TM_BlightWildlifeMR.description>Contagia la peste a toda la fauna salvaje.\nLanzadores: 3\nManá: 40 c/u\nProbabilidad de fallo: 15 %\nRetroceso por fallo: 6</TM_BlightWildlifeMR.description>
+  
+  <TM_BlightWildlifeMR.jobString>Hechizando a la fauna salvaje.</TM_BlightWildlifeMR.jobString>
+  
+  
+  <TM_CallOfTheWildMR.label>Alteración: llamada de lo salvaje</TM_CallOfTheWildMR.label>
+  
+  <TM_CallOfTheWildMR.description>Atrae la atención de los animales salvajes.\nLanzadores: 2\nManá: 60 c/u\nProbabilidad de fallo: 20 %\nRetroceso por fallo: 12</TM_CallOfTheWildMR.description>
+  
+  <TM_CallOfTheWildMR.jobString>Alterando la probabilidad de sucesos.</TM_CallOfTheWildMR.jobString>
+  
+  
+  <TM_ColdSnapMR.label>Alteración: ola de frío</TM_ColdSnapMR.label>
+  
+  <TM_ColdSnapMR.description>Una ola de frío envuelve el mapa.\nLanzadores: 3\nManá: 50 c/u\nProbabilidad de fallo: 5 %\nRetroceso por fallo: 0</TM_ColdSnapMR.description>
+  
+  <TM_ColdSnapMR.jobString>Invocando una ola de frío.</TM_ColdSnapMR.jobString>
+  
+  
+  <TM_CreateGiantSkeletonMR.label>Conjuración: esqueleto gigante</TM_CreateGiantSkeletonMR.label>
+  
+  <TM_CreateGiantSkeletonMR.description>Crea un esqueleto gigante animado a partir de un montón de cadáveres. El esqueleto defenderá la colonia durante 5 días o hasta que sea destruido.\nLanzadores: 4\nManá: 50 c/u\nProbabilidad de fallo: 25 %\nRetroceso por fallo: 12</TM_CreateGiantSkeletonMR.description>
+  
+  <TM_CreateGiantSkeletonMR.jobString>Animando un esqueleto.</TM_CreateGiantSkeletonMR.jobString>
+  
+  
+  <TM_CreateSkeletonMR.label>Conjuración: esqueleto</TM_CreateSkeletonMR.label>
+  
+  <TM_CreateSkeletonMR.description>Crea un esqueleto animado a partir de un solo cadáver. El esqueleto defenderá la colonia durante 5 días o hasta que sea destruido.\nLanzadores: 1\nManá: 50 c/u\nProbabilidad de fallo: 10 %\nRetroceso por fallo: 8</TM_CreateSkeletonMR.description>
+  
+  <TM_CreateSkeletonMR.jobString>Animando un esqueleto.</TM_CreateSkeletonMR.jobString>
+
+  
+  
+  <TM_DivineBlessingMR.label>Encantamiento: bendición divina</TM_DivineBlessingMR.label>
+  
+  <TM_DivineBlessingMR.description>Implora a un poder superior que se apiade de los peones enfermos.\nLanzadores: 3\nManá: 60 c/u\nProbabilidad de fallo: 40 %\nRetroceso por fallo: 0</TM_DivineBlessingMR.description>
+  
+  <TM_DivineBlessingMR.jobString>Buscando la bendición divina.</TM_DivineBlessingMR.jobString>
+  
+  
+  <TM_HealingRainMR.label>Alteración: lluvia curativa</TM_HealingRainMR.label>
+  
+  <TM_HealingRainMR.description>Una lluvia curativa baña el mapa.\nLanzadores: 1\nManá: 60 c/u\nProbabilidad de fallo: 20 %\nRetroceso por fallo: 10</TM_HealingRainMR.description>
+  
+  <TM_HealingRainMR.jobString>Formando lluvia curativa.</TM_HealingRainMR.jobString>
+  
+  
+  <TM_HeatWaveMR.label>Alteración: ola de calor</TM_HeatWaveMR.label>
+  
+  <TM_HeatWaveMR.description>Una ola de calor envuelve el mapa.\nLanzadores: 3\nManá: 50 c/u\nProbabilidad de fallo: 5 %\nRetroceso por fallo: 0</TM_HeatWaveMR.description>
+  
+  <TM_HeatWaveMR.jobString>Invocando una ola de calor.</TM_HeatWaveMR.jobString>
+  
+  
+  <TM_MeteorFallMR.label>Conjuración: atraer meteoritos</TM_MeteorFallMR.label>
+  
+  <TM_MeteorFallMR.description>Hace que varios meteoritos impacten cerca.\nLanzadores: 3\nManá: 60 c/u\nProbabilidad de fallo: 15 %\nRetroceso por fallo: 0</TM_MeteorFallMR.description>
+  
+  <TM_MeteorFallMR.jobString>Invocando meteoritos.</TM_MeteorFallMR.jobString>
+  
+  
+  <TM_NameWindMR.label>Alteración: nombre del viento</TM_NameWindMR.label>
+  
+  <TM_NameWindMR.description>Provoca vientos de gran velocidad en todo el mapa durante varios días.\nLanzadores: 1\nManá: 40 c/u\nProbabilidad de fallo: 10 %\nRetroceso por fallo: 6</TM_NameWindMR.description>
+  
+  <TM_NameWindMR.jobString>Invocando el viento.</TM_NameWindMR.jobString>
+  
+  
+  <TM_NaturesGiftMR.label>Alteración: don de la naturaleza</TM_NaturesGiftMR.label>
+  
+  <TM_NaturesGiftMR.description>Provoca sucesos aleatorios.\nLanzadores: 3\nManá: 40 c/u\nProbabilidad de fallo: 25 %\nRetroceso por fallo: 12</TM_NaturesGiftMR.description>
+  
+  <TM_NaturesGiftMR.jobString>Alterando la probabilidad de sucesos.</TM_NaturesGiftMR.jobString>
+
+  
+  
+  <TM_PsychicSootheMR.label>Alteración: calma psíquica</TM_PsychicSootheMR.label>
+  
+  <TM_PsychicSootheMR.description>Crea emanaciones psíquicas relajantes.\nLanzadores: 3\nManá: 50 c/u\nProbabilidad de fallo: 25 %\nRetroceso por fallo: 10</TM_PsychicSootheMR.description>
+  
+  <TM_PsychicSootheMR.jobString>Creando calma psíquica.</TM_PsychicSootheMR.jobString>
+  
+  
+  <TM_RuunbledMR.label>Conjuración: arma mística</TM_RuunbledMR.label>
+  
+  <TM_RuunbledMR.description>Invoca un arma mística.\nLanzadores: 3\nManá: 60 c/u\nProbabilidad de fallo: 50 %\nRetroceso por fallo: 10</TM_RuunbledMR.description>
+  
+  <TM_RuunbledMR.jobString>Invocando un arma mística.</TM_RuunbledMR.jobString>
+  
+  
+  <TM_SummonDemonMR.label>Conjuración: invocar demonio *desafío*</TM_SummonDemonMR.label>
+  
+  <TM_SummonDemonMR.description>Combate contra un enemigo demoníaco.\nLanzadores: 6\nManá: 40 c/u\nProbabilidad de fallo: 20 %\nRetroceso por fallo: 20</TM_SummonDemonMR.description>
+  
+  <TM_SummonDemonMR.jobString>Invocando a un demonio.</TM_SummonDemonMR.jobString>
+  
+  
+  <TM_SummonSpiritMR.label>Conjuración: espíritu poseedor</TM_SummonSpiritMR.label>
+  
+  <TM_SummonSpiritMR.description>Invoca a un espíritu errante.\nLanzadores: 3\nManá: 40 c/u\nProbabilidad de fallo: 25 %\nRetroceso por fallo: 15</TM_SummonSpiritMR.description>
+  
+  <TM_SummonSpiritMR.jobString>Invocando a un espíritu.</TM_SummonSpiritMR.jobString>
+  
+  
+  <TM_SummonWanderingLichMR.label>Conjuración: invocar lich errante *desafío*</TM_SummonWanderingLichMR.label>
+  
+  <TM_SummonWanderingLichMR.description>Atrae la atención de un lich errante.\nLanzadores: 6\nManá: 40 c/u\nProbabilidad de fallo: 20 %\nRetroceso por fallo: 20</TM_SummonWanderingLichMR.description>
+  
+  <TM_SummonWanderingLichMR.jobString>Invocando a un lich.</TM_SummonWanderingLichMR.jobString>
+  
+  
+  <TM_TerrestrialBeaconMR.label>Alteración: baliza terrestre</TM_TerrestrialBeaconMR.label>
+  
+  <TM_TerrestrialBeaconMR.description>Altera la trayectoria de los objetos que caen para que aterricen cerca.\nLanzadores: 2\nManá: 60 c/u\nProbabilidad de fallo: 25 %\nRetroceso por fallo: 12</TM_TerrestrialBeaconMR.description>
+  
+  <TM_TerrestrialBeaconMR.jobString>Alterando la probabilidad de sucesos.</TM_TerrestrialBeaconMR.jobString>
+
+  
+</LanguageData>

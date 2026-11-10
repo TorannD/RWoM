@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Enchanting.label>Magia - Encantamiento</TM_Enchanting.label>
+  
+  <TM_Enchanting.helpText>El encantamiento ofrece a los magos la capacidad de imbuir armas y armaduras con mejoras. Hay algunas cosas que deberías saber sobre el encantamiento:\n\n1. ¡Solo los magos pueden encantar! El proceso de encantamiento requiere maná, por lo que los personajes corrientes no podrán equipar piedras de encantamiento.\n\n2. Para encantar un objeto, tu colonia debe cumplir los siguientes requisitos previos:\n a. Tu colonia debe tener una mesa de tallado de gemas; investiga Encantamiento en el menú de investigación, en la pestaña Magia.\n b. Reúne magicita sin refinar; se encuentra en cualquier piedra minable, y cada golpe de minería tiene una probabilidad de revelar magicita sin refinar.\n c. Fabrica piedras de encantamiento en la mesa de tallado de gemas.\n\n3. Una vez que hayas fabricado la gema de encantamiento que prefieras, necesitarás un mago que realice el encantamiento.\n a. Con un mago seleccionado, haz clic derecho en la gema de encantamiento y elige la opción de equipar la gema para encantar.\n b. Cuando el mago sostenga la gema, haz clic derecho en cualquier arma o prenda que esté en el suelo y elige encantar. El mago que realiza el encantamiento no puede estar reclutado.</TM_Enchanting.helpText>
+  
+  
+  <TM_EnchantingII.label>Magia - Encantamiento II</TM_EnchantingII.label>
+  
+  <TM_EnchantingII.helpText>Encantamiento: Parte II\n\n4. Los encantamientos son permanentes y cada objeto puede tener un encantamiento de cada tipo. Los nuevos encantamientos del mismo tipo reemplazarán al encantamiento existente. Encantar un objeto no aumenta su valor. Encantar un objeto consume la gema de encantamiento. Actualmente no hay forma de extraer un encantamiento de un objeto.\n\n5. La magicita sin refinar (y las gemas refinadas) también puede comprarse a ciertos vendedores. Por desgracia, el proceso de minería profunda filtra la posibilidad de obtener magicita sin refinar de esta manera. Los usuarios de la "cantera" pueden añadir magicita a los minerales extraídos; el valor recomendado es 0.4%.\n\n6. Si quieres soltar una piedra de encantamiento, selecciona al mago que sostiene la gema, haz clic derecho en cualquier casilla libre y elige la opción del menú para soltar la gema.\n\n7. Los encantamientos de un objeto pueden verse seleccionándolo en el suelo y usando la pestaña "Encantado". Los encantamientos colectivos que afectan a un solo personaje pueden verse en la pestaña de salud, y se mostrará un resumen de los encantamientos en la pestaña de equipo del personaje.</TM_EnchantingII.helpText>
+  
+  
+  <TM_Portals.label>Magia - Portales</TM_Portals.label>
+  
+  <TM_Portals.helpText>1. Solo un mago arcano entrenado en magia de portales puede activar un portal.\n a. La opción de activar un portal solo aparece cuando el mago arcano tiene suficiente maná (70%) para la activación.\n b. Solo se puede seleccionar un mapa ocupado activamente por colonos.\n\n2. Una vez activado, cualquier mago puede cargar el portal; un portal debe estar cargado para usarse, pero cualquier personaje puede usarlo.\n a. Solo un personaje a la vez puede usar el portal; cada personaje drena el 5% de la energía máxima del portal.\n b. Todos los objetos se transmiten simultáneamente; el coste de transferir objetos a través de un portal es el 10% de su energía máxima.\n\n3. Solo los magos pueden transferir objetos o desactivar un portal. Un portal debe desactivarse antes de poder reactivarlo con un nuevo destino.</TM_Portals.helpText>
+  
+</LanguageData>

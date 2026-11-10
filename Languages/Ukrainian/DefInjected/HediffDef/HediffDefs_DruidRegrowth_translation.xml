@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_StandardRegrowth.label>Відросла Частина</TM_StandardRegrowth.label>
+  <TM_StandardRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_StandardRegrowth.description>
+  <TM_StandardRegrowth.stages.0.label>відрослі</TM_StandardRegrowth.stages.0.label>
+  <TM_StandardRegrowth.stages.1.label>формування</TM_StandardRegrowth.stages.1.label>
+  <TM_StandardRegrowth.stages.2.label>обрубок</TM_StandardRegrowth.stages.2.label>
+
+
+  <!-- arms -->
+
+  <TM_ArmRegrowth.label>Рука, яка відросла</TM_ArmRegrowth.label>
+  <TM_ArmRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_ArmRegrowth.description>
+  <TM_ArmRegrowth.comps.1.tools.0.label>відросла рука</TM_ArmRegrowth.comps.1.tools.0.label>
+  <TM_ArmRegrowth.stages.0.label>обрубок</TM_ArmRegrowth.stages.0.label>
+  <TM_ArmRegrowth.stages.1.label>молодий</TM_ArmRegrowth.stages.1.label>
+  <TM_ArmRegrowth.stages.2.label>відрослі</TM_ArmRegrowth.stages.2.label>
+  <TM_ArmRegrowth.stages.3.label>дикий</TM_ArmRegrowth.stages.3.label>
+
+  <TM_HandRegrowth.label>Рука, яка відросла</TM_HandRegrowth.label>
+  <TM_HandRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_HandRegrowth.description>
+  <TM_HandRegrowth.comps.1.tools.0.label>відросла рука</TM_HandRegrowth.comps.1.tools.0.label>
+  <TM_HandRegrowth.stages.0.label>обрубок</TM_HandRegrowth.stages.0.label>
+  <TM_HandRegrowth.stages.1.label>молодий</TM_HandRegrowth.stages.1.label>
+  <TM_HandRegrowth.stages.2.label>відрослі</TM_HandRegrowth.stages.2.label>
+  <TM_HandRegrowth.stages.3.label>дикий</TM_HandRegrowth.stages.3.label>
+
+  <TM_FingerRegrowth.label>Відрослий Палець</TM_FingerRegrowth.label>
+  <TM_FingerRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_FingerRegrowth.description>
+  <TM_FingerRegrowth.stages.0.label>огризок пальця</TM_FingerRegrowth.stages.0.label>
+  <TM_FingerRegrowth.stages.1.label>відрослі</TM_FingerRegrowth.stages.1.label>
+
+  <TM_ToeRegrowth.label>Відрослий Палець Ноги</TM_ToeRegrowth.label>
+  <TM_ToeRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_ToeRegrowth.description>
+  <TM_ToeRegrowth.stages.0.label>огризок пальця ноги</TM_ToeRegrowth.stages.0.label>
+  <TM_ToeRegrowth.stages.1.label>відрослі</TM_ToeRegrowth.stages.1.label>
+
+  <TM_EyeRegrowth.label>Око, що відросли</TM_EyeRegrowth.label>
+  <TM_EyeRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_EyeRegrowth.description>
+  <TM_EyeRegrowth.stages.0.label>молочний</TM_EyeRegrowth.stages.0.label>
+  <TM_EyeRegrowth.stages.1.label>смутний</TM_EyeRegrowth.stages.1.label>
+  <TM_EyeRegrowth.stages.2.label>перерослий</TM_EyeRegrowth.stages.2.label>
+  <TM_EyeRegrowth.stages.3.label>покращений</TM_EyeRegrowth.stages.3.label>
+
+  <TM_EarRegrowth.label>Відросле Вухо</TM_EarRegrowth.label>
+  <TM_EarRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_EarRegrowth.description>
+  <TM_EarRegrowth.stages.0.label>формальний</TM_EarRegrowth.stages.0.label>
+  <TM_EarRegrowth.stages.1.label>розвивається</TM_EarRegrowth.stages.1.label>
+  <TM_EarRegrowth.stages.2.label>перерослий</TM_EarRegrowth.stages.2.label>
+  <TM_EarRegrowth.stages.3.label>покращений</TM_EarRegrowth.stages.3.label>
+
+  <TM_LegRegrowth.label>Відрослі Ноги</TM_LegRegrowth.label>
+  <TM_LegRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_LegRegrowth.description>
+  <TM_LegRegrowth.stages.0.label>обрубок</TM_LegRegrowth.stages.0.label>
+  <TM_LegRegrowth.stages.1.label>молодий</TM_LegRegrowth.stages.1.label>
+  <TM_LegRegrowth.stages.2.label>відрослі</TM_LegRegrowth.stages.2.label>
+  <TM_LegRegrowth.stages.3.label>дикий</TM_LegRegrowth.stages.3.label>
+
+  <TM_FootRegrowth.label>Відрослі Ступні</TM_FootRegrowth.label>
+  <TM_FootRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_FootRegrowth.description>
+  <TM_FootRegrowth.stages.0.label>обрубок</TM_FootRegrowth.stages.0.label>
+  <TM_FootRegrowth.stages.1.label>молодий</TM_FootRegrowth.stages.1.label>
+  <TM_FootRegrowth.stages.2.label>відрослі</TM_FootRegrowth.stages.2.label>
+  <TM_FootRegrowth.stages.3.label>дикий</TM_FootRegrowth.stages.3.label>
+
+  <TM_JawRegrowth.label>Відросла Щелепа</TM_JawRegrowth.label>
+  <TM_JawRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_JawRegrowth.description>
+  <TM_JawRegrowth.stages.0.label>формування</TM_JawRegrowth.stages.0.label>
+  <TM_JawRegrowth.stages.1.label>розробка</TM_JawRegrowth.stages.1.label>
+  <TM_JawRegrowth.stages.2.label>відрослі</TM_JawRegrowth.stages.2.label>
+  <TM_JawRegrowth.stages.3.label>посилюється</TM_JawRegrowth.stages.3.label>
+
+  <TM_HeartRegrowth.label>Серце дикої природи</TM_HeartRegrowth.label>
+  <TM_HeartRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_HeartRegrowth.description>
+  <TM_HeartRegrowth.stages.0.label>повторне формування</TM_HeartRegrowth.stages.0.label>
+  <TM_HeartRegrowth.stages.1.label>нова розробка</TM_HeartRegrowth.stages.1.label>
+  <TM_HeartRegrowth.stages.2.label>об&apos;єднання</TM_HeartRegrowth.stages.2.label>
+  <TM_HeartRegrowth.stages.3.label>вплетений</TM_HeartRegrowth.stages.3.label>
+  <TM_HeartRegrowth.stages.4.label>серце дикої природи</TM_HeartRegrowth.stages.4.label>
+
+  <TM_LungRegrowth.label>Легких, які відросли</TM_LungRegrowth.label>
+  <TM_LungRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_LungRegrowth.description>
+  <TM_LungRegrowth.stages.0.label>формування</TM_LungRegrowth.stages.0.label>
+  <TM_LungRegrowth.stages.1.label>розробка</TM_LungRegrowth.stages.1.label>
+  <TM_LungRegrowth.stages.2.label>відрослі</TM_LungRegrowth.stages.2.label>
+  <TM_LungRegrowth.stages.3.label>посилюється</TM_LungRegrowth.stages.3.label>
+
+  <TM_KidneyRegrowth.label>Відрослі Нирки</TM_KidneyRegrowth.label>
+  <TM_KidneyRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_KidneyRegrowth.description>
+  <TM_KidneyRegrowth.stages.0.label>формування</TM_KidneyRegrowth.stages.0.label>
+  <TM_KidneyRegrowth.stages.1.label>розробка</TM_KidneyRegrowth.stages.1.label>
+  <TM_KidneyRegrowth.stages.2.label>відрослі</TM_KidneyRegrowth.stages.2.label>
+  <TM_KidneyRegrowth.stages.3.label>посилюється</TM_KidneyRegrowth.stages.3.label>
+
+  <TM_LiverRegrowth.label>Відрослі Печінка</TM_LiverRegrowth.label>
+  <TM_LiverRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_LiverRegrowth.description>
+  <TM_LiverRegrowth.stages.0.label>формування</TM_LiverRegrowth.stages.0.label>
+  <TM_LiverRegrowth.stages.1.label>розробка</TM_LiverRegrowth.stages.1.label>
+  <TM_LiverRegrowth.stages.2.label>відрослі</TM_LiverRegrowth.stages.2.label>
+  <TM_LiverRegrowth.stages.3.label>посилюється</TM_LiverRegrowth.stages.3.label>
+
+  <TM_StomachRegrowth.label>Зрослий Шлунок</TM_StomachRegrowth.label>
+  <TM_StomachRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_StomachRegrowth.description>
+  <TM_StomachRegrowth.stages.0.label>формування</TM_StomachRegrowth.stages.0.label>
+  <TM_StomachRegrowth.stages.1.label>розробка</TM_StomachRegrowth.stages.1.label>
+  <TM_StomachRegrowth.stages.2.label>відрослі</TM_StomachRegrowth.stages.2.label>
+
+  <TM_SpineRegrowth.label>З&apos;єднання Хребта</TM_SpineRegrowth.label>
+  <TM_SpineRegrowth.description>Магічне переплетення природи і плоті вплете цю частину тіла протягом декількох днів.</TM_SpineRegrowth.description>
+  <TM_SpineRegrowth.stages.0.label>формування</TM_SpineRegrowth.stages.0.label>
+  <TM_SpineRegrowth.stages.1.label>нове зростання</TM_SpineRegrowth.stages.1.label>
+  <TM_SpineRegrowth.stages.2.label>злиття</TM_SpineRegrowth.stages.2.label>
+  <TM_SpineRegrowth.stages.3.label>вплетений</TM_SpineRegrowth.stages.3.label>
+
+
+  <TM_ArmRegrowth.comps.HediffComp_VerbGiver.tools.0.label>відросла рука</TM_ArmRegrowth.comps.HediffComp_VerbGiver.tools.0.label>
+  <TM_HandRegrowth.comps.HediffComp_VerbGiver.tools.0.label>відросла рука</TM_HandRegrowth.comps.HediffComp_VerbGiver.tools.0.label>
+
+</LanguageData>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.0>questName-&gt;[asker_nameDef] Bandidos místicos</TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.0>
+  <TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.1>questionNama- &gt; Acampamento místico de gangues [enemyFaction_pawnsPlural]</TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.1>
+  <TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.2>questionNama- &gt; Acampamento místico de gangues</TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.2>
+  <TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.3>questionNama- &gt; Acampamento místico de gangues</TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.3>
+  <TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.4>questionName- &gt; Destrua bandidos místicos</TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.4>
+  <TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.5>questionNama- &gt; Ajuda [asker_nameDef] na proteção de artefatos mágicos</TM_OpportunitySite_ArcaneBandits.questNameRules.rulesStrings.5>
+  <TM_OpportunitySite_ArcaneBandits.questDescriptionRules.rulesStrings.0>questDescription-&gt;[asker_nameFull], [asker_faction_leaderTitle] de [asker _ fation _ name], enviou-lhe uma mensagem. Aparentemente, [site Faction_pawnsPlural] criaram um posto próximo e ameaçam atacar a aldeia se a aldeia [asker _ fation _ name] não entregar seus artefatos. O acampamento está controlado [site Facção _ name].
+O que significa destruí-los ou expulsá-los do seu avental. [[[asker _ label] diz que [site Parte 0 _ descrição].
+\ nSe tivermos sucesso, [asker _ label] nos enviará alguns artefatos; [allRewardsDescriptions]</TM_OpportunitySite_ArcaneBandits.questDescriptionRules.rulesStrings.0>
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.11.node.nodes.0.label>O certame expira [resolved QuestName]</TM_OpportunitySite_ArcaneBandits.root.nodes.11.node.nodes.0.label>
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.11.node.nodes.0.text>Os bandidos roubaram com sucesso artefatos secretos de [asker _ facition _ name]. [asker _ label] não está satisfeito com você.</TM_OpportunitySite_ArcaneBandits.root.nodes.11.node.nodes.0.text>
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.12.node.nodes.0.label>A busca falhou [resolvedQuestName]</TM_OpportunitySite_ArcaneBandits.root.nodes.12.node.nodes.0.label>
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.12.node.nodes.0.text>Depois do seu ataque falhado, os bandidos atacaram e roubaram vários artefactos imediatamente. [asker _ label] está desapontado com você.</TM_OpportunitySite_ArcaneBandits.root.nodes.12.node.nodes.0.text>
+
+
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.13.node.customLetterLabel>Pagamento chegou</TM_OpportunitySite_ArcaneBandits.root.nodes.13.node.customLetterLabel>
+  <TM_OpportunitySite_ArcaneBandits.root.nodes.13.node.customLetterText>Você derrotou bandidos secretos !\n\nUm pagamento de [asker _ fation _ name] chegou.</TM_OpportunitySite_ArcaneBandits.root.nodes.13.node.customLetterText>
+
+</LanguageData>

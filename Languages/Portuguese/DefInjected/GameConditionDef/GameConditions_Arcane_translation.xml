@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManaDrain.label>fuga de maná</ManaDrain.label>
+  <ManaDrain.description>O alinhamento celestial do planeta provoca a fuga do maná. Todos os seres configurados para a força mágica vão perdê-la lentamente.</ManaDrain.description>
+  <ManaDrain.endMessage>A magia está a voltar ao normal.</ManaDrain.endMessage>
+  <ManaDrain.letterText>O alinhamento celeste do planeta desloca-se, provocando a fuga do maná. Todas as criaturas com forças mágicas perderão Manu lentamente e ficarão fisicamente doentes se não tiverem maná.</ManaDrain.letterText>
+
+  <ManaSurge.label>saliência de maná</ManaSurge.label>
+  <ManaSurge.description>O alinhamento celestial do planeta provoca uma subida de maná. Todos os seres configurados para a força mágica receberão Manu a uma velocidade maior.</ManaSurge.description>
+  <ManaSurge.endMessage>A magia está a voltar ao normal.</ManaSurge.endMessage>
+  <ManaSurge.letterText>A orientação celestial do planeta mudou-se, provocando uma subida de maná. Todos os seres configurados para a força mágica receberão Manu a uma velocidade maior.</ManaSurge.letterText>
+
+  <ElementalAssault.label>Ataque natural</ElementalAssault.label>
+  <ElementalAssault.description>Os primórdios hostis criaram uma brecha no seu mundo e preparam-se para enviar comandos de assalto através de uma rutura !\n\n As fraturas causam o caos na atmosfera, porque a energia é derramada através da rutura para o seu mundo. Cada elemento do rift apresenta os seguintes efeitos :\n\n Rutura de fogo: chuvas de meteoros e ondas de calor .\n Fenda de terra: vapores venenosos e faz os animais enlouquecerem\n</ElementalAssault.description>
+  <ElementalAssault.endMessage>A fenda foi fechada.</ElementalAssault.endMessage>
+  <ElementalAssault.letterText>Os primórdios hostis criaram uma brecha no seu mundo e preparam-se para enviar comandos de assalto através de uma rutura !\n\n As fraturas causam o caos na atmosfera, porque a energia é derramada através da rutura para o seu mundo. Cada elemento do rift apresenta os seguintes efeitos :\n\n Rutura de fogo: chuvas de meteoros e ondas de calor .\n Fenda de terra: vapores venenosos e faz os animais enlouquecerem\n Destruam a rutura para acabar com este pesadelo!</ElementalAssault.letterText>
+
+  <WanderingLich.label>Lente itinerante</WanderingLich.label>
+  <WanderingLich.description>Um velho leque entrou nesta área e está a preparar-se para atacar a sua colónia .\n\n Leach é uma criatura poderosa por si só, mas a sua verdadeira força é a sua capacidade de criar uma vida viva a partir dos cadáveres dos mortos. Este leque é um ser antigo que despreza tudo o que é vivo, e a vossa companhia divertida de seres vivos ainda resistiu a ser destruída. Ele se esforçará para terminar a sua história de sobrevivência, criando uma horda de não vida para esmagar a vossa defesa. Leek irá criar novos esqueletos guerreiros periodicamente para atacar a colônia; Ao permitir que a larva complete o ritual ao lado de um cadáver nu, aumentará a possibilidade de um esqueleto gigante. Em última análise, o leque atacará a própria colônia se as ondas de não vida não conseguirem realizar esta tarefa primeiro.</WanderingLich.description>
+  <WanderingLich.endMessage>O ataque à larva acabou.</WanderingLich.endMessage>
+  <WanderingLich.letterText>Um velho leque entrou nesta área e está a preparar-se para atacar a sua colónia .\n\n Leach é uma criatura poderosa por si só, mas a sua verdadeira força é a sua capacidade de criar uma vida viva a partir dos cadáveres dos mortos. Este leque é um ser antigo que despreza tudo o que é vivo, e a vossa companhia divertida de seres vivos ainda resistiu a ser destruída. Ele se esforçará para terminar a sua história de sobrevivência, criando uma horda de não vida para esmagar a vossa defesa. Leek irá criar novos esqueletos guerreiros periodicamente para atacar a colônia; Ao permitir que a larva complete o ritual ao lado de um cadáver nu, aumentará a possibilidade de um esqueleto gigante. Em última análise, o leque atacará a própria colônia se as ondas de não vida não conseguirem realizar esta tarefa primeiro.</WanderingLich.letterText>
+
+  <DarkClouds.label>nuvens escuras</DarkClouds.label>
+  <DarkClouds.description>A sombra maligna deitou-se sobre a terra; na sombra escura destas nuvens há uma presença maligna que amaldiçoa os vivos.</DarkClouds.description>
+  <DarkClouds.endMessage>As nuvens escuras estão a dissipar-se.</DarkClouds.endMessage>
+  <DarkClouds.letterText>A sombra maligna deitou-se sobre a terra; na sombra escura destas nuvens há uma presença maligna que amaldiçoa os vivos.</DarkClouds.letterText>
+
+  <DarkThunderstorm.label>Tempestade Forte</DarkThunderstorm.label>
+  <DarkThunderstorm.description>Há uma energia maligna escondida nestas nuvens escuras.</DarkThunderstorm.description>
+  <DarkThunderstorm.endMessage>A tempestade furiosa está a recuar.</DarkThunderstorm.endMessage>
+
+  <TargetedPredatorInsanity.label>loucura de predador</TargetedPredatorInsanity.label>
+  <TargetedPredatorInsanity.description>O impulso mental está a irritar os predadores mais próximos... e empurra-os para pessoas agressivas.</TargetedPredatorInsanity.description>
+  <TargetedPredatorInsanity.endMessage>A loucura do predador acabou.</TargetedPredatorInsanity.endMessage>
+  <TargetedPredatorInsanity.letterText>Você enfureceu todos os predadores que estavam por perto e focou-os nos seus inimigos. Cuidado, os animais furiosos continuarão a caçar mesmo depois que os seus inimigos saírem.</TargetedPredatorInsanity.letterText>
+
+  <DivineBlessing.label>bênção divina</DivineBlessing.label>
+  <DivineBlessing.description>O poder superior responde à tua mola de misericórdia.</DivineBlessing.description>
+  <DivineBlessing.endMessage>A presença benigna desaparece.</DivineBlessing.endMessage>
+  <DivineBlessing.letterText>A tua mola de misericórdia foi respondida por uma força superior. Várias bênçãos foram concedidas para combater os males existentes.</DivineBlessing.letterText>
+
+  <DemonAssault.label>ataques de demónio</DemonAssault.label>
+  <DemonAssault.description>O fim está perto. Um demónio louco está a atacar a sua colónia! Esta besta tem uma série de ataques e táticas complexas. Fogo e cinzas cairão do céu. Temos muito pouco tempo para nos preparar.</DemonAssault.description>
+  <DemonAssault.endMessage>O demónio vai para outro lugar.</DemonAssault.endMessage>
+  <DemonAssault.letterText>O fim está perto. Um demónio louco está a atacar a sua colónia! Esta besta tem uma série de ataques e táticas complexas. Fogo e cinzas cairão do céu. Temos muito pouco tempo para nos preparar.</DemonAssault.letterText>
+
+  <TM_ManaStorm.label>tempestade de maná</TM_ManaStorm.label>
+  <TM_ManaStorm.description>As forças caóticas provocam uma tempestade perigosa. Durante a tempestade, a maná tentar usar manu para realizar uma intenção mágica externa ao feitiço, prejudicará o feitiço proporcionalmente ao custo do feitiço. Este estrago é feito antes do feitiço começar. O uso não moldado do maná e o uso interno da magia, como a transmissão de maná ou a dispersão de encantos, permanecem intactos. Círculos mágicos ou truques não podem ser usados durante este evento. Enquanto a tempestade maná está ativa, os custos de energia são reduzidos pela metade e a limitação da redução do maná é removida.</TM_ManaStorm.description>
+  <TM_ManaStorm.letterText>Durante a tempestade, as manas de tentar usar manu para realizar a intenção mágica externa em relação ao feitiço, prejudicarão o feitiço proporcionalmente aos custos de feitiço do maná. Este estrago é feito antes do feitiço começar. O uso não moldado do maná e o uso interno da magia, como a transmissão de maná ou a dispersão de encantos, permanecem intactos. Círculos mágicos ou truques não podem ser usados durante este evento. Enquanto a tempestade maná está ativa, os custos de energia são reduzidos pela metade e a limitação da redução do maná é removida.</TM_ManaStorm.letterText>
+  <TM_ManaStorm.endMessage>A magia está a voltar ao normal.</TM_ManaStorm.endMessage>
+
+
+</LanguageData>

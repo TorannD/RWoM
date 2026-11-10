@@ -1,181 +1,170 @@
-﻿using RimWorld.Planet;
-using RimWorld;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
+using RimWorld;
+using RimWorld.Planet;
+using TorannMagic.ClassProgression;
+using TorannMagic.Odyssey;
 using UnityEngine;
 using Verse;
-using AbilityUser;
 
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class Verb_FoldReality : Verb_UseAbility
+    public class Verb_FoldReality : Verb_SpiritTargetable
     {
         private static readonly Texture2D TargeterMouseAttachment = ContentFinder<Texture2D>.Get("Other/gatewayring", true);
+        private const int MaxLaunchDistance = 999;
+        private Map origin;
+        private bool selecting;
+        private int generation;
 
-        int MaxLaunchDistance = 999;
-        CompAbilityUserMagic comp;
+        protected override bool TryCastShot() => ApplyHostedEffect();
 
-        protected override bool TryCastShot()
+        protected override bool ApplyHostedEffect()
         {
-            Map map = base.CasterPawn.Map;
-            comp = this.CasterPawn.GetCompAbilityUserMagic();
+            generation++;
+            origin = CasterPawn?.Map;
+            selecting = true;
+            if (!Ready()) { selecting = false; return false; }
+            ManualTravelSafety.BeginAttempt(Ability);
             StartChoosingDestination();
-            return false;
+            return true;
+        }
+
+        private bool Ready()
+        {
+            if (!selecting || CasterPawn?.Spawned != true || CasterPawn.Map != origin || CasterPawn.Downed ||
+                CasterPawn.InMentalState || !Find.Maps.Contains(origin) || !(Ability is MagicAbility power)) return false;
+            if (power.Pawn != CasterPawn)
+                return ReferenceEquals(SpiritHostedBolt.Find(CasterPawn, power.Pawn, power.magicDef), power) && SpiritHostedBolt.Ready(CasterPawn, power);
+            return !CasterPawn.Dead && power.CooldownTicksLeft <= 0 &&
+                power.MagicUser.AbilityData.AllPowers.Contains(power) && power.MagicUser.Mana != null &&
+                power.MagicUser.Mana.CurLevel >= power.MagicUser.ActualManaCost(power.magicDef);
         }
 
         private void StartChoosingDestination()
         {
-            CameraJumper.TryJump(CameraJumper.GetWorldTarget(base.CasterPawn.Map.info.parent));
+            CameraJumper.TryJump(CameraJumper.GetWorldTarget(origin.info.parent));
             Find.WorldSelector.ClearSelection();
-            int tile = base.CasterPawn.Map.Tile;
-            Find.WorldTargeter.BeginTargeting(new Func<GlobalTargetInfo, bool>(this.ChoseWorldTarget), true, Verb_FoldReality.TargeterMouseAttachment, true, delegate
-            {
-                GenDraw.DrawWorldRadiusRing(tile, this.MaxLaunchDistance);  //center, max launch distance
-            }, delegate (GlobalTargetInfo target)
-            {
-                if (!target.IsValid)
-                {
-                    return null;
-                }
-                int num = Find.WorldGrid.TraversalDistanceBetween(tile, target.Tile);
-                if (num <= this.MaxLaunchDistance) // <= max launch distance
-                {
-                    return null;
-                }
-                if (num > this.MaxLaunchDistance) //this.MaxLaunchDistanceEverPossible
-                {
-                    return "TM_GatewayBeyondMaximumRange".Translate();
-                }
-                return "TM_InvalidGatewaySelection".Translate();
-            });
+            var tile = origin.Tile;
+            int request = generation;
+            Find.WorldTargeter.BeginTargeting(target => request == generation && Find.WorldTargeter.IsTargeting && ChoseWorldTarget(target), true, TargeterMouseAttachment, true,
+                () => GenDraw.DrawWorldRadiusRing(tile, MaxLaunchDistance),
+                target => target.IsValid && !InRange(target) ? "TM_GatewayBeyondMaximumRange".Translate().ToString() : null);
+        }
+
+        private bool InRange(GlobalTargetInfo target)
+        {
+            if (!target.IsValid || target.Tile.Layer != origin.Tile.Layer) return false;
+            int distance = Find.WorldGrid.TraversalDistanceBetween(origin.Tile, target.Tile);
+            return distance >= 0 && distance <= MaxLaunchDistance;
         }
 
         private bool ChoseWorldTarget(GlobalTargetInfo target)
         {
-            if (!target.IsValid)
-            {
-                Messages.Message("TM_InvalidGatewaySelection".Translate(), MessageTypeDefOf.RejectInput);
-                return false;
-            }
-            int num = Find.WorldGrid.TraversalDistanceBetween(base.CasterPawn.Map.Tile, target.Tile);
-            if (num > this.MaxLaunchDistance)
+            if (!Ready()) return false;
+            if (!InRange(target))
             {
                 Messages.Message("TM_GatewayBeyondMaximumRange".Translate(), MessageTypeDefOf.RejectInput);
                 return false;
             }
-            MapParent mapParent = target.WorldObject as MapParent;
-            if (mapParent != null && mapParent.HasMap)
+            if (!(target.WorldObject is MapParent parent) || !parent.HasMap)
             {
-                Map myMap = base.CasterPawn.Map;
-                Map map = mapParent.Map;
-                Current.Game.CurrentMap = map;
-                TargetingParameters portalTarget = new TargetingParameters();
-                portalTarget.canTargetLocations = true;
-                portalTarget.canTargetSelf = false;
-                portalTarget.canTargetPawns = false;
-                portalTarget.canTargetFires = false;
-                portalTarget.canTargetBuildings = false;
-                portalTarget.canTargetItems = false;
-                portalTarget.validator = ((TargetInfo x) => x.IsValid && !x.Cell.Fogged(map) && x.Cell.InBoundsWithNullCheck(map) && x.Cell.Walkable(map));
-                Find.Targeter.BeginTargeting(portalTarget, delegate (LocalTargetInfo x)
-                {
-
-                    InitiateMassSummon(map, x);
-                }, null, delegate
-                {
-                    if (Find.Maps.Contains(myMap))
-                    {
-                        Current.Game.CurrentMap = myMap;
-                    }
-                }, Verb_FoldReality.TargeterMouseAttachment);
-                return true;
-            }
-            bool flag;
-            if (mapParent != null)
-            {
-                Settlement settlement = mapParent as Settlement;
-                List<FloatMenuOption> list = new List<FloatMenuOption>();
-                if (settlement != null && settlement.Visitable)
-                {
-                    Messages.Message("TM_InvalidGatewayNotOccupied".Translate(), MessageTypeDefOf.RejectInput);
-                    return false;
-                }
-                //if (mapParent.TransportPodsCanLandAndGenerateMap)
-                //{
-                //    Messages.Message("TM_InvalidGatewayNotOccupied".Translate(), MessageTypeDefOf.RejectInput);
-                //    return false;
-                //}
-                if (list.Any<FloatMenuOption>())
-                {
-                    Find.WorldTargeter.closeWorldTabWhenFinished = false;
-                    Find.WindowStack.Add(new FloatMenu(list));
-                    return true;
-                }
-                flag = true;
-            }
-            else
-            {
-                flag = true;
-            }
-            if (!flag)
-            {
+                Messages.Message("TM_InvalidGatewayNotOccupied".Translate(), MessageTypeDefOf.RejectInput);
                 return false;
             }
-            if (Find.World.Impassable(target.Tile))
-            {
-                Messages.Message("TM_InvalidGatewaySelection".Translate(), MessageTypeDefOf.RejectInput);
-                return false;
-            }
-            comp.Mana.CurLevel += comp.ActualManaCost(TorannMagicDefOf.TM_FoldReality);
-            Messages.Message("TM_InvalidGatewayNotOccupied".Translate(), MessageTypeDefOf.RejectInput);
-            return false;
+            var map = parent.Map;
+            Current.Game.CurrentMap = map;
+            var portal = new TargetingParameters {
+                canTargetLocations = true, canTargetSelf = false, canTargetPawns = false,
+                canTargetBuildings = false, canTargetItems = false,
+                validator = info => Ready() && ValidCell(map, info.Cell)
+            };
+            int request = generation;
+            bool picked = false;
+            Find.Targeter.BeginTargeting(portal, cell => {
+                if (picked || request != generation) return;
+                picked = true;
+                InitiateMassSummon(map, cell);
+            }, null, () => {
+                if (request != generation) return;
+                if (!picked) selecting = false;
+                if (Find.Maps.Contains(origin)) Current.Game.CurrentMap = origin;
+            }, TargeterMouseAttachment);
+            return true;
         }
+
+        private static bool ValidCell(Map map, IntVec3 cell) => map != null && Find.Maps.Contains(map) &&
+            cell.InBounds(map) && !cell.Fogged(map) && cell.Walkable(map);
 
         public void InitiateMassSummon(Map map, LocalTargetInfo target)
         {
-            IntVec3 curCell;
-            IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(target.Cell, Mathf.RoundToInt(7*comp.arcaneDmg), true);
-            int transportedItemCount = 0;
-            for (int i = 0; i < targets.Count(); i++)
+            if (!Ready() || !target.IsValid || !ValidCell(map, target.Cell)) return;
+            var body = CasterPawn;
+            var destination = body.Position;
+            var power = (MagicAbility)Ability;
+            int radius = Mathf.RoundToInt(7 * power.MagicUser.arcaneDmg);
+            // Materialize before moving: nearby placement may put an item back inside the source area.
+            var cells = GenRadial.RadialCellsAround(target.Cell, radius, true).Where(c => c.InBounds(map)).ToArray();
+            var things = cells.SelectMany(c => c.GetThingList(map)).Where(t => t != body && t.def.mote == null &&
+                (t is Pawn || t.def.EverHaulable) && (map != origin || t.Position != destination)).Distinct().ToList();
+            if (things.Count == 0) return;
+            var warnings = new List<string>();
+            var acceptedHazards = new Dictionary<Pawn,TravelEnvironmentResult>();
+            foreach (var pawn in things.OfType<Pawn>())
             {
-                curCell = targets.ToArray<IntVec3>()[i];                
-                if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
+                var result = TravelEnvironmentSafety.Evaluate(pawn, origin, destination);
+                if ((result.Hazards & TravelEnvironmentHazard.InvalidDestination) != 0) return;
+                if (!result.IsSafe) warnings.Add(ManualTravelSafety.Warning(pawn, result));
+                acceptedHazards[pawn] = result;
+            }
+            int request = generation;
+            void Commit()
+            {
+                if (request != generation || !Ready() || body.Position != destination || !ValidCell(map,target.Cell)) return;
+                selecting = false;
+                bool moved = false;
+                try
                 {
-                    List<Thing> thingList = curCell.GetThingList(map);
-                    for(int j = 0; j < thingList.Count(); j++)
+                    foreach (var thing in things)
                     {
-                        if(thingList[j] != null && thingList[j].def.mote == null)
+                        if (!thing.Spawned || thing.Map != map || !thing.Position.InHorDistOf(target.Cell,radius)) continue;
+                        var from = thing.Position;
+                        if (thing is Pawn pawn)
                         {
-                            Thing targetThing = thingList[j];
-                            if (targetThing != this.CasterPawn)
+                            var risk = TravelEnvironmentSafety.Evaluate(pawn, origin, destination);
+                            var accepted = acceptedHazards[pawn];
+                            if ((risk.Hazards & ~accepted.Hazards) != 0 || (risk.ShellExpiring && !accepted.ShellExpiring)) continue;
+                            if (origin == map)
                             {
-                                if (targetThing is Pawn)
-                                {
-                                    FleckMaker.ThrowLightningGlow(targetThing.DrawPos, targetThing.Map, 1f);
-                                    FleckMaker.ThrowHeatGlow(targetThing.Position, targetThing.Map, 1f);
-                                    targetThing.DeSpawn();
-                                    GenSpawn.Spawn(targetThing, this.CasterPawn.Position, this.CasterPawn.Map);
-                                    transportedItemCount++;
-                                    j--;
-                                }
-                                else if (targetThing != null && targetThing.def.EverHaulable)
-                                {
-                                    FleckMaker.ThrowLightningGlow(targetThing.DrawPos, targetThing.Map, .6f);
-                                    FleckMaker.ThrowHeatGlow(targetThing.Position, targetThing.Map, 1f);
-                                    targetThing.DeSpawn();
-                                    GenPlace.TryPlaceThing(targetThing, this.CasterPawn.Position, this.CasterPawn.Map, ThingPlaceMode.Near, null);
-                                    transportedItemCount++;
-                                    j--;
-                                }
+                                if (Compatibility.TM_Teleport.Move(pawn,destination)) moved = true;
+                                continue;
                             }
-                        }                        
+                        }
+                        int originalCount = thing.stackCount;
+                        FleckMaker.ThrowLightningGlow(thing.DrawPos,map,thing is Pawn ? 1f : .6f);
+                        FleckMaker.ThrowHeatGlow(from,map,1f);
+                        try
+                        {
+                            thing.DeSpawn();
+                            if (thing is Pawn) GenSpawn.Spawn(thing,destination,origin);
+                            else GenPlace.TryPlaceThing(thing,destination,origin,ThingPlaceMode.Near);
+                        }
+                        finally
+                        {
+                            if (thing.Destroyed || thing.stackCount < originalCount || (thing.Spawned && (thing.Map != map || thing.Position != from))) moved = true;
+                            if (!thing.Destroyed && !thing.Spawned && thing.holdingOwner == null) GenSpawn.Spawn(thing,from,map);
+                        }
                     }
-                    FleckMaker.ThrowSmoke(curCell.ToVector3Shifted(), map, .6f);                   
+                    foreach (var cell in cells) FleckMaker.ThrowSmoke(cell.ToVector3Shifted(),map,.6f);
+                }
+                finally
+                {
+                    if (moved) ManualTravelSafety.SettleHosted(power,body);
                 }
             }
+            if (warnings.Count == 0) Commit();
+            else ManualTravelSafety.Confirm(string.Join("\n",warnings), Commit);
         }
     }
 }

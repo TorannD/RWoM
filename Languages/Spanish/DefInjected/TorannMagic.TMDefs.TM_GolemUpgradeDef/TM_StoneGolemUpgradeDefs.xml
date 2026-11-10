@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Golem_StoneCompactor.label>compactadora de piedra</TM_Golem_StoneCompactor.label>
+  
+  <TM_Golem_StoneCompactor.description>Permite al golem triturar trozos de piedra y convertirlos en ladrillos utilizables. Este proceso se realiza por sí solo una vez depositados los trozos de piedra en el golem, y requiere que el golem esté en estado latente.</TM_Golem_StoneCompactor.description>
+  
+  
+  <TM_Golem_StoneEnergyEfficiency.label>eficiencia energética</TM_Golem_StoneEnergyEfficiency.label>
+  
+  <TM_Golem_StoneEnergyEfficiency.description>Aumenta la eficiencia energética un 10 % por nivel. La eficiencia energética inicial es del 50 %.</TM_Golem_StoneEnergyEfficiency.description>
+  
+  
+  <TM_Golem_StoneEnergyRate.label>regeneración de energía</TM_Golem_StoneEnergyRate.label>
+  
+  <TM_Golem_StoneEnergyRate.description>Aumenta la velocidad de carga de energía un 20 % por nivel. La velocidad de recarga inicial es de 20 de energía por hora.</TM_Golem_StoneEnergyRate.description>
+  
+  
+  <TM_Golem_StoneHardening.label>endurecimiento</TM_Golem_StoneHardening.label>
+  
+  <TM_Golem_StoneHardening.description>Aumenta la protección general:\nContundente: +[4,8,12] %\nCortante: +[11,22,33] %\nCalor: +[6,12,18] %</TM_Golem_StoneHardening.description>
+  
+  
+  <TM_Golem_StoneLifeStage.label>nivel de armazón</TM_Golem_StoneLifeStage.label>
+  
+  <TM_Golem_StoneLifeStage.description>Aumenta las estadísticas:\nMovimiento: +[10 %/20 %/30 %]\nSalud: +[40 %/70 %/100 %]</TM_Golem_StoneLifeStage.description>
+  
+  
+  <TM_Golem_StoneMaxEnergy.label>almacenamiento de energía</TM_Golem_StoneMaxEnergy.label>
+  
+  <TM_Golem_StoneMaxEnergy.description>Aumenta la energía máxima en 120 por nivel. La energía máxima inicial es 800.</TM_Golem_StoneMaxEnergy.description>
+  
+  
+  <TM_Golem_StoneRepair.label>restaurar parte</TM_Golem_StoneRepair.label>
+  
+  
+  <TM_Golem_StoneToBricks.label>fabricación</TM_Golem_StoneToBricks.label>
+  
+  <TM_Golem_StoneToBricks.description>Convierte trozos de piedra en ladrillos con el tiempo.</TM_Golem_StoneToBricks.description>
+  
+</LanguageData>

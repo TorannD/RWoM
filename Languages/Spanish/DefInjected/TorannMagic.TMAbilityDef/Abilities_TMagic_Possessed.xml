@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_SpiritPossession.label>poseer</TM_SpiritPossession.label>
+  <TM_SpiritPossession.description>Posee un cuerpo físico, ya esté muerto o vivo. Poseer un cuerpo reduce la rapidez con la que se pierde energía espiritual. Los cuerpos fallecidos o los animales pueden poseerse libremente, pero no generan energía espiritual por sí solos; únicamente otro cuerpo con un espíritu anfitrión existente la generará. Sin embargo, un cuerpo que ya está ocupado es más difícil de poseer y el espíritu poseedor puede tener que luchar contra el espíritu original del anfitrión. Si al espíritu aún le queda energía, se extraerá del cuerpo y volverá a ser un espíritu errante. Si la energía de un espíritu se agota por completo, dejará de existir. Cuando un espíritu abandona un cuerpo, este vuelve a su estado o a su dueño originales. La energía espiritual se puede obtener succionando energía mediante daño físico, usando Drenar espíritu o mediante la meditación. Matar a otro peón con Drenar espíritu absorbe una gran cantidad de espíritu. El cuerpo de un peón poseído no se recupera de forma natural y solo cura heridas y dolencias cuando obtiene energía espiritual.</TM_SpiritPossession.description>
+
+  
+  <TM_SpiritDrain.label>drenar espíritu</TM_SpiritDrain.label>
+  <TM_SpiritDrain.description>Drena el espíritu de un ser vivo para restaurar la energía espiritual del lanzador.</TM_SpiritDrain.description>
+
+  
+  <TM_DistortSpirit.label>distorsionar espíritu (I)</TM_DistortSpirit.label>
+  <TM_DistortSpirit.description>Distorsiona el equilibrio entre espíritu y cuerpo de los peones vivos en una zona amplia. Los peones que sufren distorsión espiritual reciben un 20 % más de daño de todas las fuentes.\n\nAlcance: 35\nTiempo de lanzamiento: 3 s\nRecarga: 60 s</TM_DistortSpirit.description>
+
+  <TM_DistortSpirit_I.label>distorsionar espíritu (II)</TM_DistortSpirit_I.label>
+  <TM_DistortSpirit_I.description>Distorsiona el equilibrio entre espíritu y cuerpo de los peones vivos en una zona amplia. Los peones que sufren distorsión espiritual reciben un 20 % más de daño de todas las fuentes.\n\nAlcance: 40\nTiempo de lanzamiento: 2 s\nRecarga: 45 s</TM_DistortSpirit_I.description>
+
+  <TM_DistortSpirit_II.label>distorsionar espíritu (III)</TM_DistortSpirit_II.label>
+  <TM_DistortSpirit_II.description>Distorsiona el equilibrio entre espíritu y cuerpo de los peones vivos en una zona amplia. Los peones que sufren distorsión espiritual reciben un 20 % más de daño de todas las fuentes.\n\nAlcance: 45\nTiempo de lanzamiento: 1,5 s\nRecarga: 30 s</TM_DistortSpirit_II.description>
+
+  <TM_DistortSpirit_III.label>distorsionar espíritu (IV)</TM_DistortSpirit_III.label>
+  <TM_DistortSpirit_III.description>Distorsiona el equilibrio entre espíritu y cuerpo de los peones vivos en una zona amplia. Los peones que sufren distorsión espiritual reciben un 20 % más de daño de todas las fuentes.\n\nAlcance: 50\nTiempo de lanzamiento: 1 s\nRecarga: 20 s</TM_DistortSpirit_III.description>
+
+  
+  <TM_SummonSpiritAnimalMass.label>animales espirituales</TM_SummonSpiritAnimalMass.label>
+  <TM_SummonSpiritAnimalMass.description>Invoca un animal espiritual de cada tipo durante un breve periodo de tiempo.</TM_SummonSpiritAnimalMass.description>
+
+  
+  <TM_SpiritRally.label>reunir espíritus (I)</TM_SpiritRally.label>
+  <TM_SpiritRally.description>Recluta la ayuda de peones recientemente fallecidos para que habiten la forma de un lobo espiritual y asistan al lanzador durante un breve periodo de tiempo. Reunir espíritus solo es eficaz si se lanza cerca de cadáveres. Cada cadáver puede generar un espíritu.\n\nTiempo de lanzamiento: 2 s\nEnfriamiento: 45 s</TM_SpiritRally.description>
+
+  <TM_SpiritRally_I.label>reunir espíritus (II)</TM_SpiritRally_I.label>
+  <TM_SpiritRally_I.description>Recluta la ayuda de peones recientemente fallecidos para que habiten la forma de un lobo espiritual y asistan al lanzador durante un breve periodo de tiempo. Reunir espíritus solo es eficaz si se lanza cerca de cadáveres. Cada cadáver puede generar un espíritu.\n\nTiempo de lanzamiento: 1 s\nEnfriamiento: 30 s</TM_SpiritRally_I.description>
+
+  <TM_SpiritRally_II.label>reunir espíritus (III)</TM_SpiritRally_II.label>
+  <TM_SpiritRally_II.description>Recluta la ayuda de peones recientemente fallecidos para que habiten la forma de un lobo espiritual y asistan al lanzador durante un breve periodo de tiempo. Reunir espíritus solo es eficaz si se lanza cerca de cadáveres. Cada cadáver puede generar un espíritu.\n\nTiempo de lanzamiento: 0,5 s\nEnfriamiento: 20 s</TM_SpiritRally_II.description>
+
+  <TM_SpiritRally_III.label>reunir espíritus (IV)</TM_SpiritRally_III.label>
+  <TM_SpiritRally_III.description>Recluta la ayuda de peones recientemente fallecidos para que habiten la forma de un lobo espiritual y asistan al lanzador durante un breve periodo de tiempo. Reunir espíritus solo es eficaz si se lanza cerca de cadáveres. Cada cadáver puede generar un espíritu.\n\nTiempo de lanzamiento: 0 s\nEnfriamiento: 15 s</TM_SpiritRally_III.description>
+
+  
+  <TM_SpiritStorm.label>tormenta de espíritus</TM_SpiritStorm.label>
+  <TM_SpiritStorm.description>Crea una baliza espiritual que atrae espíritus de pérdida, rencor y venganza. El enjambre de espíritus furiosos se convierte rápidamente en un vórtice que arranca de cuajo la realidad y la esperanza. Los espíritus malévolos de esta tormenta buscarán los espíritus de los seres vivos para infligirles su sufrimiento. La dirección de la tormenta de espíritus se puede controlar durante un breve periodo de tiempo después de crearla.</TM_SpiritStorm.description>
+
+  <TM_ControlSpiritStorm.label>controlar tormenta de espíritus</TM_ControlSpiritStorm.label>
+  <TM_ControlSpiritStorm.description>Dirige la tormenta de espíritus hacia una ubicación designada.</TM_ControlSpiritStorm.description>
+
+</LanguageData>

@@ -37,6 +37,13 @@ namespace TorannMagic
         Pawn pawn;
         CompAbilityUserMagic comp;
 
+        // Landing retry state: the leaping pawn is despawned while in flight, so a
+        // blocked destination must be retried for a bounded interval instead of
+        // losing the pawn; damage is applied at most once per flight.
+        private const int MaxLandRetryTicks = 120;
+        private int landRetryTicks = -1;
+        private bool damageApplied = false;
+
         TMPawnSummoned newPawn = new TMPawnSummoned();
 
         protected new int StartingTicksToImpact
@@ -97,6 +104,8 @@ namespace TorannMagic
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
             Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
             Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
+            Scribe_Values.Look<int>(ref this.landRetryTicks, "landRetryTicks", -1, false);
+            Scribe_Values.Look<bool>(ref this.damageApplied, "damageApplied", false, false);
         }
 
         private void Initialize()
@@ -123,7 +132,7 @@ namespace TorannMagic
 
         public void Launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo = null)
         {
-            bool spawned = flyingThing.Spawned;            
+            bool spawned = flyingThing != null && flyingThing.Spawned;
             pawn = launcher as Pawn;
             if (spawned)
             {               
@@ -149,14 +158,39 @@ namespace TorannMagic
         protected override void TickInterval(int delta)
         {
             //base.Tick();
+            if (this.landRetryTicks >= 0)
+            {
+                this.landRetryTicks += delta;
+                if (this.landRetryTicks >= MaxLandRetryTicks)
+                {
+                    Log.Warning("TM Leap: could not place the leaping pawn within " + MaxLandRetryTicks + " ticks; the pawn remains despawned where it leapt from.");
+                    this.Destroy(DestroyMode.Vanish);
+                    return;
+                }
+                this.Impact(null);
+                return;
+            }
             Vector3 exactPosition = this.ExactPosition;
             this.ticksToImpact--;
             bool flag = !this.ExactPosition.InBoundsWithNullCheck(base.Map);
             if (flag)
             {
-                this.ticksToImpact++;
-                base.Position = this.ExactPosition.ToIntVec3();
-                this.Destroy(DestroyMode.Vanish);
+                // Never orphan the leaping pawn off-map: land at the closest
+                // in-bounds cell instead of destroying the projectile mid-flight.
+                this.ticksToImpact = 0;
+                IntVec3 c = this.ExactPosition.ToIntVec3();
+                if (base.Map != null)
+                {
+                    c.x = Mathf.Clamp(c.x, 0, base.Map.Size.x - 1);
+                    c.z = Mathf.Clamp(c.z, 0, base.Map.Size.z - 1);
+                    this.destination = c.ToVector3Shifted();
+                    base.Position = c;
+                    this.ImpactSomething();
+                }
+                else
+                {
+                    this.Destroy(DestroyMode.Vanish);
+                }
             }
             else
             {
@@ -181,11 +215,10 @@ namespace TorannMagic
 
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            bool flag = this.flyingThing != null;
-            if (flag)
+            // flyingThing can be null after a failed save restore — never draw it.
+            if (this.flyingThing != null)
             {
-                bool flag2 = this.flyingThing is Pawn;
-                if (flag2)
+                if (this.flyingThing is Pawn pawn2)
                 {
                     Vector3 arg_2B_0 = this.DrawPos;
                     bool flag4 = !this.DrawPos.ToIntVec3().IsValid;
@@ -193,18 +226,12 @@ namespace TorannMagic
                     {
                         return;
                     }
-                    Pawn pawn = this.flyingThing as Pawn;
-                    pawn.Drawer.renderer.RenderPawnAt(this.DrawPos);  
-                    
+                    pawn2.Drawer.renderer.RenderPawnAt(this.DrawPos);
                 }
                 else
                 {
                     Graphics.DrawMesh(MeshPool.plane10, this.DrawPos, this.ExactRotation, this.flyingThing.def.DrawMatSingle, 0);
                 }
-            }
-            else
-            {
-                Graphics.DrawMesh(MeshPool.plane10, this.DrawPos, this.ExactRotation, this.flyingThing.def.DrawMatSingle, 0);
             }
             base.Comps_PostDraw();
         }
@@ -220,8 +247,8 @@ namespace TorannMagic
 
         private void ImpactSomething()
         {
-            bool flag = this.assignedTarget != null;
-            if (flag)
+            // A destroyed/despawned target must not be passed into Impact.
+            if (this.assignedTarget != null && !this.assignedTarget.Destroyed && this.assignedTarget.Spawned)
             {
                 Pawn pawn = this.assignedTarget as Pawn;
                 bool flag2 = pawn != null && pawn.GetPosture() != PawnPosture.Standing && (this.origin - this.destination).MagnitudeHorizontalSquared() >= 20.25f && Rand.Value > 0.2f;
@@ -242,34 +269,48 @@ namespace TorannMagic
 
         protected new void Impact(Thing hitThing)
         {
-            bool flag = hitThing == null;
-            if (flag)
-            {
-                Pawn pawn;
-                bool flag2 = (pawn = (base.Position.GetThingList(base.Map).FirstOrDefault((Thing x) => x == this.assignedTarget) as Pawn)) != null;
-                if (flag2)
-                {
-                    hitThing = pawn;
-                }
-            }
-            bool hasValue = this.impactDamage.HasValue;
-            if (hasValue)
-            {
-                hitThing.TakeDamage(this.impactDamage.Value);
-            }
             try
             {
-                SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);                
+                if (hitThing == null && base.Map != null)
+                {
+                    Pawn pawn = base.Position.GetThingList(base.Map).FirstOrDefault((Thing x) => x == this.assignedTarget) as Pawn;
+                    if (pawn != null)
+                    {
+                        hitThing = pawn;
+                    }
+                }
+                if (this.impactDamage.HasValue && !this.damageApplied && hitThing != null && !hitThing.Destroyed)
+                {
+                    this.damageApplied = true;
+                    hitThing.TakeDamage(this.impactDamage.Value);
+                }
 
-                //GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
-                GenPlace.TryPlaceThing(this.flyingThing, base.Position, base.Map, ThingPlaceMode.Near);
-                Pawn p = this.flyingThing as Pawn;
-                this.Destroy(DestroyMode.Vanish);
+                SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
+
+                if (this.flyingThing != null && !this.flyingThing.Destroyed && base.Map != null && !this.flyingThing.Spawned)
+                {
+                    // Retry placement for a bounded interval when the destination
+                    // is blocked; the projectile survives until the pawn is back.
+                    if (GenPlace.TryPlaceThing(this.flyingThing, base.Position, base.Map, ThingPlaceMode.Direct) ||
+                        GenPlace.TryPlaceThing(this.flyingThing, base.Position, base.Map, ThingPlaceMode.Near))
+                    {
+                        this.landRetryTicks = -1;
+                    }
+                    else
+                    {
+                        if (this.landRetryTicks < 0)
+                        {
+                            this.landRetryTicks = 0;
+                        }
+                        return;
+                    }
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                this.Destroy(DestroyMode.Vanish);
+                Log.Warning("TM Leap: error while landing: " + ex);
             }
+            this.Destroy(DestroyMode.Vanish);
         }        
     }
 }

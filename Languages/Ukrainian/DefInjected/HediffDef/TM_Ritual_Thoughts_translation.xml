@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SEVER MAGIC -->
+
+  <TM_MagicSeverenceHD.label>Магічне роз &quot;єднання</TM_MagicSeverenceHD.label>
+  <TM_MagicSeverenceHD.description>Ця пішака нещодавно втратила зв&apos;язок з магією і буде страждати від втрати напрямку і мети, поки не зможе заповнити порожнечу іншою метою.</TM_MagicSeverenceHD.description>
+  <TM_MagicSeverenceHD.stages.0.label></TM_MagicSeverenceHD.stages.0.label>
+
+
+  <!-- BESTOW MAGIC -->
+
+  <TM_BestowMagicClassHD.label>Дар магії</TM_BestowMagicClassHD.label>
+  <TM_BestowMagicClassHD.description>Цій пішці нещодавно була дарована іскра магії.</TM_BestowMagicClassHD.description>
+  <TM_BestowMagicClassHD.stages.0.label></TM_BestowMagicClassHD.stages.0.label>
+
+
+</LanguageData>

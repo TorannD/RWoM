@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mending -->
+
+  <TM_ArtifactMendingHD.label>Починка</TM_ArtifactMendingHD.label>
+  <TM_ArtifactMendingHD.description>Лагід і ремонтує екіпірований одяг і зброю.</TM_ArtifactMendingHD.description>
+
+
+  <!-- Health Charm -->
+
+  <TM_ArtifactHealthHD.label>Покращення Здоров &quot;я</TM_ArtifactHealthHD.label>
+  <TM_ArtifactHealthHD.description>Збільшує природне загоєння.</TM_ArtifactHealthHD.description>
+
+
+  <!-- Cat Eyes -->
+
+  <TM_ArtifactCatEyesHD.label>Темний погляд</TM_ArtifactCatEyesHD.label>
+  <TM_ArtifactCatEyesHD.description>Покращує зір і дає незначний нічний зір.</TM_ArtifactCatEyesHD.description>
+
+
+  <!-- Strength of Stone -->
+
+  <TM_ArtifactStrengthHD.label>Міцність каменю</TM_ArtifactStrengthHD.label>
+  <TM_ArtifactStrengthHD.description>Чари, що підсилюють маніпуляцію.</TM_ArtifactStrengthHD.description>
+
+
+  <!-- Mind Ward -->
+
+  <TM_ArtifactMindHD.label>Розумова Обитель</TM_ArtifactMindHD.label>
+  <TM_ArtifactMindHD.description>Унікальний талісман, який допомагає Пешці розділити свої емоції, щоб швидко оговтатися від психічного зриву.</TM_ArtifactMindHD.description>
+
+
+  <!-- Renewal -->
+
+  <TM_ArtifactRenewalHD.label>Оновлення</TM_ArtifactRenewalHD.label>
+  <TM_ArtifactRenewalHD.description>Покращує якість сну.</TM_ArtifactRenewalHD.description>
+
+
+  <!-- Arcane Recovery -->
+
+  <TM_ArtifactArcaneRecoveryHD.label>Таємне Відновлення</TM_ArtifactArcaneRecoveryHD.label>
+  <TM_ArtifactArcaneRecoveryHD.description>Збільшує швидкість відновлення від таємної слабкості; не зменшує кількість придбаної таємної слабкості.</TM_ArtifactArcaneRecoveryHD.description>
+
+
+  <!-- Pathfinding -->
+
+  <TM_ArtifactPathfindingHD.label>Новатор</TM_ArtifactPathfindingHD.label>
+  <TM_ArtifactPathfindingHD.description>Талісман, який надприродно встановлює легкий шлях через будь-яку перешкоду; обходить штраф за пересування перешкодами і місцевістю.</TM_ArtifactPathfindingHD.description>
+
+
+  <!-- Defensive Bracers -->
+
+  <TM_ArtifactBlockHD.label>Блокування</TM_ArtifactBlockHD.label>
+  <TM_ArtifactBlockHD.description>Блокує фізичні атаки; запобігає пошкодженню від успішно заблокованих атак.</TM_ArtifactBlockHD.description>
+
+  <TM_ArtifactDeflectHD.label>Дефектне блокування</TM_ArtifactDeflectHD.label>
+  <TM_ArtifactDeflectHD.description>Блокує атаки і може відхиляти снаряди до найближчих ворогів; запобігає втрату від успішно відбитої атаки.</TM_ArtifactDeflectHD.description>
+
+
+  <!-- Energy Pool Boosts -->
+
+  <TM_Artifact_BloodBoostHD.label>Підвищення Рівня Крові</TM_Artifact_BloodBoostHD.label>
+  <TM_Artifact_BloodBoostHD.description>Збільшує максимальну магію крові, доступну магу крові.</TM_Artifact_BloodBoostHD.description>
+
+  <TM_Artifact_PsionicBoostHD.label>Піонний Імпульс</TM_Artifact_PsionicBoostHD.label>
+  <TM_Artifact_PsionicBoostHD.description>Збільшує максимальну псі-енергію псіоніка.</TM_Artifact_PsionicBoostHD.description>
+
+  <TM_Artifact_HateBoostHD.label>Підвищення ненависті</TM_Artifact_HateBoostHD.label>
+  <TM_Artifact_HateBoostHD.description>Збільшує максимальну ненависть, доступну лицарю смерті.</TM_Artifact_HateBoostHD.description>
+
+
+  <!-- soul orb infusion debuff -->
+
+  <TM_TraitInfusionHD.label>Вливання Риси Характеру</TM_TraitInfusionHD.label>
+  <TM_TraitInfusionHD.description>Пішак набув рис характеру завдяки магічному вливанню; це вплине на їх самовідчуття.</TM_TraitInfusionHD.description>
+
+
+  <!-- Winter's Staff -->
+
+  <TM_WinterStaffHD.label>Зимовий холод</TM_WinterStaffHD.label>
+  <TM_WinterStaffHD.description>Відводить тепло та енергію з організму; запобігає тепловому удару. Тільки для магів: знижує кімнатну температуру.</TM_WinterStaffHD.description>
+
+
+</LanguageData>

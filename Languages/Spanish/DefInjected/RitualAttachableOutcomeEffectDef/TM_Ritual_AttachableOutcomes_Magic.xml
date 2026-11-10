@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_RechargeMana.label>recargar maná</TM_RechargeMana.label>
+  
+  <TM_RechargeMana.effectDesc>Recarga entre 50 y 100 de maná a todos los magos participantes.</TM_RechargeMana.effectDesc>
+  
+  <TM_RechargeMana.letterInfoText>Todos los magos participantes han recargado {AMOUNT} de maná.</TM_RechargeMana.letterInfoText>
+  
+</LanguageData>

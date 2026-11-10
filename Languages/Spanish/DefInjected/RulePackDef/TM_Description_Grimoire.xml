@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Description_Grimoire.rulePack.rulesStrings>
+    <li>subject-&gt;[subject_Magic]</li>
+    <li>object-&gt;[subject_bookType]</li>
+    <li>desc-&gt;[discussion].\n\n[anecdote]. \n\n[quality_statement].</li>
+    <li>discussion-&gt;Este [object] ofrece [useful_information] sobre [subject][detail]</li>
+    <li>discussion-&gt;Este [object] establece la autoridad del autor en materia de [subject][detail]</li>
+    <li>discussion-&gt;Quienes buscan [understanding_synonym] [subject] acuden a este [notable_adjective] [textbook][detail]</li>
+    <li>discussion-&gt;Un [object] [object_adjective] sobre [subject][detail]</li>
+    <li>object_adjective-&gt;polvoriento</li>
+    <li>object_adjective-&gt;antiguo</li>
+    <li>object_adjective-&gt;desgastado</li>
+    <li>detail-&gt;. Las instrucciones se centran en los aspectos más sutiles de manipular [subject]</li>
+    <li>detail-&gt;. Es una instrucción concisa sobre un tema complejo</li>
+    <li>detail-&gt;. En la introducción se dice que, cuando [ANYPAWN_label] lo escribió, era una aplicación novedosa en este campo</li>
+    <li>detail-&gt;. Una cita en [note_location] dice: «Los verdaderos [students] de [subject] no pueden ignorar el libro de [ANYPAWN_label]»</li>
+    <li>students-&gt;estudiantes</li>
+    <li>students-&gt;amantes</li>
+    <li>students-&gt;practicantes</li>
+    <li>students-&gt;magos</li>
+    <li>students-&gt;hechiceros</li>
+    <li>detail-&gt;. Guía al lector por el tema paso a paso</li>
+    <li>detail(quality[less_than]4)-&gt;, aunque el autor pasa por el tema a toda prisa</li>
+    <li>detail(quality[greater_than]3)-&gt;. Es un tratamiento exhaustivo del tema</li>
+    <li>detail(quality[greater_than]4)-&gt;. Las páginas de este [object] están hechas de piel humana</li>
+    <li>detail(quality[greater_than]5)-&gt;. El [object] está cubierto de runas brillantes</li>
+    <li>detail-&gt;. Hay extraños arañazos en la cubierta de este [object]</li>
+    <li>detail-&gt;. La sangre seca mancha la cubierta de este [object]</li>
+    <li>detail(quality[less_than]3)-&gt;, aunque la retórica del autor distrae del concepto central</li>
+    <li>detail(quality[less_than]3)-&gt;, y le han arrancado algunas páginas</li>
+    <li>quality_statement-&gt;[exterior_quality] [page_quality]</li>
+
+    <li>anecdote-&gt;En [magicLocation], [author_adjective] [author_type] llamado [ANYPAWN_nameFull], conocido por [ANYPAWN_possessive] [author_skillLevel] [subject], tomó a un joven aprendiz. Cada mañana recorrían [magicLocation] y descubrían nuevos [phenomena]. El mago desentrañaba con delicadeza todos esos [phenomena] y susurraba antiguos conjuros que los hacían brillar con luz mágica. El aprendiz comprendió que dominar [subject] no consistía solo en hechizos, sino también en entender la esencia de la magia y cultivarla con respeto</li>
+    <li>anecdote-&gt;Según [note_location], [ANYPAWN_nameFull] era conocido por ser un maestro de muchas materias</li>
+    <li>anecdote-&gt;Según [note_location], la gente de [worldname] todavía habla de [ANYPAWN_nameFull] y recuerda [ANYPAWN_possessive] amor por [subject]</li>
+    <li>anecdote-&gt;Según [note_location], un extraño accidente de entrelazamiento mágico mató al autor, [ANYPAWN_nameFull], poco después de la publicación</li>
+    <li>anecdote-&gt;Según [precis_synonym], [ANYPAWN_nameFull] pasó los días enseñando en la academia de [coreworld]. Este libro procede de las lecciones que impartió</li>
+    <li>anecdote-&gt;Según [precis_synonym], los conocimientos de [ANYPAWN_nameFull] sobre [subject] eran tan célebres que la gente lo detenía por la calle para preguntarle al respecto</li>
+    <li>anecdote-&gt;En una ciudad bulliciosa, encajada entre torres imponentes, había una puerta oculta hacia [magicLocation] a la que solo accedían quienes conocían el secreto. En este reino mágico había una estructura antigua con estanterías llenas de libros de todas las ramas imaginables de la magia. El bibliotecario, un excéntrico [author_type] con un brillo en la mirada, guiaba a estudiantes ansiosos por el laberinto de [phenomena]. Les enseñó a [student_learn] [subject] [author_action]</li>
+    <li>anecdote-&gt;Un joven aprendiz encontró por casualidad un viejo [textbook] en su desván. En su entusiasmo, intentó un hechizo que superaba con mucho su comprensión. Se desató [author_event], casi acabando con [ANYPAWN_label]. Este [object] es la obra de toda la vida del maestro [author_type] [ANYPAWN_nameFull], que dejó por escrito su odisea por las maravillas de la magia</li>
+    <li>anecdote-&gt;En medio de una feroz batalla, un [author_type] inexperto encontró un misterioso [author_item] en el campo de batalla. Movido por la curiosidad, lo activó y liberó un torrente incontrolable de [subject]. Estalló [author_event] y causó destrucción entre los combatientes. Este [object] contiene las crónicas del legendario [author_type] [ANYPAWN_nameFull], que documentó su camino hacia el dominio del arte de [subject] en medio de acontecimientos tan impredecibles</li>
+    <li>author_item-&gt;fragmento</li>
+    <li>author_item-&gt;velo de oscuridad</li>
+    <li>author_item-&gt;destello de luz</li>
+    <li>author_item-&gt;trozo</li>
+    <li>author_item-&gt;espejismo</li>
+    <li>author_item-&gt;encantamiento</li>
+    <li>author_item-&gt;glifo rúnico</li>
+    <li>author_item-&gt;portal</li>
+    <li>author_item-&gt;sello</li>
+
+      <li>author_item-&gt;maleficio</li>
+    <li>author_item-&gt;anatema</li>
+    <li>author_item-&gt;amuleto</li>
+    <li>author_event-&gt;el caos</li>
+    <li>author_event-&gt;el desorden</li>
+    <li>author_event-&gt;un desastre</li>
+    <li>author_event-&gt;una calamidad</li>
+    <li>author_event-&gt;una catástrofe</li>
+    <li>author_event-&gt;un pandemónium</li>
+    <li>student_learn-&gt;descifrar</li>
+    <li>student_learn-&gt;aprender</li>
+    <li>student_learn-&gt;entender</li>
+    <li>student_learn-&gt;dominar</li>
+    <li>student_learn-&gt;ver</li>
+    <li>student_learn-&gt;visualizar</li>
+    <li>student_learn-&gt;hacerse con el control de</li>
+    <li>student_learn-&gt;comprender</li>
+    <li>student_learn-&gt;adquirir</li>
+    <li>student_learn-&gt;captar</li>
+    <li>student_learn-&gt;alcanzar</li>
+    <li>student_learn-&gt;asimilar</li>
+    <li>student_learn-&gt;absorber</li>
+    <li>student_learn-&gt;procurarse</li>
+    <li>student_learn-&gt;capturar</li>
+    <li>student_learn-&gt;tomar el mando de</li>
+    <li>student_learn-&gt;desentrañar</li>
+    <li>author_adjective-&gt;un anciano</li>
+    <li>author_adjective-&gt;un siniestro</li>
+    <li>author_adjective-&gt;un hermoso</li>
+    <li>author_adjective-&gt;un curtido</li>
+    <li>author_adjective-&gt;un misterioso</li>
+    <li>author_adjective-&gt;un enigmático</li>
+    <li>author_adjective-&gt;un sabio</li>
+    <li>author_adjective-&gt;un antiguo</li>
+    <li>author_adjective-&gt;un poderoso</li>
+    <li>author_adjective-&gt;un olvidado</li>
+    <li>author_adjective-&gt;un arcano</li>
+    <li>author_adjective-&gt;un legendario</li>
+    <li>author_adjective-&gt;un sombrío</li>
+    <li>author_adjective-&gt;un mítico</li>
+
+      <li>author_type-&gt;mago</li>
+    <li>author_type-&gt;hechicero</li>
+    <li>author_type-&gt;brujo</li>
+    <li>author_type-&gt;brujo oscuro</li>
+    <li>author_type-&gt;mago arcano</li>
+    <li>author_type-&gt;encantador</li>
+    <li>author_type-&gt;conjurador</li>
+    <li>author_type-&gt;ilusionista</li>
+    <li>author_type-&gt;taumaturgo</li>
+    <li>author_type-&gt;nigromante</li>
+    <li>author_type-&gt;archimago</li>
+    <li>author_type-&gt;hechicero mayor</li>
+    <li>author_type-&gt;lanzador de conjuros</li>
+    <li>author_skillLevel-&gt;dominio de</li>
+    <li>author_skillLevel-&gt;base sólida en</li>
+    <li>author_skillLevel-&gt;supremacía sobre</li>
+    <li>author_skillLevel-&gt;competencia en</li>
+    <li>author_skillLevel-&gt;destreza en</li>
+    <li>author_skillLevel-&gt;aptitud para</li>
+    <li>author_skillLevel-&gt;pericia en</li>
+    <li>author_skillLevel-&gt;habilidad en</li>
+    <li>author_skillLevel-&gt;soltura con</li>
+    <li>author_skillLevel-&gt;capacidad en</li>
+    <li>author_skillLevel-&gt;maestría con</li>
+    <li>author_skillLevel-&gt;perspicacia en</li>
+    <li>author_action-&gt;invocando a familiares que susurraban secretos desde el éter</li>
+    <li>author_action-&gt;abriendo ventanas al tiempo a lo largo de la historia</li>
+    <li>author_action-&gt;tejiendo ataduras de control a lo largo del hechizo</li>
+    <li>author_action-&gt;elaborando pociones que alteraban la realidad</li>
+    <li>author_action-&gt;cantando hechizos que resonaban a través de las dimensiones</li>
+    <li>author_action-&gt;esculpiendo ilusiones capaces de engañar a las mentes más agudas</li>
+    <li>author_action-&gt;tejiendo sueños que daban forma a los destinos</li>
+    <li>author_action-&gt;forjando artefactos que aprovechaban energías cósmicas</li>
+    <li>author_action-&gt;susurrando conjuros que despertaban a espíritus ancestrales</li>
+    <li>author_action-&gt;pintando hechizos en lienzos que cobraban vida</li>
+    <li>author_action-&gt;bailando rituales bajo cielos iluminados por la luna para doblegar el destino</li>
+    <li>author_action-&gt;tallando runas en piedra para atar fuerzas elementales</li>
+    <li>author_action-&gt;entonando himnos que curaban heridas y recomponían almas</li>
+    <li>author_action-&gt;enfrentando elementales entre sí en combate mortal</li>
+    <li>phenomena-&gt;misterios</li>
+
+    <li>phenomena-&gt;fenómenos</li>
+    <li>phenomena-&gt;secretos</li>
+    <li>phenomena-&gt;enigmas</li>
+    <li>phenomena-&gt;prodigios</li>
+    <li>phenomena-&gt;portentos</li>
+    <li>phenomena-&gt;arcanos</li>
+    <li>phenomena-&gt;sucesos</li>
+    <li>phenomena-&gt;hallazgos</li>
+    <li>phenomena-&gt;milagros</li>
+    <li>phenomena-&gt;misterios</li>
+    <li>phenomena-&gt;secretos</li>
+    <li>magicLocation-&gt;un claro apartado</li>
+    <li>magicLocation-&gt;una biblioteca flotante</li>
+    <li>magicLocation-&gt;un jardín encantado</li>
+    <li>magicLocation-&gt;un plano elemental</li>
+    <li>magicLocation-&gt;un abismo ardiente</li>
+    <li>magicLocation-&gt;un plano astral</li>
+    <li>magicLocation-&gt;una ciudad antigua</li>
+    <li>magicLocation-&gt;un palacio espectral</li>
+    <li>magicLocation-&gt;un oasis resplandeciente</li>
+    <li>magicLocation-&gt;un valle oculto</li>
+    <li>magicLocation-&gt;unos bosques oscuros llenos de susurros</li>
+    <li>magicLocation-&gt;una caverna iluminada por las estrellas</li>
+    <li>magicLocation-&gt;una grieta cósmica</li>
+    <li>magicLocation-&gt;una aguja crepuscular</li>
+    <li>magicLocation-&gt;una ciudadela hundida</li>
+    <li>magicLocation-&gt;un laberinto esmeralda</li>
+    <li>magicLocation-&gt;un reino etéreo</li>
+    <li>textbook-&gt;manual básico</li>
+    <li>textbook-&gt;manual</li>
+    <li>textbook-&gt;libro de texto</li>
+    <li>textbook(p=6)-&gt;libro</li>
+    <li>textbook-&gt;cuaderno de ejercicios</li>
+    <li>textbook-&gt;compendio</li>
+    <li>textbook-&gt;libro guía</li>
+    <li>textbook-&gt;folleto</li>
+    <li>textbook-&gt;tomo enciclopédico</li>
+    <li>textbook-&gt;manual práctico</li>
+    <li>textbook-&gt;tratado del oficio</li>
+    <li>textbook-&gt;tratado</li>
+    <li>note_location-&gt;la cubierta</li>
+    <li>note_location-&gt;la contracubierta</li>
+    <li>note_location-&gt;la solapa delantera</li>
+    <li>note_location-&gt;la solapa trasera</li>
+    <li>note_location-&gt;la primera página</li>
+    <li>note_location-&gt;la última página</li>
+    <li>note_location-&gt;los márgenes</li>
+
+      <li>note_location-&gt;la portada</li>
+    <li>note_location-&gt;una nota al pie</li>
+    <li>note_location-&gt;una nota final</li>
+    <li>note_location-&gt;la biografía del autor</li>
+    <li>note-&gt;nota</li>
+    <li>note-&gt;adenda</li>
+    <li>note-&gt;posdata</li>
+    <li>note-&gt;epílogo</li>
+    <li>note-&gt;apéndice</li>
+    <li>note-&gt;coda</li>
+    <li>note-&gt;nota al pie</li>
+    <li>note-&gt;nota final</li>
+    <li>useful_information-&gt;datos útiles</li>
+    <li>useful_information-&gt;información útil</li>
+    <li>useful_information-&gt;datos interesantes</li>
+    <li>useful_information-&gt;valiosas perspectivas</li>
+    <li>useful_information-&gt;perspectivas prácticas</li>
+    <li>useful_information-&gt;consejos útiles</li>
+    <li>useful_information-&gt;detalles informativos</li>
+    <li>understanding_synonym-&gt;conocimientos de</li>
+    <li>understanding_synonym-&gt;superación personal en</li>
+    <li>understanding_synonym-&gt;una comprensión de</li>
+    <li>understanding_synonym-&gt;habilidades en</li>
+    <li>understanding_synonym-&gt;técnicas de</li>
+    <li>understanding_synonym-&gt;pericia en</li>
+    <li>understanding_synonym-&gt;una filosofía de</li>
+    <li>understanding_synonym-&gt;la ética de</li>
+    <li>notable_adjective-&gt;famoso</li>
+    <li>notable_adjective-&gt;desconocido</li>
+    <li>notable_adjective-&gt;icónico</li>
+    <li>notable_adjective-&gt;clásico</li>
+    <li>notable_adjective-&gt;común</li>
+    <li>notable_adjective-&gt;familiar</li>
+    <li>notable_adjective-&gt;atemporal</li>
+    <li>notable_adjective-&gt;desequilibrado</li>
+    <li>notable_adjective-&gt;armonioso</li>
+    <li>notable_adjective-&gt;elegante</li>
+    <li>notable_adjective-&gt;sencillo</li>
+    <li>notable_adjective-&gt;funcional</li>
+    <li>notable_adjective-&gt;urbano</li>
+
+      <li>notable_adjective-&gt;refulgente</li>
+    <li>notable_adjective-&gt;primitivo</li>
+    <li>notable_adjective-&gt;decorativo</li>
+    <li>exterior_quality(quality[greater_than]4)-&gt;La cubierta de este libro está finamente encuadernada y</li>
+    <li>exterior_quality(quality[greater_than]4)-&gt;Una obra maestra del arte de la imprenta, este libro brilla y</li>
+    <li>exterior_quality(quality[greater_than]4)-&gt;Su cubierta de cuero es áspera, pero</li>
+    <li>exterior_quality(quality[greater_than]4)-&gt;Aunque la cubierta es muy sencilla,</li>
+    <li>exterior_quality(quality[less_than]5,quality[greater_than]1)-&gt;Este libro ha visto días mejores, pero</li>
+    <li>exterior_quality(quality[less_than]5,quality[greater_than]1)-&gt;A pesar de ser un libro escolar de segunda mano,</li>
+    <li>exterior_quality(quality[less_than]5,quality[greater_than]1)-&gt;Este libro ha tenido muchos dueños, pero</li>
+    <li>exterior_quality(quality[less_than]2)-&gt;La portada de este libro parece atractiva, pero</li>
+    <li>exterior_quality(quality[less_than]2)-&gt;Alguien ha arrancado el primer tercio del libro y</li>
+    <li>exterior_quality(quality[less_than]2)-&gt;La cubierta está empapada en un líquido de olor fuerte y</li>
+    <li>exterior_quality(quality[less_than]2)-&gt;A primera vista el libro no tiene nada malo, pero</li>
+    <li>page_quality-&gt;las páginas [page_condition]</li>
+    <li>page_condition(quality[greater_than]4)-&gt;[page_excellent]</li>
+    <li>page_condition(quality[less_than]5,quality[greater_than]1)-&gt;[page_decent]</li>
+    <li>page_condition(quality[less_than]2)-&gt;[page_awful]</li>
+    <li>page_excellent-&gt;están en un estado asombroso, como si nunca las hubieran tocado</li>
+    <li>page_excellent-&gt;están en un gran estado</li>
+
+      <li>page_excellent-&gt;están impecables</li>
+    <li>page_excellent-&gt;están limpias y brillantes</li>
+    <li>page_excellent-&gt;están excepcionalmente bien conservadas</li>
+    <li>page_decent-&gt;están en un estado decente</li>
+    <li>page_decent-&gt;son legibles, aunque están arrugadas</li>
+    <li>page_decent-&gt;se leen perfectamente</li>
+    <li>page_decent-&gt;están bien, aunque ligeramente rayadas</li>
+    <li>page_awful-&gt;parecen escritas en un pergamino que se desmorona</li>
+    <li>page_awful-&gt;están muy dañadas</li>
+    <li>page_awful-&gt;están manchadas con una sustancia oscura</li>
+    <li>page_awful-&gt;son ilegibles</li>
+    <li>page_awful-&gt;han sido anotadas con una letra ilegible</li>
+    <li>worldname-&gt;[glitterworld]</li>
+    <li>worldname-&gt;[urbworld]</li>
+    <li>worldname-&gt;[deadworld]</li>
+    <li>worldname-&gt;[shellworld]</li>
+    <li>worldname-&gt;[ruinworld]</li>
+    <li>worldname-&gt;[medievalworld]</li>
+    <li>worldname-&gt;[steamworld]</li>
+    <li>worldname-&gt;[midworld]</li>
+    <li>worldname-&gt;[rimworld]</li>
+    <li>worldname-&gt;[coreworld]</li>
+    <li>worldname-&gt;[toxicworld]</li>
+    <li>worldname-&gt;[glassworld]</li>
+    <li>worldname-&gt;[transcendentworld]</li>
+    <li>worldname-&gt;[indworld]</li>
+    <li>worldname-&gt;[prisonworld]</li>
+    <li>worldname-&gt;[feudalworld]</li>
+    <li>worldname-&gt;[trashworld]</li>
+
+      <li>worldname-&gt;[iceworld]</li>
+    <li>worldname-&gt;[dinoworld]</li>
+    <li>worldname-&gt;[warworld]</li>
+    <li>worldname-&gt;[oceanicworld]</li>
+    <li>worldname-&gt;[mineworld]</li>
+    <li>worldname-&gt;[animalworld]</li>
+    <li>worldname-&gt;[asteroid]</li>
+    <li>worldname-&gt;[animalworld]</li>
+    <li>feralworld-&gt;[animalworld]</li>
+    <li>milworld-&gt;[warworld]</li>
+    <li>animalworld-&gt;Sorne</li>
+    <li>animalworld-&gt;Rhydell</li>
+    <li>animalworld-&gt;Zoutera</li>
+    <li>animalworld-&gt;Thylacine</li>
+    <li>animalworld-&gt;Jiai</li>
+    <li>animalworld-&gt;Mundo de Steller</li>
+    <li>animalworld-&gt;Aukton</li>
+    <li>asteroid-&gt;Iwamura</li>
+    <li>asteroid-&gt;Atura</li>
+    <li>asteroid-&gt;Widdershins</li>
+    <li>asteroid-&gt;Ranomi</li>
+    <li>asteroid-&gt;Aesh 265</li>
+    <li>asteroid-&gt;Taxlos</li>
+    <li>asteroid-&gt;Aryn Sigma</li>
+    <li>coreworld-&gt;Novaroma</li>
+    <li>coreworld-&gt;Lutuni</li>
+    <li>coreworld-&gt;Zeglar</li>
+    <li>coreworld-&gt;Novaroma</li>
+    <li>coreworld-&gt;Cormora Prime</li>
+    <li>coreworld-&gt;Glossolia</li>
+    <li>coreworld-&gt;Barbaros</li>
+    <li>deadworld-&gt;Callos IX</li>
+    <li>deadworld-&gt;Haspia</li>
+    <li>deadworld-&gt;Gost IV</li>
+    <li>deadworld-&gt;Berimund</li>
+    <li>deadworld-&gt;Ardar</li>
+    <li>deadworld-&gt;Kremhild</li>
+    <li>deadworld-&gt;Melisandz</li>
+    <li>deathworld-&gt;Creticon</li>
+    <li>deathworld-&gt;Zartza</li>
+
+      <li>deathworld-&gt;Rayth</li>
+    <li>deathworld-&gt;Spectra</li>
+    <li>deathworld-&gt;JNovahex</li>
+    <li>deathworld-&gt;Carthago</li>
+    <li>deathworld-&gt;Grimcore</li>
+    <li>dinoworld-&gt;Oubanyen</li>
+    <li>dinoworld-&gt;Zoutera</li>
+    <li>dinoworld-&gt;Einio</li>
+    <li>dinoworld-&gt;Baryonyx</li>
+    <li>dinoworld-&gt;N'cilo</li>
+    <li>dinoworld-&gt;Venator</li>
+    <li>dinoworld-&gt;Brach</li>
+    <li>feudalworld-&gt;Aracena VI</li>
+    <li>feudalworld-&gt;Nuchadus</li>
+    <li>feudalworld-&gt;Filson</li>
+    <li>feudalworld-&gt;Fieth</li>
+    <li>feudalworld-&gt;Bloch Regis</li>
+    <li>feudalworld-&gt;Carlosphere</li>
+    <li>feudalworld-&gt;Magna Dijou</li>
+    <li>glassworld-&gt;Ceti V</li>
+    <li>glassworld-&gt;Thebes XIV</li>
+    <li>glassworld-&gt;Naga</li>
+    <li>glassworld-&gt;Merv</li>
+    <li>glassworld-&gt;Perse</li>
+    <li>glassworld-&gt;Shechem</li>
+    <li>glassworld-&gt;Yelhazor</li>
+    <li>glitterworld-&gt;Kalthas IV</li>
+    <li>glitterworld-&gt;Amen-Ti</li>
+    <li>glitterworld-&gt;Sophiamunda</li>
+    <li>glitterworld-&gt;Rogia</li>
+    <li>glitterworld-&gt;Utmaior</li>
+    <li>glitterworld-&gt;Caspian</li>
+    <li>glitterworld-&gt;Kenerella</li>
+    <li>iceworld-&gt;Yttak</li>
+    <li>iceworld-&gt;Dedchenko</li>
+    <li>iceworld-&gt;Baltoro</li>
+    <li>iceworld-&gt;Furtwale</li>
+    <li>iceworld-&gt;Jaqua</li>
+    <li>iceworld-&gt;Christensen</li>
+    <li>iceworld-&gt;Barnes</li>
+    <li>indworld-&gt;Irithir</li>
+    <li>indworld-&gt;Nueva China</li>
+    <li>indworld-&gt;Hudders</li>
+    <li>indworld-&gt;Iver</li>
+
+      <li>indworld-&gt;Achesta</li>
+    <li>indworld-&gt;Oods</li>
+    <li>indworld-&gt;Iladelf</li>
+    <li>medievalworld-&gt;Chelis</li>
+    <li>medievalworld-&gt;Vinna</li>
+    <li>medievalworld-&gt;Cassone</li>
+    <li>medievalworld-&gt;Jork</li>
+    <li>medievalworld-&gt;Cochmar</li>
+    <li>medievalworld-&gt;Alin</li>
+    <li>medievalworld-&gt;Dubrognago</li>
+    <li>midworld-&gt;Khalderia</li>
+    <li>midworld-&gt;Elsin</li>
+    <li>midworld-&gt;Haihan</li>
+    <li>midworld-&gt;Seolure</li>
+    <li>midworld-&gt;Panga</li>
+    <li>midworld-&gt;Nueva Londres CXI</li>
+    <li>midworld-&gt;San Delenda</li>
+    <li>mineworld-&gt;Xanides</li>
+    <li>mineworld-&gt;Bingham</li>
+    <li>mineworld-&gt;Saarhi</li>
+    <li>mineworld-&gt;Grasbeg</li>
+    <li>mineworld-&gt;Chuqui</li>
+    <li>mineworld-&gt;Olimpia</li>
+    <li>mineworld-&gt;Orme</li>
+    <li>oceanicworld-&gt;Wavia</li>
+    <li>oceanicworld-&gt;Wadka</li>
+    <li>oceanicworld-&gt;Gichen</li>
+    <li>oceanicworld-&gt;Port Yam</li>
+    <li>oceanicworld-&gt;Baia</li>
+    <li>oceanicworld-&gt;Thonis</li>
+    <li>oceanicworld-&gt;Moaui</li>
+    <li>prisonworld-&gt;Yttak</li>
+    <li>prisonworld-&gt;Aldgate</li>
+    <li>prisonworld-&gt;Borren</li>
+    <li>prisonworld-&gt;Hoalo</li>
+    <li>prisonworld-&gt;Casmina</li>
+    <li>prisonworld-&gt;Port Basil</li>
+    <li>prisonworld-&gt;Chateau D'Ouen</li>
+    <li>rimworld-&gt;Filson</li>
+    <li>rimworld-&gt;La Grand</li>
+    <li>rimworld-&gt;Dalles</li>
+    <li>rimworld-&gt;Cascadas Twig</li>
+    <li>rimworld-&gt;Old Boise</li>
+    <li>rimworld-&gt;Puerta del Diablo</li>
+    <li>rimworld-&gt;Laramiere</li>
+    <li>ruinworld-&gt;Tierra</li>
+    <li>ruinworld-&gt;Ilwaba</li>
+
+    <li>ruinworld-&gt;Xennoa</li>
+    <li>ruinworld-&gt;Pichu</li>
+    <li>ruinworld-&gt;Perdida</li>
+    <li>ruinworld-&gt;Hisarlik</li>
+    <li>ruinworld-&gt;Helike</li>
+    <li>shellworld-&gt;Boccocarro</li>
+    <li>shellworld-&gt;Destria</li>
+    <li>shellworld-&gt;Trófico</li>
+    <li>shellworld-&gt;Matrio</li>
+    <li>shellworld-&gt;Samen</li>
+    <li>shellworld-&gt;Xinthia</li>
+    <li>shellworld-&gt;Ferbine</li>
+    <li>steamworld-&gt;Corliss</li>
+    <li>steamworld-&gt;Borassic</li>
+    <li>steamworld-&gt;Savery II</li>
+    <li>steamworld-&gt;Heron</li>
+    <li>steamworld-&gt;Malmesburi</li>
+    <li>steamworld-&gt;Architonnerre</li>
+    <li>steamworld-&gt;Escape</li>
+    <li>toxicworld-&gt;Scylla</li>
+    <li>toxicworld-&gt;Mauro</li>
+    <li>toxicworld-&gt;Cerospor</li>
+    <li>toxicworld-&gt;Oxy VI</li>
+    <li>toxicworld-&gt;Sangwine</li>
+    <li>toxicworld-&gt;Soleno</li>
+    <li>toxicworld-&gt;Imbatus</li>
+    <li>transcendentworld-&gt;Xaroh</li>
+    <li>transcendentworld-&gt;Immanence VI</li>
+    <li>transcendentworld-&gt;Qabba</li>
+    <li>transcendentworld-&gt;Einsof</li>
+    <li>transcendentworld-&gt;Mitvo</li>
+    <li>transcendentworld-&gt;Samydi</li>
+    <li>transcendentworld-&gt;Samsarr</li>
+    <li>trashworld-&gt;Bagua 5</li>
+    <li>trashworld-&gt;Puobell</li>
+    <li>trashworld-&gt;Deni IX</li>
+    <li>trashworld-&gt;Garbsh</li>
+    <li>trashworld-&gt;Tra'age</li>
+    <li>trashworld-&gt;Reepsyk</li>
+    <li>trashworld-&gt;Mystras</li>
+
+
+      <li>urbworld-&gt;Euterpe</li>
+    <li>urbworld-&gt;Avenna</li>
+    <li>urbworld-&gt;Essalon</li>
+    <li>urbworld-&gt;Enike</li>
+    <li>urbworld-&gt;Adocia</li>
+    <li>urbworld-&gt;N'toch</li>
+    <li>urbworld-&gt;Barca</li>
+    <li>warworld-&gt;Kemia</li>
+    <li>warworld-&gt;Vanu</li>
+    <li>warworld-&gt;Samnium</li>
+    <li>warworld-&gt;Kyrus</li>
+    <li>warworld-&gt;Punica</li>
+    <li>warworld-&gt;Cimbria XII</li>
+    <li>warworld-&gt;Barkitos</li>
+
+  </TM_Description_Grimoire.rulePack.rulesStrings>
+</LanguageData>

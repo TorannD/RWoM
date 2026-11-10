@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_EnrageHD.label>Deixar furioso</TM_EnrageHD.label>
+  <TM_EnrageHD.description>Consumir todas as emoções positivas como combustível para a força física, o feitiço desaparecerá assim que toda a felicidade for queimada. Sob o efeito desta maldição, o peão não pode ser abalado, tem maior resistência à dor, velocidade de ataque e danos em combate próximo.</TM_EnrageHD.description>
+  <TM_EnrageHD.stages.0.label>I</TM_EnrageHD.stages.0.label>
+  <TM_EnrageHD.stages.1.label>II</TM_EnrageHD.stages.1.label>
+  <TM_EnrageHD.stages.2.label>III</TM_EnrageHD.stages.2.label>
+  <TM_EnrageHD.stages.3.label>IV</TM_EnrageHD.stages.3.label>
+  <TM_EnrageHD.stages.4.label>V</TM_EnrageHD.stages.4.label>
+
+  <TM_HexHD.label>Amaldiçoado</TM_HexHD.label>
+  <TM_HexHD.description>Sob a influência do feitiço.</TM_HexHD.description>
+  <TM_HexHD.stages.0.label></TM_HexHD.stages.0.label>
+
+  <TM_PainHD.label>Dor</TM_PainHD.label>
+  <TM_PainHD.description>Um trauma que causa uma dor insuportável.</TM_PainHD.description>
+  <TM_PainHD.comps.0.labelTendedWell>vendado</TM_PainHD.comps.0.labelTendedWell>
+  <TM_PainHD.comps.0.labelTendedWellInner>costurado</TM_PainHD.comps.0.labelTendedWellInner>
+  <TM_PainHD.comps.0.labelSolidTendedWell>curado</TM_PainHD.comps.0.labelSolidTendedWell>
+  <TM_PainHD.injuryProps.destroyedLabel>afundado para sempre</TM_PainHD.injuryProps.destroyedLabel>
+  <TM_PainHD.injuryProps.destroyedOutLabel>afundado para sempre</TM_PainHD.injuryProps.destroyedOutLabel>
+
+  <TM_Hex_CriticalFailHD.label>Infeliz</TM_Hex_CriticalFailHD.label>
+  <TM_Hex_CriticalFailHD.description>Amaldiçoado pela má sorte.</TM_Hex_CriticalFailHD.description>
+  <TM_Hex_CriticalFailHD.stages.0.label></TM_Hex_CriticalFailHD.stages.0.label>
+
+
+  <!-- Spirit Bond -->
+
+  <TM_SpiritBondHD.label>Ligação Espiritual</TM_SpiritBondHD.label>
+  <TM_SpiritBondHD.description>É uma ligação que este espírito animal compartilha com um xamã. Aumenta as características físicas e melhora a cura.</TM_SpiritBondHD.description>
+  <TM_SpiritBondHD.stages.0.label>I</TM_SpiritBondHD.stages.0.label>
+  <TM_SpiritBondHD.stages.1.label>II</TM_SpiritBondHD.stages.1.label>
+  <TM_SpiritBondHD.stages.2.label>III</TM_SpiritBondHD.stages.2.label>
+  <TM_SpiritBondHD.stages.3.label>IV</TM_SpiritBondHD.stages.3.label>
+
+  <TM_CrowInsightHD.label>Corvo Visível</TM_CrowInsightHD.label>
+  <TM_CrowInsightHD.description>A compreensão do espírito do corvo aumenta a velocidade da pesquisa e a sensibilidade mental.</TM_CrowInsightHD.description>
+  <TM_CrowInsightHD.stages.0.label>I</TM_CrowInsightHD.stages.0.label>
+  <TM_CrowInsightHD.stages.1.label>II</TM_CrowInsightHD.stages.1.label>
+  <TM_CrowInsightHD.stages.2.label>III</TM_CrowInsightHD.stages.2.label>
+  <TM_CrowInsightHD.stages.3.label>IV</TM_CrowInsightHD.stages.3.label>
+
+
+  <!-- Bird flight graphics -->
+
+  <TM_BirdflightHD.label>voo</TM_BirdflightHD.label>
+  <TM_BirdflightHD.description>Movimento aumentado durante o voo.</TM_BirdflightHD.description>
+  <TM_BirdflightHD.stages.0.label></TM_BirdflightHD.stages.0.label>
+  <TM_BirdflightHD.stages.1.label></TM_BirdflightHD.stages.1.label>
+
+
+  <TM_PainHD.comps.1.permanentLabel>seco</TM_PainHD.comps.1.permanentLabel>
+  <TM_PainHD.comps.HediffComp_TendDuration.labelTendedWell>com vendagem</TM_PainHD.comps.HediffComp_TendDuration.labelTendedWell>
+  <TM_PainHD.comps.HediffComp_TendDuration.labelTendedWellInner>Usca</TM_PainHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  <TM_PainHD.comps.HediffComp_TendDuration.labelSolidTendedWell>definir</TM_PainHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  <TM_PainHD.comps.HediffComp_GetsPermanent.permanentLabel>seco</TM_PainHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  <TM_PainHD.labelNounPretty>Se você quiser um 0, um 1</TM_PainHD.labelNounPretty>
+
+</LanguageData>

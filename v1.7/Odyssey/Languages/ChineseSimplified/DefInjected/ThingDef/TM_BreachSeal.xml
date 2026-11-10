@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BreachSealWall.label>破口封印</TM_BreachSealWall.label>
+  <TM_BreachSealWall.description>在选定的3×3区域远离飞船核心的一侧生成最多三面气密魔法墙。需要己方飞船平台及完好的地板。每面墙有300点生命值，持续一天。保留友方已有的气密墙，不能刷新生效中的封印。不修复地板或屋顶，也不提供氧气。</TM_BreachSealWall.description>
+  <SpellOf_BreachSeal.label>破口封印 — 学习卷轴</SpellOf_BreachSeal.label>
+  <SpellOf_BreachSeal.description>教会能够学习通用法术的法师使用破口封印。 在选定的3×3区域远离飞船核心的一侧生成最多三面气密魔法墙。需要己方飞船平台及完好的地板。每面墙有300点生命值，持续一天。保留友方已有的气密墙，不能刷新生效中的封印。不修复地板或屋顶，也不提供氧气。</SpellOf_BreachSeal.description>
+  <TM_CastScroll_BreachSeal.label>破口封印 — 施法卷轴</TM_CastScroll_BreachSeal.label>
+  <TM_CastScroll_BreachSeal.description>在选定的3×3区域远离飞船核心的一侧生成最多三面气密魔法墙。需要己方飞船平台及完好的地板。每面墙有300点生命值，持续一天。保留友方已有的气密墙，不能刷新生效中的封印。不修复地板或屋顶，也不提供氧气。 从物品栏使用。仅在成功时消耗一张卷轴。任何人均可使用，无需法力或已学法术。 射程：15格。准备：1秒。冷却：60秒。</TM_CastScroll_BreachSeal.description>
+  <TM_SpellStaff_BreachSeal.label>破口封印 — 充能法杖</TM_SpellStaff_BreachSeal.label>
+  <TM_SpellStaff_BreachSeal.description>在选定的3×3区域远离飞船核心的一侧生成最多三面气密魔法墙。需要己方飞船平台及完好的地板。每面墙有300点生命值，持续一天。保留友方已有的气密墙，不能刷新生效中的封印。不修复地板或屋顶，也不提供氧气。 作为主武器装备。可用10次，不可充能，最后一次使用后消失。任何人均可使用，无需法力或已学法术。 射程：15格。准备：1秒。冷却：60秒。</TM_SpellStaff_BreachSeal.description>
+</LanguageData>

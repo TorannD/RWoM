@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_SkeletalFaction.label>скелетоподібний</TM_SkeletalFaction.label>
+  <TM_SkeletalFaction.description>Скелети і мертвяки, підняті магічної енергії.</TM_SkeletalFaction.description>
+  <TM_SkeletalFaction.pawnsPlural>скелетоподібний</TM_SkeletalFaction.pawnsPlural>
+  <TM_SkeletalFaction.fixedName>скелетоподібний</TM_SkeletalFaction.fixedName>
+
+  <TM_ElementalFaction.label>елементарний</TM_ElementalFaction.label>
+  <TM_ElementalFaction.description>Елементальні парфуми, викликані зі своїх шарів сили.</TM_ElementalFaction.description>
+  <TM_ElementalFaction.pawnsPlural>елементарний</TM_ElementalFaction.pawnsPlural>
+  <TM_ElementalFaction.fixedName>елементарний</TM_ElementalFaction.fixedName>
+
+  <TM_SummonedFaction.label>Спричинена істота</TM_SummonedFaction.label>
+  <TM_SummonedFaction.description>Істоти, викликані з інших вимірювань або рівнів існування за допомогою таємної сили.</TM_SummonedFaction.description>
+  <TM_SummonedFaction.pawnsPlural>Викликаний</TM_SummonedFaction.pawnsPlural>
+  <TM_SummonedFaction.fixedName>Викликаний</TM_SummonedFaction.fixedName>
+
+
+  <TM_SkeletalFaction.pawnSingular>скелет</TM_SkeletalFaction.pawnSingular>
+  <TM_ElementalFaction.pawnSingular>елементаль</TM_ElementalFaction.pawnSingular>
+  <TM_SummonedFaction.pawnSingular>покликаний</TM_SummonedFaction.pawnSingular>
+
+</LanguageData>

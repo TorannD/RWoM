@@ -1,0 +1,6 @@
+<Defs>
+  <ThoughtDef>
+    <defName>TM_SoulStoneForcedHost</defName><durationDays>7</durationDays><stackLimit>1</stackLimit><thoughtClass>Thought_Memory</thoughtClass>
+    <stages><li><label>forced spirit possession</label><description>Someone used a soul stone to seize my body.</description><baseMoodEffect>-8</baseMoodEffect></li></stages>
+  </ThoughtDef>
+</Defs>

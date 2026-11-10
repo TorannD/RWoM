@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Light Lance -->
+
+  <Projectile_LightLance.label>світловий список</Projectile_LightLance.label>
+  <FlyingObject_LightLance.label>світловий список</FlyingObject_LightLance.label>
+
+
+  <!-- Sunfire -->
+
+  <Projectile_Sunfire.label>сонячне світло</Projectile_Sunfire.label>
+  <Projectile_Sunfire_I.label>сонячне світло</Projectile_Sunfire_I.label>
+  <Projectile_Sunfire_II.label>сонячне світло</Projectile_Sunfire_II.label>
+  <Projectile_Sunfire_III.label>сонячне світло</Projectile_Sunfire_III.label>
+
+
+  <!-- Light Skip -->
+
+  <Projectile_LightSkip.label>світловий стрибок</Projectile_LightSkip.label>
+
+
+  <!-- Mass Light Skip -->
+
+  <Projectile_LightSkipMass.label>масовий світловий стрибок</Projectile_LightSkipMass.label>
+
+
+  <!-- Refraction -->
+
+  <Projectile_Refraction.label>переломлення</Projectile_Refraction.label>
+
+
+  <!-- Spirit of Light (SoL) -->
+
+  <Projectile_SpiritOfLight.label>дух світла</Projectile_SpiritOfLight.label>
+  <FlyingObject_SpiritOfLight.label>дух світла</FlyingObject_SpiritOfLight.label>
+  <Projectile_LightLaser.label>світловий промінь</Projectile_LightLaser.label>
+
+
+  <!-- Create Light -->
+
+  <Projectile_CreateLight.label>створіть світло</Projectile_CreateLight.label>
+
+
+</LanguageData>

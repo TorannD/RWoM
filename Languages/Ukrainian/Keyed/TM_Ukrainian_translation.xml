@@ -1,0 +1,2227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_NotEnoughMana>{0} недостатньо мани.</TM_NotEnoughMana>
+  <TM_NotEnoughBlood>{0} пожертвувано недостатньо крові.</TM_NotEnoughBlood>
+  <TM_NotEnoughMaxMana>{0} недостатньо запасів мани для підтримки {1}</TM_NotEnoughMaxMana>
+  <TM_NotEnoughStamina>{0} недостатньо витривалості.</TM_NotEnoughStamina>
+  <TM_NotEnoughPsionicEnergy>{0} недостатньо псіонічної енергії для {1}.</TM_NotEnoughPsionicEnergy>
+  <TM_NotEnoughChi>{0} недостатньо енергії Ци.</TM_NotEnoughChi>
+  <TM_NotEnoughEnergy>У {0} недостатньо {1} для виконання цієї здатності.</TM_NotEnoughEnergy>
+  <TM_NoRequiredNeed>{0} не потребує {1}, необхідної для виконання цієї здатності.</TM_NoRequiredNeed>
+  <TM_NoRequiredHediff>{0} не має ефекту здоров'я {1}, необхідного для виконання цієї здатності.</TM_NoRequiredHediff>
+  <TM_NoRequiredInspiration>{0} не має натхнення {1}, необхідного для виконання цієї здатності.</TM_NoRequiredInspiration>
+  <TM_NotInspired>{0} не надихає.</TM_NotInspired>
+  <MentalStateByPsyker>{0} подолання психічної атаки.</MentalStateByPsyker>
+  <TM_InvalidTarget>{0} не знайдено належної мети для здатності {1}.</TM_InvalidTarget>
+  <InvalidPortal>Неприпустиме розташування порталу-цільове положення і всі сусідні позиції повинні бути дійсними і вільними від сміття.</InvalidPortal>
+  <InvalidMine>Неприпустиме розташування викликаної міни - цільове положення має бути дійсним і вільним від сміття.</InvalidMine>
+  <InvalidSummon>Спроба виклику в неприпустимому місці-цільове положення має бути дійсним і вільним від сміття.</InvalidSummon>
+  <PylonDeSpawn>Згусток мани, що утримує оборонний пілон, вичерпався і пілон розпався.</PylonDeSpawn>
+  <MineDeSpawn>Згусток мани, що утримує міну, вичерпався і міна розчинилася.</MineDeSpawn>
+  <MinionFled>Один з твоїх міньйонів вислизнув назад у свою реальність.</MinionFled>
+  <NotArcaneBook>Тип книги не ідентифікований як містичний сценарій!</NotArcaneBook>
+  <NotGiftedPawn>{0} не має магічно обдарованої риси характеру і не може використовувати цей предмет.</NotGiftedPawn>
+  <NotCombatBook>Книжковий тип не визнається бойовою формою!</NotCombatBook>
+  <NotPhyAdeptPawn>Пішак не володіє рисою фізичного адепта і не може вивчити цю бойову форму.</NotPhyAdeptPawn>
+  <CannotLearnSpell>Заклинання не може бути застосоване до цієї пішаки.</CannotLearnSpell>
+  <CannotLearnSkill>Вміння не може бути застосоване до цієї пішаки.</CannotLearnSkill>
+  <NotMageToLearnSpell>Пішак не пристосований до таємних сил і не може дізнатися вміст цього сувою.</NotMageToLearnSpell>
+  <NotFighterToLearnSkill>Пішака не навчена бойовій формі і не може застосовувати прийоми з цього сувою.</NotFighterToLearnSkill>
+  <InvalidBattery>Заклинання не спрацювало, не вдалося виявити точки дотику з будівлею (не батарея).</InvalidBattery>
+  <NotABuilding>Заклинання не спрацювало: метою була не будівля.</NotABuilding>
+  <NotRightTerrainType>Неможливо перетворити цей тип землі.</NotRightTerrainType>
+  <TerraformFailed>Нездатність трансформувати землю.</TerraformFailed>
+  <TerraformNotSandOrGravel>Неможливо перетворити землю, повинен бути пісок або гравій.</TerraformNotSandOrGravel>
+  <PortalCollapseFinal>Портал зруйнувався!</PortalCollapseFinal>
+  <PortalCollapseIn>Портал зруйнується за {0} секунд.</PortalCollapseIn>
+  <InvalidTargetLocation>Некоректне розташування цілі.</InvalidTargetLocation>
+  <MustHaveRangedWeapon>{0} не екіпірований зброєю дальнього бою. Щоб використовувати цю навичку, озброїте {0} зброєю дальнього бою.</MustHaveRangedWeapon>
+  <MustBeUnarmed>{0} повинен бути беззбройним, щоб виконати {1}</MustBeUnarmed>
+  <MustHaveGunpowderWeapon>{0} не екіпірований зброєю дальнього бою. {0} необхідно озброїтися більш досконалою зброєю, щоб використовувати цю навичку.</MustHaveGunpowderWeapon>
+  <MustHaveMeleeWeapon>{0} не екіпірований зброєю ближнього бою. Щоб використовувати цю навичку, озброїте {0} зброєю ближнього бою.</MustHaveMeleeWeapon>
+  <TM_ShieldBlockingPowers>{0} потрібно прибрати {1} щоб використовувати цю здатність.</TM_ShieldBlockingPowers>
+  <TM_OutOfRange>Цільове місце розташування знаходиться поза зоною досяжності.</TM_OutOfRange>
+  <TM_OutOfLOS>Здатність не спрацювала, мета не була видна для {0}.</TM_OutOfLOS>
+  <TM_NothingToRegenerate>Немає дійсної мети для регенерації.</TM_NothingToRegenerate>
+  <TM_CureDiseaseTypeFail>Неможливо вилікувати цей тип хвороби.</TM_CureDiseaseTypeFail>
+  <TM_CantSummonSelf>Не можу закликати до себе.</TM_CantSummonSelf>
+  <TM_UndeadCollapsed>У {0} Немає мани, щоб підтримувати {1}. {1} розпався на ману для поповнення {0}.</TM_UndeadCollapsed>
+  <TM_ResistedSpell>Опір!</TM_ResistedSpell>
+  <TM_CannotUseOnLiving>Це закляття не може бути використане на живих.</TM_CannotUseOnLiving>
+  <TM_CannontConsumeCorpseType>Не можна вживати цей тип трупів.</TM_CannontConsumeCorpseType>
+  <TM_InvalidCorpseType>Тип трупа неприпустимий для вживання.</TM_InvalidCorpseType>
+  <TM_Learn>Вивчено</TM_Learn>
+  <TM_GatewayBeyondMaximumRange>Спрямований осередок знаходиться поза досяжністю воріт.</TM_GatewayBeyondMaximumRange>
+  <TM_InvalidGatewaySelection>Некоректна комірка для воріт.</TM_InvalidGatewaySelection>
+  <TM_InvalidGatewayNotOccupied>Вороти можуть бути використані тільки на осередках світу, зайнятих колоністами.</TM_InvalidGatewayNotOccupied>
+  <TM_Exception>виняток було викликано {0} під час спроби каста {1} - поповніть ману і повторіть спробу.</TM_Exception>
+  <TM_ExceptionClose>Було створено виняток при спробі закрити {0} - завершення здатності.</TM_ExceptionClose>
+  <TM_ExceptionTick>Виняток було викликано під час {0} - негайне завершення здатності.</TM_ExceptionTick>
+  <TM_InvalidResurrection>{0} не вдалося знайти відповідну мету для воскресіння.</TM_InvalidResurrection>
+  <TM_ResurrectionTargetExpired>Воскресіння не може відновити це тіло, воно виснажилося і більше не може підтримувати життя.</TM_ResurrectionTargetExpired>
+  <MustHaveBow>{0} озброєний {1}, {0} повинен бути екіпірований цибулею для цієї здатності.</MustHaveBow>
+  <TM_BondedAnimalRelease>Зв'язок між {0} і {1} закінчився і {0} зник у дикій природі.</TM_BondedAnimalRelease>
+  <TM_BondedAnimalReleaseToColony>Зв'язок між {0} і {1} закінчився, але {0} вважав за краще залишитися в колонії.</TM_BondedAnimalReleaseToColony>
+  <TM_AnimalIncapableOfBond>{0} не має достатнього інтелекту, щоб утворити зв'язок з {1}.</TM_AnimalIncapableOfBond>
+  <TM_AnimalAlreadyHasBond>{0} вже встановив зв'язок з іншим рейнджером.</TM_AnimalAlreadyHasBond>
+  <TM_FailedRangerBond>{1} не вдалося встановити зв'язок з ймовірністю {0} - {2}%</TM_FailedRangerBond>
+  <TM_RangerNotExperienced>{1} не може встановити зв'язок з {0}. {0} має дикість {2}% і {1} може зв'язуватися тільки з існуванням з {3}% або нижче. Це можна збільшити, вклавши окуляри в «Емпатія до тварин».</TM_RangerNotExperienced>
+  <TM_TooManyTraps>{0} обмежується пастками {1}, видаляючи найстарішу пастку.</TM_TooManyTraps>
+  <TM_SummonedCreatureLimitExceeded>{0} перевищив максимальну кількість викликаних істот, відсторонивши найстаріший виклик.</TM_SummonedCreatureLimitExceeded>
+  <TM_NoMinionToDismiss>{0} не має покликаних міньйонів.</TM_NoMinionToDismiss>
+  <TM_NoGuardianSpiritToDismiss>У {0} немає духу-хранителя, якого можна було б звільнити.</TM_NoGuardianSpiritToDismiss>
+  <TM_NoValidUndeadToDismiss>Мета не є допустимою метою.</TM_NoValidUndeadToDismiss>
+  <TM_CannotUseGemOfInsight>{0} вже володіє таємницею або бойовою рисою, або є нежиттю, і не може використовувати цей дорогоцінний камінь.</TM_CannotUseGemOfInsight>
+  <TM_ItemUseFailed>Спроба використовувати елемент невдала, причина: {0}</TM_ItemUseFailed>
+  <TM_SunlightCollapse>Сонячне світло зникло, {0} не зміг цього витримати.</TM_SunlightCollapse>
+  <TM_DamageAbsorbedAll>Поглинено</TM_DamageAbsorbedAll>
+  <TM_DamageAbsorbed>Поглинено ({0} - {1})</TM_DamageAbsorbed>
+  <TM_NotSocialCapable>{0} не здатний до соціальної активності і не може стати бардом.</TM_NotSocialCapable>
+  <TM_CleaveChance>Шанс розщеплення {0}%</TM_CleaveChance>
+  <TM_WhirlwindDamage>Збиток від вихору за удар: {0}</TM_WhirlwindDamage>
+  <TM_WeaponDamage>{0} Втрата: {1}</TM_WeaponDamage>
+  <TM_CritChance>{0} критичний удар: {1}</TM_CritChance>
+  <TM_AntiArmorDamage>{0} Втрата: {1}; додатковий збиток механоїдам: {2}</TM_AntiArmorDamage>
+  <TM_ArrowStormDamage>{0} Втрата: {1}; точність: {2}%</TM_ArrowStormDamage>
+  <TM_LastManaGainPct>Приріст мани: {0}% /5s</TM_LastManaGainPct>
+  <TM_LastStaminaGainPct>ПРирост стаміни: {0}% /5s</TM_LastStaminaGainPct>
+  <TM_AssaultPending>Елементали йдуть через розлом!</TM_AssaultPending>
+  <TM_MimicFailed>{0} не вдається скопіювати здатність цього об'єкта.</TM_MimicFailed>
+  <TM_CannotPossess>Неможливо, щоб {0} було {1}.</TM_CannotPossess>
+  <TM_CannotPossessNow>Для {0} неможливо мати {1} у його поточному стані.</TM_CannotPossessNow>
+  <TM_PossessedCaughtStealing>{0} звинувачує тебе в спробі вкрасти {1}! Вони засудили ваші мерзенні маніпуляції і тепер вороже ставляться до вашої фракції.</TM_PossessedCaughtStealing>
+  <TM_LetterLabelPossessedCaughtStealing>Пійманий на крадіжці!</TM_LetterLabelPossessedCaughtStealing>
+  <TM_CannotSoulBondUndead>{0} не може створити зв'язок душі з нежиттю.</TM_CannotSoulBondUndead>
+  <TM_CannotSoulBondThing>Неможливо створити душевний зв'язок з метою. {0} може отримати прибуток тільки із зв'язку душі з живою пішаком, що володіє звичною душею.</TM_CannotSoulBondThing>
+  <TM_NothingToDominate>Немає відповідної мети для домінування.</TM_NothingToDominate>
+  <TM_CannotSoulBondUnwilling>не вдалося створити зв'язок душі з {1}. {0} може утворити зв'язок душі тільки з спраглим пішаком (та ж фракція).</TM_CannotSoulBondUnwilling>
+  <TM_CannotSoulBondAnother>{0} не може утворити зв'язок душі з {1}. {1} вже підтримує цей тип зв'язку з іншим.</TM_CannotSoulBondAnother>
+  <TM_PsychicSensitivity>Екстрасенсорна чутливість: {0}</TM_PsychicSensitivity>
+  <TM_WarlockEmpathyDesc>Я можу відчувати емоції тих, хто мене оточує.</TM_WarlockEmpathyDesc>
+  <TM_WarlockEmpathyOverwhelmed>Емоції тих, хто мене оточує, приголомшують, мені потрібно піти від усіх цих людей або знайти спосіб приглушити ці емоції.</TM_WarlockEmpathyOverwhelmed>
+  <TM_Icon_Undead>Жвава Ніжити</TM_Icon_Undead>
+  <TM_Icon_Mage>Магічний клас</TM_Icon_Mage>
+  <TM_Icon_Fighter>Бойовий клас</TM_Icon_Fighter>
+  <TM_Icon_Custom>Клас користувача</TM_Icon_Custom>
+  <TM_NotPsychicSensitive>{0} намагався стати псіоніком, але, схоже, не володіє психічною чутливістю, необхідною для прояву псіонічної сили.</TM_NotPsychicSensitive>
+  <TM_TooManyStoneskins>{0} може підтримувати захист кам "яної шкіри лише на пішаках {1}. {0} зараз захищає {2}.</TM_TooManyStoneskins>
+  <TM_NoSpritesToDismiss>{0} не виявив земних парфумів - скидання параметрів.</TM_NoSpritesToDismiss>
+  <TM_SentinelDeSpawn>{0} розсипався в прах без мани, необхідної для підтримки.</TM_SentinelDeSpawn>
+  <TM_TooManySentinels>{0} обмежується {1} вартовими, видаляючи найстарішого варта.</TM_TooManySentinels>
+  <TM_NoSpawnSentinelOnBuilding>{0} не вдається створити варту на вершині поточного будинку.</TM_NoSpawnSentinelOnBuilding>
+  <TM_SentinelCannotReturn>Страж, що відноситься до {0}, не зміг повернутися в своє позначене місце, воно більш недоступне. Страж перетворився на пил.</TM_SentinelCannotReturn>
+  <TM_AugmentationsToggleDesc>Вмикає або вимикає автоматичне використання доповнень. Якщо його вимкнено, псіонік ніколи не буде використовувати навички аугментації.</TM_AugmentationsToggleDesc>
+  <TM_AugmentationsEnabled>Увімкнено аугментацію</TM_AugmentationsEnabled>
+  <TM_AugmentationsDisabled>Увімкнено аугментацію</TM_AugmentationsDisabled>
+  <TM_MindAttackToggleDesc>Вмикає або вимикає автоматичне використання ментальних атак.</TM_MindAttackToggleDesc>
+  <TM_MindAttackEnabled>Ментальна атака включена</TM_MindAttackEnabled>
+  <TM_MindAttackDisabled>Ментальна атака вимкнена</TM_MindAttackDisabled>
+  <TM_CleaveToggleDesc>Вмикає або вимикає автоматичне використання гладіаторського розрубування; ця здатність спрацьовує тільки в ближньому бою.</TM_CleaveToggleDesc>
+  <TM_CleaveEnabled>Розрубування ввімкнено</TM_CleaveEnabled>
+  <TM_CleaveDisabled>Розрубування вимкнено</TM_CleaveDisabled>
+  <TM_CQCToggleDesc>Вмикає або вимикає автоматичне використання CQC; ця здатність спрацьовує тільки в ближньому бою.</TM_CQCToggleDesc>
+  <TM_CQCEnabled>Включено CQC</TM_CQCEnabled>
+  <TM_CQCDisabled>CQC вимкнено</TM_CQCDisabled>
+  <TM_CanNotTeachMagic>{0} не може бути наставником {1} в магії, оскільки {1} не є магом.</TM_CanNotTeachMagic>
+  <TM_CanNotTeachCombat>{0} не може тренуватися {1} в бою, оскільки {1} не є бійцем.</TM_CanNotTeachCombat>
+  <TM_CanNotTeachMagicDislike>{0} відмовляється наставляти {1} в магію через думку {0} про {1}.</TM_CanNotTeachMagicDislike>
+  <TM_CanNotTeachCombatDislike>{0} відмовляється тренувати {1} у бою через думку {0} про {1}.</TM_CanNotTeachCombatDislike>
+  <TM_TechnoBitToggleDesc>Включає або відключає техно-біт, коли відключений, техно-біт не буде виконувати ніяких дій.</TM_TechnoBitToggleDesc>
+  <TM_TechnoBitEnabled>Техно-біт включений</TM_TechnoBitEnabled>
+  <TM_TechnoBitDisabled>Техно-біт вимкнено</TM_TechnoBitDisabled>
+  <TM_ElementalShotToggleDesc>Вмикає або вимикає елементарний постріл. Коли він включений, гарматні снаряди іноді будуть мати елементарні властивості, прикріплені до снаряду. Елементарні снаряди споживають невелику кількість мани.</TM_ElementalShotToggleDesc>
+  <TM_AnimalHasAllegience>Ця тварина вже віддана іншій справі.</TM_AnimalHasAllegience>
+  <TM_TechnoBitRepair>Ремонт</TM_TechnoBitRepair>
+  <TM_TechnoBitRepairDesc>Перемикає функцію ремонту техно-біта.</TM_TechnoBitRepairDesc>
+  <TM_FoundNoReplicateTarget>Не вдалося знайти допустимий елемент для реплікації.</TM_FoundNoReplicateTarget>
+  <TM_FoundNoReplicateRecipe>Неможливо визначити конструкцію або рецепт для {0}.</TM_FoundNoReplicateRecipe>
+  <TM_NotEnoughHate>{0} не вистачає ненависті, щоб використовувати {1}.</TM_NotEnoughHate>
+  <TM_ReplicatedUnrecognizedIngredient>{0} містить невизначений елемент і не може бути відтворений.</TM_ReplicatedUnrecognizedIngredient>
+  <TM_NoExternalBodyPartsCanBleed>У {0} Немає частини тіла, з якої можна було б взяти кров.</TM_NoExternalBodyPartsCanBleed>
+  <TM_NoThingToTransmutate>{0} не знайшов жодних ресурсів, щоб транслювати у вказаному місці.</TM_NoThingToTransmutate>
+  <TM_UnableToTransmutate>{0} не може транслювати {1}.</TM_UnableToTransmutate>
+  <TM_TransmutationLostCohesion>Матеріал {0} втратили зв'язок під час трансмутації і розпалися.</TM_TransmutationLostCohesion>
+  <TM_CancelPolymorph>Скасувати зміну форми</TM_CancelPolymorph>
+  <TM_CancelPolymorphDesc>Повертає персонажа в оригінальному вигляді до зміни форми.</TM_CancelPolymorphDesc>
+  <TM_NoMeleeWeaponToEnchant>Не знайдено зброю ближнього бою на {0}, щоб зачарувати.</TM_NoMeleeWeaponToEnchant>
+  <TM_CannotEnchantArtifact>{0} не може зачарувати {1} Цей пункт не може бути зачаровано далі.</TM_CannotEnchantArtifact>
+  <TM_BrokenOutOfMentalState>{0} вирвався з ментального стану {1} за допомогою психічного розуму.</TM_BrokenOutOfMentalState>
+  <TM_InsufficientMaterialForArtifact>Бракує {0} для створення каменю чародіїв.</TM_InsufficientMaterialForArtifact>
+  <TM_CannotCreateStone>{0} не вдалося створити артефакт з {1}.</TM_CannotCreateStone>
+  <TM_CannotMimicBloodMage>Здатності мага крові не можуть бути скопійовані.</TM_CannotMimicBloodMage>
+  <TM_ViolentCannotEquip>{0} здатний на насильство і не може бути екіпірований {1}</TM_ViolentCannotEquip>
+  <TM_TraitorOrbRecruit>{0} успішно прирік {1} приєднатися до вашої справи, використовуючи кулю зрадника .\n\nВикористання підлої магії проти {2} обурило {3} і зменшило ваше положення з ними з {4} до {5}.</TM_TraitorOrbRecruit>
+  <TM_InsufficientManaForJob>Бракує мани, щоб почати роботу: потрібно 50, є {0}</TM_InsufficientManaForJob>
+  <TM_NoTraitsApplied>Немає можливості застосувати якісь риси до {0}, сфера душ може застосовувати тільки ті риси, які не суперечать раніше існуючим рисам.</TM_NoTraitsApplied>
+  <TM_NothingEnchanted>{0} не вдалося покращити чари на {1} за допомогою {2}</TM_NothingEnchanted>
+  <TM_Taunting>Насмішка!</TM_Taunting>
+  <TM_CeaseToExist>{0} припинив своє існування...</TM_CeaseToExist>
+  <TM_EndingGameCondition>{0} успішно завершило {1}.</TM_EndingGameCondition>
+  <TM_GameConditionChanged>{0} було випадково змінено з {1} у {2}!</TM_GameConditionChanged>
+  <TM_GameConditionMadePermanent>{0} стало постійним.</TM_GameConditionMadePermanent>
+  <TM_GameConditionAdded>{0} викликав (а) {1} під час спроби змінити {2}.</TM_GameConditionAdded>
+  <TM_AlterGameConditionFailed>{0} Не вдалося змінити {1}.</TM_AlterGameConditionFailed>
+  <TM_PredictionFeelsConfident>{0} відчуває уиєреність, що {1} запобігла {2}.</TM_PredictionFeelsConfident>
+  <TM_PredictionFeelsUnsure>{0} не впевнений, що {1} вплинув на передбачення {2}.</TM_PredictionFeelsUnsure>
+  <TM_PredictionUnease>{0} почувається ніяково через {1} зміни, внесені в передбачення {2}, можливо, щось пішло не так...</TM_PredictionUnease>
+  <TM_PredictionTerrified>{0} наляканий (а), {1} відчуває, що щось катастрофічне трапиться...</TM_PredictionTerrified>
+  <TM_StatsReport_Undead>Ніжити: немає цінності</TM_StatsReport_Undead>
+  <TM_IncompatibleWeapon>Несумісна зброя для цієї здатності.</TM_IncompatibleWeapon>
+  <TM_BondedPawnNotSpawned>Не вдається зв'язати з прив'язаною пішаком {0}, душа в трансформації.</TM_BondedPawnNotSpawned>
+  <TM_WildSurge>Дикий Сплеск: {0}!</TM_WildSurge>
+  <TM_CasterMute>{0} не може вимовляти заклинання під час немоти.</TM_CasterMute>
+  <TM_IgnoredOrder>Проігнорував наказ</TM_IgnoredOrder>
+  <TM_MustHaveWeaponType>{0} озброєний {1}, {0} повинен спорядити {2}, щоб використовувати цю здатність.</TM_MustHaveWeaponType>
+  <TM_SuppressingFireCount>Пострілів: {0}</TM_SuppressingFireCount>
+  <TM_BuckshotFireCount>Дробинки картечі: {0}</TM_BuckshotFireCount>
+  <TM_LendColonist_UndeadFail>Ви відправляєте нам трупи - це якийсь жарт!?</TM_LendColonist_UndeadFail>
+  <TM_AlreadyLearnedAbility>{0} вже вивчив {1}.</TM_AlreadyLearnedAbility>
+  <TM_NotEnoughManaToSustain>{0} не має достатньої кількості мани для підтримки {1}.</TM_NotEnoughManaToSustain>
+  <TM_CannotCastUnderRoof>{0} не може використовувати {1} з-під даху.</TM_CannotCastUnderRoof>
+  <TM_UnableToTravel>Неможливо дістатися до цього пункту призначення.</TM_UnableToTravel>
+  <TM_SelectTargetOnMap>{0}: виберіть ціль на карті...</TM_SelectTargetOnMap>
+  <TM_AbandoningMap>Ваші пішаки відмовляються від {0}, ви хочете прибрати карту?</TM_AbandoningMap>
+  <TM_IncompatibleWeaponType>{0} не можна використовувати {1} - несумісну зброю.</TM_IncompatibleWeaponType>
+  <TM_SpiritAnimalChange>Духовна тварина {0} змінилася з {1} на {2}.</TM_SpiritAnimalChange>
+  <TM_InvalidAction>{0} неможливо використовувати {1} - некоректні параметри.</TM_InvalidAction>
+  <TM_InvalidAbility>{0} Не вдалося використовувати {1}.</TM_InvalidAbility>
+  <TM_SlaveRefuses>{0} відмовляється виконувати цю дію.</TM_SlaveRefuses>
+  <TM_SlaveScribeFail>{0} був зіпсований {1} під час процесу запису.</TM_SlaveScribeFail>
+  <TM_MessageRitualRoleMustBeColonistOrPrisoner>{0} мабуть, колоніст або в'язень.</TM_MessageRitualRoleMustBeColonistOrPrisoner>
+  <TM_MessageRitualRoleMustBeColonist>{0} мабуть, колоніст.</TM_MessageRitualRoleMustBeColonist>
+  <TM_MessageRitualRoleMustBeVoidseeker>{0} мабуть, шукач порожнечі.</TM_MessageRitualRoleMustBeVoidseeker>
+  <TM_MessageRitualRoleMustBeMage>{0} Маг.</TM_MessageRitualRoleMustBeMage>
+  <TM_MessageRitualRoleMustNotBeMage>{0} вже не може бути магом.</TM_MessageRitualRoleMustNotBeMage>
+  <TM_MessageRitualRoleMustNotBeFighter>{0} вже не може бути бійцем.</TM_MessageRitualRoleMustNotBeFighter>
+  <TM_MessageRitualRoleCannotHaveTrait>{0} вже має ознаку {1}.</TM_MessageRitualRoleCannotHaveTrait>
+  <TM_MessageRitualRoleMustHaveTrait>{0} повинна мати ознаку {1}.</TM_MessageRitualRoleMustHaveTrait>
+  <TM_DoesNotHaveArcanePathwayInspiration>{0} більше не було натхнення.</TM_DoesNotHaveArcanePathwayInspiration>
+  <TM_MessageRitualRoleMustBeInspiredWith>{0} не надихається {1}.</TM_MessageRitualRoleMustBeInspiredWith>
+  <TM_MessageRitualRoleCannotBeUndead>{0} не може бути нежиттю.</TM_MessageRitualRoleCannotBeUndead>
+  <TM_RuneCarving>рунічне гравіювання</TM_RuneCarving>
+  <TM_ArcaneTatoo>таємне татуювання</TM_ArcaneTatoo>
+  <TM_MaxGolemUpgradeReached>Максимальне оновлення {0} вже досягнуто; ресурси повернуто</TM_MaxGolemUpgradeReached>
+  <TM_NoGolemPartToRestore>Відсутніх деталей для заміни {0} не було; ресурси були повернуті</TM_NoGolemPartToRestore>
+  <TM_GolemBillUnsuccessful>Не вдалося завершити рецепт голема {0}; ресурси були повернуті</TM_GolemBillUnsuccessful>
+  <TM_GolemCannotReturn>Голем не зміг повернутися в призначене становище, він недоступний або зайнятий.</TM_GolemCannotReturn>
+  <TM_GolemPartReplaced>Оновлення {0} замінило оновлення {1}; тільки одне оновлення цього типу може займати {2}.</TM_GolemPartReplaced>
+  <TM_UnfinishedThingNoProduct>Незавершений {0}</TM_UnfinishedThingNoProduct>
+  <TM_NoPassionsToTransfer>Не знайдено нічого, щоб перейти з {0} на {1}.</TM_NoPassionsToTransfer>
+  <TM_MustHaveInspiration>{0} має бути натхнення для використання {1}.</TM_MustHaveInspiration>
+  <TM_BonusDamage>Додаткова втрата: {0}</TM_BonusDamage>
+  <TM_NoRangedAttack>ніякої дальньої атаки</TM_NoRangedAttack>
+  <TM_GolemLight>Світло</TM_GolemLight>
+  <TM_GolemLightDesc>Перемикач світла</TM_GolemLightDesc>
+  <TM_GolemMinimumToActivate>Недостатньо енергії для активації: {0} з {1}</TM_GolemMinimumToActivate>
+  <TM_GolemChargesRemaining>{0} Решта дій</TM_GolemChargesRemaining>
+  <TM_AlreadyHasSymbiote>у {0} вже є свій симбіот.</TM_AlreadyHasSymbiote>
+  <TM_CannotAlterWeatherType>Неможливо створити альтернативний тип погоди з {0}</TM_CannotAlterWeatherType>
+  <LetterLabelRegrowthSurgeryFail>Операція пройшла невдало</LetterLabelRegrowthSurgeryFail>
+  <LetterRegrowthSurgeryFail>{0} просто спробував виконати {1} на {2}, але зазнав невдачі, тому що {4} {3}. Для успішного виконання цієї операції необхідно виконати наступні умови:\n\n1. Хірург повинен бути друїдом\n\n2. Друїд повинен був вивчити заклинання відростання кінцівок .\n\n3. Ви повинні мати сім'ю життя як інгредієнт для виконання операції .\n\n4. На момент операції у Друїда має бути 90 або більше одиниць мани .\n\n5. Після того, як всі ці умови будуть виконані, друїд все одно повинен виконати операцію успішно, що залежить від їх медичної майстерності .\n\n Удачі, маг!</LetterRegrowthSurgeryFail>
+  <TM_NotMagicUser>це не чарівна користувачів</TM_NotMagicUser>
+  <TM_NoRegrowthSpell>не вивчив заклинання виростити кінцівки</TM_NoRegrowthSpell>
+  <TM_InsufficientManaForSurgery>не вистачило мани для завершення операції - потрібно 90 або більше</TM_InsufficientManaForSurgery>
+  <LetterLabelRuneCarvingFail>Вирізання рун Не вдалося</LetterLabelRuneCarvingFail>
+  <LetterRuneCarvingFail>{0} щойно спробував {1} на {2}, але зазнав невдачі, оскільки {4} {3} .\n\n Для успішного виконання вирізання рун повинні бути виконані такі умови:\n\n1. Хірург повинен бути Магом\n2. Маг, повинен бути навчений здатності Вирізання рун .\n3. У вас має бути не менше {5} мани, щоб завершити вирізання руни .\n4. Маґ має вміти виконувати художні та ремісничі роботи .\n5. Після виконання всіх цих умов маг все одно повинен успішно виконувати різьблення - шанс успіху у вирізанні рун починається з 70% і збільшується в залежності від навички крафта, художньої майстерності та навички вирізання рун.</LetterRuneCarvingFail>
+  <TM_NoRuneCarvingSpell>не може вирізати руни</TM_NoRuneCarvingSpell>
+  <TM_InsufficientManaForCarving>не вистачило мани для завершення вирізання рун - для {0} потрібно {1} або більше.</TM_InsufficientManaForCarving>
+  <TM_RuneCarvingFailed>{0} не вдалося успішно вирізати руну для {1} {2} - шанс успіху був {3}%</TM_RuneCarvingFailed>
+  <TM_CarvingFailedChance>Вирізання рун не вдалося.</TM_CarvingFailedChance>
+  <LetterLabelArcaneScriptCaravan>Запит каравану</LetterLabelArcaneScriptCaravan>
+  <LetterArcaneScriptCaravan>Сусіднє поселення, {0}, зв'яжеться з вами за спеціальним торговим запитом. Вони хотіли б придбати:\ n\n {1 }\n\n у відповідь вони пропонують:\ n\n {2 }\n\n цей запит закінчується після того, як: {3 }\n\n Якщо ви хочете здійснити операцію, надішліть караван із запитаними припасами. Ви можете переглянути цю пропозицію, вибравши {0} на карті світу.</LetterArcaneScriptCaravan>
+  <LetterLabelRitualFail>Ритуал не вдався</LetterLabelRitualFail>
+  <LetterRitualFail>Ваші маги не змогли активувати груповий ритуал {0}. Цей ритуал має {1}% шанс на успіх. Всі ресурси були втрачені.</LetterRitualFail>
+  <LetterRitualFailDamage>Ваші маги не змогли активувати груповий ритуал {0} і постраждали від відповідної реакції магії на шкоду до {2}. Цей ритуал має {1}% шансів на успіх. Всі ресурси були втрачені.</LetterRitualFailDamage>
+  <TM_PredictionLetter>Передбачення: {0}</TM_PredictionLetter>
+  <TM_PredictionText>{0} передбачив {1} відбуватиметься протягом найближчих {2} годин.</TM_PredictionText>
+  <XPMultiplier>Маг ХР множник збільшення</XPMultiplier>
+  <NeedMultiplier>Збільшення мани множник</NeedMultiplier>
+  <AICanCast>ШІ використовує здібності</AICanCast>
+  <AIHardMode>Жорсткий режим ШІ</AIHardMode>
+  <DeathRadius>ШІ радіус відплати смерті мага</DeathRadius>
+  <AIMarking>Маркування мага ШІ</AIMarking>
+  <AIFighterMarking>Маркування бійця ШІ</AIFighterMarking>
+  <AIFriendlyMarking>Маркування керованих пішаків</AIFriendlyMarking>
+  <baseMageChance>Магічно-обдаровані:</baseMageChance>
+  <baseFighterChance>Фізично-обдаровані:</baseFighterChance>
+  <advMageChance>Спільність магів:</advMageChance>
+  <advFighterChance>Спільність бійців:</advFighterChance>
+  <DeathExplosionMin>мінімальна втрата</DeathExplosionMin>
+  <DeathExplosionMax>максимальна втрата</DeathExplosionMax>
+  <DeathExplosionField>{0}</DeathExplosionField>
+  <MagicyteChance>Шанс падіння Магіцита</MagicyteChance>
+  <showAbilitiesOnMultiSelect>Показати здібності під час вибору декількох пішаків</showAbilitiesOnMultiSelect>
+  <showMagicGizmo>Показати Ману/витривалість/псі енергії як Гізмо</showMagicGizmo>
+  <TM_enableAutocast>Увімкнути авто</TM_enableAutocast>
+  <TM_queueAutocast>Завдання автоматичного листування в чергу</TM_queueAutocast>
+  <TM_queueAutocastDesc>Ненасильницькі і необроблені завдання автоматичної розсилки будуть поставлені в чергу в якості наступного завдання для виконання замість переривання поточного завдання. Можливості, поставлені в чергу, можуть стати недійсними або неоптимальними, залежно від тривалості затримки. Деякі здібності, такі як мерехтіння, фазовий удар або завдання, засновані на «зоні», звільняються.</TM_queueAutocastDesc>
+  <TM_autocastUndraftedThreshold>Мінімальна енергія% для авто-каста (непідготовлений)</TM_autocastUndraftedThreshold>
+  <TM_autocastDraftedThreshold>Мінімальна енергія% для авто-каста (підготовлено)</TM_autocastDraftedThreshold>
+  <TM_autocastEvaluationFrequency>Частота оцінки автокасту</TM_autocastEvaluationFrequency>
+  <showLevelUpMessage>Показувати повідомлення підвищення рівня</showLevelUpMessage>
+  <showUndeadPawnChange>Змінити вигляд нежити пішки</showUndeadPawnChange>
+  <showUndeadAnimalChange>Зміна зовнішнього вигляду нежити тварин</showUndeadAnimalChange>
+  <unrestrictedBloodTypesForBloodMagic>Необмежені типи крові для магія крові</unrestrictedBloodTypesForBloodMagic>
+  <showClassIconOnColonistBar>Показати піктограму класу на панелі колоністів</showClassIconOnColonistBar>
+  <classIconSize>Розмір піктограми класу</classIconSize>
+  <TM_AggressiveAICasting>ШІ агресивний</TM_AggressiveAICasting>
+  <TM_ParacyteSoftCap>Paracyte М'яка Шапочка:</TM_ParacyteSoftCap>
+  <TM_ParacyteMagesCount>Маги враховуються м'яка кришка (2 шт)</TM_ParacyteMagesCount>
+  <TM_UndeadUpkeepMultiplier>Вартість утримання нежиті</TM_UndeadUpkeepMultiplier>
+  <TM_autocastAnimals>Автокаст націлений на тварин</TM_autocastAnimals>
+  <TM_UnrestrictedWeaponCopy>Необмежена Техно-Зброя</TM_UnrestrictedWeaponCopy>
+  <TM_DeathRetaliationIsLethal>Відплата смерті завжди летальна</TM_DeathRetaliationIsLethal>
+  <TM_DeathRetaliationChance>Відплата смерті шанс</TM_DeathRetaliationChance>
+  <TM_DeathRetaliationDelay>Фактор затримки відплати смерті</TM_DeathRetaliationDelay>
+  <TM_shrinkIcons>Зменшити піктограми</TM_shrinkIcons>
+  <TM_CameraSnap>Прив'язка камери після телепортації</TM_CameraSnap>
+  <supportTraitChance>Допоміжні ознаки</supportTraitChance>
+  <TM_ClassWarning>* * Змінюйте параметри класів тільки при запуску нової гри * *</TM_ClassWarning>
+  <TM_RequiresRestart>* * Будь-яка зміна вимагає перезавантаження гри * *</TM_RequiresRestart>
+<TM_NewProgressionBeta>Нова прогресія класів (бета)</TM_NewProgressionBeta>
+  <TM_NewProgressionBetaDesc>Увімкнує експериментальну систему нової прогресії класів. Враховується лише під час запуску гри: для зміни налаштування потрібен перезапуск. Коли вимкнено, мод використовує класичну систему класів.</TM_NewProgressionBetaDesc>
+  <TM_ClassOptions>Включені класи:</TM_ClassOptions>
+  <TM_EnabledMages>Маги</TM_EnabledMages>
+  <TM_EnabledFighters>Бійці</TM_EnabledFighters>
+  <TM_Arcanist>Чаклун</TM_Arcanist>
+  <TM_FireMage>Маг вогню</TM_FireMage>
+  <TM_IceMage>Маг льоду</TM_IceMage>
+  <TM_LitMage>Маг блискавок</TM_LitMage>
+  <TM_Geomancer>Геомансер</TM_Geomancer>
+  <TM_Druid>Друїд</TM_Druid>
+  <TM_Paladin>Паладін</TM_Paladin>
+  <TM_Priest>Священик</TM_Priest>
+  <TM_Bard>Бард</TM_Bard>
+  <TM_Summoner>Призовник</TM_Summoner>
+  <TM_Necromancer>Некромант</TM_Necromancer>
+  <TM_Demonkin>Демонік</TM_Demonkin>
+  <TM_Gladiator>Гладіатор</TM_Gladiator>
+  <TM_Bladedancer>Танцюючий з клинками</TM_Bladedancer>
+  <TM_Sniper>Снайпер</TM_Sniper>
+  <TM_Ranger>Слідопит</TM_Ranger>
+  <TM_Faceless>Безликий</TM_Faceless>
+  <TM_Psionic>Псионик</TM_Psionic>
+  <TM_Technomancer>Техномансер</TM_Technomancer>
+  <TM_DeathKnight>Лицар Смерті</TM_DeathKnight>
+  <TM_BloodMage>Маг крові</TM_BloodMage>
+  <TM_Enchanter>Чаклун</TM_Enchanter>
+  <TM_Chronomancer>Хрономант</TM_Chronomancer>
+  <TM_Monk>Монах.</TM_Monk>
+  <TM_Wanderer>Мандрівник</TM_Wanderer>
+  <TM_Wayfarer>Путінник</TM_Wayfarer>
+  <TM_ChaosMage>Хаос Маг</TM_ChaosMage>
+  <TM_Commander>Воєначальник</TM_Commander>
+  <TM_SuperSoldier>Супер Солдат</TM_SuperSoldier>
+  <TM_ArcaneConduit>Магічний Провідник</TM_ArcaneConduit>
+  <TM_ManaWell>Ману успішний</TM_ManaWell>
+  <TM_Boundless>Безмежний</TM_Boundless>
+  <TM_Brightmage>Маг світла</TM_Brightmage>
+  <TM_Shaman>Шаман.</TM_Shaman>
+  <TM_Shadow>Тінь</TM_Shadow>
+  <TM_Golemancer>Големант</TM_Golemancer>
+  <TM_Apothecary>Аптекар</TM_Apothecary>
+  <TM_Empath>Емпат</TM_Empath>
+  <TM_Enlightened>Освічений</TM_Enlightened>
+  <TM_Cursed>Проклятий</TM_Cursed>
+  <TM_FaeBlood>Кров фейрі</TM_FaeBlood>
+  <TM_GiantsBlood>Кров гігантів</TM_GiantsBlood>
+  <TM_CustomClasses>Класи користувача</TM_CustomClasses>
+  <TM_EventOptions>Варіанти Подій</TM_EventOptions>
+  <riftChallenge>Складність розлому елементалів:</riftChallenge>
+  <lichChallenge>Складність мандрівного Ліча</lichChallenge>
+  <demonChallenge>Складність демонічного вторгнення</demonChallenge>
+  <TM_GolemOptions>Варіанти Голема</TM_GolemOptions>
+  <TM_GolemShowDormantFrameWhileActive>Показати фрейм, який не діє</TM_GolemShowDormantFrameWhileActive>
+  <TM_GolemShowDormantFrameWhileActiveDesc>Показує контур сплячого голему в його сплячому положенні, поки голем активний.</TM_GolemShowDormantFrameWhileActiveDesc>
+  <TM_GolemShowColonistBar>Показати големів у барі колоністів</TM_GolemShowColonistBar>
+  <TM_GolemShowColonistBarDesc>Коли він увімкнений, големи будуть з'являтися на панелі колоністів разом з іншими колоністами. Застосовується до всіх типів големів.</TM_GolemShowColonistBarDesc>
+  <TM_FactionOptions>Параметри фракцій</TM_FactionOptions>
+  <TM_ExtraOptions>Додаткові параметри</TM_ExtraOptions>
+  <TM_global_regen_pwr>Ясність</TM_global_regen_pwr>
+  <TM_global_regen_pwr_desc>Збільшує швидкість відновлення мани на 5% за рівень.</TM_global_regen_pwr_desc>
+  <TM_global_eff_pwr>Концентрація</TM_global_eff_pwr>
+  <TM_global_eff_pwr_desc>Зменшує витрати мани на всі здібності, у розмірі 2,5% за кожен рівень.</TM_global_eff_pwr_desc>
+  <TM_global_spirit_pwr>Дух</TM_global_spirit_pwr>
+  <TM_global_spirit_pwr_desc>Збільшує максимальний запас мани на 4 за рівень навички.</TM_global_spirit_pwr_desc>
+  <TM_global_refresh_pwr>Пристосованість</TM_global_refresh_pwr>
+  <TM_global_refresh_pwr_desc>Збільшує швидкість відновлення витривалості на 5% за рівень.</TM_global_refresh_pwr_desc>
+  <TM_global_seff_pwr>Координація</TM_global_seff_pwr>
+  <TM_global_seff_pwr_desc>Зменшує витрати витривалості від усіх умінь на 3% за рівень.</TM_global_seff_pwr_desc>
+  <TM_global_strength_pwr>Сила</TM_global_strength_pwr>
+  <TM_global_strength_pwr_desc>Збільшує втрати від здібностей на 5% за рівень.</TM_global_strength_pwr_desc>
+  <TM_global_endurance_pwr>Витривалість</TM_global_endurance_pwr>
+  <TM_global_endurance_pwr_desc>Збільшує максимальну витривалість на 4 за рівень.</TM_global_endurance_pwr_desc>
+  <TM_WandererCraft_pwr_desc>Кожне очко навички:
+Потенціал: +1%
+Опір здатності: +2%</TM_WandererCraft_pwr_desc>
+  <TM_WandererCraft_eff_desc>Кожне очко навички:
+Вартість здатності: -1%
+Досвід: +2%</TM_WandererCraft_eff_desc>
+  <TM_WandererCraft_ver_desc>Кожне очко навички:
+Відкат здатності: -1%
+Регенерація мани: +1%
+Максимум мани: +2%</TM_WandererCraft_ver_desc>
+  <TM_Cantrips_pwr_desc>Додає додаткову потужність для заклинання:
+Рівень 1: Хмара диму викликає сліпоту у ворогів
+Рівень 2: Таємний болт мінімальна кількість вибухів збільшується до 2
+Рівень 3: Грязьовий Диявол рухається на 33% швидше
+Рівень 4: Ліквідація завдає шкоди елементалям і високої шкоди демонам
+Рівень 5: телепортація, зцілення та виклик міньйону посилення потужності рівень 1 клас покращень
+Рівень 6: передача мани і висмоктування сили завжди застосовуються баффи/дебаффи
+Рівень 7: Таємна болт мінімальна кількість вибухів збільшується до 3
+Рівень 8: заклинання лагодження швидкість відновлення збільшена на 25%
+Рівень 9: ефект спрацьовування пастки блискавки триває довше і створює сніговий покрив
+Рівень 10: телепортація, зцілення та виклик міньйону посилення потужності рівень 2 клас покращень
+Рівень 11: магічний котел плює вогнем на ворогів
+Рівень 12: магічний кулер уповільнює пересування найближчих ворогів
+Рівень 13: вузол живлення вражає найближчих ворогів
+Рівень 14: дощ викликає сильну грозу (замість дощу), де удари блискавки фокусуються на ворогах
+Рівень 15: телепортація, зцілення та виклик міньйону посилення потужності Рівень 3 клас покращень</TM_Cantrips_pwr_desc>
+  <TM_Cantrips_eff_desc>Зменшіть максимальні витрати на утримання MP на 3% і штрафи за регенерацію енергії на 3% за кожну навичку.
+Рівень 15: приріст Мандрівник витривалість і можуть дізнатися, можливо, безкласової здібностей.</TM_Cantrips_eff_desc>
+  <TM_Cantrips_ver_desc>Додано додаткові утиліти та універсальні заклинання:
+Рівень 1: млинець оглушає ворогів навколо цільової області
+Рівень 2: радіус димової хмари збільшується на 2 клітини
+Рівень 3: підвищує ефективність щита мани на 25%
+Рівень 4: грязьовий Диявол триває на 25% довше
+Рівень 5: телепортація, зцілення та виклик міньйону посилення універсальності рівень 1 клас покращень
+Рівень 6: магічний кулер, магічний котел і вузол харчування застосовують незначні баффи
+Рівень 7: підвищує ефективність щита мани на 40%
+Рівень 8: заклинання лагодження не застосовує дебафф на ціль
+Рівень 9: магічний кулер, магічний котел і вузол харчування застосовують додаткові баффи
+Рівень 10: телепортація, зцілення та виклик міньйону посилення універсальності рівень 1 клас покращень
+Рівень 11: шанс ухилення від розмиття збільшено з 20% до 30%
+Рівень 12: невидимість має 25% збільшену тривалість і застосовує самозцілення при активації
+Рівень 13: магічне світло стрілятиме блискавкою по ворогах у межах 24 осередків кожні 7-13 секунд
+Рівень 14: ЕМІ має 40% шанс здійснити спробу саботажу на роботів і механоїдів
+Рівень 15: телепортація, зцілення та виклик міньйону посилення універсальності Рівень 3 клас покращень</TM_Cantrips_ver_desc>
+  <TM_WandererCraft_pwr>Експерименти</TM_WandererCraft_pwr>
+  <TM_WandererCraft_eff>Самоучка</TM_WandererCraft_eff>
+  <TM_WandererCraft_ver>Розширений Розум</TM_WandererCraft_ver>
+  <TM_Cantrips_pwr>Сила заклинань</TM_Cantrips_pwr>
+  <TM_Cantrips_eff>Ефективність заклинань</TM_Cantrips_eff>
+  <TM_Cantrips_ver>Універсальність заклинань</TM_Cantrips_ver>
+  <TM_RayofHope_eff>Промінь надії ефективність</TM_RayofHope_eff>
+  <TM_RayofHope_eff_desc>Знижує вартість утримання мани для Луча надії на 8% за рівень.</TM_RayofHope_eff_desc>
+  <TM_Firebolt_pwr_desc>Збільшує збиток від вогняної кулі на 5 одиниць за рівень.</TM_Firebolt_pwr_desc>
+  <TM_Firebolt_eff_desc>Знижує витрати мани на вогненну кулю на 10% за рівень.</TM_Firebolt_eff_desc>
+  <TM_Fireclaw_pwr_desc>Збільшує збиток, що завдається кожною ниткою вогняної стріли, на 4 за рівень навички.
+Рівень 1: 4
+Рівень 2: 8
+Рівень 3: 12</TM_Fireclaw_pwr_desc>
+  <TM_Fireclaw_eff_desc>Зниження витрати мани на 10% за рівень.</TM_Fireclaw_eff_desc>
+  <TM_Fireclaw_ver_desc>Додає додаткові кігті на рівнях 1 та 2, збільшує радіус удару кігтів на рівні 3.</TM_Fireclaw_ver_desc>
+  <TM_Fireball_pwr_desc>Збільшує кількість вторинних вибухів по 3 за рівень.</TM_Fireball_pwr_desc>
+  <TM_Fireball_eff_desc>Зниження витрати мани на 8% за рівень.</TM_Fireball_eff_desc>
+  <TM_Fireball_ver_desc>Вогняна куля викликає жах на рівні 1; рівні 2 і 3 збільшують силу терору. Терор знижує здатність ворогів ефективно битися і може змусити їх бігти в паніці.</TM_Fireball_ver_desc>
+  <TM_Firestorm_pwr_desc>Збільшується частота всіх типів метеорів.
+Збільшує радіус вогняної бурі на .25 за рівень навички.</TM_Firestorm_pwr_desc>
+  <TM_Firestorm_eff_desc>Зниження витрат мани на 5% за рівень.</TM_Firestorm_eff_desc>
+  <TM_Firestorm_ver_desc>Збільшує тривалість вогняної бурі на 1 секунду за кожен рівень навички.
+Збільшує радіус бурі на .25 за рівень навички.
+Збільшується кількість осколків, що утворюються при ударах метеоритів.</TM_Firestorm_ver_desc>
+  <TM_Firebolt_pwr>Сила вогняної кулі</TM_Firebolt_pwr>
+  <TM_Firebolt_eff>Ефективність вогняної кулі</TM_Firebolt_eff>
+  <TM_Fireclaw_pwr>Сила вогнемета</TM_Fireclaw_pwr>
+  <TM_Fireclaw_eff>Ефективність вогнемета</TM_Fireclaw_eff>
+  <TM_Fireclaw_ver>Універсальність вогнемета</TM_Fireclaw_ver>
+  <TM_Fireball_pwr>Сила вогняної кулі</TM_Fireball_pwr>
+  <TM_Fireball_eff>Ефективність вогняної кулі</TM_Fireball_eff>
+  <TM_Fireball_ver>Універсальність вогняної кулі</TM_Fireball_ver>
+  <TM_Firestorm_pwr>Сила вогняного шторму</TM_Firestorm_pwr>
+  <TM_Firestorm_eff>Ефективність вогняного шторму</TM_Firestorm_eff>
+  <TM_Firestorm_ver>Універсальність вогняного шторму</TM_Firestorm_ver>
+  <TM_Soothe_eff_desc>Знижує вартість вмісту мани в заспокоєнні на 8% за рівень.</TM_Soothe_eff_desc>
+  <TM_Rainmaker_eff_desc>Зменшує вартість мани створення дощу на 15% за рівень від базової вартості мани.</TM_Rainmaker_eff_desc>
+  <TM_Icebolt_pwr_desc>Збільшує летальність Крижаної кулі шляхом попереднього дроблення болту на гострі як бритва осколки.
+Рівень 0: від 2 до 5 урона за осколок
+Рівень 1: від 4 до 9 урона за осколок
+Рівень 2: від 6 до 13 одиниць урона за осколок
+Рівень 3: від 8 до 17 одиниць урона за осколок</TM_Icebolt_pwr_desc>
+  <TM_Icebolt_eff_desc>Знижує вартість мани Крижаної кулі на 8% за рівень від базової вартості мани.</TM_Icebolt_eff_desc>
+  <TM_Icebolt_ver_desc>Підвищує компресію і розмір крижаної кулі, кожен рівень навички збільшує кількість крижаних осколків при ударі.
+Рівень 0: від 2 до 3 осколків
+Рівень 1: від 3 до 8 осколків
+Рівень 2: від 4 до 14 осколків
+Рівень 3: від 5 до 20 осколків</TM_Icebolt_ver_desc>
+  <TM_FrostRay_eff_desc>Знижує витрати мани на заклинання морозного променя на 8% базової мани.</TM_FrostRay_eff_desc>
+  <TM_Snowball_pwr_desc>Збільшується розмір снігової коми, викликаючи збільшення площі удару на одиницю .7 клітин на рівень і збільшує шкоди до 3 на рівень.</TM_Snowball_pwr_desc>
+  <TM_Snowball_eff_desc>Знижує витрати мани на сніговий ком на 8% за рівень витрат мани.</TM_Snowball_eff_desc>
+  <TM_Snowball_ver_desc>Збільшується стиснення снігової коми, що посилює кількість і силу вторинних осколків, які викидаються поруч з точкою удару.
+Рівень 0: Немає
+Рівень 1: 4 фрагменти
+Рівень 2: 8 фрагментів
+Рівень 3: 12 фрагментів</TM_Snowball_ver_desc>
+  <TM_Blizzard_pwr_desc>Збільшується частота появи крижаних осколків і сніжків.
+Збільшує радіус снігової бурі на .5 за рівень навички.</TM_Blizzard_pwr_desc>
+  <TM_Blizzard_eff_desc>Знижує витрати мани на бурю на 8% за рівень.</TM_Blizzard_eff_desc>
+  <TM_Blizzard_ver_desc>Збільшує тривалість бурі на 1,5 секунди на кожному рівні.
+Збільшує радіус бурі на .5 за рівень навички.</TM_Blizzard_ver_desc>
+  <TM_Soothe_eff>Ефективність заспокоєння</TM_Soothe_eff>
+  <TM_Rainmaker_eff>Ефективність створення дощу</TM_Rainmaker_eff>
+  <TM_Icebolt_eff>Ефективність крижаної кулі</TM_Icebolt_eff>
+  <TM_Icebolt_pwr>Сила крижаної кулі</TM_Icebolt_pwr>
+  <TM_Icebolt_ver>Універсальність крижаної кулі</TM_Icebolt_ver>
+  <TM_FrostRay_eff>Ефективність морозного променя</TM_FrostRay_eff>
+  <TM_Snowball_eff>Ефективність снігової кулі</TM_Snowball_eff>
+  <TM_Snowball_pwr>Сила снігової кулі</TM_Snowball_pwr>
+  <TM_Snowball_ver>Універсальність снігової кулі</TM_Snowball_ver>
+  <TM_Blizzard_eff>Ефективність бурі</TM_Blizzard_eff>
+  <TM_Blizzard_pwr>Сила бурі</TM_Blizzard_pwr>
+  <TM_Blizzard_ver>Універсальність бурі</TM_Blizzard_ver>
+  <TM_AMP_eff_desc>Зменшує вартість мани підсилювача на 8% за рівень базової вартості мани.</TM_AMP_eff_desc>
+  <TM_LightningBolt_pwr_desc>Збільшує урону від блискавки на 6 за кожен рівень.</TM_LightningBolt_pwr_desc>
+  <TM_LightningBolt_eff_desc>Зменшує витрати мани на блискавку на 8% від базової вартості мани.</TM_LightningBolt_eff_desc>
+  <TM_LightningBolt_ver_desc>Підвищує ймовірність вторинних ударів блискавки від 1 до 4 на кожному рівні.</TM_LightningBolt_ver_desc>
+  <TM_LightningCloud_eff_desc>Знижує витрати мани на хмару блискавок на 6% від базової вартості мани.</TM_LightningCloud_eff_desc>
+  <TM_LightningCloud_pwr_desc>Збільшує збиток, що наноситься хмаром блискавок на 1 за рівень.</TM_LightningCloud_pwr_desc>
+  <TM_LightningCloud_ver_desc>Збільшує тривалість хмари блискавок на 2 секунди за рівень.</TM_LightningCloud_ver_desc>
+  <TM_LightningStorm_eff_desc>Зменшує витрати мани на грозу на 6% від базової вартості мани.</TM_LightningStorm_eff_desc>
+  <TM_LightningStorm_pwr_desc>Підвищує частоту ударів блискавок на 20% за рівень і трохи збільшує шкоди від кожного удару.</TM_LightningStorm_pwr_desc>
+  <TM_LightningStorm_ver_desc>Збільшує тривалість грози на 1сек. за рівень і розширює зону дії.</TM_LightningStorm_ver_desc>
+  <TM_EyeOfTheStorm_eff_desc>Використовує енергію в атмосфері для підживлення створення шторму. Знижує вартість мани на 5% за рівень навички.</TM_EyeOfTheStorm_eff_desc>
+  <TM_EyeOfTheStorm_pwr_desc>Збільшує частоту ударів ока бурі на 20% за рівень і збільшує втрати від кожного удару на 20%.</TM_EyeOfTheStorm_pwr_desc>
+  <TM_EyeOfTheStorm_ver_desc>Розширює радіус удару на 1 за кожен рівень навички. Базовий радіус дорівнює 5.</TM_EyeOfTheStorm_ver_desc>
+  <TM_AMP_eff>Ефективність підсилювача</TM_AMP_eff>
+  <TM_LightningBolt_eff>Ефективність Блискавки</TM_LightningBolt_eff>
+  <TM_LightningBolt_pwr>Сила Блискавки</TM_LightningBolt_pwr>
+  <TM_LightningBolt_ver>Універсальність блискавки</TM_LightningBolt_ver>
+  <TM_LightningCloud_eff>Ефективність Хмари Блискавки</TM_LightningCloud_eff>
+  <TM_LightningCloud_pwr>Сила хмари блискавок</TM_LightningCloud_pwr>
+  <TM_LightningCloud_ver>Універсальність хмари блискавок</TM_LightningCloud_ver>
+  <TM_LightningStorm_eff>Ефективність Грози</TM_LightningStorm_eff>
+  <TM_LightningStorm_pwr>Сила грози</TM_LightningStorm_pwr>
+  <TM_LightningStorm_ver>Універсальність грози</TM_LightningStorm_ver>
+  <TM_EyeOfTheStorm_eff>Витік Атмосфери</TM_EyeOfTheStorm_eff>
+  <TM_EyeOfTheStorm_pwr>Рьов землі</TM_EyeOfTheStorm_pwr>
+  <TM_EyeOfTheStorm_ver>Ідеальний Шторм</TM_EyeOfTheStorm_ver>
+  <TM_Shadow_eff_desc>Зменшує вартість підтримки тіні на 8% за рівень.</TM_Shadow_eff_desc>
+  <TM_Blink_eff_desc>Знижує витрати мани на млинець на 10% за рівень.</TM_Blink_eff_desc>
+  <TM_Summon_eff_desc>Знижує витрати мани на призов по 10% за рівень.</TM_Summon_eff_desc>
+  <TM_MagicMissile_eff_desc>Знижує витрати мани на магічний снаряд на 8% від базової вартості.</TM_MagicMissile_eff_desc>
+  <TM_Teleport_eff_desc>Знижує витрати мани на телепорт на 10% за рівень.</TM_Teleport_eff_desc>
+  <TM_Teleport_pwr_desc>Втягує більше енергії в телепорт, дозволяючи на 33% збільшити дальність переміщення за рівень.
+Дозволяє порталу залишатися відкритим на 20 секунд довше на кожному рівні.</TM_Teleport_pwr_desc>
+  <TM_Teleport_ver_desc>Уточнює процес транспортування, додаючи 400 транспортних потужностей на рівень кваліфікації, 600 на рівні 3.
+Дозволяє порталу залишатися відкритим на 20 секунд довше на кожному рівні.</TM_Teleport_ver_desc>
+  <TM_FoldReality_eff_desc>Знижує витрати мани зміна реальності на 6% за рівень навички.</TM_FoldReality_eff_desc>
+  <TM_Shadow_eff>Ефективність тіні</TM_Shadow_eff>
+  <TM_MagicMissile_eff>Ефективність магічних снарядів</TM_MagicMissile_eff>
+  <TM_Blink_eff>Ефективність млинця</TM_Blink_eff>
+  <TM_Summon_eff>Ефективність призову</TM_Summon_eff>
+  <TM_Teleport_eff>Ефективність телепорту</TM_Teleport_eff>
+  <TM_Teleport_pwr>Сила телепорту</TM_Teleport_pwr>
+  <TM_Teleport_ver>Універсальність телепорту</TM_Teleport_ver>
+  <TM_FoldReality_eff>Ефективність зміни реальності</TM_FoldReality_eff>
+  <TM_P_RayofHope_eff_desc>Зменшує витрати на утримання мани Луча надії на 8% за рівень.</TM_P_RayofHope_eff_desc>
+  <TM_Heal_eff_desc>Знижує витрати мани на заклинання зцілення на 7% від базової вартості.</TM_Heal_eff_desc>
+  <TM_Heal_pwr_desc>Збільшує кількість загоєння кожної рани на 2 очки за рівень.</TM_Heal_pwr_desc>
+  <TM_Heal_ver_desc>Збільшує максимальну кількість поранень, які можуть бути зцілені за заклинання на 1 за рівень.</TM_Heal_ver_desc>
+  <TM_Shield_eff_desc>Знижує витрати мани на щит на 8% від базової вартості.</TM_Shield_eff_desc>
+  <TM_ValiantCharge_eff_desc>Зменшує вартість мани доблесного заряду на 8% від базової вартості мани.</TM_ValiantCharge_eff_desc>
+  <TM_ValiantCharge_pwr_desc>Збільшує втрати від доблесних зарядів від 1 до 4 на кожному рівні.</TM_ValiantCharge_pwr_desc>
+  <TM_ValiantCharge_ver_desc>Збільшіть силу удару, збільшивши розмір удару і кількість уламків.
+Може оглушити на рівні 2.</TM_ValiantCharge_ver_desc>
+  <TM_Overwhelm_eff_desc>Зменшує витрати мани на розтрощення на 10% від базової вартості мани.</TM_Overwhelm_eff_desc>
+  <TM_Overwhelm_pwr_desc>Збільшує потенційну втрату розтрощення.</TM_Overwhelm_pwr_desc>
+  <TM_Overwhelm_ver_desc>Викликає більш потужні символи на рівні 1 і 3.
+Розтрощення може оглушити на рівні 2 і поліпшене оглушення на рівні 3.</TM_Overwhelm_ver_desc>
+  <TM_HolyWrath_eff_desc>Зменшує вартість мани Святого гніву на 5% від базової вартості мани.</TM_HolyWrath_eff_desc>
+  <TM_HolyWrath_pwr_desc>Вимагає 2 очки здатності за кожен рівень навички. Збільшує кількість ударів на 1 за рівень навички. Базова кількість ударів 5.</TM_HolyWrath_pwr_desc>
+  <TM_HolyWrath_ver_desc>Вимагає 2 очки здатності за кожен рівень навички.
+Рівень 1: союзники у сфері Святого гніву стають тимчасово невразливими
+Рівень 2: союзники зцілюються на невелику суму
+Рівень 3: святий гнів дарує міць усім союзникам у радіусі дії</TM_HolyWrath_ver_desc>
+  <TM_P_RayofHope_eff>Промінь надії Ефективність</TM_P_RayofHope_eff>
+  <TM_Heal_eff>Ефективність зцілення</TM_Heal_eff>
+  <TM_Heal_pwr>Сила зцілення</TM_Heal_pwr>
+  <TM_Heal_ver>Універсальність зцілення</TM_Heal_ver>
+  <TM_Shield_eff>Ефективність щита</TM_Shield_eff>
+  <TM_ValiantCharge_eff>Ефективність доблесного заряду</TM_ValiantCharge_eff>
+  <TM_ValiantCharge_pwr>Сила доблесного заряду</TM_ValiantCharge_pwr>
+  <TM_ValiantCharge_ver>Універсальність доблесного заряду</TM_ValiantCharge_ver>
+  <TM_Overwhelm_eff>Ефективність розтрощення</TM_Overwhelm_eff>
+  <TM_Overwhelm_pwr>Сила розтрощення</TM_Overwhelm_pwr>
+  <TM_Overwhelm_ver>Універсальність розтрощення</TM_Overwhelm_ver>
+  <TM_HolyWrath_eff>Чистота святого гніву</TM_HolyWrath_eff>
+  <TM_HolyWrath_pwr>Свята помста</TM_HolyWrath_pwr>
+  <TM_HolyWrath_ver>Спокута</TM_HolyWrath_ver>
+  <TM_SummonMinion_eff_desc>Знижує витрати мани для призову міньйонів на 10%. Також знижує витрати на утримання на 10%.</TM_SummonMinion_eff_desc>
+  <TM_SummonMinion_pwr_desc>Збільшує кількість або силу викликаних міньйонів.
+Рівень 0: викличте одного міньйона.
+Рівень 1: викличте двох міньйонів.
+Рівень 2: викличте одного великого міньйону.
+Рівень 3: викличте двох великих міньйонів.</TM_SummonMinion_pwr_desc>
+  <TM_SummonMinion_ver_desc>Збільшує тривалість призову на 10м за кожну точку навички. Базова тривалість - 20м.</TM_SummonMinion_ver_desc>
+  <TM_SummonPylon_eff_desc>Зменшує вартість мани для виклику захисного пілона на 8% від базової вартості мани.</TM_SummonPylon_eff_desc>
+  <TM_SummonPylon_pwr_desc>Збільшує дальність і потужність створюваного оборонного пілона.</TM_SummonPylon_pwr_desc>
+  <TM_SummonPylon_ver_desc>Збільшує тривалість призову на 2м за очко навички. Базова тривалість - 4м.</TM_SummonPylon_ver_desc>
+  <TM_SummonExplosive_eff_desc>Зменшує вартість мани для створення міни на 8% від рівня навички.</TM_SummonExplosive_eff_desc>
+  <TM_SummonExplosive_pwr_desc>Збільшує потужність міни на 20% за рівень навички.
+Збільшує радіус вибуху на 20% за рівень навички.</TM_SummonExplosive_pwr_desc>
+  <TM_SummonExplosive_ver_desc>Збільшує час, протягом якого міна залишається стабільною, на 2м за кожен рівень навички. Базова тривалість становить 4м. Мана-Міна буде нешкідливо розчинятися, якщо таймер закінчиться.</TM_SummonExplosive_ver_desc>
+  <TM_SummonElemental_eff_desc>Знижує витрати мани для призову елементаля на 6%.</TM_SummonElemental_eff_desc>
+  <TM_SummonElemental_pwr_desc>Збільшує силу викликаного елемента.
+У ранзі 3: викличте двох менших елементалів, щоб вони супроводжували ваш основний виклик.</TM_SummonElemental_pwr_desc>
+  <TM_SummonElemental_ver_desc>Збільшує тривалість призову на 15 секунд за очко навички. Базова тривалість - 30 секунд.</TM_SummonElemental_ver_desc>
+  <TM_SummonPoppi_eff_desc>Зменшує вартість мани, щоб викликати групу Поппі на 5% кожне очко навички, але дійсно, хто може поставити ціну на щастя?</TM_SummonPoppi_eff_desc>
+  <TM_SummonPoppi_pwr_desc>Ще Поппі, притискаються до всіх.</TM_SummonPoppi_pwr_desc>
+  <TM_SummonPoppi_ver_desc>Тусуватися з цими Поппі - це ще більший вибух.</TM_SummonPoppi_ver_desc>
+  <TM_SummonMinion_eff>Примус</TM_SummonMinion_eff>
+  <TM_SummonMinion_pwr>Приваблива Пропозиція</TM_SummonMinion_pwr>
+  <TM_SummonMinion_ver>Перегляд</TM_SummonMinion_ver>
+  <TM_SummonPylon_eff>Таємне формоутворення</TM_SummonPylon_eff>
+  <TM_SummonPylon_pwr>Покращені Пілони</TM_SummonPylon_pwr>
+  <TM_SummonPylon_ver>Міцні Пілони</TM_SummonPylon_ver>
+  <TM_SummonExplosive_eff>Адепт Створення</TM_SummonExplosive_eff>
+  <TM_SummonExplosive_pwr>Покращений Реактор</TM_SummonExplosive_pwr>
+  <TM_SummonExplosive_ver>Міцні міни</TM_SummonExplosive_ver>
+  <TM_SummonElemental_eff>Елементальне споріднення</TM_SummonElemental_eff>
+  <TM_SummonElemental_pwr>Літаки Ходунки</TM_SummonElemental_pwr>
+  <TM_SummonElemental_ver>Слова прив'язки</TM_SummonElemental_ver>
+  <TM_SummonPoppi_eff>Ентузіаст Поппі</TM_SummonPoppi_eff>
+  <TM_SummonPoppi_pwr>Зловити Їх Усіх</TM_SummonPoppi_pwr>
+  <TM_SummonPoppi_ver>Каталізатор Притискання</TM_SummonPoppi_ver>
+  <TM_Poison_eff_desc>Знижує вартість отрути на 10% за рівень навички.</TM_Poison_eff_desc>
+  <TM_Poison_pwr_desc>Збільшує силу отрути, завдаючи на 25% більше за рівень навички для кожного квадрата, який проходить жертва.</TM_Poison_pwr_desc>
+  <TM_Poison_ver_desc>Збільшує мінімальний і максимальний рівні тяжкості отруєння. Рівні серйозності викликають зниження бойових і рухових можливостей. Також збільшує тривалість дії отрути на 10% за рівень.
+Рівень 0: (10% -40%), тривалість 45с
+Рівень 1: (20% -60%), тривалість 49,5с
+Рівень 2: (30% -80%), тривалість 54с
+Рівень 3: (40% -80%), тривалість 58,5с</TM_Poison_ver_desc>
+  <TM_SootheAnimal_eff_desc>Знижує вартість «брехлива тварина» на 8% за рівень навички.</TM_SootheAnimal_eff_desc>
+  <TM_SootheAnimal_pwr_desc>Тварини отримуватимуть таємні баффи, коли розлючені, і таємні дебаффи, коли заспокоєні. Рівень навички визначає силу цих модифікаторів, ніяких модифікаторів не відбувається на рівні навички 0.</TM_SootheAnimal_pwr_desc>
+  <TM_Regenerate_eff_desc>Знижує витрати на регенерацію на 7% за рівень навички.</TM_Regenerate_eff_desc>
+  <TM_Regenerate_pwr_desc>Збільшує регенерацію кожен тик лікує здоров'я на .5 за рівень. Базова регенерація здоров'я 4.</TM_Regenerate_pwr_desc>
+  <TM_Regenerate_ver_desc>Збільшує тривалість регенерації на кожному рівні навички, тривалість є випадковою між вказаними значеннями:
+Рівень 0: 16с - 50с
+Рівень 1: 33с - 100с
+Рівень 2: 50с - 150с
+Рівень 3: 67с - 200с</TM_Regenerate_ver_desc>
+  <TM_CureDisease_eff_desc>Знижує вартість лікування хвороб на 10% за рівень навички.</TM_CureDisease_eff_desc>
+  <TM_CureDisease_pwr_desc>Підвищує ефективність лікування захворювань. Чим вищий рівень навички, тим більша ймовірність того, що заклинання вилікує хворобу, а не зменшить її.
+Рівень 0: ймовірність успіху 75%; зменшує тяжкість захворювання на 1 у разі успіху.
+Рівень 1: 100% шанс успіху на зрозумілих хворобах (знання хвороб)
+Рівень 2: Підвищення імунітету до захворювання мети на 15% протягом 3 днів
+Рівень 3: Підвищення імунітету до захворювання мішені на 25% протягом 5 днів</TM_CureDisease_pwr_desc>
+  <TM_CureDisease_ver_desc>Вивчення хвороб дозволяє друїду вилікувати складніші недуги.
+Рівень 0: грип і раневі інфекції
+Рівень 1: кишкові черв'яки, харчове отруєння та малярія
+Рівень 2: сонна хвороба і м'язові паразити
+Рівень 3: Чума</TM_CureDisease_ver_desc>
+  <TM_RegrowLimb_eff_desc>Зменшує кількість мани, необхідну, щоб виростити кінцівки (хірургія) на 6% за рівень навички. Зростання це не впливає на загальне зниження витрат мани.</TM_RegrowLimb_eff_desc>
+  <TM_Poison_eff>Методи Вилучення</TM_Poison_eff>
+  <TM_Poison_pwr>Сила отрути</TM_Poison_pwr>
+  <TM_Poison_ver>Ослаблені Кінцівки</TM_Poison_ver>
+  <TM_SootheAnimal_eff>Спокуслива Природа</TM_SootheAnimal_eff>
+  <TM_SootheAnimal_pwr>- Так. можливості</TM_SootheAnimal_pwr>
+  <TM_Regenerate_eff>Ефективний засіб</TM_Regenerate_eff>
+  <TM_Regenerate_pwr>Посилена Регенерація</TM_Regenerate_pwr>
+  <TM_Regenerate_ver>Стійка Регенерації</TM_Regenerate_ver>
+  <TM_CureDisease_eff>природне зцілення</TM_CureDisease_eff>
+  <TM_CureDisease_pwr>Ефективне Лікування</TM_CureDisease_pwr>
+  <TM_CureDisease_ver>Знання Хвороби</TM_CureDisease_ver>
+  <TM_RegrowLimb_eff>Майстерність Відростання</TM_RegrowLimb_eff>
+  <TM_RaiseUndead_eff_desc>Знижує витрати мани на заклинання підняти ніжити на 5% за рівень навички. Знижує витрати на підтримку нежити на 10% за рівень навички.</TM_RaiseUndead_eff_desc>
+  <TM_RaiseUndead_pwr_desc>Збільшує кількість нежити, яку можна створити за допомогою кожного заклинання, на 1 за рівень навички.
+Рівень 0: 2
+Рівень 1: 3
+Рівень 2: 4
+Рівень 3: 5</TM_RaiseUndead_pwr_desc>
+  <TM_RaiseUndead_ver_desc>Швидкість руху і дії нежити збільшується на 5% за рівень навички.</TM_RaiseUndead_ver_desc>
+  <TM_DeathMark_ver_desc>Мітка смерті може спричинити жах і несамовиті страждання. Кожне очко навички збільшує шанс застосувати додаткову недугу на 10%.</TM_DeathMark_ver_desc>
+  <TM_DeathMark_eff_desc>Знижує витрати мани на мітку смерті на 8% за рівень навички.</TM_DeathMark_eff_desc>
+  <TM_DeathMark_pwr_desc>Підвищує тяжкість мітки смерті на 50% за рівень навички.</TM_DeathMark_pwr_desc>
+  <TM_FogOfTorment_eff_desc>Знижує витрати мани на туман мук на 8% за рівень навички.</TM_FogOfTorment_eff_desc>
+  <TM_FogOfTorment_pwr_desc>Збільшує шкоди і штрафи, викликані туманом мук, на 33% за рівень навички. Також збільшується кількість зцілень нежити на 50% за кожен рівень навички.
+Рівень 0: 2-4 урона, 2 зцілення
+Рівень 1: 3-5 урона, 3 исцеления.
+Рівень 2: 4-6 пошкоджень, 4 зцілення
+Рівень 3: Збиток 5-7, 5 зцілення</TM_FogOfTorment_pwr_desc>
+  <TM_FogOfTorment_ver_desc>Збільшує тривалість, скорочує час між ефектами і розширює радіус туману мук.
+Рівень 0: радіус 6, ефект/2с, тривалість 24с
+Рівень 1: радіус 7, ефект/1.7с, тривалість 27с
+Рівень 2: радіус 8, ефект/1.4с, тривалість 30с
+Рівень 3: радіус 9, ефект/1.1с, тривалість 33с</TM_FogOfTorment_ver_desc>
+  <TM_ConsumeCorpse_eff_desc>Збільшує Ману, відновлену споживаним трупом, на 7% за рівень навички.</TM_ConsumeCorpse_eff_desc>
+  <TM_ConsumeCorpse_ver_desc>Вживання трупа також зцілює фізичні рани заклинача.
+Кількість здоров'я варіюється залежно від типу (людини або тварини) і свіжості споживаного трупа або нежиті.</TM_ConsumeCorpse_ver_desc>
+  <TM_CorpseExplosion_pwr_desc>Збільшує втрати від вибуху трупа на 5 за рівень навички. Також збільшується радіус вибуху на 10%.
+Рівень 0: 18-30
+Рівень 1: 23-35
+Рівень 2: 28-40
+Рівень 3: 32-45</TM_CorpseExplosion_pwr_desc>
+  <TM_CorpseExplosion_eff_desc>Знижує вартість мани при вибуху трупа на 8% за рівень навички.</TM_CorpseExplosion_eff_desc>
+  <TM_CorpseExplosion_ver_desc>Зменшує затримку вибуху по 1с на очко навички. Також збільшує радіус вибуху на 10%.</TM_CorpseExplosion_ver_desc>
+  <TM_DeathBolt_pwr_desc>Збільшує шкоди смертельного болту на 5 за рівень навички і поширення темряви на 3 за рівень навички.
+Рівень 0: 18-35; Темрява: 12-24
+Рівень 1: 23-40; Темрява: 15-27
+Рівень 2: 28-45; Темрява: 18-30
+Рівень 3: 33-50; Темрява: 21-33</TM_DeathBolt_pwr_desc>
+  <TM_DeathBolt_eff_desc>Знижує витрати мани на смертельний болт на 6% за рівень навички.</TM_DeathBolt_eff_desc>
+  <TM_DeathBolt_ver_desc>Темрява поширюється далі від місця удару.</TM_DeathBolt_ver_desc>
+  <TM_RaiseUndead_eff>Обдурити Смерть</TM_RaiseUndead_eff>
+  <TM_RaiseUndead_pwr>Потужне творіння</TM_RaiseUndead_pwr>
+  <TM_RaiseUndead_ver>Поспішна Ніжити</TM_RaiseUndead_ver>
+  <TM_DeathMark_ver>Посушливе Прокляття</TM_DeathMark_ver>
+  <TM_DeathMark_eff>Ефективна Марка</TM_DeathMark_eff>
+  <TM_DeathMark_pwr>Переважна Марка</TM_DeathMark_pwr>
+  <TM_FogOfTorment_eff>Неприродний Вітер</TM_FogOfTorment_eff>
+  <TM_FogOfTorment_pwr>Смертельні муки</TM_FogOfTorment_pwr>
+  <TM_FogOfTorment_ver>Затяжний Туман</TM_FogOfTorment_ver>
+  <TM_ConsumeCorpse_eff>Жадібне Споживання</TM_ConsumeCorpse_eff>
+  <TM_ConsumeCorpse_ver>Цілюще споживання</TM_ConsumeCorpse_ver>
+  <TM_CorpseExplosion_pwr>Сильний Вибух</TM_CorpseExplosion_pwr>
+  <TM_CorpseExplosion_eff>Майстерність Трупа</TM_CorpseExplosion_eff>
+  <TM_CorpseExplosion_ver>Летючі Токсини</TM_CorpseExplosion_ver>
+  <TM_DeathBolt_pwr>Нечестива Могутність</TM_DeathBolt_pwr>
+  <TM_DeathBolt_eff>Вічне Навчання</TM_DeathBolt_eff>
+  <TM_DeathBolt_ver>Поширення темряви</TM_DeathBolt_ver>
+  <TM_AdvancedHeal_eff_desc>Знижує вартість мани просунутого зцілення на 8% за рівень.</TM_AdvancedHeal_eff_desc>
+  <TM_AdvancedHeal_ver_desc>Збільшує максимальну кількість загоєних ран на 1 рівень.</TM_AdvancedHeal_ver_desc>
+  <TM_AdvancedHeal_pwr_desc>Збільшує кількість загоєння кожної рани на 3 очки за рівень.</TM_AdvancedHeal_pwr_desc>
+  <TM_Purify_eff_desc>Зменшує витрати мани на очищення на 7% за рівень.</TM_Purify_eff_desc>
+  <TM_Purify_ver_desc>Збільшує кількість недуг, які можна вилікувати за одне використання. Підвищення кваліфікації розширює види недуг, які можуть бути очищені:
+Рівень 0:
+Фізичні - катаракта, втрата слуху, токсичне накопичення
+Наркоманія-Куріння, Алкоголь
+Рівень 1:
+Фізична сліпота, астма, цироз печінки, помірні хімічні пошкодження
+Наркоманія, Go-Сік, бодрин
+Рівень 2:
+Фізична слабкість, біль у спині, карцинома, важкі хімічні ушкодження
+Наркотик-Психотік
+Рівень 3:
+Фізичні-стан мозку і серця
+Наркотики - будь-яка залежність, включаючи Люциферій</TM_Purify_ver_desc>
+  <TM_Purify_pwr_desc>Підвищує ефективність очищення.
+Шрами заживають на 2 бали + 2x рівень навички; травми головного мозку вимагають рівня навички 1 або більше і лікує 1 бал за рівень навички .\n\n
+Фізичні стани, такі як сліпота або карцинома, виліковуються або зменшуються, залежно від рівня кваліфікації. Якщо сила очищення недостатня для того, щоб вилікувати стан відразу, можна використовувати багаторазове використання чистоти, щоб зменшити, вилікувати стан .\n\n\n
+Кожен пункт навички збільшує ефективність у подоланні наркотичної залежності; може знадобитися багаторазове використання, щоб повністю подолати залежність.</TM_Purify_pwr_desc>
+  <TM_HealingCircle_eff_desc>Знижує витрати мани цілющого кола на 7% за кожне очко навички.</TM_HealingCircle_eff_desc>
+  <TM_HealingCircle_ver_desc>Збільшує кількість травм, які можуть бути зцілені за одну хвилю. Також збільшується тривалість кола зцілення на 3 секунди за кожну точку навички.
+Рівень 0: 1
+Рівень 1: 2 травми
+Рівень 2: 3 травми
+Рівень 3: 4 травми</TM_HealingCircle_ver_desc>
+  <TM_HealingCircle_pwr_desc>Збільшується кількість ран, що заживають. Також збільшується тривалість кола зцілення на 3 секунди за кожну точку навички.
+Рівень 0: 10
+Рівень 1: 12 здоров'я
+Рівень 2: 14 здоров'я
+Рівень 3: 16 здоров'я
+Рівень 4: 18 здоров'я</TM_HealingCircle_pwr_desc>
+  <TM_BestowMight_eff_desc>Знижує витрати мани на дарування сили на 8% за кожне очко навички.</TM_BestowMight_eff_desc>
+  <TM_Resurrection_eff_desc>Зменшує витрати мани на воскресіння на 5% за рівень навички і зменшує кількість втраченого досвіду навички на 2% за рівень навички.</TM_Resurrection_eff_desc>
+  <TM_Resurrection_ver_desc>Збільшує шанс запобігти побічним ефектам воскресіння на 10% за рівень.</TM_Resurrection_ver_desc>
+  <TM_AdvancedHeal_eff>Ефективне Зцілення</TM_AdvancedHeal_eff>
+  <TM_AdvancedHeal_ver>Глибоке Зцілення</TM_AdvancedHeal_ver>
+  <TM_AdvancedHeal_pwr>Цілюща Сила</TM_AdvancedHeal_pwr>
+  <TM_Purify_eff>Безумовна Чистота</TM_Purify_eff>
+  <TM_Purify_ver>Всеохоплююча Чистота</TM_Purify_ver>
+  <TM_Purify_pwr>Палаюча Чистота</TM_Purify_pwr>
+  <TM_HealingCircle_eff>Ефективне коло</TM_HealingCircle_eff>
+  <TM_HealingCircle_ver>Приплив</TM_HealingCircle_ver>
+  <TM_HealingCircle_pwr>Заспокійливі хвилі</TM_HealingCircle_pwr>
+  <TM_BestowMight_eff>Практиковане благословення</TM_BestowMight_eff>
+  <TM_Resurrection_ver>Витончене Воскресіння</TM_Resurrection_ver>
+  <TM_Resurrection_eff>дороговказна зірка</TM_Resurrection_eff>
+  <TM_BardTraining_pwr_desc>Просуває межу Барда на наступний рівень. Артист - &gt; Виконавець - &gt; Менестрель - &gt; Бард. Потрібно 2 очки для тренування.</TM_BardTraining_pwr_desc>
+  <TM_Entertain_ver_desc>Збільшує шанс сприятливої розмови з іншими колоністами.</TM_Entertain_ver_desc>
+  <TM_Entertain_pwr_desc>Збільшує те, як часто бард готовий до соціальної взаємодії.</TM_Entertain_pwr_desc>
+  <TM_Inspire_ver_desc>Бард дізнається нові способи надихати колоністів.
+Рівень 0: може викликати спільне натхнення
+Рівень 1: може викликати натхнення ресурсного божевілля
+Рівень 2: може викликати навчання і соціальне натхнення
+Рівень 3: може викликати героїчне натхнення для занять магією або могутністю.</TM_Inspire_ver_desc>
+  <TM_Inspire_pwr_desc>Збільшує, як часто бард буде намагатися надихнути колег-колоністів.</TM_Inspire_pwr_desc>
+  <TM_Lullaby_eff_desc>Знижує витрати мани на колискову на 8% за кожне очко навички.</TM_Lullaby_eff_desc>
+  <TM_Lullaby_pwr_desc>Increases chance lullaby is effective by 10% per skill point.
+Level 0: 40%
+Level 1: 50%
+Level 2: 60%
+Level 3: 70%</TM_Lullaby_pwr_desc>
+  <TM_Lullaby_ver_desc>Колискова знижує свідомість діючих пішаків-спрацьовує навіть у тому випадку, якщо колискова пручалася.
+Рівень 0: N / A
+Рівень 1: -10% свідомості
+Рівень 2: -15% свідомості
+Рівень 3: свідомість - 20%</TM_Lullaby_ver_desc>
+  <TM_BattleHymn_eff_desc>Знижує витрату мани для використання і для підтримки Бойового гімну на 6% за рівень навички.</TM_BattleHymn_eff_desc>
+  <TM_BattleHymn_ver_desc>Збільшує діапазон Бойового гімну по 3м на кожне очко навички (базова 17м). Також збільшується темп Бойового гімну .5с (5s базове).</TM_BattleHymn_ver_desc>
+  <TM_BattleHymn_pwr_desc>Збільшує ефект бойового гімну на 12% заочко для кожного вірша (ітерації) він залишається активним і збільшує шанс викликати натхнення на 1%.</TM_BattleHymn_pwr_desc>
+  <TM_BardTraining_pwr>Навчання Барда</TM_BardTraining_pwr>
+  <TM_Entertain_ver>Рясний Сміх</TM_Entertain_ver>навичка
+  <TM_Entertain_pwr>Імпровізація</TM_Entertain_pwr>
+  <TM_Inspire_ver>Драматург</TM_Inspire_ver>
+  <TM_Inspire_pwr>Харизма</TM_Inspire_pwr>
+  <TM_Lullaby_eff>Спритні Руки</TM_Lullaby_eff>
+  <TM_Lullaby_pwr>Вушний хробак</TM_Lullaby_pwr>
+  <TM_Lullaby_ver>Резонанс</TM_Lullaby_ver>
+  <TM_BattleHymn_ver>Затяжна Увага</TM_BattleHymn_ver>
+  <TM_BattleHymn_eff>Вокаліст</TM_BattleHymn_eff>
+  <TM_BattleHymn_pwr>Героїчний Хор</TM_BattleHymn_pwr>
+  <TM_SoulBond_pwr_desc>Збільшує користь від зв'язку душі з демоном.</TM_SoulBond_pwr_desc>
+  <TM_SoulBond_eff_desc>Зменшує витрати мани на використання тіньового кроку та тіньового виклику на 10% за кожне очко навички.</TM_SoulBond_eff_desc>
+  <TM_SoulBond_ver_desc>Зменшує тягар душевного зв'язку на носії.</TM_SoulBond_ver_desc>
+  <TM_ShadowBolt_ver_desc>Збільшує збиток і радіус тіньового болту.</TM_ShadowBolt_ver_desc>
+  <TM_ShadowBolt_pwr_desc>Збільшує пряму шкоду тіньового Болта на 10%, а розмір і шкоди тіньового афтершоку на 25% за рівень навички.</TM_ShadowBolt_pwr_desc>
+  <TM_ShadowBolt_eff_desc>Знижує витрати мани на заклинання «тіньового болту» на 8% за рівень навички.</TM_ShadowBolt_eff_desc>
+  <TM_Dominate_ver_desc>Тінь поглиблює панування, збільшуючи тривалість домінування та інфекція радіус.
+Рівень 0: 15-30с, 3 комірки радіус
+Рівень 1: 25-40с, 4 комірки радіус
+Рівень 2: 35-50с, комірки радіус
+3-й рівень: 45-60с, з 6 комірками радіусу</TM_Dominate_ver_desc>
+  <TM_Dominate_pwr_desc>Збільшує силу домінування і збільшує частоту його розповсюдження. Суккуби зменшують фізичні та бойові можливості; чорнокнижники збільшують тип і частоту ментальних розривів, а також знижують рівень свідомості.</TM_Dominate_pwr_desc>
+  <TM_Dominate_eff_desc>Зменшує вартість мани домінування на 6% і знижує вартість серйозності поширення домінування на інший хост на 20%.</TM_Dominate_eff_desc>
+  <TM_Attraction_eff_desc>Знижує витрати мани тяжіння на 8% за кожне очко навички.</TM_Attraction_eff_desc>
+  <TM_Attraction_pwr_desc>Збільшує радіус тяжіння на 1,5 клітини за рівень навички.</TM_Attraction_pwr_desc>
+  <TM_Attraction_ver_desc>Збільшує тривалість притЛуч надії Ефективності свердловин на 2 С і його повільну тривалість на 25% за рівень навички.</TM_Attraction_ver_desc>
+  <TM_Repulsion_eff_desc>Знижує витрати мани відштовхування на 8% за кожне очко навички.</TM_Repulsion_eff_desc>
+  <TM_Repulsion_pwr_desc>Збільшує силу відштовхування на 20% за рівень навички. Величина сили, докладеної до пішака пропорційна їх відстані до центру.</TM_Repulsion_pwr_desc>
+  <TM_Repulsion_ver_desc>Завдає шкоди залежно від величини сили, що діє на пішака. Цей збиток завдається тільки ворогам.
+Рівень 0: 0%
+Рівень 1: 20%
+Рівень 2: 40%
+Рівень 3: 60%</TM_Repulsion_ver_desc>
+  <TM_Scorn_eff_desc>Знижує витрати мани презирства на 6% за кожне очко навички.</TM_Scorn_eff_desc>
+  <TM_Scorn_ver_desc>Збільшує радіус впливу презирства на 1ячейку за очко навички. Базовий радіус 7 клітин.
+Також збільшує силу часткової демонічної трансформації.</TM_Scorn_ver_desc>
+  <TM_Scorn_pwr_desc>Збільшує втрати від презирства на 15% за рівень навички.
+Також збільшує силу демонічного урона щита на 25%. Базовий щит поглинає 60 одиниць урона.</TM_Scorn_pwr_desc>
+  <TM_PsychicShock_eff_desc>Знижує витрати мани на психічний шок на 6% за кожне очко навички.</TM_PsychicShock_eff_desc>
+  <TM_PsychicShock_ver_desc>Збільшує радіус психічного шоку і будь-яких вторинних імпульсів на 1 клітку. Базовий радіус дорівнює 6.</TM_PsychicShock_ver_desc>
+  <TM_PsychicShock_pwr_desc>Збільшує шкоди від психічного шоку 1 очко за рівень навички.</TM_PsychicShock_pwr_desc>
+  <TM_SoulBond_pwr>Посилений Зв "язок</TM_SoulBond_pwr>
+  <TM_SoulBond_eff>Зв "язок Душі</TM_SoulBond_eff>
+  <TM_SoulBond_ver>Буфер Душі</TM_SoulBond_ver>
+  <TM_ShadowBolt_ver>Розширення темряви</TM_ShadowBolt_ver>
+  <TM_ShadowBolt_pwr>Хижі Тіні</TM_ShadowBolt_pwr>
+  <TM_ShadowBolt_eff>Серце Темряви</TM_ShadowBolt_eff>
+  <TM_Dominate_ver>приреченість</TM_Dominate_ver>
+  <TM_Dominate_pwr>кромешна темрява</TM_Dominate_pwr>
+  <TM_Dominate_eff>Примарна Команда</TM_Dominate_eff>
+  <TM_Attraction_eff>Ваблива Тінь</TM_Attraction_eff>
+  <TM_Attraction_pwr>Відкрита прірва</TM_Attraction_pwr>
+  <TM_Attraction_ver>Тіньові Кігті</TM_Attraction_ver>
+  <TM_Repulsion_eff>Спритний розум</TM_Repulsion_eff>
+  <TM_Repulsion_pwr>Сила волі</TM_Repulsion_pwr>
+  <TM_Repulsion_ver>Насильницьке Розсіювання</TM_Repulsion_ver>
+  <TM_Scorn_ver>Злість</TM_Scorn_ver>
+  <TM_Scorn_eff>Фонова служба Крові</TM_Scorn_eff>
+  <TM_Scorn_pwr>Лють</TM_Scorn_pwr>
+  <TM_PsychicShock_ver>Маразм</TM_PsychicShock_ver>
+  <TM_PsychicShock_eff>Менталіст</TM_PsychicShock_eff>
+  <TM_PsychicShock_pwr>Домінуюча Воля</TM_PsychicShock_pwr>
+  <TM_Stoneskin_pwr_desc>Збільшує кількість атак, які кам'яна шкіра пом'якшує перед тим, як стиратися.
+Рівень 0: 4 атаки
+Рівень 1: 5 атак
+Рівень 2: 6 атак
+Рівень 3: 7 атак</TM_Stoneskin_pwr_desc>
+  <TM_Stoneskin_eff_desc>Знижує витрати на утримання мани для кожного екземпляра кам'яної шкіри на 2%.
+Рівень 0: -15 максимальна Мана
+Рівень 1: -13 максимальна Мана
+Рівень 2: -11 максимальна Мана
+Рівень 3: -9 максимальна Мана</TM_Stoneskin_eff_desc>
+  <TM_Stoneskin_ver_desc>Збільшує максимальну кількість екземплярів кам'яної шкіри, які може підтримувати геомант. Геомант також повинен мати достатні запаси мани для підтримки кожного заклинання.
+Рівень 0: 2
+Рівень 1: 3
+Рівень 2: 4
+Рівень 3: 5</TM_Stoneskin_ver_desc>
+  <TM_Encase_pwr_desc>Використовує більш міцні типи каменю, що робить його більш важким для прориву.</TM_Encase_pwr_desc>
+  <TM_Encase_eff_desc>Знижує витрати витривалості, необхідні для використання Оболонки, на 8% за рівень навички.</TM_Encase_eff_desc>
+  <TM_Encase_ver_desc>Збільшує тривалість оболонки на 4s за рівень навички.
+Рівень 0: 30С
+Рівень 1: 34s
+Рівень 2: 38С
+Рівень 3: 42s</TM_Encase_ver_desc>
+  <TM_EarthSprites_pwr_desc>Збільшує швидкість роботи парфумів Землі на 20% за рівень навички. Ця навичка може бути підвищена до рівня 5.</TM_EarthSprites_pwr_desc>
+  <TM_EarthSprites_eff_desc>Зменшує початкову Ману, необхідну для заклинання парфумів Землі, на 6% за рівень навички.</TM_EarthSprites_eff_desc>
+  <TM_EarthSprites_ver_desc>Зменшує регенерацію мани, виснажуваної земними парфумами, на 7% за рівень навички.
+Рівень 0: -60% регенерації мани
+Рівень 1: -53% регенерації мани
+Рівень 2: -46% регенерації мани
+Рівень 3: -39% регенерації мани</TM_EarthSprites_ver_desc>
+  <TM_EarthernHammer_pwr_desc>Збільшує кількість ваги, якою може маніпулювати геомант. Витягування підземних каменів вимагає 3 ваги; кидання прилеглих поверхневих каменів вимагає 1 ваги.
+Рівень 0: 8 вага
+Рівень 1: 10 вага
+Рівень 2: 12 вага
+Рівень 3: 14 вага</TM_EarthernHammer_pwr_desc>
+  <TM_EarthernHammer_eff_desc>Знижує витрати мани на земляний молот на 6% за рівень навички.</TM_EarthernHammer_eff_desc>
+  <TM_EarthernHammer_ver_desc>Зменшує час між кожним кидком і зменшує тривалість оглушення, що застосовується до заклинача.</TM_EarthernHammer_ver_desc>
+  <TM_Sentinel_pwr_desc>Збільшує бойову міць вартового. Потрібно 2 очки здібності для рівня.
+Рівень 0 (менший страж): потужність 12, броня 45%, швидкість 3,2 с/с, здоров'я 75%
+Рівень 1 (страж): потужність 14, броня 51%, швидкість 4С/с, здоров'я 100%
+Рівень 2 (великий страж): потужність 16, Броня 55%, швидкість 4,8 С/с, здоров'я 125%</TM_Sentinel_pwr_desc>
+  <TM_Sentinel_eff_desc>Зменшує витрати на утримання кожного годинника.
+Рівень 0: -20 максимальна Мана
+Рівень 1: -18 максимальна Мана
+Рівень 2: -16 максимальна Мана
+Рівень 3: -15 максимальна Мана</TM_Sentinel_eff_desc>
+  <TM_Sentinel_ver_desc>Збільшує максимальну кількість часових, які геомант може підтримувати в даний момент часу. Геомант також повинен мати достатні запаси мани для підтримки кожного вартового.
+Рівень 0: 2
+Рівень 1: 3
+Рівень 2: 4
+Рівень 3: 5</TM_Sentinel_ver_desc>
+  <TM_Meteor_eff_desc>Зменшує вартість мани Метеора на 5% від базової вартості за рівень навички.</TM_Meteor_eff_desc>
+  <TM_Meteor_ver_desc>Підвищується ймовірність того, що клітини, прилеглі до ядра метеоритів, також містять дорогоцінні мінерали.
+Рівень 0: 0%
+Рівень 1: 15%
+Рівень 2: 30%
+Рівень 3: 45%</TM_Meteor_ver_desc>
+  <TM_Stoneskin_pwr>Багатошарова Оборона</TM_Stoneskin_pwr>
+  <TM_Stoneskin_eff>Знайома Шкіра</TM_Stoneskin_eff>
+  <TM_Stoneskin_ver>Загальна шкіра</TM_Stoneskin_ver>
+  <TM_Encase_pwr>Непоступливий Камінь</TM_Encase_pwr>
+  <TM_Encase_eff>Творець форми</TM_Encase_eff>
+  <TM_Encase_ver>Міцний Камінь</TM_Encase_ver>
+  <TM_EarthSprites_pwr>Дух може</TM_EarthSprites_pwr>
+  <TM_EarthSprites_eff>Непостійна Фея</TM_EarthSprites_eff>
+  <TM_EarthSprites_ver>Відхилення від Норми Мани</TM_EarthSprites_ver>
+  <TM_EarthernHammer_pwr>Важкий Метал</TM_EarthernHammer_pwr>
+  <TM_EarthernHammer_eff>Пухкий Ґрунт</TM_EarthernHammer_eff>
+  <TM_EarthernHammer_ver>Змінена Гравітація</TM_EarthernHammer_ver>
+  <TM_Sentinel_pwr>Майстер</TM_Sentinel_pwr>
+  <TM_Sentinel_eff>кам'яне серце</TM_Sentinel_eff>
+  <TM_Sentinel_ver>Верховенство закону</TM_Sentinel_ver>
+  <TM_Meteor_eff>Струс Землі</TM_Meteor_eff>
+  <TM_Meteor_ver>Золоте серце</TM_Meteor_ver>
+  <TM_TechnoBit_pwr_desc>Техно-біт перетворює ману від техноманта, стріляючи чергами мікролазерів на ціль техноманта. Кожен рівень навички збільшує дальність стрільби і зменшує затримку стрільби і витрати мани на атаку.
+Рівень 0: 25 дальність, 3 постріли кожні 3 секунди, 6 мани
+Рівень 5: дальність стрільби 30, 4 постріли кожні 2,75 секунди, 5,5 мани
+Рівень 10: 35 далекобійність, 5 пострілів кожні 2,5 секунди, 5 мани
+Рівень 15: дальність стрільби 40, 6 пострілів кожні 2,25 секунди, 4,5 мани</TM_TechnoBit_pwr_desc>
+  <TM_TechnoBit_eff_desc>Збільшує кількість, частоту і радіус пошуку ремонтних робіт при одночасному зниженні витрат мани на виконання ремонтних робіт.
+
+При складанні проекту частота ремонту збільшується.</TM_TechnoBit_eff_desc>
+  <TM_TechnoBit_ver_desc>Покращує користувальницький інтерфейс до техно-біту, дозволяючи йому збільшити свою підтримку техноманту під час будівництва, крафта і видобутку корисних копалин, одночасно знижуючи вартість енергії (мани).
+
+Ефективність підвищується на 10% за кожне очко навички. Зменшує вартість мани на 2% за очко навички.</TM_TechnoBit_ver_desc>
+  <TM_TechnoTurret_pwr_desc>Збільшує кількість серійних пострілів на .4 на кожному рівні.
+Зменшує час прогрівання на 2% за рівень.
+Збільшує точність у всіх категоріях діапазону на 1% за рівень.</TM_TechnoTurret_pwr_desc>
+  <TM_TechnoTurret_eff_desc>Збільшує кількість окулярів життя Mark-IV на 10 за рівень.
+Збільшує тривалість на 5 секунд за рівень.
+Знижує витрати мани на ракети і міномети на 3% за рівень.
+Зменшує кількість нейронного зворотного зв'язку, що виникає при відключенні, завдяки своїй безвідмовності.</TM_TechnoTurret_eff_desc>
+  <TM_TechnoTurret_ver_desc>Додає і покращує системи озброєння для вежі Mark-IV.
+Збільшує дальність стрільби баштової автопушки на 1 рівень
+Рівень 5: додає ракетницю; додаткові рівні збільшують скорострільність
+Рівень 10: запускає 2 ракети; додає невелику мінометну систему; додаткові рівні збільшують дальність дії міномета і скорострільність
+Рівень 15: запускає 3 ракети</TM_TechnoTurret_ver_desc>
+  <TM_TechnoWeapon_pwr_desc>Підсилює всі аспекти інженерної зброї для кожного рівня навички: збиток, дальність, час прогріву і час перезарядки поліпшені на 2%, все точність поліпшена на 1%, а також збільшує кількість пострілів за серію на 2% (округлено до найближчого цілого числа).</TM_TechnoWeapon_pwr_desc>
+  <TM_TechnoWeapon_eff_desc>Підсилює всі аспекти нано-стимулятора.</TM_TechnoWeapon_eff_desc>
+  <TM_TechnoWeapon_ver_desc>Збільшує ймовірність створення елементарного пострілу на 1% (базовий 20%) і зменшує витрату мани на постріл на 4% за рівень навички. Цю навичку можна перемикати.
+
+Вогняний постріл: генерує негорючий вибух (2 мани)
+
+Крижаний постріл: будь-який удар по частині тіла втрачає ефективність (1,5 мани)
+
+Блискавичний постріл: оглушає ціль (1 Мана)</TM_TechnoWeapon_ver_desc>
+  <TM_TechnoShield_pwr_desc>Додає конденсатори, які пульсують при відхиленні вхідних снарядів; збільшує кількість енергії, яку можна відхилити.</TM_TechnoShield_pwr_desc>
+  <TM_TechnoShield_eff_desc>Зменшує витрати мани для створення кінетичної області на 6% за кожне очко навички.</TM_TechnoShield_eff_desc>
+  <TM_TechnoShield_ver_desc>Збільшує кількість енергії, доступної для кінетичного щита 30pts за рівень навички. Базове 110pts.</TM_TechnoShield_ver_desc>
+  <TM_Sabotage_pwr_desc>Підсилює ефект саботажу.</TM_Sabotage_pwr_desc>
+  <TM_Sabotage_eff_desc>Знижує витрати мани на саботаж на 6% за рівень навички.</TM_Sabotage_eff_desc>
+  <TM_Sabotage_ver_desc>Збільшує ймовірність успішного саботажу на 10%. Базовий шанс 50%.</TM_Sabotage_ver_desc>
+  <TM_Overdrive_pwr_desc>Підсилює ефект і тривалість перевантаження.</TM_Overdrive_pwr_desc>
+  <TM_Overdrive_eff_desc>Знижує витрати мани на перевантаження на 8% від базової вартості в рівні майстерності.</TM_Overdrive_eff_desc>
+  <TM_Overdrive_ver_desc>Зменшує частоту і пошкодження, що наносяться підсистемам, а також збільшує тривалість перевантаження.</TM_Overdrive_ver_desc>
+  <TM_OrbitalStrike_pwr_desc>Збільшує втрати від вибуху на 20% за рівень навички. Базово 25 урона.</TM_OrbitalStrike_pwr_desc>
+  <TM_OrbitalStrike_eff_desc>Зменшує вартість мани орбітального удару на 5% від базової вартості за рівень навички.</TM_OrbitalStrike_eff_desc>
+  <TM_OrbitalStrike_ver_desc>Скорочує час, необхідний орбітальним бомбардувальним системам для вирівнювання за координатами цілі.</TM_OrbitalStrike_ver_desc>
+  <TM_TechnoBit_pwr>Наступальний Протокол</TM_TechnoBit_pwr>
+  <TM_TechnoBit_eff>Ремонтний Протокол</TM_TechnoBit_eff>
+  <TM_TechnoBit_ver>Нейроінтерфейс</TM_TechnoBit_ver>
+  <TM_TechnoTurret_pwr>Вогнева міць</TM_TechnoTurret_pwr>
+  <TM_TechnoTurret_eff>Довговічність</TM_TechnoTurret_eff>
+  <TM_TechnoTurret_ver>Озброєння</TM_TechnoTurret_ver>
+  <TM_TechnoWeapon_pwr>Покращена Зброя</TM_TechnoWeapon_pwr>
+  <TM_TechnoWeapon_eff>Ін'єкції Нанітов</TM_TechnoWeapon_eff>
+  <TM_TechnoWeapon_ver>Елементарний Постріл</TM_TechnoWeapon_ver>
+  <TM_TechnoShield_pwr>Кінетична конденсатори</TM_TechnoShield_pwr>
+  <TM_TechnoShield_eff>енергетичний цикл</TM_TechnoShield_eff>
+  <TM_TechnoShield_ver>Поворотно-Поступальні Поля</TM_TechnoShield_ver>
+  <TM_Sabotage_pwr>Хакерська Рутина</TM_Sabotage_pwr>
+  <TM_Sabotage_eff>Надлишкові З "єднання</TM_Sabotage_eff>
+  <TM_Sabotage_ver>Гуру Кодування</TM_Sabotage_ver>
+  <TM_Overdrive_pwr>Розгін</TM_Overdrive_pwr>
+  <TM_Overdrive_eff>Чиста Сила</TM_Overdrive_eff>
+  <TM_Overdrive_ver>Контроль пошкоджень</TM_Overdrive_ver>
+  <TM_OrbitalStrike_pwr>Перебір</TM_OrbitalStrike_pwr>
+  <TM_OrbitalStrike_eff>Розрахункове вирівнювання</TM_OrbitalStrike_eff>
+  <TM_OrbitalStrike_ver>Обхід Автентифікації</TM_OrbitalStrike_ver>
+  <TM_BloodGift_pwr_desc>Збільшує втрати від усієї магії крові на 10% за очко навички.</TM_BloodGift_pwr_desc>
+  <TM_BloodGift_eff_desc>Знижує вартість мани кривавого жертвопринесення на 5% за очко навички і знижує вартість крові всієї магії крові на 3% за очко навички.</TM_BloodGift_eff_desc>
+  <TM_BloodGift_ver_desc>Збільшує кількість магії крові, отриманої при використанні кривавого жертвопринесення або через кровотечу, на 10%. Підвищений рівень майстерності дозволяє магу крові черпати свіжу кров із землі:
+Рівень 0: Немає
+Рівень 1: 1 радіус комірки
+Рівень 2: 3 радіус комірки
+Рівень 3: 5 радіус комірки</TM_BloodGift_ver_desc>
+  <TM_IgniteBlood_pwr_desc>Збільшує втрати від підпалювання крові на 12% за рівень навички.</TM_IgniteBlood_pwr_desc>
+  <TM_IgniteBlood_eff_desc>Зменшує вартість магії крові, необхідну для використання займання крові, на 6% за рівень навички.</TM_IgniteBlood_eff_desc>
+  <TM_IgniteBlood_ver_desc>Збільшує швидкість горіння займаної крові на 15% за очко навички. Це впливає на те, як швидко поширюється полум'я і як швидко пульсує полум'я.</TM_IgniteBlood_ver_desc>
+  <TM_BloodForBlood_pwr_desc>Збільшує тривалість прийому крові за кров на 10%.</TM_BloodForBlood_pwr_desc>
+  <TM_BloodForBlood_eff_desc>Зменшує вартість магії крові, необхідну для використання крові за кров, на 6% за рівень навички.</TM_BloodForBlood_eff_desc>
+  <TM_BloodForBlood_ver_desc>Збільшити кількість здоров'я, відновлювану кров за кров на 0,35 оч кожен рівень навички. Базове 1 оч.
+
+Кожен тік кров за кров може випромінювати хвилі зцілення, сформований з ролика, який зцілить все поруч, доброзичливий пішаки. Кожен рівень навички збільшує радіус зцілення пульс:
+Рівень 0: Немає
+Рівень 1: радіус 1 комірка
+2 рівень: радіус 2 комірки
+Рівень 3: радіус 3 комірки</TM_BloodForBlood_ver_desc>
+  <TM_BloodShield_pwr_desc>Збільшує силу кривавого щита на 10% за очко навички.</TM_BloodShield_pwr_desc>
+  <TM_BloodShield_eff_desc>Зменшує вартість магії крові, необхідну для використання кривавого щита, на 6% за рівень навички.</TM_BloodShield_eff_desc>
+  <TM_BloodShield_ver_desc>Збільшує кількість зцілення, що генерується кривавим щитом, на 15% за рівень навички.</TM_BloodShield_ver_desc>
+  <TM_Rend_pwr_desc>Збільшує втрати від роздирання на 15% за кожне очко навички.</TM_Rend_pwr_desc>
+  <TM_Rend_eff_desc>Зменшує вартість магії крові, необхідну для роздирання, на 5% за рівень навички.</TM_Rend_eff_desc>
+  <TM_Rend_ver_desc>Збільшує тривалість роздирання на 20% за рівень навички і збільшує кількість крові.</TM_Rend_ver_desc>
+  <TM_BloodMoon_pwr_desc>Поглиблюйте ніч і викликайте більш потужні криваві жахи, збільшуючи їх розмір і шкоди на 15% за рівень навички.</TM_BloodMoon_pwr_desc>
+  <TM_BloodMoon_eff_desc>Криваві жахи з нетерпінням чекають вашого дзвінка, зменшуючи магію крові, необхідну для використання Кривавого Місяця, на 4% за очко навичка і збільшуючи частоту атак кривавого терору на 5%.</TM_BloodMoon_eff_desc>
+  <TM_BloodMoon_ver_desc>Збільште тривалість Кривавого Місяця на 10% за кожну точку навички.</TM_BloodMoon_ver_desc>
+  <TM_BloodGift_pwr>Кровь. Это сила.</TM_BloodGift_pwr>
+  <TM_BloodGift_eff>Жертва Крові</TM_BloodGift_eff>
+  <TM_BloodGift_ver>Чиста кров</TM_BloodGift_ver>
+  <TM_IgniteBlood_pwr>Крововилив</TM_IgniteBlood_pwr>
+  <TM_IgniteBlood_eff>Вогник Крові</TM_IgniteBlood_eff>
+  <TM_IgniteBlood_ver>грецький вогонь</TM_IgniteBlood_ver>
+  <TM_BloodForBlood_pwr>Гемофілія</TM_BloodForBlood_pwr>
+  <TM_BloodForBlood_eff>Кровні Узи</TM_BloodForBlood_eff>
+  <TM_BloodForBlood_ver>Пульс Життя</TM_BloodForBlood_ver>
+  <TM_BloodShield_pwr>Загустіла кров</TM_BloodShield_pwr>
+  <TM_BloodShield_eff>Приплив Крові</TM_BloodShield_eff>
+  <TM_BloodShield_ver>Коагуляція Рани</TM_BloodShield_ver>
+  <TM_Rend_pwr>Зазубрений Край</TM_Rend_pwr>
+  <TM_Rend_eff>Містичний Кіготь</TM_Rend_eff>
+  <TM_Rend_ver>Тисячі Порізів</TM_Rend_ver>
+  <TM_BloodMoon_pwr>Повний Місяць</TM_BloodMoon_pwr>
+  <TM_BloodMoon_eff>Голод</TM_BloodMoon_eff>
+  <TM_BloodMoon_ver>Нескінченна Ніч</TM_BloodMoon_ver>
+  <TM_EnchantedBody_pwr_desc>Збільшує силу Зачарованого тіла і Зачарованої аури на ауд 33% за рівень навички.</TM_EnchantedBody_pwr_desc>
+  <TM_EnchantedBody_eff_desc>Знижує вартість заклинань і максимальну вартість підтримки мани Зачарованого тіла і Зачарованої аури на 15% за рівень навички.</TM_EnchantedBody_eff_desc>
+  <TM_EnchantedBody_ver_desc>Зменшує штраф на регенерацію мани Зачарованого тіла та Зачарованої аури на 15% за рівень навички.</TM_EnchantedBody_ver_desc>
+  <TM_Transmutate_pwr_desc>Зменшує кількість втраченої цінності на 5% за рівень навички при виконанні трансмутації ресурсів. Базове значення перетворення становить 70%.
+При перетворенні обладнання, виготовленого з матеріалу, перетворений матеріал може становити від 10% до 300% від вартості вихідного матеріалу, кожен рівень покращує цей діапазон.
+Перетворювальне обладнання призведе до погіршення стану обладнання:
+Рівень 0: -20% HP
+Рівень 1: -10% HP
+Рівень 2: відсутність деградації
+Рівень 3: + 10% HP
+
+Обладнання розпадеться, якщо його міцність впаде нижче 0. Трансмутації обладнання завжди будуть видаляти зіпсоване.</TM_Transmutate_pwr_desc>
+  <TM_Transmutate_eff_desc>Знижує витрати мани, необхідної для використання трансмутування на 12% за рівень навички.</TM_Transmutate_eff_desc>
+  <TM_Transmutate_ver_desc>Трансмутація може бути виконана на більш складному матеріалі.
+Рівень 0: сировинні ресурси (камінь, сталь, срібло тощо)
+Рівень 1: Продукти харчування (м "ясо, рис, їжа) - завжди перетворюються на пемікан або поживну пасту
+Рівень 2: трупи-завжди будуть перетворюватися на поживну пасту
+Рівень 3: обладнання-застосовується до обладнання, зробленого з матеріалу; випадковим чином перетворюється на матеріал тієї ж категорії.
+Обладнання, виготовлене тільки із заданого матеріалу, буде відремонтовано на 30% + 10% * рівень навички конверсії і має (2% * рівень навички конверсії) шанс підвищити якість предмета на один рівень.</TM_Transmutate_ver_desc>
+  <TM_EnchanterStone_eff_desc>Зменшує кількість мани, необхідної для розігрування каменю чародія, на 10% і зменшує максимальний вміст MP на 2 мани за рівень навички.</TM_EnchanterStone_eff_desc>
+  <TM_EnchanterStone_ver_desc>Створює артефакти з більшої кількості типів ресурсів. Ця навичка вимагає 2 очок здібностей для тренування.
+Рівень 0: кам'яні брили (сланець, піщаник, вапняк, мармур, граніт)
+Рівень 1: сталь, срібло, * залізо
+Рівень 2: фітотерапія, нефрит, дерево
+Рівень 3: Золото, магіцит</TM_EnchanterStone_ver_desc>
+  <TM_EnchantWeapon_pwr_desc>Збільшує силу заклинання зброї.
+Вогонь: + 33% середньої шкоди
+Лід: + 25% середньої шкоди
+Оглушення: + 25% тривалості оглушення
+Темрява: + 10% шанс застосування</TM_EnchantWeapon_pwr_desc>
+  <TM_EnchantWeapon_eff_desc>Знижує витрати мани зачарувати зброю на 10% за рівень навички.</TM_EnchantWeapon_eff_desc>
+  <TM_Polymorph_pwr_desc>Зменшує шанси мети на опір. Опір залежить від таємного опору і психічної чутливості мети. Може розлючити (Берсерк) ворогів.
+
+Шанс опору до модифікаторів:
+Рівень 0: Пішак 50%, Механоїд 0%
+Рівень 1: пішак 60%, механоїд 20%, лють 20%
+Рівень 2: пішак 70%, механоїд 40%, лють 40%
+Рівень 3: пішак 80%, механоїд 60%, лють 50%</TM_Polymorph_pwr_desc>
+  <TM_Polymorph_eff_desc>Зниження вартості каста Поліморф на 6% за рівень навички.</TM_Polymorph_eff_desc>
+  <TM_Polymorph_ver_desc>Збільшує тривалість поліморфу і застосовує більше контролю над бойовими здібностями істоти для ворогів і союзників. Ця навичка вимагає 2 очок здібностей для тренування.
+Рівень 0: Тривалість 30с, ворог 100/союзник 60
+Рівень 1: Тривалість 40с, ворог 80/союзник 100
+Рівень 2: тривалість 50с, ворог 60/союзник 160
+Рівень 3: постійний, ворог 60с/союзник 200</TM_Polymorph_ver_desc>
+  <TM_Shapeshift_pwr_desc>Чародій бере на себе деякі вольності, щоб поліпшити фізичні риси істоти, в яку він перетворюється. Вчіться ще більше посилювати фізичну силу під час зміни форми. Ця навичка вимагає 2 очок здібностей для тренування.
+Рівень 0: фізичний + 25%, швидкість атаки + 10%, броня + 10%
+Рівень 1: фізичний + 35%, швидкість атаки + 10%, броня + 15%
+Рівень 2: фізичний + 40%, швидкість атаки + 15%, броня + 15%
+Рівень 3: фізичний + 50%, швидкість атаки + 15%, броня + 20%
+</TM_Shapeshift_pwr_desc>
+  <TM_Shapeshift_eff_desc>Знижує витрати мани час відновлення: 5% від базової вартості в рівні майстерності. Збільшує тривалість на 20%. Ця навичка вимагає 2 очок здібностей для тренування.
+Рівень 3: перетворення є постійним, поки не скасовано.</TM_Shapeshift_eff_desc>
+  <TM_Shapeshift_ver_desc>Перетворення на істот з більш високою бойовою міццю. Мінімальні/максимальні значення множаться на таємну силу. Ця навичка вимагає 2 очок здібностей для тренування.
+Рівень 0: мін 80, Макс 250
+Рівень 1: мін 120, Макс 320
+Рівень 2: мінімум 150, Максимум 420
+Рівень 3: min 200, max 500; відкриває доступ до перетворення: Темний Вовк</TM_Shapeshift_ver_desc>
+  <TM_EnchantedBody_pwr>Розум над тілом</TM_EnchantedBody_pwr>
+  <TM_EnchantedBody_eff>Поступлива Форма</TM_EnchantedBody_eff>
+  <TM_EnchantedBody_ver>Адаптація</TM_EnchantedBody_ver>
+  <TM_Transmutate_pwr>Коефіцієнт Конверсії</TM_Transmutate_pwr>
+  <TM_Transmutate_eff>Вартість Перетворення</TM_Transmutate_eff>
+  <TM_Transmutate_ver>Матеріал Застосування</TM_Transmutate_ver>
+  <TM_EnchanterStone_eff>Суб-Атомний Контроль</TM_EnchanterStone_eff>
+  <TM_EnchanterStone_ver>Матерія Має Значення</TM_EnchanterStone_ver>
+  <TM_EnchantWeapon_pwr>Елементарний Край</TM_EnchantWeapon_pwr>
+  <TM_EnchantWeapon_eff>Елементарне Плетіння</TM_EnchantWeapon_eff>
+  <TM_Polymorph_pwr>Зменшити опір</TM_Polymorph_pwr>
+  <TM_Polymorph_eff>Цільний</TM_Polymorph_eff>
+  <TM_Polymorph_ver>вільний кінець</TM_Polymorph_ver>
+  <TM_Shapeshift_pwr>Розширена Форма</TM_Shapeshift_pwr>
+  <TM_Shapeshift_eff>Стійка Преображення</TM_Shapeshift_eff>
+  <TM_Shapeshift_ver>Природний Відбір</TM_Shapeshift_ver>
+  <TM_Prediction_pwr_desc>Застосовує силу передбачення для захисту хрономанта.
+Ця навичка зменшує кількість розумової концентрації, необхідної для збереження передбачуваного стану, одночасно збільшуючи швидкість реакції на передбачені небезпеки.
+
+Рівень 0: -24% свідомість, -10% затримка прицілювання, + 3% поріг нервового зриву, + 5% шанс ухилення в ближньому бою, 5% шанс передбачити і уникнути фізичних атак
+
+Рівень 5: -10% свідомості, -20% затримки прицілювання, + 6% поріг нервового зриву, + 15% шансу ухилення в ближньому бою, 55% шансу передбачити і уникнути фізичних атак</TM_Prediction_pwr_desc>
+  <TM_Prediction_eff_desc>Зменшує кількість регенерації мани для підтримки прогнозу.
+
+Рівень 0: -50% регенерації мани
+Рівень 1: -45% регенерації мани
+Рівень 2: регенерація мани - 40%
+Рівень 3: -35% регенерації мани</TM_Prediction_eff_desc>
+  <TM_Prediction_ver_desc>Збільшує шанс передбачити події на 5% за рівень навички. Кожен chronomancer можна тільки передбачити 1 подію одночасно.
+
+0 Рівень: 25%
+Рівень 1: 30%
+Рівень 2: 35%
+Рівень 3: 40%</TM_Prediction_ver_desc>
+  <TM_AlterFate_pwr_desc>Підвищується ймовірність сприятливого результату при використанні зміни долі. Основна мета при зміні долі - запобігти передбаченню; на рівні 3 можна скасувати умови навколишнього середовища (теплова хвиля, раптова буря тощо) на короткий період після їх виникнення.
+
+Рівень 0: 25% шанс запобігання
+1 рівень: 30% шанс запобігання
+Рівень 2: ймовірність запобігання 35%
+Рівень 3: ймовірність запобігання 40%; зміна умов навколишнього середовища</TM_AlterFate_pwr_desc>
+  <TM_AlterFate_eff_desc>Знижує витрати мани, необхідної для використання зміни долі на 10% за рівень навички.</TM_AlterFate_eff_desc>
+  <TM_AccelerateTime_eff_desc>Зменшує кількість мани, необхідну для прискорення часу, на 8% за рівень навички.</TM_AccelerateTime_eff_desc>
+  <TM_AccelerateTime_ver_desc>Збільшує потенціал прискорення часу за рахунок збільшення максимальної кількості ворожих цілей, зменшення ймовірності опору і збільшення тривалості тимчасового поля.
+
+Рівень 0: 2 цілі, 50% успішності, 100% тривалості
+Рівень 1: 3 цілі, 60% успіху, 110% тривалості
+Рівень 2: 4 цілі, 70% успіху, 120% тривалості
+Рівень 3: 5 цілей, 80% успіху, 130% тривалості</TM_AccelerateTime_ver_desc>
+  <TM_AccelerateTime_pwr_desc>Збільшує силу прискорення часу.
+
+Пішаки будуть старіти на 10% швидше, ворожі пішаки почнуть страждати від вікових захворювань у більш молодому віці, а інші умови, що впливають на здоров'я, прискорюються. Також псується обладнання на додаткові 100% довговічності.</TM_AccelerateTime_pwr_desc>
+  <TM_ReverseTime_pwr_desc>Збільшує силу зворотного часу.
+Збільшує кількість гниття, розпаду або пошкодження обладнання, яке повертається, збільшує швидкість реверсування стану здоров'я і збільшує ефективність поля реверсування, що оточує пішака.</TM_ReverseTime_pwr_desc>
+  <TM_ReverseTime_eff_desc>Знижує витрати мани на зворотний час на 8% за рівень навички.</TM_ReverseTime_eff_desc>
+  <TM_ReverseTime_ver_desc>Збільшує шанс успіху і тривалість зворотного часу на 10% за рівень навички.
+
+На рівні 3, може бути використаний на недавно померлого (ауд 2 години ігрового часу) пішаки, щоб спробувати відновити фізичні умови, які призвели до смерті.</TM_ReverseTime_ver_desc>
+  <TM_ChronostaticField_pwr_desc>Збільшує тривалість Хроностатичного поля на 20% за рівень навички. Базова тривалість: 26 секунд.</TM_ChronostaticField_pwr_desc>
+  <TM_ChronostaticField_eff_desc>Зменшіть вартість каста Хроностатичного поля на 6% за рівень навички.</TM_ChronostaticField_eff_desc>
+  <TM_ChronostaticField_ver_desc>Зменшіть ймовірність того, що Хроностатичне поле буде чинити опір на 10% за рівень навички. Шанс опору модифікується силою заклинання заклинача і цільовими опорами.
+
+Рівень 0: 60%
+Рівень 1: 70%
+Рівень 2: 80%
+Рівень 3: 90%</TM_ChronostaticField_ver_desc>
+  <TM_Recall_pwr_desc>Автоматизує відгук.
+
+Рівень 0: тільки ручна активація
+Рівень 1: 50% шанс спровокувати смерть
+Рівень 2: 50% шанс спрацювання вниз
+Рівень 3: 100% шанс спровокувати смерть або падіння</TM_Recall_pwr_desc>
+  <TM_Recall_eff_desc>Зниження вартості навчання до 8% за кожен рівень кваліфікації.
+
+Рівень 0: -40 Макс МП, реген мани - 30%
+Рівень 1: max MP -36.8, Mana regen -27.6%
+Рівень 2: max MP -33.2, Mana regen -25.2%
+Рівень 3: max MP, -30.4, Мана regen -22.8%</TM_Recall_eff_desc>
+  <TM_Recall_ver_desc>Збільшення тривалості маркера часу, який залишатиметься активним на 4 ігрові години за рівень навички.
+
+Рівень 0: 20 годин
+Рівень 1: 24 години
+Рівень 2: 28 годин
+Рівень 3: 32 години</TM_Recall_ver_desc>
+  <TM_Prediction_pwr>Первинне Знання</TM_Prediction_pwr>
+  <TM_Prediction_eff>Річка часу</TM_Prediction_eff>
+  <TM_Prediction_ver>Третє око</TM_Prediction_ver>
+  <TM_AlterFate_pwr>Віщун</TM_AlterFate_pwr>
+  <TM_AlterFate_eff>Підступність</TM_AlterFate_eff>
+  <TM_AccelerateTime_pwr>Відносність</TM_AccelerateTime_pwr>
+  <TM_AccelerateTime_eff>Передній Маніпулятор</TM_AccelerateTime_eff>
+  <TM_AccelerateTime_ver>Мінливість</TM_AccelerateTime_ver>
+  <TM_ReverseTime_pwr>перезаписати хронологію</TM_ReverseTime_pwr>
+  <TM_ReverseTime_eff>Зворотній Маніпулятор</TM_ReverseTime_eff>
+  <TM_ReverseTime_ver>Відмова</TM_ReverseTime_ver>
+  <TM_ChronostaticField_pwr>Петля Времени</TM_ChronostaticField_pwr>
+  <TM_ChronostaticField_eff>своєчасність</TM_ChronostaticField_eff>
+  <TM_ChronostaticField_ver>Ловець Часу</TM_ChronostaticField_ver>
+  <TM_Recall_pwr>Страхування</TM_Recall_pwr>
+  <TM_Recall_eff>Ідеальна Пам'ять</TM_Recall_eff>
+  <TM_Recall_ver>Враження</TM_Recall_ver>
+  <TM_ChaosTradition_pwr_desc>Збільшує ймовірність того, що дика магія має благотворний сплеск і вирішує ймовірність зворотної дії. Не змінює нейтральні події, які завжди становлять 3%. Вимоги 2 очки навички для навчання.
+
+Рівень 0: (+)2% : (-)5%
+Рівень 1: (+)3% : (-)4%
+Рівень 2: (+)4% : (-)3%
+Рівень 3: (+)5% : (-)2%</TM_ChaosTradition_pwr_desc>
+  <TM_ChaosTradition_eff_desc>Маги хаосу процвітають на змінах - кожен рівень майстерності приносить додаткові переваги, коли використовується традиція Хаосу. Потрібно 2 очки навички для тренування.
+
+Рівень 0: змінює всі набуті здібності
+Рівень 1: отримує підвищення настрою на + 8 протягом 24 годин
+Рівень 2: приріст 25 мани
+3 Рівень: застосовує ефект укладання, що підвищує статистику</TM_ChaosTradition_eff_desc>
+  <TM_ChaosTradition_ver_desc>Збільшує кількість здібностей, які маг хаосу може вивчити через традицію Хаосу. Традиція хаосу ніколи не зникає. Потрібно 2 очки навички для тренування.
+
+Рівень 0: 2 здібності
+Рівень 1: 3 здібності
+Рівень 2: 4 здібності
+3 Рівень: 5 здібності</TM_ChaosTradition_ver_desc>
+  <TM_ChaosTradition_pwr>Потік Хаоса</TM_ChaosTradition_pwr>
+  <TM_ChaosTradition_eff>Ртутний</TM_ChaosTradition_eff>
+  <TM_ChaosTradition_ver>Протеан</TM_ChaosTradition_ver>
+  <TM_LightLance_pwr_desc>Збільшує тривалість світлового списа на 8% та втрати на 15% за рівень навички.</TM_LightLance_pwr_desc>
+  <TM_LightLance_eff_desc>Знижує витрати енергії на світлове списо на 8% за рівень навички.</TM_LightLance_eff_desc>
+  <TM_LightLance_ver_desc>Збільшує радіус світлового списа на 15% за рівень навички.</TM_LightLance_ver_desc>
+  <TM_Sunfire_pwr_desc>Збільшує втрати від Сонячного вогню на 25% і пробиваність броні на 10% за очко навички.</TM_Sunfire_pwr_desc>
+  <TM_Sunfire_eff_desc>Знижує витрати енергії на Сонячний вогонь на 6% за рівень навички.</TM_Sunfire_eff_desc>
+  <TM_Sunfire_ver_desc>Збільшує кількість променів, вироблених на 4 за рівень навички, і збільшує середню тривалість променя на 10%.</TM_Sunfire_ver_desc>
+  <TM_LightBurst_pwr_desc>Кожен рівень навички збільшує щільність світла, що призводить до 15% -го поліпшення ефективного радіусу, сенсорного урона і дезорієнтації, викликаної кожним спалахом світла.</TM_LightBurst_pwr_desc>
+  <TM_LightBurst_eff_desc>Знижує витрати мани на 8% за очко навички.</TM_LightBurst_eff_desc>
+  <TM_LightBurst_ver_desc>Збільшує кількість спалахів світла і змінює спалах, щоб впливати на датчики механоїдів.
+Рівень 0: 2 спалахи світла
+Рівень 1: 3 спалахи світла
+Рівень 2: 3 спалахи світла, вражають механоїдів
+Рівень 3: 4 спалахи світла, вражають механоїдів</TM_LightBurst_ver_desc>
+  <TM_LightSkip_pwr_desc>Додає додаткові можливості для розширеної програми. Коштує 2 очки за рівень.
+Ранг 0: Легкий пропуск - та ж карта, тільки для себе
+Ранг 1: Масовий пропуск Світла - та ж карта, СтіпЕ навколо заклинателя
+Ранг 2: Глобальний пропуск світла - глобальний, ЛЄ навколо заклинача</TM_LightSkip_pwr_desc>
+  <TM_LightSkip_eff_desc>Знижує витрати енергії на легкий пропуск на 8% за рівень навички.</TM_LightSkip_eff_desc>
+  <TM_Refraction_pwr_desc>Збільшує точність переломлених снарядів на 20% і знижує точність переломлених снарядів на 15%.</TM_Refraction_pwr_desc>
+  <TM_Refraction_eff_desc>Зменшує витрати енергії на переломлення на 6% за рівень навички.</TM_Refraction_eff_desc>
+  <TM_Refraction_ver_desc>Збільшує тривалість Переломної стіни на 10% (2,5 с) за рівень навички.</TM_Refraction_ver_desc>
+  <TM_SpiritOfLight_pwr_desc>SoL: збільшує збиток на 3% і максимальну дальність атаки на 1 за рівень навички.</TM_SpiritOfLight_pwr_desc>
+  <TM_SpiritOfLight_eff_desc>Призовник: Знижує витрати на утримання на 2% за рівень навички.
+SoL: знижує витрати світлової енергії для Духа Світла на 1% за рівень навички.</TM_SpiritOfLight_eff_desc>
+  <TM_SpiritOfLight_ver_desc>SoL: збільшує максимальну світлову енергію на 4 за рівень навички та поглинання світлової енергії на 3% за рівень навички.</TM_SpiritOfLight_ver_desc>
+  <TM_LightLance_pwr>Пронизливе Світло</TM_LightLance_pwr>
+  <TM_LightLance_eff>Збільшення</TM_LightLance_eff>
+  <TM_LightLance_ver>Пекуче випромінювання</TM_LightLance_ver>
+  <TM_Sunfire_pwr>Глибокий опік</TM_Sunfire_pwr>
+  <TM_Sunfire_eff>Сонячна енергія</TM_Sunfire_eff>
+  <TM_Sunfire_ver>Стійкий Опік</TM_Sunfire_ver>
+  <TM_LightBurst_pwr>Люкс</TM_LightBurst_pwr>
+  <TM_LightBurst_eff>Лінза</TM_LightBurst_eff>
+  <TM_LightBurst_ver>Люмен</TM_LightBurst_ver>
+  <TM_LightSkip_pwr>Відносність</TM_LightSkip_pwr>
+  <TM_LightSkip_eff>Оседлав Хвилю</TM_LightSkip_eff>
+  <TM_Refraction_pwr>Коефіцієнт заломлення</TM_Refraction_pwr>
+  <TM_Refraction_eff>Світло, що розпорошує</TM_Refraction_eff>
+  <TM_Refraction_ver>Згасаюче світло</TM_Refraction_ver>
+  <TM_SpiritOfLight_pwr>Випромінювання</TM_SpiritOfLight_pwr>
+  <TM_SpiritOfLight_eff>Підтримка</TM_SpiritOfLight_eff>
+  <TM_SpiritOfLight_ver>Поглинання</TM_SpiritOfLight_ver>
+  <TM_Totems_pwr_desc>Збільшує силу тотемів на 3%
+Тотем блискавки: Збільшує дальність і втрати
+Тотем Землі: Збільшує частоту і тривалість хитання
+Зцілюючий тотем: Збільшує дальність дії та кількість зцілень.</TM_Totems_pwr_desc>
+  <TM_Totems_eff_desc>Знижує витрати мани на створення тотема на 2% за рівень навички.</TM_Totems_eff_desc>
+  <TM_Totems_ver_desc>Збільшує тривалість тотемів на 5% за очко навички; базова тривалість становить 1 ігрову годину.</TM_Totems_ver_desc>
+  <TM_ChainLightning_pwr_desc>Збільшує шкоди від ланцюгової блискавки на 10% за очко навички.</TM_ChainLightning_pwr_desc>
+  <TM_ChainLightning_eff_desc>Знижує витрати мани на 6% за очко навички.</TM_ChainLightning_eff_desc>
+  <TM_ChainLightning_ver_desc>Збільшує кількість разів, коли ланцюгова блискавка розгалужується або відскакує, на 1 за очко навички.</TM_ChainLightning_ver_desc>
+  <TM_Enrage_pwr_desc>Збільшує силу Люті на 0,05 за очко навички. Базова серйозність рівна .25, максимальна серйозність рівна .5</TM_Enrage_pwr_desc>
+  <TM_Enrage_eff_desc>Знижує витрати мани на Лють на 6% за очко навички.</TM_Enrage_eff_desc>
+  <TM_Enrage_ver_desc>Зменшує кількість емоцій, що споживаються Люттю; на рівні 3 Лють може також поглинати Радість (Відпочинок), щоб значно збільшити її тривалість.</TM_Enrage_ver_desc>
+  <TM_Hex_pwr_desc>Збільшує шанс застосування заклинання на 10%, базовий шанс на 40%.</TM_Hex_pwr_desc>
+  <TM_Hex_eff_desc>Знижує витрати мани на заклинання на 6% за очко навички.</TM_Hex_eff_desc>
+  <TM_Hex_ver_desc>Збільшує силу ефектів, які застосовуються до зачарованих цілей.</TM_Hex_ver_desc>
+  <TM_SpiritWolves_pwr_desc>Духовні вовки лютують, коли їх заохочують. Кожне очко навички збільшує ефект люті.</TM_SpiritWolves_pwr_desc>
+  <TM_SpiritWolves_eff_desc>Зменшує витрати мани на прояв Духовних Вовків на 6% і збільшує тривалість на 2 секунди за очко навички.</TM_SpiritWolves_eff_desc>
+  <TM_SpiritWolves_ver_desc>Збільшує кількість призваних вовків на 1 за рівень навички.</TM_SpiritWolves_ver_desc>
+  <TM_GuardianSpirit_pwr_desc>Збільшує силу здібностей Духа-Хранителя:
+Дух Ведмедя: Збільшено цілі насмішки (4 - &gt; 9), шанс насмішки (60% - &gt; 78%) і дальність насмішки (15 - &gt; 21); збільшено пом'якшення урона (4 - &gt; 7)
+Дух Мангуста: Збільшує втрати від удару тінню (11 - &gt; 16) і шанс криту (40% - &gt; 65%); збільшує тривалість невидимості (1,5 с - &gt; 2,5 с) і швидкість (2 с - &gt; 3 с) після удару тінню.
+Дух Ворона: Збільшує шанс чаклунства (50% - &gt; 75%); збільшує ефективність ментального баффа «Воронове прозріння», екстрасенсорну чутливість і швидкість дослідження (20% - &gt; 30%)</TM_GuardianSpirit_pwr_desc>
+  <TM_GuardianSpirit_eff_desc>Знижує вартість заклинання, максимальну вартість утримання МП і вартість регенерації мани Духа-Хранителя на 6% за очко навички.</TM_GuardianSpirit_eff_desc>
+  <TM_GuardianSpirit_ver_desc>Збільшує ефективність духовного зв'язку Духа-Хранителя для збільшення швидкості пересування, маніпуляцій, зцілення, ігнорування болю та ухилення на 10% за очко навички.</TM_GuardianSpirit_ver_desc>
+  <TM_Totems_pwr>Тотемний майстер</TM_Totems_pwr>
+  <TM_Totems_eff>Носій тотема</TM_Totems_eff>
+  <TM_Totems_ver>Довговічність</TM_Totems_ver>
+  <TM_ChainLightning_pwr>Батько шторму</TM_ChainLightning_pwr>
+  <TM_ChainLightning_eff>Електрична атмосфера</TM_ChainLightning_eff>
+  <TM_ChainLightning_ver>Вшита блискавка</TM_ChainLightning_ver>
+  <TM_Enrage_pwr>Нестримна лють</TM_Enrage_pwr>
+  <TM_Enrage_eff>Провокатор</TM_Enrage_eff>
+  <TM_Enrage_ver>Холодна Лють</TM_Enrage_ver>
+  <TM_Hex_pwr>Відьмак</TM_Hex_pwr>
+  <TM_Hex_eff>Заклинання</TM_Hex_eff>
+  <TM_Hex_ver>Маніфест Іао</TM_Hex_ver>
+  <TM_SpiritWolves_pwr>Північний притулок</TM_SpiritWolves_pwr>
+  <TM_SpiritWolves_eff>Духовний виття</TM_SpiritWolves_eff>
+  <TM_SpiritWolves_ver>Ватажок зграї</TM_SpiritWolves_ver>
+  <TM_GuardianSpirit_pwr>Явний Зберігач</TM_GuardianSpirit_pwr>
+  <TM_GuardianSpirit_eff>Зв "язок з духом</TM_GuardianSpirit_eff>
+  <TM_GuardianSpirit_ver>Духовний Зв "язок</TM_GuardianSpirit_ver>
+  <TM_Golemancy_pwr_desc>Збільшує швидкість пересування і зменшує втрати голему.
+Рух: +[10, 15, 19, 23, 26]%
+DR: [5, 9, 13, 17, 20]%</TM_Golemancy_pwr_desc>
+  <TM_Golemancy_eff_desc>Підвищує загальну свідомість глема.
+Свідомість: +[10, 15, 19, 23, 26]%</TM_Golemancy_eff_desc>
+  <TM_Golemancy_ver_desc>Збільшує продуктивність големанта.
+Швидкість роботи: +[10, 15, 19, 23, 26]%
+Швидкість дослідження: +[10, 15, 19, 23, 26]%
+Відновлення Після Травми: +[50, 60, 70, 80, 90]%</TM_Golemancy_ver_desc>
+  <TM_RuneCarving_pwr_desc>Збільшує бонус за ефективність частини, але також збільшує складність. Для тренування потрібно 2 очки здібностей.
+Рівень 0: ефективність 20%
+Рівень 1: ефективність 22%, ймовірність успіху - 5%
+Рівень 2: ефективність 24%, ймовірність успіху - 10%
+Рівень 3: ефективність 25%, ймовірність успіху - 15%</TM_RuneCarving_pwr_desc>
+  <TM_RuneCarving_eff_desc>10% мани за очко навички повертається після виконання рунного гравірування.</TM_RuneCarving_eff_desc>
+  <TM_RuneCarving_ver_desc>Збільшує шанс успішного вирізання рун на 10% за рівень навички.</TM_RuneCarving_ver_desc>
+  <TM_Branding_pwr_desc>Збільшує потужність кожного сорту.</TM_Branding_pwr_desc>
+  <TM_Branding_eff_desc>Зменшує штраф за регенерацію мани на 10% за рівень навички.</TM_Branding_eff_desc>
+  <TM_SigilSurge_pwr_desc>Збільшує межу, якої може досягти Сігіл-сплеск, коли він активний.</TM_SigilSurge_pwr_desc>
+  <TM_SigilSurge_eff_desc>Зменшує витрати мани на підтримку Сігіл-сплеску на 10% за кожне очко вміння.</TM_SigilSurge_eff_desc>
+  <TM_SigilSurge_ver_desc>Зменшує кількість болю, що відчувається заклиначем при сплеску сигила.</TM_SigilSurge_ver_desc>
+  <TM_SigilDrain_pwr_desc>Збільшує кількість енергії клейма, що поглинається заклиначем для кожного застосовуваного клейма при зливі сигила.</TM_SigilDrain_pwr_desc>
+  <TM_SigilDrain_eff_desc>Знижує витрати на утримання мани при зливі Сігіла на 20% за одне очко навички.</TM_SigilDrain_eff_desc>
+  <TM_SigilDrain_ver_desc>Зменшує кількість болю, що відчувається кожною заклейменою пішакою, коли активний злив сигила</TM_SigilDrain_ver_desc>
+  <TM_LivingWall_pwr_desc>Збільшує шкоди і дальність дії основного механізму атаки живої стіни</TM_LivingWall_pwr_desc>
+  <TM_LivingWall_eff_desc>Знижує максимальну вартість вмісту мани на 15% за рівень навички.</TM_LivingWall_eff_desc>
+  <TM_LivingWall_ver_desc>Кожне очко навички збільшує швидкість пересування і частоту атак.</TM_LivingWall_ver_desc>
+  <TM_Golemancy_pwr>Оновлення кадру</TM_Golemancy_pwr>
+  <TM_Golemancy_eff>Контролер</TM_Golemancy_eff>
+  <TM_Golemancy_ver>Оновлення розуму</TM_Golemancy_ver>
+  <TM_RuneCarving_pwr>Глибокий Слід</TM_RuneCarving_pwr>
+  <TM_RuneCarving_eff>Майстер рун</TM_RuneCarving_eff>
+  <TM_RuneCarving_ver>Впевнені Руки</TM_RuneCarving_ver>
+  <TM_Branding_pwr>Інтенсивність</TM_Branding_pwr>
+  <TM_Branding_eff>фірмовий майстер</TM_Branding_eff>
+  <TM_SigilSurge_pwr>Потужність перенапруження</TM_SigilSurge_pwr>
+  <TM_SigilSurge_eff>Майстер напруги</TM_SigilSurge_eff>
+  <TM_SigilSurge_ver>Зменшення зворотного зв'язку</TM_SigilSurge_ver>
+  <TM_SigilDrain_pwr>Потужність Слива</TM_SigilDrain_pwr>
+  <TM_SigilDrain_eff>Майстер зливу</TM_SigilDrain_eff>
+  <TM_SigilDrain_ver>Фільтр зворотного зв'язку</TM_SigilDrain_ver>
+  <TM_LivingWall_pwr>Нестримний</TM_LivingWall_pwr>
+  <TM_LivingWall_eff>Невблаганний</TM_LivingWall_eff>
+  <TM_LivingWall_ver>Незламний</TM_LivingWall_ver>
+  <TM_Empathy_pwr_desc>Збільшує силу волі емпата, зменшуючи сприйнятливість до піддавання своїм емоціям і збільшуючи ймовірність передачі позитивних емоцій.
+Опір ментальному розриву: [0,5,9,12,13,15]%
+Шанс позитивної вібрації: [5,10,15,20,25]%</TM_Empathy_pwr_desc>
+  <TM_Empathy_eff_desc>Збільшує діапазон емпатії на 3с і частоту емоційних вібрацій на 2с за рівень навички. Типова частота - один раз на 21 секунду.</TM_Empathy_eff_desc>
+  <TM_Empathy_ver_desc>Збільшує проникнення заклинань для всіх здібностей на 5% за рівень навички.</TM_Empathy_ver_desc>
+  <TM_MindKiller_pwr_desc>Збільшує максимальну кількість цілей на 2 і загальну силу ефектів на 20% за рівень навички. При рангах 1 + дружні пішаки не будуть порушені. Максимальна базова мета - 8.</TM_MindKiller_pwr_desc>
+  <TM_MindKiller_eff_desc>Зменшує кількість параметрів для активації на 5% за рівень навички.</TM_MindKiller_eff_desc>
+  <TM_MindKiller_ver_desc>Збільшує радіус дії і шанси на успіх:
+Радіус: [15,17,19,21]c
+Шанс: [50,60,70,80]%</TM_MindKiller_ver_desc>
+  <TM_SuppressiveAura_pwr_desc>Збільшує тривалість придушення емоцій на 20% і шанс дозволити позитивні емоції на 10% за рівень навички.</TM_SuppressiveAura_pwr_desc>
+  <TM_SuppressiveAura_eff_desc>Збільшує радіус переважної аури на 15% за рівень навички; на рівні 3 ефекти поширюються на всіх членів каравану.</TM_SuppressiveAura_eff_desc>
+  <TM_SuppressiveAura_ver_desc>Імітує почуття радості і комфорту для передачі постраждалим пішакам; кожен рівень майстерності збільшує кількість переданої радості і комфорту.</TM_SuppressiveAura_ver_desc>
+  <TM_HarvestPassion_pwr_desc>Збільшує шанс отримати пристрасть на 6%, як тільки радість цілі буде вичерпана. Базовий шанс становить 30% кожні 1 секунду. Також збільшує шанс зібрати додаткові пристрасті (якщо це можливо) на 20% за рівень навички, базовий шанс на 30%. Спроба закінчиться, як тільки радість заклинателів буде вичерпана.</TM_HarvestPassion_pwr_desc>
+  <TM_HarvestPassion_eff_desc>Зменшує кількість радості заклинателя, що виснажується за ітерацію, на 20% за рівень навички і збільшує кількість радості мети, що виснажується за ітерацію, на 15% за рівень навички.</TM_HarvestPassion_eff_desc>
+  <TM_HarvestPassion_ver_desc>Збільшує шанс отримати приплив натхнення на 1%. Базовий шанс становить 2% кожну ігрову годину.</TM_HarvestPassion_ver_desc>
+  <TM_Symbiosis_pwr_desc>Збільшує свідомість пішаки-господаря для кожного рівня майстерності.
+Рівень 0: +70%
+Рівень 1: +100%
+Рівень 2: +125%
+Рівень 3: +150%
+</TM_Symbiosis_pwr_desc>
+  <TM_Symbiosis_eff_desc>Знижує витрати на початок симбіозу на 35%.</TM_Symbiosis_eff_desc>
+  <TM_Symbiosis_ver_desc>Збільшує захисну оболонку, що оточує господаря, і зменшує відсоток поглиненої шкоди, що наноситься тілу симбіонта.
+Рівень 0: поглинено 25%, передано 100%
+Рівень 1: поглинено 30%, передано 80%
+Рівень 2: 35% поглинено, 60% передано
+Рівень 3: 40% поглинено, 50% передано</TM_Symbiosis_ver_desc>
+  <TM_Empathy_pwr>Позитивне мислення</TM_Empathy_pwr>
+  <TM_Empathy_eff>Групова терапія</TM_Empathy_eff>
+  <TM_Empathy_ver>Відкрита книга</TM_Empathy_ver>
+  <TM_MindKiller_pwr>Задуха</TM_MindKiller_pwr>
+  <TM_MindKiller_eff>Сталевий погляд</TM_MindKiller_eff>
+  <TM_MindKiller_ver>Боротьба зі штормом</TM_MindKiller_ver>
+  <TM_SuppressiveAura_pwr>Тривале Придушення</TM_SuppressiveAura_pwr>
+  <TM_SuppressiveAura_eff>Величезна Аура</TM_SuppressiveAura_eff>
+  <TM_SuppressiveAura_ver>Блаженна брехня</TM_SuppressiveAura_ver>
+  <TM_HarvestPassion_pwr>Пристрасний мисливець</TM_HarvestPassion_pwr>
+  <TM_HarvestPassion_eff>Хуліган</TM_HarvestPassion_eff>
+  <TM_HarvestPassion_ver>Розпач</TM_HarvestPassion_ver>
+  <TM_Symbiosis_pwr>Обізнаність</TM_Symbiosis_pwr>
+  <TM_Symbiosis_eff>Комуна</TM_Symbiosis_eff>
+  <TM_Symbiosis_ver>Мушля</TM_Symbiosis_ver>
+  <TM_WayfarerCraft_pwr_desc>Кожне очко навички:
+Здібності: +1%
+Здатність опору: +2%</TM_WayfarerCraft_pwr_desc>
+  <TM_WayfarerCraft_eff_desc>Кожне очко навички:
+Здатність вартість: -1%
+Досвід: +2%</TM_WayfarerCraft_eff_desc>
+  <TM_WayfarerCraft_ver_desc>Кожне очко навички:
+Перезарядка: -1%
+Регенерація витривалості: +1%
+Макс СП: +2%</TM_WayfarerCraft_ver_desc>
+  <TM_FieldTraining_pwr_desc>Додає додаткову силу до бойових здібностей:
+Рівень 1: сильний удар збільшує шкоди на 25%
+Рівень 2: удар навершием шанс збити ворога подвоюється (нелетальний)
+Рівень 3: метальний ніж застосовує миттєве заспокійливе для ув'язнених або отруту для ворожих пішаків
+Рівень 4: інтенсивність палаючої люті збільшується на 50%
+Рівень 5: спринт збільшує рух на 40%
+Рівень 6: сильний удар збільшує шкоди на 27,5%
+Рівень 7: Фокусування бійця має 20% шанс обеззброїти ціль під час успішної атаки ближнього бою
+Рівень 8: Штормова атака отримує бонус до шкоди в розмірі 20%
+Рівень 9: збільшує силу Легіону до рівня 1
+Рівень 10: спринт збільшує рух на 50%
+Рівень 11: сильний удар збільшує шкоди на 30%
+Рівень 12: метальний ніж кидає 3 ножі замість одного
+Рівень 13: збільшує силу Легіону до рівня 2
+Рівень 14: інтенсивність палаючої люті збільшується на 100%
+Рівень 15: Спринт збільшує рух на 60%</TM_FieldTraining_pwr_desc>
+  <TM_FieldTraining_eff_desc>Зменшіть максимальні витрати на утримання SP на 3% і штрафи за регенерацію енергії на 3% за кожну навичку.
+Рівень 15: путівник отримує Ману і може вивчати магічні заклинання.</TM_FieldTraining_eff_desc>
+  <TM_FieldTraining_ver_desc>Додано додаткові утиліти та універсальність бойових здібностей:
+Рівень 1: фокус бійців зменшує втрату спокою на 20%
+Рівень 2: товста шкіра збільшує опір на 12%
+Рівень 3: сильна спина збільшує швидкість майнінгу на 20%
+Рівень 4: внутрішнє зцілення швидкість відновлення збільшилася на 65%
+Рівень 5: ремонт шестерень видалить зіпсоване обладнання з повністю відремонтованого
+Рівень 6: отримати доступ до здатності Легіону
+Рівень 7: товста шкіра збільшує опір на 14%
+Рівень 8: сильна спина збільшує швидкість будівництва на 20%
+Рівень 9: збільшує універсальність Легіону до рівня 1
+Рівень 10: Коли ремонт шестерень активний, путівник ремонтуватиме шестерню інших пішаків під час випадкової взаємодії
+Рівень 11: внутрішнє зцілення буде повільно зцілювати шрами та інші постійні травми
+Рівень 12: товста шкіра збільшує опір на 15% і вирощує шипи, які можуть пошкодити атакуючому в ближньому бою
+Рівень 13: збільшує універсальність Легіону до рівня 2
+Рівень 14: спалювання люті споживання витривалості знижується на 35%
+Рівень 15: удар бурі споживає на 25% менше витривалості за одну атаку</TM_FieldTraining_ver_desc>
+  <TM_WayfarerCraft_pwr>Вдосконалення</TM_WayfarerCraft_pwr>
+  <TM_WayfarerCraft_eff>Семпай.</TM_WayfarerCraft_eff>
+  <TM_WayfarerCraft_ver>Витривалість</TM_WayfarerCraft_ver>
+  <TM_FieldTraining_pwr>Летальність</TM_FieldTraining_pwr>
+  <TM_FieldTraining_eff>Баланс</TM_FieldTraining_eff>
+  <TM_FieldTraining_ver>Виживання</TM_FieldTraining_ver>
+  <TM_Sprint_eff_desc>Знижує витрати витривалості, необхідних для підтримки спринту на 3 витривалості за кожен рівень навички.</TM_Sprint_eff_desc>
+  <TM_Sprint_pwr_desc>Збільшує швидкість спринту, але також збільшує фізичне навантаження.
+Рівень 0: швидкість + 30%, втома + 40%
+Рівень 1: швидкість + 40%, втома + 45%
+Рівень 2: швидкість + 50%, втома + 50%
+Рівень 3: швидкість + 60%, втома + 55%</TM_Sprint_pwr_desc>
+  <TM_Fortitude_pwr_desc>Збільшує кількість зниження шкоди на 2 за рівень навички.</TM_Fortitude_pwr_desc>
+  <TM_Fortitude_ver_desc>Збільшує збитки до перетворення витривалості шляхом 5 витривалості за шкоди для кожного рівня.
+Конверсія відбувається до пом'якшення наслідків.
+Базовий коефіцієнт конверсії становить 1 витривалість за 1 Урон.</TM_Fortitude_ver_desc>
+  <TM_Grapple_eff_desc>Зменшує вартість витривалості захоплення на 10% за рівень базової вартості витривалості.</TM_Grapple_eff_desc>
+  <TM_Cleave_eff_desc>Зменшує витривалість, яку споживає розкол, коли він спрацьовує, на 10% від базової вартості витривалості.</TM_Cleave_eff_desc>
+  <TM_Cleave_pwr_desc>Розкол вражає ворогів поблизу мети, ґрунтуючись на відсотку початкової шкоди, завданої мети.
+Рівень 0: 35%
+Рівень 1: 40%
+Рівень 2: 45%
+Рівень 3: 50%</TM_Cleave_pwr_desc>
+  <TM_Cleave_ver_desc>Збільшує шанс розколу на подвійний удар на 15% за рівень.
+Базовий шанс - 0%.</TM_Cleave_ver_desc>
+  <TM_Whirlwind_pwr_desc>Вихор підвищує шкоди на 10% за рівень навички.</TM_Whirlwind_pwr_desc>
+  <TM_Whirlwind_eff_desc>Знижує витрати витривалості «Вихор», на 15% від базової вартості в рівні майстерності.</TM_Whirlwind_eff_desc>
+  <TM_Whirlwind_ver_desc>Додає шанс нокдауну ворогів на 5% (за кожен удар) для кожного рівня кваліфікації.
+Базовий шанс дорівнює 0%.</TM_Whirlwind_ver_desc>
+  <TM_Sprint_eff>Ефективність Спринта</TM_Sprint_eff>
+  <TM_Sprint_pwr>Сила Спрінта</TM_Sprint_pwr>
+  <TM_Fortitude_pwr>Сила Духа</TM_Fortitude_pwr>
+  <TM_Fortitude_ver>Універсальність Духа</TM_Fortitude_ver>
+  <TM_Grapple_eff>Ефективність Захоплення</TM_Grapple_eff>
+  <TM_Cleave_pwr>Сила розколу</TM_Cleave_pwr>
+  <TM_Cleave_eff>Ефективність розколу</TM_Cleave_eff>
+  <TM_Cleave_ver>Універсальність розколу</TM_Cleave_ver>
+  <TM_Whirlwind_pwr>Сила Вихора</TM_Whirlwind_pwr>
+  <TM_Whirlwind_eff>Ефективність Вихора</TM_Whirlwind_eff>
+  <TM_Whirlwind_ver>Універсальність Вихора</TM_Whirlwind_ver>
+  <TM_SniperFocus_pwr_desc>Просуває навчання в якості снайпера. Кожен рівень вимагає 2 очок навичок для тренування.
+Рівень 0: точність + 3, затримка прицілювання -10%, рух + 10%
+Рівень 1: точність + 7, затримка прицілювання -15%, рух + 15%
+Рівень 2: точність + 11, затримка прицілювання -22%, рух + 20%
+Рівень 3: точність + 15, затримка прицілювання -30%, рух + 25%</TM_SniperFocus_pwr_desc>
+  <TM_DisablingShot_eff_desc>Зменшує витрати витривалості на вражаючий постріл по 10% за рівень навички.</TM_DisablingShot_eff_desc>
+  <TM_DisablingShot_ver_desc>Відключаючі патрони тепер подвоюються як транквілізатор, включаючи швидкодіючі седативні засоби, які значно уповільнюють швидкість руху після того, як мета відновлюється після пострілу. Шляхом проб і помилок і досліджень (в основному методом проб і помилок) снайпер дізнається правильну дозу цього заспокійливого засобу.
+Рівень 0: без седативних засобів
+Рівень 1: 10-15с (слабкий)
+Рівень 2: 20-25с (помірний)
+Рівень 3: 30-45с (сильний)</TM_DisablingShot_ver_desc>
+  <TM_Headshot_pwr_desc>Поліпшені боєприпаси збільшують швидкість пострілів, що призводить до більшої ймовірності руйнування життєво важливого органу. Постріл у голову приносить 10% шкоди за очко навички.</TM_Headshot_pwr_desc>
+  <TM_Headshot_eff_desc>Зменшення витрат витривалості тепер на 10% від базової вартості в рівні майстерності.</TM_Headshot_eff_desc>
+  <TM_Headshot_ver_desc>Снайпер отримує сплеск адреналіну, який відновлює деяку витривалість щоразу, коли постріл у голову вбиває ціль.
+Рівень 0: Немає
+Рівень 1: 10% витривалості відновлено
+Рівень 2: 20% витривалості відновлено
+Рівень 3: 30% витривалості відновлено</TM_Headshot_ver_desc>
+  <TM_AntiArmor_pwr_desc>Покращує нанити, використовуваних в Анти-броньових патронах, збільшуючи шкоди броньованим цілям на 50% за кожне очко навички.</TM_AntiArmor_pwr_desc>
+  <TM_AntiArmor_eff_desc>Знижує витрати витривалості анти-броньового пострілу на 10% від базової вартості в рівні майстерності.</TM_AntiArmor_eff_desc>
+  <TM_AntiArmor_ver_desc>Збільшується кількість і потужність осколків, викликаних розривними снарядами. Снаряди не вибухають, якщо ціль не броньована.</TM_AntiArmor_ver_desc>
+  <TM_ShadowSlayer_pwr_desc>Збільшує збиток, що завдається кожним пострілом, на 2 за рівень навички, поки активна невидимість.</TM_ShadowSlayer_pwr_desc>
+  <TM_ShadowSlayer_eff_desc>Зменшує вартість витривалості для активації плаща вбивці тіней на 6% за рівень навички.</TM_ShadowSlayer_eff_desc>
+  <TM_ShadowSlayer_ver_desc>Збільшує тривалість маскуючого поля тіньового мисливця на 3 секунди для кожного рівня навички. тривалість за замовчуванням 40 секунд.</TM_ShadowSlayer_ver_desc>
+  <TM_SniperFocus_pwr>Снайперська Підготовка</TM_SniperFocus_pwr>
+  <TM_DisablingShot_eff>Вартість Витримки</TM_DisablingShot_eff>
+  <TM_DisablingShot_ver>Седативна Потенція</TM_DisablingShot_ver>
+  <TM_Headshot_pwr>Покращені Патрони</TM_Headshot_pwr>
+  <TM_Headshot_eff>Вартість Витримки</TM_Headshot_eff>
+  <TM_Headshot_ver>Адреналін</TM_Headshot_ver>
+  <TM_AntiArmor_pwr>Наниті</TM_AntiArmor_pwr>
+  <TM_AntiArmor_eff>Вартість Витримки</TM_AntiArmor_eff>
+  <TM_AntiArmor_ver>Розривні Патрони</TM_AntiArmor_ver>
+  <TM_ShadowSlayer_pwr>Привілей прихованості</TM_ShadowSlayer_pwr>
+  <TM_ShadowSlayer_eff>Передбачення збереження</TM_ShadowSlayer_eff>
+  <TM_ShadowSlayer_ver>Програмне оновлення</TM_ShadowSlayer_ver>
+  <TM_BladeFocus_pwr_desc>Просуває навчання в якості танцюриста з клинками. Кожен рівень потребує 2 очок навичок для навчання та оновлення класової межі.
+Рівень 0: Шанс Потрапляння У Близькому Бою + 3, Рух + 0.15, Поріг нервового зриву -3%
+Рівень 1: Шанс Потрапляння У Близькому Бою + 6, Рух + 0.20, Поріг нервового зриву -5%
+Рівень 2: Шанс Потрапляння У Близькому Бою + 10, Рух + 0.30, Поріг нервового зриву -8%, Больовий Поріг + 5%
+Рівень 3: Шанс Потрапляння У Близькому Бою + 15, Рух + 0.40, Поріг нервового зриву -10%, Больовий Поріг + 10%</TM_BladeFocus_pwr_desc>
+  <TM_BladeArt_pwr_desc>Покращує оволодіння тілом. Кожен рівень вимагає 2 очок навичок для тренування.
+Рівень 0: Рух + 10%, Маніпуляція + 10%
+Рівень 1: Рух + 15%, Маніпуляція + 15%
+Рівень 2: Рух + 20%, Маніпуляція + 20%, Дихання + 10%
+Рівень 3: Рух + 25%, Маніпуляція + 25%, Дихання + 15%, кровообіг + 10%</TM_BladeArt_pwr_desc>
+  <TM_SeismicSlash_pwr_desc>Збільшує збиток сейсмічного Слеша на 10% за рівень.</TM_SeismicSlash_pwr_desc>
+  <TM_SeismicSlash_eff_desc>Зменшує вартість витривалості сейсмічного Слеша на 10% за очко навички.</TM_SeismicSlash_eff_desc>
+  <TM_SeismicSlash_ver_desc>Збільшує кількість ударів, прилеглих до лінії удару, на 2 за рівень. Базовий рівень перевіряє 2 сусідні квадрати, максимальний рівень перевірить всі 8 сусідніх квадратів.
+Якщо ніщо не займає площу, то сусідній удар його ніщо.</TM_SeismicSlash_ver_desc>
+  <TM_BladeSpin_pwr_desc>Збільшує кількість ударів на 1 за рівень навички. Базова кількість ударів 2.
+Збільшує ймовірність потрапляння леза на 4% за рівень. База становить 50%.</TM_BladeSpin_pwr_desc>
+  <TM_BladeSpin_eff_desc>Знижує вартість витривалості при обертанні клинка на 10% за очко навички.</TM_BladeSpin_eff_desc>
+  <TM_BladeSpin_ver_desc>Збільшує радіус обертання клинків на 5 квадратів на рівень навички. Радіус основи - 2 квадрати.
+Збільшує ймовірність потрапляння клинка на 4% за рівень. База становить 50%.</TM_BladeSpin_ver_desc>
+  <TM_PhaseStrike_pwr_desc>Збільшує шанс критичного удару на 15% за рівень навички. Базовий шанс - 10%. Критичні удари завдають 3-разової шкоди.</TM_PhaseStrike_pwr_desc>
+  <TM_PhaseStrike_eff_desc>Зменшує вартість витривалості фазового удару на 8% за очко навички.</TM_PhaseStrike_eff_desc>
+  <TM_PhaseStrike_ver_desc>Збільшує радіус фазового удару на .5 квадратів на рівень навички.</TM_PhaseStrike_ver_desc>
+  <TM_BladeFocus_pwr>Майстерність Володіння Клінком</TM_BladeFocus_pwr>
+  <TM_BladeArt_pwr>Майстерність Володіння Тілом</TM_BladeArt_pwr>
+  <TM_SeismicSlash_pwr>Силова Хвиля</TM_SeismicSlash_pwr>
+  <TM_SeismicSlash_eff>Бездоганні Рухи</TM_SeismicSlash_eff>
+  <TM_SeismicSlash_ver>Хвиля, що розширюється</TM_SeismicSlash_ver>
+  <TM_BladeSpin_pwr>Заточене Лезо</TM_BladeSpin_pwr>
+  <TM_BladeSpin_eff>Легкий Удар</TM_BladeSpin_eff>
+  <TM_BladeSpin_ver>Покращений Діапазон Досяжності</TM_BladeSpin_ver>
+  <TM_PhaseStrike_pwr>Критична Фаза</TM_PhaseStrike_pwr>
+  <TM_PhaseStrike_eff>Розмір Леза</TM_PhaseStrike_eff>
+  <TM_PhaseStrike_ver>Фазована Зона Досяжності</TM_PhaseStrike_ver>
+  <TM_RangerTraining_pwr_desc>Просуває навчання як рейнджер. Кожен рівень потребує 2 очок навичок для навчання та оновлення класової межі.
+Рівень 0: швидкість переміщення + 0,2 с/с, несприйнятливість + 20%, температурний комфорт + -10, затримка прицілювання -15%
+Рівень 1: Швидкість пересування + 0,3 С/с, несприйнятливість + 30%, температурний комфорт + -15, затримка прицілювання -20%
+Рівень 2: Швидкість переміщення + 0,4 с/с, несприйнятливість + 40%, температурний комфорт + -20, затримка прицілювання -30%
+Рівень 3: Швидкість пересування + 0,5 С/с, несприйнятливість + 50%, температурний комфорт + -25, затримка прицілювання -40%</TM_RangerTraining_pwr_desc>
+  <TM_BowTraining_pwr_desc>Підвищує майстерність володіння луками. Кожен рівень вимагає 2 очок навичок для тренування.
+Рівень 0: + 20% урона з цибулі, + 20% зору, + 20% слуху
+Рівень 1: + 40% урона з цибулі, + 40% зору, + 40% слуху
+Рівень 2: + 60% урона з цибулі, + 60% зору, + 60% слуху, + 15% дихання
+Рівень 3: + 80% урона з цибулі, + 80% зору, + 80% слуху, + 25% дихання, + 10% фільтрації крові</TM_BowTraining_pwr_desc>
+  <TM_PoisonTrap_ver_desc>Збільшує кількість активних пасток, які рейнджер може мати на 1 рівень. Базовий максимум - 2.</TM_PoisonTrap_ver_desc>
+  <TM_AnimalFriend_pwr_desc>Рейнджер може встановити зв'язок з твариною, якщо у неї є рівень емпатії, що перевищує дикість тварини. Співпереживання також збільшує ймовірність встановлення зв'язку з твариною.
+Рівень 0: до 70% дикості
+Рівень 1: до 80% дикості
+Рівень 2: до 90% дикості
+Рівень 3: до 100% дикість</TM_AnimalFriend_pwr_desc>
+  <TM_AnimalFriend_eff_desc>Знижує витрати витривалості на використання і підтримання зв'язку з тваринами на 15% за одиницю навички.</TM_AnimalFriend_eff_desc>
+  <TM_AnimalFriend_ver_desc>Збільшує силу зв'язку між рейнджером і тваринним царством.
+Рівень 0: пересування + 20%, маніпуляція + 20%, шанс ухилення + 15%
+Рівень 1: переміщення + 30%, маніпуляція + 30%, перекачування крові + 20%, шанс ухилення + 20%
+Рівень 2: переміщення + 40%, маніпуляція + 40%, перекачування крові + 30%, шанс ухилення + 27%
+Рівень 3: переміщення + 50%, маніпуляція + 50%, перекачування крові + 40%, шанс ухилення + 35%</TM_AnimalFriend_ver_desc>
+  <TM_ArrowStorm_pwr_desc>Збільшує втрати від кожної стріли по 10% на кожне очко навички.</TM_ArrowStorm_pwr_desc>
+  <TM_ArrowStorm_eff_desc>Зменшує вартість витривалості шторму стріл на 8% за очко навички.</TM_ArrowStorm_eff_desc>
+  <TM_ArrowStorm_ver_desc>Збільшує точність штурму стріли на 5% за рівень навички. Це аддитивно, так що якщо точність становить 60%, то 2 рівня майстерності збільшать точність до 70%. Точність визначається точністю оснащеної цибулі.</TM_ArrowStorm_ver_desc>
+  <TM_RangerTraining_pwr>Навчання Рейнджерів</TM_RangerTraining_pwr>
+  <TM_BowTraining_pwr>Майстерність Володіння Луком</TM_BowTraining_pwr>
+  <TM_PoisonTrap_ver>Більше Пасток</TM_PoisonTrap_ver>
+  <TM_AnimalFriend_pwr>Співпереживання Тваринам</TM_AnimalFriend_pwr>
+  <TM_AnimalFriend_eff>Заспокійливий Шепот</TM_AnimalFriend_eff>
+  <TM_AnimalFriend_ver>Доповнений Зв "язок</TM_AnimalFriend_ver>
+  <TM_ArrowStorm_pwr>Зазубреные. Стрелы.</TM_ArrowStorm_pwr>
+  <TM_ArrowStorm_eff>Плавний Розіграш</TM_ArrowStorm_eff>
+  <TM_ArrowStorm_ver>Непохитний Фокус</TM_ArrowStorm_ver>
+  <TM_Disguise_eff_desc>Знижує витрати витривалості, необхідні для застосування обману, на 10% за рівень навички.</TM_Disguise_eff_desc>
+  <TM_Disguise_pwr_desc>Зменшіть штраф за рух при виконанні візуального обману:
+Рівень 0: рух - 40%
+Рівень 1: рух - 20%
+Рівень 2: 0% руху
+Рівень 3: + 20% руху</TM_Disguise_pwr_desc>
+  <TM_Disguise_ver_desc>Збільшує тривалість обману по 8с за рівень навички. Обман триває 30 сек за замовчуванням.</TM_Disguise_ver_desc>
+  <TM_Mimic_pwr_desc>Цей рівень сили застосовується до будь-якої здатності, яку безликий імітує.</TM_Mimic_pwr_desc>
+  <TM_Mimic_eff_desc>Знижує витрати витривалості, необхідні для імітації іншої пішаки, на 8% за рівень навички.</TM_Mimic_eff_desc>
+  <TM_Mimic_ver_desc>Цей рівень універсальності застосовний до будь-якої здатності безликої міміки.</TM_Mimic_ver_desc>
+  <TM_Transpose_eff_desc>Зменшує вартість витривалості транспонування на 8% за рівень базової вартості витривалості.</TM_Transpose_eff_desc>
+  <TM_Transpose_ver_desc>Рівень 1: безликий більше не дезорієнтується після транспозиції. Безликий отримує 3 секунди розвороту.
+Рівень 2: дружні цілі більше не дезорієнтуються після транспозиції. Безликий отримує 4 секунди розвороту.
+Рівень 3: транспонування більше не вимагає, щоб мета була видна безликому. Безликий отримує 5 секунд розвороту.</TM_Transpose_ver_desc>
+  <TM_Reversal_eff_desc>Знижує витрати витривалості на реверсування на 10% за рівень навички.</TM_Reversal_eff_desc>
+  <TM_Reversal_pwr_desc>Збільшує тривалість реверсу на 2 секунди за рівень навички. Типовий розворот триває 8 секунд.</TM_Reversal_pwr_desc>
+  <TM_Reversal_ver_desc>Реверс відкачує частину кінетичної енергії, щоб відновити витривалість і життя користувача.</TM_Reversal_ver_desc>
+  <TM_Possess_pwr_desc>Збільшує тривалість володіння на 5 секунд за рівень навички. Типове значення: 20 секунд.</TM_Possess_pwr_desc>
+  <TM_Possess_eff_desc>Знижує вартість володіння витривалістю на 6% від базової вартості за рівень навички.</TM_Possess_eff_desc>
+  <TM_Possess_ver_desc>Зменшує штрафи при володінні ворожою пішакою або збільшує бонуси при володінні дружньою пішаком.</TM_Possess_ver_desc>
+  <TM_Disguise_eff>Клаптиковий Плеолог</TM_Disguise_eff>
+  <TM_Disguise_ver>Маска обману</TM_Disguise_ver>
+  <TM_Disguise_pwr>Дзеркальне Тіло</TM_Disguise_pwr>
+  <TM_Mimic_pwr>Потужна мімікрія</TM_Mimic_pwr>
+  <TM_Mimic_eff>Спритний розум</TM_Mimic_eff>
+  <TM_Mimic_ver>Універсальний мімікрія</TM_Mimic_ver>
+  <TM_Transpose_eff>Спільна Мова</TM_Transpose_eff>
+  <TM_Transpose_ver>Екстраполяція</TM_Transpose_ver>
+  <TM_Reversal_pwr>Стійкий Розворот</TM_Reversal_pwr>
+  <TM_Reversal_eff>Доданий Імпульс</TM_Reversal_eff>
+  <TM_Reversal_ver>Кінетичне Поглинання</TM_Reversal_ver>
+  <TM_Possess_pwr>Лабіринт Разума</TM_Possess_pwr>
+  <TM_Possess_eff>Домінуюча Воля</TM_Possess_eff>
+  <TM_Possess_ver>Синхронізація</TM_Possess_ver>
+  <TM_PsionicAugmentation_eff_desc>Вводячи псіонічну енергію в їх ноги і ядро, псіонік здатний швидко прискорити їх рух на короткий час.
+У бою це збільшення дозволяє псіонікам швидко просуватися на короткі відстані і передавати цю енергію як форму атаки в місці удару. Під час виконання цього псіонічного стрибка псіоніки екрануються бар'єром.
+Ця атака відбувається тільки в тому випадку, якщо псіонік покликаний і беззбройний.
+Тренування в цій навичці покращує дистанцію стрибка і силу удару.
+Поза бою псионик наповнюватиме свій крок ментальною енергією, різко збільшуючи швидкість руху на короткий час. Ця здатність виникає тільки тоді, коли псіонік знаходиться поблизу максимальної псіонічної енергії і має робочу мету на достатній відстані. Це не завадить виконанню поточних завдань.
+Тренування в цій навичці покращує тривалість і швидкість руху.
+Обидва збільшення відбуваються автоматично. Ця навичка вимагає 2 очок здібностей для рівня.</TM_PsionicAugmentation_eff_desc>
+  <TM_PsionicAugmentation_pwr_desc>Підкріплюючи фізичну силу псіонічною силою, псіонік здатний збільшити швидкість і силу своїх дій.
+
+У бою ця здатність посилює атаки ближнього бою за допомогою псіонічної енергії, даючи псіоніку можливість завдати потужного удару, який може відкинути або оглушити противника.
+Ця атака відбувається тільки під час ближнього бою, коли псіонік беззбройний.
+Тренування в цій навичці збільшує вихід урона і частоту ударів, які завдають нокдаун або оглушення.
+Вийшовши з бою, псіонік значно прискорює рух своїх рук, різко збільшуючи маніпуляцію. Ця здатність виникає тільки з псіонічною, близькою до максимальної псіонічною енергією і виконує роботу, яка приносить користь від маніпуляції. Це не завадить виконанню поточних завдань.
+Тренування в цій навичці покращує тривалість і збільшує кількість маніпуляцій.
+Обидва збільшення відбуваються автоматично. Ця навичка вимагає 2 очок здібностей для рівня.</TM_PsionicAugmentation_pwr_desc>
+  <TM_PsionicAugmentation_ver_desc>Псионик фокусує свою псіонічну енергію, щоб розтрощити противника за допомогою грубої сили. Це відбувається тільки в бою, але може бути використано у зв'язці з іншими бойовими можливостями.
+Ця здатність має мінімальний цільовий діапазон в 5 клітин.
+Тренування в цій навичці покращує максимальну дальність, шкоди і зменшує псіонічну енергію, необхідну для виконання атаки.
+Це збільшення відбувається автоматично, але має бути навчене принаймні один раз, щоб стати активним. Ця навичка вимагає 2 очок здібностей для рівня.</TM_PsionicAugmentation_ver_desc>
+  <TM_PsionicBarrier_pwr_desc>Снаряди, відхилені бар'єром, мають шанс виснажити витривалість замість псіонічної енергії. Кожен рівень підвищує цей шанс на 15%.
+Рівень 0: 0%
+Рівень 1: 15%
+Рівень 2: 30%
+Рівень 3: 45%</TM_PsionicBarrier_pwr_desc>
+  <TM_PsionicBarrier_eff_desc>Зменшує кількість псіонічної енергії, що витрачається при відхиленні снаряда, на 10% за кожну точку навички.</TM_PsionicBarrier_eff_desc>
+  <TM_PsionicBarrier_ver_desc>Збільшує радіус бар'єру на половину комірки на кожну точку навички. Типовий радіус - 2 клітини.</TM_PsionicBarrier_ver_desc>
+  <TM_PsionicBlast_pwr_desc>Потужність вибуху псі, кожен рівень збільшує завдану шкоду на 15%.</TM_PsionicBlast_pwr_desc>
+  <TM_PsionicBlast_eff_desc>Знижує витрати витривалості для псіонічного вибуху на 8% рівень базової вартості витривалість.</TM_PsionicBlast_eff_desc>
+  <TM_PsionicBlast_ver_desc>Збільшує ймовірність проектування декількох вибухів на 4% за рівень і зменшує витрату псіонічної енергії для кожного додаткового вибуху на 1.</TM_PsionicBlast_ver_desc>
+  <TM_PsionicDash_eff_desc>Знижує витрати витривалості псіонічного ривка на 10% і зменшує потік енергії витрати на 1 за рівень навички.</TM_PsionicDash_eff_desc>
+  <TM_PsionicDash_pwr_desc>Збільшує весь збиток від псіонічного ривка на 10% за рівень навички.</TM_PsionicDash_pwr_desc>
+  <TM_PsionicDash_ver_desc>Збільште кількість кроків, зроблених під час перебіжки, на 1 за рівень навички.</TM_PsionicDash_ver_desc>
+  <TM_PsionicStorm_pwr_desc>Збільшує втрати від кожного псіонічного вибуху на 10% за очко навички.</TM_PsionicStorm_pwr_desc>
+  <TM_PsionicStorm_eff_desc>Зменшує мінімальну необхідну псіонічну енергію для використання псіонічного шторму на 5% для кожного рівня навички.
+Рівень 0: 65
+Рівень 1: 60
+Рівень 2: 55
+Рівень 3: 50</TM_PsionicStorm_eff_desc>
+  <TM_PsionicStorm_ver_desc>Збільшує скорострільність на 10% за очко навички.</TM_PsionicStorm_ver_desc>
+  <TM_PsionicAugmentation_eff>Збільшення рухливості</TM_PsionicAugmentation_eff>
+  <TM_PsionicAugmentation_ver>Збільшення Інтелекту</TM_PsionicAugmentation_ver>
+  <TM_PsionicAugmentation_pwr>Спосіб Маніпулювання Посиленням</TM_PsionicAugmentation_pwr>
+  <TM_PsionicBarrier_pwr>Енергетичний Симбіоз</TM_PsionicBarrier_pwr>
+  <TM_PsionicBarrier_eff>Енергозбереження</TM_PsionicBarrier_eff>
+  <TM_PsionicBarrier_ver>Розмір Бар'єру</TM_PsionicBarrier_ver>
+  <TM_PsionicBlast_pwr>псі-крах-ан</TM_PsionicBlast_pwr>
+  <TM_PsionicBlast_eff>Розум і тіло</TM_PsionicBlast_eff>
+  <TM_PsionicBlast_ver>Енергетичний потік</TM_PsionicBlast_ver>
+  <TM_PsionicDash_pwr>Супер Псионик</TM_PsionicDash_pwr>
+  <TM_PsionicDash_eff>Спринтер</TM_PsionicDash_eff>
+  <TM_PsionicDash_ver>Довге ривок</TM_PsionicDash_ver>
+  <TM_PsionicStorm_pwr>Руйнівна Воля</TM_PsionicStorm_pwr>
+  <TM_PsionicStorm_eff>Мислені Резерви</TM_PsionicStorm_eff>
+  <TM_PsionicStorm_ver>Безжалісний Шторм</TM_PsionicStorm_ver>
+  <TM_Shroud_pwr_desc>Збільшує захисні бонуси і відповідну шкоду від покриву темряви приблизно на 20% за очко навички. (фактична сума варіюється залежно від рівня ненависті)</TM_Shroud_pwr_desc>
+  <TM_Shroud_eff_desc>Збільшує кількість ненависті, що генерується при пораненні Лицаря Смерті, на 10%.
+Зменшує кількість споживаної ненависті, коли покрив Темряви обнуляє снаряд на 25% або завдає удару у відповідь проти атакуючого в ближньому бою на 12%.</TM_Shroud_eff_desc>
+  <TM_Shroud_ver_desc>Збільшує шанси для покриву темряви завдати удару у відповідь на 10% за очко навички або обнулити снаряд на 6% за очко навички.
+Базовий шанс відплати: 0%
+Базова ймовірність анулювання: 30%</TM_Shroud_ver_desc>
+  <TM_WaveOfFear_pwr_desc>Уражені пішаки оточені виснажливим страхом, який збільшує час прицілювання і зменшує рух і броню проти темних і світлих атак. Тренування в цій навичці збільшує ефект і тривалість цього дебафа.</TM_WaveOfFear_pwr_desc>
+  <TM_WaveOfFear_eff_desc>Знижує витрати витривалості і ненависті на хвилю страху на 10% за рівень навички.</TM_WaveOfFear_eff_desc>
+  <TM_WaveOfFear_ver_desc>Збільшує радіус дії хвилі страху на .8 клітин на очко навички. Типовий радіус - 4 клітини.
+Радіус ще більше збільшується на 7 клітин на кожні 10% ненависті.</TM_WaveOfFear_ver_desc>
+  <TM_Spite_pwr_desc>Збільште втрату від злоби на 10% за кожен рівень навички.</TM_Spite_pwr_desc>
+  <TM_Spite_eff_desc>Знижує вартість витривалості злоби на 10% за рівень навички.</TM_Spite_eff_desc>
+  <TM_Spite_ver_desc>Підвищується ймовірність того, що злість буде пригнічувати емоції мети, оглушаючи їх на короткий період.
+Рівень 0: 0%
+Рівень 1: 15%
+Рівень 2: 30%
+Рівень 3: 45%</TM_Spite_ver_desc>
+  <TM_LifeSteal_pwr_desc>Melee attacks life steal 15% of the damage dealt; each skill level increases the amount by 2%</TM_LifeSteal_pwr_desc>
+  <TM_LifeSteal_eff_desc>Краде витривалість і породжує ненависть пропорційно завданої шкоди.
+Рівень 0: 0%
+Рівень 1: 5%
+Рівень 2: 10%
+Рівень 3: 15%</TM_LifeSteal_eff_desc>
+  <TM_LifeSteal_ver_desc>Кожен удар може зцілити найближчого союзника (в межах 3 клітин) на% від завданої шкоди за рівень навички.
+Рівень 0: 0%
+Рівень 1: 11%
+Рівень 2: 12%
+Рівень 3: 13%</TM_LifeSteal_ver_desc>
+  <TM_GraveBlade_pwr_desc>Збільшує збиток кожного могильного клинку на 12% за рівень навички.</TM_GraveBlade_pwr_desc>
+  <TM_GraveBlade_eff_desc>Знижує вартість витривалості Могильного клинка на 8% за рівень навички.</TM_GraveBlade_eff_desc>
+  <TM_GraveBlade_ver_desc>Кожен удар має 10% шанс на очко навички зцілити заклинача на половину завданої шкоди та/або викликати страх біля цілі.</TM_GraveBlade_ver_desc>
+  <TM_Shroud_pwr>Темний лицар</TM_Shroud_pwr>
+  <TM_Shroud_eff>Ненависть, яка видимається</TM_Shroud_eff>
+  <TM_Shroud_ver>Тісна Темрява</TM_Shroud_ver>
+  <TM_WaveOfFear_pwr>Провокувати Жах</TM_WaveOfFear_pwr>
+  <TM_WaveOfFear_eff>Крижана ненависть</TM_WaveOfFear_eff>
+  <TM_WaveOfFear_ver>Зараза</TM_WaveOfFear_ver>
+  <TM_Spite_pwr>Інтенсивність</TM_Spite_pwr>
+  <TM_Spite_eff>Безжалісний</TM_Spite_eff>
+  <TM_Spite_ver>Приголомшливий</TM_Spite_ver>
+  <TM_LifeSteal_pwr>Невгамовна ненависть</TM_LifeSteal_pwr>
+  <TM_LifeSteal_eff>Подвійне Натискання</TM_LifeSteal_eff>
+  <TM_LifeSteal_ver>Близьке Зцілення</TM_LifeSteal_ver>
+  <TM_GraveBlade_pwr>На порозі смерті</TM_GraveBlade_pwr>
+  <TM_GraveBlade_eff>Перевізник</TM_GraveBlade_eff>
+  <TM_GraveBlade_ver>Кров і дух</TM_GraveBlade_ver>
+  <TM_Chi_pwr_desc>Збільшує максимальну кількість спалюваної енергії на 20%. База Макс 50 енергії.
+Постраждалі пішаки беруть .4 урона за кожну спалену енергію та оглушення.</TM_Chi_pwr_desc>
+  <TM_Chi_eff_desc>Зменшує кількість ци, необхідну для використання здібностей ци, на 6% за одиницю навички.</TM_Chi_eff_desc>
+  <TM_Chi_ver_desc>Зменшує розпад Ци на 20% за кожну точку навички.</TM_Chi_ver_desc>
+  <TM_MindOverBody_pwr_desc>Застосовує додатковий стік пасивного баффа монаха (розум над тілом) на кожен рівень навички</TM_MindOverBody_pwr_desc>
+  <TM_MindOverBody_ver_desc>Збільшує максимальне зниження шкоди на 2 за рівень навички. Пом'якшення пошкоджень зменшується на 1 одиницю для кожного кілограма ваги одягу.
+Рівень 0: 7 втрат
+Рівень 1: 9 втрат
+Рівень 2: 11 втрат
+Рівень 3: 13 втрат</TM_MindOverBody_ver_desc>
+  <TM_Meditate_pwr_desc>Збільшує швидкість регенерації ран, хвороб і наркоманії на 10% за рівень навички.</TM_Meditate_pwr_desc>
+  <TM_Meditate_eff_desc>Збільшує Ци, накопичений під час медитації по 10% за рівень навички.</TM_Meditate_eff_desc>
+  <TM_Meditate_ver_desc>Збільшує бонусний виграш відпочинку, радості та настрої під час медитації на 10%.</TM_Meditate_ver_desc>
+  <TM_TigerStrike_pwr_desc>Збільшує втрати від удару Тигра на 15% за рівень навички і збільшує пасивний шанс на мульти-удар на 5% (базова 30%)</TM_TigerStrike_pwr_desc>
+  <TM_TigerStrike_eff_desc>Зменшується ци і витрати витривалості на удар тигра на 10%</TM_TigerStrike_eff_desc>
+  <TM_TigerStrike_ver_desc>Кожен рівень навички додає 1 додаткову атаку до удару Тигра. Кожен рівень майстерності також додає шанс застосувати бонусні атаки.
+Рівень 0: тільки фізичний
+Рівень 1: оглушення (10% за удар)
+Рівень 2: злив (40% за удар)
+Рівень 3: смертельний удар (10% за удар)
+
+Виснажливі атаки будуть поглинати енергію (Ману, витривалість) і перетворювати її в ци
+Смертельний удар націлюється на життєво важливу частину тіла і вражає її точною атакою, яка завдає додаткової 40% шкоди</TM_TigerStrike_ver_desc>
+  <TM_DragonStrike_pwr_desc>Збільшує втрати від удару Дракона на 10% за рівень навички.</TM_DragonStrike_pwr_desc>
+  <TM_DragonStrike_eff_desc>Знижує витривалість і вартість ци Драконячого удару на 10% за рівень навички.</TM_DragonStrike_eff_desc>
+  <TM_DragonStrike_ver_desc>Збільшує пасивний шанс того, що Удар дракона спрацює на 5% за рівень навички. База 30%. Спрацьовує тільки при зіткненні з кількома супротивниками. Також збільшується відстань, на яку Удар дракона відкидає найближчу ціль на 15% за рівень навички.</TM_DragonStrike_ver_desc>
+  <TM_ThunderStrike_pwr_desc>Збільшує втрату від Удару грому на 12% за рівень навички.</TM_ThunderStrike_pwr_desc>
+  <TM_ThunderStrike_eff_desc>Зменшує КД і вартість удару грому на 10% за рівень навички.</TM_ThunderStrike_eff_desc>
+  <TM_ThunderStrike_ver_desc>Збільшений заряд створює додаткові болти, які розвиваються назовні від монаха у вигляді віяла.</TM_ThunderStrike_ver_desc>
+  <TM_Chi_pwr>Вибух, що руйнує</TM_Chi_pwr>
+  <TM_Chi_eff>Життєве Сіто</TM_Chi_eff>
+  <TM_Chi_ver>Духовний Накопичувач</TM_Chi_ver>
+  <TM_MindOverBody_pwr>Бойові Мистецтва</TM_MindOverBody_pwr>
+  <TM_MindOverBody_ver>Ігнорувати Пошкодження</TM_MindOverBody_ver>
+  <TM_Meditate_pwr>Очищаюча Медитація</TM_Meditate_pwr>
+  <TM_Meditate_eff>глибока медитація</TM_Meditate_eff>
+  <TM_Meditate_ver>Відновлювальна Медитація</TM_Meditate_ver>
+  <TM_TigerStrike_pwr>Лють тигра</TM_TigerStrike_pwr>
+  <TM_TigerStrike_eff>Плавна стійка</TM_TigerStrike_eff>
+  <TM_TigerStrike_ver>Хитрість тигра</TM_TigerStrike_ver>
+  <TM_DragonStrike_pwr>Лють дракона</TM_DragonStrike_pwr>
+  <TM_DragonStrike_eff>Дракон, який зачаївся</TM_DragonStrike_eff>
+  <TM_DragonStrike_ver>Крилаті Лапи</TM_DragonStrike_ver>
+  <TM_ThunderStrike_pwr>Лють грому</TM_ThunderStrike_pwr>
+  <TM_ThunderStrike_eff>Електричний Дух</TM_ThunderStrike_eff>
+  <TM_ThunderStrike_ver>Вщент</TM_ThunderStrike_ver>
+  <TM_ProvisionerAura_pwr_desc>Підвищує ефективність усіх аспектів командирських положень.</TM_ProvisionerAura_pwr_desc>
+  <TM_ProvisionerAura_eff_desc>Знижує витрати на енергію активації та утримання витрат на 10% за очко навички.</TM_ProvisionerAura_eff_desc>
+  <TM_ProvisionerAura_ver_desc>Розширює сферу застосування
+Рівень 0: зменшує занепад відпочинку та їжі
+Рівень 1: підтримує оснащену зброю і спорядження
+Рівень 2: покращує природну регенерацію здоров'я
+Рівень 3: додає 15% приросту витривалості та регенерації мани</TM_ProvisionerAura_ver_desc>
+  <TM_TaskMasterAura_pwr_desc>Підвищує ефективність роботи пішаків під головним завдання.</TM_TaskMasterAura_pwr_desc>
+  <TM_TaskMasterAura_eff_desc>Знижує витрати на енергію активації та утримання витрат на 10% за очко навички.</TM_TaskMasterAura_eff_desc>
+  <TM_TaskMasterAura_ver_desc>Збільшує досяжність аури наглядача на 2 клітини за точку навички; базова досяжність становить 15С. збільшує частоту застосування ефекту на 5%.</TM_TaskMasterAura_ver_desc>
+  <TM_CommanderAura_pwr_desc>Покращує ефект аури командира і зменшує час між мотиваційними промовами на 10%.</TM_CommanderAura_pwr_desc>
+  <TM_CommanderAura_eff_desc>Знижує витрати на енергію активації та утримання витрат на 10% за очко навички.</TM_CommanderAura_eff_desc>
+  <TM_CommanderAura_ver_desc>Збільшує досяжність аури командира на 2 клітини за очко навички; базова досяжність становить 15С. збільшує тривалість впливу аури на пішаки на 10% за очко навички; базова тривалість становить .5 годин (ігровий час).</TM_CommanderAura_ver_desc>
+  <TM_StayAlert_pwr_desc>Збільшує кількість відпочинку, отриманого кожною постраждалою пішаком, на 10% за рівень навички і збільшує тривалість перебування пішаків у стані бойової готовності. Це фіксований бонус, що не залежить від кількості пішаків, які отримують ордер.</TM_StayAlert_pwr_desc>
+  <TM_StayAlert_eff_desc>Зменшує витривалість, необхідну для того, щоб наказати залишатися напоготові! на 10% за кожен рівень навички.</TM_StayAlert_eff_desc>
+  <TM_MoveOut_pwr_desc>Збільшує бонус руху на 10% за кожен рівень навички. Це фіксований бонус, що не залежить від кількості пішаків, які отримують ордер.</TM_MoveOut_pwr_desc>
+  <TM_MoveOut_eff_desc>Знижує витривалість, необхідну для того, щоб наказати з'їхати! на 10% за кожен рівень навички.</TM_MoveOut_eff_desc>
+  <TM_HoldTheLine_pwr_desc>Збільшує ефективність утримання лінії та збільшує кількість екранованої кожної ураженої пішаки. Це фіксований бонус, що не залежить від кількості пішаків, які отримують ордер.</TM_HoldTheLine_pwr_desc>
+  <TM_HoldTheLine_eff_desc>Зменшує витривалість, необхідну для того, щоб наказати тримати лінію! на 10% за кожен рівень навички.</TM_HoldTheLine_eff_desc>
+  <TM_ProvisionerAura_pwr>Адепт Лічильництва</TM_ProvisionerAura_pwr>
+  <TM_ProvisionerAura_eff>Ефективний менеджер</TM_ProvisionerAura_eff>
+  <TM_ProvisionerAura_ver>Брокер</TM_ProvisionerAura_ver>
+  <TM_TaskMasterAura_pwr>Бурильний майстер</TM_TaskMasterAura_pwr>
+  <TM_TaskMasterAura_eff>більше благо</TM_TaskMasterAura_eff>
+  <TM_TaskMasterAura_ver>Голосова проекція</TM_TaskMasterAura_ver>
+  <TM_CommanderAura_pwr>далекоглядний лідер</TM_CommanderAura_pwr>
+  <TM_CommanderAura_eff>Маска командира</TM_CommanderAura_eff>
+  <TM_CommanderAura_ver>Мотивація Характеру</TM_CommanderAura_ver>
+  <TM_StayAlert_pwr>Командування</TM_StayAlert_pwr>
+  <TM_StayAlert_eff>Присутність Команди</TM_StayAlert_eff>
+  <TM_MoveOut_pwr>Командування</TM_MoveOut_pwr>
+  <TM_MoveOut_eff>Присутність Команди</TM_MoveOut_eff>
+  <TM_HoldTheLine_pwr>Командування</TM_HoldTheLine_pwr>
+  <TM_HoldTheLine_eff>Присутність Команди</TM_HoldTheLine_eff>
+  <TM_PistolSpec_pwr_desc>Оснащені пістолети отримують такі поліпшення для кожного рівня майстерності:
+Збиток + 3%
+Кількість пострілів + 2%
+Перезарядка -2.5%
+Розминка -2,5%
+Час вибуху - 3%
+Діапазон + 1%
+Акумулятор. Короткий + 1,5%
+Акумулятор. Середній + 0,5%</TM_PistolSpec_pwr_desc>
+  <TM_PistolSpec_eff_desc>Збільшує шанс проігнорувати перезарядку після кожного пістолетного пострілу чергою.
+Рівень 0: 25%
+Рівень 1: 30%
+Рівень 2: 35%
+Рівень 3: 40%</TM_PistolSpec_eff_desc>
+  <TM_PistolSpec_ver_desc>Покращує здатність пістолетного удару хлистом.
+Рівень 0: (оглушення) 6-9 втрат, (тупий) 6-8 втрат, 35% шанс обеззброїти
+Рівень 1: (оглушення) 7-10 втрат, (тупий) 7-9 втрат, 40% шанс роззброїтися, -10% витрати енергії
+Рівень 2: (оглушення) 8-11 втрат, (тупий) 8-10 втрат, 45% шанс роззброїтися, -20% витрати енергії
+Рівень 3: (оглушення) 9-12 втрат, (тупий) 9-11 втрат, 50% шанс роззброїтися, -30% витрати енергії</TM_PistolSpec_ver_desc>
+  <TM_RifleSpec_pwr_desc>Оснащені гвинтівки отримують такі поліпшення для кожного рівня майстерності:
+Збиток + 1%
+Кількість пострілів + 3%
+Час відновлення здатності -1%
+Розминка -1%
+Час Вибуху - 2%
+Діапазон + 2%
+Акумулятор. Короткий + 1%
+Акумулятор. Середній + 1%
+Акумулятор. Довгий + 1%</TM_RifleSpec_pwr_desc>
+  <TM_RifleSpec_eff_desc>Збільшує кількість раундів придушення вогню на 12,5% і знижує витрати енергії на 8% за рівень навички.</TM_RifleSpec_eff_desc>
+  <TM_RifleSpec_ver_desc>Збільшує втрати від вибуху Mk203 гранатомет на 1,5 і знижує витрати енергії на 8% за рівень навички.</TM_RifleSpec_ver_desc>
+  <TM_ShotgunSpec_pwr_desc>Оснащені дробовики отримують такі поліпшення для кожного рівня майстерності:
+Збиток + 2%
+Час перезарядки - 3%
+Розминка -3%
+Час Вибуху - 2%
+Діапазон + 1%
+Акумулятор. Дотик + 1%
+Акумулятор. Короткий + 1,5%
+Акумулятор. Середній + 0,5%</TM_ShotgunSpec_pwr_desc>
+  <TM_ShotgunSpec_eff_desc>Збільшує кількість гранул картечі на 3 і знижує витрати енергії на 8% за рівень навички.</TM_ShotgunSpec_eff_desc>
+  <TM_ShotgunSpec_ver_desc>Збільшує втрати від пробивного заряду на 15% і знижує витрати енергії на 8% за рівень навички.</TM_ShotgunSpec_ver_desc>
+  <TM_CQC_pwr_desc>Збільшує втрати від удару CQC на 2 за рівень навички. База 10-14 пошкодження.</TM_CQC_pwr_desc>
+  <TM_CQC_eff_desc>Зменшує витрати енергії на використання ближнього бою на 10% за рівень навички.</TM_CQC_eff_desc>
+  <TM_CQC_ver_desc>Збільшує ймовірність виконання атаки CQC:
+Рівень 0: 20%
+Рівень 1: 25%
+Рівень 2: 28%
+Рівень 3: 30%</TM_CQC_ver_desc>
+  <TM_FirstAid_pwr_desc>Збільшує кількість нанесених ран на 1 рівень навички. База 2 рани оброблені.</TM_FirstAid_pwr_desc>
+  <TM_FirstAid_eff_desc>Знижує витрати енергії на використання Самопомочі на 10% за кожен рівень навички.</TM_FirstAid_eff_desc>
+  <TM_FirstAid_ver_desc>Покращує загальну якість надання допомоги собі
+Рівень 0: 0-40%
+Рівень 1: 10-50%
+Рівень 2: 20-60%
+Рівень 3: 30-70%</TM_FirstAid_ver_desc>
+  <TM_60mmMortar_pwr_desc>Збільшує втрати від вибуху і радіус дії.
+Рівень 0: 14-20 урона, 2c радіус
+Рівень 1: 15-22 урона, 2.35c радіус
+Рівень 2: 16-24 урона, 2.7c радіус
+Рівень 3: 17-26 урона, 3.05c радіус</TM_60mmMortar_pwr_desc>
+  <TM_60mmMortar_eff_desc>Знижує енерговитрати на розгортання 60-мм мінометної системи на 8% і підвищує точність на 10% за рівень кваліфікації.</TM_60mmMortar_eff_desc>
+  <TM_60mmMortar_ver_desc>Збільшує максимальну дальність стрільби і зменшує затримку між снарядами. Ранг 3 збільшує кількість раундів до 4.</TM_60mmMortar_ver_desc>
+  <TM_PistolSpec_pwr>Спеціалізація Пістолета</TM_PistolSpec_pwr>
+  <TM_PistolSpec_eff>Подвійний дотик</TM_PistolSpec_eff>
+  <TM_PistolSpec_ver>Плеть Для Пістолета</TM_PistolSpec_ver>
+  <TM_RifleSpec_pwr>Стрілецька Спеціалізація</TM_RifleSpec_pwr>
+  <TM_RifleSpec_eff>Кульова Буря</TM_RifleSpec_eff>
+  <TM_RifleSpec_ver>Гренадер</TM_RifleSpec_ver>
+  <TM_ShotgunSpec_pwr>Спеціалізація Дробовика</TM_ShotgunSpec_pwr>
+  <TM_ShotgunSpec_eff>Контузія</TM_ShotgunSpec_eff>
+  <TM_ShotgunSpec_ver>кумулятивний заряд</TM_ShotgunSpec_ver>
+  <TM_CQC_pwr>Зусилля</TM_CQC_pwr>
+  <TM_CQC_eff>Розторопність</TM_CQC_eff>
+  <TM_CQC_ver>Баланс</TM_CQC_ver>
+  <TM_FirstAid_pwr>Кров троля</TM_FirstAid_pwr>
+  <TM_FirstAid_eff>Природна Тенденція</TM_FirstAid_eff>
+  <TM_FirstAid_ver>Друга шкіра</TM_FirstAid_ver>
+  <TM_60mmMortar_pwr>вибухонебезпечна Речовина</TM_60mmMortar_pwr>
+  <TM_60mmMortar_eff>Мінометний Експерт</TM_60mmMortar_eff>
+  <TM_60mmMortar_ver>Якісні Снаряди</TM_60mmMortar_ver>
+  <TM_ShadowWalk_pwr_desc>Застосовує короткочасну невидимість до заклинача після виконання Тіньового шляху.
+Рівень 0: Немає
+Рівень 1: невидимість 2s
+Рівень 2: невидимість 3s
+Рівень 3: невидимість 4s</TM_ShadowWalk_pwr_desc>
+  <TM_ShadowWalk_eff_desc>Зменшує кількість мани, необхідну для використання тіньового шляху, на 8% за очко навички.</TM_ShadowWalk_eff_desc>
+  <TM_ShadowWalk_ver_desc>Створює надлишок тіні для відновлення і захисту заклинача і дружніх цільових пішаків.
+Рівень 0: Немає
+Рівень 1: зцілює заклинателя
+Рівень 2: зцілює ціль
+Рівень 3: ненадовго приховує мету</TM_ShadowWalk_ver_desc>
+  <TM_ShadowStrike_pwr_desc>Збільшує втрати від удару тіні на 5% за очко навички.</TM_ShadowStrike_pwr_desc>
+  <TM_ShadowStrike_eff_desc>Знижує витрати на витривалість на 4% за очко навички.</TM_ShadowStrike_eff_desc>
+  <TM_ShadowStrike_ver_desc>Додає витривалості і смертоносності удару тіні:
+Рівень 0: Немає
+Рівень 1: отримаєте 2 секунди невидимості
+Рівень 2: невидимість + 1 сек.
+Рівень 3: запускає удар тіні за допомогою сплеску нічної тіні, який завдає токсин нічної тіні на всіх ворогів на відстані 2 метрів від цілі.
+Рівень 4: збільшує токсичність нічної тіні
+Рівень 5: радіус + 1 м</TM_ShadowStrike_ver_desc>
+  <TM_Nightshade_pwr_desc>Збільшує токсичність кожної атаки на 20% за очко навички.</TM_Nightshade_pwr_desc>
+  <TM_Nightshade_eff_desc>Знижує витрати на утримання нічної тіні на 6% за очко навички.</TM_Nightshade_eff_desc>
+  <TM_Nightshade_ver_desc>Збільшує максимальну кількість доз токсину нічної тіні на 20% за очко навички.</TM_Nightshade_ver_desc>
+  <TM_VeilOfShadows_pwr_desc>Збільшує тривалість невидимості і тіньового туману на 1 секунду за очко навички. Типово, 10 секунд невидимості.</TM_VeilOfShadows_pwr_desc>
+  <TM_VeilOfShadows_eff_desc>Знижує вартість витривалості «Вуалі тіней» на 6% за очко навички.</TM_VeilOfShadows_eff_desc>
+  <TM_VeilOfShadows_ver_desc>Збільшує радіус тіньового туману на 10% за очко навички, а плеолог тіней також застосовує бонуси за пересування і маніпуляції в розмірі 20% за очко навички.</TM_VeilOfShadows_ver_desc>
+  <TM_ShadowWalk_pwr>Тривала тінь</TM_ShadowWalk_pwr>
+  <TM_ShadowWalk_eff>Контраст</TM_ShadowWalk_eff>
+  <TM_ShadowWalk_ver>Ласка тіні</TM_ShadowWalk_ver>
+  <TM_ShadowStrike_pwr>Жорстокі Удари</TM_ShadowStrike_pwr>
+  <TM_ShadowStrike_eff>Прихований підхід</TM_ShadowStrike_eff>
+  <TM_ShadowStrike_ver>Отруйна тінь</TM_ShadowStrike_ver>
+  <TM_Nightshade_pwr>Токсична активність</TM_Nightshade_pwr>
+  <TM_Nightshade_eff>Збирач</TM_Nightshade_eff>
+  <TM_Nightshade_ver>Токсичні запаси</TM_Nightshade_ver>
+  <TM_VeilOfShadows_pwr>Тінь, що чіпляється</TM_VeilOfShadows_pwr>
+  <TM_VeilOfShadows_eff>Тіньовий угодник</TM_VeilOfShadows_eff>
+  <TM_VeilOfShadows_ver>Переважна темрява</TM_VeilOfShadows_ver>
+  <TM_Herbalist_pwr_desc>Збільшує пропускну здатність аптекарських трав на 10 за рівень навички.</TM_Herbalist_pwr_desc>
+  <TM_Herbalist_eff_desc>Знижує швидкість закінчення терміну придатності інгредієнтів на 10% за рівень навички.</TM_Herbalist_eff_desc>
+  <TM_Herbalist_ver_desc>Збільште кількість корисних інгредієнтів, знайдених під час збору врожаю, на 10% за рівень навички.</TM_Herbalist_ver_desc>
+  <TM_PoisonFlask_pwr_desc>Збільшує тривалість дії туману з фляги з отрутою на 1 секунду за рівень навички. База 6s.</TM_PoisonFlask_pwr_desc>
+  <TM_PoisonFlask_eff_desc>Зменшує кількість інгредієнтів, необхідних для створення колби з отрутою, на 8% за рівень навички.</TM_PoisonFlask_eff_desc>
+  <TM_PoisonFlask_ver_desc>Збільшує радіус дії туману з фляги з отрутою на .8c за рівень навички, базовий 4c.</TM_PoisonFlask_ver_desc>
+  <TM_Elixir_pwr_desc>Збільшує тривалість потужної стадії Еліксира на 2,4 години.</TM_Elixir_pwr_desc>
+  <TM_Elixir_eff_desc>Зменшує кількість інгредієнтів для виробництва еліксиру на 8% за рівень навички.</TM_Elixir_eff_desc>
+  <TM_Elixir_ver_desc>Переваги трав'яного еліксиру можуть бути розширені за допомогою правильних інгредієнтів:
+Рівень 0: зменшує руйнування в стані спокою і збільшує регенерацію здоров'я під час активного стану.
+Рівень 1: активно бореться з інфекціями
+Рівень 2: активно бореться з хворобами
+Рівень 3: повільно загоює незворотні травми</TM_Elixir_ver_desc>
+  <TM_SoothingBalm_pwr_desc>Збільшує загальну якість оброблених ран на 10% за рівень навички. База 50-70%.</TM_SoothingBalm_pwr_desc>
+  <TM_SoothingBalm_eff_desc>Зменшує кількість інгредієнтів, які використовуються для створення заспокійливого бальзаму, на 8% за рівень навички.</TM_SoothingBalm_eff_desc>
+  <TM_SoothingBalm_ver_desc>Збільшує кількість ран, оброблених заспокійливим бальзамом.</TM_SoothingBalm_ver_desc>
+  <TM_FireSuppressionFlask_eff_desc>Зменшує кількість інгредієнтів, необхідних для створення колби з отрутою, на 15% за рівень навички.</TM_FireSuppressionFlask_eff_desc>
+  <TM_Herbalist_pwr>Сумка Травника</TM_Herbalist_pwr>
+  <TM_Herbalist_eff>Збереження</TM_Herbalist_eff>
+  <TM_Herbalist_ver>Фуражир</TM_Herbalist_ver>
+  <TM_PoisonFlask_pwr>Затягнута хмара</TM_PoisonFlask_pwr>
+  <TM_PoisonFlask_eff>Ефективність інгредієнтів</TM_PoisonFlask_eff>
+  <TM_PoisonFlask_ver>Хмара, що розширюється</TM_PoisonFlask_ver>
+  <TM_Elixir_pwr>Потенція</TM_Elixir_pwr>
+  <TM_Elixir_eff>Ефективність інгредієнтів</TM_Elixir_eff>
+  <TM_Elixir_ver>Хімія</TM_Elixir_ver>
+  <TM_SoothingBalm_pwr>Лікувальна мазь</TM_SoothingBalm_pwr>
+  <TM_SoothingBalm_eff>Ефективність інгредієнтів</TM_SoothingBalm_eff>
+  <TM_SoothingBalm_ver>Анестетик</TM_SoothingBalm_ver>
+  <TM_FireSuppressionFlask_eff>Ефективність інгредієнтів</TM_FireSuppressionFlask_eff>
+  <TM_ApothecaryHerbsGizmoLabel>Трави</TM_ApothecaryHerbsGizmoLabel>
+  <TM_Taunt_pwr>Суперник</TM_Taunt_pwr>
+  <TM_Taunt_eff>Книга образ</TM_Taunt_eff>
+  <TM_Taunt_ver>Ревучий рик</TM_Taunt_ver>
+  <TM_Taunt_pwr_desc>Збільшує ймовірність успіху насмішки і максимальну кількість цілей.
+Рівень 0: 60%, максимум 5 цілей
+Рівень 1: 65%, максимум 6 цілей
+Рівень 2: 70%, максимум 7 цілей
+Рівень 3: 75%, максимум 8 цілей</TM_Taunt_pwr_desc>
+  <TM_Taunt_eff_desc>Знижує витрати енергії на 10% за рівень навички.</TM_Taunt_eff_desc>
+  <TM_Taunt_ver_desc>Збільшує радіус насмішки на 2 комірки; типовим є 15 комірок.</TM_Taunt_ver_desc>
+  <TM_Explosion_pwr>Руйнування</TM_Explosion_pwr>
+  <TM_Explosion_eff>Піснеспіва</TM_Explosion_eff>
+  <TM_Explosion_ver>Покращення зору</TM_Explosion_ver>
+  <TM_Explosion_pwr_desc>Збільшує втрати від вибуху на 2% за рівень навички.</TM_Explosion_pwr_desc>
+  <TM_Explosion_eff_desc>Знижує витрати енергії на вибух на 1% за рівень навички.</TM_Explosion_eff_desc>
+  <TM_Explosion_ver_desc>Зменшує час, необхідний для активації Вибуху, на 1% і збільшує радіус вибуху на 1 комірку на рівнях 10/20/30; типово, 12 комірок.</TM_Explosion_ver_desc>
+  <TM_MedicalSupply_ver>Місткість</TM_MedicalSupply_ver>
+  <TM_MedicalSupply_ver_desc>Збільшує максимальну кількість медикаментів, що переносяться на 10 за рівень навички.</TM_MedicalSupply_ver_desc>
+  <TM_Medigel_eff>Бойовий медик</TM_Medigel_eff>
+  <TM_Medigel_eff_desc>Знижує витрати енергії на Медігель на 5% за рівень навички.</TM_Medigel_eff_desc>
+  <TM_CombatDrugs_pwr>Ефективність</TM_CombatDrugs_pwr>
+  <TM_CombatDrugs_pwr_desc>Збільшує кількість застосованих ефектів:
+Ефект рівня 0: 1
+Рівень 1: 2 ефекти
+Рівень 2: 3 ефекти
+Рівень 3: всі 4 ефекти</TM_CombatDrugs_pwr_desc>
+  <TM_CombatDrugs_ver>Стабілізація</TM_CombatDrugs_ver>
+  <TM_CombatDrugs_ver_desc>Триває 120 секунд плюс 20 секунд за рівень навички.</TM_CombatDrugs_ver_desc>
+  <TM_TabMagic>Магія</TM_TabMagic>
+  <TM_TabMight>Сила</TM_TabMight>
+  <TM_TabCustom>Клас</TM_TabCustom>
+  <TM_Header>магія</TM_Header>
+  <TM_HeaderMight>сила</TM_HeaderMight>
+  <TM_Level>рівень</TM_Level>
+  <TM_Spells>магічні заклинання</TM_Spells>
+  <TM_Skills>потужні навички</TM_Skills>
+  <TM_PointsAvail>Доступні окуляри</TM_PointsAvail>
+  <TM_MagicXPDesc>Магічний досвід набувається в міру того, як персонажі використовують заклинання. Збільшення XP еквівалентно складності заклинання. Персонажі також будуть повільно набирати XP, якщо вони знаходяться на максимальному рівні мани.</TM_MagicXPDesc>
+  <TM_MightXPDesc>Може досвід набув в якості персонажів використовувати бойові навички. Отримайте XP еквівалентну складності навички. Персонажі також отримати XP повільно, якщо вони повністю відпочили.</TM_MightXPDesc>
+  <TM_CheckPointsForMoreInfo>Наведіть вказівник миші над атрибутами навичок, щоб дізнатися більше про покращення.</TM_CheckPointsForMoreInfo>
+  <TM_MagicLevelUp>{0} отримав глибше розуміння магії і може тренувати нову магічну навичку.</TM_MagicLevelUp>
+  <TM_MightLevelUp>{0} зміцніла і готова до розвитку бойових навичок.</TM_MightLevelUp>
+  <TM_NotEnoughAbilityPoints>Потрібно {1} окуляри здібностей. Пішак має {0}.</TM_NotEnoughAbilityPoints>
+  <TM_Power>Сила грози</TM_Power>
+  <TM_Efficiency>Ефективність Грози</TM_Efficiency>
+  <TM_Versatility>Універсальність грозових розрядів</TM_Versatility>
+  <TM_TechnomancerPathWarning>* * Можна вибрати тільки один шлях техномагії; як тільки шлях вибрано, всі інші шляхи будуть закриті * *</TM_TechnomancerPathWarning>
+  <TM_SuperSoldierPathWarning>* * Можна вибрати тільки одну спеціалізацію зброї; після вибору шляху всі інші шляхи будуть закриті * *</TM_SuperSoldierPathWarning>
+  <TM_SpellLocked>Заблоковано: дізнайтеся {0} за допомогою прокрутки</TM_SpellLocked>
+  <TM_MasterSpellLocked>Заблоковано: дізнайтеся {0} за допомогою сувою майстра</TM_MasterSpellLocked>
+  <Poppi_fuelGrowth>Хімічна екстракція</Poppi_fuelGrowth>
+  <TM_ArmorHarmony>Чеснота</TM_ArmorHarmony>
+  <TM_AbilityDescBaseManaCost>Базова Вартість Мани: {0}</TM_AbilityDescBaseManaCost>
+  <TM_AbilityDescAdjustedManaCost>Скоригована Вартість Мани: {0}</TM_AbilityDescAdjustedManaCost>
+  <TM_AbilityDescBaseStaminaCost>Базова Вартість Витривалості: {0}</TM_AbilityDescBaseStaminaCost>
+  <TM_AbilityDescAdjustedStaminaCost>Скоригована Вартість Витривалості: {0}</TM_AbilityDescAdjustedStaminaCost>
+  <TM_AbilityDescBaseBloodCost>Базова Вартість Крові: {0}</TM_AbilityDescBaseBloodCost>
+  <TM_AbilityDescAdjustedBloodCost>Скоригована Вартість Крові: {0}</TM_AbilityDescAdjustedBloodCost>
+  <TM_AbilityDescBaseResourceCost>Базова вартість {0}: {1}</TM_AbilityDescBaseResourceCost>
+  <TM_AbilityDescAdjustedResourceCost>Скоригована вартість {0}: {1}</TM_AbilityDescAdjustedResourceCost>
+  <TM_AbilityDescBaseChiCost>Базова Вартість Ци: {0}</TM_AbilityDescBaseChiCost>
+  <TM_AbilityDescAdjustedChiCost>Скоригована Вартість Ци: {0}</TM_AbilityDescAdjustedChiCost>
+  <TM_AbilityDescPortalTime>Обвалення порталу за {0} секунд</TM_AbilityDescPortalTime>
+  <TM_AbilityDescSummonDuration>Тривалість виклику: {0} секунд</TM_AbilityDescSummonDuration>
+  <TM_AdjustedCooldown>Регулювати час відновлення: {0} секунд</TM_AdjustedCooldown>
+  <TM_PsionicInitialCost>Початкова Вартість Псіонічної Енергії: {0}</TM_PsionicInitialCost>
+  <TM_PsionicBlastAddCost>Подальша Вартість Енергії Вибуху: {0}</TM_PsionicBlastAddCost>
+  <TM_RequiresHateAmount>Необхідна Ненависть: {0}</TM_RequiresHateAmount>
+  <TM_PsionicBarrierMaintenanceCost />
+  <TM_PsionicBarrierConversionRate />
+  <TM_Replicate>Сканування Реплікації</TM_Replicate>
+  <TM_ReplicateDesc>Таємна Кузня здатна сканувати один предмет і відтворювати його дизайн. У разі успіху в кузні зберігаються проектні креслення відсканованого виробу, і потім виріб може бути виготовлено в кузні. Для виготовлення складних предметів потрібен той самий матеріал, що і для виготовлення стандартних предметів, але будь-які вимоги до досліджень або навичок крафта ігноруються. Всі репліковані предмети вимагають високого інтелекту для відтворення, і кузнею може керувати тільки маг. Примітка адміністратора: кузня може виконувати сканування безкоштовно, але активний дизайн замінюється рецептом за замовчуванням, якщо гра перезавантажується .\n\n Реплікація не має меж використання, але приносить найбільшу користь, коли використовується для створення предметів, у вас немає досліджень для створення, щоб змінити вимоги до крафта, щоб скористатися різкою швидкістю крафта таємної кузні або отримати вигоду з бонусу якості при роботі з магом високого рівня.</TM_ReplicateDesc>
+  <TM_ReplicateDisabled>Реплікація Вимкнено</TM_ReplicateDisabled>
+  <TM_ReplicateDisabledDesc>Очистіть рахунки, пов'язані з реплікацією, і дозволіть нову реплікацію.</TM_ReplicateDisabledDesc>
+  <TM_PromoteWanderer>Просувати К мандрівника</TM_PromoteWanderer>
+  <TM_PromoteWandererDesc>Просуває обдаровану пішаку в клас мандрівників. Мандрівник не має жодних класових здібностей, але може вивчити всі безкласові автономні здібності (заклинання) за допомогою сувоїв і може поліпшити заклинання за межами їх нормального потенціалу.
+
+* Щоб стати класом магів, пішак повинен прочитати розірваний таємний сценарій або таємний том. *
+* * Після підвищення пішака не може стати іншим класом магів, рішення є постійним і не може бути скасовано - це включає в себе клас Мандрівника.</TM_PromoteWandererDesc>
+  <TM_PromoteWayfarer>Просувати До Путніка</TM_PromoteWayfarer>
+  <TM_PromoteWayfarerDesc>Просуває обдаровану пішаку в клас путників. Путнік не має жодних класових здібностей, але може вивчити всі безкласові автономні здібності за допомогою сувоїв і може поліпшити бойові здібності понад їхній звичайний потенціал.
+* Щоб стати класом сили, пішак має прочитати книгу, яка навчає бойової форми. *
+* * Після підвищення пішака не може стати іншим класом бійців, рішення є постійним і не може бути скасоване - це відноситься і до класу путників.</TM_PromoteWayfarerDesc>
+  <TM_ActivateGolem>Активувати</TM_ActivateGolem>
+  <TM_ActivateGolemDesc>Починається процес активації голему - після активації голем буде пересуватися як звичайна пішака. Будь-які оновлення або ремонти, що виконуються в стані спокою, будуть відкинуті. Для активації потрібно мінімум енергії {0}.</TM_ActivateGolemDesc>
+  <TM_DeActivateGolem>Деактивувати</TM_DeActivateGolem>
+  <TM_DeActivateGolemDesc>Наказує голему впасти в сплячку. Голем спробує повернутися в призначене йому місце бездіяльності. Якщо це місце розташування недоступне, голем деактивується в своєму поточному місці розташування. Якщо місце розташування доступне, повторна видача цієї команди скасує команду повернення і негайно деактивує голема в його поточному положенні.</TM_DeActivateGolemDesc>
+  <TM_ActivateGolemDisabled>Вимкнено - недостатньо енергії</TM_ActivateGolemDisabled>
+  <TM_AssignGolemRestPosition>Спляче становище</TM_AssignGolemRestPosition>
+  <TM_AssignGolemRestPositionDesc>Призначає місце розташування, яке голем повинен деактивувати.</TM_AssignGolemRestPositionDesc>
+  <TM_DormantPositionUnreachable>Вибрана позиція недоступна або зайнята - скасування</TM_DormantPositionUnreachable>
+  <TM_GolemStationaryDefenseToggle>протокол захисту</TM_GolemStationaryDefenseToggle>
+  <TM_GolemStationaryDefenseToggleDesc>Перемикає стаціонарний захист. Голем залишається в сплячому стані, використовуючи стаціонарний захист.</TM_GolemStationaryDefenseToggleDesc>
+  <TM_GolemActiveDefenseToggle>протокол взаємодії</TM_GolemActiveDefenseToggle>
+  <TM_GolemActiveDefenseToggleDesc>Перемикає активний захист. Голем активується, якщо ворог входить в зону його загрози. Діапазон загрози для голему можна налаштувати, вибравши сплячого голему і відкривши вкладку голем.</TM_GolemActiveDefenseToggleDesc>
+  <TM_UpgradesVerbatum>Оновлення</TM_UpgradesVerbatum>
+  <TM_GolemThreatRange>Діапазон загроз:</TM_GolemThreatRange>
+  <TM_GolemThreatRangeDesc>Визначає відстань, на якій голем виявить і активує атаку на ворожу ціль; це значення також визначає відстань, на якій активний голем буде атакувати загрозу. Встановлення цього значення в 0 запобігатиме активації бездіяльного голему від найближчої загрози.</TM_GolemThreatRangeDesc>
+  <TM_GolemAbilityMinimum>Поріг здатності:</TM_GolemAbilityMinimum>
+  <TM_GolemAbilityMinimumDesc>Визначає мінімальний відсоток енергії, необхідний для використання здібностей, що потребують енергії; голем не буде використовувати здібності, що потребують енергії, якщо відсоток енергії менше цього значення. Встановлення цього значення на 100% вимкне використання здатності.</TM_GolemAbilityMinimumDesc>
+  <TM_GolemRestMinimum>Поріг спокою:</TM_GolemRestMinimum>
+  <TM_GolemRestMinimumDesc>Відсоток енергії, який голем спробує повернути в стан спокою, щоб деактивувати і перезарядити енергію; голем автоматично деактивується при 0%.</TM_GolemRestMinimumDesc>
+  <TM_GolemAwakenMinimum>Активувати порогове значення:</TM_GolemAwakenMinimum>
+  <TM_GolemAwakenMinimumDesc>Відсоток енергії, при якому голем активується для виконання завдань; встановіть значення 10% або менше, щоб вимкнути автоматичну активацію.</TM_GolemAwakenMinimumDesc>
+  <TM_GolemMasterDesc>Призначає големанта майстром цього голему; призначення майстра дозволяє голему поліпшити поведінку для захисту призначеного големанта.</TM_GolemMasterDesc>
+  <TM_GolemFollowsMaster>Слідуйте за майстром</TM_GolemFollowsMaster>
+  <TM_GolemFollowsMasterDesc>Коли він включений, голем буде приділяти пріоритетну увагу слідуванню і захисту свого господаря над усіма іншими завданнями, пов'язаними з роботою.</TM_GolemFollowsMasterDesc>
+  <TM_GolemDraftedFollow>Складений тільки</TM_GolemDraftedFollow>
+  <TM_GolemDraftedFollowDesc>Ставить захист призначеного йому господаря вище всіх інших дій, коли майстер покликаний; майстер може направляти голема в бою, подібно до випущеної тварини.</TM_GolemDraftedFollowDesc>
+  <TM_GolemDormantWhenUpgrading>Залишайтеся у стані спокою під час оновлення</TM_GolemDormantWhenUpgrading>
+  <TM_GolemDormantWhenUpgradingDesc>Коли він включений, голем буде залишатися в сплячому стані, якщо є рахунки в черзі. Голем завжди залишатиметься в стані спокою, коли ведеться рахунок (незавершене оновлення).</TM_GolemDormantWhenUpgradingDesc>
+  <TM_GolemUseAbilitiesWhileDormant>Використовуйте здібності у стані спокою</TM_GolemUseAbilitiesWhileDormant>
+  <TM_GolemUseAbilitiesWhileDormantDesc>Будучи відключеним, бездіяльний голем ніколи не буде використовувати здібності.</TM_GolemUseAbilitiesWhileDormantDesc>
+  <TM_GolemRestrictedAggression>Обмежена агресія</TM_GolemRestrictedAggression>
+  <TM_GolemRestrictedAggressionDesc>Коли він включений, голем не буде активувати або переслідувати цілі через двері або за межами дозволеної зони.</TM_GolemRestrictedAggressionDesc>
+  <TM_GolemName>Назва голема</TM_GolemName>
+  <TM_GolemNameDesc>Змінити назву голема</TM_GolemNameDesc>
+  <TM_GolemMasterLabel>Големант</TM_GolemMasterLabel>
+  <TM_ActivatesGolem_Time>Активує голема - зазвичай це займає невелику кількість часу. Голем не зможе активуватися, якщо він проходить модернізацію.</TM_ActivatesGolem_Time>
+  <TM_DeActivatesGolem_Time>Деактивує голема - це відправить голему назад у вихідне положення і може зайняти деякий час.</TM_DeActivatesGolem_Time>
+  <TM_SelectPortalDestination>Активувати Портал</TM_SelectPortalDestination>
+  <TM_UsePortal>Використовувати Портал</TM_UsePortal>
+  <TM_DeactivatePortal>Деактивувати Портал</TM_DeactivatePortal>
+  <TM_ChargePortal>Заряд Портала: {0}%</TM_ChargePortal>
+  <TM_CommandMakePortalStockpileDesc>Створює запас навколо порталу. При транспортуванні предметів портал буде переміщати всі предмети в межах цього запасу.</TM_CommandMakePortalStockpileDesc>
+  <TM_CommandMakePortalStockpileLabel>Портальні склади</TM_CommandMakePortalStockpileLabel>
+  <TM_PortalStockpile>Транспортні елементи</TM_PortalStockpile>
+  <TM_PortalFailed>{0} помилка при спробі використовувати портал - якщо це повториться, спробуйте деактивувати портал і скинути цільове місце розташування.</TM_PortalFailed>
+  <TM_PortalDestinationInvalid>Неприпустима комірка призначення-місцем призначення повинна бути відома, видима і зайнята гравцем карта.</TM_PortalDestinationInvalid>
+  <TM_NoValidPortalDestination>Не вибрано дійсний пункт призначення порталу, що виходить без призначення.</TM_NoValidPortalDestination>
+  <TM_PortalNoGatewayLearned>{0} не освоїв закляття Воріт</TM_PortalNoGatewayLearned>
+  <TM_NeedManaToActivatePortal>Активувати: {0} of .70 мани</TM_NeedManaToActivatePortal>
+  <TM_ChargeManaStorage>Зарядка: {0}%</TM_ChargeManaStorage>
+  <TabEnchantment>Зачарована</TabEnchantment>
+  <TM_DropGem>Дроп {0}</TM_DropGem>
+  <TM_PickupGem>Снарядити {0} для зачаровування</TM_PickupGem>
+  <TM_CannotReach>Не можу дотягнутися</TM_CannotReach>
+  <TM_EnchantItem>Зачарувати {0}</TM_EnchantItem>
+  <TM_CannotDrop>Неможливо дропнути {0}</TM_CannotDrop>
+  <TM_NeedManaForEnchant>Зачарування: {0} of .5 Ману</TM_NeedManaForEnchant>
+  <TabGolem>Голем</TabGolem>
+  <TM_GolemAbilities>Здібності {0}</TM_GolemAbilities>
+  <TM_GolemAbilitiesButton>Здібності</TM_GolemAbilitiesButton>
+  <TM_GolemAbilityEnabledDesc>Перемикає використання {0}: {1}</TM_GolemAbilityEnabledDesc>
+  <TM_GolemShowDormant>Показати фрейм, який не діє</TM_GolemShowDormant>
+  <TM_GolemShowDormantDesc>Показує рамку над бездіяльним положенням цього голему. Скористайтеся меню параметрів мода, щоб перемикати це для всіх големів.</TM_GolemShowDormantDesc>
+  <TM_MaxMPLabel>Максимальне Збільшення Енергії: {0}%</TM_MaxMPLabel>
+  <TM_MPRegenRateLabel>Збільшення Регенерації Енергії: {0}%</TM_MPRegenRateLabel>
+  <TM_CoolDownLabel>Зменшення Перезарядки Здібності: {0}%</TM_CoolDownLabel>
+  <TM_MPCostLabel>Можливість Зниження Витрат: {0}%</TM_MPCostLabel>
+  <TM_XPGainLabel>Збільшення коефіцієнта XP: {0}%</TM_XPGainLabel>
+  <TM_ArcaneResLabel>Опір Здібності: {0}%</TM_ArcaneResLabel>
+  <TM_ArcaneDmgLabel>Бонус Здібності: {0}%</TM_ArcaneDmgLabel>
+  <TM_ArcaneSpectre>Таємний Привид</TM_ArcaneSpectre>
+  <TM_PhantomShift>Фантомний Сдвиг</TM_PhantomShift>
+  <TM_ArcalleumCooldown>Перезарядка Аркаллеума: {0}%</TM_ArcalleumCooldown>
+  <TM_EA_Hediff>{0}: {1} {2}% при потраплянні</TM_EA_Hediff>
+  <TM_EA_Damage>{0}: {1} - {2} {3} втрат {4}% при потраплянні</TM_EA_Damage>
+  <TM_Enchanted>Зачаровано!</TM_Enchanted>
+  <TM_UnableToLearnAdvancedClass>{0} не вдалося застосувати {1}, оскільки {2}</TM_UnableToLearnAdvancedClass>
+  <TM_LearnFail_NotClass>не знайдено базового класу</TM_LearnFail_NotClass>
+  <TM_LearnFail_NoRequiredTrait>потрібна риса не знайдена</TM_LearnFail_NoRequiredTrait>
+  <TM_LearnFail_DisallowedTrait>конфліктуючої риси</TM_LearnFail_DisallowedTrait>
+  <TM_SpiritVerbatum>Дух</TM_SpiritVerbatum>
+  <TM_AncientSpiritVerbatum>Стародавній дух</TM_AncientSpiritVerbatum>
+  <TM_VengefulSpiritVerbatum>Мстивий дух</TM_VengefulSpiritVerbatum>
+  <TM_LostSpiritVerbatum>Втрачений дух</TM_LostSpiritVerbatum>
+  <TM_RegretSpiritVerbatum>Дух жалю</TM_RegretSpiritVerbatum>
+  <TM_BaseSpiritDesc>Блукаючий дух, прив'язаний до цього світу якоюсь невідомою силою. Події, пов'язані з походженням цього духу, невідомі, але досить сильні, щоб змусити дух шукати відповіді, справедливість або спокутування у живих.</TM_BaseSpiritDesc>
+  <TM_AncientSpiritDesc>Цей дух існував незліченну кількість століть і більше не пам'ятає свого призначення. Стародавні духи переслідують свої цілі і стали майстрами управління духовною енергією. Максимальна енергія духу збільшена на 50.</TM_AncientSpiritDesc>
+  <TM_VengefulSpiritDesc>Мстиві духи сповнені злості і ненависті, бажаючи тільки завдати своїх страждань живим. Мстиві духи можуть виявляти велику силу під час духовного спотворення і духовної бурі, але з ними складніше гармоніювати, коли вони мають живе тіло. Збільшує швидкість атаки Spirit Storm на 25% і бонус до урону Distortion Spirit на 6%. Знижує сумісність на 1.</TM_VengefulSpiritDesc>
+  <TM_LostSpiritDesc>Заблудлі духи блукають по царству в постійному стані екзистенційного болю, не здатні зрозуміти свою мету. Заблудші з готовністю приєднуються до чужої справи і легше знаходять спільну мову з родинними душами. Вони також можуть посилити силу здатності ралійного духу. Збільште тривалість, радіус, максимальну кількість цілей і бонуси Spirit Rally на 10%. Збільшує сумісність на 2.</TM_LostSpiritDesc>
+  <TM_RegretSpiritDesc>Дух жалю все ще може пам'ятати своє призначення як духу, але не може виправити свої помилки, поки не стало занадто пізно. Тепер вони бродять по світу як духи, повні печалі і жалю, які все ще шукають спосіб виконати своє призначення. Духи жалю посилюють здатність висмоктування духу на 20%.</TM_RegretSpiritDesc>
+  <TM_SpiritPossession_pwr_desc>Підвищує психічну чутливість і свідомість у формі духу, а також збільшує кількість енергії, одержуваної при торканні духу, на 10% за рівень:
+Чутливість: +[40%, 65%, 85%, 100%]
+Свідомість: +[0%, 15%, 25%, 40%]</TM_SpiritPossession_pwr_desc>
+  <TM_SpiritPossession_eff_desc>Знижує вартість володіння духом на 15% за кожен рівень навички, підвищує сумісність при володінні окупованим тілом.</TM_SpiritPossession_eff_desc>
+  <TM_SpiritPossession_ver_desc>Знижує ймовірність опору одержимості духом на 20% і максимальне значення духу на 15 за рівень навички.</TM_SpiritPossession_ver_desc>
+  <TM_SpiritDrain_pwr_desc>Збільшує кількість висмоктування духу, що застосовується до ворогів, і зменшує кількість, що застосовується до союзників, на 15% за рівень навички.</TM_SpiritDrain_pwr_desc>
+  <TM_SpiritDrain_eff_desc>Збільшує кількість енергії духу, одержуваної з будь-якого джерела, на 10% за кожен рівень навички.</TM_SpiritDrain_eff_desc>
+  <TM_SpiritDrain_ver_desc>Зменшує тривалість посушення духу на 15% за рівень навички; кількість застосованого висмоктування духу і поглиненої енергії духу залишається колишньою.</TM_SpiritDrain_ver_desc>
+  <TM_DistortSpirit_pwr_desc>Збільшує кількість урона, яке отримує спотворена пішака, на 5% за кожен рівень навички.</TM_DistortSpirit_pwr_desc>
+  <TM_DistortSpirit_eff_desc>Знижує енергію духу, необхідну для виголошення спотворення духу, на 10% і збільшує максимальну кількість уражених цілей на 1 за рівень навички. Базовий максимум - 5 цілей.</TM_DistortSpirit_eff_desc>
+  <TM_DistortSpirit_ver_desc>Викривлення духу також застосовує невелику кількість висмоктування духу на рівні навички 1. На рівнях навички 2 і 3 кількість висмоктування духу збільшується, і заклинач буде поглинати енергію духу. Навчання цій навичці коштує 2 очки.</TM_DistortSpirit_ver_desc>
+  <TM_SummonSpiritAnimalMass_pwr_desc>Покликані тварини-привиди отримують посилення з кожним рівнем навички.</TM_SummonSpiritAnimalMass_pwr_desc>
+  <TM_SummonSpiritAnimalMass_eff_desc>Знижує необхідну духовну енергію на 10% за кожен рівень навички.</TM_SummonSpiritAnimalMass_eff_desc>
+  <TM_SummonSpiritAnimalMass_ver_desc>Збільшує тривалість життя тварин-привидів на 5 з за рівень навички. Базова тривалість 20 секунд.</TM_SummonSpiritAnimalMass_ver_desc>
+  <TM_SpiritRally_pwr_desc>Збільшує максимальну кількість призованих парфумів-союзників на 2 на кожен рівень навички та зменшує штрафи за призов. Базовий максимум 7.</TM_SpiritRally_pwr_desc>
+  <TM_SpiritRally_eff_desc>Знижує витрати енергії духу на 12% за кожен рівень навички.</TM_SpiritRally_eff_desc>
+  <TM_SpiritRally_ver_desc>Збільшує радіус і тривалість відновлення духу:
+Рівень 0: 8с, 15с
+Рівень 1: 10с, 18с
+Рівень 2: 12с, 21с
+Рівень 3: 14с, 24с</TM_SpiritRally_ver_desc>
+  <TM_SpiritStorm_pwr_desc>Збільшує шкоду, яку завдає Духовний бурей, на 12% за кожен рівень навички.</TM_SpiritStorm_pwr_desc>
+  <TM_SpiritStorm_eff_desc>Знижує витрати духовної енергії на створення духовної бурі на 10% за кожен рівень навички.</TM_SpiritStorm_eff_desc>
+  <TM_SpiritStorm_ver_desc>Збільшує радіус духовної бурі на 1с за кожен рівень навички. Базовий радіус 4c.</TM_SpiritStorm_ver_desc>
+  <TM_SpiritPossession_pwr>Сила духу</TM_SpiritPossession_pwr>
+  <TM_SpiritPossession_eff>Контроль духу</TM_SpiritPossession_eff>
+  <TM_SpiritPossession_ver>Керування духом</TM_SpiritPossession_ver>
+  <TM_SpiritDrain_pwr>Усунення пошкоджень</TM_SpiritDrain_pwr>
+  <TM_SpiritDrain_eff>Чиста енергія</TM_SpiritDrain_eff>
+  <TM_SpiritDrain_ver>Швидке поглинання</TM_SpiritDrain_ver>
+  <TM_DistortSpirit_pwr>Інтенсивність</TM_DistortSpirit_pwr>
+  <TM_DistortSpirit_eff>Адміністрування</TM_DistortSpirit_eff>
+  <TM_DistortSpirit_ver>Розриви духу</TM_DistortSpirit_ver>
+  <TM_SummonSpiritAnimalMass_pwr>Прояви</TM_SummonSpiritAnimalMass_pwr>
+  <TM_SummonSpiritAnimalMass_eff>Сородичі</TM_SummonSpiritAnimalMass_eff>
+  <TM_SummonSpiritAnimalMass_ver>Гармонія</TM_SummonSpiritAnimalMass_ver>
+  <TM_SpiritRally_pwr>Армія духів</TM_SpiritRally_pwr>
+  <TM_SpiritRally_eff>Колективний</TM_SpiritRally_eff>
+  <TM_SpiritRally_ver>Вплив</TM_SpiritRally_ver>
+  <TM_SpiritStorm_pwr>Сказ духу</TM_SpiritStorm_pwr>
+  <TM_SpiritStorm_eff>Співчуття</TM_SpiritStorm_eff>
+  <TM_SpiritStorm_ver>Море печалі</TM_SpiritStorm_ver>
+  <TM_GolemAssignAreaDesc>Дозволити область</TM_GolemAssignAreaDesc>
+  <TM_RemovePossession>Покинути тіло</TM_RemovePossession>
+  <TM_RemovePossessionDesc>Дух добровільно залишає тіло, і характеристики пішаки повертаються до того стану, в якому вона була до володіння.</TM_RemovePossessionDesc>
+  <TM_GolemDoScreenShake>Тремтіння екрана Голема</TM_GolemDoScreenShake>
+  <TM_GolemDoScreenShakeDesc>Якщо ця функція вимкнена, големи не будуть викликати тремтіння екрана при активації або деактивації.</TM_GolemDoScreenShakeDesc>
+  <TM_EndSymbiosis>Кінець симбіозу</TM_EndSymbiosis>
+  <TM_EndSymbiosisDesc>Емпат відділяє свою волю від господаря і повертається в своє тіло. Цей параметр доступний, лише якщо вузол знаходиться поряд із симбіотом.</TM_EndSymbiosisDesc>
+  <AIFighterMarkingDesc>Показує маленьку іконку класу біля бійця ШІ</AIFighterMarkingDesc>
+  <AIMarkingDesc>Показує маленьку іконку класу біля мага ШІ</AIMarkingDesc>
+  <TM_AlterClothingDepth>Змінити глибину малювання одягу</TM_AlterClothingDepth>
+  <TM_AlterClothingDepthDesc>Якщо увімкнено, наступні параметри змінюють порядок малювання одягу (поверх або під іншим одягом).</TM_AlterClothingDepthDesc>
+  <TM_BookCausesWeakness>Читач отримає арканову слабкість під час вивчення цього гримуару.</TM_BookCausesWeakness>
+  <TM_BookExperienceCombat>Досвід бойового класу</TM_BookExperienceCombat>
+  <TM_BookExperienceGrimoire>Досвід магічного класу</TM_BookExperienceGrimoire>
+  <TM_CameraSnapDesc>Наводить камеру на обрану пішака після телепорту (блимання, фазовий удар тощо)</TM_CameraSnapDesc>
+  <TM_CloakDepth>Глибина малювання плащів</TM_CloakDepth>
+  <TM_CloakDepthDesc>Змінює глибину малювання плащів: поверх або під іншим одягом. Значення зазвичай дуже мале (.001).</TM_CloakDepthDesc>
+  <TM_CloakDepthNorth>Глибина плащів (північ)</TM_CloakDepthNorth>
+  <TM_CloakDepthNorthDesc>Змінює глибину малювання плащів, коли персонаж дивиться на північ (вгору). Значення зазвичай дуже мале (.001).</TM_CloakDepthNorthDesc>
+  <TM_CreateAreas>Створити зони карти</TM_CreateAreas>
+  <TM_CreateAreasDesc>Автоматично створює зони для духів, трансмутації та насіння відродження. Ці зони потрібні для повноцінної роботи відповідних здібностей. Вже створені зони не видаляються. Гравець може створити їх вручну пізніше, але вони мають називатися точно "earth sprites", "transmutate" і "regrowth seed". Як це працює: духи землі завжди обирають нове місце терраформування у зоні "earth sprites"; увімкнене автокастування трансмутації дозволяє чарівнику змінювати спорядження лише в зоні "transmutate"; друїд автоматично створює нове насіння відродження, коли закляття доступне, у зоні "regrowth seed" (найкраще зі складом насіння під зоною).</TM_CreateAreasDesc>
+  <TM_DisplayOptions>Параметри відображення</TM_DisplayOptions>
+  <TM_EnabledClasses>Увімкнені класи</TM_EnabledClasses>
+  <TM_GolemAssignArea>Обмежити голема цією зоною</TM_GolemAssignArea>
+  <TM_GolemCharge>Енергія: {0}%</TM_GolemCharge>
+  <TM_GolemWorkTypeEnabledDesc>Перемикає використання {0}</TM_GolemWorkTypeEnabledDesc>
+  <TM_IncitePassionSelection>{0} обрано для Розпалювання пристрасті</TM_IncitePassionSelection>
+  <TM_Inject>Ввести {0}</TM_Inject>
+  <TM_MCU_BaseMana>Базовий приріст мани: {0}</TM_MCU_BaseMana>
+  <TM_MCU_BaseRegen>Бонус регенерації мани: {0}</TM_MCU_BaseRegen>
+  <TM_MCU_CurrentLevel>Поточний рівень:</TM_MCU_CurrentLevel>
+  <TM_MCU_EnergyDrainBonus>Змінений приріст мани: {0}</TM_MCU_EnergyDrainBonus>
+  <TM_MCU_ManaDrain>Відтік мани: -{0}</TM_MCU_ManaDrain>
+  <TM_MCU_ManaNet>Разом утримання мани: {0}</TM_MCU_ManaNet>
+  <TM_MCU_ManaSickness>Манна хвороба: -{0}</TM_MCU_ManaSickness>
+  <TM_MCU_ManaSurge>Сплеск мани: +{0}</TM_MCU_ManaSurge>
+  <TM_MCU_ManaWeakness>Слабкість до мани: -{0}</TM_MCU_ManaWeakness>
+  <TM_MCU_Minion>Утримання міньйона: -{0}</TM_MCU_Minion>
+  <TM_MCU_NextLevel>Наступний рівень:</TM_MCU_NextLevel>
+  <TM_MCU_Paracyte>Паразитарний відтік: -{0}</TM_MCU_Paracyte>
+  <TM_MCU_PointsToLearn>{0} очок для </TM_MCU_PointsToLearn>
+  <TM_MCU_RegenBonus>Бонус регенерації енергії: +{0}</TM_MCU_RegenBonus>
+  <TM_MCU_Sprite>Вартість духів: -{0}</TM_MCU_Sprite>
+  <TM_MCU_Syrrium>Бонус сирріуму: +{0}</TM_MCU_Syrrium>
+  <TM_MCU_Undead>Утримання нежиті: -{0}</TM_MCU_Undead>
+  <TM_Read>Читати {0}</TM_Read>
+  <TM_SelectPassion>Обрати пріоритет</TM_SelectPassion>
+  <TM_SetVerbatum>Встановити</TM_SetVerbatum>
+  <TM_TooWeak>{0} має надто сильну арканову слабкість, щоб вивчати це зараз.</TM_TooWeak>
+  <TM_UndeadVerbatum>Нежить</TM_UndeadVerbatum>
+  <TM_Use>Використати {0}</TM_Use>
+  <TM_offsetApplyAt>Поріг застосування зсуву</TM_offsetApplyAt>
+  <TM_offsetApplyAtDesc>Застосовує зсув до одягу, коли його сумарна глибина перевищує це значення; використовуйте цей поріг, щоб налаштувати багатошаровий одяг, якщо він малюється над плащами та волоссям.</TM_offsetApplyAtDesc>
+  <TM_offsetMultilayerClothing>Зсув багатошаровості</TM_offsetMultilayerClothing>
+  <TM_offsetMultilayerClothingDesc>Змінює глибину малювання багатошарового одягу, але лише коли обчислений зсув екстремальний (малювався б поверх усього). Призначено насамперед для плащів.</TM_offsetMultilayerClothingDesc>
+  <TM_shrinkIconsDesc>Зменшує розмір іконок під час вибору пішаків із великою кількістю здібностей</TM_shrinkIconsDesc>
+  <classIconSizeDesc>Змінює розмір іконки класу на панелі колоністів</classIconSizeDesc>
+  <showUndeadAnimalChangeDesc>Нежить-тварини показують першу стадію гниття (згнилі); якщо вимкнено, виглядають як за життя</showUndeadAnimalChangeDesc>
+  <showUndeadPawnChangeDesc>Нежить-пішаки показують різні стадії гниття; якщо вимкнено, виглядають як за життя</showUndeadPawnChangeDesc>
+  <TM_GrimoireSub>Рівні класів, мана та здібності в одному місці.</TM_GrimoireSub>
+  <AU_DISABLED>Вимкнено</AU_DISABLED>
+  <TM_GrimoireTabMode>Гримуар на панелі здібностей</TM_GrimoireTabMode>
+  <TM_GrimoireTabModeDesc>Увімкнено: показувати кнопку гримуара на панелі здібностей. Вимкнено: відкривати те саме вікно через вкладку гримуара на панелі огляду.</TM_GrimoireTabModeDesc>
+  <TM_GrimoireOpen>Відкрити гримуар</TM_GrimoireOpen>
+  <TM_GrimoireTabHint>Вікно гримуара вже відкрите.</TM_GrimoireTabHint>
+  <TM_AIMarkingDesc>Показувати значки класів над магами й бійцями поза колонією, зокрема нейтральними та дружніми гостями.</TM_AIMarkingDesc>
+  <TM_AIFighterMarkingDesc>Застаріла опція без самостійного ефекту. Значки бійців поза колонією наразі залежать від налаштування значків магів ШІ.</TM_AIFighterMarkingDesc>
+  <TM_AIFriendlyMarkingDesc>Показувати значки класів над вашими колоністами-магами й бійцями.</TM_AIFriendlyMarkingDesc>
+  <XPMultiplierDesc>Множник магічного та бойового досвіду за використання здібностей.</XPMultiplierDesc>
+  <NeedMultiplierDesc>Множник швидкості відновлення мани.</NeedMultiplierDesc>
+  <MagicyteChanceDesc>Імовірність отримати необроблений магіцит під час видобутку породи.</MagicyteChanceDesc>
+  <TM_DeathRetaliationIsLethalDesc>Дозволяти відплаті смертельно поранити самого персонажа, який її здійснює, крім відновлювальних ефектів. Вимкнення не робить шкоду іншим персонажам несмертельною.</TM_DeathRetaliationIsLethalDesc>
+  <TM_DeathRetaliationChanceDesc>Імовірність того, що повалений ворожий маг або боєць підготує відплату. Полонені не можуть мститися.</TM_DeathRetaliationChanceDesc>
+  <TM_DeathRetaliationDelayDesc>Множник зворотного відліку після початку відплати; більші значення відкладають спрацювання.</TM_DeathRetaliationDelayDesc>
+  <TM_enableAutocastDesc>Дозволити колоністам автоматично використовувати магічні та бойові здібності з увімкненим перемикачем AC.</TM_enableAutocastDesc>
+  <TM_autocastUndraftedThresholdDesc>Мінімальний відсоток мани або витривалості для автозастосування поза бойовим режимом. Також використовується під час звичайних перевірок автозастосування NPC.</TM_autocastUndraftedThresholdDesc>
+  <TM_autocastDraftedThresholdDesc>Мінімальний відсоток мани або витривалості для автозастосування в бойовому режимі з дозволеним вогнем. Монахи ігнорують поріг витривалості.</TM_autocastDraftedThresholdDesc>
+  <TM_autocastEvaluationFrequencyDesc>Базовий інтервал між перевірками автозастосування в ігрових секундах. Більші значення означають рідші перевірки; фактичні інтервали випадкові.</TM_autocastEvaluationFrequencyDesc>
+  <TM_autocastAnimalsDesc>Враховувати тварин під час підтримуваних автоматичних пошуків цілей, наприклад для лікування.</TM_autocastAnimalsDesc>
+  <AICanCastDesc>Дозволити магам і бійцям поза колонією використовувати здібності під керуванням ШІ.</AICanCastDesc>
+  <AIHardModeDesc>Посилювати багато магічних і бойових здібностей NPC та підвищувати ймовірність знання вищих заклять у магів NPC.</AIHardModeDesc>
+  <TM_AggressiveAICastingDesc>Підвищувати активність застосування здібностей NPC та вдвічі скорочувати базове перезаряджання й витрати мани або витривалості.</TM_AggressiveAICastingDesc>
+  <TM_SlavesCanScribeDesc>Дозволити рабам писати класові томи й уривки класових рукописів за дотримання звичайних вимог до класу.</TM_SlavesCanScribeDesc>
+  <TM_UndeadUpkeepMultiplierDesc>Множник штрафу до відновлення мани за утримання нежиті; нуль вимикає цей штраф.</TM_UndeadUpkeepMultiplierDesc>
+  <TM_ParacyteSoftCapDesc>Допустиме місцеве навантаження парацитів до зниження відновлення мани. Кожна рослина рахується за 1, а кожен маг — за 2, якщо відповідну опцію ввімкнено.</TM_ParacyteSoftCapDesc>
+  <TM_ParacyteMagesCountDesc>Під час розрахунку штрафу до відновлення мани рахувати кожного мага на мапі за два парацити. Тварини, дикі люди й Безликі не враховуються.</TM_ParacyteMagesCountDesc>
+  <unrestrictedBloodTypesForBloodMagicDesc>Дозволити збирати й підпалювати кров інших рас, зберігаючи решту вимог заклять.</unrestrictedBloodTypesForBloodMagicDesc>
+  <TM_UnrestrictedWeaponCopyDesc>Дозволити техноманту копіювати далекобійну зброю нижче індустріального рівня або з нестандартним способом стрільби. Зброя ближнього бою й надалі виключена.</TM_UnrestrictedWeaponCopyDesc>
+  <TM_ClassOptionsDesc>Вибрати доступні магічні й бойові класи та допоміжні риси, налаштувати ймовірність їх появи.</TM_ClassOptionsDesc>
+  <TM_FactionOptionsDesc>Налаштувати множники появи магів і бійців для кожної фракції.</TM_FactionOptionsDesc>
+  <TM_EventOptionsDesc>Відкрити налаштування складності розломів, мандрівних лічів і демонічних нападів.</TM_EventOptionsDesc>
+  <TM_GolemOptionsDesc>Налаштувати відображення големів: сплячі каркаси, значки на панелі колоністів і тремтіння екрана.</TM_GolemOptionsDesc>
+  <TM_DisplayOptionsDesc>Налаштувати значки, камеру, розташування гримуара, вигляд нежиті й відображення одягу.</TM_DisplayOptionsDesc>
+  <TM_GrimoireDesc>Відкрити гримуар персонажа: рівні класів, ресурси та здібності.</TM_GrimoireDesc>
+  <TM_GrimoireIsekaiHint>Вбудована інтеграція Isekai Leveling від Jelly Creative дає бонуси до запасу й відновлення мани та витривалості, перезаряджання здібностей і витрат ресурсів.</TM_GrimoireIsekaiHint>
+  <TM_Grimoire>Гримуар</TM_Grimoire>
+
+  <!-- Grimoire classic-mode strings. -->
+  <TM_GrimoireClassicRequirements>Класичні правила: заклинання вивчаються очками класу в гримуарі; частині заклинань додатково потрібне прочитання свого сувою чи книги.</TM_GrimoireClassicRequirements>
+  <TM_GrimoireClassicRules>Класичні правила</TM_GrimoireClassicRules>
+  <TM_GrimoireLearningItems>Потрібні навчальні предмети:</TM_GrimoireLearningItems>
+  <TM_GrimoireNoLearningItems>Навчальні предмети не потрібні.</TM_GrimoireNoLearningItems>
+  <TM_GrimoireLearned>Вивчено</TM_GrimoireLearned>
+  <TM_GrimoireRankMax>Макс. ранг</TM_GrimoireRankMax>
+  <TM_GrimoireRank>Ранг</TM_GrimoireRank>
+  <TM_GrimoireScrollUnspecified>Сувій не вказано</TM_GrimoireScrollUnspecified>
+
+  <!-- Magofuel synthesizer UI strings. -->
+  <TM_SynthToggleLabel>Автосинтез: мана + хімічне паливо</TM_SynthToggleLabel>
+  <TM_SynthToggleDesc>Повільно перетворює накопичену ману та хімічне паливо на манапаливо в цьому баку (~50 на день). Пауза, поки бак не досягне цілі або не вистачає входів.</TM_SynthToggleDesc>
+  <TM_SynthLoad>Завантажити хімічне паливо ({0})</TM_SynthLoad>
+  <TM_SynthLoadDesc>Забрати хімічне паливо зі стаків біля резервуара в прийомний бункер.</TM_SynthLoadDesc>
+  <TM_SynthInspect>Бункер хімічного палива: {0} — синтез 50 манапалива на день</TM_SynthInspect>
+  <TM_PoolInspect>Пул мережі маяків: мана {0}/{1}, манапаливо {2}/{3} ({4} баки)</TM_PoolInspect>
+</LanguageData>

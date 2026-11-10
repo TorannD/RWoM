@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadPsionicProjector>Вивчати кінетичну проєкцію</TM_ReadPsionicProjector>
+  <TM_ReadPsionicAccelerator>Вивчати кінетичне прискорення</TM_ReadPsionicAccelerator>
+  <TM_PsionicFoundationTrial>Поглиньте або завдайте ворогам {0}/200 од. кінетичної шкоди або відновіть {1}/20 різних будівель після лиха.</TM_PsionicFoundationTrial>
+  <TM_PsionicAdeptTrial>Врятуйте {0}/10 різних поранених союзників або доставте {1}/30 вантажів допомоги, поки союзник знерухомлений (раз на годину).</TM_PsionicAdeptTrial>
+  <TM_PsionicMasterTrial>Прослужіть {0}/12 днів псіоніком. Рівень бійця {1}/30.</TM_PsionicMasterTrial>
+  <TM_PsionicAdvance>Перейти на наступний щабель</TM_PsionicAdvance>
+  <TM_PsionicCrucibleUnavailable>Потрібно 60% псі-енергії та 30% витривалості.</TM_PsionicCrucibleUnavailable>
+  <TM_PsionicProjectorInfo>Проєкція витрачає на 10% менше псі-енергії за перехоплення. Шкода імпульсу знижена на 10%.</TM_PsionicProjectorInfo>
+  <TM_PsionicAcceleratorInfo>Імпульс завдає на 8% більше шкоди. Під час підтримки бар’єра псі-енергія не відновлюється.</TM_PsionicAcceleratorInfo>
+</LanguageData>

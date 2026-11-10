@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerCareHint>Care for the same bonded animal on 12 days ({0}/12). Visit it on the same map once per day. Changing companions resets the unfinished trial. Releasing or replacing an animal with Animal Friend can permanently remove it.</TM_RangerCareHint>
+  <TM_RangerCareOrder>Care for {0}</TM_RangerCareOrder>
+  <TM_RangerClaimTrap>Learn Poison Trap</TM_RangerClaimTrap>
+</LanguageData>

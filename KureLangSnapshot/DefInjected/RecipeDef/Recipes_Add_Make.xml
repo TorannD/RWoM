@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Make_SkillOf_BackupGrenade.label>сделать Навык Бойца: Взрывная Сумка</Make_SkillOf_BackupGrenade.label>
+  <Make_SkillOf_BackupGrenade.description>Сделать Навык Бойца: Взрывная Сумка.</Make_SkillOf_BackupGrenade.description>
+  <Make_SkillOf_BackupGrenade.jobString>Делает Навык Бойца: Взрывная Сумка.</Make_SkillOf_BackupGrenade.jobString>
+  <Make_SkillOf_EMPBomb.label>сделать Навык Бойца: Сумка Молний</Make_SkillOf_EMPBomb.label>
+  <Make_SkillOf_EMPBomb.description>Сделать Навык Бойца: Сумка Молний.</Make_SkillOf_EMPBomb.description>
+  <Make_SkillOf_EMPBomb.jobString>Делает Навык Бойца: Сумка Молний.</Make_SkillOf_EMPBomb.jobString>
+  <Make_SkillOf_Glare.label>сделать Навык Бойца: Свирепый Взгляд</Make_SkillOf_Glare.label>
+  <Make_SkillOf_Glare.description>Сделать Навык Бойца: Свирепый Взгляд.</Make_SkillOf_Glare.description>
+  <Make_SkillOf_Glare.jobString>Делает Навык Бойца: Свирепый Взгляд.</Make_SkillOf_Glare.jobString>
+  <Make_SkillOf_EvasiveLeap.label>сделать Навык Бойца: Перекат</Make_SkillOf_EvasiveLeap.label>
+  <Make_SkillOf_EvasiveLeap.description>Сделать Навык Бойца: Перекат.</Make_SkillOf_EvasiveLeap.description>
+  <Make_SkillOf_EvasiveLeap.jobString>Делает Навык Бойца: Перекат.</Make_SkillOf_EvasiveLeap.jobString>
+  <Make_SkillOf_QuickShot.label>сделать Навык Лучника: Быстрый Выстрел</Make_SkillOf_QuickShot.label>
+  <Make_SkillOf_QuickShot.description>Сделать Навык Лучника: Быстрый Выстрел.</Make_SkillOf_QuickShot.description>
+  <Make_SkillOf_QuickShot.jobString>Делает Навык Лучника: Быстрый Выстрел.</Make_SkillOf_QuickShot.jobString>
+  <Make_SkillOf_CripplingShot.label>сделать Навык Лучника: Калечащий Выстрел</Make_SkillOf_CripplingShot.label>
+  <Make_SkillOf_CripplingShot.description>Сделать Навык Лучника: Калечащий Выстрел.</Make_SkillOf_CripplingShot.description>
+  <Make_SkillOf_CripplingShot.jobString>Делает Навык Лучника: Калечащий Выстрел.</Make_SkillOf_CripplingShot.jobString>
+  <Make_SkillOf_GrappleArrow.label>сделать Навык Лучника: Стрела-крюк</Make_SkillOf_GrappleArrow.label>
+  <Make_SkillOf_GrappleArrow.description>Сделать Навык Лучника: Стрела-крюк.</Make_SkillOf_GrappleArrow.description>
+  <Make_SkillOf_GrappleArrow.jobString>Делает Навык Лучника: Стрела-крюк.</Make_SkillOf_GrappleArrow.jobString>
+  <Make_SkillOf_MarksmansVow.label>сделать Навык Лучника: Обет Лучника</Make_SkillOf_MarksmansVow.label>
+  <Make_SkillOf_MarksmansVow.description>Сделать Навык Лучника: Обет Лучника.</Make_SkillOf_MarksmansVow.description>
+  <Make_SkillOf_MarksmansVow.jobString>Делает Навык Лучника: Обет Лучника.</Make_SkillOf_MarksmansVow.jobString>
+  <Make_SkillOf_Temperance.label>Сделать Навык Самурая: Сдержанность</Make_SkillOf_Temperance.label>
+  <Make_SkillOf_Temperance.description>Сделать Навык Самурая: Сдержанность.</Make_SkillOf_Temperance.description>
+  <Make_SkillOf_Temperance.jobString>Делает Навык Самурая: Сдержанность.</Make_SkillOf_Temperance.jobString>
+  <Make_SkillOf_BladeParry.label>Сделать Навык Самурая: Парирование</Make_SkillOf_BladeParry.label>
+  <Make_SkillOf_BladeParry.description>Сделать Навык Самурая: Парирование.</Make_SkillOf_BladeParry.description>
+  <Make_SkillOf_BladeParry.jobString>Делает Навык Самурая: Парирование.</Make_SkillOf_BladeParry.jobString>
+  <Make_SkillOf_GrapplingHookD.label>Сделать Навык Мага-стрелка: Крюк</Make_SkillOf_GrapplingHookD.label>
+  <Make_SkillOf_GrapplingHookD.description>Сделать Навык Мага-стрелка: Крюк.</Make_SkillOf_GrapplingHookD.description>
+  <Make_SkillOf_GrapplingHookD.jobString>Делает Навык Мага-стрелка: Крюк.</Make_SkillOf_GrapplingHookD.jobString>
+  <Make_SkillOf_OneInTheChamber.label>Сделать Навык Мага-стрелка: Один в патроннике</Make_SkillOf_OneInTheChamber.label>
+  <Make_SkillOf_OneInTheChamber.description>Сделать Навык Мага-стрелка: Один в патроннике.</Make_SkillOf_OneInTheChamber.description>
+  <Make_SkillOf_OneInTheChamber.jobString>Делает Навык Мага-стрелка: Один в патроннике.</Make_SkillOf_OneInTheChamber.jobString>
+  <Make_SpellOf_BramblePatch.label>Сделать Заклинание Арбормансера: Колючий путь</Make_SpellOf_BramblePatch.label>
+  <Make_SpellOf_BramblePatch.description>Сделать Заклинание Арбормансера: Колючий путь.</Make_SpellOf_BramblePatch.description>
+  <Make_SpellOf_BramblePatch.jobString>Делает Заклинание Арбормансера: Колючий путь.</Make_SpellOf_BramblePatch.jobString>
+  <Make_SpellOf_BulletTime.label>Сделать Заклинание Мага-стрелка/Э-стрелка: Время пуль</Make_SpellOf_BulletTime.label>
+  <Make_SpellOf_BulletTime.description>Сделать Заклинание Мага-стрелка/Э-стрелка: Время пуль.</Make_SpellOf_BulletTime.description>
+  <Make_SpellOf_BulletTime.jobString>Делает Заклинание Мага-стрелка/Э-стрелка: Время пуль.</Make_SpellOf_BulletTime.jobString>
+  <Make_SkillOf_DeathsJudgment.label>Сделать Навык Снайпера: Смертельный приговор</Make_SkillOf_DeathsJudgment.label>
+  <Make_SkillOf_DeathsJudgment.description>Сделать Навык Снайпера: Смертельный приговор.</Make_SkillOf_DeathsJudgment.description>
+  <Make_SkillOf_DeathsJudgment.jobString>Делает Навык Снайпера: Смертельный приговор.</Make_SkillOf_DeathsJudgment.jobString>
+  <Make_SpellOf_Renew.label>Сделать Заклинание Зачарователя: Обновление</Make_SpellOf_Renew.label>
+  <Make_SpellOf_Renew.description>Сделать Заклинание Зачарователя: Обновление.</Make_SpellOf_Renew.description>
+  <Make_SpellOf_Renew.jobString>Делает Заклинание Зачарователя: Обновление.</Make_SpellOf_Renew.jobString>
+  <Make_SkillOf_DisarmingShot.label>Сделать Навык Снайпера: Разоружающий выстрел</Make_SkillOf_DisarmingShot.label>
+  <Make_SkillOf_DisarmingShot.description>Сделать Навык Снайпера: Разоружающий выстрел.</Make_SkillOf_DisarmingShot.description>
+  <Make_SkillOf_DisarmingShot.jobString>Делает Навык Снайпера: Разоружающий выстрел.</Make_SkillOf_DisarmingShot.jobString>
+  <Make_SkillOf_StimShot.label>Сделать Навык Снайпера/Суперсолдата: Выстрел Стимулятором</Make_SkillOf_StimShot.label>
+  <Make_SkillOf_StimShot.description>Сделать Навык Снайпера/Суперсолдата: Выстрел Стимулятором.</Make_SkillOf_StimShot.description>
+  <Make_SkillOf_StimShot.jobString>Делает Навык Снайпера/Суперсолдата: Выстрел Стимулятором.</Make_SkillOf_StimShot.jobString>
+  <Make_SkillOf_SerumOverload.label>Сделать Навык Суперсолдата: Перегрузка сыворотки</Make_SkillOf_SerumOverload.label>
+  <Make_SkillOf_SerumOverload.description>Сделать Навык Суперсолдата: Перегрузка сыворотки.</Make_SkillOf_SerumOverload.description>
+  <Make_SkillOf_SerumOverload.jobString>Делает Навык Суперсолдата: Перегрузка сыворотки.</Make_SkillOf_SerumOverload.jobString>
+  <Make_SkillOf_Equilibrium.label>Сделать Навык Специалиста поддержки: Взрывной скачок</Make_SkillOf_Equilibrium.label>
+  <Make_SkillOf_Equilibrium.description>Сделать Навык Специалиста поддержки: Взрывной скачок.</Make_SkillOf_Equilibrium.description>
+  <Make_SkillOf_Equilibrium.jobString>Делает Навык Специалиста поддержки: Взрывной скачок.</Make_SkillOf_Equilibrium.jobString>
+  <Make_SkillOf_HandheldRocket.label>Сделать Навык Специалиста поддержки: Портативная ракета</Make_SkillOf_HandheldRocket.label>
+  <Make_SkillOf_HandheldRocket.description>Сделать Навык Специалиста поддержки: Портативная ракета.</Make_SkillOf_HandheldRocket.description>
+  <Make_SkillOf_HandheldRocket.jobString>Делает Навык Специалиста поддержки: Портативная ракета.</Make_SkillOf_HandheldRocket.jobString>
+  <Make_SpellOf_EldritchBarrage.label>Сделать Заклинание Темного мага: Жуткий обстрел</Make_SpellOf_EldritchBarrage.label>
+  <Make_SpellOf_EldritchBarrage.description>Сделать Заклинание Темного мага: Жуткий обстрел.</Make_SpellOf_EldritchBarrage.description>
+  <Make_SpellOf_EldritchBarrage.jobString>Делает Заклинание Темного мага: Жуткий обстрел.</Make_SpellOf_EldritchBarrage.jobString>
+  <Make_SpellOf_Overcharge.label>Сделать Заклинание Молний: Энергетический заряд</Make_SpellOf_Overcharge.label>
+  <Make_SpellOf_Overcharge.description>Сделать Заклинание Молний: Энергетический заряд.</Make_SpellOf_Overcharge.description>
+  <Make_SpellOf_Overcharge.jobString>Делает Заклинание Молний: Энергетический заряд.</Make_SpellOf_Overcharge.jobString>
+  <Make_SpellOf_FrostArmor.label>Сделать Заклинание Льда: Ледяная броня</Make_SpellOf_FrostArmor.label>
+  <Make_SpellOf_FrostArmor.description>Сделать Заклинание Льда: Ледяная броня.</Make_SpellOf_FrostArmor.description>
+  <Make_SpellOf_FrostArmor.jobString>Делает Заклинание Льда: Ледяная броня.</Make_SpellOf_FrostArmor.jobString>
+  <Make_SpellOf_Incinerate.label>Сделать Заклинание Огня: Испепеление</Make_SpellOf_Incinerate.label>
+  <Make_SpellOf_Incinerate.description>Сделать Заклинание Огня: Испепеление.</Make_SpellOf_Incinerate.description>
+  <Make_SpellOf_Incinerate.jobString>Делает Заклинание Огня: Испепеление.</Make_SpellOf_Incinerate.jobString>
+  <Make_SpellOf_AspectChanneling.label>Сделать Заклинание Призывателя: Стихийное Сотворение</Make_SpellOf_AspectChanneling.label>
+  <Make_SpellOf_AspectChanneling.description>Сделать Заклинание Призывателя: Стихийное Сотворение.</Make_SpellOf_AspectChanneling.description>
+  <Make_SpellOf_AspectChanneling.jobString>Делает Заклинание Призывателя: Стихийное Сотворение.</Make_SpellOf_AspectChanneling.jobString>
+  <Make_SkillOf_GrandChallenge.label>Сделать Заклинание Гладиатора: Грандиозный вызов</Make_SkillOf_GrandChallenge.label>
+  <Make_SkillOf_GrandChallenge.description>Сделать Заклинание Гладиатора: Грандиозный вызов.</Make_SkillOf_GrandChallenge.description>
+  <Make_SkillOf_GrandChallenge.jobString>Делает Заклинание Гладиатора: Грандиозный вызов.</Make_SkillOf_GrandChallenge.jobString>
+  <Make_SkillOf_ShieldStance.label>Сделать Заклинание Гладиатора: Блокирующая стойка</Make_SkillOf_ShieldStance.label>
+  <Make_SkillOf_ShieldStance.description>Сделать Заклинание Гладиатора: Блокирующая стойка.</Make_SkillOf_ShieldStance.description>
+  <Make_SkillOf_ShieldStance.jobString>Делает Заклинание Гладиатора: Блокирующая стойка.</Make_SkillOf_ShieldStance.jobString>
+  <Make_SkillOf_TrollUnguent.label>Сделать Навык Рейнджера: Тролльская мазь</Make_SkillOf_TrollUnguent.label>
+  <Make_SkillOf_TrollUnguent.description>Сделать Навык Рейнджера: Тролльская мазь.</Make_SkillOf_TrollUnguent.description>
+  <Make_SkillOf_TrollUnguent.jobString>Делает Навык Рейнджера: Тролльская мазь.</Make_SkillOf_TrollUnguent.jobString>
+  <Make_SkillOf_HuntersShot.label>Сделать Навык Рейнджера: Выстрел охотника</Make_SkillOf_HuntersShot.label>
+  <Make_SkillOf_HuntersShot.description>Сделать Навык Рейнджера: Выстрел охотника.</Make_SkillOf_HuntersShot.description>
+  <Make_SkillOf_HuntersShot.jobString>Делает Навык Рейнджера: Выстрел охотника.</Make_SkillOf_HuntersShot.jobString>
+  <Make_SkillOf_PoisonVolley.label>Сделать Навык Рейнджера: Ядовитый залп</Make_SkillOf_PoisonVolley.label>
+  <Make_SkillOf_PoisonVolley.description>Сделать Навык Рейнджера: Ядовитый залп.</Make_SkillOf_PoisonVolley.description>
+  <Make_SkillOf_PoisonVolley.jobString>Делает Навык Рейнджера: Ядовитый залп.</Make_SkillOf_PoisonVolley.jobString>
+  <Make_SkillOf_BladesEdge.label>Сделать Навык Танцора с клинками: Лезвие клинка</Make_SkillOf_BladesEdge.label>
+  <Make_SkillOf_BladesEdge.description>Сделать Навык Танцора с клинками: Лезвие клинка.</Make_SkillOf_BladesEdge.description>
+  <Make_SkillOf_BladesEdge.jobString>Делает Навык Танцора с клинками: Лезвие клинка.</Make_SkillOf_BladesEdge.jobString>
+  <Make_SkillOf_ApproachingStorm.label>Сделать Навык Псионика: Приближающийся шторм</Make_SkillOf_ApproachingStorm.label>
+  <Make_SkillOf_ApproachingStorm.description>Сделать Навык Псионика: Приближающийся шторм.</Make_SkillOf_ApproachingStorm.description>
+  <Make_SkillOf_ApproachingStorm.jobString>Делает Навык Псионика: Приближающийся шторм.</Make_SkillOf_ApproachingStorm.jobString>
+  <Make_SpellOf_ChromaticFlash.label>Сделать Заклинание Хроматического мага: Хроматическая вспышка</Make_SpellOf_ChromaticFlash.label>
+  <Make_SpellOf_ChromaticFlash.description>Сделать Заклинание Хроматического мага: Хроматическая вспышка.</Make_SpellOf_ChromaticFlash.description>
+  <Make_SpellOf_ChromaticFlash.jobString>Делает Заклинание Хроматического мага: Хроматическая вспышка.</Make_SpellOf_ChromaticFlash.jobString>
+  <Make_SkillOf_Vengeance.label>сделать Навык Бойца: Превосходство</Make_SkillOf_Vengeance.label>
+  <Make_SkillOf_Vengeance.description>Сделать Навык Бойца: Превосходство.</Make_SkillOf_Vengeance.description>
+  <Make_SkillOf_Vengeance.jobString>Делает Навык Бойца: Превосходство.</Make_SkillOf_Vengeance.jobString>
+  <Make_SpellOf_Effulgence.label>Сделать Заклинание Мага: Сияние</Make_SpellOf_Effulgence.label>
+  <Make_SpellOf_Effulgence.description>Сделать Заклинание Мага: Сияние.</Make_SpellOf_Effulgence.description>
+  <Make_SpellOf_Effulgence.jobString>Делает Заклинание Мага: Сияние.</Make_SpellOf_Effulgence.jobString>
+  <Make_SpellOf_PlanetaryForce.label>Сделать Заклинание Оракула: Сила Планет</Make_SpellOf_PlanetaryForce.label>
+  <Make_SpellOf_PlanetaryForce.description>Сделать Заклинание Оракула: Сила Планет.</Make_SpellOf_PlanetaryForce.description>
+  <Make_SpellOf_PlanetaryForce.jobString>Делает Заклинание Оракула: Сила Планет.</Make_SpellOf_PlanetaryForce.jobString>
+  <Make_SpellOf_GrandExpanse.label>Сделать Заклинание Оракула: Великое Раздолье</Make_SpellOf_GrandExpanse.label>
+  <Make_SpellOf_GrandExpanse.description>Сделать Заклинание Оракула: Великое Раздолье.</Make_SpellOf_GrandExpanse.description>
+  <Make_SpellOf_GrandExpanse.jobString>Делает Заклинание Оракула: Великое Раздолье.</Make_SpellOf_GrandExpanse.jobString>
+  <Make_SkillOf_OfudaStorm.label>Сделать Навык Мистика: Шторм Офуда</Make_SkillOf_OfudaStorm.label>
+  <Make_SkillOf_OfudaStorm.description>Сделать Навык Мистика: Шторм Офуда.</Make_SkillOf_OfudaStorm.description>
+  <Make_SkillOf_OfudaStorm.jobString>Делает Навык Мистика: Шторм Офуда.</Make_SkillOf_OfudaStorm.jobString>
+  <Make_SpellOf_SacrificialPact.label>Сделать Заклинание Предвестника: Жертвоприношение</Make_SpellOf_SacrificialPact.label>
+  <Make_SpellOf_SacrificialPact.description>Сделать Заклинание Предвестника: Жертвоприношение.</Make_SpellOf_SacrificialPact.description>
+  <Make_SpellOf_SacrificialPact.jobString>Делает Заклинание Предвестника: Жертвоприношение.</Make_SpellOf_SacrificialPact.jobString>
+  <Make_SpellOf_Disarm.label>Сделать Заклинание Чародея: Разоружение</Make_SpellOf_Disarm.label>
+  <Make_SpellOf_Disarm.description>Сделать Заклинание Чародея: Разоружение.</Make_SpellOf_Disarm.description>
+  <Make_SpellOf_Disarm.jobString>Делает Заклинание Чародея: Разоружение.</Make_SpellOf_Disarm.jobString>
+  <Make_SpellOf_Дотон.label>Сделать Заклинание Ниндзя: Дотон</Make_SpellOf_Дотон.label>
+  <Make_SpellOf_Дотон.description>Сделать Заклинание Ниндзя: Дотон.</Make_SpellOf_Дотон.description>
+  <Make_SpellOf_Дотон.jobString>Делает Заклинание Ниндзя: Дотон.</Make_SpellOf_Дотон.jobString>
+  <Make_SpellOf_HyoshoRanryu.label>Сделать Заклинание Ниндзя: Хёшо Ранрю</Make_SpellOf_HyoshoRanryu.label>
+  <Make_SpellOf_HyoshoRanryu.description>Сделать Заклинание Ниндзя: Хёшо Ранрю.</Make_SpellOf_HyoshoRanryu.description>
+  <Make_SpellOf_HyoshoRanryu.jobString>Делает Заклинание Ниндзя: Хёшо Ранрю.</Make_SpellOf_HyoshoRanryu.jobString>
+  <Make_SpellOf_ForceMissile.label>Сделать Заклинание Чародея: Силовые снаряды</Make_SpellOf_ForceMissile.label>
+  <Make_SpellOf_ForceMissile.description>Сделать Заклинание Чародея: Силовые снаряды.</Make_SpellOf_ForceMissile.description>
+  <Make_SpellOf_ForceMissile.jobString>Делает Заклинание Чародея: Силовые снаряды.</Make_SpellOf_ForceMissile.jobString>
+  <Make_SpellOf_FlashHeal.label>Сделать Заклинание Жреца: Мгновенное исцеление</Make_SpellOf_FlashHeal.label>
+  <Make_SpellOf_FlashHeal.description>Сделать Заклинание Жреца: Мгновенное исцеление.</Make_SpellOf_FlashHeal.description>
+  <Make_SpellOf_FlashHeal.jobString>Делает Заклинание Жреца: Мгновенное исцеление.</Make_SpellOf_FlashHeal.jobString>
+  <Make_SkillOf_ElusiveJump.label>Сделать Навык Драгуна: Неуловимый прыжок</Make_SkillOf_ElusiveJump.label>
+  <Make_SkillOf_ElusiveJump.description>Сделать Навык Драгуна: Неуловимый прыжок.</Make_SkillOf_ElusiveJump.description>
+  <Make_SkillOf_ElusiveJump.jobString>Делает Навык Драгуна: Неуловимый прыжок.</Make_SkillOf_ElusiveJump.jobString>
+  <Make_SkillOf_BloodOfTheDragon.label>Сделать Навык Драгуна: Кровь дракона</Make_SkillOf_BloodOfTheDragon.label>
+  <Make_SkillOf_BloodOfTheDragon.description>Сделать Навык Драгуна: Кровь дракона.</Make_SkillOf_BloodOfTheDragon.description>
+  <Make_SkillOf_BloodOfTheDragon.jobString>Делает Навык Драгуна: Кровь дракона.</Make_SkillOf_BloodOfTheDragon.jobString>
+  <Make_SkillOf_Stardiver.label>Сделать Навык Драгуна: Стардайвер</Make_SkillOf_Stardiver.label>
+  <Make_SkillOf_Stardiver.description>Сделать Навык Драгуна: Стардайвер.</Make_SkillOf_Stardiver.description>
+  <Make_SkillOf_Stardiver.jobString>Делает Навык Драгуна: Стардайвер.</Make_SkillOf_Stardiver.jobString>
+  <Make_SpellOf_AetherialManipulation.label>Сделать Заклинание Черного Мага: Манипуляция эфиром</Make_SpellOf_AetherialManipulation.label>
+  <Make_SpellOf_AetherialManipulation.description>Сделать Заклинание Черного Мага: Манипуляция эфиром.</Make_SpellOf_AetherialManipulation.description>
+  <Make_SpellOf_AetherialManipulation.jobString>Делает Заклинание Черного Мага: Манипуляция эфиром.</Make_SpellOf_AetherialManipulation.jobString>
+  <Make_SpellOf_Manaward.label>Сделать Заклинание Черного Мага: Щит маны</Make_SpellOf_Manaward.label>
+  <Make_SpellOf_Manaward.description>Сделать Заклинание Черного Мага: Щит маны.</Make_SpellOf_Manaward.description>
+  <Make_SpellOf_Manaward.jobString>Делает Заклинание Черного Мага: Щит маны.</Make_SpellOf_Manaward.jobString>
+  <Make_SpellOf_Despair.label>Сделать Заклинание Черного Мага: Отчаяние</Make_SpellOf_Despair.label>
+  <Make_SpellOf_Despair.description>Сделать Заклинание Черного Мага: Отчаяние.</Make_SpellOf_Despair.description>
+  <Make_SpellOf_Despair.jobString>Делает Заклинание Черного Мага: Отчаяние.</Make_SpellOf_Despair.jobString>
+  <Make_SpellOf_Sharpcast.label>Сделать Заклинание Черного Мага: Подготовка</Make_SpellOf_Sharpcast.label>
+  <Make_SpellOf_Sharpcast.description>Сделать Заклинание Черного Мага: Подготовка.</Make_SpellOf_Sharpcast.description>
+  <Make_SpellOf_Sharpcast.jobString>Делает Заклинание Черного Мага: Подготовка.</Make_SpellOf_Sharpcast.jobString>
+  <Make_SpellOf_Xenoglossy.label>Сделать Заклинание Черного Мага: Ксеноглоссия</Make_SpellOf_Xenoglossy.label>
+  <Make_SpellOf_Xenoglossy.description>Сделать Заклинание Черного Мага: Ксеноглоссия.</Make_SpellOf_Xenoglossy.description>
+  <Make_SpellOf_Xenoglossy.jobString>Делает Заклинание Черного Мага: Ксеноглоссия.</Make_SpellOf_Xenoglossy.jobString>
+  <Make_SpellOf_ContreSixte.label>Сделать Заклинание Красного мага: Контре Сиксте</Make_SpellOf_ContreSixte.label>
+  <Make_SpellOf_ContreSixte.description>Сделать Заклинание Красного мага: Контре Сиксте.</Make_SpellOf_ContreSixte.description>
+  <Make_SpellOf_ContreSixte.jobString>Делает Заклинание Красного мага: Контре Сиксте.</Make_SpellOf_ContreSixte.jobString>
+  <Make_SkillOf_Pickpocket.label>Сделать Навык Похитителя заклинаний: Карманная кража</Make_SkillOf_Pickpocket.label>
+  <Make_SkillOf_Pickpocket.description>Сделать Навык Похитителя заклинаний: Карманная кража.</Make_SkillOf_Pickpocket.description>
+  <Make_SkillOf_Pickpocket.jobString>Делает Навык Похитителя заклинаний: Карманная кража.</Make_SkillOf_Pickpocket.jobString>
+  <Make_SpellOf_FeyBlessing.label>Сделать Заклинание Школяра: Благословение Фей</Make_SpellOf_FeyBlessing.label>
+  <Make_SpellOf_FeyBlessing.description>Сделать Заклинание Школяра: Благословение Фей.</Make_SpellOf_FeyBlessing.description>
+  <Make_SpellOf_FeyBlessing.jobString>Делает Заклинание Школяра: Благословение Фей.</Make_SpellOf_FeyBlessing.jobString>
+  <Make_SpellOf_GuidingLight.label>Сделать Заклинание Школяра: Напрявляющий Свет</Make_SpellOf_GuidingLight.label>
+  <Make_SpellOf_GuidingLight.description>Сделать Заклинание Школяра: Напрявляющий Свет.</Make_SpellOf_GuidingLight.description>
+  <Make_SpellOf_GuidingLight.jobString>Делает Заклинание Школяра: Напрявляющий Свет.</Make_SpellOf_GuidingLight.jobString>
+  <Make_SkillOf_RoughDivide.label>Сделать Навык Ганбрейкера: Эфирный зов</Make_SkillOf_RoughDivide.label>
+  <Make_SkillOf_RoughDivide.description>Сделать Навык Ганбрейкера: Эфирный зов.</Make_SkillOf_RoughDivide.description>
+  <Make_SkillOf_RoughDivide.jobString>Делает Навык Ганбрейкера: Эфирный зов.</Make_SkillOf_RoughDivide.jobString>
+  <Make_SkillOf_Continuation.label>Сделать Навык Ганбрейкера: Продолжение</Make_SkillOf_Continuation.label>
+  <Make_SkillOf_Continuation.description>Сделать Навык Ганбрейкера: Продолжение.</Make_SkillOf_Continuation.description>
+  <Make_SkillOf_Continuation.jobString>Делает Навык Ганбрейкера: Продолжение.</Make_SkillOf_Continuation.jobString>
+  <Make_SkillOf_Superbolide.label>Сделать Навык Ганбрейкера: Суперболид</Make_SkillOf_Superbolide.label>
+  <Make_SkillOf_Superbolide.description>Сделать Навык Ганбрейкера: Суперболид.</Make_SkillOf_Superbolide.description>
+  <Make_SkillOf_Superbolide.jobString>Делает Навык Ганбрейкера: Суперболид.</Make_SkillOf_Superbolide.jobString>
+  <Make_SkillOf_HeadGraze.label>Сделать Навык Тяжелого стрелка: Касательный в голову</Make_SkillOf_HeadGraze.label>
+  <Make_SkillOf_HeadGraze.description>Сделать Навык Тяжелого стрелка: Касательный в голову.</Make_SkillOf_HeadGraze.description>
+  <Make_SkillOf_HeadGraze.jobString>Делает Навык Тяжелого стрелка: Касательный в голову.</Make_SkillOf_HeadGraze.jobString>
+  <Make_SkillOf_NaniteShot.label>Сделать Навык Тяжелого стрелка: Выстрел нанитами</Make_SkillOf_NaniteShot.label>
+  <Make_SkillOf_NaniteShot.description>Сделать Навык Тяжелого стрелка: Выстрел нанитами.</Make_SkillOf_NaniteShot.description>
+  <Make_SkillOf_NaniteShot.jobString>Делает Навык Тяжелого стрелка: Выстрел нанитами.</Make_SkillOf_NaniteShot.jobString>
+  <Make_SkillOf_CleanReload.label>Сделать Навык Тяжелого стрелка: Искусная перезарядка</Make_SkillOf_CleanReload.label>
+  <Make_SkillOf_CleanReload.description>Сделать Навык Тяжелого стрелка: Искусная перезарядка.</Make_SkillOf_CleanReload.description>
+  <Make_SkillOf_CleanReload.jobString>Делает Навык Тяжелого стрелка: Искусная перезарядка.</Make_SkillOf_CleanReload.jobString>
+  <Make_SkillOf_FlameSplitter.label>Сделать Навык Тяжелого стрелка: Разделитель пламени</Make_SkillOf_FlameSplitter.label>
+  <Make_SkillOf_FlameSplitter.description>Сделать Навык Тяжелого стрелка: Разделитель пламени.</Make_SkillOf_FlameSplitter.description>
+  <Make_SkillOf_FlameSplitter.jobString>Делает Навык Тяжелого стрелка: Разделитель пламени.</Make_SkillOf_FlameSplitter.jobString>
+  <Make_SkillOf_BarrelStabilizer.label>Сделать Навык Тяжелого стрелка: Стабилизация стволов</Make_SkillOf_BarrelStabilizer.label>
+  <Make_SkillOf_BarrelStabilizer.description>Сделать Навык Тяжелого стрелка: Стабилизация стволов.</Make_SkillOf_BarrelStabilizer.description>
+  <Make_SkillOf_BarrelStabilizer.jobString>Делает Навык Тяжелого стрелка: Стабилизация стволов.</Make_SkillOf_BarrelStabilizer.jobString>
+  <Make_SkillOf_OpeningRitual.label>Сделать Навык Рыцаря Смерти: Ритуал вскрытия</Make_SkillOf_OpeningRitual.label>
+  <Make_SkillOf_OpeningRitual.description>Сделать Навык Рыцаря Смерти: Ритуал вскрытия.</Make_SkillOf_OpeningRitual.description>
+  <Make_SkillOf_OpeningRitual.jobString>Делает Навык Рыцаря Смерти: Ритуал вскрытия.</Make_SkillOf_OpeningRitual.jobString>
+  <Make_SkillOf_DarkGrasp.label>Сделать Навык Рыцаря Смерти: Темная хватка</Make_SkillOf_DarkGrasp.label>
+  <Make_SkillOf_DarkGrasp.description>Сделать Навык Рыцаря Смерти: Темная хватка.</Make_SkillOf_DarkGrasp.description>
+  <Make_SkillOf_DarkGrasp.jobString>Делает Навык Рыцаря Смерти: Темная хватка.</Make_SkillOf_DarkGrasp.jobString>
+  <Make_SkillOf_AbyssalDrain.label>Сделать Навык Рыцаря Смерти: Иссушение бездны</Make_SkillOf_AbyssalDrain.label>
+  <Make_SkillOf_AbyssalDrain.description>Сделать Навык Рыцаря Смерти: Иссушение бездны.</Make_SkillOf_AbyssalDrain.description>
+  <Make_SkillOf_AbyssalDrain.jobString>Делает Навык Рыцаря Смерти: Иссушение бездны.</Make_SkillOf_AbyssalDrain.jobString>
+  <Make_SkillOf_TheBlackestNight.label>Сделать Навык Рыцаря Смерти: Темнейшая ночь</Make_SkillOf_TheBlackestNight.label>
+  <Make_SkillOf_TheBlackestNight.description>Сделать Навык Рыцаря Смерти: Темнейшая ночь.</Make_SkillOf_TheBlackestNight.description>
+  <Make_SkillOf_TheBlackestNight.jobString>Делает Навык Рыцаря Смерти: Темнейшая ночь.</Make_SkillOf_TheBlackestNight.jobString>
+  <Make_SkillOf_WhistlingWind.label>Сделать Навык Монаха: Рассекая ветер</Make_SkillOf_WhistlingWind.label>
+  <Make_SkillOf_WhistlingWind.description>Сделать Навык Монаха: Рассекая ветер.</Make_SkillOf_WhistlingWind.description>
+  <Make_SkillOf_WhistlingWind.jobString>Делает Навык Монаха: Рассекая ветер.</Make_SkillOf_WhistlingWind.jobString>
+  <Make_SkillOf_SkirmishersShot.label>Сделать Навык Кочевника: Выстрел застрельщика</Make_SkillOf_SkirmishersShot.label>
+  <Make_SkillOf_SkirmishersShot.description>Сделать Навык Кочевника: Выстрел застрельщика.</Make_SkillOf_SkirmishersShot.description>
+  <Make_SkillOf_SkirmishersShot.jobString>Делает Навык Кочевника: Выстрел застрельщика.</Make_SkillOf_SkirmishersShot.jobString>
+  <Make_SkillOf_RiddleOfFlame.label>Сделать Навык Кочевника/Страйкера: Грохот Пламени</Make_SkillOf_RiddleOfFlame.label>
+  <Make_SkillOf_RiddleOfFlame.description>Сделать Навык Кочевника/Страйкера: Грохот Пламени.</Make_SkillOf_RiddleOfFlame.description>
+  <Make_SkillOf_RiddleOfFlame.jobString>Делает Навык Кочевника/Страйкера: Грохот Пламени.</Make_SkillOf_RiddleOfFlame.jobString>
+  <Make_SkillOf_LightArrow.label>Сделать Навык Кочевника: Стрела света</Make_SkillOf_LightArrow.label>
+  <Make_SkillOf_LightArrow.description>Сделать Навык Кочевника: Стрела света.</Make_SkillOf_LightArrow.description>
+  <Make_SkillOf_LightArrow.jobString>Делает Навык Кочевника: Стрела света.</Make_SkillOf_LightArrow.jobString>
+  <Make_SkillOf_HowlingFist.label>Сделать Навык Страйкера: Воющий кулак</Make_SkillOf_HowlingFist.label>
+  <Make_SkillOf_HowlingFist.description>Сделать Навык Страйкера: Воющий кулак.</Make_SkillOf_HowlingFist.description>
+  <Make_SkillOf_HowlingFist.jobString>Делает Навык Страйкера: Воющий кулак.</Make_SkillOf_HowlingFist.jobString>
+  <Make_SkillOf_Rockbreaker.label>Сделать Навык Страйкера: Камнедробитель</Make_SkillOf_Rockbreaker.label>
+  <Make_SkillOf_Rockbreaker.description>Сделать Навык Страйкера: Камнедробитель.</Make_SkillOf_Rockbreaker.description>
+  <Make_SkillOf_Rockbreaker.jobString>Делает Навык Страйкера: Камнедробитель.</Make_SkillOf_Rockbreaker.jobString>
+  <Make_SkillOf_Sheltron.label>Сделать Навык Паладина/Воителя: Шелтрон</Make_SkillOf_Sheltron.label>
+  <Make_SkillOf_Sheltron.description>Сделать Навык Паладина/Воителя: Шелтрон.</Make_SkillOf_Sheltron.description>
+  <Make_SkillOf_Sheltron.jobString>Делает Навык Паладина/Воителя: Шелтрон.</Make_SkillOf_Sheltron.jobString>
+  <Make_SkillOf_Onslaught.label>Сделать Навыки Воителя: Натиск</Make_SkillOf_Onslaught.label>
+  <Make_SkillOf_Onslaught.description>Сделать Навыки Воителя: Натиск.</Make_SkillOf_Onslaught.description>
+  <Make_SkillOf_Onslaught.jobString>Делает Навыки Воителя: Натиск.</Make_SkillOf_Onslaught.jobString>
+  <Make_SkillOf_InfuriateW.label>Сделать Навыки Воителя: Разъярение</Make_SkillOf_InfuriateW.label>
+  <Make_SkillOf_InfuriateW.description>Сделать Навыки Воителя: Разъярение.</Make_SkillOf_InfuriateW.description>
+  <Make_SkillOf_InfuriateW.jobString>Делает Навыки Воителя: Разъярение.</Make_SkillOf_InfuriateW.jobString>
+  <Make_SkillOf_InnerChaos.label>Сделать Навыки Воителя: Внутренний хаос</Make_SkillOf_InnerChaos.label>
+  <Make_SkillOf_InnerChaos.description>Сделать Навыки Воителя: Внутренний хаос.</Make_SkillOf_InnerChaos.description>
+  <Make_SkillOf_InnerChaos.jobString>Делает Навыки Воителя: Внутренний хаос.</Make_SkillOf_InnerChaos.jobString>
+  <Make_SkillOf_ShakeItOff.label>Сделать Навыки Воителя: Преодоление</Make_SkillOf_ShakeItOff.label>
+  <Make_SkillOf_ShakeItOff.description>Сделать Навыки Воителя: Преодоление.</Make_SkillOf_ShakeItOff.description>
+  <Make_SkillOf_ShakeItOff.jobString>Делает Навыки Воителя: Преодоление.</Make_SkillOf_ShakeItOff.jobString>
+  <Make_SkillOf_TemperedWill.label>Сделать Навык Стража: Закаленная воля</Make_SkillOf_TemperedWill.label>
+  <Make_SkillOf_TemperedWill.description>Сделать Навык Стража: Закаленная воля.</Make_SkillOf_TemperedWill.description>
+  <Make_SkillOf_TemperedWill.jobString>Делает Навык Стража: Закаленная воля.</Make_SkillOf_TemperedWill.jobString>
+  <Make_SkillOf_Confiteor.label>Сделать Навык Стража: Конфитеор</Make_SkillOf_Confiteor.label>
+  <Make_SkillOf_Confiteor.description>Сделать Навык Стража: Конфитеор.</Make_SkillOf_Confiteor.description>
+  <Make_SkillOf_Confiteor.jobString>Делает Навык Стража: Конфитеор.</Make_SkillOf_Confiteor.jobString>
+  <Make_SpellOf_CircleOfScorn.label>Сделать Заклинание Стража: Круг презрения</Make_SpellOf_CircleOfScorn.label>
+  <Make_SpellOf_CircleOfScorn.description>Сделать Заклинание Стража: Круг презрения.</Make_SpellOf_CircleOfScorn.description>
+  <Make_SpellOf_CircleOfScorn.jobString>Делает Заклинание Стража: Круг презрения.</Make_SpellOf_CircleOfScorn.jobString>
+  <Make_SkillOf_CoolantBlast.label>Сделать Навык Голокузнеца: Охлаждающая жидкость</Make_SkillOf_CoolantBlast.label>
+  <Make_SkillOf_CoolantBlast.description>Сделать Навык Голокузнеца: Охлаждающая жидкость.</Make_SkillOf_CoolantBlast.description>
+  <Make_SkillOf_CoolantBlast.jobString>Делает Навык Голокузнеца: Охлаждающая жидкость.</Make_SkillOf_CoolantBlast.jobString>
+  <Make_SkillOf_ColdOpen.label>Сделать Навык Голокузнеца: Холодное открытие</Make_SkillOf_ColdOpen.label>
+  <Make_SkillOf_ColdOpen.description>Сделать Навык Голокузнеца: Холодное открытие.</Make_SkillOf_ColdOpen.description>
+  <Make_SkillOf_ColdOpen.jobString>Делает Навык Голокузнеца: Холодное открытие.</Make_SkillOf_ColdOpen.jobString>
+  <Make_SkillOf_PhotonWall.label>Сделать Навык Голокузнеца: Фотонный барьер</Make_SkillOf_PhotonWall.label>
+  <Make_SkillOf_PhotonWall.description>Сделать Навык Голокузнеца: Фотонный барьер.</Make_SkillOf_PhotonWall.description>
+  <Make_SkillOf_PhotonWall.jobString>Делает Навык Голокузнеца: Фотонный барьер.</Make_SkillOf_PhotonWall.jobString>
+  <Make_SkillOf_PrimeLightCannon.label>Сделать Навык Голокузнеца: Световая Пушка</Make_SkillOf_PrimeLightCannon.label>
+  <Make_SkillOf_PrimeLightCannon.description>Сделать Навык Голокузнеца: Световая Пушка.</Make_SkillOf_PrimeLightCannon.description>
+  <Make_SkillOf_PrimeLightCannon.jobString>Делает Навык Голокузнеца: Световая Пушка.</Make_SkillOf_PrimeLightCannon.jobString>
+  <Make_SkillOf_EmpyrealArrow.label>Сделать Навык Трубадура: Небесная стрела</Make_SkillOf_EmpyrealArrow.label>
+  <Make_SkillOf_EmpyrealArrow.description>Сделать Навык Трубадура: Небесная стрела.</Make_SkillOf_EmpyrealArrow.description>
+  <Make_SkillOf_EmpyrealArrow.jobString>Делает Навык Трубадура: Небесная стрела.</Make_SkillOf_EmpyrealArrow.jobString>
+  <Make_SkillOf_Swiftsong.label>Сделать Навык Трубадура: Баллада стремительности</Make_SkillOf_Swiftsong.label>
+  <Make_SkillOf_Swiftsong.description>Сделать Навык Трубадура: Баллада стремительности.</Make_SkillOf_Swiftsong.description>
+  <Make_SkillOf_Swiftsong.jobString>Делает Навык Трубадура: Баллада стремительности.</Make_SkillOf_Swiftsong.jobString>
+  <Make_SpellOf_WardensPaean.label>Сделать Заклинание Трубадура: Баллада стража</Make_SpellOf_WardensPaean.label>
+  <Make_SpellOf_WardensPaean.description>Сделать Заклинание Трубадура: Баллада стража.</Make_SpellOf_WardensPaean.description>
+  <Make_SpellOf_WardensPaean.jobString>Делает Заклинание Трубадура: Баллада стража.</Make_SpellOf_WardensPaean.jobString>
+  <Make_SpellOf_Impromptu.label>Сделать Заклинание Трубадура: Экспромт</Make_SpellOf_Impromptu.label>
+  <Make_SpellOf_Impromptu.description>Сделать Заклинание Трубадура: Экспромт.</Make_SpellOf_Impromptu.description>
+  <Make_SpellOf_Impromptu.jobString>Делает Заклинание Трубадура: Экспромт.</Make_SpellOf_Impromptu.jobString>
+  <Make_SkillOf_BurstShot.label>Сделать Навык Трубадура: Разрывной выстрел</Make_SkillOf_BurstShot.label>
+  <Make_SkillOf_BurstShot.description>Сделать Навык Трубадура: Разрывной выстрел.</Make_SkillOf_BurstShot.description>
+  <Make_SkillOf_BurstShot.jobString>Делает Навык Трубадура: Разрывной выстрел.</Make_SkillOf_BurstShot.jobString>
+  <Make_SkillOf_MiserysEnd.label>Сделать Навык Трубадура: Мучительный конец</Make_SkillOf_MiserysEnd.label>
+  <Make_SkillOf_MiserysEnd.description>Сделать Навык Трубадура: Мучительный конец.</Make_SkillOf_MiserysEnd.description>
+  <Make_SkillOf_MiserysEnd.jobString>Делает Навык Трубадура: Мучительный конец.</Make_SkillOf_MiserysEnd.jobString>
+  <Make_SkillOf_ApexArrow.label>Сделать Навык Трубадура: Звенящая стрела</Make_SkillOf_ApexArrow.label>
+  <Make_SkillOf_ApexArrow.description>Сделать Навык Трубадура: Звенящая стрела.</Make_SkillOf_ApexArrow.description>
+  <Make_SkillOf_ApexArrow.jobString>Делает Навык Трубадура: Звенящая стрела.</Make_SkillOf_ApexArrow.jobString>
+  <Make_SpellOf_Destiny.label>Сделать Заклинание Картежника: Судьба</Make_SpellOf_Destiny.label>
+  <Make_SpellOf_Destiny.description>Сделать Заклинание Картежника: Судьба.</Make_SpellOf_Destiny.description>
+  <Make_SpellOf_Destiny.jobString>Делает Заклинание Картежника: Судьба.</Make_SpellOf_Destiny.jobString>
+  <Make_SkillOf_RoyalRoad.label>Сделать Навык Картежника: Королевская дорога</Make_SkillOf_RoyalRoad.label>
+  <Make_SkillOf_RoyalRoad.description>Сделать Навык Картежника: Королевская дорога.</Make_SkillOf_RoyalRoad.description>
+  <Make_SkillOf_RoyalRoad.jobString>Делает Навык Картежника: Королевская дорога.</Make_SkillOf_RoyalRoad.jobString>
+  <Make_SkillOf_DeckBlast.label>Сделать Навык Картежника: Взрыв колоды</Make_SkillOf_DeckBlast.label>
+  <Make_SkillOf_DeckBlast.description>Сделать Навык Картежника: Взрыв колоды.</Make_SkillOf_DeckBlast.description>
+  <Make_SkillOf_DeckBlast.jobString>Делает Навык Картежника: Взрыв колоды.</Make_SkillOf_DeckBlast.jobString>
+  <Make_SpellOf_SleeveDraw.label>Сделать Заклинание Картежника: Карта из рукава</Make_SpellOf_SleeveDraw.label>
+  <Make_SpellOf_SleeveDraw.description>Сделать Заклинание Картежника: Карта из рукава.</Make_SpellOf_SleeveDraw.description>
+  <Make_SpellOf_SleeveDraw.jobString>Делает Заклинание Картежника: Карта из рукава.</Make_SpellOf_SleeveDraw.jobString>
+  <Make_SkillOf_OldHeadlight.label>Сделать Навык Гаджетера/Рудокопа: Старый Прожектор</Make_SkillOf_OldHeadlight.label>
+  <Make_SkillOf_OldHeadlight.description>Сделать Навык Гаджетера/Рудокопа: Старый Прожектор.</Make_SkillOf_OldHeadlight.description>
+  <Make_SkillOf_OldHeadlight.jobString>Делает Навык Гаджетера/Рудокопа: Старый Прожектор.</Make_SkillOf_OldHeadlight.jobString>
+  <Make_SkillOf_CollapsingColumn.label>Сделать Навык Рудокопа: Обрушающаяся колонна</Make_SkillOf_CollapsingColumn.label>
+  <Make_SkillOf_CollapsingColumn.description>Сделать Навык Рудокопа: Обрушающаяся колонна.</Make_SkillOf_CollapsingColumn.description>
+  <Make_SkillOf_CollapsingColumn.jobString>Делает Навык Рудокопа: Обрушающаяся колонна.</Make_SkillOf_CollapsingColumn.jobString>
+  <Make_SkillOf_TruthOfMountains.label>Сделать Навык Рудокопа: Правда гор</Make_SkillOf_TruthOfMountains.label>
+  <Make_SkillOf_TruthOfMountains.description>Сделать Навык Рудокопа: Правда гор.</Make_SkillOf_TruthOfMountains.description>
+  <Make_SkillOf_TruthOfMountains.jobString>Делает Навык Рудокопа: Правда гор.</Make_SkillOf_TruthOfMountains.jobString>
+  <Make_SkillOf_RuneOfLightning.label>Сделать Навык Рудокопа: Руна молний</Make_SkillOf_RuneOfLightning.label>
+  <Make_SkillOf_RuneOfLightning.description>Сделать Навык Рудокопа: Руна молний.</Make_SkillOf_RuneOfLightning.description>
+  <Make_SkillOf_RuneOfLightning.jobString>Делает Навык Рудокопа: Руна молний.</Make_SkillOf_RuneOfLightning.jobString>
+  <Make_SkillOf_ProximityCharge.label>Сделать Навык Мастера засад: Контактная мина</Make_SkillOf_ProximityCharge.label>
+  <Make_SkillOf_ProximityCharge.description>Сделать Навык Мастера засад: Контактная мина.</Make_SkillOf_ProximityCharge.description>
+  <Make_SkillOf_ProximityCharge.jobString>Делает Навык Мастера засад: Контактная мина.</Make_SkillOf_ProximityCharge.jobString>
+  <Make_SkillOf_AmbusherPoisonTrap.label>Сделать Навык Мастера засад: Ядовитая ловушка</Make_SkillOf_AmbusherPoisonTrap.label>
+  <Make_SkillOf_AmbusherPoisonTrap.description>Сделать Навык Мастера засад: Ядовитая ловушка.</Make_SkillOf_AmbusherPoisonTrap.description>
+  <Make_SkillOf_AmbusherPoisonTrap.jobString>Делает Навык Мастера засад: Ядовитая ловушка.</Make_SkillOf_AmbusherPoisonTrap.jobString>
+  <Make_SkillOf_TheBigOne.label>Сделать Навык Рудокопа/Мастера засад: Большая Бомба</Make_SkillOf_TheBigOne.label>
+  <Make_SkillOf_TheBigOne.description>Сделать Навык Рудокопа/Мастера засад: Большая Бомба.</Make_SkillOf_TheBigOne.description>
+  <Make_SkillOf_TheBigOne.jobString>Делает Навык Рудокопа/Мастера засад: Большая Бомба.</Make_SkillOf_TheBigOne.jobString>
+  <Make_SkillOf_Ambush.label>Сделать Навык Мастера засад: Засада</Make_SkillOf_Ambush.label>
+  <Make_SkillOf_Ambush.description>Сделать Навык Мастера засад: Засада.</Make_SkillOf_Ambush.description>
+  <Make_SkillOf_Ambush.jobString>Делает Навык Мастера засад: Засада.</Make_SkillOf_Ambush.jobString>
+  <Make_SkillOf_StiflingWinds.label>Сделать Навык Разрушителя чар: Удушающий ветер</Make_SkillOf_StiflingWinds.label>
+  <Make_SkillOf_StiflingWinds.description>Сделать Навык Разрушителя чар: Удушающий ветер.</Make_SkillOf_StiflingWinds.description>
+  <Make_SkillOf_StiflingWinds.jobString>Делает Навык Разрушителя чар: Удушающий ветер.</Make_SkillOf_StiflingWinds.jobString>
+  <Make_SpellOf_UnstableSingularity.label>Сделать Заклинание Хрономансера: Нестабильная сингулярность</Make_SpellOf_UnstableSingularity.label>
+  <Make_SpellOf_UnstableSingularity.description>Сделать Заклинание Хрономансера: Нестабильная сингулярность.</Make_SpellOf_UnstableSingularity.description>
+  <Make_SpellOf_UnstableSingularity.jobString>Делает Заклинание Хрономансера: Нестабильная сингулярность.</Make_SpellOf_UnstableSingularity.jobString>
+  <Make_SpellOf_Erase.label>Сделать Заклинание Мага: Стирание</Make_SpellOf_Erase.label>
+  <Make_SpellOf_Erase.description>Сделать Заклинание Мага: Стирание.</Make_SpellOf_Erase.description>
+  <Make_SpellOf_Erase.jobString>Делает Заклинание Мага: Стирание.</Make_SpellOf_Erase.jobString>
+  <Make_SkillOf_MartialTraining.label>сделать Навык Бойца: Боевая тренировка</Make_SkillOf_MartialTraining.label>
+  <Make_SkillOf_MartialTraining.description>Сделать Навык Бойца: Боевая тренировка.</Make_SkillOf_MartialTraining.description>
+  <Make_SkillOf_MartialTraining.jobString>Делает Навык Бойца: Боевая тренировка.</Make_SkillOf_MartialTraining.jobString>
+  <Make_SpellOf_MagicTraining.label>Сделать Заклинание Мага: Магическая тренировка</Make_SpellOf_MagicTraining.label>
+  <Make_SpellOf_MagicTraining.description>Сделать Заклинание Мага: Магическая тренировка.</Make_SpellOf_MagicTraining.description>
+  <Make_SpellOf_MagicTraining.jobString>Делает Заклинание Мага: Магическая тренировка.</Make_SpellOf_MagicTraining.jobString>
+  <Make_SpellOf_Reflect.label>Сделать Заклинание Рунного Рыцаря: Отражение</Make_SpellOf_Reflect.label>
+  <Make_SpellOf_Reflect.description>Сделать Заклинание Рунного Рыцаря: Отражение.</Make_SpellOf_Reflect.description>
+  <Make_SpellOf_Reflect.jobString>Делает Заклинание Рунного Рыцаря: Отражение.</Make_SpellOf_Reflect.jobString>
+  <Make_SpellOf_Balefire.label>Сделать Заклинание Рунного Рыцаря: Гибельное Пламя</Make_SpellOf_Balefire.label>
+  <Make_SpellOf_Balefire.description>Сделать Заклинание Рунного Рыцаря: Гибельное Пламя.</Make_SpellOf_Balefire.description>
+  <Make_SpellOf_Balefire.jobString>Делает Заклинание Рунного Рыцаря: Гибельное Пламя.</Make_SpellOf_Balefire.jobString>
+  <Make_SkillOf_Bladestorm.label>Сделать Навык Цветущего клинка: Шторм клинков</Make_SkillOf_Bladestorm.label>
+  <Make_SkillOf_Bladestorm.description>Сделать Навык Цветущего клинка: Шторм клинков.</Make_SkillOf_Bladestorm.description>
+  <Make_SkillOf_Bladestorm.jobString>Делает Навык Цветущего клинка: Шторм клинков.</Make_SkillOf_Bladestorm.jobString>
+  <Make_SkillOf_FallenLeaf.label>Сделать Навык Цветущего клинка: Опавший лист</Make_SkillOf_FallenLeaf.label>
+  <Make_SkillOf_FallenLeaf.description>Сделать Навык Цветущего клинка: Опавший лист.</Make_SkillOf_FallenLeaf.description>
+  <Make_SkillOf_FallenLeaf.jobString>Делает Навык Цветущего клинка: Опавший лист.</Make_SkillOf_FallenLeaf.jobString>
+  <Make_SkillOf_SecondStomach.label>Сделать Навык Ненасытного: Второй желудок</Make_SkillOf_SecondStomach.label>
+  <Make_SkillOf_SecondStomach.description>Сделать Навык Ненасытного: Второй желудок.</Make_SkillOf_SecondStomach.description>
+  <Make_SkillOf_SecondStomach.jobString>Делает Навык Ненасытного: Второй желудок.</Make_SkillOf_SecondStomach.jobString>
+  <Make_SkillOf_ThroneOfGluttony.label>Сделать Навык Ненасытного: Престол Чревоугодия</Make_SkillOf_ThroneOfGluttony.label>
+  <Make_SkillOf_ThroneOfGluttony.description>Сделать Навык Ненасытного: Престол Чревоугодия.</Make_SkillOf_ThroneOfGluttony.description>
+  <Make_SkillOf_ThroneOfGluttony.jobString>Делает Навык Ненасытного: Престол Чревоугодия.</Make_SkillOf_ThroneOfGluttony.jobString>
+  <Make_SkillOf_LivingArtillery.label>Сделать Навык Ненасытного: Живая артиллерия</Make_SkillOf_LivingArtillery.label>
+  <Make_SkillOf_LivingArtillery.description>Сделать Навык Ненасытного: Живая артиллерия.</Make_SkillOf_LivingArtillery.description>
+  <Make_SkillOf_LivingArtillery.jobString>Делает Навык Ненасытного: Живая артиллерия.</Make_SkillOf_LivingArtillery.jobString>
+  <Make_SkillOf_Blackpowder.label>Сделать Навык Охотника на Мехов: Черный Порох</Make_SkillOf_Blackpowder.label>
+  <Make_SkillOf_Blackpowder.description>Сделать Навык Охотника на Мехов: Черный Порох.</Make_SkillOf_Blackpowder.description>
+  <Make_SkillOf_Blackpowder.jobString>Делает Навык Охотника на Мехов: Черный Порох.</Make_SkillOf_Blackpowder.jobString>
+  <Make_SkillOf_FinalSalvo.label>Сделать Навык Охотника на Мехов: Последний Залп</Make_SkillOf_FinalSalvo.label>
+  <Make_SkillOf_FinalSalvo.description>Сделать Навык Охотника на Мехов: Последний Залп.</Make_SkillOf_FinalSalvo.description>
+  <Make_SkillOf_FinalSalvo.jobString>Делает Навык Охотника на Мехов: Последний Залп.</Make_SkillOf_FinalSalvo.jobString>
+  <Make_SkillOf_OrbitalEMP.label>Сделать Навык Охотника на Мехов: ЭМИ Бомбардировка</Make_SkillOf_OrbitalEMP.label>
+  <Make_SkillOf_OrbitalEMP.description>Сделать Навык Охотника на Мехов: ЭМИ Бомбардировка.</Make_SkillOf_OrbitalEMP.description>
+  <Make_SkillOf_OrbitalEMP.jobString>Делает Навык Охотника на Мехов: ЭМИ Бомбардировка.</Make_SkillOf_OrbitalEMP.jobString>
+  <Make_SkillOf_CoverFire.label>Сделать Навык Мастера-стрелка: Прикрытие огнем</Make_SkillOf_CoverFire.label>
+  <Make_SkillOf_CoverFire.description>Сделать Навык Мастера-стрелка: Прикрытие огнем.</Make_SkillOf_CoverFire.description>
+  <Make_SkillOf_CoverFire.jobString>Делает Навык Мастера-стрелка: Прикрытие огнем.</Make_SkillOf_CoverFire.jobString>
+  <Make_SkillOf_Nanoseeker.label>Сделать Навык Мастера-стрелка: Наноискатель</Make_SkillOf_Nanoseeker.label>
+  <Make_SkillOf_Nanoseeker.description>Сделать Навык Мастера-стрелка: Наноискатель.</Make_SkillOf_Nanoseeker.description>
+  <Make_SkillOf_Nanoseeker.jobString>Делает Навык Мастера-стрелка: Наноискатель.</Make_SkillOf_Nanoseeker.jobString>
+  <Make_SkillOf_Gunflame.label>Сделать Навык Мастера-стрелка/Снайпера: Зажигательный выстрел</Make_SkillOf_Gunflame.label>
+  <Make_SkillOf_Gunflame.description>Сделать Навык Мастера-стрелка/Снайпера: Зажигательный выстрел.</Make_SkillOf_Gunflame.description>
+  <Make_SkillOf_Gunflame.jobString>Делает Навык Мастера-стрелка/Снайпера: Зажигательный выстрел.</Make_SkillOf_Gunflame.jobString>
+  <Make_SkillOf_Breakstep.label>Сделать Навык Мастера-стрелка: Инерционный прыжок</Make_SkillOf_Breakstep.label>
+  <Make_SkillOf_Breakstep.description>Сделать Навык Мастера-стрелка: Инерционный прыжок.</Make_SkillOf_Breakstep.description>
+  <Make_SkillOf_Breakstep.jobString>Делает Навык Мастера-стрелка: Инерционный прыжок.</Make_SkillOf_Breakstep.jobString>
+  <Make_SkillOf_Breachfire.label>Сделать Навык Мастера-стрелка: Разрушительный огонь</Make_SkillOf_Breachfire.label>
+  <Make_SkillOf_Breachfire.description>Сделать Навык Мастера-стрелка: Разрушительный огонь.</Make_SkillOf_Breachfire.description>
+  <Make_SkillOf_Breachfire.jobString>Делает Навык Мастера-стрелка: Разрушительный огонь.</Make_SkillOf_Breachfire.jobString>
+</LanguageData>

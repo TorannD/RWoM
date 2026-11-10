@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_CoreReturnUnavailable>El núcleo vinculado no está disponible, está desactivado o ya no te pertenece.</TM_CoreReturnUnavailable>
+  <TM_CoreReturnUnpaid>Las marcas están inactivas: el núcleo necesita magocombustible para mantenerlas.</TM_CoreReturnUnpaid>
+  <TM_CoreReturnRebindConfirm>¿Reemplazar la marca de retorno de {0} cuando llegue a este núcleo?</TM_CoreReturnRebindConfirm>
+  <TM_CoreReturnNoCandidates>No hay colonos aptos sin vincular a este núcleo en el mapa.</TM_CoreReturnNoCandidates>
+  <TM_CoreReturnConfirm>¿Devolver {0} peones a {2} por {1} de magocombustible? Su equipo y objetos viajarán con ellos.</TM_CoreReturnConfirm>
+  <TM_CoreReturnStranding>Advertencia: quedarán animales o prisioneros en la caravana sin un colono capaz.</TM_CoreReturnStranding>
+  <TM_CoreReturnMarkedOnly>Devolver solo a los marcados</TM_CoreReturnMarkedOnly>
+  <TM_CoreReturnIncludeCaravans>Incluir sus caravanas completas</TM_CoreReturnIncludeCaravans>
+  <TM_CoreReturnStatus>Marcas de retorno: {0}
+Mantenimiento: {1} de magocombustible/día
+Magocombustible disponible: {2}</TM_CoreReturnStatus>
+  <TM_CoreReturnMark>Marcar</TM_CoreReturnMark>
+  <TM_CoreReturnMarkDesc>Elige un colono para que se acerque al núcleo y reciba una marca de retorno. Cada marca consume 1 de magocombustible al día.</TM_CoreReturnMarkDesc>
+  <TM_CoreReturnAll>Devolver a todos</TM_CoreReturnAll>
+  <TM_CoreReturnAllDesc>Devuelve a los peones vinculados desde mapas y caravanas. Revisa el grupo y el coste antes de confirmar.</TM_CoreReturnAllDesc>
+  <TM_CoreReturnSingle>Volver al núcleo</TM_CoreReturnSingle>
+  <TM_CoreReturnSingleDesc>Devuelve a este peón con su inventario y los objetos que lleva. Coste: {0} de magocombustible.</TM_CoreReturnSingleDesc>
+  <TM_CoreReturnUnbind>Quitar marca</TM_CoreReturnUnbind>
+  <TM_CoreReturnUnbindDesc>Elimina el vínculo de este peón y su coste de mantenimiento.</TM_CoreReturnUnbindDesc>
+  <TM_CoreReturnUnbindConfirm>¿Quitar la marca de retorno de {0}?</TM_CoreReturnUnbindConfirm>
+  <TM_CoreReturnCaravan>Devolver toda la caravana</TM_CoreReturnCaravan>
+  <TM_CoreReturnCaravanDesc>Devuelve a todos los miembros, animales y prisioneros con su carga. Coste: {0} de magocombustible por miembro.</TM_CoreReturnCaravanDesc>
+  <TM_CoreReturnChanged>La selección ha cambiado. Revisa el retorno de nuevo.</TM_CoreReturnChanged>
+  <TM_CoreReturnBlockDowned>No se puede marcar ahora: incapacitado.</TM_CoreReturnBlockDowned>
+  <TM_CoreReturnBlockMental>No se puede marcar ahora: brote mental.</TM_CoreReturnBlockMental>
+  <TM_CoreReturnBlockCapacity>No se puede marcar ahora: no puede moverse.</TM_CoreReturnBlockCapacity>
+  <TM_CoreReturn_InvalidSelection>Un peón seleccionado ya no puede realizar este retorno.</TM_CoreReturn_InvalidSelection>
+  <TM_CoreReturn_AlreadyNear>Los peones seleccionados ya están cerca del núcleo.</TM_CoreReturn_AlreadyNear>
+  <TM_CoreReturn_NoLanding>No hay suficientes casillas libres y seguras cerca del núcleo.</TM_CoreReturn_NoLanding>
+  <TM_CoreReturn_NoFuel>No hay suficiente magocombustible conectado para todo el retorno.</TM_CoreReturn_NoFuel>
+  <TM_CoreReturn_Busy>Ya hay otro retorno o pago de combustible en curso.</TM_CoreReturn_Busy>
+  <TM_CoreReturn_Failed>El retorno ha fallado. Consulta los detalles de recuperación en el registro.</TM_CoreReturn_Failed>
+  <TM_CoreReturn_UnsupportedTransport>Las caravanas con una lanzadera no pueden volver al núcleo.</TM_CoreReturn_UnsupportedTransport>
+  <TM_CoreReturn_CarriedPawn>Deja en el suelo al peón que llevas antes de volver; los pasajeros deben contabilizarse por separado.</TM_CoreReturn_CarriedPawn>
+</LanguageData>

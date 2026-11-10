@@ -1,0 +1,118 @@
+<LanguageData><!-- v1.5\Defs\Ideology\Rituals\TM_Interactions_Speech.xml-->
+	<!--                    EN: sever magic speech-->
+	<TM_Speech_SeverMagic.label>разрыв магического потока</TM_Speech_SeverMagic.label>
+	<!-- EN:
+		<li>r_logentry->[INITIATOR_nameDef] [praised] [doing] [speechtopic].</li>
+		<li>r_logentry(p=0.2)->[INITIATOR_nameDef] [crazy].</li>
+		<li>speechtopic->magic</li>
+		<li>speechtopic->peace through power</li>
+		<li>speechtopic->mages</li>
+		<li>speechtopic->chaos</li>
+		<li>speechtopic->the temptation of power</li>
+		<li>speechtopic->magic and mages</li>
+		<li>speechtopic->the seduction of magic</li>
+		<li>speechtopic->an errant bio-genetic cancer</li>
+		<li>crazy->screamed maniacally</li>
+		<li>crazy->broke into a chant</li>
+		<li>crazy->chanted towards the heavens</li>
+		<li>crazy->spat in the mage's eye</li>
+		<li>crazy->cackled</li>
+		<li>crazy->brandished a blade</li>
+		<li>crazy->muttered repetitively</li>
+		<li>crazy->screamed in defiance</li>
+		<li>crazy->spasmed uncontrollably</li>
+		<li>doing->controlling</li>
+		<li>doing->balancing</li>
+		<li>doing->sacrificing</li>
+		<li>doing->removing the temptation</li>
+		<li>doing->manipulating</li>
+		<li>doing->freeing</li>
+		<li>doing->standing firm against</li>
+		<li>doing->rejecting</li>-->
+	<TM_Speech_SeverMagic.logRulesInitiator.rulesStrings><li>r_logentry-&gt;[INITIATOR_nameDef] [praised] [doing] [speechtopic].</li>
+		<li>r_logentry(p=0.2)-&gt;[INITIATOR_nameDef] [crazy].</li>
+		<li>speechtopic-&gt;магия</li>
+		<li>speechtopic-&gt;мир через силу</li>
+		<li>speechtopic-&gt;маги</li>
+		<li>speechtopic-&gt;хаос</li>
+		<li>speechtopic-&gt;искушение властью</li>
+		<li>speechtopic-&gt;магия и маги</li>
+		<li>speechtopic-&gt;соблазн магии</li>
+		<li>speechtopic-&gt;блуждающая биогенетическая чума</li>
+		<li>crazy-&gt;маниакально закричал(а)</li>
+		<li>crazy-&gt;начал(а) скандировать</li>
+		<li>crazy-&gt;воздел(а) голос к небесам</li>
+		<li>crazy-&gt;плюнул(а) магу в лицо</li>
+		<li>crazy-&gt;захихикал(а)</li>
+		<li>crazy-&gt;размахивал(а) клинком</li>
+		<li>crazy-&gt;бормотал(а) одно и то же</li>
+		<li>crazy-&gt;вскричал(а) в ярости</li>
+		<li>crazy-&gt;бился(лась) в конвульсиях</li>
+		<li>doing-&gt;контролировал(а)</li>
+		<li>doing-&gt;уравновешивал(а)</li>
+		<li>doing-&gt;жертвовал(а)</li>
+		<li>doing-&gt;искоренял(а) искушение</li>
+		<li>doing-&gt;манипулировал(а)</li>
+		<li>doing-&gt;освобождал(а)</li>
+		<li>doing-&gt;твёрдо противостоял(а)</li>
+		<li>doing-&gt;отвергал(а)</li>
+	</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings>
+	<!--                     EN: bestow magic speech-->
+	<TM_Speech_BestowMagic.label>дар магического потока</TM_Speech_BestowMagic.label>
+	<!-- EN:
+		<li>r_logentry->[INITIATOR_nameDef] [praised] [doing] [speechtopic].</li>
+		<li>r_logentry(p=0.2)->[INITIATOR_nameDef] [crazy].</li>
+		<li>speechtopic->magic</li>
+		<li>speechtopic->peace through power</li>
+		<li>speechtopic->mages</li>
+		<li>speechtopic->order</li>
+		<li>speechtopic->the power to protect</li>
+		<li>speechtopic->magic and mages</li>
+		<li>speechtopic->the blessings of magic</li>
+		<li>speechtopic->the next stage in human evolution</li>
+		<li>crazy->roared in victory</li>
+		<li>crazy->broke into a chant</li>
+		<li>crazy->chanted towards the heavens</li>
+		<li>crazy->placed a hand of assurance on the mage</li>
+		<li>crazy->smiled heroically</li>
+		<li>crazy->brandished a staff</li>
+		<li>crazy->murmured a mantra</li>
+		<li>crazy->offered a benediction</li>
+		<li>crazy->reached towards the heavens</li>
+		<li>doing->achieving</li>
+		<li>doing->learning</li>
+		<li>doing->understanding</li>
+		<li>doing->using</li>
+		<li>doing->protecting</li>
+		<li>doing->releasing</li>
+		<li>doing->supporting</li>
+		<li>doing->gaining</li>-->
+	<TM_Speech_BestowMagic.logRulesInitiator.rulesStrings><li>r_logentry-&gt;[INITIATOR_nameDef] [praised] [doing] [speechtopic].</li>
+		<li>r_logentry(p=0.2)-&gt;[INITIATOR_nameDef] [crazy].</li>
+		<li>speechtopic-&gt;магия</li>
+		<li>speechtopic-&gt;мир через силу</li>
+		<li>speechtopic-&gt;маги</li>
+		<li>speechtopic-&gt;порядок</li>
+		<li>speechtopic-&gt;сила защиты</li>
+		<li>speechtopic-&gt;магия и маги</li>
+		<li>speechtopic-&gt;благословение магии</li>
+		<li>speechtopic-&gt;следующий этап эволюции</li>
+		<li>crazy-&gt;вскричал(а) в победе</li>
+		<li>crazy-&gt;начал(а) скандировать</li>
+		<li>crazy-&gt;воздел(а) голос к небесам</li>
+		<li>crazy-&gt;ободряюще положил(а) руку на мага</li>
+		<li>crazy-&gt;героически улыбнулся(лась)</li>
+		<li>crazy-&gt;размахивал(а) посохом</li>
+		<li>crazy-&gt;прошептал(а) мантру</li>
+		<li>crazy-&gt;произнёс(ла) благословение</li>
+		<li>crazy-&gt;простёр(ла) руки к небу</li>
+		<li>doing-&gt;достигал(а)</li>
+		<li>doing-&gt;познавал(а)</li>
+		<li>doing-&gt;постигал(а)</li>
+		<li>doing-&gt;использовал(а)</li>
+		<li>doing-&gt;защищал(а)</li>
+		<li>doing-&gt;освобождал(а)</li>
+		<li>doing-&gt;поддерживал(а)</li>
+		<li>doing-&gt;обретал(а)</li>
+	</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings>
+</LanguageData>

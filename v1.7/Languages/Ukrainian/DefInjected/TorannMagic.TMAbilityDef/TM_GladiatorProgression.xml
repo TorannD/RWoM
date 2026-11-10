@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_GladiatorManeuver.label>маневр</TM_GladiatorManeuver.label>
+  <TM_GladiatorManeuver.description>Збільшує швидкість руху на 8% на 8 секунд.</TM_GladiatorManeuver.description>
+  <TM_GladiatorSweep.label>помах</TM_GladiatorSweep.label>
+  <TM_GladiatorSweep.description>Удар по сусідньому ворогу та ще одному поруч із ним. Кожен отримує 65% шкоди зброї.</TM_GladiatorSweep.description>
+</LanguageData>

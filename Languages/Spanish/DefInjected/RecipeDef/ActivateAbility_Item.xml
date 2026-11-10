@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <AdministerShardOfExtraction.label>administrar fragmento de extracción</AdministerShardOfExtraction.label>
+  
+  <AdministerShardOfExtraction.description>Extrae esencia marcial y arcana de un personaje. Es un objeto de un solo uso que elimina de forma permanente la clase del personaje y la convierte en esencia. La esencia puede consumirse para otorgar experiencia de clase. El fragmento se destruye tras el proceso de extracción.</AdministerShardOfExtraction.description>
+  
+  <AdministerShardOfExtraction.jobString>Usando fragmento de extracción</AdministerShardOfExtraction.jobString>
+  
+</LanguageData>

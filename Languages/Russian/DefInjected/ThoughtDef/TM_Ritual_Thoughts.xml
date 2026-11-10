@@ -1,0 +1,34 @@
+<LanguageData><!-- SEVER MAGIC-->
+	<TM_Botched_SeverMagicTD.stages.0.label>неудачный ритуал отсечения</TM_Botched_SeverMagicTD.stages.0.label>
+	<TM_Botched_SeverMagicTD.stages.0.description>Ритуал отсечения провалился и дал магу шанс нанести ответный удар.</TM_Botched_SeverMagicTD.stages.0.description>
+	<TM_Lethal_SeverMagicTD.stages.0.label>смертельный ритуал отсечения</TM_Lethal_SeverMagicTD.stages.0.label>
+	<TM_Lethal_SeverMagicTD.stages.0.description>В этом ритуале не было ни порядка, ни мастерства, и в итоге маг погиб.</TM_Lethal_SeverMagicTD.stages.0.description>
+	<TM_Success_SeverMagicTD.stages.0.label>успешный ритуал отсечения</TM_Success_SeverMagicTD.stages.0.label>
+	<TM_Success_SeverMagicTD.stages.0.description>Ритуал отсечения прошёл успешно, освободив нас от власти другого мага.</TM_Success_SeverMagicTD.stages.0.description>
+	<TM_Flawless_SeverMagicTD.stages.0.label>безупречный ритуал отсечения</TM_Flawless_SeverMagicTD.stages.0.label>
+	<TM_Flawless_SeverMagicTD.stages.0.description>Хор голосов, напряжение ритуала и выражение неизбежности на лице мага — ничто не смогло остановить наш священный поход!</TM_Flawless_SeverMagicTD.stages.0.description>
+	<TM_MagicSeverenceTD.stages.0.label>оторван(а) от магии</TM_MagicSeverenceTD.stages.0.label>
+	<TM_MagicSeverenceTD.stages.0.description>Я утратил(а) нечто, что прежде определяло меня. Внутри остались только пустота и отчаяние.</TM_MagicSeverenceTD.stages.0.description>
+	<TM_SeverMagic_ForApproveTD.stages.0.label>удалось разорвать магию</TM_SeverMagic_ForApproveTD.stages.0.label>
+	<TM_SeverMagic_ForApproveTD.stages.0.description>В нашей колонии был проведен ритуал, чтобы лишить мага магии; какой подлый и варварский акт.</TM_SeverMagic_ForApproveTD.stages.0.description>
+	<TM_SeverMagic_ForVeneratedTD.stages.0.label>удалось разорвать магию</TM_SeverMagic_ForVeneratedTD.stages.0.label>
+	<TM_SeverMagic_ForVeneratedTD.stages.0.description>В нашей колонии был проведен ритуал, чтобы лишить мага магии; этот отвратительный акт варварства противоречит всему, во что мы верим.</TM_SeverMagic_ForVeneratedTD.stages.0.description>
+	<!-- BESTOW MAGIC-->
+	<TM_Botched_BestowMagicTD.stages.0.label>неудачный ритуал дарения</TM_Botched_BestowMagicTD.stages.0.label>
+	<TM_Botched_BestowMagicTD.stages.0.description>Ритуал дарения был испорчен, и магическая искра так и не была передана.</TM_Botched_BestowMagicTD.stages.0.description>
+	<TM_Success_BestowMagicTD.stages.0.label>удачный ритуал дарения</TM_Success_BestowMagicTD.stages.0.label>
+	<TM_Success_BestowMagicTD.stages.0.description>Ритуал дарения успешно передал магическую искру.</TM_Success_BestowMagicTD.stages.0.description>
+	<TM_Flawless_BestowMagicTD.stages.0.label>просветленный ритуал дарения</TM_Flawless_BestowMagicTD.stages.0.label>
+	<TM_Flawless_BestowMagicTD.stages.0.description>Как будто небеса разверзлись, чтобы благословить ритуал, и хор голосов воспел славу нашего дела!</TM_Flawless_BestowMagicTD.stages.0.description>
+	<!-- BESTOW MAGIC CLASS-->
+	<TM_Poor_BestowMagicClassTD.stages.0.label>слабый ритуал тайного пути</TM_Poor_BestowMagicClassTD.stages.0.label>
+	<TM_Poor_BestowMagicClassTD.stages.0.description>Ритуал, направляющий мага к его тайному пути, вышел блеклым и невыразительным.</TM_Poor_BestowMagicClassTD.stages.0.description>
+	<TM_Moderate_BestowMagicClassTD.stages.0.label>успешный ритуал тайного пути</TM_Moderate_BestowMagicClassTD.stages.0.label>
+	<TM_Moderate_BestowMagicClassTD.stages.0.description>Ритуал тайного пути оказался обнадёживающим и захватывающим.</TM_Moderate_BestowMagicClassTD.stages.0.description>
+	<TM_Good_BestowMagicClassTD.stages.0.label>вдохновляющий ритуал тайного пути</TM_Good_BestowMagicClassTD.stages.0.label>
+	<TM_Good_BestowMagicClassTD.stages.0.description>Ритуал тайного пути получился великолепным — эмоциональным, вдохновляющим и наполненным магией. Всегда радостно видеть, как кто-то находит свою судьбу.</TM_Good_BestowMagicClassTD.stages.0.description>
+	<TM_MagicSeverenceHD.label>Отсечение магии</TM_MagicSeverenceHD.label>
+	<TM_MagicSeverenceHD.description>Эта пешка недавно утратила связь с магией и теперь страдает от чувства потери и внутренней пустоты, пока не найдёт новую цель.</TM_MagicSeverenceHD.description>
+	<TM_BestowMagicClassHD.stages.0.label>Дар магии</TM_BestowMagicClassHD.stages.0.label>
+	<TM_BestowMagicClassHD.stages.0.description>Этой пешке недавно была дарована искра магии.</TM_BestowMagicClassHD.stages.0.description>
+</LanguageData>

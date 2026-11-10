@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_UndeadHD.label>Não morar</TM_UndeadHD.label>
+  <TM_UndeadHD.description>Um peão animado com energia necrótica. Este peão não tem uma ideia própria e requer um necromante de controle e energia contínuos.</TM_UndeadHD.description>
+  <TM_UndeadHD.stages.0.label>I</TM_UndeadHD.stages.0.label>
+  <TM_UndeadHD.stages.1.label>II</TM_UndeadHD.stages.1.label>
+  <TM_UndeadHD.stages.2.label>III</TM_UndeadHD.stages.2.label>
+  <TM_UndeadHD.stages.3.label>IV</TM_UndeadHD.stages.3.label>
+
+  <TM_LichHD.label>Lic</TM_LichHD.label>
+  <TM_LichHD.description>Um peão que se tornou imortal, rompendo a ligação com o círculo da vida e da morte.</TM_LichHD.description>
+  <TM_LichHD.stages.0.label>Não morar</TM_LichHD.stages.0.label>
+
+  <TM_UndeadAnimalHD.label>Não morar</TM_UndeadAnimalHD.label>
+  <TM_UndeadAnimalHD.description>Um peão animado com energia necrótica. Este peão não tem uma ideia própria e requer um necromante de controle e energia contínuos.</TM_UndeadAnimalHD.description>
+  <TM_UndeadAnimalHD.stages.0.label>I</TM_UndeadAnimalHD.stages.0.label>
+  <TM_UndeadAnimalHD.stages.1.label>II</TM_UndeadAnimalHD.stages.1.label>
+  <TM_UndeadAnimalHD.stages.2.label>III</TM_UndeadAnimalHD.stages.2.label>
+  <TM_UndeadAnimalHD.stages.3.label>IV</TM_UndeadAnimalHD.stages.3.label>
+
+  <TM_DeathMarkHD.label>Marca da Morte</TM_DeathMarkHD.label>
+  <TM_DeathMarkHD.description>Marcada pela morte, este peão está prestes a morrer e será reanimado. (não usado)</TM_DeathMarkHD.description>
+
+  <TM_DeathMarkCurse.label>Marca da Morte</TM_DeathMarkCurse.label>
+  <TM_DeathMarkCurse.description>Marcado pela morte, este peão não pode concentrar-se no presente por causa da concentração na sua morte inevitável.</TM_DeathMarkCurse.description>
+  <TM_DeathMarkCurse.stages.0.label>Mal-sucedido</TM_DeathMarkCurse.stages.0.label>
+  <TM_DeathMarkCurse.stages.1.label>Burburinho</TM_DeathMarkCurse.stages.1.label>
+  <TM_DeathMarkCurse.stages.2.label>Maldito</TM_DeathMarkCurse.stages.2.label>
+
+  <TM_TormentHD.label>Angústia</TM_TormentHD.label>
+  <TM_TormentHD.description>A dor causada pela energia escura.</TM_TormentHD.description>
+  <TM_TormentHD.comps.0.labelTendedWell>Carimbado</TM_TormentHD.comps.0.labelTendedWell>
+  <TM_TormentHD.comps.0.labelTendedWellInner>costurado</TM_TormentHD.comps.0.labelTendedWellInner>
+  <TM_TormentHD.comps.0.labelSolidTendedWell>curado</TM_TormentHD.comps.0.labelSolidTendedWell>
+  <TM_TormentHD.injuryProps.destroyedLabel>Fundido</TM_TormentHD.injuryProps.destroyedLabel>
+  <TM_TormentHD.injuryProps.destroyedOutLabel>Fundido</TM_TormentHD.injuryProps.destroyedOutLabel>
+
+  <TM_DeathBoltHD.label>parafuso mortal</TM_DeathBoltHD.label>
+  <TM_DeathBoltHD.description>Uma energia destrutiva que mata toda a vida.</TM_DeathBoltHD.description>
+  <TM_DeathBoltHD.comps.0.labelTendedWell>Carimbado</TM_DeathBoltHD.comps.0.labelTendedWell>
+  <TM_DeathBoltHD.comps.0.labelTendedWellInner>costurado</TM_DeathBoltHD.comps.0.labelTendedWellInner>
+  <TM_DeathBoltHD.comps.0.labelSolidTendedWell>curado</TM_DeathBoltHD.comps.0.labelSolidTendedWell>
+  <TM_DeathBoltHD.injuryProps.destroyedLabel>Fundido</TM_DeathBoltHD.injuryProps.destroyedLabel>
+  <TM_DeathBoltHD.injuryProps.destroyedOutLabel>Fundido</TM_DeathBoltHD.injuryProps.destroyedOutLabel>
+
+  <TM_Torment_HD.label>Exausto</TM_Torment_HD.label>
+  <TM_Torment_HD.description>Atormentado pela magia negra.</TM_Torment_HD.description>
+  <TM_Torment_HD.stages.0.label>dor</TM_Torment_HD.stages.0.label>
+  <TM_Torment_HD.stages.1.label>agonia</TM_Torment_HD.stages.1.label>
+  <TM_Torment_HD.stages.2.label>angústia</TM_Torment_HD.stages.2.label>
+
+  <TM_UndeadStageHD.label>Estágio corporal</TM_UndeadStageHD.label>
+  <TM_UndeadStageHD.description>O atual estágio de não vida.</TM_UndeadStageHD.description>
+  <TM_UndeadStageHD.stages.0.label>Podre</TM_UndeadStageHD.stages.0.label>
+  <TM_UndeadStageHD.stages.1.label>Esgotado</TM_UndeadStageHD.stages.1.label>
+
+  <TM_BrittleBonesHD.label>Ossos frágeis</TM_BrittleBonesHD.label>
+  <TM_BrittleBonesHD.description>Surge quando as temperaturas são extremamente baixas e faz com que os ossos e ligamentos fiquem frágeis, reduzindo o movimento e a manipulação. Não viver com essa condição requer 50% de maná extra para manter a vida.</TM_BrittleBonesHD.description>
+  <TM_BrittleBonesHD.stages.0.label>I</TM_BrittleBonesHD.stages.0.label>
+  <TM_BrittleBonesHD.stages.1.label>II</TM_BrittleBonesHD.stages.1.label>
+  <TM_BrittleBonesHD.stages.2.label>III</TM_BrittleBonesHD.stages.2.label>
+
+  <TM_SlaggedHD.label>Batido</TM_SlaggedHD.label>
+  <TM_SlaggedHD.description>Ocorre quando as temperaturas são extremamente elevadas e causa decomposição e até mesmo derretimento da matéria orgânica. A falta de vida, afetada por esta condição, requer 50% mais maná para manter a vida.</TM_SlaggedHD.description>
+  <TM_SlaggedHD.stages.0.label>I</TM_SlaggedHD.stages.0.label>
+  <TM_SlaggedHD.stages.1.label>II</TM_SlaggedHD.stages.1.label>
+  <TM_SlaggedHD.stages.2.label>III</TM_SlaggedHD.stages.2.label>
+
+
+  <TM_TormentHD.comps.1.permanentLabel>podre</TM_TormentHD.comps.1.permanentLabel>
+  <TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWell>com vendagem</TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWell>
+  <TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWellInner>Usca</TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  <TM_TormentHD.comps.HediffComp_TendDuration.labelSolidTendedWell>definir</TM_TormentHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  <TM_TormentHD.comps.HediffComp_GetsPermanent.permanentLabel>podre</TM_TormentHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  <TM_TormentHD.labelNounPretty>Se você quiser um 0, um 1</TM_TormentHD.labelNounPretty>
+  <TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWell>vendado</TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWell>
+  <TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWellInner>Usca</TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  <TM_DeathBoltHD.comps.HediffComp_TendDuration.labelSolidTendedWell>definir</TM_DeathBoltHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  <TM_DeathBoltHD.comps.HediffComp_GetsPermanent.permanentLabel>derretido</TM_DeathBoltHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  <TM_DeathBoltHD.labelNounPretty>Se você quiser um 0, um 1</TM_DeathBoltHD.labelNounPretty>
+
+</LanguageData>

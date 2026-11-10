@@ -1,0 +1,15 @@
+<LanguageData><!-- Learning interactions-->
+	<TM_MagicLore.label>обсуждали теорию и практику магии</TM_MagicLore.label>
+	<TM_MagicLore.logRulesInitiator.rulesStrings.0>r_logentry-&gt;Обучал(а) [RECIPIENT_nameDef] магическим теориям.</TM_MagicLore.logRulesInitiator.rulesStrings.0>
+	<TM_MagicLore.logRulesRecipient.rulesStrings.0>r_logentry-&gt;Изучал(а) магические теории у [INITIATOR_nameDef].</TM_MagicLore.logRulesRecipient.rulesStrings.0>
+	<TM_MightLore.label>обсуждали боевые приёмы</TM_MightLore.label>
+	<TM_MightLore.logRulesInitiator.rulesStrings.0>r_logentry-&gt;Обучал(а) [RECIPIENT_nameDef] боевым приёмам.</TM_MightLore.logRulesInitiator.rulesStrings.0>
+	<TM_MightLore.logRulesRecipient.rulesStrings.0>r_logentry-&gt;Осваивал(а) боевые приёмы у [INITIATOR_nameDef].</TM_MightLore.logRulesRecipient.rulesStrings.0>
+	<!-- Social interactions-->
+	<TM_EntertainID.label>развлекал(а)</TM_EntertainID.label>
+	<TM_EntertainID.logRulesInitiator.rulesStrings.0>r_logentry-&gt;Развлекал(а) [RECIPIENT_nameDef].</TM_EntertainID.logRulesInitiator.rulesStrings.0>
+	<TM_EntertainID.logRulesRecipient.rulesStrings.0>r_logentry-&gt;Был(а) развлечён(а) [INITIATOR_nameDef].</TM_EntertainID.logRulesRecipient.rulesStrings.0>
+	<TM_EntertainAuraID.label>увлекал(а) беседой</TM_EntertainAuraID.label>
+	<TM_EntertainAuraID.logRulesInitiator.rulesStrings.0>r_logentry-&gt;Приятно беседовал(а) с [RECIPIENT_nameDef].</TM_EntertainAuraID.logRulesInitiator.rulesStrings.0>
+	<TM_EntertainAuraID.logRulesRecipient.rulesStrings.0>r_logentry-&gt;Приятно беседовал(а) с [INITIATOR_nameDef].</TM_EntertainAuraID.logRulesRecipient.rulesStrings.0>
+</LanguageData>

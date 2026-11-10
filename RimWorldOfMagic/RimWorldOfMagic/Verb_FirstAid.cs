@@ -1,36 +1,31 @@
-﻿using System;
+using AbilityUser;
 using System.Collections.Generic;
 using System.Linq;
-using RimWorld;
-using AbilityUser;
 using Verse;
-using UnityEngine;
-
 
 namespace TorannMagic
 {
     public class Verb_FirstAid : Verb_UseAbility
     {
+        internal static IEnumerable<Hediff_Injury> EligibleWounds(Pawn patient) =>
+            patient.health.hediffSet.hediffs.OfType<Hediff_Injury>()
+                .Where(injury => injury.CanHealNaturally() && injury.TendableNow());
 
-        private int pwrVal = 0;
-        private int verVal = 0;
+        internal static bool Tend(Pawn patient, int power, int versatility)
+        {
+            var injuries = EligibleWounds(patient).Take(2 + power).ToList();
+            foreach (var injury in injuries)
+                injury.Tended(Rand.Range(0f, .4f) + .1f * versatility, 1f);
+            return injuries.Count > 0;
+        }
 
         protected override bool TryCastShot()
         {
-            Pawn caster = base.CasterPawn;
-
-            pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
-            verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
-
-            if (caster == null) return false;
-
-            IEnumerable<Hediff_Injury> injuriesToTend = caster.health.hediffSet.hediffs
-                .OfType<Hediff_Injury>()
-                .Where(injury => injury.CanHealNaturally() && injury.TendableNow())
-                .Take(2 + pwrVal);
-            foreach (Hediff_Injury injury in injuriesToTend)
+            var caster = CasterPawn;
+            if (caster != null)
             {
-                injury.Tended(Rand.Range(0, 0.4f) + .1f * verVal, 1f);
+                var def = Ability.Def as TMAbilityDef;
+                Tend(caster, TM_Calc.GetSkillPowerLevel(caster, def), TM_Calc.GetSkillVersatilityLevel(caster, def));
             }
             return false;
         }

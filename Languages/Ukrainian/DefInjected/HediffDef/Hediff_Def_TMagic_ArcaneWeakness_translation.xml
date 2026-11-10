@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ArcaneWeakness.label>таємна слабкість</TM_ArcaneWeakness.label>
+  <TM_ArcaneWeakness.description>Таємна слабкість - це побічний ефект застосування магічних здібностей. Незначні здібності з ціною мани менше 25 не будуть мати таємної слабкості. Кількість таємної слабкості, яка вплине на мага, залежить від вартості мани цієї здатності.</TM_ArcaneWeakness.description>
+  <TM_ArcaneWeakness.stages.0.label>ослаблений</TM_ArcaneWeakness.stages.0.label>
+  <TM_ArcaneWeakness.stages.1.label>висушений</TM_ArcaneWeakness.stages.1.label>
+  <TM_ArcaneWeakness.stages.2.label>серйозно хворий</TM_ArcaneWeakness.stages.2.label>
+  <TM_ArcaneWeakness.stages.3.label>кататонічний</TM_ArcaneWeakness.stages.3.label>
+  <TM_ArcaneWeakness.stages.4.label>клінічна смерть</TM_ArcaneWeakness.stages.4.label>
+
+  <TM_CursedHD.label>таємне прокляття</TM_CursedHD.label>
+  <TM_CursedHD.description>Таємне прокляття - це побічний продукт проклятої риси. Проклята пішака постійно страждає від таємної слабкості, яка буде поступово посилюватися, поки не перетвориться на стійку хворобу. Наслідки прокляття можуть бути компенсовані за допомогою магії, однак біль, викликаний прокляттям, забезпечує унікальну ясність. Прокляття можна зняти, видаливши магічну межу пішаки.</TM_CursedHD.description>
+  <TM_CursedHD.stages.0.label>бляклий</TM_CursedHD.stages.0.label>
+  <TM_CursedHD.stages.1.label>помірний</TM_CursedHD.stages.1.label>
+  <TM_CursedHD.stages.2.label>підвищений</TM_CursedHD.stages.2.label>
+
+
+</LanguageData>

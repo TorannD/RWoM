@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Verse;
 using RimWorld;
 
@@ -20,7 +20,7 @@ namespace TorannMagic.Thoughts
                 }
                 if (pawn.RaceProps.Humanlike && other.RaceProps.Humanlike)
                 {
-                    if ((pawn.story.traits.HasTrait(TorannMagicDefOf.Paladin) || pawn.story.traits.HasTrait(TorannMagicDefOf.Druid) || pawn.story.traits.HasTrait(TorannMagicDefOf.Priest)) && (other.story.traits.HasTrait(TorannMagicDefOf.Necromancer)))
+                    if ((ClassProgression.ClassIdentity.IsPaladin(pawn) || ClassProgression.ClassIdentity.IsDruid(pawn) || ClassProgression.ClassIdentity.IsPriest(pawn)) && (ClassProgression.ClassIdentity.IsBaseNecromancer(other)))
                     {
                         return true;
                     }

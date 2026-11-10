@@ -1,0 +1,332 @@
+<LanguageData><!-- v1.5\Defs\GolemDefs\TM_HollowGolemUpgradeDefs.xml-->
+	<!--                      EN: restore part-->
+	<TM_Golem_HollowRestore.label>восстановите часть</TM_Golem_HollowRestore.label>
+	<!--                        EN: mana cell-->
+	<TM_Golem_HollowMaxEnergy.label>ячейка маны</TM_Golem_HollowMaxEnergy.label>
+	<!--                              EN: Increases maximum energy by 500 per level. Starting max energy is 2500.-->
+	<TM_Golem_HollowMaxEnergy.description>Увеличивает максимальную энергию на 500 за уровень. Начальная максимальная энергия составляет 2500.</TM_Golem_HollowMaxEnergy.description>
+	<!--                               EN: mana converter-->
+	<TM_Golem_HollowEnergyEfficiency.label>преобразователь маны</TM_Golem_HollowEnergyEfficiency.label>
+	<!--                                     EN: Increases energy efficiency by 10% per level. Starting energy efficiency is 50%.-->
+	<TM_Golem_HollowEnergyEfficiency.description>Повышает энергоэффективность на 10% за уровень. Начальная энергоэффективность составляет 50%.</TM_Golem_HollowEnergyEfficiency.description>
+	<!--                         EN: mana attractor-->
+	<TM_Golem_HollowEnergyRate.label>аттрактор маны</TM_Golem_HollowEnergyRate.label>
+	<!--                               EN: Increases energy charge rate by 20% per level. Starting recharge rate is 30 energy/hour.-->
+	<TM_Golem_HollowEnergyRate.description>Увеличивает скорость заряда энергии на 20% за уровень. Начальная скорость перезарядки составляет 30 энергозатрат в час.</TM_Golem_HollowEnergyRate.description>
+	<!--                  EN: hollow axe-->
+	<TM_Golem_HollowAxe.label>полый топор</TM_Golem_HollowAxe.label>
+	<!--                        EN: Adds a massive battle-axe that shears through multiple opponents with each swing. The hollowed axe occupies the weapon slot; only one weapon may be equipped.-->
+	<TM_Golem_HollowAxe.description>Добавляет массивный боевой топор, который пронзает нескольких противников с каждым ударом. Выдолбленный топор занимает слот для оружия; может быть снаряжено только одно оружие.</TM_Golem_HollowAxe.description>
+	<!--                    EN: Hollow Staff-->
+	<TM_Golem_HollowStaff.label>Полый Посох</TM_Golem_HollowStaff.label>
+	<!--                          EN: Enables a ranged, magical attack. The hollowed staff occupies the weapon slot; only one weapon may be equipped.-->
+	<TM_Golem_HollowStaff.description>Позволяет проводить дальнюю магическую атаку. Выдолбленный посох занимает слот для оружия; может быть снаряжено только одно оружие.</TM_Golem_HollowStaff.description>
+	<!--                          EN: breastplate-->
+	<TM_Golem_HollowBreastPlate.label>нагрудный знак</TM_Golem_HollowBreastPlate.label>
+	<!--                                EN: Increases armor for the chest and torso:
+Blunt:	+24%
+Sharp:	+36%
+Heat:	+16%
+Hit:	+12%-->
+	<TM_Golem_HollowBreastPlate.description>Увеличивает броню для груди и туловища:
+Тупой урон:	+21%
+Режущий урон:	+32%
+Температура:	+14%</TM_Golem_HollowBreastPlate.description>
+	<!--                   EN: helmet-->
+	<TM_Golem_HollowHelm.label>шлем</TM_Golem_HollowHelm.label>
+	<!--                         EN: Protects the head and skull:
+Blunt:	+26%
+Sharp:	+9%
+Heat:	+11%
+Hit:	+15%-->
+	<TM_Golem_HollowHelm.description>Защищает голову и череп:
+Тупой урон:	+22%
+Режущий урон:	+7%
+Температура:	+9%</TM_Golem_HollowHelm.description>
+	<!--                        EN: shoulder guards-->
+	<TM_Golem_HollowShoulders.label>наплечные щитки</TM_Golem_HollowShoulders.label>
+	<!--                              EN: Protects the shoulders, collar and neck:
+Blunt:	+10%
+Sharp:	+23%
+Heat:	+7%
+Hit:	+8%-->
+	<TM_Golem_HollowShoulders.description>Защищает плечи, воротник и шею:
+Тупой урон:	+8%
+Режущий урон:	+19%
+Температура:	+6%</TM_Golem_HollowShoulders.description>
+	<!--                    EN: Crown of Awakening-->
+	<TM_Golem_HollowCrown.label>Венец пробуждения</TM_Golem_HollowCrown.label>
+	<!--                          EN: Passively strengthens the will of the wearer to protect against magical attacks and offers minor physical protection. Active ability detects and nullify the magic of other spells.
+
+Spell Reflection
+Energy Cost:	50
+Cooldown:	6.6s
+Range:	100c
+Damage and radius varies based on mana cost of reflected spell-->
+	<TM_Golem_HollowCrown.description>Пассивно усиливает волю владельца для защиты от магических атак и обеспечивает незначительную физическую защиту. Активная способность обнаруживает и аннулирует магию других заклинаний.
+
+Отражение заклинания
+Затраты на энергию: 50
+Время перезарядки: 6,6с
+Диапазон: 100
+Урон и радиус варьируются в зависимости от стоимости маны отраженного заклинания</TM_Golem_HollowCrown.description>
+	<!--                    EN: Fade Cloak-->
+	<TM_Golem_HollowCloak.label>Исчезающий плащ</TM_Golem_HollowCloak.label>
+	<!--                          EN: The fade cloak passively increases the basic movement speed of the wearer while providing a small amount of protection. It also allows the wearer to instantly move to another location on the map by expending energy. If the wearer fades to a location near enemies, a decay blast will strike each enemy near the destination.
+
+Blunt:	+12%
+Sharp:	+6%
+Heat:	+18%
+Harmony: +10%
+Move Speed +1c/s
+
+Faded Decay
+Energy Cost:	30
+Cooldown:	10s
+Min Range:	10c
+Max Range:	200c
+Decay Radius:	4c
+Hit Chance:	80%-->
+	<TM_Golem_HollowCloak.description>Плащ с эффектом исчезновения пассивно увеличивает базовую скорость передвижения пользователя, обеспечивая при этом небольшую степень защиты. Он также позволяет владельцу мгновенно перемещаться в другое место на карте, затрачивая энергию. Если владелец исчезает в месте рядом с врагами, взрыв распада поразит каждого врага вблизи места назначения.
+
+Тупой урон: +10%
+Режущий урон: +5%
+Температура: +15%
+Гармония: +5%
+Скорость перемещения +.4c/s
+
+Увядший Распад
+Затраты на энергию: 30
+Время перезарядки: 20 секунд
+Минимальный диапазон: 10c
+Максимальный диапазон: 200c
+Радиус распада: 4c
+Шанс попадания: 80%</TM_Golem_HollowCloak.description>
+	<!-- Герб: Огонь-->
+	<TM_HollowGolem_CoAFire.label>Герб: Огонь</TM_HollowGolem_CoAFire.label>
+	<!-- Пассивно увеличивает характеристики и улучшает "Гнилое касание", нанося дополнительно 10 + 5*уровень урона огнём:
+Скорость:	+[0.2с/0.3с/0.35с]
+Термозащита:	+[30%/50%/60%]
+Откат способностей:	-[10%/20%/30%]
+Скорость обработки:	+[10%/20%/30%]
+Сопротивление урону:	[85%/80%/75%]
+
+Поглощение огня
+Затраты энергии:	0
+Откат:	2.5с
+Радиус:	4с
+Восстановление здоровья за огонь: 10
+*Можно использовать только один Герб, но его можно улучшать*-->
+	<TM_HollowGolem_CoAFire.description>Пассивно увеличивает характеристики и улучшает "Гнилое касание", нанося дополнительно 10 + 5*уровень урона огнём:
+Скорость:	+[0.2с/0.3с/0.35с]
+Термозащита:	+[30%/50%/60%]
+Откат способностей:	-[10%/20%/30%]
+Скорость обработки:	+[10%/20%/30%]
+Сопротивление урону:	[85%/80%/75%]
+
+Поглощение огня
+Затраты энергии:	0
+Откат:	2.5с
+Радиус:	4с
+Восстановление здоровья за огонь: 10
+*Можно использовать только один Герб, но его можно улучшать*</TM_HollowGolem_CoAFire.description>
+	<!-- Герб: Вода-->
+	<TM_HollowGolem_CoAIce.label>Герб: Вода</TM_HollowGolem_CoAIce.label>
+	<!-- Пассивно увеличивает характеристики и улучшает "Гнилое касание", восстанавливая голему 8 + 4*уровень здоровья и столько же ближайшему союзнику.
+Броня:		+[5%/10%/15%]
+Откат способностей:	-[10%/20%/30%]
+Скорость обработки:	+[10%/20%/30%]
+Сопротивление урону:	[85%/80%/75%]
+*Можно использовать только один Герб, но его можно улучшать*-->
+	<TM_HollowGolem_CoAIce.description>Пассивно увеличивает характеристики и улучшает "Гнилое касание", восстанавливая голему 8 + 4*уровень здоровья и столько же ближайшему союзнику.
+Броня:		+[5%/10%/15%]
+Откат способностей:	-[10%/20%/30%]
+Скорость обработки:	+[10%/20%/30%]
+Сопротивление урону:	[85%/80%/75%]
+*Можно использовать только один Герб, но его можно улучшать*</TM_HollowGolem_CoAIce.description>
+	<!-- Герб: Тайная магия-->
+	<TM_HollowGolem_CoAArcane.label>Герб: Тайная магия</TM_HollowGolem_CoAArcane.label>
+	<!-- Пассивно увеличивает характеристики и улучшает "Гнилое касание", восстанавливая 20 + 5*уровень энергии за удар.
+Откат способностей:	-[12%/24%/36%]
+Урон способностей:		+[10%/20%/30%]
+Скорость обработки:		+[15%/30%/45%]
+Сопротивление урону:	[85%/80%/75%]
+*Можно использовать только один Герб, но его можно улучшать*-->
+	<TM_HollowGolem_CoAArcane.description>Пассивно увеличивает характеристики и улучшает "Гнилое касание", восстанавливая 20 + 5*уровень энергии за удар.
+Откат способностей:	-[12%/24%/36%]
+Урон способностей:		+[10%/20%/30%]
+Скорость обработки:		+[15%/30%/45%]
+Сопротивление урону:	[85%/80%/75%]
+*Можно использовать только один Герб, но его можно улучшать*</TM_HollowGolem_CoAArcane.description>
+	<!-- Герб: Смерть-->
+	<TM_HollowGolem_CoADeath.label>Герб: Смерть</TM_HollowGolem_CoADeath.label>
+	<!-- Пассивно увеличивает характеристики и улучшает "Гнилое касание", повышая его эффективность на 50% и заставляя атаковать дважды.
+Броня:		+[5%/10%/15%]
+Откат способностей:	-[8%/16%/24%]
+Урон способностей:	+[10%/20%/30%]
+Скорость обработки:	+[15%/30%/45%]
+Сопротивление урону:	[85%/80%/75%]
+*Можно использовать только один Герб, но его можно улучшать*-->
+	<TM_HollowGolem_CoADeath.description>Пассивно увеличивает характеристики и улучшает "Гнилое касание", повышая его эффективность на 50% и заставляя атаковать дважды.
+Броня:		+[5%/10%/15%]
+Откат способностей:	-[8%/16%/24%]
+Урон способностей:	+[10%/20%/30%]
+Скорость обработки:	+[15%/30%/45%]
+Сопротивление урону:	[85%/80%/75%]
+*Можно использовать только один Герб, но его можно улучшать*</TM_HollowGolem_CoADeath.description>
+	<!--                     EN: Protection Gem: Fire-->
+	<TM_Golem_HollowPGFire.label>Защитный камень: Огонь</TM_Golem_HollowPGFire.label>
+	<!--                           EN: The Fire protection gem allows the golem to encase itself in fire with the Burning Fury shield. Burning Fury provides a 35% damage reduction to all attacks, cauterizes wounds, prevents being staggered, and burns nearby enemies.
+
+Energy Cost: 120
+Cooldown: 1200s
+Duration: 100s
+*Only one Protection Gem can used*-->
+	<TM_Golem_HollowPGFire.description>Камень защиты от огня позволяет голему окружить себя огнем с помощью щита Пылающей ярости. Пылающая ярость снижает урон от всех атак на 35%, прижигает раны, предотвращает шатание и сжигает ближайших врагов.
+
+Стоимость энергии: 120
+Время перезарядки: 1200 секунд
+Продолжительность: 100 секунд</TM_Golem_HollowPGFire.description>
+	<!--                    EN: Protection Gem: Water-->
+	<TM_Golem_HollowPGIce.label>Защитный камень: Вода</TM_Golem_HollowPGIce.label>
+	<!--                          EN: The Water protection gem allows the golem evade incoming attacks. The chance to evade an attack is proportional to the golem's energy percent. Each evasion reduces the golems energy by 5. This ability is persistent as long as the golem energy threshold is above the minimum required to use abilities.
+		*Only one Protection Gem can used*-->
+	<TM_Golem_HollowPGIce.description>Камень защиты от воды позволяет голему уклоняться от входящих атак. Шанс уклониться от атаки пропорционален проценту энергии голема. Каждое уклонение уменьшает энергию големов на 5. Эта способность сохраняется до тех пор, пока энергетический порог голема превышает минимум, необходимый для использования способностей.</TM_Golem_HollowPGIce.description>
+	<!--                       EN: Protection Gem: Arcane-->
+	<TM_Golem_HollowPGArcane.label>Защитный камень: Тайный</TM_Golem_HollowPGArcane.label>
+	<!--                             EN: The Arcane protection gem allows the golem to surround enemy ranged attackers with a reverse shield called Well of Despair. Well of Despair allows projectiles in but will block all projectiles out.
+
+Energy Cost:	40
+Cooldown:	360
+Range:		60
+Duration:	20s
+*Only one Protection Gem can used*-->
+	<TM_Golem_HollowPGArcane.description>Тайный защитный камень позволяет голему окружать вражеских дальнобойщиков обратным щитом под названием Колодец Отчаяния. Колодец отчаяния пропускает снаряды внутрь, но блокирует все снаряды наружу.
+
+Затраты на электроэнергию: 60
+Время перезарядки: 480
+Диапазон: 50
+Продолжительность: 20 секунд</TM_Golem_HollowPGArcane.description>
+	<!--                      EN: Protection Gem: Death-->
+	<TM_Golem_HollowPGDeath.label>Камень защиты: Смерть</TM_Golem_HollowPGDeath.label>
+	<!--                            EN: The Death protection gem surrounds the golem with a cursed aura. Enemies within 15 cells can be stricken with a curse that degrades willpower and combat abilities. The energy cost is always 10 regardless of how many enemies are affected.
+
+Aura Range:	15
+Pulse Rate:	12s
+Energy Cost:	10 energy per pulse
+*Only one Protection Gem can used*-->
+	<TM_Golem_HollowPGDeath.description>Камень защиты от смерти окружает голема проклятой аурой. Враги в пределах 15 клеток могут быть поражены проклятием, которое ухудшает силу воли и боевые способности. Затраты энергии всегда равны 10, независимо от того, сколько врагов пострадало.
+
+Диапазон ауры: 15
+Частота импульса: 12 с
+затраты энергии: 10 энергии на импульс</TM_Golem_HollowPGDeath.description>
+	<!--                     EN: Protection Gem: Death's Abyss-->
+	<TM_Golem_HollowPGDoom.label>Защитный камень: Бездна Смерти</TM_Golem_HollowPGDoom.label>
+	<!--                           EN: The Death's Abyss protection gem curses enemies with the weight of their mortality. Enemies within 36 cells can be stricken with a movement slowing curse.
+
+Aura Range:	36
+Pulse Rate:	10s
+Energy Cost:	8 energy per pawn
+*Only one Protection Gem can used*-->
+	<TM_Golem_HollowPGDoom.description>Камень защиты Бездны Смерти проклинает врагов тяжестью их смертности. Враги в пределах 36 клеток могут быть поражены проклятием, замедляющим движение.
+
+Диапазон ауры: 36
+Частота импульса: 10 с
+затраты энергии: 8 энергии за пешку</TM_Golem_HollowPGDoom.description>
+	<!--                     EN: Focus Gem: Fire-->
+	<TM_Golem_HollowFGFire.label>Фокус камень: Огонь</TM_Golem_HollowFGFire.label>
+	<!--                           EN: The Fire focus gem allows the golem to concentrate elemental fire into a fierce burst of firebolts. Launches 20 firebolts at enemies within 8 cells of a target.
+
+Energy Cost: 20
+Min Range: 6
+Max Range: 80
+*Only one Focus Gem can be used*-->
+	<TM_Golem_HollowFGFire.description>Камень фокусировки огня позволяет голему концентрировать стихийный огонь в яростную вспышку огненных зарядов. Запускает 16 огненных зарядов во врагов в пределах 8 клеток от цели.
+
+Затраты на энергию: 40
+Минимальный диапазон: 6
+Максимальный диапазон: 50</TM_Golem_HollowFGFire.description>
+	<!--                    EN: Focus Gem: Ice-->
+	<TM_Golem_HollowFGIce.label>Фокус камень: Лед</TM_Golem_HollowFGIce.label>
+	<!--                          EN: The Ice focus gem allows the golem to concentrate elemental ice into a rapid flow of icebolts. Launches 20 icebolts at enemies within 12 cells of a target.
+
+Energy Cost: 30
+Min Range: 8
+Max Range: 80
+*Only one Focus Gem can be used*-->
+	<TM_Golem_HollowFGIce.description>Камень ледяного фокуса позволяет голему концентрировать элементальный лед в быстрый поток ледяных разрядов. Запускает 16 ледяных болитов во врагов в пределах 12 клеток от цели.
+
+Затраты на энергию: 60
+Минимальный диапазон: 10
+Максимальный диапазон: 70</TM_Golem_HollowFGIce.description>
+	<!--                       EN: Focus Gem: Arcane-->
+	<TM_Golem_HollowFGArcane.label>Фокус камень: Тайный</TM_Golem_HollowFGArcane.label>
+	<!--                             EN: The Arcane focus gem allows the golem to concentrate dark energy a massive shadow bolt. Launches a single, explosive shadowbolt at the target. Extreme range.
+
+Energy Cost: 50
+Min Range: 10
+Max Range: 120
+*Only one Focus Gem can be used*-->
+	<TM_Golem_HollowFGArcane.description>Камень тайного фокуса позволяет голему концентрировать темную энергию в виде массивного теневого разряда. Запускает одиночную взрывную молнию тени в цель. Экстремальный диапазон.
+
+Затраты на электроэнергию: 50
+Минимальный диапазон: 10
+Максимальная дальность действия: 150</TM_Golem_HollowFGArcane.description>
+	<!--                      EN: Focus Gem: Death-->
+	<TM_Golem_HollowFGDeath.label>Фокус камень: Смерть</TM_Golem_HollowFGDeath.label>
+	<!--                            EN: The Death focus gem surrounds the golem with a field radiating death energy. Periodically strikes nearby enemies. Gains a bonus strike when any pawn dies within 10 cells of the golem.
+
+Energy Cost: 10
+Range: 10
+*Only one Focus Gem can be used*-->
+	<TM_Golem_HollowFGDeath.description>Камень фокуса смерти окружает голема полем, излучающим энергию смерти. Периодически наносит удары по ближайшим врагам. Получает бонусный удар, когда любая пешка умирает в пределах 10 клеток от голема.
+
+Затраты на энергию: 20
+Диапазон: 10</TM_Golem_HollowFGDeath.description>
+	<!--                           EN: fire affinity-->
+	<TM_Golem_HollowAffinityFire.label>сродство к огню</TM_Golem_HollowAffinityFire.label>
+	<!--                                 EN: The arcane energy within the hollow golem is entwined with elemental fire. This affinity causes the golem's eyes to glow reddish orange. Fire affinity grants the golem additional stats:
+Movement: +[25/40/50]%
+Health:	+[40/60/75]%
+*Only one affinity type is allowed per golem*-->
+	<TM_Golem_HollowAffinityFire.description>Тайная энергия внутри полого голема вплетена в элементальный огонь. Для каждого голема допускается только одно сродство. Это сродство заставляет глаза голема светиться красновато-оранжевым. Сродство к огню дает голему дополнительные характеристики:
+Движение: +[25/40/50]%
+Здоровье: +[40/60/75]%</TM_Golem_HollowAffinityFire.description>
+	<!--                          EN: water affinity-->
+	<TM_Golem_HollowAffinityIce.label>сродство к воде</TM_Golem_HollowAffinityIce.label>
+	<!--                                EN: The arcane energy within the hollow golem is entwined with elemental water. This affinity causes the golem's eyes to glow light blue. Water affinity grants the golem additional stats:
+Movement: +[20/30/35]%
+Health:	+[50/75/90]%
+*Only one affinity type is allowed per golem*-->
+	<TM_Golem_HollowAffinityIce.description>Тайная энергия внутри полого голема вплетена в элементальную воду. Для каждого голема допускается только одно сродство. Это сродство заставляет глаза голема светиться светло-голубым. Сродство к воде дает голему дополнительные характеристики:
+Движение: +[20/30/35]%
+Здоровье: +[50/75/90]%</TM_Golem_HollowAffinityIce.description>
+	<!--                             EN: arcane affinity-->
+	<TM_Golem_HollowAffinityArcane.label>тайное сродство</TM_Golem_HollowAffinityArcane.label>
+	<!--                                   EN: The arcane energy within the hollow golem is further enhanced. This affinity causes the golem's eyes to glow magenta. Arcane affinity grants the golem additional stats:
+Movement: +[15/25/30]%
+Health:	+[55/85/100]%
+*Only one affinity type is allowed per golem*-->
+	<TM_Golem_HollowAffinityArcane.description>Тайная энергия внутри полого голема еще больше усиливается. Для каждого голема допускается только одно сродство. Это сродство заставляет глаза голема светиться пурпурным цветом. Тайное сродство дает голему дополнительные характеристики:
+Движение: +[15/25/30]%
+Здоровье: +[55/85/100]%</TM_Golem_HollowAffinityArcane.description>
+	<!--                            EN: death affinity-->
+	<TM_Golem_HollowAffinityDeath.label>близость к смерти</TM_Golem_HollowAffinityDeath.label>
+	<!--                                  EN: The arcane energy within the hollow golem is entwined with death magic. This affinity causes the golem's eyes to glow green. Death affinity grants the golem additional stats:
+Movement: +[10/15/20]%
+Health:	+[65/90/110]%
+*Only one affinity type is allowed per golem*-->
+	<TM_Golem_HollowAffinityDeath.description>Тайная энергия внутри полого голема вплетена в магию смерти. Для каждого голема допускается только одно сродство. Это сродство заставляет глаза голема светиться зеленым. Близость к смерти дает голему дополнительные характеристики:
+Движение: +[15.10.2010]%
+Здоровье: +[65/90/110]%</TM_Golem_HollowAffinityDeath.description>
+	<!--                                      EN: Orb of Extinguished Flames-->
+	<TM_Golem_HollowOrbOfExtinguishedFlames.label>Шар потухшего пламени</TM_Golem_HollowOrbOfExtinguishedFlames.label>
+	<!--                                            EN: Gain points into the active research technology will increase for every pawn killed on the map. The orb can also be toggled to detect and consume any fire within 25 cells and emits a faint silver light. These effect are only active while the hollow golem is dormant.
+		*This upgrade shares the same slot as Flames of Devouring Apathy and will remove it if installed*-->
+	<TM_Golem_HollowOrbOfExtinguishedFlames.description>Очки, набранные за активную исследовательскую технологию, будут увеличиваться за каждую убитую пешку на карте. Шар также может быть переключен для обнаружения и поглощения любого огня в пределах 25 ячеек и излучает слабый серебристый свет. Эти эффекты активны только тогда, когда полый голем находится в состоянии покоя.</TM_Golem_HollowOrbOfExtinguishedFlames.description>
+	<!--                                      EN: Flames of Devouring Apathy-->
+	<TM_Golem_HollowFlamesOfDevouringApathy.label>Пламя всепожирающей апатии</TM_Golem_HollowFlamesOfDevouringApathy.label>
+	<!--                                            EN: Actively regulates temperature and destroys any filth within 25 cells. Emits a faint mystical light. These effect are only active while the hollow golem is dormant.
+		*This upgrade shares the same slot as Orb of Extinguished Flames and will remove it if installed*-->
+	<TM_Golem_HollowFlamesOfDevouringApathy.description>Активно регулирует температуру и уничтожает любую грязь в пределах 25 ячеек. Излучает слабый мистический свет. Эти эффекты активны только тогда, когда полый голем находится в состоянии покоя.</TM_Golem_HollowFlamesOfDevouringApathy.description>
+</LanguageData>

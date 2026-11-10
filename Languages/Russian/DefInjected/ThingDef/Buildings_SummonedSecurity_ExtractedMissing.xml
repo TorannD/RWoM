@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <TM_Trap_Poison.label>ядовитая ловушка</TM_Trap_Poison.label>
+  <TM_Trap_Poison.description>Ловушка из шипов и бечёвки, которая прекрасно сливается с местностью и обманывает неподготовленный взгляд, хотя её запах заранее предупреждает животных. Когда жертва срабатывает ловушку, в воздух выбрасываются частицы друидского яда. Этот яд одновременно калечит и лишает жертву возможности действовать.</TM_Trap_Poison.description>
+  <DefensePylon_Blueprint_Install.label>магический защитный пилон (чертёж)</DefensePylon_Blueprint_Install.label>
+  <DefensePylon_I_Blueprint_Install.label>магический защитный пилон (I) (чертёж)</DefensePylon_I_Blueprint_Install.label>
+  <DefensePylon_II_Blueprint_Install.label>магический защитный пилон (II) (чертёж)</DefensePylon_II_Blueprint_Install.label>
+  <DefensePylon_III_Blueprint_Install.label>магический защитный пилон (III) (чертёж)</DefensePylon_III_Blueprint_Install.label>
+</LanguageData>

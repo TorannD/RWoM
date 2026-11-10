@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.label>animal cuadrúpedo</TM_QuadrupedAnimalWithPawsAndTail.label>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.left_lung.customLabel>pulmón izquierdo</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.left_lung.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.right_lung.customLabel>pulmón derecho</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.right_lung.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.left_kidney.customLabel>riñón izquierdo</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.left_kidney.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.right_kidney.customLabel>riñón derecho</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.right_kidney.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.TM_PoppiNeck.parts.TM_PoppiHead.parts.left_eye.customLabel>ojo izquierdo</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.TM_PoppiNeck.parts.TM_PoppiHead.parts.left_eye.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.TM_PoppiNeck.parts.TM_PoppiHead.parts.right_eye.customLabel>ojo derecho</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.TM_PoppiNeck.parts.TM_PoppiHead.parts.right_eye.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.TM_PoppiNeck.parts.TM_PoppiHead.parts.left_ear.customLabel>oreja izquierda</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.TM_PoppiNeck.parts.TM_PoppiHead.parts.left_ear.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.TM_PoppiNeck.parts.TM_PoppiHead.parts.right_ear.customLabel>oreja derecha</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.TM_PoppiNeck.parts.TM_PoppiHead.parts.right_ear.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.front_left_leg.customLabel>pata delantera izquierda</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.front_left_leg.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.front_left_leg.parts.front_left_paw.customLabel>zarpa delantera izquierda</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.front_left_leg.parts.front_left_paw.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.front_right_leg.customLabel>pata delantera derecha</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.front_right_leg.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.front_right_leg.parts.front_right_paw.customLabel>zarpa delantera derecha</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.front_right_leg.parts.front_right_paw.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.rear_left_leg.customLabel>pata trasera izquierda</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.rear_left_leg.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.rear_left_leg.parts.rear_left_paw.customLabel>zarpa trasera izquierda</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.rear_left_leg.parts.rear_left_paw.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.rear_right_leg.customLabel>pata trasera derecha</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.rear_right_leg.customLabel>
+  
+  <TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.rear_right_leg.parts.rear_right_paw.customLabel>zarpa trasera derecha</TM_QuadrupedAnimalWithPawsAndTail.corePart.parts.rear_right_leg.parts.rear_right_paw.customLabel>
+  
+</LanguageData>

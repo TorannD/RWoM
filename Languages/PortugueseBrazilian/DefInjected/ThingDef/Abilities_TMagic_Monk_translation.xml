@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Dragon Strike -->
+
+  <FlyingObject_DragonStrike.label>Golpe do Dragão</FlyingObject_DragonStrike.label>
+  <Projectile_DragonStrike.label>Golpe do Dragão</Projectile_DragonStrike.label>
+
+
+  <!-- Thunder Strike -->
+
+  <Projectile_ThunderStrike.label>Choque de Trovão</Projectile_ThunderStrike.label>
+
+
+</LanguageData>

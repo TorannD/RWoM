@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RedMage.degreeDatas.0.label>Красный маг</TM_RedMage.degreeDatas.0.label>
+  <TM_RedMage.degreeDatas.0.description>Красные маги - грациозные мечники-чародеи, смертоносные на поле боя.</TM_RedMage.degreeDatas.0.description>
+  <TM_Ninja.degreeDatas.0.label>Нинзя</TM_Ninja.degreeDatas.0.label>
+  <TM_Ninja.degreeDatas.0.description>Нинзя - скрытные и ловкие бойцы с несколькими волшебными трюками в рукаве. Они преуспевают в уничтожении противника ещё до того, как тот узнает, что его поразило.</TM_Ninja.degreeDatas.0.description>
+  <TM_ElementalGunner.degreeDatas.0.label>Стихийный стрелок</TM_ElementalGunner.degreeDatas.0.label>
+  <TM_ElementalGunner.degreeDatas.0.description>Стихийные стрелки - магически одаренные пешки, умеющие наполнять боеприпасы магической силой. Их магически укрепленное сознание позволяет стрелять с устрашающей скоростью. Они специальзируются на ведении подавляющей стрельбы.</TM_ElementalGunner.degreeDatas.0.description>
+  <TM_Bombardier.degreeDatas.0.label>Бомбардир</TM_Bombardier.degreeDatas.0.label>
+  <TM_Bombardier.degreeDatas.0.description>Бомбардиры - бойцы, специализирующиеся на дальнобойнем взрывном оружии. Они являются экспертами в осадной войне и могут стрелять взрывчаткой из-за укрытия.</TM_Bombardier.degreeDatas.0.description>
+  <TM_Railbreaker.degreeDatas.0.label>Рейлбрейкер</TM_Railbreaker.degreeDatas.0.label>
+  <TM_Railbreaker.degreeDatas.0.description>Рейлбрейкеры - безрассудные бойцы ближнего боя, оснащенные чрезвычайно опасными имплантами, позволяющими им произвольно создавать взрывы, которые они запускают в упор. Они не имеют себе равных в огневой мощи, но их самая большая слабость - отдача от их собственных способностей.</TM_Railbreaker.degreeDatas.0.description>
+  <TM_Samurai.degreeDatas.0.label>Самурай</TM_Samurai.degreeDatas.0.label>
+  <TM_Samurai.degreeDatas.0.description>Самураи - странствующие мечники, которые специализируются на Иай.</TM_Samurai.degreeDatas.0.description>
+  <TM_Gadgeteer.degreeDatas.0.label>Гаджетер</TM_Gadgeteer.degreeDatas.0.label>
+  <TM_Gadgeteer.degreeDatas.0.description>Гаджетеры - эксцентричные изобретатели, которые носят с собой множество гаджетов и инструментов, помогающих им в повседневной жизни.</TM_Gadgeteer.degreeDatas.0.description>
+  <TM_WindMage.degreeDatas.0.label>Маг ветра</TM_WindMage.degreeDatas.0.label>
+  <TM_WindMage.degreeDatas.0.description>Маги ветра - способные колдуны, подчинившие воздух своей воле.</TM_WindMage.degreeDatas.0.description>
+  <TM_Medic.degreeDatas.0.label>Медик</TM_Medic.degreeDatas.0.label>
+  <TM_Medic.degreeDatas.0.description>Медики - люди, посвятивший себя врачебной деятельности, они имеют множество вспомогательных способностей, которыми они поддерживают союзников. Из-за того что они посвятили себя спасению жизни, бойцы из них не слишком хорошие.</TM_Medic.degreeDatas.0.description>
+  <TM_ChromaMage.degreeDatas.0.label>Хроматический маг</TM_ChromaMage.degreeDatas.0.label>
+  <TM_ChromaMage.degreeDatas.0.description>Хроматические маги - разносторонние заклинатели, чьи врожденные способности позволяют изучать магию самых разных направлений. Они могут выучить любое из нескольких мощных заклинаний, но они никогда не станут мастерами во всех них. Их максимальный уровень - 30.</TM_ChromaMage.degreeDatas.0.description>
+  <TM_Harbinger.degreeDatas.0.label>Предвестник</TM_Harbinger.degreeDatas.0.label>
+  <TM_Harbinger.degreeDatas.0.description>Предвестники - маги, присутствие которых всегда предвещает смерть и разрушение. Они способны использовать темные силы, чтобы проклинать своих врагов, развращая их тело и душу. Из-за их уникальной связи со своими жертвами, большинство их заклинаний не требует прямой видимости для произнесения.</TM_Harbinger.degreeDatas.0.description>
+  <TM_Reaper.degreeDatas.0.label>Жнец</TM_Reaper.degreeDatas.0.label>
+  <TM_Reaper.degreeDatas.0.description>Никто не знает истинного происхождения жнецов, но в бою они больше всего напоминает демонов. Они  беспрепятственно влетают прямо на вражеские позиции и искажает умы своих врагов, вызывая раздор и разруху.</TM_Reaper.degreeDatas.0.description>
+  <TM_Berserker.degreeDatas.0.label>Берсеркер</TM_Berserker.degreeDatas.0.label>
+  <TM_Berserker.degreeDatas.0.description>Берсеркеры - яростные бойцы, которые живут только ради боя.</TM_Berserker.degreeDatas.0.description>
+  <TM_Scion.degreeDatas.0.label>Сцион</TM_Scion.degreeDatas.0.label>
+  <TM_Scion.degreeDatas.0.description>Сционы - бойцы ближнего боя, которых направляют аспекты древних духов, помогающие им как в бою, так и в повседневной жизни.</TM_Scion.degreeDatas.0.description>
+  <TM_Plaguedoctor.degreeDatas.0.label>Чумной доктор</TM_Plaguedoctor.degreeDatas.0.label>
+  <TM_Plaguedoctor.degreeDatas.0.description>Чумные доктора - полубезумные средневековые врачи, восхищающиеся ядами и болезнями. Они способны выполнять ужасающие хирургические операции как на союзниках, так и на врагах.</TM_Plaguedoctor.degreeDatas.0.description>
+  <TM_Cleric.degreeDatas.0.label>Клерик</TM_Cleric.degreeDatas.0.label>
+  <TM_Cleric.degreeDatas.0.description>Клерики - универсальные целители среднего уровня, они способны быстро исцелить союзников или очистить их от ослаблений.</TM_Cleric.degreeDatas.0.description>
+  <TM_Arbormancer.degreeDatas.0.label>Арбормансер</TM_Arbormancer.degreeDatas.0.label>
+  <TM_Arbormancer.degreeDatas.0.description>Арбормансеры - маги, берущие силу из живых растений. Однако это не значит что они являются любителями природы. Они часто вызывают гнев у рейнджеров и друидов из-за своего бессмысленно жестокого обращения с природой.</TM_Arbormancer.degreeDatas.0.description>
+  <TM_Chainwarden.degreeDatas.0.label>Хранитель цепей</TM_Chainwarden.degreeDatas.0.label>
+  <TM_Chainwarden.degreeDatas.0.description>Хранители цепей - бойцы, научившиеся использовать цепи как боевое оружие. Они превосходно контролируют движения врага и справляются с несколькими противниками одновременно.</TM_Chainwarden.degreeDatas.0.description>
+  <TM_Ambusher.degreeDatas.0.label>Мастер засад</TM_Ambusher.degreeDatas.0.label>
+  <TM_Ambusher.degreeDatas.0.description>Мастера засад - бойцы, спокойно поджидающие своих врагов в расставленные ими ловушки и добивающие их своими разрушительными способностями ближнего боя.</TM_Ambusher.degreeDatas.0.description>
+  <TM_Saboteur.degreeDatas.0.label>Диверсант</TM_Saboteur.degreeDatas.0.label>
+  <TM_Saboteur.degreeDatas.0.description>Диверсанты - бойцы, специализирующиеся на проникновении в тыл врага и выведении из строя их ключевых объектов и обороны.</TM_Saboteur.degreeDatas.0.description>
+  <TM_Keeper.degreeDatas.0.label>Хранитель</TM_Keeper.degreeDatas.0.label>
+  <TM_Keeper.degreeDatas.0.description>Хранители - маги, специализирующиеся на защитной магии.</TM_Keeper.degreeDatas.0.description>
+  <TM_Pridestalker.degreeDatas.0.label>Прайдсталкер</TM_Pridestalker.degreeDatas.0.label>
+  <TM_Pridestalker.degreeDatas.0.description>Прайдсталкеры - бойцы, использующие лук и магию, что бы превратить бой в смертельную охоту.</TM_Pridestalker.degreeDatas.0.description>
+  <TM_Starseeker.degreeDatas.0.label>Искатель звезд</TM_Starseeker.degreeDatas.0.label>
+  <TM_Starseeker.degreeDatas.0.description>Искатели звезд - неопытные маги с невероятным потенциалом.</TM_Starseeker.degreeDatas.0.description>
+  <TM_Aspirant.degreeDatas.0.label>Претендент</TM_Aspirant.degreeDatas.0.label>
+  <TM_Aspirant.degreeDatas.0.description>Претенденты - неопытные бойцы с невероятным потенциалом.</TM_Aspirant.degreeDatas.0.description>
+  <TM_Hawkeye.degreeDatas.0.label>Соколиный глаз</TM_Hawkeye.degreeDatas.0.label>
+  <TM_Hawkeye.degreeDatas.0.description>Соколиный глаз - бойцы, посвятившие свою жизнь мастерскому овладению луком.</TM_Hawkeye.degreeDatas.0.description>
+  <TM_Atronach.degreeDatas.0.label>Атронах</TM_Atronach.degreeDatas.0.label>
+  <TM_Atronach.degreeDatas.0.description>Атронахи - аномалия среди заклинателей. Они способны использовать мощные заклинания, но они полностью отрезаны от потока магии и не регенерируют ману. Они вынуждены искать свои собственные источники маны, чтобы подпитывать свои заклинания.</TM_Atronach.degreeDatas.0.description>
+  <TM_SupportSpecialist.degreeDatas.0.label>Специалист поддержки</TM_SupportSpecialist.degreeDatas.0.label>
+  <TM_SupportSpecialist.degreeDatas.0.description>Специалисты поддержки это универсальные бойцы с дробовиками, способные поражать ключевые цели, удерживать линию обороны или поддерживать союзников.</TM_SupportSpecialist.degreeDatas.0.description>
+  <TM_Scrapper.degreeDatas.0.label>Задира</TM_Scrapper.degreeDatas.0.label>
+  <TM_Scrapper.degreeDatas.0.description>Задиры - бойцы, предпочитающие драться голыми руками. Они не имеют себе равных в бою 1 на 1, имея в запасе огромное количество различных ударов.</TM_Scrapper.degreeDatas.0.description>
+  <TM_Oracle.degreeDatas.0.label>Оракул</TM_Oracle.degreeDatas.0.label>
+  <TM_Oracle.degreeDatas.0.description>Астрологи, гадалки, провидцы - всё это Оракулы. Так как они черпают свою силу из самих звезд, они медленно и обдуманно читают свои заклинания, но могут использовать их на цель из любой точки на карте.</TM_Oracle.degreeDatas.0.description>
+  <TM_Mystic.degreeDatas.0.label>Мистик</TM_Mystic.degreeDatas.0.label>
+  <TM_Mystic.degreeDatas.0.description>Мистики - бойцы, которые используют духовную энергию, чтобы выводить врагов из строя.</TM_Mystic.degreeDatas.0.description>
+  <TM_Spellbreaker.degreeDatas.0.label>Разрушитель чар</TM_Spellbreaker.degreeDatas.0.label>
+  <TM_Spellbreaker.degreeDatas.0.description>Разрушители чар - бойцы, которые отлично противостоят атакам противника, и умеют разбираться с вражескими бойцами и магами, запрещая им использовать умения и заклинания.</TM_Spellbreaker.degreeDatas.0.description>
+  <TM_Duskbringer.degreeDatas.0.label>Вестник сумерек</TM_Duskbringer.degreeDatas.0.label>
+  <TM_Duskbringer.degreeDatas.0.description>Вестники сумерек - бойцы, овладевшие разрушительными силами света и тьмы.</TM_Duskbringer.degreeDatas.0.description>
+  <TM_Thunderblessed.degreeDatas.0.label>Благословленный грозой</TM_Thunderblessed.degreeDatas.0.label>
+  <TM_Thunderblessed.degreeDatas.0.description>Благословленные грозой - бойцы, при рождении наделенные силами молний, но не ставшие магами. Они совершают разрушительные атаки, но из-за того что их тела содержат в себе огромную силу, которую трудно сдерживать, они получают больше урона.</TM_Thunderblessed.degreeDatas.0.description>
+  <TM_Deadeye.degreeDatas.0.label>Маг-стрелок</TM_Deadeye.degreeDatas.0.label>
+  <TM_Deadeye.degreeDatas.0.description>Маги-стрелки - наемники, которых нередко можно встретить в пыльных барах Окраинных Миров. Их навыки уничтожать цели на расстоянии не имеют себе равных, но из-за жизни наемных убийц, они не привыкли выполнять простую работу и повседневные задачи. Они способны использовать магию, что бы сделать свои пули ещё более смертоносными, но у них нет врожденной регенерации маны.</TM_Deadeye.degreeDatas.0.description>
+  <TM_Spellthief.degreeDatas.0.label>Похититель заклинаний</TM_Spellthief.degreeDatas.0.label>
+  <TM_Spellthief.degreeDatas.0.description>Похитители заклинаний - маги-обманщики, способные легко проникать в стан врагов и саботировать их. Они могут копировать способности союзников и врагов.</TM_Spellthief.degreeDatas.0.description>
+  <TM_Dragoon.degreeDatas.0.label>Драгун</TM_Dragoon.degreeDatas.0.label>
+  <TM_Dragoon.degreeDatas.0.description>Драгуны -  ловкие рыцари, впитавшие в себя силу древних драконов, что обеспечило им черезвычайную устойчивость к жаре. Они способны взмывать в небо, обхитряя и уничтожая своих противников.</TM_Dragoon.degreeDatas.0.description>
+  <TM_BlackMage.degreeDatas.0.label>Черный маг</TM_BlackMage.degreeDatas.0.label>
+  <TM_BlackMage.degreeDatas.0.description>Черные маги - специализированные боевые маги, способные обрушивать на своих врагов нескончаемую разрушительную магию.</TM_BlackMage.degreeDatas.0.description>
+  <TM_Scholar.degreeDatas.0.label>Школяр</TM_Scholar.degreeDatas.0.label>
+  <TM_Scholar.degreeDatas.0.description>Школяры - магические стратеги, способные защитить своих союзников от вреда. Они очень плохие бойцы, но отлично поддерживают своих союзников в бою.</TM_Scholar.degreeDatas.0.description>
+  <TM_Gunbreaker.degreeDatas.0.label>Ганбрейкер</TM_Gunbreaker.degreeDatas.0.label>
+  <TM_Gunbreaker.degreeDatas.0.description>Ганбрейкеры - неординарные бойцы, предпочитающие использовать оружие дальнего боя в рукопашном бою. Они способны быстро атаковать свои цели сокрушительными атаками расходуя специальные заряды.</TM_Gunbreaker.degreeDatas.0.description>
+  <TM_Gunner.degreeDatas.0.label>Тяжелый стрелок</TM_Gunner.degreeDatas.0.label>
+  <TM_Gunner.degreeDatas.0.description>Тяжелые стрелки - бойцы, которые предпочитают оружие дальнего боя с мощными одиночными выстрелами. Они способны накапливать заряды и выпускать быстрые очереди подавляющего огня.</TM_Gunner.degreeDatas.0.description>
+  <TM_Warrior.degreeDatas.0.label>Воитель</TM_Warrior.degreeDatas.0.label>
+  <TM_Warrior.degreeDatas.0.description>Воители - бойцы ближнего боя, обученные выживать на передовой.</TM_Warrior.degreeDatas.0.description>
+  <TM_Nomad.degreeDatas.0.label>Кочевник</TM_Nomad.degreeDatas.0.label>
+  <TM_Nomad.degreeDatas.0.description>Кочевники - универсальные лучники, которые хорошо сражаются как в ближнем бою, так и на расстоянии.</TM_Nomad.degreeDatas.0.description>
+  <TM_Guardian.degreeDatas.0.label>Страж</TM_Guardian.degreeDatas.0.label>
+  <TM_Guardian.degreeDatas.0.description>Стражи - стойкие защитники, которые используют клинки и магию для защиты своих союзников.</TM_Guardian.degreeDatas.0.description>
+  <TM_Holosmith.degreeDatas.0.label>Голокузнец</TM_Holosmith.degreeDatas.0.label>
+  <TM_Holosmith.degreeDatas.0.description>Голокузнецы - обычные люди, за исключением одного - они используют удивительную Фотонную кузницу, которая позволяет им использовать силу света на короткие периоды времени, позволяя им не отставать от других обученных бойцов.</TM_Holosmith.degreeDatas.0.description>
+  <TM_Troubadour.degreeDatas.0.label>Трубадур</TM_Troubadour.degreeDatas.0.label>
+  <TM_Troubadour.degreeDatas.0.description>Трубадуры - лучники, поддерживающие своих союзников стрелами и песнями.</TM_Troubadour.degreeDatas.0.description>
+  <TM_Gambler.degreeDatas.0.label>Картежник</TM_Gambler.degreeDatas.0.label>
+  <TM_Gambler.degreeDatas.0.description>Картежник - красноречивый бродяга с волшебной колодой карт. Они разыгрывают судьбу и жизнь как колоду карт.</TM_Gambler.degreeDatas.0.description>
+  <TM_Chef.degreeDatas.0.label>Шеф-повар</TM_Chef.degreeDatas.0.label>
+  <TM_Chef.degreeDatas.0.description>Шеф-повара - обычные люди, посвятившие себя готовке и приготовлению блюд, которые помогают облегчить бремя их союзников.</TM_Chef.degreeDatas.0.description>
+  <TM_Miner.degreeDatas.0.label>Рудокоп</TM_Miner.degreeDatas.0.label>
+  <TM_Miner.degreeDatas.0.description>Рудокопы - обученные специалисты, способные с легкостью прорываться сквозь горные породы и добывать руду .</TM_Miner.degreeDatas.0.description>
+  <TM_Striker.degreeDatas.0.label>Страйкер</TM_Striker.degreeDatas.0.label>
+  <TM_Striker.degreeDatas.0.description>Страйкеры - безоружные бойцы, являющиеся более агрессивным ответвлением от Монахов - они отказались от защиты и исцеления в обмен на более быстрый и мощный стиль боя.</TM_Striker.degreeDatas.0.description>
+  <TM_RuneKnight.degreeDatas.0.label>Рунный Рыцарь</TM_RuneKnight.degreeDatas.0.label>
+  <TM_RuneKnight.degreeDatas.0.description>Рунные рыцари - боевые маги,специализирующиеся на наполнении маной особых рун, которые они смогут использовать позднее, что позволяет им заранее подготовится к столкновению с противниками. У них есть доступ к наступательной, защитной и исцеляющей магии.</TM_RuneKnight.degreeDatas.0.description>
+  <TM_BlossomBlader.degreeDatas.0.label>Цветущий клинок</TM_BlossomBlader.degreeDatas.0.label>
+  <TM_BlossomBlader.degreeDatas.0.description>Цветущие клинки - изящные танцующие с клинками, тесно связанные с природой. Они способны быстро атаковать свои цели, изнуряя их. Их способности подпитываются специальными травами, которые они собирают.</TM_BlossomBlader.degreeDatas.0.description>
+  <TM_Ravenous.degreeDatas.0.label>Ненасытный</TM_Ravenous.degreeDatas.0.label>
+  <TM_Ravenous.degreeDatas.0.description>Ненасытный. Никто достоверно не знает, как возникают эти существа - из-за врожденных отклонений, химических экспериментов или магических аномалий. Единственное, что все знают наверняка, - это то, что этим существам необходимо питаться, всегда, и всем. Несмотря на то, что они не прошли должную подготовку, они способны изучать способности бойцов и магов. Возможно, они пожрали знания у какой-то несчастной души...</TM_Ravenous.degreeDatas.0.description>
+  <TM_MechHunter.degreeDatas.0.label>Охотник на Мехов</TM_MechHunter.degreeDatas.0.label>
+  <TM_MechHunter.degreeDatas.0.description>Одни делают это из мести, другие - за плату. Какой бы ни была причина, [PAWN_nameDef] - {PAWN_gender ? один : одна} из {PAWN_gender ? охотников : охотниц} на мехов, бойцов, посвятивших свою жизнь искоренению механоидов.</TM_MechHunter.degreeDatas.0.description>
+  <TM_Gunslinger.degreeDatas.0.label>Мастер-стрелок</TM_Gunslinger.degreeDatas.0.label>
+  <TM_Gunslinger.degreeDatas.0.description>[PAWN_nameDef] - Мастер-стрелок, мобильный боец, подавляющий противников непрерывным потоком пуль.</TM_Gunslinger.degreeDatas.0.description>
+</LanguageData>

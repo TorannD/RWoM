@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -21,7 +21,8 @@ namespace TorannMagic
         private bool doPsionicAttack = false;
         private int ticksTillPsionicStrike = 0;
         private int nextPsionicAttack = 0;
-        Pawn threat =  null;
+        Pawn threat = null;
+        private Pawn strikeBody;
         CompAbilityUserMight comp;
 
         public int PwrVal
@@ -60,6 +61,8 @@ namespace TorannMagic
             }
         }
 
+        public override string CompLabelInBracketsExtra => parent.Severity.ToString("0.00")+"%";
+
         public string LabelCap
         {
             get
@@ -76,10 +79,10 @@ namespace TorannMagic
             }
         }
 
-        private void Initialize()
+        private void Initialize(Pawn body)
         {
             this.parent.Severity = 90f;
-            FleckMaker.ThrowLightningGlow(base.Pawn.TrueCenter(), base.Pawn.Map, 1f);
+            if (body.Spawned) FleckMaker.ThrowLightningGlow(body.TrueCenter(),body.Map,1f);
             DeterminePsionicHD();            
         }
 
@@ -88,33 +91,65 @@ namespace TorannMagic
             this.comp = this.Pawn.GetCompAbilityUserMight();
             if (comp != null && comp.MightData != null)
             {
-                this.PwrVal = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_pwr").level;
-                this.EffVal = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_eff").level;
-                this.VerVal = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_ver").level;
+                this.PwrVal = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault(x=>x.label=="TM_PsionicAugmentation_pwr")?.level ?? 0;
+                this.EffVal = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault(x=>x.label=="TM_PsionicAugmentation_eff")?.level ?? 0;
+                this.VerVal = this.Pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault(x=>x.label=="TM_PsionicAugmentation_ver")?.level ?? 0;
             }
         }
 
         public override void CompPostTick(ref float severityAdjustment)
         {
-            if (base.Pawn != null & base.parent != null && !this.Pawn.Dead)
+            base.CompPostTick(ref severityAdjustment);
+            if (Pawn==null || Pawn.Dead || ClassProgression.SpiritRebirthEnergy.Marked(Pawn)) return;
+            RunAugmentation(Pawn,ref severityAdjustment);
+        }
+
+        internal static bool CanProject(Pawn body,Pawn soul) => body?.Spawned==true && body.IsColonistPlayerControlled &&
+            !body.Dead && !body.Downed && ClassProgression.PsionicMartialPath.Energy(body)==null &&
+            ClassProgression.PsionicMartialPath.Path(body)==null && ClassProgression.PsionicMartialPath.Energy(soul)!=null &&
+            ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(body,out var current) && current==soul &&
+            ClassProgression.SpiritRebirthState.TryGet(soul,out var state) && !state.DepletionPending;
+
+        internal static void TickHosted(Pawn soul)
+        {
+            var energy=ClassProgression.PsionicMartialPath.Energy(soul);
+            var tracker=energy?.TryGetComp<HediffComp_Psionic>();
+            if (tracker==null) return;
+            if (!ClassProgression.SpiritRebirthState.TryGet(soul,out var state) || state.DepletionPending ||
+                state.Host is not Pawn body || !state.HasValidHost(soul) || (ClassProgression.PsionicMartialPath.Energy(body)!=null || ClassProgression.PsionicMartialPath.Path(body)!=null))
             {
-                if (!initialized)
-                {
-                    initialized = true;
-                    this.Initialize();
-                }
-                base.CompPostTick(ref severityAdjustment);
+                tracker.CancelStrike();
+                return;
+            }
+            if (!body.Spawned || body.Dead || body.Downed || !body.IsColonistPlayerControlled) return;
+            float change=0;
+            tracker.RunAugmentation(body,ref change);
+            if (change!=0) energy.Severity+=change;
+        }
+
+        private void CancelStrike()
+        {
+            doPsionicAttack=false;
+            strikeBody=null;
+            threat=null;
+            ticksTillPsionicStrike=0;
+        }
+
+        private void RunAugmentation(Pawn body, ref float severityAdjustment)
+        {
+            if (parent!=null)
+            {
+                if (!initialized) { initialized=true; Initialize(body); }
+                comp ??= Pawn.GetCompAbilityUserMight();
+                var career=ClassProgression.PsionicMartialPath.Path(Pawn);
+                if(career!=null && (body.jobs?.curDriver is ClassProgression.JobDriver_PsionicCrucible || ClassProgression.PsionicMartialPath.Read(career)?.DisruptedUntil>Find.TickManager.TicksGame))
+                {CancelStrike();return;}
 
                 if (Find.TickManager.TicksGame % 60 == 0 && initialized)
                 {
                     DeterminePsionicHD();
-                    severityAdjustment += (this.Pawn.GetStatValue(StatDefOf.PsychicSensitivity, false) * Rand.Range(.04f, .12f));
-                    if (Find.Selector.FirstSelectedObject == this.Pawn)
-                    {
-                        HediffStage hediffStage = this.Pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("TM_PsionicHD"), false).CurStage;
-                        hediffStage.label = this.parent.Severity.ToString("0.00") + "%";
-                    }
-
+                    if(career?.MartialAlternate!=true || body.jobs?.curDriver is not JobDriver_PsionicBarrier)
+                        severityAdjustment += (body.GetStatValue(StatDefOf.PsychicSensitivity, false) * Rand.Range(.04f, .12f));
                     Hediff hediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_Artifact_PsionicBoostHD);
                     float maxSev = 100;
                     if (hediff != null)
@@ -125,78 +160,47 @@ namespace TorannMagic
 
                 }
 
-                if (base.Pawn.Spawned && !this.Pawn.Downed && base.Pawn.Map != null && comp != null)
+                if (body.Spawned && !body.Downed && body.Map!=null && comp!=null)
                 {                    
+                    if (doPsionicAttack && (strikeBody ?? Pawn)!=body) CancelStrike();
                     if (this.doPsionicAttack)
                     {
                         this.ticksTillPsionicStrike--;
                         if (this.ticksTillPsionicStrike <= 0)
                         {
                             this.doPsionicAttack = false;
-                            if (threat != null && !threat.Destroyed && !threat.Dead && !threat.Downed)
+                            if (threat?.Spawned==true && threat.Map==body.Map && !threat.Dead && !threat.Downed && threat.HostileTo(body) && !threat.IsPrisoner)
                             {
                                 TM_MoteMaker.MakePowerBeamMotePsionic(threat.DrawPos.ToIntVec3(), threat.Map, 2f, 2f, .7f, .1f, .6f);
-                                DamageInfo dinfo2 = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_PsionicInjury, Rand.Range(6, 12) * this.Pawn.GetStatValue(StatDefOf.PsychicSensitivity, false) + (2 * VerVal), 0, -1, this.Pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown, this.threat);
+                                DamageInfo dinfo2 = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_PsionicInjury, Rand.Range(6, 12) * body.GetStatValue(StatDefOf.PsychicSensitivity, false) + (2 * VerVal), 0, -1, body, null, null, DamageInfo.SourceCategory.ThingOrUnknown, this.threat);
                                 this.threat.TakeDamage(dinfo2);
                             }
                         }
                     }                    
 
-                    if (comp.usePsionicAugmentationToggle && this.Pawn.drafter != null && this.Pawn.CurJob != null)
+                    if (comp.usePsionicAugmentationToggle && body.drafter != null && body.CurJob != null)
                     {
-                        if (Find.TickManager.TicksGame % 600 == 0 && !this.Pawn.Drafted)
+                        if (Find.TickManager.TicksGame % 600 == 0 && !body.Drafted)
                         {
-                            if (this.parent.Severity >= 95 && this.Pawn.CurJob.targetA != null && this.Pawn.CurJob.targetA.Thing != null)
+                            if (this.parent.Severity >= 95 && body.CurJob.targetA != null && body.CurJob.targetA.Thing != null)
                             {
-                                if ((this.Pawn.Position - this.Pawn.CurJob.targetA.Thing.Position).LengthHorizontal > 20 && (this.Pawn.Position - this.Pawn.CurJob.targetA.Thing.Position).LengthHorizontal < 300 && this.Pawn.CurJob.locomotionUrgency >= LocomotionUrgency.Jog && this.Pawn.CurJob.bill == null)
+                                if ((body.Position - body.CurJob.targetA.Thing.Position).LengthHorizontal > 20 && (body.Position - body.CurJob.targetA.Thing.Position).LengthHorizontal < 300 && body.CurJob.locomotionUrgency >= LocomotionUrgency.Jog && body.CurJob.bill == null)
                                 {
-                                    this.parent.Severity -= 10f;
-                                    if (this.EffVal == 0)
-                                    {
-                                        HealthUtility.AdjustSeverity(this.Pawn, HediffDef.Named("TM_PsionicSpeedHD"), 1f + .02f * this.EffVal);
-                                    }
-                                    else if (this.EffVal == 1)
-                                    {
-                                        HealthUtility.AdjustSeverity(this.Pawn, HediffDef.Named("TM_PsionicSpeedHD_I"), 1f + .02f * this.EffVal);
-                                    }
-                                    else if (this.EffVal == 2)
-                                    {
-                                        HealthUtility.AdjustSeverity(this.Pawn, HediffDef.Named("TM_PsionicSpeedHD_II"), 1f + .02f * this.EffVal);
-                                    }
-                                    else
-                                    {
-                                        HealthUtility.AdjustSeverity(this.Pawn, HediffDef.Named("TM_PsionicSpeedHD_III"), 1f + .02f * this.EffVal);
-                                    }
+                                    if (!WorkBoost(body,"TM_PsionicSpeedHD",EffVal,10f)) return;
                                     for (int i = 0; i < 12; i++)
                                     {
                                         float direction = Rand.Range(0, 360);
-                                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi, this.Pawn.DrawPos, this.Pawn.Map, Rand.Range(.1f, .4f), 0.2f, .02f, .1f, 0, Rand.Range(8, 10), direction, direction);
+                                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi, body.DrawPos, body.Map, Rand.Range(.1f, .4f), 0.2f, .02f, .1f, 0, Rand.Range(8, 10), direction, direction);
                                     }
                                     comp.MightUserXP += Rand.Range(10, 15);
                                 }
-                                if ((this.Pawn.Position - this.Pawn.CurJob.targetA.Thing.Position).LengthHorizontal < 2 && (this.Pawn.CurJob.bill != null || this.Pawn.CurJob.def.defName == "Sow" || this.Pawn.CurJob.def.defName == "FinishFrame" || this.Pawn.CurJob.def.defName == "Deconstruct" || this.Pawn.CurJob.def.defName == "Repair" || this.Pawn.CurJob.def.defName == "Clean" || this.Pawn.CurJob.def.defName == "Mine" || this.Pawn.CurJob.def.defName == "SmoothFloor" || this.Pawn.CurJob.def.defName == "SmoothWall" || this.Pawn.CurJob.def.defName == "Harvest" || this.Pawn.CurJob.def.defName == "HarvestDesignated" || this.Pawn.CurJob.def.defName == "CutPlant" || this.Pawn.CurJob.def.defName == "CutPlantDesignated"))
+                                if ((body.Position - body.CurJob.targetA.Thing.Position).LengthHorizontal < 2 && (body.CurJob.bill != null || body.CurJob.def.defName == "Sow" || body.CurJob.def.defName == "FinishFrame" || body.CurJob.def.defName == "Deconstruct" || body.CurJob.def.defName == "Repair" || body.CurJob.def.defName == "Clean" || body.CurJob.def.defName == "Mine" || body.CurJob.def.defName == "SmoothFloor" || body.CurJob.def.defName == "SmoothWall" || body.CurJob.def.defName == "Harvest" || body.CurJob.def.defName == "HarvestDesignated" || body.CurJob.def.defName == "CutPlant" || body.CurJob.def.defName == "CutPlantDesignated"))
                                 {
-                                    this.parent.Severity -= 12f;
-                                    if (this.PwrVal == 0)
-                                    {
-                                        HealthUtility.AdjustSeverity(this.Pawn, HediffDef.Named("TM_PsionicManipulationHD"), 1f + .02f * this.PwrVal);
-                                    }
-                                    else if (this.PwrVal == 1)
-                                    {
-                                        HealthUtility.AdjustSeverity(this.Pawn, HediffDef.Named("TM_PsionicManipulationHD_I"), 1f + .02f * this.PwrVal);
-                                    }
-                                    else if (this.PwrVal == 2)
-                                    {
-                                        HealthUtility.AdjustSeverity(this.Pawn, HediffDef.Named("TM_PsionicManipulationHD_II"), 1f + .02f * this.PwrVal);
-                                    }
-                                    else
-                                    {
-                                        HealthUtility.AdjustSeverity(this.Pawn, HediffDef.Named("TM_PsionicManipulationHD_III"), 1f + .02f * this.PwrVal);
-                                    }
+                                    if (!WorkBoost(body,"TM_PsionicManipulationHD",PwrVal,12f)) return;
                                     for (int i = 0; i < 12; i++)
                                     {
                                         float direction = Rand.Range(0, 360);
-                                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi, this.Pawn.DrawPos, this.Pawn.Map, Rand.Range(.1f, .4f), 0.2f, .02f, .1f, 0, Rand.Range(8, 10), direction, direction);
+                                        TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi, body.DrawPos, body.Map, Rand.Range(.1f, .4f), 0.2f, .02f, .1f, 0, Rand.Range(8, 10), direction, direction);
                                     }
                                     comp.MightUserXP += Rand.Range(10, 15);
                                 }                                
@@ -205,41 +209,47 @@ namespace TorannMagic
 
                         if (this.parent.Severity >= 20)
                         {
-                            if (Find.TickManager.TicksGame % 180 == 0 && (this.Pawn.Drafted || !this.Pawn.IsColonist) && ((this.Pawn.equipment.Primary != null && !this.Pawn.equipment.Primary.def.IsRangedWeapon) || this.Pawn.equipment.Primary == null))
+                            if (Find.TickManager.TicksGame % 180 == 0 && (body.Drafted || !body.IsColonist) && ((body.equipment.Primary != null && !body.equipment.Primary.def.IsRangedWeapon) || body.equipment.Primary == null))
                             {
-                                if (this.Pawn.CurJob.targetA != null && this.Pawn.CurJob.targetA.Thing != null && this.Pawn.CurJob.targetA.Thing is Pawn && this.Pawn.CurJobDef == JobDefOf.AttackMelee)
+                                if (body.CurJob.targetA != null && body.CurJob.targetA.Thing != null && body.CurJob.targetA.Thing is Pawn && body.CurJobDef == JobDefOf.AttackMelee)
                                 {
-                                    //Log.Message("performing psionic dash - curjob " + this.Pawn.CurJob);
-                                    //Log.Message("curjob def " + this.Pawn.CurJob.def.defName);
-                                    //Log.Message("target " + this.Pawn.CurJob.targetA.Thing);
-                                    //Log.Message("target range " + (this.Pawn.CurJob.targetA.Thing.Position - this.Pawn.Position).LengthHorizontal);
-                                    Pawn targetPawn = this.Pawn.CurJob.targetA.Thing as Pawn;
-                                    float targetDistance = (this.Pawn.Position - targetPawn.Position).LengthHorizontal;
-                                    if (targetDistance > 3 && targetDistance < (12 + EffVal) && targetPawn.Map != null && !targetPawn.Downed)
+                                    //Log.Message("performing psionic dash - curjob " + body.CurJob);
+                                    //Log.Message("curjob def " + body.CurJob.def.defName);
+                                    //Log.Message("target " + body.CurJob.targetA.Thing);
+                                    //Log.Message("target range " + (body.CurJob.targetA.Thing.Position - body.Position).LengthHorizontal);
+                                    Pawn targetPawn = body.CurJob.targetA.Thing as Pawn;
+                                    float targetDistance = (body.Position - targetPawn.Position).LengthHorizontal;
+                                    if (targetDistance > 3 && targetDistance < (12 + EffVal) && targetPawn.Map==body.Map && !targetPawn.Downed && targetPawn.HostileTo(body) &&
+                                        Odyssey.TravelEnvironmentSafety.IsSafe(body,body.Map,targetPawn.Position,Mathf.CeilToInt(targetDistance/.75f)+1))
                                     {
                                         for (int i = 0; i < 12; i++)
                                         {
                                             float direction = Rand.Range(0, 360);
-                                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi, this.Pawn.DrawPos, this.Pawn.Map, Rand.Range(.1f, .4f), 0.2f, .02f, .1f, 0, Rand.Range(8, 10), direction, direction);
+                                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi, body.DrawPos, body.Map, Rand.Range(.1f, .4f), 0.2f, .02f, .1f, 0, Rand.Range(8, 10), direction, direction);
                                         }
-                                        FlyingObject_PsionicLeap flyingObject = (FlyingObject_PsionicLeap)GenSpawn.Spawn(ThingDef.Named("FlyingObject_PsionicLeap"), this.Pawn.Position, this.Pawn.Map);
-                                        flyingObject.Launch(this.Pawn, this.Pawn.CurJob.targetA.Thing, this.Pawn);
-                                        HealthUtility.AdjustSeverity(this.Pawn, HediffDef.Named("TM_PsionicHD"), -3f);
-                                        comp.Stamina.CurLevel -= .03f;
-                                        comp.MightUserXP += Rand.Range(20, 30);
+                                        FlyingObject_PsionicLeap flyingObject = (FlyingObject_PsionicLeap)GenSpawn.Spawn(ThingDef.Named("FlyingObject_PsionicLeap"), body.Position, body.Map);
+                                        flyingObject.SetSkillOwner(Pawn);
+                                        flyingObject.Launch(body, body.CurJob.targetA.Thing, body);
+                                        if(flyingObject.GetDirectlyHeldThings().Contains(body))
+                                        {
+                                            parent.Severity-=3f;
+                                            comp.Stamina.CurLevel -= .03f;
+                                            comp.MightUserXP += Rand.Range(20, 30);
+                                            return; // Takeoff clears the body's map/job; do not run another augmentation this tick.
+                                        }
                                     }
                                 }
                             }
 
-                            if (this.nextPsionicAttack < Find.TickManager.TicksGame && this.Pawn.Drafted && comp.usePsionicMindAttackToggle)
+                            if (this.nextPsionicAttack < Find.TickManager.TicksGame && body.Drafted && comp.usePsionicMindAttackToggle)
                             {
-                                if (this.Pawn.CurJob.def != TorannMagicDefOf.JobDriver_PsionicBarrier && VerVal > 0)
+                                if (body.CurJob.def != TorannMagicDefOf.JobDriver_PsionicBarrier && VerVal > 0)
                                 {
-                                    this.threat = TM_Calc.FindNearbyEnemy(this.Pawn, 20 + (2 * verVal)); // GetNearbyTarget(20 + (2 * VerVal));
+                                    this.threat = TM_Calc.FindNearbyEnemy(body, 20 + (2 * verVal)); // GetNearbyTarget(20 + (2 * VerVal));
                                     if (threat != null)
                                     {
                                         //start psionic attack; ends after delay
-                                        SoundInfo info = SoundInfo.InMap(new TargetInfo(this.Pawn.Position, this.Pawn.Map, false), MaintenanceType.None);
+                                        SoundInfo info = SoundInfo.InMap(new TargetInfo(body.Position, body.Map, false), MaintenanceType.None);
                                         TorannMagicDefOf.TM_Implosion.PlayOneShot(info);
                                         Effecter psionicAttack = TorannMagicDefOf.TM_GiantExplosion.Spawn();
                                         psionicAttack.Trigger(new TargetInfo(threat.Position, threat.Map, false), new TargetInfo(threat.Position, threat.Map, false));
@@ -247,20 +257,20 @@ namespace TorannMagic
                                         for (int i = 0; i < 12; i++)
                                         {
                                             float direction = Rand.Range(0, 360);
-                                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi, this.Pawn.DrawPos, this.Pawn.Map, Rand.Range(.1f, .4f), 0.2f, .02f, .1f, 0, Rand.Range(8, 10), direction, direction);
+                                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Psi, body.DrawPos, body.Map, Rand.Range(.1f, .4f), 0.2f, .02f, .1f, 0, Rand.Range(8, 10), direction, direction);
                                         }
                                         float weaponModifier = 1;
-                                        if (this.Pawn.equipment.Primary != null)
+                                        if (body.equipment.Primary != null)
                                         {
-                                            if (this.Pawn.equipment.Primary.def.IsRangedWeapon)
+                                            if (body.equipment.Primary.def.IsRangedWeapon)
                                             {
-                                                StatModifier wpnMass = this.Pawn.equipment.Primary.def.statBases.FirstOrDefault((StatModifier x) => x.stat.defName == "Mass");
-                                                weaponModifier = Mathf.Clamp(wpnMass.value, .8f, 6);
+                                                StatModifier wpnMass = body.equipment.Primary.def.statBases?.FirstOrDefault((StatModifier x) => x.stat.defName == "Mass");
+                                                weaponModifier = Mathf.Clamp(wpnMass?.value ?? 1f, .8f, 6);
                                             }
                                             else //assume melee weapon
                                             {
-                                                StatModifier wpnMass = this.Pawn.equipment.Primary.def.statBases.FirstOrDefault((StatModifier x) => x.stat.defName == "Mass");
-                                                weaponModifier = Mathf.Clamp(wpnMass.value, .6f, 4);
+                                                StatModifier wpnMass = body.equipment.Primary.def.statBases?.FirstOrDefault((StatModifier x) => x.stat.defName == "Mass");
+                                                weaponModifier = Mathf.Clamp(wpnMass?.value ?? 1f, .6f, 4);
                                             }
                                         }
                                         else //unarmed
@@ -269,8 +279,9 @@ namespace TorannMagic
                                         }
                                         this.nextPsionicAttack = Find.TickManager.TicksGame + (int)(Mathf.Clamp((600 - (60 * verVal)) * weaponModifier, 120, 900));
                                         float energyCost = Mathf.Clamp((10f - VerVal) * weaponModifier, 2f, 12f);
-                                        HealthUtility.AdjustSeverity(this.Pawn, HediffDef.Named("TM_PsionicHD"), -energyCost);
+                                        parent.Severity-=energyCost;
                                         comp.MightUserXP += Rand.Range(8, 12);
+                                        strikeBody=body;
                                         this.doPsionicAttack = true;
                                         this.ticksTillPsionicStrike = 24;
                                     }
@@ -280,6 +291,34 @@ namespace TorannMagic
                     }
                 }
             }
+        }
+
+        private bool WorkBoost(Pawn body,string family,int rank,float cost)
+        {
+            string suffix=rank<=0?"":rank==1?"_I":rank==2?"_II":"_III";
+            var def=HediffDef.Named(family+suffix);
+            float severity=1f+.02f*rank;
+            if (body==Pawn) HealthUtility.AdjustSeverity(body,def,severity);
+            else
+            {
+                var existing=body.health.hediffSet.GetFirstHediffOfDef(def);
+                if (existing!=null)
+                {
+                    var link=existing.TryGetComp<ClassProgression.HediffComp_SpiritCastOrigin>();
+                    if (link?.Projected!=true || !link.Valid) return false;
+                    existing.Severity+=severity;
+                }
+                else
+                {
+                    var effect=HediffMaker.MakeHediff(def,body);
+                    var link=effect.TryGetComp<ClassProgression.HediffComp_SpiritCastOrigin>();
+                    if (link==null) return false;
+                    link.Bind(Pawn);effect.Severity=severity;body.health.AddHediff(effect);
+                    if (!body.health.hediffSet.hediffs.Contains(effect)) return false;
+                }
+            }
+            parent.Severity-=cost;
+            return true;
         }
 
         private float GetAngleFromTo(Vector3 from, Vector3 to)
@@ -302,6 +341,11 @@ namespace TorannMagic
         public override void CompExposeData()
         {
             base.CompExposeData();
+            Scribe_Values.Look(ref doPsionicAttack,"psionicStrikePending");
+            Scribe_Values.Look(ref ticksTillPsionicStrike,"psionicStrikeDelay");
+            Scribe_Values.Look(ref nextPsionicAttack,"psionicStrikeReadyAt");
+            Scribe_References.Look(ref threat,"psionicStrikeTarget");
+            Scribe_References.Look(ref strikeBody,"psionicStrikeBody");
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
             Scribe_Values.Look<int>(ref this.effVal, "effVal", 0, false);

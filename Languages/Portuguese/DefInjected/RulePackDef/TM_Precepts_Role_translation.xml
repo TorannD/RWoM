@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Base -->
+
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.0>r_roleName(p=7)-&gt;[firstPart][secondPart]</TM_NamerRoleVoidseeker.rulePack.rulesStrings.0>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.1>firstPart- &gt; vazio</TM_NamerRoleVoidseeker.rulePack.rulesStrings.1>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.2>firstPart- &gt; zero</TM_NamerRoleVoidseeker.rulePack.rulesStrings.2>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.3>firstPart- &gt; oculto</TM_NamerRoleVoidseeker.rulePack.rulesStrings.3>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.4>firstPart- &gt; estrela</TM_NamerRoleVoidseeker.rulePack.rulesStrings.4>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.5>firstPart- &gt; elo</TM_NamerRoleVoidseeker.rulePack.rulesStrings.5>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.6>firstPart- &gt; chuveiro</TM_NamerRoleVoidseeker.rulePack.rulesStrings.6>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.7>firstPart- &gt; espírito</TM_NamerRoleVoidseeker.rulePack.rulesStrings.7>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.8>firstPart- &gt; mente</TM_NamerRoleVoidseeker.rulePack.rulesStrings.8>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.9>segundPart- &gt; assistente</TM_NamerRoleVoidseeker.rulePack.rulesStrings.9>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.10>segundPart- &gt; buscador</TM_NamerRoleVoidseeker.rulePack.rulesStrings.10>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.11>segundPart- &gt; Tocado</TM_NamerRoleVoidseeker.rulePack.rulesStrings.11>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.12>segundPart- &gt; Chamando</TM_NamerRoleVoidseeker.rulePack.rulesStrings.12>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.13>segundPart- &gt; buscador</TM_NamerRoleVoidseeker.rulePack.rulesStrings.13>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.14>segundPart- &gt; Manipulador</TM_NamerRoleVoidseeker.rulePack.rulesStrings.14>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.15>segundPart- &gt; refrigerante</TM_NamerRoleVoidseeker.rulePack.rulesStrings.15>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.16>segundPart- &gt; apagador</TM_NamerRoleVoidseeker.rulePack.rulesStrings.16>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.17>segundPart- &gt; mente</TM_NamerRoleVoidseeker.rulePack.rulesStrings.17>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.18>segundPart- &gt; sussurrado</TM_NamerRoleVoidseeker.rulePack.rulesStrings.18>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.19>segundPart- &gt; Trazedor</TM_NamerRoleVoidseeker.rulePack.rulesStrings.19>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.20>segundPart- &gt; falante</TM_NamerRoleVoidseeker.rulePack.rulesStrings.20>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.21>segundPart- &gt; receptor</TM_NamerRoleVoidseeker.rulePack.rulesStrings.21>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.22>segundPart- &gt; escravo</TM_NamerRoleVoidseeker.rulePack.rulesStrings.22>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.23>segundPart- &gt; existência</TM_NamerRoleVoidseeker.rulePack.rulesStrings.23>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.24>segundPart- &gt; um</TM_NamerRoleVoidseeker.rulePack.rulesStrings.24>
+  <TM_NamerRoleVoidseeker.rulePack.rulesStrings.25>segundPart- &gt; manual</TM_NamerRoleVoidseeker.rulePack.rulesStrings.25>
+
+
+</LanguageData>

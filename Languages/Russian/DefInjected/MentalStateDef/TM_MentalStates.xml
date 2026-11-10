@@ -1,0 +1,16 @@
+<LanguageData><!-- Mental breaks: extreme-->
+	<TM_Berserk.label>Берсерк</TM_Berserk.label>
+	<TM_Berserk.recoveryMessage>У {0} ярость берсерка подошла к концу.</TM_Berserk.recoveryMessage>
+	<TM_Berserk.baseInspectLine>Психическое состояние: Берсерк</TM_Berserk.baseInspectLine>
+	<TM_PanicFlee.label>паническое бегство</TM_PanicFlee.label>
+	<TM_PanicFlee.baseInspectLine>Психическое состояние: панический бег</TM_PanicFlee.baseInspectLine>
+	<TM_WanderPsychotic.label>блуждание в психозе</TM_WanderPsychotic.label>
+	<TM_WanderPsychotic.recoveryMessage>{0} больше не блуждает в психотическом состоянии.</TM_WanderPsychotic.recoveryMessage>
+	<TM_WanderPsychotic.baseInspectLine>Психическое состояние: блуждание в психозе</TM_WanderPsychotic.baseInspectLine>
+	<TM_WanderSad.label>грустно бродит</TM_WanderSad.label>
+	<TM_WanderSad.recoveryMessage>{0} больше не блуждает в печали.</TM_WanderSad.recoveryMessage>
+	<TM_WanderSad.baseInspectLine>Психическое состояние: грустно бродит</TM_WanderSad.baseInspectLine>
+	<TM_WanderConfused.label>растерянно бродит</TM_WanderConfused.label>
+	<TM_WanderConfused.recoveryMessage>{0} больше не смущен.</TM_WanderConfused.recoveryMessage>
+	<TM_WanderConfused.baseInspectLine>Психическое состояние: растерянно бродит</TM_WanderConfused.baseInspectLine>
+</LanguageData>

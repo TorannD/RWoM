@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <ID_ArcanePathways.label>senda arcana</ID_ArcanePathways.label>
+  
+  <ID_ArcanePathways.baseInspectLine>Inspiración: senda arcana</ID_ArcanePathways.baseInspectLine>
+  
+  <ID_ArcanePathways.beginLetter>{0} ha tenido una visión de potencial arcano. Con la ayuda de un buscador del vacío, podrá alcanzar el poder de la clase {1}. Este ritual debe realizarse en un plazo de dos días o la inspiración se perderá.</ID_ArcanePathways.beginLetter>
+  
+  <ID_ArcanePathways.beginLetterLabel>Inspiración: senda arcana</ID_ArcanePathways.beginLetterLabel>
+  
+  <ID_ArcanePathways.endMessage>{0} ya no puede alcanzar la senda arcana de la clase {1} mediante la inspiración.</ID_ArcanePathways.endMessage>
+  
+  
+  <ID_Champion.label>campeón</ID_Champion.label>
+  
+  <ID_Champion.baseInspectLine>Inspiración: campeón</ID_Champion.baseInspectLine>
+  
+  <ID_Champion.beginLetter>{0} ha recibido una inspiración heroica. Sueña con ser el campeón de las historias que cuentan los bardos y estará a la altura de esas expectativas durante las próximas 72 horas.</ID_Champion.beginLetter>
+  
+  <ID_Champion.beginLetterLabel>Inspiración: campeón</ID_Champion.beginLetterLabel>
+  
+  <ID_Champion.endMessage>{0} ya no tiene inspiración (campeón).</ID_Champion.endMessage>
+  
+  
+  <ID_Enlightened.label>iluminado</ID_Enlightened.label>
+  
+  <ID_Enlightened.baseInspectLine>Inspiración: iluminado</ID_Enlightened.baseInspectLine>
+  
+  <ID_Enlightened.beginLetter>{0} ha entrado en un periodo de iluminación. Su consciencia se expandirá de forma considerable durante las próximas 72 horas.</ID_Enlightened.beginLetter>
+  
+  <ID_Enlightened.beginLetterLabel>Inspiración: iluminación</ID_Enlightened.beginLetterLabel>
+  
+  <ID_Enlightened.endMessage>{0} ya no tiene inspiración (iluminación).</ID_Enlightened.endMessage>
+  
+  
+  <ID_FarmingFrenzy.label>frenesí agrícola</ID_FarmingFrenzy.label>
+  
+  <ID_FarmingFrenzy.baseInspectLine>Inspiración: frenesí agrícola</ID_FarmingFrenzy.baseInspectLine>
+  
+  <ID_FarmingFrenzy.beginLetter>{0} acaba de recibir una inspiración. Cosechará los cultivos un 100 % más rápido y con un 50 % más de rendimiento en las tareas de corte de plantas durante las próximas 48 horas.</ID_FarmingFrenzy.beginLetter>
+  
+  <ID_FarmingFrenzy.beginLetterLabel>Inspiración: frenesí agrícola</ID_FarmingFrenzy.beginLetterLabel>
+  
+  <ID_FarmingFrenzy.endMessage>{0} ya no tiene inspiración (frenesí agrícola).</ID_FarmingFrenzy.endMessage>
+  
+  
+  <ID_Introspection.label>introspección</ID_Introspection.label>
+  
+  <ID_Introspection.baseInspectLine>Inspiración: introspección</ID_Introspection.baseInspectLine>
+  
+  <ID_Introspection.beginLetter>{0} acaba de recibir una inspiración. Aprenderá el doble de rápido durante las próximas 48 horas.</ID_Introspection.beginLetter>
+  
+  <ID_Introspection.beginLetterLabel>Inspiración: introspección</ID_Introspection.beginLetterLabel>
+  
+  <ID_Introspection.endMessage>{0} ya no tiene inspiración (introspección).</ID_Introspection.endMessage>
+  
+  
+  <ID_ManaRegen.label>regeneración de maná</ID_ManaRegen.label>
+  
+  <ID_ManaRegen.baseInspectLine>Inspiración: regeneración de maná</ID_ManaRegen.baseInspectLine>
+  
+  <ID_ManaRegen.beginLetter>{0} acaba de recibir una inspiración. Ganará maná el doble de rápido durante las próximas 72 horas.</ID_ManaRegen.beginLetter>
+  
+  <ID_ManaRegen.beginLetterLabel>Inspiración: regeneración de maná</ID_ManaRegen.beginLetterLabel>
+  
+  <ID_ManaRegen.endMessage>{0} ya no tiene inspiración (regeneración de maná).</ID_ManaRegen.endMessage>
+  
+  
+  <ID_MiningFrenzy.label>frenesí minero</ID_MiningFrenzy.label>
+  
+  <ID_MiningFrenzy.baseInspectLine>Inspiración: frenesí minero</ID_MiningFrenzy.baseInspectLine>
+  
+  <ID_MiningFrenzy.beginLetter>{0} acaba de recibir una inspiración. Minará un 100 % más rápido y obtendrá un 100 % más de recursos al minar durante las próximas 48 horas.</ID_MiningFrenzy.beginLetter>
+  
+  <ID_MiningFrenzy.beginLetterLabel>Inspiración: frenesí minero</ID_MiningFrenzy.beginLetterLabel>
+  
+  <ID_MiningFrenzy.endMessage>{0} ya no tiene inspiración (frenesí minero).</ID_MiningFrenzy.endMessage>
+  
+  
+  <ID_Outgoing.label>sociable</ID_Outgoing.label>
+  
+  <ID_Outgoing.baseInspectLine>Inspiración: sociable</ID_Outgoing.baseInspectLine>
+  
+  <ID_Outgoing.beginLetter>{0} acaba de recibir una inspiración. Tendrá una mayor actividad social y más probabilidades de mantener interacciones sociales positivas durante las próximas 24 horas.</ID_Outgoing.beginLetter>
+  
+  <ID_Outgoing.beginLetterLabel>Inspiración: actividad social</ID_Outgoing.beginLetterLabel>
+  
+  <ID_Outgoing.endMessage>{0} ya no tiene inspiración (actividad social).</ID_Outgoing.endMessage>
+  
+</LanguageData>

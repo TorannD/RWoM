@@ -1,0 +1,10 @@
+<LanguageData><!-- priest projectile-->
+	<TM_Projectile_Priest.label>священник снаряд</TM_Projectile_Priest.label>
+	<!-- Healing Circle-->
+	<TM_Projectile_HealingCircle.label>Круг исцеления</TM_Projectile_HealingCircle.label>
+	<TM_Projectile_HealingCircle_I.label>Круг исцеления</TM_Projectile_HealingCircle_I.label>
+	<TM_Projectile_HealingCircle_II.label>Круг исцеления</TM_Projectile_HealingCircle_II.label>
+	<TM_Projectile_HealingCircle_III.label>Круг исцеления</TM_Projectile_HealingCircle_III.label>
+	<!-- Resurrection-->
+	<Projectile_Resurrection.label>воскрешение</Projectile_Resurrection.label>
+</LanguageData>

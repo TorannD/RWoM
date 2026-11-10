@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Spirit Bear -->
+
+  <TM_SpiritBear.label>espírito de urso</TM_SpiritBear.label>
+  <TM_SpiritBear.labelPlural>perfume de ursos</TM_SpiritBear.labelPlural>
+  <TM_SpiritBear.labelMale>espírito macho do urso</TM_SpiritBear.labelMale>
+  <TM_SpiritBear.labelMalePlural>perfume macho urso</TM_SpiritBear.labelMalePlural>
+  <TM_SpiritBear.labelFemale>fêmea espírito de urso</TM_SpiritBear.labelFemale>
+  <TM_SpiritBear.labelFemalePlural>fêmea perfume urso</TM_SpiritBear.labelFemalePlural>
+
+
+  <!-- Spirit Mongoose -->
+
+  <TM_SpiritMongoose.label>espírito de manguda</TM_SpiritMongoose.label>
+  <TM_SpiritMongoose.labelPlural>perfume de mangustus</TM_SpiritMongoose.labelPlural>
+  <TM_SpiritMongoose.labelMale>espírito macho mangueiro</TM_SpiritMongoose.labelMale>
+  <TM_SpiritMongoose.labelMalePlural>espíritos machos de mangustus</TM_SpiritMongoose.labelMalePlural>
+  <TM_SpiritMongoose.labelFemale>fêmea espírito manguda</TM_SpiritMongoose.labelFemale>
+  <TM_SpiritMongoose.labelFemalePlural>fêmea perfume mangustus</TM_SpiritMongoose.labelFemalePlural>
+
+
+  <!-- Spirit Crow -->
+
+  <TM_SpiritCrow.label>espírito de corvo</TM_SpiritCrow.label>
+  <TM_SpiritCrow.labelPlural>perfume dos corvos</TM_SpiritCrow.labelPlural>
+  <TM_SpiritCrow.labelMale>espírito masculino de corvo</TM_SpiritCrow.labelMale>
+  <TM_SpiritCrow.labelMalePlural>perfume masculino corvo</TM_SpiritCrow.labelMalePlural>
+  <TM_SpiritCrow.labelFemale>espírito de corvo feminino</TM_SpiritCrow.labelFemale>
+  <TM_SpiritCrow.labelFemalePlural>espíritos femininos de corvo</TM_SpiritCrow.labelFemalePlural>
+  <TM_SpiritCrow.lifeStages.0.label>voo 1</TM_SpiritCrow.lifeStages.0.label>
+  <TM_SpiritCrow.lifeStages.0.labelPlural>voo</TM_SpiritCrow.lifeStages.0.labelPlural>
+  <TM_SpiritCrow.lifeStages.0.labelMale>Voo masculino 1</TM_SpiritCrow.lifeStages.0.labelMale>
+  <TM_SpiritCrow.lifeStages.0.labelMalePlural>Voo masculino</TM_SpiritCrow.lifeStages.0.labelMalePlural>
+  <TM_SpiritCrow.lifeStages.0.labelFemale>Voo feminino 1</TM_SpiritCrow.lifeStages.0.labelFemale>
+  <TM_SpiritCrow.lifeStages.0.labelFemalePlural>Voo feminino</TM_SpiritCrow.lifeStages.0.labelFemalePlural>
+  <TM_SpiritCrow.lifeStages.1.label>voo 2</TM_SpiritCrow.lifeStages.1.label>
+  <TM_SpiritCrow.lifeStages.1.labelPlural>voos</TM_SpiritCrow.lifeStages.1.labelPlural>
+  <TM_SpiritCrow.lifeStages.1.labelMale>Voo masculino 2</TM_SpiritCrow.lifeStages.1.labelMale>
+  <TM_SpiritCrow.lifeStages.1.labelMalePlural>Voos masculinos</TM_SpiritCrow.lifeStages.1.labelMalePlural>
+  <TM_SpiritCrow.lifeStages.1.labelFemale>Voo feminino 2</TM_SpiritCrow.lifeStages.1.labelFemale>
+  <TM_SpiritCrow.lifeStages.1.labelFemalePlural>voos femininos</TM_SpiritCrow.lifeStages.1.labelFemalePlural>
+  <TM_SpiritCrow.lifeStages.2.label>passarinho de corvo</TM_SpiritCrow.lifeStages.2.label>
+  <TM_SpiritCrow.lifeStages.2.labelPlural>passarinhos de corvo</TM_SpiritCrow.lifeStages.2.labelPlural>
+  <TM_SpiritCrow.lifeStages.2.labelMale>passarinho macho</TM_SpiritCrow.lifeStages.2.labelMale>
+  <TM_SpiritCrow.lifeStages.2.labelMalePlural>filhotes de corvo macho</TM_SpiritCrow.lifeStages.2.labelMalePlural>
+  <TM_SpiritCrow.lifeStages.2.labelFemale>fêmea de passarinho</TM_SpiritCrow.lifeStages.2.labelFemale>
+  <TM_SpiritCrow.lifeStages.2.labelFemalePlural>filhotes fêmeas de corvo</TM_SpiritCrow.lifeStages.2.labelFemalePlural>
+  <TM_SpiritCrow.lifeStages.3.label>passarinho de corvo</TM_SpiritCrow.lifeStages.3.label>
+  <TM_SpiritCrow.lifeStages.3.labelPlural>passarinhos de corvo</TM_SpiritCrow.lifeStages.3.labelPlural>
+  <TM_SpiritCrow.lifeStages.3.labelMale>corvo macho operado</TM_SpiritCrow.lifeStages.3.labelMale>
+  <TM_SpiritCrow.lifeStages.3.labelMalePlural>filhotes de corvo macho</TM_SpiritCrow.lifeStages.3.labelMalePlural>
+  <TM_SpiritCrow.lifeStages.3.labelFemale>fêmea de corvo em operação</TM_SpiritCrow.lifeStages.3.labelFemale>
+  <TM_SpiritCrow.lifeStages.3.labelFemalePlural>filhotes fêmeas de corvo</TM_SpiritCrow.lifeStages.3.labelFemalePlural>
+  <TM_SpiritCrow.lifeStages.4.label>espírito de corvo</TM_SpiritCrow.lifeStages.4.label>
+  <TM_SpiritCrow.lifeStages.4.labelPlural>perfume de corvo</TM_SpiritCrow.lifeStages.4.labelPlural>
+  <TM_SpiritCrow.lifeStages.4.labelMale>espírito masculino de corvo</TM_SpiritCrow.lifeStages.4.labelMale>
+  <TM_SpiritCrow.lifeStages.4.labelMalePlural>perfume masculino corvo</TM_SpiritCrow.lifeStages.4.labelMalePlural>
+  <TM_SpiritCrow.lifeStages.4.labelFemale>espírito de corvo feminino</TM_SpiritCrow.lifeStages.4.labelFemale>
+  <TM_SpiritCrow.lifeStages.4.labelFemalePlural>espíritos femininos de corvo</TM_SpiritCrow.lifeStages.4.labelFemalePlural>
+
+
+</LanguageData>

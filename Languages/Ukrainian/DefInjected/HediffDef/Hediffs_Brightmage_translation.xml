@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_LightCapacitanceHD.label>Сила світла</TM_LightCapacitanceHD.label>
+  <TM_LightCapacitanceHD.description>Кількість накопиченої світлової енергії, доступної магу, діє як каталізатор для магії світла.</TM_LightCapacitanceHD.description>
+  <TM_LightCapacitanceHD.stages.0.label></TM_LightCapacitanceHD.stages.0.label>
+
+  <TM_LightBurstHD.label>Засліплювальний Спалах</TM_LightBurstHD.label>
+  <TM_LightBurstHD.description>Біль, сліпота і дезорієнтація в результаті впливу інтенсивного світла на органи почуттів. Дезорієнтовані пішаки не в змозі відрізнити ворогів від союзників.</TM_LightBurstHD.description>
+  <TM_LightBurstHD.stages.0.label>тьмяний зір</TM_LightBurstHD.stages.0.label>
+  <TM_LightBurstHD.stages.1.label>засліплений</TM_LightBurstHD.stages.1.label>
+  <TM_LightBurstHD.stages.2.label>дезорієнтований</TM_LightBurstHD.stages.2.label>
+
+
+</LanguageData>

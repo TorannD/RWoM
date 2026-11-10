@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Soothing Breeze -->
+
+  <SoothingBreeze.stages.0.label>brisa de acalmar</SoothingBreeze.stages.0.label>
+  <SoothingBreeze.stages.0.description>Algo que me acalma, penso claramente e desperdiço menos energia em cuidados sem sentido.</SoothingBreeze.stages.0.description>
+
+  <SoothingBreeze_I.stages.0.label>brisa de acalmar</SoothingBreeze_I.stages.0.label>
+  <SoothingBreeze_I.stages.0.description>Algo está a acalmar-me, estou a pensar claramente e desperdiçar menos energia em cuidados sem sentido.</SoothingBreeze_I.stages.0.description>
+
+  <SoothingBreeze_II.stages.0.label>brisa de acalmar</SoothingBreeze_II.stages.0.label>
+  <SoothingBreeze_II.stages.0.description>Quando os ventos sopram nas minhas costas, sinto-me calmo, relaxado e concentrado, e tenho energia para continuar a andar.</SoothingBreeze_II.stages.0.description>
+
+  <SoothingBreeze_III.stages.0.label>brisa de acalmar</SoothingBreeze_III.stages.0.label>
+  <SoothingBreeze_III.stages.0.description>Todas as distrações foram lavadas, estou completamente concentrado e confiante para cumprir todas as tarefas perfeitamente.</SoothingBreeze_III.stages.0.description>
+
+
+  <!-- (Paladin) Ray of Hope -->
+
+  <RayofHope.stages.0.label>Sombra de esperança</RayofHope.stages.0.label>
+  <RayofHope.stages.0.description>Onde há sombra, há luz</RayofHope.stages.0.description>
+
+  <RayofHope_I.stages.0.label>Um vislumbre de esperança</RayofHope_I.stages.0.label>
+  <RayofHope_I.stages.0.description>Tenho este sinal de esperança que nunca tinha tido.</RayofHope_I.stages.0.description>
+
+  <RayofHope_II.stages.0.label>Raio de esperança</RayofHope_II.stages.0.label>
+  <RayofHope_II.stages.0.description>Há um raio de luz a atravessar este estado de espírito sombrio, e finalmente sinto que temos uma hipótese.</RayofHope_II.stages.0.description>
+
+  <RayofHope_III.stages.0.label>Farol de esperança</RayofHope_III.stages.0.label>
+  <RayofHope_III.stages.0.description>Toda a desgraça que caiu sobre a nossa parte é queimada por uma luz brilhante, sinto uma maré de energia e sinto-me incrível!</RayofHope_III.stages.0.description>
+
+  <AMP_I.stages.0.label>drogado</AMP_I.stages.0.label>
+  <AMP_I.stages.0.description>Sinto-me muito bem. É melhor do que jus de Go.</AMP_I.stages.0.description>
+
+  <AMP_II.stages.0.label>amplificador</AMP_II.stages.0.label>
+  <AMP_II.stages.0.description>Isto é fantástico! Eu poderia fugir como o vento e lutar como um leão, nada me vai impedir!</AMP_II.stages.0.description>
+
+  <AMP_III.stages.0.label>Energia tumultuada</AMP_III.stages.0.label>
+  <AMP_III.stages.0.description>Estou a ficar muito forte. Sinto-me inabalável.</AMP_III.stages.0.description>
+
+  <Shadow.stages.0.label>nervoso</Shadow.stages.0.label>
+  <Shadow.stages.0.description>Passa-se alguma coisa.</Shadow.stages.0.description>
+
+  <Shadow_I.stages.0.label>preocupado</Shadow_I.stages.0.label>
+  <Shadow_I.stages.0.description>Tenho um formigamento na cabeça, como se estivesse sempre a ser vigiado. Isso é horrível.</Shadow_I.stages.0.description>
+
+  <Shadow_II.stages.0.label>nervoso</Shadow_II.stages.0.label>
+  <Shadow_II.stages.0.description>Eu continuo a ver algo na borda dos olhos, e acho que alguém vem atrás de mim, e isso deixa-me nervosa.</Shadow_II.stages.0.description>
+
+  <Shadow_III.stages.0.label>descompromissado</Shadow_III.stages.0.label>
+  <Shadow_III.stages.0.description>Há outra pessoa ao meu lado que me ajuda em tudo o que faço. Ele sabe o que fazer antes que eu o faça. Estou obcecado?</Shadow_III.stages.0.description>
+
+
+  <!-- Blind -->
+
+  <TM_Blind.stages.0.label>deslumbrado</TM_Blind.stages.0.label>
+  <TM_Blind.stages.0.description>Havia um clarão de luz e o que ela me revelou... Não posso... Não quero ver mais nada!</TM_Blind.stages.0.description>
+
+
+  <!-- успокаивающий бриз -->
+  <!-- Ray of Hope -->
+
+</LanguageData>

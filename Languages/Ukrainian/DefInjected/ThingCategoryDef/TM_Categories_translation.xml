@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_MagicItems.label>Магічні предмети</TM_MagicItems.label>
+  <TM_SkillBooks.label>Книги навичок</TM_SkillBooks.label>
+  <TM_Scrolls.label>Сувої</TM_Scrolls.label>
+  <TM_Magicyte.label>Очищений магіцит</TM_Magicyte.label>
+  <TM_MagicEquipment.label>Магічне оснащення</TM_MagicEquipment.label>
+  <TM_MagicArtifacts.label>Магічні артефакти</TM_MagicArtifacts.label>
+  <TM_MagicApparel.label>Магічна ковдра</TM_MagicApparel.label>
+  <TM_MagicWeapons.label>Магічна зброя</TM_MagicWeapons.label>
+  <TM_MagicWeaponsMelee.label>Магічна зброя рукопашна</TM_MagicWeaponsMelee.label>
+  <TM_MagicWeaponsRanged.label>Магічна зброя далекобійна</TM_MagicWeaponsRanged.label>
+  <TM_MagicWeaponsFoci.label>Магічні фокуси</TM_MagicWeaponsFoci.label>
+
+
+</LanguageData>

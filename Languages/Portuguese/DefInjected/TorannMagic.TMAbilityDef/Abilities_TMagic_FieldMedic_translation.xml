@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Medic supply -->
+
+  <TM_MedicalSupply.label>Reabastecimento</TM_MedicalSupply.label>
+  <TM_MedicalSupply.description>Reabasteça os medicamentos da Medicina do Campo.
+
+O médico de campo vai usar um item da reserva de destino e transformá-lo em material médico pessoal que ele pode usar para alimentar suas capacidades.
+
+A quantidade de reserva obtida equivale a 20 vezes o potencial médico do item em quadrado:
+medicina - 20 itens de uso médico
+fitoterapia - 4,9 itens de uso médico
+medicina do mundo brilhante - 51,2 itens de uso médico
+
+Medicina de campo pode aprender como transformar seu equipamento de volta em medicina convencional</TM_MedicalSupply.description>
+
+  <TM_Emergency.label>Emergência</TM_Emergency.label>
+  <TM_Emergency.description>Um médico de campo vai ajudar os seus pacientes.
+
+O médico de campo recebe uma maior velocidade básica de movimento, velocidade final e qualidade de cuidados, além de uma dor reduzida de 30 segundos.</TM_Emergency.description>
+
+  <TM_Medigel.label>Medigel</TM_Medigel.label>
+  <TM_Medigel.description>Aplica um gel sarador sobre as feridas do alvo, que acelera a recuperação e combate a infecção. As feridas vão sarar lentamente ao longo do tempo. A medigel diminui um pouco a dor das feridas.</TM_Medigel.description>
+
+  <TM_CombatDrugs.label>Combate às drogas</TM_CombatDrugs.label>
+  <TM_CombatDrugs.description>Dá drogas de combate ao aliado
+
+Um médico de campo abandona uma seringa com medicamentos de guerra improvisados.
+O efeito é sempre positivo, mas pode ser diferente.</TM_CombatDrugs.description>
+
+
+</LanguageData>

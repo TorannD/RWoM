@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GrandAtmosphereDome.label>gran cúpula atmosférica</TM_GrandAtmosphereDome.label>
+  <TM_GrandAtmosphereDome.description>Mantiene una atmósfera respirable en todo el mapa local, incluso en el vacío abierto. Un mago debe realizar un ritual de 60 segundos y gastar al completarlo un 10% de su maná máximo personal, conservando al menos un 20%. Consume 100 unidades de magocombustible al día sin importar el área del mapa y almacena 200. Se reabastece mediante transporte o balizas de maná conectadas. Solo una cúpula funciona por mapa; las demás cúpulas activadas esperan sin consumir combustible. Apagarla, una avería, perder la propiedad o agotar el combustible exige otro ritual. Permite respirar y mantener plantas y fuego en el vacío. No proporciona calor, protección de combate ni terreno.</TM_GrandAtmosphereDome.description>
+</LanguageData>

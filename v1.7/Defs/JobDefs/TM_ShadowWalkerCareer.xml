@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_ReadShadowWalkerStrike</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying the shadow walker's fighting style.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_ReadShadowWalkerPoison</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying the shadow walker's fighting style.</reportString>
+  </JobDef>
+</Defs>

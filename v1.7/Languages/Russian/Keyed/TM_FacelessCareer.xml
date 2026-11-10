@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadFacelessInfiltrator>Лазутчик — маскировка действует на 20% дольше.</TM_ReadFacelessInfiltrator>
+  <TM_ReadFacelessUnderstudy>Дублёр — эхо действует на 20% сильнее.</TM_ReadFacelessUnderstudy>
+  <TM_FacelessOrigins>Изучите три разных вида эха: {0}/3.</TM_FacelessOrigins>
+  <TM_FacelessPractice>Раньте врага или исцелите союзника эхом в разные дни: {0}/{1}.</TM_FacelessPractice>
+  <TM_FacelessRescue>Или спасите разных раненых союзников: {0}/{1}.</TM_FacelessRescue>
+  <TM_FacelessSample>Образец для подражания: {0}</TM_FacelessSample>
+  <TM_FacelessVirtuoso>Виртуоз — усилить эхо на 50%.</TM_FacelessVirtuoso>
+</LanguageData>

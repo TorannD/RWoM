@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MagofuelReservoir.label>depósito de combustible mágico</TM_MagofuelReservoir.label>
+  <TM_MagofuelReservoir.description>Almacena combustible mágico y una carga de maná independiente. El combustible se puede convertir en maná; un mago también puede cargar el depósito conservando una reserva personal configurable. No genera electricidad ni convierte maná en combustible.</TM_MagofuelReservoir.description>
+</LanguageData>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritRaiseUndead.reportString>正在通过宿主的身体唤起亡灵。</TM_SpiritRaiseUndead.reportString>
+  <TM_SpiritDeathMark.reportString>正通过灵体宿主施加死亡印记。</TM_SpiritDeathMark.reportString>
+  <TM_SpiritDeathMark_I.reportString>正通过灵体宿主施加死亡印记。</TM_SpiritDeathMark_I.reportString>
+  <TM_SpiritDeathMark_II.reportString>正通过灵体宿主施加死亡印记。</TM_SpiritDeathMark_II.reportString>
+  <TM_SpiritDeathMark_III.reportString>正通过灵体宿主施加死亡印记。</TM_SpiritDeathMark_III.reportString>
+  <TM_SpiritConsumeCorpse.reportString>正通过灵魂宿主吞噬尸体。</TM_SpiritConsumeCorpse.reportString>
+  <TM_SpiritConsumeCorpse_I.reportString>正通过灵魂宿主吞噬尸体。</TM_SpiritConsumeCorpse_I.reportString>
+  <TM_SpiritConsumeCorpse_II.reportString>正通过灵魂宿主吞噬尸体。</TM_SpiritConsumeCorpse_II.reportString>
+  <TM_SpiritConsumeCorpse_III.reportString>正通过灵魂宿主吞噬尸体。</TM_SpiritConsumeCorpse_III.reportString>
+  <TM_SpiritConsumeCorpse_Mass.reportString>正通过灵魂宿主吞噬尸体。</TM_SpiritConsumeCorpse_Mass.reportString>
+  <TM_SpiritCorpseExplosion.reportString>正通过灵魂宿主引爆尸体。</TM_SpiritCorpseExplosion.reportString>
+  <TM_SpiritCorpseExplosion_I.reportString>正通过灵魂宿主引爆尸体。</TM_SpiritCorpseExplosion_I.reportString>
+  <TM_SpiritCorpseExplosion_II.reportString>正通过灵魂宿主引爆尸体。</TM_SpiritCorpseExplosion_II.reportString>
+  <TM_SpiritCorpseExplosion_III.reportString>正通过灵魂宿主引爆尸体。</TM_SpiritCorpseExplosion_III.reportString>
+  <TM_SpiritFogOfTorment.reportString>正通过灵魂宿主释放折磨之雾。</TM_SpiritFogOfTorment.reportString>
+  <TM_SpiritDeathBolt.reportString>正通过灵魂宿主发射死亡之箭。</TM_SpiritDeathBolt.reportString>
+  <TM_SpiritDeathBolt_I.reportString>正通过灵魂宿主发射死亡之箭。</TM_SpiritDeathBolt_I.reportString>
+  <TM_SpiritDeathBolt_II.reportString>正通过灵魂宿主发射死亡之箭。</TM_SpiritDeathBolt_II.reportString>
+  <TM_SpiritDeathBolt_III.reportString>正通过灵魂宿主发射死亡之箭。</TM_SpiritDeathBolt_III.reportString>
+</LanguageData>

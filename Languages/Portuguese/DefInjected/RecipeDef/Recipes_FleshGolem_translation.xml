@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Flesh Golem upgrade recipes -->
+
+  <TM_FleshGolem_RestorePart.label>recuperar parte do corpo</TM_FleshGolem_RestorePart.label>
+  <TM_FleshGolem_RestorePart.description>Restabelece as partes faltantes do golem que não necessitam de atualização específica.</TM_FleshGolem_RestorePart.description>
+  <TM_FleshGolem_RestorePart.jobString>transplante de parte do golem</TM_FleshGolem_RestorePart.jobString>
+
+  <TM_FleshGolem_MuscleTissue.label>transplante de tecido muscular</TM_FleshGolem_MuscleTissue.label>
+  <TM_FleshGolem_MuscleTissue.description>Injeta tecido muscular para melhorar a força e resistência.</TM_FleshGolem_MuscleTissue.description>
+  <TM_FleshGolem_MuscleTissue.jobString>transplante de tecido muscular</TM_FleshGolem_MuscleTissue.jobString>
+
+  <TM_FleshGolem_DigestiveOrgans.label>adicionar órgãos digestivos</TM_FleshGolem_DigestiveOrgans.label>
+  <TM_FleshGolem_DigestiveOrgans.description>Aumenta em 10% a eficiência de absorção e uso de energia por holem para o sistema digestivo adicionado.</TM_FleshGolem_DigestiveOrgans.description>
+  <TM_FleshGolem_DigestiveOrgans.jobString>adição de órgãos digestivos</TM_FleshGolem_DigestiveOrgans.jobString>
+
+  <TM_FleshGolem_EnergySynthesis.label>melhora o aprendizado de nutrientes</TM_FleshGolem_EnergySynthesis.label>
+  <TM_FleshGolem_EnergySynthesis.description>Aumenta a taxa de propagação de energia por todo o golo.</TM_FleshGolem_EnergySynthesis.description>
+  <TM_FleshGolem_EnergySynthesis.jobString>melhoria do metabolismo muscular</TM_FleshGolem_EnergySynthesis.jobString>
+
+  <TM_FleshGolem_LifeStage.label>aumente a biomassa da máquina</TM_FleshGolem_LifeStage.label>
+  <TM_FleshGolem_LifeStage.description>Aumenta o holema da carne, removendo partes extras ou desnecessárias do corpo ou órgãos e substituindo-os por tecidos musculares adicionais, tendões e ossos para transformar ainda mais o golem da carne em uma criatura letal. Esta atualização oferece os seguintes benefícios para cada nível de atualização [1/2/3]:
+Movimento: + [20 %/35 %/50%]
+Saúde: + [30 %/50 %/70%]
+
+Além disso, esta atualização permite que um goleiro de carne use sua fúria para arrancar membros de seus inimigos.</TM_FleshGolem_LifeStage.description>
+  <TM_FleshGolem_LifeStage.jobString>reforço do golem em carne</TM_FleshGolem_LifeStage.jobString>
+
+  <TM_FleshGolem_LeftArm_Bracer.label>fabricar a pulseira esquerda do gloma</TM_FleshGolem_LeftArm_Bracer.label>
+  <TM_FleshGolem_LeftArm_Bracer.description>Adiciona uma pulseira de metal à mão de um golem de carne para aumentar os danos de um golpe contundente e permitir o bloqueio.</TM_FleshGolem_LeftArm_Bracer.description>
+  <TM_FleshGolem_LeftArm_Bracer.jobString>criação de uma pulseira de golem</TM_FleshGolem_LeftArm_Bracer.jobString>
+
+  <TM_FleshGolem_RightArm_Bracer.label>fabricar a pulseira direita do glom</TM_FleshGolem_RightArm_Bracer.label>
+  <TM_FleshGolem_RightArm_Bracer.description>Adiciona uma pulseira de metal à mão de um golem de carne para aumentar os danos de um golpe contundente e permitir o bloqueio.</TM_FleshGolem_RightArm_Bracer.description>
+  <TM_FleshGolem_RightArm_Bracer.jobString>criação de uma pulseira de golem</TM_FleshGolem_RightArm_Bracer.jobString>
+
+  <TM_FleshGolem_LeftArm_Cleaver.label>fabricar tesão de gloma esquerdo</TM_FleshGolem_LeftArm_Cleaver.label>
+  <TM_FleshGolem_LeftArm_Cleaver.description>Adiciona uma tenda de metal à mão de um golem de carne, permitindo o uso de um ataque cortante e permitindo que o goleiro recolha plantas e árvores.</TM_FleshGolem_LeftArm_Cleaver.description>
+  <TM_FleshGolem_LeftArm_Cleaver.jobString>criação de um tesaco para o golem</TM_FleshGolem_LeftArm_Cleaver.jobString>
+
+  <TM_FleshGolem_RightArm_Cleaver.label>fabricar a tenda direita do gloma</TM_FleshGolem_RightArm_Cleaver.label>
+  <TM_FleshGolem_RightArm_Cleaver.description>Adiciona uma tenda de metal à mão de um golem de carne, permitindo o uso de um ataque cortante e permitindo que o goleiro recolha plantas e árvores.</TM_FleshGolem_RightArm_Cleaver.description>
+  <TM_FleshGolem_RightArm_Cleaver.jobString>criação de um tesaco para o golem</TM_FleshGolem_RightArm_Cleaver.jobString>
+
+  <TM_FleshGolem_Tusks.label>colar as batedeiras</TM_FleshGolem_Tusks.label>
+  <TM_FleshGolem_Tusks.description>Põe as presas nos ferros de golem de carne.</TM_FleshGolem_Tusks.description>
+  <TM_FleshGolem_Tusks.jobString>anexar presas de golem</TM_FleshGolem_Tusks.jobString>
+
+  <TM_FleshGolem_Horns.label>colar os chifres</TM_FleshGolem_Horns.label>
+  <TM_FleshGolem_Horns.description>Agarra os chifres ao crânio de um golem de carne. Os chifres dão-nos um ataque mortal de carne e sangue e deixam-no correr.</TM_FleshGolem_Horns.description>
+  <TM_FleshGolem_Horns.jobString>anexar os chifres</TM_FleshGolem_Horns.jobString>
+
+  <TM_FleshGolem_SkullPlate.label>transplante de placa craniana</TM_FleshGolem_SkullPlate.label>
+  <TM_FleshGolem_SkullPlate.description>Injeta uma placa de metal ao redor do crânio de um golem de carne.</TM_FleshGolem_SkullPlate.description>
+  <TM_FleshGolem_SkullPlate.jobString>transplante de placa craniana</TM_FleshGolem_SkullPlate.jobString>
+
+  <TM_FleshGolem_ShoulderPlates.label>transplante de placas de úmero</TM_FleshGolem_ShoulderPlates.label>
+  <TM_FleshGolem_ShoulderPlates.description>Injeta placas de metal nos ombros do golem de carne.</TM_FleshGolem_ShoulderPlates.description>
+  <TM_FleshGolem_ShoulderPlates.jobString>transplante de placas de úmero</TM_FleshGolem_ShoulderPlates.jobString>
+
+  <TM_FleshGolem_ChestCage.label>colar o peito</TM_FleshGolem_ChestCage.label>
+  <TM_FleshGolem_ChestCage.description>Melhora a blindagem frontal do corpo, injectando uma célula feita de ossos de corpos humanos ao redor do peito.</TM_FleshGolem_ChestCage.description>
+  <TM_FleshGolem_ChestCage.jobString>anexação de tórax ósseo</TM_FleshGolem_ChestCage.jobString>
+
+  <TM_FleshGolem_SpineGuard.label>colar a proteção da coluna</TM_FleshGolem_SpineGuard.label>
+  <TM_FleshGolem_SpineGuard.description>Melhora a blindagem das costas, injectando carapuça feita com os ossos de um cadáver, ao longo da coluna vertebral de um golem de carne.</TM_FleshGolem_SpineGuard.description>
+  <TM_FleshGolem_SpineGuard.jobString>fixação da placa óssea da coluna</TM_FleshGolem_SpineGuard.jobString>
+
+  <TM_FleshGolem_Wings.label>colar asas</TM_FleshGolem_Wings.label>
+  <TM_FleshGolem_Wings.description>Aumenta a velocidade e o equilíbrio, injetando asas nas costas do golem de carne. Estas asas não são projetadas para voar, mas servem como um golem, ajudando-o a compensar parte de sua grande massa durante o combate.</TM_FleshGolem_Wings.description>
+  <TM_FleshGolem_Wings.jobString>anexar asas</TM_FleshGolem_Wings.jobString>
+
+  <TM_FleshGolem_LegPlates.label>colar placas de faca</TM_FleshGolem_LegPlates.label>
+  <TM_FleshGolem_LegPlates.description>Injeta placas de metal ao redor dos pés de golem em carne.</TM_FleshGolem_LegPlates.description>
+  <TM_FleshGolem_LegPlates.jobString>anexar placas de faca</TM_FleshGolem_LegPlates.jobString>
+
+  <TM_FleshGolem_EyesT1.label>inserir quatro olhos</TM_FleshGolem_EyesT1.label>
+  <TM_FleshGolem_EyesT1.description>Coloca um par de olhos sob o par original, que melhora a visão e reduz a probabilidade de que o golem possa ficar completamente cego.</TM_FleshGolem_EyesT1.description>
+  <TM_FleshGolem_EyesT1.jobString>inserir os olhos</TM_FleshGolem_EyesT1.jobString>
+
+  <TM_FleshGolem_EyesT2.label>esculpir o olho malvado</TM_FleshGolem_EyesT2.label>
+  <TM_FleshGolem_EyesT2.description>Esculpe o olho na testa de um golem de carne cheia de uma substância mágica moldada em forma de olho. Há símbolos secretos gravados ao redor do olho, formando uma ligação mágica entre o holem e o olho. O olho mau é capaz de mostrar a fúria deprimida de uma carne nua para amaldiçoar o seu alvo com a fraqueza.</TM_FleshGolem_EyesT2.description>
+  <TM_FleshGolem_EyesT2.jobString>cortar o olho maligno</TM_FleshGolem_EyesT2.jobString>
+
+
+</LanguageData>

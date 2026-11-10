@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Enchanting jobs -->
+
+  <JobDriver_RemoveEnchantingGem.reportString>tira TargetA para encantar</JobDriver_RemoveEnchantingGem.reportString>
+  <JobDriver_AddEnchantingGem.reportString>tripular TargetA para encantar</JobDriver_AddEnchantingGem.reportString>
+  <JobDriver_EnchantItem.reportString>está a enfeitar TargetA</JobDriver_EnchantItem.reportString>
+
+
+</LanguageData>

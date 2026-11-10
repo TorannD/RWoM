@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_BloodHD.label>Magia do Sangue</TM_BloodHD.label>
+  <TM_BloodHD.description>Isso explica o poder do sangue do mago do sangue.</TM_BloodHD.description>
+  <TM_BloodHD.stages.0.label></TM_BloodHD.stages.0.label>
+
+  <TM_RendHD.label>Hemorragia</TM_RendHD.label>
+  <TM_RendHD.description>Uma ferida terrível que causa hemorragia.</TM_RendHD.description>
+  <TM_RendHD.stages.0.label></TM_RendHD.stages.0.label>
+
+  <TM_BloodForBloodHD.label>Vazamento de sangue</TM_BloodForBloodHD.label>
+  <TM_BloodForBloodHD.description>Leva o sangue deste alvo para o mago do sangue. Durante o tratamento, as feridas cicatrizam.</TM_BloodForBloodHD.description>
+  <TM_BloodForBloodHD.stages.0.label></TM_BloodForBloodHD.stages.0.label>
+
+  <TM_BloodShieldHD.label>Escudo de Sangue</TM_BloodShieldHD.label>
+  <TM_BloodShieldHD.description>Envolto por uma bolha de proteção de energia vital; a energia de cada ataque contra o escudo sanguíneo restabelece a saúde da Pesque protegida.</TM_BloodShieldHD.description>
+  <TM_BloodShieldHD.stages.0.label></TM_BloodShieldHD.stages.0.label>
+
+
+</LanguageData>

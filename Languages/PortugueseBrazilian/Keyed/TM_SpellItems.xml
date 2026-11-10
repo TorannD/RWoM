@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SpellItem_InvalidTarget>Escolha um alvo válido.</TM_SpellItem_InvalidTarget>
+  <TM_SpellItem_OutOfRange>O alvo está fora de alcance.</TM_SpellItem_OutOfRange>
+  <TM_SpellItem_NoLineOfSight>Não há linha de visão.</TM_SpellItem_NoLineOfSight>
+  <TM_SpellItem_NoInjuries>Não há feridas que possam cicatrizar naturalmente.</TM_SpellItem_NoInjuries>
+  <TM_SpellItem_Occupied>O destino está ocupado.</TM_SpellItem_Occupied>
+  <TM_SpellItem_SameCell>Escolha outro destino.</TM_SpellItem_SameCell>
+  <TM_SpellItem_HostileTarget>Não é possível curar um alvo hostil.</TM_SpellItem_HostileTarget>
+  <TM_SpellItem_UndeadTarget>Não é possível curar mortos-vivos ou mecanoides.</TM_SpellItem_UndeadTarget>
+  <TM_SpellItem_NotHeld>O item deve estar no inventário do usuário ou equipado.</TM_SpellItem_NotHeld>
+  <TM_SpellItem_CannotUse>Este personagem não pode usar o item.</TM_SpellItem_CannotUse>
+  <TM_SpellItem_Empty>Não restam usos.</TM_SpellItem_Empty>
+  <TM_SpellItem_Cooldown>O item está em tempo de recarga.</TM_SpellItem_Cooldown>
+  <TM_SpellItem_Busy>Um feitiço de item já está sendo lançado.</TM_SpellItem_Busy>
+  <TM_SpellItem_Uses>Usos: {0}/{1}</TM_SpellItem_Uses>
+  <TM_SpellItem_CastLabel>{0} {1}</TM_SpellItem_CastLabel>
+  <TM_SpellItem_Description>Lança o feitiço de poder fixo do item. Não exige mana nem aprender o feitiço.</TM_SpellItem_Description>
+  <TM_SpellItem_Casting>lançando um feitiço com {0}.</TM_SpellItem_Casting>
+  <TM_SpellItem_NoTreatment>Não há uma condição adequada para tratar ou este efeito já está ativo.</TM_SpellItem_NoTreatment>
+  <TM_SpellItem_EnterPortal>Entrar no portal</TM_SpellItem_EnterPortal>
+  <TM_SpellItem_RequiredKnowledge>É preciso aprender {0} para fabricar este item.</TM_SpellItem_RequiredKnowledge>
+</LanguageData>

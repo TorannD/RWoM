@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_VocationMage.degreeDatas.0.label>маг</TM_VocationMage.degreeDatas.0.label>
+  <TM_VocationMage.degreeDatas.0.description>[PAWN_nameDef] пробуджує в собі магію. Напрями вивчаються через гримуар і книги посвяти.</TM_VocationMage.degreeDatas.0.description>
+  <TM_VocationWarrior.degreeDatas.0.label>воїн</TM_VocationWarrior.degreeDatas.0.label>
+  <TM_VocationWarrior.degreeDatas.0.description>[PAWN_nameDef] дотримується покликання воїна.</TM_VocationWarrior.degreeDatas.0.description>
+  <TM_VocationWarriorMage.degreeDatas.0.label>воїн-маг</TM_VocationWarriorMage.degreeDatas.0.label>
+  <TM_VocationWarriorMage.degreeDatas.0.description>[PAWN_nameDef] поєднує покликання мага та воїна.</TM_VocationWarriorMage.degreeDatas.0.description>
+</LanguageData>

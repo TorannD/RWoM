@@ -1,0 +1,17 @@
+<LanguageData><TM_ManaSickness.label>болезнь маны</TM_ManaSickness.label>
+  <TM_ManaSickness.description>Болезнь маны поражает магов, когда у них есть 0 маны и их регенерация отрицательна. Болезнь маны в конце концов убьет мага, если ее не обратить вспять. Игроки могут оценить регенерацию маны мага на вкладке магия, наведя курсор на значение регенерации маны, чтобы отобразить всплывающую подсказку, показывающую вкладчиков, влияющих на регенерацию маны.</TM_ManaSickness.description>
+  <TM_ManaSickness.stages.0.label>ослабленный</TM_ManaSickness.stages.0.label>
+  <TM_ManaSickness.stages.1.label>больной</TM_ManaSickness.stages.1.label>
+  <TM_ManaSickness.stages.2.label>клиническая смерть</TM_ManaSickness.stages.2.label>
+
+  <TM_ArcaneSickness.label>тайная болезнь</TM_ArcaneSickness.label>
+  <TM_ArcaneSickness.description>Болезнь, вызванная испорченной магией.</TM_ArcaneSickness.description>
+  <TM_ArcaneSickness.stages.0.label>незначительные</TM_ArcaneSickness.stages.0.label>
+  <TM_ArcaneSickness.stages.1.label>незначительные</TM_ArcaneSickness.stages.1.label>
+  <TM_ArcaneSickness.stages.2.label>умеренный</TM_ArcaneSickness.stages.2.label>
+  <TM_ArcaneSickness.stages.3.label>серьёзный</TM_ArcaneSickness.stages.3.label>
+  <TM_ArcaneSickness.stages.4.label>экстрим</TM_ArcaneSickness.stages.4.label>
+  <TM_ArcaneSickness.stages.5.label>экстрим</TM_ArcaneSickness.stages.5.label>
+
+
+</LanguageData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadApothecaryHerbalist>Estudar colheita de campo</TM_ReadApothecaryHerbalist>
+  <TM_ReadApothecaryFreshStock>Estudar conservação</TM_ReadApothecaryFreshStock>
+  <TM_ApothecaryGatherInfo>A colheita dá mais 5% de ervas.</TM_ApothecaryGatherInfo>
+  <TM_ApothecaryFreshInfo>As ervas se deterioram 10% mais devagar.</TM_ApothecaryFreshInfo>
+  <TM_ApothecaryStock>Ervas: {0}/{1}</TM_ApothecaryStock>
+  <TM_ApothecaryTrialGather>Obtenha ervas de 30 plantas maduras e saudáveis diferentes ({0}/30).</TM_ApothecaryTrialGather>
+  <TM_ApothecaryTrialTreat>Trate 20 feridas recentes diferentes ({0}/20) ou alivie 12 intoxicações alimentares com antídoto ({1}/12).</TM_ApothecaryTrialTreat>
+  <TM_ApothecaryTrialShift>Complete 12 dias de serviço médico ({0}/12). A ascensão requer nível marcial 30 ({1}/30).</TM_ApothecaryTrialShift>
+  <TM_ApothecaryClaim>Obter o grau seguinte</TM_ApothecaryClaim>
+  <TM_ApothecaryKitUnavailable>Requer quatro medicamentos herbais ao alcance e 60% de ervas.</TM_ApothecaryKitUnavailable>
+  <TM_ApothecaryAntitoxinLow>Requer 20% de ervas.</TM_ApothecaryAntitoxinLow>
+</LanguageData>

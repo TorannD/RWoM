@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+	<TM_Description_CombatTechnique.rulePack.rulesStrings><li>subject-&gt;[subject_Might]</li>
+		<li>object-&gt;[subject_teachingType]</li>
+		<li>desc-&gt;[discussion].
+
+[anecdote].
+
+[quality_statement].</li>
+		<li>discussion-&gt;Этот [object] даёт [useful_information] о предмете [subject][detail]</li>
+		<li>discussion-&gt;Этот [object] подтверждает авторитет автора в вопросе [subject][detail]</li>
+		<li>discussion-&gt;Те, кто ищет [understanding_synonym] [subject], неизменно тянутся к этому [notable_adjective] [textbook][detail]</li>
+		<li>discussion-&gt;[object_adjective] [object] о предмете [subject][detail]</li>
+		<li>object_adjective-&gt;пыльный</li>
+		<li>object_adjective-&gt;древний</li>
+		<li>object_adjective-&gt;потрёпанный</li>
+		<li>detail-&gt;. В нём особенно подробно разбираются тонкости освоения [subject]</li>
+		<li>detail-&gt;. Это краткое, но ёмкое наставление по сложной теме</li>
+		<li>detail-&gt;. Во вступлении сказано, что во времена [ANYPAWN_label] этот подход считался новым словом в ремесле</li>
+		<li>detail-&gt;. На [note_location] есть пометка: «Настоящие [students] [subject] не могут пройти мимо книги [ANYPAWN_label]»</li>
+		<li>detail-&gt;. Материал изложен шаг за шагом и легко прослеживается</li>
+		<li>detail(quality[less_than]4)-&gt;, хотя автор временами слишком торопится с выводами</li>
+		<li>detail(quality[greater_than]3)-&gt;. Это обстоятельный труд, написанный с редкой тщательностью</li>
+		<li>detail(quality[greater_than]4)-&gt;. Страницы этого [object] сделаны из тонких металлических листов</li>
+		<li>detail(quality[greater_than]5)-&gt;. Весь [object] оплетён цепями</li>
+		<li>detail-&gt;. На обложке [object] видны странные царапины</li>
+		<li>detail-&gt;. Обложку [object] портят засохшие пятна крови</li>
+		<li>detail(quality[less_than]3)-&gt;, хотя авторская риторика иногда отвлекает от сути</li>
+		<li>detail(quality[less_than]3)-&gt;, а часть страниц и вовсе вырвана</li>
+		<li>students-&gt;ученики</li>
+		<li>students-&gt;ценители</li>
+		<li>students-&gt;практики</li>
+		<li>students-&gt;воины</li>
+		<li>students-&gt;бойцы</li>
+		<li>quality_statement-&gt;[exterior_quality] [page_quality]</li>
+		<li>anecdote-&gt;В уединённом додзё опытный [author_type] по имени [ANYPAWN_label], прославившийся [ANYPAWN_possessive] неустанным стремлением к [skill_combat], взял к себе ученика. Каждое утро они сходились в [combatLocation], чтобы отрабатывать новые боевые приёмы. [ANYPAWN_label] показывал каждое движение с безупречной точностью, объясняя, как именно техника обретает смертельную эффективность.</li>
+		<li>anecdote-&gt;Согласно легендам, [ANYPAWN_nameFull] был знаменитым [author_type]. Этот [object] позволяет понять, как [ANYPAWN_label] довёл искусство [skill_combat] до совершенства.</li>
+		<li>anecdote-&gt;Хроники гласят, что жители [worldname] до сих пор вспоминают [ANYPAWN_nameFull] и [ANYPAWN_possessive] страсть к бою. Этот [object] учит владению [skill_combat].</li>
+		<li>anecdote-&gt;По архивным записям известно, что роковая дуэль с вражеским военачальником оборвала жизнь [author_type] по имени [ANYPAWN_nameFull]. Этот [object] сохранил последние наставления [ANYPAWN_label] о развитии [skill_combat].</li>
+		<li>anecdote-&gt;Согласно записям, [ANYPAWN_nameFull] провёл последние дни, обучая учеников в известной академии на [worldname]. Эта книга составлена по [ANYPAWN_possessive] лекциям о [skill_combat].</li>
+		<li>anecdote-&gt;В шумном городе, скрытом среди высоких зданий, был потайной вход в [combatLocation], известный лишь посвящённым. Там, среди оружия всех видов, строгий [author_type] наставлял учеников, обучая их искусству [skill_combat] плавными и точными движениями.</li>
+		<li>student_learn-&gt;постигнуть</li>
+		<li>student_learn-&gt;изучить</li>
+		<li>student_learn-&gt;освоить</li>
+		<li>student_learn-&gt;понять</li>
+		<li>student_learn-&gt;увидеть суть</li>
+		<li>student_learn-&gt;взять под контроль</li>
+		<li>author_type-&gt;боец</li>
+		<li>author_type-&gt;ниндзя</li>
+		<li>author_type-&gt;воин</li>
+		<li>author_type-&gt;военачальник</li>
+		<li>author_type-&gt;завоеватель</li>
+		<li>author_type-&gt;гладиатор</li>
+		<li>author_type-&gt;рыцарь смерти</li>
+		<li>author_type-&gt;самурай</li>
+		<li>author_type-&gt;наёмник</li>
+		<li>author_type-&gt;дуэлянт</li>
+		<li>author_type-&gt;берсерк</li>
+		<li>author_type-&gt;следопыт</li>
+		<li>author_type-&gt;рубакa</li>
+		<li>author_type-&gt;тень</li>
+		<li>author_type-&gt;танцующий с клинком</li>
+		<li>skill_combat-&gt;скорость</li>
+		<li>skill_combat-&gt;силу</li>
+		<li>skill_combat-&gt;хитрость</li>
+		<li>skill_combat-&gt;меткость</li>
+		<li>skill_combat-&gt;выносливость</li>
+		<li>skill_combat-&gt;ловкость</li>
+		<li>skill_combat-&gt;стойкость</li>
+		<li>skill_combat-&gt;точность</li>
+		<li>skill_combat-&gt;стратегию</li>
+		<li>skill_combat-&gt;тактику</li>
+		<li>skill_combat-&gt;свирепость</li>
+		<li>skill_combat-&gt;оборону</li>
+		<li>skill_combat-&gt;баланс</li>
+		<li>skill_combat-&gt;внимательность</li>
+		<li>skill_combat-&gt;технику</li>
+		<li>skill_combat-&gt;реакцию</li>
+		<li>skill_combat-&gt;мощь</li>
+		<li>skill_combat-&gt;сосредоточенность</li>
+		<li>skill_combat-&gt;дисциплину</li>
+		<li>combatLocation-&gt;уединённое додзё</li>
+		<li>combatLocation-&gt;древнее поле битвы</li>
+		<li>combatLocation-&gt;заброшенную арену</li>
+		<li>combatLocation-&gt;горную вершину</li>
+		<li>combatLocation-&gt;укрытый храм</li>
+		<li>combatLocation-&gt;глухой лес</li>
+		<li>combatLocation-&gt;ветреное плато</li>
+		<li>combatLocation-&gt;подземный зал</li>
+		<li>textbook-&gt;учебник</li>
+		<li>textbook-&gt;руководство</li>
+		<li>textbook(p=6)-&gt;книга</li>
+		<li>textbook-&gt;справочник</li>
+		<li>textbook-&gt;компендиум</li>
+		<li>textbook-&gt;трактат</li>
+		<li>textbook-&gt;пособие</li>
+		<li>object-&gt;трактат</li>
+		<li>note_location-&gt;лицевой стороне обложки</li>
+		<li>note_location-&gt;обороте обложки</li>
+		<li>note_location-&gt;первой странице</li>
+		<li>note_location-&gt;последней странице</li>
+		<li>note_location-&gt;полях</li>
+		<li>note_location-&gt;титульном листе</li>
+		<li>useful_information-&gt;полезные сведения</li>
+		<li>useful_information-&gt;ценные наблюдения</li>
+		<li>useful_information-&gt;практические советы</li>
+		<li>useful_information-&gt;важные подробности</li>
+		<li>understanding_synonym-&gt;знание</li>
+		<li>understanding_synonym-&gt;понимание</li>
+		<li>understanding_synonym-&gt;мастерство в</li>
+		<li>understanding_synonym-&gt;искусство</li>
+		<li>notable_adjective-&gt;знаменитый</li>
+		<li>notable_adjective-&gt;неприметный</li>
+		<li>notable_adjective-&gt;классический</li>
+		<li>notable_adjective-&gt;вечный</li>
+		<li>notable_adjective-&gt;элегантный</li>
+		<li>notable_adjective-&gt;практичный</li>
+		<li>exterior_quality(quality[greater_than]4)-&gt;Снаружи эта книга переплетена с большим мастерством, а</li>
+		<li>exterior_quality(quality[greater_than]4)-&gt;Настоящее произведение переплётного искусства: книга сияет, а</li>
+		<li>exterior_quality(quality[less_than]5,quality[greater_than]1)-&gt;Эта книга знавала лучшие дни, но</li>
+		<li>exterior_quality(quality[less_than]2)-&gt;С первого взгляда книга кажется добротной, но</li>
+		<li>page_quality-&gt;страницы [page_condition]</li>
+		<li>page_condition(quality[greater_than]4)-&gt;[page_excellent]</li>
+		<li>page_condition(quality[less_than]5,quality[greater_than]1)-&gt;[page_decent]</li>
+		<li>page_condition(quality[less_than]2)-&gt;[page_awful]</li>
+		<li>page_excellent-&gt;словно никогда не тронуты</li>
+		<li>page_excellent-&gt;в превосходном состоянии</li>
+		<li>page_excellent-&gt;безупречно чисты</li>
+		<li>page_decent-&gt;в вполне приличном состоянии</li>
+		<li>page_decent-&gt;читабельны, хоть и помяты</li>
+		<li>page_awful-&gt;сильно повреждены</li>
+		<li>page_awful-&gt;покрыты тёмными пятнами</li>
+		<li>page_awful-&gt;почти неразборчивы</li>
+		<li>worldname-&gt;[glitterworld]</li>
+		<li>worldname-&gt;[urbworld]</li>
+		<li>worldname-&gt;[deadworld]</li>
+		<li>worldname-&gt;[rimworld]</li>
+		<li>worldname-&gt;[coreworld]</li>
+		<li>worldname-&gt;[warworld]</li>
+		<li>worldname-&gt;[iceworld]</li>
+		<li>worldname-&gt;[medievalworld]</li>
+		<li>glitterworld-&gt;Kalthas IV</li>
+		<li>urbworld-&gt;Euterpe</li>
+		<li>deadworld-&gt;Callos IX</li>
+		<li>rimworld-&gt;Filson</li>
+		<li>coreworld-&gt;Novaroma</li>
+		<li>warworld-&gt;Kemia</li>
+		<li>iceworld-&gt;Yttak</li>
+		<li>medievalworld-&gt;Chelis</li>
+	</TM_Description_CombatTechnique.rulePack.rulesStrings>
+	<TM_Description_Grimoire.rulePack.rulesStrings><li>subject-&gt;[subject_Magic]</li>
+		<li>object-&gt;[subject_bookType]</li>
+		<li>desc-&gt;[discussion].
+
+[anecdote].
+
+[quality_statement].</li>
+		<li>discussion-&gt;Этот [object] содержит [useful_information] о предмете [subject][detail]</li>
+		<li>discussion-&gt;Этот [object] закрепляет за автором репутацию знатока в вопросе [subject][detail]</li>
+		<li>discussion-&gt;Те, кто ищет [understanding_synonym] [subject], нередко обращаются к этому [notable_adjective] [textbook][detail]</li>
+		<li>discussion-&gt;[object_adjective] [object], посвящённый теме [subject][detail]</li>
+		<li>object_adjective-&gt;пыльный</li>
+		<li>object_adjective-&gt;древний</li>
+		<li>object_adjective-&gt;потрёпанный</li>
+		<li>detail-&gt;. В нём особенно подробно разбираются тонкости управления [subject]</li>
+		<li>detail-&gt;. Это краткое, но содержательное наставление по непростой теме</li>
+		<li>detail-&gt;. Во вступлении сказано, что во времена [ANYPAWN_label] это считалось совершенно новым подходом</li>
+		<li>detail-&gt;. На [note_location] есть пометка: «Настоящие [students] [subject] не могут пройти мимо книги [ANYPAWN_label]»</li>
+		<li>detail-&gt;. Материал излагается шаг за шагом и читается удивительно легко</li>
+		<li>detail(quality[less_than]4)-&gt;, хотя автор временами слишком увлекается риторикой</li>
+		<li>detail(quality[greater_than]3)-&gt;. Это обстоятельный труд, написанный с большим вниманием к теме</li>
+		<li>detail(quality[greater_than]4)-&gt;. Страницы этого [object] сделаны из человеческой кожи</li>
+		<li>detail(quality[greater_than]5)-&gt;. Весь [object] покрыт светящимися рунами</li>
+		<li>detail-&gt;. На обложке [object] заметны странные царапины</li>
+		<li>detail-&gt;. Обложку [object] портят засохшие пятна крови</li>
+		<li>students-&gt;ученики</li>
+		<li>students-&gt;ценители</li>
+		<li>students-&gt;практики</li>
+		<li>students-&gt;маги</li>
+		<li>students-&gt;волшебники</li>
+		<li>quality_statement-&gt;[exterior_quality] [page_quality]</li>
+		<li>anecdote-&gt;В [magicLocation] [author_adjective] [author_type] по имени [ANYPAWN_nameFull], известный [ANYPAWN_possessive] [author_skillLevel] в области [subject], взял себе ученика. Каждое утро они странствовали по [magicLocation], открывая новые [phenomena]. Маг бережно распутывал каждое явление, нашёптывая древние заклинания, и объяснял ученику саму сущность магии.</li>
+		<li>anecdote-&gt;Согласно заметке на [note_location], [ANYPAWN_nameFull] прославился как мастер множества дисциплин.</li>
+		<li>anecdote-&gt;На [note_location] сказано, что жители [worldname] до сих пор вспоминают [ANYPAWN_nameFull] и [ANYPAWN_possessive] любовь к [subject].</li>
+		<li>anecdote-&gt;Согласно заметке на [note_location], автора, [ANYPAWN_nameFull], вскоре после публикации убил роковой инцидент с переплетением энергий.</li>
+		<li>anecdote-&gt;По краткому пересказу видно, что [ANYPAWN_nameFull] провёл последние годы, обучая в академии на [coreworld]. Эта книга составлена по [ANYPAWN_possessive] лекциям.</li>
+		<li>anecdote-&gt;В шумном городе существовал тайный проход в [magicLocation], известный лишь посвящённым. Там, среди полок с трудами по всем ветвям магии, эксцентричный [author_type] наставлял учеников, обучая их [student_learn] [subject] через [author_action].</li>
+		<li>author_item-&gt;осколок</li>
+		<li>author_item-&gt;тьму</li>
+		<li>author_item-&gt;свет</li>
+		<li>author_item-&gt;фрагмент</li>
+		<li>author_item-&gt;иллюзию</li>
+		<li>author_item-&gt;чары</li>
+		<li>author_item-&gt;руну</li>
+		<li>author_item-&gt;портал</li>
+		<li>author_item-&gt;сигил</li>
+		<li>author_item-&gt;проклятие</li>
+		<li>author_item-&gt;оберег</li>
+		<li>author_event-&gt;Хаос</li>
+		<li>author_event-&gt;Смятение</li>
+		<li>author_event-&gt;Катастрофа</li>
+		<li>author_event-&gt;Бедствие</li>
+		<li>author_event-&gt;Паника</li>
+		<li>student_learn-&gt;постигать</li>
+		<li>student_learn-&gt;изучать</li>
+		<li>student_learn-&gt;осваивать</li>
+		<li>student_learn-&gt;понимать</li>
+		<li>student_learn-&gt;подчинять себе</li>
+		<li>student_learn-&gt;овладевать</li>
+		<li>author_adjective-&gt;пожилой</li>
+		<li>author_adjective-&gt;зловещий</li>
+		<li>author_adjective-&gt;прекрасный</li>
+		<li>author_adjective-&gt;мудрый</li>
+		<li>author_adjective-&gt;древний</li>
+		<li>author_adjective-&gt;могущественный</li>
+		<li>author_adjective-&gt;забытый</li>
+		<li>author_adjective-&gt;таинственный</li>
+		<li>author_type-&gt;волшебник</li>
+		<li>author_type-&gt;чародей</li>
+		<li>author_type-&gt;ведьма</li>
+		<li>author_type-&gt;чернокнижник</li>
+		<li>author_type-&gt;маг</li>
+		<li>author_type-&gt;заклинатель</li>
+		<li>author_type-&gt;некромант</li>
+		<li>author_type-&gt;архимаг</li>
+		<li>author_skillLevel-&gt;мастерством</li>
+		<li>author_skillLevel-&gt;превосходством</li>
+		<li>author_skillLevel-&gt;глубоким знанием</li>
+		<li>author_skillLevel-&gt;редким даром</li>
+		<li>author_action-&gt;вплетание уз контроля прямо в заклинание</li>
+		<li>author_action-&gt;создание зелий, меняющих саму реальность</li>
+		<li>author_action-&gt;вызов фамильяров, шепчущих тайны эфира</li>
+		<li>author_action-&gt;ковку артефактов, удерживающих космическую энергию</li>
+		<li>author_action-&gt;вырезание рун в камне, чтобы связать стихии</li>
+		<li>phenomena-&gt;тайны</li>
+		<li>phenomena-&gt;чудеса</li>
+		<li>phenomena-&gt;аномалии</li>
+		<li>phenomena-&gt;загадки</li>
+		<li>phenomena-&gt;явления</li>
+		<li>magicLocation-&gt;уединённая роща</li>
+		<li>magicLocation-&gt;парящая библиотека</li>
+		<li>magicLocation-&gt;зачарованный сад</li>
+		<li>magicLocation-&gt;астральный план</li>
+		<li>magicLocation-&gt;древний город</li>
+		<li>magicLocation-&gt;эфирное царство</li>
+		<li>textbook-&gt;учебник</li>
+		<li>textbook-&gt;руководство</li>
+		<li>textbook-&gt;книга</li>
+		<li>textbook-&gt;компендиум</li>
+		<li>textbook-&gt;трактат</li>
+		<li>textbook-&gt;пособие</li>
+		<li>note_location-&gt;лицевой стороне обложки</li>
+		<li>note_location-&gt;обороте обложки</li>
+		<li>note_location-&gt;первой странице</li>
+		<li>note_location-&gt;последней странице</li>
+		<li>note_location-&gt;полях</li>
+		<li>note_location-&gt;титульном листе</li>
+		<li>useful_information-&gt;полезные сведения</li>
+		<li>useful_information-&gt;ценные наблюдения</li>
+		<li>useful_information-&gt;практические советы</li>
+		<li>useful_information-&gt;важные подробности</li>
+		<li>understanding_synonym-&gt;знание</li>
+		<li>understanding_synonym-&gt;понимание</li>
+		<li>understanding_synonym-&gt;мастерство в</li>
+		<li>understanding_synonym-&gt;искусство</li>
+		<li>notable_adjective-&gt;знаменитый</li>
+		<li>notable_adjective-&gt;забытый</li>
+		<li>notable_adjective-&gt;классический</li>
+		<li>notable_adjective-&gt;вечный</li>
+		<li>notable_adjective-&gt;элегантный</li>
+		<li>notable_adjective-&gt;неприметный</li>
+		<li>exterior_quality(quality[greater_than]4)-&gt;Снаружи эта книга переплетена с большим мастерством, а</li>
+		<li>exterior_quality(quality[greater_than]4)-&gt;Настоящее произведение переплётного искусства: книга сияет, а</li>
+		<li>exterior_quality(quality[less_than]5,quality[greater_than]1)-&gt;Эта книга знавала лучшие дни, но</li>
+		<li>exterior_quality(quality[less_than]2)-&gt;С первого взгляда книга кажется добротной, но</li>
+		<li>page_quality-&gt;страницы [page_condition]</li>
+		<li>page_condition(quality[greater_than]4)-&gt;[page_excellent]</li>
+		<li>page_condition(quality[less_than]5,quality[greater_than]1)-&gt;[page_decent]</li>
+		<li>page_condition(quality[less_than]2)-&gt;[page_awful]</li>
+		<li>page_excellent-&gt;словно никогда не тронуты</li>
+		<li>page_excellent-&gt;в превосходном состоянии</li>
+		<li>page_excellent-&gt;безупречно чисты</li>
+		<li>page_decent-&gt;в вполне приличном состоянии</li>
+		<li>page_decent-&gt;читабельны, хоть и помяты</li>
+		<li>page_awful-&gt;сильно повреждены</li>
+		<li>page_awful-&gt;покрыты тёмными пятнами</li>
+		<li>page_awful-&gt;почти неразборчивы</li>
+		<li>worldname-&gt;[glitterworld]</li>
+		<li>worldname-&gt;[urbworld]</li>
+		<li>worldname-&gt;[deadworld]</li>
+		<li>worldname-&gt;[rimworld]</li>
+		<li>worldname-&gt;[coreworld]</li>
+		<li>worldname-&gt;[warworld]</li>
+		<li>worldname-&gt;[iceworld]</li>
+		<li>worldname-&gt;[medievalworld]</li>
+		<li>glitterworld-&gt;Kalthas IV</li>
+		<li>urbworld-&gt;Euterpe</li>
+		<li>deadworld-&gt;Callos IX</li>
+		<li>rimworld-&gt;Filson</li>
+		<li>coreworld-&gt;Novaroma</li>
+		<li>warworld-&gt;Kemia</li>
+		<li>iceworld-&gt;Yttak</li>
+		<li>medievalworld-&gt;Chelis</li>
+	</TM_Description_Grimoire.rulePack.rulesStrings>
+</LanguageData>

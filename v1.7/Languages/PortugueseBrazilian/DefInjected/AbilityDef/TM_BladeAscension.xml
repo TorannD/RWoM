@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_BladeSevenSteps.label>Forma dos sete passos</TM_Bridge_BladeSevenSteps.label>
+  <TM_Bridge_BladeSevenSteps.description>Escolha uma rota reta e transitável de até 12 células. Após cinco segundos de preparação, percorra a rota durante no máximo 14 segundos. Até sete golpes a 55% do dano da arma podem atingir três inimigos, no máximo três golpes por inimigo. Durante a forma, você recebe 15% a mais de dano. Depois, a velocidade de movimento diminui 20% por seis segundos. Consome 60% de vigor e recarrega em dois dias. Interromper a preparação consome 6% e inicia uma recarga curta.</TM_Bridge_BladeSevenSteps.description>
+</LanguageData>

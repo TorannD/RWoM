@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- AMP start -->
+
+  <Buff_AMP.label>УМС</Buff_AMP.label>
+
+
+  <!-- Lightning Cloud -->
+
+  <Projectile_LightningCloud.label>Грозова хмара</Projectile_LightningCloud.label>
+
+
+  <!-- Lightning Bolt -->
+
+  <Laser_LightningBolt.label>Удар блискавки</Laser_LightningBolt.label>
+
+
+  <!-- Lightning Storm -->
+
+  <Projectile_LightningStorm.label>Грозовий шторм</Projectile_LightningStorm.label>
+
+
+  <!-- Eye of the Storm -->
+
+  <FlyingObject_EyeOfTheStorm.label>літаючий об&apos;єкт</FlyingObject_EyeOfTheStorm.label>
+  <Projectile_EyeOfTheStorm.label>Око бурі</Projectile_EyeOfTheStorm.label>
+
+
+</LanguageData>

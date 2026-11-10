@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SEVER MAGIC -->
+
+  <TM_Botched_SeverMagicTD.stages.0.label>ritual de corte falhado</TM_Botched_SeverMagicTD.stages.0.label>
+  <TM_Botched_SeverMagicTD.stages.0.description>O ritual de corte foi um fracasso e deu ao mago a oportunidade de retaliar.</TM_Botched_SeverMagicTD.stages.0.description>
+
+  <TM_Lethal_SeverMagicTD.stages.0.label>ritual mortal de corte</TM_Lethal_SeverMagicTD.stages.0.label>
+  <TM_Lethal_SeverMagicTD.stages.0.description>Não havia ordem neste ritual, e a técnica era terrível e matou o mágico.</TM_Lethal_SeverMagicTD.stages.0.description>
+
+  <TM_Success_SeverMagicTD.stages.0.label>ritual de corte bem sucedido</TM_Success_SeverMagicTD.stages.0.label>
+  <TM_Success_SeverMagicTD.stages.0.description>O ritual de corte foi um sucesso, libertando-nos da opressão de outro mágico.</TM_Success_SeverMagicTD.stages.0.description>
+
+  <TM_Flawless_SeverMagicTD.stages.0.label>ritual de corte impecável</TM_Flawless_SeverMagicTD.stages.0.label>
+  <TM_Flawless_SeverMagicTD.stages.0.description>O coro das vozes, a intensidade do senhor do vazio, a expressão da inevitabilidade na cara do mago, nada pode impedir a nossa jornada de combate!</TM_Flawless_SeverMagicTD.stages.0.description>
+
+  <TM_MagicSeverenceTD.stages.0.label>Afastado da magia</TM_MagicSeverenceTD.stages.0.label>
+  <TM_MagicSeverenceTD.stages.0.description>Perdi algo que alguma vez definiu quem eu era; Sinto uma mistura de desespero e vazio.</TM_MagicSeverenceTD.stages.0.description>
+
+  <TM_SeverMagic_ForApproveTD.stages.0.label>foi possível quebrar a magia</TM_SeverMagic_ForApproveTD.stages.0.label>
+  <TM_SeverMagic_ForApproveTD.stages.0.description>Na nossa colônia foi realizado um ritual para tirar a magia do mágico; que ato vil e bárbaro.</TM_SeverMagic_ForApproveTD.stages.0.description>
+
+  <TM_SeverMagic_ForVeneratedTD.stages.0.label>foi possível quebrar a magia</TM_SeverMagic_ForVeneratedTD.stages.0.label>
+  <TM_SeverMagic_ForVeneratedTD.stages.0.description>Na nossa colônia foi realizado um ritual para tirar a magia do mágico; este ato abominável de barbárie vai contra tudo o que acreditamos.</TM_SeverMagic_ForVeneratedTD.stages.0.description>
+
+
+  <!-- BESTOW MAGIC -->
+
+  <TM_Botched_BestowMagicTD.stages.0.label>ritual de doação falhado</TM_Botched_BestowMagicTD.stages.0.label>
+  <TM_Botched_BestowMagicTD.stages.0.description>O ritual da doação foi estragado e a faísca mágica não foi concedida.</TM_Botched_BestowMagicTD.stages.0.description>
+
+  <TM_Success_BestowMagicTD.stages.0.label>bom ritual de doação</TM_Success_BestowMagicTD.stages.0.label>
+  <TM_Success_BestowMagicTD.stages.0.description>O ritual de doação deu uma faísca mágica com sucesso.</TM_Success_BestowMagicTD.stages.0.description>
+
+  <TM_Flawless_BestowMagicTD.stages.0.label>um ritual iluminado de doação</TM_Flawless_BestowMagicTD.stages.0.label>
+  <TM_Flawless_BestowMagicTD.stages.0.description>Como se os céus se tivessem voltado para abençoar o ritual, e o coro de vozes cantou a glória da nossa causa.</TM_Flawless_BestowMagicTD.stages.0.description>
+
+
+  <!-- BESTOW MAGIC CLASS -->
+
+  <TM_Poor_BestowMagicClassTD.stages.0.label>ritual fraco de caminho secreto</TM_Poor_BestowMagicClassTD.stages.0.label>
+  <TM_Poor_BestowMagicClassTD.stages.0.description>O ritual que guia o mago para o seu caminho secreto era chato e pouco interessante.</TM_Poor_BestowMagicClassTD.stages.0.description>
+
+  <TM_Moderate_BestowMagicClassTD.stages.0.label>ritual de sucesso do caminho secreto</TM_Moderate_BestowMagicClassTD.stages.0.label>
+  <TM_Moderate_BestowMagicClassTD.stages.0.description>O ritual do caminho secreto era esperançoso e interessante.</TM_Moderate_BestowMagicClassTD.stages.0.description>
+
+  <TM_Good_BestowMagicClassTD.stages.0.label>ritual inspirador do caminho secreto</TM_Good_BestowMagicClassTD.stages.0.label>
+  <TM_Good_BestowMagicClassTD.stages.0.description>O ritual do caminho secreto foi fantástico, emocionalmente e magicamente carregado - é sempre bom ver alguém alcançar os seus sonhos!</TM_Good_BestowMagicClassTD.stages.0.description>
+
+
+  <TM_MagicSeverenceHD.label>Recorte mágico</TM_MagicSeverenceHD.label>
+  <TM_MagicSeverenceHD.description>Este peão recentemente perdeu o contacto com a magia e sofrerá com a perda de direção e propósito até conseguir preencher o vazio com outro objetivo.</TM_MagicSeverenceHD.description>
+  <TM_BestowMagicClassHD.stages.0.label>Dom da mágica</TM_BestowMagicClassHD.stages.0.label>
+  <TM_BestowMagicClassHD.stages.0.description>Este peão foi recentemente dado a uma faísca de magia.</TM_BestowMagicClassHD.stages.0.description>
+
+</LanguageData>

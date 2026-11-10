@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Heater -->
+
+  <TM_Heater.label>Магічний нагрівач</TM_Heater.label>
+  <TM_Heater.description>Створює просторову кишеню, яка входить до площини вогню, генеруючи постійне тепло в обмеженому просторі. Нагрівач повинен бути підтриманий магом - зменшує максимальну ману на 25 при активному режимі.</TM_Heater.description>
+
+  <TM_DismissHeater.label>Розсіяти нагрівач</TM_DismissHeater.label>
+  <TM_DismissHeater.description>Розсіює магічний нагрівач</TM_DismissHeater.description>
+
+
+  <!-- Cooler -->
+
+  <TM_Cooler.label>Магічний кулер</TM_Cooler.label>
+  <TM_Cooler.description>Створює просторову кишеню, яка врізається в площину льоду, зменшуючи тепло в замкнутому просторі. Кулер повинен бути підтриманий магом - зменшує максимальну ману на 25 при активному режимі.</TM_Cooler.description>
+
+  <TM_DismissCooler.label>Розсіяти кулер</TM_DismissCooler.label>
+  <TM_DismissCooler.description>Розсіює магічний кулер</TM_DismissCooler.description>
+
+
+  <!-- Power Node -->
+
+  <TM_PowerNode.label>Містична енергетична нода</TM_PowerNode.label>
+  <TM_PowerNode.description>Створює енергетичний вузол, який повільно вивільняє таємну енергію у вигляді електрики. Можна використовувати як джерело живлення. Силовий вузол повинен бути підтриманий магом-зменшує максимальну ману на 25 і повстання мани на 25% при активному режимі.</TM_PowerNode.description>
+
+  <TM_DismissPowerNode.label>Розсіяти енергетичну ноду</TM_DismissPowerNode.label>
+  <TM_DismissPowerNode.description>Розсіяти містичну енергетичну ноду</TM_DismissPowerNode.description>
+
+
+  <!-- Light Node -->
+
+  <TM_Sunlight.label>Сонячне світло</TM_Sunlight.label>
+  <TM_Sunlight.description>Створює Маяк сонячного світла, досить сильний, щоб виростити рослини. Маяк повинен бути підтриманий магом - зменшує максимальну ману на 40 і регенерацію мани на 40% при активному режимі.</TM_Sunlight.description>
+
+  <TM_DismissSunlight.label>Розсіяти сонячне світло</TM_DismissSunlight.label>
+  <TM_DismissSunlight.description>Розсіяти сонячне світло</TM_DismissSunlight.description>
+
+
+  <!-- Remove Moisture -->
+
+  <TM_DryGround.label>Висушити землю</TM_DryGround.label>
+  <TM_DryGround.description>Наповнює землю теплом, випаровуючи більшу частину вологи з ділянки землі. Працює тільки на брудному ґрунті.</TM_DryGround.description>
+
+
+  <!-- Add Moisture -->
+
+  <TM_WetGround.label>Зволоження землі</TM_WetGround.label>
+  <TM_WetGround.description>Наповнює пісок водою, створюючи придатний для використання ґрунт.</TM_WetGround.description>
+
+
+  <!-- Charge Battery -->
+
+  <TM_ChargeBattery.label>Зарядка батареї</TM_ChargeBattery.label>
+  <TM_ChargeBattery.description>Перетворення магічної енергії на електричну енергію. Це заклинання можна використовувати тільки на батарейках. Генерує 400 од. енергії.</TM_ChargeBattery.description>
+
+
+  <!-- Smoke Cloud -->
+
+  <TM_SmokeCloud.label>Хмара диму</TM_SmokeCloud.label>
+  <TM_SmokeCloud.description>Втягує і запалює воду і частинки бруду в повітрі, щоб створити димову завісу, яка тимчасово приховує область.</TM_SmokeCloud.description>
+
+
+  <!-- Extinguish -->
+
+  <TM_Extinguish.label>Гасіння</TM_Extinguish.label>
+  <TM_Extinguish.description>Видаляє елемент вогню з цільового місця, миттєво туша небажані пожежі.</TM_Extinguish.description>
+
+
+  <!-- EMP -->
+
+  <TM_EMP.label>ЕМІ</TM_EMP.label>
+  <TM_EMP.description>Генеруйте сплеск електромагнітного імпульсу на цільовій ділянці, відключаючи механоїдів на короткий період.</TM_EMP.description>
+
+
+  <!-- Transfer mana -->
+
+  <TM_TransferMana.label>Передача Мани</TM_TransferMana.label>
+  <TM_TransferMana.description>Передає магічну енергію від одного заклинача до іншого. Одержувачі, які не є магами, отримають значне, хоча і випадкове, фізичне збільшення протягом короткого періоду часу. Може бути шкідливим, навіть смертельним, на екстремальних рівнях.</TM_TransferMana.description>
+
+
+  <!-- siphon mana -->
+
+  <TM_SiphonMana.label>Сифон мани</TM_SiphonMana.label>
+  <TM_SiphonMana.description>Викачує магічну енергію з іншого заклинача. Одержувачі, які не є магами, натомість матимуть виснажені фізичні можливості. Може бути смертельним, якщо занадто багато життєвої сили виснажується.</TM_SiphonMana.description>
+
+
+  <!-- mana shield -->
+
+  <TM_ManaShield.label>Щит мани</TM_ManaShield.label>
+  <TM_ManaShield.description>Викликає захисний бар&apos;єр, який черпає силу з мани заклинача. Швидкість поглинання урона становить 1од. урона до 1 мани. Бар&apos;єр ламається, коли у заклинателя недостатньо мани, щоб поглинути атаку.
+
+Виголошення заклинання, коли бар&apos;єр активний, зніме бар&apos;єр. Може використовуватися в поєднанні з захисним поясом. Не перешкоджає накладенню заклинань будь-якого типу.</TM_ManaShield.description>
+
+
+  <!-- summoned wall -->
+
+  <TM_ArcaneBarrier.label>Таємний бар&apos;єр</TM_ArcaneBarrier.label>
+  <TM_ArcaneBarrier.description>Створює таємний бар&apos;єр у цільовому розташуванні, яке знаходиться горизонтально до заклинача. Бар&apos;єр триває 60 секунд.</TM_ArcaneBarrier.description>
+
+
+  <!-- Flight -->
+
+  <TM_Flight.label>Політ</TM_Flight.label>
+  <TM_Flight.description>Швидко летіть до цільового місця.</TM_Flight.description>
+
+
+  <!-- Fertile land -->
+
+  <TM_FertileLands.label>Родючі Землі</TM_FertileLands.label>
+  <TM_FertileLands.description>Наповнює ділянку землі силою від друїда, що збільшує його родючість. Ця здатність повинна бути підтримувана і зменшує регенерацію мани на 40%. Друїд обмежений однією областю.</TM_FertileLands.description>
+
+  <TM_DismissFertileLands.label>Зупинити родючість землі</TM_DismissFertileLands.label>
+  <TM_DismissFertileLands.description>Зупинити родючість землі.</TM_DismissFertileLands.description>
+
+
+  <!-- Spell Mending -->
+
+  <TM_SpellMending.label>Заклинання лагодження</TM_SpellMending.label>
+  <TM_SpellMending.description>Накладіть на людину чари, які повільно відновлюють його спорядження на молекулярному рівні. Це заклинання вимагає носіння обладнання, щоб витягти «спогади» з власника для виконання реконструкції. Це створює фізичне навантаження на уражену пішака і уповільнює її фізичну активність. Заклинання лагодження розсіюється через кілька годин.</TM_SpellMending.description>
+
+
+  <!-- Cauterize Wound -->
+
+  <TM_CauterizeWound.label>Розпалювання рани</TM_CauterizeWound.label>
+  <TM_CauterizeWound.description>Вогняний маг викликає елементарний вогонь, щоб миттєво припалити рани на пацієнті. Однак цей процес, швидше за все, залишить опікові шрами.</TM_CauterizeWound.description>
+
+
+  <!-- Teach Magic & Might -->
+
+  <TM_TeachMagic.label>Наставник Магії</TM_TeachMagic.label>
+  <TM_TeachMagic.description>Наставляє мага меншого рівня, щоб збільшити його магічні навички.
+
+Наставлені маги отримають класовий досвід. Кількість отриманого досвіду залежить від соціального статусу і різниці в рівнях між двома магами.</TM_TeachMagic.description>
+
+  <TM_TeachMight.label>Бойове тренування</TM_TeachMight.label>
+  <TM_TeachMight.description>Тренуйте бійця меншого рівня, щоб підвищити його бойову майстерність.
+
+Навчені бійці отримають класовий досвід. Кількість отриманого досвіду залежить від соціального статусу і різниці в рівнях між двома бійцями.</TM_TeachMight.description>
+
+
+  <!-- blur -->
+
+  <TM_Blur.label>Розмиття</TM_Blur.label>
+  <TM_Blur.description>Додатковий 20-іпроцентний шанс уникнути всі атаки, спотворюючи світло навколо заклинача. Потрібно 20 мани для підтримки. Повторне використання деактивує розмиття.</TM_Blur.description>
+
+
+  <!-- blank mind -->
+
+  <TM_BlankMind.label>Чистий Розум</TM_BlankMind.label>
+  <TM_BlankMind.description>Стирає спогади пішаки і виводить їх з будь-якого ментального стану, але викличе короткочасне замішання, коли вони зберуться з думками. При використанні на ворогах, він буде застосовувати ментальну заморозку, оглушаючи ворога на короткий період.
+
+Масовий ефект застосовується тільки в тих випадках, коли основною метою є не пішак. Дружні пішаки втратять як хороші, так і погані спогади.</TM_BlankMind.description>
+
+
+  <!-- dirt devil -->
+
+  <TM_DirtDevil.label>Земляний Диявол</TM_DirtDevil.label>
+  <TM_DirtDevil.description>Створіть невеликий вакуумного елементаря, який шукає і випаровує бруд і сміття.</TM_DirtDevil.description>
+
+  <TM_MechaniteReprogramming.label>Перепрограмування механітів</TM_MechaniteReprogramming.label>
+  <TM_MechaniteReprogramming.description>Перепрограмує волоконні або сенсорні механіти для гармонізації з біологічними системами господаря. Результат значно зменшить навантаження на господаря, поки механіти активні.</TM_MechaniteReprogramming.description>
+
+
+  <!-- Arcane Bolt -->
+
+  <TM_ArcaneBolt.label>Магічний Болт</TM_ArcaneBolt.label>
+  <TM_ArcaneBolt.description>Запускає заряд сирої таємної енергії. Ця здатність буде повільно зростати в силі, заснованій на магічному рівні заклинателів.
+
+Таємний Болт неефективний через нерафіновану природу заклинання, але його може вивчити і застосувати будь-який маг, здатний на насильство.</TM_ArcaneBolt.description>
+
+
+  <!-- Throwing Knife -->
+
+  <TM_ThrowingKnife.label>Метання ножа</TM_ThrowingKnife.label>
+  <TM_ThrowingKnife.description>Дальня атака з використанням прихованого метального ножа, призначеного для доповнення будь-якої оснащеної системи зброї.</TM_ThrowingKnife.description>
+
+
+  <!-- Pommel Strike -->
+
+  <TM_PommelStrike.label>Удар Навершием</TM_PommelStrike.label>
+  <TM_PommelStrike.description>Атака в ближньому бою, яка забезпечує несмертельний удар, що завдає незначної шкоди і оглушає ціль на короткий період.
+
+Ця здатність може миттєво збити цільову пішаку; чим більше болю у цілі, тим більш ймовірно, що удар буде збивати ціль, а не оглушати.
+
+Автокаст спрацьовує тільки тоді, коли мета має 80% або більше шансів бути збитою від цієї атаки.</TM_PommelStrike.description>
+
+
+  <!-- Lightning Trap -->
+
+  <TM_LightningTrap.label>Пастка з блискавкою</TM_LightningTrap.label>
+  <TM_LightningTrap.description>Елементарна блискавка заряджається всередині загартованої магічної оболонки і поміщається в пастку. Таємні нитки, які активують заклинання, витягуються навколо пастки і спрацьовують, коли їх турбують вороги. Пастки тривають нескінченно, але маг здатний витримати тільки одну пастку.</TM_LightningTrap.description>
+
+  <TM_DismissLightningTrap.label>Розсіяти пастку</TM_DismissLightningTrap.label>
+  <TM_DismissLightningTrap.description>Розсіяти пастку з блискавкою</TM_DismissLightningTrap.description>
+
+
+  <!-- invisibility -->
+
+  <TM_Invisibility.label>Невидимість</TM_Invisibility.label>
+  <TM_Invisibility.description>Станьте невидимим на 20 секунд. Будь-яка відкрита взаємодія негайно зруйнує чари. Очищає заклинателя від усіх ворожих цілей.</TM_Invisibility.description>
+
+
+  <!-- briar patch -->
+
+  <TM_BriarPatch.label>Колючий Чагарник</TM_BriarPatch.label>
+  <TM_BriarPatch.description>Створює небезпеку, зроблену з колючих лоз. Будь-який рух над ураженою ділянкою буде уповільнено, і істоти, що переміщаються через зарості шипшини, можуть отримати незначну шкоду.</TM_BriarPatch.description>
+
+
+  <!-- Magelight -->
+
+  <TM_MageLight.label>Магічне світло</TM_MageLight.label>
+  <TM_MageLight.description>Створює маленьку кулю світла, яка проганяє темряву. Магічне світло залишиться в безпосередній близькості від мага-заклинателя. Це заклинання має вартість утримання 10 мани і 5% регена мани.
+
+Світло дає 20% бонус бачення; тільки заклинатель отримує вигоду від цього бонусу.
+
+Магічне світло можна розсіяти, використовуючи цю здатність на заклинателі.</TM_MageLight.description>
+
+
+  <!-- Legion start -->
+
+  <TM_Legion.label>Позичити</TM_Legion.label>
+  <TM_Legion.description>Скопіювати здатність іншого бійця. Діють всі бонуси і обмеження здатності, що копіюється. Одночасно може зберігатися тільки одна здатність.</TM_Legion.description>
+
+
+  <!-- Tempest Strike -->
+
+  <TM_TempestStrike.label>Штормовий удар</TM_TempestStrike.label>
+  <TM_TempestStrike.description>Запускайте декілька атак у швидкій послідовності. Кожна атака споживає 20 витривалості. Штормовий удар закінчиться, коли у бійця буде недостатня витривалість або після 5 атак.
+
+Зброя ближнього бою генерує клинки енергії.
+
+Ця атака працює тільки тоді, коли зброя, наявна, зазвичай не витрачається після використання.</TM_TempestStrike.description>
+
+
+  <!-- ignite -->
+
+  <TM_Ignite.label>Підпалювання</TM_Ignite.label>
+  <TM_Ignite.description>Концентрує величезна кількість тепла в точці фокусування, а потім вивільняє його. Тепло, що виділяється, може запалити найближчих істот і завжди підпалюватиме трупи. Тепло також різко підвищить температуру в приміщенні для будь-якої закритої зони.</TM_Ignite.description>
+
+
+  <!-- snap freeze -->
+
+  <TM_SnapFreeze.label>Заморожує клацання</TM_SnapFreeze.label>
+  <TM_SnapFreeze.description>Видаляє майже все тепло в точці фокусування, викликаючи різке заморожування будь-якого живого об&apos;єкта. Істоти можуть страждати від обмороження, і більша частина рослинного життя загине. Видалення тепла також різко знизить температуру в приміщенні.</TM_SnapFreeze.description>
+
+
+  <!-- discord -->
+
+  <TM_Discord.label>Дисонанс</TM_Discord.label>
+  <TM_Discord.description>Спрямована здатність, яка постійно впливає на почуття жертви випадковими і різкими сигналами. Це сенсорне перевантаження поступово послабить психічну стабільність, і в кінцевому підсумку психічна гармонія цілі повністю зруйнується. Результати цієї здатності розрізняються, але будуть посилюватися з кожною ітерацією.
+
+Наслідки включають запаморочення, нудоту, втрату зору і слуху, блювоту, нездатність відрізнити друга від ворога, нездатність до математики, неприязнь до інших пішаків, втрату рухових навичок, втрату розуму, бажання обговорювати політику, пароксизм, крововилив у мозок і детонацію черепа. Результати можуть відрізнятися при націлюванні на дружні пішаки. Проконсультуйтеся з вашим терапевтом перед використанням.</TM_Discord.description>
+
+
+  <!-- magic warddrobe -->
+
+  <TM_MagicWardrobe.label>Чарівна шафа</TM_MagicWardrobe.label>
+  <TM_MagicWardrobe.description>Проста здатність, яка дозволяє зберігати весь екіпірований одяг в об&apos;ємній кишені. При повторному використанні збережений одяг стає спорядженим, а будь-яке поточне обладнання стає збереженим. Підходить для будь-якого одягу, але не для зброї або утримуваних предметів. Корисно для зберігання спорядження або для швидкої заміни комплектів спорядження.</TM_MagicWardrobe.description>
+
+
+  <!-- heat shield -->
+
+  <TM_HeatShield.label>Тепловий екран</TM_HeatShield.label>
+  <TM_HeatShield.description>Помістіть тепловий бар&apos;єр на союзників, який забезпечує 75% додаткового захисту від теплового пошкодження і запобігає загорянню. Вражає до 6 цілей і триває близько 30 секунд.</TM_HeatShield.description>
+
+
+  <!-- alter storm -->
+
+  <TM_AlterStorm.label>Перемічний Шторм</TM_AlterStorm.label>
+  <TM_AlterStorm.description>Змінює погоду, щоб створити нові умови. Дощові шторми зміняться цілющим дощем. Сніг зміниться градом. Градом можна частково керувати, направляючи град на ворогів на карті, але як тільки ця погода навіть починається, вона повинна йти своєю чергою і не може бути схильна до впливу творця дощу.</TM_AlterStorm.description>
+
+
+  <!-- snape freeze -->
+
+</LanguageData>

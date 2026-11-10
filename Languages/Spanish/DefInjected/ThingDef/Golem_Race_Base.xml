@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_FleshGolem.label>gólem de carne</TM_FleshGolem.label>
+  
+  <TM_FleshGolem.description>Un gólem fabricado a partir de carne, huesos y órganos de otros seres, dotado de una autonomía básica mediante una combinación de bioingeniería y magia.</TM_FleshGolem.description>
+  
+  <TM_FleshGolem.tools.gore.label>cornada</TM_FleshGolem.tools.gore.label>
+  
+  <TM_FleshGolem.tools.tusks.label>colmillos</TM_FleshGolem.tools.tusks.label>
+  
+  <TM_FleshGolem.tools.left_fist.label>puño izquierdo</TM_FleshGolem.tools.left_fist.label>
+  
+  <TM_FleshGolem.tools.left_guard.label>defensa izquierda</TM_FleshGolem.tools.left_guard.label>
+  
+  <TM_FleshGolem.tools.left_cleaver.label>cuchilla izquierda</TM_FleshGolem.tools.left_cleaver.label>
+  
+  <TM_FleshGolem.tools.right_fist.label>puño derecho</TM_FleshGolem.tools.right_fist.label>
+  
+  <TM_FleshGolem.tools.right_guard.label>defensa derecha</TM_FleshGolem.tools.right_guard.label>
+  
+  <TM_FleshGolem.tools.right_cleaver.label>cuchilla derecha</TM_FleshGolem.tools.right_cleaver.label>
+  
+  
+  <TM_GraniteGolem.label>gólem de granito</TM_GraniteGolem.label>
+  
+  <TM_GraniteGolem.description>Un gólem simple tallado en piedra y animado mediante magia.</TM_GraniteGolem.description>
+  
+  <TM_GraniteGolem.tools.smash.label>aplastamiento</TM_GraniteGolem.tools.smash.label>
+  
+  <TM_GraniteGolem.tools.left_fist.label>puño izquierdo</TM_GraniteGolem.tools.left_fist.label>
+  
+  <TM_GraniteGolem.tools.right_fist.label>puño derecho</TM_GraniteGolem.tools.right_fist.label>
+  
+  
+  <TM_HollowGolem.label>gólem hueco</TM_HollowGolem.label>
+  
+  <TM_HollowGolem.description>Un gólem fabricado a partir de maná condensado y catalizadores arcanos. La armadura que rodea al gólem hueco ancla su centro mágico a una ubicación física y protege su integridad material. El gólem hueco es capaz de aprovechar enormes cantidades de energía mágica para diversos fines, lo que lo convierte en uno de los gólems más versátiles desarrollados hasta la fecha. Absorbe energía mágica de la atmósfera, de forma similar al parásito ciego, generando una reducción de maná equivalente a la de 10 arbustos de espinas parásitas.</TM_HollowGolem.description>
+  
+  <TM_HollowGolem.tools.claw.label>garra</TM_HollowGolem.tools.claw.label>
+  
+  <TM_HollowGolem.tools.decay_touch.label>toque de descomposición</TM_HollowGolem.tools.decay_touch.label>
+  
+  <TM_HollowGolem.tools.hollow_axe.label>hacha hueca</TM_HollowGolem.tools.hollow_axe.label>
+  
+  <TM_HollowGolem.tools.hollow_staff.label>bastón hueco</TM_HollowGolem.tools.hollow_staff.label>
+
+  
+  <TM_HollowGolem.verbs.blazing_energy.label>energía ardiente</TM_HollowGolem.verbs.blazing_energy.label>
+  
+  <TM_HollowGolem.verbs.firebolts.label>descargas de fuego</TM_HollowGolem.verbs.firebolts.label>
+  
+  <TM_HollowGolem.verbs.ice_shards.label>fragmentos de hielo</TM_HollowGolem.verbs.ice_shards.label>
+  
+  <TM_HollowGolem.verbs.darkbolt.label>descarga oscura</TM_HollowGolem.verbs.darkbolt.label>
+  
+  
+  <TM_LimestoneGolem.label>gólem de caliza</TM_LimestoneGolem.label>
+  
+  <TM_LimestoneGolem.description>Un gólem simple tallado en piedra y animado mediante magia.</TM_LimestoneGolem.description>
+  
+  <TM_LimestoneGolem.tools.smash.label>aplastamiento</TM_LimestoneGolem.tools.smash.label>
+  
+  <TM_LimestoneGolem.tools.left_fist.label>puño izquierdo</TM_LimestoneGolem.tools.left_fist.label>
+  
+  <TM_LimestoneGolem.tools.right_fist.label>puño derecho</TM_LimestoneGolem.tools.right_fist.label>
+  
+  
+  <TM_MaharalGolem.label>gólem maharal</TM_MaharalGolem.label>
+  
+  <TM_MaharalGolem.description>Un gólem fabricado a partir de una mezcla de piedra moldeada envuelta en cuero.</TM_MaharalGolem.description>
+  
+  <TM_MaharalGolem.tools.left_fist.label>puño izquierdo</TM_MaharalGolem.tools.left_fist.label>
+  
+  <TM_MaharalGolem.tools.right_fist.label>puño derecho</TM_MaharalGolem.tools.right_fist.label>
+  
+  
+  <TM_MarbleGolem.label>gólem de mármol</TM_MarbleGolem.label>
+  
+  <TM_MarbleGolem.description>Un gólem simple tallado en piedra y animado mediante magia.</TM_MarbleGolem.description>
+  
+  <TM_MarbleGolem.tools.smash.label>aplastamiento</TM_MarbleGolem.tools.smash.label>
+  
+  <TM_MarbleGolem.tools.left_fist.label>puño izquierdo</TM_MarbleGolem.tools.left_fist.label>
+  
+  <TM_MarbleGolem.tools.right_fist.label>puño derecho</TM_MarbleGolem.tools.right_fist.label>
+  
+  
+  <TM_MechaGolem.label>meca-gólem</TM_MechaGolem.label>
+  
+  <TM_MechaGolem.description>Un gólem fabricado a partir de materia prima y dotado de una autonomía básica mediante una combinación de circuitos y magia.</TM_MechaGolem.description>
+  
+  <TM_MechaGolem.tools.body_smash.label>golpe corporal</TM_MechaGolem.tools.body_smash.label>
+  
+  <TM_MechaGolem.tools.left_fist.label>puño izquierdo</TM_MechaGolem.tools.left_fist.label>
+  
+  <TM_MechaGolem.tools.mechaaxe.label>meca-hacha</TM_MechaGolem.tools.mechaaxe.label>
+  
+  <TM_MechaGolem.tools.mechasword.label>meca-espada</TM_MechaGolem.tools.mechasword.label>
+
+  
+  <TM_MechaGolem.tools.right_fist.label>puño derecho</TM_MechaGolem.tools.right_fist.label>
+  
+  <TM_MechaGolem.tools.mechahammer.label>meca-martillo</TM_MechaGolem.tools.mechahammer.label>
+  
+  
+  <TM_SandstoneGolem.label>gólem de arenisca</TM_SandstoneGolem.label>
+  
+  <TM_SandstoneGolem.description>Un gólem simple tallado en piedra y animado mediante magia.</TM_SandstoneGolem.description>
+  
+  <TM_SandstoneGolem.tools.smash.label>aplastamiento</TM_SandstoneGolem.tools.smash.label>
+  
+  <TM_SandstoneGolem.tools.left_fist.label>puño izquierdo</TM_SandstoneGolem.tools.left_fist.label>
+  
+  <TM_SandstoneGolem.tools.right_fist.label>puño derecho</TM_SandstoneGolem.tools.right_fist.label>
+  
+  
+  <TM_SilkGolem.label>gólem de seda</TM_SilkGolem.label>
+  
+  <TM_SilkGolem.description>Una masa de tela e hilo construida con forma de babosa, cuyo único rasgo distintivo es su rostro amigable y expresivo.</TM_SilkGolem.description>
+  
+  <TM_SilkGolem.tools.bash.label>golpe</TM_SilkGolem.tools.bash.label>
+  
+  
+  <TM_SlateGolem.label>gólem de pizarra</TM_SlateGolem.label>
+  
+  <TM_SlateGolem.description>Un gólem simple tallado en piedra y animado mediante magia.</TM_SlateGolem.description>
+  
+  <TM_SlateGolem.tools.smash.label>aplastamiento</TM_SlateGolem.tools.smash.label>
+  
+  <TM_SlateGolem.tools.left_fist.label>puño izquierdo</TM_SlateGolem.tools.left_fist.label>
+  
+  <TM_SlateGolem.tools.right_fist.label>puño derecho</TM_SlateGolem.tools.right_fist.label>
+  
+  
+  <TM_StoneGolem.label>gólem de piedra</TM_StoneGolem.label>
+  
+  <TM_StoneGolem.description>Un gólem simple tallado en piedra y animado mediante magia.</TM_StoneGolem.description>
+  
+  <TM_StoneGolem.tools.smash.label>aplastamiento</TM_StoneGolem.tools.smash.label>
+  
+  <TM_StoneGolem.tools.left_fist.label>puño izquierdo</TM_StoneGolem.tools.left_fist.label>
+  
+  <TM_StoneGolem.tools.right_fist.label>puño derecho</TM_StoneGolem.tools.right_fist.label>
+  
+  
+  <TM_StrawGolem.label>gólem de paja</TM_StrawGolem.label>
+  
+  <TM_StrawGolem.description>Un gólem fabricado a partir de una mezcla de materiales básicos moldeados con forma humana.</TM_StrawGolem.description>
+  
+  <TM_StrawGolem.tools.left_fist.label>puño izquierdo</TM_StrawGolem.tools.left_fist.label>
+  
+  <TM_StrawGolem.tools.right_fist.label>puño derecho</TM_StrawGolem.tools.right_fist.label>
+  
+  
+  <TM_WoodGolem.label>gólem de madera</TM_WoodGolem.label>
+  
+  <TM_WoodGolem.description>Energía mágica infundida en un constructo de madera y piedra.</TM_WoodGolem.description>
+  
+  <TM_WoodGolem.tools.spirit_force.label>fuerza espiritual</TM_WoodGolem.tools.spirit_force.label>
+  
+  <TM_WoodGolem.tools.frame_smash.label>golpe de armazón</TM_WoodGolem.tools.frame_smash.label>
+
+  
+</LanguageData>

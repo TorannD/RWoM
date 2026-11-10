@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_SeverMagic.description>Os escravos de observação serão 100% suprimidos. Dependendo da qualidade do ritual, os participantes receberão o seu humor, desde o que quer que seja, entre o que quer que aconteça, entre o que quer que aconteça e o que quiser.</TM_SeverMagic.description>
+  <TM_SeverMagic.comps.1.label>referência moral presente</TM_SeverMagic.comps.1.label>
+  <TM_SeverMagic.comps.2.label>número de participantes</TM_SeverMagic.comps.2.label>
+  <TM_SeverMagic.comps.3.label>começou com um altar ou ideograma</TM_SeverMagic.comps.3.label>
+  <TM_SeverMagic.comps.4.label>impressão da sala</TM_SeverMagic.comps.4.label>
+  <TM_SeverMagic.outcomeChances.0.label>Fracassado</TM_SeverMagic.outcomeChances.0.label>
+  <TM_SeverMagic.outcomeChances.0.description>O &apos;0&apos; foi um fracasso. O mago reagiu com medo e desespero.</TM_SeverMagic.outcomeChances.0.description>
+  <TM_SeverMagic.outcomeChances.1.label>Mortal</TM_SeverMagic.outcomeChances.1.label>
+  <TM_SeverMagic.outcomeChances.1.description>O 0 foi fatal. O ritual foi projetado para cortar o mágico da magia, não para matar o mágico.</TM_SeverMagic.outcomeChances.1.description>
+  <TM_SeverMagic.outcomeChances.2.label>Sucesso</TM_SeverMagic.outcomeChances.2.label>
+  <TM_SeverMagic.outcomeChances.2.description>A operação foi bem sucedida. O buscador do vazio efetivamente corta a magia do mágico.</TM_SeverMagic.outcomeChances.2.description>
+  <TM_SeverMagic.outcomeChances.3.label>Impecável</TM_SeverMagic.outcomeChances.3.label>
+  <TM_SeverMagic.outcomeChances.3.description>O evento foi impecável, oferecendo compaixão e liberdade ao mago.</TM_SeverMagic.outcomeChances.3.description>
+
+
+  <!-- Bestow Magic -->
+
+  <TM_BestowMagic.description>Os escravos de observação serão 100% suprimidos. Dependendo da qualidade do ritual, os participantes receberão o seu humor, desde o que quer que seja, entre o que quer que aconteça, entre o que quer que aconteça e o que quiser.</TM_BestowMagic.description>
+  <TM_BestowMagic.comps.1.label>referência moral presente</TM_BestowMagic.comps.1.label>
+  <TM_BestowMagic.comps.2.label>número de participantes</TM_BestowMagic.comps.2.label>
+  <TM_BestowMagic.comps.3.label>começou com um altar ou ideograma</TM_BestowMagic.comps.3.label>
+  <TM_BestowMagic.comps.4.label>impressão da sala</TM_BestowMagic.comps.4.label>
+  <TM_BestowMagic.outcomeChances.0.label>Fracassado</TM_BestowMagic.outcomeChances.0.label>
+  <TM_BestowMagic.outcomeChances.0.description>O que aconteceu foi um fracasso. O buscador do vazio não conseguiu fazer uma ligação mágica.</TM_BestowMagic.outcomeChances.0.description>
+  <TM_BestowMagic.outcomeChances.1.label>Sucesso</TM_BestowMagic.outcomeChances.1.label>
+  <TM_BestowMagic.outcomeChances.1.description>A operação foi bem sucedida. O buscador do vazio deu uma faísca de magia.</TM_BestowMagic.outcomeChances.1.description>
+  <TM_BestowMagic.outcomeChances.2.label>Inspirado</TM_BestowMagic.outcomeChances.2.label>
+  <TM_BestowMagic.outcomeChances.2.description>A cerimónia confirmou as nossas crenças, trazendo o dom da magia e oferecendo visões inspiradoras.</TM_BestowMagic.outcomeChances.2.description>
+
+
+  <!-- Arcane Pathway -->
+
+  <TM_BestowMagicClass.description>Os escravos de observação serão 100% suprimidos. Dependendo da qualidade do ritual, os participantes receberão o seu humor, desde o que quer que seja, entre o que quer que aconteça, entre o que quer que aconteça e o que quiser.</TM_BestowMagicClass.description>
+  <TM_BestowMagicClass.comps.1.label>referência moral presente</TM_BestowMagicClass.comps.1.label>
+  <TM_BestowMagicClass.comps.2.label>número de participantes</TM_BestowMagicClass.comps.2.label>
+  <TM_BestowMagicClass.comps.3.label>começou com um altar ou ideograma</TM_BestowMagicClass.comps.3.label>
+  <TM_BestowMagicClass.comps.4.label>impressão da sala</TM_BestowMagicClass.comps.4.label>
+  <TM_BestowMagicClass.outcomeChances.0.label>Doce</TM_BestowMagicClass.outcomeChances.0.label>
+  <TM_BestowMagicClass.outcomeChances.0.description>Se bem-sucedido, ele sentiu alguma coisa real ou energia.</TM_BestowMagicClass.outcomeChances.0.description>
+  <TM_BestowMagicClass.outcomeChances.1.label>Esperançoso</TM_BestowMagicClass.outcomeChances.1.label>
+  <TM_BestowMagicClass.outcomeChances.1.description>A operação foi bem sucedida. Um homem dotado deu um grande passo para ser uma vantagem mais poderosa para a nossa colónia.</TM_BestowMagicClass.outcomeChances.1.description>
+  <TM_BestowMagicClass.outcomeChances.2.label>Inspirador</TM_BestowMagicClass.outcomeChances.2.label>
+  <TM_BestowMagicClass.outcomeChances.2.description>A colônia ganhou mais um grande mágico.</TM_BestowMagicClass.outcomeChances.2.description>
+
+
+  <TM_SeverMagic.comps.3.expectedThingLabelTip>altar ou ideograma</TM_SeverMagic.comps.3.expectedThingLabelTip>
+  <TM_BestowMagic.comps.3.expectedThingLabelTip>altar ou ideograma</TM_BestowMagic.comps.3.expectedThingLabelTip>
+  <TM_BestowMagicClass.comps.3.expectedThingLabelTip>altar ou ideograma</TM_BestowMagicClass.comps.3.expectedThingLabelTip>
+
+</LanguageData>

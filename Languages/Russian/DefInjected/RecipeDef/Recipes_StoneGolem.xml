@@ -1,0 +1,43 @@
+<LanguageData><!-- Stone Golem upgrade recipes-->
+	<TM_StoneGolem_RepairBlock.label>Восстановление деталей</TM_StoneGolem_RepairBlock.label>
+	<TM_StoneGolem_RepairBlock.description>Заменяет недостающие части голема, которые не требуют обновления.</TM_StoneGolem_RepairBlock.description>
+	<TM_StoneGolem_RepairBlock.jobString>создание части голема</TM_StoneGolem_RepairBlock.jobString>
+	<TM_StoneGolem_EnergyMax.label>энергетический элемент</TM_StoneGolem_EnergyMax.label>
+	<TM_StoneGolem_EnergyMax.description>Создает энергетическую ячейку, которая увеличивает максимальную энергию на 120 на ячейку.</TM_StoneGolem_EnergyMax.description>
+	<TM_StoneGolem_EnergyMax.jobString>создание энергетической ячейки</TM_StoneGolem_EnergyMax.jobString>
+	<TM_StoneGolem_EnergyConverter.label>преобразователь энергии</TM_StoneGolem_EnergyConverter.label>
+	<TM_StoneGolem_EnergyConverter.description>Увеличивает эффективность поглощения и использования энергии големом на 10%.</TM_StoneGolem_EnergyConverter.description>
+	<TM_StoneGolem_EnergyConverter.jobString>устройство преобразователя энергии</TM_StoneGolem_EnergyConverter.jobString>
+	<TM_StoneGolem_EnergyRegen.label>генератор энергии</TM_StoneGolem_EnergyRegen.label>
+	<TM_StoneGolem_EnergyRegen.description>Увеличивает скорость регенерации энергии голема на 4 в час.</TM_StoneGolem_EnergyRegen.description>
+	<TM_StoneGolem_EnergyRegen.jobString>создание генератора энергии</TM_StoneGolem_EnergyRegen.jobString>
+	<TM_StoneGolem_Armor.label>Затвердение</TM_StoneGolem_Armor.label>
+	<TM_StoneGolem_Armor.description>Каждое обновление увеличивает броню голема:
+Тупой урон: +4%
+Режущий: +11%
+Температура: +6%</TM_StoneGolem_Armor.description>
+	<TM_StoneGolem_Armor.jobString>создание части голема</TM_StoneGolem_Armor.jobString>
+	<TM_StoneGolem_LifeStage.label>каркасный слой</TM_StoneGolem_LifeStage.label>
+	<TM_StoneGolem_LifeStage.description>Улучшает и усиливает каркас голема на каждом уровне [1,2,3]:
+Движение: +[20.10/30]%
+Здоровье: +[40/70/100]%</TM_StoneGolem_LifeStage.description>
+	<TM_StoneGolem_LifeStage.jobString>улучшение каркаса голема</TM_StoneGolem_LifeStage.jobString>
+	<TM_StoneGolem_Compactor.label>Уплотнитель</TM_StoneGolem_Compactor.label>
+	<TM_StoneGolem_Compactor.description>Снабдите полость голема каменным уплотнителем, способным дробить каменные куски в пригодный для использования кирпич.</TM_StoneGolem_Compactor.description>
+	<TM_StoneGolem_Compactor.jobString>создание обновления голема</TM_StoneGolem_Compactor.jobString>
+	<TM_StoneGolem_SandstoneBricks.label>дробить песчаник</TM_StoneGolem_SandstoneBricks.label>
+	<TM_StoneGolem_SandstoneBricks.description>Помещает куски песчаника в голема, чтобы их можно было раздробить на пригодные для использования блоки.</TM_StoneGolem_SandstoneBricks.description>
+	<TM_StoneGolem_SandstoneBricks.jobString>загрузка песчаника</TM_StoneGolem_SandstoneBricks.jobString>
+	<TM_StoneGolem_GraniteBricks.label>дробить гранит</TM_StoneGolem_GraniteBricks.label>
+	<TM_StoneGolem_GraniteBricks.description>Помещает гранитные куски в голема, которые будут измельчены в пригодные для использования блоки.</TM_StoneGolem_GraniteBricks.description>
+	<TM_StoneGolem_GraniteBricks.jobString>загрузка песчаника</TM_StoneGolem_GraniteBricks.jobString>
+	<TM_StoneGolem_LimestoneBricks.label>дробить известняк</TM_StoneGolem_LimestoneBricks.label>
+	<TM_StoneGolem_LimestoneBricks.description>Помещает куски известняка в голема, которые будут измельчены в пригодные для использования блоки.</TM_StoneGolem_LimestoneBricks.description>
+	<TM_StoneGolem_LimestoneBricks.jobString>загрузка известняка</TM_StoneGolem_LimestoneBricks.jobString>
+	<TM_StoneGolem_SlateBricks.label>дробить шиферный сланец</TM_StoneGolem_SlateBricks.label>
+	<TM_StoneGolem_SlateBricks.description>Помещает куски сланца в голема, которые будут измельчены в пригодные для использования блоки.</TM_StoneGolem_SlateBricks.description>
+	<TM_StoneGolem_SlateBricks.jobString>загрузка шифера</TM_StoneGolem_SlateBricks.jobString>
+	<TM_StoneGolem_MarbleBricks.label>дробить мрамор</TM_StoneGolem_MarbleBricks.label>
+	<TM_StoneGolem_MarbleBricks.description>Помещает куски мрамора в голема, которые будут измельчены в пригодные для использования блоки.</TM_StoneGolem_MarbleBricks.description>
+	<TM_StoneGolem_MarbleBricks.jobString>загрузка мрамора</TM_StoneGolem_MarbleBricks.jobString>
+</LanguageData>

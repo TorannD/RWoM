@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_GolemActive.headerTip>Estado de activación</TM_GolemActive.headerTip>
+  
+  
+  <TM_GolemAge.label>Edad</TM_GolemAge.label>
+  
+  
+  <TM_GolemMaster.label>Asignado a:</TM_GolemMaster.label>
+  
+  
+  <TM_GolemNeeds.label>Energía</TM_GolemNeeds.label>
+  
+</LanguageData>

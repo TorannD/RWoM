@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBlink.reportString>se teletransporta a través del cuerpo del huésped.</TM_SpiritBlink.reportString>
+  <TM_SpiritBlink_I.reportString>se teletransporta a través del cuerpo del huésped.</TM_SpiritBlink_I.reportString>
+  <TM_SpiritBlink_II.reportString>se teletransporta a través del cuerpo del huésped.</TM_SpiritBlink_II.reportString>
+  <TM_SpiritBlink_III.reportString>se teletransporta a través del cuerpo del huésped.</TM_SpiritBlink_III.reportString>
+  <TM_SpiritSummon.reportString>invoca un objetivo a través del cuerpo del huésped.</TM_SpiritSummon.reportString>
+  <TM_SpiritSummon_I.reportString>invoca un objetivo a través del cuerpo del huésped.</TM_SpiritSummon_I.reportString>
+  <TM_SpiritSummon_II.reportString>invoca un objetivo a través del cuerpo del huésped.</TM_SpiritSummon_II.reportString>
+  <TM_SpiritSummon_III.reportString>invoca un objetivo a través del cuerpo del huésped.</TM_SpiritSummon_III.reportString>
+  <TM_SpiritMagicMissile.reportString>lanza proyectiles mágicos a través del cuerpo del huésped.</TM_SpiritMagicMissile.reportString>
+  <TM_SpiritMagicMissile_I.reportString>lanza proyectiles mágicos a través del cuerpo del huésped.</TM_SpiritMagicMissile_I.reportString>
+  <TM_SpiritMagicMissile_II.reportString>lanza proyectiles mágicos a través del cuerpo del huésped.</TM_SpiritMagicMissile_II.reportString>
+  <TM_SpiritMagicMissile_III.reportString>lanza proyectiles mágicos a través del cuerpo del huésped.</TM_SpiritMagicMissile_III.reportString>
+  <TM_SpiritTeleport.reportString>abriendo un portal de transporte a través del huésped del espíritu.</TM_SpiritTeleport.reportString>
+  <TM_SpiritFoldReality.reportString>plegando la realidad a través del huésped del espíritu.</TM_SpiritFoldReality.reportString>
+</LanguageData>

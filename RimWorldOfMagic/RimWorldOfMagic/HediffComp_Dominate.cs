@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -18,7 +18,7 @@ namespace TorannMagic
         private int infectionRadius = 3;
         private int effVal = 0;
         private int verVal = 0;
-        private float minimumSev = .3f;
+        private float MinimumSeverity => .3f - .03f * effVal;
 
         public int EffVal
         {
@@ -41,6 +41,7 @@ namespace TorannMagic
             set
             {
                 this.verVal = value;
+                this.infectionRadius = 3 + value;
             }
         }
 
@@ -63,7 +64,6 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            this.minimumSev = .3f - (.03f * effVal);
             this.infectionRadius = 3 + verVal;
 
             if (spawned)
@@ -111,43 +111,27 @@ namespace TorannMagic
                 HealthUtility.AdjustSeverity(base.Pawn, this.Def, -0.1f);
             }
 
-            if (age > (lastInfection + infectionRate) && this.parent.Severity > this.minimumSev)
+            if (age > (lastInfection + infectionRate) && this.parent.Severity > MinimumSeverity)
             {
-                bool infectionFlag = false;
-                HealthUtility.AdjustSeverity(base.Pawn, this.Def, -1 * (this.minimumSev));
+                HealthUtility.AdjustSeverity(base.Pawn, this.Def, -1 * (MinimumSeverity));
                 this.lastInfection = this.age;
                 Pawn pawn = base.Pawn as Pawn;
                 Map map = pawn.Map;
                 if (!pawn.DestroyedOrNull() && pawn.Map != null)
                 {
-                    IntVec3 curCell;
-                    Pawn victim = null;
-                    IEnumerable<IntVec3> targets = GenRadial.RadialCellsAround(pawn.Position, this.infectionRadius, true);
-                    for (int i = 0; i < targets.Count(); i++)
+                    foreach (var cell in GenRadial.RadialCellsAround(pawn.Position,this.infectionRadius,true))
                     {
-                        curCell = targets.ToArray<IntVec3>()[i];
-                        if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
+                        if (!cell.InBounds(map)) continue;
+                        var victim = cell.GetFirstPawn(map);
+                        if (victim != null && !victim.Dead && victim.Faction == pawn.Faction && !victim.health.hediffSet.HasHediff(this.Def))
                         {
-                            victim = curCell.GetFirstPawn(map);
-                        }
-
-                        if (victim != null && victim.Faction == pawn.Faction && infectionFlag == false && !victim.health.hediffSet.HasHediff(this.Def))
-                        {
-                            //bool hediffFlag = (victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SDDominateHD) ||
-                            //    victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SDDominateHD_I) ||
-                            //    victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SDDominateHD_II) ||
-                            //    victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_SDDominateHD_III) ||
-                            //    victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_WDDominateHD) ||
-                            //    victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_WDDominateHD) ||
-                            //    victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_WDDominateHD) ||
-                            //    victim.health.hediffSet.HasHediff(TorannMagicDefOf.TM_WDDominateHD));
-                            infectionFlag = true;
                             float angle = GetAngleFromTo(pawn.Position.ToVector3(), victim.Position.ToVector3());
                             HealthUtility.AdjustSeverity(victim, this.Def, this.parent.Severity);
                             for (int j = 0; j < 3; j++)
                             {
                                 TM_MoteMaker.ThrowShadowMote(pawn.DrawPos, map, Rand.Range(.6f, 1f), Rand.Range(50, 80), Rand.Range(1f, 2f), angle + Rand.Range(-20, 20));
                             }
+                            break;
                         }
                     }
 

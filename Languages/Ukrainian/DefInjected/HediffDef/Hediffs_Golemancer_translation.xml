@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_RuneCarvedPartHD.label>Вирізана руна</TM_RuneCarvedPartHD.label>
+  <TM_RuneCarvedPartHD.description>Наділяє частину тіла рунічною енергією.</TM_RuneCarvedPartHD.description>
+  <TM_RuneCarvedPartHD.stages.0.label>Рунічний (I)</TM_RuneCarvedPartHD.stages.0.label>
+  <TM_RuneCarvedPartHD.stages.1.label>Рунічний (II)</TM_RuneCarvedPartHD.stages.1.label>
+  <TM_RuneCarvedPartHD.stages.2.label>Рунічний (III)</TM_RuneCarvedPartHD.stages.2.label>
+  <TM_RuneCarvedPartHD.stages.3.label>Рунічний (IV)</TM_RuneCarvedPartHD.stages.3.label>
+
+  <TM_ArcaneTatooPartHD.label>рунічне тіло</TM_ArcaneTatooPartHD.label>
+  <TM_ArcaneTatooPartHD.description>На тілі вигравірувано таємні символи і знаки.</TM_ArcaneTatooPartHD.description>
+  <TM_ArcaneTatooPartHD.stages.0.label>I</TM_ArcaneTatooPartHD.stages.0.label>
+  <TM_ArcaneTatooPartHD.stages.1.label>II</TM_ArcaneTatooPartHD.stages.1.label>
+  <TM_ArcaneTatooPartHD.stages.2.label>III</TM_ArcaneTatooPartHD.stages.2.label>
+  <TM_ArcaneTatooPartHD.stages.3.label>IV</TM_ArcaneTatooPartHD.stages.3.label>
+
+  <TM_SigilPainHD.label>друк сигилів</TM_SigilPainHD.label>
+  <TM_SigilPainHD.description>Підтримка сигилів понад їх звичайних можливостей напружує заклинателя, завдаючи болю.</TM_SigilPainHD.description>
+  <TM_SigilPainHD.stages.0.label>незначний</TM_SigilPainHD.stages.0.label>
+  <TM_SigilPainHD.stages.1.label>I</TM_SigilPainHD.stages.1.label>
+  <TM_SigilPainHD.stages.2.label>II</TM_SigilPainHD.stages.2.label>
+  <TM_SigilPainHD.stages.3.label>III</TM_SigilPainHD.stages.3.label>
+  <TM_SigilPainHD.stages.4.label>IV</TM_SigilPainHD.stages.4.label>
+  <TM_SigilPainHD.stages.5.label>V</TM_SigilPainHD.stages.5.label>
+  <TM_SigilPainHD.stages.6.label>VI</TM_SigilPainHD.stages.6.label>
+  <TM_SigilPainHD.stages.7.label>VII</TM_SigilPainHD.stages.7.label>
+
+  <TM_SiphonBrandHD.label>Марка Сіфона</TM_SiphonBrandHD.label>
+  <TM_SiphonBrandHD.description>Повільно передає ману отримувачу бренду.</TM_SiphonBrandHD.description>
+  <TM_SiphonBrandHD.stages.0.label>бездіяльний</TM_SiphonBrandHD.stages.0.label>
+  <TM_SiphonBrandHD.stages.1.label></TM_SiphonBrandHD.stages.1.label>
+  <TM_SiphonBrandHD.stages.2.label>вируючий</TM_SiphonBrandHD.stages.2.label>
+
+  <TM_ProtectionBrandHD.label>Захисна марка</TM_ProtectionBrandHD.label>
+  <TM_ProtectionBrandHD.description>Руна захисту здатна запобігти нанесенню шкоди носієві, але при цьому використовує частину або весь свій заряд; ця руна перезаряджається з плином часу.</TM_ProtectionBrandHD.description>
+  <TM_ProtectionBrandHD.stages.0.label>бездіяльний</TM_ProtectionBrandHD.stages.0.label>
+  <TM_ProtectionBrandHD.stages.1.label></TM_ProtectionBrandHD.stages.1.label>
+  <TM_ProtectionBrandHD.stages.2.label>вируючий</TM_ProtectionBrandHD.stages.2.label>
+
+  <TM_EmotionBrandHD.label>Бренд Емоцій</TM_EmotionBrandHD.label>
+  <TM_EmotionBrandHD.description>Змушує настрій підвищуватися швидше і знижуватися повільніше; має шанс відновити пішака після психічного зриву при зриві.</TM_EmotionBrandHD.description>
+  <TM_EmotionBrandHD.stages.0.label>бездіяльний</TM_EmotionBrandHD.stages.0.label>
+  <TM_EmotionBrandHD.stages.1.label></TM_EmotionBrandHD.stages.1.label>
+  <TM_EmotionBrandHD.stages.2.label>вируючий</TM_EmotionBrandHD.stages.2.label>
+
+  <TM_FitnessBrandHD.label>Фітнес-бренд</TM_FitnessBrandHD.label>
+  <TM_FitnessBrandHD.description>Збільшує переміщення та маніпуляції.</TM_FitnessBrandHD.description>
+  <TM_FitnessBrandHD.stages.0.label>бездіяльний</TM_FitnessBrandHD.stages.0.label>
+  <TM_FitnessBrandHD.stages.1.label>I</TM_FitnessBrandHD.stages.1.label>
+  <TM_FitnessBrandHD.stages.2.label>II</TM_FitnessBrandHD.stages.2.label>
+  <TM_FitnessBrandHD.stages.3.label>III</TM_FitnessBrandHD.stages.3.label>
+  <TM_FitnessBrandHD.stages.4.label>IV</TM_FitnessBrandHD.stages.4.label>
+  <TM_FitnessBrandHD.stages.5.label>вируючий I</TM_FitnessBrandHD.stages.5.label>
+  <TM_FitnessBrandHD.stages.6.label>вируючий II</TM_FitnessBrandHD.stages.6.label>
+  <TM_FitnessBrandHD.stages.7.label>вируючий III</TM_FitnessBrandHD.stages.7.label>
+  <TM_FitnessBrandHD.stages.8.label>вируючий IV</TM_FitnessBrandHD.stages.8.label>
+  <TM_FitnessBrandHD.stages.9.label>вируючий V</TM_FitnessBrandHD.stages.9.label>
+  <TM_FitnessBrandHD.stages.10.label>вируючий VI</TM_FitnessBrandHD.stages.10.label>
+
+  <TM_AwarenessBrandHD.label>Впізнаваність Бренда</TM_AwarenessBrandHD.label>
+  <TM_AwarenessBrandHD.description>Підсилює почуття і сприйняття.</TM_AwarenessBrandHD.description>
+  <TM_AwarenessBrandHD.stages.0.label>dormant</TM_AwarenessBrandHD.stages.0.label>
+  <TM_AwarenessBrandHD.stages.1.label>I</TM_AwarenessBrandHD.stages.1.label>
+  <TM_AwarenessBrandHD.stages.2.label>II</TM_AwarenessBrandHD.stages.2.label>
+  <TM_AwarenessBrandHD.stages.3.label>III</TM_AwarenessBrandHD.stages.3.label>
+  <TM_AwarenessBrandHD.stages.4.label>IV</TM_AwarenessBrandHD.stages.4.label>
+  <TM_AwarenessBrandHD.stages.5.label>вируючий I</TM_AwarenessBrandHD.stages.5.label>
+  <TM_AwarenessBrandHD.stages.6.label>вируючий II</TM_AwarenessBrandHD.stages.6.label>
+  <TM_AwarenessBrandHD.stages.7.label>вируючий III</TM_AwarenessBrandHD.stages.7.label>
+  <TM_AwarenessBrandHD.stages.8.label>вируючий IV</TM_AwarenessBrandHD.stages.8.label>
+  <TM_AwarenessBrandHD.stages.9.label>вируючий V</TM_AwarenessBrandHD.stages.9.label>
+  <TM_AwarenessBrandHD.stages.10.label>вируючий VI</TM_AwarenessBrandHD.stages.10.label>
+
+  <TM_VitalityBrandHD.label>Бренд Життя</TM_VitalityBrandHD.label>
+  <TM_VitalityBrandHD.description>Підвищує життєвий тонус і відновлення.</TM_VitalityBrandHD.description>
+  <TM_VitalityBrandHD.stages.0.label>бездіяльний</TM_VitalityBrandHD.stages.0.label>
+  <TM_VitalityBrandHD.stages.1.label>I</TM_VitalityBrandHD.stages.1.label>
+  <TM_VitalityBrandHD.stages.2.label>II</TM_VitalityBrandHD.stages.2.label>
+  <TM_VitalityBrandHD.stages.3.label>III</TM_VitalityBrandHD.stages.3.label>
+  <TM_VitalityBrandHD.stages.4.label>IV</TM_VitalityBrandHD.stages.4.label>
+  <TM_VitalityBrandHD.stages.5.label>вируючий I</TM_VitalityBrandHD.stages.5.label>
+  <TM_VitalityBrandHD.stages.6.label>вируючий II</TM_VitalityBrandHD.stages.6.label>
+  <TM_VitalityBrandHD.stages.7.label>вируючий III</TM_VitalityBrandHD.stages.7.label>
+  <TM_VitalityBrandHD.stages.8.label>вируючий IV</TM_VitalityBrandHD.stages.8.label>
+  <TM_VitalityBrandHD.stages.9.label>вируючий V</TM_VitalityBrandHD.stages.9.label>
+  <TM_VitalityBrandHD.stages.10.label>вируючий VI</TM_VitalityBrandHD.stages.10.label>
+
+  <TM_GolemancyEfficiencyHD.label>Мислений зв&apos;язок</TM_GolemancyEfficiencyHD.label>
+  <TM_GolemancyEfficiencyHD.description>Голем пов&apos;язаний з големантом і набув більш високого стану усвідомлення.</TM_GolemancyEfficiencyHD.description>
+  <TM_GolemancyEfficiencyHD.stages.0.label></TM_GolemancyEfficiencyHD.stages.0.label>
+  <TM_GolemancyEfficiencyHD.stages.1.label>I</TM_GolemancyEfficiencyHD.stages.1.label>
+  <TM_GolemancyEfficiencyHD.stages.2.label>II</TM_GolemancyEfficiencyHD.stages.2.label>
+  <TM_GolemancyEfficiencyHD.stages.3.label>III</TM_GolemancyEfficiencyHD.stages.3.label>
+  <TM_GolemancyEfficiencyHD.stages.4.label>IV</TM_GolemancyEfficiencyHD.stages.4.label>
+  <TM_GolemancyEfficiencyHD.stages.5.label>V</TM_GolemancyEfficiencyHD.stages.5.label>
+
+  <TM_GolemancyVersatilityHD.label>Зв&apos;язок з големом</TM_GolemancyVersatilityHD.label>
+  <TM_GolemancyVersatilityHD.description>Големант пов&apos;язаний з големом і здатний відкачувати частину його енергії для особистого використання.</TM_GolemancyVersatilityHD.description>
+  <TM_GolemancyVersatilityHD.stages.0.label></TM_GolemancyVersatilityHD.stages.0.label>
+  <TM_GolemancyVersatilityHD.stages.1.label>I</TM_GolemancyVersatilityHD.stages.1.label>
+  <TM_GolemancyVersatilityHD.stages.2.label>II</TM_GolemancyVersatilityHD.stages.2.label>
+  <TM_GolemancyVersatilityHD.stages.3.label>III</TM_GolemancyVersatilityHD.stages.3.label>
+  <TM_GolemancyVersatilityHD.stages.4.label>IV</TM_GolemancyVersatilityHD.stages.4.label>
+  <TM_GolemancyVersatilityHD.stages.5.label>V</TM_GolemancyVersatilityHD.stages.5.label>
+
+  <TM_GolemancyPowerHD.label>Аугментація голему</TM_GolemancyPowerHD.label>
+  <TM_GolemancyPowerHD.description>Голем пов&apos;язаний з големантом, здатним збільшувати потужність і витривалість голему.</TM_GolemancyPowerHD.description>
+  <TM_GolemancyPowerHD.stages.0.label></TM_GolemancyPowerHD.stages.0.label>
+  <TM_GolemancyPowerHD.stages.1.label>I</TM_GolemancyPowerHD.stages.1.label>
+  <TM_GolemancyPowerHD.stages.2.label>II</TM_GolemancyPowerHD.stages.2.label>
+  <TM_GolemancyPowerHD.stages.3.label>III</TM_GolemancyPowerHD.stages.3.label>
+  <TM_GolemancyPowerHD.stages.4.label>IV</TM_GolemancyPowerHD.stages.4.label>
+  <TM_GolemancyPowerHD.stages.5.label>V</TM_GolemancyPowerHD.stages.5.label>
+
+
+</LanguageData>

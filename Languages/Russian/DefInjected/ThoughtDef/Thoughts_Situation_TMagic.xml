@@ -1,0 +1,46 @@
+<LanguageData><!-- affecting opinion-->
+	<TM_Undead.stages.0.label>нежить</TM_Undead.stages.0.label>
+	<TM_Necromancer.stages.0.label>некромант</TM_Necromancer.stages.0.label>
+	<TM_OpinionOfBoundless.stages.0.label>беспредельная наглость</TM_OpinionOfBoundless.stages.0.label>
+	<TM_Lich.stages.0.label>лич</TM_Lich.stages.0.label>
+	<TM_HolierThanThou.stages.0.label>самодовольный маг</TM_HolierThanThou.stages.0.label>
+	<TM_FemaleOpinionOfSuccubus.stages.0.label>Завидую суккубу</TM_FemaleOpinionOfSuccubus.stages.0.label>
+	<TM_FemaleOpinionOfSuccubus.stages.0.description>Все обращают на неё внимание из-за внешности. Неужели всё остальное ничего не значит?</TM_FemaleOpinionOfSuccubus.stages.0.description>
+	<TM_FemaleOpinionOfSuccubus.stages.1.label>Неестественная красота</TM_FemaleOpinionOfSuccubus.stages.1.label>
+	<TM_FemaleOpinionOfSuccubus.stages.1.description>В ней есть что-то притягательное, чего у меня никогда не будет... и я ненавижу её за это.</TM_FemaleOpinionOfSuccubus.stages.1.description>
+	<TM_MaleOpinionOfSuccubus.stages.0.label>Иллюзия красоты</TM_MaleOpinionOfSuccubus.stages.0.label>
+	<TM_MaleOpinionOfSuccubus.stages.0.description>Боевой опыт подсказывает, что в её облике и движениях есть ложь, но порой проще просто поддаться этому обману.</TM_MaleOpinionOfSuccubus.stages.0.description>
+	<TM_MaleOpinionOfSuccubus.stages.1.label>Дьявольски привлекательна</TM_MaleOpinionOfSuccubus.stages.1.label>
+	<TM_MaleOpinionOfSuccubus.stages.1.description>Я понимаю, что она использует демонические силы, чтобы казаться привлекательнее, но это знание почти не ослабляет эффект.</TM_MaleOpinionOfSuccubus.stages.1.description>
+	<TM_MaleOpinionOfSuccubus.stages.2.label>неотразимо привлекательна</TM_MaleOpinionOfSuccubus.stages.2.label>
+	<TM_MaleOpinionOfSuccubus.stages.2.description>В ней есть нечто бесспорно и пугающе притягательное.</TM_MaleOpinionOfSuccubus.stages.2.description>
+	<Thought_EnchantedAura.stages.0.label>очаровательный</Thought_EnchantedAura.stages.0.label>
+	<Thought_EnchantedAura.stages.0.description>Имеет очаровательное присутствие.</Thought_EnchantedAura.stages.0.description>
+	<Thought_EnchantedAura.stages.1.label>зачарованный</Thought_EnchantedAura.stages.1.label>
+	<Thought_EnchantedAura.stages.1.description>Обладает очаровательной аурой.</Thought_EnchantedAura.stages.1.description>
+	<Thought_EnchantedAura.stages.2.label>мощное очарование</Thought_EnchantedAura.stages.2.label>
+	<Thought_EnchantedAura.stages.2.description>Обладает мощным очарованием.</Thought_EnchantedAura.stages.2.description>
+	<Thought_EnchantedAura.stages.3.label>по-настоящему ослепителен(на)</Thought_EnchantedAura.stages.3.label>
+	<Thought_EnchantedAura.stages.3.description>От него(неё) буквально невозможно отвести взгляд.</Thought_EnchantedAura.stages.3.description>
+	<Thought_EnchantedBody.stages.0.label>три руки</Thought_EnchantedBody.stages.0.label>
+	<Thought_EnchantedBody.stages.0.description>У него есть и третья рука... смотреть на него неудобно и неестественно.</Thought_EnchantedBody.stages.0.description>
+	<Thought_EnchantedBody.stages.1.label>четыре руки</Thought_EnchantedBody.stages.1.label>
+	<Thought_EnchantedBody.stages.1.description>Меня не волнует, что эти дополнительные руки волшебные, это просто уродство.</Thought_EnchantedBody.stages.1.description>
+	<Thought_EnchantedBody.stages.2.label>странный рост</Thought_EnchantedBody.stages.2.label>
+	<Thought_EnchantedBody.stages.2.description>Появление лишних частей тела уже выходит за всякие рамки. Кажется, этот третий глаз всё время следит за мной.</Thought_EnchantedBody.stages.2.description>
+	<Thought_EnchantedBody.stages.3.label>мутант</Thought_EnchantedBody.stages.3.label>
+	<Thought_EnchantedBody.stages.3.description>А что дальше, еще одна голова? Это зашло слишком далеко.</Thought_EnchantedBody.stages.3.description>
+	<Thought_EnchantedBody.stages.4.label>восхищает трансгуманиста</Thought_EnchantedBody.stages.4.label>
+	<Thought_EnchantedBody.stages.4.description>Уметь менять своё тело по собственной воле — потрясающий дар!</Thought_EnchantedBody.stages.4.description>
+	<Thought_EnchantedBody.stages.5.label>отвратительно для пуриста тела</Thought_EnchantedBody.stages.5.label>
+	<Thought_EnchantedBody.stages.5.description>Что за уродство... на это просто невозможно смотреть без отвращения.</Thought_EnchantedBody.stages.5.description>
+	<!-- affecting mood-->
+	<Thought_ObservedUndead.stages.0.label>наблюдаемая нежить</Thought_ObservedUndead.stages.0.label>
+	<Thought_ObservedUndead.stages.0.description>Я ненавижу находиться рядом с нежитью. Я не могу не думать об этом... неужели это случится со мной, когда я умру?</Thought_ObservedUndead.stages.0.description>
+	<Thought_WearingDemonhide.stages.0.label>демоническая шкура {0}</Thought_WearingDemonhide.stages.0.label>
+	<Thought_WearingDemonhide.stages.0.description>Ношение одежды из кожи демона заставляет меня чувствовать себя более уверенно.</Thought_WearingDemonhide.stages.0.description>
+	<Thought_WearingDemonhide.stages.1.label>демоническая шкура {0} (+1)</Thought_WearingDemonhide.stages.1.label>
+	<Thought_WearingDemonhide.stages.1.description>Одежда из кожи демона - символ моего элитного статуса.</Thought_WearingDemonhide.stages.1.description>
+	<Thought_WearingDemonhide.stages.2.label>демоническая шкура {0} (+2)</Thought_WearingDemonhide.stages.2.label>
+	<Thought_WearingDemonhide.stages.2.description>Я одет в шкуру демона; мой статус и безопасность гарантированы.</Thought_WearingDemonhide.stages.2.description>
+</LanguageData>

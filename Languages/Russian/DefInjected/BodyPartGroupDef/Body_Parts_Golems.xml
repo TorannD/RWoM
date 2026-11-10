@@ -1,0 +1,37 @@
+<LanguageData><!-- ОБЩИЕ ЧАСТИ ГОЛЕМОВ-->
+	<Golem_Eyes.label>глаза</Golem_Eyes.label>
+	<Golem_Arms.label>дробящие руки</Golem_Arms.label>
+	<!-- МЕХА-ГОЛЕМ-->
+	<Mecha_LeftArm.label>левая рука</Mecha_LeftArm.label>
+	<Mecha_LeftArm_Axe.label>меха-топор</Mecha_LeftArm_Axe.label>
+	<Mecha_LeftArm_Sword.label>меха-меч</Mecha_LeftArm_Sword.label>
+	<Mecha_RightArm.label>правая рука</Mecha_RightArm.label>
+	<Mecha_RightArm_Hammer.label>механический молот</Mecha_RightArm_Hammer.label>
+	<Mecha_Base.label>разбитый корпус</Mecha_Base.label>
+	<!-- ПЛОТЯНОЙ ГОЛЕМ-->
+	<Flesh_Eyes.label>глаза</Flesh_Eyes.label>
+	<Flesh_Tusks.label>клыки</Flesh_Tusks.label>
+	<Flesh_Horns.label>рога</Flesh_Horns.label>
+	<Flesh_Arms.label>сокрушающие руки</Flesh_Arms.label>
+	<Flesh_LeftArm_Brace.label>наруч</Flesh_LeftArm_Brace.label>
+	<Flesh_LeftArm_Cleaver.label>дровокол</Flesh_LeftArm_Cleaver.label>
+	<Flesh_RightArm_Brace.label>наруч</Flesh_RightArm_Brace.label>
+	<Flesh_RightArm_Cleaver.label>дровокол</Flesh_RightArm_Cleaver.label>
+	<!-- ПОЛЫЙ ГОЛЕМ-->
+	<Hollow_Axe.label>пустотный топор</Hollow_Axe.label>
+	<Hollow_Staff.label>пустотный посох</Hollow_Staff.label>
+	<Hollow_Claws.label>пустотные когти</Hollow_Claws.label>
+	<Hollow_Decay.label>прикосновение тления</Hollow_Decay.label>
+	<Hollow_FocusGems.label>фокусирующий кристалл</Hollow_FocusGems.label>
+	<!-- КАМЕННЫЙ ГОЛЕМ-->
+	<Stone_Arms.label>каменные руки</Stone_Arms.label>
+	<!-- ГОЛЕМ МАХАРАЛА-->
+	<Maharal_Arms.label>руки из глины</Maharal_Arms.label>
+	<!-- СОЛОМЕННЫЙ ГОЛЕМ-->
+	<Straw_Arms.label>соломенные руки</Straw_Arms.label>
+	<!-- ДЕРЕВЯННЫЙ ГОЛЕМ-->
+	<TM_Wood_Manipulator.label>центральный манипулятор</TM_Wood_Manipulator.label>
+	<TM_Wood_Base.label>подвижная основа</TM_Wood_Base.label>
+	<!-- ШЁЛКОВЫЙ ГОЛЕМ-->
+	<TM_Silk_Arms.label>шёлковые руки</TM_Silk_Arms.label>
+</LanguageData>

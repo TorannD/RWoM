@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_SpiritTD.label>espírito</TM_SpiritTD.label>
+  <TM_SpiritTD.description>Um espírito errante, preso a um plano material por uma força desconhecida.</TM_SpiritTD.description>
+  <TM_SpiritTD.tools.0.label>torneira de sopro</TM_SpiritTD.tools.0.label>
+  <!-- Leather Amount: 0 -->
+  <!-- Meat Amount: 0 -->
+  <TM_SpiritTD_Corpse.label>cadáver do espírito</TM_SpiritTD_Corpse.label>
+  <TM_SpiritTD_Corpse.description>cadáver do espírito</TM_SpiritTD_Corpse.description>
+
+
+</LanguageData>

@@ -1,0 +1,6 @@
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ScenarioDef[defName='TM_MagicalVoyagers']/scenario/parts/li[@Class='TorannMagic.Odyssey.ScenPart_MagicalShipArrival']/includeReservoir</xpath>
+    <value><includeReservoir>true</includeReservoir></value>
+  </Operation>
+</Patch>

@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Projectile_Syringe.label>Шприц</Projectile_Syringe.label>
+  <Projectile_SyringeW.label>Шприц</Projectile_SyringeW.label>
+  <Projectile_MassPossess.label>AMP</Projectile_MassPossess.label>
+  <Projectile_MiniBomb.label>Граната</Projectile_MiniBomb.label>
+  <Projectile_MiniBomb_I.label>Граната</Projectile_MiniBomb_I.label>
+  <Projectile_MiniBomb_II.label>Граната</Projectile_MiniBomb_II.label>
+  <Projectile_MiniBomb_III.label>Граната</Projectile_MiniBomb_III.label>
+  <Projectile_ClearingCharge.label>Граната</Projectile_ClearingCharge.label>
+  <Projectile_ClearingCharge_I.label>Граната</Projectile_ClearingCharge_I.label>
+  <Projectile_ClearingCharge_II.label>Граната</Projectile_ClearingCharge_II.label>
+  <Projectile_ClearingCharge_III.label>Граната</Projectile_ClearingCharge_III.label>
+  <Projectile_IgnitionCharge.label>Граната</Projectile_IgnitionCharge.label>
+  <Projectile_IgnitionCharge_I.label>Граната</Projectile_IgnitionCharge_I.label>
+  <Projectile_IgnitionCharge_II.label>Граната</Projectile_IgnitionCharge_II.label>
+  <Projectile_IgnitionCharge_III.label>Граната</Projectile_IgnitionCharge_III.label>
+  <Projectile_FlashCharge.label>Граната</Projectile_FlashCharge.label>
+  <Projectile_FlashCharge_I.label>Граната</Projectile_FlashCharge_I.label>
+  <Projectile_FlashCharge_II.label>Граната</Projectile_FlashCharge_II.label>
+  <Projectile_FlashCharge_III.label>Граната</Projectile_FlashCharge_III.label>
+  <Projectile_EMPCharge.label>ЭМИ</Projectile_EMPCharge.label>
+  <Projectile_EMPCharge_I.label>ЭМИ</Projectile_EMPCharge_I.label>
+  <Projectile_EMPCharge_II.label>ЭМИ</Projectile_EMPCharge_II.label>
+  <Projectile_EMPCharge_III.label>ЭМИ</Projectile_EMPCharge_III.label>
+  <Projectile_SiegeExplosive.label>Разрушающий заряд</Projectile_SiegeExplosive.label>
+  <Projectile_SiegeExplosive_I.label>Разрушающий заряд</Projectile_SiegeExplosive_I.label>
+  <Projectile_SiegeExplosive_II.label>Разрушающий заряд</Projectile_SiegeExplosive_II.label>
+  <Projectile_SiegeExplosive_III.label>Разрушающий заряд</Projectile_SiegeExplosive_III.label>
+  <Projectile_CarpetBomb.label>Граната</Projectile_CarpetBomb.label>
+  <Projectile_CarpetBomb_I.label>Граната</Projectile_CarpetBomb_I.label>
+  <Projectile_CarpetBomb_II.label>Граната</Projectile_CarpetBomb_II.label>
+  <Projectile_CarpetBomb_III.label>Граната</Projectile_CarpetBomb_III.label>
+  <Projectile_Yukikaze.label>Юкиказе</Projectile_Yukikaze.label>
+  <Projectile_Yukikaze_I.label>Юкиказе</Projectile_Yukikaze_I.label>
+  <Projectile_Yukikaze_II.label>Юкиказе</Projectile_Yukikaze_II.label>
+  <Projectile_Yukikaze_III.label>Юкиказе</Projectile_Yukikaze_III.label>
+  <Projectile_Yukikaze_IV.label>Юкиказе</Projectile_Yukikaze_IV.label>
+  <Projectile_Yukikaze_V.label>Юкиказе</Projectile_Yukikaze_V.label>
+  <Projectile_Yukikaze_VI.label>Юкиказе</Projectile_Yukikaze_VI.label>
+  <Projectile_Yukikaze_VII.label>Юкиказе</Projectile_Yukikaze_VII.label>
+  <Projectile_Yukikaze_VIII.label>Юкиказе</Projectile_Yukikaze_VIII.label>
+  <Projectile_Yukikaze_IX.label>Юкиказе</Projectile_Yukikaze_IX.label>
+  <Projectile_BackupGrenade.label>Взрывная сумка</Projectile_BackupGrenade.label>
+  <Projectile_BackupGrenade_I.label>Взрывная сумка</Projectile_BackupGrenade_I.label>
+  <Projectile_BackupGrenade_II.label>Взрывная сумка</Projectile_BackupGrenade_II.label>
+  <Projectile_BackupGrenade_III.label>Взрывная сумка</Projectile_BackupGrenade_III.label>
+  <Projectile_EMPBomb.label>Сумка молний</Projectile_EMPBomb.label>
+  <Projectile_EMPBomb_I.label>Сумка молний</Projectile_EMPBomb_I.label>
+  <Projectile_EMPBomb_II.label>Сумка молний</Projectile_EMPBomb_II.label>
+  <Projectile_EMPBomb_III.label>Сумка молний</Projectile_EMPBomb_III.label>
+  <Projectile_EvasiveLeap.label>полет</Projectile_EvasiveLeap.label>
+  <Buff_FireAtWill.label>AMP</Buff_FireAtWill.label>
+  <Buff_Shadowsong.label>AMP</Buff_Shadowsong.label>
+  <Projectile_Assassinate.label>Нож</Projectile_Assassinate.label>
+  <Projectile_LunarArc.label>Лунная арка</Projectile_LunarArc.label>
+  <Projectile_IgnitionShot.label>Зажигательный выстрел</Projectile_IgnitionShot.label>
+  <Projectile_IgnitionShot_I.label>Зажигательный выстрел</Projectile_IgnitionShot_I.label>
+  <Projectile_IgnitionShot_II.label>Зажигательный выстрел</Projectile_IgnitionShot_II.label>
+  <Projectile_IgnitionShot_III.label>Зажигательный выстрел</Projectile_IgnitionShot_III.label>
+  <Projectile_FrostShot.label>Морозный выстрел</Projectile_FrostShot.label>
+  <Projectile_LightningShot.label>Выстрел молний</Projectile_LightningShot.label>
+  <Projectile_LucentShot.label>Сияющий выстрел</Projectile_LucentShot.label>
+  <Projectile_StrikeZone.label>Зона удара</Projectile_StrikeZone.label>
+  <Projectile_Backdraft.label>Обратная тяга</Projectile_Backdraft.label>
+  <Projectile_InfernoBreaker.label>Inferno Breaker</Projectile_InfernoBreaker.label>
+  <Projectile_Redpoint.label>Граната</Projectile_Redpoint.label>
+  <Projectile_Redpoint_I.label>Граната</Projectile_Redpoint_I.label>
+  <Projectile_Redpoint_II.label>Граната</Projectile_Redpoint_II.label>
+  <Projectile_Redpoint_III.label>Граната</Projectile_Redpoint_III.label>
+  <Projectile_BlitzCharge.label>Blitz Charge</Projectile_BlitzCharge.label>
+  <Projectile_BlitzCharge_I.label>Blitz Charge</Projectile_BlitzCharge_I.label>
+  <Projectile_BlitzCharge_II.label>Blitz Charge</Projectile_BlitzCharge_II.label>
+  <Projectile_BlitzCharge_III.label>Blitz Charge</Projectile_BlitzCharge_III.label>
+  <Projectile_PlagueKnife.label>Метательный Нож</Projectile_PlagueKnife.label>
+  <Projectile_Bloodletting.label>Нож</Projectile_Bloodletting.label>
+  <Projectile_GleefulButchery.label>Нож</Projectile_GleefulButchery.label>
+  <Projectile_Garrote.label>Garrote</Projectile_Garrote.label>
+  <Projectile_Garrote_I.label>Garrote</Projectile_Garrote_I.label>
+  <Projectile_Garrote_II.label>Garrote</Projectile_Garrote_II.label>
+  <Projectile_Garrote_III.label>Garrote</Projectile_Garrote_III.label>
+  <Projectile_ImpalingStrike.label>Нож</Projectile_ImpalingStrike.label>
+  <Projectile_ShadowShuriken.label>Shuriken</Projectile_ShadowShuriken.label>
+  <Projectile_Engagement.label>Engagement</Projectile_Engagement.label>
+  <Projectile_Coupe.label>Coupé</Projectile_Coupe.label>
+  <Projectile_Fleche.label>Flèche</Projectile_Fleche.label>
+  <Buff_NullZone.label>AMP</Buff_NullZone.label>
+  <Projectile_Gust.label>Gust</Projectile_Gust.label>
+  <Projectile_AdvancedFlight.label>полет</Projectile_AdvancedFlight.label>
+  <Projectile_Updraft.label>Updraft</Projectile_Updraft.label>
+  <Buff_Gale.label>Gale</Buff_Gale.label>
+  <Buff_WailOfDoom.label>AMP</Buff_WailOfDoom.label>
+  <Projectile_OldHeadlight.label>Старый Прожектор</Projectile_OldHeadlight.label>
+  <Projectile_PocketSand.label>dry ground</Projectile_PocketSand.label>
+  <Projectile_HydratedWater.label>moisturize ground</Projectile_HydratedWater.label>
+  <Projectile_PocketExtinguisher.label>Firefoam</Projectile_PocketExtinguisher.label>
+  <Projectile_BiotechBrambles.label>briar patch</Projectile_BiotechBrambles.label>
+  <Projectile_BiotechBrambles_III.label>briar patch</Projectile_BiotechBrambles_III.label>
+  <Projectile_Wrench.label>Wrench</Projectile_Wrench.label>
+  <Projectile_CloakingDeviceW.label>Cloaking Device</Projectile_CloakingDeviceW.label>
+  <Projectile_CloakingDevice.label>Cloaking Device</Projectile_CloakingDevice.label>
+  <Projectile_RocketBoots.label>Rocket Boots</Projectile_RocketBoots.label>
+  <Projectile_Goggles.label>Goggles</Projectile_Goggles.label>
+  <Projectile_Taser.label>Taser</Projectile_Taser.label>
+  <Projectile_ZealousDevotion.label>Overwhelm</Projectile_ZealousDevotion.label>
+  <Projectile_ProstratedForm.label>sunfire</Projectile_ProstratedForm.label>
+  <Projectile_BlindFaith.label>refraction</Projectile_BlindFaith.label>
+  <Laser_Thunderbolt.label>Thunderbolt</Laser_Thunderbolt.label>
+  <Projectile_Explosion.label>explosion</Projectile_Explosion.label>
+  <Projectile_Sap.label>Sap</Projectile_Sap.label>
+  <Projectile_LumenShot.label>Lightbeam</Projectile_LumenShot.label>
+  <Projectile_OmniShield.label>Lightbeam</Projectile_OmniShield.label>
+  <Projectile_ElementalOrigin.label>Elemental Origin</Projectile_ElementalOrigin.label>
+  <Projectile_Healberry.label>Healberry</Projectile_Healberry.label>
+  <Projectile_Honeytrap.label>Honeytrap</Projectile_Honeytrap.label>
+  <Projectile_Suncall.label>Suncall</Projectile_Suncall.label>
+  <Projectile_SuncallIndicator.label>explosion</Projectile_SuncallIndicator.label>
+  <Projectile_Bloodsoak.label>Bloodsoak</Projectile_Bloodsoak.label>
+  <Projectile_Combust.label>Combust</Projectile_Combust.label>
+  <Projectile_Combust_I.label>Combust</Projectile_Combust_I.label>
+  <Projectile_Combust_II.label>Combust</Projectile_Combust_II.label>
+  <Projectile_Combust_III.label>Combust</Projectile_Combust_III.label>
+  <Projectile_CombustIndicator.label>explosion</Projectile_CombustIndicator.label>
+  <Projectile_RemoteExplosive.label>explosive</Projectile_RemoteExplosive.label>
+  <Projectile_RemoteExplosive_I.label>explosive</Projectile_RemoteExplosive_I.label>
+  <Projectile_RemoteExplosive_II.label>explosive</Projectile_RemoteExplosive_II.label>
+  <Projectile_RemoteExplosive_III.label>explosive</Projectile_RemoteExplosive_III.label>
+  <Projectile_RemoteExplosiveIndicator.label>explosion</Projectile_RemoteExplosiveIndicator.label>
+  <Projectile_FlashTrap.label>flash trap</Projectile_FlashTrap.label>
+  <Projectile_FlashTrap_I.label>flash trap</Projectile_FlashTrap_I.label>
+  <Projectile_FlashTrap_II.label>flash trap</Projectile_FlashTrap_II.label>
+  <Projectile_FlashTrap_III.label>flash trap</Projectile_FlashTrap_III.label>
+  <Projectile_FlashTrapIndicator.label>explosion</Projectile_FlashTrapIndicator.label>
+  <Projectile_ChainDash.label>chain</Projectile_ChainDash.label>
+  <Projectile_ChainClimb.label>grappling hook</Projectile_ChainClimb.label>
+  <Projectile_GrapplingHook.label>chain</Projectile_GrapplingHook.label>
+  <Projectile_Eviscerate.label>Eviscerate</Projectile_Eviscerate.label>
+  <Projectile_ChainJail.label>chain</Projectile_ChainJail.label>
+  <Projectile_ChainJail_I.label>chain</Projectile_ChainJail_I.label>
+  <Projectile_ChainJail_II.label>chain</Projectile_ChainJail_II.label>
+  <Projectile_ChainJail_III.label>chain</Projectile_ChainJail_III.label>
+  <Projectile_ChainStrike.label>chain</Projectile_ChainStrike.label>
+  <Projectile_ChainFlurry.label>chain</Projectile_ChainFlurry.label>
+  <Projectile_Condemn.label>chain</Projectile_Condemn.label>
+  <Projectile_Condemn_I.label>chain</Projectile_Condemn_I.label>
+  <Projectile_Condemn_II.label>chain</Projectile_Condemn_II.label>
+  <Projectile_Condemn_III.label>chain</Projectile_Condemn_III.label>
+  <Projectile_ChainWard.label>chain</Projectile_ChainWard.label>
+  <Projectile_StickyBombs.label>sticky bomb</Projectile_StickyBombs.label>
+  <Projectile_StickyBombs_I.label>sticky bomb</Projectile_StickyBombs_I.label>
+  <Projectile_StickyBombs_II.label>sticky bomb</Projectile_StickyBombs_II.label>
+  <Projectile_StickyBombs_III.label>sticky bomb</Projectile_StickyBombs_III.label>
+  <Projectile_C45Explosives.label>class C-45 explosive</Projectile_C45Explosives.label>
+  <Projectile_C45Explosives_I.label>class C-45 explosive</Projectile_C45Explosives_I.label>
+  <Projectile_C45Explosives_II.label>class C-45 explosive</Projectile_C45Explosives_II.label>
+  <Projectile_C45Explosives_III.label>class C-45 explosive</Projectile_C45Explosives_III.label>
+  <Projectile_TimedCharge.label>timed charge</Projectile_TimedCharge.label>
+  <Projectile_TimedCharge_I.label>timed charge</Projectile_TimedCharge_I.label>
+  <Projectile_TimedCharge_II.label>timed charge</Projectile_TimedCharge_II.label>
+  <Projectile_TimedCharge_III.label>timed charge</Projectile_TimedCharge_III.label>
+  <Projectile_Flashbang.label>flashbang</Projectile_Flashbang.label>
+  <Projectile_Flashbang_I.label>flashbang</Projectile_Flashbang_I.label>
+  <Projectile_Flashbang_II.label>flashbang</Projectile_Flashbang_II.label>
+  <Projectile_Flashbang_III.label>flashbang</Projectile_Flashbang_III.label>
+  <Projectile_Fortify.label>encase projectile</Projectile_Fortify.label>
+  <Projectile_Fortify_I.label>encase projectile</Projectile_Fortify_I.label>
+  <Projectile_Fortify_II.label>encase projectile</Projectile_Fortify_II.label>
+  <Projectile_Fortify_III.label>encase projectile</Projectile_Fortify_III.label>
+  <Projectile_EssenceChanneling.label>Essence Channeling</Projectile_EssenceChanneling.label>
+  <Projectile_EnergyChanneling.label>Energy Channeling</Projectile_EnergyChanneling.label>
+  <Projectile_AspectChanneling.label>Aspect Channeling</Projectile_AspectChanneling.label>
+  <Projectile_TargetPractice.label>energy channeling</Projectile_TargetPractice.label>
+  <Projectile_Lightshow.label>Lightshow</Projectile_Lightshow.label>
+  <Projectile_Dazzle.label>dazzle</Projectile_Dazzle.label>
+  <Projectile_Impact.label>fireball</Projectile_Impact.label>
+  <Projectile_Decimate.label>fireball</Projectile_Decimate.label>
+  <Projectile_Obliterate.label>fireball</Projectile_Obliterate.label>
+  <Projectile_GrappleArrow.label>grapple arrow</Projectile_GrappleArrow.label>
+  <Projectile_ArcingArrow.label>broadhead arrow</Projectile_ArcingArrow.label>
+  <Projectile_ArcingArrow_I.label>arcing arrow</Projectile_ArcingArrow_I.label>
+  <Projectile_ArcingArrow_II.label>broadhead arrow</Projectile_ArcingArrow_II.label>
+  <Projectile_ArcingArrow_III.label>broadhead arrow</Projectile_ArcingArrow_III.label>
+  <Projectile_QuickShot.label>quick shot</Projectile_QuickShot.label>
+  <Projectile_CripplingShot.label>crippling shot</Projectile_CripplingShot.label>
+  <Projectile_BarbedArrow.label>arrow</Projectile_BarbedArrow.label>
+  <Projectile_PoisonArrow.label>poison arrow</Projectile_PoisonArrow.label>
+  <Projectile_FireArrow.label>fire arrow</Projectile_FireArrow.label>
+  <Projectile_ChokingGas.label>choking gas</Projectile_ChokingGas.label>
+  <Projectile_ChokingGas_I.label>choking gas</Projectile_ChokingGas_I.label>
+  <Projectile_ChokingGas_II.label>choking gas</Projectile_ChokingGas_II.label>
+  <Projectile_ChokingGas_III.label>choking gas</Projectile_ChokingGas_III.label>
+  <Projectile_Multishot.label>multishot</Projectile_Multishot.label>
+  <Projectile_Barrage.label>barrage</Projectile_Barrage.label>
+  <Projectile_NeedlingShot.label>needling shot</Projectile_NeedlingShot.label>
+  <Projectile_CalledShot.label>needling shot</Projectile_CalledShot.label>
+  <Projectile_Thwack.label>Thwack</Projectile_Thwack.label>
+  <Projectile_AwkwardSlash.label>Awkward Slash</Projectile_AwkwardSlash.label>
+  <Projectile_QuickSlash.label>Quick Slash</Projectile_QuickSlash.label>
+  <Projectile_DecaSlash.label>Decaslash</Projectile_DecaSlash.label>
+  <Projectile_HundredBlades.label>Hundred Blades</Projectile_HundredBlades.label>
+  <Projectile_TentativeStep.label>Tentative Step</Projectile_TentativeStep.label>
+  <Projectile_HastyDash.label>Hasty Dash</Projectile_HastyDash.label>
+  <Projectile_StepThrust.label>Step Thrust</Projectile_StepThrust.label>
+  <Projectile_LightningThrust.label>Lightning Thrust</Projectile_LightningThrust.label>
+  <Projectile_SpatialRift.label>Spatial Rift</Projectile_SpatialRift.label>
+  <Projectile_PebbleToss.label>pebble</Projectile_PebbleToss.label>
+  <Projectile_SpinningJavelin.label>Spinning Javelin</Projectile_SpinningJavelin.label>
+  <Projectile_FieryJavelin.label>Fiery Javelin</Projectile_FieryJavelin.label>
+  <Projectile_FlameBarrage.label>Flame Barrage</Projectile_FlameBarrage.label>
+  <Projectile_PillarOfFlame.label>Pillar Of Flame</Projectile_PillarOfFlame.label>
+  <Projectile_TinyBandAid.label>band-aid</Projectile_TinyBandAid.label>
+  <Projectile_Potion.label>potion</Projectile_Potion.label>
+  <Projectile_LesserLesserFirebolt.label>lesser lesser firebolt</Projectile_LesserLesserFirebolt.label>
+  <Projectile_LesserFirebolt.label>lesser firebolt</Projectile_LesserFirebolt.label>
+  <Projectile_ConjureFlame.label>Conjure Flame</Projectile_ConjureFlame.label>
+  <Projectile_Perdition.label>Perdition</Projectile_Perdition.label>
+  <Projectile_Cataclysm.label>Cataclysm</Projectile_Cataclysm.label>
+  <Projectile_ExpiredSnowball.label>snowball</Projectile_ExpiredSnowball.label>
+  <Projectile_Freeze.label>Freeze</Projectile_Freeze.label>
+  <Projectile_Avalanche.label>Avalanche</Projectile_Avalanche.label>
+  <Projectile_Whiteout.label>Whiteout</Projectile_Whiteout.label>
+  <Laser_StaticShock.label>static electricity</Laser_StaticShock.label>
+  <Laser_StaticBolt.label>static electricity</Laser_StaticBolt.label>
+  <Laser_ForkedLightning.label>Forked Lightning</Laser_ForkedLightning.label>
+  <Projectile_LightningRod.label>Lightning Cloud</Projectile_LightningRod.label>
+  <Projectile_Cloudburst.label>Cloudburst</Projectile_Cloudburst.label>
+  <Projectile_ManaDrain.label>Mana Drain</Projectile_ManaDrain.label>
+  <Projectile_AtronachsTouch.label>Atronach's Touch</Projectile_AtronachsTouch.label>
+  <Projectile_OverloadMana.label>Overload</Projectile_OverloadMana.label>
+  <Projectile_OverloadMana_I.label>Overload</Projectile_OverloadMana_I.label>
+  <Projectile_OverloadMana_II.label>Overload</Projectile_OverloadMana_II.label>
+  <Projectile_OverloadMana_III.label>Overload</Projectile_OverloadMana_III.label>
+  <Projectile_MindBlast.label>Magic Missile</Projectile_MindBlast.label>
+  <Projectile_EldritchBarrage.label>shadow bolt</Projectile_EldritchBarrage.label>
+  <Projectile_EldritchBarrage_I.label>Жуткий обстрел</Projectile_EldritchBarrage_I.label>
+  <Projectile_EldritchBarrage_II.label>Жуткий обстрел</Projectile_EldritchBarrage_II.label>
+  <Projectile_EldritchBarrage_III.label>Жуткий обстрел</Projectile_EldritchBarrage_III.label>
+  <Projectile_Scattershot.label>buckshot pellet</Projectile_Scattershot.label>
+  <Projectile_PointBlank.label>buckshot pellet</Projectile_PointBlank.label>
+  <Projectile_HiExplosiveShells.label>Hi-explosive shells</Projectile_HiExplosiveShells.label>
+  <Projectile_HiExplosiveShells_III.label>Hi-explosive shells</Projectile_HiExplosiveShells_III.label>
+  <Projectile_FlashpowderShells.label>Flashpowder Shells</Projectile_FlashpowderShells.label>
+  <Projectile_FlashpowderShells_I.label>Flashpowder Shells</Projectile_FlashpowderShells_I.label>
+  <Projectile_FlashpowderShells_II.label>Flashpowder Shells</Projectile_FlashpowderShells_II.label>
+  <Projectile_FlashpowderShells_III.label>Flashpowder Shells</Projectile_FlashpowderShells_III.label>
+  <Projectile_DragonsBreathShells.label>Dragon's Breath Shells</Projectile_DragonsBreathShells.label>
+  <Projectile_DragonsBreathShells_III.label>Dragon's Breath Shells</Projectile_DragonsBreathShells_III.label>
+  <Projectile_StimShot.label>Шприц</Projectile_StimShot.label>
+  <Projectile_FalkenPunch.label>Falken Punch</Projectile_FalkenPunch.label>
+  <Projectile_FalkenPunch_I.label>Falken Punch</Projectile_FalkenPunch_I.label>
+  <Projectile_FalkenPunch_II.label>Falken Punch</Projectile_FalkenPunch_II.label>
+  <Projectile_FalkenPunch_III.label>Falken Punch</Projectile_FalkenPunch_III.label>
+  <Projectile_Jab.label>Jab</Projectile_Jab.label>
+  <Projectile_Jab_I.label>Jab</Projectile_Jab_I.label>
+  <Projectile_Jab_II.label>Jab</Projectile_Jab_II.label>
+  <Projectile_Jab_III.label>Jab</Projectile_Jab_III.label>
+  <Projectile_LeftHook.label>Left Hook</Projectile_LeftHook.label>
+  <Projectile_LeftHook_I.label>Left Hook</Projectile_LeftHook_I.label>
+  <Projectile_LeftHook_II.label>Left Hook</Projectile_LeftHook_II.label>
+  <Projectile_LeftHook_III.label>Left Hook</Projectile_LeftHook_III.label>
+  <Projectile_Uppercut.label>Uppercut</Projectile_Uppercut.label>
+  <Projectile_Uppercut_I.label>Uppercut</Projectile_Uppercut_I.label>
+  <Projectile_Uppercut_II.label>Uppercut</Projectile_Uppercut_II.label>
+  <Projectile_Uppercut_III.label>Uppercut</Projectile_Uppercut_III.label>
+  <Projectile_Headbutt.label>Headbutt</Projectile_Headbutt.label>
+  <Projectile_Headbutt_I.label>Headbutt</Projectile_Headbutt_I.label>
+  <Projectile_Headbutt_II.label>Headbutt</Projectile_Headbutt_II.label>
+  <Projectile_Headbutt_III.label>Headbutt</Projectile_Headbutt_III.label>
+  <Projectile_SuckerPunch.label>Sucker Punch</Projectile_SuckerPunch.label>
+  <Projectile_SuckerPunch_I.label>Sucker Punch</Projectile_SuckerPunch_I.label>
+  <Projectile_SuckerPunch_II.label>Sucker Punch</Projectile_SuckerPunch_II.label>
+  <Projectile_SuckerPunch_III.label>Sucker Punch</Projectile_SuckerPunch_III.label>
+  <Projectile_Haymaker.label>Haymaker</Projectile_Haymaker.label>
+  <Projectile_Haymaker_I.label>Haymaker</Projectile_Haymaker_I.label>
+  <Projectile_Haymaker_II.label>Haymaker</Projectile_Haymaker_II.label>
+  <Projectile_Haymaker_III.label>Haymaker</Projectile_Haymaker_III.label>
+  <Projectile_Takedown.label>Takedown</Projectile_Takedown.label>
+  <Projectile_CrushingBlow.label>Crushing Blow</Projectile_CrushingBlow.label>
+  <Projectile_RockThrow.label>Rock</Projectile_RockThrow.label>
+  <Projectile_Incinerate.label>Испепеление</Projectile_Incinerate.label>
+  <Projectile_DeathsJudgment.label>Выстрел в голову</Projectile_DeathsJudgment.label>
+  <Projectile_HuntersShot.label>arrow</Projectile_HuntersShot.label>
+  <Projectile_PoisonVolleyIndicator.label>explosion</Projectile_PoisonVolleyIndicator.label>
+  <Projectile_PoisonVolley.label>poison volley</Projectile_PoisonVolley.label>
+  <Projectile_BladesEdge.label>Blade</Projectile_BladesEdge.label>
+  <Projectile_Hyoton.label>Hyoton</Projectile_Hyoton.label>
+  <Projectile_Hyoton_I.label>Hyoton</Projectile_Hyoton_I.label>
+  <Projectile_Hyoton_II.label>Hyoton</Projectile_Hyoton_II.label>
+  <Projectile_Hyoton_III.label>Hyoton</Projectile_Hyoton_III.label>
+  <Projectile_Katon.label>Katon</Projectile_Katon.label>
+  <Projectile_Katon_I.label>Katon</Projectile_Katon_I.label>
+  <Projectile_Katon_II.label>Katon</Projectile_Katon_II.label>
+  <Projectile_Katon_III.label>Katon</Projectile_Katon_III.label>
+  <Projectile_Ketsuekiton.label>Ketsuekiton</Projectile_Ketsuekiton.label>
+  <Projectile_HammerBolt.label>Hammer</Projectile_HammerBolt.label>
+  <Projectile_HammerBolt_I.label>Hammer</Projectile_HammerBolt_I.label>
+  <Projectile_HammerBolt_II.label>Hammer</Projectile_HammerBolt_II.label>
+  <Projectile_HammerBolt_III.label>Hammer</Projectile_HammerBolt_III.label>
+  <Projectile_BlackStar.label>AMP</Projectile_BlackStar.label>
+  <Projectile_AstralFlames.label>Astral Flames</Projectile_AstralFlames.label>
+  <Projectile_AstralFlames_I.label>Astral Flames</Projectile_AstralFlames_I.label>
+  <Projectile_AstralFlames_II.label>Astral Flames</Projectile_AstralFlames_II.label>
+  <Projectile_AstralFlames_III.label>Astral Flames</Projectile_AstralFlames_III.label>
+  <Projectile_HeavenlySeal.label>Heavenly Seal</Projectile_HeavenlySeal.label>
+  <Projectile_HeavenlySeal_I.label>Heavenly Seal</Projectile_HeavenlySeal_I.label>
+  <Projectile_HeavenlySeal_II.label>Heavenly Seal</Projectile_HeavenlySeal_II.label>
+  <Projectile_HeavenlySeal_III.label>Heavenly Seal</Projectile_HeavenlySeal_III.label>
+  <Projectile_Horoscope.label>Shooting Star</Projectile_Horoscope.label>
+  <Projectile_Ohajiki.label>Marble</Projectile_Ohajiki.label>
+  <Projectile_Shizukesa.label>Shizukesa</Projectile_Shizukesa.label>
+  <Projectile_SmellingSalts.label>Smelling Salts</Projectile_SmellingSalts.label>
+  <Projectile_SmellingSalts_I.label>Smelling Salts</Projectile_SmellingSalts_I.label>
+  <Projectile_SmellingSalts_II.label>Smelling Salts</Projectile_SmellingSalts_II.label>
+  <Projectile_SmellingSalts_III.label>Smelling Salts</Projectile_SmellingSalts_III.label>
+  <Projectile_SealOfPurging.label>Seal of Purging</Projectile_SealOfPurging.label>
+  <Projectile_SealOfPurging_I.label>Seal of Purging</Projectile_SealOfPurging_I.label>
+  <Projectile_SealOfPurging_II.label>Seal of Purging</Projectile_SealOfPurging_II.label>
+  <Projectile_SealOfPurging_III.label>Seal of Purging</Projectile_SealOfPurging_III.label>
+  <Projectile_ExplosiveSeal.label>Explosive Seal</Projectile_ExplosiveSeal.label>
+  <Projectile_ExplosiveSeal_I.label>Explosive Seal</Projectile_ExplosiveSeal_I.label>
+  <Projectile_ExplosiveSeal_II.label>Explosive Seal</Projectile_ExplosiveSeal_II.label>
+  <Projectile_ExplosiveSeal_III.label>Explosive Seal</Projectile_ExplosiveSeal_III.label>
+  <Projectile_Absolution.label>Absolution</Projectile_Absolution.label>
+  <Projectile_Absolution_I.label>Absolution</Projectile_Absolution_I.label>
+  <Projectile_Absolution_II.label>Absolution</Projectile_Absolution_II.label>
+  <Projectile_Absolution_III.label>Absolution</Projectile_Absolution_III.label>
+  <Projectile_OfudaStorm.label>Шторм Офуда</Projectile_OfudaStorm.label>
+  <Projectile_DisarmingShot.label>Разоружающий выстрел</Projectile_DisarmingShot.label>
+  <Projectile_SacrificialPact.label>Жертвоприношение</Projectile_SacrificialPact.label>
+  <Projectile_DisarmingBlow.label>Disarming Blow</Projectile_DisarmingBlow.label>
+  <Projectile_DisarmingBlow_I.label>Disarming Blow</Projectile_DisarmingBlow_I.label>
+  <Projectile_DisarmingBlow_II.label>Disarming Blow</Projectile_DisarmingBlow_II.label>
+  <Projectile_DisarmingBlow_III.label>Disarming Blow</Projectile_DisarmingBlow_III.label>
+  <Projectile_CheapShot.label>Coupé</Projectile_CheapShot.label>
+  <Projectile_DistractingDaggers.label>Нож</Projectile_DistractingDaggers.label>
+  <Projectile_FleetingLight.label>light skip</Projectile_FleetingLight.label>
+  <Projectile_Radiance.label>Radiance</Projectile_Radiance.label>
+  <Projectile_Daybreak.label>Daybreak</Projectile_Daybreak.label>
+  <Projectile_Eclipse.label>Затмение</Projectile_Eclipse.label>
+  <Projectile_Eclipse_I.label>Затмение</Projectile_Eclipse_I.label>
+  <Projectile_Eclipse_II.label>Затмение</Projectile_Eclipse_II.label>
+  <Projectile_Eclipse_III.label>Затмение</Projectile_Eclipse_III.label>
+  <Projectile_Umbra.label>Umbra</Projectile_Umbra.label>
+  <Projectile_Nightfall.label>Nightfall</Projectile_Nightfall.label>
+  <Projectile_ForceMissile.label>Magic Missile</Projectile_ForceMissile.label>
+  <Projectile_ApproachingStorm.label>psionic blast</Projectile_ApproachingStorm.label>
+  <Laser_Discharge.label>Discharge</Laser_Discharge.label>
+  <Laser_Discharge_I.label>Discharge</Laser_Discharge_I.label>
+  <Laser_Discharge_II.label>Discharge</Laser_Discharge_II.label>
+  <Laser_Discharge_III.label>Discharge</Laser_Discharge_III.label>
+  <Projectile_Levinflight.label>Levinflight</Projectile_Levinflight.label>
+  <Projectile_ThunderCall.label>Thunder Call</Projectile_ThunderCall.label>
+  <Projectile_Fulmination.label>chain lightning</Projectile_Fulmination.label>
+  <Projectile_ThunderAegis.label>Thunder Aegis</Projectile_ThunderAegis.label>
+  <Projectile_DrainShot.label>Drain Shot</Projectile_DrainShot.label>
+  <Projectile_Hipfire.label>Выстрел в голову</Projectile_Hipfire.label>
+  <Projectile_Unload.label>Разрядка</Projectile_Unload.label>
+  <Projectile_Unload_I.label>Разрядка</Projectile_Unload_I.label>
+  <Projectile_Unload_II.label>Разрядка</Projectile_Unload_II.label>
+  <Projectile_Unload_III.label>Разрядка</Projectile_Unload_III.label>
+  <Projectile_DeathsJudgmentD.label>Выстрел в голову</Projectile_DeathsJudgmentD.label>
+  <Projectile_DeathsJudgmentD_I.label>Выстрел в голову</Projectile_DeathsJudgmentD_I.label>
+  <Projectile_DeathsJudgmentD_II.label>Выстрел в голову</Projectile_DeathsJudgmentD_II.label>
+  <Projectile_DeathsJudgmentD_III.label>Выстрел в голову</Projectile_DeathsJudgmentD_III.label>
+  <Projectile_ThreeRoundBurst.label>Выстрел в голову</Projectile_ThreeRoundBurst.label>
+  <Projectile_GhostShot.label>Выстрел в голову</Projectile_GhostShot.label>
+  <Projectile_ChronoShot.label>Хроно выстрел</Projectile_ChronoShot.label>
+  <Projectile_TargetMarker.label>kinetic bombardment</Projectile_TargetMarker.label>
+  <Projectile_PolaricShot.label>Polaric Shot</Projectile_PolaricShot.label>
+  <Projectile_GrapplingHookD.label>grappling hook</Projectile_GrapplingHookD.label>
+  <Projectile_Absorb.label>Absorb</Projectile_Absorb.label>
+  <Projectile_Tease.label>Rubber Hammer</Projectile_Tease.label>
+  <Projectile_IllusionOfPain.label>Hex</Projectile_IllusionOfPain.label>
+  <Projectile_Shadowblade.label>Теневой клинок</Projectile_Shadowblade.label>
+  <Projectile_Shadowblade_I.label>Теневой клинок</Projectile_Shadowblade_I.label>
+  <Projectile_Shadowblade_II.label>Теневой клинок</Projectile_Shadowblade_II.label>
+  <Projectile_Shadowblade_III.label>Теневой клинок</Projectile_Shadowblade_III.label>
+  <Projectile_Blackout.label>Hex</Projectile_Blackout.label>
+  <Projectile_Jump.label>Прыжок</Projectile_Jump.label>
+  <Projectile_Jump_I.label>Прыжок</Projectile_Jump_I.label>
+  <Projectile_Jump_II.label>Прыжок</Projectile_Jump_II.label>
+  <Projectile_Jump_III.label>Прыжок</Projectile_Jump_III.label>
+  <Projectile_SpineshatterDive.label>Spineshatter Dive</Projectile_SpineshatterDive.label>
+  <Projectile_SpineshatterDive_I.label>Spineshatter Dive</Projectile_SpineshatterDive_I.label>
+  <Projectile_SpineshatterDive_II.label>Spineshatter Dive</Projectile_SpineshatterDive_II.label>
+  <Projectile_SpineshatterDive_III.label>Spineshatter Dive</Projectile_SpineshatterDive_III.label>
+  <Projectile_DragonfireDive.label>Dragonfire Dive</Projectile_DragonfireDive.label>
+  <Projectile_DragonfireDive_I.label>Dragonfire Dive</Projectile_DragonfireDive_I.label>
+  <Projectile_DragonfireDive_II.label>Dragonfire Dive</Projectile_DragonfireDive_II.label>
+  <Projectile_DragonfireDive_III.label>Dragonfire Dive</Projectile_DragonfireDive_III.label>
+  <Projectile_SpiralDive.label>Spiral Dive</Projectile_SpiralDive.label>
+  <Projectile_SpiralDive_I.label>Spiral Dive</Projectile_SpiralDive_I.label>
+  <Projectile_SpiralDive_II.label>Spiral Dive</Projectile_SpiralDive_II.label>
+  <Projectile_SpiralDive_III.label>Spiral Dive</Projectile_SpiralDive_III.label>
+  <Projectile_SpiralDiveA.label>Levinflight</Projectile_SpiralDiveA.label>
+  <Projectile_MirageDive.label>Mirage Dive</Projectile_MirageDive.label>
+  <Projectile_MirageDive_I.label>Mirage Dive</Projectile_MirageDive_I.label>
+  <Projectile_MirageDive_II.label>Mirage Dive</Projectile_MirageDive_II.label>
+  <Projectile_MirageDive_III.label>Mirage Dive</Projectile_MirageDive_III.label>
+  <Projectile_SonicThrust.label>Sonic Thrust</Projectile_SonicThrust.label>
+  <Projectile_Disembowel.label>Disembowel</Projectile_Disembowel.label>
+  <Projectile_Geirskogul.label>Geirskogul</Projectile_Geirskogul.label>
+  <Projectile_ElusiveJump.label>Неуловимый прыжок</Projectile_ElusiveJump.label>
+  <Projectile_Stardiver.label>Стардайвер</Projectile_Stardiver.label>
+  <Projectile_Doton.label>encase projectile</Projectile_Doton.label>
+  <Projectile_BlackBlizzard.label>Blizzard</Projectile_BlackBlizzard.label>
+  <Projectile_BlackBlizzard_I.label>Blizzard</Projectile_BlackBlizzard_I.label>
+  <Projectile_BlackBlizzard_II.label>Blizzard</Projectile_BlackBlizzard_II.label>
+  <Projectile_BlackBlizzard_III.label>Blizzard</Projectile_BlackBlizzard_III.label>
+  <Projectile_BlackFire.label>Fire</Projectile_BlackFire.label>
+  <Projectile_BlackFire_I.label>Fire</Projectile_BlackFire_I.label>
+  <Projectile_BlackFire_II.label>Fire</Projectile_BlackFire_II.label>
+  <Projectile_BlackFire_III.label>Fire</Projectile_BlackFire_III.label>
+  <Laser_BlackThunder.label>Thunder</Laser_BlackThunder.label>
+  <Laser_BlackThunder_I.label>Thunder</Laser_BlackThunder_I.label>
+  <Laser_BlackThunder_II.label>Thunder</Laser_BlackThunder_II.label>
+  <Laser_BlackThunder_III.label>Thunder</Laser_BlackThunder_III.label>
+  <Projectile_Blizzaga.label>Blizzaga</Projectile_Blizzaga.label>
+  <Projectile_Blizzaga_I.label>Blizzaga</Projectile_Blizzaga_I.label>
+  <Projectile_Blizzaga_II.label>Blizzaga</Projectile_Blizzaga_II.label>
+  <Projectile_Blizzaga_III.label>Blizzaga</Projectile_Blizzaga_III.label>
+  <Projectile_Firaga.label>Firaga</Projectile_Firaga.label>
+  <Projectile_Firaga_I.label>Firaga</Projectile_Firaga_I.label>
+  <Projectile_Firaga_II.label>Firaga</Projectile_Firaga_II.label>
+  <Projectile_Firaga_III.label>Firaga</Projectile_Firaga_III.label>
+  <Laser_Thundaga.label>Thundaga</Laser_Thundaga.label>
+  <Laser_Thundaga_I.label>Thundaga</Laser_Thundaga_I.label>
+  <Laser_Thundaga_II.label>Thundaga</Laser_Thundaga_II.label>
+  <Laser_Thundaga_III.label>Thundaga</Laser_Thundaga_III.label>
+  <Projectile_Flare.label>Flare</Projectile_Flare.label>
+  <Projectile_Flare_I.label>Flare</Projectile_Flare_I.label>
+  <Projectile_Flare_II.label>Flare</Projectile_Flare_II.label>
+  <Projectile_Flare_III.label>Flare</Projectile_Flare_III.label>
+  <Projectile_Despair.label>Отчаяние</Projectile_Despair.label>
+  <Projectile_Xenoglossy.label>Ксеноглоссия</Projectile_Xenoglossy.label>
+  <Projectile_ContreSixte.label>Контре Сиксте</Projectile_ContreSixte.label>
+  <Buff_DeploymentTactics.label>AMP</Buff_DeploymentTactics.label>
+  <Projectile_Bio.label>poison</Projectile_Bio.label>
+  <Projectile_Broil.label>Broil</Projectile_Broil.label>
+  <Projectile_Broil_I.label>Broil</Projectile_Broil_I.label>
+  <Projectile_Broil_II.label>Broil</Projectile_Broil_II.label>
+  <Projectile_Broil_III.label>Broil</Projectile_Broil_III.label>
+  <Projectile_DangerZone.label>Danger Zone</Projectile_DangerZone.label>
+  <Projectile_DangerZone_I.label>Danger Zone</Projectile_DangerZone_I.label>
+  <Projectile_DangerZone_II.label>Danger Zone</Projectile_DangerZone_II.label>
+  <Projectile_DangerZone_III.label>Danger Zone</Projectile_DangerZone_III.label>
+  <Projectile_BrutalShell.label>Brutal Shell</Projectile_BrutalShell.label>
+  <Projectile_BrutalShell_I.label>Brutal Shell</Projectile_BrutalShell_I.label>
+  <Projectile_BrutalShell_II.label>Brutal Shell</Projectile_BrutalShell_II.label>
+  <Projectile_BrutalShell_III.label>Brutal Shell</Projectile_BrutalShell_III.label>
+  <Projectile_RoughDivide.label>Rough Divide</Projectile_RoughDivide.label>
+  <Projectile_RoughDivide_I.label>Rough Divide</Projectile_RoughDivide_I.label>
+  <Projectile_RoughDivide_II.label>Rough Divide</Projectile_RoughDivide_II.label>
+  <Projectile_RoughDivide_III.label>Rough Divide</Projectile_RoughDivide_III.label>
+  <Projectile_SonicBreak.label>Sonic Break</Projectile_SonicBreak.label>
+  <Projectile_SonicBreak_I.label>Sonic Break</Projectile_SonicBreak_I.label>
+  <Projectile_SonicBreak_II.label>Sonic Break</Projectile_SonicBreak_II.label>
+  <Projectile_SonicBreak_III.label>Sonic Break</Projectile_SonicBreak_III.label>
+  <Projectile_BowShock.label>Bow Shock</Projectile_BowShock.label>
+  <Projectile_BowShock_I.label>Bow Shock</Projectile_BowShock_I.label>
+  <Projectile_BowShock_II.label>Bow Shock</Projectile_BowShock_II.label>
+  <Projectile_BowShock_III.label>Bow Shock</Projectile_BowShock_III.label>
+  <Projectile_JugularRip.label>Jugular Rip</Projectile_JugularRip.label>
+  <Projectile_JugularRip_I.label>Jugular Rip</Projectile_JugularRip_I.label>
+  <Projectile_JugularRip_II.label>Jugular Rip</Projectile_JugularRip_II.label>
+  <Projectile_JugularRip_III.label>Jugular Rip</Projectile_JugularRip_III.label>
+  <Projectile_Continuation.label>Продолжение</Projectile_Continuation.label>
+  <Projectile_HeartStab.label>Heart Stab</Projectile_HeartStab.label>
+  <Projectile_PointBlankShot.label>Point Blank Shot</Projectile_PointBlankShot.label>
+  <Projectile_HookShot.label>chain</Projectile_HookShot.label>
+  <Projectile_HookShot_I.label>chain</Projectile_HookShot_I.label>
+  <Projectile_HookShot_II.label>chain</Projectile_HookShot_II.label>
+  <Projectile_HookShot_III.label>chain</Projectile_HookShot_III.label>
+  <Projectile_SandStrike.label>knife</Projectile_SandStrike.label>
+  <Projectile_NomadsGrit.label>knife</Projectile_NomadsGrit.label>
+  <Projectile_HailOfBlades.label>Hail of Blades</Projectile_HailOfBlades.label>
+  <Projectile_HailOfBlades_I.label>Hail of Blades</Projectile_HailOfBlades_I.label>
+  <Projectile_HailOfBlades_II.label>Hail of Blades</Projectile_HailOfBlades_II.label>
+  <Projectile_HailOfBlades_III.label>Hail of Blades</Projectile_HailOfBlades_III.label>
+  <Projectile_BroadheadArrow.label>Broadhead Arrow</Projectile_BroadheadArrow.label>
+  <Projectile_BroadheadArrow_I.label>Broadhead Arrow</Projectile_BroadheadArrow_I.label>
+  <Projectile_BroadheadArrow_II.label>Broadhead Arrow</Projectile_BroadheadArrow_II.label>
+  <Projectile_BroadheadArrow_III.label>Broadhead Arrow</Projectile_BroadheadArrow_III.label>
+  <Projectile_ShadowShot.label>shadow shot</Projectile_ShadowShot.label>
+  <Projectile_SunShotIndicator.label>Sun Shot</Projectile_SunShotIndicator.label>
+  <Projectile_SunShotIndicator_III.label>Sun Shot</Projectile_SunShotIndicator_III.label>
+  <Projectile_SunShot.label>Sun Shot</Projectile_SunShot.label>
+  <Projectile_SunShot_I.label>Sun Shot</Projectile_SunShot_I.label>
+  <Projectile_SunShot_II.label>Sun Shot</Projectile_SunShot_II.label>
+  <Projectile_SunShot_III.label>Sun Shot</Projectile_SunShot_III.label>
+  <Projectile_GustArrow.label>Gust</Projectile_GustArrow.label>
+  <Projectile_SkirmishersShot.label>Выстрел застрельщика</Projectile_SkirmishersShot.label>
+  <Projectile_LightArrow.label>Стрела света</Projectile_LightArrow.label>
+  <Projectile_HotShot.label>Hot Shot</Projectile_HotShot.label>
+  <Projectile_HeatBlast.label>Heat Blast</Projectile_HeatBlast.label>
+  <Projectile_GaussRound.label>Gauss Round</Projectile_GaussRound.label>
+  <Projectile_Drill.label>Drill</Projectile_Drill.label>
+  <Projectile_Drill_I.label>Drill</Projectile_Drill_I.label>
+  <Projectile_Drill_II.label>Drill</Projectile_Drill_II.label>
+  <Projectile_Drill_III.label>Drill</Projectile_Drill_III.label>
+  <Projectile_DrillMkB.label>Drill Mk2</Projectile_DrillMkB.label>
+  <Projectile_DrillMkC.label>Drill Mk3</Projectile_DrillMkC.label>
+  <Projectile_DrillMkD.label>Drill Mk4</Projectile_DrillMkD.label>
+  <Projectile_DrillMkE.label>Drill Mk5</Projectile_DrillMkE.label>
+  <Projectile_SplitShot.label>Split Shot</Projectile_SplitShot.label>
+  <Projectile_CleanReload.label>полет</Projectile_CleanReload.label>
+  <Projectile_Detonator.label>Detonator</Projectile_Detonator.label>
+  <Projectile_HeadGraze.label>Касательный в голову</Projectile_HeadGraze.label>
+  <Projectile_NaniteShot.label>Выстрел нанитами</Projectile_NaniteShot.label>
+  <Projectile_FlameSplitter.label>Разделитель пламени</Projectile_FlameSplitter.label>
+  <Projectile_DarkGrasp.label>Темная хватка</Projectile_DarkGrasp.label>
+  <Projectile_AbyssalDrain.label>Иссушение бездны</Projectile_AbyssalDrain.label>
+  <Projectile_Tomahawk.label>Tomahawk</Projectile_Tomahawk.label>
+  <Projectile_Tomahawk_I.label>Tomahawk</Projectile_Tomahawk_I.label>
+  <Projectile_Tomahawk_II.label>Tomahawk</Projectile_Tomahawk_II.label>
+  <Projectile_Tomahawk_III.label>Tomahawk</Projectile_Tomahawk_III.label>
+  <Projectile_StormsEye.label>Storm's Eye</Projectile_StormsEye.label>
+  <Projectile_Holmgang.label>Holmgang</Projectile_Holmgang.label>
+  <Projectile_FellCleave.label>Fell Cleave</Projectile_FellCleave.label>
+  <Projectile_FellCleave_I.label>Fell Cleave</Projectile_FellCleave_I.label>
+  <Projectile_FellCleave_II.label>Fell Cleave</Projectile_FellCleave_II.label>
+  <Projectile_FellCleave_III.label>Fell Cleave</Projectile_FellCleave_III.label>
+  <Projectile_Upheaval.label>Upheaval</Projectile_Upheaval.label>
+  <Projectile_Upheaval_I.label>Upheaval</Projectile_Upheaval_I.label>
+  <Projectile_Upheaval_II.label>Upheaval</Projectile_Upheaval_II.label>
+  <Projectile_Upheaval_III.label>Upheaval</Projectile_Upheaval_III.label>
+  <Projectile_Onslaught.label>Натиск</Projectile_Onslaught.label>
+  <Projectile_InnerChaos.label>Внутренний хаос</Projectile_InnerChaos.label>
+  <Projectile_GlacialHeart.label>Glacial Heart</Projectile_GlacialHeart.label>
+  <Projectile_GlacialHeart_I.label>Glacial Heart</Projectile_GlacialHeart_I.label>
+  <Projectile_GlacialHeart_II.label>Glacial Heart</Projectile_GlacialHeart_II.label>
+  <Projectile_GlacialHeart_III.label>Glacial Heart</Projectile_GlacialHeart_III.label>
+  <Projectile_OverwhelmG.label>Overwhelm</Projectile_OverwhelmG.label>
+  <Projectile_Atonement.label>Atonement</Projectile_Atonement.label>
+  <Projectile_Atonement_I.label>Atonement</Projectile_Atonement_I.label>
+  <Projectile_Atonement_II.label>Atonement</Projectile_Atonement_II.label>
+  <Projectile_Atonement_III.label>Atonement</Projectile_Atonement_III.label>
+  <Projectile_DivineVeil.label>Divine Veil</Projectile_DivineVeil.label>
+  <Projectile_Confiteor.label>Конфитеор</Projectile_Confiteor.label>
+  <Projectile_FlashCutter.label>Flash Cutter</Projectile_FlashCutter.label>
+  <Projectile_FlashCutter_I.label>Flash Cutter</Projectile_FlashCutter_I.label>
+  <Projectile_FlashCutter_II.label>Flash Cutter</Projectile_FlashCutter_II.label>
+  <Projectile_FlashCutter_III.label>Flash Cutter</Projectile_FlashCutter_III.label>
+  <Projectile_HoloLeap.label>Holo Leap</Projectile_HoloLeap.label>
+  <Projectile_HoloLeap_I.label>Holo Leap</Projectile_HoloLeap_I.label>
+  <Projectile_HoloLeap_II.label>Holo Leap</Projectile_HoloLeap_II.label>
+  <Projectile_HoloLeap_III.label>Holo Leap</Projectile_HoloLeap_III.label>
+  <Projectile_CoronaBurst.label>Corona Burst</Projectile_CoronaBurst.label>
+  <Projectile_CoronaBurst_I.label>Corona Burst</Projectile_CoronaBurst_I.label>
+  <Projectile_CoronaBurst_II.label>Corona Burst</Projectile_CoronaBurst_II.label>
+  <Projectile_CoronaBurst_III.label>Corona Burst</Projectile_CoronaBurst_III.label>
+  <Projectile_PhotonBlitz.label>Photon Blitz</Projectile_PhotonBlitz.label>
+  <Projectile_HolographicShockwave.label>Holographic Shockwave</Projectile_HolographicShockwave.label>
+  <Projectile_HolographicShockwave_I.label>Holographic Shockwave</Projectile_HolographicShockwave_I.label>
+  <Projectile_HolographicShockwave_II.label>Holographic Shockwave</Projectile_HolographicShockwave_II.label>
+  <Projectile_HolographicShockwave_III.label>Holographic Shockwave</Projectile_HolographicShockwave_III.label>
+  <Projectile_LaserDisk.label>Laser Disk</Projectile_LaserDisk.label>
+  <Projectile_PhotonWall.label>Фотонный барьер</Projectile_PhotonWall.label>
+  <Projectile_PrimeLightCannon.label>Световая Пушка</Projectile_PrimeLightCannon.label>
+  <Projectile_PitchPerfect.label>Song Note</Projectile_PitchPerfect.label>
+  <Projectile_Shadowbite.label>Shadowbite</Projectile_Shadowbite.label>
+  <Projectile_RainOfDeath.label>Rain of Death</Projectile_RainOfDeath.label>
+  <Projectile_TroubadourSong.label>Song Note</Projectile_TroubadourSong.label>
+  <Projectile_MagesBallad.label>Song Note</Projectile_MagesBallad.label>
+  <Projectile_EmpyrealArrow.label>Pitch Perfect</Projectile_EmpyrealArrow.label>
+  <Projectile_BurstShot.label>Разрывной выстрел</Projectile_BurstShot.label>
+  <Projectile_ApexArrow.label>Звенящая стрела</Projectile_ApexArrow.label>
+  <Projectile_RedCard.label>Red Card</Projectile_RedCard.label>
+  <Projectile_GreenCard.label>Green Card</Projectile_GreenCard.label>
+  <Projectile_YellowCard.label>Yellow Card</Projectile_YellowCard.label>
+  <Projectile_BlueCard.label>Blue Card</Projectile_BlueCard.label>
+  <Projectile_VoidCard.label>Void Card</Projectile_VoidCard.label>
+  <Projectile_Joker.label>Джокер</Projectile_Joker.label>
+  <Projectile_LordOfCrowns.label>Lord of Crowns</Projectile_LordOfCrowns.label>
+  <Projectile_LordOfCrowns_I.label>Lord of Crowns</Projectile_LordOfCrowns_I.label>
+  <Projectile_LordOfCrowns_II.label>Lord of Crowns</Projectile_LordOfCrowns_II.label>
+  <Projectile_LordOfCrowns_III.label>Lord of Crowns</Projectile_LordOfCrowns_III.label>
+  <Projectile_TheEwer.label>Blue Card</Projectile_TheEwer.label>
+  <Projectile_HoldEm.label>Hold 'Em</Projectile_HoldEm.label>
+  <Projectile_HoldEm_I.label>Hold 'Em</Projectile_HoldEm_I.label>
+  <Projectile_HoldEm_II.label>Hold 'Em</Projectile_HoldEm_II.label>
+  <Projectile_HoldEm_III.label>Hold 'Em</Projectile_HoldEm_III.label>
+  <Projectile_Spread.label>Spread</Projectile_Spread.label>
+  <Projectile_RoyalRoad.label>Королевская дорога</Projectile_RoyalRoad.label>
+  <Projectile_DeckBlast.label>Взрыв колоды</Projectile_DeckBlast.label>
+  <Projectile_JumpShot.label>Взрывной скачок</Projectile_JumpShot.label>
+  <Projectile_HandheldRocket.label>Rocket</Projectile_HandheldRocket.label>
+  <Projectile_StiflingWinds.label>Gust</Projectile_StiflingWinds.label>
+  <Projectile_HyoshoRanryu.label>Shuriken</Projectile_HyoshoRanryu.label>
+  <Projectile_PlatedFood.label>Food</Projectile_PlatedFood.label>
+  <Projectile_Coffee.label>Coffee</Projectile_Coffee.label>
+  <Projectile_RedPepper.label>Pepper</Projectile_RedPepper.label>
+  <Projectile_KnifeToss.label>Нож</Projectile_KnifeToss.label>
+  <Projectile_SlowCooker.label>Slow Cooker</Projectile_SlowCooker.label>
+  <Projectile_Firestarter.label>Firestarter</Projectile_Firestarter.label>
+  <Projectile_Firestarter_I.label>Firestarter</Projectile_Firestarter_I.label>
+  <Projectile_Firestarter_II.label>Firestarter</Projectile_Firestarter_II.label>
+  <Projectile_Firestarter_III.label>Firestarter</Projectile_Firestarter_III.label>
+  <Projectile_PickClean.label>Pick Clean</Projectile_PickClean.label>
+  <Projectile_CalidStrike.label>Calid Strike</Projectile_CalidStrike.label>
+  <Projectile_CalidStrike_I.label>Calid Strike</Projectile_CalidStrike_I.label>
+  <Projectile_CalidStrike_II.label>Calid Strike</Projectile_CalidStrike_II.label>
+  <Projectile_CalidStrike_III.label>Calid Strike</Projectile_CalidStrike_III.label>
+  <Projectile_UnstableSingularity.label>sticky bomb</Projectile_UnstableSingularity.label>
+  <Projectile_BramblePatch.label>bramble patch</Projectile_BramblePatch.label>
+  <Projectile_DemolisherStrike.label>Demolisher Strike</Projectile_DemolisherStrike.label>
+  <Projectile_DemolisherStrike_I.label>Demolisher Strike</Projectile_DemolisherStrike_I.label>
+  <Projectile_DemolisherStrike_II.label>Demolisher Strike</Projectile_DemolisherStrike_II.label>
+  <Projectile_DemolisherStrike_III.label>Demolisher Strike</Projectile_DemolisherStrike_III.label>
+  <Projectile_FlameUprising.label>Flame Uprising</Projectile_FlameUprising.label>
+  <Projectile_FlameUprising_I.label>Flame Uprising</Projectile_FlameUprising_I.label>
+  <Projectile_FlameUprising_II.label>Flame Uprising</Projectile_FlameUprising_II.label>
+  <Projectile_FlameUprising_III.label>Flame Uprising</Projectile_FlameUprising_III.label>
+  <Projectile_LightningKick.label>Lightning Kick</Projectile_LightningKick.label>
+  <Projectile_LightningKick_I.label>Lightning Kick</Projectile_LightningKick_I.label>
+  <Projectile_LightningKick_II.label>Lightning Kick</Projectile_LightningKick_II.label>
+  <Projectile_LightningKick_III.label>Lightning Kick</Projectile_LightningKick_III.label>
+  <Projectile_Thunderclap.label>Thunderclap</Projectile_Thunderclap.label>
+  <Projectile_Thunderclap_I.label>Thunderclap</Projectile_Thunderclap_I.label>
+  <Projectile_Thunderclap_II.label>Thunderclap</Projectile_Thunderclap_II.label>
+  <Projectile_Thunderclap_III.label>Thunderclap</Projectile_Thunderclap_III.label>
+  <Projectile_DestructionWave.label>Destruction Wave</Projectile_DestructionWave.label>
+  <Projectile_DestructionWave_I.label>Destruction Wave</Projectile_DestructionWave_I.label>
+  <Projectile_DestructionWave_II.label>Destruction Wave</Projectile_DestructionWave_II.label>
+  <Projectile_DestructionWave_III.label>Destruction Wave</Projectile_DestructionWave_III.label>
+  <Projectile_HowlingFist.label>Gust</Projectile_HowlingFist.label>
+  <Projectile_Rockbreaker.label>Камнедробитель</Projectile_Rockbreaker.label>
+</LanguageData>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritHolyWrath</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting holy wrath through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritP_RayofHope</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>projecting ray of hope through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritP_RayofHope_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>projecting ray of hope through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritP_RayofHope_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>projecting ray of hope through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritP_RayofHope_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>projecting ray of hope through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritRayofHope</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>projecting inner fire through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritRayofHope_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>projecting inner fire through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritRayofHope_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>projecting inner fire through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritRayofHope_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>projecting inner fire through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritOverwhelm</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>overwhelming enemies through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritValiantCharge</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>charging through a spirit host.</reportString>
+  </JobDef>
+</Defs>

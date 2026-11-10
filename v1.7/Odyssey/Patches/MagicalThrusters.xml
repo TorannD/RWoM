@@ -1,0 +1,13 @@
+<Patch>  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName='GravEngine']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities/li[text()='TM_SmallMagicalThruster']</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='GravEngine']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+      <value><li>TM_SmallMagicalThruster</li></value>
+    </nomatch>
+  </Operation>  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName='GravEngine']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities/li[text()='TM_LargeMagicalThruster']</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='GravEngine']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+      <value><li>TM_LargeMagicalThruster</li></value>
+    </nomatch>
+  </Operation></Patch>

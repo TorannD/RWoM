@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- STONE GOLEM -->
+
+  <TM_GolemSmash.label>громити</TM_GolemSmash.label>
+
+
+  <!-- HOLLOW GOLEM -->
+
+  <TM_DecayTouch.label>дотик до розпаду</TM_DecayTouch.label>
+  <TM_NullCleave.label>нульове розщеплення</TM_NullCleave.label>
+
+
+</LanguageData>

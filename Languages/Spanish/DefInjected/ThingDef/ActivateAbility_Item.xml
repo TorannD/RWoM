@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <MagicArtifact_RerollSpiritBond.label>Pergamino de vinculación espiritual</MagicArtifact_RerollSpiritBond.label>
+  
+  <MagicArtifact_RerollSpiritBond.description>Este pergamino se puede usar para cambiar el animal espiritual del chamán. El nuevo vínculo seleccionará al azar un nuevo tipo de espíritu para vincularse.</MagicArtifact_RerollSpiritBond.description>
+  
+  <MagicArtifact_RerollSpiritBond.comps.CompUsable.useLabel>Usar {0_label}</MagicArtifact_RerollSpiritBond.comps.CompUsable.useLabel>
+  
+  
+  <TM_Artifact_ClassExtraction.label>Fragmento de extracción espiritual</TM_Artifact_ClassExtraction.label>
+  
+  <TM_Artifact_ClassExtraction.description>Este misterioso fragmento es capaz de extraer los talentos marciales o arcanos de un peón y convertirlos en esencia. El fragmento se destruye después de su uso.\n	\n*Nota: este objeto elimina por completo la clase de un peón y cualquier habilidad o destreza asociada. El peón puede aprender otra clase después de una extracción espiritual.</TM_Artifact_ClassExtraction.description>
+  
+  <TM_Artifact_ClassExtraction.comps.CompUsable.useLabel>Usar {0_label}</TM_Artifact_ClassExtraction.comps.CompUsable.useLabel>
+  
+  
+  <TM_MagicArtifact_MagicEssence.label>Esencia de magia</TM_MagicArtifact_MagicEssence.label>
+  
+  <TM_MagicArtifact_MagicEssence.description>La esencia de la habilidad mágica pura. Absorber la esencia otorga experiencia arcana.</TM_MagicArtifact_MagicEssence.description>
+  
+  <TM_MagicArtifact_MagicEssence.comps.CompUsable.useLabel>Usar {0_label}</TM_MagicArtifact_MagicEssence.comps.CompUsable.useLabel>
+  
+  
+  <TM_MagicArtifact_MightEssence.label>Esencia de fuerza</TM_MagicArtifact_MightEssence.label>
+  
+  <TM_MagicArtifact_MightEssence.description>La esencia de la habilidad marcial pura. Absorber la esencia otorga experiencia marcial.</TM_MagicArtifact_MightEssence.description>
+  
+  <TM_MagicArtifact_MightEssence.comps.CompUsable.useLabel>Usar {0_label}</TM_MagicArtifact_MightEssence.comps.CompUsable.useLabel>
+  
+</LanguageData>

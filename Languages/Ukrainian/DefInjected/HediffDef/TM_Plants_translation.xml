@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_PomanaSenseHD.label>почуття помани</TM_PomanaSenseHD.label>
+  <TM_PomanaSenseHD.description>Розслаблення і загострення почуттів від вживання сирих фруктів помани.</TM_PomanaSenseHD.description>
+  <TM_PomanaSenseHD.stages.0.label></TM_PomanaSenseHD.stages.0.label>
+
+  <TM_SyrriumSenseHD.label>почуття сирріуму</TM_SyrriumSenseHD.label>
+  <TM_SyrriumSenseHD.description>Підвищені почуття, що виникають в результаті вживання згущеного поманасирріуму.</TM_SyrriumSenseHD.description>
+  <TM_SyrriumSenseHD.stages.0.label></TM_SyrriumSenseHD.stages.0.label>
+  <TM_SyrriumSenseHD.stages.1.label></TM_SyrriumSenseHD.stages.1.label>
+
+
+  <!-- Syrrium addiction -->
+
+  <TM_SyrriumTolerance.label>толерантність до сирріуму</TM_SyrriumTolerance.label>
+  <TM_SyrriumTolerance.description>Природне коригування для нормалізації ефекту споживання конденсованого поманасиррію.</TM_SyrriumTolerance.description>
+
+  <TM_SyrriumAddiction.label>залежність від сирріуму</TM_SyrriumAddiction.label>
+  <TM_SyrriumAddiction.description>Бажання відчути вплив сиріуму переросло в потребу.</TM_SyrriumAddiction.description>
+  <TM_SyrriumAddiction.stages.1.label>вивід</TM_SyrriumAddiction.stages.1.label>
+
+
+</LanguageData>

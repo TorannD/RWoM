@@ -37,6 +37,9 @@ namespace TorannMagic
         protected Thing assignedTarget;
         protected Thing flyingThing;
         Pawn pawn;
+        private Pawn launchBody;
+        public Pawn TrialCaster => pawn;
+        public ClassProgression.BrightmageTrials.LanceSource trialSource;
         private List<Pawn> filteredTargets = new List<Pawn>();
 
         public DamageInfo? impactDamage;
@@ -97,8 +100,11 @@ namespace TorannMagic
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look<Vector3>(ref this.origin, "origin", default(Vector3), false);
-            Scribe_Values.Look<Vector3>(ref this.destination, "destination", default(Vector3), false);
+            Scribe_Deep.Look(ref trialSource, "rwomLightLanceTrialSource");
+            // Projectile already serializes the origin and destination. Older emitters
+            // obtained their speed directly from their def at launch.
+            Scribe_Values.Look(ref speed, "TM_lanceSpeed", def.projectile.speed);
+            Scribe_Values.Look(ref lightPotency, "TM_lanceLightPotency", .5f);
             Scribe_Values.Look<int>(ref this.ticksToImpact, "ticksToImpact", 0, false);
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
@@ -110,6 +116,7 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.powered, "powered", false, false);
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
             Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
+            Scribe_References.Look(ref launchBody, "TM_lanceBody");
             //Scribe_References.Look<Thing>(ref this.flyingThing, "flyingThing", false);
             Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
         }
@@ -136,13 +143,12 @@ namespace TorannMagic
                 }
                 for (int i = 0; i < 3; i++)
                 {
-                    Vector3 rndPos = pawn.DrawPos;
+                    Vector3 rndPos = origin;
                     rndPos.x += Rand.Range(-.75f, .75f);
                     rndPos.z += Rand.Range(-.75f, .75f);
-                    FleckMaker.Static(rndPos, pawn.Map, FleckDefOf.FireGlow, 1f);
+                    FleckMaker.Static(rndPos, Map, FleckDefOf.FireGlow, 1f);
                 }
             }            
-            flyingThing.ThingID += Rand.Range(0, 214).ToString();            
         }
 
         private void GetFilteredList()
@@ -150,7 +156,7 @@ namespace TorannMagic
             filteredTargets = new List<Pawn>();
             filteredTargets.Clear();
             IEnumerable<Pawn> pList = from p in this.Map.mapPawns.AllPawnsSpawned
-                                      where (!p.DestroyedOrNull() && p != pawn && (p.Position - pawn.Position).LengthHorizontal < ((this.destination - this.origin).magnitude * 1.5f))
+                                      where (!p.DestroyedOrNull() && p != pawn && p != launchBody && (p.Position - origin.ToIntVec3()).LengthHorizontal < ((this.destination - this.origin).magnitude * 1.5f))
                                       select p;
             filteredTargets = pList.ToList();
         }
@@ -167,8 +173,19 @@ namespace TorannMagic
 
         public void Launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo = null)
         {
-            bool spawned = flyingThing.Spawned;
-            this.pawn = launcher as Pawn;
+            LaunchFrom(launcher as Pawn, launcher as Pawn, origin, targ, flyingThing, newDamageInfo);
+        }
+
+        internal void LaunchFromCaster(Pawn body, Pawn owner, LocalTargetInfo target)
+        {
+            LaunchFrom(body, owner, Position.ToVector3Shifted(), target, null, null);
+        }
+
+        private void LaunchFrom(Pawn body, Pawn owner, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo)
+        {
+            bool spawned = flyingThing?.Spawned == true;
+            pawn = owner;
+            launchBody = body == owner ? null : body;
             if (spawned)
             {
                 flyingThing.DeSpawn();
@@ -238,7 +255,7 @@ namespace TorannMagic
             targets.Clear();
             for (int i = 0; i < num; i++)
             {
-                if ((filteredTargets[i].DrawPos - this.ExactPosition).magnitude < this.radius)
+                if (filteredTargets[i].Spawned && filteredTargets[i].Map == Map && (filteredTargets[i].DrawPos - this.ExactPosition).magnitude < this.radius)
                 {
                     if (!(filteredTargets[i].Faction == Faction.OfPlayer && (filteredTargets[i].DrawPos - origin).magnitude < 2f))
                     {
@@ -250,7 +267,12 @@ namespace TorannMagic
             {
                 for(int k =0; k < targets.Count; k++)
                 {
-                    TM_Action.DamageEntities(targets[k], null, (4 + (.6f*pwrVal)) * arcaneDmg * this.lightPotency, TMDamageDefOf.DamageDefOf.TM_BurningLight, pawn);
+                    var trialScope = ClassProgression.BrightmageTrials.EnterEmitter(this, targets[k]);
+                    try
+                    {
+                        TM_Action.DamageEntities(targets[k], null, (4 + (.6f*pwrVal)) * arcaneDmg * this.lightPotency, TMDamageDefOf.DamageDefOf.TM_BurningLight, pawn);
+                    }
+                    finally { ClassProgression.BrightmageTrials.ExitEmitter(trialScope); }
                 }           
             }
         }
@@ -264,10 +286,10 @@ namespace TorannMagic
 
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            bool flag = this.flyingThing != null && !this.impacted;
+            bool flag = !this.impacted;
             if (flag)
             {
-                Graphics.DrawMesh(MeshPool.plane10, this.DrawPos, this.ExactRotation, this.flyingThing.def.DrawMatSingle, 0);
+                Graphics.DrawMesh(MeshPool.plane10, this.DrawPos, this.ExactRotation, (flyingThing?.def ?? def).DrawMatSingle, 0);
                 base.Comps_PostDraw();
             }
         }

@@ -1,0 +1,60 @@
+﻿<LanguageData><!-- Advanced Heal-->
+	<TM_AdvancedHeal.label>Продвинутое Исцеление</TM_AdvancedHeal.label>
+	<TM_AdvancedHeal.description>Призывает святую силу, чтобы сильно исцелить раны цели. Базовое исцеление восстанавливает 14 здоровья до 3-х ран. Немедленно запечатает кровоточащие раны от отсутствующих частей тела.</TM_AdvancedHeal.description>
+	<!-- Purify-->
+	<TM_Purify.label>Очищение</TM_Purify.label>
+	<TM_Purify.description>Призывает святую силу, чтобы очистить шрамы на теле, уме и душе.</TM_Purify.description>
+	<!-- Healing Circle-->
+	<TM_HealingCircle.label>Целительный круг</TM_HealingCircle.label>
+	<TM_HealingCircle.description>Создает поле света, которое исцеляет дружественные пешки внутри. Базовая способность исцеляет 1 рану на 10 здоровья за каждую исцеленную пешку. Невозможно залечить травмы отсутствующих частей тела.
+
+Радиус круга: 3
+Дистанция: 30</TM_HealingCircle.description>
+	<TM_HealingCircle_I.label>Целительный круг (I)</TM_HealingCircle_I.label>
+	<TM_HealingCircle_I.description>Создает поле света, которое исцеляет дружественные пешки внутри. Базовая способность исцеляет 1 рану на 10 здоровья за каждую исцеленную пешку. Невозможно залечить травмы отсутствующих частей тела.
+
+Радиус круга: 4
+Дистанция: 35</TM_HealingCircle_I.description>
+	<TM_HealingCircle_II.label>Целительный круг (II)</TM_HealingCircle_II.label>
+	<TM_HealingCircle_II.description>Создает поле света, которое исцеляет дружественные пешки внутри. Базовая способность исцеляет 1 рану на 10 здоровья за каждую исцеленную пешку. Невозможно залечить травмы отсутствующих частей тела.
+
+Радиус круга: 5.5
+Дистанция: 40</TM_HealingCircle_II.description>
+	<TM_HealingCircle_III.label>Целительный круг (III)</TM_HealingCircle_III.label>
+	<TM_HealingCircle_III.description>Создает поле света, которое исцеляет дружественные пешки внутри. Базовая способность исцеляет 1 рану на 10 здоровья за каждую исцеленную пешку. Невозможно залечить травмы отсутствующих частей тела.
+
+Радиус круга: 7
+Дистанция: 45</TM_HealingCircle_III.description>
+	<!-- Bestow Might-->
+	<TM_BestowMight.label>Дар могущества</TM_BestowMight.label>
+	<TM_BestowMight.description>Благословляет единственную цель и сильно увеличиваеи физическую силу.
+
+Длительность: 		30-40s
+Физические возможности: 	+40%
+Физический потребность: 	+50%
+Боль:		-40%</TM_BestowMight.description>
+	<TM_BestowMight_I.label>Дар могущества (I)</TM_BestowMight_I.label>
+	<TM_BestowMight_I.description>Благословляет единственную цель и сильно увеличиваеи физическую силу.
+
+Длительность: 		50-60s
+Физические возможности: 	+60%
+Физический потребность: 	+60%
+Боль:		-50%</TM_BestowMight_I.description>
+	<TM_BestowMight_II.label>Дар могущества (II)</TM_BestowMight_II.label>
+	<TM_BestowMight_II.description>Благословляет единственную цель и сильно увеличиваеи физическую силу.
+
+Длительность: 		50-60s
+Физические возможности: 	+80%
+Физический потребность: 	+70%
+Боль:		-60%</TM_BestowMight_II.description>
+	<TM_BestowMight_III.label>Дар могущества (III)</TM_BestowMight_III.label>
+	<TM_BestowMight_III.description>Благословляет единственную цель и сильно увеличиваеи физическую силу.
+
+Длительность: 		100-115s
+Физические возможности: 	~+100%
+Физический потребность: 	+100%
+Боль:		-70%</TM_BestowMight_III.description>
+	<!-- Resurrection-->
+	<TM_Resurrection.label>Воскрешение</TM_Resurrection.label>
+	<TM_Resurrection.description>Воскрешение восстанавливает жизнь недавно умершей пешки. Это накладывает огромный стресс на священника и воскресшую пешку, и оба будут слабы в течение нескольких дней, пока их сила не восстановится. Воскрешение имеет свою цену; воскрешенная пешка потеряет до 20% своих навыков и может развить пагубные состояния здоровья.</TM_Resurrection.description>
+</LanguageData>

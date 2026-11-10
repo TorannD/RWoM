@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_UndeadChildBS.title>Ніжити</TM_UndeadChildBS.title>
+  <TM_UndeadChildBS.titleShort>Ніжити</TM_UndeadChildBS.titleShort>
+  <TM_UndeadChildBS.baseDesc>[PAWN_nameDef] зараз ніжити, історія пішаки, що населяла це тіло раніше, змилася - замінена волею некроманта.</TM_UndeadChildBS.baseDesc>
+
+  <TM_UndeadAdultBS_GhostEye.title>Примарне око</TM_UndeadAdultBS_GhostEye.title>
+  <TM_UndeadAdultBS_GhostEye.titleShort>Примарне око</TM_UndeadAdultBS_GhostEye.titleShort>
+  <TM_UndeadAdultBS_GhostEye.baseDesc>Збільшує майстерність стрільби покращуючи ближній бій.</TM_UndeadAdultBS_GhostEye.baseDesc>
+
+  <TM_UndeadAdultBS_GhostMind.title>Примарний розум</TM_UndeadAdultBS_GhostMind.title>
+  <TM_UndeadAdultBS_GhostMind.titleShort>Примарний розум</TM_UndeadAdultBS_GhostMind.titleShort>
+  <TM_UndeadAdultBS_GhostMind.baseDesc>Збільшує майстерність готування і ремесла натомість знижує видобуток корисних копалин</TM_UndeadAdultBS_GhostMind.baseDesc>
+
+  <TM_UndeadAdultBS_Brute.title>Ніжити</TM_UndeadAdultBS_Brute.title>
+  <TM_UndeadAdultBS_Brute.titleShort>Ніжити робочий</TM_UndeadAdultBS_Brute.titleShort>
+  <TM_UndeadAdultBS_Brute.baseDesc>Ніжити робітник є унікальним варіантом нежити зі збільшеною майстерністю ближнього бою і видобутком копалин, натомість не може толком готувати і займатися мистецтвом.</TM_UndeadAdultBS_Brute.baseDesc>
+
+  <TM_UndeadAdultBS_Servant.title>Ніжити слуга</TM_UndeadAdultBS_Servant.title>
+  <TM_UndeadAdultBS_Servant.titleShort>Ніжити слуга</TM_UndeadAdultBS_Servant.titleShort>
+  <TM_UndeadAdultBS_Servant.baseDesc>Ніжити слуга - Краще за всіх трудиться, але дуже слабкий в бою</TM_UndeadAdultBS_Servant.baseDesc>
+
+  <TM_UndeadAdultBS.title>Ніжити</TM_UndeadAdultBS.title>
+  <TM_UndeadAdultBS.titleShort>Ніжити</TM_UndeadAdultBS.titleShort>
+  <TM_UndeadAdultBS.baseDesc>[PAWN_nameDef] є базовою нежиттю без аномалій.</TM_UndeadAdultBS.baseDesc>
+
+  <TM_GolemChildBS.title>Голем</TM_GolemChildBS.title>
+  <TM_GolemChildBS.titleShort>Голем</TM_GolemChildBS.titleShort>
+  <TM_GolemChildBS.baseDesc>[PAWN_nameDef] - голем, виготовлений з сировини і одушевлений магією.</TM_GolemChildBS.baseDesc>
+
+  <TM_GolemAdultBS.title>Голем</TM_GolemAdultBS.title>
+  <TM_GolemAdultBS.titleShort>Голем</TM_GolemAdultBS.titleShort>
+  <TM_GolemAdultBS.baseDesc>[PAWN_nameDef] - голем, виготовлений з сировини і одушевлений магією.</TM_GolemAdultBS.baseDesc>
+
+  <TM_SpiritChildBS.title>Дух</TM_SpiritChildBS.title>
+  <TM_SpiritChildBS.titleShort>Дух</TM_SpiritChildBS.titleShort>
+  <TM_SpiritChildBS.baseDesc>[PAWN_nameDef] - мандрівний дух, прив&apos;язаний до цієї сфери якоюсь невідомою силою. Події навколо [PAWN_possessive] походження невідомі, але досить сильні, щоб змусити [PAWN_objective] шукати відповіді, справедливості або спокутування живих.</TM_SpiritChildBS.baseDesc>
+
+  <TM_AncientSpiritAdultBS.title>Стародавній дух</TM_AncientSpiritAdultBS.title>
+  <TM_AncientSpiritAdultBS.titleShort>Стародавній дух</TM_AncientSpiritAdultBS.titleShort>
+  <TM_AncientSpiritAdultBS.baseDesc>[PAWN_nameDef] існує незліченна безліч років і більше не пам&apos;ятає [PAWN_possessive] мети. Стародавні духи переслідують свої власні цілі і стали господарями в управлінні духовною енергією. Максимальна енергія духу збільшується на 50.</TM_AncientSpiritAdultBS.baseDesc>
+
+  <TM_VengefulSpiritAdultBS.title>Дух помсти</TM_VengefulSpiritAdultBS.title>
+  <TM_VengefulSpiritAdultBS.titleShort>Дух помсти</TM_VengefulSpiritAdultBS.titleShort>
+  <TM_VengefulSpiritAdultBS.baseDesc>[PAWN_nameDef] - мстивий дух, повний злості і ненависті, який хоче тільки заподіяти біду живим. Мстиві духи здатні виявляти більше сили під час духовного спотворення і духовного шторму, але їх важче гармоніювати з живим тілом. Збільшує швидкість атаки духового шторму на 25% і бонус пошкодження спотвореного духу на 6%. Знижує сумісність на 1.</TM_VengefulSpiritAdultBS.baseDesc>
+
+  <TM_LostSpiritAdultBS.title>Втрачений дух</TM_LostSpiritAdultBS.title>
+  <TM_LostSpiritAdultBS.titleShort>Втрачений дух</TM_LostSpiritAdultBS.titleShort>
+  <TM_LostSpiritAdultBS.baseDesc>Загублені духи бродять по світу в постійному стані екзистенційних страждань, не в змозі сприймати своє призначення. Загублені легко прив&apos;язуються до справи іншого і легше гармоніюють з родинними духами. Вони також можуть зміцнити силу здатності згуртованого духу. Збільшення тривалості, радіусу, максимальних цільових показників і бонусів згуртування духу на 10%. Підвищує сумісність на 2.</TM_LostSpiritAdultBS.baseDesc>
+
+  <TM_RegretSpiritAdultBS.title>Дух жалю</TM_RegretSpiritAdultBS.title>
+  <TM_RegretSpiritAdultBS.titleShort>Дух жалю</TM_RegretSpiritAdultBS.titleShort>
+  <TM_RegretSpiritAdultBS.baseDesc>Дух жалю все ще здатний пам&apos;ятати про їх задум як про дух, але вони не в змозі виправити свої гріхи, поки не стало занадто пізно. Тепер вони бродять по світу як дух, повний печалі і жалю, все ще шукаючи спосіб виконати своє призначення. Духи жалю підвищують здатність зливу духу на 20%.</TM_RegretSpiritAdultBS.baseDesc>
+
+
+</LanguageData>

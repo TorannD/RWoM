@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadBladeFocus>Вивчити зосередження клинка — кращий ближній бій, гірші стрільба й робота (назавжди)</TM_ReadBladeFocus>
+  <TM_ReadBladeMemory>Вивчити пам’ять леза — більше шкоди при зміні супротивника (назавжди)</TM_ReadBladeMemory>
+  <TM_BladeMemoryName>Пам’ять леза</TM_BladeMemoryName>
+  <TM_BladeMemoryTraining>Після зміни сусіднього супротивника основна шкода удару зброєю ближнього бою зростає на 2%. Кожен ранг додає 2 відсоткові пункти, до 10%. Спрацьовує раз на 6 секунд.</TM_BladeMemoryTraining>
+</LanguageData>

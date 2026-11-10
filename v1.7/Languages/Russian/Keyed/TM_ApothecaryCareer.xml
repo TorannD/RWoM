@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadApothecaryHerbalist>Освоить полевой сбор</TM_ReadApothecaryHerbalist>
+  <TM_ReadApothecaryFreshStock>Освоить хранение трав</TM_ReadApothecaryFreshStock>
+  <TM_ApothecaryGatherInfo>При сборе урожая на 5% больше трав.</TM_ApothecaryGatherInfo>
+  <TM_ApothecaryFreshInfo>Травы портятся на 10% медленнее.</TM_ApothecaryFreshInfo>
+  <TM_ApothecaryStock>Травы: {0}/{1}</TM_ApothecaryStock>
+  <TM_ApothecaryTrialGather>Соберите травы с 30 разных здоровых зрелых растений ({0}/30). Нужен реальный прирост запаса.</TM_ApothecaryTrialGather>
+  <TM_ApothecaryTrialTreat>Обработайте 20 разных свежих ран ({0}/20) или ослабьте антидотом 12 пищевых отравлений ({1}/12).</TM_ApothecaryTrialTreat>
+  <TM_ApothecaryTrialShift>Отработайте 12 медицинских смен ({0}/12). Для Вознесения нужен 30-й уровень воина ({1}/30).</TM_ApothecaryTrialShift>
+  <TM_ApothecaryClaim>Получить следующую ступень</TM_ApothecaryClaim>
+  <TM_ApothecaryKitUnavailable>Нужны четыре растительных лекарства под рукой и 60% трав.</TM_ApothecaryKitUnavailable>
+  <TM_ApothecaryAntitoxinLow>Нужно 20% трав.</TM_ApothecaryAntitoxinLow>
+</LanguageData>

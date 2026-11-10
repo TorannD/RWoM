@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+	<TM_PoisonTrap.label>Ядовитая ловушка</TM_PoisonTrap.label>
+
+	<TM_PoisonTrap.description>Рейнджер использует дозу друидического яда, чтобы вооружить деревянную ловушку. Ловушки длятся бесконечно долго, но рейнджер может развернуть только ограниченное количество за один раз.
+
+Враги, попавшие в яд, будут получать 1-8 урона ядом каждые 0,66 секунды. Ядовитый урон также оказывает замедляющий эффект. Ловушки никогда не будут срабатывать из-за животных.</TM_PoisonTrap.description>
+
+	<TM_Trap_Lightning.label>Ловушка С Молнией</TM_Trap_Lightning.label>
+
+	<TM_Trap_Lightning.description>Ловушка, созданная путем содержания элементальной молнии внутри тайного барьера; она высвобождает разлитую по бутылкам энергию всякий раз, когда враг нарушает соседнюю тайную нить.</TM_Trap_Lightning.description>
+
+	<TM_ManaMine.label>Мана-мина</TM_ManaMine.label>
+
+	<TM_ManaMine.description>Мощный взрывной заряд, созданный путём сжатия маны и материи. От мины тянутся щупальца психической энергии: любое существо, задевшее их, разрушает удерживающее поле и вызывает детонацию. Радиус взрыва: 2,4 метра.</TM_ManaMine.description>
+
+	<TM_ManaMine_I.label>Мина маны</TM_ManaMine_I.label>
+
+	<TM_ManaMine_I.description>Мощное взрывчатое вещество, созданное путем сжатия маны и материи. Щупальца психической силы тянутся от мины; когда жертва нарушает психическую нить, она разрушает сдерживающее поле и взрывает мину.  2.9м радиус взрыва.</TM_ManaMine_I.description>
+
+	<TM_ManaMine_II.label>Мина маны</TM_ManaMine_II.label>
+
+	<TM_ManaMine_II.description>Мощное взрывчатое вещество, созданное путем сжатия маны и материи. Щупальца психической силы тянутся от мины; когда жертва нарушает психическую нить, она разрушает сдерживающее поле и взрывает мину.  3.8м радиус взрыва.</TM_ManaMine_II.description>
+
+	<TM_ManaMine_III.label>Мина маны</TM_ManaMine_III.label>
+
+	<TM_ManaMine_III.description>Мощное взрывчатое вещество, созданное путем сжатия маны и материи. Щупальца психической силы тянутся от мины; когда жертва нарушает психическую нить, она разрушает сдерживающее поле и взрывает мину.  4.7м радиус взрыва.</TM_ManaMine_III.description>
+
+	<DefensePylon.label>магический защитный пилон</DefensePylon.label>
+
+	<DefensePylon.description>Магический защитный пилон. Создается путем материализации магической энергии для формирования основы, а затем направления тайного тока в фокусную точку, которая испускает всплески сырой энергии.</DefensePylon.description>
+
+	<Launcher_DefensePylon.label>точка энергетического фокуса</Launcher_DefensePylon.label>
+
+	<Launcher_DefensePylon.description>Фокусная точка тайного защитного пилона, способного собирать и испускать всплески сырой магической энергии.</Launcher_DefensePylon.description>
+
+	<Launcher_DefensePylon.verbs.0.label>ㅤ</Launcher_DefensePylon.verbs.0.label>
+
+	<Bullet_DefensePylon.label>целенаправленная магическая энергия</Bullet_DefensePylon.label>
+
+	<DefensePylon_I.label>магический защитный пилон (I)</DefensePylon_I.label>
+
+	<DefensePylon_I.description>A магический защитный пилон. Создается путем материализации магической энергии для формирования базы, а затем направления магического потока в фокусную точку, испускающую всплески сырой энергии..</DefensePylon_I.description>
+
+	<Launcher_DefensePylon_I.label>точка энергетического фокуса</Launcher_DefensePylon_I.label>
+
+	<Launcher_DefensePylon_I.description>Фокусная точка тайного защитного пилона, способного собирать и испускать всплески сырой магической энергии.</Launcher_DefensePylon_I.description>
+
+	<Launcher_DefensePylon_I.verbs.0.label>ㅤ</Launcher_DefensePylon_I.verbs.0.label>
+
+	<DefensePylon_II.label>магический защитный пилон (II)</DefensePylon_II.label>
+
+	<DefensePylon_II.description>A магический защитный пилон. Создается путем материализации магической энергии для формирования базы, а затем направления магического потока в фокусную точку, испускающую всплески сырой энергии..</DefensePylon_II.description>
+
+	<Launcher_DefensePylon_II.label>точка энергетического фокуса</Launcher_DefensePylon_II.label>
+
+	<Launcher_DefensePylon_II.description>Фокусная точка тайного защитного пилона, способного собирать и испускать всплески сырой магической энергии.</Launcher_DefensePylon_II.description>
+
+	<Launcher_DefensePylon_II.verbs.0.label>ㅤ</Launcher_DefensePylon_II.verbs.0.label>
+
+	<DefensePylon_III.label>магический защитный пилон (III)</DefensePylon_III.label>
+
+	<DefensePylon_III.description>A магический защитный пилон. Создается путем материализации магической энергии для формирования базы, а затем направления магического потока в фокусную точку, испускающую всплески сырой энергии..</DefensePylon_III.description>
+
+	<Launcher_DefensePylon_III.label>точка энергетического фокуса</Launcher_DefensePylon_III.label>
+
+	<Launcher_DefensePylon_III.description>Фокусная точка тайного защитного пилона, способного собирать и испускать всплески сырой магической энергии.</Launcher_DefensePylon_III.description>
+
+	<Launcher_DefensePylon_III.verbs.0.label>ㅤ</Launcher_DefensePylon_III.verbs.0.label>
+
+	<TM_ArcaneBarrier.label>Тайный барьер</TM_ArcaneBarrier.label>
+
+	<TM_ArcaneBarrier.description>Создает тайный барьер в целевом местоположении, которое находится горизонтально к заклинателю. Барьер длится 60 секунд.</TM_ArcaneBarrier.description>
+
+	<TM_TechnoTurret_Base.label>Марк-IV</TM_TechnoTurret_Base.label>
+
+	<TM_TechnoTurret_Base.description>«Марк-IV» — развёртываемая турель с огневой мощью тяжёлой оружейной платформы. В сложенном виде её удобно перевозить благодаря системе миниатюризации. Преобразователь материи в компактном режиме ремонтирует турель и восполняет боезапас, но из-за колоссальной нагрузки даже пласталь и гиперволокно со временем не выдерживают. Техноманты научились подпитывать её арканной энергией, обеспечивая и ремонт, и повторную миниатюризацию. В развёрнутом виде «Марк-IV» слишком тяжёл для переноски.</TM_TechnoTurret_Base.description>
+
+	<TM_TechnoTurret_Base_RL.label>Марк-IV</TM_TechnoTurret_Base_RL.label>
+
+	<TM_TechnoTurret_Base_RL.description>«Марк-IV» — развёртываемая турель с огневой мощью тяжёлой оружейной платформы. В сложенном виде её удобно перевозить благодаря системе миниатюризации. Преобразователь материи в компактном режиме ремонтирует турель и восполняет боезапас, но из-за колоссальной нагрузки даже пласталь и гиперволокно со временем не выдерживают. Техноманты научились подпитывать её арканной энергией, обеспечивая и ремонт, и повторную миниатюризацию. В развёрнутом виде «Марк-IV» слишком тяжёл для переноски.</TM_TechnoTurret_Base_RL.description>
+
+	<TM_TechnoTurret_Base_RL_MTR.label>Марк-IV</TM_TechnoTurret_Base_RL_MTR.label>
+
+	<TM_TechnoTurret_Base_RL_MTR.description>«Марк-IV» — развёртываемая турель с огневой мощью тяжёлой оружейной платформы. В сложенном виде её удобно перевозить благодаря системе миниатюризации. Преобразователь материи в компактном режиме ремонтирует турель и восполняет боезапас, но из-за колоссальной нагрузки даже пласталь и гиперволокно со временем не выдерживают. Техноманты научились подпитывать её арканной энергией, обеспечивая и ремонт, и повторную миниатюризацию. В развёрнутом виде «Марк-IV» слишком тяжёл для переноски.</TM_TechnoTurret_Base_RL_MTR.description>
+
+	<Bullet_Mark-IV.label>пули «Марк-IV»</Bullet_Mark-IV.label>
+
+	<Gun_Mark-IV.label>оружейная система «Марк-IV»</Gun_Mark-IV.label>
+
+	<Gun_Mark-IV.description>Ствол и система управления огнём комплекса «Марк-IV».</Gun_Mark-IV.description>
+
+	<Gun_Mark-IV.verbs.0.label>ㅤ</Gun_Mark-IV.verbs.0.label>
+
+	<Gun_Mark-IV_RL.label>оружейная система «Марк-IV»</Gun_Mark-IV_RL.label>
+
+	<Gun_Mark-IV_RL.description>Ствол и система управления огнём комплекса «Марк-IV».</Gun_Mark-IV_RL.description>
+
+	<Gun_Mark-IV_RL.verbs.0.label>ㅤ</Gun_Mark-IV_RL.verbs.0.label>
+
+	<Gun_Mark-IV_RL_MTR.label>оружейная система «Марк-IV»</Gun_Mark-IV_RL_MTR.label>
+
+	<Gun_Mark-IV_RL_MTR.description>Ствол и система управления огнём комплекса «Марк-IV».</Gun_Mark-IV_RL_MTR.description>
+
+	<Gun_Mark-IV_RL_MTR.verbs.0.label>ㅤ</Gun_Mark-IV_RL_MTR.verbs.0.label>
+
+	<Gun_Mark-IV_RL_MTR.verbs.Verb_Shoot.label>ㅤ</Gun_Mark-IV_RL_MTR.verbs.Verb_Shoot.label>
+
+	<FlyingObject_RocketSmall.label>маленькая ракета</FlyingObject_RocketSmall.label>
+
+	<Bullet_Shell_TechnoTurretExplosive.label>осколочно-фугасный снаряд</Bullet_Shell_TechnoTurretExplosive.label>
+
+	<TM_60mmMortar_Base.label>60-мм миномётная труба</TM_60mmMortar_Base.label>
+
+	<TM_60mmMortar_Base.description>60-мм миномёт — переносная и быстро развёртываемая система навесного огня. Из-за массы самой установки боеприпасы обычно перевозят отдельно. Орудие рассчитано прежде всего на стрельбу с закрытых позиций; прямой наводкой им пользуются только новички, потому что это и неточно, и опасно для расчёта. По дальности и мощности этот миномёт уступает стационарным системам: его ограничивают прочность ствола и сила метательного заряда.</TM_60mmMortar_Base.description>
+
+	<FlyingObject_60mmMortar.label>60-мм мина</FlyingObject_60mmMortar.label>
+
+	<TM_LightningTotem.label>Тотем Молнии</TM_LightningTotem.label>
+
+	<TM_LightningTotem.description>Шаманский тотем, украшенный сложной, причудливой резьбой и потрескивающий стихийными молниями.</TM_LightningTotem.description>
+
+	<TM_HealingTotem.label>Исцеляющий Тотем</TM_HealingTotem.label>
+
+	<TM_HealingTotem.description>Шаманский тотем, украшенный плавными, дополняющими друг друга формами. Исцеляющий тотем способен привлекать дружественных духов, которые вернут силу и здоровье ближайшим союзникам.</TM_HealingTotem.description>
+
+	<TM_EarthTotem.label>Земной тотем</TM_EarthTotem.label>
+
+	<TM_EarthTotem.description>Шаманский тотем, украшенный симметричной резьбой и излучающий чувство единения. Связь тотема с землей позволяет ему вызывать сейсмические волны, которые поражают ближайших врагов.</TM_EarthTotem.description>
+</LanguageData>

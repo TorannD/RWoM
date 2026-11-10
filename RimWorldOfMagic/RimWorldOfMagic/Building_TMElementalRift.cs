@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -39,10 +39,19 @@ namespace TorannMagic
         IntVec2 centerLocation;
 
         private bool initialized = false;
+        private int debugElement = -1;
+
+        public void SetDebugElement(int element)
+        {
+            if (element < 0 || element > 3) throw new ArgumentOutOfRangeException(nameof(element));
+            if (initialized) throw new InvalidOperationException("Rift already initialized.");
+            debugElement = element;
+        }
 
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref debugElement, "debugElement", -1);
             Scribe_Values.Look<float>(ref this.arcaneEnergyCur, "arcaneEnergyCur", 0f, false);
             Scribe_Values.Look<float>(ref this.arcaneEnergyMax, "arcaneEnergyMax", 0f, false);
             Scribe_Values.Look<int>(ref this.rnd, "rnd", 0, false);
@@ -346,6 +355,11 @@ namespace TorannMagic
 
         public void DetermineElementalType()
         {
+            if (debugElement >= 0 && debugElement <= 3)
+            {
+                rnd = debugElement * 2;
+                return;
+            }
             System.Random random = new System.Random();
             random = new System.Random();
             this.rnd = GenMath.RoundRandom(random.Next(0, 8));
@@ -595,12 +609,7 @@ namespace TorannMagic
                         if (newPawn.Faction != null && newPawn.Faction != Faction.OfPlayer)
                         {
                             Lord lord = null;
-                            if (newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction).Any((Pawn p) => p != newPawn))
-                            {
-                                Predicate<Thing> validator = (Thing p) => p != newPawn && ((Pawn)p).GetLord() != null;
-                                Pawn p2 = (Pawn)GenClosest.ClosestThing_Global(newPawn.Position, newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction), 99999f, validator, null);
-                                lord = p2.GetLord();
-                            }
+                            lord = ElementalRiftLordUtility.FindExisting(newPawn, newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction));
                             bool flag4 = lord == null;
                             if (flag4)
                             {

@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -10,8 +10,23 @@ using AbilityUser;
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class FlyingObject_PsionicLeap : Projectile
+    public class FlyingObject_PsionicLeap : Projectile, IThingHolder, ISuspendableThingHolder
     {
+        private readonly ThingOwner<Thing> passenger;
+        private Thing carriedCargo;
+        private bool returnPending, takingOff, resumeAttack, drafted=true;
+        private int nextReturnAttempt;
+        public FlyingObject_PsionicLeap() { passenger=new ThingOwner<Thing>(this,true); }
+        public bool IsContentsSuspended => true;
+        public ThingOwner GetDirectlyHeldThings() => passenger;
+        public void GetChildHolders(List<IThingHolder> children) =>
+            ThingOwnerUtility.AppendThingHoldersFromThings(children,passenger);
+        internal static bool ProtectsMap(Map map)
+        {
+            var definition=DefDatabase<ThingDef>.GetNamedSilentFail("FlyingObject_PsionicLeap");
+            return definition!=null && map?.listerThings?.ThingsOfDef(definition)
+                .Any(t=>t is FlyingObject_PsionicLeap leap && (leap.takingOff || leap.passenger.Count>0))==true;
+        }
 
         private int effVal = 0;
 
@@ -22,7 +37,6 @@ namespace TorannMagic
         private Vector3 direction;
         private float trueAngle;
 
-        private bool isSelected = false;
         private bool earlyImpact = false;
 
         protected float speed = 75f;
@@ -90,6 +104,14 @@ namespace TorannMagic
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref returnPending,"psionicReturnPending");
+            Scribe_Values.Look(ref resumeAttack,"psionicResumeAttack");
+            Scribe_Values.Look(ref drafted,"psionicDrafted",true);
+            Scribe_References.Look(ref carriedCargo,"psionicCarriedCargo");
+            Scribe_Values.Look(ref trueOrigin,"psionicTrueOrigin");
+            Scribe_Values.Look(ref trueDestination,"psionicTrueDestination");
+            Scribe_Values.Look(ref trueAngle,"psionicTrueAngle");
+            Scribe_References.Look(ref oldjobTarget,"psionicOldTarget");
             Scribe_Values.Look<Vector3>(ref this.origin, "origin", default(Vector3), false);
             Scribe_Values.Look<Vector3>(ref this.destination, "destination", default(Vector3), false);
             Scribe_Values.Look<int>(ref this.ticksToImpact, "ticksToImpact", 0, false);
@@ -99,6 +121,13 @@ namespace TorannMagic
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
             Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
             Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
+            if(Scribe.mode==LoadSaveMode.PostLoadInit && flyingThing!=null && !passenger.Contains(flyingThing))
+            {
+                if(flyingThing.Spawned || flyingThing.holdingOwner!=null)
+                {flyingThing=null;returnPending=true;}
+                else if(!passenger.TryAdd(flyingThing,false))
+                    throw new InvalidOperationException("Psionic leap cannot restore its saved passenger.");
+            }
         }
 
         private void Initialize()
@@ -115,6 +144,9 @@ namespace TorannMagic
             //flyingThing.ThingID += Rand.Range(0, 2147).ToString();
         }
 
+        private Pawn skillOwner;
+        internal void SetSkillOwner(Pawn owner) => skillOwner=owner;
+
         public void Launch(Thing launcher, LocalTargetInfo targ, Thing flyingThing, DamageInfo? impactDamage)
         {
             this.Launch(launcher, base.Position.ToVector3Shifted(), targ, flyingThing, impactDamage);
@@ -126,25 +158,40 @@ namespace TorannMagic
         }
 
         public void Launch(Thing launcher, Vector3 origin, LocalTargetInfo targ, Thing flyingThing, DamageInfo? newDamageInfo = null)
-        {            
-            if (Find.Selector.FirstSelectedObject == launcher)
-            {
-                this.isSelected = true;
-            }
-                
-            bool spawned = flyingThing.Spawned;
-            pawn = launcher as Pawn;
-            this.oldjobTarget = pawn.CurJob.targetA.Thing;
+        {
+            if(passenger.Count!=0 || !Spawned || flyingThing?.Spawned!=true || flyingThing.Map!=Map ||
+                launcher is not Pawn body || !targ.IsValid || !targ.Cell.InBounds(Map) || targ.Cell==body.Position)
+            {Destroy();return;}
+            pawn=body;
+            this.oldjobTarget = pawn.CurJob?.targetA.Thing;
             //Log.Message("pre leap target is " + this.oldjobTarget.LabelShort);
             CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
-            this.effVal = TM_Calc.GetSkillEfficiencyLevel(pawn, TorannMagicDefOf.TM_PsionicAugmentation, false); //comp.MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_eff").level;
-            if (spawned)
+            this.effVal = TM_Calc.GetSkillEfficiencyLevel(skillOwner ?? pawn, TorannMagicDefOf.TM_PsionicAugmentation, false); //comp.MightData.MightPowerSkill_PsionicAugmentation.FirstOrDefault((MightPowerSkill x) => x.label == "TM_PsionicAugmentation_eff").level;
+            var start=body.Position;
+            drafted=body.Drafted;trueOrigin=origin;takingOff=true;
+            try
             {
+                var cargo=body.carryTracker?.CarriedThing;
+                if(cargo!=null)
+                {
+                    if(body.inventory==null || !body.carryTracker.innerContainer.TryTransferToContainer(cargo,body.inventory.innerContainer,false))
+                    {Destroy();return;}
+                    carriedCargo=cargo;
+                }
                 flyingThing.DeSpawn();
+                if(!passenger.TryAdd(flyingThing,false))
+                {
+                    if(!flyingThing.Spawned && flyingThing.holdingOwner==null)GenSpawn.Spawn(flyingThing,start,Map);
+                    Destroy();return;
+                }
+                this.flyingThing=flyingThing;
             }
-            //
-            ModOptions.Constants.SetPawnInFlight(true);
-            //
+            catch
+            {
+                if(!flyingThing.Destroyed && !flyingThing.Spawned && flyingThing.holdingOwner==null)GenSpawn.Spawn(flyingThing,start,Map);
+                throw;
+            }
+            finally {takingOff=false;}
             this.origin = origin;
             this.trueOrigin = origin;
             this.impactDamage = newDamageInfo;
@@ -162,18 +209,21 @@ namespace TorannMagic
             this.Initialize();
         }
 
+        protected override void TickInterval(int delta) { }
+
         protected override void Tick()
         {
-        }
-        protected override void TickInterval(int delta)
-        {
+            if(returnPending)
+            {
+                if(Find.TickManager.TicksGame>=nextReturnAttempt)Destroy();
+                return;
+            }
             //base.Tick();
             this.ticksToImpact--;
             bool flag = !this.ExactPosition.InBoundsWithNullCheck(base.Map);
             if (flag)
             {
                 this.ticksToImpact++;
-                base.Position = this.ExactPosition.ToIntVec3();
                 this.Destroy(DestroyMode.Vanish);
             }
             else if (!this.ExactPosition.ToIntVec3().Walkable(base.Map))
@@ -237,7 +287,7 @@ namespace TorannMagic
             if (hasValue)
             {
                 bool flag3 = this.damageLaunched;
-                if (flag3)
+                if (flag3 && hitThing!=null)
                 {
                     hitThing.TakeDamage(this.impactDamage.Value);
                 }
@@ -251,26 +301,48 @@ namespace TorannMagic
             TM_MoteMaker.MakePowerBeamMotePsionic(this.ExactPosition.ToIntVec3(), this.Map, 10f, 2f, .7f, .1f, .6f);
             //GenExplosion.DoExplosion(this.ExactPosition.ToIntVec3(), this.Map, 1.7f, TMDamageDefOf.DamageDefOf.TM_PsionicInjury, this.pawn, Rand.Range(8, 12) + 2*this.effVal, 0, this.def.projectile.soundExplode, def, null, null, null, 0f, 1, false, null, 0f, 1, 0.0f, false);
             SearchForTargets(base.Position, 1.7f, this.Map);
-            GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
-            ModOptions.Constants.SetPawnInFlight(false);
-            Pawn p = this.flyingThing as Pawn;
-            if (p.IsColonist)
+            resumeAttack=true;
+            this.Destroy(DestroyMode.Vanish);
+        }
+
+        private bool ReleaseNear(IntVec3 center)
+        {
+            if(passenger.Count==0)return true;
+            var body=passenger[0];
+            foreach(var cell in GenRadial.RadialCellsAround(center,3.9f,true))
             {
-                p.drafter.Drafted = true;
-                if (this.isSelected)
+                if(!cell.InBounds(Map) || !cell.Standable(Map) || cell.GetFirstPawn(Map)!=null)continue;
+                try
                 {
-                    if (ModOptions.Settings.Instance.cameraSnap)
-                    {
-                        CameraJumper.TryJumpAndSelect(p);
-                    }
+                    if(passenger.TryDrop(body,cell,Map,ThingPlaceMode.Direct,out _,playDropSound:false))return true;
                 }
-                if (this.oldjobTarget != null && !this.oldjobTarget.Destroyed)
+                catch
                 {
-                    Job job = new Job(JobDefOf.AttackMelee, this.oldjobTarget);
-                    p.jobs.TryTakeOrderedJob(job, JobTag.DraftedOrder);
+                    if(!body.Destroyed && !body.Spawned && body.holdingOwner==null)passenger.TryAdd(body,false);
+                    throw;
                 }
             }
-            this.Destroy(DestroyMode.Vanish);
+            return false;
+        }
+
+        public override void Destroy(DestroyMode mode=DestroyMode.Vanish)
+        {
+            returnPending=true;
+            if(passenger.Count>0)
+            {
+                var body=passenger[0] as Pawn;
+                if(!Spawned || Map.Disposed || (!ReleaseNear(Position) && !ReleaseNear(trueOrigin.ToIntVec3())))
+                {nextReturnAttempt=Find.TickManager.TicksGame+60;return;}
+                if(body?.IsColonist==true && body.drafter!=null)body.drafter.Drafted=drafted;
+                if(resumeAttack && body?.IsColonist==true && body.Drafted && !body.Dead && !body.Downed &&
+                    oldjobTarget?.Spawned==true && oldjobTarget.Map==body.Map && !oldjobTarget.Destroyed)
+                    body.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.AttackMelee,oldjobTarget),JobTag.DraftedOrder);
+                if(carriedCargo!=null && body?.carryTracker!=null && body.carryTracker.CarriedThing==null &&
+                    body.inventory?.innerContainer.Contains(carriedCargo)==true)
+                    body.inventory.innerContainer.TryTransferToContainer(carriedCargo,body.carryTracker.innerContainer,false);
+            }
+            flyingThing=null;
+            base.Destroy(mode);
         }
 
         public void SearchForTargets(IntVec3 center, float radius, Map map)

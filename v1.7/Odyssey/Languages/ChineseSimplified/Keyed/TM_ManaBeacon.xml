@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaNetworkModeOff>关闭</TM_ManaNetworkModeOff>
+  <TM_ManaNetworkModeSend>发送</TM_ManaNetworkModeSend>
+  <TM_ManaNetworkModeReceive>接收</TM_ManaNetworkModeReceive>
+  <TM_ManaNetworkManaMode>法力：{0}</TM_ManaNetworkManaMode>
+  <TM_ManaNetworkFuelMode>魔法燃料：{0}</TM_ManaNetworkFuelMode>
+  <TM_ManaNetworkModeDesc>选择此建筑通过附近的法力信标发送、接收或忽略此资源。</TM_ManaNetworkModeDesc>
+  <TM_ManaNetworkTarget>法力目标：{0}</TM_ManaNetworkTarget>
+  <TM_ManaNetworkTargetDesc>将所需法力储备设为容量的10%至100%。</TM_ManaNetworkTargetDesc>
+  <TM_ManaNetworkConnected>信标网络：已连接</TM_ManaNetworkConnected>
+  <TM_ManaNetworkDisconnected>信标网络：未连接</TM_ManaNetworkDisconnected>
+  <TM_ManaBeaconInspect>已连接信标：{0}\n范围：5格\n网络传输：每秒10法力和5魔法燃料</TM_ManaBeaconInspect>
+  <TM_ManaNetworkUnsupportedFuel>无法传输魔法燃料：燃料设置不兼容。</TM_ManaNetworkUnsupportedFuel>
+  <TM_ManaNetworkManaPriority>法力优先级：{0}</TM_ManaNetworkManaPriority>
+  <TM_ManaNetworkFuelPriority>魔法燃料优先级：{0}</TM_ManaNetworkFuelPriority>
+  <TM_ManaNetworkPriorityDesc>信标自动传输时优先供应高优先级接收端。同级接收端轮流获得供应。法力和魔法燃料的优先级相互独立。更改从下一次脉冲起生效。</TM_ManaNetworkPriorityDesc>
+  <TM_ManaNetworkPriority1>1：普通</TM_ManaNetworkPriority1>
+  <TM_ManaNetworkPriority2>2：中等</TM_ManaNetworkPriority2>
+  <TM_ManaNetworkPriority3>3：高</TM_ManaNetworkPriority3>
+</LanguageData>

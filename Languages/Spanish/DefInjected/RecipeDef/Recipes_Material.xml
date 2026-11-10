@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_MakeArcalleum.label>arcalleum</TM_MakeArcalleum.label>
+  
+  <TM_MakeArcalleum.description>Funde acero, jade, plata y magicita para obtener una aleación de arcalleum.</TM_MakeArcalleum.description>
+  
+  <TM_MakeArcalleum.jobString>fundiendo arcalleum</TM_MakeArcalleum.jobString>
+  
+  
+  <TM_MakeManaweave.label>tejido de maná</TM_MakeManaweave.label>
+  
+  <TM_MakeManaweave.description>Teje maná, magicita y tela para obtener tejido de maná.</TM_MakeManaweave.description>
+  
+  <TM_MakeManaweave.jobString>tejiendo maná</TM_MakeManaweave.jobString>
+  
+</LanguageData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Portal jobs -->
+
+  <PortalDestination.reportString>визначення призначення порталу.</PortalDestination.reportString>
+  <UsePortal.reportString>використання порталу.</UsePortal.reportString>
+  <DeactivatePortal.reportString>деактивація порталу.</DeactivatePortal.reportString>
+  <ChargePortal.reportString>зарядка порталу.</ChargePortal.reportString>
+  <PortalStockpile.reportString>відправка товарів через портал.</PortalStockpile.reportString>
+
+
+</LanguageData>

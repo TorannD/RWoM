@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Heater -->
+
+  <TM_Heater.label>Aquecedor mágico</TM_Heater.label>
+  <TM_Heater.description>Cria um bolso espacial que entra no plano de fogo, gerando calor constante em um espaço limitado. O aquecedor deve ser apoiado por um mágico - reduz a manga máxima em 25 no modo ativo.</TM_Heater.description>
+
+  <TM_DismissHeater.label>Dispersar aquecedor</TM_DismissHeater.label>
+  <TM_DismissHeater.description>Dispersa aquecedor mágico</TM_DismissHeater.description>
+
+
+  <!-- Cooler -->
+
+  <TM_Cooler.label>Cooler mágico</TM_Cooler.label>
+  <TM_Cooler.description>Cria um bolso espacial que bate em um plano de gelo, reduzindo o calor em um espaço fechado. O cooler deve ser apoiado por um mágico - reduz a manga máxima em 25 no modo ativo.</TM_Cooler.description>
+
+  <TM_DismissCooler.label>Dispersar o cooler</TM_DismissCooler.label>
+  <TM_DismissCooler.description>Dispersa o cooler mágico</TM_DismissCooler.description>
+
+
+  <!-- Power Node -->
+
+  <TM_PowerNode.label>Noda de energia mística</TM_PowerNode.label>
+  <TM_PowerNode.description>Cria um nó de energia que, lentamente, libera energia secreta em forma de eletricidade. Pode ser usado como fonte de alimentação. O nó de força deve ser suportado por um magom que reduz a manha máxima em 25% e a elevação do maná em 25% no modo ativo.</TM_PowerNode.description>
+
+  <TM_DismissPowerNode.label>Dissipar a energia</TM_DismissPowerNode.label>
+  <TM_DismissPowerNode.description>Dissipar o fio de energia mística</TM_DismissPowerNode.description>
+
+
+  <!-- Light Node -->
+
+  <TM_Sunlight.label>Luz do Sol</TM_Sunlight.label>
+  <TM_Sunlight.description>Cria um farol solar forte o suficiente para criar plantas. O farol deve ser apoiado por um mágico - reduz o manu máximo em 40 e a regeneração do maná em 40% no modo ativo.</TM_Sunlight.description>
+
+  <TM_DismissSunlight.label>Dispersar a luz solar</TM_DismissSunlight.label>
+  <TM_DismissSunlight.description>Dispersar a luz solar</TM_DismissSunlight.description>
+
+
+  <!-- Remove Moisture -->
+
+  <TM_DryGround.label>Secar a terra</TM_DryGround.label>
+  <TM_DryGround.description>Enche a terra com calor, evaporando a maior parte da umidade do terreno. Só funciona em solo sujo.</TM_DryGround.description>
+
+
+  <!-- Add Moisture -->
+
+  <TM_WetGround.label>Hidratação da terra</TM_WetGround.label>
+  <TM_WetGround.description>Enche a areia com água, criando um solo utilizável.</TM_WetGround.description>
+
+
+  <!-- Charge Battery -->
+
+  <TM_ChargeBattery.label>Carregar bateria</TM_ChargeBattery.label>
+  <TM_ChargeBattery.description>Conversão de energia mágica em energia elétrica. Este feitiço só pode ser usado em pilhas. Gera 400 energias.</TM_ChargeBattery.description>
+
+
+  <!-- Smoke Cloud -->
+
+  <TM_SmokeCloud.label>Nuvem de fumo</TM_SmokeCloud.label>
+  <TM_SmokeCloud.description>Arrastar e inflamar água e partículas de lama no ar para criar uma cortina de fumaça que esconde temporariamente a área.</TM_SmokeCloud.description>
+
+
+  <!-- Extinguish -->
+
+  <TM_Extinguish.label>Apagar</TM_Extinguish.label>
+  <TM_Extinguish.description>Remove o elemento de fogo do local de destino, e instantaneamente a carcaça de fogos indesejados.</TM_Extinguish.description>
+
+
+  <!-- EMP -->
+
+  <TM_EMP.label>AMY</TM_EMP.label>
+  <TM_EMP.description>Gere um pico de impulso eletromagnético na área de destino, desligando os mehanoides por um curto período.</TM_EMP.description>
+
+
+  <!-- Transfer mana -->
+
+  <TM_TransferMana.label>Transferência de Mana</TM_TransferMana.label>
+  <TM_TransferMana.description>Transmite energia mágica de um feitiço para outro. Os beneficiários que não são mágicos receberão um aumento físico significativo, embora aleatório, por um curto período de tempo. Pode ser prejudicial, até mortal, em níveis extremos.</TM_TransferMana.description>
+
+
+  <!-- siphon mana -->
+
+  <TM_SiphonMana.label>Sifon maná</TM_SiphonMana.label>
+  <TM_SiphonMana.description>Drena a energia mágica de outro feitiço. Os beneficiários que não são mágicos, em vez disso, terão capacidade física exaustiva. Pode ser fatal se a vida se esgotar demais.</TM_SiphonMana.description>
+
+
+  <!-- mana shield -->
+
+  <TM_ManaShield.label>Escudo de maná</TM_ManaShield.label>
+  <TM_ManaShield.description>Provoca uma barreira de segurança que tira a força do maná do feitiço. A velocidade de absorção é de 1l. cortada a 1 maná. A barreira quebra quando o feitiço não tem maná suficiente para absorver o ataque.
+
+Fazer um feitiço, quando a barreira estiver ativa, vai tirar a barreira. Pode ser usado em conjunto com o cinto de segurança. Não impede feitiços de qualquer tipo.</TM_ManaShield.description>
+
+
+  <!-- summoned wall -->
+
+  <TM_ArcaneBarrier.label>Barreira secreta</TM_ArcaneBarrier.label>
+  <TM_ArcaneBarrier.description>Cria uma barreira secreta na localização de destino, que fica horizontalmente para o feitiço. A barreira dura 60 segundos.</TM_ArcaneBarrier.description>
+
+
+  <!-- Flight -->
+
+  <TM_Flight.label>Voo</TM_Flight.label>
+  <TM_Flight.description>Voem rapidamente para o destino.</TM_Flight.description>
+
+
+  <!-- Fertile land -->
+
+  <TM_FertileLands.label>Terras férteis</TM_FertileLands.label>
+  <TM_FertileLands.description>Enche o terreno com a força do druido, o que aumenta a sua fertilidade. Esta capacidade deve ser suportada e reduz a regeneração do maná em 40%. O Druide está limitado a uma área.</TM_FertileLands.description>
+
+  <TM_DismissFertileLands.label>Parar a fertilidade da terra</TM_DismissFertileLands.label>
+  <TM_DismissFertileLands.description>Parar a fertilidade da terra.</TM_DismissFertileLands.description>
+
+
+  <!-- Spell Mending -->
+
+  <TM_SpellMending.label>Feitiço de conserto</TM_SpellMending.label>
+  <TM_SpellMending.description>Coloque encantos no homem que lentamente restabelecem o seu equipamento ao nível molecular. Este feitiço requer o uso de equipamentos para extrair «memórias» do proprietário para a reconstrução. Isso gera uma pressão física sobre o peão afetado e atrasa a sua atividade física. O feitiço do reparo vai dissipar-se dentro de algumas horas.</TM_SpellMending.description>
+
+
+  <!-- Cauterize Wound -->
+
+  <TM_CauterizeWound.label>Incendiar a ferida</TM_CauterizeWound.label>
+  <TM_CauterizeWound.description>Um mágico de fogo provoca um fogo básico para encostar as feridas no paciente. No entanto, este processo provavelmente deixará cicatrizes queimadas.</TM_CauterizeWound.description>
+
+
+  <!-- Teach Magic & Might -->
+
+  <TM_TeachMagic.label>Mentor da Magia</TM_TeachMagic.label>
+  <TM_TeachMagic.description>Orienta um mágico de menor nível para aumentar as suas habilidades mágicas.
+
+Os magos orientados terão uma experiência de classe. A quantidade de experiência adquirida depende do status social e da diferença de nível entre os dois magos.</TM_TeachMagic.description>
+
+  <TM_TeachMight.label>Treino de combate</TM_TeachMight.label>
+  <TM_TeachMight.description>Treine um lutador de menor nível para melhorar a sua habilidade de combate.
+
+Lutadores treinados terão experiência de classe. A quantidade de experiência adquirida depende do status social e da diferença de nível entre os dois combatentes.</TM_TeachMight.description>
+
+
+  <!-- blur -->
+
+  <TM_Blur.label>Desfocar</TM_Blur.label>
+  <TM_Blur.description>Uma chance extra de 20% de evitar todos os ataques, distorcendo a luz em torno do feitiço. São necessários 20 manás para manter. A reutilização desativará o desmatamento.</TM_Blur.description>
+
+
+  <!-- blank mind -->
+
+  <TM_BlankMind.label>Pura Mente</TM_BlankMind.label>
+  <TM_BlankMind.description>Apaga as memórias de um peão e tira-as de qualquer estado mental, mas vai causar confusão de curto prazo quando eles se juntarem. Quando usado em inimigos, ele usará congelamento mental, atordoando o inimigo por um curto período.
+
+O efeito de massa só é aplicado quando o alvo principal não é um peão. Peões amigos perderão boas e más memórias.</TM_BlankMind.description>
+
+
+  <!-- dirt devil -->
+
+  <TM_DirtDevil.label>Diabo da Terra</TM_DirtDevil.label>
+  <TM_DirtDevil.description>Crie um pequeno básico de vácuo que procura e evapora a lama e o lixo.</TM_DirtDevil.description>
+
+  <TM_MechaniteReprogramming.label>Reprogramação de mecânicos</TM_MechaniteReprogramming.label>
+  <TM_MechaniteReprogramming.description>Reprograma mehanitas de fibra ou sensores para harmonizar com os sistemas biológicos do anfitrião. O resultado reduzirá significativamente a pressão sobre o anfitrião enquanto os mehanitas estiverem ativos.</TM_MechaniteReprogramming.description>
+
+
+  <!-- Arcane Bolt -->
+
+  <TM_ArcaneBolt.label>Bolt mágico</TM_ArcaneBolt.label>
+  <TM_ArcaneBolt.description>Ativa uma carga de energia crua secreta. Esta capacidade vai crescer lentamente em uma força baseada no nível mágico dos feitiços.
+
+O Bolt secreto é ineficaz devido à natureza não refinada do feitiço, mas pode ser aprendido e usado por qualquer mágico capaz de violência.</TM_ArcaneBolt.description>
+
+
+  <!-- Throwing Knife -->
+
+  <TM_ThrowingKnife.label>Lançamento de faca</TM_ThrowingKnife.label>
+  <TM_ThrowingKnife.description>Um ataque de longo alcance com uma faca de lançamento oculta para complementar qualquer sistema de armas equipado.</TM_ThrowingKnife.description>
+
+
+  <!-- Pommel Strike -->
+
+  <TM_PommelStrike.label>Golpe de recomposição</TM_PommelStrike.label>
+  <TM_PommelStrike.description>Um ataque de combate a longo prazo que fornece um ataque sem tamanho, que causa danos menores e atordoam o alvo por um curto período de tempo.
+
+Esta capacidade pode derrubar o peão alvo instantaneamente; quanto mais dor o alvo tiver, mais provável é que o impacto abale o alvo, em vez de atordoá-lo.
+
+A câmera automática só funciona quando o alvo tem 80% ou mais de probabilidade de ser abatido por este ataque.</TM_PommelStrike.description>
+
+
+  <!-- Lightning Trap -->
+
+  <TM_LightningTrap.label>Armadilha relâmpago</TM_LightningTrap.label>
+  <TM_LightningTrap.description>Um raio básico é carregado dentro de um invólucro mágico temperado e colocado numa armadilha. Os filamentos secretos que ativam o feitiço são puxados em torno da armadilha e executados quando os inimigos os incomodam. As armadilhas duram indefinidamente, mas o mágico só aguenta uma armadilha.</TM_LightningTrap.description>
+
+  <TM_DismissLightningTrap.label>Dispersar armadilha</TM_DismissLightningTrap.label>
+  <TM_DismissLightningTrap.description>Dispersar armadilha relâmpago</TM_DismissLightningTrap.description>
+
+
+  <!-- invisibility -->
+
+  <TM_Invisibility.label>Invisibilidade</TM_Invisibility.label>
+  <TM_Invisibility.description>Tornem-se invisíveis por 20 segundos. Qualquer interação aberta destruirá imediatamente o encantamento. Limpa o feitiço de todos os fins hostis.</TM_Invisibility.description>
+
+
+  <!-- briar patch -->
+
+  <TM_BriarPatch.label>Arboreto espinhoso</TM_BriarPatch.label>
+  <TM_BriarPatch.description>Cria um perigo feito de losas espinhosas. Qualquer movimento sobre a área atingida será abrandado, e as criaturas que se movem através da espinha podem sofrer danos ligeiros.</TM_BriarPatch.description>
+
+
+  <!-- Magelight -->
+
+  <TM_MageLight.label>Luz mágica</TM_MageLight.label>
+  <TM_MageLight.description>Cria uma pequena bola de luz que expulsa a escuridão. A luz mágica fica perto do feitiço mágico. Este feitiço tem um custo de manutenção de 10 manás e 5% de regen maná.
+
+A luz dá 20% de bônus de visão; só o feitiço se beneficia deste bónus.
+
+A luz mágica pode ser dissipada usando esta capacidade no feitiço.</TM_MageLight.description>
+
+
+  <!-- Legion start -->
+
+  <TM_Legion.label>Emprestar</TM_Legion.label>
+  <TM_Legion.description>Copiar a capacidade de outro lutador. Todos os bónus e limitações de capacidade copiada são aplicados. Apenas uma capacidade pode ser preservada ao mesmo tempo.</TM_Legion.description>
+
+
+  <!-- Tempest Strike -->
+
+  <TM_TempestStrike.label>Choque de tempestade</TM_TempestStrike.label>
+  <TM_TempestStrike.description>Execute vários ataques em uma sequência rápida. Cada ataque consome 20 resistências. A tempestade vai acabar quando o lutador tiver uma resistência insuficiente ou após os ataques.
+
+Uma arma de combate próximo gera energia.
+
+Este ataque só funciona quando as armas disponíveis normalmente não são consumidas após o uso.</TM_TempestStrike.description>
+
+
+  <!-- ignite -->
+
+  <TM_Ignite.label>Incendiar</TM_Ignite.label>
+  <TM_Ignite.description>Concentra grandes quantidades de calor no ponto de foco e depois liberta-o. O calor que se solta pode inflamar as criaturas próximas e vai sempre incendiar os cadáveres. O calor liberado também aumentará drasticamente a temperatura da sala para qualquer zona fechada.</TM_Ignite.description>
+
+
+  <!-- snap freeze -->
+
+  <TM_SnapFreeze.label>Clique congelador</TM_SnapFreeze.label>
+  <TM_SnapFreeze.description>Remove quase todo o calor no ponto de foco, provocando o congelamento abrupto de qualquer objeto vivo. As criaturas podem sofrer de congelamento, e a maior parte da vida vegetal vai morrer. A remoção do calor também reduzirá drasticamente a temperatura da sala.</TM_SnapFreeze.description>
+
+
+  <!-- discord -->
+
+  <TM_Discord.label>Dissonância</TM_Discord.label>
+  <TM_Discord.description>Uma capacidade direcionada que afeta constantemente os sentimentos da vítima com sinais aleatórios e acentuados. Esta sobrecarga sensorial vai enfraquecer gradualmente a estabilidade mental, e eventualmente a harmonia mental do alvo será completamente destruída. Os resultados desta capacidade variam, mas aumentam a cada iteração.
+
+As consequências incluem tonturas, náuseas, perda de visão e audição, vômito, incapacidade de distinguir um amigo de um inimigo, incapacidade de matemática, aversão a outros peões, perda de habilidades motoras, perda da mente, vontade de discutir política, paroxismo, hemorragia cerebral e detonação do crânio. Os resultados podem variar ao apontar para peões amigos. Consulte o seu terapeuta antes de usá-lo.</TM_Discord.description>
+
+
+  <!-- magic warddrobe -->
+
+  <TM_MagicWardrobe.label>Armário mágico</TM_MagicWardrobe.label>
+  <TM_MagicWardrobe.description>Uma capacidade simples que permite guardar todas as roupas equipadas em um bolso volumoso. Se você voltar a usar, as roupas salvas tornam-se equipadas e todos os equipamentos atuais são salvos. Adequado para qualquer roupa, mas não para armas ou objetos retidos. Útil para armazenamento de equipamentos ou substituição rápida de kits de equipamentos.</TM_MagicWardrobe.description>
+
+
+  <!-- heat shield -->
+
+  <TM_HeatShield.label>Tela térmica</TM_HeatShield.label>
+  <TM_HeatShield.description>Coloque a barreira térmica sobre os aliados, que oferece 75% de proteção adicional contra danos térmicos e evita o incêndio. Atinge até 6 alvos e dura cerca de 30 segundos.</TM_HeatShield.description>
+
+
+  <!-- alter storm -->
+
+  <TM_AlterStorm.label>Tempestade Transbordada</TM_AlterStorm.label>
+  <TM_AlterStorm.description>Altera o tempo para criar novas condições. As tempestades de chuva vão ser substituídas por uma chuva de cura. A neve vai mudar de granizo. O granizo pode ser controlado em parte direcionando o granizo para os inimigos no mapa, mas uma vez que este tempo sequer começa, ele deve seguir seu curso e não pode ser influenciado pelo criador da chuva.</TM_AlterStorm.description>
+
+
+  <!-- snape freeze -->
+
+</LanguageData>

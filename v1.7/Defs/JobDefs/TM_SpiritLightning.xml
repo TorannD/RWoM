@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritLightningCloud</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting lightning cloud through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritLightningStorm</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting lightning storm through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritLightningBolt</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting lightning bolt through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritAMP</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting AMP through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritAMP_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting AMP through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritAMP_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting AMP through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritAMP_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting AMP through a spirit host.</reportString>
+  </JobDef>
+</Defs>

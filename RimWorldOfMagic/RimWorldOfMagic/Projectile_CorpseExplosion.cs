@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Verse;
 using AbilityUser;
 using UnityEngine;
@@ -6,12 +6,11 @@ using RimWorld;
 
 namespace TorannMagic
 {
-    class Projectile_CorpseExplosion : Projectile_AbilityBase
+    class Projectile_CorpseExplosion : ClassProgression.Projectile_SpiritImpact
     {
         int age = 300;
-        int verVal = 0;
-        int pwrVal = 0;
-        float arcaneDmg = 1;
+        protected override string SkillStem => "TM_CorpseExplosion";
+        protected override System.Collections.Generic.List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_CorpseExplosion;
         float radius = 3f;
         bool initialized = false;
         Corpse targetCorpse = null;
@@ -42,72 +41,31 @@ namespace TorannMagic
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
-            base.Impact(hitThing);
+            base.Impact(hitThing, blockedByShield);
+            if (Destroyed || map == null) return;
             ThingDef def = this.def;
-            Pawn pawn = this.launcher as Pawn;
-
-            if (!this.initialized)
+            if (!initialized)
             {
-                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_CorpseExplosion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_CorpseExplosion_pwr");
-                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_CorpseExplosion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_CorpseExplosion_ver");
-                this.arcaneDmg = comp.arcaneDmg;
-                pwrVal = pwr.level;
-                verVal = ver.level;
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                if (!projected)
                 {
-                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                    pwrVal = mpwr.level;
-                    verVal = mver.level;
+                    var pawn = SourcePawn;
+                    var comp = pawn?.GetCompAbilityUserMagic();
+                    if (comp?.MagicData == null) { age = 0; Destroy(); return; }
+                    var skills = Skills(comp.MagicData);
+                    pwrVal = SpellRank(pawn, skills, SkillStem, "_pwr");
+                    verVal = SpellRank(pawn, skills, SkillStem, "_ver");
+                    arcaneDmg = comp.arcaneDmg;
                 }
                 Initialize();
-
-                CellRect cellRect = CellRect.CenteredOn(base.Position, 1);
-                cellRect.ClipInsideMap(map);
-                IntVec3 curCell = cellRect.CenterCell;
-                if (curCell.InBoundsWithNullCheck(map) && curCell.IsValid)
+                if (Position.InBounds(map))
                 {
-                    Pawn undead = curCell.GetFirstPawn(map);
-                    bool flag = undead != null && !undead.Dead;
-                    if (flag)
-                    {
-                        if(TM_Calc.IsUndead(undead))
-                        {
-                            this.targetPawn = undead;
-                        }
-                        //if (undead.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadHD))
-                        //{
-                        //    this.targetPawn = undead;
-                        //}
-                        //if (undead.health.hediffSet.HasHediff(TorannMagicDefOf.TM_UndeadAnimalHD))
-                        //{
-                        //    this.targetPawn = undead;
-                        //}
-                    }
-
-                    Thing corpseThing = curCell.GetFirstItem(map);
-                    Corpse corpse = null;
-                    if (corpseThing != null)
-                    {
-                        bool validator = corpseThing is Corpse;
-                        if (validator)
-                        {                            
-                            corpse = corpseThing as Corpse;
-                            Pawn corpsePawn = corpse.InnerPawn;
-                            if (corpsePawn.RaceProps.IsFlesh)
-                            {
-                                if (corpsePawn.RaceProps.Humanlike || corpsePawn.RaceProps.Animal || TM_Calc.IsUndead(corpsePawn))
-                                {
-                                    this.targetCorpse = corpse;
-                                }
-                            }
-                        }
-                    }
+                    var things = Position.GetThingList(map);
+                    targetPawn = things.OfType<Pawn>().FirstOrDefault(p => !p.Dead && TM_Calc.IsUndead(p));
+                    targetCorpse = things.OfType<Corpse>().FirstOrDefault(ValidCorpse);
                 }
-            }     
-            
-            if(this.targetPawn != null && !this.targetPawn.Destroyed)
+            }
+
+            if (targetPawn?.Spawned == true && targetPawn.Map == map)
             {
                 if (this.age == 360)
                 {
@@ -139,6 +97,7 @@ namespace TorannMagic
                     TM_MoteMaker.ThrowBloodSquirt(this.targetPawn.Position.ToVector3Shifted(), map, 1.2f);
                     TM_MoteMaker.ThrowBloodSquirt(this.targetPawn.Position.ToVector3Shifted(), map, .6f);
                     TM_MoteMaker.ThrowBloodSquirt(this.targetPawn.Position.ToVector3Shifted(), map, .8f);
+                    IntVec3 position = targetPawn.Position;
                     if (targetPawn.def != TorannMagicDefOf.TM_SkeletonLichR && targetPawn.def != TorannMagicDefOf.TM_GiantSkeletonR)
                     {
                         if (this.targetPawn.RaceProps.Humanlike)
@@ -152,12 +111,12 @@ namespace TorannMagic
                             this.targetPawn.Destroy();
                         }
                     }
-                    GenExplosion.DoExplosion(this.targetPawn.Position, map, this.radius, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion, this.launcher, Mathf.RoundToInt((Rand.Range(22f, 36f) + (5f * pwrVal)) * this.arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 01, null, null, 0, false, null, 0f, 0, 0.0f, true);
+                    GenExplosion.DoExplosion(position, map, this.radius, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion, SpellInstigator, Mathf.RoundToInt((Rand.Range(22f, 36f) + (5f * pwrVal)) * this.arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 01, null, null, 0, false, null, 0f, 0, 0.0f, true);
 
                 }
             }
 
-            if (this.targetCorpse != null && !this.targetCorpse.Destroyed)
+            if (targetCorpse?.Spawned == true && targetCorpse.Map == map)
             {
                 if (this.age == 360)
                 {
@@ -196,7 +155,7 @@ namespace TorannMagic
                         corpsePawn.equipment.DropAllEquipment(this.targetCorpse.Position, false);
                         corpsePawn.apparel.DropAll(this.targetCorpse.Position, false);
                     }
-                    GenExplosion.DoExplosion(this.targetCorpse.Position, map, this.radius, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion, this.launcher, Mathf.RoundToInt((Rand.Range(18f, 30f) + (5f * pwrVal))*this.arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 01, null, null, 0, false, null, 0f, 0, 0.0f, true);
+                    GenExplosion.DoExplosion(this.targetCorpse.Position, map, this.radius, TMDamageDefOf.DamageDefOf.TM_CorpseExplosion, SpellInstigator, Mathf.RoundToInt((Rand.Range(18f, 30f) + (5f * pwrVal))*this.arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, null, null, 0f, 01, null, null, 0, false, null, 0f, 0, 0.0f, true);
                     if (!this.targetCorpse.Destroyed)
                     {
                         this.targetCorpse.Destroy();
@@ -206,9 +165,22 @@ namespace TorannMagic
 
         }
 
+        private static bool ValidCorpse(Corpse corpse)
+        {
+            var pawn = corpse.InnerPawn;
+            return pawn != null && pawn.RaceProps.IsFlesh &&
+                (pawn.RaceProps.Humanlike || pawn.RaceProps.Animal || TM_Calc.IsUndead(pawn));
+        }
+
+        internal static bool HasTarget(Map map, IntVec3 cell) => cell.GetThingList(map).Any(t =>
+            t is Corpse corpse && ValidCorpse(corpse) || t is Pawn p && !p.Dead && TM_Calc.IsUndead(p));
+
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_References.Look(ref targetPawn, "TM_armedUndead");
+            Scribe_References.Look(ref targetCorpse, "TM_armedCorpse");
+            Scribe_Values.Look(ref arcaneDmg, "TM_explosionScale", 1f);
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", true, false);
             Scribe_Values.Look<int>(ref this.age, "age", 360, false);
             Scribe_Values.Look<float>(ref this.radius, "radius", 2.4f, false);

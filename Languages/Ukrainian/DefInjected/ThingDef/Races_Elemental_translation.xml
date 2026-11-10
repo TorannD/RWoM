@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Earth Elemental -->
+
+  <TM_LesserEarth_ElementalR.label>Малий Елементаль Землі</TM_LesserEarth_ElementalR.label>
+  <TM_LesserEarth_ElementalR.description>Елементаль землі-незграбна, вперта істота, зроблена з живого каменю. Його шкура здається зробленою з каменю і кришталю з плямами бруду і ґрунту там, де повинні бути суглоби. Ця істота - найстійкіший з усіх елементалів, здатний витримати бурю ударів. Хоча це менший елементал, він все ж перевершує більшість гуманоїдів і володіє чудовою здатністю захищати свого господаря.</TM_LesserEarth_ElementalR.description>
+  <TM_LesserEarth_ElementalR.tools.0.label>ліва рука</TM_LesserEarth_ElementalR.tools.0.label>
+  <TM_LesserEarth_ElementalR.tools.1.label>права рука</TM_LesserEarth_ElementalR.tools.1.label>
+  <TM_LesserEarth_ElementalR.tools.2.label>ріг</TM_LesserEarth_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserEarth_ElementalR_Corpse.label>Малий Елементаль Землі труп</TM_LesserEarth_ElementalR_Corpse.label>
+  <TM_LesserEarth_ElementalR_Corpse.description>Малий Елементаль Землі труп</TM_LesserEarth_ElementalR_Corpse.description>
+
+
+  <!-- Earth Elemental -->
+
+  <TM_Earth_ElementalR.label>Елементаль Землі</TM_Earth_ElementalR.label>
+  <TM_Earth_ElementalR.description>Елементаль землі-незграбна, вперта істота, зроблена з живого каменю. Його шкура здається зробленою з каменю і кришталю з плямами бруду і ґрунту там, де повинні бути суглоби. Ця істота - найстійкіший з усіх елементалів, здатний витримати бурю ударів. Ця істота ганьбить сучасні танки своєю непереможною шкірою.</TM_Earth_ElementalR.description>
+  <TM_Earth_ElementalR.tools.0.label>ліва рука</TM_Earth_ElementalR.tools.0.label>
+  <TM_Earth_ElementalR.tools.1.label>права рука</TM_Earth_ElementalR.tools.1.label>
+  <TM_Earth_ElementalR.tools.2.label>ріг</TM_Earth_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_Earth_ElementalR_Corpse.label>Елементаль Землі труп</TM_Earth_ElementalR_Corpse.label>
+  <TM_Earth_ElementalR_Corpse.description>Елементаль Землі труп</TM_Earth_ElementalR_Corpse.description>
+
+
+  <!-- Earth Elemental -->
+
+  <TM_GreaterEarth_ElementalR.label>Великий Елементаль Землі</TM_GreaterEarth_ElementalR.label>
+  <TM_GreaterEarth_ElementalR.description>Елементаль землі-незграбне, вперте чудовисько, зроблене з живого каменю. Його шкура здається зробленою з каменю і кришталю з плямами бруду і ґрунту там, де повинні бути суглоби. Його гирло являє собою печеру, і на його спині ростуть невеликі дерева або чагарники, ніби він носить плеолог з рослинності. Ця істота - найстійкіший з усіх елементалів, здатний витримати бурю ударів, і цей елементаль є господарем своєї стихії. Сила цієї істоти буквально розтрощить ваших ворогів, єдиний шанс, який у них є, - це бігти.</TM_GreaterEarth_ElementalR.description>
+  <TM_GreaterEarth_ElementalR.tools.0.label>ліва рука</TM_GreaterEarth_ElementalR.tools.0.label>
+  <TM_GreaterEarth_ElementalR.tools.1.label>права рука</TM_GreaterEarth_ElementalR.tools.1.label>
+  <TM_GreaterEarth_ElementalR.tools.2.label>ріг</TM_GreaterEarth_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GreaterEarth_ElementalR_Corpse.label>Великий Елементаль Землі труп</TM_GreaterEarth_ElementalR_Corpse.label>
+  <TM_GreaterEarth_ElementalR_Corpse.description>Великий Елементаль Землі труп</TM_GreaterEarth_ElementalR_Corpse.description>
+
+
+  <!-- Fire Elemental -->
+
+  <TM_LesserFire_ElementalR.label>Малий Елементаль Вогню</TM_LesserFire_ElementalR.label>
+  <TM_LesserFire_ElementalR.description>Це злісні істоти з живого полум&apos;я. Вони швидкі і жорстокі за своєю природою, спеціалізуючись на руйнуванні. Елементаль вогню здається сумішшю маслянистих і розплавлених речовин, оповитих полум&apos;ям і попелом, його шкіра виглядає майже рідкою, ніби він постійно плавиться і реформується. Малий блиск в очах цієї істоти-єдине попередження, яке вороги матимуть, перш ніж бути поглиненими його люттю.</TM_LesserFire_ElementalR.description>
+  <TM_LesserFire_ElementalR.tools.0.label>ліва рука</TM_LesserFire_ElementalR.tools.0.label>
+  <TM_LesserFire_ElementalR.tools.1.label>права рука</TM_LesserFire_ElementalR.tools.1.label>
+  <TM_LesserFire_ElementalR.tools.2.label>ріг</TM_LesserFire_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserFire_ElementalR_Corpse.label>Малий Елементаль Вогню труп</TM_LesserFire_ElementalR_Corpse.label>
+  <TM_LesserFire_ElementalR_Corpse.description>Малий Елементаль Вогню труп</TM_LesserFire_ElementalR_Corpse.description>
+
+
+  <!-- Fire Elemental -->
+
+  <TM_Fire_ElementalR.label>Елементаль Вогню</TM_Fire_ElementalR.label>
+  <TM_Fire_ElementalR.description>Це злісні істоти з живого полум&apos;я. Вони швидкі і жорстокі за своєю природою, спеціалізуючись на руйнуванні. Елементаль вогню здається сумішшю маслянистих і розплавлених речовин, оповитих полум&apos;ям і попелом, його шкіра виглядає майже рідкою, ніби він постійно плавиться і реформується. На обличчі цієї істоти застигло щось схоже на злобну ухмилку... вороги повинні бути обережні, граючи з цим вогнем.</TM_Fire_ElementalR.description>
+  <TM_Fire_ElementalR.tools.0.label>ліва рука</TM_Fire_ElementalR.tools.0.label>
+  <TM_Fire_ElementalR.tools.1.label>права рука</TM_Fire_ElementalR.tools.1.label>
+  <TM_Fire_ElementalR.tools.2.label>ріг</TM_Fire_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_Fire_ElementalR_Corpse.label>Елементаль Вогню труп</TM_Fire_ElementalR_Corpse.label>
+  <TM_Fire_ElementalR_Corpse.description>Елементаль Вогню труп</TM_Fire_ElementalR_Corpse.description>
+
+
+  <!-- Fire Elemental -->
+
+  <TM_GreaterFire_ElementalR.label>Великий Елементаль Вогню</TM_GreaterFire_ElementalR.label>
+  <TM_GreaterFire_ElementalR.description>Це злісні істоти з живого полум&apos;я. Вони швидкі і жорстокі за своєю природою, знаючи тільки руйнування. Елементаль вогню представляється сумішшю маслянистих і розплавлених речовин, оповитих полум&apos;ям і попелом. Його шкіра виглядає майже рідкою, ніби він постійно плавиться і реформується. Перед вами стоїть князь руйнування, що носить на челі вогняну корону, а груди його прикрашені пластиною з обсидіану, що звивається в полум&apos;ї. Він дивиться на тебе своїм єдиним блискучим оком, готовий випустити на волю свою злобу.</TM_GreaterFire_ElementalR.description>
+  <TM_GreaterFire_ElementalR.tools.0.label>ліва рука</TM_GreaterFire_ElementalR.tools.0.label>
+  <TM_GreaterFire_ElementalR.tools.1.label>права рука</TM_GreaterFire_ElementalR.tools.1.label>
+  <TM_GreaterFire_ElementalR.tools.2.label>ріг</TM_GreaterFire_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GreaterFire_ElementalR_Corpse.label>Великий Елементаль Вогню труп</TM_GreaterFire_ElementalR_Corpse.label>
+  <TM_GreaterFire_ElementalR_Corpse.description>Великий Елементаль Вогню труп</TM_GreaterFire_ElementalR_Corpse.description>
+
+
+  <!-- Water Elemental -->
+
+  <TM_LesserWater_ElementalR.label>Малий Елементаль Води</TM_LesserWater_ElementalR.label>
+  <TM_LesserWater_ElementalR.description>Це істоти з живої води. Вони втілюють дух безмежного терпіння і самотності. Вони з&apos;являються у вигляді вихрящуваної маси води, іноді здається, що вони приймають форму істоти або предмета зі шматочками уламків, іноді спливають на поверхню. Вони завжди знаходяться в русі і, здається, ковзають або розгойдуються при русі. Істота перед вами має меншу форму, але невблаганно перемагатиме навіть найсильнішого противника.</TM_LesserWater_ElementalR.description>
+  <TM_LesserWater_ElementalR.tools.0.label>ліва рука</TM_LesserWater_ElementalR.tools.0.label>
+  <TM_LesserWater_ElementalR.tools.1.label>права рука</TM_LesserWater_ElementalR.tools.1.label>
+  <TM_LesserWater_ElementalR.tools.2.label>ріг</TM_LesserWater_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserWater_ElementalR_Corpse.label>Малий Елементаль Води труп</TM_LesserWater_ElementalR_Corpse.label>
+  <TM_LesserWater_ElementalR_Corpse.description>Малий Елементаль Води труп</TM_LesserWater_ElementalR_Corpse.description>
+
+
+  <!-- Water Elemental -->
+
+  <TM_Water_ElementalR.label>Елементаль Води</TM_Water_ElementalR.label>
+  <TM_Water_ElementalR.description>Це істоти з живої води. Вони втілюють дух безмежного терпіння і самотності. Вони з&apos;являються у вигляді вихрящуваної маси води, іноді здається, що вони приймають форму істоти або предмета зі шматочками уламків, іноді спливають на поверхню. Вони завжди знаходяться в русі і, здається, ковзають або розгойдуються при русі. Елементаль перед вами здається майже безтурботним, але ви відчуваєте приховану небезпеку, що ховається прямо під поверхнею.</TM_Water_ElementalR.description>
+  <TM_Water_ElementalR.tools.0.label>ліва рука</TM_Water_ElementalR.tools.0.label>
+  <TM_Water_ElementalR.tools.1.label>права рука</TM_Water_ElementalR.tools.1.label>
+  <TM_Water_ElementalR.tools.2.label>ріг</TM_Water_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_Water_ElementalR_Corpse.label>Елементаль Води труп</TM_Water_ElementalR_Corpse.label>
+  <TM_Water_ElementalR_Corpse.description>Елементаль Води труп</TM_Water_ElementalR_Corpse.description>
+
+
+  <!-- Water Elemental -->
+
+  <TM_GreaterWater_ElementalR.label>Великий Елементаль Води</TM_GreaterWater_ElementalR.label>
+  <TM_GreaterWater_ElementalR.description>Це істоти з живої води. Вони втілюють дух безмежного терпіння і самотності. Вони з&apos;являються у вигляді вихрящуваної маси води, іноді здається, що вони приймають форму істоти або предмета зі шматочками уламків, іноді спливають на поверхню. Вони завжди знаходяться в русі і, здається, ковзають або розгойдуються при русі. Цей величезний елементаль перед вами має водовороти для очей і рухається, як Хвиля, що розбивається.</TM_GreaterWater_ElementalR.description>
+  <TM_GreaterWater_ElementalR.tools.0.label>ліва рука</TM_GreaterWater_ElementalR.tools.0.label>
+  <TM_GreaterWater_ElementalR.tools.1.label>права рука</TM_GreaterWater_ElementalR.tools.1.label>
+  <TM_GreaterWater_ElementalR.tools.2.label>ріг</TM_GreaterWater_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GreaterWater_ElementalR_Corpse.label>Великий Елементаль Води труп</TM_GreaterWater_ElementalR_Corpse.label>
+  <TM_GreaterWater_ElementalR_Corpse.description>Великий Елементаль Води труп</TM_GreaterWater_ElementalR_Corpse.description>
+
+
+  <!-- Wind Elemental -->
+
+  <TM_LesserWind_ElementalR.label>Малий Елементаль Вітра</TM_LesserWind_ElementalR.label>
+  <TM_LesserWind_ElementalR.description>Повітряні елементали - це істоти живого вітру, що володіють неприродною швидкістю і спритністю. Фізичний прояв елементаля повітря, мабуть, швидко змінюється; іноді це туманний дим, іноді-пронизливий вихор. Повітряні потоки, здається, утворюють ледь помітні обриси гуманоїдної форми. У той час як Малий в природі, цей елементаль вивільнить дощ злісних, жалюючих атак на своїх ворогів.</TM_LesserWind_ElementalR.description>
+  <TM_LesserWind_ElementalR.tools.0.label>ліва рука</TM_LesserWind_ElementalR.tools.0.label>
+  <TM_LesserWind_ElementalR.tools.1.label>права рука</TM_LesserWind_ElementalR.tools.1.label>
+  <TM_LesserWind_ElementalR.tools.2.label>ріг</TM_LesserWind_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserWind_ElementalR_Corpse.label>Малий Елементаль Вітру труп</TM_LesserWind_ElementalR_Corpse.label>
+  <TM_LesserWind_ElementalR_Corpse.description>Малий Елементаль Вітру труп</TM_LesserWind_ElementalR_Corpse.description>
+
+
+  <!-- Wind Elemental -->
+
+  <TM_Wind_ElementalR.label>Елементаль Вітру</TM_Wind_ElementalR.label>
+  <TM_Wind_ElementalR.description>Повітряні елементали - це істоти живого вітру, що володіють неприродною швидкістю і спритністю. Фізичний прояв елементаля повітря, мабуть, швидко змінюється; іноді це туманний дим, іноді-пронизливий вихор. Повітряні потоки, здається, утворюють ледь помітні обриси гуманоїдної форми. Ця істота має силу бурі і без вагань обрушить її на своїх ворогів.</TM_Wind_ElementalR.description>
+  <TM_Wind_ElementalR.tools.0.label>ліва рука</TM_Wind_ElementalR.tools.0.label>
+  <TM_Wind_ElementalR.tools.1.label>права рука</TM_Wind_ElementalR.tools.1.label>
+  <TM_Wind_ElementalR.tools.2.label>ріг</TM_Wind_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_Wind_ElementalR_Corpse.label>Елементаль Вітру труп</TM_Wind_ElementalR_Corpse.label>
+  <TM_Wind_ElementalR_Corpse.description>Елементаль Вітру труп</TM_Wind_ElementalR_Corpse.description>
+
+
+  <!-- Wind Elemental -->
+
+  <TM_GreaterWind_ElementalR.label>Великий Елементаль Вітру</TM_GreaterWind_ElementalR.label>
+  <TM_GreaterWind_ElementalR.description>Повітряні елементали - це істоти живого вітру, що володіють неприродною швидкістю і спритністю. Фізичний прояв елементаля повітря, мабуть, швидко змінюється; іноді це туманний дим, іноді-пронизливий вихор. Повітряні потоки, здається, утворюють ледь помітні обриси гуманоїдної форми. Немає ніяких сумнівів, що цей елементаль-вища істота, здатна вивільнити Лють Бурі.</TM_GreaterWind_ElementalR.description>
+  <TM_GreaterWind_ElementalR.tools.0.label>ліва рука</TM_GreaterWind_ElementalR.tools.0.label>
+  <TM_GreaterWind_ElementalR.tools.1.label>права рука</TM_GreaterWind_ElementalR.tools.1.label>
+  <TM_GreaterWind_ElementalR.tools.2.label>ріг</TM_GreaterWind_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GreaterWind_ElementalR_Corpse.label>Великий Елементаль Вітру труп</TM_GreaterWind_ElementalR_Corpse.label>
+  <TM_GreaterWind_ElementalR_Corpse.description>Великий Елементаль Вітру труп</TM_GreaterWind_ElementalR_Corpse.description>
+
+
+  <!-- Элементаль Земли -->
+  <!-- Элементаль Огня -->
+  <!-- Элементаль Воды -->
+  <!-- Элементаль Ветра -->
+
+</LanguageData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Portal jobs -->
+
+  <PortalDestination.reportString>definição de destino do portal.</PortalDestination.reportString>
+  <UsePortal.reportString>usar o portal.</UsePortal.reportString>
+  <DeactivatePortal.reportString>desativação do portal.</DeactivatePortal.reportString>
+  <ChargePortal.reportString>Carregar o portal.</ChargePortal.reportString>
+  <PortalStockpile.reportString>Envio de mercadorias através do portal.</PortalStockpile.reportString>
+
+
+</LanguageData>

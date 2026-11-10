@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Advanced Heal -->
+
+  <TM_AdvancedHeal.label>Cura Avançada</TM_AdvancedHeal.label>
+  <TM_AdvancedHeal.description>Chama a força santa para curar fortemente as feridas do alvo. A cura básica restabelece a saúde 14 até três feridas. Sela imediatamente as feridas sangrentas das partes ausentes do corpo.</TM_AdvancedHeal.description>
+
+
+  <!-- Purify -->
+
+  <TM_Purify.label>Purificação</TM_Purify.label>
+  <TM_Purify.description>Chama o poder sagrado para limpar as cicatrizes no corpo, na mente e na alma.</TM_Purify.description>
+
+
+  <!-- Healing Circle -->
+
+  <TM_HealingCircle.label>Círculo de cura</TM_HealingCircle.label>
+  <TM_HealingCircle.description>Cria um campo de luz que cura os peões amigos no interior. A capacidade básica cura 1 ferimento por 10 saúde por cada peão curado. Não é possível curar lesões de partes do corpo ausentes.
+
+Raio do círculo: 3
+Distância: 30</TM_HealingCircle.description>
+
+  <TM_HealingCircle_I.label>Círculo de cura (I)</TM_HealingCircle_I.label>
+  <TM_HealingCircle_I.description>Cria um campo de luz que cura os peões amigos no interior. A capacidade básica cura 1 ferimento por 10 saúde por cada peão curado. Não é possível curar lesões de partes do corpo ausentes.
+
+Raio do círculo: 4
+Distância: 35</TM_HealingCircle_I.description>
+
+  <TM_HealingCircle_II.label>Círculo de Cura (II)</TM_HealingCircle_II.label>
+  <TM_HealingCircle_II.description>Cria um campo de luz que cura os peões amigos no interior. A capacidade básica cura 1 ferimento por 10 saúde por cada peão curado. Não é possível curar lesões de partes do corpo ausentes.
+
+Raio de círculo: 5.5
+Distância: 40</TM_HealingCircle_II.description>
+
+  <TM_HealingCircle_III.label>Círculo de cura (III)</TM_HealingCircle_III.label>
+  <TM_HealingCircle_III.description>Cria um campo de luz que cura os peões amigos no interior. A capacidade básica cura 1 ferimento por 10 saúde por cada peão curado. Não é possível curar lesões de partes do corpo ausentes.
+
+Raio do círculo: 7
+Distância: 45</TM_HealingCircle_III.description>
+
+
+  <!-- Bestow Might -->
+
+  <TM_BestowMight.label>Dom do poder</TM_BestowMight.label>
+  <TM_BestowMight.description>Abençoa o único objetivo e aumenta muito a força física.
+
+Duração:		30-40s
+Recursos físicos:	+40%
+Necessidade física:	+50%
+Dor:		-40%</TM_BestowMight.description>
+
+  <TM_BestowMight_I.label>Dom do poder (I)</TM_BestowMight_I.label>
+  <TM_BestowMight_I.description>Abençoa o único objetivo e aumenta muito a força física.
+
+Duração:		50-60s
+Recursos físicos:	+60%
+Necessidade física:	+60%
+Dor:		-50%</TM_BestowMight_I.description>
+
+  <TM_BestowMight_II.label>Dom do poder (II)</TM_BestowMight_II.label>
+  <TM_BestowMight_II.description>Abençoa o único objetivo e aumenta muito a força física.
+
+Duração:		50-60s
+Recursos físicos:	+80%
+Necessidade física:	+70%
+Dor:		-60%</TM_BestowMight_II.description>
+
+  <TM_BestowMight_III.label>Dom do poder (III)</TM_BestowMight_III.label>
+  <TM_BestowMight_III.description>Abençoa o único objetivo e aumenta muito a força física.
+
+Duração:		100-115s
+Recursos físicos:	~+100%
+Necessidade física:	+100%
+Dor:		-70%</TM_BestowMight_III.description>
+
+
+  <!-- Resurrection -->
+
+  <TM_Resurrection.label>Ressuscitação</TM_Resurrection.label>
+  <TM_Resurrection.description>A ressurreição recupera a vida de um peão que morreu recentemente. Isso impõe um enorme stress ao padre e ao peão ressuscitado, e ambos ficarão fracos em alguns dias até que o seu poder se recupere. A ressurreição tem um preço; um peão ressuscitado perderá até 20% de suas habilidades e pode desenvolver condições de saúde danosas.</TM_Resurrection.description>
+
+
+</LanguageData>

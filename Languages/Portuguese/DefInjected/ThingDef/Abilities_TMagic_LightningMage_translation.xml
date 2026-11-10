@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- AMP start -->
+
+  <Buff_AMP.label>UMS</Buff_AMP.label>
+
+
+  <!-- Lightning Cloud -->
+
+  <Projectile_LightningCloud.label>Nuvem de tempestade</Projectile_LightningCloud.label>
+
+
+  <!-- Lightning Bolt -->
+
+  <Laser_LightningBolt.label>Impacto relâmpago</Laser_LightningBolt.label>
+
+
+  <!-- Lightning Storm -->
+
+  <Projectile_LightningStorm.label>Tempestade de tempestade</Projectile_LightningStorm.label>
+
+
+  <!-- Eye of the Storm -->
+
+  <FlyingObject_EyeOfTheStorm.label>objeto voador</FlyingObject_EyeOfTheStorm.label>
+  <Projectile_EyeOfTheStorm.label>Olho da tempestade</Projectile_EyeOfTheStorm.label>
+
+
+</LanguageData>

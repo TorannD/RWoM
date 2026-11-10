@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Ray of Hope start -->
+
+  <TM_RayofHope.label>Fogo Interno</TM_RayofHope.label>
+  <TM_RayofHope.description>Cria uma aura quente em torno de um feitiço que aumenta periodicamente o espírito de um aliado.
+
+Fogo interno: Um reforço secreto que acende o fogo interno, aumentando a resistência e a resistência do peão.
+
+Preparação: 80-90s
+Duração: 200-223s
+Necessidades de descanso e fome: -10%
+Cura natural: + 20%
+Resistência à interrupção mental: + 3%
+Resistência ao frio: + 6 gramados
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_RayofHope.description>
+
+  <TM_RayofHope_I.label>Fogo Interno</TM_RayofHope_I.label>
+  <TM_RayofHope_I.description>Cria uma aura quente em torno de um feitiço que aumenta periodicamente o espírito de um aliado.
+
+Fogo interno: Um reforço secreto que acende o fogo interno, aumentando a resistência e a resistência do peão.
+
+Preparação: 80-90s
+Duração: 200-223s
+Necessidades de descanso e fome: -14%
+Cura natural: + 25%
+Resistência à interrupção mental: + 4%
+Resistência ao frio: + 8 gramados
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_RayofHope_I.description>
+
+  <TM_RayofHope_II.label>Fogo Interno</TM_RayofHope_II.label>
+  <TM_RayofHope_II.description>Cria uma aura quente em torno de um feitiço que aumenta periodicamente o espírito de um aliado.
+
+Fogo interno: Um reforço secreto que acende o fogo interno, aumentando a resistência e a resistência do peão.
+
+Preparação: 80-90s
+Duração: 500-600s
+Necessidades de descanso e fome: -17%
+Cura natural: + 28%
+Resistência à interrupção mental: + 4%
+Resistência ao frio: + 9 gramados
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_RayofHope_II.description>
+
+  <TM_RayofHope_III.label>Fogo Interno</TM_RayofHope_III.label>
+  <TM_RayofHope_III.description>Cria uma aura quente em torno de um feitiço que aumenta periodicamente o espírito de um aliado.
+
+Fogo interno: Um reforço secreto que acende o fogo interno, aumentando a resistência e a resistência do peão.
+
+Preparação: 80-90s
+Duração: 500-600s
+Necessidades de descanso e fome: -20%
+Cura natural: + 30%
+Resistência à interrupção mental: + 5%
+Resistência ao frio: + 10 gramados
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_RayofHope_III.description>
+
+
+  <!-- Firebolt -->
+
+  <TM_Firebolt.label>Relâmpago de bola</TM_Firebolt.label>
+  <TM_Firebolt.description>Desencadeia uma carga de magma escaldante que causa danos e pode incendiar o alvo.</TM_Firebolt.description>
+
+
+  <!-- Fireball -->
+
+  <TM_Fireball.label>Bola de fogo</TM_Fireball.label>
+  <TM_Fireball.description>Atira uma bola de fogo maciça, em marcha lenta. Semeia o caos e cria uma explosão de fogo na área alvo.</TM_Fireball.description>
+
+
+  <!-- Fire Claw -->
+
+  <TM_Fireclaw.label>Garra de fogo</TM_Fireclaw.label>
+  <TM_Fireclaw.description>Criem correntes de fogo que se espalham pelos vossos inimigos, deixando para trás destruição e fogo.</TM_Fireclaw.description>
+
+
+  <!-- Firestorm -->
+
+  <TM_Firestorm.label>Tempestade de Fogo</TM_Firestorm.label>
+  <TM_Firestorm.description>Causa toda a fúria do fogo natural numa tempestade meteórica de morte e destruição.</TM_Firestorm.description>
+
+
+</LanguageData>

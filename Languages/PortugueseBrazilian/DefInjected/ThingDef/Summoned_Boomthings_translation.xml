@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- leap as a flying object -->
+
+  <FlyingObject_Leap.label>salto</FlyingObject_Leap.label>
+
+
+  <!-- Torann Magic poppi thingdef -->
+
+  <TM_Poppi.label>Poppy</TM_Poppi.label>
+  <TM_Poppi.description>Enganosamente inofensivos e incrivelmente simpáticos, estas criaturas não querem nada mais do que saltar para os vossos braços e «iluminar» a sua vida.</TM_Poppi.description>
+  <TM_Poppi.tools.0.label>apertado</TM_Poppi.tools.0.label>
+  <TM_Poppi_Leather.label>Pele Poppy</TM_Poppi_Leather.label>
+  <TM_Poppi_Leather.description>Pele Poppy</TM_Poppi_Leather.description>
+  <TM_Poppi_Leather.stuffProps.stuffAdjective>Pele Poppy</TM_Poppi_Leather.stuffProps.stuffAdjective>
+  <!-- Meat Amount: 0 -->
+  <TM_Poppi_Corpse.label>Poppy morto</TM_Poppi_Corpse.label>
+  <TM_Poppi_Corpse.description>Poppy morto</TM_Poppi_Corpse.description>
+
+
+</LanguageData>

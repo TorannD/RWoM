@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_ReadDeathKnightDread</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying the death knight's combat form.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_ReadDeathKnightSpite</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying the death knight's combat form.</reportString>
+  </JobDef>
+</Defs>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_BurningFuryHD.label>Furia ardiente</TM_BurningFuryHD.label>
+  
+  <TM_BurningFuryHD.description>Emite un escudo de energía pura que desvía los ataques e inflige daño a los enemigos cercanos.</TM_BurningFuryHD.description>
+  
+  <TM_BurningFuryHD.stages.I.label>I</TM_BurningFuryHD.stages.I.label>
+  
+  
+  <TM_HediffFightersFocus.label>Concentración del luchador</TM_HediffFightersFocus.label>
+  
+  <TM_HediffFightersFocus.description>Concentración mental para luchadores.</TM_HediffFightersFocus.description>
+  
+  <TM_HediffFightersFocus.stages.I.label>I</TM_HediffFightersFocus.stages.I.label>
+  
+  <TM_HediffFightersFocus.stages.II.label>II</TM_HediffFightersFocus.stages.II.label>
+  
+  
+  <TM_HediffGearRepair.label>Reparación de equipo</TM_HediffGearRepair.label>
+  
+  <TM_HediffGearRepair.description>Mantenimiento y cuidado del equipo.</TM_HediffGearRepair.description>
+  
+  <TM_HediffGearRepair.stages.I.label>I</TM_HediffGearRepair.stages.I.label>
+  
+  
+  <TM_HediffHeavyBlow.label>Golpe pesado</TM_HediffHeavyBlow.label>
+  
+  <TM_HediffHeavyBlow.description>Aumenta el daño infligido con cada golpe físico.</TM_HediffHeavyBlow.description>
+  
+  <TM_HediffHeavyBlow.stages.I.label>I</TM_HediffHeavyBlow.stages.I.label>
+  
+  <TM_HediffHeavyBlow.stages.II.label>II</TM_HediffHeavyBlow.stages.II.label>
+  
+  <TM_HediffHeavyBlow.stages.III.label>III</TM_HediffHeavyBlow.stages.III.label>
+  
+  <TM_HediffHeavyBlow.stages.IV.label>IV</TM_HediffHeavyBlow.stages.IV.label>
+  
+  
+  <TM_HediffInnerHealing.label>Curación interior</TM_HediffInnerHealing.label>
+  
+  <TM_HediffInnerHealing.description>Mejora la curación natural.</TM_HediffInnerHealing.description>
+  
+  <TM_HediffInnerHealing.stages.I.label>I</TM_HediffInnerHealing.stages.I.label>
+  
+  
+  <TM_HediffSprint.label>Carrera</TM_HediffSprint.label>
+  
+  <TM_HediffSprint.description>Muévete más rápido.</TM_HediffSprint.description>
+  
+  <TM_HediffSprint.stages.I.label>I</TM_HediffSprint.stages.I.label>
+  
+  <TM_HediffSprint.stages.II.label>II</TM_HediffSprint.stages.II.label>
+  
+  <TM_HediffSprint.stages.III.label>III</TM_HediffSprint.stages.III.label>
+  
+  <TM_HediffSprint.stages.IV.label>IV</TM_HediffSprint.stages.IV.label>
+  
+  
+  <TM_HediffStrongBack.label>Espalda fuerte</TM_HediffStrongBack.label>
+  
+  <TM_HediffStrongBack.description>Aumenta la capacidad de carga en 40 y la capacidad de inventario en un 50 %.</TM_HediffStrongBack.description>
+  
+  <TM_HediffStrongBack.stages.I.label>I</TM_HediffStrongBack.stages.I.label>
+  
+  <TM_HediffStrongBack.stages.II.label>II</TM_HediffStrongBack.stages.II.label>
+  
+  <TM_HediffStrongBack.stages.III.label>III</TM_HediffStrongBack.stages.III.label>
+  
+  
+  <TM_HediffThickSkin.label>Piel gruesa</TM_HediffThickSkin.label>
+  
+  <TM_HediffThickSkin.description>Endurece la piel, haciéndola más resistente.</TM_HediffThickSkin.description>
+  
+  <TM_HediffThickSkin.stages.I.label>I</TM_HediffThickSkin.stages.I.label>
+  
+  <TM_HediffThickSkin.stages.II.label>II</TM_HediffThickSkin.stages.II.label>
+  
+  <TM_HediffThickSkin.stages.III.label>III</TM_HediffThickSkin.stages.III.label>
+  
+  <TM_HediffThickSkin.stages.IV.label>IV</TM_HediffThickSkin.stages.IV.label>
+  
+</LanguageData>

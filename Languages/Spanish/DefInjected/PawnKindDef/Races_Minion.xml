@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_GreaterMinion.label>minion mayor</TM_GreaterMinion.label>
+  
+  <TM_GreaterMinion.lifeStages.greater_minion.label>minion mayor</TM_GreaterMinion.lifeStages.greater_minion.label>
+  
+  <TM_GreaterMinion.lifeStages.greater_minion.labelPlural>minions mayores</TM_GreaterMinion.lifeStages.greater_minion.labelPlural>
+  
+  
+  <TM_Minion.label>minion</TM_Minion.label>
+  
+  <TM_Minion.lifeStages.minion.label>minion</TM_Minion.lifeStages.minion.label>
+  
+  <TM_Minion.lifeStages.minion.labelPlural>minions</TM_Minion.lifeStages.minion.labelPlural>
+  
+</LanguageData>

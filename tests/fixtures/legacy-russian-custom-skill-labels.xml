@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<legacyRussianSkillLabels>
+  <skill canonical="TM_Taunt_pwr" path="TM_Taunt.customPower.skills.0.label">Соперник</skill>
+  <skill canonical="TM_Taunt_eff" path="TM_Taunt.customPower.skills.1.label">Книга оскорблений</skill>
+  <skill canonical="TM_Taunt_ver" path="TM_Taunt.customPower.skills.2.label">Ревущий рык</skill>
+  <skill canonical="TM_Explosion_pwr" path="TM_Explosion.customPower.skills.0.label">Разрушение</skill>
+  <skill canonical="TM_Explosion_eff" path="TM_Explosion.customPower.skills.1.label">Песнопение</skill>
+  <skill canonical="TM_Explosion_ver" path="TM_Explosion.customPower.skills.2.label">Улучшение зрения</skill>
+  <skill canonical="TM_MedicalSupply_ver" path="TM_MedicalSupply.customPower.skills.0.label">Вместимость</skill>
+  <skill canonical="TM_Medigel_eff" path="TM_Medigel.customPower.skills.0.label">Боевой медик</skill>
+  <skill canonical="TM_CombatDrugs_pwr" path="TM_CombatDrugs.customPower.skills.0.label">Эффективность</skill>
+  <skill canonical="TM_CombatDrugs_ver" path="TM_CombatDrugs.customPower.skills.1.label">Стабилизация</skill>
+  <skill canonical="TM_Shield_eff" path="TM_ShieldOther.customPower.skills.0.label">Эффективность щита</skill>
+  <skill canonical="TM_Discord_eff" path="TM_Discord.customPower.skills.0.label">Ментальная перегрузка</skill>
+  <skill canonical="TM_Empathy_pwr" path="TM_Empathy.customPower.skills.0.label">Позитивное мышление</skill>
+  <skill canonical="TM_Empathy_ver" path="TM_Empathy.customPower.skills.1.label">Открытая книга</skill>
+  <skill canonical="TM_Empathy_eff" path="TM_Empathy.customPower.skills.2.label">Групповая терапия</skill>
+  <skill canonical="TM_MindKiller_pwr" path="TM_MindKiller.customPower.skills.0.label">Удушье</skill>
+  <skill canonical="TM_MindKiller_ver" path="TM_MindKiller.customPower.skills.1.label">Борьба со штормом</skill>
+  <skill canonical="TM_MindKiller_eff" path="TM_MindKiller.customPower.skills.2.label">Стальной Взгляд</skill>
+  <skill canonical="TM_SuppressiveAura_pwr" path="TM_SuppressiveAura.customPower.skills.0.label">Затянувшееся Подавление</skill>
+  <skill canonical="TM_SuppressiveAura_ver" path="TM_SuppressiveAura.customPower.skills.1.label">Блаженная Ложь</skill>
+  <skill canonical="TM_SuppressiveAura_eff" path="TM_SuppressiveAura.customPower.skills.2.label">Огромная Аура</skill>
+  <skill canonical="TM_HarvestPassion_pwr" path="TM_HarvestPassion.customPower.skills.0.label">Страстный охотник</skill>
+  <skill canonical="TM_HarvestPassion_ver" path="TM_HarvestPassion.customPower.skills.1.label">Отчаяние</skill>
+  <skill canonical="TM_HarvestPassion_eff" path="TM_HarvestPassion.customPower.skills.2.label">Хулиган</skill>
+  <skill canonical="TM_Symbiosis_pwr" path="TM_Symbiosis.customPower.skills.0.label">Осведомленность</skill>
+  <skill canonical="TM_Symbiosis_eff" path="TM_Symbiosis.customPower.skills.1.label">Коммуна</skill>
+  <skill canonical="TM_Symbiosis_ver" path="TM_Symbiosis.customPower.skills.2.label">Ракушка</skill>
+  <skill canonical="TM_FireSuppressionFlask_eff" path="TM_FireSuppressionFlask.customPower.skills.0.label">Эффективность ингредиентов</skill>
+  <skill canonical="TM_SpiritPossession_pwr" path="TM_SpiritPossession.customPower.skills.0.label">Сила духа</skill>
+  <skill canonical="TM_SpiritPossession_eff" path="TM_SpiritPossession.customPower.skills.1.label">Контроль духа</skill>
+  <skill canonical="TM_SpiritPossession_ver" path="TM_SpiritPossession.customPower.skills.2.label">Управление духом</skill>
+  <skill canonical="TM_SpiritDrain_pwr" path="TM_SpiritDrain.customPower.skills.0.label">Устранение повреждений</skill>
+  <skill canonical="TM_SpiritDrain_eff" path="TM_SpiritDrain.customPower.skills.1.label">Чистая энергия</skill>
+  <skill canonical="TM_SpiritDrain_ver" path="TM_SpiritDrain.customPower.skills.2.label">Быстрое поглощение</skill>
+  <skill canonical="TM_DistortSpirit_pwr" path="TM_DistortSpirit.customPower.skills.0.label">Интенсивность</skill>
+  <skill canonical="TM_DistortSpirit_eff" path="TM_DistortSpirit.customPower.skills.1.label">Контроль искажения</skill>
+  <skill canonical="TM_DistortSpirit_ver" path="TM_DistortSpirit.customPower.skills.2.label">Разрывы духа</skill>
+  <skill canonical="TM_SummonSpiritAnimalMass_pwr" path="TM_SummonSpiritAnimalMass.customPower.skills.0.label">Проявление</skill>
+  <skill canonical="TM_SummonSpiritAnimalMass_eff" path="TM_SummonSpiritAnimalMass.customPower.skills.1.label">Сородичи</skill>
+  <skill canonical="TM_SummonSpiritAnimalMass_ver" path="TM_SummonSpiritAnimalMass.customPower.skills.2.label">Гармония</skill>
+  <skill canonical="TM_SpiritRally_pwr" path="TM_SpiritRally.customPower.skills.0.label">Армия духов</skill>
+  <skill canonical="TM_SpiritRally_eff" path="TM_SpiritRally.customPower.skills.1.label">Общее восстановление</skill>
+  <skill canonical="TM_SpiritRally_ver" path="TM_SpiritRally.customPower.skills.2.label">Влияние</skill>
+  <skill canonical="TM_SpiritStorm_pwr" path="TM_SpiritStorm.customPower.skills.0.label">Бешенство духа</skill>
+  <skill canonical="TM_SpiritStorm_eff" path="TM_SpiritStorm.customPower.skills.1.label">Сочувствие</skill>
+  <skill canonical="TM_SpiritStorm_ver" path="TM_SpiritStorm.customPower.skills.2.label">Море печали</skill>
+  <skill canonical="TM_ConsumeCorpse_eff" path="TM_ConsumeCorpse_Mass.customPower.skills.0.label">Жадное Потребление</skill>
+  <skill canonical="TM_ConsumeCorpse_ver" path="TM_ConsumeCorpse_Mass.customPower.skills.1.label">Целебное Потребление</skill>
+</legacyRussianSkillLabels>

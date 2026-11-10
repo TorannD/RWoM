@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ArcaneConduitTD.degreeDatas.0.label>Guia Mágico</TM_ArcaneConduitTD.degreeDatas.0.label>
+  <TM_ArcaneConduitTD.degreeDatas.0.description>[PAWN_nameDef] anormalmente suscetível a marés e marés de maná, [PAWN _ pronoon] receberá manu 40% mais rápido do que o normal, mas [PAWN _ possessive] a capacidade máxima do maná será reduzida em 20.</TM_ArcaneConduitTD.degreeDatas.0.description>
+
+  <TM_ManaWellTD.degreeDatas.0.label>Poço de Mana</TM_ManaWellTD.degreeDatas.0.label>
+  <TM_ManaWellTD.degreeDatas.0.description>[PAWN_nameDef] apresenta maior resistência às marés e moedas de maná, permitindo que [PAWN _ objectiva] mantenha 40 manes adicionais, mas reduz a regeneração do maná [PAWN _ possessive] em 20%.</TM_ManaWellTD.degreeDatas.0.description>
+
+  <TM_BoundlessTD.degreeDatas.0.label>Ilimitado</TM_BoundlessTD.degreeDatas.0.label>
+  <TM_BoundlessTD.degreeDatas.0.description>[PAWN_nameDef] tem sucesso nas artes marciais e é capaz de realizar manobras de combate 40% mais frequentes, mas o talento [PAWN _ possessive] criou atitudes arrogantes que reduzem o aumento de experiência [PAWN _ possessive] em 25% e causam aversão a outros combatentes [PAWN _ objectiva].</TM_BoundlessTD.degreeDatas.0.description>
+
+  <TM_FaeBloodTD.degreeDatas.0.label>Sangue das Fações</TM_FaeBloodTD.degreeDatas.0.label>
+  <TM_FaeBloodTD.degreeDatas.0.description>[PAWN_nameDef] é descendente do povo Fae e tem uma ligação natural com o segredo. [PAWN _ possessive] a resistência aos times foi reduzida em 40%, mas a regeneração do maná e o maná máximo foram aumentados em 20%. Os custos dos feitiços diminuem 10%.</TM_FaeBloodTD.degreeDatas.0.description>
+
+  <TM_GiantsBloodTD.degreeDatas.0.label>Sangue de gigantes</TM_GiantsBloodTD.degreeDatas.0.label>
+  <TM_GiantsBloodTD.degreeDatas.0.description>[PAWN_nameDef] é um descendente de gigantes, dotado de uma enorme força e resistência, embora lentamente se recuperando. [PAWN _ possessive] a resistência máxima aumenta 80%, mas a regeneração da resistência diminui 40%. Qualquer ataque com armas de combate próximo ou sem armas causa danos adicionais de 25%.</TM_GiantsBloodTD.degreeDatas.0.description>
+
+  <TM_EnlightenedTD.degreeDatas.0.label>Iluminado</TM_EnlightenedTD.degreeDatas.0.label>
+  <TM_EnlightenedTD.degreeDatas.0.description>[PAWN_nameDef] abençoado pela magia, é capaz de usar o seu poder sem sofrer todos os efeitos colaterais. A sensibilidade extrassolar aumenta 50%, e qualquer capacidade mágica utilizada só causa metade da fraqueza mágica convencional.</TM_EnlightenedTD.degreeDatas.0.description>
+
+  <TM_CursedTD.degreeDatas.0.label>Maldito</TM_CursedTD.degreeDatas.0.label>
+  <TM_CursedTD.degreeDatas.0.description>[O PAWN_nameDef] é amaldiçoado pela magia - agoniza-se com a constante e acesa maré de força através da criatura [PAWN _ possessive] e só pode ser aliviado ao desperdiçar energia secreta. [O PAWN_nameDef] vai lentamente acumular fraqueza secreta até que [PAWN _ pronoon] se torne catatônico, podendo tornar-se catatônico a qualquer momento enquanto estiver nesta porta. O uso de poderes mágicos, que geralmente levam à fraqueza secreta, em vez disso reduziria proporcionalmente a fraqueza secreta e os efeitos da maldição.</TM_CursedTD.degreeDatas.0.description>
+
+  <TM_OKWithDeath.degreeDatas.0.label>Não afetado pela morte</TM_OKWithDeath.degreeDatas.0.label>
+  <TM_OKWithDeath.degreeDatas.0.description>PAWN_nameDef reconheceu que a morte é outra parte da vida, e não se incomoda quando descobre um aliado morto ou vê um dos mortos.</TM_OKWithDeath.degreeDatas.0.description>
+
+  <Undead.degreeDatas.0.label>Não morar</Undead.degreeDatas.0.label>
+  <Undead.degreeDatas.0.description>[PAWN_nameDef] foi reanimado como se estivesse sem vida.</Undead.degreeDatas.0.description>
+
+  <TM_Gifted.degreeDatas.0.label>magicamente dotado</TM_Gifted.degreeDatas.0.label>
+  <TM_Gifted.degreeDatas.0.description>[PAWN_nameDef] tem um dom mágico. [PAWN _ pronoon] pode usar este dom para se tornar um mágico, estudando segredos misteriosos em escrituras secretas.</TM_Gifted.degreeDatas.0.description>
+
+  <TM_Empath.degreeDatas.0.label>Empata</TM_Empath.degreeDatas.0.label>
+  <TM_Empath.degreeDatas.0.description>[PAWN_nameDef] é uma empatia capaz de sentir e manipular as emoções dos outros [PAWN _ objectiva]. As habilidades [PAWN _ possessive] estão relacionadas com a magia, mas afetaram [PAWN _ objectiva] em níveis mais congênitos. No entanto, uma vez treinado, [PAWN_nameDef] ainda pode se tornar um hábil usuário de magia. Bem ou mal, os empatas têm uma presença muito forte e podem facilmente reconhecer a presença de outros; a eficácia de suas capacidades está muito ligada à sua capacidade de superar a proteção dos outros.</TM_Empath.degreeDatas.0.description>
+
+  <TM_Wanderer.degreeDatas.0.label>Viajante</TM_Wanderer.degreeDatas.0.label>
+  <TM_Wanderer.degreeDatas.0.description>[PAWN_nameDef] é um viajante; Um exorcista, uma turma de mágicos mestiços, muitas vezes chamado de mágico vivo. [PAWN _ postessive] A personalidade despreocupada manteve [PAWN _ possessive] fora do desenvolvimento das capacidades de classe. Em vez disso, [PAWN _ pronoon] aprendeu a aperfeiçoar uma grande quantidade de capacidades úteis que permitem [PAWN _ objectiva] se adaptar a qualquer situação.
+
+Os viajantes preferem o caminho aberto e recebem a carga de animação de estar na caravana. As caravanas com um viajante vão ignorar as multas por circular em qualquer lugar. No entanto, a sua sede de viajantes irá levá-los a sofrer com a colônia.</TM_Wanderer.degreeDatas.0.description>
+
+  <InnerFire.degreeDatas.0.label>Mago do Fogo</InnerFire.degreeDatas.0.label>
+  <InnerFire.degreeDatas.0.description>[PAWN_nameDef] configurado para o elemento de fogo.</InnerFire.degreeDatas.0.description>
+
+  <HeartOfFrost.degreeDatas.0.label>Mago do gelo</HeartOfFrost.degreeDatas.0.label>
+  <HeartOfFrost.degreeDatas.0.description>[PAWN_nameDef] está em harmonia com os elementos da água.</HeartOfFrost.degreeDatas.0.description>
+
+  <StormBorn.degreeDatas.0.label>Mago relâmpago</StormBorn.degreeDatas.0.label>
+  <StormBorn.degreeDatas.0.description>[PAWN_nameDef] configurado para elementos relâmpagos.</StormBorn.degreeDatas.0.description>
+
+  <Arcanist.degreeDatas.0.label>Mágico misterioso</Arcanist.degreeDatas.0.label>
+  <Arcanist.degreeDatas.0.description>[PAWN_nameDef] está configurado para forças secretas, interagindo diretamente com a força secreta não tratada para mover a matéria e a energia que deseja.</Arcanist.degreeDatas.0.description>
+
+  <Druid.degreeDatas.0.label>Druida</Druid.degreeDatas.0.label>
+  <Druid.degreeDatas.0.description>[PAWN_nameDef] está em harmonia com as forças da natureza.</Druid.degreeDatas.0.description>
+
+  <Paladin.degreeDatas.0.label>Paladino</Paladin.degreeDatas.0.label>
+  <Paladin.degreeDatas.0.description>[PAWN_nameDef] foi dotado de poder divino e jurou manter a justiça onde estivesse [PAWN _ pronoon].</Paladin.degreeDatas.0.description>
+
+  <Summoner.degreeDatas.0.label>Recrutador</Summoner.degreeDatas.0.label>
+  <Summoner.degreeDatas.0.description>[PAWN_nameDef] é capaz de chamar seres e materializar objetos de outros mundos.</Summoner.degreeDatas.0.description>
+
+  <Necromancer.degreeDatas.0.label>Necromante</Necromancer.degreeDatas.0.label>
+  <Necromancer.degreeDatas.0.description>[PAWN_nameDef] está em harmonia com as forças da morte.</Necromancer.degreeDatas.0.description>
+
+  <Lich.degreeDatas.0.label>Lic</Lich.degreeDatas.0.label>
+  <Lich.degreeDatas.0.description>[PAWN_nameDef] transformou-se em uma larva, abandonando a vida em troca do poder e da existência imortal, decidindo usar a vida para fazer o trabalho negro.</Lich.degreeDatas.0.description>
+
+  <Priest.degreeDatas.0.label>Padre</Priest.degreeDatas.0.label>
+  <Priest.degreeDatas.0.description>[PAWN_nameDef] está determinado ao poder da vida e da cura, e fez um voto para não ferir os outros.</Priest.degreeDatas.0.description>
+
+  <TM_Bard.degreeDatas.0.label>Conferancier</TM_Bard.degreeDatas.0.label>
+  <TM_Bard.degreeDatas.0.description>[PAWN_nameDef] é um artista nato, capaz de levantar o humor e animar todos [PAWN _ objectiva].</TM_Bard.degreeDatas.0.description>
+  <TM_Bard.degreeDatas.1.label>Ator de teatro</TM_Bard.degreeDatas.1.label>
+  <TM_Bard.degreeDatas.1.description>[PAWN_nameDef] - executor; ao desenvolver seu talento natural, [PAWN _ pronoon] começou a desempenhar um papel consciente para melhorar o humor dos outros colonos.</TM_Bard.degreeDatas.1.description>
+  <TM_Bard.degreeDatas.2.label>Menestrel</TM_Bard.degreeDatas.2.label>
+  <TM_Bard.degreeDatas.2.description>Todos gostam de estar perto de [PAWN_nameDef]. [PAWN _ pronoon] tem talento, humor e habilidade em muitos tipos de entretenimento e é capaz de estabelecer um vínculo pessoal com quase todos.</TM_Bard.degreeDatas.2.description>
+  <TM_Bard.degreeDatas.3.label>Bard</TM_Bard.degreeDatas.3.label>
+  <TM_Bard.degreeDatas.3.description>[PAWN_nameDef] Mestre conferanceiro. Mente aguda, mãos ágeis e humor seco são as armas [PAWN _ possessive], e [PAWN _ pronoon] é o mestre de todas as armas [PAWN _ possessive].</TM_Bard.degreeDatas.3.description>
+
+  <Succubus.degreeDatas.0.label>Sukkub</Succubus.degreeDatas.0.label>
+  <Succubus.degreeDatas.0.description>[PAWN_nameDef] tem uma estranha cepa genética que lhe dá características físicas elevadas. Ela também é extremamente atraente com a estrutura exótica do rosto que captura o olho. Sukub tem mais probabilidade de usar os seus benefícios físicos e forçar outros a fazer o trabalho dela. [PAWN _ possessive] o charme da sucuba tem seus defeitos e pode fazer com que alguns tenham ciúmes e até desprezo [PAWN _ objectiva].</Succubus.degreeDatas.0.description>
+
+  <Warlock.degreeDatas.0.label>Preto</Warlock.degreeDatas.0.label>
+  <Warlock.degreeDatas.0.description>[PAWN_nameDef] é um bruxo capaz de exercer forças físicas e demoníacas usando o seu acesso único ao poder secreto. O bruxo compartilha a mesma mistura genética que a sucuba, mas como homem, [PAWN _ pronoon] está sujeito a melhorias mentais, que incluem clareza e telecinese. O feiticeiro pode às vezes influenciar o resultado da interação social usando suas habilidades mentais, independentemente de como essa interação realmente aconteceu.</Warlock.degreeDatas.0.description>
+
+  <Geomancer.degreeDatas.0.label>Geomante</Geomancer.degreeDatas.0.label>
+  <Geomancer.degreeDatas.0.description>[PAWN_nameDef] está em harmonia com a Terra e a ordem natural, tirando a força da esfera física e entrelaçando-a com a energia secreta. [PAWN _ pronoon] é capaz de reforçar os elementos físicos e dobrá-los como necessário [PAWN _ pronoon].</Geomancer.degreeDatas.0.description>
+
+  <Technomancer.degreeDatas.0.label>Tecnomante</Technomancer.degreeDatas.0.label>
+  <Technomancer.degreeDatas.0.description>[PAWN_nameDef] aprendeu a ver a magia e a ciência como duas partes do mesmo poder e é capaz de usar a força secreta para interagir diretamente com os componentes da tecnologia. [PAWN _ pronoon] é capaz de manipular objetos com mecânica avançada, eletrônica ou calculá-los para alcançar objetivos [PAWN _ possessive], mas tem dificuldades em interagir com sistemas biológicos.</Technomancer.degreeDatas.0.description>
+
+  <BloodMage.degreeDatas.0.label>Mago do sangue</BloodMage.degreeDatas.0.label>
+  <BloodMage.degreeDatas.0.description>[PAWN_nameDef] É um mágico do sangue, dedicou-se à arte obscura de manipular o sangue vital dos seres vivos como um meio de aumentar [PAWN _ possessive] o poder .\n\n Como um mágico do sangue, [PAWN_nameDef] aprendeu a controlar a vitalidade dentro de si e a comandar por [PAWN _ postessive] vontade. [PAWN _ possessive] se relacionar com a vida facilita a comunicação com outros seres vivos, mas não valoriza os esforços sem resultados imediatos.</BloodMage.degreeDatas.0.description>
+
+  <Enchanter.degreeDatas.0.label>Feiticeiro</Enchanter.degreeDatas.0.label>
+  <Enchanter.degreeDatas.0.description>[PAWN_nameDef] é um feiticeiro ajustado à composição da matéria e dos materiais. [PAWN _ pronoon] pode manipular a matéria de acordo com a vontade [PAWN _ postessive], muitas vezes de forma não natural, e [PAWN _ possessive] as forças de transmissão podem ser constantes quando há esforços suficientes.</Enchanter.degreeDatas.0.description>
+
+  <Chronomancer.degreeDatas.0.label>Cronomante</Chronomancer.degreeDatas.0.label>
+  <Chronomancer.degreeDatas.0.description>[PAWN_nameDef] é um cronomante. Através de uma visão secreta, [PAWN _ pronoon] é capaz de ver a realidade como ela já foi e como ela poderia ser, e pode manipular objetos entre essas realidades.</Chronomancer.degreeDatas.0.description>
+
+  <ChaosMage.degreeDatas.0.label>Mago do Caos</ChaosMage.degreeDatas.0.label>
+  <ChaosMage.degreeDatas.0.description>[PAWN_nameDef] rejeita todos os caminhos mágicos pré-definidos e recusa atribuir a realidade objetiva a [PAWN _ possessive] à busca de força; Não há verdades, toda a magia é permitida. Esta tradição permitiu [PAWN_nameDef] estudar qualquer tipo de magia, embora [PAWN _ pronoon] nunca será dominado por nenhum deles.</ChaosMage.degreeDatas.0.description>
+
+
+  <!-- Custom Class -->
+
+  <TM_TheShadow.degreeDatas.0.label>Sombra</TM_TheShadow.degreeDatas.0.label>
+  <TM_TheShadow.degreeDatas.0.description>[PAWN_nameDef] é um demónio mestiço com tendência à magia das sombras. [PAWN _ pronoon] desenvolveu [PAWN _ possessive] talentos únicos graças ao treinamento físico e de combate, tornando [PAWN _ objectiva] um assassino perfeito.</TM_TheShadow.degreeDatas.0.description>
+
+  <TM_Brightmage.degreeDatas.0.label>Mago da Luz</TM_Brightmage.degreeDatas.0.label>
+  <TM_Brightmage.degreeDatas.0.description>[PAWN_nameDef] é um mestre da luz capaz de usar as forças da luz para purificar o mal. [PAWN _ pronoon] se encaixa em qualquer tarefa com um empenho incomparável que normalmente coloca [PAWN _ objectiva] em primeiro plano. Ser o Mago Claro leva à dependência do sol e da luz, o que fez com que [o] desenvolvesse um ódio forte contra as sombras e as imitações obscuras.</TM_Brightmage.degreeDatas.0.description>
+
+  <TM_Shaman.degreeDatas.0.label>Xamã</TM_Shaman.degreeDatas.0.label>
+  <TM_Shaman.degreeDatas.0.description>Os xamãs têm uma abordagem mais harmoniosa das forças secretas do que a maioria dos mágicos, escolhendo um caminho que trabalha com marés e marés de magia para compensar ou reforçar a ordem natural. [PAWN_nameDef] é familiar ao reino dos espíritos e está mais ajustado à natureza e aos seus elementos.</TM_Shaman.degreeDatas.0.description>
+
+  <TM_Golemancer.degreeDatas.0.label>Golemant</TM_Golemancer.degreeDatas.0.label>
+  <TM_Golemancer.degreeDatas.0.description>Os golementes preferem usar a sua magia com runas poderosas e símbolos capazes de transferir o alvo para o objeto. [PAWN_nameDef] não é uma exceção; [O PAWN _ pronoon] pode criar runas que melhoram a mecânica básica, alteram os produtos químicos na matéria biológica e revivem o material em seres abomináveis vivos. Os holemantes são mais eficientes quando guiam sua magia através de símbolos, e é mais difícil converter diretamente manu em energia, mas também possuem mais resistência mágica. A maioria dos holemantes geralmente encontram as pedras mais interessantes do que as pessoas e pouco se preocupam com a limpeza.</TM_Golemancer.degreeDatas.0.description>
+
+  <TM_Possessed.degreeDatas.0.label>obcecado</TM_Possessed.degreeDatas.0.label>
+  <TM_Possessed.degreeDatas.0.description>O corpo foi dominado pelo espírito de outro peão. A posse em um peão vivo cria um conflito interno, porque as funções corporais são divididas entre duas almas. Este conflito pode ser reduzido se as identidades coincidirem, mas se agravar ainda mais se elas forem opostas. O homem obcecado por um peão morto não sofrerá conflitos mentais, mas irá lentamente esgotar a energia do espírito obsessivo. O espírito pode ser carregado com meditação ou absorção.</TM_Possessed.degreeDatas.0.description>
+
+  <TM_Possessor.degreeDatas.0.label>Espírito</TM_Possessor.degreeDatas.0.label>
+  <TM_Possessor.degreeDatas.0.description>O corpo foi dominado pelo espírito de outro peão. A posse em um peão vivo cria um conflito interno, porque as funções corporais são divididas entre duas almas. Este conflito pode ser reduzido se as identidades coincidirem, mas se agravar ainda mais se elas forem opostas. O homem obcecado por um peão morto não sofrerá conflitos mentais, mas irá lentamente esgotar a energia do espírito obsessivo. O espírito pode ser carregado através da meditação ou absorção.</TM_Possessor.degreeDatas.0.description>
+
+
+  <!-- Might Classes -->
+
+  <PhysicalProdigy.degreeDatas.0.label>adepto físico</PhysicalProdigy.degreeDatas.0.label>
+  <PhysicalProdigy.degreeDatas.0.description>[PAWN_nameDef] é um adepto físico e tem potencial para estudar formas especiais de combate.</PhysicalProdigy.degreeDatas.0.description>
+
+  <TM_Wayfarer.degreeDatas.0.label>Viajante</TM_Wayfarer.degreeDatas.0.label>
+  <TM_Wayfarer.degreeDatas.0.description>[PAWN_nameDef] é um viajante; Um lutador autodisciplinado que tem sucesso em truques e lutas sujas. [PAWN _ postessive] A personalidade despreocupada manteve [PAWN _ objectiva] fora do desenvolvimento das capacidades de classe. Em vez disso, [PAWN _ pronoon] aprendeu a melhorar a grande quantidade de capacidades úteis que permitem [PAWN _ objectiva] se adaptar a qualquer situação.
+
+Os viajantes preferem uma estrada aberta e recebem uma carga de animação de estar na caravana, e qualquer caravana com um viajante viaja 25% mais rápido. No entanto, os viajantes ficarão tristes se ficarem muito tempo na colónia.</TM_Wayfarer.degreeDatas.0.description>
+
+  <TM_Apothecary.degreeDatas.0.label>Farmacêutico</TM_Apothecary.degreeDatas.0.label>
+  <TM_Apothecary.degreeDatas.0.description>[PAWN_nameDef] é um farmacêutico treinado para preparar medicamentos, embalsames, insistências e medicamentos. A profissão [PAWN _ possessive] demonstra disciplina e dedicação rigorosas, e [PAWN _ pronoon] aprendeu a aplicar a disciplina [PAWN _ possessive] a habilidades físicas mais gerais. Com a formação, [Pawn _ proonoon] pode tornar-se capaz em muitas técnicas de combate para aumentar a habilidade [PAWN _ possessive] nas ervas.</TM_Apothecary.degreeDatas.0.description>
+
+  <Gladiator.degreeDatas.0.label>Gladiador</Gladiator.degreeDatas.0.label>
+  <Gladiator.degreeDatas.0.description>[PAWN_nameDef] aprendeu a treinar o estilo de combate dos gladiadores.</Gladiator.degreeDatas.0.description>
+
+  <Ranger.degreeDatas.0.label>Guarda florestal</Ranger.degreeDatas.0.label>
+  <Ranger.degreeDatas.0.description>[PAWN_nameDef] - guarda florestal treinado; preferindo o silêncio e a mortalidade da cebola e o artesanato e astúcia do campo, [PAWN _ pronoon] está pronto para proteger [PAWN _ possessive] a terra dos invasores.</Ranger.degreeDatas.0.description>
+  <Ranger.degreeDatas.1.label>Caçador</Ranger.degreeDatas.1.label>
+  <Ranger.degreeDatas.1.description>[PAWN_nameDef] é um caçador; [PAWN _ pronoon] usa o ofício de campo, a astúcia e a habilidade de lidar com a cebola para proteger [PAWN _ possessive] a terra dos invasores.</Ranger.degreeDatas.1.description>
+  <Ranger.degreeDatas.2.label>Batedor</Ranger.degreeDatas.2.label>
+  <Ranger.degreeDatas.2.description>[PAWN_nameDef] é um explorador; Ele está confortável numa zona selvagem, e pode ser os olhos e os ouvidos da colónia. [PAWN _ pronoon] usa a experiência no terreno, a astúcia e a cebola para proteger [PAWN _ possessive] a terra dos invasores.</Ranger.degreeDatas.2.description>
+  <Ranger.degreeDatas.3.label>Ranger</Ranger.degreeDatas.3.label>
+  <Ranger.degreeDatas.3.description>[PAWN_nameDef] é um ranger, dono de terras selvagens. [PAWN _ pronoon] é o mestre [PAWN _ possessive] do ofício e protetor [PAWN _ possessive] da terra.</Ranger.degreeDatas.3.description>
+
+  <TM_Sniper.degreeDatas.0.label>Atirador atirador</TM_Sniper.degreeDatas.0.label>
+  <TM_Sniper.degreeDatas.0.description>[PAWN_nameDef] foi treinado para se tornar um atirador, experiente em lutas exatamente de longa distância com armas de pequeno porte. A preparação para ser um atirador fez com que alguns colonos se sentissem desconfortáveis ao lado dele, mas não é isso que o atirador está a tomar conta.</TM_Sniper.degreeDatas.0.description>
+  <TM_Sniper.degreeDatas.1.label>Atirador</TM_Sniper.degreeDatas.1.label>
+  <TM_Sniper.degreeDatas.1.description>[PAWN_nameDef] foi treinado para se tornar um atirador, experiente em economia e precisão de combate de longa distância com armas de pequeno porte. Tornar-se um atirador fez com que [PAWN _ objectiva] se tornasse distante de outros colonatos e algo intransponível, mas não era isso que o atirador estava cuidando.</TM_Sniper.degreeDatas.1.description>
+  <TM_Sniper.degreeDatas.2.label>Atirador magistral</TM_Sniper.degreeDatas.2.label>
+  <TM_Sniper.degreeDatas.2.description>[PAWN_nameDef] é um atirador mestre, experiente em economia e exatas lutas de longa distância com armas de fogo. Como atirador, faz com que [PAWN _ objectiva] evite outros colonatos, mas isso não lhes interessa.</TM_Sniper.degreeDatas.2.description>
+  <TM_Sniper.degreeDatas.3.label>Atirador lendário</TM_Sniper.degreeDatas.3.label>
+  <TM_Sniper.degreeDatas.3.description>[PAWN_nameDef] é um atirador lendário, experiente em economia e exatas lutas de longa distância com armas de pequeno porte. Outros colonos evitam o contacto visual e sussurram pelos cantos sobre como [PAWN _ pronoon] é perigoso, e isso satisfaz [PAWN _ objectiva].</TM_Sniper.degreeDatas.3.description>
+
+  <Bladedancer.degreeDatas.0.label>Espada</Bladedancer.degreeDatas.0.label>
+  <Bladedancer.degreeDatas.0.description>[PAWN_nameDef] treina para se tornar mestre da lâmina e tem sucesso na luta em combate próximo.</Bladedancer.degreeDatas.0.description>
+  <Bladedancer.degreeDatas.1.label>Mestre da lâmina</Bladedancer.degreeDatas.1.label>
+  <Bladedancer.degreeDatas.1.description>[PAWN_nameDef] treinou-se para ser o Mestre da Lâmina, perigosamente hábil em combate próximo.</Bladedancer.degreeDatas.1.description>
+  <Bladedancer.degreeDatas.2.label>Dançando com lâminas</Bladedancer.degreeDatas.2.label>
+  <Bladedancer.degreeDatas.2.description>[PAWN_nameDef] é um dançante com lâminas, muito experiente em combate próximo. A observação da luta [PAWN _ objectiva] é semelhante à observação da dança, cada ação é exata e impecável quando ela é arrastada de uma forma para outra.</Bladedancer.degreeDatas.2.description>
+  <Bladedancer.degreeDatas.3.label>Lendário dançante com lâminas</Bladedancer.degreeDatas.3.label>
+  <Bladedancer.degreeDatas.3.description>[PAWN_nameDef] tornou-se uma lenda, [PAWN _ possessive] a habilidade no combate próximo é conhecida em todo o mundo. [PAWN _ possessive] habilidade de combate faz com que ele pareça cada movimento, cada batida é apenas um pouso na tapeçaria que representa a vitória [PAWN _ possessive].</Bladedancer.degreeDatas.3.description>
+
+  <Faceless.degreeDatas.0.label>Sem rosto</Faceless.degreeDatas.0.label>
+  <Faceless.degreeDatas.0.description>[PAWN_nameDef] é um mestre de camuflagem e imitação; capaz de manipular e capturar as acções musculares e mentais de outra pessoa e libertá-las como suas próprias.</Faceless.degreeDatas.0.description>
+
+  <TM_Psionic.degreeDatas.0.label>Psicônico</TM_Psionic.degreeDatas.0.label>
+  <TM_Psionic.degreeDatas.0.description>[PAWN_nameDef] é um psicônico capaz de demonstrar uma força mental de vontade em energia crua sem o uso de um amplificador mental. [PAWN _ pronoon] é capaz de projetar a energia psicónica, mas considera mais fácil e eficaz aplicá-la como extensão e aumento corporal [PAWN _ possessive]. Por essa razão, [PAWN _ pronoon] prefere ser livre de armas pesadas.
+
+[PAWN_nameDef] tornou-se menos social desde que desenvolveu as habilidades psicônicas, porque [PAWN _ objectiva] pode realizar qualquer tarefa em [PAWN _ postessive] por si só e pode passar sem inveja dos outros.
+
+* A velocidade de regeneração da energia psicónica é baseada na sensibilidade mental - reduzir a sensibilidade a 0 impedirá a regeneração da energia psicónica.</TM_Psionic.degreeDatas.0.description>
+
+  <DeathKnight.degreeDatas.0.label>Cavaleiro da Morte</DeathKnight.degreeDatas.0.label>
+  <DeathKnight.degreeDatas.0.description>[PAWN_nameDef] - O cavaleiro da morte, o precursor do rock e o representante da inevitabilidade da morte que se aproxima constantemente. [PAWN _ postessive] atitudes majestosas tornam a maioria dos peões embaraçosos e aprovam ainda menos os métodos [PAWN _ postessive].</DeathKnight.degreeDatas.0.description>
+
+  <TM_Monk.degreeDatas.0.label>Monge</TM_Monk.degreeDatas.0.label>
+  <TM_Monk.degreeDatas.0.description>[PAWN_nameDef] é um monge que se dedicou a dominar a energia qI que conecta tudo o que existe no Universo. [PAWN _ pronoon] usa QI para criar efeitos mágicos e supera a capacidade física [PAWN _ possessive]. [PAWN_nameDef] também é capaz de quebrar o qi dos outros, influenciando seu comando com feitiços e poderes.</TM_Monk.degreeDatas.0.description>
+
+  <TM_Commander.degreeDatas.0.label>Comandante</TM_Commander.degreeDatas.0.label>
+  <TM_Commander.degreeDatas.0.description>Como comandante, [PAWN_nameDef] apresenta uma personalidade carismática e uma presença persistente que faz com que outros peões queiram seguir [PAWN _ postessive]. Os comandantes usam o peso de sua presença para inspirar os peões mais próximos, e quando isso não é suficiente, podem dar ordens que levam seus seguidores à vitória. Como [PAWN_nameDef] é usado para que todos façam [PAWN _ postessive] licitações, [PAWN _ pronoon] considera que o trabalho negro é inferior ao status [PAWN _ postessive] e normalmente é um mau empregado.</TM_Commander.degreeDatas.0.description>
+
+  <TM_SuperSoldier.degreeDatas.0.label>Super Soldado</TM_SuperSoldier.degreeDatas.0.label>
+  <TM_SuperSoldier.degreeDatas.0.description>[PAWN_nameDef] é um soldado bem treinado especializado em armas, espingardas ou espingardas. [PAWN _ postessive] a especialização em armas é complementada por um conjunto de treinamento de combate padrão. Os supersoldados são treinados para ser agressivos e consideram a violência uma solução natural para qualquer disputa.</TM_SuperSoldier.degreeDatas.0.description>
+
+</LanguageData>

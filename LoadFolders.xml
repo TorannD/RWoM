@@ -1,32 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <loadFolders>
-  <v1.0>
-	<li>/</li> 
-	<li>v1.0</li>	     
-  </v1.0>
-  <v1.1>	
-    <li>/</li>	
-	<li>v1.1</li>
-  </v1.1>
-  <v1.2>
-    <li>/</li>
-	<li>v1.2</li>
-  </v1.2>
-  <v1.3>
-    <li>/</li>
-	<li>v1.3</li>
-  </v1.3>
-  <v1.4>
-    <li>/</li>
-	<li>v1.4</li>
-  </v1.4>
-  <v1.5>
-    <li>/</li>
-	<li>v1.5</li>
-  </v1.5>
   <v1.6>
     <li>/</li>
 	<li>v1.6</li>
   </v1.6>
+  <v1.7>
+    <li>/</li>
+	<li>v1.7</li>
+	<li IfModActive="ludeon.rimworld.odyssey">v1.7/Odyssey</li>
+	<li IfModActive="ludeon.rimworld.biotech">v1.7/Biotech</li>
+  </v1.7>
 </loadFolders>

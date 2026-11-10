@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_PomanaSenseHD.label>sensação de batano</TM_PomanaSenseHD.label>
+  <TM_PomanaSenseHD.description>Relaxar e agravar os sentimentos da ingestão de frutas crudas de pomana.</TM_PomanaSenseHD.description>
+  <TM_PomanaSenseHD.stages.0.label></TM_PomanaSenseHD.stages.0.label>
+
+  <TM_SyrriumSenseHD.label>sensação de sirrium</TM_SyrriumSenseHD.label>
+  <TM_SyrriumSenseHD.description>Sentimentos elevados resultantes da ingestão de túmulos condensados.</TM_SyrriumSenseHD.description>
+  <TM_SyrriumSenseHD.stages.0.label></TM_SyrriumSenseHD.stages.0.label>
+  <TM_SyrriumSenseHD.stages.1.label></TM_SyrriumSenseHD.stages.1.label>
+
+
+  <!-- Syrrium addiction -->
+
+  <TM_SyrriumTolerance.label>tolerância com sirrium</TM_SyrriumTolerance.label>
+  <TM_SyrriumTolerance.description>Ajustamento natural para normalizar o efeito do consumo da mamadeira condensada.</TM_SyrriumTolerance.description>
+
+  <TM_SyrriumAddiction.label>dependência de sirrium</TM_SyrriumAddiction.label>
+  <TM_SyrriumAddiction.description>O desejo de sentir os efeitos do sírio tornou-se uma necessidade.</TM_SyrriumAddiction.description>
+  <TM_SyrriumAddiction.stages.1.label>exibição</TM_SyrriumAddiction.stages.1.label>
+
+
+</LanguageData>

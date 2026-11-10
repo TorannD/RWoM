@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Wayfarer -->
+
+  <TM_WayfarerCraft.label>Viajante</TM_WayfarerCraft.label>
+  <TM_WayfarerCraft.description>Aumente os atributos através do treino e trabalho duro. Consulte as habilidades para obter mais informações.</TM_WayfarerCraft.description>
+
+
+  <!-- Field Training -->
+
+  <TM_FieldTraining.label>Treinamento de combate</TM_FieldTraining.label>
+  <TM_FieldTraining.description>Os viajantes não têm poderes específicos clássicos, em vez disso, superam os outros no combate geral.
+
+As técnicas de combate comuns são estudadas pela maioria dos combatentes como habilidades adicionais que não necessitam de treinamento adicional. O viajante usa uma abordagem diferente; investindo tempo e esforço na compreensão dessas habilidades de combate, o viajante é capaz de melhorar quase todas as capacidades gerais de utilidade, força e eficiência.
+
+Consulte as habilidades para obter mais informações.</TM_FieldTraining.description>
+
+
+</LanguageData>

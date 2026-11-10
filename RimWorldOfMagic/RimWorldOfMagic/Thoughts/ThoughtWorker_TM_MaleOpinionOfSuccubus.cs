@@ -23,9 +23,9 @@ namespace TorannMagic.Thoughts
                 {
                     return false;
                 }
-                if (other.story.traits.HasTrait(TorannMagicDefOf.Succubus))
+                if (TorannMagic.ClassProgression.ClassIdentity.IsSuccubus(other))
                 {
-                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.Succubus) || (pawn.gender == Gender.Female && !pawn.story.traits.HasTrait(TraitDefOf.Gay)))
+                    if (TorannMagic.ClassProgression.ClassIdentity.IsSuccubus(pawn) || (pawn.gender == Gender.Female && !pawn.story.traits.HasTrait(TraitDefOf.Gay)))
                     {
                         return false;
                     }

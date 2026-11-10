@@ -8,32 +8,23 @@ using Verse;
 
 namespace TorannMagic
 {
-    public class Verb_DismissEarthSprites : Verb_UseAbility
+    public class Verb_DismissEarthSprites : ClassProgression.Verb_SpiritTargetable
     {
+        protected override bool ApplyHostedEffect()
+        {
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            var comp = owner?.GetCompAbilityUserMagic();
+            if (comp == null || comp.earthSpriteType == 0) return false;
+            comp.ClearEarthSprites();
+            return true;
+        }
 
         protected override bool TryCastShot()
         {
-            bool flag = false;
-            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
-
-            if (comp.IsMagicUser)
-            {
-                if (comp.earthSpriteType != 0)
-                {
-                    comp.earthSpriteType = 0;
-                    comp.earthSpriteMap = null;
-                    comp.earthSprites = IntVec3.Invalid;
-                }
-                else
-                {
-                    Messages.Message("TM_NoSpritesToDismiss".Translate(
-                            this.CasterPawn.LabelShort
-                        ), MessageTypeDefOf.RejectInput);
-                }
-            }
-
-            this.PostCastShot(flag, out flag);
-            return flag;
+            if (!ApplyHostedEffect())
+                Messages.Message("TM_NoSpritesToDismiss".Translate(CasterPawn.LabelShort), MessageTypeDefOf.RejectInput);
+            PostCastShot(false, out bool fired);
+            return fired;
         }
     }
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="TM_BuildingBase">
+    <defName>TM_ManaBeacon</defName>
+    <label>mana beacon</label>
+    <description>Relays mana and magofuel between your connected buildings within 5 cells, even through walls. Nearby beacons extend the network. Each network transfers up to 10 mana and 5 magofuel per second, without consuming electricity. Choose sending, receiving or off independently for each resource on connected buildings. Receiving buildings respect their configured targets.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Buildings/ManaBeacon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.4,1.4)</drawSize>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <placeWorkers>
+      <li>TorannMagic.Odyssey.PlaceWorker_ManaNetwork</li>
+    </placeWorkers>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>15</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>TM_RWoM</designationCategory>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>3000</WorkToBuild>
+      <Mass>15</Mass>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <RawMagicyte>50</RawMagicyte>
+    </costList>
+    <researchPrerequisites>
+      <li>TM_MagofuelRefining</li>
+      <li>Electricity</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="TorannMagic.Odyssey.CompProperties_CrystalGlow"><state>Service</state><diameter>0.35</diameter><north>(0.49,0.254)</north><east>(0.49,0.254)</east><south>(0.49,0.254)</south><west>(0.49,0.254)</west></li>
+      <li Class="TorannMagic.Odyssey.CompProperties_ManaBeacon" />
+      <li Class="TorannMagic.Odyssey.CompProperties_MagicalCombatInterceptor" />
+    </comps>
+  </ThingDef>
+</Defs>

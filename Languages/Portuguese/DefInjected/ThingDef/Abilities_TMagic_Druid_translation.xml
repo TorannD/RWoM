@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- poison -->
+
+  <Projectile_Poison.label>Venar venado.</Projectile_Poison.label>
+
+
+  <!-- soothe animal -->
+
+  <Projectile_SootheAnimal.label>animal enganador</Projectile_SootheAnimal.label>
+
+
+  <!-- regenerate -->
+
+  <Projectile_Regenerate.label>regeneração</Projectile_Regenerate.label>
+
+
+  <!-- cure disease -->
+
+  <Projectile_CureDisease.label>curar a doença</Projectile_CureDisease.label>
+
+
+  <!-- regrow limb -->
+
+  <Projectile_RegrowLimb.label>saliência do membro</Projectile_RegrowLimb.label>
+
+
+</LanguageData>

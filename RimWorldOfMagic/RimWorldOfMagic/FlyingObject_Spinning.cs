@@ -37,6 +37,7 @@ namespace TorannMagic
 
         public int weaponDmg = 0;
 
+        internal Pawn hammerOwner;
         Pawn pawn;
         CompAbilityUserMagic comp;
 
@@ -98,7 +99,16 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.damageLaunched, "damageLaunched", true, false);
             Scribe_Values.Look<bool>(ref this.explosion, "explosion", false, false);
             Scribe_References.Look<Thing>(ref this.assignedTarget, "assignedTarget", false);
-            //Scribe_References.Look<Thing>(ref this.launcher, "launcher", false);
+            Scribe_References.Look(ref hammerOwner,"TM_hammerOwner");
+            Scribe_Values.Look(ref spinRate,"TM_spinRate");
+            Scribe_Values.Look(ref rotation,"TM_rotation");
+            Scribe_Values.Look(ref speed,"TM_flightSpeed",25f);
+            Scribe_Values.Look(ref force,"TM_flightForce",1f);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                pawn = launcher as Pawn;
+                direction = TM_Calc.GetVector(origin.ToIntVec3(),destination.ToIntVec3());
+            }
             Scribe_Deep.Look<Thing>(ref this.flyingThing, "flyingThing", new object[0]);
             Scribe_Values.Look<bool>(ref this.drafted, "drafted", false, false);
         }
@@ -158,19 +168,29 @@ namespace TorannMagic
             this.Initialize();
         }
 
+        // Payload flight advances every simulation tick, including off-camera.
+        protected override void TickInterval(int delta) { }
+
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            if (Spawned && !Map.Disposed && flyingThing is Pawn passenger && !passenger.Spawned &&
+                !passenger.Dead && !passenger.Destroyed && passenger.holdingOwner == null)
+            {
+                GenSpawn.Spawn(passenger, Position, Map);
+                if (drafted && passenger.IsColonist && passenger.drafter != null) passenger.drafter.Drafted = true;
+            }
+            base.Destroy(mode);
+        }
+
         protected override void Tick()
         {
-        }
-        protected override void TickInterval(int delta)
-        {
-            //base.Tick();
             Vector3 exactPosition = this.ExactPosition;
             this.ticksToImpact--;
             bool flag = !this.ExactPosition.InBoundsWithNullCheck(base.Map);
             if (flag)
             {
                 this.ticksToImpact++;
-                base.Position = this.ExactPosition.ToIntVec3();
+                // The carrier is still at its last in-bounds position.
                 this.Destroy(DestroyMode.Vanish);
             }
             else if(!this.ExactPosition.ToIntVec3().Walkable(base.Map))
@@ -428,7 +448,7 @@ namespace TorannMagic
                                 Vector3 moteDirection = TM_Calc.GetVector(this.ExactPosition.ToIntVec3(), intVec);
                                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Rubble, this.ExactPosition, base.Map, Rand.Range(.3f, .6f), .2f, .02f, .05f, Rand.Range(-100, 100), Rand.Range(8f, 13f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), 0);
                                 TM_MoteMaker.ThrowGenericFleck(FleckDefOf.Smoke, this.ExactPosition, base.Map, Rand.Range(.9f, 1.2f), .3f, .02f, Rand.Range(.25f, .4f), Rand.Range(-100, 100), Rand.Range(5f, 8f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), 0);
-                                GenExplosion.DoExplosion(intVec, base.Map, .4f, DamageDefOf.Blunt, pawn, 0, 0, SoundDefOf.Pawn_Melee_Punch_HitBuilding_Generic, null, null, null, ThingDefOf.Filth_RubbleRock, .25f, 1, null, null, 0, false, null, 0f, 1, 0, false);
+                                GenExplosion.DoExplosion(intVec, base.Map, .4f, DamageDefOf.Blunt, hammerOwner ?? pawn, 0, 0, SoundDefOf.Pawn_Melee_Punch_HitBuilding_Generic, null, null, null, ThingDefOf.Filth_RubbleRock, .25f, 1, null, null, 0, false, null, 0f, 1, 0, false);
                                 //FleckMaker.ThrowSmoke(intVec.ToVector3Shifted(), base.Map, Rand.Range(.6f, 1f));
                             }
                         }
@@ -512,7 +532,7 @@ namespace TorannMagic
                                 Vector3 moteDirection = TM_Calc.GetVector(this.ExactPosition.ToIntVec3(), intVec);
                                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodSquirt, this.ExactPosition, base.Map, Rand.Range(.3f, .6f), .2f, .02f, .05f, Rand.Range(-100, 100), Rand.Range(4f, 13f), (Quaternion.AngleAxis(Rand.Range(60, 120), Vector3.up) * moteDirection).ToAngleFlat(), 0);
                                 TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_BloodMist, this.ExactPosition, base.Map, Rand.Range(.9f, 1.2f), .3f, .02f, Rand.Range(.25f, .4f), Rand.Range(-100, 100), Rand.Range(5f, 8f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), 0);
-                                GenExplosion.DoExplosion(intVec, base.Map, .4f, DamageDefOf.Blunt, pawn, 0, 0, SoundDefOf.Pawn_Melee_Punch_HitBuilding_Generic, null, null, null, filth.def, .08f, 1, null, null, 0, false, null, 0f, 1, 0, false);
+                                GenExplosion.DoExplosion(intVec, base.Map, .4f, DamageDefOf.Blunt, hammerOwner ?? pawn, 0, 0, SoundDefOf.Pawn_Melee_Punch_HitBuilding_Generic, null, null, null, filth.def, .08f, 1, null, null, 0, false, null, 0f, 1, 0, false);
                                 //FleckMaker.ThrowSmoke(intVec.ToVector3Shifted(), base.Map, Rand.Range(.6f, 1f));
                             }
                         }
@@ -583,7 +603,7 @@ namespace TorannMagic
                             Vector3 moteDirection = TM_Calc.GetVector(this.ExactPosition.ToIntVec3(), intVec);
                             TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Rubble, this.ExactPosition, base.Map, Rand.Range(.3f, .6f), .2f, .02f, .05f, Rand.Range(-100, 100), Rand.Range(8f, 13f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), 0);
                             TM_MoteMaker.ThrowGenericFleck(FleckDefOf.Smoke, this.ExactPosition, base.Map, Rand.Range(.9f, 1.2f), .3f, .02f, Rand.Range(.25f, .4f), Rand.Range(-100, 100), Rand.Range(5f, 8f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), 0);
-                            GenExplosion.DoExplosion(intVec, base.Map, .4f, DamageDefOf.Blunt, pawn, 0, 0, SoundDefOf.Pawn_Melee_Punch_HitBuilding_Generic, null, null, null, null, .4f, 1, null, null, 0, false, null, 0f, 1, 0, false);
+                            GenExplosion.DoExplosion(intVec, base.Map, .4f, DamageDefOf.Blunt, hammerOwner ?? pawn, 0, 0, SoundDefOf.Pawn_Melee_Punch_HitBuilding_Generic, null, null, null, null, .4f, 1, null, null, 0, false, null, 0f, 1, 0, false);
                             //FleckMaker.ThrowSmoke(intVec.ToVector3Shifted(), base.Map, Rand.Range(.6f, 1f));
                         }
                     }
@@ -606,7 +626,7 @@ namespace TorannMagic
         public void damageEntities(Thing e, float d, DamageDef type)
         {
             int amt = Mathf.RoundToInt(Rand.Range(.75f, 1.25f) * d);
-            DamageInfo dinfo = new DamageInfo(type, amt, 0, (float)-1, this.launcher, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+            DamageInfo dinfo = new DamageInfo(type, amt, 0, (float)-1, hammerOwner ?? this.launcher, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             bool flag = e != null;
             if (flag)
             {

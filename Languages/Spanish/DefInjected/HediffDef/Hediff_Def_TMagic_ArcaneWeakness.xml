@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_ArcaneWeakness.label>debilidad arcana</TM_ArcaneWeakness.label>
+  
+  <TM_ArcaneWeakness.description>La debilidad arcana es un subproducto de lanzar habilidades mágicas. Las habilidades menores con un coste de maná inferior a 25 no provocan debilidad arcana. La cantidad de debilidad arcana que sufre un mago es proporcional al coste de maná de la habilidad.</TM_ArcaneWeakness.description>
+  
+  <TM_ArcaneWeakness.stages.weakened.label>debilitado</TM_ArcaneWeakness.stages.weakened.label>
+  
+  <TM_ArcaneWeakness.stages.drained.label>agotado</TM_ArcaneWeakness.stages.drained.label>
+  
+  <TM_ArcaneWeakness.stages.severely_ill.label>gravemente enfermo</TM_ArcaneWeakness.stages.severely_ill.label>
+  
+  <TM_ArcaneWeakness.stages.catatonic.label>catatónico</TM_ArcaneWeakness.stages.catatonic.label>
+  
+  <TM_ArcaneWeakness.stages.near_death.label>al borde de la muerte</TM_ArcaneWeakness.stages.near_death.label>
+  
+  
+  <TM_CursedHD.label>maldición arcana</TM_CursedHD.label>
+  
+  <TM_CursedHD.description>La maldición arcana es un subproducto del rasgo maldito. El peón maldito sufre constantemente debilidad arcana, que aumenta gradualmente hasta convertirse en una enfermedad persistente. Los efectos de la maldición pueden contrarrestarse usando magia; además, el dolor que causa la maldición proporciona una claridad singular. La maldición puede eliminarse quitando al peón su rasgo mágico.</TM_CursedHD.description>
+  
+  <TM_CursedHD.stages.faded.label>apagada</TM_CursedHD.stages.faded.label>
+  
+  <TM_CursedHD.stages.moderate.label>moderada</TM_CursedHD.stages.moderate.label>
+  
+  <TM_CursedHD.stages.heightened.label>intensificada</TM_CursedHD.stages.heightened.label>
+  
+</LanguageData>

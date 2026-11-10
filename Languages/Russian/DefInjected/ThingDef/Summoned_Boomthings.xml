@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <TM_Poppi.label>Поппи</TM_Poppi.label>
+  <TM_Poppi.description>Обманчиво милое создание, которому будто бы хочется только прижиматься к тебе и делать твою жизнь светлее.</TM_Poppi.description>
+  <TM_Poppi.tools.0.label>прижимание</TM_Poppi.tools.0.label>
+  <TM_Poppi_Leather.label>шкура Поппи</TM_Poppi_Leather.label>
+  <TM_Poppi_Leather.description>шкура Поппи</TM_Poppi_Leather.description>
+  <TM_Poppi_Leather.stuffProps.stuffAdjective>из шкуры Поппи</TM_Poppi_Leather.stuffProps.stuffAdjective>
+  <TM_Poppi_Meat.label>мясо Поппи</TM_Poppi_Meat.label>
+  <TM_Poppi_Meat.description>мясо Поппи</TM_Poppi_Meat.description>
+  <TM_Poppi_Corpse.label>труп Поппи</TM_Poppi_Corpse.label>
+  <TM_Poppi_Corpse.description>труп Поппи</TM_Poppi_Corpse.description>
+</LanguageData>

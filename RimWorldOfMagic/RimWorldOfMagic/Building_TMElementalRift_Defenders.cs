@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -618,12 +618,7 @@ namespace TorannMagic
                             //Lord lord = LordMaker.MakeNewLord(parms.faction, MakeLordJob(parms, map, list2, @int), map, list2);
                             //RaidStrategyDefOf.ImmediateAttackFriendly;
                             //LordJob_DefendBase
-                            if (newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction).Any((Pawn p) => p != newPawn))
-                            {
-                                Predicate<Thing> validator = (Thing p) => p != newPawn && ((Pawn)p).GetLord() != null;
-                                Pawn p2 = (Pawn)GenClosest.ClosestThing_Global(newPawn.Position, newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction), 99999f, validator, null);
-                                lord = p2.GetLord();
-                            }
+                            lord = ElementalRiftLordUtility.FindExisting(newPawn, newPawn.Map.mapPawns.SpawnedPawnsInFaction(faction));
                             bool flag4 = lord == null;
                             if (flag4)
                             {

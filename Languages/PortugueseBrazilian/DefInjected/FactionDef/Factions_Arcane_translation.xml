@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Seers.label>Dobrado secreto</Seers.label>
+  <Seers.description>Sabe-se muito pouco sobre esta facção secreta. Têm tecnologia, mas não dependem dela. Eles funcionam com ferramentas simples e protegem-se com armas de fogo. Eles estão envolvidos em questões práticas de comércio, confiança e sobrevivência, mas seu interesse principal não é claro. De acordo com as histórias dos viajantes e informações recolhidas de outras facções, eles têm conhecimento e usam forças misteriosas e artefatos.</Seers.description>
+  <Seers.pawnsPlural>visionários</Seers.pawnsPlural>
+  <Seers.leaderTitle>Rei Magov</Seers.leaderTitle>
+
+
+  <Seers.pawnSingular>visionário</Seers.pawnSingular>
+
+</LanguageData>

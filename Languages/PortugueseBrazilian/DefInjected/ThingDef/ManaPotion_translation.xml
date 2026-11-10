@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManaPotion.label>Poção de maná</ManaPotion.label>
+  <ManaPotion.description>Um complemento mágico que permite aos mágicos reconstruir rapidamente o manu. As poções de maná funcionam como um supressor natural de resistência à absorção de corpos maná\n\n usuários são avisados que contornar as resistências naturais pode causar danos mentais e sensoriais.</ManaPotion.description>
+  <ManaPotion.ingestible.ingestCommandString>Consumido a. 0 03</ManaPotion.ingestible.ingestCommandString>
+  <ManaPotion.ingestible.ingestReportString>Consumido por &lt; 0 a.p.</ManaPotion.ingestible.ingestReportString>
+
+
+</LanguageData>

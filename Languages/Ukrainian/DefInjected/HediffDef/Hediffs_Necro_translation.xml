@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_UndeadHD.label>Ніжити</TM_UndeadHD.label>
+  <TM_UndeadHD.description>Пішак, жвавий некротичною енергією. Ця пішака не володіє власним помислом і вимагає від некроманта постійного управління та енергії.</TM_UndeadHD.description>
+  <TM_UndeadHD.stages.0.label>I</TM_UndeadHD.stages.0.label>
+  <TM_UndeadHD.stages.1.label>II</TM_UndeadHD.stages.1.label>
+  <TM_UndeadHD.stages.2.label>III</TM_UndeadHD.stages.2.label>
+  <TM_UndeadHD.stages.3.label>IV</TM_UndeadHD.stages.3.label>
+
+  <TM_LichHD.label>Ліч</TM_LichHD.label>
+  <TM_LichHD.description>Пішак, який знайшов безсмертя, розірвавши свій зв&apos;язок з кругообігом життя і смерті.</TM_LichHD.description>
+  <TM_LichHD.stages.0.label>Ніжити</TM_LichHD.stages.0.label>
+
+  <TM_UndeadAnimalHD.label>Ніжити</TM_UndeadAnimalHD.label>
+  <TM_UndeadAnimalHD.description>Пішак, жвавий некротичною енергією. Ця пішака не володіє власним помислом і вимагає від некроманта постійного управління та енергії.</TM_UndeadAnimalHD.description>
+  <TM_UndeadAnimalHD.stages.0.label>I</TM_UndeadAnimalHD.stages.0.label>
+  <TM_UndeadAnimalHD.stages.1.label>II</TM_UndeadAnimalHD.stages.1.label>
+  <TM_UndeadAnimalHD.stages.2.label>III</TM_UndeadAnimalHD.stages.2.label>
+  <TM_UndeadAnimalHD.stages.3.label>IV</TM_UndeadAnimalHD.stages.3.label>
+
+  <TM_DeathMarkHD.label>Мітка Смерті</TM_DeathMarkHD.label>
+  <TM_DeathMarkHD.description>Відзначена смертю, ця пішака скоро помре і буде реанімована як ніжити. (не використовується)</TM_DeathMarkHD.description>
+
+  <TM_DeathMarkCurse.label>Мітка Смерті</TM_DeathMarkCurse.label>
+  <TM_DeathMarkCurse.description>Відзначена смертю, ця пішака не може зосередитися на сьогоденні через концентрацію на своїй неминучій смерті.</TM_DeathMarkCurse.description>
+  <TM_DeathMarkCurse.stages.0.label>Невміле</TM_DeathMarkCurse.stages.0.label>
+  <TM_DeathMarkCurse.stages.1.label>Бурмотіння</TM_DeathMarkCurse.stages.1.label>
+  <TM_DeathMarkCurse.stages.2.label>проклятий</TM_DeathMarkCurse.stages.2.label>
+
+  <TM_TormentHD.label>Мука</TM_TormentHD.label>
+  <TM_TormentHD.description>Біль, викликаний темною енергією.</TM_TormentHD.description>
+  <TM_TormentHD.comps.0.labelTendedWell>забинтована</TM_TormentHD.comps.0.labelTendedWell>
+  <TM_TormentHD.comps.0.labelTendedWellInner>зашито</TM_TormentHD.comps.0.labelTendedWellInner>
+  <TM_TormentHD.comps.0.labelSolidTendedWell>зажило</TM_TormentHD.comps.0.labelSolidTendedWell>
+  <TM_TormentHD.injuryProps.destroyedLabel>оплавлена</TM_TormentHD.injuryProps.destroyedLabel>
+  <TM_TormentHD.injuryProps.destroyedOutLabel>оплавився</TM_TormentHD.injuryProps.destroyedOutLabel>
+
+  <TM_DeathBoltHD.label>смертельний болт</TM_DeathBoltHD.label>
+  <TM_DeathBoltHD.description>Руйнівна енергія, яка вбиває все живе.</TM_DeathBoltHD.description>
+  <TM_DeathBoltHD.comps.0.labelTendedWell>забинтована</TM_DeathBoltHD.comps.0.labelTendedWell>
+  <TM_DeathBoltHD.comps.0.labelTendedWellInner>зашито</TM_DeathBoltHD.comps.0.labelTendedWellInner>
+  <TM_DeathBoltHD.comps.0.labelSolidTendedWell>зажило</TM_DeathBoltHD.comps.0.labelSolidTendedWell>
+  <TM_DeathBoltHD.injuryProps.destroyedLabel>оплавлена</TM_DeathBoltHD.injuryProps.destroyedLabel>
+  <TM_DeathBoltHD.injuryProps.destroyedOutLabel>оплавився</TM_DeathBoltHD.injuryProps.destroyedOutLabel>
+
+  <TM_Torment_HD.label>Змучений</TM_Torment_HD.label>
+  <TM_Torment_HD.description>Мучительно терзаємий темною магією.</TM_Torment_HD.description>
+  <TM_Torment_HD.stages.0.label>біль</TM_Torment_HD.stages.0.label>
+  <TM_Torment_HD.stages.1.label>агонія</TM_Torment_HD.stages.1.label>
+  <TM_Torment_HD.stages.2.label>мука</TM_Torment_HD.stages.2.label>
+
+  <TM_UndeadStageHD.label>Стадія тіла</TM_UndeadStageHD.label>
+  <TM_UndeadStageHD.description>Нинішня стадія нежити.</TM_UndeadStageHD.description>
+  <TM_UndeadStageHD.stages.0.label>Гниючий</TM_UndeadStageHD.stages.0.label>
+  <TM_UndeadStageHD.stages.1.label>Посушений</TM_UndeadStageHD.stages.1.label>
+
+  <TM_BrittleBonesHD.label>Крихкі кістки</TM_BrittleBonesHD.label>
+  <TM_BrittleBonesHD.description>Виникає при впливі екстремально низьких температур і призводить до того, що кістки і зв&apos;язки стають крихкими, що зменшує рух і маніпуляції. Ніжити з таким станом вимагає 50% додаткової мани для підтримки життя.</TM_BrittleBonesHD.description>
+  <TM_BrittleBonesHD.stages.0.label>I</TM_BrittleBonesHD.stages.0.label>
+  <TM_BrittleBonesHD.stages.1.label>II</TM_BrittleBonesHD.stages.1.label>
+  <TM_BrittleBonesHD.stages.2.label>III</TM_BrittleBonesHD.stages.2.label>
+
+  <TM_SlaggedHD.label>Зашлакований</TM_SlaggedHD.label>
+  <TM_SlaggedHD.description>Виникає при впливі надзвичайно високих температур і призводить до розкладання і навіть розплавлення органічної речовини. Ніжити, уражена цим станом, вимагає на 50% більше мани для підтримки життя.</TM_SlaggedHD.description>
+  <TM_SlaggedHD.stages.0.label>I</TM_SlaggedHD.stages.0.label>
+  <TM_SlaggedHD.stages.1.label>II</TM_SlaggedHD.stages.1.label>
+  <TM_SlaggedHD.stages.2.label>III</TM_SlaggedHD.stages.2.label>
+
+
+  <TM_TormentHD.comps.1.permanentLabel>гнилої</TM_TormentHD.comps.1.permanentLabel>
+  <TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWell>з перев&apos;язкою</TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWell>
+  <TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWellInner>ушить</TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  <TM_TormentHD.comps.HediffComp_TendDuration.labelSolidTendedWell>встановити</TM_TormentHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  <TM_TormentHD.comps.HediffComp_GetsPermanent.permanentLabel>гниє</TM_TormentHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  <TM_TormentHD.labelNounPretty>{0} у {1}</TM_TormentHD.labelNounPretty>
+  <TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWell>перев&apos;язаний</TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWell>
+  <TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWellInner>ушить</TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  <TM_DeathBoltHD.comps.HediffComp_TendDuration.labelSolidTendedWell>встановити</TM_DeathBoltHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  <TM_DeathBoltHD.comps.HediffComp_GetsPermanent.permanentLabel>розплавлений</TM_DeathBoltHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  <TM_DeathBoltHD.labelNounPretty>{0} у {1}</TM_DeathBoltHD.labelNounPretty>
+
+</LanguageData>

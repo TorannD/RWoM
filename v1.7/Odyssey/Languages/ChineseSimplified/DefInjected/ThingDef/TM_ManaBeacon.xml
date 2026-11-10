@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaBeacon.label>法力信标</TM_ManaBeacon.label>
+  <TM_ManaBeacon.description>在5格范围内为己方相连建筑传输法力和魔法燃料，可穿过墙壁。附近的信标可扩展网络。每个网络每秒最多传输10法力和5魔法燃料，无需用电。可为相连建筑的每种资源分别选择发送、接收或关闭。接收方不会超过设定的储备目标。</TM_ManaBeacon.description>
+</LanguageData>

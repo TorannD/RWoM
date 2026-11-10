@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -23,6 +23,11 @@ namespace TorannMagic
         private float arcaneDmg = 1f;
 
         public Pawn caster = null;
+        internal int originalId;
+        private Pawn Owner => originalId == 0 ? caster :
+            ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(caster,out var soul) && soul.thingIDNumber == originalId ? soul : null;
+        private bool Connected => caster?.Spawned == true && caster.Map == Pawn.Map && !caster.Dead && !caster.Downed &&
+            Owner != null;
 
         public List<SkillRecord> validSkillPassions = new List<SkillRecord>();
 
@@ -30,6 +35,8 @@ namespace TorannMagic
         {
             base.CompExposeData();
             Scribe_References.Look<Pawn>(ref this.caster, "caster");
+            Scribe_Values.Look(ref originalId, "harvestOriginalId", 0);
+            Scribe_Values.Look(ref shouldRemove, "harvestFinished");
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0);
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0);
             Scribe_Values.Look<int>(ref this.effVal, "effVal", 0);
@@ -57,7 +64,7 @@ namespace TorannMagic
             bool spawned = base.Pawn.Spawned && Pawn.skills != null && !Pawn.Dead;
             if (spawned && !caster.DestroyedOrNull() && !caster.Dead && !caster.Downed)
             {                
-                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
+                CompAbilityUserMagic comp = Owner.GetCompAbilityUserMagic();
                 if(comp != null && comp.MagicData != null)
                 {
                     if (comp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_HarvestPassion) != null)
@@ -93,13 +100,13 @@ namespace TorannMagic
 
         public bool CheckAnyPassions()
         {
-            validSkillPassions = new List<SkillRecord>();
             validSkillPassions.Clear();
+            if (Owner?.skills == null || Pawn.skills == null) return false;
             foreach (SkillRecord skill in Pawn.skills.skills)
             {
                 if (skill != null)
                 {
-                    if (caster.skills.GetSkill(skill.def).passion < skill.passion)
+                    if (Owner.skills.GetSkill(skill.def).passion < skill.passion)
                     {
                         validSkillPassions.Add(skill);
                     }
@@ -115,7 +122,7 @@ namespace TorannMagic
             base.CompPostTick(ref severityAdjustment);
             if (Find.TickManager.TicksGame % 8 == 0)
             {
-                bool flag = !base.Pawn.DestroyedOrNull() && base.Pawn.Spawned && !Pawn.Dead && !caster.DestroyedOrNull() && !caster.Dead && !caster.Downed && !shouldRemove;
+                bool flag = !base.Pawn.DestroyedOrNull() && base.Pawn.Spawned && !Pawn.Dead && Connected && !shouldRemove;
                 if (flag)
                 {
                     if (!initialized)
@@ -135,7 +142,7 @@ namespace TorannMagic
                                 if (Pawn.needs.joy != null)
                                 {
                                     float joyDrainPawn = Rand.Range(.04f, .1f) + (.01f * effVal);
-                                    float joyDrainCaster = Rand.Range(.03f, .06f) - (.01f * effVal);
+                                    float joyDrainCaster = Mathf.Max(0f, Rand.Range(.03f, .06f) - (.01f * effVal));
 
                                     Need np = Pawn.needs.joy;
                                     np.CurLevel = Mathf.Clamp01(np.CurLevel - joyDrainPawn);
@@ -159,6 +166,7 @@ namespace TorannMagic
                             }
                             else
                             {
+                                shouldRemove = true;
                                 MoteMaker.ThrowText(caster.DrawPos, caster.Map, "Casting Failed", -1);
                             }
                         }
@@ -173,12 +181,7 @@ namespace TorannMagic
 
         public void StealPassion()
         {
-            bool flag = true;
-            if (validSkillPassions == null || validSkillPassions.Count <= 0)
-            {
-                flag = CheckAnyPassions();
-            }
-            if (flag)
+            if (Connected && !shouldRemove && CheckAnyPassions())
             {
                 SkillRecord sr = validSkillPassions.RandomElement();
                 string count = "+";
@@ -189,14 +192,10 @@ namespace TorannMagic
                 Vector3 aboveHead = caster.DrawPos;
                 aboveHead.z += .3f;
                 MoteMaker.ThrowText(aboveHead, caster.Map, sr.def.defName.CapitalizeFirst() + count.ToString() + " harvested");
-                caster.skills.GetSkill(sr.def).passion = sr.passion;
+                Owner.skills.GetSkill(sr.def).passion = sr.passion;
                 sr.passion = Passion.None;
             }
-            else
-            {
-                //message
-                Log.Message("attempted to harvest a passion but no valid passions were found, this should have been determined at the beginning");
-            }
+
         }
 
         public void DrawEffects()

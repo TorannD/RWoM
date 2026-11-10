@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -15,9 +15,17 @@ namespace TorannMagic
         private int pwrVal;
         private float arcaneDmg = 1f;
             
+        protected override bool ApplyHostedEffect()
+        {
+            // This verb returns false to the projectile system even on a successful direct cast.
+            TryCastShot();
+            return true;
+        }
+
         protected override bool TryCastShot()
         {
-            Pawn caster = base.CasterPawn;
+            Pawn caster = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            if (caster == null) return false;
             Pawn pawn = this.currentTarget.Thing as Pawn;
             CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
             pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
@@ -55,7 +63,7 @@ namespace TorannMagic
                 {
                     bool success = false;
 
-                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.GetEnumerator())
+                    using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.hediffs.ToList().GetEnumerator())
                     {
                         while (enumerator.MoveNext())
                         {
@@ -163,17 +171,17 @@ namespace TorannMagic
                     if (success == true)
                     {                        
                         TM_MoteMaker.ThrowRegenMote(pawn.Position.ToVector3(), pawn.Map, 1.5f);
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + StringsToTranslate.AU_CastSuccess, -1f);
+                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + "AU_CastSuccess".Translate(), -1f);
                     }
                     else
                     {
                         Messages.Message("TM_CureDiseaseTypeFail".Translate(), MessageTypeDefOf.NegativeEvent);
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + StringsToTranslate.AU_CastFailure, -1f);
+                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + "AU_CastFailure".Translate(), -1f);
                     }
                 }
                 else
                 {
-                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + StringsToTranslate.AU_CastFailure, -1f);
+                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Cure Disease" + ": " + "AU_CastFailure".Translate(), -1f);
                 }
                 
             }
@@ -181,3 +189,4 @@ namespace TorannMagic
         }
     }
 }
+

@@ -1,0 +1,12 @@
+<LanguageData><!-- v1.5\Defs\GolemDefs\Hediffs_WoodGolem.xml-->
+	<!--                    EN: armor-->
+	<TM_WoodGolem_ArmorHD.label>броня</TM_WoodGolem_ArmorHD.label>
+	<!--                          EN: Improves physical protection.-->
+	<TM_WoodGolem_ArmorHD.description>Улучшает физическую защиту.</TM_WoodGolem_ArmorHD.description>
+	<!--                             EN: I-->
+	<TM_WoodGolem_ArmorHD.stages.0.label>I</TM_WoodGolem_ArmorHD.stages.0.label>
+	<!--                             EN: II-->
+	<TM_WoodGolem_ArmorHD.stages.1.label>II</TM_WoodGolem_ArmorHD.stages.1.label>
+	<!--                             EN: III-->
+	<TM_WoodGolem_ArmorHD.stages.2.label>III</TM_WoodGolem_ArmorHD.stages.2.label>
+</LanguageData>

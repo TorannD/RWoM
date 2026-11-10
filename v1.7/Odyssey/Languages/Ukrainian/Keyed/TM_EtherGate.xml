@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_EtherGateSummon>Закликати ефірного слугу</TM_EtherGateSummon>
+  <TM_EtherGateSummonDesc>Витратити 100 магопалива, щоб закликати слугу для перенесення на одну добу. Їжа, сон і повітря не потрібні. Також видобуває з початковою навичкою гірництва 10 і будує з початковою навичкою будівництва 5. Пріоритет робіт: будівництво, позначений видобуток, потім перенесення.</TM_EtherGateSummonDesc>
+  <TM_EtherGateUnavailable>Брама має стояти на мапі, належати вашій фракції та бути ввімкненою.</TM_EtherGateUnavailable>
+  <TM_EtherGateNoFuel>Потрібно 100 магопалива.</TM_EtherGateNoFuel>
+  <TM_EtherGateNoLanding>Поруч із брамою немає безпечного місця для слуги.</TM_EtherGateNoLanding>
+  <TM_EtherGateFailed>Заклик не вдався. Магопаливо не витрачено.</TM_EtherGateFailed>
+  <TM_EtherGateBusy>Триває заклик.</TM_EtherGateBusy>
+  <TM_EtherServantRemaining>Залишилося часу: {0}</TM_EtherServantRemaining>
+</LanguageData>

@@ -1,0 +1,74 @@
+<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_LightningMage.xml-->
+	<!--      EN: AMP-->
+	<TM_AMP.label>УМС</TM_AMP.label>
+	<!--            EN: Blessing: Augmented by Magical Power - aka "AMP."  Short term augmentation that drastically increases physical capacity at the cost of increased stress on the body.
+
+Duration: 		30-40s
+Physical capacity: 	~+30%
+Physical demand: 	+40%
+Pain:		-20%-->
+	<TM_AMP.description>Благословение: Усиление Магической Силой - также известное как УМС. Кратковременное усиление, которое резко увеличивает физическую работоспособность за счет увеличения нагрузки на организм.
+
+Продолжительность: 30-40с
+Физическая работоспособность: ~+30%
+Физическая потребность: +40%
+Боль: -20%</TM_AMP.description>
+	<!--        EN: AMP-->
+	<TM_AMP_I.label>УМС</TM_AMP_I.label>
+	<!--              EN: Blessing: Augmented by Magical Power - aka "AMP."  Drastically increases physical capacity at the cost of increased stress on the body.
+
+Duration: 		30-40s
+Physical capacity: 	~+50%
+Physical demand: 	+60%
+Pain:		-20%-->
+	<TM_AMP_I.description>Благословение: Усиление Магической Силой - также известное как УМС. Кратковременное усиление, которое резко увеличивает физическую работоспособность за счет увеличения нагрузки на организм.
+
+Продолжительность: 30-40с
+Физическая работоспособность: ~+50%
+Физическая потребность: +60%
+Боль: -20%</TM_AMP_I.description>
+	<!--         EN: AMP-->
+	<TM_AMP_II.label>УМС</TM_AMP_II.label>
+	<!--               EN: Blessing: Augmented by Magical Power - aka "AMP."  Drastically increases physical capacity at the cost of increased stress on the body.
+
+Duration: 		50-60s
+Physical capacity: 	~+65%
+Physical demand: 	+60%
+Pain:		-30%-->
+	<TM_AMP_II.description>Благословение: Усиление Магической Силой - также известное как УМС. Кратковременное усиление, которое резко увеличивает физическую работоспособность за счет увеличения нагрузки на организм.
+
+Продолжительность: 50-60с
+Физическая работоспособность: ~+65%
+Физическая потребность: +60%
+Боль: -30%</TM_AMP_II.description>
+	<!--          EN: AMP-->
+	<TM_AMP_III.label>УМС</TM_AMP_III.label>
+	<!--                EN: Blessing: Augmented by Magical Power - aka "AMP."  Drastically increases physical capacity at the cost of increased stress on the body.
+
+Duration: 		50-60s
+Physical capacity: 	~+80%
+Physical demand: 	+100%
+Pain:		-40%-->
+	<TM_AMP_III.description>Благословение: Усиление Магической Силой - также известное как УМС. Кратковременное усиление, которое резко увеличивает физическую работоспособность за счет увеличения нагрузки на организм.
+
+Продолжительность: 50-60с
+Физическая работоспособность: ~+80%
+Физическая потребность: +100%
+Боль: -40%</TM_AMP_III.description>
+	<!-- Грозовая туча-->
+	<TM_LightningCloud.label>Грозовая туча</TM_LightningCloud.label>
+	<!-- Создает зону, наполненную разрядами молний. Наносит урон и оглушает всё в своих смертоносных клубах.-->
+	<TM_LightningCloud.description>Создает зону, наполненную разрядами молний. Наносит урон и оглушает всё в своих смертоносных клубах.</TM_LightningCloud.description>
+	<!--                EN: Lightning Bolt-->
+	<TM_LightningBolt.label>Удар молнии</TM_LightningBolt.label>
+	<!--                      EN: Launch a bolt of lightning to strike your target.-->
+	<TM_LightningBolt.description>Запустите молнию, чтобы поразить свою цель.</TM_LightningBolt.description>
+	<!--                 EN: Lightning Storm-->
+	<TM_LightningStorm.label>Грозовой шторм</TM_LightningStorm.label>
+	<!--                       EN: Create a fierce, but uncontrolled, lightning storm over the target location.-->
+	<TM_LightningStorm.description>Создайте сильную, но неконтролируемую грозу над целевой областью.</TM_LightningStorm.description>
+	<!--                EN: Eye of the Storm-->
+	<TM_EyeOfTheStorm.label>Око бури</TM_EyeOfTheStorm.label>
+	<!--                      EN: Release a ball of pure electrical energy that annihilates everything it its path.-->
+	<TM_EyeOfTheStorm.description>Выпустите шар чистой электрической энергии, который уничтожает все на своем пути.</TM_EyeOfTheStorm.description>
+</LanguageData>

@@ -1,114 +1,53 @@
-﻿using RimWorld;
-using System;
-using Verse;
-using Verse.Sound;
-using AbilityUser;
 using System.Linq;
-using System.Collections.Generic;
+using AbilityUser;
+using RimWorld;
+using TorannMagic.ClassProgression;
 using UnityEngine;
+using Verse;
 
 namespace TorannMagic
 {
-    public class Verb_Shapeshift : Verb_UseAbility  
+    public class Verb_Shapeshift : Verb_SpiritTargetable
     {
-        float arcaneDmg = 1f;
-        public int verVal = 0;
-        public int pwrVal = 0;
-        public int effVal = 0;
-
-        private int min;
-        private int max;
-
-        private int duration = 1800;
+        public int verVal, pwrVal, effVal;
+        protected virtual bool DireWolf => false;
 
         protected override bool TryCastShot()
         {
-            Pawn caster = base.CasterPawn;
-
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            verVal = comp.MagicData.MagicPowerSkill_Shapeshift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Shapeshift_ver").level;
-            pwrVal = comp.MagicData.MagicPowerSkill_Shapeshift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Shapeshift_pwr").level;
-            effVal = comp.MagicData.MagicPowerSkill_Shapeshift.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Shapeshift_eff").level;
-            this.duration = Mathf.RoundToInt((this.duration + (360 * effVal))*comp.arcaneDmg);
-            bool flag = caster != null && !caster.Dead;
-            if (flag)
+            var body = CasterPawn;
+            var owner = SpiritRebirthCasting.SkillOwner(body, Ability);
+            if (body?.Spawned != true || body.Dead || owner == null) return false;
+            var current = body.GetComp<CompPolymorph>();
+            if (current?.Original != null)
             {
-                
-                CompPolymorph compPoly = caster.GetComp<CompPolymorph>();
-                if (compPoly != null && compPoly.Original != null && compPoly.TicksLeft > 0)
-                {
-                    compPoly.Temporary = true;
-                    compPoly.TicksLeft = 0;
-                }
-                else
-                {
-                    FactionDef fDef = TorannMagicDefOf.TM_SummonedFaction;
-                    if (caster.Faction != null)
-                    {
-                        fDef = caster.Faction.def;
-                    }
-                    SpawnThings spawnThing = new SpawnThings();
-                    spawnThing.factionDef = fDef;
-                    spawnThing.spawnCount = 1;
-                    spawnThing.temporary = false;
-
-                    GetPolyMinMax(caster);
-
-                    spawnThing = TM_Action.AssignRandomCreatureDef(spawnThing, this.min, this.max);
-                    if (spawnThing.def == null || spawnThing.kindDef == null)
-                    {
-                        spawnThing.def = ThingDef.Named("Rat");
-                        spawnThing.kindDef = PawnKindDef.Named("Rat");
-                        Log.Message("random creature was null");
-                    }
-
-                    Pawn polymorphedPawn = TM_Action.PolymorphPawn(this.CasterPawn, caster, caster, spawnThing, caster.Position, true, duration, caster.Faction);
-
-                    if (this.effVal >= 3)
-                    {
-                        polymorphedPawn.GetComp<CompPolymorph>().Temporary = false;
-                    }
-
-                    FleckMaker.ThrowSmoke(polymorphedPawn.DrawPos, caster.Map, 2);
-                    FleckMaker.ThrowMicroSparks(polymorphedPawn.DrawPos, caster.Map);
-                    FleckMaker.ThrowHeatGlow(polymorphedPawn.Position, caster.Map, 2);
-                    //caster.DeSpawn();
-
-                    HealthUtility.AdjustSeverity(polymorphedPawn, HediffDef.Named("TM_ShapeshiftHD"), .5f + (1f * pwrVal));
-
-                }
-
-                //SoundInfo info = SoundInfo.InMap(new TargetInfo(caster.Position, caster.Map, false), MaintenanceType.None);
-                //info.pitchFactor = 1.0f;
-                //info.volumeFactor = 1.0f;
-                //TorannMagicDefOf.TM_FastReleaseSD.PlayOneShot(info);
-                //TM_MoteMaker.ThrowGenericMote(ThingDef.Named("Mote_PowerWave"), caster.DrawPos, caster.Map, .8f, .2f, .1f, .1f, 0, 1f, 0, Rand.Chance(.5f) ? 0 : 180);
+                current.CancelPolymorph();
+                return true;
             }
-            return true;
-        }
-
-        private void GetPolyMinMax(Pawn pawn)
-        {
-            if (this.verVal >= 3)
+            var magic = owner.GetCompAbilityUserMagic();
+            var skills = magic.MagicData.MagicPowerSkill_Shapeshift;
+            verVal = skills.First(x => x.label == "TM_Shapeshift_ver").level;
+            pwrVal = skills.First(x => x.label == "TM_Shapeshift_pwr").level;
+            effVal = skills.First(x => x.label == "TM_Shapeshift_eff").level;
+            var form = new SpawnThings { factionDef = body.Faction?.def ?? TorannMagicDefOf.TM_SummonedFaction, spawnCount = 1 };
+            if (DireWolf)
             {
-                this.min = Mathf.RoundToInt(200 * this.arcaneDmg);
-                this.max = Mathf.RoundToInt(500 * this.arcaneDmg);
-            }
-            else if (this.verVal >= 2)
-            {
-                this.min = Mathf.RoundToInt(150 * this.arcaneDmg);
-                this.max = Mathf.RoundToInt(420 * this.arcaneDmg);
-            }
-            else if (this.verVal >= 1)
-            {
-                this.min = Mathf.RoundToInt(120 * this.arcaneDmg);
-                this.max = Mathf.RoundToInt(320 * this.arcaneDmg);
+                form.kindDef = PawnKindDef.Named("TM_Dire_Wolf");
+                form.def = form.kindDef.race;
             }
             else
             {
-                this.min = Mathf.RoundToInt(80 * this.arcaneDmg);
-                this.max = Mathf.RoundToInt(250 * this.arcaneDmg);
+                var bounds = verVal >= 3 ? (200,500) : verVal == 2 ? (150,420) : verVal == 1 ? (120,320) : (80,250);
+                TM_Action.AssignRandomCreatureDef(form, bounds.Item1, bounds.Item2);
             }
+            int duration = Mathf.Max(1, Mathf.RoundToInt((1800 + 360 * effVal) * magic.arcaneDmg));
+            var animal = TM_Action.PolymorphPawn(owner, body, body, form, body.Position, effVal < 3, duration, body.Faction);
+            if (animal == null) return false;
+            FleckMaker.ThrowSmoke(animal.DrawPos, animal.Map, 2);
+            FleckMaker.ThrowMicroSparks(animal.DrawPos, animal.Map);
+            FleckMaker.ThrowHeatGlow(animal.Position, animal.Map, 2);
+            HealthUtility.AdjustSeverity(animal, HediffDef.Named("TM_ShapeshiftHD"), .5f + pwrVal);
+            animal.GetComp<CompPolymorph>().EnterSelfForm();
+            return true;
         }
     }
 }

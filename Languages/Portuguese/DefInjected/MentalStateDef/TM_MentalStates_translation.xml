@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mental breaks: extreme -->
+
+  <TM_Berserk.label>Berserk</TM_Berserk.label>
+  <TM_Berserk.recoveryMessage>A fúria do berserque acabou.</TM_Berserk.recoveryMessage>
+  <TM_Berserk.baseInspectLine>Estado mental: Berserk</TM_Berserk.baseInspectLine>
+
+  <TM_PanicFlee.label>fuga de pânico</TM_PanicFlee.label>
+  <TM_PanicFlee.baseInspectLine>Estado mental: correr em pânico</TM_PanicFlee.baseInspectLine>
+
+
+  <TM_WanderPsychotic.label>errar na psicose</TM_WanderPsychotic.label>
+  <TM_WanderPsychotic.recoveryMessage>Porém, já não está em estado psicótico.</TM_WanderPsychotic.recoveryMessage>
+  <TM_WanderPsychotic.baseInspectLine>Estado mental: vagar na psicose</TM_WanderPsychotic.baseInspectLine>
+
+
+  <TM_WanderSad.label>Triste vagando</TM_WanderSad.label>
+  <TM_WanderSad.recoveryMessage>O que se passa é que já não está triste.</TM_WanderSad.recoveryMessage>
+  <TM_WanderSad.baseInspectLine>Estado mental: triste vagando</TM_WanderSad.baseInspectLine>
+
+  <TM_WanderConfused.label>vagabundo confuso</TM_WanderConfused.label>
+  <TM_WanderConfused.recoveryMessage>Se não estiver mais constrangido.</TM_WanderConfused.recoveryMessage>
+  <TM_WanderConfused.baseInspectLine>Estado mental: confuso</TM_WanderConfused.baseInspectLine>
+
+
+</LanguageData>

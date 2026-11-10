@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- <ThingDef Class="TorannMagic.TMAbilityDef" ParentName="BaseAbility"> -->
+
+  <TM_AMP.label>УМС</TM_AMP.label>
+  <TM_AMP.description>Благословення: Посилення Магічною Силою - також відоме як УМС. Короткочасне посилення, яке різко збільшує фізичну працездатність за рахунок збільшення навантаження на організм.
+
+Тривалість: 30-40с
+Фізична працездатність: ~+30%
+Фізична потреба: +40%
+Біль: -20%</TM_AMP.description>
+
+  <TM_AMP_I.label>УМС</TM_AMP_I.label>
+  <TM_AMP_I.description>Благословення: Посилення Магічною Силою - також відоме як УМС. Короткочасне посилення, яке різко збільшує фізичну працездатність за рахунок збільшення навантаження на організм.
+
+Тривалість: 30-40с
+Фізична працездатність: ~+50%
+Фізична потреба: +60%
+Біль: -20%</TM_AMP_I.description>
+
+  <TM_AMP_II.label>УМС</TM_AMP_II.label>
+  <TM_AMP_II.description>Благословення: Посилення Магічною Силою - також відоме як УМС. Короткочасне посилення, яке різко збільшує фізичну працездатність за рахунок збільшення навантаження на організм.
+
+Тривалість: 50-60с
+Фізична працездатність: ~+65%
+Фізична потреба: +60%
+Біль: -30%</TM_AMP_II.description>
+
+  <TM_AMP_III.label>УМС</TM_AMP_III.label>
+  <TM_AMP_III.description>Благословення: Посилення Магічною Силою - також відоме як УМС. Короткочасне посилення, яке різко збільшує фізичну працездатність за рахунок збільшення навантаження на організм.
+
+Тривалість: 50-60с
+Фізична працездатність: ~+80%
+Фізична потреба: +100%
+Біль: -40%</TM_AMP_III.description>
+
+
+  <!-- Lightning Cloud -->
+
+  <TM_LightningCloud.label>Грозова хмара</TM_LightningCloud.label>
+  <TM_LightningCloud.description>Створює область, заряджену блискавкою. Пошкоджує і оглушає все, що знаходиться в цій хмарі.</TM_LightningCloud.description>
+
+
+  <!-- Lightning Bolt -->
+
+  <TM_LightningBolt.label>Удар блискавки</TM_LightningBolt.label>
+  <TM_LightningBolt.description>Запустіть блискавку, щоб вразити свою ціль.</TM_LightningBolt.description>
+
+
+  <!-- Lightning Storm -->
+
+  <TM_LightningStorm.label>Грозовий шторм</TM_LightningStorm.label>
+  <TM_LightningStorm.description>Створіть сильну, але неконтрольовану грозу над цільовою областю.</TM_LightningStorm.description>
+
+
+  <!-- Eye of the Storm -->
+
+  <TM_EyeOfTheStorm.label>Око бурі</TM_EyeOfTheStorm.label>
+  <TM_EyeOfTheStorm.description>Випустіть кулю чистої електричної енергії, яка знищує все на своєму шляху.</TM_EyeOfTheStorm.description>
+
+
+</LanguageData>

@@ -1,0 +1,31 @@
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritPsionicStorm</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
+    <carryThingAfterJob>true</carryThingAfterJob>
+    <reportString>preparing a psionic storm.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritPsionicDash</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
+    <carryThingAfterJob>true</carryThingAfterJob>
+    <reportString>preparing a psionic dash.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritPsionicBarrier</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>raising a psionic barrier.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritProjectedBarrier</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>projecting a psionic barrier at TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritPsionicBlast</defName>
+    <driverClass>TorannMagic.JobDriver_PsionicVolley</driverClass>
+    <reportString>firing a psionic volley at TargetB.</reportString>
+  </JobDef>
+</Defs>

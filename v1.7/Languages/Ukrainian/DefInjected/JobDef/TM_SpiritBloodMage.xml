@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBloodShield.reportString>створює кривавий щит.</TM_SpiritBloodShield.reportString>
+  <TM_SpiritBloodMoon.reportString>закликає кривавий місяць.</TM_SpiritBloodMoon.reportString>
+  <TM_SpiritBloodMoon_I.reportString>закликає кривавий місяць.</TM_SpiritBloodMoon_I.reportString>
+  <TM_SpiritBloodMoon_II.reportString>закликає кривавий місяць.</TM_SpiritBloodMoon_II.reportString>
+  <TM_SpiritBloodMoon_III.reportString>закликає кривавий місяць.</TM_SpiritBloodMoon_III.reportString>
+  <TM_SpiritRend.reportString>розриває цілі магією крові.</TM_SpiritRend.reportString>
+  <TM_SpiritRend_I.reportString>розриває цілі магією крові.</TM_SpiritRend_I.reportString>
+  <TM_SpiritRend_II.reportString>розриває цілі магією крові.</TM_SpiritRend_II.reportString>
+  <TM_SpiritRend_III.reportString>розриває цілі магією крові.</TM_SpiritRend_III.reportString>
+  <TM_SpiritBloodForBlood.reportString>переливає кров.</TM_SpiritBloodForBlood.reportString>
+  <TM_SpiritIgniteBlood.reportString>підпалює кров.</TM_SpiritIgniteBlood.reportString>
+</LanguageData>

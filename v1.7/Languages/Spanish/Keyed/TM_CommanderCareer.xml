@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadCommanderProvisioner>Iniciación: intendencia</TM_ReadCommanderProvisioner>
+  <TM_ReadCommanderSignals>Iniciación: señales claras</TM_ReadCommanderSignals>
+  <TM_CommanderSupplyTrial>Entregas coordinadas: {0}/12. Ordena a un aliado que termine un transporte antes de que expire la orden.</TM_CommanderSupplyTrial>
+  <TM_CommanderEvacTrial>Aliados retirados del peligro: {0}/8, o reparaciones coordinadas: {1}/16. Asigna la cuadrilla mientras se repara un edificio dañado por un enemigo o un incendio no iniciado por la colonia.</TM_CommanderEvacTrial>
+  <TM_CommanderServiceTrial>Días de servicio: {0}/10 u órdenes de emergencia útiles: {1}/10. Nivel de guerrero: {2}/30.</TM_CommanderServiceTrial>
+  <TM_CommanderAdvance>Ascender de grado</TM_CommanderAdvance>
+  <TM_CommanderEveryoneHome>Operación: todos a casa</TM_CommanderEveryoneHome>
+  <TM_CommanderChoseOperation>Ascensión: todos a casa.</TM_CommanderChoseOperation>
+  <TM_CommanderChoseAura>Ascensión: aura de mando.</TM_CommanderChoseAura>
+  <TM_CommanderOperationUnavailable>Requiere la operación, 60% de aguante y la recarga completa.</TM_CommanderOperationUnavailable>
+  <TM_CommanderDoctrineSupply>Intendencia concede el aura de suministros original. La cuadrilla solo acelera el trabajo asignado.</TM_CommanderDoctrineSupply>
+  <TM_CommanderDoctrineSignals>Señales claras aumenta la aceptación de órdenes en 2/4/6/8/10 puntos porcentuales, hasta el 95%.</TM_CommanderDoctrineSignals>
+</LanguageData>

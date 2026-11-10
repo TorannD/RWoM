@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Tranquilizer_HD.label>Заспокоєний</TM_Tranquilizer_HD.label>
+  <TM_Tranquilizer_HD.description>Ефекти транквілізатора.</TM_Tranquilizer_HD.description>
+  <TM_Tranquilizer_HD.stages.0.label>Уповільнений</TM_Tranquilizer_HD.stages.0.label>
+  <TM_Tranquilizer_HD.stages.1.label>Заспокоєний</TM_Tranquilizer_HD.stages.1.label>
+  <TM_Tranquilizer_HD.stages.2.label>Паралізований</TM_Tranquilizer_HD.stages.2.label>
+
+  <TM_Slow_HD.label>Уповільнений</TM_Slow_HD.label>
+  <TM_Slow_HD.description>Ефекти здатності, що знижує фізичну і розумову рухливість.</TM_Slow_HD.description>
+  <TM_Slow_HD.stages.0.label>незначний</TM_Slow_HD.stages.0.label>
+  <TM_Slow_HD.stages.1.label>сильний</TM_Slow_HD.stages.1.label>
+  <TM_Slow_HD.stages.2.label>екстремальний</TM_Slow_HD.stages.2.label>
+
+
+</LanguageData>

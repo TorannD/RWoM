@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	
+  
+    <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_MedicalSupply</defName>
+        <label>Resupply</label>
+        <uiIconPath>UI/bloodgift</uiIconPath>
+        <description>Resupply the Field Medic's medical supplies.
+
+The Field Medic will use one item from target stockpile and convert it into personal medical supplies he can use to fuel his abilities.
+
+The amount of supply gained is equal to 20 times the medical potency of the item squared:
+medicine - 20 medical supplies
+herbal medicine - 4.9 medical supplies
+glitterworld medicine - 51.2 medical supplies
+
+The Field Medic can train to convert his equipment back into common medicine</description>
+        <staminaCost>0</staminaCost>
+        <shouldInitialize>true</shouldInitialize>
+        <learnChance>1</learnChance>
+        <abilityHediff>TM_MedicalSupplyHD</abilityHediff>
+        <canCopy>false</canCopy>
+        <MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_MedicalSupply</verbClass>
+                <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+                <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+                <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+                <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <abilityDef>TM_MedicalSupply</abilityDef>
+            <isViolent>false</isViolent>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <warmupTime>8</warmupTime>
+            <SecondsToRecharge>1.0</SecondsToRecharge>
+            <range>2</range>
+            <soundCast>TM_VibrationLow</soundCast>
+            <muzzleFlashScale>10</muzzleFlashScale>
+            <isPrimary>false</isPrimary>
+            <targetParams>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_medicalsupply</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
+	
+	 <TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_Emergency</defName>
+        <label>Emergency</label>
+        <uiIconPath>UI/Emergency</uiIconPath>
+        <description>The Field Medic rushes to aid their patients.
+
+The Field Medic gains increased base movement speed, tending speed and tending quality as well as reduced pain for a 30 seconds.</description>
+        <shouldInitialize>true</shouldInitialize>
+        <efficiencyReductionPercent>.08</efficiencyReductionPercent>
+        <learnChance>1</learnChance>
+        <canCopy>true</canCopy>
+		<staminaCost>.30</staminaCost>
+        <MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_SB</verbClass>
+                <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+                <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+                <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+                <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <abilityDef>TM_Emergency</abilityDef>
+            <isViolent>false</isViolent>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <warmupTime>0</warmupTime>
+            <SecondsToRecharge>60.0</SecondsToRecharge>
+            <range>0</range>
+            <soundCast>TM_VibrationLow</soundCast>
+            <muzzleFlashScale>1</muzzleFlashScale>
+            <isPrimary>false</isPrimary>
+            <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+            <targetParams>
+              <canTargetPawns>true</canTargetPawns>
+              <canTargetBuildings>false</canTargetBuildings>
+              <canTargetSelf>true</canTargetSelf>
+              <canTargetLocations>false</canTargetLocations>
+            </targetParams>
+            <hediffsToApply>
+                <li>
+                    <hediffDef>TM_EmergencyHD</hediffDef>
+                    <applyChance>1</applyChance>
+                    <severity>0.030</severity>
+                </li>
+            </hediffsToApply>
+        </MainVerb>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_emergency</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
+	
+	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_Medigel</defName>
+        <label>Medigel</label>
+        <uiIconPath>UI/Medigel</uiIconPath>
+        <description>Applies a healing gel to the wounds of a target that speeds recovery and fights infection. Wounds will be healed slowly over time. Medigel slightly reduces the pain of wounds.</description>
+        <shouldInitialize>true</shouldInitialize>
+        <learnChance>1</learnChance>
+        <canCopy>false</canCopy>
+		<staminaCost>.1</staminaCost>
+		<efficiencyReductionPercent>.05</efficiencyReductionPercent>
+		<requiredHediff>TM_MedicalSupplyHD</requiredHediff>
+		<hediffCost>10</hediffCost>
+		<hediffXPFactor>2</hediffXPFactor>
+        <MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>TorannMagic.Verb_SB</verbClass>
+                <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+                <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+                <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+                <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <abilityDef>TM_Medigel</abilityDef>
+            <isViolent>false</isViolent>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <warmupTime>2</warmupTime>
+            <SecondsToRecharge>10</SecondsToRecharge>
+            <range>1</range>
+            <AlwaysHits>true</AlwaysHits>
+
+            <muzzleFlashScale>1</muzzleFlashScale>
+            <isPrimary>false</isPrimary>
+            <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+            <targetParams>
+              <canTargetPawns>true</canTargetPawns>
+              <canTargetBuildings>false</canTargetBuildings>
+              <canTargetSelf>true</canTargetSelf>
+              <canTargetLocations>false</canTargetLocations>
+            </targetParams>
+			<hediffsToApply>
+                <li>
+                    <hediffDef>TM_MedigelHD</hediffDef>
+                    <applyChance>1</applyChance>
+                </li>
+            </hediffsToApply>
+        </MainVerb>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_medigel</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
+	
+	<TorannMagic.TMAbilityDef ParentName="BaseMightAbility">
+        <defName>TM_CombatDrugs</defName>
+        <label>Combat Drugs</label>
+        <uiIconPath>UI/bloodgift</uiIconPath> 
+        <description>Gives combat drugs to an ally
+
+The Field Medic throws a syringe of improvised combat drugs to an ally.
+The effects are always positive but may vary.</description>
+		<requiredHediff>TM_MedicalSupplyHD</requiredHediff>
+		<hediffCost>8</hediffCost>
+		<hediffXPFactor>2</hediffXPFactor>
+        <shouldInitialize>true</shouldInitialize>
+        <learnChance>1</learnChance>
+        <canCopy>false</canCopy>
+        <MainVerb Class="TorannMagic.Verb_ApplyRandomHediffFromList_Properties">
+            <verbClass>TorannMagic.Verb_ApplyRandomHediffFromList</verbClass>
+            <hediffDefs> 
+                <li>TM_CombatDrugsPain_HD</li>
+                <li>TM_CombatDrugsMoving_HD</li>
+                <li>TM_CombatDrugsAwareness_HD</li>
+                <li>TM_CombatDrugsAccuracy_HD</li>
+            </hediffDefs>
+            <baseCount>1</baseCount> 
+            <countUpgrade>TM_CombatDrugs_ver</countUpgrade> 
+            <baseSeverity>0.12</baseSeverity> 
+                                              
+            <severityUpgrade>TM_CombatDrugs_pwr</severityUpgrade> 
+            <severityIncreasePerUpgrade>0.02</severityIncreasePerUpgrade> 
+            <useEachOnceMax>true</useEachOnceMax> 
+                <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+                <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+                <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+                <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <abilityDef>TM_CombatDrugs</abilityDef>
+            <isViolent>false</isViolent>
+            <defaultProjectile>Projectile_Default</defaultProjectile>
+            <warmupTime>2</warmupTime>
+            <SecondsToRecharge>1.0</SecondsToRecharge>
+            <range>10</range>
+            <AlwaysHits>true</AlwaysHits>
+
+            <muzzleFlashScale>20</muzzleFlashScale>
+            <isPrimary>false</isPrimary>
+            <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+            <targetParams>
+              <canTargetPawns>true</canTargetPawns>
+              <canTargetBuildings>false</canTargetBuildings>
+              <canTargetSelf>true</canTargetSelf>
+              <canTargetLocations>false</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    <modExtensions>
+<li Class="TorannMagic.Core.SpellIdentityExtension" MayRequire="huginn.rwom.core">
+<spellId>rwom.tm_combatdrugs</spellId>
+<domain>Magic</domain>
+<tier>0</tier>
+</li>
+</modExtensions>
+</TorannMagic.TMAbilityDef>
+
+</Defs>

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <BookOfNinja.label>Тайный том: Нинзя</BookOfNinja.label>
+  <BookOfNinja.description>Обучает магически или физически склонную пешку искусству Ниндзя, хитрого бойца ближнего боя с несколькими волшебными трюками в рукавах.</BookOfNinja.description>
+  <BookOfRedMage.label>Тайный том: Красный маг</BookOfRedMage.label>
+  <BookOfRedMage.description>Обучает магически или физически склонную пешку искусству Красного мага, универсальному и стильному переплетению клинка и магии.</BookOfRedMage.description>
+  <BookOfElementalGunner.label>Тайный том: Стихийный стрелок</BookOfElementalGunner.label>
+  <BookOfElementalGunner.description>Обучает магически или физически склонную пешку пути скорострельного Стихийного стрелка.</BookOfElementalGunner.description>
+  <Torn_BookOfTroubadour.label>Разорванный том: Трубадур</Torn_BookOfTroubadour.label>
+  <Torn_BookOfTroubadour.description>Обучает физически или магически одаренную пешку искусству трубадура, лучника, поддерживающего своих союзников стрелами и песнями. Свиток неполный и это может привести к тому, что пешка не выучит все заклинания сразу.</Torn_BookOfTroubadour.description>
+  <BookOfTroubadour.label>Тайный том: Трубадур</BookOfTroubadour.label>
+  <BookOfTroubadour.description>Обучает магически или физически одаренную пешку искусству Трубадура, лучника, поддерживающего своих союзников стрелами и песнями.</BookOfTroubadour.description>
+  <BookOfBombardier.label>Боевой стиль: Бомбардир</BookOfBombardier.label>
+  <BookOfBombardier.description>Обучает физически развитую пешку, как стать экспертом по взрывчатым веществам дальнего боя.</BookOfBombardier.description>
+  <BookOfReaper.label>Боевой стиль: Жнец</BookOfReaper.label>
+  <BookOfReaper.description>Обучает физически развитую пешку, как настраиваться на темные силы, чтобы становиться демоническим существом, которое ныряет прямо на позиции врага, сея среди них хаос.</BookOfReaper.description>
+  <BookOfRailbreaker.label>Боевой имплант: Рейлбрейкер</BookOfRailbreaker.label>
+  <BookOfRailbreaker.description>Физически развитая пешка может использовать эти импланты, чтобы превратиться в Рейлбрейкера, безрассудного бойца ближнего боя, который использует взрывы. У них огромная огневая мощь, но отдача от их собственных способностей представляет собой постоянный риск.</BookOfRailbreaker.description>
+  <BookOfMedic.label>Клятва Гиппократа: Медик</BookOfMedic.label>
+  <BookOfMedic.description>Позволяет физически развитой пешке принести Клятву Гиппократа и стать медиком. Медики - чрезвычайно способные врачи и обладают множеством поддерживающих способностей. Однако они очень плохие бойцы.</BookOfMedic.description>
+  <Torn_BookOfWindMage.label>Разорванный том: Маг ветра</Torn_BookOfWindMage.label>
+  <Torn_BookOfWindMage.description>Обучает одаренную пешку магии ветра. Свиток неполный и это может привести к тому, что пешка не выучит все заклинания сразу.</Torn_BookOfWindMage.description>
+  <BookOfWindMage.label>Тайный том: Маг ветра</BookOfWindMage.label>
+  <BookOfWindMage.description>Обучает склонную к магии пешку, как использовать силу ветра.</BookOfWindMage.description>
+  <BookOfGadgeteer.label>Боевое вдохновение: Гаджетер</BookOfGadgeteer.label>
+  <BookOfGadgeteer.description>Обучает физически искусного пешку проницательному стилю мышления, необходимому для того, чтобы стать Гаджетером, эксцентричным изобретателем, владеющим множеством необычных инструментов для повседневной жизни.</BookOfGadgeteer.description>
+  <Torn_BookOfChromaMage.label>Разорванный том: Хроматический маг</Torn_BookOfChromaMage.label>
+  <Torn_BookOfChromaMage.description>Обучает одаренную пешку, как встать на многогранный путь Хроматического мага. Путь Хроматического мага - это адаптируемость и разностороннее мастерство, хотя за это и приходится платить. Они могут выучить ряд мощных заклинаний других классов, но их максимальный уровень - 30, и они никогда не овладеют каждым заклинанием. Прочитав свиток, Хроматический маг выучит случайное количество заклинаний из своего возможного пула заклинаний.</Torn_BookOfChromaMage.description>
+  <BookOfSamurai.label>Боевой стиль: Самурай</BookOfSamurai.label>
+  <BookOfSamurai.description>Обучает физически искусную пешку как стать Самураем, мастером Иай.</BookOfSamurai.description>
+  <BookOfScion.label>Боевой стиль: Сцион</BookOfScion.label>
+  <BookOfScion.description>Обучает физически искусную пешку, чтобы стать Сционом, бойцом ближнего боя, который направляет силу древних аспектов, чтобы помочь себе в бою.</BookOfScion.description>
+  <Torn_BookOfHarbinger.label>Разорванный том: Предвестник</Torn_BookOfHarbinger.label>
+  <Torn_BookOfHarbinger.description>Обучает одаренную пешку как накладывать на врагов проклятия и наговоры. Свиток неполный и это может привести к тому, что пешка не выучит все заклинания сразу.</Torn_BookOfHarbinger.description>
+  <BookOfHarbinger.label>Тайный том: Предвестник</BookOfHarbinger.label>
+  <BookOfHarbinger.description>Обучает склонную к магии пешку порочному искусству Предвестника, обучая проклятиям, способным сломить разум и тело любого, кто встретит их гнев.</BookOfHarbinger.description>
+  <BookOfBerserker.label>Боевой стиль: Берсеркер</BookOfBerserker.label>
+  <BookOfBerserker.description>Эта книга якобы обучает боевому искусству Берсеркера, но, кажется, никто не читает больше, чем первые несколько страниц, прежде чем разорвать ее на части и броситься на поиски ближайшего врага.</BookOfBerserker.description>
+  <BookOfPlaguedoctor.label>Искаженное вдохновение: Чумной доктор</BookOfPlaguedoctor.label>
+  <BookOfPlaguedoctor.description>Эта книга учит физически склонную пешку извращенному стилю мышления Чумного доктора, полубезумного средневекового врача, упивающегося ядами, смертью и разложением. Они способны выполнять сомнительные, но быстрые операции и наносят различные, зараженные чумой, атаки.</BookOfPlaguedoctor.description>
+  <Torn_BookOfCleric.label>Разорванный том: Клерик</Torn_BookOfCleric.label>
+  <Torn_BookOfCleric.description>Обучает одаренную пешку, как стать клериком. Клерики способны произносить несколько специализированных заклинаний поддержки в быстрой последовательности, но их главный ограничивающий фактор - это усталость, которую их заклинания переносят на их тело.
+Свиток неполный и это может привести к тому, что пешка не выучит все заклинания сразу.</Torn_BookOfCleric.description>
+  <BookOfCleric.label>Тайный том: Клерик</BookOfCleric.label>
+  <BookOfCleric.description>Обучает одаренную пешку, как стать клириком. Клерики способны произносить несколько специализированных заклинаний поддержки в быстрой последовательности, но их главный ограничивающий фактор - это усталость, которую их заклинания переносят на их тело.</BookOfCleric.description>
+  <Torn_BookOfArbormancer.label>Разорванный том: Арбормансер</Torn_BookOfArbormancer.label>
+  <Torn_BookOfArbormancer.description>Обучает магически одаренную пешку, как использовать силу живых растений для произнесения разнообразных магических заклинаний. Свиток неполный и это может привести к тому, что пешка не выучит все заклинания сразу.</Torn_BookOfArbormancer.description>
+  <BookOfArbormancer.label>Тайный том: Арбормансер</BookOfArbormancer.label>
+  <BookOfArbormancer.description>Обучает магически одаренную пешку, как использовать силу живых растений для произнесения разнообразных магических заклинаний.</BookOfArbormancer.description>
+  <BookOfChainwarden.label>Боевой стиль: Хранитель цепей</BookOfChainwarden.label>
+  <BookOfChainwarden.description>Обучает физически склонную пешку, как стать Стражем цепей, мобильным бойцом среднего радиуса действия, способным наносить большой урон по площади и выводить из строя противников оглушением и притягиванием.</BookOfChainwarden.description>
+  <BookOfAmbusher.label>Боевой стиль: Мастер засад</BookOfAmbusher.label>
+  <BookOfAmbusher.description>Обучает физически склонную пешку ехидному боевому стилю Мастера засад - холодного, терпеливого бойца, который подстерегает своих противников ловушками и разрушительными способностями ближнего боя.</BookOfAmbusher.description>
+  <BookOfSaboteur.label>Боевой стиль: Диверсант</BookOfSaboteur.label>
+  <BookOfSaboteur.description>Обучает физически склонную пешку искусству Диверсанта, бойца, который специализируется на том, чтобы идти в тыл врага и разрушать ключевые вражеские здания и оборону.</BookOfSaboteur.description>
+  <Torn_BookOfKeeper.label>Разорванный том: Хранитель</Torn_BookOfKeeper.label>
+  <Torn_BookOfKeeper.description>Обучает склонного к магии стать Хранителем, магом, специализирующимся на защите. Свиток неполный и это может привести к тому, что пешка не выучит все заклинания сразу.</Torn_BookOfKeeper.description>
+  <BookOfKeeper.label>Тайный том: Хранитель</BookOfKeeper.label>
+  <BookOfKeeper.description>Обучает склонного к магии стать Хранителем, магом, специализирующимся на защите.</BookOfKeeper.description>
+  <BookOfPridestalker.label>Тайный том: Прайдсталкер</BookOfPridestalker.label>
+  <BookOfPridestalker.description>Обучает склонную к магии или физике пешку искусству Прайдсталкера, быстрого охотника, который сочетает магию и лук, чтобы превратить любую битву в жестокую охоту.</BookOfPridestalker.description>
+  <BookOfHawkeye.label>Боевой стиль: Соколиный глаз</BookOfHawkeye.label>
+  <BookOfHawkeye.description>Обучает физически развитую пешку древнему дисциплинированному искусству самоотверженного боя из лука.</BookOfHawkeye.description>
+  <BookOfSupportSpecialist.label>Боевая форма: Специалист поддержки</BookOfSupportSpecialist.label>
+  <BookOfSupportSpecialist.description>Обучает физически склонную пешку, как стать Специалистом поддержки, универсальным бойцом с дробовиком, способным поражать ключевые цели, удерживать линию обороны или поддерживать союзников.</BookOfSupportSpecialist.description>
+  <BookOfScrapper.label>Боевая форма: Задира</BookOfScrapper.label>
+  <BookOfScrapper.description>Обучает физически склонную пешку, как стать Задирой, бойцом, который предпочитает драку без оружия и имеет большой набор обезвреживающих приемов по одной цели.</BookOfScrapper.description>
+  <BookOfOracle.label>Тайный том: Оракул</BookOfOracle.label>
+  <BookOfOracle.description>Обучает склонную к магии пешку пути Оракула, мага, черпающего свою силу от звезд. Они медленные, обдумывающие заклинатели, способные воздействовать на цели в любом месте карты своими поддерживающими заклинаниями.</BookOfOracle.description>
+  <Torn_BookOfOracle.label>Разорванный том: Оракул</Torn_BookOfOracle.label>
+  <Torn_BookOfOracle.description>Обучает склонную к магии пешку пути Оракула, мага, черпающего свою силу от звезд. Они медленные, обдумывающие заклинатели, способные воздействовать на цели в любом месте карты своими поддерживающими заклинаниями. Свиток неполный и это может привести к тому, что пешка не выучит все заклинания сразу.</Torn_BookOfOracle.description>
+  <BookOfMystic.label>Боевая форма: Мистик</BookOfMystic.label>
+  <BookOfMystic.description>Обучает физически одаренную пешку эзотерическим искусствам Мистика, универсального бойца среднего ранга, который использует силу духовной энергии, чтобы победить своих врагов.</BookOfMystic.description>
+  <BookOfSpellbreaker.label>Боевая форма: Разрушитель чар</BookOfSpellbreaker.label>
+  <BookOfSpellbreaker.description>Обучает физически искусную пешку боевому стилю Разрушителя чар, бойца, который отлично справляется с противодействием и выведением из строя вражеских бойцов и магов.</BookOfSpellbreaker.description>
+  <BookOfDuskbringer.label>Тайный том: Вестник сумерек</BookOfDuskbringer.label>
+  <BookOfDuskbringer.description>Обучает магически или физически склонную пешку, чтобы стать Вестником сумерек, воином, который использует двойные разрушительные силы света и тьмы, чтобы одолеть своих врагов.</BookOfDuskbringer.description>
+  <BookOfThunderblessed.label>Боевая форма: Благословленный грозой</BookOfThunderblessed.label>
+  <BookOfThunderblessed.description>Обучает физически развитую пешку, как использовать чистую силу электричества, получая доступ к очень разрушительным атакам ближнего боя.</BookOfThunderblessed.description>
+  <BookOfDeadeye.label>Боевая форма: Маг-стрелок</BookOfDeadeye.label>
+  <BookOfDeadeye.description>Обучает физически или магически одаренную пешку холодному искусству Мага-стрелка, бесподобного снайпера, который использует навыки, тактику и надежное оружие, чтобы убедиться, что их цели не выживают, где бы они ни находились. Они способны использовать магию для еще более смертоносных атак, но они не регенерируют ману пассивно.</BookOfDeadeye.description>
+  <BookOfSpellthief.label>Боевая форма: Похититель заклинаний</BookOfSpellthief.label>
+  <BookOfSpellthief.description>Обучает магически или физически склонную пешку искусству Похитителя заклинаний, мага, хорошо подходящего для проникновения и саботажа врагов. Они могут копировать способности союзников и врагов.</BookOfSpellthief.description>
+  <BookOfDragoon.label>Боевая форма: Драгун</BookOfDragoon.label>
+  <BookOfDragoon.description>Обучает физически склонную пешку, как стать драгуном, ловким рыцарем, который поглотил силу драконов, наделяя их невероятной устойчивостью к жаре, а также способностью подниматься в небо и атаковать врагов сверху.</BookOfDragoon.description>
+  <Torn_BookOfBlackMage.label>Разорванный том: Черный маг</Torn_BookOfBlackMage.label>
+  <Torn_BookOfBlackMage.description>Обучает одаренную магию пешку, как стать Черным магом, специализированным боевым магом, способным обрушить на своих врагов бесконечную разрушительную магию. Свиток неполный и это может привести к тому, что пешка не выучит все заклинания сразу.</Torn_BookOfBlackMage.description>
+  <BookOfBlackMage.label>Тайный том: Черный маг</BookOfBlackMage.label>
+  <BookOfBlackMage.description>Обучает одаренную магию пешку, как стать Черным магом, специализированным боевым магом, способным обрушить на своих врагов бесконечную разрушительную магию.</BookOfBlackMage.description>
+  <Torn_BookOfScholar.label>Разорванный том: Школяр</Torn_BookOfScholar.label>
+  <Torn_BookOfScholar.description>Обучает склонную к магии пешку, как стать Школяром, магом-тактиком, который отлично защищает и поддерживает своих союзников в бою. Они очень плохие бойцы. Свиток неполный и это может привести к тому, что пешка не выучит все заклинания сразу.</Torn_BookOfScholar.description>
+  <BookOfScholar.label>Тайный том: Школяр</BookOfScholar.label>
+  <BookOfScholar.description>Обучает склонную к магии пешку, как стать Школяром, магом-тактиком, который отлично защищает и поддерживает своих союзников в бою. Они очень плохие бойцы.</BookOfScholar.description>
+  <BookOfGunbreaker.label>Боевая форма: Ганбрейкер</BookOfGunbreaker.label>
+  <BookOfGunbreaker.description>Обучает физически склонную пешку, как стать Ганбрейкером, необычным бойцом, предпочитающим использовать оружие дальнего боя в рукопашном бою. Они способны заряжаться и быстро наносить несколько разрушительных атак.</BookOfGunbreaker.description>
+  <BookOfGunner.label>Боевая форма: Тяжелый стрелок</BookOfGunner.label>
+  <BookOfGunner.description>Обучает физически склонную пешку, как стать стрелком, бойцом, который предпочитает оружие дальнего боя с мощными возможностями одиночного выстрела. Они способны заряжаться и выпускать быстрые очереди подавляющего огня.</BookOfGunner.description>
+  <BookOfWarrior.label>Боевая форма: Воитель</BookOfWarrior.label>
+  <BookOfWarrior.description>Обучает физически одаренную пешку, как стать Воителем, стойким бойцом ближнего боя, обученным выживать на передовой.</BookOfWarrior.description>
+  <BookOfNomad.label>Боевая форма: Кочевние</BookOfNomad.label>
+  <BookOfNomad.description>Обучает физически склонную пешку, как стать Кочевником, стойким бойцом с луком, который сражается как в ближнем бою, так и на расстоянии.</BookOfNomad.description>
+  <BookOfGuardian.label>Тайный том: Страж</BookOfGuardian.label>
+  <BookOfGuardian.description>Обучает магически или физически склонной пешки дисциплине Стража, стойкого защитника, сочетающего меч и магию для защиты своих союзников.</BookOfGuardian.description>
+  <BookOfHolosmith.label>Боевая форма: Голокузнец</BookOfHolosmith.label>
+  <BookOfHolosmith.description>Обучает физически склонную пешку, как стать Голокузнецом, бойцом, использующим уникальную Фотонную кузницу, позволяющую им использовать чистую силу света для уничтожения своих врагов.</BookOfHolosmith.description>
+  <BookOfGambler.label>Коробка игральных костей: Картежник</BookOfGambler.label>
+  <BookOfGambler.description>Это коробка с игральными костями и игральными картами. Физически или магически склонная пешка, вероятно, может использовать их, чтобы стать игроком, разносторонним бойцом, который играет судьбой по прихоти своей руки.</BookOfGambler.description>
+  <BookOfChef.label>Книга рецептов: Шеф-повар</BookOfChef.label>
+  <BookOfChef.description>Обучает физически склонную пешку, как стать поваром, способным помочь своим союзникам едой.</BookOfChef.description>
+  <BookOfMiner.label>Боевая форма: Рудокоп</BookOfMiner.label>
+  <BookOfMiner.description>Обучает физически склонного пешку, как стать рудокопом, квалифицированным специалистом, способным с легкостью разрушать руду и горные породы</BookOfMiner.description>
+  <BookOfStriker.label>Боевая форма: Страйкер</BookOfStriker.label>
+  <BookOfStriker.description>Обучает физически склонную пешку, как стать Страйкером, невооруженным бойцом, который является агрессивным ответвлением Монаха - они отказываются от защиты и исцеления в обмен на быстрый и наступательный стиль боя.</BookOfStriker.description>
+  <SkillOf_BackupGrenade.label>Навык бойца: Взрывной мешок</SkillOf_BackupGrenade.label>
+  <SkillOf_BackupGrenade.description>Обучает бойца, как бросить мешок, наполненный взрывчаткой, в определенное место, нанося небольшой AoE-урон.</SkillOf_BackupGrenade.description>
+  <SkillOf_EMPBomb.label>Навык бойца: Мешок молний</SkillOf_EMPBomb.label>
+  <SkillOf_EMPBomb.description>Обучает бойца, как бросить мешочек, наполненный кристаллами молнии, в место, где отключаются механоиды и турели.</SkillOf_EMPBomb.description>
+  <SkillOf_Glare.label>Навык бойца: Свирепый Взгляд</SkillOf_Glare.label>
+  <SkillOf_Glare.description>Обучает бойца, как направить леденящий кровь взгляд на одного врага, ненадолго оглушив его.</SkillOf_Glare.description>
+  <SkillOf_EvasiveLeap.label>Навык бойца: Перекат</SkillOf_EvasiveLeap.label>
+  <SkillOf_EvasiveLeap.description>Обучает класс бойцов способности перекат, позволяя им перепрыгивать через небольшие препятствия, а также становится ненадолго неуязвимым.</SkillOf_EvasiveLeap.description>
+  <SkillOf_QuickShot.label>Навык лучника: Быстрый выстрел</SkillOf_QuickShot.label>
+  <SkillOf_QuickShot.description>Обучает лучника, как быстро стрелять из лука в ближайшую цель.</SkillOf_QuickShot.description>
+  <SkillOf_CripplingShot.label>Навык лучника: Калечащий выстрел</SkillOf_CripplingShot.label>
+  <SkillOf_CripplingShot.description>Обучает лучника, как стрелять умело направленной стрелой, чтобы нанести вред противнику, уменьшив его скорость передвижения.</SkillOf_CripplingShot.description>
+  <SkillOf_GrappleArrow.label>Навык лучника: Крюк-стрела</SkillOf_GrappleArrow.label>
+  <SkillOf_GrappleArrow.description>Обучает лучника, как стрелять крюком по местности или зданиям, подтягивая себя к новому месту.</SkillOf_GrappleArrow.description>
+  <SkillOf_MarksmansVow.label>Навык лучника: Клятва лучника</SkillOf_MarksmansVow.label>
+  <SkillOf_MarksmansVow.description>Обучает лучника, как усилить внимание, повысить скорость стрельбы на короткое время и восстановить энергию.</SkillOf_MarksmansVow.description>
+  <SkillOf_Temperance.label>Навык Самурая: Сдержанность</SkillOf_Temperance.label>
+  <SkillOf_Temperance.description>Обучает Самурая, как отточить свое внимание, чтобы увеличить скорость атаки и значительно сократить время произнесения навыков на короткое время.</SkillOf_Temperance.description>
+  <SkillOf_BladeParry.label>Навык Самурая: Парирование</SkillOf_BladeParry.label>
+  <SkillOf_BladeParry.description>Обучает Самурая, как на короткое время парировать большинство атак.</SkillOf_BladeParry.description>
+  <SkillOf_GrapplingHookD.label>Навык Мага-стрелка: Крюк</SkillOf_GrapplingHookD.label>
+  <SkillOf_GrapplingHookD.description>Обучает Мага-стрелка, как стрелять крюком по местности или зданиям, подтягивая себя к новому месту.</SkillOf_GrapplingHookD.description>
+  <SkillOf_OneInTheChamber.label>Навык Мага-стрелка: Один в патроннике</SkillOf_OneInTheChamber.label>
+  <SkillOf_OneInTheChamber.description>Обучает Мага-стрелка, которое мгновенно генерирует небольшое количество маны для себя с длительным временем восстановления.</SkillOf_OneInTheChamber.description>
+  <SpellOf_BramblePatch.label>Заклинание Абромансера: Колючий путь</SpellOf_BramblePatch.label>
+  <SpellOf_BramblePatch.description>Обучает Абромансера, как быстро вырастить опасную область из колючих лоз. Лозы можно использовать для усиления других способностей.</SpellOf_BramblePatch.description>
+  <SpellOf_BulletTime.label>Заклинание Мага-стрелка/Э-стрелка: Время пуль</SpellOf_BulletTime.label>
+  <SpellOf_BulletTime.description>Обучает Мага-стрелка или Элементального стрелка, как волшебным образом усилить фокус, повыси скорость и характеристики стрельбы.</SpellOf_BulletTime.description>
+  <SkillOf_DeathsJudgment.label>Навык Снайпера: Смертельный приговор</SkillOf_DeathsJudgment.label>
+  <SkillOf_DeathsJudgment.description>Обучает снайпера, как сделать невероятно смертельный "выстрел в голову" с большей дальности.</SkillOf_DeathsJudgment.description>
+  <SpellOf_Renew.label>Заклинание Зачарователя: Обновление</SpellOf_Renew.label>
+  <SpellOf_Renew.description>Обучает Зачарователя заклинанию, восстанавливающему состояние предметов.</SpellOf_Renew.description>
+  <SkillOf_DisarmingShot.label>Навык Снайпера: Обезоруживающий выстрел</SkillOf_DisarmingShot.label>
+  <SkillOf_DisarmingShot.description>Обучает снайпера, как обезвредить врага умелым выстрелом.</SkillOf_DisarmingShot.description>
+  <SkillOf_StimShot.label>Навык Снайпера/Суперсолдата: Выстрел Стимулятором</SkillOf_StimShot.label>
+  <SkillOf_StimShot.description>Обучает снайпера или суперсолдата, как доставлять боевые стимуляторы в чрезвычайных ситуациях удаленному союзнику.</SkillOf_StimShot.description>
+  <SkillOf_SerumOverload.label>Навык Суперсолдата: Перегрузка сыворотки</SkillOf_SerumOverload.label>
+  <SkillOf_SerumOverload.description>Обучает суперсолдата, как вводить себе лекарство, которое перегрузит сыворотку в их теле, предоставляя им значительно увеличенные боевые возможности на короткое время за счет снижения силы сыворотки в последствии.</SkillOf_SerumOverload.description>
+  <SkillOf_Equilibrium.label>Навык Специалиста Поддержки: Взрывной скачок</SkillOf_Equilibrium.label>
+  <SkillOf_Equilibrium.description>Обучает специалиста поддержки, как прыгать в область, нанося урон в месте где он приземляется.</SkillOf_Equilibrium.description>
+  <SkillOf_HandheldRocket.label>Навык Специалиста Поддержки: Портативная ракета</SkillOf_HandheldRocket.label>
+  <SkillOf_HandheldRocket.description>Обучает специалиста поддержки, как запустить небольшую взрывную ракету в область, которая наносит небольшой урон юнитам, но большой урон строениям. Не требует прямой видимости для стрельбы.</SkillOf_HandheldRocket.description>
+  <SpellOf_EldritchBarrage.label>Заклинание темного мага: Жуткий обстрел</SpellOf_EldritchBarrage.label>
+  <SpellOf_EldritchBarrage.description>Обучает чернокнижника или суккуба, как нанести серию призрачных взрывов в области.</SpellOf_EldritchBarrage.description>
+  <SpellOf_Overcharge.label>Заклинание Молний: Энергетический заряд</SpellOf_Overcharge.label>
+  <SpellOf_Overcharge.description>Обучает Мага Молнии, как наполнять союзников в области электрической энергией, давая им импульс значительно увеличенной регенерации энергии и скорости передвижения.</SpellOf_Overcharge.description>
+  <SpellOf_FrostArmor.label>Заклинание Льда: Ледяная Броня</SpellOf_FrostArmor.label>
+  <SpellOf_FrostArmor.description>Обучает ледяного мага, как защитить одного союзника слоем магического холода, обеспечивая повышенные значения брони, устойчивость к жаре и огню, а также мягкий регенерирующий эффект в течение длительного периода времени.</SpellOf_FrostArmor.description>
+  <SpellOf_Incinerate.label>Заклинание Огня: Испепеление</SpellOf_Incinerate.label>
+  <SpellOf_Incinerate.description>Обучает мага огня, как охватить одну цель опаляющим пламенем. Способность сбрасывает время восстановления, если она убивает цель.</SpellOf_Incinerate.description>
+  <SpellOf_AspectChanneling.label>Заклинание Призывателя: Стихийное Сотворение</SpellOf_AspectChanneling.label>
+  <SpellOf_AspectChanneling.description>Обучает призывателя, как наложить заклинание на область пешек, вызывая низших элементалей за каждую пешку в радиусе применения.</SpellOf_AspectChanneling.description>
+  <SkillOf_GrandChallenge.label>Навык Гладиатора: Грандиозный вызов</SkillOf_GrandChallenge.label>
+  <SkillOf_GrandChallenge.description>Обучает гладиатора, как отправить насмешливый вызов всем пешкам в области, значительно увеличивая время, необходимое им для прицеливания и применения способностей на короткое время. Не влияет на рукопашный бой.</SkillOf_GrandChallenge.description>
+  <SkillOf_ShieldStance.label>Навык Гладиатора: Блокирующая стойка</SkillOf_ShieldStance.label>
+  <SkillOf_ShieldStance.description>Обучает гладиатора, как занять блокирующую стойку, снижая скорость и точность передвижения, но значительно увеличивая на короткое время его броню.</SkillOf_ShieldStance.description>
+  <SkillOf_TrollUnguent.label>Навык Рейнджера: Тролльская мазь</SkillOf_TrollUnguent.label>
+  <SkillOf_TrollUnguent.description>Обучает рейнджера, как наносить на союзника стойкую и мощную регенерирующую мазь.</SkillOf_TrollUnguent.description>
+  <SkillOf_HuntersShot.label>Навык Рейнджера: Выстрел охотника</SkillOf_HuntersShot.label>
+  <SkillOf_HuntersShot.description>Обучает рейнджера, как стрелять в цель быстрой отвлекающей стрелой, что дает рейнджеру скрытность и на короткое время увеличивает скорость его передвижения.</SkillOf_HuntersShot.description>
+  <SkillOf_PoisonVolley.label>Навык Рейнджера: Ядовитый залп</SkillOf_PoisonVolley.label>
+  <SkillOf_PoisonVolley.description>Обучает рейнджера, как стрелять залпом стрел по ближайшим растениям, заставляя их взорваться ядовитым газом.</SkillOf_PoisonVolley.description>
+  <SkillOf_BladesEdge.label>Навык Танцующего с клинками: Лезвие клинка</SkillOf_BladesEdge.label>
+  <SkillOf_BladesEdge.description>Обучает Танцующего с клинками, как бросить клинок в текущем местоположение, возвращаясь к нему по прошествии пяти секунд.</SkillOf_BladesEdge.description>
+  <SkillOf_ApproachingStorm.label>Навык Псионика: Приближающийся шторм</SkillOf_ApproachingStorm.label>
+  <SkillOf_ApproachingStorm.description>Обучает псионика, как уклончиво лететь к месту, производя псионический взрыв в месте приземления.</SkillOf_ApproachingStorm.description>
+  <SpellOf_ChromaticFlash.label>Заклинание Хроматического мага: Хроматическая вспышка</SpellOf_ChromaticFlash.label>
+  <SpellOf_ChromaticFlash.description>Обучает Хроматического мага, как направить уникальное переплетение магической энергии в цель, давая ей скрытность, сверхскорость и повышенную регенерацию энергии на короткое время.</SpellOf_ChromaticFlash.description>
+  <SkillOf_Vengeance.label>Навык бойца: Превосходство</SkillOf_Vengeance.label>
+  <SkillOf_Vengeance.description>Обучает бойца, как выйти за пределы своих возможностей, что дает ему значительно повышенные характеристики, регенерацию выносливости, кратковременное отклонение снарядов и кратковременную невосприимчивость к боли. Однако после того, как эффект закончится, он потеряет сознание более чем на сутки.</SkillOf_Vengeance.description>
+  <SpellOf_Effulgence.label>Заклинание мага: Сияние</SpellOf_Effulgence.label>
+  <SpellOf_Effulgence.description>Обучает мага, как преобразовывать свою собственную жизненную энергию в ману в безвыходной ситуации, давая им всплеск регенерации маны и скорость произнесения заклинаний на короткое время, а также мгновенно очищая любую магическую слабость и болезнь маны. Однако после того, как эффект закончится, он потеряет сознание более чем на сутки.</SpellOf_Effulgence.description>
+  <SpellOf_PlanetaryForce.label>Заклинание Оракула: Сила Планет</SpellOf_PlanetaryForce.label>
+  <SpellOf_PlanetaryForce.description>Обучает Оракула заклинанию, которое дает цели все баффы Гороскопа одновременно, а также дает короткий всплеск регенерации энергии.</SpellOf_PlanetaryForce.description>
+  <SpellOf_GrandExpanse.label>Заклинание Оракула: Великое Раздолье</SpellOf_GrandExpanse.label>
+  <SpellOf_GrandExpanse.description>Обучает Оракула, как воскресить недавно умершее существо.</SpellOf_GrandExpanse.description>
+  <SkillOf_OfudaStorm.label>Навык Мистика: Шторм Офуда</SkillOf_OfudaStorm.label>
+  <SkillOf_OfudaStorm.description>Обучает Мистика, как бросить бурю взрывных талисманов в определенное место. Эта способность истощает весь запас выносливости Мистика, бросая тем больше талисманов чем больше потрачено выносливости. Эту способность нельзя использовать, пока вы держите в руках оружие дальнего боя.</SkillOf_OfudaStorm.description>
+  <SpellOf_SacrificialPact.label>Заклинание Предвестника: Жертвоприношение</SpellOf_SacrificialPact.label>
+  <SpellOf_SacrificialPact.description>Обучает Предвестника заклинанию, которое жертвует жизнью пешки, чтобы воскресить другую. Это заклинание не может быть наложено пешками, неспособными к насилию.</SpellOf_SacrificialPact.description>
+  <SpellOf_Disarm.label>Заклинание Чародея: Разоружение</SpellOf_Disarm.label>
+  <SpellOf_Disarm.description>Обучает Чародея, как управлять пространством вокруг цели, принудительно обезоруживая ее.</SpellOf_Disarm.description>
+  <SpellOf_Doton.label>Заклинание Ниндзя: Дотон</SpellOf_Doton.label>
+  <SpellOf_Doton.description>Обучает Ниндзя, как прыгнуть в ближайшее место, а затем призвать вокруг себя каменное кольцо. Если противник будет выбран целью, он получит урон и будет отброшен в вызванные стены земли, временно получив оглушение. Затем цель окажется в ловушке вместе с ниндзя на короткое время, пока стены не разойдутся.</SpellOf_Doton.description>
+  <SpellOf_HyoshoRanryu.label>Заклинание Ниндзя: Хёшо Ранрю</SpellOf_HyoshoRanryu.label>
+  <SpellOf_HyoshoRanryu.description>Обучает ниндзя, как бросать ледяной сюрикен во врага, нанося большой урон одной цели и оглушая его на короткое время.</SpellOf_HyoshoRanryu.description>
+  <SpellOf_ForceMissile.label>Заклинание Чародея: Силовые снаряды</SpellOf_ForceMissile.label>
+  <SpellOf_ForceMissile.description>Обучает Чародея, как стрелять волной ракет по нескольким противникам, нанося урон и с высокой вероятностью вызывая замешательство.</SpellOf_ForceMissile.description>
+  <SpellOf_FlashHeal.label>Заклинание Жреца: Мгновенное исцеление</SpellOf_FlashHeal.label>
+  <SpellOf_FlashHeal.description>Обучает жреца сотворению заклинания, которое исцеляет одну цель целиком и полностью исцеляет большинство существ.</SpellOf_FlashHeal.description>
+  <SkillOf_ElusiveJump.label>Навык Драгуна: Неуловимый прыжок</SkillOf_ElusiveJump.label>
+  <SkillOf_ElusiveJump.description>Обучает Драгуна, как прыгать к удаленной цели. Способен преодолевать препятствия.</SkillOf_ElusiveJump.description>
+  <SkillOf_BloodOfTheDragon.label>Навык Драгуна: Кровь дракона</SkillOf_BloodOfTheDragon.label>
+  <SkillOf_BloodOfTheDragon.description>Обучает Драгуна, как направлять драконьую энергию, временно увеличивая их максимальный запас выносливости и давая им короткий всплеск регенерации выносливости, а также давая бонусы к характеристикам рукопашного боя.</SkillOf_BloodOfTheDragon.description>
+  <SkillOf_Stardiver.label>Навык Драгуна: Стардайвер</SkillOf_Stardiver.label>
+  <SkillOf_Stardiver.description>Обучает драгуна, как прыгать в указанное место, метая перед собой пылающее копье, нанося огромный урон в области. Практически невозможно использовать без предварительного наложения Крови дракона.</SkillOf_Stardiver.description>
+  <SpellOf_AetherialManipulation.label>Заклинание Черного Мага: Манипуляция эфиром</SpellOf_AetherialManipulation.label>
+  <SpellOf_AetherialManipulation.description>Обучает Черного мага, как мгновенно переместиться в сторону ближайшей пешки.</SpellOf_AetherialManipulation.description>
+  <SpellOf_Manaward.label>Заклинание Черного Мага: Щит маны</SpellOf_Manaward.label>
+  <SpellOf_Manaward.description>Обучает Черного мага, как кристаллизовать ману вокруг своего тела, защищая его от всех повреждений на короткое время или до тех пор, пока щит не сломается.</SpellOf_Manaward.description>
+  <SpellOf_Despair.label>Заклинание Черного Мага: Отчаяние</SpellOf_Despair.label>
+  <SpellOf_Despair.description>Обучает Черного мага, как читать заклинание, которое наносит огромный урон одной цели.</SpellOf_Despair.description>
+  <SpellOf_Sharpcast.label>Заклинание Черного Мага: Подготовка</SpellOf_Sharpcast.label>
+  <SpellOf_Sharpcast.description>Обучает Черного мага читать заклинание, которое дает ему максимальное количество стаков Темного льда и Астрального огня.</SpellOf_Sharpcast.description>
+  <SpellOf_Xenoglossy.label>Заклинание Черного Мага: Ксеноглоссия</SpellOf_Xenoglossy.label>
+  <SpellOf_Xenoglossy.description>Обучает Черного мага, как читать заклинание, которое наносит огромный урон в области, но отключает запас маны на длительный период времени.</SpellOf_Xenoglossy.description>
+  <SpellOf_ContreSixte.label>Заклинание Красного мага: Контре Сиксте</SpellOf_ContreSixte.label>
+  <SpellOf_ContreSixte.description>Обучает Красного мага, как стрелять снарядами сконцентрированной энергии во врагов в области.</SpellOf_ContreSixte.description>
+  <SkillOf_Pickpocket.label>Навык Похитителя заклинаний: Карманная кража</SkillOf_Pickpocket.label>
+  <SkillOf_Pickpocket.description>Обучает Похитителя заклинаний, как использовать ловкость рук, чтобы обезоружить цель, оставив оружие лежать на земле.</SkillOf_Pickpocket.description>
+  <SpellOf_FeyBlessing.label>Заклинание Школяра: Благословение Фей</SpellOf_FeyBlessing.label>
+  <SpellOf_FeyBlessing.description>Обучает Школяра, как произносить заклинание, которое восстанавливает здоровье союзника. Это заклинание призывает Дух Света, если он отсутствует, или изгоняет его, если он активен.</SpellOf_FeyBlessing.description>
+  <SpellOf_GuidingLight.label>Заклинание Школяра: Напрявляющий Свет</SpellOf_GuidingLight.label>
+  <SpellOf_GuidingLight.description>Обучает Школяра воскрешать недавно умершее существо.</SpellOf_GuidingLight.description>
+  <SkillOf_RoughDivide.label>Навык Ганбрейкера: Эфирный зов</SkillOf_RoughDivide.label>
+  <SkillOf_RoughDivide.description>Обучает Ганбрейкера, как на короткое время переключаться в стойку ближнего боя, повышая характеристики и броню в ближнем бою, а также генерируя картридж, но касты и стрельба становятся неэффективными на время действия стойки.</SkillOf_RoughDivide.description>
+  <SkillOf_Continuation.label>Навык Ганбрейкера: Продолжение</SkillOf_Continuation.label>
+  <SkillOf_Continuation.description>Обучает Ганбрейкера, как напрямую использовать свою жизненную энергию для взрывной атаки, а не использовать картридж. Накапливает тепло в теле, что может быть опасно при чрезмерном использовании этой способности.</SkillOf_Continuation.description>
+  <SkillOf_Superbolide.label>Навык Ганбрейкера: Суперболид</SkillOf_Superbolide.label>
+  <SkillOf_Superbolide.description>Обучает Ганбрейкера, как использовать последние запасы своей энергии, чтобы получить максимальное количество картриджей и мгновенно очистить себя от любого накопления тепла от «Продолжения», а также значительно увеличить регенерацию выносливости на короткое время. Однако после того, как эффект закончится, он потеряет сознание более чем на сутки.</SkillOf_Superbolide.description>
+  <SkillOf_HeadGraze.label>Навык Тяжелого стрелка: Касательный в голову</SkillOf_HeadGraze.label>
+  <SkillOf_HeadGraze.description>Обучает Тяжелого стрелка, как быстро выстрелить в цель, на короткое время оглушив ее и заставив замолчать.</SkillOf_HeadGraze.description>
+  <SkillOf_NaniteShot.label>Навык Тяжелого стрелка: Выстрел нанитами</SkillOf_NaniteShot.label>
+  <SkillOf_NaniteShot.description>Обучает стрелка, как выстрелить в цель из нанита, на короткое время повысив его броню на 100%.</SkillOf_NaniteShot.description>
+  <SkillOf_CleanReload.label>Навык Тяжелого стрелка: Искусная перезарядка</SkillOf_CleanReload.label>
+  <SkillOf_CleanReload.description>Обучает Тяжелого стрелка, как уклончиво прыгать к выбранной локации, одновременно давая себе Аккумуляторный заряд и снимая эффекты истощения выносливости от Заряженного выстрела и Заряда гаусса.</SkillOf_CleanReload.description>
+  <SkillOf_FlameSplitter.label>Навык Тяжелого стрелка: Разделитель пламени</SkillOf_FlameSplitter.label>
+  <SkillOf_FlameSplitter.description>Обучает Тяжелого стрелка, как стрелять ярким выстрелом по нескольким целям в области, потенциально поджигая их.</SkillOf_FlameSplitter.description>
+  <SkillOf_BarrelStabilizer.label>Навык Тяжелого стрелка: Стабилизация стволов</SkillOf_BarrelStabilizer.label>
+  <SkillOf_BarrelStabilizer.description>Обучает Тяжелого стрелка, как стабилизировать свое оружие, обеспечивая Аккумуляторный заряд и устраняя эффекты истощения и уменьшения выносливости, полученные от Теплового взрыва, Заряда гаусса, Дрели и Дрели Mk2.</SkillOf_BarrelStabilizer.description>
+  <SkillOf_OpeningRitual.label>Навык Рыцаря Смерти: Ритуал вскрытия</SkillOf_OpeningRitual.label>
+  <SkillOf_OpeningRitual.description>Обучает рыцаря смерти, как мгновенно вызвать ненависть перед битвой.</SkillOf_OpeningRitual.description>
+  <SkillOf_DarkGrasp.label>Навык Рыцаря Смерти: Темная хватка</SkillOf_DarkGrasp.label>
+  <SkillOf_DarkGrasp.description>Обучает рыцаря смерти, как притянуть к себе ближайшую цель.</SkillOf_DarkGrasp.description>
+  <SkillOf_AbyssalDrain.label>Навык Рыцаря Смерти: Иссушение бездны</SkillOf_AbyssalDrain.label>
+  <SkillOf_AbyssalDrain.description>Обучает рыцаря смерти, как поражать область темной энергией, давая себе регенерацию.</SkillOf_AbyssalDrain.description>
+  <SkillOf_TheBlackestNight.label>Навык Рыцаря Смерти: Темнейшая ночь</SkillOf_TheBlackestNight.label>
+  <SkillOf_TheBlackestNight.description>Обучает рыцаря смерти, как собрать темную энергию вокруг цели, чтобы на короткое время сформировать мощный щит от урона.</SkillOf_TheBlackestNight.description>
+  <SkillOf_WhistlingWind.label>Навык Монаха: Рассекая ветер</SkillOf_WhistlingWind.label>
+  <SkillOf_WhistlingWind.description>Обучает монаха, как уклончиво прыгать в локацию, при этом мгновенно восстанавливая себе 35 Ци и ненадолго получая Спешку.</SkillOf_WhistlingWind.description>
+  <SkillOf_SkirmishersShot.label>Навык Кочевника: Выстрел застрельщика</SkillOf_SkirmishersShot.label>
+  <SkillOf_SkirmishersShot.description>Обучает кочевника, как прыгать к цели, производя точный выстрел из своего оружия. Стоит Ци.</SkillOf_SkirmishersShot.description>
+  <SkillOf_RiddleOfFlame.label>Навык Кочевника/Страйкера: Грохот Пламени</SkillOf_RiddleOfFlame.label>
+  <SkillOf_RiddleOfFlame.description>Обучает Кочевника или Страйкера, как поджечь свой дух, давая им максимум Ци, но отключая их запас выносливости на умеренное время.</SkillOf_RiddleOfFlame.description>
+  <SkillOf_LightArrow.label>Навык Кочевника: Стрела света</SkillOf_LightArrow.label>
+  <SkillOf_LightArrow.description>Обучает кочевника, как запустить стрелу из конденсированного света в определенное место, нанося большой урон. Вытягивает всю оставшуюся ци кочевника.</SkillOf_LightArrow.description>
+  <SkillOf_HowlingFist.label>Навык Страйкера: Воющий кулак</SkillOf_HowlingFist.label>
+  <SkillOf_HowlingFist.description>Обучает Страйкера, как использовать давление ветра для нанесения урона и обезоруживания ближайшего врага.</SkillOf_HowlingFist.description>
+  <SkillOf_Rockbreaker.label>Навык Страйкера: Камнедробитель</SkillOf_Rockbreaker.label>
+  <SkillOf_Rockbreaker.description>Обучает Страйкера, как ударять по земле с резонирующей силой, создавая разрушающие взрывы вокруг зданий или местности в определенной области.</SkillOf_Rockbreaker.description>
+  <SkillOf_Sheltron.label>Навык Паладина/Воителя: Шелтрон</SkillOf_Sheltron.label>
+  <SkillOf_Sheltron.description>Обучает Воителя или Паладина занимать оборонительную стойку, на короткое время блокируя большинство атак.</SkillOf_Sheltron.description>
+  <SkillOf_Onslaught.label>Навыки Воителя: Натиск</SkillOf_Onslaught.label>
+  <SkillOf_Onslaught.description>Обучает Воителя, как прыгать в указанное место, нанося урон в небольшой области вокруг себя при приземлении. Стоит Ци.</SkillOf_Onslaught.description>
+  <SkillOf_InfuriateW.label>Навыки Воителя: Разъярение</SkillOf_InfuriateW.label>
+  <SkillOf_InfuriateW.description>Обучает Воителя, как сосредоточить свою энергию, давая ему большое количество Ци, но накладывая на себя Инерцию, отключая их запас выносливости на умеренное время.</SkillOf_InfuriateW.description>
+  <SkillOf_InnerChaos.label>Навыки Воителя: Внутренний хаос</SkillOf_InnerChaos.label>
+  <SkillOf_InnerChaos.description>Обучает Воителя, как нанести массивную завершающую атаку за счет всей оставшейся у них ци и выносливости, а также наложить на себя Инерцию на умеренное время.</SkillOf_InnerChaos.description>
+  <SkillOf_ShakeItOff.label>Навыки Воителя: Преодоление</SkillOf_ShakeItOff.label>
+  <SkillOf_ShakeItOff.description>Обучает Воителя, как на короткое время наделить себя щитом от повреждений, а также дает кратковременный иммунитет к боли и кровотечению и очищает себя от Инерции.</SkillOf_ShakeItOff.description>
+  <SkillOf_TemperedWill.label>Навык Стража: Закаленная воля</SkillOf_TemperedWill.label>
+  <SkillOf_TemperedWill.description>Обучает Стража, как создать Связь с мечом на короткое время бесплатно, но накладывает на себя Немоту на такое же время.</SkillOf_TemperedWill.description>
+  <SkillOf_Confiteor.label>Навык Стража: Конфитеор</SkillOf_Confiteor.label>
+  <SkillOf_Confiteor.description>Обучает Стража, как расколоть землю мощной завершающей атакой, которая также дает им блокировку на короткое время. Применение этой способности завершает Связь с мечом.</SkillOf_Confiteor.description>
+  <SpellOf_CircleOfScorn.label>Заклинание Стража: Круг презрения</SpellOf_CircleOfScorn.label>
+  <SpellOf_CircleOfScorn.description>Обучает Стража, как освящать область энергией гнева, заставляя себя и всех находящихся поблизости существ получать повторяющийся урон с течением времени. Страж может заблокировать этот урон.</SpellOf_CircleOfScorn.description>
+  <SkillOf_CoolantBlast.label>Навык Голокузнеца: Охлаждающая жидкость</SkillOf_CoolantBlast.label>
+  <SkillOf_CoolantBlast.description>Обучает Голокузнеца, как распылять на себя охлаждающую жидкость, восстанавливая здоровье и продлевая время действия Фотонной кузницы.</SkillOf_CoolantBlast.description>
+  <SkillOf_ColdOpen.label>Навык Голокузнеца: Холодное открытие</SkillOf_ColdOpen.label>
+  <SkillOf_ColdOpen.description>Обучает Голокузнеца, как войти в Фотонную кузницу, но с пониженным пределом выносливости, что потенциально не позволяет им использовать некоторые из своих способностей.</SkillOf_ColdOpen.description>
+  <SkillOf_PhotonWall.label>Навык Голокузнеца: Фотонный барьер</SkillOf_PhotonWall.label>
+  <SkillOf_PhotonWall.description>Обучает Голокузнеца, как проецировать световой барьер на цель, защищая ее от большей части входящего урона на короткое время.</SkillOf_PhotonWall.description>
+  <SkillOf_PrimeLightCannon.label>Навык Голокузнеца: Световая Пушка</SkillOf_PrimeLightCannon.label>
+  <SkillOf_PrimeLightCannon.description>Обучает Голокузнеца, как выстрелить в определенную точку зарядом конденсированной световой энергии, нанося большой урон. Эта способность завершает Фотонную кузницу.</SkillOf_PrimeLightCannon.description>
+  <SkillOf_EmpyrealArrow.label>Навык Трубадура: Небесная стрела</SkillOf_EmpyrealArrow.label>
+  <SkillOf_EmpyrealArrow.description>Обучает трубадура, как произвести музыкальный выстрел по цели, продлевая время действия «Идеального голоса».</SkillOf_EmpyrealArrow.description>
+  <SkillOf_Swiftsong.label>Навык Трубадура: Баллада стремительности</SkillOf_Swiftsong.label>
+  <SkillOf_Swiftsong.description>Обучает трубадура, как сыграть песню, которая на короткое время дарует ему или союзнику сверхскорость.</SkillOf_Swiftsong.description>
+  <SpellOf_WardensPaean.label>Заклинание Трубадура: Баллада стража</SpellOf_WardensPaean.label>
+  <SpellOf_WardensPaean.description>Teaches a Troubadour how to play a song for an ally that grants them a temporary damage shield.</SpellOf_WardensPaean.description>
+  <SpellOf_Impromptu.label>Заклинание Трубадура: Экспромт</SpellOf_Impromptu.label>
+  <SpellOf_Impromptu.description>Обучает трубадура импровизировать на ходу, временно активируя их запас выносливости, но с уменьшенной вместимостью.</SpellOf_Impromptu.description>
+  <SkillOf_BurstShot.label>Навык Трубадура: Разрывной выстрел</SkillOf_BurstShot.label>
+  <SkillOf_BurstShot.description>Обучает трубадура, как стрелять стрелой, которая наносит большой урон одной цели.</SkillOf_BurstShot.description>
+  <SkillOf_MiserysEnd.label>Навык Трубадура: Мучительный конец</SkillOf_MiserysEnd.label>
+  <SkillOf_MiserysEnd.description>Обучает трубадура, как быстро выстрелить стрелой, которая наносит большой урон. Способность стоит мало и быстро перезаряжается, но использование этой способности сокращает время действия Идеального голоса и Экспромта на 8 секунд.</SkillOf_MiserysEnd.description>
+  <SkillOf_ApexArrow.label>Навык Трубадура: Звенящая стрела</SkillOf_ApexArrow.label>
+  <SkillOf_ApexArrow.description>Обучает трубадура, как произвести поющий выстрел в локацию, оглушая всех ближайших юнитов на длительное время. Использование этой способности завершает «Идеальный голос».</SkillOf_ApexArrow.description>
+  <SpellOf_Destiny.label>Заклинание Картежника: Судьба</SpellOf_Destiny.label>
+  <SpellOf_Destiny.description>Обучает Картежника, как мгновенно переместиться в нужное место на карте.</SpellOf_Destiny.description>
+  <SkillOf_RoyalRoad.label>Навык Картежника: Королевская дорога</SkillOf_RoyalRoad.label>
+  <SkillOf_RoyalRoad.description>Обучает Картежника, как сжечь карту, нанести урон по области, затем закрыть доступ к его запасу выносливости и активировать его запас маны.</SkillOf_RoyalRoad.description>
+  <SkillOf_DeckBlast.label>Навык Картежника: Взрыв колоды</SkillOf_DeckBlast.label>
+  <SkillOf_DeckBlast.description>Обучает Картежника, как бросить всю колоду в своих врагов, нанося большой урон по области, но нанося себе безмолвие и инерцию.</SkillOf_DeckBlast.description>
+  <SpellOf_SleeveDraw.label>Заклинание Картежника: Карта из рукава</SpellOf_SleeveDraw.label>
+  <SpellOf_SleeveDraw.description>Обучает Картежника мошенничеству, задействуя все его пулы ресурсов одновременно.</SpellOf_SleeveDraw.description>
+  <SkillOf_OldHeadlight.label>Навык Гаджетера/Рудокопа: Старый Прожектор</SkillOf_OldHeadlight.label>
+  <SkillOf_OldHeadlight.description>Обучает Гаджетера или Рудокопа, как собрать старый прожектор из собранного хлама. Прожектор достаточно мощный, чтобы выращивать растения, не требует внешнего питания и работает до тех пор, пока она не будет разобрана или уничтожена. У Гаджетера нет ограничений на количество прожекторов, которые они могут разместить, но на их изготовление уходит много времени.</SkillOf_OldHeadlight.description>
+  <SkillOf_CollapsingColumn.label>Навык Рудокопа: Обрушающаяся колонна</SkillOf_CollapsingColumn.label>
+  <SkillOf_CollapsingColumn.description>Обучает Рудокопа, как быстро построить импровизированную колонну, способную удерживать крышу. Колонна чрезвычайно хрупкая и рассчитана на провал - она рухнет, если неосведомленная пешка подойдет слишком близко. Когда колонна рушится, она наносит урон в небольшой области вокруг нее.</SkillOf_CollapsingColumn.description>
+  <SkillOf_TruthOfMountains.label>Навык Рудокопа: Правда гор</SkillOf_TruthOfMountains.label>
+  <SkillOf_TruthOfMountains.description>Обучает Рудокопа, как создать руну, которая периодически лечит ближайшие цели.</SkillOf_TruthOfMountains.description>
+  <SkillOf_RuneOfLightning.label>Навык Рудокопа: Руна молний</SkillOf_RuneOfLightning.label>
+  <SkillOf_RuneOfLightning.description>Обучает Рудокопа, как создать руну, которая периодически стреляет молнией по ближайшим целям.</SkillOf_RuneOfLightning.description>
+  <SkillOf_ProximityCharge.label>Навык Мастера засад: Контактная мина</SkillOf_ProximityCharge.label>
+  <SkillOf_ProximityCharge.description>Обучает Мастера засад, как установить неконтактную мину в его текущем местоположении, которая взорвется, когда противник перейдет через нее.</SkillOf_ProximityCharge.description>
+  <SkillOf_AmbusherPoisonTrap.label>Навык Мастера засад: Ядовитая ловушка</SkillOf_AmbusherPoisonTrap.label>
+  <SkillOf_AmbusherPoisonTrap.description>Обучает Мастера засад, как поставить ядовитую ловушку в их текущем местоположении, которая взрывается, когда противник переходит через нее.</SkillOf_AmbusherPoisonTrap.description>
+  <SkillOf_TheBigOne.label>Навык Рудокопа/Мастера засад: Большая Бомба</SkillOf_TheBigOne.label>
+  <SkillOf_TheBigOne.description>Обучает Мастера засад или Рудокопа, как поставить бочку, наполненную взрывчаткой, которая при срабатывании триггера наносит урон большой площади. Бочка очень тяжелая, и её установка на долгое время накладывает на пешку инерцию, временно выводя из строя и истощая запас выносливости.</SkillOf_TheBigOne.description>
+  <SkillOf_Ambush.label>Навык Мастера засад: Засада</SkillOf_Ambush.label>
+  <SkillOf_Ambush.description>Обучает Мастера засад, как наносить огромный урон целям в области.</SkillOf_Ambush.description>
+  <SkillOf_StiflingWinds.label>Навык Разрушителя чар: Удушающий ветер</SkillOf_StiflingWinds.label>
+  <SkillOf_StiflingWinds.description>Обучает Разрушителя чар, как призывать удушающие ветры, накладывая Инерцию и Безмолвие на большой площади.</SkillOf_StiflingWinds.description>
+  <SpellOf_UnstableSingularity.label>Заклинание Хрономансера: Нестабильная сингулярность</SpellOf_UnstableSingularity.label>
+  <SpellOf_UnstableSingularity.description>Обучает Хрономансера, как перематывать время зданий и ландшафта в области, мгновенно разрушая их. Разрушенные конструкции превращаются в Нестабильную сингулярность, которая взрывается через короткое время.</SpellOf_UnstableSingularity.description>
+  <SpellOf_Erase.label>Заклинание Мага: Стирание</SpellOf_Erase.label>
+  <SpellOf_Erase.description>Обучает мага, как наложить на союзника заклинание, которое снижает у цели тайную слабость, а также снимает магическую слабость и безмолвие.</SpellOf_Erase.description>
+  <SkillOf_MartialTraining.label>Навык бойца: Боевая тренировка</SkillOf_MartialTraining.label>
+  <SkillOf_MartialTraining.description>Обучает класс бойца, как автоматически расходовать выносливость для получения опыта и небольшого баффа скорости.</SkillOf_MartialTraining.description>
+  <SpellOf_MagicTraining.label>Заклинание Мага: Магическая тренировка</SpellOf_MagicTraining.label>
+  <SpellOf_MagicTraining.description>Обучает мага, как автоматически расходовать ману для получения опыта, а также незначительно увеличивать скорость исследования и обучения.</SpellOf_MagicTraining.description>
+  <Torn_BookOfRuneKnight.label>Разорванный том: Рунный Рыцарь</Torn_BookOfRuneKnight.label>
+  <Torn_BookOfRuneKnight.description>Обучает магически одаренную пешку пути Рунного рыцаря, специализированного боевого мага, который наполняет маной особые руны для дальнейшего использования, позволяя им подготовиться к будущим столкновениям. Они способны использовать наступательную, защитную и исцеляющую магию. Свиток неполный и это может привести к тому, что пешка не выучит все заклинания сразу.</Torn_BookOfRuneKnight.description>
+  <BookOfRuneKnight.label>Тайный том: Рунный Рыцарь</BookOfRuneKnight.label>
+  <BookOfRuneKnight.description>Обучает магически одаренную пешку пути Рунного рыцаря, специализированного боевого мага, который наполняет маной особые руны для дальнейшего использования, позволяя им подготовиться к будущим столкновениям. Они способны использовать наступательную, защитную и исцеляющую магию.</BookOfRuneKnight.description>
+  <SkillOf_BeltPouch.label>Навык Апотекария/Цветущего клинка: Поясная сумка</SkillOf_BeltPouch.label>
+  <SkillOf_BeltPouch.description>Обучает Апотекария или Цветущего клинка навыку, который при использовании мгновенно дает небольшое количество трав.</SkillOf_BeltPouch.description>
+  <SkillOf_RefinedManaPotion.label>Навык Апотекария: Очищенное зелье маны</SkillOf_RefinedManaPotion.label>
+  <SkillOf_RefinedManaPotion.description>Обучает Апотекария, как дать союзнику очищенное зелье маны, которое мгновенно дает союзнику ману без риска передозировки или зависимости.</SkillOf_RefinedManaPotion.description>
+  <SkillOf_Bladestorm.label>Навык Цветущего клинка: Шторм клинков</SkillOf_Bladestorm.label>
+  <SkillOf_Bladestorm.description>Обучает Цветущего клинка, как многократно метать ножи во все цели в области, нанося урон и оглушая каждую пораженную цель. Расходует выносливость.</SkillOf_Bladestorm.description>
+  <SkillOf_FallenLeaf.label>Навык Цветущего клинка: Опавший лист</SkillOf_FallenLeaf.label>
+  <SkillOf_FallenLeaf.description>Обучает Цветущего клинка, как в мгновение ока поражать многочисленных врагов в области.</SkillOf_FallenLeaf.description>
+  <SkillOf_SecondStomach.label>Навык Ненасытного: Второй желудок</SkillOf_SecondStomach.label>
+  <SkillOf_SecondStomach.description>Обучает Ненасытного, как превращать пищу в ацидоз.</SkillOf_SecondStomach.description>
+  <SkillOf_ThroneOfGluttony.label>Навык Ненасытного: Престол Чревоугодия</SkillOf_ThroneOfGluttony.label>
+  <SkillOf_ThroneOfGluttony.description>Обучает Ненасытного, как полностью подавить потребность в отдыхе за счет усиления голода.</SkillOf_ThroneOfGluttony.description>
+  <SkillOf_LivingArtillery.label>Навык Ненасытного: Живая артиллерия</SkillOf_LivingArtillery.label>
+  <SkillOf_LivingArtillery.description>Обучает Ненасытного, как бомбить территорию токсичным газом за счет ацидоза.</SkillOf_LivingArtillery.description>
+  <SkillOf_Blackpowder.label>Навык Охотника на Мехов: Черный Порох</SkillOf_Blackpowder.label>
+  <SkillOf_Blackpowder.description>Обучает Охотника на Мехов, как использовать нанитовую пулю, чтобы создать мгновенный ЭМИ взрыв вокруг себя, а также на короткое время предоставить себе невидимость.</SkillOf_Blackpowder.description>
+  <SkillOf_FinalSalvo.label>Навык Охотника на Мехов: Последний Залп</SkillOf_FinalSalvo.label>
+  <SkillOf_FinalSalvo.description>Обучает Охотника на Мехов, как мгновенно создать полный набор нанитовых пуль, используя его собственную жизненную энергию. Это истощает пользователя и накладывает на него Инерцию, на долгое время отключающую запас выносливости.</SkillOf_FinalSalvo.description>
+  <SkillOf_OrbitalEMP.label>Навык Охотника на Мехов: ЭМИ Бомбардировка</SkillOf_OrbitalEMP.label>
+  <SkillOf_OrbitalEMP.description>Обучает Охотника на Мехов, как взывать орбитальную ЭМИ бомбардировку в указанное место, оглушая механоидов в нем на очень долгое время. Можно использовать в любом месте карты.</SkillOf_OrbitalEMP.description>
+  <BookOfBlossomBlader.label>Боевой стиль: Цветущий клинок</BookOfBlossomBlader.label>
+  <BookOfBlossomBlader.description>Обучает физически склонную пешку, как стать Цветущим клинком - изящным танцующим с клинками, тесно связанным с природой. Они способны быстро атаковать свои цели, изнуряя их. Их способности подпитываются специальными травами, которые они собирают.</BookOfBlossomBlader.description>
+  <BookOfMechHunter.label>Боевой стиль: Охотник на Мехов</BookOfMechHunter.label>
+  <BookOfMechHunter.description>Обучает физически склонную пешку, как стать Охотником на Мехов, специализированным бойцом, который отлично справляется с механоидами и противниками в тяжелой броне.</BookOfMechHunter.description>
+  <BookOfGunslinger.label>Боевой стиль: Мастер-стрелок</BookOfGunslinger.label>
+  <BookOfGunslinger.description>Обучает физически склонную пешку, как стать Мастером-стрелком, мобильным бойцом, подавляющим противников непрерывным потоком пуль.</BookOfGunslinger.description>
+  <SkillOf_CoverFire.label>Навык Мастера-стрелка: Прикрытие огнем</SkillOf_CoverFire.label>
+  <SkillOf_CoverFire.description>Обучает Мастера-стрелка, как произыести отвлекающий выстрел в цель, нанося урон и оглушая её на короткое время. Перезаряжает снаряд.</SkillOf_CoverFire.description>
+  <SkillOf_Nanoseeker.label>Навык Мастера-стрелка: Наноискатель</SkillOf_Nanoseeker.label>
+  <SkillOf_Nanoseeker.description>Обучает Мастера-стрелка, как бросить нанотехнологическое устройство в цель, которая зацепится за нее и насильно обезоружит.</SkillOf_Nanoseeker.description>
+  <SkillOf_Gunflame.label>Навык Мастера-стрелка/Снайпера: Зажигательный выстрел</SkillOf_Gunflame.label>
+  <SkillOf_Gunflame.description>Обучает Мастера-стрелка или Снайпера, как выстрелить зажигательным снарядом, который наносит большой урон одной цели и незначительный урон в области вокруг нее, потенциально поджигая врагов.</SkillOf_Gunflame.description>
+  <SkillOf_Breakstep.label>Навык Мастера-стрелка: Инерционный прыжок</SkillOf_Breakstep.label>
+  <SkillOf_Breakstep.description>Обучает Мастера-стрелка, как ловко выстрелить снарядом, чтобы прыгнуть в близлежащую область. Может перепрыгивать через стены. Стоит снаряд.</SkillOf_Breakstep.description>
+  <SkillOf_Breachfire.label>Навык Мастера-стрелка: Разрушительный огонь</SkillOf_Breachfire.label>
+  <SkillOf_Breachfire.description>Обучает Мастера-стрелка, как стрелять специальными снарядами, которые взрываются при ударе, нанося урон по площади и наносящие дополнительный урон строениям. Стоит три снаряда.</SkillOf_Breachfire.description>
+</LanguageData>

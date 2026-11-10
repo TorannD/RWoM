@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerMasteryHint>Разных врагов в ваших ловушках: {0}/8 · Потушено складских пожаров: {1}/12</TM_RangerMasteryHint>
+  <TM_RangerFireHint>При тушении пожара на горючих запасах колонии или рядом с ними Следопыт должен лично погасить огонь. Запасы должны находиться в подходящем хранилище. Сектор 12×12 засчитывается раз в сутки. Поджоги вашей фракции не считаются.</TM_RangerFireHint>
+  <TM_RangerMasteryClaim>Освоить «{0}»</TM_RangerMasteryClaim>
+  <TM_RangerAscensionHint>Уровень воина: {0}/30 · Отступления союзников по безопасной тропе: {1}/8 · Смены ухода за животными: {2}/10</TM_RangerAscensionHint>
+  <TM_RangerWoundHint>Работая врачом, обработайте настоящую рану у животного колонии. Засчитывается одна завершённая смена в сутки.</TM_RangerWoundHint>
+  <TM_RangerChooseUltimate>Выбрать технику Вознесения</TM_RangerChooseUltimate>
+  <TM_RangerEarnedUltimate>Техника Вознесения: «{0}»</TM_RangerEarnedUltimate>
+</LanguageData>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ShadowHD.label>Тінь</TM_ShadowHD.label>
+  <TM_ShadowHD.description>Тіньової шкоди.</TM_ShadowHD.description>
+  <TM_ShadowHD.comps.0.labelTendedWell>забинтована</TM_ShadowHD.comps.0.labelTendedWell>
+  <TM_ShadowHD.comps.0.labelTendedWellInner>зашитий</TM_ShadowHD.comps.0.labelTendedWellInner>
+  <TM_ShadowHD.comps.0.labelSolidTendedWell>набір</TM_ShadowHD.comps.0.labelSolidTendedWell>
+  <TM_ShadowHD.injuryProps.destroyedLabel>висохлий</TM_ShadowHD.injuryProps.destroyedLabel>
+  <TM_ShadowHD.injuryProps.destroyedOutLabel>дезінтегрований</TM_ShadowHD.injuryProps.destroyedOutLabel>
+
+  <TM_GravitySlowHD.label>гравітаційний фонтан</TM_GravitySlowHD.label>
+  <TM_GravitySlowHD.description>Сповільнюється неприродним гравітаційним тяжінням.</TM_GravitySlowHD.description>
+  <TM_GravitySlowHD.stages.0.label>сповільнилося</TM_GravitySlowHD.stages.0.label>
+
+  <TM_SoulBondPhysicalHD.label>Душевний Зв &quot;язок</TM_SoulBondPhysicalHD.label>
+  <TM_SoulBondPhysicalHD.description>Душа прив&apos;язана до сукуба.</TM_SoulBondPhysicalHD.description>
+  <TM_SoulBondPhysicalHD.stages.0.label>I</TM_SoulBondPhysicalHD.stages.0.label>
+  <TM_SoulBondPhysicalHD.stages.1.label>II</TM_SoulBondPhysicalHD.stages.1.label>
+  <TM_SoulBondPhysicalHD.stages.2.label>III</TM_SoulBondPhysicalHD.stages.2.label>
+  <TM_SoulBondPhysicalHD.stages.3.label>IV</TM_SoulBondPhysicalHD.stages.3.label>
+
+  <TM_SDSoulBondPhysicalHD.label>Душевний Зв &quot;язок</TM_SDSoulBondPhysicalHD.label>
+  <TM_SDSoulBondPhysicalHD.description>Підтримання контракту про пов&apos;язування душі з іншим пішаком.</TM_SDSoulBondPhysicalHD.description>
+  <TM_SDSoulBondPhysicalHD.stages.0.label>I</TM_SDSoulBondPhysicalHD.stages.0.label>
+  <TM_SDSoulBondPhysicalHD.stages.1.label>II</TM_SDSoulBondPhysicalHD.stages.1.label>
+  <TM_SDSoulBondPhysicalHD.stages.2.label>III</TM_SDSoulBondPhysicalHD.stages.2.label>
+  <TM_SDSoulBondPhysicalHD.stages.3.label>IV</TM_SDSoulBondPhysicalHD.stages.3.label>
+
+  <TM_SoulBondMentalHD.label>Душевний Зв &quot;язок</TM_SoulBondMentalHD.label>
+  <TM_SoulBondMentalHD.description>Душа пов&apos;язана з чаклуном.</TM_SoulBondMentalHD.description>
+  <TM_SoulBondMentalHD.stages.0.label>I</TM_SoulBondMentalHD.stages.0.label>
+  <TM_SoulBondMentalHD.stages.1.label>II</TM_SoulBondMentalHD.stages.1.label>
+  <TM_SoulBondMentalHD.stages.2.label>III</TM_SoulBondMentalHD.stages.2.label>
+  <TM_SoulBondMentalHD.stages.3.label>IV</TM_SoulBondMentalHD.stages.3.label>
+
+  <TM_WDSoulBondMentalHD.label>Душевний Зв &quot;язок</TM_WDSoulBondMentalHD.label>
+  <TM_WDSoulBondMentalHD.description>Підтримання контракту з іншою пішаком, яка пов&apos;язує їх душу з моєю.</TM_WDSoulBondMentalHD.description>
+  <TM_WDSoulBondMentalHD.stages.0.label>I</TM_WDSoulBondMentalHD.stages.0.label>
+  <TM_WDSoulBondMentalHD.stages.1.label>II</TM_WDSoulBondMentalHD.stages.1.label>
+  <TM_WDSoulBondMentalHD.stages.2.label>III</TM_WDSoulBondMentalHD.stages.2.label>
+  <TM_WDSoulBondMentalHD.stages.3.label>IV</TM_WDSoulBondMentalHD.stages.3.label>
+
+  <TM_WDDominateHD.label>Панування I</TM_WDDominateHD.label>
+  <TM_WDDominateHD.description>Ментально домінує чорнокнижник-знижує психічний стан і може викликати різні психічні зриви.</TM_WDDominateHD.description>
+  <TM_WDDominateHD.stages.0.label>затухаючий</TM_WDDominateHD.stages.0.label>
+  <TM_WDDominateHD.stages.1.label>відступ</TM_WDDominateHD.stages.1.label>
+  <TM_WDDominateHD.stages.2.label>охоплюючий</TM_WDDominateHD.stages.2.label>
+  <TM_WDDominateHD.stages.3.label>переважна</TM_WDDominateHD.stages.3.label>
+
+  <TM_WDDominateHD_I.label>Панування II</TM_WDDominateHD_I.label>
+  <TM_WDDominateHD_I.description>Ментально домінує чорнокнижник-знижує психічний стан і може викликати різні психічні зриви.</TM_WDDominateHD_I.description>
+  <TM_WDDominateHD_I.stages.0.label>затухаючий</TM_WDDominateHD_I.stages.0.label>
+  <TM_WDDominateHD_I.stages.1.label>відступ</TM_WDDominateHD_I.stages.1.label>
+  <TM_WDDominateHD_I.stages.2.label>охоплюючий</TM_WDDominateHD_I.stages.2.label>
+  <TM_WDDominateHD_I.stages.3.label>переважна</TM_WDDominateHD_I.stages.3.label>
+
+  <TM_WDDominateHD_II.label>Панування III</TM_WDDominateHD_II.label>
+  <TM_WDDominateHD_II.description>Ментально домінує чорнокнижник-знижує психічний стан і може викликати різні психічні зриви.</TM_WDDominateHD_II.description>
+  <TM_WDDominateHD_II.stages.0.label>затухаючий</TM_WDDominateHD_II.stages.0.label>
+  <TM_WDDominateHD_II.stages.1.label>відступ</TM_WDDominateHD_II.stages.1.label>
+  <TM_WDDominateHD_II.stages.2.label>охоплюючий</TM_WDDominateHD_II.stages.2.label>
+  <TM_WDDominateHD_II.stages.3.label>переважна</TM_WDDominateHD_II.stages.3.label>
+
+  <TM_WDDominateHD_III.label>Панування IV</TM_WDDominateHD_III.label>
+  <TM_WDDominateHD_III.description>Ментально домінує чорнокнижник-знижує психічний стан і може викликати різні психічні зриви.</TM_WDDominateHD_III.description>
+  <TM_WDDominateHD_III.stages.0.label>затухаючий</TM_WDDominateHD_III.stages.0.label>
+  <TM_WDDominateHD_III.stages.1.label>відступ</TM_WDDominateHD_III.stages.1.label>
+  <TM_WDDominateHD_III.stages.2.label>охоплюючий</TM_WDDominateHD_III.stages.2.label>
+  <TM_WDDominateHD_III.stages.3.label>переважна</TM_WDDominateHD_III.stages.3.label>
+
+  <TM_SDDominateHD.label>Панування I</TM_SDDominateHD.label>
+  <TM_SDDominateHD.description>Під впливом суккубу пані-виконавиця всіх фізичних дій.</TM_SDDominateHD.description>
+  <TM_SDDominateHD.stages.0.label>затухаючий</TM_SDDominateHD.stages.0.label>
+  <TM_SDDominateHD.stages.1.label>відступ</TM_SDDominateHD.stages.1.label>
+  <TM_SDDominateHD.stages.2.label>охоплюючий</TM_SDDominateHD.stages.2.label>
+  <TM_SDDominateHD.stages.3.label>переважна</TM_SDDominateHD.stages.3.label>
+
+  <TM_SDDominateHD_I.label>Панування II</TM_SDDominateHD_I.label>
+  <TM_SDDominateHD_I.description>Під впливом суккубу пані-виконавиця всіх фізичних дій.</TM_SDDominateHD_I.description>
+  <TM_SDDominateHD_I.stages.0.label>затухаючий</TM_SDDominateHD_I.stages.0.label>
+  <TM_SDDominateHD_I.stages.1.label>відступ</TM_SDDominateHD_I.stages.1.label>
+  <TM_SDDominateHD_I.stages.2.label>охоплюючий</TM_SDDominateHD_I.stages.2.label>
+  <TM_SDDominateHD_I.stages.3.label>переважна</TM_SDDominateHD_I.stages.3.label>
+
+  <TM_SDDominateHD_II.label>Панування III</TM_SDDominateHD_II.label>
+  <TM_SDDominateHD_II.description>Під впливом суккубу пані-виконавиця всіх фізичних дій.</TM_SDDominateHD_II.description>
+  <TM_SDDominateHD_II.stages.0.label>затухаючий</TM_SDDominateHD_II.stages.0.label>
+  <TM_SDDominateHD_II.stages.1.label>відступ</TM_SDDominateHD_II.stages.1.label>
+  <TM_SDDominateHD_II.stages.2.label>охоплюючий</TM_SDDominateHD_II.stages.2.label>
+  <TM_SDDominateHD_II.stages.3.label>переважна</TM_SDDominateHD_II.stages.3.label>
+
+  <TM_SDDominateHD_III.label>Панування IV</TM_SDDominateHD_III.label>
+  <TM_SDDominateHD_III.description>Під впливом суккубу пані-виконавиця всіх фізичних дій.</TM_SDDominateHD_III.description>
+  <TM_SDDominateHD_III.stages.0.label>затухаючий</TM_SDDominateHD_III.stages.0.label>
+  <TM_SDDominateHD_III.stages.1.label>відступ</TM_SDDominateHD_III.stages.1.label>
+  <TM_SDDominateHD_III.stages.2.label>охоплюючий</TM_SDDominateHD_III.stages.2.label>
+  <TM_SDDominateHD_III.stages.3.label>переважна</TM_SDDominateHD_III.stages.3.label>
+
+  <TM_VitalityDrainHD.label>Витік Життєвих Сил</TM_VitalityDrainHD.label>
+  <TM_VitalityDrainHD.description>Фізично виснажений, але розумово розслаблений близькістю з суккубом.</TM_VitalityDrainHD.description>
+  <TM_VitalityDrainHD.stages.0.label>Суккуб</TM_VitalityDrainHD.stages.0.label>
+
+  <TM_VitalityBoostHD.label>Підвищення Життєвої Сили</TM_VitalityBoostHD.label>
+  <TM_VitalityBoostHD.description>Фізичний поштовх купується шляхом висмоктування енергії з пішаки під час близькості.</TM_VitalityBoostHD.description>
+  <TM_VitalityBoostHD.stages.0.label></TM_VitalityBoostHD.stages.0.label>
+
+  <TM_DemonHD.label>Демонічне полум &quot;я</TM_DemonHD.label>
+  <TM_DemonHD.description>Демонічне полум&apos;я, яке кружляє і зветься навколо форми демона.</TM_DemonHD.description>
+  <TM_DemonHD.stages.0.label></TM_DemonHD.stages.0.label>
+  <TM_DemonHD.stages.1.label></TM_DemonHD.stages.1.label>
+  <TM_DemonHD.stages.2.label></TM_DemonHD.stages.2.label>
+
+  <TM_DemonicPriceHD.label>Споживання Душі</TM_DemonicPriceHD.label>
+  <TM_DemonicPriceHD.description>Полум&apos;я руйнування, яке ніколи не припиниться, поки не поглине душу цієї пішаки.</TM_DemonicPriceHD.description>
+  <TM_DemonicPriceHD.stages.0.label></TM_DemonicPriceHD.stages.0.label>
+
+  <TM_DemonScornHD.label>Презирство демону</TM_DemonScornHD.label>
+  <TM_DemonScornHD.description>Часткове перетворення суккубу на демона; дарує підвищену фізичну силу і поглинає шкоди.</TM_DemonScornHD.description>
+  <TM_DemonScornHD.stages.0.label>I</TM_DemonScornHD.stages.0.label>
+
+  <TM_DemonScornHD_I.label>Презирство демону</TM_DemonScornHD_I.label>
+  <TM_DemonScornHD_I.description>Часткове перетворення суккубу на демона; дарує підвищену фізичну силу і поглинає шкоди.</TM_DemonScornHD_I.description>
+  <TM_DemonScornHD_I.stages.0.label>II</TM_DemonScornHD_I.stages.0.label>
+
+  <TM_DemonScornHD_II.label>Презирство демону</TM_DemonScornHD_II.label>
+  <TM_DemonScornHD_II.description>Часткове перетворення суккубу на демона; дарує підвищену фізичну силу і поглинає шкоди.</TM_DemonScornHD_II.description>
+  <TM_DemonScornHD_II.stages.0.label>III</TM_DemonScornHD_II.stages.0.label>
+
+  <TM_DemonScornHD_III.label>Презирство демону</TM_DemonScornHD_III.label>
+  <TM_DemonScornHD_III.description>Часткове перетворення суккубу на демона; дарує підвищену фізичну силу і поглинає шкоди.</TM_DemonScornHD_III.description>
+  <TM_DemonScornHD_III.stages.0.label>IV</TM_DemonScornHD_III.stages.0.label>
+
+
+  <TM_ShadowHD.comps.1.permanentLabel>зворушений тінню</TM_ShadowHD.comps.1.permanentLabel>
+  <TM_ShadowHD.comps.HediffComp_TendDuration.labelTendedWell>перев&apos;язаний</TM_ShadowHD.comps.HediffComp_TendDuration.labelTendedWell>
+  <TM_ShadowHD.comps.HediffComp_TendDuration.labelTendedWellInner>ушить</TM_ShadowHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  <TM_ShadowHD.comps.HediffComp_TendDuration.labelSolidTendedWell>встановити</TM_ShadowHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  <TM_ShadowHD.comps.HediffComp_GetsPermanent.permanentLabel>зворушений тінню</TM_ShadowHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  <TM_ShadowHD.labelNounPretty>{0} у {1}</TM_ShadowHD.labelNounPretty>
+
+</LanguageData>

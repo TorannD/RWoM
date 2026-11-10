@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using AbilityUser;
 using System.Collections.Generic;
 using RimWorld;
@@ -47,21 +47,14 @@ namespace TorannMagic
 
         public virtual void Effect()
         {
-            LocalTargetInfo t = this.TargetsAoE[0];
-            bool flag = t.Cell != default(IntVec3);
-            if (flag)
-            {
-                Thing launchedThing = new Thing()
-                {
-                    def = TorannMagicDefOf.FlyingObject_ShadowBolt
-                };
-                Pawn casterPawn = base.CasterPawn;
-                //LongEventHandler.QueueLongEvent(delegate
-                //{
-                    FlyingObject_ShadowBolt flyingObject = (FlyingObject_ShadowBolt)GenSpawn.Spawn(ThingDef.Named("FlyingObject_ShadowBolt"), this.CasterPawn.Position, this.CasterPawn.Map);
-                    flyingObject.Launch(this.CasterPawn, t.Cell, launchedThing);
-                //}, "LaunchingFlyer", false, null);
-            }
+            var target = TargetsAoE?.Count > 0 ? TargetsAoE[0] : currentTarget;
+            if (target.IsValid) SpawnOrb(CasterPawn,CasterPawn,target);
+        }
+
+        internal static void SpawnOrb(Pawn body, Pawn owner, LocalTargetInfo target)
+        {
+            var orb = (FlyingObject_ShadowBolt)GenSpawn.Spawn(TorannMagicDefOf.FlyingObject_ShadowBolt,body.Position,body.Map);
+            orb.LaunchFromCaster(body,owner,target);
         }
 
         public override void PostCastShot(bool inResult, out bool outResult)

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Spirit Bear -->
+
+  <TM_SpiritBearR.label>espírito de urso</TM_SpiritBearR.label>
+  <TM_SpiritBearR.description>O espírito do urso representa a estabilidade e a força. Estes animais foram admirados durante séculos como uma fonte poderosa de inspiração para aqueles que precisam de coragem para enfrentar as adversidades. O espírito do urso é um poderoso condutor para manter a força física e o corpo e vai proteger ativamente seus filhotes.</TM_SpiritBearR.description>
+  <TM_SpiritBearR.tools.0.label>pata esquerda</TM_SpiritBearR.tools.0.label>
+  <TM_SpiritBearR.tools.1.label>pata direita</TM_SpiritBearR.tools.1.label>
+  <TM_SpiritBearR.tools.2.label>parte rasgada</TM_SpiritBearR.tools.2.label>
+  <TM_SpiritBearR.tools.3.label>cabeça</TM_SpiritBearR.tools.3.label>
+  <TM_SpiritBearR_Leather.label>pele de urso espiritual</TM_SpiritBearR_Leather.label>
+  <TM_SpiritBearR_Leather.description>pele de urso espiritual</TM_SpiritBearR_Leather.description>
+  <TM_SpiritBearR_Leather.stuffProps.stuffAdjective>pele de urso espiritual</TM_SpiritBearR_Leather.stuffProps.stuffAdjective>
+  <TM_SpiritBearR_Meat.label>carne de urso espiritual</TM_SpiritBearR_Meat.label>
+  <TM_SpiritBearR_Meat.description>carne de urso espiritual</TM_SpiritBearR_Meat.description>
+  <TM_SpiritBearR_Corpse.label>corpo do espírito urso</TM_SpiritBearR_Corpse.label>
+  <TM_SpiritBearR_Corpse.description>corpo do espírito urso</TM_SpiritBearR_Corpse.description>
+
+
+  <!-- Spirit Mongoose -->
+
+  <TM_SpiritMongooseR.label>espírito de manguda</TM_SpiritMongooseR.label>
+  <TM_SpiritMongooseR.description>O espírito animal é inteligente e adaptável. Isso representa uma curiosidade insaciável para o mundo ao seu redor, ao mesmo tempo que possui os meios necessários para saber onde olhar antes de saltar. Mangoust usa sua astúcia e agilidade para atacar rapidamente o inimigo ou entregar recursos rapidamente. Mangoust também é o mais brincalhão dos animais espirituais.</TM_SpiritMongooseR.description>
+  <TM_SpiritMongooseR.tools.0.label>garra esquerda</TM_SpiritMongooseR.tools.0.label>
+  <TM_SpiritMongooseR.tools.1.label>garra direita</TM_SpiritMongooseR.tools.1.label>
+  <TM_SpiritMongooseR.tools.3.label>cabeça</TM_SpiritMongooseR.tools.3.label>
+  <TM_SpiritMongooseR_Leather.label>pele do espírito manouço</TM_SpiritMongooseR_Leather.label>
+  <TM_SpiritMongooseR_Leather.description>pele do espírito manouço</TM_SpiritMongooseR_Leather.description>
+  <TM_SpiritMongooseR_Leather.stuffProps.stuffAdjective>pele do espírito manouço</TM_SpiritMongooseR_Leather.stuffProps.stuffAdjective>
+  <TM_SpiritMongooseR_Meat.label>carne de espírito de mangueta</TM_SpiritMongooseR_Meat.label>
+  <TM_SpiritMongooseR_Meat.description>carne de espírito de mangueta</TM_SpiritMongooseR_Meat.description>
+  <TM_SpiritMongooseR_Corpse.label>corpo de espírito de mangueiro</TM_SpiritMongooseR_Corpse.label>
+  <TM_SpiritMongooseR_Corpse.description>corpo de espírito de mangueiro</TM_SpiritMongooseR_Corpse.description>
+
+
+  <!-- Spirit Crow -->
+
+  <TM_SpiritCrowR.label>espírito de corvo</TM_SpiritCrowR.label>
+  <TM_SpiritCrowR.description>O corvo é um animal espiritual ligado aos segredos da vida e da magia. O corvo do espírito fornece compreensão e meios para apoiar as intenções. É também um sinal de sorte, embora nem sempre boa sorte. Se um corvo o escolheu como seu espírito ou animal totem, ele o apoia no desenvolvimento da força de visão, transformação e conexão com a magia e ajudará nestes esforços.</TM_SpiritCrowR.description>
+  <TM_SpiritCrowR.tools.0.label>garras</TM_SpiritCrowR.tools.0.label>
+  <TM_SpiritCrowR.tools.1.label>bico</TM_SpiritCrowR.tools.1.label>
+  <TM_SpiritCrowR.tools.2.label>cabeça</TM_SpiritCrowR.tools.2.label>
+  <TM_SpiritCrowR_Leather.label>pele do espírito do corvo</TM_SpiritCrowR_Leather.label>
+  <TM_SpiritCrowR_Leather.description>pele do espírito do corvo</TM_SpiritCrowR_Leather.description>
+  <TM_SpiritCrowR_Leather.stuffProps.stuffAdjective>pele do espírito do corvo</TM_SpiritCrowR_Leather.stuffProps.stuffAdjective>
+  <TM_SpiritCrowR_Meat.label>carne de espírito de corvo</TM_SpiritCrowR_Meat.label>
+  <TM_SpiritCrowR_Meat.description>carne de espírito de corvo</TM_SpiritCrowR_Meat.description>
+  <TM_SpiritCrowR_Corpse.label>cadáver do espírito do corvo</TM_SpiritCrowR_Corpse.label>
+  <TM_SpiritCrowR_Corpse.description>cadáver do espírito do corvo</TM_SpiritCrowR_Corpse.description>
+
+
+</LanguageData>

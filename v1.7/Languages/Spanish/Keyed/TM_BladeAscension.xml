@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_BladeAscensionProgress>Nivel de guerrero {0}/30 · Rutas de combate {1}/6 · Entregas médicas {2}/10</TM_BladeAscensionProgress>
+  <TM_BladeRouteHint>Golpea a un enemigo con Paso y daña a otro con un ataque cuerpo a cuerpo normal en menos de diez segundos.</TM_BladeRouteHint>
+  <TM_BladeSupplyHint>Activa el trabajo de médico. Recoge medicina a seis casillas o más de una cama médica de la colonia y úsala para tratar al aliado que la ocupa. Solo cuenta la medicina consumida, una vez al día.</TM_BladeSupplyHint>
+  <TM_BladeAscend>Elegir técnica de ascensión</TM_BladeAscend>
+  <TM_BladeUltimateOption>{0} (elección permanente)</TM_BladeUltimateOption>
+  <TM_BladeUltimateLearned>Técnica de ascensión: {0}</TM_BladeUltimateLearned>
+  <TM_BladeFormUnavailable>Requiere la Forma de los siete pasos, un arma cuerpo a cuerpo, un 60% de aguante y que haya terminado la recarga.</TM_BladeFormUnavailable>
+</LanguageData>

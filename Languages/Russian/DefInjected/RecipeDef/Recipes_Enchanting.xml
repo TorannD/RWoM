@@ -1,0 +1,78 @@
+<LanguageData><!-- Gem Recipes-->
+	<CutMinorMPGem.label>небольшой камень владения</CutMinorMPGem.label>
+	<CutMinorMPGem.description>Ограните и очистите необработанный магицит, превратив его в очаровательный драгоценный камень, способный поддерживать запасы маны.</CutMinorMPGem.description>
+	<CutMinorMPGem.jobString>огранить небольшой камень владения</CutMinorMPGem.jobString>
+	<CutMPGem.label>камень владения</CutMPGem.label>
+	<CutMPGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный поддерживать запасы маны.</CutMPGem.description>
+	<CutMPGem.jobString>огранить камень владения</CutMPGem.jobString>
+	<CutMajorMPGem.label>крупный камень владения</CutMajorMPGem.label>
+	<CutMajorMPGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный поддерживать запасы маны.</CutMajorMPGem.description>
+	<CutMajorMPGem.jobString>огранить крупный камень владения</CutMajorMPGem.jobString>
+	<CutMinorCoolDownGem.label>небольшой камень ускорения</CutMinorCoolDownGem.label>
+	<CutMinorCoolDownGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный ускорить откат способностей.</CutMinorCoolDownGem.description>
+	<CutMinorCoolDownGem.jobString>огранить небольшой камень ускорения</CutMinorCoolDownGem.jobString>
+	<CutCoolDownGem.label>камень ускорения</CutCoolDownGem.label>
+	<CutCoolDownGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный ускорить откат способностей.</CutCoolDownGem.description>
+	<CutCoolDownGem.jobString>огранить камень ускорения</CutCoolDownGem.jobString>
+	<CutMajorCoolDownGem.label>крупный камень ускорения</CutMajorCoolDownGem.label>
+	<CutMajorCoolDownGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный ускорить откат способностей.</CutMajorCoolDownGem.description>
+	<CutMajorCoolDownGem.jobString>огранить крупный камень ускорения</CutMajorCoolDownGem.jobString>
+	<CutMinorMPCostGem.label>небольшой камень сохранения</CutMinorMPCostGem.label>
+	<CutMinorMPCostGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный уменьшит требуемое кол-во маны.</CutMinorMPCostGem.description>
+	<CutMinorMPCostGem.jobString>огранить небольшой камень сохранения</CutMinorMPCostGem.jobString>
+	<CutMPCostGem.label>камень сохранения</CutMPCostGem.label>
+	<CutMPCostGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный уменьшит требуемое кол-во маны.</CutMPCostGem.description>
+	<CutMPCostGem.jobString>огранить камень сохранения</CutMPCostGem.jobString>
+	<CutMajorMPCostGem.label>крупный камень сохранения</CutMajorMPCostGem.label>
+	<CutMajorMPCostGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный уменьшит требуемое кол-во маны.</CutMajorMPCostGem.description>
+	<CutMajorMPCostGem.jobString>огранить крупный камень сохранения</CutMajorMPCostGem.jobString>
+	<CutMinorMPRegenRateGem.label>небольшой камень регенерации</CutMinorMPRegenRateGem.label>
+	<CutMinorMPRegenRateGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный ускорить регенерацию маны.</CutMinorMPRegenRateGem.description>
+	<CutMinorMPRegenRateGem.jobString>огранить небольшой камень регенерации</CutMinorMPRegenRateGem.jobString>
+	<CutMPRegenRateGem.label>камень регенерации</CutMPRegenRateGem.label>
+	<CutMPRegenRateGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный ускорить регенерацию маны.</CutMPRegenRateGem.description>
+	<CutMPRegenRateGem.jobString>огранить камень регенерации</CutMPRegenRateGem.jobString>
+	<CutMajorMPRegenRateGem.label>крупный камень регенерации</CutMajorMPRegenRateGem.label>
+	<CutMajorMPRegenRateGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный ускорить регенерацию маны.</CutMajorMPRegenRateGem.description>
+	<CutMajorMPRegenRateGem.jobString>огранить крупный камень регенерации</CutMajorMPRegenRateGem.jobString>
+	<CutMinorXPGainGem.label>небольшой камень обучения</CutMinorXPGainGem.label>
+	<CutMinorXPGainGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, увеличивающий получаемый опыт при использовнии способностей.</CutMinorXPGainGem.description>
+	<CutMinorXPGainGem.jobString>огранить небольшой камень обучения</CutMinorXPGainGem.jobString>
+	<CutXPGainGem.label>камень обучения</CutXPGainGem.label>
+	<CutXPGainGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, увеличивающий получаемый опыт при использовнии способностей.</CutXPGainGem.description>
+	<CutXPGainGem.jobString>огранить камень обучения</CutXPGainGem.jobString>
+	<CutMajorXPGainGem.label>крупный камень обучения</CutMajorXPGainGem.label>
+	<CutMajorXPGainGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, увеличивающий получаемый опыт при использовнии способностей.</CutMajorXPGainGem.description>
+	<CutMajorXPGainGem.jobString>огранить крупный камень обучения</CutMajorXPGainGem.jobString>
+	<CutMinorArcaneResGem.label>небольшой камень сопротивления</CutMinorArcaneResGem.label>
+	<CutMinorArcaneResGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, увеличивающий сопротивление магическим атакам.</CutMinorArcaneResGem.description>
+	<CutMinorArcaneResGem.jobString>огранить небольшой камень сопротивления</CutMinorArcaneResGem.jobString>
+	<CutArcaneResGem.label>камень сопротивления</CutArcaneResGem.label>
+	<CutArcaneResGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, увеличивающий сопротивление магическим атакам.</CutArcaneResGem.description>
+	<CutArcaneResGem.jobString>огранить камень сопротивления</CutArcaneResGem.jobString>
+	<CutMajorArcaneResGem.label>крупный камень сопротивления</CutMajorArcaneResGem.label>
+	<CutMajorArcaneResGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, увеличивающий сопротивление магическим атакам.</CutMajorArcaneResGem.description>
+	<CutMajorArcaneResGem.jobString>огранить крупный камень сопротивления</CutMajorArcaneResGem.jobString>
+	<CutMinorArcaneDmgGem.label>небольшой камень силы</CutMinorArcaneDmgGem.label>
+	<CutMinorArcaneDmgGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, увеличивающий силу заклинаний.</CutMinorArcaneDmgGem.description>
+	<CutMinorArcaneDmgGem.jobString>огранить небольшой камень силы</CutMinorArcaneDmgGem.jobString>
+	<CutArcaneDmgGem.label>камень силы</CutArcaneDmgGem.label>
+	<CutArcaneDmgGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, увеличивающий силу заклинаний.</CutArcaneDmgGem.description>
+	<CutArcaneDmgGem.jobString>огранить камень силы</CutArcaneDmgGem.jobString>
+	<CutMajorArcaneDmgGem.label>крупный камень силы</CutMajorArcaneDmgGem.label>
+	<CutMajorArcaneDmgGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, увеличивающий силу заклинаний.</CutMajorArcaneDmgGem.description>
+	<CutMajorArcaneDmgGem.jobString>огранить крупный камень силы</CutMajorArcaneDmgGem.jobString>
+	<CutMinorArcaneWonderGem.label>небольшой камень сомнения</CutMinorArcaneWonderGem.label>
+	<CutMinorArcaneWonderGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный использовать все виды чар.</CutMinorArcaneWonderGem.description>
+	<CutMinorArcaneWonderGem.jobString>огранить небольшой камень сомнения</CutMinorArcaneWonderGem.jobString>
+	<CutArcaneWonderGem.label>камень сомнения</CutArcaneWonderGem.label>
+	<CutArcaneWonderGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный использовать все виды чар.</CutArcaneWonderGem.description>
+	<CutArcaneWonderGem.jobString>огранить камень сомнения</CutArcaneWonderGem.jobString>
+	<CutMajorArcaneWonderGem.label>крупный камень сомнения</CutMajorArcaneWonderGem.label>
+	<CutMajorArcaneWonderGem.description>Ограните и очистите магицит, превратив его в очаровательный драгоценный камень, способный использовать все виды чар.</CutMajorArcaneWonderGem.description>
+	<CutMajorArcaneWonderGem.jobString>огранить крупный камень сомнения</CutMajorArcaneWonderGem.jobString>
+	<!-- Refinement Recipes-->
+	<ManaPotion_Refined.label>Зелье маны</ManaPotion_Refined.label>
+	<ManaPotion_Refined.description>Травы, смешанные с порошком магицита, чтобы получить 2 зелья маны.</ManaPotion_Refined.description>
+	<ManaPotion_Refined.jobString>СОздание зелья маны</ManaPotion_Refined.jobString>
+</LanguageData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- special attack manuevers -->
+
+  <TM_ShadowBurn.label>queimadura de sombra</TM_ShadowBurn.label>
+  <TM_DeathGaze.label>olhar mortal</TM_DeathGaze.label>
+
+
+</LanguageData>

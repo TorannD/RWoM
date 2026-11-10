@@ -1,0 +1,5 @@
+<LanguageData>
+  <TM_MagicalThrusterFuelName>Magofuel</TM_MagicalThrusterFuelName>
+  <TM_MagicalThrusterFuelAmount>{0} / {1} magofuel</TM_MagicalThrusterFuelAmount>
+  <TM_MagicalThrusterFuelRange>Range supported by magofuel: {0} / {1}</TM_MagicalThrusterFuelRange>
+</LanguageData>

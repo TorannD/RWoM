@@ -1,95 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using RimWorld;
-using AbilityUser;
 using Verse;
-using Verse.AI;
-
 
 namespace TorannMagic
 {
-    public class Verb_Enrage : Verb_UseAbility
+    public class Verb_Enrage : ClassProgression.Verb_SpiritTargetable
     {
-
-        private int verVal = 0;
-        private int pwrVal = 0;
-        private float arcaneDmg = 1f;
-        bool validTarg;
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
-            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map))
-            {
-                if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
-                {
-                    validTarg = true;
-                }
-                else
-                {
-                    //out of range
-                    validTarg = false;
-                }
-            }
-            else
-            {
-                validTarg = false;
-            }
-            return validTarg;
+            var pawn = targ.Pawn;
+            return pawn?.Spawned == true && !pawn.Dead && pawn.Map == CasterPawn?.Map &&
+                pawn.RaceProps.Humanlike && !TM_Calc.IsUndead(pawn) && !pawn.Position.Fogged(pawn.Map) &&
+                (root - pawn.Position).LengthHorizontal < verbProps.range;
         }
 
         protected override bool TryCastShot()
         {
-            bool flag = false;
-            Pawn caster = this.CasterPawn;
-            Pawn hitPawn = this.currentTarget.Thing as Pawn;
-            CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-            if (comp != null && comp.MagicData != null)
+            burstShotsLeft = 0;
+            var body = CasterPawn;
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(body,Ability);
+            var magic = owner?.GetCompAbilityUserMagic();
+            if (body?.Spawned != true || magic == null || !CanHitTargetFrom(body.Position,currentTarget)) return false;
+            var target = currentTarget.Pawn;
+            if (target.HostileTo(body))
             {
-                //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Enrage, "TM_Enrage", "_pwr", true);
-                //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Enrage, "TM_Enrage", "_ver", true);
-                pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef);
-                verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef);
-                arcaneDmg = comp.arcaneDmg;
-            }
-
-            if(hitPawn != null && hitPawn.RaceProps != null && hitPawn.RaceProps.Humanlike && !TM_Calc.IsUndead(hitPawn))
-            {
-                if(hitPawn.Faction != caster.Faction && hitPawn.mindState != null && hitPawn.mindState.mentalStateHandler != null)
+                if (!Rand.Chance(TM_Calc.GetSpellSuccessChance(owner,target,true)))
                 {
-                    if(Rand.Chance(TM_Calc.GetSpellSuccessChance(caster, hitPawn, true)))
-                    {
-                        try
-                        {
-                            hitPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, null, true, false, false, caster);
-                        }
-                        catch
-                        {
-                            MoteMaker.ThrowText(hitPawn.DrawPos, hitPawn.Map, "Failed", -1);
-                        }
-                    }
-                    else
-                    {
-                        MoteMaker.ThrowText(hitPawn.DrawPos, hitPawn.Map, "TM_ResistedSpell".Translate(), -1);
-                        return false;
-                    }
+                    MoteMaker.ThrowText(target.DrawPos,target.Map,"TM_ResistedSpell".Translate(),-1);
+                    return false;
                 }
-                HealthUtility.AdjustSeverity(hitPawn, TorannMagicDefOf.TM_EnrageHD, (.25f + (.05f+pwrVal)) * (.5f*arcaneDmg));
-
-                HediffComp_Enrage hdc = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EnrageHD).TryGetComp<HediffComp_Enrage>();
-                hdc.reductionFactor = (1f - (.1f * verVal));
-                if(verVal >= 4)
-                {
-                    hdc.consumeJoy = true;
-                }
-                
+                target.mindState?.mentalStateHandler?.TryStartMentalState(MentalStateDefOf.Berserk,null,true,false,false,body);
             }
-            else
-            {
-                Messages.Message("TM_InvalidTarget".Translate(CasterPawn.LabelShort, this.Ability.Def.label), MessageTypeDefOf.RejectInput);
-            }
-
-            this.PostCastShot(flag, out flag);
-            return flag;
-        }        
+            int power = TM_Calc.GetSkillPowerLevel(owner,TorannMagicDefOf.TM_Enrage);
+            int versatility = TM_Calc.GetSkillVersatilityLevel(owner,TorannMagicDefOf.TM_Enrage);
+            HealthUtility.AdjustSeverity(target,TorannMagicDefOf.TM_EnrageHD,(.25f + .05f * power) * magic.arcaneDmg);
+            var effect = target.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_EnrageHD)?.TryGetComp<HediffComp_Enrage>();
+            if (effect == null) return false;
+            effect.reductionFactor = 1f - .1f * versatility;
+            effect.consumeJoy = versatility >= 3;
+            return true;
+        }
     }
 }

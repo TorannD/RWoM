@@ -19,7 +19,7 @@ namespace TorannMagic
         private int trapSpringDelay = 30;
         private bool trapSprung = false;
 
-        private Pawn trapPawn = new Pawn();
+        private Pawn trapPawn;
 
         public bool Armed => !trapSprung;
 
@@ -30,7 +30,9 @@ namespace TorannMagic
             {
                 if (AllComps[i] is CompExplosive comp)
                 {
+                    bool wasStarted = comp.wickStarted;
                     comp.StartWick();
+                    if (!wasStarted && comp.wickStarted) ClassProgression.SummonerTrials.WickStarted(this, p);
                     return;
                 }
             }
@@ -39,7 +41,10 @@ namespace TorannMagic
         public override void ExposeData()
         {
             base.ExposeData();
-            //Scribe_References.Look<Pawn>(ref this.trapPawn, "trapPawn", false);
+            Scribe_References.Look<Pawn>(ref this.trapPawn, "trapPawn", false);
+            Scribe_Values.Look(ref trapSprung, "trapSprung", false);
+            Scribe_Values.Look(ref trapSpringDelay, "trapSpringDelay", 30);
+            ClassProgression.SummonerTrials.ExposeMine(this);
         }
 
         private void CheckPawn(IntVec3 position)
@@ -94,13 +99,12 @@ namespace TorannMagic
             if (!(Rand.Value < SpringChance(p))) return;
 
             this.Spring(p);
+            ClassProgression.SummonerTrials.Triggered(this, p);
             if (p.Faction == Faction.OfPlayer || p.HostFaction == Faction.OfPlayer)
             {
-                Find.LetterStack.ReceiveLetter("LetterFriendlyTrapSprungLabel".Translate(
-                    p.LabelShort
-                ), "LetterFriendlyTrapSprung".Translate(
-                    p.LabelShort
-                ), LetterDefOf.NegativeEvent, new TargetInfo(base.Position, base.Map));
+                Find.LetterStack.ReceiveLetter("LetterFriendlyTrapSprungLabel".Translate(this, p),
+                    "LetterFriendlyTrapSprung".Translate(this, p),
+                    LetterDefOf.NegativeEvent, new TargetInfo(base.Position, base.Map));
             }            
         }
 

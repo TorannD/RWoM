@@ -1,0 +1,9 @@
+<LanguageData><!-- orb of conviction-->
+	<TM_Artifact_Conviction.label>Убеждение</TM_Artifact_Conviction.label>
+	<TM_Artifact_Conviction.description>Убедите пешку присоединиться к вашему делу. Эта сила нанесет тяжелый урон заклинателю.
+
+Использование Убеждения уничтожит сферу.</TM_Artifact_Conviction.description>
+	<!-- winter's reign-->
+	<TM_Weapon_WintersFury.label>Ярость зимы</TM_Weapon_WintersFury.label>
+	<TM_Weapon_WintersFury.description>Покрывает карту катящимися волнами темных, яростных облаков, несущих едкое презрение зимы.</TM_Weapon_WintersFury.description>
+</LanguageData>

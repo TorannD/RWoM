@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GrandDomeRitual>Активировать атмосферный купол (ритуал)</TM_GrandDomeRitual>
+  <TM_GrandDomeUnavailable>Нужны исправный заправленный купол и маг, способный потратить 10% маны и сохранить 20%.</TM_GrandDomeUnavailable>
+  <TM_GrandDomeUnarmed>Неактивен: требуется ритуал активации</TM_GrandDomeUnarmed>
+  <TM_GrandDomeStandby>Ожидание: другой купол защищает карту</TM_GrandDomeStandby>
+  <TM_GrandDomeActive>Активен: атмосфера на всей локальной карте</TM_GrandDomeActive>
+  <TM_GrandDomeLowFuel>В куполе мало топлива: осталось на {0} дн.</TM_GrandDomeLowFuel>
+  <TM_GrandDomeExhausted>Топливо атмосферного купола закончилось. Заправьте его и проведите новый ритуал активации.</TM_GrandDomeExhausted>
+</LanguageData>

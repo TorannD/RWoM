@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_LightPodLeaving.label>промінь світла (відхід)</TM_LightPodLeaving.label>
+  <TM_LightPodIncoming.label>світловий промінь (вхідний)</TM_LightPodIncoming.label>
+  <TM_ActiveLightPod.label>світловий пучок</TM_ActiveLightPod.label>
+  <TM_Firestorm_Large.label>вогняний шторм (великий)</TM_Firestorm_Large.label>
+  <TM_Firestorm_Small.label>вогняний шторм (маленький)</TM_Firestorm_Small.label>
+  <TM_Firestorm_Tiny.label>вогняний шторм (крихітний)</TM_Firestorm_Tiny.label>
+  <TM_Blizzard_Tiny.label>буря (крихітний)</TM_Blizzard_Tiny.label>
+  <TM_Blizzard_Small.label>буря (маленький)</TM_Blizzard_Small.label>
+  <TM_Blizzard_Large.label>буря (великий)</TM_Blizzard_Large.label>
+  <TM_ArrowStorm.label>град стріл</TM_ArrowStorm.label>
+  <TM_ScornLeaving.label>презирливий догляд</TM_ScornLeaving.label>
+  <TM_ScornIncoming.label>презирливий догляд</TM_ScornIncoming.label>
+  <TM_Meteorite.label>метеорит</TM_Meteorite.label>
+  <TM_Meteorite_I.label>метеорит</TM_Meteorite_I.label>
+  <TM_Meteorite_II.label>метеорит</TM_Meteorite_II.label>
+  <TM_Meteorite_III.label>метеорит</TM_Meteorite_III.label>
+  <TM_Hail.label>град</TM_Hail.label>
+
+
+</LanguageData>

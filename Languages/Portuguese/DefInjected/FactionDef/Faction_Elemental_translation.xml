@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_SkeletalFaction.label>esqueletado</TM_SkeletalFaction.label>
+  <TM_SkeletalFaction.description>Esqueletos e mortos levantados pela energia mágica.</TM_SkeletalFaction.description>
+  <TM_SkeletalFaction.pawnsPlural>esqueletado</TM_SkeletalFaction.pawnsPlural>
+  <TM_SkeletalFaction.fixedName>esqueletado</TM_SkeletalFaction.fixedName>
+
+  <TM_ElementalFaction.label>básico</TM_ElementalFaction.label>
+  <TM_ElementalFaction.description>Perfume básico causado a partir de suas camadas de poder.</TM_ElementalFaction.description>
+  <TM_ElementalFaction.pawnsPlural>básico</TM_ElementalFaction.pawnsPlural>
+  <TM_ElementalFaction.fixedName>básico</TM_ElementalFaction.fixedName>
+
+  <TM_SummonedFaction.label>Criatura causada</TM_SummonedFaction.label>
+  <TM_SummonedFaction.description>Criaturas causadas por outras dimensões ou níveis de existência através da força secreta.</TM_SummonedFaction.description>
+  <TM_SummonedFaction.pawnsPlural>Chamado</TM_SummonedFaction.pawnsPlural>
+  <TM_SummonedFaction.fixedName>Chamado</TM_SummonedFaction.fixedName>
+
+
+  <TM_SkeletalFaction.pawnSingular>esqueleto</TM_SkeletalFaction.pawnSingular>
+  <TM_ElementalFaction.pawnSingular>primário</TM_ElementalFaction.pawnSingular>
+  <TM_SummonedFaction.pawnSingular>chamado</TM_SummonedFaction.pawnSingular>
+
+</LanguageData>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadPsionicProjector>Estudar projeção cinética</TM_ReadPsionicProjector>
+  <TM_ReadPsionicAccelerator>Estudar aceleração cinética</TM_ReadPsionicAccelerator>
+  <TM_PsionicFoundationTrial>Absorva ou cause {0}/200 de dano cinético hostil ou repare {1}/20 edifícios diferentes danificados por desastres.</TM_PsionicFoundationTrial>
+  <TM_PsionicAdeptTrial>Resgate {0}/10 aliados feridos diferentes ou entregue {1}/30 carregamentos de emergência enquanto houver um aliado caído (um por hora).</TM_PsionicAdeptTrial>
+  <TM_PsionicMasterTrial>Complete {0}/12 dias de serviço psiónico. Nível de poder físico {1}/30.</TM_PsionicMasterTrial>
+  <TM_PsionicAdvance>Avançar de etapa</TM_PsionicAdvance>
+  <TM_PsionicCrucibleUnavailable>Requer 60% de energia psiónica e 30% de resistência.</TM_PsionicCrucibleUnavailable>
+  <TM_PsionicProjectorInfo>A projeção consome menos 10% de energia por projétil. O pulso causa menos 10% de dano.</TM_PsionicProjectorInfo>
+  <TM_PsionicAcceleratorInfo>O pulso causa mais 8% de dano. A regeneração psiónica é suspensa durante a canalização da barreira.</TM_PsionicAcceleratorInfo>
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GuideTitle>魔法指南</TM_GuideTitle>
+  <TM_GuideRead>阅读指南</TM_GuideRead>
+  <TM_GuideReadDesc>查看此装置的使用方法。即使尚未研究其建造技术，也可阅读。</TM_GuideReadDesc>
+  <TM_GuideStart>你的魔法飞船已抵达星球表面。核心、两个推进器和信标支持星球内航行；剧本提供的燃料储备有限。准备好后使用驾驶控制台。工坊、生命维持设施和后续改进仍需自行研究和建造。</TM_GuideStart>
+  <TM_GuideResearch>新的魔法功能已解锁。以下说明介绍相关研究与装置。</TM_GuideResearch>
+  <TM_GuideNetwork>魔法燃料与法力是两种资源。推进器消耗魔法燃料，不能用法力代替。信标连接附近的设备。每种资源的发送与接收需要分别设置。建造信标需要同时完成魔法燃料精炼和电力研究。</TM_GuideNetwork>
+  <TM_GuideOwnership>研究解锁生产与成长。已获得的装置和已学会的法术仍可使用。</TM_GuideOwnership>
+  <TM_GuideReread>选中相关魔法装置，点击“阅读指南”即可重新查看使用说明。</TM_GuideReread>
+</LanguageData>

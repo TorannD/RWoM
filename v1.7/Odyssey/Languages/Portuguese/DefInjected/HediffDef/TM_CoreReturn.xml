@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_CoreReturnMark.label>marca de regresso</TM_CoreReturnMark.label>
+  <TM_CoreReturnMark.description>Ligação a um núcleo mágico. Regresso: 10 de magocombustível; manutenção: 1 por dia.</TM_CoreReturnMark.description>
+</LanguageData>

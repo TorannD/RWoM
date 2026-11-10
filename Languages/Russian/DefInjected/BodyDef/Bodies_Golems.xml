@@ -1,0 +1,175 @@
+<LanguageData><!-- MECHA GOLEM-->
+	<TM_Mecha-Golem.label>меха-голем</TM_Mecha-Golem.label>
+	<!-- FLESH GOLEM-->
+	<TM_FleshGolem.label>Голем из плоти</TM_FleshGolem.label>
+	<TM_FleshGolem.corePart.parts.2.parts.1.parts.0.customLabel>левое легкое</TM_FleshGolem.corePart.parts.2.parts.1.parts.0.customLabel>
+	<TM_FleshGolem.corePart.parts.2.parts.1.parts.1.customLabel>правое легкое</TM_FleshGolem.corePart.parts.2.parts.1.parts.1.customLabel>
+	<TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.0.customLabel>левый глаз</TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.0.customLabel>
+	<TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.1.customLabel>правый глаз</TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.1.customLabel>
+	<TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.2.customLabel>нижний левый глаз</TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.2.customLabel>
+	<TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.3.customLabel>нижний правый глаз</TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.3.customLabel>
+	<TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.4.customLabel>злой глаз</TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.4.customLabel>
+	<TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.6.customLabel>левое ухо</TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.6.customLabel>
+	<TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.7.customLabel>правое ухо</TM_FleshGolem.corePart.parts.3.parts.0.parts.1.parts.7.customLabel>
+	<TM_FleshGolem.corePart.parts.4.customLabel>левое плечо</TM_FleshGolem.corePart.parts.4.customLabel>
+	<TM_FleshGolem.corePart.parts.4.parts.0.customLabel>левая рука</TM_FleshGolem.corePart.parts.4.parts.0.customLabel>
+	<TM_FleshGolem.corePart.parts.4.parts.0.parts.0.customLabel>левая рука</TM_FleshGolem.corePart.parts.4.parts.0.parts.0.customLabel>
+	<TM_FleshGolem.corePart.parts.5.customLabel>правое плечо</TM_FleshGolem.corePart.parts.5.customLabel>
+	<TM_FleshGolem.corePart.parts.5.parts.0.customLabel>правая рука</TM_FleshGolem.corePart.parts.5.parts.0.customLabel>
+	<TM_FleshGolem.corePart.parts.5.parts.0.parts.0.customLabel>правая рука</TM_FleshGolem.corePart.parts.5.parts.0.parts.0.customLabel>
+	<TM_FleshGolem.corePart.parts.6.parts.0.customLabel>левая нога</TM_FleshGolem.corePart.parts.6.parts.0.customLabel>
+	<TM_FleshGolem.corePart.parts.6.parts.0.parts.0.customLabel>левая бедренная кость</TM_FleshGolem.corePart.parts.6.parts.0.parts.0.customLabel>
+	<TM_FleshGolem.corePart.parts.6.parts.0.parts.1.customLabel>левая большеберцовая кость</TM_FleshGolem.corePart.parts.6.parts.0.parts.1.customLabel>
+	<TM_FleshGolem.corePart.parts.6.parts.0.parts.2.customLabel>левая нога</TM_FleshGolem.corePart.parts.6.parts.0.parts.2.customLabel>
+	<TM_FleshGolem.corePart.parts.6.parts.1.customLabel>правая нога</TM_FleshGolem.corePart.parts.6.parts.1.customLabel>
+	<TM_FleshGolem.corePart.parts.6.parts.1.parts.0.customLabel>правая бедренная кость</TM_FleshGolem.corePart.parts.6.parts.1.parts.0.customLabel>
+	<TM_FleshGolem.corePart.parts.6.parts.1.parts.1.customLabel>правая большеберцовая кость</TM_FleshGolem.corePart.parts.6.parts.1.parts.1.customLabel>
+	<TM_FleshGolem.corePart.parts.6.parts.1.parts.2.customLabel>правая нога</TM_FleshGolem.corePart.parts.6.parts.1.parts.2.customLabel>
+	<!-- HOLLOW GOLEM-->
+	<TM_HollowGolem.label>Полый голем</TM_HollowGolem.label>
+	<TM_HollowGolem.corePart.parts.2.parts.4.parts.0.customLabel>левое легкое</TM_HollowGolem.corePart.parts.2.parts.4.parts.0.customLabel>
+	<TM_HollowGolem.corePart.parts.2.parts.4.parts.1.customLabel>правое легкое</TM_HollowGolem.corePart.parts.2.parts.4.parts.1.customLabel>
+	<TM_HollowGolem.corePart.parts.3.parts.0.parts.1.parts.0.customLabel>левый глаз</TM_HollowGolem.corePart.parts.3.parts.0.parts.1.parts.0.customLabel>
+	<TM_HollowGolem.corePart.parts.3.parts.0.parts.1.parts.1.customLabel>правый глаз</TM_HollowGolem.corePart.parts.3.parts.0.parts.1.parts.1.customLabel>
+	<TM_HollowGolem.corePart.parts.3.parts.0.parts.1.parts.2.customLabel>левое ухо</TM_HollowGolem.corePart.parts.3.parts.0.parts.1.parts.2.customLabel>
+	<TM_HollowGolem.corePart.parts.3.parts.0.parts.1.parts.3.customLabel>правое ухо</TM_HollowGolem.corePart.parts.3.parts.0.parts.1.parts.3.customLabel>
+	<TM_HollowGolem.corePart.parts.4.customLabel>левое плечо</TM_HollowGolem.corePart.parts.4.customLabel>
+	<TM_HollowGolem.corePart.parts.4.parts.0.customLabel>левая рука</TM_HollowGolem.corePart.parts.4.parts.0.customLabel>
+	<TM_HollowGolem.corePart.parts.4.parts.0.parts.0.customLabel>левая рука</TM_HollowGolem.corePart.parts.4.parts.0.parts.0.customLabel>
+	<TM_HollowGolem.corePart.parts.5.customLabel>правое плечо</TM_HollowGolem.corePart.parts.5.customLabel>
+	<TM_HollowGolem.corePart.parts.5.parts.0.customLabel>правая рука</TM_HollowGolem.corePart.parts.5.parts.0.customLabel>
+	<TM_HollowGolem.corePart.parts.5.parts.0.parts.0.customLabel>правая рука</TM_HollowGolem.corePart.parts.5.parts.0.parts.0.customLabel>
+	<TM_HollowGolem.corePart.parts.7.parts.0.customLabel>левая нога</TM_HollowGolem.corePart.parts.7.parts.0.customLabel>
+	<TM_HollowGolem.corePart.parts.7.parts.0.parts.0.customLabel>левая бедренная кость</TM_HollowGolem.corePart.parts.7.parts.0.parts.0.customLabel>
+	<TM_HollowGolem.corePart.parts.7.parts.0.parts.1.customLabel>левая большеберцовая кость</TM_HollowGolem.corePart.parts.7.parts.0.parts.1.customLabel>
+	<TM_HollowGolem.corePart.parts.7.parts.0.parts.2.customLabel>левая нога</TM_HollowGolem.corePart.parts.7.parts.0.parts.2.customLabel>
+	<TM_HollowGolem.corePart.parts.7.parts.1.customLabel>правая нога</TM_HollowGolem.corePart.parts.7.parts.1.customLabel>
+	<TM_HollowGolem.corePart.parts.7.parts.1.parts.0.customLabel>правая бедренная кость</TM_HollowGolem.corePart.parts.7.parts.1.parts.0.customLabel>
+	<TM_HollowGolem.corePart.parts.7.parts.1.parts.1.customLabel>правая большеберцовая кость</TM_HollowGolem.corePart.parts.7.parts.1.parts.1.customLabel>
+	<TM_HollowGolem.corePart.parts.7.parts.1.parts.2.customLabel>правая нога</TM_HollowGolem.corePart.parts.7.parts.1.parts.2.customLabel>
+	<!-- STONE GOLEM-->
+	<TM_StoneGolem.label>Каменный голем</TM_StoneGolem.label>
+	<TM_StoneGolem.corePart.parts.3.parts.0.parts.1.parts.0.customLabel>левый глаз</TM_StoneGolem.corePart.parts.3.parts.0.parts.1.parts.0.customLabel>
+	<TM_StoneGolem.corePart.parts.3.parts.0.parts.1.parts.1.customLabel>правый глаз</TM_StoneGolem.corePart.parts.3.parts.0.parts.1.parts.1.customLabel>
+	<TM_StoneGolem.corePart.parts.4.customLabel>левое плечо</TM_StoneGolem.corePart.parts.4.customLabel>
+	<TM_StoneGolem.corePart.parts.4.parts.0.customLabel>левая рука</TM_StoneGolem.corePart.parts.4.parts.0.customLabel>
+	<TM_StoneGolem.corePart.parts.4.parts.0.parts.0.customLabel>левая рука</TM_StoneGolem.corePart.parts.4.parts.0.parts.0.customLabel>
+	<TM_StoneGolem.corePart.parts.5.customLabel>правое плечо</TM_StoneGolem.corePart.parts.5.customLabel>
+	<TM_StoneGolem.corePart.parts.5.parts.0.customLabel>правая рука</TM_StoneGolem.corePart.parts.5.parts.0.customLabel>
+	<TM_StoneGolem.corePart.parts.5.parts.0.parts.0.customLabel>правая рука</TM_StoneGolem.corePart.parts.5.parts.0.parts.0.customLabel>
+	<TM_StoneGolem.corePart.parts.6.parts.0.customLabel>левая нога</TM_StoneGolem.corePart.parts.6.parts.0.customLabel>
+	<TM_StoneGolem.corePart.parts.6.parts.0.parts.0.customLabel>левая нога</TM_StoneGolem.corePart.parts.6.parts.0.parts.0.customLabel>
+	<TM_StoneGolem.corePart.parts.6.parts.1.customLabel>правая нога</TM_StoneGolem.corePart.parts.6.parts.1.customLabel>
+	<TM_StoneGolem.corePart.parts.6.parts.1.parts.0.customLabel>правая нога</TM_StoneGolem.corePart.parts.6.parts.1.parts.0.customLabel>
+	<!-- MAHARAL GOLEM-->
+	<TM_MaharalGolem.label>Голем Махарала</TM_MaharalGolem.label>
+	<TM_MaharalGolem.corePart.parts.3.parts.0.parts.1.parts.0.customLabel>левый глаз</TM_MaharalGolem.corePart.parts.3.parts.0.parts.1.parts.0.customLabel>
+	<TM_MaharalGolem.corePart.parts.3.parts.0.parts.1.parts.1.customLabel>правый глаз</TM_MaharalGolem.corePart.parts.3.parts.0.parts.1.parts.1.customLabel>
+	<TM_MaharalGolem.corePart.parts.4.customLabel>левое плечо</TM_MaharalGolem.corePart.parts.4.customLabel>
+	<TM_MaharalGolem.corePart.parts.4.parts.0.customLabel>левая рука</TM_MaharalGolem.corePart.parts.4.parts.0.customLabel>
+	<TM_MaharalGolem.corePart.parts.4.parts.0.parts.0.customLabel>левая рука</TM_MaharalGolem.corePart.parts.4.parts.0.parts.0.customLabel>
+	<TM_MaharalGolem.corePart.parts.5.customLabel>правое плечо</TM_MaharalGolem.corePart.parts.5.customLabel>
+	<TM_MaharalGolem.corePart.parts.5.parts.0.customLabel>правая рука</TM_MaharalGolem.corePart.parts.5.parts.0.customLabel>
+	<TM_MaharalGolem.corePart.parts.5.parts.0.parts.0.customLabel>правая рука</TM_MaharalGolem.corePart.parts.5.parts.0.parts.0.customLabel>
+	<TM_MaharalGolem.corePart.parts.6.parts.0.customLabel>левая нога</TM_MaharalGolem.corePart.parts.6.parts.0.customLabel>
+	<TM_MaharalGolem.corePart.parts.6.parts.0.parts.0.customLabel>левая нога</TM_MaharalGolem.corePart.parts.6.parts.0.parts.0.customLabel>
+	<TM_MaharalGolem.corePart.parts.6.parts.1.customLabel>правая нога</TM_MaharalGolem.corePart.parts.6.parts.1.customLabel>
+	<TM_MaharalGolem.corePart.parts.6.parts.1.parts.0.customLabel>правая нога</TM_MaharalGolem.corePart.parts.6.parts.1.parts.0.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Chest.parts.Flesh_Ribcage.parts.left_lung.customLabel>левое легкое</TM_FleshGolem.corePart.parts.Flesh_Chest.parts.Flesh_Ribcage.parts.left_lung.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Chest.parts.Flesh_Ribcage.parts.right_lung.customLabel>правое легкое</TM_FleshGolem.corePart.parts.Flesh_Chest.parts.Flesh_Ribcage.parts.right_lung.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.left_eye.customLabel>левый глаз</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.left_eye.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.right_eye.customLabel>правый глаз</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.right_eye.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.lower_left_eye.customLabel>нижний левый глаз</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.lower_left_eye.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.lower_right_eye.customLabel>нижний правый глаз</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.lower_right_eye.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.evil_eye.customLabel>дурной глаз</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.evil_eye.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.left_ear.customLabel>левое ухо</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.left_ear.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.right_ear.customLabel>правое ухо</TM_FleshGolem.corePart.parts.Flesh_Neck.parts.Flesh_Head.parts.Flesh_Face.parts.right_ear.customLabel>
+	<TM_FleshGolem.corePart.parts.left_shoulder.customLabel>левое плечо</TM_FleshGolem.corePart.parts.left_shoulder.customLabel>
+	<TM_FleshGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>левая рука</TM_FleshGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+	<TM_FleshGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>левая рука</TM_FleshGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+	<TM_FleshGolem.corePart.parts.right_shoulder.customLabel>правое плечо</TM_FleshGolem.corePart.parts.right_shoulder.customLabel>
+	<TM_FleshGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>правая рука</TM_FleshGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+	<TM_FleshGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>правая рука</TM_FleshGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.customLabel>левая нога</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.parts.left_femur.customLabel>левое бедро</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.parts.left_femur.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.parts.left_tibia.customLabel>левая большеберцовая кость</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.parts.left_tibia.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.parts.left_foot.customLabel>левая нога</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.left_leg.parts.left_foot.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.customLabel>правая нога</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.parts.right_femur.customLabel>правое бедро</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.parts.right_femur.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.parts.right_tibia.customLabel>правая большеберцовая кость</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.parts.right_tibia.customLabel>
+	<TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.parts.right_foot.customLabel>правая ступня</TM_FleshGolem.corePart.parts.Flesh_Waist.parts.right_leg.parts.right_foot.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Chest.parts.Golem_Ribcage.parts.left_lung.customLabel>левое легкое</TM_HollowGolem.corePart.parts.Golem_Chest.parts.Golem_Ribcage.parts.left_lung.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Chest.parts.Golem_Ribcage.parts.right_lung.customLabel>правое легкое</TM_HollowGolem.corePart.parts.Golem_Chest.parts.Golem_Ribcage.parts.right_lung.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_eye.customLabel>левый глаз</TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_eye.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_eye.customLabel>правый глаз</TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_eye.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_ear.customLabel>левое ухо</TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_ear.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_ear.customLabel>правое ухо</TM_HollowGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_ear.customLabel>
+	<TM_HollowGolem.corePart.parts.left_shoulder.customLabel>левое плечо</TM_HollowGolem.corePart.parts.left_shoulder.customLabel>
+	<TM_HollowGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>левая рука</TM_HollowGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+	<TM_HollowGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>левая рука</TM_HollowGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+	<TM_HollowGolem.corePart.parts.right_shoulder.customLabel>правое плечо</TM_HollowGolem.corePart.parts.right_shoulder.customLabel>
+	<TM_HollowGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>правая рука</TM_HollowGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+	<TM_HollowGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>правая рука</TM_HollowGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>левая нога</TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_femur.customLabel>левое бедро</TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_femur.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_tibia.customLabel>левая большеберцовая кость</TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_tibia.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>левая нога</TM_HollowGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>правая нога</TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_femur.customLabel>правое бедро</TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_femur.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_tibia.customLabel>большеберцовая кость справа</TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_tibia.customLabel>
+	<TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>правая ступня</TM_HollowGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>
+	<TM_StoneGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_eye.customLabel>левый глаз</TM_StoneGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_eye.customLabel>
+	<TM_StoneGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_eye.customLabel>правый глаз</TM_StoneGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_eye.customLabel>
+	<TM_StoneGolem.corePart.parts.left_shoulder.customLabel>левое плечо</TM_StoneGolem.corePart.parts.left_shoulder.customLabel>
+	<TM_StoneGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>левая рука</TM_StoneGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+	<TM_StoneGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>левая рука</TM_StoneGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+	<TM_StoneGolem.corePart.parts.right_shoulder.customLabel>правое плечо</TM_StoneGolem.corePart.parts.right_shoulder.customLabel>
+	<TM_StoneGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>правая рука</TM_StoneGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+	<TM_StoneGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>правая рука</TM_StoneGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+	<TM_StoneGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>левая нога</TM_StoneGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>
+	<TM_StoneGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>левая нога</TM_StoneGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>
+	<TM_StoneGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>правая нога</TM_StoneGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>
+	<TM_StoneGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>правая ступня</TM_StoneGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>
+	<TM_MaharalGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_eye.customLabel>левый глаз</TM_MaharalGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.left_eye.customLabel>
+	<TM_MaharalGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_eye.customLabel>правый глаз</TM_MaharalGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.Golem_Face.parts.right_eye.customLabel>
+	<TM_MaharalGolem.corePart.parts.left_shoulder.customLabel>левое плечо</TM_MaharalGolem.corePart.parts.left_shoulder.customLabel>
+	<TM_MaharalGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>левая рука</TM_MaharalGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+	<TM_MaharalGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>левая рука</TM_MaharalGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+	<TM_MaharalGolem.corePart.parts.right_shoulder.customLabel>правое плечо</TM_MaharalGolem.corePart.parts.right_shoulder.customLabel>
+	<TM_MaharalGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>правая рука</TM_MaharalGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+	<TM_MaharalGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>правая рука</TM_MaharalGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+	<TM_MaharalGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>левая нога</TM_MaharalGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>
+	<TM_MaharalGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>левая нога</TM_MaharalGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>
+	<TM_MaharalGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>правая нога</TM_MaharalGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>
+	<TM_MaharalGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>правая ступня</TM_MaharalGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>
+	<!-- Соломенный голем-->
+	<TM_StrawGolem.label>Соломенный голем</TM_StrawGolem.label>
+	<TM_StrawGolem.corePart.parts.left_shoulder.customLabel>левое плечо</TM_StrawGolem.corePart.parts.left_shoulder.customLabel>
+	<TM_StrawGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>левая рука</TM_StrawGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+	<TM_StrawGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>левая рука</TM_StrawGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+	<TM_StrawGolem.corePart.parts.right_shoulder.customLabel>правое плечо</TM_StrawGolem.corePart.parts.right_shoulder.customLabel>
+	<TM_StrawGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>правая рука</TM_StrawGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+	<TM_StrawGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>правая рука</TM_StrawGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+	<TM_StrawGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>левая нога</TM_StrawGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>
+	<TM_StrawGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>левая нога</TM_StrawGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>
+	<TM_StrawGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>правая нога</TM_StrawGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>
+	<TM_StrawGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>правая нога</TM_StrawGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>
+	<!-- Деревянный голем-->
+	<TM_WoodGolem.label>Деревянный голем</TM_WoodGolem.label>
+	<!-- Шёлковый голем-->
+	<TM_SilkGolem.label>Шёлковый голем</TM_SilkGolem.label>
+	<TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.left_eye.customLabel>левый глаз</TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.left_eye.customLabel>
+	<TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.right_eye.customLabel>правый глаз</TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.right_eye.customLabel>
+	<TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.left_ear.customLabel>левое ухо</TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.left_ear.customLabel>
+	<TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.right_ear.customLabel>правое ухо</TM_SilkGolem.corePart.parts.Golem_Neck.parts.Golem_Head.parts.right_ear.customLabel>
+	<TM_SilkGolem.corePart.parts.left_shoulder.customLabel>левое плечо</TM_SilkGolem.corePart.parts.left_shoulder.customLabel>
+	<TM_SilkGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>левая рука</TM_SilkGolem.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+	<TM_SilkGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>левая рука</TM_SilkGolem.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+	<TM_SilkGolem.corePart.parts.right_shoulder.customLabel>правое плечо</TM_SilkGolem.corePart.parts.right_shoulder.customLabel>
+	<TM_SilkGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>правая рука</TM_SilkGolem.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+	<TM_SilkGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>правая рука</TM_SilkGolem.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+	<TM_SilkGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>левая нога</TM_SilkGolem.corePart.parts.Golem_Waist.parts.left_leg.customLabel>
+	<TM_SilkGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>левая нога</TM_SilkGolem.corePart.parts.Golem_Waist.parts.left_leg.parts.left_foot.customLabel>
+	<TM_SilkGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>правая нога</TM_SilkGolem.corePart.parts.Golem_Waist.parts.right_leg.customLabel>
+	<TM_SilkGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>правая нога</TM_SilkGolem.corePart.parts.Golem_Waist.parts.right_leg.parts.right_foot.customLabel>
+</LanguageData>

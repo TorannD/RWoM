@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_EtherGateSummon>Summon ether servant</TM_EtherGateSummon>
+  <TM_EtherGateSummonDesc>Spend 100 magofuel to summon a hauling servant for one day. No food, sleep or air required. Also mines with a starting Mining skill of 10 and builds with a starting Construction skill of 5. Work priority: construction, designated mining, then hauling.</TM_EtherGateSummonDesc>
+  <TM_EtherGateUnavailable>The ether gate must be placed on a map, owned by your faction and switched on.</TM_EtherGateUnavailable>
+  <TM_EtherGateNoFuel>Requires 100 magofuel.</TM_EtherGateNoFuel>
+  <TM_EtherGateNoLanding>No safe space beside the gate for a servant.</TM_EtherGateNoLanding>
+  <TM_EtherGateFailed>Summoning failed. No magofuel was consumed.</TM_EtherGateFailed>
+  <TM_EtherGateBusy>Summoning in progress.</TM_EtherGateBusy>
+  <TM_EtherServantRemaining>Time remaining: {0}</TM_EtherServantRemaining>
+</LanguageData>

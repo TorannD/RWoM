@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="TM_BuildingBase">
+    <defName>TM_ThermalShieldGenerator</defName>
+    <label>thermal shield generator</label>
+    <description>Protects against cold within 5 cells of itself and connected mana beacons, on land or in space. Uses only mana stored in its 100-mana buffer. Only one generator operates per connected network; additional generators remain on standby. Consumes 0.001 mana per cold cell per second (0.1 mana per second for 100 cold cells). Full strength raises effective cold exposure to at least 21°C. Insufficient mana provides partial protection toward 21°C. Does not cool hot areas, supply oxygen, or physically heat rooms.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Buildings/ThermalShield</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2.2,2.2)</drawSize>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <placeWorkers>
+      <li>TorannMagic.Odyssey.PlaceWorker_ManaNetwork</li>
+    </placeWorkers>
+    <size>(2,2)</size>
+    <rotatable>true</rotatable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>TM_RWoM</designationCategory>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>40</Mass>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <RawMagicyte>100</RawMagicyte>
+    </costList>
+    <researchPrerequisites>
+      <li>TM_MagofuelRefining</li>
+      <li>OrbitalTech</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="TorannMagic.Odyssey.CompProperties_CrystalGlow"><state>Service</state><diameter>0.8</diameter><north>(0.58,0.32)</north><east>(0.52,0.32)</east><south>(0.5,0.32)</south><west>(0.5,0.33)</west></li>
+      <li Class="TorannMagic.Odyssey.CompProperties_MagicalThermal">
+        <manaPerCellSecond>0.001</manaPerCellSecond>
+        <pulseInterval>60</pulseInterval>
+        <minTemperature>21</minTemperature>
+      </li>
+      <li Class="TorannMagic.Odyssey.CompProperties_ShieldManaBuffer">
+        <manaCapacity>100</manaCapacity>
+        <maxTransfer>10</maxTransfer>
+      </li>
+      <li Class="TorannMagic.Odyssey.CompProperties_ManaNetworkEndpoint">
+        <supportsMana>true</supportsMana>
+        <supportsFuel>false</supportsFuel>
+        <defaultManaMode>Receive</defaultManaMode>
+        <defaultFuelMode>Off</defaultFuelMode>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+  </ThingDef>
+</Defs>

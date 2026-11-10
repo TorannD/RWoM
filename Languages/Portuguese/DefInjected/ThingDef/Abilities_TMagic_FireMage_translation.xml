@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Ray of Hope start -->
+
+  <Buff_RayofHope.label>Raio de luz</Buff_RayofHope.label>
+
+
+  <!-- Firebolt -->
+
+  <Projectile_Firebolt.label>Relâmpago de bola</Projectile_Firebolt.label>
+
+
+  <!-- Fireball -->
+
+  <Projectile_Fireball.label>bola de fogo</Projectile_Fireball.label>
+
+
+  <!-- Fire Claw -->
+
+  <Projectile_Fireclaw.label>Garra de fogo</Projectile_Fireclaw.label>
+
+
+  <!-- Firestorm -->
+
+  <Projectile_Firestorm.label>Tempestade de Fogo</Projectile_Firestorm.label>
+
+
+</LanguageData>

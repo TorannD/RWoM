@@ -1,0 +1,54 @@
+<LanguageData><!-- v1.5\Defs\GolemDefs\Recipes_WoodGolem.xml-->
+	<!--                        EN: Part restoration-->
+	<TM_WoodGolem_RepairBlock.label>Ремонт компонентов</TM_WoodGolem_RepairBlock.label>
+	<!--                              EN: Replaces missing golem parts that do not require an upgrade.-->
+	<TM_WoodGolem_RepairBlock.description>Заменяет отсутствующие части голема, не требующие улучшения.</TM_WoodGolem_RepairBlock.description>
+	<!--                            EN: crafting golem part-->
+	<TM_WoodGolem_RepairBlock.jobString>изготовление части голема</TM_WoodGolem_RepairBlock.jobString>
+	<!--                      EN: energy cell-->
+	<TM_WoodGolem_EnergyMax.label>Энергоячейка</TM_WoodGolem_EnergyMax.label>
+	<!--                            EN: Creates an energy cell that increases maximum energy by 100 per cell.-->
+	<TM_WoodGolem_EnergyMax.description>Создаёт энергоячейку, увеличивающую максимальный запас энергии на 100 единиц.</TM_WoodGolem_EnergyMax.description>
+	<!--                          EN: creating energy cell-->
+	<TM_WoodGolem_EnergyMax.jobString>создание энергоячейки</TM_WoodGolem_EnergyMax.jobString>
+	<!--                            EN: energy converter-->
+	<TM_WoodGolem_EnergyConverter.label>Энергоконвертер</TM_WoodGolem_EnergyConverter.label>
+	<!--                                  EN: Increases the efficiency of energy absorbed and used by the golem by 5%.-->
+	<TM_WoodGolem_EnergyConverter.description>Увеличивает эффективность поглощения и использования энергии големом на 5%.</TM_WoodGolem_EnergyConverter.description>
+	<!--                                EN: constructing energy converter-->
+	<TM_WoodGolem_EnergyConverter.jobString>сборка энергоконвертера</TM_WoodGolem_EnergyConverter.jobString>
+	<!--                        EN: energy generator-->
+	<TM_WoodGolem_EnergyRegen.label>Генератор энергии</TM_WoodGolem_EnergyRegen.label>
+	<!--                              EN: Increases the energy regeneration rate of the golem by 15% per hour.-->
+	<TM_WoodGolem_EnergyRegen.description>Увеличивает скорость восстановления энергии голема на 15% в час.</TM_WoodGolem_EnergyRegen.description>
+	<!--                            EN: constructing energy generator-->
+	<TM_WoodGolem_EnergyRegen.jobString>сборка генератора энергии</TM_WoodGolem_EnergyRegen.jobString>
+	<!--                  EN: Hardening-->
+	<TM_WoodGolem_Armor.label>Укрепление</TM_WoodGolem_Armor.label>
+	<!--                        EN: Each upgrade increases the armor of the golem:
+Blunt:	+[9,17,23]%
+Sharp:	+[8,15,21]%
+Heat:	+[4,7,10]%-->
+	<TM_WoodGolem_Armor.description>Каждое улучшение повышает защиту голема:
+Дробящая:	+[9,17,23]%
+Режущая:	+[8,15,21]%
+Термическая:	+[4,7,10]%</TM_WoodGolem_Armor.description>
+	<!--                      EN: crafting golem part-->
+	<TM_WoodGolem_Armor.jobString>изготовление части голема</TM_WoodGolem_Armor.jobString>
+	<!--                      EN: frame tier-->
+	<TM_WoodGolem_LifeStage.label>Уровень каркаса</TM_WoodGolem_LifeStage.label>
+	<!--                            EN: Improves and refines the golem's frame each level [1,2,3]:
+Movement:	+[20/30/40]%
+Health:		+[20/40/60]%-->
+	<TM_WoodGolem_LifeStage.description>Улучшает и модернизирует каркас голема на каждом уровне [1,2,3]:
+Скорость:	+[20/30/40]%
+Здоровье:	+[20/40/60]%</TM_WoodGolem_LifeStage.description>
+	<!--                          EN: improving golem frame-->
+	<TM_WoodGolem_LifeStage.jobString>улучшение каркаса голема</TM_WoodGolem_LifeStage.jobString>
+	<!--                   EN: Skills-->
+	<TM_WoodGolem_Skills.label>Навыки</TM_WoodGolem_Skills.label>
+	<!--                         EN: The wood golem improves the quality of cooking, construction, and handling by 2 skill points.-->
+	<TM_WoodGolem_Skills.description>Деревянный голем повышает навыки готовки, строительства и обращения с животными на 2 уровня.</TM_WoodGolem_Skills.description>
+	<!--                       EN: crafting golem upgrade-->
+	<TM_WoodGolem_Skills.jobString>изготовление улучшения голема</TM_WoodGolem_Skills.jobString>
+</LanguageData>

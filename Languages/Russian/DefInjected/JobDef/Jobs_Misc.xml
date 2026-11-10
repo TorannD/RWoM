@@ -1,0 +1,18 @@
+<LanguageData><!-- Misc jobs-->
+	<JobDriver_DoMagicBill.reportString>выполняет магическую работу у TargetA.</JobDriver_DoMagicBill.reportString>
+	<JobDriver_AssistMagicCircle.reportString>подготовка магического круга</JobDriver_AssistMagicCircle.reportString>
+	<PlacePoisonTrap.reportString>установка ядовитой ловушки</PlacePoisonTrap.reportString>
+	<JobDriver_PlaceLightningTrap.reportString>размещение молнии ловушки</JobDriver_PlaceLightningTrap.reportString>
+	<JobDriver_SleepNow.reportString>спит (колыбельная)</JobDriver_SleepNow.reportString>
+	<JobDriver_Entertain.reportString>развлекает</JobDriver_Entertain.reportString>
+	<JobDriver_DoFor.reportString>подготовка атаки</JobDriver_DoFor.reportString>
+	<JobDriver_SummonDemon.reportString>отмечает жертвоприношение</JobDriver_SummonDemon.reportString>
+	<JobDriver_PsionicBarrier.reportString>проектирование псионического барьера</JobDriver_PsionicBarrier.reportString>
+	<JobDriver_TM_Teach.reportString>обучение и наставничество</JobDriver_TM_Teach.reportString>
+	<JobDriver_TM_GotoAndWait.reportString>ожидание на месте</JobDriver_TM_GotoAndWait.reportString>
+	<JobDriver_TM_Meditate.reportString>глубокая медитация</JobDriver_TM_Meditate.reportString>
+	<JobDriver_TM_Command.reportString>мотивирование</JobDriver_TM_Command.reportString>
+	<JobDriver_GotoAndCast.reportString>занимаюсь магической работой</JobDriver_GotoAndCast.reportString>
+	<JobDriver_Discord.reportString>создание раздора</JobDriver_Discord.reportString>
+	<JobDriver_SpiritDrain.reportString>истощающий дух</JobDriver_SpiritDrain.reportString>
+</LanguageData>

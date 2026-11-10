@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <NamerRitualGifting.rulePack.rulesStrings.0>r_ritualName-&gt;[ritNoun] de [keyDeity]</NamerRitualGifting.rulePack.rulesStrings.0>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.1>r_ritualName-&gt;[ritNoun] de [chosenTheme]</NamerRitualGifting.rulePack.rulesStrings.1>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.2>r_ritualName-&gt;[ritNoun] de [memeConcept]</NamerRitualGifting.rulePack.rulesStrings.2>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.3>r_ritualName-&gt;[ritNoun] [memeAdjective]</NamerRitualGifting.rulePack.rulesStrings.3>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.4>ritNoun-&gt;otorgamiento</NamerRitualGifting.rulePack.rulesStrings.4>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.5>ritNoun-&gt;ascenso</NamerRitualGifting.rulePack.rulesStrings.5>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.6>ritNoun-&gt;devenir</NamerRitualGifting.rulePack.rulesStrings.6>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.7>ritNoun-&gt;alumbramiento</NamerRitualGifting.rulePack.rulesStrings.7>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.8>ritNoun-&gt;puente</NamerRitualGifting.rulePack.rulesStrings.8>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.9>ritNoun-&gt;enlace</NamerRitualGifting.rulePack.rulesStrings.9>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.10>ritNoun-&gt;fundimiento</NamerRitualGifting.rulePack.rulesStrings.10>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.11>ritNoun-&gt;llamamiento</NamerRitualGifting.rulePack.rulesStrings.11>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.12>ritNoun-&gt;esclarecimiento</NamerRitualGifting.rulePack.rulesStrings.12>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.13>ritNoun-&gt;encumbramiento</NamerRitualGifting.rulePack.rulesStrings.13>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.14>ritNoun-&gt;despertar</NamerRitualGifting.rulePack.rulesStrings.14>
+  
+  <NamerRitualGifting.rulePack.rulesStrings.15>ritNoun-&gt;conjuro</NamerRitualGifting.rulePack.rulesStrings.15>
+  
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.0>r_ritualName-&gt;[ritNoun] de [keyDeity]</NamerRitualMindMutilation.rulePack.rulesStrings.0>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.1>r_ritualName-&gt;[ritNoun] de [chosenTheme]</NamerRitualMindMutilation.rulePack.rulesStrings.1>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.2>r_ritualName-&gt;[ritNoun] de [memeConcept]</NamerRitualMindMutilation.rulePack.rulesStrings.2>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.3>r_ritualName-&gt;[ritNoun] [memeAdjective]</NamerRitualMindMutilation.rulePack.rulesStrings.3>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.4>ritNoun-&gt;desgarro del espíritu</NamerRitualMindMutilation.rulePack.rulesStrings.4>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.5>ritNoun-&gt;corte del alma</NamerRitualMindMutilation.rulePack.rulesStrings.5>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.6>ritNoun-&gt;tajo del alma</NamerRitualMindMutilation.rulePack.rulesStrings.6>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.7>ritNoun-&gt;cercenamiento</NamerRitualMindMutilation.rulePack.rulesStrings.7>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.8>ritNoun-&gt;desgarro mental</NamerRitualMindMutilation.rulePack.rulesStrings.8>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.9>ritNoun-&gt;despedazamiento mental</NamerRitualMindMutilation.rulePack.rulesStrings.9>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.10>ritNoun-&gt;destrozo del alma</NamerRitualMindMutilation.rulePack.rulesStrings.10>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.11>ritNoun-&gt;tallado de la mente</NamerRitualMindMutilation.rulePack.rulesStrings.11>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.12>ritNoun-&gt;acuchillamiento del espíritu</NamerRitualMindMutilation.rulePack.rulesStrings.12>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.13>ritNoun-&gt;desgarramiento del alma</NamerRitualMindMutilation.rulePack.rulesStrings.13>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.14>ritNoun-&gt;silenciamiento</NamerRitualMindMutilation.rulePack.rulesStrings.14>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.15>ritNoun-&gt;acallamiento</NamerRitualMindMutilation.rulePack.rulesStrings.15>
+  
+  <NamerRitualMindMutilation.rulePack.rulesStrings.16>ritNoun-&gt;apaciguamiento</NamerRitualMindMutilation.rulePack.rulesStrings.16>
+  
+</LanguageData>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_RuneCarvedPartHD.label>Runa cortada</TM_RuneCarvedPartHD.label>
+  <TM_RuneCarvedPartHD.description>Dá energia à parte do corpo.</TM_RuneCarvedPartHD.description>
+  <TM_RuneCarvedPartHD.stages.0.label>Rúnico (I)</TM_RuneCarvedPartHD.stages.0.label>
+  <TM_RuneCarvedPartHD.stages.1.label>Rúnico (II)</TM_RuneCarvedPartHD.stages.1.label>
+  <TM_RuneCarvedPartHD.stages.2.label>Rúnico (III)</TM_RuneCarvedPartHD.stages.2.label>
+  <TM_RuneCarvedPartHD.stages.3.label>Rúnico (IV)</TM_RuneCarvedPartHD.stages.3.label>
+
+  <TM_ArcaneTatooPartHD.label>corpo rúnico</TM_ArcaneTatooPartHD.label>
+  <TM_ArcaneTatooPartHD.description>O corpo tem caracteres e sinais secretos.</TM_ArcaneTatooPartHD.description>
+  <TM_ArcaneTatooPartHD.stages.0.label>I</TM_ArcaneTatooPartHD.stages.0.label>
+  <TM_ArcaneTatooPartHD.stages.1.label>II</TM_ArcaneTatooPartHD.stages.1.label>
+  <TM_ArcaneTatooPartHD.stages.2.label>III</TM_ArcaneTatooPartHD.stages.2.label>
+  <TM_ArcaneTatooPartHD.stages.3.label>IV</TM_ArcaneTatooPartHD.stages.3.label>
+
+  <TM_SigilPainHD.label>impressão de siglas</TM_SigilPainHD.label>
+  <TM_SigilPainHD.description>Manter os sigilos além das suas capacidades normais faz com que o feitiço doa.</TM_SigilPainHD.description>
+  <TM_SigilPainHD.stages.0.label>menor</TM_SigilPainHD.stages.0.label>
+  <TM_SigilPainHD.stages.1.label>I</TM_SigilPainHD.stages.1.label>
+  <TM_SigilPainHD.stages.2.label>II</TM_SigilPainHD.stages.2.label>
+  <TM_SigilPainHD.stages.3.label>III</TM_SigilPainHD.stages.3.label>
+  <TM_SigilPainHD.stages.4.label>IV</TM_SigilPainHD.stages.4.label>
+  <TM_SigilPainHD.stages.5.label>V</TM_SigilPainHD.stages.5.label>
+  <TM_SigilPainHD.stages.6.label>VI</TM_SigilPainHD.stages.6.label>
+  <TM_SigilPainHD.stages.7.label>VII</TM_SigilPainHD.stages.7.label>
+
+  <TM_SiphonBrandHD.label>Mark Sifon</TM_SiphonBrandHD.label>
+  <TM_SiphonBrandHD.description>Lentamente transmite manu ao destinatário da marca.</TM_SiphonBrandHD.description>
+  <TM_SiphonBrandHD.stages.0.label>inativo</TM_SiphonBrandHD.stages.0.label>
+  <TM_SiphonBrandHD.stages.1.label></TM_SiphonBrandHD.stages.1.label>
+  <TM_SiphonBrandHD.stages.2.label>burburinho</TM_SiphonBrandHD.stages.2.label>
+
+  <TM_ProtectionBrandHD.label>Marca de segurança</TM_ProtectionBrandHD.label>
+  <TM_ProtectionBrandHD.description>A runa de proteção é capaz de evitar que o hospedeiro seja prejudicado, mas usa parte ou toda a sua carga; esta runa é recarregada ao longo do tempo.</TM_ProtectionBrandHD.description>
+  <TM_ProtectionBrandHD.stages.0.label>inativo</TM_ProtectionBrandHD.stages.0.label>
+  <TM_ProtectionBrandHD.stages.1.label></TM_ProtectionBrandHD.stages.1.label>
+  <TM_ProtectionBrandHD.stages.2.label>burburinho</TM_ProtectionBrandHD.stages.2.label>
+
+  <TM_EmotionBrandHD.label>Marca Emoções</TM_EmotionBrandHD.label>
+  <TM_EmotionBrandHD.description>Faz com que o humor aumente mais rapidamente e diminua mais lentamente; tem a chance de reconstruir o peão depois de um colapso mental.</TM_EmotionBrandHD.description>
+  <TM_EmotionBrandHD.stages.0.label>inativo</TM_EmotionBrandHD.stages.0.label>
+  <TM_EmotionBrandHD.stages.1.label></TM_EmotionBrandHD.stages.1.label>
+  <TM_EmotionBrandHD.stages.2.label>burburinho</TM_EmotionBrandHD.stages.2.label>
+
+  <TM_FitnessBrandHD.label>Marca fitness</TM_FitnessBrandHD.label>
+  <TM_FitnessBrandHD.description>Aumenta a movimentação e a manipulação.</TM_FitnessBrandHD.description>
+  <TM_FitnessBrandHD.stages.0.label>inativo</TM_FitnessBrandHD.stages.0.label>
+  <TM_FitnessBrandHD.stages.1.label>I</TM_FitnessBrandHD.stages.1.label>
+  <TM_FitnessBrandHD.stages.2.label>II</TM_FitnessBrandHD.stages.2.label>
+  <TM_FitnessBrandHD.stages.3.label>III</TM_FitnessBrandHD.stages.3.label>
+  <TM_FitnessBrandHD.stages.4.label>IV</TM_FitnessBrandHD.stages.4.label>
+  <TM_FitnessBrandHD.stages.5.label>I borbulhante</TM_FitnessBrandHD.stages.5.label>
+  <TM_FitnessBrandHD.stages.6.label>tempestade II</TM_FitnessBrandHD.stages.6.label>
+  <TM_FitnessBrandHD.stages.7.label>tempestade III</TM_FitnessBrandHD.stages.7.label>
+  <TM_FitnessBrandHD.stages.8.label>burburinho IV</TM_FitnessBrandHD.stages.8.label>
+  <TM_FitnessBrandHD.stages.9.label>V borbulhante</TM_FitnessBrandHD.stages.9.label>
+  <TM_FitnessBrandHD.stages.10.label>VI borbulhante</TM_FitnessBrandHD.stages.10.label>
+
+  <TM_AwarenessBrandHD.label>Reconhecimento de Brenda</TM_AwarenessBrandHD.label>
+  <TM_AwarenessBrandHD.description>Aumenta os sentimentos e as percepções.</TM_AwarenessBrandHD.description>
+  <TM_AwarenessBrandHD.stages.0.label>dormant</TM_AwarenessBrandHD.stages.0.label>
+  <TM_AwarenessBrandHD.stages.1.label>I</TM_AwarenessBrandHD.stages.1.label>
+  <TM_AwarenessBrandHD.stages.2.label>II</TM_AwarenessBrandHD.stages.2.label>
+  <TM_AwarenessBrandHD.stages.3.label>III</TM_AwarenessBrandHD.stages.3.label>
+  <TM_AwarenessBrandHD.stages.4.label>IV</TM_AwarenessBrandHD.stages.4.label>
+  <TM_AwarenessBrandHD.stages.5.label>I borbulhante</TM_AwarenessBrandHD.stages.5.label>
+  <TM_AwarenessBrandHD.stages.6.label>tempestade II</TM_AwarenessBrandHD.stages.6.label>
+  <TM_AwarenessBrandHD.stages.7.label>tempestade III</TM_AwarenessBrandHD.stages.7.label>
+  <TM_AwarenessBrandHD.stages.8.label>burburinho IV</TM_AwarenessBrandHD.stages.8.label>
+  <TM_AwarenessBrandHD.stages.9.label>V borbulhante</TM_AwarenessBrandHD.stages.9.label>
+  <TM_AwarenessBrandHD.stages.10.label>VI borbulhante</TM_AwarenessBrandHD.stages.10.label>
+
+  <TM_VitalityBrandHD.label>Marca da Vida</TM_VitalityBrandHD.label>
+  <TM_VitalityBrandHD.description>Aumenta o tom de vida e a recuperação.</TM_VitalityBrandHD.description>
+  <TM_VitalityBrandHD.stages.0.label>inativo</TM_VitalityBrandHD.stages.0.label>
+  <TM_VitalityBrandHD.stages.1.label>I</TM_VitalityBrandHD.stages.1.label>
+  <TM_VitalityBrandHD.stages.2.label>II</TM_VitalityBrandHD.stages.2.label>
+  <TM_VitalityBrandHD.stages.3.label>III</TM_VitalityBrandHD.stages.3.label>
+  <TM_VitalityBrandHD.stages.4.label>IV</TM_VitalityBrandHD.stages.4.label>
+  <TM_VitalityBrandHD.stages.5.label>I borbulhante</TM_VitalityBrandHD.stages.5.label>
+  <TM_VitalityBrandHD.stages.6.label>tempestade II</TM_VitalityBrandHD.stages.6.label>
+  <TM_VitalityBrandHD.stages.7.label>tempestade III</TM_VitalityBrandHD.stages.7.label>
+  <TM_VitalityBrandHD.stages.8.label>burburinho IV</TM_VitalityBrandHD.stages.8.label>
+  <TM_VitalityBrandHD.stages.9.label>V borbulhante</TM_VitalityBrandHD.stages.9.label>
+  <TM_VitalityBrandHD.stages.10.label>VI borbulhante</TM_VitalityBrandHD.stages.10.label>
+
+  <TM_GolemancyEfficiencyHD.label>Conexão de pensamento</TM_GolemancyEfficiencyHD.label>
+  <TM_GolemancyEfficiencyHD.description>O Golem está ligado ao golemante e ganhou uma maior consciência.</TM_GolemancyEfficiencyHD.description>
+  <TM_GolemancyEfficiencyHD.stages.0.label></TM_GolemancyEfficiencyHD.stages.0.label>
+  <TM_GolemancyEfficiencyHD.stages.1.label>I</TM_GolemancyEfficiencyHD.stages.1.label>
+  <TM_GolemancyEfficiencyHD.stages.2.label>II</TM_GolemancyEfficiencyHD.stages.2.label>
+  <TM_GolemancyEfficiencyHD.stages.3.label>III</TM_GolemancyEfficiencyHD.stages.3.label>
+  <TM_GolemancyEfficiencyHD.stages.4.label>IV</TM_GolemancyEfficiencyHD.stages.4.label>
+  <TM_GolemancyEfficiencyHD.stages.5.label>V</TM_GolemancyEfficiencyHD.stages.5.label>
+
+  <TM_GolemancyVersatilityHD.label>Ligação com o Holem</TM_GolemancyVersatilityHD.label>
+  <TM_GolemancyVersatilityHD.description>O Golemant está ligado ao hólem e é capaz de bombear parte da sua energia para uso pessoal.</TM_GolemancyVersatilityHD.description>
+  <TM_GolemancyVersatilityHD.stages.0.label></TM_GolemancyVersatilityHD.stages.0.label>
+  <TM_GolemancyVersatilityHD.stages.1.label>I</TM_GolemancyVersatilityHD.stages.1.label>
+  <TM_GolemancyVersatilityHD.stages.2.label>II</TM_GolemancyVersatilityHD.stages.2.label>
+  <TM_GolemancyVersatilityHD.stages.3.label>III</TM_GolemancyVersatilityHD.stages.3.label>
+  <TM_GolemancyVersatilityHD.stages.4.label>IV</TM_GolemancyVersatilityHD.stages.4.label>
+  <TM_GolemancyVersatilityHD.stages.5.label>V</TM_GolemancyVersatilityHD.stages.5.label>
+
+  <TM_GolemancyPowerHD.label>Augmentação de golem</TM_GolemancyPowerHD.label>
+  <TM_GolemancyPowerHD.description>O golem está ligado a um golemante capaz de aumentar a potência e a resistência do goleiro.</TM_GolemancyPowerHD.description>
+  <TM_GolemancyPowerHD.stages.0.label></TM_GolemancyPowerHD.stages.0.label>
+  <TM_GolemancyPowerHD.stages.1.label>I</TM_GolemancyPowerHD.stages.1.label>
+  <TM_GolemancyPowerHD.stages.2.label>II</TM_GolemancyPowerHD.stages.2.label>
+  <TM_GolemancyPowerHD.stages.3.label>III</TM_GolemancyPowerHD.stages.3.label>
+  <TM_GolemancyPowerHD.stages.4.label>IV</TM_GolemancyPowerHD.stages.4.label>
+  <TM_GolemancyPowerHD.stages.5.label>V</TM_GolemancyPowerHD.stages.5.label>
+
+
+</LanguageData>

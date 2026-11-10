@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_HamstringHD.label>Desacelerado</TM_HamstringHD.label>
+  <TM_HamstringHD.description>Reduz a velocidade de movimento.</TM_HamstringHD.description>
+  <TM_HamstringHD.stages.0.label>I</TM_HamstringHD.stages.0.label>
+  <TM_HamstringHD.stages.1.label>II</TM_HamstringHD.stages.1.label>
+  <TM_HamstringHD.stages.2.label>III</TM_HamstringHD.stages.2.label>
+
+
+</LanguageData>

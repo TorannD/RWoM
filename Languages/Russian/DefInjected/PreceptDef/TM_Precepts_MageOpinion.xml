@@ -1,0 +1,39 @@
+<LanguageData><!-- Abhorrent-->
+	<TM_Mages_Abhorrent.label>ненавидят магию</TM_Mages_Abhorrent.label>
+	<TM_Mages_Abhorrent.description>Магия - это мерзость, которую нужно поносить и вычищать из существования. Манипулирование энергией мага противоречит естественному порядку. Убийство вражеского мага оправдано независимо от обстоятельств. Разрешение свободному магу проживать в колонии - это насмешка над нашими убеждениями. Маги должны быть быстро преданы смерти или порабощены до тех пор, пока от них не удастся избавиться. Использование магии категорически запрещено.</TM_Mages_Abhorrent.description>
+	<TM_Mages_Abhorrent.comps.1.description>Я убил мага</TM_Mages_Abhorrent.comps.1.description>
+	<TM_Mages_Abhorrent.comps.2.description>Мы убили мага</TM_Mages_Abhorrent.comps.2.description>
+	<TM_Mages_Abhorrent.comps.4.description>использование магии</TM_Mages_Abhorrent.comps.4.description>
+	<TM_Mages_Abhorrent.comps.5.description>маг в колонии</TM_Mages_Abhorrent.comps.5.description>
+	<TM_Mages_Abhorrent.comps.6.description>маг в колонии</TM_Mages_Abhorrent.comps.6.description>
+	<!-- Disapprove-->
+	<TM_Mages_Disapprove.label>не одобряют магию</TM_Mages_Disapprove.label>
+	<TM_Mages_Disapprove.description>Следует избегать зависимости от неизвестного и непредсказуемого источника энергии. Наука и техника - это будущее, и их преимуществами могут пользоваться все, и каждый может внести в них свой вклад. Колония должна ограничить количество свободных магов до 10% или менее и только самыми доверенными жителями, а количество заклинаний должно быть ограничено 5 в день. Магов следует сделать рабами, чтобы они знали свое законное место. Соблюдение этих правил позволит нашей колонии процветать и сделает всех счастливее.</TM_Mages_Disapprove.description>
+	<TM_Mages_Disapprove.comps.0.description>регулируемое использование магии</TM_Mages_Disapprove.comps.0.description>
+	<TM_Mages_Disapprove.comps.1.description>управляемое существование магов</TM_Mages_Disapprove.comps.1.description>
+	<!-- Approve-->
+	<TM_Mages_Approve.label>одобряют магию</TM_Mages_Approve.label>
+	<TM_Mages_Approve.description>Магия - мощный и полезный ресурс, и было бы безумием отказываться от ее потенциала. Маги позволяют нам использовать этот ресурс и могут улучшить качество нашей жизни. Из-за их ценности для нашей колонии к магам следует относиться с уважением, как к аристократам. Мы должны сосредоточить наши усилия и расширить наши знания об этой таинственной силе.</TM_Mages_Approve.description>
+	<TM_Mages_Approve.comps.1.description>использование магии</TM_Mages_Approve.comps.1.description>
+	<TM_Mages_Approve.comps.2.description>использование магии</TM_Mages_Approve.comps.2.description>
+	<TM_Mages_Approve.comps.3.description>маги в колонии</TM_Mages_Approve.comps.3.description>
+	<TM_Mages_Approve.comps.5.description>выполнил разрыв магии</TM_Mages_Approve.comps.5.description>
+	<!-- Venerated-->
+	<TM_Mages_Venerated.label>почитают магию</TM_Mages_Venerated.label>
+	<TM_Mages_Venerated.description>Магия чудесна, мистична, могущественна и бесконечна. Ана способна выполнять обычные задачи или уничтожать наших врагов в мгновение ока. Это источник как созидания, так и разрушения, и он достоин почтения. Те, кто может использовать эту силу, благословлены - тронуты божественностью - и должны быть возвышены над всеми остальными. Убийство вражеского мага отвратительно и должно быть сделано только в крайнем случае. Магия открывает путь к нашему спасению! Его использование поддерживает наше дело, и мы должны принять решение распространить благословение магии на всех.</TM_Mages_Venerated.description>
+	<TM_Mages_Venerated.comps.2.description>Я убил мага</TM_Mages_Venerated.comps.2.description>
+	<TM_Mages_Venerated.comps.3.description>Мы убили мага</TM_Mages_Venerated.comps.3.description>
+	<TM_Mages_Venerated.comps.5.description>использовал магию</TM_Mages_Venerated.comps.5.description>
+	<TM_Mages_Venerated.comps.6.description>свидетель магии</TM_Mages_Venerated.comps.6.description>
+	<TM_Mages_Venerated.comps.7.description>маг в колонии</TM_Mages_Venerated.comps.7.description>
+	<TM_Mages_Venerated.comps.8.description>заключенный маг</TM_Mages_Venerated.comps.8.description>
+	<TM_Mages_Venerated.comps.9.description>раб-маг</TM_Mages_Venerated.comps.9.description>
+	<TM_Mages_Venerated.comps.11.description>выполнил разрыв магии</TM_Mages_Venerated.comps.11.description>
+	<!-- Transcendent Rituals-->
+	<TM_SeverenceRitual.label>разорвать магию</TM_SeverenceRitual.label>
+	<TM_SeverenceRitual.description>Искатель пустоты отсекает магию от цели. Зрители будут наблюдать, как искатель пустоты произносит объединительную речь, отделяет магию от мага и произносит несколько заключительных слов. Цель может попытаться применить последнее заклинание возмездия, если ритуал будет выполнен плохо. В случае успеха цель будет свободна от магии.</TM_SeverenceRitual.description>
+	<TM_BestowMagicRitual.label>даровать магию</TM_BestowMagicRitual.label>
+	<TM_BestowMagicRitual.description>Искатель пустоты попытается установить связь между целью и магией. Зрители будут наблюдать, как искатель пустоты произносит несколько слов мудрости, пытается даровать искру магии, а затем произносит несколько заключительных слов. Этот ритуал может потерпеть неудачу и может быть выполнен только в определенную дату.</TM_BestowMagicRitual.description>
+	<TM_BestowClassRitual.label>тайный путь</TM_BestowClassRitual.label>
+	<TM_BestowClassRitual.description>Искатель пустоты будет направлять пешку, обладающую даром магии, во время ритуала, чтобы стать магом. Зрители будут наблюдать, как маг пытается реализовать свое вдохновение под руководством искателя пустоты. По завершении цель получит свой вдохновенный класс магии.</TM_BestowClassRitual.description>
+</LanguageData>

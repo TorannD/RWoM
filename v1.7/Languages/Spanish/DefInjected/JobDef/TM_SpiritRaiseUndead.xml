@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritRaiseUndead.reportString>alzando muertos vivientes a través del cuerpo poseído.</TM_SpiritRaiseUndead.reportString>
+  <TM_SpiritDeathMark.reportString>aplicando una marca de muerte a través del huésped del espíritu.</TM_SpiritDeathMark.reportString>
+  <TM_SpiritDeathMark_I.reportString>aplicando una marca de muerte a través del huésped del espíritu.</TM_SpiritDeathMark_I.reportString>
+  <TM_SpiritDeathMark_II.reportString>aplicando una marca de muerte a través del huésped del espíritu.</TM_SpiritDeathMark_II.reportString>
+  <TM_SpiritDeathMark_III.reportString>aplicando una marca de muerte a través del huésped del espíritu.</TM_SpiritDeathMark_III.reportString>
+  <TM_SpiritConsumeCorpse.reportString>consumiendo cadáveres a través del huésped del espíritu.</TM_SpiritConsumeCorpse.reportString>
+  <TM_SpiritConsumeCorpse_I.reportString>consumiendo cadáveres a través del huésped del espíritu.</TM_SpiritConsumeCorpse_I.reportString>
+  <TM_SpiritConsumeCorpse_II.reportString>consumiendo cadáveres a través del huésped del espíritu.</TM_SpiritConsumeCorpse_II.reportString>
+  <TM_SpiritConsumeCorpse_III.reportString>consumiendo cadáveres a través del huésped del espíritu.</TM_SpiritConsumeCorpse_III.reportString>
+  <TM_SpiritConsumeCorpse_Mass.reportString>consumiendo cadáveres a través del huésped del espíritu.</TM_SpiritConsumeCorpse_Mass.reportString>
+  <TM_SpiritCorpseExplosion.reportString>preparando una explosión de cadáver a través del huésped del espíritu.</TM_SpiritCorpseExplosion.reportString>
+  <TM_SpiritCorpseExplosion_I.reportString>preparando una explosión de cadáver a través del huésped del espíritu.</TM_SpiritCorpseExplosion_I.reportString>
+  <TM_SpiritCorpseExplosion_II.reportString>preparando una explosión de cadáver a través del huésped del espíritu.</TM_SpiritCorpseExplosion_II.reportString>
+  <TM_SpiritCorpseExplosion_III.reportString>preparando una explosión de cadáver a través del huésped del espíritu.</TM_SpiritCorpseExplosion_III.reportString>
+  <TM_SpiritFogOfTorment.reportString>invocando niebla de tormento a través del huésped del espíritu.</TM_SpiritFogOfTorment.reportString>
+  <TM_SpiritDeathBolt.reportString>lanzando proyectiles mortales a través del huésped del espíritu.</TM_SpiritDeathBolt.reportString>
+  <TM_SpiritDeathBolt_I.reportString>lanzando proyectiles mortales a través del huésped del espíritu.</TM_SpiritDeathBolt_I.reportString>
+  <TM_SpiritDeathBolt_II.reportString>lanzando proyectiles mortales a través del huésped del espíritu.</TM_SpiritDeathBolt_II.reportString>
+  <TM_SpiritDeathBolt_III.reportString>lanzando proyectiles mortales a través del huésped del espíritu.</TM_SpiritDeathBolt_III.reportString>
+</LanguageData>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- affecting opinion -->
+
+  <TM_Undead.stages.0.label>Não morar</TM_Undead.stages.0.label>
+  <TM_Necromancer.stages.0.label>necromante</TM_Necromancer.stages.0.label>
+  <TM_OpinionOfBoundless.stages.0.label>ousadia sem graça</TM_OpinionOfBoundless.stages.0.label>
+  <TM_Lich.stages.0.label>Lic</TM_Lich.stages.0.label>
+  <TM_HolierThanThou.stages.0.label>Mago autodeclarado</TM_HolierThanThou.stages.0.label>
+
+  <TM_FemaleOpinionOfSuccubus.stages.0.label>Sukuba invejável</TM_FemaleOpinionOfSuccubus.stages.0.label>
+  <TM_FemaleOpinionOfSuccubus.stages.0.description>Toda a gente chama a atenção por causa da aparência dela, não importa o resto?</TM_FemaleOpinionOfSuccubus.stages.0.description>
+  <TM_FemaleOpinionOfSuccubus.stages.1.label>Beleza não natural</TM_FemaleOpinionOfSuccubus.stages.1.label>
+  <TM_FemaleOpinionOfSuccubus.stages.1.description>Há algo atraente nela que nunca terei... E odeio-a por isso.</TM_FemaleOpinionOfSuccubus.stages.1.description>
+
+  <TM_MaleOpinionOfSuccubus.stages.0.label>Ilusão de beleza</TM_MaleOpinionOfSuccubus.stages.0.label>
+  <TM_MaleOpinionOfSuccubus.stages.0.description>A experiência nas artes marciais revela mentiras em sua forma e movimentos, mas às vezes é mais fácil simplesmente aceitar a fraude</TM_MaleOpinionOfSuccubus.stages.0.description>
+  <TM_MaleOpinionOfSuccubus.stages.1.label>Diabolicamente atraente</TM_MaleOpinionOfSuccubus.stages.1.label>
+  <TM_MaleOpinionOfSuccubus.stages.1.description>Eu posso dizer que ela usa forças demoníacas para se tornar mais atraente, mas esse conhecimento diminui pouco o efeito</TM_MaleOpinionOfSuccubus.stages.1.description>
+  <TM_MaleOpinionOfSuccubus.stages.2.label>Tentador</TM_MaleOpinionOfSuccubus.stages.2.label>
+  <TM_MaleOpinionOfSuccubus.stages.2.description>Há algo inegável e extremamente atraente nela.</TM_MaleOpinionOfSuccubus.stages.2.description>
+
+  <Thought_EnchantedAura.stages.0.label>charmoso</Thought_EnchantedAura.stages.0.label>
+  <Thought_EnchantedAura.stages.0.description>Tem uma presença encantadora.</Thought_EnchantedAura.stages.0.description>
+  <Thought_EnchantedAura.stages.1.label>encantado</Thought_EnchantedAura.stages.1.label>
+  <Thought_EnchantedAura.stages.1.description>Tem uma aura encantadora.</Thought_EnchantedAura.stages.1.description>
+  <Thought_EnchantedAura.stages.2.label>charme poderoso</Thought_EnchantedAura.stages.2.label>
+  <Thought_EnchantedAura.stages.2.description>Tem um charme poderoso.</Thought_EnchantedAura.stages.2.description>
+  <Thought_EnchantedAura.stages.3.label>positivo glamour</Thought_EnchantedAura.stages.3.label>
+  <Thought_EnchantedAura.stages.3.description>É bem glamouroso.</Thought_EnchantedAura.stages.3.description>
+
+  <Thought_EnchantedBody.stages.0.label>três mãos</Thought_EnchantedBody.stages.0.label>
+  <Thought_EnchantedBody.stages.0.description>Ele tem uma terceira mão... Vê-lo é desconfortável e pouco natural.</Thought_EnchantedBody.stages.0.description>
+  <Thought_EnchantedBody.stages.1.label>quatro mãos</Thought_EnchantedBody.stages.1.label>
+  <Thought_EnchantedBody.stages.1.description>Não me interessa que estas mãos extras sejam mágicas, é uma aberração.</Thought_EnchantedBody.stages.1.description>
+  <Thought_EnchantedBody.stages.2.label>crescimento estranho</Thought_EnchantedBody.stages.2.label>
+  <Thought_EnchantedBody.stages.2.description>Isso vai além do razoável para simplesmente começar a criar partes adicionais do corpo; Este terceiro olho parece estar sempre a olhar para mim.</Thought_EnchantedBody.stages.2.description>
+  <Thought_EnchantedBody.stages.3.label>mutante</Thought_EnchantedBody.stages.3.label>
+  <Thought_EnchantedBody.stages.3.description>E depois, outra cabeça? Isto foi longe demais.</Thought_EnchantedBody.stages.3.description>
+  <Thought_EnchantedBody.stages.4.label>amando transumanista</Thought_EnchantedBody.stages.4.label>
+  <Thought_EnchantedBody.stages.4.description>Para ser capaz de se transformar no que você quer - que capacidade incrível!</Thought_EnchantedBody.stages.4.description>
+  <Thought_EnchantedBody.stages.5.label>Um corpo de purista odiado</Thought_EnchantedBody.stages.5.label>
+  <Thought_EnchantedBody.stages.5.description>Que aberração, acho... Isto é... É nojento.</Thought_EnchantedBody.stages.5.description>
+
+
+  <!-- affecting mood -->
+
+  <Thought_ObservedUndead.stages.0.label>Decolagem observável</Thought_ObservedUndead.stages.0.label>
+  <Thought_ObservedUndead.stages.0.description>Odeio estar perto de um homem sem vida. Não posso deixar de pensar nisso... Isso vai acontecer-me quando eu morrer?</Thought_ObservedUndead.stages.0.description>
+
+  <Thought_WearingDemonhide.stages.0.label>Pele de demónio a.p.</Thought_WearingDemonhide.stages.0.label>
+  <Thought_WearingDemonhide.stages.0.description>Usar roupas de demónio faz-me sentir mais confiante.</Thought_WearingDemonhide.stages.0.description>
+  <Thought_WearingDemonhide.stages.1.label>Pele demoníaca a.0 03 (+ 1)</Thought_WearingDemonhide.stages.1.label>
+  <Thought_WearingDemonhide.stages.1.description>As roupas de pele de demónio são um símbolo do meu status de elite.</Thought_WearingDemonhide.stages.1.description>
+  <Thought_WearingDemonhide.stages.2.label>Pele demoníaca a.0 03 (+ 2)</Thought_WearingDemonhide.stages.2.label>
+  <Thought_WearingDemonhide.stages.2.description>Estou vestido com a pele de um demónio; o meu estatuto e segurança estão garantidos.</Thought_WearingDemonhide.stages.2.description>
+
+
+</LanguageData>

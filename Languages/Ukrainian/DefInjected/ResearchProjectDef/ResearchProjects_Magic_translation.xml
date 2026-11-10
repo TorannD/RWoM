@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Research into magic -->
+
+  <TM_PlantCultivation.label>вирощування</TM_PlantCultivation.label>
+  <TM_PlantCultivation.description>Досліджуйте ботаніку, щоб отримати уявлення про те, як вирощувати рослини з властивостями, що мають відношення до магії, і використовувати їх ресурси для доповнення або підживлення таємних мистецтв.</TM_PlantCultivation.description>
+
+  <TM_ArcaneConstruction.label>чародійський зал</TM_ArcaneConstruction.label>
+  <TM_ArcaneConstruction.description>Відкриває дослідження різних об&apos;єктів і верстаків, які дозволили створити унікальні магічні предмети та ефекти.</TM_ArcaneConstruction.description>
+
+  <TM_ArcaneFundamentals.label>основи чародійства</TM_ArcaneFundamentals.label>
+  <TM_ArcaneFundamentals.description>Фундаментальні дослідження про те, як магічна сила пов&apos;язана з фізичною магами.</TM_ArcaneFundamentals.description>
+
+  <TM_MagicCircle.label>магічне коло</TM_MagicCircle.label>
+  <TM_MagicCircle.description>Передові дослідження геометрії та симетрії ліній, які дозволяють магам об&apos;єднувати свою енергію для створення неймовірних ефектів.</TM_MagicCircle.description>
+
+  <TM_Portals.label>портали</TM_Portals.label>
+  <TM_Portals.description>Дозволяє побудувати портал - потужний артефакт, що дозволяє миттєво переміщатися між колоніями .\n\n Вимагає таємних магів, що навчалися воротам для активації.</TM_Portals.description>
+
+  <TM_ManaStorage.label>сховище мани</TM_ManaStorage.label>
+  <TM_ManaStorage.description>Розробляє способи зберігання мани.</TM_ManaStorage.description>
+
+  <TM_ArcaneForging.label>Таємна кузня</TM_ArcaneForging.label>
+  <TM_ArcaneForging.description>Розвивайте засоби використання таємної сили для створення різних предметів і обладнання. Завершення цього дослідження також розкриє, як зробити манаткань - унікальний матеріал, який посилює магічну силу.</TM_ArcaneForging.description>
+
+  <TM_ForgeReplication.label>Кузня реплікації</TM_ForgeReplication.label>
+  <TM_ForgeReplication.description>Підсилює таємну кузню за допомогою техніки, яка дозволяє їй витягувати дизайн з будь-якого ремісничого предмета і дублювати його в кузні.</TM_ForgeReplication.description>
+
+  <TM_ArcaneCrafting.label>таємне ремесло</TM_ArcaneCrafting.label>
+  <TM_ArcaneCrafting.description>Перший крок у розумінні зв&apos;язку між таємним і фізичним. Дозволяє створювати потужні дорогоцінні камені прозріння і магічне обладнання.</TM_ArcaneCrafting.description>
+
+  <TM_ArcaneApparel.label>магічне снаряжеїні</TM_ArcaneApparel.label>
+  <TM_ArcaneApparel.description>Застосовує знання таємного ремесла і чар, щоб навчитися відтворювати обладнання з більш потужними магічними властивостями.</TM_ArcaneApparel.description>
+
+  <TM_ArcaneArtifacts.label>таємні артифакти</TM_ArcaneArtifacts.label>
+  <TM_ArcaneArtifacts.description>Дозволяє відтворювати таємні артефакти за допомогою великих досліджень, що об&apos;єднують знання про чари, стародавні малюнки, руни і чутки.</TM_ArcaneArtifacts.description>
+
+  <TM_MagicyteRefining.label>Обробка магіциту</TM_MagicyteRefining.label>
+  <TM_MagicyteRefining.description>Експериментальне дослідження, яке визначає способи використання магіциту для створення магічних предметів. Відкриває рецепт створення зілля мани в лабораторії.</TM_MagicyteRefining.description>
+
+  <TM_MagicScribing.label>Гравіювання!</TM_MagicScribing.label>
+  <TM_MagicScribing.description>Розвивайте знання, щоб змішувати чорнило з порошкоподібним магіцитом і застосовувати його через спеціально сконструйований прес, здатний відтворювати сувої і книги, які можуть містити силу магії.</TM_MagicScribing.description>
+
+  <TM_AdvancedScribing.label>Покращене гравірвоання</TM_AdvancedScribing.label>
+  <TM_AdvancedScribing.description>Дозволяє використовувати більш якісний матеріал для написання більш потужних книг і сувоїв.</TM_AdvancedScribing.description>
+
+  <TM_MasterScribing.label>Майстер гравіювання</TM_MasterScribing.label>
+  <TM_MasterScribing.description>Дозволяє створювати сувої майстра</TM_MasterScribing.description>
+
+  <TM_Enchanting.label>Зачарування!</TM_Enchanting.label>
+  <TM_Enchanting.description>Дозволяє побудувати верстак для огранювання дорогоцінного каміння і створювати зачаровані дорогоцінні камені рівня I.</TM_Enchanting.description>
+
+  <TM_AdvancedEnchanting.label>Покращені зачарування</TM_AdvancedEnchanting.label>
+  <TM_AdvancedEnchanting.description>Дозволяє створювати зачаровані камені рівня II</TM_AdvancedEnchanting.description>
+
+  <TM_ExpertEnchanting.label>майстер зачарувань</TM_ExpertEnchanting.label>
+  <TM_ExpertEnchanting.description>Дозволяє створювати зачаровані камені рівня III</TM_ExpertEnchanting.description>
+
+  <TM_GolemCraftRD.label>теорія голему</TM_GolemCraftRD.label>
+  <TM_GolemCraftRD.description>Створення големів - це різновид чар, який відрізняється від пасивних поліпшень і досліджує теорії маніпулювання магічними чарами в активних цілях. Це дослідження розробить концепції того, як застосовувати активні поліпшення для створення магічних істот. Це дослідження дозволяє створювати кам&apos;яних і махаральських големів за столом каменотесу. Голема махарала також можна створити в місці крафта.</TM_GolemCraftRD.description>
+
+  <TM_HollowGolemRD.label>порожній голем</TM_HollowGolemRD.label>
+  <TM_HollowGolemRD.description>Магічний підхід до створення големів, який досліджує, як оживити сиру енергію. Для створення такого типу голему буде потрібна таємна кузня.</TM_HollowGolemRD.description>
+
+  <TM_HollowGolemEquipmentRD.label>статеве обладнання</TM_HollowGolemEquipmentRD.label>
+  <TM_HollowGolemEquipmentRD.description>Досліджує зброю і броню, які можуть бути прикріплені до пового голему для подальшого поліпшення або розширення можливостей.</TM_HollowGolemEquipmentRD.description>
+
+  <TM_HollowGolemArtifactsRD.label>порожні артефакти</TM_HollowGolemArtifactsRD.label>
+  <TM_HollowGolemArtifactsRD.description>Дослідження зв&apos;язку таємних артефактів з поведінкою голему дозволяють статеві голему підживлювати артефакти своєю власною магічною енергією.</TM_HollowGolemArtifactsRD.description>
+
+  <TM_MechaGolemRD.label>механічний голем</TM_MechaGolemRD.label>
+  <TM_MechaGolemRD.description>Поєднує в собі електротехніку і машинобудування з големним ремеслом для створення робота-голему. Очікувано, що для виготовлення компонентів хутра-голему буде потрібен машинний стіл.</TM_MechaGolemRD.description>
+
+  <TM_MechaGolemEquipmentRD.label>механічне навісне обладнання</TM_MechaGolemEquipmentRD.label>
+  <TM_MechaGolemEquipmentRD.description>Досліджує методи створення навісного обладнання і броні для подальшого поліпшення хутра-голему.</TM_MechaGolemEquipmentRD.description>
+
+  <TM_FleshGolemRD.label>голем з плоті</TM_FleshGolemRD.label>
+  <TM_FleshGolemRD.description>Біологічний підхід до голем, який досліджує, як перетворити плоть і кістки мертвих організмів на двоногу анімовану конструкцію. Простого м&apos;ясницького столу повинно вистачити для створення голему з плоті.</TM_FleshGolemRD.description>
+
+  <TM_FleshGolemEquipmentRD.label>плотські вкладення</TM_FleshGolemEquipmentRD.label>
+  <TM_FleshGolemEquipmentRD.description>Досліджує зброю і броню, які можуть бути прикріплені до голему з плоті для подальшого поліпшення або розширення можливостей.</TM_FleshGolemEquipmentRD.description>
+
+
+</LanguageData>

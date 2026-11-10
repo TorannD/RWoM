@@ -1,0 +1,94 @@
+<LanguageData>
+
+  <TM_Skeletal.label>esqueletado</TM_Skeletal.label>
+  <TM_Skeletal.corePart.customLabel>peito</TM_Skeletal.corePart.customLabel>
+  <TM_Skeletal.corePart.parts.1.customLabel>ossos do pescoço</TM_Skeletal.corePart.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.1.parts.0.customLabel>crânio</TM_Skeletal.corePart.parts.1.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.1.parts.0.parts.0.customLabel>mandíbula</TM_Skeletal.corePart.parts.1.parts.0.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.2.customLabel>ombro esquerdo</TM_Skeletal.corePart.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.0.customLabel>clavícula esquerda</TM_Skeletal.corePart.parts.2.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.customLabel>área da mão esquerda</TM_Skeletal.corePart.parts.2.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.0.customLabel>úmero esquerdo</TM_Skeletal.corePart.parts.2.parts.1.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.1.customLabel>raio esquerdo</TM_Skeletal.corePart.parts.2.parts.1.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.2.customLabel>ossos da mão esquerda</TM_Skeletal.corePart.parts.2.parts.1.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.0.customLabel>mindinho esquerdo</TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.1.customLabel>Dedo esquerdo sem nome</TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.2.customLabel>Dedo médio esquerdo</TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.3.customLabel>dedo indicador esquerdo</TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.3.customLabel>
+  <TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.4.customLabel>polegar da mão esquerda</TM_Skeletal.corePart.parts.2.parts.1.parts.2.parts.4.customLabel>
+  <TM_Skeletal.corePart.parts.3.customLabel>ombro direito</TM_Skeletal.corePart.parts.3.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.0.customLabel>clavícula direita</TM_Skeletal.corePart.parts.3.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.customLabel>área da mão direita</TM_Skeletal.corePart.parts.3.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.0.customLabel>úmero direito</TM_Skeletal.corePart.parts.3.parts.1.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.1.customLabel>raio direito</TM_Skeletal.corePart.parts.3.parts.1.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.2.customLabel>ossos da mão direita</TM_Skeletal.corePart.parts.3.parts.1.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.0.customLabel>mindinho direito</TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.1.customLabel>dedo sem nome direito</TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.2.customLabel>Dedo médio direito</TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.3.customLabel>dedo indicador direito</TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.3.customLabel>
+  <TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.4.customLabel>polegar da mão direita</TM_Skeletal.corePart.parts.3.parts.1.parts.2.parts.4.customLabel>
+  <TM_Skeletal.corePart.parts.4.customLabel>pé esquerdo</TM_Skeletal.corePart.parts.4.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.0.customLabel>fémur esquerdo</TM_Skeletal.corePart.parts.4.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.1.customLabel>Osso bolchevique esquerdo</TM_Skeletal.corePart.parts.4.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.2.customLabel>pé esquerdo</TM_Skeletal.corePart.parts.4.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.2.parts.0.customLabel>mindinho da perna esquerda</TM_Skeletal.corePart.parts.4.parts.2.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.2.parts.1.customLabel>quarto osso esquerdo do dedo do pé</TM_Skeletal.corePart.parts.4.parts.2.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.2.parts.2.customLabel>osso médio esquerdo do dedo do pé</TM_Skeletal.corePart.parts.4.parts.2.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.2.parts.3.customLabel>osso esquerdo do segundo dedo do pé</TM_Skeletal.corePart.parts.4.parts.2.parts.3.customLabel>
+  <TM_Skeletal.corePart.parts.4.parts.2.parts.4.customLabel>osso esquerdo do polegar do pé</TM_Skeletal.corePart.parts.4.parts.2.parts.4.customLabel>
+  <TM_Skeletal.corePart.parts.5.customLabel>pé direito</TM_Skeletal.corePart.parts.5.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.0.customLabel>fémur direito</TM_Skeletal.corePart.parts.5.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.1.customLabel>Osso de bolchê direito</TM_Skeletal.corePart.parts.5.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.2.customLabel>pé direito</TM_Skeletal.corePart.parts.5.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.2.parts.0.customLabel>mindinho da perna direita</TM_Skeletal.corePart.parts.5.parts.2.parts.0.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.2.parts.1.customLabel>quarto osso direito do dedo do pé</TM_Skeletal.corePart.parts.5.parts.2.parts.1.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.2.parts.2.customLabel>osso médio direito do dedo do pé</TM_Skeletal.corePart.parts.5.parts.2.parts.2.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.2.parts.3.customLabel>osso direito do segundo dedo do pé</TM_Skeletal.corePart.parts.5.parts.2.parts.3.customLabel>
+  <TM_Skeletal.corePart.parts.5.parts.2.parts.4.customLabel>osso direito do polegar do pé</TM_Skeletal.corePart.parts.5.parts.2.parts.4.customLabel>
+
+
+<TM_Skeletal.corePart.parts.neck_bones.customLabel>ossos cervicais</TM_Skeletal.corePart.parts.neck_bones.customLabel>
+<TM_Skeletal.corePart.parts.neck_bones.parts.skull.customLabel>crânio</TM_Skeletal.corePart.parts.neck_bones.parts.skull.customLabel>
+<TM_Skeletal.corePart.parts.neck_bones.parts.skull.parts.jaw.customLabel>mandíbula</TM_Skeletal.corePart.parts.neck_bones.parts.skull.parts.jaw.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.customLabel>ombro esquerdo</TM_Skeletal.corePart.parts.left_shoulder.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_clavicle.customLabel>clavícula esquerda</TM_Skeletal.corePart.parts.left_shoulder.parts.left_clavicle.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.customLabel>área da mão esquerda</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_humerus.customLabel>úmero esquerdo</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_humerus.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_radius.customLabel>raio esquerdo</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_radius.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.customLabel>ossos da mão esquerda</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_pinky_bone.customLabel>mindinho esquerdo</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_pinky_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_ring_finger_bone.customLabel>osso de dedo sem nome da mão esquerda</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_ring_finger_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_middle_finger_bone.customLabel>osso do dedo médio da mão esquerda</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_middle_finger_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_index_finger_bone.customLabel>osso do dedo indicador da mão esquerda</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_index_finger_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_thumb_bone.customLabel>osso do polegar da mão esquerda</TM_Skeletal.corePart.parts.left_shoulder.parts.left_arm_area.parts.left_hand_bones.parts.left_thumb_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.customLabel>ombro direito</TM_Skeletal.corePart.parts.right_shoulder.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_clavicle.customLabel>clavícula direita</TM_Skeletal.corePart.parts.right_shoulder.parts.right_clavicle.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.customLabel>área da mão direita</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_humerus.customLabel>úmero direito</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_humerus.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_radius.customLabel>raio direito</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_radius.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.customLabel>ossos da mão direita</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_pinky_bone.customLabel>mindinho direito</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_pinky_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_ring_finger_bone.customLabel>osso do dedo da mão direita sem nome</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_ring_finger_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_middle_finger_bone.customLabel>osso do dedo médio direito</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_middle_finger_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_index_finger_bone.customLabel>osso do dedo indicador direito</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_index_finger_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_thumb_bone.customLabel>osso do polegar da mão direita</TM_Skeletal.corePart.parts.right_shoulder.parts.right_arm_area.parts.right_hand_bones.parts.right_thumb_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.customLabel>pé esquerdo</TM_Skeletal.corePart.parts.left_leg.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_femur.customLabel>coxa esquerda</TM_Skeletal.corePart.parts.left_leg.parts.left_femur.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_tibia.customLabel>Osso bolchevique esquerdo</TM_Skeletal.corePart.parts.left_leg.parts.left_tibia.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.customLabel>ossos do pé esquerdo</TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_little_toe_bone.customLabel>mindinho da perna esquerda</TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_little_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_fourth_toe_bone.customLabel>osso do quarto dedo da perna esquerda</TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_fourth_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_middle_toe_bone.customLabel>osso do dedo médio do pé esquerdo</TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_middle_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_second_toe_bone.customLabel>osso do segundo dedo da perna esquerda</TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_second_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_big_toe_bone.customLabel>polegar da perna esquerda</TM_Skeletal.corePart.parts.left_leg.parts.left_foot_bones.parts.left_big_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.customLabel>pé direito</TM_Skeletal.corePart.parts.right_leg.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_femur.customLabel>coxa direita</TM_Skeletal.corePart.parts.right_leg.parts.right_femur.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_tibia.customLabel>Osso de bolchê direito</TM_Skeletal.corePart.parts.right_leg.parts.right_tibia.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.customLabel>ossos do pé direito</TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_little_toe_bone.customLabel>osso do mindinho direito</TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_little_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_fourth_toe_bone.customLabel>osso do quarto dedo da perna direita</TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_fourth_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_middle_toe_bone.customLabel>osso do dedo médio do pé direito</TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_middle_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_second_toe_bone.customLabel>osso do segundo dedo da perna direita</TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_second_toe_bone.customLabel>
+<TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_big_toe_bone.customLabel>osso do polegar da perna direita</TM_Skeletal.corePart.parts.right_leg.parts.right_foot_bones.parts.right_big_toe_bone.customLabel>
+
+</LanguageData>

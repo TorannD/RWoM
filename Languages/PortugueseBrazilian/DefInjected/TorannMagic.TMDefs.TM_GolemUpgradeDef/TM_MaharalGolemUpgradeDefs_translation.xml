@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Golem_MaharalRepair.label>recupere a parte</TM_Golem_MaharalRepair.label>
+
+  <TM_Golem_MaharalMaxEnergy.label>armazenador de energia</TM_Golem_MaharalMaxEnergy.label>
+  <TM_Golem_MaharalMaxEnergy.description>Aumenta a energia máxima em 100 por nível. A energia máxima inicial é de 800.</TM_Golem_MaharalMaxEnergy.description>
+
+  <TM_Golem_MaharalEnergyEfficiency.label>eficiência energética</TM_Golem_MaharalEnergyEfficiency.label>
+  <TM_Golem_MaharalEnergyEfficiency.description>Aumenta a eficiência energética em 10% por nível. A eficiência energética inicial é de 50%.</TM_Golem_MaharalEnergyEfficiency.description>
+
+  <TM_Golem_MaharalEnergyRate.label>regeneração de energia</TM_Golem_MaharalEnergyRate.label>
+  <TM_Golem_MaharalEnergyRate.description>Aumenta a velocidade de carga de energia em 20% por nível. A velocidade inicial de recarga é de 30 custos de energia por hora.</TM_Golem_MaharalEnergyRate.description>
+
+  <TM_Golem_MaharalArmor.label>armadura</TM_Golem_MaharalArmor.label>
+  <TM_Golem_MaharalArmor.description>Aumenta a proteção geral:
+Danos estúpidos: + [9,16,21]%
+Corte de danos: + [13,22,29]%
+Temperatura: + [8,14,18]%</TM_Golem_MaharalArmor.description>
+
+  <TM_Golem_MaharalPower.label>Força</TM_Golem_MaharalPower.label>
+  <TM_Golem_MaharalPower.description>Permite que o golem produza energia excedente em estado de paz.</TM_Golem_MaharalPower.description>
+
+  <TM_Golem_MaharalHeat.label>Calor</TM_Golem_MaharalHeat.label>
+  <TM_Golem_MaharalHeat.description>Permite que o golem produza calor em estado de paz.</TM_Golem_MaharalHeat.description>
+
+  <TM_Golem_MaharalLifeStage.label>camada de esqueleto</TM_Golem_MaharalLifeStage.label>
+  <TM_Golem_MaharalLifeStage.description>Aumenta as estatísticas:
+Movimento: + [20 %/30 %/40%]
+Saúde: + [20 %/40 %/50%]</TM_Golem_MaharalLifeStage.description>
+
+
+</LanguageData>

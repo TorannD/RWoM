@@ -1,121 +1,91 @@
 ﻿using RimWorld;
-using System;
 using UnityEngine;
 using Verse;
+using System.Linq;
 
 namespace TorannMagic
 {
-    public class ITab_Pawn_Might : ITab  //code by Jecrell
+    /// <summary>
+    /// Inspect-pane tab variant of the Grimoire button (might side). Enabled by
+    /// turning off the "grimoireOnAbilityBar" mod setting: the tab shows for
+    /// class holders and opens the Grimoire window on click, then deselects
+    /// itself so no empty pane is left behind. Faceless uses the might tab; other hybrids use magic —
+    /// both tabs open the same window, showing two of them made no sense.
+    /// </summary>
+    public class ITab_Pawn_Might : ITab
     {
-        private Pawn PawnToShowInfoAbout
-        {
-            get
-            {
-                Pawn pawn = null;
-                bool flag = base.SelPawn != null;
-                if (flag)
-                {
-                    pawn = base.SelPawn;
-                }
-                else
-                {
-                    Corpse corpse = base.SelThing as Corpse;
-                    if (corpse != null)
-                    {
-                        pawn = corpse.InnerPawn;
-                    }
-                }
-                if (pawn == null)
-                {
-                    Log.Error("Character tab found no selected pawn to display.");
-                    return null;
-                }
-                return pawn;
-            }
-        }
+        private bool pendingDeselect;
 
         public override bool IsVisible
         {
             get
             {
-                
-                bool flag = base.SelPawn.story != null && base.SelPawn.IsColonist;
-                if (flag)
+                if (ModOptions.Settings.Instance.grimoireOnAbilityBar)
                 {
-                    CompAbilityUserMight compMight = base.SelPawn.GetCompAbilityUserMight();
-                    if (compMight != null)
-                    {
-                        if (compMight.customClass != null)
-                        {
-                            return true;
-                        }
-                        if(compMight.AdvancedClasses.Count > 0)
-                        {
-                            return true;
-                        }
-                    }
-                    if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.Gladiator))
-                    {
-                        return flag && true;
-                    }
-                    if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.TM_Sniper))
-                    {
-                        return flag && true;
-                    }
-                    if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.Bladedancer))
-                    {
-                        return flag && true;
-                    }
-                    if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.Ranger))
-                    {
-                        return flag && true;
-                    }
-                    if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-                    {
-                        return flag && true;
-                    }
-                    if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.TM_Psionic))
-                    {
-                        return flag && true;
-                    }
-                    if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.DeathKnight))
-                    {
-                        return flag && true;
-                    }
-                    if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.TM_Monk))
-                    {
-                        return flag && true;
-                    }
-                    if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wayfarer))
-                    {
-                        return flag && true;
-                    }
-                    if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.TM_Commander))
-                    {
-                        return flag && true;
-                    }
-                    if (base.SelPawn.story.traits.HasTrait(TorannMagicDefOf.TM_SuperSoldier))
-                    {
-                        return flag && true;
-                    }
+                    return false;
                 }
-
-                return false;
-                
+                Pawn pawn = base.SelPawn;
+                if (pawn == null || !pawn.IsColonist)
+                {
+                    return false;
+                }
+                CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+                if (comp == null || !comp.IsMightUser)
+                {
+                    return false;
+                }
+                // Faceless registers Might; ordinary hybrids use Magic. Both open the same window.
+                CompAbilityUserMagic cm = pawn.GetCompAbilityUserMagic();
+                bool faceless = pawn.story?.traits?.HasTrait(TorannMagicDefOf.Faceless) == true;
+                return faceless || cm == null || !cm.IsMagicUser;
             }
         }
 
         public ITab_Pawn_Might()
         {
-            this.size = MightCardUtility.MightCardSize + new Vector2(17f, 17f) * 2f;
-            this.labelKey = "TM_TabMight";
+            this.labelKey = "TM_Grimoire";
+        }
+
+        public override void OnOpen()
+        {
+            base.OnOpen();
+            OpenGrimoire();
+            pendingDeselect = true;
+        }
+
+        public override void TabUpdate()
+        {
+            base.TabUpdate();
+            if (pendingDeselect)
+            {
+                // ToggleTab sets OpenTabType after OnOpen returns, so the
+                // deselect has to happen on the next frame
+                pendingDeselect = false;
+                if (MainButtonDefOf.Inspect.TabWindow is MainTabWindow_Inspect pane && pane.OpenTabType == GetType())
+                {
+                    pane.OpenTabType = null;
+                }
+            }
         }
 
         protected override void FillTab()
         {
-            Rect rect = new Rect(17f, 17f, MightCardUtility.MightCardSize.x, MightCardUtility.MightCardSize.y);
-            MightCardUtility.DrawMightCard(rect, this.PawnToShowInfoAbout);
+            // the Grimoire window opens on tab click; nothing to draw in the pane
         }
 
+        private void OpenGrimoire()
+        {
+            Pawn pawn = base.SelPawn;
+            if (pawn == null)
+            {
+                return;
+            }
+            Window_TMGrimoire open = Find.WindowStack.Windows.OfType<Window_TMGrimoire>().FirstOrDefault();
+            if (open != null)
+            {
+                open.Close();
+            }
+            Window_TMGrimoire.OpenFor(pawn);
+        }
     }
 }

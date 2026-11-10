@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- orb of souls -->
+
+  <TM_Artifact_TraitThief.label>Absorver a Alma</TM_Artifact_TraitThief.label>
+  <TM_Artifact_TraitThief.description>Roubar os traços de outro peão.</TM_Artifact_TraitThief.description>
+
+  <TM_Artifact_TraitInfuse.label>Saciar a Alma</TM_Artifact_TraitInfuse.label>
+  <TM_Artifact_TraitInfuse.description>Coloque os traços selados num peão humano.</TM_Artifact_TraitInfuse.description>
+
+
+</LanguageData>

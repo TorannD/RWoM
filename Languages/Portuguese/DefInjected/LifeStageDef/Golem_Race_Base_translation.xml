@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- STONE GOLEM -->
+
+  <TM_StoneGolemLS.label>golem de pedra</TM_StoneGolemLS.label>
+  <TM_StoneGolemLS1.label>golem de pedra</TM_StoneGolemLS1.label>
+  <TM_StoneGolemLS2.label>golem de pedra</TM_StoneGolemLS2.label>
+  <TM_StoneGolemLS3.label>golem de pedra</TM_StoneGolemLS3.label>
+
+
+  <!-- MECHA GOLEM -->
+
+  <TM_MechaGolemLS.label>peles-golem</TM_MechaGolemLS.label>
+  <TM_MechaGolemLS_FS1.label>Pelé-golem com fragmento de fogo</TM_MechaGolemLS_FS1.label>
+  <TM_MechaGolemLS_FS2.label>Pelé-golem com fragmento de fogo</TM_MechaGolemLS_FS2.label>
+  <TM_MechaGolemLS_FS3.label>Pelé-golem com fragmento de fogo</TM_MechaGolemLS_FS3.label>
+  <TM_MechaGolemLS_WS1.label>Pelé-golem com fragmento de água</TM_MechaGolemLS_WS1.label>
+  <TM_MechaGolemLS_WS2.label>Pelé-golem com fragmento de água</TM_MechaGolemLS_WS2.label>
+  <TM_MechaGolemLS_WS3.label>Pelé-golem com fragmento de água</TM_MechaGolemLS_WS3.label>
+  <TM_MechaGolemLS_ES1.label>Pelé-golem com fragmento de terra</TM_MechaGolemLS_ES1.label>
+  <TM_MechaGolemLS_ES2.label>Pelé-golem com fragmento de terra</TM_MechaGolemLS_ES2.label>
+  <TM_MechaGolemLS_ES3.label>Pelé-golem com fragmento de terra</TM_MechaGolemLS_ES3.label>
+  <TM_MechaGolemLS_LS1.label>Pelé-golem com fragmento relâmpago</TM_MechaGolemLS_LS1.label>
+  <TM_MechaGolemLS_LS2.label>Pelé-golem com fragmento relâmpago</TM_MechaGolemLS_LS2.label>
+  <TM_MechaGolemLS_LS3.label>Pelé-golem com fragmento relâmpago</TM_MechaGolemLS_LS3.label>
+
+
+  <!-- FLESH GOLEM -->
+
+  <TM_FleshGolemLS.label>golem de carne</TM_FleshGolemLS.label>
+  <TM_FleshGolemLS1.label>golem de carne</TM_FleshGolemLS1.label>
+  <TM_FleshGolemLS2.label>golem de carne</TM_FleshGolemLS2.label>
+  <TM_FleshGolemLS3.label>golem de carne</TM_FleshGolemLS3.label>
+
+
+  <!-- HOLLOW GOLEM -->
+
+  <TM_HollowGolemLS.label>vazio de nu</TM_HollowGolemLS.label>
+  <TM_HollowGolemLS_FA1.label>fusão de fogo I</TM_HollowGolemLS_FA1.label>
+  <TM_HollowGolemLS_FA2.label>afinidade de fogo II</TM_HollowGolemLS_FA2.label>
+  <TM_HollowGolemLS_FA3.label>filiação de fogo III</TM_HollowGolemLS_FA3.label>
+  <TM_HollowGolemLS_IA1.label>afinidade de água I</TM_HollowGolemLS_IA1.label>
+  <TM_HollowGolemLS_IA2.label>afinidade de água II</TM_HollowGolemLS_IA2.label>
+  <TM_HollowGolemLS_IA3.label>afinidade de água III</TM_HollowGolemLS_IA3.label>
+  <TM_HollowGolemLS_AA1.label>afinidade de magia I</TM_HollowGolemLS_AA1.label>
+  <TM_HollowGolemLS_AA2.label>afinidade de magia II</TM_HollowGolemLS_AA2.label>
+  <TM_HollowGolemLS_AA3.label>afinidade de magia III</TM_HollowGolemLS_AA3.label>
+  <TM_HollowGolemLS_DA1.label>afinidade da morte I</TM_HollowGolemLS_DA1.label>
+  <TM_HollowGolemLS_DA2.label>a súmula da morte II</TM_HollowGolemLS_DA2.label>
+  <TM_HollowGolemLS_DA3.label>afinidade da morte III</TM_HollowGolemLS_DA3.label>
+
+
+  <!-- MAHARAL GOLEM -->
+
+  <TM_MaharalGolemLS.label>golem maharala</TM_MaharalGolemLS.label>
+  <TM_MaharalGolemLS1.label>golem maharala</TM_MaharalGolemLS1.label>
+  <TM_MaharalGolemLS2.label>golem maharala</TM_MaharalGolemLS2.label>
+  <TM_MaharalGolemLS3.label>golem maharala</TM_MaharalGolemLS3.label>
+
+
+</LanguageData>

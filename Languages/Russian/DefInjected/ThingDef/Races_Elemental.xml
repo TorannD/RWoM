@@ -1,0 +1,185 @@
+<LanguageData>
+  <!-- Earth Elemental-->
+  <TM_LesserEarth_ElementalR.label>Малый Элементаль Земли</TM_LesserEarth_ElementalR.label>
+  <TM_LesserEarth_ElementalR.description>Элементаль земли — неуклюжее и упрямое создание из живого камня. Его шкура напоминает смесь скалы и кристалла, а в местах суставов проступают земля и грязь. Даже в низшей форме этот элементаль остаётся самым стойким среди собратьев: он выдерживает град ударов и надёжно прикрывает хозяина.</TM_LesserEarth_ElementalR.description>
+  <TM_LesserEarth_ElementalR.tools.0.label>левая рука</TM_LesserEarth_ElementalR.tools.0.label>
+  <TM_LesserEarth_ElementalR.tools.1.label>правая рука</TM_LesserEarth_ElementalR.tools.1.label>
+  <TM_LesserEarth_ElementalR.tools.2.label>рог</TM_LesserEarth_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_LesserEarth_ElementalR_Corpse.label>Малый Элементаль Земли труп</TM_LesserEarth_ElementalR_Corpse.label>
+  <TM_LesserEarth_ElementalR_Corpse.description>Малый Элементаль Земли труп</TM_LesserEarth_ElementalR_Corpse.description>
+  <!-- Earth Elemental-->
+  <TM_Earth_ElementalR.label>Элементаль Земли</TM_Earth_ElementalR.label>
+  <TM_Earth_ElementalR.description>Элементаль земли — упрямое создание из живого камня, покрытое будто бы слоем скалы и кристалла. В местах суставов сквозь твёрдую оболочку проступают земля и грязь. Это самый выносливый из элементалей: он принимает на себя удар за ударом и держится так, будто его выточили для осадной войны.</TM_Earth_ElementalR.description>
+  <TM_Earth_ElementalR.tools.0.label>левая рука</TM_Earth_ElementalR.tools.0.label>
+  <TM_Earth_ElementalR.tools.1.label>правая рука</TM_Earth_ElementalR.tools.1.label>
+  <TM_Earth_ElementalR.tools.2.label>рог</TM_Earth_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_Earth_ElementalR_Corpse.label>Элементаль Земли труп</TM_Earth_ElementalR_Corpse.label>
+  <TM_Earth_ElementalR_Corpse.description>Элементаль Земли труп</TM_Earth_ElementalR_Corpse.description>
+  <!-- Earth Elemental-->
+  <TM_GreaterEarth_ElementalR.label>Высший Элементаль Земли</TM_GreaterEarth_ElementalR.label>
+  <TM_GreaterEarth_ElementalR.description>Высший элементаль земли — неуклюжее, упрямое чудовище из живого камня. Его кожа похожа на смесь скалы и кристалла, а в местах суставов проступают грязь и земля. Пасть напоминает пещерный зев, а на спине порой вырастают кусты и маленькие деревья, будто он носит плащ из растительности. Это самый стойкий из элементалей, истинный хозяин своей стихии: он выдерживает град ударов и буквально сокрушает врагов. Лучший шанс спастись от него — бежать.</TM_GreaterEarth_ElementalR.description>
+  <TM_GreaterEarth_ElementalR.tools.0.label>левая рука</TM_GreaterEarth_ElementalR.tools.0.label>
+  <TM_GreaterEarth_ElementalR.tools.1.label>правая рука</TM_GreaterEarth_ElementalR.tools.1.label>
+  <TM_GreaterEarth_ElementalR.tools.2.label>рог</TM_GreaterEarth_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_GreaterEarth_ElementalR_Corpse.label>труп высшего элементаля земли</TM_GreaterEarth_ElementalR_Corpse.label>
+  <TM_GreaterEarth_ElementalR_Corpse.description>труп высшего элементаля земли</TM_GreaterEarth_ElementalR_Corpse.description>
+  <!-- Fire Elemental-->
+  <TM_LesserFire_ElementalR.label>Малый Элементаль Огня</TM_LesserFire_ElementalR.label>
+  <TM_LesserFire_ElementalR.description>Элементали огня — злобные создания из живого пламени. Они быстры, яростны и рождены для разрушения. Их тела похожи на смесь раскалённого масла, расплавленной массы и золы; кожа кажется текучей, словно они непрерывно плавятся и собираются заново. Тусклый огонёк в их глазах — последнее предупреждение перед вспышкой ярости.</TM_LesserFire_ElementalR.description>
+  <TM_LesserFire_ElementalR.tools.0.label>левая рука</TM_LesserFire_ElementalR.tools.0.label>
+  <TM_LesserFire_ElementalR.tools.1.label>правая рука</TM_LesserFire_ElementalR.tools.1.label>
+  <TM_LesserFire_ElementalR.tools.2.label>рог</TM_LesserFire_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_LesserFire_ElementalR_Corpse.label>Малый Элементаль Огня труп</TM_LesserFire_ElementalR_Corpse.label>
+  <TM_LesserFire_ElementalR_Corpse.description>Малый Элементаль Огня труп</TM_LesserFire_ElementalR_Corpse.description>
+  <!-- Fire Elemental-->
+  <TM_Fire_ElementalR.label>Элементаль Огня</TM_Fire_ElementalR.label>
+  <TM_Fire_ElementalR.description>Элементали огня — воплощённое разрушение. Их тело похоже на смесь расплавленного вещества, золы и пламени, а кожа выглядит так, будто непрерывно плавится и собирается заново. На их лицах читается жуткое подобие ухмылки. Связываться с таким созданием — всё равно что играть с пожаром в закрытой комнате.</TM_Fire_ElementalR.description>
+  <TM_Fire_ElementalR.tools.0.label>левая рука</TM_Fire_ElementalR.tools.0.label>
+  <TM_Fire_ElementalR.tools.1.label>правая рука</TM_Fire_ElementalR.tools.1.label>
+  <TM_Fire_ElementalR.tools.2.label>рог</TM_Fire_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_Fire_ElementalR_Corpse.label>Элементаль Огня труп</TM_Fire_ElementalR_Corpse.label>
+  <TM_Fire_ElementalR_Corpse.description>Элементаль Огня труп</TM_Fire_ElementalR_Corpse.description>
+  <!-- Fire Elemental-->
+  <TM_GreaterFire_ElementalR.label>Высший Элементаль Огня</TM_GreaterFire_ElementalR.label>
+  <TM_GreaterFire_ElementalR.description>Высший элементаль огня — князь разрушения, сотканный из пламени, золы и расплавленной материи. Его кожа выглядит почти жидкой, словно он непрерывно плавится и собирается заново. Огненная корона полыхает над обсидиановой грудной пластиной, а единственный сверкающий глаз обещает одно: всё вокруг скоро обратится в пепел.</TM_GreaterFire_ElementalR.description>
+  <TM_GreaterFire_ElementalR.tools.0.label>левая рука</TM_GreaterFire_ElementalR.tools.0.label>
+  <TM_GreaterFire_ElementalR.tools.1.label>правая рука</TM_GreaterFire_ElementalR.tools.1.label>
+  <TM_GreaterFire_ElementalR.tools.2.label>рог</TM_GreaterFire_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_GreaterFire_ElementalR_Corpse.label>труп высшего элементаля огня</TM_GreaterFire_ElementalR_Corpse.label>
+  <TM_GreaterFire_ElementalR_Corpse.description>труп высшего элементаля огня</TM_GreaterFire_ElementalR_Corpse.description>
+  <!-- Water Elemental-->
+  <TM_LesserWater_ElementalR.label>Малый Элементаль Воды</TM_LesserWater_ElementalR.label>
+  <TM_LesserWater_ElementalR.description>Элементали воды состоят из живой воды и воплощают бесконечное терпение своей стихии. Обычно они выглядят как вихрящийся столб жидкости, в котором порой проступают очертания существа или предмета, а на поверхность всплывают мелкие обломки. Даже низшая форма этого элементаля движется без остановки и изматывает противников неумолимой, вязкой силой.</TM_LesserWater_ElementalR.description>
+  <TM_LesserWater_ElementalR.tools.0.label>левая рука</TM_LesserWater_ElementalR.tools.0.label>
+  <TM_LesserWater_ElementalR.tools.1.label>правая рука</TM_LesserWater_ElementalR.tools.1.label>
+  <TM_LesserWater_ElementalR.tools.2.label>рог</TM_LesserWater_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_LesserWater_ElementalR_Corpse.label>Малый Элементаль Воды труп</TM_LesserWater_ElementalR_Corpse.label>
+  <TM_LesserWater_ElementalR_Corpse.description>Малый Элементаль Воды труп</TM_LesserWater_ElementalR_Corpse.description>
+  <!-- Water Elemental-->
+  <TM_Water_ElementalR.label>Элементаль Воды</TM_Water_ElementalR.label>
+  <TM_Water_ElementalR.description>Элементали воды состоят из живой воды и воплощают спокойствие глубин. Они принимают форму непрерывно вращающейся массы жидкости, в которой порой угадываются очертания существ и предметов. Этот элементаль выглядит почти безмятежно, но под гладкой поверхностью чувствуется сила, готовая обрушиться в любой момент.</TM_Water_ElementalR.description>
+  <TM_Water_ElementalR.tools.0.label>левая рука</TM_Water_ElementalR.tools.0.label>
+  <TM_Water_ElementalR.tools.1.label>правая рука</TM_Water_ElementalR.tools.1.label>
+  <TM_Water_ElementalR.tools.2.label>рог</TM_Water_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_Water_ElementalR_Corpse.label>Элементаль Воды труп</TM_Water_ElementalR_Corpse.label>
+  <TM_Water_ElementalR_Corpse.description>Элементаль Воды труп</TM_Water_ElementalR_Corpse.description>
+  <!-- Water Elemental-->
+  <TM_GreaterWater_ElementalR.label>Высший Элементаль Воды</TM_GreaterWater_ElementalR.label>
+  <TM_GreaterWater_ElementalR.description>Высший элементаль воды — живая стихия в чистом виде. Его тело беспрерывно перетекает, словно бурный поток, а вместо глаз у него вращаются тёмные водовороты. Он движется как штормовая волна и сметает всё на своём пути холодной, безжалостной мощью.</TM_GreaterWater_ElementalR.description>
+  <TM_GreaterWater_ElementalR.tools.0.label>левая рука</TM_GreaterWater_ElementalR.tools.0.label>
+  <TM_GreaterWater_ElementalR.tools.1.label>правая рука</TM_GreaterWater_ElementalR.tools.1.label>
+  <TM_GreaterWater_ElementalR.tools.2.label>рог</TM_GreaterWater_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_GreaterWater_ElementalR_Corpse.label>труп высшего элементаля воды</TM_GreaterWater_ElementalR_Corpse.label>
+  <TM_GreaterWater_ElementalR_Corpse.description>труп высшего элементаля воды</TM_GreaterWater_ElementalR_Corpse.description>
+  <!-- Wind Elemental-->
+  <TM_LesserWind_ElementalR.label>Малый Элементаль Ветра</TM_LesserWind_ElementalR.label>
+  <TM_LesserWind_ElementalR.description>Воздушные элементали состоят из живого ветра и отличаются пугающей скоростью. Их облик постоянно меняется: то это дымчатый силуэт, то режущий воздух вихрь. Даже низшая форма способна осыпать врагов стремительными, жалящими ударами, не давая им перевести дух.</TM_LesserWind_ElementalR.description>
+  <TM_LesserWind_ElementalR.tools.0.label>левая рука</TM_LesserWind_ElementalR.tools.0.label>
+  <TM_LesserWind_ElementalR.tools.1.label>правая рука</TM_LesserWind_ElementalR.tools.1.label>
+  <TM_LesserWind_ElementalR.tools.2.label>рог</TM_LesserWind_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_LesserWind_ElementalR_Corpse.label>Малый Элементаль Ветра труп</TM_LesserWind_ElementalR_Corpse.label>
+  <TM_LesserWind_ElementalR_Corpse.description>Малый Элементаль Ветра труп</TM_LesserWind_ElementalR_Corpse.description>
+  <!-- Wind Elemental-->
+  <TM_Wind_ElementalR.label>Элементаль Ветра</TM_Wind_ElementalR.label>
+  <TM_Wind_ElementalR.description>Воздушные элементали состоят из живого ветра и двигаются с неестественной для плоти скоростью. Их очертания всё время меняются: то перед вами туманный силуэт, то свистящий вихрь. Этот элементаль несёт в себе силу настоящей бури и без колебаний обрушит её на любого врага.</TM_Wind_ElementalR.description>
+  <TM_Wind_ElementalR.tools.0.label>левая рука</TM_Wind_ElementalR.tools.0.label>
+  <TM_Wind_ElementalR.tools.1.label>правая рука</TM_Wind_ElementalR.tools.1.label>
+  <TM_Wind_ElementalR.tools.2.label>рог</TM_Wind_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_Wind_ElementalR_Corpse.label>Элементаль Ветра труп</TM_Wind_ElementalR_Corpse.label>
+  <TM_Wind_ElementalR_Corpse.description>Элементаль Ветра труп</TM_Wind_ElementalR_Corpse.description>
+  <!-- Wind Elemental-->
+  <TM_GreaterWind_ElementalR.label>Высший Элементаль Ветра</TM_GreaterWind_ElementalR.label>
+  <TM_GreaterWind_ElementalR.description>Высший элементаль ветра — воплощённая буря. Его форма непрерывно меняется между дымчатым силуэтом и режущим вихрем, а сама стихия вокруг него будто приходит в ярость. Нет сомнений: это существо способно выпустить на волю шторм такой силы, что от него остаётся только спасаться бегством.</TM_GreaterWind_ElementalR.description>
+  <TM_GreaterWind_ElementalR.tools.0.label>левая рука</TM_GreaterWind_ElementalR.tools.0.label>
+  <TM_GreaterWind_ElementalR.tools.1.label>правая рука</TM_GreaterWind_ElementalR.tools.1.label>
+  <TM_GreaterWind_ElementalR.tools.2.label>рог</TM_GreaterWind_ElementalR.tools.2.label>
+  <!-- No Leather: Butcher Products-->
+  <!-- Meat Amount: 0-->
+  <TM_GreaterWind_ElementalR_Corpse.label>труп высшего элементаля ветра</TM_GreaterWind_ElementalR_Corpse.label>
+  <TM_GreaterWind_ElementalR_Corpse.description>труп высшего элементаля ветра</TM_GreaterWind_ElementalR_Corpse.description>
+  <!-- Элементаль Земли-->
+  <!-- Элементаль Огня-->
+  <!-- Элементаль Воды-->
+  <!-- Элементаль Ветра-->
+  <TM_LesserEarth_ElementalR.race.meatLabel>стихийная пыль</TM_LesserEarth_ElementalR.race.meatLabel>
+	<TM_LesserEarth_ElementalR.meatLabel>стихийная пыль</TM_LesserEarth_ElementalR.meatLabel>
+  <TM_Earth_ElementalR.race.meatLabel>стихийная пыль</TM_Earth_ElementalR.race.meatLabel>
+	<TM_Earth_ElementalR.meatLabel>стихийная пыль</TM_Earth_ElementalR.meatLabel>
+  <TM_GreaterEarth_ElementalR.race.meatLabel>стихийная пыль</TM_GreaterEarth_ElementalR.race.meatLabel>
+	<TM_GreaterEarth_ElementalR.meatLabel>стихийная пыль</TM_GreaterEarth_ElementalR.meatLabel>
+  <TM_LesserFire_ElementalR.race.meatLabel>стихийная пыль</TM_LesserFire_ElementalR.race.meatLabel>
+	<TM_LesserFire_ElementalR.meatLabel>стихийная пыль</TM_LesserFire_ElementalR.meatLabel>
+  <TM_Fire_ElementalR.race.meatLabel>стихийная пыль</TM_Fire_ElementalR.race.meatLabel>
+	<TM_Fire_ElementalR.meatLabel>стихийная пыль</TM_Fire_ElementalR.meatLabel>
+  <TM_GreaterFire_ElementalR.race.meatLabel>стихийная пыль</TM_GreaterFire_ElementalR.race.meatLabel>
+	<TM_GreaterFire_ElementalR.meatLabel>стихийная пыль</TM_GreaterFire_ElementalR.meatLabel>
+  <TM_LesserIce_ElementalR.race.meatLabel>стихийная пыль</TM_LesserIce_ElementalR.race.meatLabel>
+	<TM_LesserIce_ElementalR.meatLabel>стихийная пыль</TM_LesserIce_ElementalR.meatLabel>
+  <TM_Ice_ElementalR.race.meatLabel>стихийная пыль</TM_Ice_ElementalR.race.meatLabel>
+	<TM_Ice_ElementalR.meatLabel>стихийная пыль</TM_Ice_ElementalR.meatLabel>
+  <TM_GreaterIce_ElementalR.race.meatLabel>стихийная пыль</TM_GreaterIce_ElementalR.race.meatLabel>
+	<TM_GreaterIce_ElementalR.meatLabel>стихийная пыль</TM_GreaterIce_ElementalR.meatLabel>
+  <TM_LesserWind_ElementalR.race.meatLabel>стихийная пыль</TM_LesserWind_ElementalR.race.meatLabel>
+	<TM_LesserWind_ElementalR.meatLabel>стихийная пыль</TM_LesserWind_ElementalR.meatLabel>
+  <TM_Wind_ElementalR.race.meatLabel>стихийная пыль</TM_Wind_ElementalR.race.meatLabel>
+	<TM_Wind_ElementalR.meatLabel>стихийная пыль</TM_Wind_ElementalR.meatLabel>
+  <TM_GreaterWind_ElementalR.race.meatLabel>стихийная пыль</TM_GreaterWind_ElementalR.race.meatLabel>
+	<TM_GreaterWind_ElementalR.meatLabel>стихийная пыль</TM_GreaterWind_ElementalR.meatLabel>
+
+	<TM_Base_Elemental.race.meatLabel>стихийная пыль</TM_Base_Elemental.race.meatLabel>
+	<TM_Base_Elemental.meatLabel>стихийная пыль</TM_Base_Elemental.meatLabel>
+  <TM_LesserEarth_ElementalR_Meat.label>стихийная пыль</TM_LesserEarth_ElementalR_Meat.label>
+  <TM_LesserEarth_ElementalR_Meat.description>стихийная пыль</TM_LesserEarth_ElementalR_Meat.description>
+  <TM_Earth_ElementalR_Meat.label>стихийная пыль</TM_Earth_ElementalR_Meat.label>
+  <TM_Earth_ElementalR_Meat.description>стихийная пыль</TM_Earth_ElementalR_Meat.description>
+  <TM_GreaterEarth_ElementalR_Meat.label>стихийная пыль</TM_GreaterEarth_ElementalR_Meat.label>
+  <TM_GreaterEarth_ElementalR_Meat.description>стихийная пыль</TM_GreaterEarth_ElementalR_Meat.description>
+  <TM_LesserFire_ElementalR_Meat.label>стихийная пыль</TM_LesserFire_ElementalR_Meat.label>
+  <TM_LesserFire_ElementalR_Meat.description>стихийная пыль</TM_LesserFire_ElementalR_Meat.description>
+  <TM_Fire_ElementalR_Meat.label>стихийная пыль</TM_Fire_ElementalR_Meat.label>
+  <TM_Fire_ElementalR_Meat.description>стихийная пыль</TM_Fire_ElementalR_Meat.description>
+  <TM_GreaterFire_ElementalR_Meat.label>стихийная пыль</TM_GreaterFire_ElementalR_Meat.label>
+  <TM_GreaterFire_ElementalR_Meat.description>стихийная пыль</TM_GreaterFire_ElementalR_Meat.description>
+  <TM_LesserIce_ElementalR_Meat.label>стихийная пыль</TM_LesserIce_ElementalR_Meat.label>
+  <TM_LesserIce_ElementalR_Meat.description>стихийная пыль</TM_LesserIce_ElementalR_Meat.description>
+  <TM_Ice_ElementalR_Meat.label>стихийная пыль</TM_Ice_ElementalR_Meat.label>
+  <TM_Ice_ElementalR_Meat.description>стихийная пыль</TM_Ice_ElementalR_Meat.description>
+  <TM_GreaterIce_ElementalR_Meat.label>стихийная пыль</TM_GreaterIce_ElementalR_Meat.label>
+  <TM_GreaterIce_ElementalR_Meat.description>стихийная пыль</TM_GreaterIce_ElementalR_Meat.description>
+  <TM_LesserWater_ElementalR_Meat.label>стихийная пыль</TM_LesserWater_ElementalR_Meat.label>
+  <TM_LesserWater_ElementalR_Meat.description>стихийная пыль</TM_LesserWater_ElementalR_Meat.description>
+  <TM_Water_ElementalR_Meat.label>стихийная пыль</TM_Water_ElementalR_Meat.label>
+  <TM_Water_ElementalR_Meat.description>стихийная пыль</TM_Water_ElementalR_Meat.description>
+  <TM_GreaterWater_ElementalR_Meat.label>стихийная пыль</TM_GreaterWater_ElementalR_Meat.label>
+  <TM_GreaterWater_ElementalR_Meat.description>стихийная пыль</TM_GreaterWater_ElementalR_Meat.description>
+  <TM_LesserWind_ElementalR_Meat.label>стихийная пыль</TM_LesserWind_ElementalR_Meat.label>
+  <TM_LesserWind_ElementalR_Meat.description>стихийная пыль</TM_LesserWind_ElementalR_Meat.description>
+  <TM_Wind_ElementalR_Meat.label>стихийная пыль</TM_Wind_ElementalR_Meat.label>
+  <TM_Wind_ElementalR_Meat.description>стихийная пыль</TM_Wind_ElementalR_Meat.description>
+  <TM_GreaterWind_ElementalR_Meat.label>стихийная пыль</TM_GreaterWind_ElementalR_Meat.label>
+  <TM_GreaterWind_ElementalR_Meat.description>стихийная пыль</TM_GreaterWind_ElementalR_Meat.description>
+  <TM_Base_Elemental_Meat.label>стихийная пыль</TM_Base_Elemental_Meat.label>
+  <TM_Base_Elemental_Meat.description>стихийная пыль</TM_Base_Elemental_Meat.description>
+</LanguageData>

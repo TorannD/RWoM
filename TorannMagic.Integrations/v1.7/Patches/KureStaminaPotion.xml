@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="RFSStaminaPotionAddiction" and hediffClass="Hediff_Addiction" and not(chemicalNeed) and ../NeedDef[defName="RFSChemical_StaminaPotion"]]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[defName="RFSStaminaPotionAddiction" and hediffClass="Hediff_Addiction" and not(chemicalNeed)]</xpath>
+      <value><chemicalNeed>RFSChemical_StaminaPotion</chemicalNeed></value>
+    </match>
+  </Operation>
+</Patch>

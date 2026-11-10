@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_TravelSafety_Warning>Пешке {0} угрожает опасность в точке назначения: {1}. Продолжить перемещение?</TM_TravelSafety_Warning>
+  <TM_TravelSafety_Vacuum>вакуум</TM_TravelSafety_Vacuum>
+  <TM_TravelSafety_Cold>опасный холод</TM_TravelSafety_Cold>
+  <TM_TravelSafety_Heat>опасная жара</TM_TravelSafety_Heat>
+  <TM_TravelSafety_ShellExpiring>эфирная оболочка скоро исчезнет</TM_TravelSafety_ShellExpiring>
+  <TM_TravelSafety_Changed>Точка назначения больше не безопасна. Отдайте новый приказ на перемещение, чтобы подтвердить риск.</TM_TravelSafety_Changed>
+</LanguageData>

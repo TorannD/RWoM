@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Bridge_PsionicKineticCrucible.label>kinetic crucible</TM_Bridge_PsionicKineticCrucible.label>
+  <TM_Bridge_PsionicKineticCrucible.description>Channel for 16 seconds. Four pulses strike up to three enemies. A shared 60-point barrier guards up to three allies. Costs 60% psi energy and 30% stamina.</TM_Bridge_PsionicKineticCrucible.description>
+</LanguageData>

@@ -1,0 +1,21 @@
+<LanguageData><TM_SeverMagic.spectatorFilter.description>Зрители должны быть готовы наблюдать за происходящим.</TM_SeverMagic.spectatorFilter.description>
+	<TM_SeverMagic.roles.0.label>искатель пустоты</TM_SeverMagic.roles.0.label>
+	<TM_SeverMagic.roles.1.label>маг</TM_SeverMagic.roles.1.label>
+	<TM_SeverMagic.roles.2.label>наставление</TM_SeverMagic.roles.2.label>
+	<!-- Bestow Magic-->
+	<TM_BestowMagic.spectatorFilter.description>Зрители должны быть готовы наблюдать за происходящим.</TM_BestowMagic.spectatorFilter.description>
+	<TM_BestowMagic.roles.0.label>искатель пустоты</TM_BestowMagic.roles.0.label>
+	<TM_BestowMagic.roles.1.label>неодарённый</TM_BestowMagic.roles.1.label>
+	<TM_BestowMagic.roles.2.label>наставление</TM_BestowMagic.roles.2.label>
+	<!-- Arcane Pathway-->
+	<TM_ArcanePathway.spectatorFilter.description>Зрители должны быть готовы наблюдать за происходящим.</TM_ArcanePathway.spectatorFilter.description>
+	<TM_ArcanePathway.roles.0.label>искатель пустоты</TM_ArcanePathway.roles.0.label>
+	<TM_ArcanePathway.roles.1.label>вдохновлённый одарённый</TM_ArcanePathway.roles.1.label>
+	<TM_ArcanePathway.roles.2.label>наставление</TM_ArcanePathway.roles.2.label>
+	<TM_SeverMagic.roles.0.missingDesc>искатель пустоты</TM_SeverMagic.roles.0.missingDesc>
+	<TM_SeverMagic.roles.1.missingDesc>маг</TM_SeverMagic.roles.1.missingDesc>
+	<TM_BestowMagic.roles.0.missingDesc>искатель пустоты</TM_BestowMagic.roles.0.missingDesc>
+	<TM_BestowMagic.roles.1.missingDesc>поселенец без дара силы или магии</TM_BestowMagic.roles.1.missingDesc>
+	<TM_ArcanePathway.roles.0.missingDesc>искатель пустоты</TM_ArcanePathway.roles.0.missingDesc>
+	<TM_ArcanePathway.roles.1.missingDesc>поселенец с чертой одарённости, вдохновлённый стать одним из магических классов</TM_ArcanePathway.roles.1.missingDesc>
+</LanguageData>

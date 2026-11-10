@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Dire Wolf -->
+
+  <TM_Dire_Wolf.label>зловісний вовк</TM_Dire_Wolf.label>
+  <TM_Dire_Wolf.labelPlural>зловісні вовки</TM_Dire_Wolf.labelPlural>
+  <TM_Dire_Wolf.labelMale>самець зловісний вовк</TM_Dire_Wolf.labelMale>
+  <TM_Dire_Wolf.labelMalePlural>самеци зловісні вовки</TM_Dire_Wolf.labelMalePlural>
+  <TM_Dire_Wolf.labelFemale>самка зловісний вовк</TM_Dire_Wolf.labelFemale>
+  <TM_Dire_Wolf.labelFemalePlural>самки зловісні вовки</TM_Dire_Wolf.labelFemalePlural>
+  <TM_Dire_Wolf.lifeStages.0.label>щеня зловісного вовка</TM_Dire_Wolf.lifeStages.0.label>
+  <TM_Dire_Wolf.lifeStages.0.labelPlural>цуценята зловісного вовка</TM_Dire_Wolf.lifeStages.0.labelPlural>
+  <TM_Dire_Wolf.lifeStages.0.labelMale>самець цуценя зловісного вовка</TM_Dire_Wolf.lifeStages.0.labelMale>
+  <TM_Dire_Wolf.lifeStages.0.labelMalePlural>самеци цуценята зловісного вовка</TM_Dire_Wolf.lifeStages.0.labelMalePlural>
+  <TM_Dire_Wolf.lifeStages.0.labelFemale>самка цуценя зловісного вовка</TM_Dire_Wolf.lifeStages.0.labelFemale>
+  <TM_Dire_Wolf.lifeStages.0.labelFemalePlural>самки цуценяти зловісного вовка</TM_Dire_Wolf.lifeStages.0.labelFemalePlural>
+  <TM_Dire_Wolf.lifeStages.1.label>зловісний вовк</TM_Dire_Wolf.lifeStages.1.label>
+  <TM_Dire_Wolf.lifeStages.1.labelPlural>зловісні вовки</TM_Dire_Wolf.lifeStages.1.labelPlural>
+  <TM_Dire_Wolf.lifeStages.1.labelMale>самець зловісний вовк</TM_Dire_Wolf.lifeStages.1.labelMale>
+  <TM_Dire_Wolf.lifeStages.1.labelMalePlural>самеци зловісні вовки</TM_Dire_Wolf.lifeStages.1.labelMalePlural>
+  <TM_Dire_Wolf.lifeStages.1.labelFemale>самка зловісний вовк</TM_Dire_Wolf.lifeStages.1.labelFemale>
+  <TM_Dire_Wolf.lifeStages.1.labelFemalePlural>самки зловісні вовки</TM_Dire_Wolf.lifeStages.1.labelFemalePlural>
+  <TM_Dire_Wolf.lifeStages.2.label>зловісний вовк</TM_Dire_Wolf.lifeStages.2.label>
+  <TM_Dire_Wolf.lifeStages.2.labelPlural>зловісні вовки</TM_Dire_Wolf.lifeStages.2.labelPlural>
+  <TM_Dire_Wolf.lifeStages.2.labelMale>самець зловісний вовк</TM_Dire_Wolf.lifeStages.2.labelMale>
+  <TM_Dire_Wolf.lifeStages.2.labelMalePlural>самеци зловісні вовки</TM_Dire_Wolf.lifeStages.2.labelMalePlural>
+  <TM_Dire_Wolf.lifeStages.2.labelFemale>самка зловісний вовк</TM_Dire_Wolf.lifeStages.2.labelFemale>
+  <TM_Dire_Wolf.lifeStages.2.labelFemalePlural>самки зловісні вовки</TM_Dire_Wolf.lifeStages.2.labelFemalePlural>
+
+
+</LanguageData>

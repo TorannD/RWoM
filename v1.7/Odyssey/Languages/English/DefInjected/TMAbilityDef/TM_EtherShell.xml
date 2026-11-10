@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_EtherShell.label>Ether Shell</TM_EtherShell.label>
+  <TM_EtherShell.description>Protects the caster or an allied pawn from vacuum and extreme cold for one day. Grants full vacuum resistance, prevents vacuum burns and lowers minimum comfortable temperature by 300 C. Does not protect from bullets, fire or heat, and does not heal injuries. Cannot stack or refresh while active. Range: 12 cells. Preparation: 1 second. Cooldown: 60 seconds. Costs 25% mana before efficiency modifiers.</TM_EtherShell.description>
+</LanguageData>

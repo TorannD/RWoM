@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GuideTitle>Magic guide</TM_GuideTitle>
+  <TM_GuideRead>Read guide</TM_GuideRead>
+  <TM_GuideReadDesc>Read how to use this device. Available even before its construction research.</TM_GuideReadDesc>
+  <TM_GuideStart>Your magical ship has reached the planet surface. Its core, two thrusters and beacons support local travel; the scenario supplies a limited fuel reserve. Use the pilot console when ready. Research and build your own workshops, life support and improvements.</TM_GuideStart>
+  <TM_GuideResearch>New magical possibilities are ready. The notes below explain the relevant research and equipment.</TM_GuideResearch>
+  <TM_GuideNetwork>Magofuel and mana are separate resources. Thrusters spend magofuel; mana cannot replace it. Beacons connect nearby equipment. Configure sending and receiving separately for each resource. Crafting beacons requires both magofuel refining and electricity.</TM_GuideNetwork>
+  <TM_GuideOwnership>Research unlocks production and progression. Already obtained equipment and already learned spells remain usable.</TM_GuideOwnership>
+  <TM_GuideReread>Select a relevant magical device and choose Read guide to revisit its instructions.</TM_GuideReread>
+</LanguageData>

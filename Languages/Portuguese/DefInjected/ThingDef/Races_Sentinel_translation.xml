@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Lesser Sentinel -->
+
+  <TM_Lesser_SentinelR.label>Pequeno Sentinel</TM_Lesser_SentinelR.label>
+  <TM_Lesser_SentinelR.description>Esta pedra outrora inanimada agora protege ferozmente o seu território. Os membros que pareciam estar juntos, como a mesma pedra, agora são ágeis.</TM_Lesser_SentinelR.description>
+  <TM_Lesser_SentinelR.tools.0.label>garras</TM_Lesser_SentinelR.tools.0.label>
+  <TM_Lesser_SentinelR.tools.1.label>dentes</TM_Lesser_SentinelR.tools.1.label>
+  <TM_Lesser_SentinelR_Leather.label>Pele de pequeno sentinela</TM_Lesser_SentinelR_Leather.label>
+  <TM_Lesser_SentinelR_Leather.description>Pele de pequeno sentinela</TM_Lesser_SentinelR_Leather.description>
+  <TM_Lesser_SentinelR_Leather.stuffProps.stuffAdjective>Pele de pequeno sentinela</TM_Lesser_SentinelR_Leather.stuffProps.stuffAdjective>
+  <!-- Meat Amount: 0 -->
+  <TM_Lesser_SentinelR_Corpse.label>Pequeno Cadáver de Sentinela</TM_Lesser_SentinelR_Corpse.label>
+  <TM_Lesser_SentinelR_Corpse.description>Pequeno Cadáver de Sentinela</TM_Lesser_SentinelR_Corpse.description>
+
+
+  <!-- Sentinel -->
+
+  <TM_SentinelR.label>Sentinel</TM_SentinelR.label>
+  <TM_SentinelR.description>Esta pedra outrora inanimada agora protege ferozmente o seu território. Os membros que pareciam estar juntos, como a mesma pedra, agora são ágeis.</TM_SentinelR.description>
+  <TM_SentinelR.tools.0.label>garras</TM_SentinelR.tools.0.label>
+  <TM_SentinelR.tools.1.label>dentes</TM_SentinelR.tools.1.label>
+  <TM_SentinelR_Leather.label>Pele sentinela</TM_SentinelR_Leather.label>
+  <TM_SentinelR_Leather.description>Pele sentinela</TM_SentinelR_Leather.description>
+  <TM_SentinelR_Leather.stuffProps.stuffAdjective>Pele sentinela</TM_SentinelR_Leather.stuffProps.stuffAdjective>
+  <!-- Meat Amount: 0 -->
+  <TM_SentinelR_Corpse.label>Corpo de Sentinel</TM_SentinelR_Corpse.label>
+  <TM_SentinelR_Corpse.description>Corpo de Sentinel</TM_SentinelR_Corpse.description>
+
+
+  <!-- Greater Sentinel -->
+
+  <TM_Greater_SentinelR.label>Grande Sentinel</TM_Greater_SentinelR.label>
+  <TM_Greater_SentinelR.description>Esta pedra outrora inanimada agora protege ferozmente o seu território. Os membros que pareciam estar juntos, como a mesma pedra, agora são ágeis.</TM_Greater_SentinelR.description>
+  <TM_Greater_SentinelR.tools.0.label>garras</TM_Greater_SentinelR.tools.0.label>
+  <TM_Greater_SentinelR.tools.1.label>dentes</TM_Greater_SentinelR.tools.1.label>
+  <TM_Greater_SentinelR_Leather.label>Pele de grande sentinela</TM_Greater_SentinelR_Leather.label>
+  <TM_Greater_SentinelR_Leather.description>Pele de grande sentinela</TM_Greater_SentinelR_Leather.description>
+  <TM_Greater_SentinelR_Leather.stuffProps.stuffAdjective>Pele de grande sentinela</TM_Greater_SentinelR_Leather.stuffProps.stuffAdjective>
+  <!-- Meat Amount: 0 -->
+  <TM_Greater_SentinelR_Corpse.label>Grande Cadáver Sentinela</TM_Greater_SentinelR_Corpse.label>
+  <TM_Greater_SentinelR_Corpse.description>Grande Cadáver Sentinela</TM_Greater_SentinelR_Corpse.description>
+
+
+</LanguageData>

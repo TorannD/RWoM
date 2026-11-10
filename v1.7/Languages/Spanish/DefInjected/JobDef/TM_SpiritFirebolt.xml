@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritFirebolt.reportString>lanzando un proyectil de fuego a través del huésped.</TM_SpiritFirebolt.reportString>
+  <TM_SpiritIcebolt.reportString>lanzando un proyectil de hielo a través del huésped.</TM_SpiritIcebolt.reportString>
+  <TM_SpiritFireball.reportString>lanzando una bola de fuego a través del huésped.</TM_SpiritFireball.reportString>
+  <TM_SpiritSnowball.reportString>lanzando una bola de nieve a través del huésped.</TM_SpiritSnowball.reportString>
+  <TM_SpiritFireclaw.reportString>lanza garra de fuego a través del cuerpo del huésped.</TM_SpiritFireclaw.reportString>
+  <TM_SpiritBlizzard.reportString>invocando una ventisca a través del huésped del espíritu.</TM_SpiritBlizzard.reportString>
+  <TM_SpiritFrostRay.reportString>lanzando un rayo de escarcha a través del huésped del espíritu.</TM_SpiritFrostRay.reportString>
+  <TM_SpiritFrostRay_I.reportString>lanzando un rayo de escarcha a través del huésped del espíritu.</TM_SpiritFrostRay_I.reportString>
+  <TM_SpiritFrostRay_II.reportString>lanzando un rayo de escarcha a través del huésped del espíritu.</TM_SpiritFrostRay_II.reportString>
+  <TM_SpiritFrostRay_III.reportString>lanzando un rayo de escarcha a través del huésped del espíritu.</TM_SpiritFrostRay_III.reportString>
+  <TM_SpiritFirestorm.reportString>invocando una tormenta de fuego a través del huésped del espíritu.</TM_SpiritFirestorm.reportString>
+</LanguageData>

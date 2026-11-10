@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_HealingRainWD.label>Дощ, що зціляє</TM_HealingRainWD.label>
+  <TM_HealingRainWD.description>Ніжний дощ з цілющими властивостями. Будь - яка істота, яка зазнала впливу цілющого дощу, буде повільно відновлювати свої рани.</TM_HealingRainWD.description>
+
+  <TM_HailstormWD.label>шторм з градом</TM_HailstormWD.label>
+  <TM_HailstormWD.description>Люта злива з градом, яка накриває ділянки суші смертоносними хвилями льоду. Рух і точність сильно ускладнені.</TM_HailstormWD.description>
+
+
+</LanguageData>

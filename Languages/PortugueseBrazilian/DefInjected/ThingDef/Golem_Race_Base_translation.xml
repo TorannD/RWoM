@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- STONE GOLEM -->
+
+  <TM_StoneGolem.label>golem de pedra</TM_StoneGolem.label>
+  <TM_StoneGolem.tools.0.label>dividir</TM_StoneGolem.tools.0.label>
+  <TM_StoneGolem.tools.1.label>punho esquerdo</TM_StoneGolem.tools.1.label>
+  <TM_StoneGolem.tools.2.label>punho direito</TM_StoneGolem.tools.2.label>
+  <TM_StoneGolem.description>Um simples golem feito de pedra e animado pela magia.</TM_StoneGolem.description>
+  <TM_StoneGolem_Leather.label>pele de golem de pedra</TM_StoneGolem_Leather.label>
+  <TM_StoneGolem_Leather.description>pele de golem de pedra</TM_StoneGolem_Leather.description>
+  <TM_StoneGolem_Leather.stuffProps.stuffAdjective>pele de golem de pedra</TM_StoneGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_StoneGolem_Corpse.label>cadáver de um golem de pedra</TM_StoneGolem_Corpse.label>
+  <TM_StoneGolem_Corpse.description>cadáver de um golem de pedra</TM_StoneGolem_Corpse.description>
+
+
+  <!-- STONE GOLEM -->
+
+  <TM_SandstoneGolem.label>golem de arenito</TM_SandstoneGolem.label>
+  <TM_SandstoneGolem.tools.0.label>dividir</TM_SandstoneGolem.tools.0.label>
+  <TM_SandstoneGolem.tools.1.label>punho esquerdo</TM_SandstoneGolem.tools.1.label>
+  <TM_SandstoneGolem.tools.2.label>punho direito</TM_SandstoneGolem.tools.2.label>
+  <TM_SandstoneGolem.description>Um simples golem feito de pedra e animado pela magia.</TM_SandstoneGolem.description>
+  <TM_SandstoneGolem_Leather.label>pele golem de arenito</TM_SandstoneGolem_Leather.label>
+  <TM_SandstoneGolem_Leather.description>pele golem de arenito</TM_SandstoneGolem_Leather.description>
+  <TM_SandstoneGolem_Leather.stuffProps.stuffAdjective>pele golem de arenito</TM_SandstoneGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_SandstoneGolem_Corpse.label>cadáver de golem de arenito</TM_SandstoneGolem_Corpse.label>
+  <TM_SandstoneGolem_Corpse.description>cadáver de golem de arenito</TM_SandstoneGolem_Corpse.description>
+
+
+  <!-- STONE GOLEM -->
+
+  <TM_LimestoneGolem.label>golem de calcário</TM_LimestoneGolem.label>
+  <TM_LimestoneGolem.tools.0.label>dividir</TM_LimestoneGolem.tools.0.label>
+  <TM_LimestoneGolem.tools.1.label>punho esquerdo</TM_LimestoneGolem.tools.1.label>
+  <TM_LimestoneGolem.tools.2.label>punho direito</TM_LimestoneGolem.tools.2.label>
+  <TM_LimestoneGolem.description>Um simples golem feito de pedra e animado pela magia.</TM_LimestoneGolem.description>
+  <TM_LimestoneGolem_Leather.label>pele de golem calcário</TM_LimestoneGolem_Leather.label>
+  <TM_LimestoneGolem_Leather.description>pele de golem calcário</TM_LimestoneGolem_Leather.description>
+  <TM_LimestoneGolem_Leather.stuffProps.stuffAdjective>pele de golem calcário</TM_LimestoneGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_LimestoneGolem_Corpse.label>cadáver de um golem de calcário</TM_LimestoneGolem_Corpse.label>
+  <TM_LimestoneGolem_Corpse.description>cadáver de um golem de calcário</TM_LimestoneGolem_Corpse.description>
+
+
+  <!-- STONE GOLEM -->
+
+  <TM_GraniteGolem.label>golem de granito</TM_GraniteGolem.label>
+  <TM_GraniteGolem.tools.0.label>dividir</TM_GraniteGolem.tools.0.label>
+  <TM_GraniteGolem.tools.1.label>punho esquerdo</TM_GraniteGolem.tools.1.label>
+  <TM_GraniteGolem.tools.2.label>punho direito</TM_GraniteGolem.tools.2.label>
+  <TM_GraniteGolem.description>Um simples golem feito de pedra e animado pela magia.</TM_GraniteGolem.description>
+  <TM_GraniteGolem_Leather.label>pele de golem de granito</TM_GraniteGolem_Leather.label>
+  <TM_GraniteGolem_Leather.description>pele de golem de granito</TM_GraniteGolem_Leather.description>
+  <TM_GraniteGolem_Leather.stuffProps.stuffAdjective>pele de golem de granito</TM_GraniteGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_GraniteGolem_Corpse.label>cadáver de um golem de granito</TM_GraniteGolem_Corpse.label>
+  <TM_GraniteGolem_Corpse.description>cadáver de um golem de granito</TM_GraniteGolem_Corpse.description>
+
+
+  <!-- STONE GOLEM -->
+
+  <TM_SlateGolem.label>Nu de xisto</TM_SlateGolem.label>
+  <TM_SlateGolem.tools.0.label>dividir</TM_SlateGolem.tools.0.label>
+  <TM_SlateGolem.tools.1.label>punho esquerdo</TM_SlateGolem.tools.1.label>
+  <TM_SlateGolem.tools.2.label>punho direito</TM_SlateGolem.tools.2.label>
+  <TM_SlateGolem.description>Um simples golem feito de pedra e animado pela magia.</TM_SlateGolem.description>
+  <TM_SlateGolem_Leather.label>Pele de sífera de golem</TM_SlateGolem_Leather.label>
+  <TM_SlateGolem_Leather.description>Pele de sífera de golem</TM_SlateGolem_Leather.description>
+  <TM_SlateGolem_Leather.stuffProps.stuffAdjective>Pele de sífera de golem</TM_SlateGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_SlateGolem_Corpse.label>corpo de um golem de xisto</TM_SlateGolem_Corpse.label>
+  <TM_SlateGolem_Corpse.description>corpo de um golem de xisto</TM_SlateGolem_Corpse.description>
+
+
+  <!-- STONE GOLEM -->
+
+  <TM_MarbleGolem.label>golem de mármore</TM_MarbleGolem.label>
+  <TM_MarbleGolem.tools.0.label>dividir</TM_MarbleGolem.tools.0.label>
+  <TM_MarbleGolem.tools.1.label>punho esquerdo</TM_MarbleGolem.tools.1.label>
+  <TM_MarbleGolem.tools.2.label>punho direito</TM_MarbleGolem.tools.2.label>
+  <TM_MarbleGolem.description>Um simples golem feito de pedra e animado pela magia.</TM_MarbleGolem.description>
+  <TM_MarbleGolem_Leather.label>pele de um golem de mármore</TM_MarbleGolem_Leather.label>
+  <TM_MarbleGolem_Leather.description>pele de um golem de mármore</TM_MarbleGolem_Leather.description>
+  <TM_MarbleGolem_Leather.stuffProps.stuffAdjective>pele de um golem de mármore</TM_MarbleGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_MarbleGolem_Corpse.label>corpo de um golem de mármore</TM_MarbleGolem_Corpse.label>
+  <TM_MarbleGolem_Corpse.description>corpo de um golem de mármore</TM_MarbleGolem_Corpse.description>
+
+
+  <!-- MECHA GOLEM -->
+
+  <TM_MechaGolem.label>peles-golem</TM_MechaGolem.label>
+  <TM_MechaGolem.description>Um golem criado com material não processado e com autonomia básica graças a uma combinação de esquemas e magia.</TM_MechaGolem.description>
+  <TM_MechaGolem.tools.0.label>corpo partido</TM_MechaGolem.tools.0.label>
+  <TM_MechaGolem.tools.1.label>punho esquerdo</TM_MechaGolem.tools.1.label>
+  <TM_MechaGolem.tools.2.label>peles-machado</TM_MechaGolem.tools.2.label>
+  <TM_MechaGolem.tools.3.label>peles-espada</TM_MechaGolem.tools.3.label>
+  <TM_MechaGolem.tools.4.label>punho direito</TM_MechaGolem.tools.4.label>
+  <TM_MechaGolem.tools.5.label>peles-martelo</TM_MechaGolem.tools.5.label>
+  <!-- No Leather: Butcher Products -->
+  <TM_MechaGolem_Meat.label>carne de peles-golem</TM_MechaGolem_Meat.label>
+  <TM_MechaGolem_Meat.description>carne de peles-golem</TM_MechaGolem_Meat.description>
+  <TM_MechaGolem_Corpse.label>cadáver de peles-golem</TM_MechaGolem_Corpse.label>
+  <TM_MechaGolem_Corpse.description>cadáver de peles-golem</TM_MechaGolem_Corpse.description>
+
+
+  <!-- FLESH GOLEM -->
+
+  <TM_FleshGolem.label>golem de carne</TM_FleshGolem.label>
+  <TM_FleshGolem.description>Um golem criado com carne, ossos e órgãos de outros seres, que ganhou autonomia básica através de uma combinação de bioengenharia e magia.</TM_FleshGolem.description>
+  <TM_FleshGolem.tools.0.label>sangue</TM_FleshGolem.tools.0.label>
+  <TM_FleshGolem.tools.1.label>presas</TM_FleshGolem.tools.1.label>
+  <TM_FleshGolem.tools.2.label>punho esquerdo</TM_FleshGolem.tools.2.label>
+  <TM_FleshGolem.tools.3.label>bochecha esquerda</TM_FleshGolem.tools.3.label>
+  <TM_FleshGolem.tools.4.label>tesão esquerdo</TM_FleshGolem.tools.4.label>
+  <TM_FleshGolem.tools.5.label>punho direito</TM_FleshGolem.tools.5.label>
+  <TM_FleshGolem.tools.6.label>bochecha direita</TM_FleshGolem.tools.6.label>
+  <TM_FleshGolem.tools.7.label>tesão direito</TM_FleshGolem.tools.7.label>
+  <TM_FleshGolem_Leather.label>pele de golem em carne</TM_FleshGolem_Leather.label>
+  <TM_FleshGolem_Leather.description>pele de golem em carne</TM_FleshGolem_Leather.description>
+  <TM_FleshGolem_Leather.stuffProps.stuffAdjective>pele de golem em carne</TM_FleshGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_FleshGolem_Corpse.label>cadáver de golem de carne</TM_FleshGolem_Corpse.label>
+  <TM_FleshGolem_Corpse.description>cadáver de golem de carne</TM_FleshGolem_Corpse.description>
+
+
+  <!-- HOLLOW GOLEM -->
+
+  <TM_HollowGolem.label>vazio nu</TM_HollowGolem.label>
+  <TM_HollowGolem.description>Um golem feito de magia condensada e catalisadores secretos. A armadura que rodeia o nu cativo liga o centro mágico à localização física e protege a sua integridade física. O nu é capaz de usar grandes quantidades de energia mágica para vários fins, tornando-o um dos mais flexíveis holemas desenvolvidos até agora. O nu cinza absorve a energia mágica da atmosfera, assim como o paracito, com uma redução de maná equivalente a 10 paracitos de arbustos de ternus.</TM_HollowGolem.description>
+  <TM_HollowGolem.verbs.0.label>Energia ardente</TM_HollowGolem.verbs.0.label>
+  <TM_HollowGolem.verbs.1.label>relâmpago</TM_HollowGolem.verbs.1.label>
+  <TM_HollowGolem.verbs.2.label>fragmentos de gelo</TM_HollowGolem.verbs.2.label>
+  <TM_HollowGolem.verbs.3.label>relâmpago das trevas</TM_HollowGolem.verbs.3.label>
+  <TM_HollowGolem.tools.0.label>pata</TM_HollowGolem.tools.0.label>
+  <TM_HollowGolem.tools.1.label>toque de desintegração</TM_HollowGolem.tools.1.label>
+  <TM_HollowGolem.tools.2.label>Machado cativo</TM_HollowGolem.tools.2.label>
+  <TM_HollowGolem.tools.3.label>bastão de cavidade</TM_HollowGolem.tools.3.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_HollowGolem_Corpse.label>cadáver de um nude cativo</TM_HollowGolem_Corpse.label>
+  <TM_HollowGolem_Corpse.description>cadáver de um nude cativo</TM_HollowGolem_Corpse.description>
+
+
+  <!-- MAHARAL GOLEM -->
+
+  <TM_MaharalGolem.label>maharal golem</TM_MaharalGolem.label>
+  <TM_MaharalGolem.description>Um golem criado com uma mistura de pedra moldada envolta na pele.</TM_MaharalGolem.description>
+  <TM_MaharalGolem.tools.0.label>punho esquerdo</TM_MaharalGolem.tools.0.label>
+  <TM_MaharalGolem.tools.1.label>punho direito</TM_MaharalGolem.tools.1.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_MaharalGolem_Corpse.label>cadáver do golem maharal</TM_MaharalGolem_Corpse.label>
+  <TM_MaharalGolem_Corpse.description>cadáver do golem maharal</TM_MaharalGolem_Corpse.description>
+
+
+</LanguageData>

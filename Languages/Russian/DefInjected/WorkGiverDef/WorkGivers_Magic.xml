@@ -1,0 +1,28 @@
+<LanguageData><!-- Gemcutting-->
+	<DoBillsGemcutting.label>работа за столом для огранки драгоценных камней</DoBillsGemcutting.label>
+	<DoBillsGemcutting.verb>создание</DoBillsGemcutting.verb>
+	<DoBillsGemcutting.gerund>огранка драгоценных камней</DoBillsGemcutting.gerund>
+	<!-- Printing-->
+	<DoBillsPrintingPress.label>работа за писчим столом</DoBillsPrintingPress.label>
+	<DoBillsPrintingPress.verb>создание</DoBillsPrintingPress.verb>
+	<DoBillsPrintingPress.gerund>печать</DoBillsPrintingPress.gerund>
+	<!-- Bard Entertain-->
+	<DoEntertain.label>развлекать поселенца</DoEntertain.label>
+	<DoEntertain.verb>развлекать</DoEntertain.verb>
+	<DoEntertain.gerund>развлечение</DoEntertain.gerund>
+	<!-- Commander Motivate-->
+	<DoCommanderMotivate.label>мотивирует пешку</DoCommanderMotivate.label>
+	<DoCommanderMotivate.verb>мотивация</DoCommanderMotivate.verb>
+	<DoCommanderMotivate.gerund>мотивирование</DoCommanderMotivate.gerund>
+	<!-- Magic Work Related-->
+	<ChargeStructure.label>заряд магического объекта</ChargeStructure.label>
+	<ChargeStructure.verb>заряд магического объекта</ChargeStructure.verb>
+	<ChargeStructure.gerund>заряжание магического объекта</ChargeStructure.gerund>
+	<DoBillsArcaneForge.label>работа с магией</DoBillsArcaneForge.label>
+	<DoBillsArcaneForge.verb>работа с магией</DoBillsArcaneForge.verb>
+	<DoBillsArcaneForge.gerund>работа с магией</DoBillsArcaneForge.gerund>
+	<!-- Golem Work Related-->
+	<DoBillsGolemBuilding.label>работа над големом</DoBillsGolemBuilding.label>
+	<DoBillsGolemBuilding.verb>работа голема</DoBillsGolemBuilding.verb>
+	<DoBillsGolemBuilding.gerund>работаю над големами</DoBillsGolemBuilding.gerund>
+</LanguageData>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mecha Golem upgrade recipes -->
+
+  <TM_HollowGolem_RepairComponent.label>Відновлення деталей</TM_HollowGolem_RepairComponent.label>
+  <TM_HollowGolem_RepairComponent.description>Замінює відсутні частини голема, які не потребують оновлення.</TM_HollowGolem_RepairComponent.description>
+  <TM_HollowGolem_RepairComponent.jobString>створення частини голему</TM_HollowGolem_RepairComponent.jobString>
+
+  <TM_HollowGolem_EnergyCell.label>комірка мани</TM_HollowGolem_EnergyCell.label>
+  <TM_HollowGolem_EnergyCell.description>Створює кишеню для зберігання додаткової мани.</TM_HollowGolem_EnergyCell.description>
+  <TM_HollowGolem_EnergyCell.jobString>створення кишені</TM_HollowGolem_EnergyCell.jobString>
+
+  <TM_HollowGolem_EnergyConverter.label>перетворювач мани</TM_HollowGolem_EnergyConverter.label>
+  <TM_HollowGolem_EnergyConverter.description>Збільшує ефективність поглинання і використання мани големом на 10%.</TM_HollowGolem_EnergyConverter.description>
+  <TM_HollowGolem_EnergyConverter.jobString>створення фільтра мани</TM_HollowGolem_EnergyConverter.jobString>
+
+  <TM_HollowGolem_EnergyCharge.label>полярність мани</TM_HollowGolem_EnergyCharge.label>
+  <TM_HollowGolem_EnergyCharge.description>Збільшує швидкість регенерації мани голему на 6 на годину.</TM_HollowGolem_EnergyCharge.description>
+  <TM_HollowGolem_EnergyCharge.jobString>вирівнювання полярностей мани</TM_HollowGolem_EnergyCharge.jobString>
+
+  <TM_HollowGolem_Axe.label>Видовбана сокира</TM_HollowGolem_Axe.label>
+  <TM_HollowGolem_Axe.description>Приєднує громову сокиру до таємних кінцівок полого голему. При помаху ця сокира вивільняє хвилю таємної енергії, яка здатна пробити кількох ворогів і практично будь-яку броню.</TM_HollowGolem_Axe.description>
+  <TM_HollowGolem_Axe.jobString>виготовлення видовбаної сокири</TM_HollowGolem_Axe.jobString>
+
+  <TM_HollowGolem_Staff.label>Видовбаний Посох</TM_HollowGolem_Staff.label>
+  <TM_HollowGolem_Staff.description>Сплавляє посилаючої сили і посох захисника з порожнім големом, створюючи порожній посох. Порожній голем може використовувати цей посох для запуску магічних снарядів, не споживаючи енергії.</TM_HollowGolem_Staff.description>
+  <TM_HollowGolem_Staff.jobString>виготовлення видовбаного посоху</TM_HollowGolem_Staff.jobString>
+
+  <TM_HollowGolem_Armor.label>Видовбаний Нагрудник</TM_HollowGolem_Armor.label>
+  <TM_HollowGolem_Armor.description>Покращує броню голему:
+Тупий збиток: +21%
+Ріжучий збиток: +32%
+Температура: +14%</TM_HollowGolem_Armor.description>
+  <TM_HollowGolem_Armor.jobString>створення частини голему</TM_HollowGolem_Armor.jobString>
+
+  <TM_HollowGolem_Helm.label>Видовбаний Шолом</TM_HollowGolem_Helm.label>
+  <TM_HollowGolem_Helm.description>Збільшує броню голему, захищаючи голову:
+Тупий збиток: +22%
+Ріжучий збиток: +7%
+Температура: +9%</TM_HollowGolem_Helm.description>
+  <TM_HollowGolem_Helm.jobString>створення частини голему</TM_HollowGolem_Helm.jobString>
+
+  <TM_HollowGolem_Shoulder.label>Видовбані Наплечники</TM_HollowGolem_Shoulder.label>
+  <TM_HollowGolem_Shoulder.description>Збільшує броню голему за допомогою броні, що захищає плечі і шию:
+Тупий збиток: +8%
+Ріжучий збиток: +19%
+Температура: +6%</TM_HollowGolem_Shoulder.description>
+  <TM_HollowGolem_Shoulder.jobString>створення частини голему</TM_HollowGolem_Shoulder.jobString>
+
+  <TM_HollowGolem_Crown.label>Вінець пробудження</TM_HollowGolem_Crown.label>
+  <TM_HollowGolem_Crown.description>Оснащує полого голему Короною Пробудження, яка дозволяє йому виявляти і зводити нанівець магію інших пішаків.</TM_HollowGolem_Crown.description>
+  <TM_HollowGolem_Crown.jobString>створення частини голему</TM_HollowGolem_Crown.jobString>
+
+  <TM_HollowGolem_Cloak.label>Зникаючий плеолог</TM_HollowGolem_Cloak.label>
+  <TM_HollowGolem_Cloak.description>Оснащує полого голему Плащем Зникнення, що дозволяє йому миттєво переміщатися в інше місце.
+
+Тупий збиток: +10%
+Ріжучий збиток: +5%
+Температура: +15%
+Гармонія: +5%
+Швидкість переміщення + .4c/s
+
+Здатність: Зникнути</TM_HollowGolem_Cloak.description>
+  <TM_HollowGolem_Cloak.jobString>створення частини голему</TM_HollowGolem_Cloak.jobString>
+
+  <TM_HollowGolem_PGFire.label>Захисний камінь: Вогонь</TM_HollowGolem_PGFire.label>
+  <TM_HollowGolem_PGFire.description>Оснащує голема вогняним амулетом, який забезпечує захист від вогню. Палаюча лють знижує втрати від усіх атак на 35%, припалює рани, запобігає хитанню і спалює найближчих ворогів. Можна носити тільки один захисний камінь.
+
+Час перезарядки: 1200 секунд
+Тривалість: 100 секунд
+Витрати на енергію: 50</TM_HollowGolem_PGFire.description>
+  <TM_HollowGolem_PGFire.jobString>створення частини голему</TM_HollowGolem_PGFire.jobString>
+
+  <TM_HollowGolem_PGWater.label>Захисний камінь: Вода</TM_HollowGolem_PGWater.label>
+  <TM_HollowGolem_PGWater.description>Оснащує голема амулетом води, який дозволяє голему ухилятися від атак. Шанс ухилитися від атаки пропорційний відсотку енергії голему і зменшує енергію голему на 5 за кожне ухилення.</TM_HollowGolem_PGWater.description>
+  <TM_HollowGolem_PGWater.jobString>створення частини голему</TM_HollowGolem_PGWater.jobString>
+
+  <TM_HollowGolem_PGArcane.label>Захисний камінь: Таємний</TM_HollowGolem_PGArcane.label>
+  <TM_HollowGolem_PGArcane.description>Оснащує голема таємним амулетом, який активує здатність «Колодязь відчаю». Колодязь відчаю укладає область у зворотний щит, який пропускає снаряди всередину, але блокує їх вихід.</TM_HollowGolem_PGArcane.description>
+  <TM_HollowGolem_PGArcane.jobString>створення частини голему</TM_HollowGolem_PGArcane.jobString>
+
+  <TM_HollowGolem_PGDeath.label>Камінь захисту: Смерть</TM_HollowGolem_PGDeath.label>
+  <TM_HollowGolem_PGDeath.description>Оснащує голема амулетом смерті, який оточує голема аурою смерті. Найближчі вороги можуть бути вражені прокляттям, яке знижує їх силу волі і здатність боротися.</TM_HollowGolem_PGDeath.description>
+  <TM_HollowGolem_PGDeath.jobString>створення частини голему</TM_HollowGolem_PGDeath.jobString>
+
+  <TM_HollowGolem_PGDoom.label>Захисний камінь: Безодня Смерті</TM_HollowGolem_PGDoom.label>
+  <TM_HollowGolem_PGDoom.description>Оснащує голема амулетом безодні смерті, який уповільнює найближчих ворогів у полі, що послаблює рух. Цей ефект може спрацьовувати кожні 15 секунд і вражає ворогів у межах 30 клітин.</TM_HollowGolem_PGDoom.description>
+  <TM_HollowGolem_PGDoom.jobString>створення частини голему</TM_HollowGolem_PGDoom.jobString>
+
+  <TM_HollowGolem_FGFire.label>Фокус камінь: Вогонь</TM_HollowGolem_FGFire.label>
+  <TM_HollowGolem_FGFire.description>Прикрашає порожній голем каменем фокусування елемента вогню, що дозволяє йому використовувати здатність «квітка вогню». Вогняна квітка створює 25 вибухових блискавок і націлюється на скупчення ворогів від 6 до 50 клітин. Споживає 40 енергії. Цілі можуть загорітися. Може бути прикріплений тільки один камінь фокусу.</TM_HollowGolem_FGFire.description>
+  <TM_HollowGolem_FGFire.jobString>створення частини голему</TM_HollowGolem_FGFire.jobString>
+
+  <TM_HollowGolem_FGIce.label>Фокус камінь: Лід</TM_HollowGolem_FGIce.label>
+  <TM_HollowGolem_FGIce.description>Прикрашає порожнього голема дорогоцінним каменем, що містить елементальну воду, дозволяючи йому використовувати здатність «квітка льоду». Крижана квітка створює вибух з 20 крижаних осколків і націлюється на групу ворогів на відстані від 8 до 60 клітин. Витрати енергії 60. Осколки льоду викликають сильну кровотечу. До голему може бути прикріплений тільки один камінь фокусування.</TM_HollowGolem_FGIce.description>
+  <TM_HollowGolem_FGIce.jobString>створення частини голему</TM_HollowGolem_FGIce.jobString>
+
+  <TM_HollowGolem_FGArcane.label>Фокус камінь: Таємний</TM_HollowGolem_FGArcane.label>
+  <TM_HollowGolem_FGArcane.description>Прикрашає порожнього голема дорогоцінним каменем, що містить конденсовану таємну енергію, дозволяючи йому створювати концентрований заряд темної енергії. Darkbolt вражає ворогів на відстані до 100 клітин. Витрати енергії 80. До голему може бути прикріплений тільки один камінь фокусування.</TM_HollowGolem_FGArcane.description>
+  <TM_HollowGolem_FGArcane.jobString>створення частини голему</TM_HollowGolem_FGArcane.jobString>
+
+  <TM_HollowGolem_FGDeath.label>Фокус камінь: Смерть</TM_HollowGolem_FGDeath.label>
+  <TM_HollowGolem_FGDeath.description>Прикрашає пового голему дорогоцінним каменем, що містить сутність смерті, оточуючи голема полем, що випромінює смерть. Поле смерті періодично вражає найближчих ворогів. Ця здатність - єдиний камінь фокусу, який не потребує застосування заклинання. Вражає ворогів у межах 10 клітин від голему. Коштує 20 енергії, але отримує безкоштовний удар за будь-яку пішаку, яка вмирає в межах поля. До голему може бути прикріплений тільки один камінь фокусування.</TM_HollowGolem_FGDeath.description>
+  <TM_HollowGolem_FGDeath.jobString>створення частини голему</TM_HollowGolem_FGDeath.jobString>
+
+  <TM_HollowGolem_OrbOfExtinguishedFlames.label>Кулька згаслого полум&apos;я</TM_HollowGolem_OrbOfExtinguishedFlames.label>
+  <TM_HollowGolem_OrbOfExtinguishedFlames.description>Оснащення порожнього голему Шаром Згаслого Полум&apos;я дозволяє йому зазирнути за завісу смерті, щоб отримати знання. Окуляри в активній дослідницькій технології збільшуватимуться за кожну вбиту пішаку на карті. Куля також може бути переключена для виявлення та поглинання будь-якого вогню в межах 25 осередків і випромінює слабке сріблясте світло. Ці ефекти активні тільки тоді, коли порожній голем знаходиться в стані спокою. Полум&apos;я всепожираючої апатії і сфера гаснучого полум&apos;я не можуть використовуватися разом, ці два оновлення використовують один і той же слот для компонентів.</TM_HollowGolem_OrbOfExtinguishedFlames.description>
+  <TM_HollowGolem_OrbOfExtinguishedFlames.jobString>створення частини голему</TM_HollowGolem_OrbOfExtinguishedFlames.jobString>
+
+  <TM_HollowGolem_FlamesOfDevouringApathy.label>Полум &quot;я всепожираючої апатії</TM_HollowGolem_FlamesOfDevouringApathy.label>
+  <TM_HollowGolem_FlamesOfDevouringApathy.description>Полум&apos;я Всепожираючої Апатії наділяє полого голему здатністю регулювати температуру. Полум&apos;я також поглине будь-який бруд в межах 25 клітин і випустить слабке містичне світло. Ці ефекти активні тільки тоді, коли порожній голем знаходиться в стані спокою. Полум&apos;я всепожираючої апатії і сфера гаснучого полум&apos;я не можуть використовуватися разом, ці два оновлення використовують один і той же слот для компонентів.</TM_HollowGolem_FlamesOfDevouringApathy.description>
+  <TM_HollowGolem_FlamesOfDevouringApathy.jobString>створення частини голему</TM_HollowGolem_FlamesOfDevouringApathy.jobString>
+
+  <TM_HollowGolem_CoAFire.label>Герб: Вогонь</TM_HollowGolem_CoAFire.label>
+  <TM_HollowGolem_CoAFire.description>Наділяє пустотілого голему налаштованим на вогонь гербом, який дає наступні переваги за рівень оновлення [1/2/3]:
+Рух: +[0.2c/0.3c/0.35c]
+Теплова броня: +[30%/50%/60%]
+Обробка: +[10%/20%/30%]
+Перезарядка: -[10%/20%/30%]
+
+Крім того, дотик до розпаду завдає додаткової шкоди від опіку, і голем може поглинати прилеглий вогонь, щоб відновити здоров&apos;я.</TM_HollowGolem_CoAFire.description>
+  <TM_HollowGolem_CoAFire.jobString>створення частини голему</TM_HollowGolem_CoAFire.jobString>
+
+  <TM_HollowGolem_CoAIce.label>Герб: Вода</TM_HollowGolem_CoAIce.label>
+  <TM_HollowGolem_CoAIce.description>наділяє пустотілого голему гербом, налаштованим на воду, який забезпечує такі переваги для кожного рівня оновлення [1/2/3]:
+Броня: +[5%/10%/15%]
+Перезарядка здібностей: -[10%/20%/30%]
+Обробка: +[10%/20%/30%]
+
+Крім того, дотик до розпаду зцілює голема і одну дружню пішаку в межах 10 + 3 * клітини рівня для 10 + 4 * рівень здоров&apos;я.</TM_HollowGolem_CoAIce.description>
+  <TM_HollowGolem_CoAIce.jobString>створення частини голему</TM_HollowGolem_CoAIce.jobString>
+
+  <TM_HollowGolem_CoAArcane.label>Герб: Таємний</TM_HollowGolem_CoAArcane.label>
+  <TM_HollowGolem_CoAArcane.description>Наділяє полого голему таємним налаштованим гербом, який дає наступні переваги за рівень оновлення [1/2/3]:
+Перезарядка здібностей: -[12%/24%/36%]
+Втрата Здібності: +[10%/20%/30%]
+Обробка: +[15%/30%/45%]
+
+Крім того, дотик до руйнування відновлює 20 + 5 * енергія рівня за удар.</TM_HollowGolem_CoAArcane.description>
+  <TM_HollowGolem_CoAArcane.jobString>створення частини голему</TM_HollowGolem_CoAArcane.jobString>
+
+  <TM_HollowGolem_CoADeath.label>Герб: Смерть</TM_HollowGolem_CoADeath.label>
+  <TM_HollowGolem_CoADeath.description>Одягає пустотілого голема гербом, налаштованим на смерть, який дає такі переваги за рівень оновлення [1/2/3]:
+Броня: +[5%/10%/15%]
+Перезарядка здібностей: -[8%/16%/24%]
+Втрата Здібності: +[10%/20%/30%]
+Обробка: -[5%/10%/15%]
+
+Крім того, дотик смерті на 50% ефективніший і завдає подвійного удару.</TM_HollowGolem_CoADeath.description>
+  <TM_HollowGolem_CoADeath.jobString>створення частини голему</TM_HollowGolem_CoADeath.jobString>
+
+  <TM_HollowGolem_AffinityFire.label>Спорідненість: Вогонь</TM_HollowGolem_AffinityFire.label>
+  <TM_HollowGolem_AffinityFire.description>Посилює зв&apos;язок голему зі стихією вогню; помаранчевий колір очей. Споріднення з вогнем дає такі переваги для кожного рівня оновлення [1/2/3]:
+Рух: +[25/40/50]%
+Здоров&apos;я: +[40/60/75]%</TM_HollowGolem_AffinityFire.description>
+  <TM_HollowGolem_AffinityFire.jobString>застосування елементної спорідненості</TM_HollowGolem_AffinityFire.jobString>
+
+  <TM_HollowGolem_AffinityIce.label>Спорідненість: Вода</TM_HollowGolem_AffinityIce.label>
+  <TM_HollowGolem_AffinityIce.description>Посилює зв&apos;язок голему зі стихією води; світло-блакитний колір очей. Споріднення з водою забезпечує такі переваги для кожного рівня оновлення [1/2/3]
+Рух: +[20/30/35]%
+Здоров&apos;я: +[50/75/90]%</TM_HollowGolem_AffinityIce.description>
+  <TM_HollowGolem_AffinityIce.jobString>застосування елементної спорідненості</TM_HollowGolem_AffinityIce.jobString>
+
+  <TM_HollowGolem_AffinityArcane.label>Спорідненість: Таємне</TM_HollowGolem_AffinityArcane.label>
+  <TM_HollowGolem_AffinityArcane.description>Підсилює магічне вирівнювання голему; пурпуровий колір очей. Таємна спорідненість забезпечує такі переваги для кожного рівня оновлення [1/2/3]
+Рух: +[15/25/30]%
+Здоров&apos;я: +[55/85/100]%</TM_HollowGolem_AffinityArcane.description>
+  <TM_HollowGolem_AffinityArcane.jobString>застосування елементної спорідненості</TM_HollowGolem_AffinityArcane.jobString>
+
+  <TM_HollowGolem_AffinityDeath.label>Спорідненість: Смерть</TM_HollowGolem_AffinityDeath.label>
+  <TM_HollowGolem_AffinityDeath.description>Посилює зв&apos;язок голему з магією смерті; зелений колір очей. Споріднення зі смертю дає такі переваги для кожного рівня оновлення [1/2/3]
+Рух: +[15.10.2010]%
+Здоров&apos;я: +[65/90/110]%</TM_HollowGolem_AffinityDeath.description>
+  <TM_HollowGolem_AffinityDeath.jobString>виготовлення оновлення голему</TM_HollowGolem_AffinityDeath.jobString>
+
+
+</LanguageData>

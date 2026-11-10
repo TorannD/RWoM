@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_EtherGate.label>portal etéreo</TM_EtherGate.label>
+  <TM_EtherGate.description>Invoca um servo etéreo amigável por 100 de combustível arcano. Transporta objetos durante um dia sem comida, sono ou ar. O portal recebe combustível arcano através de faróis de mana e também pode ser abastecido manualmente. Não precisa de eletricidade. Quando o prazo termina, o servo deixa a carga e desaparece sem saque. Se morrer, deixa a carga e 5 de magicita, mas nenhum cadáver. Destruir o portal não afeta os servos já invocados. Também minera com perícia inicial de Mineração 10 e constrói com perícia inicial de Construção 5. Prioridade: construção, mineração designada e transporte. Flutua pelo espaço aberto entre plataformas à velocidade normal, mas não atravessa paredes.</TM_EtherGate.description>
+  <TM_EtherServant.label>servo etéreo</TM_EtherServant.label>
+  <TM_EtherServant.description>Um espírito amigável invocado por um portal etéreo para transportar objetos durante um dia. Não precisa de comida, sono ou ar. Quando o prazo termina, deixa a carga e desaparece. Se morrer, deixa a carga e 5 de magicita em vez de um cadáver. Também minera com perícia inicial de Mineração 10 e constrói com perícia inicial de Construção 5. Prioridade: construção, mineração designada e transporte. Flutua pelo espaço aberto entre plataformas à velocidade normal, mas não atravessa paredes.</TM_EtherServant.description>
+</LanguageData>

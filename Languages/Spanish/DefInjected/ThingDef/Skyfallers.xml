@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_ActiveLightPod.label>cápsula de luz activa</TM_ActiveLightPod.label>
+  
+  
+  <TM_ArrowStorm.label>lluvia de flechas</TM_ArrowStorm.label>
+  
+  
+  <TM_Blizzard_Large.label>Ventisca (grande)</TM_Blizzard_Large.label>
+  
+  
+  <TM_Blizzard_Small.label>ventisca (pequeña)</TM_Blizzard_Small.label>
+  
+  
+  <TM_Blizzard_Tiny.label>ventisca (diminuta)</TM_Blizzard_Tiny.label>
+  
+  
+  <TM_Firestorm_Large.label>tormenta de fuego (grande)</TM_Firestorm_Large.label>
+  
+  
+  <TM_Firestorm_Small.label>tormenta de fuego (pequeña)</TM_Firestorm_Small.label>
+  
+  
+  <TM_Firestorm_Tiny.label>tormenta de fuego (diminuta)</TM_Firestorm_Tiny.label>
+  
+  
+  <TM_Hail.label>granizo</TM_Hail.label>
+  
+  
+  <TM_LightPodIncoming.label>haz de luz (entrante)</TM_LightPodIncoming.label>
+  
+  
+  <TM_LightPodLeaving.label>haz de luz (saliente)</TM_LightPodLeaving.label>
+  
+  
+  <TM_Meteorite.label>meteorito</TM_Meteorite.label>
+  
+  
+  <TM_Meteorite_I.label>meteorito I</TM_Meteorite_I.label>
+  
+  
+  <TM_Meteorite_II.label>meteorito II</TM_Meteorite_II.label>
+  
+  
+  <TM_Meteorite_III.label>meteorito III</TM_Meteorite_III.label>
+  
+  
+  <TM_ScornIncoming.label>desdén entrante</TM_ScornIncoming.label>
+  
+  
+  <TM_ScornLeaving.label>desdén saliente</TM_ScornLeaving.label>
+
+  
+</LanguageData>

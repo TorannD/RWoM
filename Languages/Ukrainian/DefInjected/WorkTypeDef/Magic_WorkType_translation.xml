@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Magic.label>Магія</TM_Magic.label>
+  <TM_Magic.labelShort>Магія</TM_Magic.labelShort>
+  <TM_Magic.pawnLabel>Магія</TM_Magic.pawnLabel>
+  <TM_Magic.gerundLabel>Магічні маніпуляції</TM_Magic.gerundLabel>
+  <TM_Magic.description>Виконуйте таємні та магічно-залежні завдання</TM_Magic.description>
+  <TM_Magic.verb>Здійснює магію</TM_Magic.verb>
+
+
+</LanguageData>

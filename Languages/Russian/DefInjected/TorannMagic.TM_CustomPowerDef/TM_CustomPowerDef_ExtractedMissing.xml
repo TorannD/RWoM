@@ -1,0 +1,77 @@
+<LanguageData>
+	<TM_Taunt.customPower.skills.0.description>Увеличивает вероятность успеха насмешки и максимальное количество целей.
+Уровень 0: 60%, максимум 5 целей
+Уровень 1: 65%, максимум 6 целей
+Уровень 2: 70%, максимум 7 целей
+Уровень 3: 75%, максимум 8 целей</TM_Taunt.customPower.skills.0.description>
+	<TM_Taunt.customPower.skills.1.description>Снижает затраты энергии на 10% за уровень навыка.</TM_Taunt.customPower.skills.1.description>
+	<TM_Taunt.customPower.skills.2.description>Увеличивает радиус насмешки на 2 ячейки; по умолчанию - 15 ячеек.</TM_Taunt.customPower.skills.2.description>
+	<TM_Explosion.customPower.skills.0.description>Увеличивает урон от взрыва на 2% за уровень навыка.</TM_Explosion.customPower.skills.0.description>
+	<TM_Explosion.customPower.skills.1.description>Снижает затраты энергии на взрыв на 1% за уровень навыка.</TM_Explosion.customPower.skills.1.description>
+	<TM_Explosion.customPower.skills.2.description>Уменьшает время, необходимое для активации Взрыва, на 1% и увеличивает радиус взрыва на 1 ячейку на уровнях 10/20/30; по умолчанию 12 ячеек.</TM_Explosion.customPower.skills.2.description>
+	<TM_MedicalSupply.customPower.skills.0.description>Увеличивает максимальное количество медикаментов, переносимых на 10 за уровень навыка.</TM_MedicalSupply.customPower.skills.0.description>
+	<TM_Medigel.customPower.skills.0.description>Снижает затраты энергии на Медигель на 5% за уровень навыка.</TM_Medigel.customPower.skills.0.description>
+	<TM_CombatDrugs.customPower.skills.0.description>Увеличивает количество применяемых эффектов:
+Эффект уровня 0: 1
+Уровень 1: 2 эффекта
+Уровень 2: 3 эффекта
+Уровень 3: все 4 эффекта</TM_CombatDrugs.customPower.skills.0.description>
+	<TM_CombatDrugs.customPower.skills.1.description>Длится 120 секунд плюс 20 секунд за уровень навыка.</TM_CombatDrugs.customPower.skills.1.description>
+	<TM_ShieldOther.customPower.skills.0.description>Снижает затраты маны на щит на 8% от базовой стоимости.</TM_ShieldOther.customPower.skills.0.description>
+	<TM_Discord.customPower.skills.0.description>Усиливает сенсорную перегрузку, постепенно подтачивая психическую устойчивость цели.</TM_Discord.customPower.skills.0.description>
+	<TM_Empathy.customPower.skills.0.description>Увеличивает силу воли эмпата, уменьшая восприимчивость к поддаванию своим эмоциям и увеличивая вероятность передачи положительных эмоций.
+Сопротивление ментальному разрыву: [0,5,9,12,13,15]%
+Шанс положительной вибрации: [5,10,15,20,25]%</TM_Empathy.customPower.skills.0.description>
+	<TM_Empathy.customPower.skills.1.description>Увеличивает проникновение заклинаний для всех способностей на 5% за уровень навыка.</TM_Empathy.customPower.skills.1.description>
+	<TM_Empathy.customPower.skills.2.description>Увеличивает диапазон эмпатии на 3с и частоту эмоциональных вибраций на 2с за уровень навыка. Частота по умолчанию - один раз в 21 секунду.</TM_Empathy.customPower.skills.2.description>
+	<TM_MindKiller.customPower.skills.0.description>Увеличивает максимальное количество целей на 2 и общую силу эффектов на 20% за уровень навыка. При рангах 1+ дружественные пешки не будут затронуты. Максимальная базовая цель - 8.</TM_MindKiller.customPower.skills.0.description>
+	<TM_MindKiller.customPower.skills.1.description>Увеличивает радиус действия и шансы на успех:
+Радиус: [15,17,19,21]c
+Шанс: [50,60,70,80]%</TM_MindKiller.customPower.skills.1.description>
+	<TM_MindKiller.customPower.skills.2.description>Уменьшает количество настроения, потребляемого для активации, на 5% за уровень навыка.</TM_MindKiller.customPower.skills.2.description>
+	<TM_SuppressiveAura.customPower.skills.0.description>Увеличивает продолжительность подавления эмоций на 20% и шанс разрешить положительные эмоции на 10% за уровень навыка.</TM_SuppressiveAura.customPower.skills.0.description>
+	<TM_SuppressiveAura.customPower.skills.1.description>Передаёт затронутым целям ощущения радости и комфорта; каждый уровень навыка усиливает передаваемый эффект.</TM_SuppressiveAura.customPower.skills.1.description>
+	<TM_SuppressiveAura.customPower.skills.2.description>Увеличивает радиус подавляющей ауры на 15% за уровень навыка; на уровне 3 эффекты распространяются на всех членов каравана.</TM_SuppressiveAura.customPower.skills.2.description>
+	<TM_HarvestPassion.customPower.skills.0.description>Увеличивает шанс получить страсть на 6%, как только радость цели будет исчерпана. Базовый шанс составляет 30% каждые 1 секунду. Также увеличивает шанс собрать дополнительные страсти (если это возможно) на 20% за уровень навыка, базовый шанс на 30%. Попытка закончится, как только радость заклинателей будет исчерпана.</TM_HarvestPassion.customPower.skills.0.description>
+	<TM_HarvestPassion.customPower.skills.1.description>Увеличивает шанс получить прилив вдохновения на 1%. Базовый шанс составляет 2% каждый игровой час.</TM_HarvestPassion.customPower.skills.1.description>
+	<TM_HarvestPassion.customPower.skills.2.description>Уменьшает количество радости заклинателя, истощаемой за итерацию, на 20% за уровень навыка и увеличивает количество радости цели, истощаемой за итерацию, на 15% за уровень навыка.</TM_HarvestPassion.customPower.skills.2.description>
+	<TM_Symbiosis.customPower.skills.0.description>Увеличивает сознание пешки-хозяина для каждого уровня мастерства.
+Уровень 0: +70%
+Уровень 1: +100%
+Уровень 2: +125%
+Уровень 3: +150%</TM_Symbiosis.customPower.skills.0.description>
+	<TM_Symbiosis.customPower.skills.1.description>Снижает затраты на начало симбиоза на 35%.</TM_Symbiosis.customPower.skills.1.description>
+	<TM_Symbiosis.customPower.skills.2.description>Увеличивает защитную оболочку, окружающую хозяина, и уменьшает процент поглощенного урона, наносимого телу симбионта.
+Уровень 0: поглощено 25%, передано 100%
+Уровень 1: поглощено 30%, передано 80%
+Уровень 2: 35% поглощено, 60% передано
+Уровень 3: 40% поглощено, 50% передано</TM_Symbiosis.customPower.skills.2.description>
+	<TM_FireSuppressionFlask.customPower.skills.0.description>Уменьшает количество ингредиентов, необходимых для создания колбы с ядом, на 15% за уровень навыка.</TM_FireSuppressionFlask.customPower.skills.0.description>
+	<TM_SpiritPossession.customPower.skills.0.description>Повышает психическую чувствительность и сознание в форме духа, а также увеличивает количество энергии, получаемой при касании духа, на 10% за уровень:
+Чувствительность: +[40%, 65%, 85%, 100%]
+Сознание: +[0%, 15%, 25%, 40%]</TM_SpiritPossession.customPower.skills.0.description>
+	<TM_SpiritPossession.customPower.skills.1.description>Снижает стоимость владения духом на 15 % за каждый уровень навыка, повышает совместимость при владении оккупированным телом.</TM_SpiritPossession.customPower.skills.1.description>
+	<TM_SpiritPossession.customPower.skills.2.description>Снижает вероятность сопротивления одержимости духом на 20% и максимальное значение духа на 15 за уровень навыка.</TM_SpiritPossession.customPower.skills.2.description>
+	<TM_SpiritDrain.customPower.skills.0.description>Увеличивает количество высасывания духа, применяемого к врагам, и уменьшает количество, применяемое к союзникам, на 15% за уровень навыка.</TM_SpiritDrain.customPower.skills.0.description>
+	<TM_SpiritDrain.customPower.skills.1.description>Увеличивает количество энергии духа, получаемой из любого источника, на 10 % за каждый уровень навыка.</TM_SpiritDrain.customPower.skills.1.description>
+	<TM_SpiritDrain.customPower.skills.2.description>Уменьшает продолжительность иссушения духа на 15% за уровень навыка; количество примененного высасывания духа и поглощенной энергии духа остается прежним.</TM_SpiritDrain.customPower.skills.2.description>
+	<TM_DistortSpirit.customPower.skills.0.description>Увеличивает урон, который искажённая цель получает, на 5% за каждый уровень навыка.</TM_DistortSpirit.customPower.skills.0.description>
+	<TM_DistortSpirit.customPower.skills.1.description>Снижает энергию духа, необходимую для произнесения искажения духа, на 10 % и увеличивает максимальное количество пораженных целей на 1 за уровень навыка. Базовый максимум — 5 целей.</TM_DistortSpirit.customPower.skills.1.description>
+	<TM_DistortSpirit.customPower.skills.2.description>Искажение духа также применяет небольшое количество высасывания духа на уровне навыка 1. На уровнях навыка 2 и 3 количество высасывания духа увеличивается, и заклинатель будет поглощать энергию духа. Обучение этому навыку стоит 2 очка.</TM_DistortSpirit.customPower.skills.2.description>
+	<TM_SummonSpiritAnimalMass.customPower.skills.0.description>Призванные животные-призраки получают усиление с каждым уровнем навыка.</TM_SummonSpiritAnimalMass.customPower.skills.0.description>
+	<TM_SummonSpiritAnimalMass.customPower.skills.1.description>Снижает требуемую духовную энергию на 10 % за каждый уровень навыка.</TM_SummonSpiritAnimalMass.customPower.skills.1.description>
+	<TM_SummonSpiritAnimalMass.customPower.skills.2.description>Увеличивает продолжительность жизни животных-призраков на 5 с за уровень навыка. Базовая продолжительность 20 секунд.</TM_SummonSpiritAnimalMass.customPower.skills.2.description>
+	<TM_SpiritRally.customPower.skills.0.description>Увеличивает максимальное количество призываемых духов-союзников на 2 на каждый уровень навыка и уменьшает штрафы за призыв. Базовый максимум 7.</TM_SpiritRally.customPower.skills.0.description>
+	<TM_SpiritRally.customPower.skills.1.description>Снижает затраты энергии духа на 12 % за каждый уровень навыка.</TM_SpiritRally.customPower.skills.1.description>
+	<TM_SpiritRally.customPower.skills.2.description>Увеличивает радиус и продолжительность восстановления духа:
+Уровень 0: 8с, 15с
+Уровень 1: 10с, 18с
+Уровень 2: 12с, 21с
+Уровень 3: 14с, 24с</TM_SpiritRally.customPower.skills.2.description>
+	<TM_SpiritStorm.customPower.skills.0.description>Увеличивает урон, наносимый Духовной бурей, на 12 % за каждый уровень навыка.</TM_SpiritStorm.customPower.skills.0.description>
+	<TM_SpiritStorm.customPower.skills.1.description>Снижает затраты духовной энергии на создание духовной бури на 10 % за каждый уровень навыка.</TM_SpiritStorm.customPower.skills.1.description>
+	<TM_SpiritStorm.customPower.skills.2.description>Увеличивает радиус духовной бури на 1 клетку за каждый уровень навыка. Базовый радиус: 4 клетки.</TM_SpiritStorm.customPower.skills.2.description>
+	<TM_ConsumeCorpse_Mass.customPower.skills.0.description>Увеличивает Ману, восстановленную потребляемым трупом, на 7% за уровень навыка.</TM_ConsumeCorpse_Mass.customPower.skills.0.description>
+	<TM_ConsumeCorpse_Mass.customPower.skills.1.description>Употребление трупа также исцеляет физические раны заклинателя.
+Количество здоровья варьируется в зависимости от типа (человека или животного) и свежести потребляемого трупа или нежити.</TM_ConsumeCorpse_Mass.customPower.skills.1.description>
+</LanguageData>

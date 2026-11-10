@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Speech_SeverMagic.label>separação do fluxo mágico</TM_Speech_SeverMagic.label>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.0>r_logentry-&gt;[INITIATOR_nameDef] [praised] [doing] [speechtopic].</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.0>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.1>r_logentry(p=0.2)-&gt;[INITIATOR_nameDef] [crazy].</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.1>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.2>speechtopic- &gt; magia</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.2>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.3>speechtopic- &gt; mundo através da força</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.3>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.4>speechtopic- &gt; magos</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.4>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.5>speechtopic- &gt; caos</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.5>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.6>speechtopic- &gt; tentação pelo poder</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.6>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.7>speechtopic- &gt; magia e mágicos</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.7>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.8>speechtopic- &gt; tentação de magia</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.8>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.9>speechtopic- &gt; câncer biogenético itinerante</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.9>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.10>crazy- &gt; grita loucamente</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.10>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.11>crazy- &gt; estourou cantando</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.11>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.12>crazy- &gt; cantado aos céus</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.12>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.13>crazy- &gt; cuspiu um mago no olho</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.13>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.14>crazy- &gt; riu</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.14>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.15>crazy- &gt; mexeu com uma lâmina</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.15>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.16>crazy- &gt; murmurava a mesma coisa</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.16>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.17>crazy- &gt; gritar com a chamada</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.17>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.18>crazy- &gt; flutuante</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.18>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.19>doing- &gt; controla</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.19>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.20>doing- &gt; equilíbrio</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.20>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.21>doing- &gt; Doing</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.21>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.22>doing- &gt; elimina tentações</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.22>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.23>doing- &gt; manipula</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.23>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.24>doing- &gt; libera</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.24>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.25>doing- &gt; firme contra</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.25>
+  <TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.26>doing- &gt; rejeita</TM_Speech_SeverMagic.logRulesInitiator.rulesStrings.26>
+
+  <TM_Speech_BestowMagic.label>dom de fluxo mágico</TM_Speech_BestowMagic.label>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.0>r_logentry-&gt;[INITIATOR_nameDef] [praised] [doing] [speechtopic].</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.0>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.1>r_logentry(p=0.2)-&gt;[INITIATOR_nameDef] [crazy].</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.1>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.2>speechtopic- &gt; magia</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.2>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.3>speechtopic- &gt; mundo através da força</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.3>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.4>speechtopic- &gt; magos</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.4>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.5>speechtopic- &gt; ordem</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.5>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.6>speechtopic- &gt; força para proteger</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.6>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.7>speechtopic- &gt; magia e mágicos</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.7>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.8>speechtopic- &gt; bênçãos da magia</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.8>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.9>speechtopic- &gt; próxima etapa na evolução humana</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.9>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.10>crazy- &gt; vitorioso</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.10>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.11>crazy- &gt; estourou cantando</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.11>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.12>crazy- &gt; cantado aos céus</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.12>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.13>crazy- &gt; colocou a mão sobre o maga</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.13>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.14>crazy- &gt; sorri heroicamente</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.14>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.15>crazy- &gt; agitou o bastão</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.15>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.16>crazy- &gt; engordou o mantra</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.16>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.17>crazy- &gt; ofereceu a bênção</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.17>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.18>crazy- &gt; puxou-se para os céus</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.18>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.19>doing- &gt; realização</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.19>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.20>doing- &gt; treinamento</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.20>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.21>doing- &gt; compreensivo</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.21>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.22>doing- &gt; usa</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.22>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.23>doing- &gt; protege</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.23>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.24>doing- &gt; libera</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.24>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.25>doing- &gt; ajuda</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.25>
+  <TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.26>doing- &gt; recebe</TM_Speech_BestowMagic.logRulesInitiator.rulesStrings.26>
+
+
+</LanguageData>

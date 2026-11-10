@@ -1,4 +1,5 @@
-﻿using RimWorld;
+using System;
+using RimWorld;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,6 +48,7 @@ namespace TorannMagic
         public int ticksUntilBaseSet = 500;
 
         private int lastGainTick;
+        private int lastSpiritIntervalTick = -1;
 
         public float paracyteCountReduction = 0;
         private int lastParacyteCheck = 0;
@@ -56,15 +58,35 @@ namespace TorannMagic
         public override float CurLevel
         {            
             get => curLevelInt;
-            set => curLevelInt = Mathf.Clamp(value, 0f, 2f*this.pawn.GetCompAbilityUserMagic().maxMP);            
+            set
+            {
+                // the comp is added to pawns at runtime — early need construction
+                // can outrun it, and a null here would throw from the clamp
+                CompAbilityUserMagic comp = this.pawn?.GetCompAbilityUserMagic();
+                float max = comp != null ? 2f * comp.maxMP : 2f;
+                curLevelInt = Mathf.Clamp(value, 0f, max);
+            }
         }
 
-        public override float MaxLevel => this.pawn.ageTracker.AgeBiologicalYears < 13 ? this.pawn.GetCompAbilityUserMagic().maxMP - ((12f - this.pawn.ageTracker.AgeBiologicalYearsFloat) / 12f) : this.pawn.GetCompAbilityUserMagic().maxMP;
+        public override float MaxLevel
+        {
+            get
+            {
+                CompAbilityUserMagic comp = this.pawn?.GetCompAbilityUserMagic();
+                float maxMP = comp != null ? comp.maxMP : 1f;
+                if (this.pawn.ageTracker.AgeBiologicalYears < 13)
+                {
+                    maxMP -= (12f - this.pawn.ageTracker.AgeBiologicalYearsFloat) / 12f;
+                }
+                return maxMP;
+            }
+        }
 
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref curLevelInt, "curLevelInt", 1f);
+            Scribe_Values.Look(ref lastSpiritIntervalTick, "TM_spiritIntervalTick", -1);
         }
 
         public ManaPoolCategory CurCategory
@@ -190,22 +212,26 @@ namespace TorannMagic
             }
         }
 
+        // Need's constructor calls SetInitialLevel before the tracker assigns def.
+        // Visibility belongs to this pawn, never to the shared NeedDef.
+        public override bool ShowOnNeedList => base.ShowOnNeedList &&
+            !(this.pawn.story?.traits?.HasTrait(TorannMagicDefOf.Faceless) ?? false);
+
         public override void SetInitialLevel()
         {
-            if(this.pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            {
-                this.def.showOnNeedList = false;
-            }
             this.CurLevel = 0.8f;
         }
 
         public void GainNeed(float amount)
         {            
-            if (!base.pawn.DestroyedOrNull() && !base.pawn.Dead && base.pawn.story != null && base.pawn.story.traits != null && !base.pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            bool spiritOwner = ClassProgression.SpiritRebirthBody.RetainsNeeds(base.pawn);
+            if (ClassProgression.SpiritRebirthEnergy.Marked(base.pawn) && !spiritOwner) return;
+            if (!base.pawn.DestroyedOrNull() && !base.pawn.Dead && base.pawn.story != null && base.pawn.story.traits != null && (spiritOwner || !base.pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless)))
             {                
                 Pawn pawn = base.pawn;
                 CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                if (comp != null && comp.MagicData != null && comp.IsMagicUser && pawn.Faction != null)
+                if (spiritOwner && comp?.ExistingMagicData == null) return;
+                if (comp != null && (spiritOwner ? comp.ExistingMagicData != null : comp.MagicData != null) && (spiritOwner || comp.IsMagicUser) && pawn.Faction != null)
                 {                    
                     if (!pawn.Faction.IsPlayer && pawn.Map != null)
                     {
@@ -216,7 +242,7 @@ namespace TorannMagic
                     else
                     {
                                                 
-                        MagicPowerSkill manaRegen = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr");
+                        int manaRegen = spiritOwner ? ClassProgression.SpiritRebirthRuntime.SavedRank(comp.MagicData, "TM_global_regen_pwr") : pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_global_regen.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_global_regen_pwr").level;
                         this.baseManaGain = (amount * (0.0012f) * ModOptions.Settings.Instance.needMultiplier);
                         amount *= (((0.0012f * comp.mpRegenRate)) * ModOptions.Settings.Instance.needMultiplier);
                         this.modifiedManaGain = amount - this.baseManaGain;
@@ -225,7 +251,7 @@ namespace TorannMagic
                         {
                             if(comp.BrandPawns != null && comp.BrandPawns.Count > 0)
                             {
-                                drainSigils = comp.BrandPawns.Count * (TorannMagicDefOf.TM_Branding.upkeepRegenCost * (1f - (TorannMagicDefOf.TM_Branding.upkeepEfficiencyPercent * comp.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_Branding).level)));
+                                drainSigils = comp.BrandPawns.Count * (TorannMagicDefOf.TM_Branding.upkeepRegenCost * (1f - (TorannMagicDefOf.TM_Branding.upkeepEfficiencyPercent * (spiritOwner ? ClassProgression.SpiritRebirthRuntime.SavedRank(comp.MagicData, TorannMagicDefOf.TM_Branding, "_eff") : comp.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_Branding).level))));
                                 if(comp.sigilSurging)
                                 {
                                     drainSigils *= 3f;
@@ -359,8 +385,8 @@ namespace TorannMagic
                         //Summoned minion modifier
                         if (comp.summonedMinions.Count > 0)
                         {
-                            MagicPowerSkill summonerEff = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonMinion_eff");
-                            this.drainMinion = (0.0012f * (comp.summonedMinions.Count * (.2f - (.01f * summonerEff.level))));
+                            int summonerEff = spiritOwner ? ClassProgression.SpiritRebirthRuntime.SavedRank(comp.MagicData, "TM_SummonMinion_eff") : pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonMinion_eff").level;
+                            this.drainMinion = (0.0012f * (comp.summonedMinions.Count * (.2f - (.01f * summonerEff))));
                             amount -= this.drainMinion;
                         }
                         else
@@ -371,8 +397,8 @@ namespace TorannMagic
                         //Earth sprite modifier
                         if(comp.earthSpriteType != 0)
                         {
-                            MagicPowerSkill manaDeviant = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthSprites_ver");
-                            this.drainSprites = (0.0012f * (.6f - (.07f * manaDeviant.level)));
+                            int manaDeviant = spiritOwner ? ClassProgression.SpiritRebirthRuntime.SavedRank(comp.MagicData, "TM_EarthSprites_ver") : pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_EarthSprites.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_EarthSprites_ver").level;
+                            this.drainSprites = (0.0012f * (.6f - (.07f * manaDeviant)));
                             amount -= this.drainSprites;
                         }
                         else
@@ -427,7 +453,7 @@ namespace TorannMagic
                                     }
                                 }
                             }                            
-                            MagicPowerSkill eff = comp.MagicData.MagicPowerSkill_RaiseUndead.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RaiseUndead_eff");
+                            int eff = spiritOwner ? ClassProgression.SpiritRebirthRuntime.SavedRank(comp.MagicData, "TM_RaiseUndead_eff") : comp.MagicData.MagicPowerSkill_RaiseUndead.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_RaiseUndead_eff").level;
                             if (comp.Mana != null && comp.Mana.CurLevel < 0.01f)
                             {
                                 if (orbEnergy > 0)
@@ -466,7 +492,7 @@ namespace TorannMagic
                                         }
                                         current.Destroy();
                                         undeadCount--;
-                                        this.curLevelInt = .12f + (.025f * manaRegen.level);
+                                        this.curLevelInt = .12f + (.025f * manaRegen);
                                     }                                    
                                 }
                             }
@@ -494,7 +520,7 @@ namespace TorannMagic
                                 shroudMultiplier = 1f - hd.Severity;
                             }
                             
-                            necroReduction = (((0.0012f * (.15f - (.15f * (.1f * eff.level))) * undeadCount) * orbReduction) * ModOptions.Settings.Instance.undeadUpkeepMultiplier * shroudMultiplier);
+                            necroReduction = (((0.0012f * (.15f - (.15f * (.1f * eff))) * undeadCount) * orbReduction) * ModOptions.Settings.Instance.undeadUpkeepMultiplier * shroudMultiplier);
                             this.drainUndead = necroReduction;
                             amount -= necroReduction;
                             //Log.Message("" + pawn.LabelShort + " is 1 of " + necroCount + " contributing necros and had necro reduction of " + necroReduction);
@@ -505,7 +531,7 @@ namespace TorannMagic
                             this.drainUndead = 0;
                         }
 
-                        if (this.CurLevel < .01f && amount < 0 && pawn.Map != null && pawn.Spawned)
+                        if (!spiritOwner && this.CurLevel < .01f && amount < 0 && pawn.Map != null && pawn.Spawned)
                         {
                             float pain = pawn.health.hediffSet.PainTotal;
                             float con = pawn.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness);
@@ -526,7 +552,7 @@ namespace TorannMagic
 
                         this.lastGainPct = amount;
 
-                        if (comp.Mana.CurLevel < MaxLevel)
+                        if (comp.Mana.CurLevel < MaxLevel || (spiritOwner && amount < 0f))
                         {
                             comp.Mana.CurLevel = Mathf.Max(comp.Mana.CurLevel + amount, 0f);
                         }
@@ -636,6 +662,13 @@ namespace TorannMagic
 
         public override void NeedInterval()
         {
+            if (ClassProgression.SpiritRebirthEnergy.Marked(pawn))
+            {
+                if (!ClassProgression.SpiritRebirthBody.RetainsNeeds(pawn)) return;
+                int now = Find.TickManager.TicksGame;
+                if (lastSpiritIntervalTick >= 0 && now - lastSpiritIntervalTick < 150) return;
+                lastSpiritIntervalTick = now;
+            }
             this.GainNeed(1f);
         }
 

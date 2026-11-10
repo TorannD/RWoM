@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- demon special attack manuevers -->
+
+  <TM_DemonR.label>Фонова служба</TM_DemonR.label>
+  <TM_DemonR.description>Звільнений з преисподней, цей демон обрушить свою нічим не стримувану злобу на будь-яку істоту на своєму шляху. Немає ніякого розуму і шансу підпорядкувати демона; знищте його або будете знищені.</TM_DemonR.description>
+  <TM_DemonR.tools.0.label>ліва лапа</TM_DemonR.tools.0.label>
+  <TM_DemonR.tools.1.label>права лапа</TM_DemonR.tools.1.label>
+  <TM_DemonR.tools.2.label>копита</TM_DemonR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_DemonR_Corpse.label>Труп демона</TM_DemonR_Corpse.label>
+  <TM_DemonR_Corpse.description>Труп демона</TM_DemonR_Corpse.description>
+
+
+  <!-- demon special attack manuevers -->
+
+  <TM_LesserDemonR.label>Менший Демон</TM_LesserDemonR.label>
+  <TM_LesserDemonR.description>Випущений з преисподней, цей нижчий демон обрушить свою нічим не стримувану злобу на всі без винятку істоти на своєму шляху. Немає ніякого міркування або підпорядкування демона; знищте його або будьте знищені.</TM_LesserDemonR.description>
+  <TM_LesserDemonR.tools.0.label>ліва лапа</TM_LesserDemonR.tools.0.label>
+  <TM_LesserDemonR.tools.1.label>права лапа</TM_LesserDemonR.tools.1.label>
+  <TM_LesserDemonR.tools.2.label>копита</TM_LesserDemonR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserDemonR_Corpse.label>Труп Меншого Демона</TM_LesserDemonR_Corpse.label>
+  <TM_LesserDemonR_Corpse.description>Труп Меншого Демона</TM_LesserDemonR_Corpse.description>
+
+
+</LanguageData>

@@ -1,0 +1,16 @@
+<LanguageData>
+  <TM_SpiritCastManeuver.reportString>виконує маневр гладіатора.</TM_SpiritCastManeuver.reportString>
+  <TM_SpiritCastFirstAid.reportString>перев’язує свої рани.</TM_SpiritCastFirstAid.reportString>
+  <TM_SpiritCastPommelStrike.reportString>завдає удару навершям.</TM_SpiritCastPommelStrike.reportString>
+  <TM_SpiritCastSprint.reportString>змінює темп бігу.</TM_SpiritCastSprint.reportString>
+  <TM_SpiritCastStrongBack.reportString>готується нести вантаж.</TM_SpiritCastStrongBack.reportString>
+  <TM_SpiritCastHeavyBlow.reportString>готує важкий удар.</TM_SpiritCastHeavyBlow.reportString>
+  <TM_SpiritCastThickSkin.reportString>готується прийняти удар.</TM_SpiritCastThickSkin.reportString>
+  <TM_SpiritCastFightersFocus.reportString>зосереджується на ближньому бою.</TM_SpiritCastFightersFocus.reportString>
+  <TM_SpiritCastGearRepair.reportString>доглядає спорядження.</TM_SpiritCastGearRepair.reportString>
+  <TM_SpiritCastInnerHealing.reportString>зосереджується на відновленні.</TM_SpiritCastInnerHealing.reportString>
+  <TM_SpiritCastHeadshot.reportString>цілиться в голову TargetB.</TM_SpiritCastHeadshot.reportString>
+  <TM_SpiritCastDisablingShot.reportString>стріляє в TargetB знерухомлювальним пострілом.</TM_SpiritCastDisablingShot.reportString>
+  <TM_SpiritCastAntiArmor.reportString>стріляє в TargetB бронебійним пострілом.</TM_SpiritCastAntiArmor.reportString>
+  <TM_SpiritCastShadowSlayer.reportString>активує маскування тіньового вбивці.</TM_SpiritCastShadowSlayer.reportString>
+</LanguageData>

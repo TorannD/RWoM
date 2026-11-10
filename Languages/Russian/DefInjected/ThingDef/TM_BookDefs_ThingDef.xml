@@ -1,0 +1,10 @@
+<LanguageData><!-- v1.5\Defs\BookDefs\TM_BookDefs.xml-->
+	<!-- Гримуар-->
+	<TM_Grimoire.label>Гримуар</TM_Grimoire.label>
+	<!-- Книга, раскрывающая тайны магии. Позволяет читателю овладеть древними заклинаниями и мистическими силами.-->
+	<TM_Grimoire.description>Книга, раскрывающая тайны магии. Позволяет читателю овладеть древними заклинаниями и мистическими силами.</TM_Grimoire.description>
+	<!-- Боевое руководство-->
+	<TM_CombatManual.label>Боевое руководство</TM_CombatManual.label>
+	<!-- Подробное пособие по тактике и приёмам боя, отточенным в сотнях сражений.-->
+	<TM_CombatManual.description>Подробное пособие по тактике и приёмам боя, отточенным в сотнях сражений.</TM_CombatManual.description>
+</LanguageData>

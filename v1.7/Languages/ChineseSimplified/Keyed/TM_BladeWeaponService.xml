@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_BladeServiceHint>使用穿行命中敌人，或保养不同的磨损武器，即可习得{0}。请先将武器放在地上。每次保养恢复10%耐久度。己方阵营造成的损伤不计入进度。</TM_BladeServiceHint>
+  <TM_BladeServiceProgress>穿行命中：{0}/10 · 已保养武器：{1}/20</TM_BladeServiceProgress>
+  <TM_BladeServiceOrder>保养武器</TM_BladeServiceOrder>
+  <TM_BladeClaimAdept>习得{0}</TM_BladeClaimAdept>
+  <TM_BladeMasteryHint>习得{0}有两种途径：在受到攻击后的四秒内以普通近战攻击反击该敌人并造成伤害，累计八次；或亲自将十二名受伤倒地的友方角色送到床上。同一名伤员每隔一天可再次计入。</TM_BladeMasteryHint>
+  <TM_BladeMasteryProgress>反击：{0}/8 · 救援：{1}/12</TM_BladeMasteryProgress>
+  <TM_BladeMasteryClaim>习得{0}</TM_BladeMasteryClaim>
+  <TM_BladeMasteryLearned>大师招式：{0}</TM_BladeMasteryLearned>
+  <TM_BladePassageRank>{0} {1}/3 · {2} 格</TM_BladePassageRank>
+</LanguageData>

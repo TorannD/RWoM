@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Flesh_Casting>正在准备{0}。</TM_Flesh_Casting>
+  <TM_Flesh_HealthLevel>等级 {0}</TM_Flesh_HealthLevel>
+  <TM_Flesh_HealthRank>阶级 {0}/{1}</TM_Flesh_HealthRank>
+  <TM_Flesh_HealthMobility>移动速度：+{0}%</TM_Flesh_HealthMobility>
+  <TM_Flesh_HealthStrength>近战伤害：+{0}%</TM_Flesh_HealthStrength>
+  <TM_Flesh_HealthIndustry>全局工作速度：+{0}%（包括制作）</TM_Flesh_HealthIndustry>
+  <TM_Flesh_HealthCapacity>饥渴上限：+{0}（总计：{1}）</TM_Flesh_HealthCapacity>
+  <TM_Flesh_Title>血肉进化</TM_Flesh_Title>
+  <TM_Flesh_Open>打开这名复生亡灵的永久血肉成长界面。</TM_Flesh_Open>
+  <TM_Flesh_Stats>等级 {0}   •   经验 {1}/{2}   •   技能点：{3}</TM_Flesh_Stats>
+  <TM_Flesh_Experience>经验</TM_Flesh_Experience>
+  <TM_Flesh_Thirst>饥渴：{0}/{1}</TM_Flesh_Thirst>
+  <TM_Flesh_Stop>终止此亡灵的血肉盛宴</TM_Flesh_Stop>
+  <TM_Flesh_StopAll>终止所有麾下亡灵的盛宴</TM_Flesh_StopAll>
+  <TM_Flesh_StopDesc>主人可免费终止盛宴；饥渴值与冷却时间保持不变。</TM_Flesh_StopDesc>
+  <TM_Flesh_Rage>盛宴狂暴：持续撕咬，直到饥渴降至20%或主人下令终止。</TM_Flesh_Rage>
+  <TM_Flesh_Gate>盛宴解锁条件——将以下所有技能升至满级：</TM_Flesh_Gate>
+  <TM_Flesh_Upgrade>升级（1点）</TM_Flesh_Upgrade>
+  <TM_Flesh_Use>使用</TM_Flesh_Use>
+  <TM_Flesh_Cooldown>{0}秒后可用</TM_Flesh_Cooldown>
+  <TM_Flesh_Ready>就绪</TM_Flesh_Ready>
+  <TM_Flesh_Active>生效中：{0}秒</TM_Flesh_Active>
+  <TM_Flesh_Devour>吞噬血肉</TM_Flesh_Devour>
+  <TM_Flesh_DevourDesc>在近战距离吞噬尸体：经验取决于剩余肉量与新鲜度。每5单位肉降低1点饥渴。对活体有机目标按阶级造成4/6/8点伤害，不提供经验。冷却：5秒。 成功撕咬活体目标还会增加1%毒素积累，受毒素抗性减免。</TM_Flesh_DevourDesc>
+  <TM_Flesh_Restore>血肉再生</TM_Flesh_Restore>
+  <TM_Flesh_RestoreDesc>完全治愈伤口、疤痕并恢复缺失的天然身体部位，保留植入物。消耗当前等级积累的全部经验（必须大于零），保留等级与技能点。各阶冷却：1000/900/800秒。</TM_Flesh_RestoreDesc>
+  <TM_Flesh_Empower>血肉强化</TM_Flesh_Empower>
+  <TM_Flesh_EmpowerDesc>准备：2秒；中断不消耗资源。按阶级提高移动速度和全局工作速度10/20/30%。代价：饥渴+10。持续与冷却时间：300秒。结束时有10%概率对天然四肢造成其最大生命值10%的伤害。</TM_Flesh_EmpowerDesc>
+  <TM_Flesh_Harden>硬化皮肤</TM_Flesh_Harden>
+  <TM_Flesh_HardenDesc>准备：2秒；中断不消耗资源。按阶级增加利器与钝器护甲20/35/50个百分点。代价：饥渴+15。持续与冷却时间：300秒。结束时躯干受到相当于其最大生命值一半的伤害。</TM_Flesh_HardenDesc>
+  <TM_Flesh_Feast>血肉盛宴</TM_Flesh_Feast>
+  <TM_Flesh_FeastDesc>准备：5秒；中断不消耗资源。仅1阶，需要其他所有技能满级。将饥渴设为50%，随后每秒增加1点，持续60秒。近战命中有20%概率吞食一个有机身体部位，包括重要器官。饥渴达到上限会触发狂暴；饥渴为0时结束盛宴。冷却：1000秒。 盛宴期间每次近战攻击都是撕咬；成功撕咬另有30%概率使仍存在的有机伤口感染。未命中或伤害被完全吸收时不会触发这些效果。 成功撕咬活体目标还会增加1%毒素积累，受毒素抗性减免。</TM_Flesh_FeastDesc>
+  <TM_Flesh_Mobility>灵动血肉</TM_Flesh_Mobility>
+  <TM_Flesh_MobilityDesc>每阶提高2%移动速度。共10阶，合计+20%。</TM_Flesh_MobilityDesc>
+  <TM_Flesh_Strength>强健血肉</TM_Flesh_Strength>
+  <TM_Flesh_StrengthDesc>每阶提高3%近战伤害。共10阶，合计+30%。</TM_Flesh_StrengthDesc>
+  <TM_Flesh_Industry>勤勉血肉</TM_Flesh_Industry>
+  <TM_Flesh_IndustryDesc>每阶提高2%全局工作速度，制作仅享受一次加成。共10阶，合计+20%。</TM_Flesh_IndustryDesc>
+  <TM_Flesh_Capacity>血肉容量</TM_Flesh_Capacity>
+  <TM_Flesh_CapacityDesc>每阶增加10点饥渴上限。共8阶：20 → 100。自然饥渴增长：每天+10。达到80%时移动与工作速度−10%；达到上限时−20%。</TM_Flesh_CapacityDesc>
+  <TM_FleshRejectUnavailable>此亡灵必须存活、未倒地、受你控制且未处于精神崩溃状态。</TM_FleshRejectUnavailable>
+  <TM_FleshRejectUnlearned>尚未学习此技能。</TM_FleshRejectUnlearned>
+  <TM_FleshRejectCooldown>此技能正在冷却。</TM_FleshRejectCooldown>
+  <TM_FleshRejectActive>此效果已生效。</TM_FleshRejectActive>
+  <TM_FleshRejectNoExperience>血肉再生需要当前等级积累的经验。</TM_FleshRejectNoExperience>
+  <TM_Flesh_ActiveKind>主动</TM_Flesh_ActiveKind>
+  <TM_Flesh_PassiveKind>被动</TM_Flesh_PassiveKind>
+  <TM_Flesh_NoPoints>技能点不足</TM_Flesh_NoPoints>
+  <TM_Flesh_MaxRank>已达最高阶</TM_Flesh_MaxRank>
+  <TM_Flesh_ThirstLabel>饥渴</TM_Flesh_ThirstLabel>
+  <TM_Flesh_ThirstTip>累积的饥饿：每天+10。吞食血肉可降低饥渴。达到80%时移动与工作速度−10%；达到上限时−20%。</TM_Flesh_ThirstTip>
+  <TM_Flesh_DebugLevelUp>+1级</TM_Flesh_DebugLevelUp>
+  <TM_Flesh_StatTotal>血肉成长总倍率：{0}</TM_Flesh_StatTotal>
+  <TM_Flesh_HealthRemaining>剩余 {0} 秒</TM_Flesh_HealthRemaining>
+  <TM_Flesh_HealthRage>失控狂暴</TM_Flesh_HealthRage>
+  <TM_Flesh_HealthEmpower>移动速度和全局工作速度：+{0}%。</TM_Flesh_HealthEmpower>
+  <TM_Flesh_HealthHarden>利器与钝器护甲：+{0} 个百分点。</TM_Flesh_HealthHarden>
+  <TM_Flesh_HealthFeast>血肉盛宴正在生效。当前饥渴：{1}/{2}。狂暴持续到饥渴降至20%或主人下令停止。</TM_Flesh_HealthFeast>
+  <TM_Flesh_BiteRules>盛宴之外，亡灵的近战攻击有10%概率变为暴击撕咬（伤害+50%）。成功撕咬增加1%毒素积累，受毒素抗性减免。</TM_Flesh_BiteRules>
+</LanguageData>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_AnimalFriend.label>vínculo animal</TM_AnimalFriend.label>
+  
+  <TM_AnimalFriend.description>En su elemento en la naturaleza, el guardabosques es capaz de forjar un vínculo con las criaturas salvajes.\n\nLos guardabosques solo pueden forjar un único vínculo, y mantenerlo reduce su resistencia máxima en 30. Forjar un nuevo vínculo rompe el existente y hará que el animal desvinculado se marche para siempre. Los intentos fallidos pueden hacer que el animal se vuelva un cazador de personas. Al usar vínculo animal sobre el animal vinculado, este podría permanecer en la colonia: la probabilidad de que se quede depende de lo salvaje que sea y del tiempo que haya estado vinculado con el guardabosques.\n\nEl aumento de capacidad física se aplica solo a los animales de su especie; a cambio, el animal vinculado asistirá al guardabosques en todo aquello de lo que sea capaz.\nSe puede eliminar un vínculo usando esta habilidad sobre una criatura vinculada.</TM_AnimalFriend.description>
+
+  
+  <TM_ArrowStorm.label>tormenta de flechas</TM_ArrowStorm.label>
+  
+  <TM_ArrowStorm.description>Dispara una andanada de 5 flechas contra un objetivo.\nAlcance: 32</TM_ArrowStorm.description>
+
+  
+  <TM_ArrowStorm_I.label>tormenta de flechas I</TM_ArrowStorm_I.label>
+  
+  <TM_ArrowStorm_I.description>Dispara una andanada de 6 flechas contra un objetivo.\nAlcance: 34</TM_ArrowStorm_I.description>
+
+  
+  <TM_ArrowStorm_II.label>tormenta de flechas II</TM_ArrowStorm_II.label>
+  
+  <TM_ArrowStorm_II.description>Dispara una rápida andanada de 7 flechas contra un objetivo.\nAlcance: 36</TM_ArrowStorm_II.description>
+
+  
+  <TM_ArrowStorm_III.label>tormenta de flechas III</TM_ArrowStorm_III.label>
+  
+  <TM_ArrowStorm_III.description>Dispara una rápida andanada de 8 flechas contra un objetivo.\nAlcance: 38</TM_ArrowStorm_III.description>
+
+  
+  <TM_BowTraining.label>entrenamiento con arco</TM_BowTraining.label>
+  
+  <TM_BowTraining.description>Entrenamiento que aumenta el daño y la precisión al usar un arco.\n\nNivel 0: oído y vista +20 %, daño con arco +20 %\nNivel 1: oído y vista +40 %, daño con arco +40 %\nNivel 2: oído y vista +60 %, respiración +15 %, daño con arco +60 %\nNivel 3: oído y vista +80 %, respiración +25 %, filtración de sangre +10 %, daño con arco +80 %</TM_BowTraining.description>
+
+  
+  <TM_PoisonTrap.label>trampa de veneno</TM_PoisonTrap.label>
+  
+  <TM_PoisonTrap.description>El guardabosques usa una dosis de veneno druídico para armar una trampa de madera. Las trampas duran indefinidamente, pero un guardabosques solo puede desplegar un número limitado a la vez.\n\nLos enemigos atrapados en el veneno sufrirán de 1 a 8 de daño por veneno cada 0,66 segundos. El daño por veneno también aplica un efecto de ralentización. Los animales nunca activan las trampas.</TM_PoisonTrap.description>
+
+  
+  <TM_RangerTraining.label>entrenamiento de guardabosques</TM_RangerTraining.label>
+  
+  <TM_RangerTraining.description>Entrenamiento que desarrolla las habilidades profesionales del guardabosques. Cada nivel mejora el rasgo de guardabosques para reflejar su destreza.\n\nRangos:\nMontaraz: velocidad +0,15 c/s, retardo de apuntado -15 %, ganancia de inmunidad +20 %, temperatura de confort ±10 °C, sensibilidad a las toxinas -10 %\nDomar y entrenar animales +5 %, velocidad de despiece +5 %, velocidad de fundición y construcción -10 %\n\nCazador: velocidad +0,2 c/s, retardo de apuntado -20 %, ganancia de inmunidad +25 %, temperatura de confort ±15 °C, sensibilidad a las toxinas -15 %\nDomar y entrenar animales +8 %, velocidad de despiece +10 %, velocidad de fundición y construcción -15 %\n\nExplorador: velocidad +0,25 c/s, retardo de apuntado -30 %, ganancia de inmunidad +30 %, temperatura de confort ±18 °C, sensibilidad a las toxinas -20 %\nDomar y entrenar animales +10 %, velocidad de despiece +15 %, velocidad de fundición y construcción -18 %\n\nGuardabosques: velocidad +0,3 c/s, retardo de apuntado -40 %, ganancia de inmunidad +35 %, temperatura de confort ±25 °C, sensibilidad a las toxinas -25 %\nDomar y entrenar animales +12 %, velocidad de despiece +20 %, velocidad de fundición y construcción -20 %</TM_RangerTraining.description>
+
+</LanguageData>

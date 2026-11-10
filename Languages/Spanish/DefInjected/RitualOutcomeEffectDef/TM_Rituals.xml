@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_BestowMagic.description>Los esclavos espectadores quedarán suprimidos al 100 %. Según la calidad del ritual, los participantes obtendrán entre {MINMOOD} y {MAXMOOD} de ánimo durante {MOODDAYS} días.</TM_BestowMagic.description>
+  
+  <TM_BestowMagic.comps.1.label>guía moral presente</TM_BestowMagic.comps.1.label>
+  
+  <TM_BestowMagic.comps.2.label>número de participantes</TM_BestowMagic.comps.2.label>
+  
+  <TM_BestowMagic.comps.3.label>iniciado en un altar o un ideograma</TM_BestowMagic.comps.3.label>
+  
+  <TM_BestowMagic.comps.3.expectedThingLabelTip>un altar o un ideograma</TM_BestowMagic.comps.3.expectedThingLabelTip>
+  
+  <TM_BestowMagic.comps.4.label>impresionabilidad de la sala</TM_BestowMagic.comps.4.label>
+  
+  <TM_BestowMagic.outcomeChances.0.label>Fallido</TM_BestowMagic.outcomeChances.0.label>
+  
+  <TM_BestowMagic.outcomeChances.0.description>{0} salió mal. El buscador del vacío no logró establecer una conexión mágica.</TM_BestowMagic.outcomeChances.0.description>
+  
+  <TM_BestowMagic.outcomeChances.1.label>Éxito</TM_BestowMagic.outcomeChances.1.label>
+  
+  <TM_BestowMagic.outcomeChances.1.description>{0} fue un éxito. El buscador del vacío concedió la chispa de la magia.</TM_BestowMagic.outcomeChances.1.description>
+  
+  <TM_BestowMagic.outcomeChances.2.label>Inspirado</TM_BestowMagic.outcomeChances.2.label>
+  
+  <TM_BestowMagic.outcomeChances.2.description>{0} fue impecable: la ceremonia reafirmó nuestras creencias, trajo el don de la magia y concedió visiones inspiradoras.</TM_BestowMagic.outcomeChances.2.description>
+  
+  
+  <TM_BestowMagicClass.description>Los esclavos espectadores quedarán suprimidos al 100 %. Según la calidad del ritual, los participantes obtendrán entre {MINMOOD} y {MAXMOOD} de ánimo durante {MOODDAYS} días.</TM_BestowMagicClass.description>
+  
+  <TM_BestowMagicClass.comps.1.label>guía moral presente</TM_BestowMagicClass.comps.1.label>
+  
+  <TM_BestowMagicClass.comps.2.label>número de participantes</TM_BestowMagicClass.comps.2.label>
+  
+  <TM_BestowMagicClass.comps.3.label>iniciado en un altar o un ideograma</TM_BestowMagicClass.comps.3.label>
+  
+  <TM_BestowMagicClass.comps.3.expectedThingLabelTip>un altar o un ideograma</TM_BestowMagicClass.comps.3.expectedThingLabelTip>
+  
+  <TM_BestowMagicClass.comps.4.label>impresionabilidad de la sala</TM_BestowMagicClass.comps.4.label>
+  
+  <TM_BestowMagicClass.outcomeChances.0.label>Insulso</TM_BestowMagicClass.outcomeChances.0.label>
+  
+  <TM_BestowMagicClass.outcomeChances.0.description>{0} fue un éxito, pero careció de verdadero sentimiento o energía.</TM_BestowMagicClass.outcomeChances.0.description>
+  
+  <TM_BestowMagicClass.outcomeChances.1.label>Alentador</TM_BestowMagicClass.outcomeChances.1.label>
+  
+  <TM_BestowMagicClass.outcomeChances.1.description>{0} fue un éxito. Un individuo dotado ha dado un gran paso para convertirse en un activo más poderoso para nuestra colonia.</TM_BestowMagicClass.outcomeChances.1.description>
+  
+  <TM_BestowMagicClass.outcomeChances.2.label>Inspirador</TM_BestowMagicClass.outcomeChances.2.label>
+  
+  <TM_BestowMagicClass.outcomeChances.2.description>{0} fue inspirador: gracias a un magnífico espectáculo de energía arcana y emocional, la colonia ha ganado otro poderoso mago.</TM_BestowMagicClass.outcomeChances.2.description>
+  
+  
+  <TM_SeverMagic.description>Los esclavos espectadores quedarán suprimidos al 100 %. Según la calidad del ritual, los participantes obtendrán entre {MINMOOD} y {MAXMOOD} de ánimo durante {MOODDAYS} días.</TM_SeverMagic.description>
+  
+  <TM_SeverMagic.comps.1.label>guía moral presente</TM_SeverMagic.comps.1.label>
+  
+  <TM_SeverMagic.comps.2.label>número de participantes</TM_SeverMagic.comps.2.label>
+  
+  <TM_SeverMagic.comps.3.label>iniciado en un altar o un ideograma</TM_SeverMagic.comps.3.label>
+  
+  <TM_SeverMagic.comps.3.expectedThingLabelTip>un altar o un ideograma</TM_SeverMagic.comps.3.expectedThingLabelTip>
+  
+  <TM_SeverMagic.comps.4.label>impresionabilidad de la sala</TM_SeverMagic.comps.4.label>
+  
+  <TM_SeverMagic.outcomeChances.0.label>Fallido</TM_SeverMagic.outcomeChances.0.label>
+  
+  <TM_SeverMagic.outcomeChances.0.description>{0} salió mal. El mago contraatacó movido por el miedo y la desesperación.</TM_SeverMagic.outcomeChances.0.description>
+  
+  <TM_SeverMagic.outcomeChances.1.label>Letal</TM_SeverMagic.outcomeChances.1.label>
+  
+  <TM_SeverMagic.outcomeChances.1.description>{0} fue letal. El ritual pretendía separar al mago de la magia, no matarlo.</TM_SeverMagic.outcomeChances.1.description>
+  
+  <TM_SeverMagic.outcomeChances.2.label>Éxito</TM_SeverMagic.outcomeChances.2.label>
+  
+  <TM_SeverMagic.outcomeChances.2.description>{0} fue un éxito. El buscador del vacío separó eficazmente la magia del mago.</TM_SeverMagic.outcomeChances.2.description>
+  
+  <TM_SeverMagic.outcomeChances.3.label>Impecable</TM_SeverMagic.outcomeChances.3.label>
+  
+  <TM_SeverMagic.outcomeChances.3.description>{0} fue impecable: la ceremonia llevó compasión y libertad al mago.</TM_SeverMagic.outcomeChances.3.description>
+  
+</LanguageData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_BestowMagicClassHD.label>don de la magia</TM_BestowMagicClassHD.label>
+  
+  <TM_BestowMagicClassHD.description>Este personaje ha recibido hace poco la chispa de la magia.</TM_BestowMagicClassHD.description>
+  
+  
+  <TM_MagicSeverenceHD.label>separación de la magia</TM_MagicSeverenceHD.label>
+  
+  <TM_MagicSeverenceHD.description>Este personaje ha perdido hace poco su conexión con la magia y sufrirá una pérdida de rumbo y de propósito hasta que pueda llenar el vacío con otro propósito.</TM_MagicSeverenceHD.description>
+  
+</LanguageData>

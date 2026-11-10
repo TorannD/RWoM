@@ -28,12 +28,12 @@ namespace TorannMagic.Golems
             {
                 return false;
             }
-            Pawn respectedMaster = cg.pawnMaster;
+            Pawn respectedMaster = ClassProgression.GolemancerLifecycle.MasterBody(cg.pawnMaster);
             if (respectedMaster == null)
             {
                 return false;
             }
-            if (respectedMaster.Spawned && cg.followsMaster)
+            if (respectedMaster.Spawned && respectedMaster.Map == pawn.Map && cg.followsMaster)
             {
                 if (cg.followsMasterDrafted)
                 {

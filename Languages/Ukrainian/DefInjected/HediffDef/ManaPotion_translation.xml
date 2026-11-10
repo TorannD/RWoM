@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManaPotionHigh.label>містична ейфорія</ManaPotionHigh.label>
+  <ManaPotionHigh.description>Свідомість підвищується при споживанні рідкої мани.</ManaPotionHigh.description>
+
+
+  <!-- Mana potion addiction -->
+
+  <ManaPotionTolerance.label>толерантність до зіллю мани</ManaPotionTolerance.label>
+  <ManaPotionTolerance.description>Природне пристосування для нормалізації ефекту споживання рідкої мани.</ManaPotionTolerance.description>
+
+  <ManaPotionAddiction.label>залежність від зілля мани</ManaPotionAddiction.label>
+  <ManaPotionAddiction.description>Бажання споживати зілля мани переросло в потребу.</ManaPotionAddiction.description>
+  <ManaPotionAddiction.stages.1.label>вивід</ManaPotionAddiction.stages.1.label>
+
+
+</LanguageData>

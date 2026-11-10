@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mecha Golem upgrade recipes -->
+
+  <TM_HollowGolem_RepairComponent.label>Restaurar peças</TM_HollowGolem_RepairComponent.label>
+  <TM_HollowGolem_RepairComponent.description>Substitui as partes faltantes do golem que não precisam ser atualizadas.</TM_HollowGolem_RepairComponent.description>
+  <TM_HollowGolem_RepairComponent.jobString>criação de uma parte do golem</TM_HollowGolem_RepairComponent.jobString>
+
+  <TM_HollowGolem_EnergyCell.label>célula de maná</TM_HollowGolem_EnergyCell.label>
+  <TM_HollowGolem_EnergyCell.description>Cria um bolso de maná para armazenar maná extra.</TM_HollowGolem_EnergyCell.description>
+  <TM_HollowGolem_EnergyCell.jobString>criar um bolso de maná</TM_HollowGolem_EnergyCell.jobString>
+
+  <TM_HollowGolem_EnergyConverter.label>conversor de maná</TM_HollowGolem_EnergyConverter.label>
+  <TM_HollowGolem_EnergyConverter.description>Aumenta em 10% a eficiência da absorção e utilização de golo.</TM_HollowGolem_EnergyConverter.description>
+  <TM_HollowGolem_EnergyConverter.jobString>criação de filtro de maná</TM_HollowGolem_EnergyConverter.jobString>
+
+  <TM_HollowGolem_EnergyCharge.label>polaridade do maná</TM_HollowGolem_EnergyCharge.label>
+  <TM_HollowGolem_EnergyCharge.description>Aumenta a taxa de regeneração do maná de golem em 6 por hora.</TM_HollowGolem_EnergyCharge.description>
+  <TM_HollowGolem_EnergyCharge.jobString>alinhamento de polaridades de maná</TM_HollowGolem_EnergyCharge.jobString>
+
+  <TM_HollowGolem_Axe.label>Machado espremido</TM_HollowGolem_Axe.label>
+  <TM_HollowGolem_Axe.description>Liga o machado de volume às extremidades secretas do nude branco. Este machado liberta uma onda de energia secreta que pode perfurar vários inimigos e praticamente qualquer armadura.</TM_HollowGolem_Axe.description>
+  <TM_HollowGolem_Axe.jobString>fabricação de um machado espremido</TM_HollowGolem_Axe.jobString>
+
+  <TM_HollowGolem_Staff.label>Bastão espremido</TM_HollowGolem_Staff.label>
+  <TM_HollowGolem_Staff.description>Liga um bastão de força ardente e um bastão de protetor com nu crespo, criando um bastão cativo. Um homem nu pode usar este bastão para lançar projéteis mágicos sem consumir energia.</TM_HollowGolem_Staff.description>
+  <TM_HollowGolem_Staff.jobString>fabricação de bastão expelido</TM_HollowGolem_Staff.jobString>
+
+  <TM_HollowGolem_Armor.label>Espremido de Nugrudnik</TM_HollowGolem_Armor.label>
+  <TM_HollowGolem_Armor.description>Melhora a blindagem do golem:
+Danos estúpidos: + 21%
+Corte de danos: + 32%
+Temperatura: + 14%</TM_HollowGolem_Armor.description>
+  <TM_HollowGolem_Armor.jobString>criação de uma parte do golem</TM_HollowGolem_Armor.jobString>
+
+  <TM_HollowGolem_Helm.label>Capacete expulso</TM_HollowGolem_Helm.label>
+  <TM_HollowGolem_Helm.description>Aumenta a blindagem do golem para proteger a cabeça:
+Danos estúpidos: + 22%
+Corte de danos: + 7%
+Temperatura: + 9%</TM_HollowGolem_Helm.description>
+  <TM_HollowGolem_Helm.jobString>criação de uma parte do golem</TM_HollowGolem_Helm.jobString>
+
+  <TM_HollowGolem_Shoulder.label>Tratadores expulsos</TM_HollowGolem_Shoulder.label>
+  <TM_HollowGolem_Shoulder.description>Aumenta a blindagem de golem com uma armadura que protege os ombros e o pescoço:
+Danos estúpidos: + 8%
+Corte de danos: + 19%
+Temperatura: + 6%</TM_HollowGolem_Shoulder.description>
+  <TM_HollowGolem_Shoulder.jobString>criação de uma parte do golem</TM_HollowGolem_Shoulder.jobString>
+
+  <TM_HollowGolem_Crown.label>Coroa de despertar</TM_HollowGolem_Crown.label>
+  <TM_HollowGolem_Crown.description>Equipou o nu cativo com a Coroa do Despertar, que lhe permite descobrir e derrubar a magia dos outros peões.</TM_HollowGolem_Crown.description>
+  <TM_HollowGolem_Crown.jobString>criação de uma parte do golem</TM_HollowGolem_Crown.jobString>
+
+  <TM_HollowGolem_Cloak.label>Capa em extinção</TM_HollowGolem_Cloak.label>
+  <TM_HollowGolem_Cloak.description>Fornece uma Capa de Desaparecimento que lhe permite deslocar-se instantaneamente para outro lugar.
+
+Danos estúpidos: + 10%
+Corte de danos: + 5%
+Temperatura: + 15%
+Harmonia: + 5%
+Velocidade de deslocamento + .4c/s
+
+Capacidade: Desaparecer</TM_HollowGolem_Cloak.description>
+  <TM_HollowGolem_Cloak.jobString>criação de uma parte do golem</TM_HollowGolem_Cloak.jobString>
+
+  <TM_HollowGolem_PGFire.label>Pedra de proteção: Fogo</TM_HollowGolem_PGFire.label>
+  <TM_HollowGolem_PGFire.description>Equipou o golem com um amuleto de fogo que fornece proteção contra o fogo. A fúria acesa reduz os danos causados por todos os ataques em 35%, incendeia as feridas, impede a locomoção e queima os inimigos mais próximos. Só podemos usar uma pedra de segurança.
+
+Tempo de recarga: 1.200 segundos
+Duração: 100 segundos
+Custos de energia: 50</TM_HollowGolem_PGFire.description>
+  <TM_HollowGolem_PGFire.jobString>criação de uma parte do golem</TM_HollowGolem_PGFire.jobString>
+
+  <TM_HollowGolem_PGWater.label>Pedra de proteção: Água</TM_HollowGolem_PGWater.label>
+  <TM_HollowGolem_PGWater.description>Equipou o golem com um amuleto de água que permite que o goleiro evite ataques. A chance de evitar um ataque é proporcional à taxa de energia do golem e reduz a energia do golem em 5 por cada evasão.</TM_HollowGolem_PGWater.description>
+  <TM_HollowGolem_PGWater.jobString>criação de uma parte do golem</TM_HollowGolem_PGWater.jobString>
+
+  <TM_HollowGolem_PGArcane.label>Pedra de proteção: Secreta</TM_HollowGolem_PGArcane.label>
+  <TM_HollowGolem_PGArcane.description>Está a equipar o golem com um amuleto secreto que ativa a capacidade do Poço de Desespero. O poço de desespero põe a área no escudo inverso, que deixa os projéteis entrarem, mas bloqueia a saída deles.</TM_HollowGolem_PGArcane.description>
+  <TM_HollowGolem_PGArcane.jobString>criação de uma parte do golem</TM_HollowGolem_PGArcane.jobString>
+
+  <TM_HollowGolem_PGDeath.label>A Pedra da Defesa: Morte</TM_HollowGolem_PGDeath.label>
+  <TM_HollowGolem_PGDeath.description>Equipou o golem com o amuleto da morte que rodeia o golem com a aura da morte. Os inimigos mais próximos podem ser atingidos por uma maldição que reduz a sua força de vontade e capacidade de lutar.</TM_HollowGolem_PGDeath.description>
+  <TM_HollowGolem_PGDeath.jobString>criação de uma parte do golem</TM_HollowGolem_PGDeath.jobString>
+
+  <TM_HollowGolem_PGDoom.label>A Pedra de Proteção: O Abismo da Morte</TM_HollowGolem_PGDoom.label>
+  <TM_HollowGolem_PGDoom.description>Equipou o golem com um amuleto de abismo da morte que desacelera os inimigos mais próximos num campo que enfraquece o movimento. Este efeito pode funcionar a cada 15 segundos e atingir os inimigos dentro de 30 células.</TM_HollowGolem_PGDoom.description>
+  <TM_HollowGolem_PGDoom.jobString>criação de uma parte do golem</TM_HollowGolem_PGDoom.jobString>
+
+  <TM_HollowGolem_FGFire.label>Foco de pedra: Fogo</TM_HollowGolem_FGFire.label>
+  <TM_HollowGolem_FGFire.description>Adorna o holofote com uma pedra de foco de um elemento de fogo que lhe permite usar a capacidade de «flor de fogo». A flor de fogo cria 25 relâmpagos explosivos e visa o acúmulo de inimigos de 6 a 50 células. Consome 40 energias. Os alvos podem pegar fogo. Só pode haver uma pedra de foco.</TM_HollowGolem_FGFire.description>
+  <TM_HollowGolem_FGFire.jobString>criação de uma parte do golem</TM_HollowGolem_FGFire.jobString>
+
+  <TM_HollowGolem_FGIce.label>Foco Pedra: Gelo</TM_HollowGolem_FGIce.label>
+  <TM_HollowGolem_FGIce.description>Adorna o nu branco com uma pedra preciosa que contém água básica, permitindo-lhe usar a capacidade de «flor de gelo». A flor de gelo cria uma explosão de 20 fragmentos de gelo e aponta para um grupo de inimigos a uma distância de 8 a 60 células. O custo da energia é de 60. Fragmentos de gelo causam hemorragia. Apenas uma pedra de foco pode ser acoplada ao golem.</TM_HollowGolem_FGIce.description>
+  <TM_HollowGolem_FGIce.jobString>criação de uma parte do golem</TM_HollowGolem_FGIce.jobString>
+
+  <TM_HollowGolem_FGArcane.label>Foco Pedra Secreta</TM_HollowGolem_FGArcane.label>
+  <TM_HollowGolem_FGArcane.description>Decora o nude cativo com uma pedra preciosa que contém energia secreta condensada, permitindo-lhe criar uma carga concentrada de energia escura. Darkbolt atinge inimigos a uma distância de até 100 células. Custos de energia 80. Apenas uma pedra de foco pode ser acoplada ao golem.</TM_HollowGolem_FGArcane.description>
+  <TM_HollowGolem_FGArcane.jobString>criação de uma parte do golem</TM_HollowGolem_FGArcane.jobString>
+
+  <TM_HollowGolem_FGDeath.label>Foco Pedra: Morte</TM_HollowGolem_FGDeath.label>
+  <TM_HollowGolem_FGDeath.description>Decora o nu cativo com uma pedra preciosa que contém a essência da morte, rodeando o nu com um campo que emite a morte. O campo da morte atinge os inimigos mais próximos. Esta capacidade é a única pedra de foco que não requer o feitiço. Atinge os inimigos dentro de 10 células do golem. Custa 20 energias, mas recebe um golpe grátis por qualquer peão que morre dentro do campo. Apenas uma pedra de foco pode ser acoplada ao golem.</TM_HollowGolem_FGDeath.description>
+  <TM_HollowGolem_FGDeath.jobString>criação de uma parte do golem</TM_HollowGolem_FGDeath.jobString>
+
+  <TM_HollowGolem_OrbOfExtinguishedFlames.label>Bola da chama apagada</TM_HollowGolem_OrbOfExtinguishedFlames.label>
+  <TM_HollowGolem_OrbOfExtinguishedFlames.description>Equipar-se com a Bola do Fogo Apagado com o Tubo Cativo permite-lhe olhar para além do véu da morte para extrair conhecimento. Os óculos da tecnologia de pesquisa ativa vão aumentar por cada peão morto no mapa. A bola também pode ser trocada para detectar e absorver qualquer fogo dentro de 25 células e emite luz prata fraca. Estes efeitos só são ativos quando o nu está em repouso. As chamas da apatia intempestiva e a esfera da chama que se esgota não podem ser usadas juntas, as duas atualizações usam a mesma slot para os componentes.</TM_HollowGolem_OrbOfExtinguishedFlames.description>
+  <TM_HollowGolem_OrbOfExtinguishedFlames.jobString>criação de uma parte do golem</TM_HollowGolem_OrbOfExtinguishedFlames.jobString>
+
+  <TM_HollowGolem_FlamesOfDevouringApathy.label>Chamas de apatia intensiva</TM_HollowGolem_FlamesOfDevouringApathy.label>
+  <TM_HollowGolem_FlamesOfDevouringApathy.description>A chama da Apatia Intempestiva permite que o nu cativo possa regular a temperatura. As chamas também absorverão qualquer sujeira dentro de 25 células e produzirão luz mística fraca. Estes efeitos só são ativos quando o nu está em repouso. As chamas da apatia intempestiva e a esfera da chama que se esgota não podem ser usadas juntas, as duas atualizações usam a mesma slot para os componentes.</TM_HollowGolem_FlamesOfDevouringApathy.description>
+  <TM_HollowGolem_FlamesOfDevouringApathy.jobString>criação de uma parte do golem</TM_HollowGolem_FlamesOfDevouringApathy.jobString>
+
+  <TM_HollowGolem_CoAFire.label>Brasão: Fogo</TM_HollowGolem_CoAFire.label>
+  <TM_HollowGolem_CoAFire.description>Dá ao nude vazio um brasão ajustado ao fogo que oferece as seguintes vantagens para o nível de atualização [1/2/3]:
+Movimento: + [0.2c/0.3c/0.35c]
+Reserva térmica: + [30 %/50 %/60%]
+Processamento: + [10 %/20 %/30%]
+Recarga: - [10 %/20 %/30%]
+
+Além disso, tocar na desintegração causa danos adicionais à queimadura, e o golem pode absorver o fogo nas proximidades para restaurar a saúde.</TM_HollowGolem_CoAFire.description>
+  <TM_HollowGolem_CoAFire.jobString>criação de uma parte do golem</TM_HollowGolem_CoAFire.jobString>
+
+  <TM_HollowGolem_CoAIce.label>Brasão: Água</TM_HollowGolem_CoAIce.label>
+  <TM_HollowGolem_CoAIce.description>fornece um brasão de nude vazio ajustado à água que oferece os seguintes benefícios para cada nível de atualização [1/2/3]:
+Armadura: + [5 %/10 %/15%]
+Recarga de capacidade: - [10 %/20 %/30%]
+Processamento: + [10 %/20 %/30%]
+
+Além disso, tocar na desintegração cura o holema e um peão amigo dentro de 10 + 3 * células nível para 10 + 4 * nível de saúde.</TM_HollowGolem_CoAIce.description>
+  <TM_HollowGolem_CoAIce.jobString>criação de uma parte do golem</TM_HollowGolem_CoAIce.jobString>
+
+  <TM_HollowGolem_CoAArcane.label>Brasão: Secreto</TM_HollowGolem_CoAArcane.label>
+  <TM_HollowGolem_CoAArcane.description>Fornece um brasão secreto de nude cativo que oferece as seguintes vantagens para o nível de atualização [1/2/3]:
+Recarga de capacidade: - [12 %/24 %/36%]
+Dano Capacidade: + [10 %/20 %/30%]
+Processamento: + [15 %/30 %/45%]
+
+Além disso, o toque de destruição recupera 20 + 5 * energia de nível por impacto.</TM_HollowGolem_CoAArcane.description>
+  <TM_HollowGolem_CoAArcane.jobString>criação de uma parte do golem</TM_HollowGolem_CoAArcane.jobString>
+
+  <TM_HollowGolem_CoADeath.label>Brasão: Morte</TM_HollowGolem_CoADeath.label>
+  <TM_HollowGolem_CoADeath.description>Veste um brasão de nude vazio configurado para a morte, que oferece as seguintes vantagens para o nível de atualização [1/2/3]:
+Armadura: + [5 %/10 %/15%]
+Recarga de capacidade: - [8 %/16 %/24%]
+Dano Capacidade: + [10 %/20 %/30%]
+Processamento: - [5 %/10 %/15%]
+
+Além disso, o toque da morte é 50% mais eficaz e dá um golpe duplo.</TM_HollowGolem_CoADeath.description>
+  <TM_HollowGolem_CoADeath.jobString>criação de uma parte do golem</TM_HollowGolem_CoADeath.jobString>
+
+  <TM_HollowGolem_AffinityFire.label>Parentesco: Fogo</TM_HollowGolem_AffinityFire.label>
+  <TM_HollowGolem_AffinityFire.description>Aumenta a ligação do golem com o elemento de fogo; cor laranja dos olhos. O parentesco com fogo oferece os seguintes benefícios para cada nível de atualização [1/2/3]:
+Movimento: + [25/40/50]%
+Saúde: + [40/60/75]%</TM_HollowGolem_AffinityFire.description>
+  <TM_HollowGolem_AffinityFire.jobString>aplicação de parentesco básico</TM_HollowGolem_AffinityFire.jobString>
+
+  <TM_HollowGolem_AffinityIce.label>Parentesco: Água</TM_HollowGolem_AffinityIce.label>
+  <TM_HollowGolem_AffinityIce.description>Aumenta a ligação do golem com o elemento da água; azul claro dos olhos. O parentesco com a água oferece os seguintes benefícios para cada nível de atualização [1/2/3]
+Movimento: + [20/30/35]%
+Saúde: + [50/75/90]%</TM_HollowGolem_AffinityIce.description>
+  <TM_HollowGolem_AffinityIce.jobString>aplicação de parentesco básico</TM_HollowGolem_AffinityIce.jobString>
+
+  <TM_HollowGolem_AffinityArcane.label>Parentesco: Secreto</TM_HollowGolem_AffinityArcane.label>
+  <TM_HollowGolem_AffinityArcane.description>Aumenta o alinhamento mágico do golem; Cor púrpura dos olhos. A afinidade secreta oferece os seguintes benefícios para cada nível de atualização [1/2/3]
+Movimento: + [15/25/30]%
+Saúde: + [55/85/100]%</TM_HollowGolem_AffinityArcane.description>
+  <TM_HollowGolem_AffinityArcane.jobString>aplicação de parentesco básico</TM_HollowGolem_AffinityArcane.jobString>
+
+  <TM_HollowGolem_AffinityDeath.label>Parentesco: Morte</TM_HollowGolem_AffinityDeath.label>
+  <TM_HollowGolem_AffinityDeath.description>Aumenta a ligação do golem com a magia da morte; a cor verde dos olhos. O parentesco com a morte oferece os seguintes benefícios para cada nível de atualização [1/2/3]
+Movimento: + [15.10.2010]%
+Saúde: + [65/90/110]%</TM_HollowGolem_AffinityDeath.description>
+  <TM_HollowGolem_AffinityDeath.jobString>fabricação da atualização do golem</TM_HollowGolem_AffinityDeath.jobString>
+
+
+</LanguageData>

@@ -1,0 +1,13 @@
+<LanguageData>
+  <TM_SpiritAwarenessBrand.reportString>накладывает клеймо осознания.</TM_SpiritAwarenessBrand.reportString>
+  <TM_SpiritEmotionBrand.reportString>накладывает клеймо эмоций.</TM_SpiritEmotionBrand.reportString>
+  <TM_SpiritFitnessBrand.reportString>накладывает клеймо силы.</TM_SpiritFitnessBrand.reportString>
+  <TM_SpiritProtectionBrand.reportString>накладывает клеймо защиты.</TM_SpiritProtectionBrand.reportString>
+  <TM_SpiritVitalityBrand.reportString>накладывает клеймо жизненной силы.</TM_SpiritVitalityBrand.reportString>
+  <TM_SpiritSiphonBrand.reportString>накладывает клеймо сифона.</TM_SpiritSiphonBrand.reportString>
+  <TM_SpiritDispelBranding.reportString>снимает клейма.</TM_SpiritDispelBranding.reportString>
+  <TM_SpiritSigilSurge.reportString>усиливает клейма.</TM_SpiritSigilSurge.reportString>
+  <TM_SpiritSigilDrain.reportString>обращает действие клейм.</TM_SpiritSigilDrain.reportString>
+  <TM_SpiritLivingWall.reportString>оживляет стену.</TM_SpiritLivingWall.reportString>
+  <TM_SpiritDispelLivingWall.reportString>снимает чары с живой стены.</TM_SpiritDispelLivingWall.reportString>
+</LanguageData>

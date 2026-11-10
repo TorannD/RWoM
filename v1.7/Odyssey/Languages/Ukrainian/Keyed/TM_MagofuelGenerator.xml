@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MagofuelGeneratorStatus>Потужність: {0} Вт; витрата під час роботи: {1}/день\nПаливо в осерді: {2}\nЗапас роботи генератора: {3} дн.</TM_MagofuelGeneratorStatus>
+</LanguageData>

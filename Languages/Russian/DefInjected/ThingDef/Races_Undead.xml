@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <TM_Undead.label>нежить</TM_Undead.label>
+  <TM_Undead.description>Оживший мертвец, движимый тёмной магией.</TM_Undead.description>
+  <TM_Undead.tools.0.label>левая ладонь</TM_Undead.tools.0.label>
+  <TM_Undead.tools.1.label>правая ладонь</TM_Undead.tools.1.label>
+  <TM_Undead.tools.2.label>голова</TM_Undead.tools.2.label>
+  <TM_Undead_Leather.label>кожа нежити</TM_Undead_Leather.label>
+  <TM_Undead_Leather.description>кожа нежити</TM_Undead_Leather.description>
+  <TM_Undead_Leather.stuffProps.stuffAdjective>из кожи нежити</TM_Undead_Leather.stuffProps.stuffAdjective>
+  <TM_Undead_Meat.label>мясо нежити</TM_Undead_Meat.label>
+  <TM_Undead_Meat.description>мясо нежити</TM_Undead_Meat.description>
+  <TM_Undead_Corpse.label>труп нежити</TM_Undead_Corpse.label>
+  <TM_Undead_Corpse.description>труп нежити</TM_Undead_Corpse.description>
+</LanguageData>

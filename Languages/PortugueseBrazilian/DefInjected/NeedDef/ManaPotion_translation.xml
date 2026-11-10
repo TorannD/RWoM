@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mana potion addiction -->
+
+  <Chemical_ManaPotion.label>poção de maná</Chemical_ManaPotion.label>
+  <Chemical_ManaPotion.description>Este homem tornou-se dependente de produtos químicos e afetos da poção maná e sofrerá de graves sintomas de abstinência se não continuar a consumir poções de maná.</Chemical_ManaPotion.description>
+
+
+</LanguageData>

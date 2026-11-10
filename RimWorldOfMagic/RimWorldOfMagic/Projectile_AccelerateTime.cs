@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using AbilityUser;
 using UnityEngine;
 using System.Linq;
@@ -11,215 +11,100 @@ namespace TorannMagic
 {
     public class Projectile_AccelerateTime : Projectile_AbilityBase
     {
-        int age = -1;
-        int duration = 20;
-        int verVal = 0;
-        int pwrVal = 0;
-        float arcaneDmg = 1;
-        int strikeDelay = 4;
-        int strikeNum = 1;
-        float radius = 5;
-        bool initialized = false;
-        List<IntVec3> cellList;
-        Pawn pawn;
-        IEnumerable<IntVec3> targets;
+        private int verVal;
+        private int pwrVal;
+        private float arcaneDmg = 1f;
+        private float penetration;
+        private Pawn projectedOwner;
+        private bool resolved;
+
+        internal void PrepareHosted(MagicAbility power)
+        {
+            projectedOwner = power.Pawn;
+            var data = power.MagicUser.ExistingMagicData;
+            verVal = ClassProgression.SpiritRebirthRuntime.SavedRank(data,"TM_AccelerateTime_ver");
+            pwrVal = ClassProgression.SpiritRebirthRuntime.SavedRank(data,"TM_AccelerateTime_pwr");
+            arcaneDmg = power.MagicUser.arcaneDmg;
+            penetration = TM_Calc.GetSpellPenetration(projectedOwner);
+        }
 
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look<bool>(ref this.initialized, "initialized", true, false);
-            Scribe_Values.Look<int>(ref this.age, "age", -1, false);
-            Scribe_Values.Look<int>(ref this.duration, "duration", 1800, false);
-            Scribe_Values.Look<int>(ref this.strikeDelay, "strikeDelay", 0, false);
-            Scribe_Values.Look<int>(ref this.strikeNum, "strikeNum", 0, false);
-            Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
-            Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
-            Scribe_References.Look<Pawn>(ref this.pawn, "pawn", false);
-            Scribe_Collections.Look<IntVec3>(ref this.cellList, "cellList", LookMode.Value);
-        }
-
-        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
-        {
-            bool flag = this.age < duration;
-            if (!flag)
-            {
-                base.Destroy(mode);
-            }
-        }
-
-        protected override void Tick()
-        {
-            base.Tick();
-            this.age++;
+            Scribe_References.Look(ref projectedOwner,"TM_accelerationOwner");
+            Scribe_Values.Look(ref resolved,"TM_accelerationResolved");
+            Scribe_Values.Look(ref verVal,"verVal");
+            Scribe_Values.Look(ref pwrVal,"pwrVal");
+            Scribe_Values.Look(ref arcaneDmg,"TM_accelerationPotency",1f);
+            Scribe_Values.Look(ref penetration,"TM_accelerationPenetration");
         }
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
-        {                              
-
-            if (!this.initialized)
+        {
+            try
             {
-                this.pawn = this.launcher as Pawn;
-                CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_AccelerateTime.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AccelerateTime_pwr");
-                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_AccelerateTime.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_AccelerateTime_ver");
-                
-                pwrVal = pwr.level;
-                verVal = ver.level;
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+                if (resolved || blockedByShield || Map == null || launcher is not Pawn body) return;
+                resolved = true;
+                if (projectedOwner == null)
                 {
-                    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                    pwrVal = mpwr.level;
-                    verVal = mver.level;
-                }
-                this.arcaneDmg = comp.arcaneDmg;
-                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-                {
-                    pwrVal = 3;
-                    verVal = 3;
-                }                
-                this.strikeDelay = this.strikeDelay - verVal;
-                this.radius = this.def.projectile.explosionRadius;
-                this.duration = Mathf.RoundToInt(this.radius * this.strikeDelay);
-                this.initialized = true;
-                this.targets = GenRadial.RadialCellsAround(base.Position, this.radius, true);
-                //cellList = targets.ToList<IntVec3>();
-            }
-
-
-            Pawn targetPawn = this.intendedTarget.Thing as Pawn;
-            if (targetPawn == null)
-            {
-                base.Position.GetFirstPawn(this.Map);
-            }
-
-            if(targetPawn != null)
-            {
-                if (targetPawn.Faction != null && targetPawn.Faction == this.launcher.Faction)
-                {
-                    AgePawn(targetPawn, Mathf.RoundToInt((24 * 2500)* (1+(.1f * verVal))), false);
-                }
-                else
-                {
-                    List<Pawn> pawnList = TM_Calc.FindAllPawnsAround(this.launcher.Map, base.Position, this.radius, this.launcher.Faction, false);
-                    if (pawnList != null && pawnList.Count > 0)
+                    var magic = body.GetCompAbilityUserMagic();
+                    if (magic == null) return;
+                    var ranks = magic.MagicData.MagicPowerSkill_AccelerateTime;
+                    pwrVal = ranks.FirstOrDefault(s => s.label == "TM_AccelerateTime_pwr")?.level ?? 0;
+                    verVal = ranks.FirstOrDefault(s => s.label == "TM_AccelerateTime_ver")?.level ?? 0;
+                    if (body.story?.traits?.HasTrait(TorannMagicDefOf.Faceless) == true)
                     {
-                        for (int i = 0; i < Mathf.Clamp(pawnList.Count, 0, 2+verVal); i++)
-                        {
-                            if(pawnList[i].Faction != null && !pawnList[i].Faction.HostileTo(this.pawn.Faction))
-                            {
-                                pawnList[i].Faction.TryAffectGoodwillWith(this.pawn.Faction, -25);
-                            }
+                        var mimic = body.GetCompAbilityUserMight()?.MightData.MightPowerSkill_Mimic;
+                        pwrVal = mimic?.FirstOrDefault(s => s.label == "TM_Mimic_pwr")?.level ?? 0;
+                        verVal = mimic?.FirstOrDefault(s => s.label == "TM_Mimic_ver")?.level ?? 0;
+                    }
+                    arcaneDmg = magic.arcaneDmg;
+                    penetration = TM_Calc.GetSpellPenetration(body);
+                    if (ModOptions.Settings.Instance.AIHardMode && !body.IsColonist) pwrVal = verVal = 3;
+                }
+                var target = intendedTarget.Thing;
+                if (target != null && (!target.Spawned || target.Map != Map || target.Position != Position)) return;
+                if (target?.def.category == ThingCategory.Item)
+                {
+                    if (CanAgeItem(target)) AgeThing(target);
+                }
+                else if (target is Pawn friend && friend.Faction != null && friend.Faction == body.Faction)
+                    AgePawn(friend,Mathf.RoundToInt(60000 * (1 + .1f * verVal)),false);
+                else AgeArea(body);
+                var effect = TorannMagicDefOf.TM_TimeAccelerationAreaEffecter.Spawn();
+                try { effect.Trigger(this,this); }
+                finally { effect.Cleanup(); }
+            }
+            finally { if (!Destroyed) Destroy(DestroyMode.Vanish); }
+        }
 
-                            if (pawnList[i].Faction != null && pawnList[i].Faction != this.pawn.Faction)
-                            {
-                                AgePawn(pawnList[i], Mathf.RoundToInt((2500) * (1 + (.1f * verVal))), true);
-                                if (pawnList[i].IsColonist && !this.pawn.IsColonist)
-                                {
-                                    TM_Action.SpellAffectedPlayerWarning(pawnList[i]);
-                                }
-                            }
-                            else if(pawnList[i].Faction == null)
-                            {
-                                AgePawn(pawnList[i], Mathf.RoundToInt((2500) * (1 + (.1f * verVal))), true);
-                            }
-                        }
+        internal static bool CanAgeItem(Thing thing) => thing.def.useHitPoints && thing is not Corpse &&
+            (thing.def.MadeFromStuff || thing.TryGetComp<CompQuality>() != null);
+
+        private void AgeArea(Pawn body)
+        {
+            float radius = def.projectile.explosionRadius;
+            foreach (var target in TM_Calc.FindAllPawnsAround(Map,Position,radius,body.Faction,false)?.Take(2 + verVal) ?? Enumerable.Empty<Pawn>())
+            {
+                if (target.Faction != null && target.Faction != body.Faction && body.Faction != null && !target.Faction.HostileTo(body.Faction))
+                    target.Faction.TryAffectGoodwillWith(body.Faction,-25);
+                AgePawn(target,Mathf.RoundToInt(2500 * (1 + .1f * verVal)),true);
+                if (target.IsColonist && !body.IsColonist) TM_Action.SpellAffectedPlayerWarning(target);
+            }
+            foreach (var cell in GenRadial.RadialCellsAround(Position,radius,true))
+            {
+                if (!cell.InBounds(Map)) continue;
+                foreach (var thing in cell.GetThingList(Map))
+                {
+                    if (thing is Plant plant && plant.def.plant.growDays > 0)
+                        plant.Growth += Rand.Range(2 + pwrVal,4 + pwrVal) * arcaneDmg / plant.def.plant.growDays;
+                    if (thing.TryGetComp<CompHatcher>() is CompHatcher hatcher)
+                    {
+                        var progress = Traverse.Create(hatcher).Field("gestateProgress");
+                        progress.SetValue((progress.GetValue<float>() + Rand.Range(.3f + .1f * pwrVal,.7f + .1f * pwrVal)) * arcaneDmg);
                     }
                 }
             }
-            else
-            {
-                List<Pawn> pawnList = TM_Calc.FindAllPawnsAround(this.launcher.Map, base.Position, this.radius, this.launcher.Faction, false);
-                if (pawnList != null && pawnList.Count > 0)
-                {                    
-                    for (int i = 0; i < Mathf.Clamp(pawnList.Count, 0, 2 + verVal); i++)
-                    {
-                        if (pawnList[i].Faction != null && !pawnList[i].Faction.HostileTo(this.pawn.Faction))
-                        {
-                            pawnList[i].Faction.TryAffectGoodwillWith(this.pawn.Faction, -25);
-                        }
-
-                        targetPawn = pawnList[i];
-                        if (targetPawn.Faction != null && targetPawn.Faction != this.pawn.Faction)
-                        {
-                            AgePawn(pawnList[i], Mathf.RoundToInt((2500) * (1 + (.1f * verVal))), true);
-                        }
-                        else if(targetPawn.Faction == null)
-                        {
-                            AgePawn(pawnList[i], Mathf.RoundToInt((2500) * (1 + (.1f * verVal))), true);
-                        }
-                    }
-                }
-            }
-
-            List<Thing> thingList = base.Position.GetThingList(this.Map);
-            Thing thing = null;
-
-            if (targetPawn == null && thingList != null && thingList.Count > 0)
-            {
-                for (int i = 0; i < thingList.Count; i++)
-                {
-                    if (thingList[i] != null && !(thingList[i] is Pawn) && !(thingList[i] is Building))
-                    {
-                        //if (thingList[i].def.thingCategories != null && thingList[i].def.thingCategories.Count > 0 && (thingList[i].def.thingCategories.Contains(ThingCategoryDefOf.ResourcesRaw) || thingList[i].def.thingCategories.Contains(ThingCategoryDefOf.StoneBlocks) || thingList[i].def.defName == "RawMagicyte"))                    
-                        if (thingList[i].def.MadeFromStuff)
-                        {
-                            thing = thingList[i];
-                            break;
-                        }
-                        if (!thingList[i].def.MadeFromStuff && thingList[i].TryGetComp<CompQuality>() != null)
-                        {
-                            thing = thingList[i];
-                            break;
-                        }
-                    }
-                }
-            }
-
-            if(thing != null)
-            {
-                AgeThing(thing);
-            }
-
-            List<IntVec3> cellList = targets.ToList();
-            if(cellList != null && cellList.Count > 0)
-            {
-                for(int i =0; i < cellList.Count; i++)
-                {
-                    thingList = cellList[i].GetThingList(this.Map);
-                    if(thingList != null && thingList.Count > 0)
-                    {
-                        for(int j =0; j < thingList.Count; j++)
-                        {
-                            if (thingList[j] is Plant)
-                            {
-                                Plant plant = thingList[j] as Plant;
-                                try
-                                {
-                                    plant.Growth = plant.Growth + ((Rand.Range((2 + pwrVal), (4 + pwrVal)) / plant.def.plant.growDays) * this.arcaneDmg);
-                                }
-                                catch (NullReferenceException ex)
-                                {
-                                    plant.Growth *= (1.1f + (.1f * pwrVal));
-                                }
-                            }
-                            CompHatcher compHatcher = thingList[j].TryGetComp<CompHatcher>();
-                            if(compHatcher != null)
-                            {
-                                float gestateProgress = Traverse.Create(root: compHatcher).Field(name: "gestateProgress").GetValue<float>();
-                                Traverse.Create(root: compHatcher).Field(name: "gestateProgress").SetValue((gestateProgress + Rand.Range(.3f + (.1f * pwrVal), .7f + (.1f * pwrVal))) * this.arcaneDmg);
-                            }
-                        }
-                    }
-                }                    
-            }
-            
-            Effecter AreaAccelEffect = TorannMagicDefOf.TM_TimeAccelerationAreaEffecter.Spawn();
-            AreaAccelEffect.Trigger(new TargetInfo(base.Position, this.Map, false), new TargetInfo(base.Position, this.Map, false));
-            AreaAccelEffect.Cleanup();
-
-            this.age = this.duration;
-            this.Destroy(DestroyMode.Vanish);
         }
 
         private void AgePawn(Pawn pawn, int duration, bool isBad)
@@ -234,7 +119,7 @@ namespace TorannMagic
                 }
                 else
                 {
-                    if (Rand.Chance((.5f + verVal) * TM_Calc.GetSpellSuccessChance(this.launcher as Pawn, pawn, false)))
+                    if (Rand.Chance((.5f + verVal) * (1f + penetration - TM_Calc.GetArcaneResistance(pawn,false))))
                     {
                         HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_AccelerateTimeHD, .5f + pwrVal);
                         HediffComp_AccelerateTime hediffComp = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_AccelerateTimeHD, false).TryGetComp<HediffComp_AccelerateTime>();
@@ -262,22 +147,18 @@ namespace TorannMagic
             thing.HitPoints -= Mathf.RoundToInt((200 + (100 * pwrVal)) * this.arcaneDmg);
             if (thing.HitPoints <= 0)
             {
-                List<ThingDefCountClass> componentList = thing.def.costList;
-                if (componentList != null && componentList.Count > 0)
+                float fraction = .5f + .1f * pwrVal;
+                void Recover(ThingDef material,int cost)
                 {
-                    for (int i = 0; i < componentList.Count; i++)
-                    {
-                        Thing componentThing = ThingMaker.MakeThing(componentList[i].thingDef, null);
-                        componentThing.stackCount = Mathf.RoundToInt(componentList[i].count * (.5f + (.1f * pwrVal)));
-                        GenPlace.TryPlaceThing(componentThing, thing.Position, this.Map, ThingPlaceMode.Near);
-                    }
+                    int count = Mathf.RoundToInt(cost * fraction);
+                    if (material == null || count <= 0) return;
+                    var recovered = ThingMaker.MakeThing(material);
+                    recovered.stackCount = count;
+                    GenPlace.TryPlaceThing(recovered,thing.Position,Map,ThingPlaceMode.Near);
                 }
-                if(thing.def.MadeFromStuff && thing.Stuff != null)
-                {
-                    Thing componentThing = ThingMaker.MakeThing(thing.Stuff, null);
-                    componentThing.stackCount = Mathf.RoundToInt(thing.def.costStuffCount * (.5f + (.1f * pwrVal)));
-                    GenPlace.TryPlaceThing(componentThing, thing.Position, this.Map, ThingPlaceMode.Near);
-                }
+                if (thing.def.costList != null)
+                    foreach (var ingredient in thing.def.costList) Recover(ingredient.thingDef, ingredient.count);
+                if (thing.def.MadeFromStuff) Recover(thing.Stuff, thing.def.costStuffCount);
                 TransmutateEffects(thing.Position, 6 );
                 thing.Destroy(DestroyMode.Vanish);                
             }            

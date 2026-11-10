@@ -1,0 +1,15 @@
+<Defs>
+  <HediffDef>
+    <defName>TM_CoreReturnMark</defName>
+    <label>return mark</label>
+    <description>Bound to a magical core. Can return to that core for 10 magofuel. Maintaining the mark costs the core 1 magofuel per day.</description>
+    <hediffClass>TorannMagic.Odyssey.Hediff_CoreReturnMark</hediffClass>
+    <isBad>false</isBad>
+  </HediffDef>
+  <JobDef>
+    <defName>TM_ReceiveCoreReturnMark</defName>
+    <driverClass>TorannMagic.Odyssey.JobDriver_ReceiveCoreReturnMark</driverClass>
+    <reportString>receiving a return mark.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+</Defs>

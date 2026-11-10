@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using UnityEngine;
 using System.Collections.Generic;
@@ -18,6 +18,7 @@ namespace TorannMagic
         private int shroudFrequency = 4;
         private int lastHateTick = 0;
         private float lastHate = 0;
+        private int lastProcessedTick = -1;
 
         private int hatePwr = 0;
         private int hateVer = 0;
@@ -34,6 +35,9 @@ namespace TorannMagic
         public override void CompExposeData()
         {
             base.CompExposeData();
+            Scribe_Values.Look(ref lastHateTick,"hateLastGainTick");
+            Scribe_Values.Look(ref lastHate,"hateLastAmount");
+            Scribe_Values.Look(ref lastProcessedTick,"hateProcessedTick",-1);
         }
 
         public string labelCap
@@ -52,17 +56,17 @@ namespace TorannMagic
             }
         }
 
-        private void Initialize()
+        private void Initialize(Pawn body)
         {
-            bool spawned = base.Pawn.Spawned;
+            bool spawned = body.Spawned;
             CompAbilityUserMight comp = this.Pawn.GetCompAbilityUserMight();
             this.stats = new List<StatModifier>();
             this.stats.Clear();
-            if (spawned && comp != null && comp.IsMightUser)
+            if (spawned && comp != null && (comp.IsMightUser || ClassProgression.DeathKnightMartialPath.IsKnight(Pawn)))
             {
-                hatePwr = comp.MightData.MightPowerSkill_Shroud.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Shroud_pwr").level;
-                hateVer = comp.MightData.MightPowerSkill_Shroud.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Shroud_ver").level;
-                hateEff = comp.MightData.MightPowerSkill_Shroud.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Shroud_eff").level;
+                hatePwr = comp.MightData.MightPowerSkill_Shroud.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Shroud_pwr")?.level ?? 0;
+                hateVer = comp.MightData.MightPowerSkill_Shroud.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Shroud_ver")?.level ?? 0;
+                hateEff = comp.MightData.MightPowerSkill_Shroud.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Shroud_eff")?.level ?? 0;
 
                 //CollectStatModifiers();
             }
@@ -147,18 +151,21 @@ namespace TorannMagic
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-            bool flag = base.Pawn != null && base.Pawn.Map != null;
-            if (flag)
+            var body=PhysicalBody();
+            if (body?.Spawned != true || body.Dead) return;
+            int now=Find.TickManager.TicksGame;
+            if (now<=lastProcessedTick) return;
+            lastProcessedTick=now;
             {
                 if (!initialized)
                 {
                     initialized = true;
-                    this.Initialize();
+                    this.Initialize(body);
                 }
 
                 if (Find.TickManager.TicksGame % this.eventFrequency == 0)
                 {
-                    Hediff hediff = this.Pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_Artifact_HateBoostHD);
+                    Hediff hediff = body.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_Artifact_HateBoostHD);
                     float maxSev = 100;
                     float minSev = 0;
                     if (hediff != null)
@@ -168,12 +175,12 @@ namespace TorannMagic
                     }
                     this.parent.Severity = Mathf.Clamp(this.parent.Severity, 0, maxSev);
 
-                    if ((this.lastHateTick + 1200) < Find.TickManager.TicksGame && this.parent.Severity > (25f + minSev + (this.Pawn.health.hediffSet.PainTotal * 50)))
+                    if ((this.lastHateTick + 1200) < Find.TickManager.TicksGame && this.parent.Severity > (25f + minSev + (body.health.hediffSet.PainTotal * 50)))
                     {
                         severityAdjustment -= Rand.Range(.1f, .2f);
                     }
 
-                    if(this.parent.Severity < (20f + minSev + (this.Pawn.health.hediffSet.PainTotal * 50)))
+                    if(this.parent.Severity < (20f + minSev + (body.health.hediffSet.PainTotal * 50)))
                     {                        
                         severityAdjustment += Rand.Range(.1f, .15f);
                     }
@@ -184,11 +191,30 @@ namespace TorannMagic
                     this.lastHate = this.parent.Severity;
                 }
 
-                if (!this.Pawn.Downed && Find.TickManager.TicksGame % this.shroudFrequency == 0 && this.parent.Severity >= 10f)
+                if (!body.Downed && Find.TickManager.TicksGame % this.shroudFrequency == 0 && this.parent.Severity >= 10f)
                 {
-                    AbsorbProjectiles();
+                    AbsorbProjectiles(body);
                 }
             }
+        }
+
+        private Pawn PhysicalBody()
+        {
+            if (!ClassProgression.SpiritRebirthEnergy.Marked(Pawn)) return Pawn;
+            if (!ClassProgression.SpiritRebirthState.TryGet(Pawn,out var state) || state.DepletionPending ||
+                state.Host is not Pawn body || !state.HasValidHost(Pawn) ||
+                ClassProgression.DeathKnightMartialPath.PassiveOwner(body)!=Pawn) return null;
+            return body;
+        }
+
+        internal static void TickHosted(Pawn soul)
+        {
+            var hate=TM_Calc.GetHateHediff(soul);
+            var tracker=hate?.TryGetComp<HediffComp_Hate>();
+            if (tracker==null) return;
+            float adjustment=0;
+            tracker.CompPostTick(ref adjustment);
+            if (adjustment!=0) hate.Severity+=adjustment;
         }
 
         public override bool CompShouldRemove
@@ -199,43 +225,42 @@ namespace TorannMagic
             }
         }
 
-        private void AbsorbProjectiles()
+        private void AbsorbProjectiles(Pawn body)
         {
-            List<IntVec3> shroudCells = GenRadial.RadialCellsAround(this.Pawn.Position, (1.4f + (this.parent.Severity / 100)), true).ToList();
+            List<IntVec3> shroudCells = GenRadial.RadialCellsAround(body.Position, (1.4f + (this.parent.Severity / 100)), true).ToList();
             for (int i = 0; i < shroudCells.Count(); i++)
             {
-                List<Thing> cellList = shroudCells[i].GetThingList(this.Pawn.Map);
+                if (!shroudCells[i].InBounds(body.Map)) continue;
+                List<Thing> cellList = shroudCells[i].GetThingList(body.Map);
                 for (int j = 0; j < cellList.Count; j++)
                 {
                     Projectile projectile = cellList[j] as Projectile;
                     if (projectile != null)
                     {
                         Vector3 projectileOrigin = Traverse.Create(root: projectile).Field(name: "origin").GetValue<Vector3>();
-                        Thing launcher = Traverse.Create(root: projectile).Field(name: "launcher").GetValue<Thing>();
-                        float weaponDamageMultiplier = Traverse.Create(root: projectile).Field(name: "weaponDamageMultiplier").GetValue<float>();
-                        if (weaponDamageMultiplier > 0 && launcher != null && launcher != this.Pawn && (projectileOrigin - this.Pawn.DrawPos).MagnitudeHorizontal() > 8 && Rand.Chance(.3f + (.06f * this.hateVer)))
+                        Thing launcher = projectile.Launcher;
+                        float projectileDamage = projectile.def.defName == "Spark" ? 1f : projectile.DamageAmount;
+                        if (projectileDamage > 0 && launcher != null && launcher != body && (projectileOrigin - body.DrawPos).MagnitudeHorizontal() > 8 && Rand.Chance(.3f + (.06f * this.hateVer)))
                         {                            
-                            Vector3 moteDirection = TM_Calc.GetVector(projectile.ExactPosition, this.Pawn.DrawPos);
+                            Vector3 moteDirection = TM_Calc.GetVector(projectile.ExactPosition, body.DrawPos);
                             //Vector3 displayEffect = projectile.DrawPos;
                             //displayEffect.x += Rand.Range(-.3f, .3f);
                             //displayEffect.y += Rand.Range(-.3f, .3f);
                             //displayEffect.z += Rand.Range(-.3f, .3f);
 
-                            float projectileDamage = 1;
-                            if (projectile.def.defName != "Spark")
-                            {
-                                projectileDamage = projectile.def.projectile.GetDamageAmount(1, null);
-                            }
-                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Shadow, projectile.DrawPos, this.Pawn.Map, Rand.Range(.6f, .8f), 0.3f, Rand.Range(.1f, .2f), Rand.Range(.2f, .5f), Rand.Range(-300, 300), Rand.Range(1.2f, 2f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), Rand.Range(0, 360));
-                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Shadow, projectile.DrawPos, this.Pawn.Map, Rand.Range(.4f, .6f), 0.3f, Rand.Range(.1f, .2f), Rand.Range(.2f, .5f), Rand.Range(-300, 300), Rand.Range(.8f, 1.2f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), Rand.Range(0, 360));
-                            TM_MoteMaker.ThrowGenericFleck(FleckDefOf.LightningGlow, projectile.DrawPos, this.Pawn.Map, projectileDamage / 8f, .2f, .1f, .3f, 0, 0, 0, Rand.Range(0, 360));
-                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Shadow, this.Pawn.DrawPos, this.Pawn.Map, Rand.Range(.6f, .8f), 0.3f, Rand.Range(.1f, .2f), Rand.Range(.2f, .5f), Rand.Range(-300, 300), Rand.Range(.6f, 1f), (Quaternion.AngleAxis(-90, Vector3.up) * moteDirection).ToAngleFlat(), Rand.Range(0, 360));
+                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Shadow, projectile.DrawPos, body.Map, Rand.Range(.6f, .8f), 0.3f, Rand.Range(.1f, .2f), Rand.Range(.2f, .5f), Rand.Range(-300, 300), Rand.Range(1.2f, 2f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), Rand.Range(0, 360));
+                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Shadow, projectile.DrawPos, body.Map, Rand.Range(.4f, .6f), 0.3f, Rand.Range(.1f, .2f), Rand.Range(.2f, .5f), Rand.Range(-300, 300), Rand.Range(.8f, 1.2f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), Rand.Range(0, 360));
+                            TM_MoteMaker.ThrowGenericFleck(FleckDefOf.LightningGlow, projectile.DrawPos, body.Map, projectileDamage / 8f, .2f, .1f, .3f, 0, 0, 0, Rand.Range(0, 360));
+                            TM_MoteMaker.ThrowGenericMote(TorannMagicDefOf.Mote_Shadow, body.DrawPos, body.Map, Rand.Range(.6f, .8f), 0.3f, Rand.Range(.1f, .2f), Rand.Range(.2f, .5f), Rand.Range(-300, 300), Rand.Range(.6f, 1f), (Quaternion.AngleAxis(-90, Vector3.up) * moteDirection).ToAngleFlat(), Rand.Range(0, 360));
 
                             float sevReduct = (projectileDamage / (2 + (.5f *hateEff)));
                             HealthUtility.AdjustSeverity(this.Pawn, this.parent.def, -sevReduct);
                             
 
                             projectile.Destroy(DestroyMode.Vanish);
+                            // Some persistent projectiles refuse destruction. Revisit the index only
+                            // when removal actually shifted the live grid list.
+                            if (j >= cellList.Count || cellList[j] != projectile) j--;
                         }
                     }
                 }

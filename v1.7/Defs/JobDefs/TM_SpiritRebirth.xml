@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritRebirth</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritRebirth</driverClass>
+    <reportString>performing the spirit rebirth ritual.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <carryThingAfterJob>true</carryThingAfterJob>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritRebirthRecovery</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritRebirthRecovery</driverClass>
+    <reportString>completing the interrupted spirit rebirth ritual.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <carryThingAfterJob>true</carryThingAfterJob>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritBloodSacrifice</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBloodSacrifice</driverClass>
+    <reportString>performing a blood sacrifice.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+</Defs>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ThermalShieldGenerator.label>热能护盾发生器</TM_ThermalShieldGenerator.label>
+  <TM_ThermalShieldGenerator.description>在自身及相连法力信标周围5格内提供御寒保护，在地面和太空均可使用。仅消耗自身容量为100的法力缓冲池中的法力。每个相连网络仅有一台发生器运行；其他发生器处于待机状态。每个低温地格每秒消耗0.001法力（100个低温地格每秒消耗0.1法力）。满强度时，寒冷暴露的有效温度至少为21°C。法力不足时，仅提供部分保护，使有效温度向21°C提升。不会冷却高温区域、供氧或实际加热房间。</TM_ThermalShieldGenerator.description>
+</LanguageData>

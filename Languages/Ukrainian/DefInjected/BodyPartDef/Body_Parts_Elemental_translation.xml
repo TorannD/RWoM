@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Ele_Body.label>тіло</Ele_Body.label>
+  <Ele_Head.label>голова</Ele_Head.label>
+  <Ele_Skull.label>череп</Ele_Skull.label>
+  <Ele_Brain.label>мозок</Ele_Brain.label>
+  <Ele_Heart.label>серце</Ele_Heart.label>
+  <Ele_LeftArm.label>ліва рука</Ele_LeftArm.label>
+  <Ele_RightArm.label>права рука</Ele_RightArm.label>
+  <Ele_Horn.label>Ріг</Ele_Horn.label>
+  <Ele_Eye.label>око</Ele_Eye.label>
+  <Ele_LeftEar.label>ліве вухо</Ele_LeftEar.label>
+  <Ele_RightEar.label>праве вухо</Ele_RightEar.label>
+  <Ele_Jaw.label>щелепи</Ele_Jaw.label>
+  <Ele_Neck.label>шия</Ele_Neck.label>
+  <Ele_Spine.label>хребет</Ele_Spine.label>
+  <Ele_Abdomen.label>черевець</Ele_Abdomen.label>
+  <Ele_Chest.label>груди</Ele_Chest.label>
+  <Ele_Base.label>елементарна підстава руху</Ele_Base.label>
+
+
+</LanguageData>

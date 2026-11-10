@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Portfuel.label>combustible de portal</Portfuel.label>
+  
+  <Portfuel.description>Energía arcana embotellada para usarse como combustible. Se utiliza para cargar portales.</Portfuel.description>
+  
+  
+  <TM_Cooler.label>Enfriador mágico</TM_Cooler.label>
+  
+  <TM_Cooler.description>Una conexión dimensional activa con el Plano del Hielo que puede utilizarse para enfriar espacios cerrados.</TM_Cooler.description>
+  
+  
+  <TM_Heater.label>Calentador mágico</TM_Heater.label>
+  
+  <TM_Heater.description>Una conexión dimensional activa con el Plano del Fuego que puede utilizarse para calentar espacios cerrados. También puede usarse para diversas tareas de cocina o cremación. Permanece en el lugar mientras sea sostenido por un mago.</TM_Heater.description>
+  
+  
+  <TM_LightPod.label>Haz de luz</TM_LightPod.label>
+  
+  <TM_LightPod.description>Transporte a lo largo de un haz de luz.</TM_LightPod.description>
+  
+  
+  <TM_MageLightTD.label>luz mágica</TM_MageLightTD.label>
+  
+  <TM_MageLightTD.description>Una fuente de luz creada por un mago.</TM_MageLightTD.description>
+
+  
+  
+  <TM_PowerNode.label>Nodo de energía arcana</TM_PowerNode.label>
+  
+  <TM_PowerNode.description>Un nodo de energía arcana que proporciona electricidad mientras sea sostenido por un mago.</TM_PowerNode.description>
+  
+  
+  <TM_Sentinel.label>Centinela</TM_Sentinel.label>
+  
+  <TM_Sentinel.description>Esta estatua está hecha de piedra y tiene la forma de una criatura aterradora. La estatua es más pequeña que una persona promedio y tiene un aspecto de corte y calidad toscos, aunque notas que los ojos, las orejas y las garras parecen tener un detalle más fino.\n\nAl acercarte a la estatua, un destello espeluznante en los ojos del centinela de piedra parece seguirte, y te invade la sensación de que te están observando.</TM_Sentinel.description>
+  
+  
+  <TM_Sunlight.label>luz solar</TM_Sunlight.label>
+  
+  <TM_Sunlight.description>Un bolsillo dimensional que emite una fuente continua de luz lo suficientemente fuerte como para cultivar plantas.</TM_Sunlight.description>
+  
+  
+  <TM_Teleporter.label>Teletransportador</TM_Teleporter.label>
+  
+  <TM_Teleporter.description>Una plataforma de portal utilizada para albergar cápsulas de teletransporte.</TM_Teleporter.description>
+  
+  
+  <TM_Teleporter_I.label>Teletransportador (I)</TM_Teleporter_I.label>
+  
+  <TM_Teleporter_I.description>Una plataforma de portal utilizada para albergar cápsulas de teletransporte.</TM_Teleporter_I.description>
+  
+  
+  <TM_Teleporter_II.label>Teletransportador (II)</TM_Teleporter_II.label>
+  
+  <TM_Teleporter_II.description>Una plataforma de portal utilizada para albergar cápsulas de teletransporte.</TM_Teleporter_II.description>
+  
+  
+  <TM_Teleporter_III.label>Teletransportador (III)</TM_Teleporter_III.label>
+  
+  <TM_Teleporter_III.description>Una plataforma de portal utilizada para albergar cápsulas de teletransporte.</TM_Teleporter_III.description>
+  
+  
+  <TM_TeleportPod.label>Cápsula de teletransporte</TM_TeleportPod.label>
+  
+  <TM_TeleportPod.description>Un cilindro plano y grande utilizado por los brujos para transportarse rápidamente entre ubicaciones.</TM_TeleportPod.description>
+  
+  
+  <TM_TeleportPod_I.label>Cápsula de teletransporte (I)</TM_TeleportPod_I.label>
+  
+  <TM_TeleportPod_I.description>Un cilindro plano y grande utilizado por los brujos para transportarse rápidamente entre ubicaciones.</TM_TeleportPod_I.description>
+  
+  
+  <TM_TeleportPod_II.label>Cápsula de teletransporte (II)</TM_TeleportPod_II.label>
+  
+  <TM_TeleportPod_II.description>Un cilindro plano y grande utilizado por los brujos para transportarse rápidamente entre ubicaciones.</TM_TeleportPod_II.description>
+  
+  
+  <TM_TeleportPod_III.label>Cápsula de teletransporte (III)</TM_TeleportPod_III.label>
+  
+  <TM_TeleportPod_III.description>Un cilindro plano y grande utilizado por los brujos para transportarse rápidamente entre ubicaciones.</TM_TeleportPod_III.description>
+
+  
+</LanguageData>

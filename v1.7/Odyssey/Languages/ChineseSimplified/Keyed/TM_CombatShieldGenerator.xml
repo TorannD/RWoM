@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_CombatShieldStatusStandby>待机：另一台战斗护盾发生器正在运行</TM_CombatShieldStatusStandby>
+  <TM_CombatShieldStatus>网络护盾：{0} / {1}</TM_CombatShieldStatus>
+  <TM_CombatShieldSourceHP>本来源护盾：{0} / {1}</TM_CombatShieldSourceHP>
+  <TM_CombatShieldReboot>护盾重启：{0}秒</TM_CombatShieldReboot>
+  <TM_CombatShieldNetworkHP>网络护盾强度：{0} / {1}</TM_CombatShieldNetworkHP>
+  <TM_CombatShieldPeace>和平模式：维持消耗为10%（修复费用不变）</TM_CombatShieldPeace>
+  <TM_CombatShieldCombat>战斗模式：全额维持消耗</TM_CombatShieldCombat>
+</LanguageData>

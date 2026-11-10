@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ThermalShieldGenerator.label>generador de escudo térmico</TM_ThermalShieldGenerator.label>
+  <TM_ThermalShieldGenerator.description>Protege del frío en un radio de 5 casillas alrededor de sí mismo y de las balizas de maná conectadas, en tierra o en el espacio. Solo usa maná de su reserva de 100. Solo un generador funciona por red conectada; los demás quedan en espera. Consume 0,001 de maná por casilla fría por segundo (0,1 por segundo para 100 casillas frías). A plena potencia, la temperatura efectiva de exposición al frío es de al menos 21°C. La falta de maná ofrece protección parcial hacia 21°C. No enfría zonas calientes, no suministra oxígeno ni calienta físicamente las habitaciones.</TM_ThermalShieldGenerator.description>
+</LanguageData>

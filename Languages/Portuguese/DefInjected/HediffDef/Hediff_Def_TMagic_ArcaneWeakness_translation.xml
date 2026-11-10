@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ArcaneWeakness.label>fraqueza secreta</TM_ArcaneWeakness.label>
+  <TM_ArcaneWeakness.description>A fraqueza secreta é um efeito secundário do uso de poderes mágicos. Poderes menores com preço de maná inferior a 25 não terão fraqueza secreta. A quantidade de fraqueza secreta que afetará o mago depende do valor do maná desta capacidade.</TM_ArcaneWeakness.description>
+  <TM_ArcaneWeakness.stages.0.label>debilitado</TM_ArcaneWeakness.stages.0.label>
+  <TM_ArcaneWeakness.stages.1.label>secado</TM_ArcaneWeakness.stages.1.label>
+  <TM_ArcaneWeakness.stages.2.label>gravemente doente</TM_ArcaneWeakness.stages.2.label>
+  <TM_ArcaneWeakness.stages.3.label>catatônica</TM_ArcaneWeakness.stages.3.label>
+  <TM_ArcaneWeakness.stages.4.label>Morte clínica</TM_ArcaneWeakness.stages.4.label>
+
+  <TM_CursedHD.label>maldição secreta</TM_CursedHD.label>
+  <TM_CursedHD.description>A maldição secreta é um subproduto. O maldito peão sofre de uma fraqueza secreta que vai aumentar até se tornar uma doença persistente. Os efeitos da maldição podem ser compensados com a magia, mas a dor causada pela maldição proporciona uma clareza única. A maldição pode ser removida ao remover a linha mágica do peão.</TM_CursedHD.description>
+  <TM_CursedHD.stages.0.label>bleckle</TM_CursedHD.stages.0.label>
+  <TM_CursedHD.stages.1.label>moderado</TM_CursedHD.stages.1.label>
+  <TM_CursedHD.stages.2.label>elevado</TM_CursedHD.stages.2.label>
+
+
+</LanguageData>

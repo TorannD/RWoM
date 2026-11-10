@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Sentinel_Abdomen.label>abdomen</Sentinel_Abdomen.label>
+  
+  
+  <Sentinel_Base.label>patas del centinela</Sentinel_Base.label>
+  
+  
+  <Sentinel_Body.label>cuerpo</Sentinel_Body.label>
+  
+  
+  <Sentinel_Brain.label>cerebro</Sentinel_Brain.label>
+  
+  
+  <Sentinel_Chest.label>pecho</Sentinel_Chest.label>
+  
+  
+  <Sentinel_Head.label>cabeza</Sentinel_Head.label>
+  
+  
+  <Sentinel_Jaw.label>mandíbula</Sentinel_Jaw.label>
+  
+  
+  <Sentinel_LeftArm.label>brazo izquierdo</Sentinel_LeftArm.label>
+  
+  
+  <Sentinel_LeftEar.label>oreja izquierda</Sentinel_LeftEar.label>
+  
+  
+  <Sentinel_LeftEye.label>ojo izquierdo</Sentinel_LeftEye.label>
+  
+  
+  <Sentinel_Neck.label>cuello</Sentinel_Neck.label>
+  
+  
+  <Sentinel_RightArm.label>brazo derecho</Sentinel_RightArm.label>
+  
+  
+  <Sentinel_RightEar.label>oreja derecha</Sentinel_RightEar.label>
+  
+  
+  <Sentinel_RightEye.label>ojo derecho</Sentinel_RightEye.label>
+  
+  
+  <Sentinel_Skull.label>cráneo</Sentinel_Skull.label>
+  
+  
+  <Sentinel_Spine.label>columna vertebral</Sentinel_Spine.label>
+  
+</LanguageData>

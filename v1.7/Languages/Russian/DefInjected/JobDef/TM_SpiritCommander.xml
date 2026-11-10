@@ -1,0 +1,10 @@
+<LanguageData>
+  <TM_SpiritCommanderCrew.reportString>координирует рабочую группу.</TM_SpiritCommanderCrew.reportString>
+  <TM_SpiritCommanderRally.reportString>собирает союзников.</TM_SpiritCommanderRally.reportString>
+  <TM_SpiritCommanderMove.reportString>приказывает союзникам выдвигаться.</TM_SpiritCommanderMove.reportString>
+  <TM_SpiritCommanderAlert.reportString>приказывает союзникам сохранять бдительность.</TM_SpiritCommanderAlert.reportString>
+  <TM_SpiritCommanderHold.reportString>приказывает союзникам держать строй.</TM_SpiritCommanderHold.reportString>
+  <TM_SpiritCommanderProvisionerAura.reportString>настраивает ауру командира.</TM_SpiritCommanderProvisionerAura.reportString>
+  <TM_SpiritCommanderTaskMasterAura.reportString>настраивает ауру командира.</TM_SpiritCommanderTaskMasterAura.reportString>
+  <TM_SpiritCommanderCommanderAura.reportString>настраивает ауру командира.</TM_SpiritCommanderCommanderAura.reportString>
+</LanguageData>

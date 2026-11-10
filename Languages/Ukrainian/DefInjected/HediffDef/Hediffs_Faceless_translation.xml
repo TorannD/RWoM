@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_DisguiseHD.label>Обман</TM_DisguiseHD.label>
+  <TM_DisguiseHD.description>Укутаний в хитромудру маску, щоб обдурити супротивників.</TM_DisguiseHD.description>
+  <TM_DisguiseHD.stages.0.label>I</TM_DisguiseHD.stages.0.label>
+
+  <TM_DisguiseHD_I.label>Обман</TM_DisguiseHD_I.label>
+  <TM_DisguiseHD_I.description>Укутаний в хитромудру маску, щоб обдурити супротивників.</TM_DisguiseHD_I.description>
+  <TM_DisguiseHD_I.stages.0.label>II</TM_DisguiseHD_I.stages.0.label>
+
+  <TM_DisguiseHD_II.label>Обман</TM_DisguiseHD_II.label>
+  <TM_DisguiseHD_II.description>Укутаний в хитромудру маску, щоб обдурити супротивників.</TM_DisguiseHD_II.description>
+  <TM_DisguiseHD_II.stages.0.label>III</TM_DisguiseHD_II.stages.0.label>
+
+  <TM_DisguiseHD_III.label>Обман</TM_DisguiseHD_III.label>
+  <TM_DisguiseHD_III.description>Укутаний в хитромудру маску, щоб обдурити супротивників.</TM_DisguiseHD_III.description>
+  <TM_DisguiseHD_III.stages.0.label>IV</TM_DisguiseHD_III.stages.0.label>
+
+  <TM_ReversalHD.label>Реверсивна позиція</TM_ReversalHD.label>
+  <TM_ReversalHD.description>Звертає енергію атаки назад на атакуючого.</TM_ReversalHD.description>
+  <TM_ReversalHD.stages.0.label>I</TM_ReversalHD.stages.0.label>
+
+  <TM_PossessionHD.label>Одержимість</TM_PossessionHD.label>
+  <TM_PossessionHD.description>Вчинки знаходяться під впливом майстра обману.</TM_PossessionHD.description>
+  <TM_PossessionHD.stages.0.label>I</TM_PossessionHD.stages.0.label>
+
+  <TM_PossessionHD_I.label>Одержимість</TM_PossessionHD_I.label>
+  <TM_PossessionHD_I.description>Вчинки знаходяться під впливом майстра обману.</TM_PossessionHD_I.description>
+  <TM_PossessionHD_I.stages.0.label>II</TM_PossessionHD_I.stages.0.label>
+
+  <TM_PossessionHD_II.label>Одержимість</TM_PossessionHD_II.label>
+  <TM_PossessionHD_II.description>Вчинки знаходяться під впливом майстра обману.</TM_PossessionHD_II.description>
+  <TM_PossessionHD_II.stages.0.label>III</TM_PossessionHD_II.stages.0.label>
+
+  <TM_PossessionHD_III.label>Одержимість</TM_PossessionHD_III.label>
+  <TM_PossessionHD_III.description>Вчинки знаходяться під впливом майстра обману.</TM_PossessionHD_III.description>
+  <TM_PossessionHD_III.stages.0.label>IV</TM_PossessionHD_III.stages.0.label>
+
+  <TM_CoOpPossessionHD.label>Одержимість</TM_CoOpPossessionHD.label>
+  <TM_CoOpPossessionHD.description>Вчинки знаходяться під впливом майстра обману.</TM_CoOpPossessionHD.description>
+  <TM_CoOpPossessionHD.stages.0.label>I</TM_CoOpPossessionHD.stages.0.label>
+
+  <TM_CoOpPossessionHD_I.label>Одержимість</TM_CoOpPossessionHD_I.label>
+  <TM_CoOpPossessionHD_I.description>Вчинки знаходяться під впливом майстра обману.</TM_CoOpPossessionHD_I.description>
+  <TM_CoOpPossessionHD_I.stages.0.label>II</TM_CoOpPossessionHD_I.stages.0.label>
+
+  <TM_CoOpPossessionHD_II.label>Одержимість</TM_CoOpPossessionHD_II.label>
+  <TM_CoOpPossessionHD_II.description>Вчинки знаходяться під впливом майстра обману.</TM_CoOpPossessionHD_II.description>
+  <TM_CoOpPossessionHD_II.stages.0.label>III</TM_CoOpPossessionHD_II.stages.0.label>
+
+  <TM_CoOpPossessionHD_III.label>Одержимість</TM_CoOpPossessionHD_III.label>
+  <TM_CoOpPossessionHD_III.description>Вчинки знаходяться під впливом майстра обману.</TM_CoOpPossessionHD_III.description>
+  <TM_CoOpPossessionHD_III.stages.0.label>IV</TM_CoOpPossessionHD_III.stages.0.label>
+
+  <TM_DisorientedVomit.label>дезорієнтований</TM_DisorientedVomit.label>
+  <TM_DisorientedVomit.description>Дезорієнтований після зміни місця з іншим пішаком.</TM_DisorientedVomit.description>
+  <TM_DisorientedVomit.stages.0.label>I</TM_DisorientedVomit.stages.0.label>
+
+
+</LanguageData>

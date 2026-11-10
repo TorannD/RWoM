@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <ArcaneEnemyRaid.label>враждебный арканный налёт</ArcaneEnemyRaid.label>
+  <QuestArcaneCamp.label>возможность: лагерь арканных пиратов</QuestArcaneCamp.label>
+  <QuestArcaneCamp.letterText>{0}, {1} из фракции {2}, отправляет нам сообщение.
+
+Пиратский лагерь неподалёку начал нападать на наши караваны и угрожает атаковать наше поселение, если мы не передадим им магический артефакт. {1} просит вас уничтожить пиратов и разрушить их лагерь, а для этого потребуется перебить всех врагов и снести турели.
+
+Если вы справитесь, мы останемся у вас в долгу и передадим тот самый артефакт вам... хлопот от него всё равно больше, чем пользы:
+
+{3}
+{4}
+{5}</QuestArcaneCamp.letterText>
+  <QuestArcaneCamp.letterLabel>арканные пираты</QuestArcaneCamp.letterLabel>
+</LanguageData>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <FlyingObject_Whirlwind.label>objeto volador</FlyingObject_Whirlwind.label>
+  
+  
+  <Projectile_Cleave.label>Tajo</Projectile_Cleave.label>
+  
+  
+  <Projectile_Grapple.label>Gancho de agarre</Projectile_Grapple.label>
+  
+  
+  <Projectile_Whirlwind.label>Torbellino</Projectile_Whirlwind.label>
+  
+  
+  <TM_Gladiator_Fortitude.label>Entereza</TM_Gladiator_Fortitude.label>
+  
+  
+  <TM_Gladiator_Sprint.label>Esprintar</TM_Gladiator_Sprint.label>
+  
+</LanguageData>

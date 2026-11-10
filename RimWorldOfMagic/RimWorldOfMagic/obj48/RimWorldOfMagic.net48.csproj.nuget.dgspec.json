@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\golang\\RWoM\\RWoM\\RimWorldOfMagic\\RimWorldOfMagic\\RimWorldOfMagic.net48.csproj": {}
+  },
+  "projects": {
+    "D:\\golang\\RWoM\\RWoM\\RimWorldOfMagic\\RimWorldOfMagic\\RimWorldOfMagic.net48.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\golang\\RWoM\\RWoM\\RimWorldOfMagic\\RimWorldOfMagic\\RimWorldOfMagic.net48.csproj",
+        "projectName": "TorannMagic",
+        "projectPath": "D:\\golang\\RWoM\\RWoM\\RimWorldOfMagic\\RimWorldOfMagic\\RimWorldOfMagic.net48.csproj",
+        "packagesPath": "C:\\Users\\mr-fi\\.nuget\\packages\\",
+        "outputPath": "D:\\golang\\RWoM\\RWoM\\RimWorldOfMagic\\RimWorldOfMagic\\obj48/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mr-fi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "targetAlias": "net48",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net48",
+          "dependencies": {
+            "Krafs.Rimworld.Ref": {
+              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[1.6.4871, )"
+            },
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.113\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

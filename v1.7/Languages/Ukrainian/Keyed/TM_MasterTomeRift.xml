@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_TomeRaidChoice>Загін нападників</TM_TomeRaidChoice>
+  <TM_TomeRiftChoice>Скінченний розлом елементалів</TM_TomeRiftChoice>
+  <TM_TomeRiftLocked>Для розлому замало загрози або відсутня ворожа фракція елементалів</TM_TomeRiftLocked>
+  <TM_TomeRiftDescription>Поблизу {0} відкриється розлом. Через одну ігрову годину з нього вийдуть вартові: {1} (близько {2} очок загрози). Розлом закриється. Відбийте цю групу за дві доби, щоб отримати {3}.</TM_TomeRiftDescription>
+</LanguageData>

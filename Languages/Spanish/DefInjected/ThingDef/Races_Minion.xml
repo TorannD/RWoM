@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_GreaterMinionR.label>minion mayor</TM_GreaterMinionR.label>
+  
+  <TM_GreaterMinionR.description>Los minions son cobardes traviesos, perezosos y crueles que proceden de un miserable plano de existencia. Parecen una albóndiga flotante con un ojo gigante. Tienen bracitos rechonchos, una boca que parece congelada en una sonrisa desagradable y dos o tres cuernos.\nNo está claro cómo flotan, aunque solo cabe suponer que tiene algo que ver con el hedor cálido y pútrido que los sigue a todas partes.\nSu utilidad es discutible: apenas tienen capacidad de combate y antes huirían que pelear. -Pueden- realizar tareas sencillas como transportar y limpiar (aunque parecen tener una definición distinta de «limpio»). Sin embargo, es más probable encontrarlos holgazaneando frente a la tele o fumándose un porro (o ambas cosas) que haciendo algo productivo.\nPueden ser invocados por magos ingenuos... digo, adiestrados y, a cambio de darles un respiro de su «jefe, un demonio del foso», están dispuestos a «echar una mano» por la zona.\nDe vez en cuando expresan el deseo de golpear cosas y (normalmente) se los puede convencer de que golpeen unas rocas cercanas.\nSi las cosas se ponen demasiado difíciles o se aburren, huirán de vuelta a donde vinieron.</TM_GreaterMinionR.description>
+  
+  <TM_GreaterMinionR.race.meatLabel>carne misteriosa</TM_GreaterMinionR.race.meatLabel>
+  
+  <TM_GreaterMinionR.tools.horns.label>cuernos</TM_GreaterMinionR.tools.horns.label>
+  
+  <TM_GreaterMinionR.tools.bite.label>mordisco</TM_GreaterMinionR.tools.bite.label>
+  
+  
+  <TM_MinionR.label>minion</TM_MinionR.label>
+  
+  <TM_MinionR.description>Los minions son cobardes traviesos, perezosos y crueles que proceden de un miserable plano de existencia. Parecen una albóndiga flotante con un ojo gigante. Tienen bracitos rechonchos, una boca que parece congelada en una sonrisa desagradable y dos o tres cuernos.\nNo está claro cómo flotan, aunque solo cabe suponer que tiene algo que ver con el hedor cálido y pútrido que los sigue a todas partes.\nSu utilidad es discutible: apenas tienen capacidad de combate y antes huirían que pelear. -Pueden- realizar tareas sencillas como transportar y limpiar (aunque parecen tener una definición distinta de «limpio»). Sin embargo, es más probable encontrarlos holgazaneando frente a la tele o fumándose un porro (o ambas cosas) que haciendo algo productivo.\nPueden ser invocados por magos ingenuos... digo, adiestrados y, a cambio de darles un respiro de su «jefe, un demonio del foso», están dispuestos a «echar una mano» por la zona.\nDe vez en cuando expresan el deseo de golpear cosas y (normalmente) se los puede convencer de que golpeen unas rocas cercanas.\nSi las cosas se ponen demasiado difíciles o se aburren, huirán de vuelta a donde vinieron.</TM_MinionR.description>
+  
+  <TM_MinionR.race.meatLabel>carne misteriosa</TM_MinionR.race.meatLabel>
+  
+  <TM_MinionR.tools.horns.label>cuernos</TM_MinionR.tools.horns.label>
+  
+  <TM_MinionR.tools.bite.label>mordisco</TM_MinionR.tools.bite.label>
+  
+</LanguageData>

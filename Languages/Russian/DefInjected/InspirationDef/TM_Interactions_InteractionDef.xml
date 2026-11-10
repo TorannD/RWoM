@@ -1,0 +1,50 @@
+<LanguageData><!-- v1.5\Defs\InteractionDefs\TM_Interactions.xml-->
+	<!--            EN: discussed magic theories and practices-->
+	<TM_MagicLore.label>обсуждали теорию и практику магии</TM_MagicLore.label>
+	<!-- EN:
+		<li>r_logentry->Mentored [RECIPIENT_nameDef] in magic.</li>-->
+	<TM_MagicLore.logRulesInitiator.rulesStrings><li>r_logentry-&gt;Обучал(а) [RECIPIENT_nameDef] магии.</li>
+	</TM_MagicLore.logRulesInitiator.rulesStrings>
+	<!-- EN:
+		<li>r_logentry->Learned magic theories from [INITIATOR_nameDef].</li>-->
+	<TM_MagicLore.logRulesRecipient.rulesStrings><li>r_logentry-&gt;Изучал(а) магию у [INITIATOR_nameDef].</li>
+	</TM_MagicLore.logRulesRecipient.rulesStrings>
+	<!--            EN: discussed combat techniques-->
+	<TM_MightLore.label>обсуждали боевые приёмы</TM_MightLore.label>
+	<!-- EN:
+		<li>r_logentry->Taught combat techniques to [RECIPIENT_nameDef].</li>-->
+	<TM_MightLore.logRulesInitiator.rulesStrings><li>r_logentry-&gt;Обучал(а) [RECIPIENT_nameDef] боевым приемам.</li>
+	</TM_MightLore.logRulesInitiator.rulesStrings>
+	<!-- EN:
+		<li>r_logentry->Trained in combat by [INITIATOR_nameDef].</li>-->
+	<TM_MightLore.logRulesRecipient.rulesStrings><li>r_logentry-&gt;Отрабатывал(а) боевые приёмы с [INITIATOR_nameDef].</li>
+	</TM_MightLore.logRulesRecipient.rulesStrings>
+	<!--              EN: entertained-->
+	<TM_EntertainID.label>развлекали</TM_EntertainID.label>
+	<!-- EN:
+		<li>r_logentry->Entertained [RECIPIENT_nameDef].</li>-->
+	<TM_EntertainID.logRulesInitiator.rulesStrings><li>r_logentry-&gt;Развлекал(а) [RECIPIENT_nameDef].</li>
+	</TM_EntertainID.logRulesInitiator.rulesStrings>
+	<!-- EN:
+		<li>r_logentry->Was entertained by [INITIATOR_nameDef].</li>-->
+	<TM_EntertainID.logRulesRecipient.rulesStrings><li>r_logentry-&gt;[INITIATOR_nameDef] развлёк(ла) меня.</li>
+	</TM_EntertainID.logRulesRecipient.rulesStrings>
+	<!--                  EN: entertained-->
+	<TM_EntertainAuraID.label>развлекали</TM_EntertainAuraID.label>
+	<!-- EN:
+		<li>r_logentry->Had an entertaining chat with [RECIPIENT_nameDef].</li>-->
+	<TM_EntertainAuraID.logRulesInitiator.rulesStrings><li>r_logentry-&gt;Приятно беседовал(а) с [RECIPIENT_nameDef].</li>
+	</TM_EntertainAuraID.logRulesInitiator.rulesStrings>
+	<!-- EN:
+		<li>r_logentry->Had an entertaining chat with [INITIATOR_nameDef].</li>-->
+	<TM_EntertainAuraID.logRulesRecipient.rulesStrings><li>r_logentry-&gt;Приятно беседовал(а) с [INITIATOR_nameDef].</li>
+	</TM_EntertainAuraID.logRulesRecipient.rulesStrings>
+	<ID_ArcanePathways.label>Пути арканы</ID_ArcanePathways.label>
+	<ID_Champion.label>Чемпион</ID_Champion.label>
+	<ID_Enlightened.label>Просветлённый</ID_Enlightened.label>
+	<ID_FarmingFrenzy.label>Полевой раж</ID_FarmingFrenzy.label>
+	<ID_Introspection.label>Самоанализ</ID_Introspection.label>
+	<ID_ManaRegen.label>Восстановление маны</ID_ManaRegen.label>
+	<ID_MiningFrenzy.label>Горняцкий раж</ID_MiningFrenzy.label>
+	<ID_Outgoing.label>Общительный</ID_Outgoing.label>
+</LanguageData>

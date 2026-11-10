@@ -1,0 +1,65 @@
+<LanguageData><TM_ArcaneHD.label>тайная магия</TM_ArcaneHD.label>
+	<TM_ArcaneHD.description>Разрушительная сила тайной магии.</TM_ArcaneHD.description>
+	<TM_ArcaneHD.comps.0.labelTendedWell>перевязано</TM_ArcaneHD.comps.0.labelTendedWell>
+	<TM_ArcaneHD.comps.0.labelTendedWellInner>зашито</TM_ArcaneHD.comps.0.labelTendedWellInner>
+	<TM_ArcaneHD.comps.0.labelSolidTendedWell>зафиксировано</TM_ArcaneHD.comps.0.labelSolidTendedWell>
+	<TM_ArcaneHD.injuryProps.destroyedLabel>разорвано</TM_ArcaneHD.injuryProps.destroyedLabel>
+	<TM_ArcaneHD.injuryProps.destroyedOutLabel>вырвано</TM_ArcaneHD.injuryProps.destroyedOutLabel>
+	<TM_ThrumboCleave.label>рассечение</TM_ThrumboCleave.label>
+	<TM_ThrumboCleave.description>Мощная атака, способная разрубить несколько целей.</TM_ThrumboCleave.description>
+	<TM_ThrumboCleave.labelNoun>тяжёлое ранение</TM_ThrumboCleave.labelNoun>
+	<TM_ThrumboCleave.comps.0.labelTendedWell>перевязано</TM_ThrumboCleave.comps.0.labelTendedWell>
+	<TM_ThrumboCleave.comps.0.labelTendedWellInner>зашито</TM_ThrumboCleave.comps.0.labelTendedWellInner>
+	<TM_ThrumboCleave.comps.0.labelSolidTendedWell>зафиксировано</TM_ThrumboCleave.comps.0.labelSolidTendedWell>
+	<TM_ThrumboCleave.injuryProps.destroyedLabel>отсечено</TM_ThrumboCleave.injuryProps.destroyedLabel>
+	<TM_ThrumboCleave.injuryProps.destroyedOutLabel>вырезано</TM_ThrumboCleave.injuryProps.destroyedOutLabel>
+	<TM_BlazingPowerHD.label>Пылающая мощь</TM_BlazingPowerHD.label>
+	<TM_BlazingPowerHD.description>Магическая сила, сфокусированная в смертоносный луч.</TM_BlazingPowerHD.description>
+	<TM_BlazingPowerHD.comps.0.labelTendedWell>перевязано</TM_BlazingPowerHD.comps.0.labelTendedWell>
+	<TM_BlazingPowerHD.comps.0.labelTendedWellInner>зашито</TM_BlazingPowerHD.comps.0.labelTendedWellInner>
+	<TM_BlazingPowerHD.comps.0.labelSolidTendedWell>зафиксировано</TM_BlazingPowerHD.comps.0.labelSolidTendedWell>
+	<TM_BlazingPowerHD.injuryProps.destroyedLabel>уничтожено</TM_BlazingPowerHD.injuryProps.destroyedLabel>
+	<TM_BlazingPowerHD.injuryProps.destroyedOutLabel>уничтожено</TM_BlazingPowerHD.injuryProps.destroyedOutLabel>
+	<TM_Holy.label>Святой Гнев</TM_Holy.label>
+	<TM_Holy.description>Вера, обращённая в разрушительную энергию.</TM_Holy.description>
+	<TM_Holy.comps.0.labelTendedWell>перевязано</TM_Holy.comps.0.labelTendedWell>
+	<TM_Holy.comps.0.labelTendedWellInner>зашито</TM_Holy.comps.0.labelTendedWellInner>
+	<TM_Holy.comps.0.labelSolidTendedWell>зафиксировано</TM_Holy.comps.0.labelSolidTendedWell>
+	<TM_Holy.injuryProps.destroyedLabel>выжжено</TM_Holy.injuryProps.destroyedLabel>
+	<TM_Holy.injuryProps.destroyedOutLabel>испепелено</TM_Holy.injuryProps.destroyedOutLabel>
+	<TM_SpiritHD.label>Духовная энергия</TM_SpiritHD.label>
+	<TM_SpiritHD.description>Вредоносная энергия потустороннего мира.</TM_SpiritHD.description>
+	<TM_SpiritHD.comps.0.labelTendedWell>перевязано</TM_SpiritHD.comps.0.labelTendedWell>
+	<TM_SpiritHD.comps.0.labelTendedWellInner>зашито</TM_SpiritHD.comps.0.labelTendedWellInner>
+	<TM_SpiritHD.comps.0.labelSolidTendedWell>зафиксировано</TM_SpiritHD.comps.0.labelSolidTendedWell>
+	<TM_SpiritHD.injuryProps.destroyedLabel>обесточено</TM_SpiritHD.injuryProps.destroyedLabel>
+	<TM_SpiritHD.injuryProps.destroyedOutLabel>опустошено</TM_SpiritHD.injuryProps.destroyedOutLabel>
+	<TM_MagicMissile.label>Волшебная стрела</TM_MagicMissile.label>
+	<TM_MagicMissile.description>Выпускает залп магических снарядов по врагам.
+
+Шанс оглушить: 3%
+Время каста: 2.5с
+Дальность: 24
+Снаряды: 14 за 2.8с
+Урон: 4</TM_MagicMissile.description>
+	<TM_MagicMissile.comps.0.labelTendedWell>перевязано</TM_MagicMissile.comps.0.labelTendedWell>
+	<TM_MagicMissile.comps.0.labelTendedWellInner>зашито</TM_MagicMissile.comps.0.labelTendedWellInner>
+	<TM_MagicMissile.comps.0.labelSolidTendedWell>зафиксировано</TM_MagicMissile.comps.0.labelSolidTendedWell>
+	<TM_MagicMissile.injuryProps.destroyedLabel>рассечено</TM_MagicMissile.injuryProps.destroyedLabel>
+	<TM_MagicMissile.injuryProps.destroyedOutLabel>вырезано</TM_MagicMissile.injuryProps.destroyedOutLabel>
+	<!-- Продолжение аналогично для остальных элементов-->
+	<TM_ArcaneHD.comps.1.permanentLabel>уничтожено тайной магией</TM_ArcaneHD.comps.1.permanentLabel>
+	<TM_ThrumboCleave.comps.2.permanentLabel>шрам</TM_ThrumboCleave.comps.2.permanentLabel>
+	<TM_BlazingPowerHD.comps.1.permanentLabel>уничтожено пылающей мощью</TM_BlazingPowerHD.comps.1.permanentLabel>
+	<TM_Holy.comps.1.permanentLabel>испепелено святым гневом</TM_Holy.comps.1.permanentLabel>
+	<TM_SpiritHD.comps.1.permanentLabel>истощено духовной энергией</TM_SpiritHD.comps.1.permanentLabel>
+	<TM_MagicMissile.comps.1.permanentLabel>отмечено магией</TM_MagicMissile.comps.1.permanentLabel>
+	<TM_ManaMine.comps.1.permanentLabel>уничтожено взрывом маны</TM_ManaMine.comps.1.permanentLabel>
+	<TM_Firebolt.comps.1.permanentLabel>ожоговый шрам</TM_Firebolt.comps.1.permanentLabel>
+	<TM_LightningCloud.comps.1.permanentLabel>поражено молнией</TM_LightningCloud.comps.1.permanentLabel>
+	<TM_Lightning.comps.1.permanentLabel>след от удара молнии</TM_Lightning.comps.1.permanentLabel>
+	<FrostRay.comps.1.permanentLabel>обморожение</FrostRay.comps.1.permanentLabel>
+	<Snowball.comps.1.permanentLabel>обморожение</Snowball.comps.1.permanentLabel>
+	<Blizzard.comps.1.permanentLabel>разбито метелью</Blizzard.comps.1.permanentLabel>
+	<Iceshard.comps.1.permanentLabel>шрам от ледяного осколка</Iceshard.comps.1.permanentLabel>
+</LanguageData>

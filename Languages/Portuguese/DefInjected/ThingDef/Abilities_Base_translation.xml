@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- leap as a flying object -->
+
+  <FlyingObject_Spinning.label>objeto voador que gira</FlyingObject_Spinning.label>
+  <FlyingObject_SpinningBone.label>objeto voador que gira</FlyingObject_SpinningBone.label>
+  <FlyingObject_Advanced.label>objeto voador que faz muitas coisas</FlyingObject_Advanced.label>
+  <Projectile_Default.label>padrão</Projectile_Default.label>
+
+
+  <TM_CompVerb.label>alvo secundário</TM_CompVerb.label>
+  <TM_CompVerb.description>palavra usada na meta secundária</TM_CompVerb.description>
+
+</LanguageData>

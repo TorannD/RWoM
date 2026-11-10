@@ -1,0 +1,66 @@
+<LanguageData><!-- v1.5\Defs\HediffDefs\Hediffs_TMagic_Buffs.xml-->
+	<!-- Успокаивающий бриз-->
+	<SoothingBreeze.stages.0.label>Успокаивающий бриз</SoothingBreeze.stages.0.label>
+	<!-- Меня окутывает странное спокойствие — мысли проясняются, а тревоги рассеиваются, словно дым.-->
+	<SoothingBreeze.stages.0.description>Меня окутывает странное спокойствие — мысли проясняются, а тревоги рассеиваются, словно дым.</SoothingBreeze.stages.0.description>
+	<!-- Умиротворяющий ветерок-->
+	<SoothingBreeze_I.stages.0.label>Умиротворяющий ветерок</SoothingBreeze_I.stages.0.label>
+	<!-- Лёгкое дуновение будто смывает все заботы, оставляя лишь ясность ума.-->
+	<SoothingBreeze_I.stages.0.description>Лёгкое дуновение будто смывает все заботы, оставляя лишь ясность ума.</SoothingBreeze_I.stages.0.description>
+	<!-- Очищающий поток-->
+	<SoothingBreeze_II.stages.0.label>Очищающий поток</SoothingBreeze_II.stages.0.label>
+	<!-- Ветер наполняет меня силой, сметая усталость. Я готов свернуть горы!-->
+	<SoothingBreeze_II.stages.0.description>Ветер наполняет меня силой, сметая усталость. Я готов свернуть горы!</SoothingBreeze_II.stages.0.description>
+	<!-- Абсолютное сосредоточение-->
+	<SoothingBreeze_III.stages.0.label>Абсолютное сосредоточение</SoothingBreeze_III.stages.0.label>
+	<!-- Мир вокруг замер — только цель имеет значение. Ничто не ускользнёт от моего внимания.-->
+	<SoothingBreeze_III.stages.0.description>Мир вокруг замер — только цель имеет значение. Ничто не ускользнёт от моего внимания.</SoothingBreeze_III.stages.0.description>
+	<!-- Отблеск надежды-->
+	<RayofHope.stages.0.label>Отблеск надежды</RayofHope.stages.0.label>
+	<!-- Даже в самой густой тьме можно разглядеть искру света.-->
+	<RayofHope.stages.0.description>Даже в самой густой тьме можно разглядеть искру света.</RayofHope.stages.0.description>
+	<!-- Робкий проблеск-->
+	<RayofHope_I.stages.0.label>Робкий проблеск</RayofHope_I.stages.0.label>
+	<!-- В сердце затеплилось что-то тёплое... Неужели шанс на спасение?-->
+	<RayofHope_I.stages.0.description>В сердце затеплилось что-то тёплое... Неужели шанс на спасение?</RayofHope_I.stages.0.description>
+	<!-- Луч надежды-->
+	<RayofHope_II.stages.0.label>Луч надежды</RayofHope_II.stages.0.label>
+	<!-- Тьма отступает! Кажется, мы сможем пережить это испытание.-->
+	<RayofHope_II.stages.0.description>Тьма отступает! Кажется, мы сможем пережить это испытание.</RayofHope_II.stages.0.description>
+	<!-- Маяк надежды-->
+	<RayofHope_III.stages.0.label>Маяк надежды</RayofHope_III.stages.0.label>
+	<!-- Будто второе дыхание открылось — все беды сгорают в ослепительном свете!-->
+	<RayofHope_III.stages.0.description>Будто второе дыхание открылось — все беды сгорают в ослепительном свете!</RayofHope_III.stages.0.description>
+	<!-- Энергетический подъём-->
+	<AMP_I.stages.0.label>Энергетический подъём</AMP_I.stages.0.label>
+	<!-- Лучше любого стимулятора! Кровь бурлит, а мышцы наполняются силой.-->
+	<AMP_I.stages.0.description>Лучше любого стимулятора! Кровь бурлит, а мышцы наполняются силой.</AMP_I.stages.0.description>
+	<!-- Перегрузка адреналина-->
+	<AMP_II.stages.0.label>Перегрузка адреналина</AMP_II.stages.0.label>
+	<!-- Я — ураган! Ни одна преграда не устоит перед такой яростью!-->
+	<AMP_II.stages.0.description>Я — ураган! Ни одна преграда не устоит перед такой яростью!</AMP_II.stages.0.description>
+	<!-- Неудержимый прилив сил-->
+	<AMP_III.stages.0.label>Неудержимый прилив сил</AMP_III.stages.0.label>
+	<!-- Моё тело — сгусток энергии. Я чувствую, как реальность дрожит под моими шагами!-->
+	<AMP_III.stages.0.description>Моё тело — сгусток энергии. Я чувствую, как реальность дрожит под моими шагами!</AMP_III.stages.0.description>
+	<!-- Нервозность-->
+	<Shadow.stages.0.label>Нервозность</Shadow.stages.0.label>
+	<!-- Кожа покрывается мурашками... Что-то здесь не так.-->
+	<Shadow.stages.0.description>Кожа покрывается мурашками... Что-то здесь не так.</Shadow.stages.0.description>
+	<!-- Тревога-->
+	<Shadow_I.stages.0.label>Тревога</Shadow_I.stages.0.label>
+	<!-- По спине бегут ледяные мурашки. Кто-то невидимый наблюдает за мной...-->
+	<Shadow_I.stages.0.description>По спине бегут ледяные мурашки. Кто-то невидимый наблюдает за мной...</Shadow_I.stages.0.description>
+	<!-- Паника-->
+	<Shadow_II.stages.0.label>Паника</Shadow_II.stages.0.label>
+	<!-- Тени шевелятся! Они повсюду! Дыхание предательски горячим пятном жжёт спину...-->
+	<Shadow_II.stages.0.description>Тени шевелятся! Они повсюду! Дыхание предательски горячим пятном жжёт спину...</Shadow_II.stages.0.description>
+	<!-- Помрачение-->
+	<Shadow_III.stages.0.label>Помрачение</Shadow_III.stages.0.label>
+	<!-- Чужие руки двигают моими! Это не я... Это НЕ Я?!-->
+	<Shadow_III.stages.0.description>Чужие руки двигают моими! Это не я... Это НЕ Я?!</Shadow_III.stages.0.description>
+	<!-- Ослепление-->
+	<TM_Blind.stages.0.label>Ослепление</TM_Blind.stages.0.label>
+	<!-- Вспышка! Боль!.. Больше не хочу видеть этот кошмар!-->
+	<TM_Blind.stages.0.description>Вспышка! Боль!.. Больше не хочу видеть этот кошмар!</TM_Blind.stages.0.description>
+</LanguageData>

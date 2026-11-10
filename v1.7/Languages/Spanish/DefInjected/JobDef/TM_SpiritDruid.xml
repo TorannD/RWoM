@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritCureDisease.reportString>cura enfermedades a través del cuerpo del huésped.</TM_SpiritCureDisease.reportString>
+  <TM_SpiritSootheAnimal.reportString>calma animales a través del cuerpo del huésped.</TM_SpiritSootheAnimal.reportString>
+  <TM_SpiritSootheAnimal_I.reportString>calma animales a través del cuerpo del huésped.</TM_SpiritSootheAnimal_I.reportString>
+  <TM_SpiritSootheAnimal_II.reportString>calma animales a través del cuerpo del huésped.</TM_SpiritSootheAnimal_II.reportString>
+  <TM_SpiritSootheAnimal_III.reportString>calma animales a través del cuerpo del huésped.</TM_SpiritSootheAnimal_III.reportString>
+  <TM_SpiritRainmaker.reportString>cambia el tiempo a través del cuerpo del huésped.</TM_SpiritRainmaker.reportString>
+  <TM_SpiritRegrowLimb.reportString>creando una semilla de regeneración a través del huésped del espíritu.</TM_SpiritRegrowLimb.reportString>
+  <TM_SpiritPoison.reportString>envenenando al objetivo a través del huésped del espíritu.</TM_SpiritPoison.reportString>
+</LanguageData>

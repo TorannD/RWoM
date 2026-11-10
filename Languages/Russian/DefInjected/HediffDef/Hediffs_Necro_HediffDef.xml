@@ -1,0 +1,120 @@
+﻿<LanguageData><!-- v1.5\Defs\HediffDefs\Hediffs_Necro.xml-->
+	<!--           EN: Undead-->
+	<TM_UndeadHD.label>Нежить</TM_UndeadHD.label>
+	<!--                 EN: A pawn animated by necrotic energy. This pawn possesses no intent of its own, and requires continual direction and energy from a necromancer.-->
+	<TM_UndeadHD.description>Пешка, оживлённая некротической энергией. Она лишена собственной воли и требует от некроманта постоянного контроля и подпитки.</TM_UndeadHD.description>
+	<!--                    EN: I-->
+	<TM_UndeadHD.stages.0.label>I</TM_UndeadHD.stages.0.label>
+	<!--                    EN: II-->
+	<TM_UndeadHD.stages.1.label>II</TM_UndeadHD.stages.1.label>
+	<!--                    EN: III-->
+	<TM_UndeadHD.stages.2.label>III</TM_UndeadHD.stages.2.label>
+	<!--                    EN: IV-->
+	<TM_UndeadHD.stages.3.label>IV</TM_UndeadHD.stages.3.label>
+	<!--         EN: Lich-->
+	<TM_LichHD.label>Лич</TM_LichHD.label>
+	<!--               EN: A pawn that has achieved immortality by severing their connection to the cycle of life and death.-->
+	<TM_LichHD.description>Пешка, которая обрела бессмертие, разорвав свою связь с круговоротом жизни и смерти.</TM_LichHD.description>
+	<!--                  EN: Undead-->
+	<TM_LichHD.stages.0.label>Нежить</TM_LichHD.stages.0.label>
+	<!--                 EN: Undead-->
+	<TM_UndeadAnimalHD.label>Нежить</TM_UndeadAnimalHD.label>
+	<!--                       EN: A pawn animated by necrotic energy. This pawn possesses no intent of its own, and requires continual direction and energy from a necromancer.-->
+	<TM_UndeadAnimalHD.description>Существо, оживлённое некротической энергией. Оно лишено собственной воли и требует от некроманта постоянного контроля и подпитки.</TM_UndeadAnimalHD.description>
+	<!--                          EN: I-->
+	<TM_UndeadAnimalHD.stages.0.label>I</TM_UndeadAnimalHD.stages.0.label>
+	<!--                          EN: II-->
+	<TM_UndeadAnimalHD.stages.1.label>II</TM_UndeadAnimalHD.stages.1.label>
+	<!--                          EN: III-->
+	<TM_UndeadAnimalHD.stages.2.label>III</TM_UndeadAnimalHD.stages.2.label>
+	<!--                          EN: IV-->
+	<TM_UndeadAnimalHD.stages.3.label>IV</TM_UndeadAnimalHD.stages.3.label>
+	<!--              EN: Death Mark-->
+	<TM_DeathMarkHD.label>Метка смерти</TM_DeathMarkHD.label>
+	<!--                    EN: Marked by death, this pawn will soon die and be reanimated as an undead. (not used)-->
+	<TM_DeathMarkHD.description>Отмеченная смертью, эта пешка скоро умрет и будет реанимирована как нежить. (не используемый)</TM_DeathMarkHD.description>
+	<!--                 EN: Death Mark-->
+	<TM_DeathMarkCurse.label>Метка смерти</TM_DeathMarkCurse.label>
+	<!--                       EN: Marked by death, this pawn is unable to focus on the present due to their focus on their inevitable death.-->
+	<TM_DeathMarkCurse.description>Отмеченная смертью, эта пешка не может сосредоточиться на настоящем, потому что её разум поглощён мыслями о неизбежной гибели.</TM_DeathMarkCurse.description>
+	<!--                          EN: clumsy-->
+	<TM_DeathMarkCurse.stages.0.label>Неумелый</TM_DeathMarkCurse.stages.0.label>
+	<!--                          EN: fumbling-->
+	<TM_DeathMarkCurse.stages.1.label>Бормотание</TM_DeathMarkCurse.stages.1.label>
+	<!--                          EN: cursed-->
+	<TM_DeathMarkCurse.stages.2.label>проклятый</TM_DeathMarkCurse.stages.2.label>
+	<!--                      EN: {0} in the {1}-->
+	<TM_TormentHD.labelNounPretty>{0} в {1}</TM_TormentHD.labelNounPretty>
+	<!--            EN: Torment-->
+	<TM_TormentHD.label>Мучение</TM_TormentHD.label>
+	<!--                  EN: Pain induced by dark energy.-->
+	<TM_TormentHD.description>Боль, вызванная темной энергией.</TM_TormentHD.description>
+	<!--                              EN: bandaged-->
+	<TM_TormentHD.comps.0.labelTendedWell>забинтованная</TM_TormentHD.comps.0.labelTendedWell>
+	<!--                                   EN: sutured-->
+	<TM_TormentHD.comps.0.labelTendedWellInner>зашита</TM_TormentHD.comps.0.labelTendedWellInner>
+	<!--                                   EN: set-->
+	<TM_TormentHD.comps.0.labelSolidTendedWell>зажило</TM_TormentHD.comps.0.labelSolidTendedWell>
+	<!--                             EN: rotten-->
+	<TM_TormentHD.comps.1.permanentLabel>гнилой</TM_TormentHD.comps.1.permanentLabel>
+	<!--                                 EN: melted off-->
+	<TM_TormentHD.injuryProps.destroyedLabel>оплавленная</TM_TormentHD.injuryProps.destroyedLabel>
+	<!--                                    EN: melted-->
+	<TM_TormentHD.injuryProps.destroyedOutLabel>оплавившийся</TM_TormentHD.injuryProps.destroyedOutLabel>
+	<!--                        EN: {0} in the {1}-->
+	<TM_DeathBoltHD.labelNounPretty>{0} в {1}</TM_DeathBoltHD.labelNounPretty>
+	<!--              EN: death bolt-->
+	<TM_DeathBoltHD.label>смертельный болт</TM_DeathBoltHD.label>
+	<!--                    EN: Destructive energy that kills all living things.-->
+	<TM_DeathBoltHD.description>Разрушительная энергия, которая убивает все живое.</TM_DeathBoltHD.description>
+	<!--                                EN: bandaged-->
+	<TM_DeathBoltHD.comps.0.labelTendedWell>забинтованная</TM_DeathBoltHD.comps.0.labelTendedWell>
+	<!--                                     EN: sutured-->
+	<TM_DeathBoltHD.comps.0.labelTendedWellInner>зашита</TM_DeathBoltHD.comps.0.labelTendedWellInner>
+	<!--                                     EN: set-->
+	<TM_DeathBoltHD.comps.0.labelSolidTendedWell>зажило</TM_DeathBoltHD.comps.0.labelSolidTendedWell>
+	<!--                               EN: melted-->
+	<TM_DeathBoltHD.comps.1.permanentLabel>расплавленный</TM_DeathBoltHD.comps.1.permanentLabel>
+	<!--                                   EN: melted off-->
+	<TM_DeathBoltHD.injuryProps.destroyedLabel>оплавленная</TM_DeathBoltHD.injuryProps.destroyedLabel>
+	<!--                                      EN: melted-->
+	<TM_DeathBoltHD.injuryProps.destroyedOutLabel>оплавившийся</TM_DeathBoltHD.injuryProps.destroyedOutLabel>
+	<!--             EN: Tormented-->
+	<TM_Torment_HD.label>Измученный</TM_Torment_HD.label>
+	<!--                   EN: Painfully tormented by dark magic.-->
+	<TM_Torment_HD.description>Мучительно терзаемый темной магией.</TM_Torment_HD.description>
+	<!--                      EN: pain-->
+	<TM_Torment_HD.stages.0.label>боль</TM_Torment_HD.stages.0.label>
+	<!--                      EN: agony-->
+	<TM_Torment_HD.stages.1.label>агония</TM_Torment_HD.stages.1.label>
+	<!--                      EN: torment-->
+	<TM_Torment_HD.stages.2.label>мучение</TM_Torment_HD.stages.2.label>
+	<!--                EN: Body stage-->
+	<TM_UndeadStageHD.label>Стадия тела</TM_UndeadStageHD.label>
+	<!--                      EN: The current stage of undead.-->
+	<TM_UndeadStageHD.description>Нынешняя стадия нежити.</TM_UndeadStageHD.description>
+	<!--                         EN: Rotting-->
+	<TM_UndeadStageHD.stages.0.label>Гниющий</TM_UndeadStageHD.stages.0.label>
+	<!--                         EN: Dessicated-->
+	<TM_UndeadStageHD.stages.1.label>Иссушенный</TM_UndeadStageHD.stages.1.label>
+	<!--                 EN: Brittle bones-->
+	<TM_BrittleBonesHD.label>Хрупкие кости</TM_BrittleBonesHD.label>
+	<!--                       EN: Occurs when exposed to extremely cold temperatures and causes bones and ligaments to become brittle which reduces movement and manipulation. Undead with this condition require 50% additional mana to sustain.-->
+	<TM_BrittleBonesHD.description>Возникает при воздействии экстремально низких температур и приводит к тому, что кости и связки становятся хрупкими, что уменьшает движение и манипуляции. Нежить с таким состоянием требует 50% дополнительной маны для поддержания жизни.</TM_BrittleBonesHD.description>
+	<!--                          EN: I-->
+	<TM_BrittleBonesHD.stages.0.label>I</TM_BrittleBonesHD.stages.0.label>
+	<!--                          EN: II-->
+	<TM_BrittleBonesHD.stages.1.label>II</TM_BrittleBonesHD.stages.1.label>
+	<!--                          EN: III-->
+	<TM_BrittleBonesHD.stages.2.label>III</TM_BrittleBonesHD.stages.2.label>
+	<!--            EN: Slagged-->
+	<TM_SlaggedHD.label>Зашлакован</TM_SlaggedHD.label>
+	<!--                  EN: Occurs when exposed to extremely hot temperatures and causes organic matter to decompose and even melt. Undead affected by this condition require 50% more mana to sustain.-->
+	<TM_SlaggedHD.description>Возникает при воздействии чрезвычайно высоких температур и приводит к разложению и даже расплавлению органического вещества. Нежить, пораженная этим состоянием, требует на 50% больше маны для поддержания жизни.</TM_SlaggedHD.description>
+	<!--                     EN: I-->
+	<TM_SlaggedHD.stages.0.label>I</TM_SlaggedHD.stages.0.label>
+	<!--                     EN: II-->
+	<TM_SlaggedHD.stages.1.label>II</TM_SlaggedHD.stages.1.label>
+	<!--                     EN: III-->
+	<TM_SlaggedHD.stages.2.label>III</TM_SlaggedHD.stages.2.label>
+</LanguageData>

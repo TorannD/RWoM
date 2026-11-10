@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_AntiBreathing.label>asfixia arcana</TM_AntiBreathing.label>
+  
+  <TM_AntiBreathing.description>Poder arcano que disminuye la circulación del aire.</TM_AntiBreathing.description>
+  
+  <TM_AntiBreathing.stages.I.label>I</TM_AntiBreathing.stages.I.label>
+  
+  <TM_AntiBreathing.stages.II.label>II</TM_AntiBreathing.stages.II.label>
+  
+  <TM_AntiBreathing.stages.III.label>III</TM_AntiBreathing.stages.III.label>
+  
+  <TM_AntiBreathing.stages.IV.label>IV</TM_AntiBreathing.stages.IV.label>
+  
+  <TM_AntiBreathing.stages.overwhelmed.label>abrumado</TM_AntiBreathing.stages.overwhelmed.label>
+  
+  
+  <TM_AntiManipulation.label>lisiadura arcana</TM_AntiManipulation.label>
+  
+  <TM_AntiManipulation.description>Poder arcano que reduce la destreza (manipulación).</TM_AntiManipulation.description>
+  
+  <TM_AntiManipulation.stages.I.label>I</TM_AntiManipulation.stages.I.label>
+  
+  <TM_AntiManipulation.stages.II.label>II</TM_AntiManipulation.stages.II.label>
+  
+  <TM_AntiManipulation.stages.III.label>III</TM_AntiManipulation.stages.III.label>
+  
+  <TM_AntiManipulation.stages.IV.label>IV</TM_AntiManipulation.stages.IV.label>
+  
+  <TM_AntiManipulation.stages.overwhelmed.label>abrumado</TM_AntiManipulation.stages.overwhelmed.label>
+  
+  
+  <TM_AntiMovement.label>ralentización arcana</TM_AntiMovement.label>
+  
+  <TM_AntiMovement.description>Poder arcano que reduce el movimiento.</TM_AntiMovement.description>
+  
+  <TM_AntiMovement.stages.I.label>I</TM_AntiMovement.stages.I.label>
+  
+  <TM_AntiMovement.stages.II.label>II</TM_AntiMovement.stages.II.label>
+  
+  <TM_AntiMovement.stages.III.label>III</TM_AntiMovement.stages.III.label>
+  
+  <TM_AntiMovement.stages.IV.label>IV</TM_AntiMovement.stages.IV.label>
+  
+  <TM_AntiMovement.stages.overwhelmed.label>abrumado</TM_AntiMovement.stages.overwhelmed.label>
+  
+  
+  <TM_AntiSight.label>ceguera arcana</TM_AntiSight.label>
+  
+  <TM_AntiSight.description>Poder arcano que disminuye la visión.</TM_AntiSight.description>
+  
+  <TM_AntiSight.stages.I.label>I</TM_AntiSight.stages.I.label>
+  
+  <TM_AntiSight.stages.II.label>II</TM_AntiSight.stages.II.label>
+  
+  <TM_AntiSight.stages.III.label>III</TM_AntiSight.stages.III.label>
+  
+  <TM_AntiSight.stages.IV.label>IV</TM_AntiSight.stages.IV.label>
+  
+  <TM_AntiSight.stages.overwhelmed.label>abrumado</TM_AntiSight.stages.overwhelmed.label>
+  
+  
+  <TM_Breathing.label>oxígeno infundido</TM_Breathing.label>
+  
+  <TM_Breathing.description>Poder arcano que mejora la eficiencia y la capacidad de la respiración.</TM_Breathing.description>
+  
+  <TM_Breathing.stages.I.label>I</TM_Breathing.stages.I.label>
+  
+  <TM_Breathing.stages.II.label>II</TM_Breathing.stages.II.label>
+  
+  <TM_Breathing.stages.III.label>III</TM_Breathing.stages.III.label>
+  
+  <TM_Breathing.stages.IV.label>IV</TM_Breathing.stages.IV.label>
+  
+  <TM_Breathing.stages.V.label>V</TM_Breathing.stages.V.label>
+  
+  
+  <TM_Manipulation.label>destreza arcana</TM_Manipulation.label>
+  
+  <TM_Manipulation.description>Poder arcano que aumenta la destreza (manipulación).</TM_Manipulation.description>
+  
+  <TM_Manipulation.stages.I.label>I</TM_Manipulation.stages.I.label>
+  
+  <TM_Manipulation.stages.II.label>II</TM_Manipulation.stages.II.label>
+  
+  <TM_Manipulation.stages.III.label>III</TM_Manipulation.stages.III.label>
+  
+  <TM_Manipulation.stages.IV.label>IV</TM_Manipulation.stages.IV.label>
+  
+  <TM_Manipulation.stages.V.label>V</TM_Manipulation.stages.V.label>
+  
+  
+  <TM_Movement.label>velocidad arcana</TM_Movement.label>
+  
+  <TM_Movement.description>Poder arcano que aumenta la velocidad de movimiento de un peón.</TM_Movement.description>
+  
+  <TM_Movement.stages.I.label>I</TM_Movement.stages.I.label>
+  
+  <TM_Movement.stages.II.label>II</TM_Movement.stages.II.label>
+  
+  <TM_Movement.stages.III.label>III</TM_Movement.stages.III.label>
+  
+  <TM_Movement.stages.IV.label>IV</TM_Movement.stages.IV.label>
+  
+  <TM_Movement.stages.V.label>V</TM_Movement.stages.V.label>
+  
+  
+  <TM_MuteHD.label>mudez mágica</TM_MuteHD.label>
+  
+  <TM_MuteHD.description>Una maldición que impide el uso de habilidades mágicas.</TM_MuteHD.description>
+  
+  
+  <TM_Sight.label>visión arcana</TM_Sight.label>
+  
+  <TM_Sight.description>Poder arcano que aumenta la visión.</TM_Sight.description>
+  
+  <TM_Sight.stages.I.label>I</TM_Sight.stages.I.label>
+  
+  <TM_Sight.stages.II.label>II</TM_Sight.stages.II.label>
+  
+  <TM_Sight.stages.III.label>III</TM_Sight.stages.III.label>
+  
+  <TM_Sight.stages.IV.label>IV</TM_Sight.stages.IV.label>
+  
+  <TM_Sight.stages.V.label>V</TM_Sight.stages.V.label>
+  
+</LanguageData>

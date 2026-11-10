@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Disguise.label>Engaño</TM_Disguise.label>
+  <TM_Disguise.description>El sin rostro manipula la luz y el movimiento para que su forma carezca de significado para cualquier observador; a nivel subconsciente, todo observador lo descartará cognitivamente como un objeto sin importancia e inofensivo, volviéndolo esencialmente invisible.
+
+El Engaño no funciona con ningún peón que ya vea al sin rostro como una amenaza.</TM_Disguise.description>
+
+  <TM_Mimic.label>Imitar</TM_Mimic.label>
+  <TM_Mimic.description>El sin rostro copia una habilidad aleatoria de un mago o un luchador. Solo se puede almacenar una habilidad a la vez. La habilidad se conserva tras usarla; volver a usar Imitar sustituirá la habilidad almacenada.</TM_Mimic.description>
+
+  <TM_Reversal.label>Inversión</TM_Reversal.label>
+  <TM_Reversal.description>Invierte la energía cinética de todos los ataques cuerpo a cuerpo y de proyectiles durante un breve periodo. El sin rostro no recibirá daño de estos ataques. Los ataques de aplicación directa y los explosivos no pueden invertirse.</TM_Reversal.description>
+
+  <TM_Transpose.label>Transponer</TM_Transpose.label>
+  <TM_Transpose.description>Intercambia posiciones con un peón objetivo. El sin rostro y el objetivo quedarán desorientados tras la transposición. El sin rostro obtendrá Inversión durante un breve periodo.
+Tiempo de lanzamiento: 0,8 s
+Alcance: 40
+Enfriamiento: 15</TM_Transpose.description>
+
+  <TM_Transpose_I.label>Transponer I</TM_Transpose_I.label>
+  <TM_Transpose_I.description>Intercambia posiciones con un peón objetivo. El sin rostro y el objetivo quedarán desorientados tras la transposición. El sin rostro obtendrá Inversión durante un breve periodo.
+Tiempo de lanzamiento: 0,6 s
+Alcance: 44
+Enfriamiento: 13</TM_Transpose_I.description>
+
+  <TM_Transpose_II.label>Transponer II</TM_Transpose_II.label>
+  <TM_Transpose_II.description>Intercambia posiciones con un peón objetivo. El sin rostro y el objetivo quedarán desorientados tras la transposición. El sin rostro obtendrá Inversión durante un breve periodo.
+Tiempo de lanzamiento: 0,4 s
+Alcance: 47
+Enfriamiento: 11</TM_Transpose_II.description>
+
+  <TM_Transpose_III.label>Transponer III</TM_Transpose_III.label>
+  <TM_Transpose_III.description>Intercambia posiciones con un peón objetivo. El sin rostro y el objetivo quedarán desorientados tras la transposición. El sin rostro obtendrá Inversión durante un breve periodo.
+Tiempo de lanzamiento: 0,2 s
+Alcance: 50
+Enfriamiento: 9</TM_Transpose_III.description>
+
+  <TM_Possess.label>Poseer</TM_Possess.label>
+  <TM_Possess.description>Como un titiritero, el sin rostro aplica su dominio de la mente y del cuerpo para provocar una extrema inseguridad en un peón objetivo, lo que le permite controlarlo mediante sugestión mental y coacción.
+
+Es poco probable que los enemigos cercanos detecten la posesión de inmediato, a menos que vean actividad sospechosa. Si se detecta, las facciones neutrales y amistosas considerarán las acciones agresivas de un peón poseído como un acto de hostilidad.
+
+Solo se puede poseer a criaturas con una mente de tipo humano capaz de dudar de sí misma.</TM_Possess.description>
+
+</LanguageData>

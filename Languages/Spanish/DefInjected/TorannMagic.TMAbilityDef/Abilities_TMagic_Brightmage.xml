@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_LightLance.label>Lanza de luz</TM_LightLance.label>
+  <TM_LightLance.description>Concentra la luz en un haz intenso que quema todo a su paso. Esta habilidad se potencia con la luz almacenada.</TM_LightLance.description>
+
+  <TM_Sunfire.label>Fuego solar</TM_Sunfire.label>
+  <TM_Sunfire.description>La zona objetivo se llena de tajos ardientes de luz. Esta habilidad se potencia con la luz almacenada.
+
+Tiempo de lanzamiento: 3 s
+Alcance: 50
+Enfriamiento: 60 s
+Radio: 5
+Cantidad: 13</TM_Sunfire.description>
+
+  <TM_Sunfire_I.label>Fuego solar (I)</TM_Sunfire_I.label>
+  <TM_Sunfire_I.description>La zona objetivo se llena de tajos ardientes de luz. Esta habilidad se potencia con la luz almacenada.
+
+Tiempo de lanzamiento: 2,7 s
+Alcance: 55
+Enfriamiento: 55 s
+Radio: 6
+Cantidad: 14</TM_Sunfire_I.description>
+
+  <TM_Sunfire_II.label>Fuego solar (II)</TM_Sunfire_II.label>
+  <TM_Sunfire_II.description>La zona objetivo se llena de tajos ardientes de luz. Esta habilidad se potencia con la luz almacenada.
+
+Tiempo de lanzamiento: 2,4 s
+Alcance: 60
+Enfriamiento: 50 s
+Radio: 7
+Cantidad: 15</TM_Sunfire_II.description>
+
+  <TM_Sunfire_III.label>Fuego solar (III)</TM_Sunfire_III.label>
+  <TM_Sunfire_III.description>La zona objetivo se llena de tajos ardientes de luz. Esta habilidad se potencia con la luz almacenada.
+
+Tiempo de lanzamiento: 2,2 s
+Alcance: 65
+Enfriamiento: 45 s
+Radio: 8
+Cantidad: 16</TM_Sunfire_III.description>
+
+  <TM_LightBurst.label>Estallido de luz</TM_LightBurst.label>
+  <TM_LightBurst.description>Crea destellos de luz que ciegan y desorientan a los peones atrapados en la explosión. Los peones desorientados no distinguen entre amigos y enemigos y pueden disparar a peones aliados cercanos. Esta habilidad se potencia con la luz almacenada.</TM_LightBurst.description>
+
+  <TM_LightSkip.label>Salto de luz</TM_LightSkip.label>
+  <TM_LightSkip.description>El lanzador cabalga una ola de luz para viajar casi al instante. Ni la posición del lanzador ni la del objetivo pueden estar bajo techo.</TM_LightSkip.description>
+
+  <TM_LightSkipMass.label>Salto de luz masivo</TM_LightSkipMass.label>
+  <TM_LightSkipMass.description>El lanzador y todos los aliados en un radio de 5 casillas cabalgan olas de luz para viajar casi al instante. Los peones que estén bajo techo no serán transportados.</TM_LightSkipMass.description>
+
+  <TM_LightSkipGlobal.label>Salto de luz global</TM_LightSkipGlobal.label>
+  <TM_LightSkipGlobal.description>El lanzador y todos los aliados en un radio de 5 casillas cabalgan olas de luz para viajar casi al instante. Los peones que estén bajo techo no serán transportados.</TM_LightSkipGlobal.description>
+
+  <TM_Refraction.label>Refracción</TM_Refraction.label>
+  <TM_Refraction.description>Crea un muro de luz que afecta a los proyectiles que lo atraviesan. Los proyectiles enemigos pueden desviarse de su objetivo. Los proyectiles aliados pueden usar parte de la energía de la luz para crear un reflejo especular del proyectil. El muro dura unos 25 segundos o hasta que se queda sin energía. Esta habilidad se potencia con la luz almacenada.</TM_Refraction.description>
+
+  <TM_SpiritOfLight.label>Espíritu de luz</TM_SpiritOfLight.label>
+  <TM_SpiritOfLight.description>Invoca a un Espíritu de luz que ayuda y protege al lanzador. Esta habilidad requiere 60 de maná para mantenerse y reduce la regeneración de maná un 75 %. Usa la habilidad de nuevo para despedir al espíritu. El EdL puede almacenar energía de luz y la usa para realizar acciones.
+
+El Espíritu de luz trabaja de forma autónoma para ayudar al lanzador y realizará las siguientes acciones:
+o Desvía ataques
+o Cauteriza las heridas de peones abatidos
+o Ataca a los enemigos (solo cuando está reclutado)
+o Mejora el ánimo de los aliados cercanos
+o Crea un estallido de alegría
+o Protege los sueños del lanzador</TM_SpiritOfLight.description>
+
+  <TM_SoL_CreateLight.label>Crear luz</TM_SoL_CreateLight.label>
+  <TM_SoL_CreateLight.description>Ordena al Espíritu de luz crear luz en una zona. Esto reduce un 70 % la regeneración de luz del Espíritu. Usa esta habilidad de nuevo en cualquier ubicación para disipar la luz.</TM_SoL_CreateLight.description>
+
+  <TM_SoL_Equalize.label>Igualar</TM_SoL_Equalize.label>
+  <TM_SoL_Equalize.description>Iguala la energía de luz entre el Espíritu de luz y el lanzador.</TM_SoL_Equalize.description>
+
+</LanguageData>

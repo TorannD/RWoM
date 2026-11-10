@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SiphonReserveDesc>Minimum mana retained by a donating mage. Configurable from 0% to 100%.</TM_SiphonReserveDesc>
+  <TM_SiphonDonationDesc>Maximum share of a mage's mana capacity donated in one visit. Configurable from 0% to 100%. Another visit requires full mana regeneration.</TM_SiphonDonationDesc>
+  <TM_SiphonNeedsFullMana>Full mana regeneration required before donating again.</TM_SiphonNeedsFullMana>
+  <TM_SiphonReserveLabel>Personal mana reserve</TM_SiphonReserveLabel>
+  <TM_SiphonNoTanks>No connected reservoir can accept mana.</TM_SiphonNoTanks>
+  <TM_SiphonDonationLabel>Maximum donation per visit</TM_SiphonDonationLabel>
+  <TM_SiphonInspect>Personal reserve: {0}; maximum donation per visit: {1}</TM_SiphonInspect>
+</LanguageData>

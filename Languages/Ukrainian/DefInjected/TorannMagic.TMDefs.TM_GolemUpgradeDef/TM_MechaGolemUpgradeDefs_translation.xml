@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Golem_MechaRepair.label>відновіть частину</TM_Golem_MechaRepair.label>
+
+  <TM_Golem_MechaMaxEnergy.label>енергетичний елемент</TM_Golem_MechaMaxEnergy.label>
+  <TM_Golem_MechaMaxEnergy.description>Збільшує максимальну енергію на 500 за рівень. Початкова максимальна енергія становить 1000.</TM_Golem_MechaMaxEnergy.description>
+
+  <TM_Golem_MechaEnergyEfficiency.label>перетворювач енергії</TM_Golem_MechaEnergyEfficiency.label>
+  <TM_Golem_MechaEnergyEfficiency.description>Підвищує енергоефективність на 10% за рівень. Початкова енергоефективність становить 50%.</TM_Golem_MechaEnergyEfficiency.description>
+
+  <TM_Golem_MechaEnergyRate.label>електричне нейро-ядро</TM_Golem_MechaEnergyRate.label>
+  <TM_Golem_MechaEnergyRate.description>Збільшує швидкість заряду енергії на 20% за рівень. Початкова швидкість перезарядки становить 50 енерговитрат на годину при відключенні від електромережі. Підключення до джерела живлення збільшує швидкість перезарядки.</TM_Golem_MechaEnergyRate.description>
+
+  <TM_Golem_MechaExtinguisher.label>вогнегасник</TM_Golem_MechaExtinguisher.label>
+  <TM_Golem_MechaExtinguisher.description>Додає можливість швидкого гасіння пожеж.</TM_Golem_MechaExtinguisher.description>
+
+  <TM_Golem_MechaBallisticPlate.label>балістична пластина</TM_Golem_MechaBallisticPlate.label>
+  <TM_Golem_MechaBallisticPlate.description>Збільшує броню, але зменшує рух для кожного рівня:
+Тупий збиток: +[24,37,49]%
+Ріжучий збиток: +[35,53,68]%
+Температура: +[40,60,75]%
+Рух: -[.3c,.5c,.6c]%</TM_Golem_MechaBallisticPlate.description>
+
+  <TM_Golem_MechaAxe.label>хутро-сокира</TM_Golem_MechaAxe.label>
+  <TM_Golem_MechaAxe.description>Додає швидку ріжучу атаку, корисну для знищення неброньованих мас.</TM_Golem_MechaAxe.description>
+
+  <TM_Golem_MechaSword.label>хутро-меч</TM_Golem_MechaSword.label>
+  <TM_Golem_MechaSword.description>Додає потужну ріжучу атаку, корисну для прориву захисту та відсікання кінцівок.</TM_Golem_MechaSword.description>
+
+  <TM_Golem_MechaHammer.label>хутро-молот</TM_Golem_MechaHammer.label>
+  <TM_Golem_MechaHammer.description>Додає безжальну тупу атаку, більш потужну, ніж кулаки големів.</TM_Golem_MechaHammer.description>
+
+  <TM_Golem_MechaGatlingCannon.label>Гармата Гатлінга</TM_Golem_MechaGatlingCannon.label>
+  <TM_Golem_MechaGatlingCannon.description>Стріляє чергою з 12 пострілів.
+Час перезарядки: 5 секунд
+Витрати на енергію: 40
+Діапазон: 40</TM_Golem_MechaGatlingCannon.description>
+
+  <TM_Golem_MechaMiningLaser.label>гірничодобувний лазер</TM_Golem_MechaMiningLaser.label>
+  <TM_Golem_MechaMiningLaser.description>Дозволяє голему здобувати певні сегменти стіни.
+Витрати на енергію: 20</TM_Golem_MechaMiningLaser.description>
+
+  <TM_Golem_MechaFlameCore.label>полум&apos;яний сердечник</TM_Golem_MechaFlameCore.label>
+  <TM_Golem_MechaFlameCore.description>Пасивно збільшує характеристики голему і додає здатність, яка спалює прилеглий бруд.
+Рух: +[0,5c/0,9c/1,2c]
+Обробка: +[10%/20%/30%]
+Втрата Здібності: +[10%/20%/30%]
+Вартість енергії: +[10%/20%/30%]
+
+Протокол очищення
+Час перезарядки: 6 секунд
+Діапазон: 2c
+Витрати на енергію: 4 долари за бруд</TM_Golem_MechaFlameCore.description>
+
+  <TM_Golem_MechaWaterCore.label>водяне ядро</TM_Golem_MechaWaterCore.label>
+  <TM_Golem_MechaWaterCore.description>Пасивно збільшує характеристики голему і додає автономний механізм відновлення.
+Броня: +[5%/10%/15%]
+Перезарядка здібностей: -[10%/20%/30%]
+Бонус за Зцілення: +[100%/200%/300%]
+Вартість енергії: -[15%/30%/45%]
+
+Автономний Ремонт
+Час перезарядки: 3 секунди
+Витрати на енергію: 10(D), 30(A)
+Кількість зцілень: 8</TM_Golem_MechaWaterCore.description>
+
+  <TM_Golem_MechaEarthCore.label>ядро землі</TM_Golem_MechaEarthCore.label>
+  <TM_Golem_MechaEarthCore.description>Пасивно збільшує характеристики голему і додає здатність, що забезпечує захист.
+Броня: +[10%/18%/25%]
+Перезарядка здібностей: +[5%/10%/15%]
+Бонус за Зцілення: +[60%/120%/180%]
+Вартість енергії: +[5%/10%/15%]
+Обробка: +[15%/30%/45%]
+
+Протокол захисту
+Час перезарядки: 10 секунд
+Вартість енергії: 10
+Кількість щитів: 120</TM_Golem_MechaEarthCore.description>
+
+  <TM_Golem_MechaLightningCore.label>ядро блискавки</TM_Golem_MechaLightningCore.label>
+  <TM_Golem_MechaLightningCore.description>Пасивно збільшує характеристики голему і додає відбиваюче покриття до панцира голему, яке виробляє електричний розряд, що оглушає атакуючих в ближньому бою.
+Рух: +[1.2c/1.8c/2.2c]
+Перезарядка здібностей: -[15%/30%/45%]
+Вартість енергії: +[10%/20%/30%]
+Обробка: -[5%/10%/15%]</TM_Golem_MechaLightningCore.description>
+
+  <TM_Golem_MechaFlameShard.label>вогняний осколок</TM_Golem_MechaFlameShard.label>
+  <TM_Golem_MechaFlameShard.description>Збільшує характеристики голему:
+Рух: +[15%/30%/40%]
+Здоров&apos;я: +[15%/30%/40%]</TM_Golem_MechaFlameShard.description>
+
+  <TM_Golem_MechaWaterShard.label>осколок води</TM_Golem_MechaWaterShard.label>
+  <TM_Golem_MechaWaterShard.description>Збільшує характеристики голему:
+Рух: +[10%/15%/20%]
+Здоров&apos;я: +[30%/50%/70%]</TM_Golem_MechaWaterShard.description>
+
+  <TM_Golem_MechaEarthShard.label>осколок землі</TM_Golem_MechaEarthShard.label>
+  <TM_Golem_MechaEarthShard.description>Збільшує характеристики голему:
+Здоров&apos;я: +[40%/80%/120%]</TM_Golem_MechaEarthShard.description>
+
+  <TM_Golem_MechaLightningShard.label>осколок блискавки</TM_Golem_MechaLightningShard.label>
+  <TM_Golem_MechaLightningShard.description>Збільшує характеристики голему:
+Рух: +[25%/50%/75%]</TM_Golem_MechaLightningShard.description>
+
+
+</LanguageData>

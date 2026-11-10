@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+	<TM_ElephantSpear.label>Копьё слона</TM_ElephantSpear.label>
+
+	<TM_ElephantSpear.description>Копьё из слоновьего бивня обычно служит знаком статуса для вождей племени и опытных охотников. На древке выгравированы слабые чары, усиливающие боевые качества владельца.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +10%
+Увеличение урона: +10%
+Тайная защита: +20%</TM_ElephantSpear.description>
+
+	<TM_ElephantSpear.tools.0.label>рукоятка</TM_ElephantSpear.tools.0.label>
+
+	<TM_ElephantSpear.tools.1.label>острие</TM_ElephantSpear.tools.1.label>
+
+	<TM_ElephantSpear.tools.2.label>кромка</TM_ElephantSpear.tools.2.label>
+
+	<TM_ElephantTusk.label>слоновый бивень</TM_ElephantTusk.label>
+
+	<TM_ElephantTusk.description>Этот слоновий бивень был превращен в длинный нож, полезный в ближнем бою как для колющих, так и для рубящих ударов. Рукоять обтянута кожей и имеет небольшой противовес для улучшения управляемости, а легкий вес клинка позволяет проводить быстрые атаки. Однако малый вес и более мягкое лезвие делают его плохим выбором против тяжеловооруженного противника.</TM_ElephantTusk.description>
+
+	<TM_ElephantTusk.tools.0.label>рукоятка</TM_ElephantTusk.tools.0.label>
+
+	<TM_ElephantTusk.tools.1.label>острие</TM_ElephantTusk.tools.1.label>
+
+	<TM_ElephantTusk.tools.2.label>кромка</TM_ElephantTusk.tools.2.label>
+
+	<Projectile_ElephantBow.label>Стрела слоновьево лука</Projectile_ElephantBow.label>
+
+	<TM_ElephantBow.label>Лук слона</TM_ElephantBow.label>
+
+	<TM_ElephantBow.description>Лук из слоновьих бивней. Кость освящают, чтобы облегчить её, а затем размягчают в магическом составе, придающем материалу нужную гибкость. Такой лук заметно превосходит обычный длинный лук по дальности и точности, но требует уверенной руки.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +5%
+Восстановление энергии: +5%
+Увеличение урона: +10%
+Перезарядка: -10%</TM_ElephantBow.description>
+
+	<TM_ElephantBow.verbs.0.label>ㅤ</TM_ElephantBow.verbs.0.label>
+
+	<TM_ElephantBow.tools.0.label>конечность</TM_ElephantBow.tools.0.label>
+
+	<TM_ThrumboAxe.label>Топор трумбо</TM_ThrumboAxe.label>
+
+	<TM_ThrumboAxe.description>Топор из рогов трумбо, скреплённых магицитовой накладкой. Эта накладка накапливает тайную силу и при каждом замахе передаёт её в удар, позволяя топору рассекать сразу нескольких противников. Древко также покрыто рунами, усиливающими владельца.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +10%
+Увеличение урона: +20%
+Тайная защита: +30%</TM_ThrumboAxe.description>
+
+	<TM_ThrumboAxe.tools.0.label>рукоять</TM_ThrumboAxe.tools.0.label>
+
+	<TM_ThrumboAxe.tools.1.label>острие</TM_ThrumboAxe.tools.1.label>
+
+	<TM_ThrumboAxe.tools.2.label>рога</TM_ThrumboAxe.tools.2.label>
+	<TM_ThrumboSaber.li.enchantedAction.actionLabel>Эффект: Проворство</TM_ThrumboSaber.li.enchantedAction.actionLabel>
+
+	<TM_ThrumboSaber.label>Сабля трумбо</TM_ThrumboSaber.label>
+
+	<TM_ThrumboSaber.description>Острое как бритва лезвие, выкованное из рога трумбо и напитанное тайной энергией. Сабля легче большинства металлических клинков и способна прорезать почти любую броню, кроме самой тяжёлой. За это её особенно ценят мастера клинка: оружие рассчитано на скорость, точность и смертоносность.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Время восстановления способностей: -10%
+Увеличение урона: +10%
+Скорость атаки: +25%</TM_ThrumboSaber.description>
+
+	<TM_ThrumboSaber.tools.0.label>рукоять</TM_ThrumboSaber.tools.0.label>
+
+	<TM_ThrumboSaber.tools.1.label>острие</TM_ThrumboSaber.tools.1.label>
+
+	<TM_ThrumboSaber.tools.2.label>кромка</TM_ThrumboSaber.tools.2.label>
+
+	<TM_GloryMaul.li.enchantedAction.actionLabel>Даровать мощь</TM_GloryMaul.li.enchantedAction.actionLabel>
+
+	<TM_GloryMaul.label>Молот Славы</TM_GloryMaul.label>
+
+	<TM_GloryMaul.description>Одноручная булава, рассчитанная на бой против самых разных противников. Её ударная часть с зазубренными выступами распределяет силу удара по нескольким точкам, а противоположный когтевидный шип помогает пробивать тяжёлую броню. Название оружию дали чары, способные даровать владельцу короткую вспышку боевого могущества.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +20
+Тайная защита: +20%
+Увеличение урона: +10%
+Дарует силу при попадании: 15%</TM_GloryMaul.description>
+
+	<TM_GloryMaul.tools.0.label>когтистый шип</TM_GloryMaul.tools.0.label>
+
+	<TM_GloryMaul.tools.1.label>ударная часть</TM_GloryMaul.tools.1.label>
+
+	<TM_Decimation.li.enchantedAction.actionLabel>Раскол</TM_Decimation.li.enchantedAction.actionLabel>
+
+	<TM_Decimation.label>Уничтожитель</TM_Decimation.label>
+
+	<TM_Decimation.description>Двуручная булава, столь сильно зачарованная, что её удары словно нарушают прочность любого материала, в который она врезается. Оружие выглядит сурово и почти утилитарно: цельнометаллическая масса, простая кожаная рукоять и тонкие руны, придающие всей конструкции неожиданное изящество. Каждый удар способен сделать цель более уязвимой к следующим атакам.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +40
+Тайная защита: +40%
+Увеличение урона: +30%
+Хрупкость при попадании: 50%</TM_Decimation.description>
+
+	<TM_Decimation.tools.0.label>рукоять</TM_Decimation.tools.0.label>
+
+	<TM_Decimation.tools.1.label>ударная часть</TM_Decimation.tools.1.label>
+
+	<TM_Ruunbled.li.enchantedAction.actionLabel>Быстрота</TM_Ruunbled.li.enchantedAction.actionLabel>
+
+	<TM_Ruunbled.label>Рунический клинок</TM_Ruunbled.label>
+
+	<TM_Ruunbled.description>Массивный клинок, покрытый сложными рунами от рукояти до самого острия. Он выкован из неизвестного материала, бритвенно остёр и при этом удивительно лёгок. Слово «Ruunbled», выбитое на рукояти, — единственная подсказка к его происхождению. Никто не знает, имя ли это клинка, мастера или мастерской, но перед вами явно реликт высочайшего оружейного искусства.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Время восстановления способностей: -20%
+Затраты энергии: -20%
+Увеличение урона: +25%
+Тайная защита: +25%
+Скорость атаки: +20%
+Уклонение: +30%
+Рассекающий удар</TM_Ruunbled.description>
+
+	<TM_Ruunbled.tools.0.label>навершие</TM_Ruunbled.tools.0.label>
+
+	<TM_Ruunbled.tools.1.label>острие</TM_Ruunbled.tools.1.label>
+
+	<TM_Ruunbled.tools.2.label>кромка</TM_Ruunbled.tools.2.label>
+
+	<Projectile_ThrumArrow.label>Стрела лука трумбо</Projectile_ThrumArrow.label>
+
+	<TM_ThrumBow.label>Лук трумбо</TM_ThrumBow.label>
+
+	<TM_ThrumBow.description>Лук из рога трумбо. Рог освящают, чтобы облегчить его, а затем размягчают в магической смеси, придающей материалу редкую гибкость. Оружие усилено чарами и арканной гравировкой, а легенды приписывают ему почти разумную связь с владельцем. Стрелы из него почти всегда летят туда, куда были посланы.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +20%
+Восстановление энергии: +10%
+Увеличение урона: +20%
+Перезарядка: -10%
+Прирост опыта класса: -20%</TM_ThrumBow.description>
+
+	<TM_ThrumBow.verbs.0.label>ㅤ</TM_ThrumBow.verbs.0.label>
+
+	<TM_ThrumBow.tools.0.label>конечность</TM_ThrumBow.tools.0.label>
+
+	<TM_DemonFang.li.enchantedAction.actionLabel>Яд</TM_DemonFang.li.enchantedAction.actionLabel>
+
+	<TM_DemonFang.label>клык демона</TM_DemonFang.label>
+
+	<TM_DemonFang.description>Смертоносный короткий клинок, способный заносить яд ночной тени. Клык демона лёгок, стремителен в атаке и особенно сильно выигрывает от качества материала. Базовый урон у него чуть ниже, чем у другого оружия того же уровня, но благодаря особенностям ковки он великолепно сочетается с чарами, усиливающими владельца.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Затраты энергии: -10%
+Время восстановления способностей: -15%
+Увеличение урона: +25%
+Яд ночной тени при попадании: 20%</TM_DemonFang.description>
+
+	<TM_DemonFang.tools.0.label>острие</TM_DemonFang.tools.0.label>
+
+	<TM_DemonFang.tools.1.label>кромка</TM_DemonFang.tools.1.label>
+
+	<Projectile_FireWand.label>огненный жезл</Projectile_FireWand.label>
+
+	<TM_FireWand.label>Жезл огня</TM_FireWand.label>
+
+	<TM_FireWand.description>Жезл, способный постепенно преобразовывать окружающую магическую энергию в силу огня. Жезлы служат прежде всего фокусирующими инструментами, помогающими направить врождённую силу владельца, а не обычным оружием.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +5%
+Восстановление энергии: +5%
+Увеличение урона: +15%</TM_FireWand.description>
+
+	<TM_FireWand.verbs.0.label>ㅤ</TM_FireWand.verbs.0.label>
+
+	<TM_FireWand.tools.0.label>жезл</TM_FireWand.tools.0.label>
+
+	<Projectile_IceWand.label>жезл льда</Projectile_IceWand.label>
+
+	<TM_IceWand.label>Жезл льда</TM_IceWand.label>
+
+	<TM_IceWand.description>Жезл, способный постепенно преобразовывать окружающую магическую энергию в силу льда. Жезлы служат прежде всего фокусирующими инструментами, помогающими направить врождённую силу владельца, а не обычным оружием.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +5%
+Восстановление энергии: +5%
+Увеличение урона: +15%</TM_IceWand.description>
+
+	<TM_IceWand.verbs.0.label>ㅤ</TM_IceWand.verbs.0.label>
+
+	<TM_IceWand.tools.0.label>жезл</TM_IceWand.tools.0.label>
+
+	<Projectile_LightningWand.label>жезл молний</Projectile_LightningWand.label>
+
+	<TM_LightningWand.label>Жезл молний</TM_LightningWand.label>
+
+	<TM_LightningWand.description>Жезл, способный постепенно преобразовывать окружающую магическую энергию в силу молнии. Жезлы служат прежде всего фокусирующими инструментами, помогающими направить врождённую силу владельца, а не обычным оружием.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +5%
+Восстановление энергии: +5%
+Увеличение урона: +15%</TM_LightningWand.description>
+
+	<TM_LightningWand.verbs.0.label>ㅤ</TM_LightningWand.verbs.0.label>
+
+	<TM_LightningWand.tools.0.label>жезл</TM_LightningWand.tools.0.label>
+
+	<TM_DefenderStaff.label>Посох защитника</TM_DefenderStaff.label>
+
+	<TM_DefenderStaff.description>Посох, созданный по древнему образцу и несущий ощутимую ауру мудрости. Он позволяет владельцу обращаться к миру духов и взывать к предкам, которые отвечают, проявляя свою силу в виде материального барьера. Силу для этого дают сами духи, хотя после каждого призыва им требуется время на восстановление.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +30%
+Восстановление энергии: +20%
+Тайная защита: +20%
+
+Аугментация открывает способность: тайный барьер</TM_DefenderStaff.description>
+
+	<TM_DefenderStaff.verbs.0.label>ㅤ</TM_DefenderStaff.verbs.0.label>
+
+	<TM_DefenderStaff.tools.0.label>жезл</TM_DefenderStaff.tools.0.label>
+
+	<TM_DefenderStaff.tools.1.label>верхняя часть</TM_DefenderStaff.tools.1.label>
+
+	<Projectile_BlazingPower.label>пламенная мощь</Projectile_BlazingPower.label>
+
+	<TM_BlazingPowerStaff.label>Посох пылающей силы</TM_BlazingPowerStaff.label>
+
+	<TM_BlazingPowerStaff.description>Посох, создающий ментальную связь с владельцем и позволяющий направлять сфокусированную энергию либо в поток пылающих снарядов, либо в укреплённый барьер, отклоняющий выстрелы. В руках мага он многократно усиливает заклинания, а для обычной пешки остаётся просто тяжёлым тупым оружием.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +20%
+Восстановление энергии: +10%
+Увеличение урона: +40%</TM_BlazingPowerStaff.description>
+
+	<TM_BlazingPowerStaff.verbs.0.label>ㅤ</TM_BlazingPowerStaff.verbs.0.label>
+
+	<TM_BlazingPowerStaff.tools.0.label>жезл</TM_BlazingPowerStaff.tools.0.label>
+
+	<TM_BlazingPowerStaff.tools.1.label>верхняя часть</TM_BlazingPowerStaff.tools.1.label>
+
+	<Projectile_FreezingWinds.label>леденящий ветер</Projectile_FreezingWinds.label>
+
+	<FlyingObject_FreezingWinds.label>леденящий ветер</FlyingObject_FreezingWinds.label>
+
+	<TM_WinterStaff.label>Кольцо зимы</TM_WinterStaff.label>
+
+	<TM_WinterStaff.description>Посох из синей стали, увенчанный короной из хрустальных осколков. Его прикосновение всегда холодно и напоминает владельцу о ледяной силе, заключённой внутри. Посох усиливает магическую мощь и позволяет вызывать град почти в любых условиях, но при этом вытягивает тепло и энергию из того, кто его держит. Полностью раскрыть его потенциал способны только маги.
+
+Это оружие зачаровано и даёт дополнительные преимущества обученным магам и бойцам:
+Максимальная энергия: +80
+Время восстановления способностей: -30%
+Тайная защита: +20%
+Магический урон: +50%
+
+Способность: Град</TM_WinterStaff.description>
+
+	<TM_WinterStaff.verbs.0.label>ㅤ</TM_WinterStaff.verbs.0.label>
+
+	<TM_WinterStaff.tools.0.label>стержень</TM_WinterStaff.tools.0.label>
+
+	<TM_WinterStaff.tools.1.label>навершие</TM_WinterStaff.tools.1.label>
+
+	<Projectile_SeerRing_Fire.label>Сила огня</Projectile_SeerRing_Fire.label>
+
+	<Seer_FireRing.label>Кольцо силы огня</Seer_FireRing.label>
+
+	<Seer_FireRing.description>Древний артефакт, привязанный к владельцу, позволяющий элементарным токам течь через носителя. Если носитель отделен от кольца, контракт, связывающий его с этим царством, аннулируется, уничтожая артефакт.</Seer_FireRing.description>
+
+	<Seer_FireRing.verbs.0.label>ㅤ</Seer_FireRing.verbs.0.label>
+
+	<Seer_FireRing.tools.0.label>элементальный удар</Seer_FireRing.tools.0.label>
+
+	<Projectile_SeerRing_Ice.label>Сила льда</Projectile_SeerRing_Ice.label>
+
+	<Seer_IceRing.label>Кольцо силы льда</Seer_IceRing.label>
+
+	<Seer_IceRing.description>Древний артефакт, привязанный к владельцу, позволяющий элементарным токам течь через носителя. Если носитель отделен от кольца, контракт, связывающий его с этим царством, аннулируется, уничтожая артефакт.</Seer_IceRing.description>
+
+	<Seer_IceRing.verbs.0.label>ㅤ</Seer_IceRing.verbs.0.label>
+
+	<Seer_IceRing.tools.0.label>элементальный удар</Seer_IceRing.tools.0.label>
+
+	<Laser_SeerRing_Lightning.label>сила молнии</Laser_SeerRing_Lightning.label>
+
+	<Seer_LightningRing.label>Кольцо силы молнии</Seer_LightningRing.label>
+
+	<Seer_LightningRing.description>Древний артефакт, привязанный к владельцу, позволяющий элементарным токам течь через носителя. Если носитель отделен от кольца, контракт, связывающий его с этим царством, аннулируется, уничтожая артефакт.</Seer_LightningRing.description>
+
+	<Seer_LightningRing.verbs.0.label>ㅤ</Seer_LightningRing.verbs.0.label>
+
+	<Seer_LightningRing.tools.0.label>элементальный удар</Seer_LightningRing.tools.0.label>
+</LanguageData>

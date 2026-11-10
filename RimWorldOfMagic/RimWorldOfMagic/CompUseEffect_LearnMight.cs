@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using System.Collections.Generic;
 
@@ -8,8 +8,33 @@ namespace TorannMagic
 	public class CompUseEffect_LearnMight : CompUseEffect
 	{
 
+        public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn pawn)
+        {
+            foreach (var choice in ClassProgression.JobDriver_GladiatorInitiation.Choices(pawn, parent)) yield return choice;
+        }
+        public override AcceptanceReport CanBeUsedBy(Pawn pawn)
+        {
+            if (parent?.def?.defName == "TM_SuperSoldierFieldManual") return "TM_ProgressionBookUnavailable".Translate();
+            if (parent?.def == TorannMagicDefOf.BookOfSuperSoldier && ClassProgression.SuperSoldierMartialPath.Path(ClassProgression.SuperSoldierMartialPath.Owner(pawn))!=null)
+                return ClassProgression.SuperSoldierMartialPath.CanInject(pawn) ? (AcceptanceReport)true : (AcceptanceReport)"TM_ProgressionBookUnavailable".Translate();
+            if (ClassProgression.WandererLessons.Path(pawn) == null) return base.CanBeUsedBy(pawn);
+            return ClassProgression.WandererLessons.Accepts(pawn, parent)
+                ? (AcceptanceReport)true : (AcceptanceReport)"TM_ProgressionBookUnavailable".Translate();
+        }
+
 		public override void DoEffect(Pawn user)
-		{
+        {
+            if (parent?.def == TorannMagicDefOf.BookOfSuperSoldier && ClassProgression.SuperSoldierMartialPath.Path(ClassProgression.SuperSoldierMartialPath.Owner(user))!=null)
+            {
+                ClassProgression.SuperSoldierMartialPath.Inject(user,parent);
+                return;
+            }
+            if (ClassProgression.ClassIdentity.TryGetState(user, out _))
+            {
+                if (ClassProgression.WandererLessons.Path(user) != null && ClassProgression.ClassInitiation.CompleteBook(user, parent)) return;
+                Messages.Message("TM_ProgressionBookUnavailable".Translate(), user, MessageTypeDefOf.RejectInput, false);
+                return;
+            }
             if (parent.def != null || user.IsShambler || user.IsGhoul)
             {
                 bool customClass = false;
@@ -185,6 +210,18 @@ namespace TorannMagic
                     {
                         Messages.Message("NotPhyAdeptPawn".Translate(), MessageTypeDefOf.RejectInput);
                     }
+                }
+                // A class trait may have been granted by any branch above. Editor-made pawns
+                // can reach this point without ability comps and without the spawn-time
+                // cache sync, which left them stamina-less and grimoire-less. Bootstrap
+                // comps and resolve stamina immediately; the comp picks up powers on its
+                // next tick.
+                TorannMagic.Utils.TM_PawnTracker.EnsureClassComps(user);
+                TorannMagic.Utils.TM_PawnTracker.ResolveComps(user);
+                CompAbilityUserMight grantedMight = user.GetCompAbilityUserMight();
+                if (grantedMight != null && grantedMight.IsMightUser)
+                {
+                    grantedMight.ResolveStamina();
                 }
                 //ResolveClassPassions(user);  currently disabled
 

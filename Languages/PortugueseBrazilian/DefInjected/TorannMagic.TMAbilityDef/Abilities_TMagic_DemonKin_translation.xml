@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SoulBond -->
+
+  <TM_SoulBond.label>Ligação mental</TM_SoulBond.label>
+  <TM_SoulBond.description>Os demônios, ou aqueles que têm o poder do demônio, podem criar uma ligação da alma (contrato da alma) com outro peão que manterá (ou aceitará) a ligação. Esta ligação dá energia ao demónio da alma do dono, e em troca as emoções do dono são apagadas na felicidade. A ligação com a alma também cria uma ligação que permite aos seres demoníacos viajar para o dono ou chamá-lo.
+
+O contrato de comunicação de alma pode ser cancelado a qualquer momento com demonomquina reutilizando a capacidade no suporte atual. Criar um vínculo de alma com outro hospedeiro cancelará todos os contratos anteriores. O contrato também vai acabar se uma das partes morrer.
+
+Sucubos e bruxos formam diferentes tipos de conexões mentalmente - as conexões dos bruxos são mentalmente recíprocas, enquanto as conexões da sucuba têm natureza física. O demónio só pode manter uma ligação; os donos só podem manter uma ligação de cada tipo (mental/físico).</TM_SoulBond.description>
+
+
+  <!-- ShadowCall -->
+
+  <TM_ShadowCall.label>Apelo de sombra</TM_ShadowCall.label>
+  <TM_ShadowCall.description>Ordena à ducha ligada que vá para a sua localização.</TM_ShadowCall.description>
+
+
+  <!-- ShadowStep -->
+
+  <TM_ShadowStep.label>Passo de sombra</TM_ShadowStep.label>
+  <TM_ShadowStep.description>Caminhe através da sombra para a localização da sua alma associada.</TM_ShadowStep.description>
+
+
+  <!-- ShadowBolt -->
+
+  <TM_ShadowBolt.label>Shadow Bolt</TM_ShadowBolt.label>
+  <TM_ShadowBolt.description>Arranca um Bolt obscuro. Qualquer ser que esteja no seu caminho será tocado pela sombra. Com o impacto, a energia obscura é liberada em uma onda intensa de escuridão.
+
+Tempo de aplicação: 2s
+Retrocesso: 20s
+Alcance: 40</TM_ShadowBolt.description>
+
+
+  <!-- ShadowBolt_I -->
+
+  <TM_ShadowBolt_I.label>Shadow Bolt</TM_ShadowBolt_I.label>
+  <TM_ShadowBolt_I.description>Arranca um Bolt obscuro. Qualquer ser que esteja no seu caminho será tocado pela sombra. Com o impacto, a energia obscura é liberada em uma onda intensa de escuridão.
+
+Tempo de aplicação: 1,8s
+Retrocesso: 18s
+Alcance: 45</TM_ShadowBolt_I.description>
+
+
+  <!-- ShadowBolt_II -->
+
+  <TM_ShadowBolt_II.label>Shadow Bolt</TM_ShadowBolt_II.label>
+  <TM_ShadowBolt_II.description>Arranca um Bolt obscuro. Qualquer ser que esteja no seu caminho será tocado pela sombra. Com o impacto, a energia obscura é liberada em uma onda intensa de escuridão.
+
+Tempo de aplicação: 1,6s
+Retrocesso: 16s
+Alcance: 50</TM_ShadowBolt_II.description>
+
+
+  <!-- ShadowBolt_III -->
+
+  <TM_ShadowBolt_III.label>Shadow Bolt</TM_ShadowBolt_III.label>
+  <TM_ShadowBolt_III.description>Arranca um Bolt obscuro. Qualquer ser que esteja no seu caminho será tocado pela sombra. Com o impacto, a energia obscura é liberada em uma onda intensa de escuridão.
+
+Tempo de aplicação: 1,5s
+Retrocesso: 15s
+Alcance: 55</TM_ShadowBolt_III.description>
+
+
+  <!-- Dominate -->
+
+  <TM_Dominate.label>Domínio</TM_Dominate.label>
+  <TM_Dominate.description>Ordene que as sombras cercem os seus inimigos com um pesadelo vivo que os rodeará em seus maiores medos. Inimigos próximos o suficiente para ver o medo no Peão dominante também podem ceder ao medo e deixar as sombras dominarem sua própria mente.
+
+Os bruxos e as sucumbas dominam os seus inimigos de várias formas. Os bruxos vão tentar quebrar a mente dos seus inimigos, enquanto a sucuba vai reduzir a habilidade física das suas vítimas.</TM_Dominate.description>
+
+
+  <!-- Attraction -->
+
+  <TM_Attraction.label>Atração</TM_Attraction.label>
+  <TM_Attraction.description>Cria uma grande fonte de sombra que atrai todos os peões mais próximos para o seu centro. As sombras vão se agarrar a qualquer ser sujeito à gravidade, reduzindo drasticamente sua velocidade de movimento por um curto período de tempo.
+
+Tempo de aplicação: 3s
+Alcance: 40
+Retrocesso: 60</TM_Attraction.description>
+
+
+  <!-- Attraction_I -->
+
+  <TM_Attraction_I.label>Atração</TM_Attraction_I.label>
+  <TM_Attraction_I.description>Cria uma grande fonte de sombra que atrai todos os peões mais próximos para o seu centro. As sombras vão se agarrar a qualquer ser sujeito à gravidade, reduzindo drasticamente sua velocidade de movimento por um curto período de tempo.
+
+Tempo de aplicação: 2.6s
+Alcance: 45
+Retrocesso: 55</TM_Attraction_I.description>
+
+
+  <!-- Attraction_II -->
+
+  <TM_Attraction_II.label>Atração</TM_Attraction_II.label>
+  <TM_Attraction_II.description>Cria uma grande fonte de sombra que atrai todos os peões mais próximos para o seu centro. As sombras vão se agarrar a qualquer ser sujeito à gravidade, reduzindo drasticamente sua velocidade de movimento por um curto período de tempo.
+
+Tempo de aplicação: 2.3s
+Alcance: 50
+Retrocesso: 50</TM_Attraction_II.description>
+
+
+  <!-- Attraction_III -->
+
+  <TM_Attraction_III.label>Atração</TM_Attraction_III.label>
+  <TM_Attraction_III.description>Cria uma grande fonte de sombra que atrai todos os peões mais próximos para o seu centro. As sombras vão se agarrar a qualquer ser sujeito à gravidade, reduzindo drasticamente sua velocidade de movimento por um curto período de tempo.
+
+Tempo de aplicação: 2s
+Alcance: 55
+Retrocesso: 45</TM_Attraction_III.description>
+
+
+  <!-- Repulsion -->
+
+  <TM_Repulsion.label>Afastar</TM_Repulsion.label>
+  <TM_Repulsion.description>O bruxo gera uma explosão de energia na célula indicada com força suficiente para afastar os seres mais próximos do centro.
+
+Tempo de aplicação: 1s
+Alcance: 40
+Retrocesso: 30s
+Raio: 5</TM_Repulsion.description>
+
+
+  <!-- Repulsion_I -->
+
+  <TM_Repulsion_I.label>Afastar</TM_Repulsion_I.label>
+  <TM_Repulsion_I.description>O bruxo gera uma explosão de energia na célula indicada com força suficiente para afastar os seres mais próximos do centro.
+
+Tempo de aplicação: .8s
+Alcance: 47
+Retrocesso: 25s
+Raio: 6</TM_Repulsion_I.description>
+
+
+  <!-- Repulsion_II -->
+
+  <TM_Repulsion_II.label>Afastar</TM_Repulsion_II.label>
+  <TM_Repulsion_II.description>O bruxo gera uma explosão de energia na célula indicada com força suficiente para afastar os seres mais próximos do centro.
+
+Tempo de aplicação: .6s
+Alcance: 54
+Retrocesso: 20s
+Raio: 7</TM_Repulsion_II.description>
+
+
+  <!-- Repulsion_III -->
+
+  <TM_Repulsion_III.label>Afastar</TM_Repulsion_III.label>
+  <TM_Repulsion_III.description>O bruxo gera uma explosão de energia na célula indicada com força suficiente para afastar os seres mais próximos do centro.
+
+Tempo de aplicação: .5s
+Alcance: 60
+Retrocesso: 15s
+Raio: 8</TM_Repulsion_III.description>
+
+
+  <!-- Scorn -->
+
+  <TM_Scorn.label>Desprezo</TM_Scorn.label>
+  <TM_Scorn.description>Sukub usa as suas forças demoníacas para se transformar em parte num demónio alado, atirando-se para um lugar distante para esmagar os seus inimigos num fluxo de raiva escura.
+
+A sucuba manterá a sua forma demoníaca parcial por um curto período de tempo após o uso desta capacidade, fornecendo-lhe capacidade física melhorada e escudo de proteção contra danos.</TM_Scorn.description>
+
+
+  <!-- PsychicShock -->
+
+  <TM_PsychicShock.label>choque mental</TM_PsychicShock.label>
+  <TM_PsychicShock.description>O bruxo retira todas as barreiras mentais e projeta uma poderosa onda de energia mental. Os peões que entrarem na onda serão bombardeados pela força mental e, por um curto período de tempo, serão submetidos à vontade do bruxo.
+
+Um bruxo que usará as mentes dos outros para espalhar a onda mental. O bruxo também vai tentar destruir a mente de qualquer inimigo que seja afetado pela energia mental. Ao serem atacados mentalmente, os peões são desorientados por um curto período de tempo, e até o bruxo pode se desorientar se for afetado por energia mental refletida. O choque mental ganha um bónus baseado na sensibilidade mental do homem negro e pode não afetar os peões com sensibilidade mental reduzida.</TM_PsychicShock.description>
+
+
+  <!-- SummonDemon -->
+
+  <TM_SummonDemon.label>Chamar o Demónio</TM_SummonDemon.label>
+  <TM_SummonDemon.description>Mostrem uma verdadeira força demoníaca através da manipulação dos laços físicos e mentais da alma. Este poder negro implica grandes perdas, e seu uso só deve ser visto em circunstâncias difíceis.
+
+O apelo é iniciado quando a sucuba fixa o oferecimento físico e termina quando o bruxo termina o contrato demoníaco.</TM_SummonDemon.description>
+
+
+</LanguageData>

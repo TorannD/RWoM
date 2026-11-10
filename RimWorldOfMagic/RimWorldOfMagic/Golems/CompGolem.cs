@@ -129,6 +129,7 @@ namespace TorannMagic.Golems
         private bool initialized = false;
         public bool shouldDespawn = false;
         public bool despawnNow = false;
+        private int nextCollapseAttempt;
         private int abilityTick = 0;
         private int abilityBurstTick = 0;
         private int abilityMaxTicks = 0;
@@ -405,8 +406,8 @@ namespace TorannMagic.Golems
                     CompGolemEnergyHandler cgeh = InnerWorkstation.Energy;
                     if (cgeh != null)
                     {
-                        need_ge.CurLevel = cgeh.StoredEnergy;
                         need_ge.maxEnergy = cgeh.StoredEnergyMax;
+                        need_ge.CurLevel = cgeh.StoredEnergy;
                         need_ge.energyEfficiency = cgeh.ConversionEfficiency;
                     }
                 }
@@ -564,6 +565,16 @@ namespace TorannMagic.Golems
 
         public override void CompTick()
         {
+            // A gravship flight destroys the old ship map, and a rest place bound
+            // to it cannot survive the trip (player report: the assigned rest spot
+            // reset after landing). Re-point the rest place to the golem's current
+            // spot; an assignment on a live map — e.g. the home base — is kept.
+            if (this.dormantMap != null && !Find.Maps.Contains(this.dormantMap))
+            {
+                this.dormantMap = Pawn.Map;
+                this.dormantPosition = Pawn.Position;
+                this.dormantRotation = Pawn.Rotation;
+            }
             if (this.age > 0)
             {
                 if (!this.initialized && InnerWorkstation != null)
@@ -592,10 +603,14 @@ namespace TorannMagic.Golems
                             UpdateGolemancerStatus();
                         }
 
-                        if ((this.ShouldDespawnNow && !Pawn.IsBurning()) || Energy.CurLevel <= .1f)
+                        if (this.ShouldDespawnNow && !Pawn.IsBurning())
                         {
                             DeSpawnGolem();
                             this.shouldDespawn = false;
+                        }
+                        else if (Energy.CurLevel <= .1f && !Pawn.IsBurning())
+                        {
+                            ShutdownGolemLowPower();
                         }
                     }
                 }                
@@ -605,57 +620,34 @@ namespace TorannMagic.Golems
 
         public void UpdateGolemancerStatus()
         {
-            if(!pawnMaster.DestroyedOrNull() && !pawnMaster.Dead)
+            if (pawnMaster.DestroyedOrNull() || pawnMaster.Dead) pawnMaster = null;
+            var body = ClassProgression.GolemancerLifecycle.MasterBody(pawnMaster);
+            var magic = body != null && ClassProgression.GolemancerLifecycle.KnowsGolemancy(pawnMaster)
+                ? pawnMaster.GetCompAbilityUserMagic() : null;
+            var ability = TorannMagicDefOf.TM_Golemancy;
+            UpdateAugment(TorannMagicDefOf.TM_GolemancyPowerHD, magic?.MagicData.GetSkill_Power(ability));
+            UpdateAugment(TorannMagicDefOf.TM_GolemancyEfficiencyHD, magic?.MagicData.GetSkill_Efficiency(ability));
+            if (magic != null)
             {
-                CompAbilityUserMagic masterComp = pawnMaster.GetCompAbilityUserMagic();
-                if(TM_Calc.IsMagicUser(pawnMaster) && masterComp != null && masterComp.MagicData != null && masterComp.MagicData.AllMagicPowersWithSkills.FirstOrDefault((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Golemancy).learned)
+                var link = body.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_GolemancyVersatilityHD);
+                if (link == null)
                 {
-                    float pSev = .5f + masterComp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_Golemancy).level;
-                    float eSev = .5f + masterComp.MagicData.GetSkill_Efficiency(TorannMagicDefOf.TM_Golemancy).level;
-                    float vSev = .5f + masterComp.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_Golemancy).level;
-                    Hediff hd = pawnMaster.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_GolemancyVersatilityHD);
-                    if(hd != null)
-                    {
-                        if (hd.Severity != vSev)
-                        {
-                            hd.Severity = vSev;
-                        }
-                    }
-                    else
-                    {
-                        HealthUtility.AdjustSeverity(pawnMaster, TorannMagicDefOf.TM_GolemancyVersatilityHD, vSev);
-                    }
-                    hd = Pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_GolemancyPowerHD);
-                    if(hd != null)
-                    {
-                        if (hd.Severity != pSev)
-                        {
-                            hd.Severity = pSev;
-                        }
-                    }
-                    else
-                    {
-                        HealthUtility.AdjustSeverity(Pawn, TorannMagicDefOf.TM_GolemancyPowerHD, pSev);
-                    }
-                    hd = Pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_GolemancyEfficiencyHD);
-                    if (hd != null)
-                    {
-                        if (hd.Severity != eSev)
-                        {
-                            hd.Severity = eSev;
-                        }
-                    }
-                    else
-                    {
-                        HealthUtility.AdjustSeverity(Pawn, TorannMagicDefOf.TM_GolemancyEfficiencyHD, eSev);
-                    }
-
+                    link = HediffMaker.MakeHediff(TorannMagicDefOf.TM_GolemancyVersatilityHD, body);
+                    body.health.AddHediff(link);
                 }
+                link.TryGetComp<HediffComp_GolemBond>()?.Register(Pawn);
             }
-            else
+        }
+
+        private void UpdateAugment(HediffDef def, MagicPowerSkill rank)
+        {
+            var effect = Pawn.health.hediffSet.GetFirstHediffOfDef(def);
+            if (rank == null)
             {
-                pawnMaster = null;
+                if (effect != null) Pawn.health.RemoveHediff(effect);
             }
+            else if (effect == null) HealthUtility.AdjustSeverity(Pawn, def, .5f + rank.level);
+            else if (effect.Severity != .5f + rank.level) effect.Severity = .5f + rank.level;
         }
 
         public void UseAbility()
@@ -737,51 +729,80 @@ namespace TorannMagic.Golems
             this.effecter?.Cleanup();
         }
 
+        // A golem that ran out of energy must walk to its rest spot before shutting
+        // down; collapsing wherever it stands crushes any storage or furniture
+        // underfoot (workshop report). Only a home that can never be reached falls
+        // back to an on-the-spot shutdown, which places the dormant golem on a
+        // clear cell instead of wiping the one it stands on.
+        private void ShutdownGolemLowPower()
+        {
+            if (this.despawnNow)
+            {
+                return;
+            }
+            Map map = Pawn.Map;
+            if (map == null || !this.dormantPosition.IsValid || this.dormantMap != map
+                || !this.dormantPosition.Walkable(map) || !this.dormantPosition.Standable(map))
+            {
+                this.despawnNow = true;
+                return;
+            }
+            this.shouldDespawn = true;
+            Job cur = Pawn.CurJob;
+            if (cur != null && (cur.def == TorannMagicDefOf.JobDriver_GolemDespawn
+                || (cur.def == JobDefOf.Goto && cur.targetA.Cell == this.dormantPosition)))
+            {
+                return;
+            }
+            if (Pawn.Drafted || !Pawn.CanReach(this.dormantPosition, PathEndMode.ClosestTouch, Danger.Deadly))
+            {
+                // Player orders win, and the despawn job giver retries on its own
+                // once a path to the rest spot opens.
+                return;
+            }
+            Job job = JobMaker.MakeJob(TorannMagicDefOf.JobDriver_GolemDespawn, this.dormantPosition);
+            job.locomotionUrgency = LocomotionUrgency.Sprint;
+            Pawn.jobs.StartJob(job, JobCondition.InterruptForced);
+        }
+
         public void DeSpawnGolem()
         {
+            int now = Find.TickManager.TicksGame;
+            if (now < nextCollapseAttempt) return;
+            var map = Pawn.Map;
+            var station = InnerWorkstation;
+            var defToPlace = station?.def ?? TM_GolemUtility.GetGolemDefFromThing(Pawn)?.golemWorkstationDef;
+            if (map == null || defToPlace == null) return;
+            var despawnPos = SafeCollapseCell(map, defToPlace);
+            if (!despawnPos.IsValid)
+            {
+                despawnNow = true;
+                nextCollapseAttempt = now + 60;
+                return;
+            }
             for(int i =0; i < 4; i++)
             {
                 Vector3 rndPos = dormantPosition.ToVector3Shifted();
                 rndPos.x += Rand.Range(-1f, 1f);
                 rndPos.z += Rand.Range(-1f, 1f);
-                FleckMaker.ThrowSmoke(rndPos, Pawn.Map, Rand.Range(.6f, 1.2f));                
+                FleckMaker.ThrowSmoke(rndPos, Pawn.Map, Rand.Range(.6f, 1.2f));
             }
             if (ModOptions.Settings.Instance.golemScreenShake)
             {
                 Find.CameraDriver.shaker.DoShake(.25f);
             }
             Building_TMGolemBase spawnedThing = null;
-            IntVec3 despawnPos = Pawn.Position;
-            if((dormantPosition - despawnPos).LengthHorizontal <= 1.4f)
+            if (station != null)
             {
-                despawnPos = dormantPosition;
-            }
-            if (InnerWorkstation != null)
-            {
-                GenPlace.TryPlaceThing(InnerWorkstation.SplitOff(1), despawnPos, Pawn.Map, ThingPlaceMode.Direct, null, null, dormantRotation);
-                spawnedThing = InnerWorkstation;
+                if (!GenPlace.TryPlaceThing(station, despawnPos, map, ThingPlaceMode.Direct, null, null, dormantRotation)) return;
+                spawnedThing = station;
             }
             else
             {
-                
-                AbilityUser.SpawnThings spawnables = new SpawnThings();
-                spawnables.def = TM_GolemUtility.GetGolemDefFromThing(Pawn).golemWorkstationDef;
-                spawnables.spawnCount = 1;
-                bool flag = spawnables.def != null;
-                if (flag)
-                {
-                    Faction faction = Pawn.Faction;
-                    ThingDef def = spawnables.def;
-                    ThingDef stuff = null;
-                    bool madeFromStuff = def.MadeFromStuff;
-                    if (madeFromStuff && TM_GolemUtility.GetGolemDefFromThing(Pawn).golemStuff != null)
-                    {
-                        stuff = TM_GolemUtility.GetGolemDefFromThing(Pawn).golemStuff;
-                    }
-                    spawnedThing = ThingMaker.MakeThing(def, stuff) as Building_TMGolemBase;
-                    spawnedThing.SetFaction(Pawn.Faction);
-                    GenSpawn.Spawn(spawnedThing, Pawn.Position, this.Pawn.Map, dormantRotation, WipeMode.Vanish, false);                    
-                }
+                var stuff = defToPlace.MadeFromStuff ? TM_GolemUtility.GetGolemDefFromThing(Pawn).golemStuff : null;
+                spawnedThing = (Building_TMGolemBase)ThingMaker.MakeThing(defToPlace, stuff);
+                spawnedThing.SetFaction(Pawn.Faction);
+                GenSpawn.Spawn(spawnedThing, despawnPos, map, dormantRotation, WipeMode.Vanish, false);
             }
             if (Find.Selector.SingleSelectedThing == this.parent)
             {
@@ -794,6 +815,24 @@ namespace TorannMagic.Golems
             this.initialized = false;
             this.parent.DeSpawn(DestroyMode.Vanish);
             PawnGolem.PostGolemDeActivate();
+        }
+
+        // Emergency shutdown away from the rest spot: pick a cell where placing the
+        // dormant golem will not destroy whatever furniture or storage is underfoot.
+        private IntVec3 SafeCollapseCell(Map map, ThingDef station)
+        {
+            bool Clear(IntVec3 position)
+            {
+                foreach (var cell in GenAdj.OccupiedRect(position, dormantRotation, station.Size))
+                    if (!cell.InBounds(map) || cell.GetEdifice(map) != null || !cell.Standable(map)) return false;
+                return !GenSpawn.WouldWipeAnythingWith(position, dormantRotation, station, map, _ => true);
+            }
+            if (dormantMap == map && dormantPosition.IsValid &&
+                (dormantPosition - Pawn.Position).LengthHorizontal <= 1.4f && Clear(dormantPosition)) return dormantPosition;
+            if (Clear(Pawn.Position)) return Pawn.Position;
+            foreach (IntVec3 cell in GenAdj.CellsAdjacent8Way(Pawn))
+                if (Clear(cell)) return cell;
+            return IntVec3.Invalid;
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)

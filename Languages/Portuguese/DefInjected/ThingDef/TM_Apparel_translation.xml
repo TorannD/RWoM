@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_MaestersCloak.label>Capa de viajante</TM_MaestersCloak.label>
+  <TM_MaestersCloak.description>Um manto projetado para mágicos viajantes que oferece proteção contra elementos e melhora a velocidade de recuperação de energia. O método de adicionar pedras preciosas secretas ao tecido durante o craft oferece uma eficácia sem precedentes do feitiço.
+
+Este manto é encantado e oferece benefícios adicionais aos magos treinados:
+Energia Máxima: + 12%
+Recarga: -20%
+Resistência mágica: + 5%</TM_MaestersCloak.description>
+
+  <DemonLordCloak.label>Capa de excelência</DemonLordCloak.label>
+  <DemonLordCloak.description>O manto reforçado pelo poder mágico, acredita-se, foi feito pela primeira vez para um cavaleiro negro que atua como embaixador do demónio astral. O tecido é difícil de focar, só pode ser descrito como «ruído visual», e as dobraduras de tecido são movidas de forma não natural, como se não fossem contidas pela lei natural. Os poucos que usaram este manto no combate juram que ele tem a sua própria consciência e contam histórias sobre o tecido que os protege da morte iminente. Outros dizem que estas observações não eram mais do que alucinações de loucos loucos. Por causa destas alegações, há rumores de que o manto tem a capacidade de amortecer os ataques contra o proprietário, mas ninguém conseguiu reproduzir os resultados com qualquer credibilidade.
+
+Os mantos de excelência são encantados e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 40%
+Regeneração Mana: + 40%
+Recarga: -20%
+
+Adicionado a uma mudança fantasma: 20% de chance de evitar ataque</DemonLordCloak.description>
+
+  <DarkRobe.label>Vestuário escuro</DarkRobe.label>
+  <DarkRobe.description>Mantos que usam heróis de magia escura. Os portadores desta roupa estão dispostos a sacrificar a sua sanidade em troca de um poder maior.
+
+Os mantos escuros são enfeitados e oferecem vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 17,5%
+Recuperação de Energia: + 10%
+Recarga Capacidade: -15%
+Custos de Kast: -15%
+Classe de reforço XP: -25%
+Resistência secreta: + 10%</DarkRobe.description>
+
+  <AncientMail.label>Colchuga Antiga</AncientMail.label>
+  <AncientMail.description>O colar é forjado com um design antigo que oferece proteção física acima da média. O projeto da armadura inclui a extração simétrica de runas secretas que dão ao proprietário maior poder. Um dia criados, estas runas atrairão o espírito antigo para realizar o colar e darão ao proprietário a chance de causar danos secretos adicionais após qualquer ataque; No entanto, todos os poderes precisarão de mais energia, e o hospedeiro será assediado por pesadelos que lentamente destruem a resistência mental.
+
+O antigo colar está encantado e oferece vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 8%
+Recuperação de Energia: + 10%
+Custos Em Castas: + 15%
+Resistência secreta: + 20%
+
+Adicionado com espectro secreto: 50% de chance de causar 20% de danos de bónus</AncientMail.description>
+
+  <RoyalArmor.label>Armadura de bravura</RoyalArmor.label>
+  <RoyalArmor.description>Um tanque gravado em símbolos sagrados que é projetado para proteger áreas vitais sem limitar os movimentos. Dizem que foi usado por soldados sagrados do século passado, que mantiveram a paz com justiça e compaixão igualmente. Não se sabe o que aconteceu com esta ordem, embora seja difícil acreditar que isso tenha algo a ver com a sua habilidade em armamento.
+
+A armadura é encantada e oferece vantagens adicionais aos magos e lutadores treinados:
+Custos de Kast: -10%
+Classe de reforço XP: + 10%</RoyalArmor.description>
+
+  <TM_DreamcatcherBuckskin.label>Apanhador de sonhos Pele de Veado</TM_DreamcatcherBuckskin.label>
+  <TM_DreamcatcherBuckskin.description>Pele de veado de couro isolado, decorada com objetos memoráveis de animais e impregnada em energias místicas. A pele de veado do pescador de sonhos, usada principalmente pelos chefes das tribos místicas, representa a ligação fabulosa entre a natureza e os espíritos.
+
+Os misticos ganham força adicional no símbolo deste fato:
+Energia máxima: + 40
+Aumento de experiência em sala de aula: + 30%
+Resistência secreta: + 25</TM_DreamcatcherBuckskin.description>
+
+  <ArchMageRobe.label>O manto do Mago Supremo</ArchMageRobe.label>
+  <ArchMageRobe.description>Tetos desenvolvidos pela raça superior que são destinados à classe alta dos usuários de magia, que merecem força e perspicácia adicionais. Aquelas roupas leves e decrépitas parecem movimentar o hospedeiro, como se ele fosse carregado por uma grande besta alada.
+
+Os mantos de Arquimaga são enfeitados e oferecem vantagens adicionais aos magos e combatentes treinados:
+Energia Máxima: + 25%
+Recuperação de Energia: + 20%
+Recarga: -20%
+Custos de Kast: -10%
+Taxa de reforço da classe XP: + 25%
+Resolução secreta: + 10%</ArchMageRobe.description>
+
+  <TM_WizardHat.label>Chapéu de feiticeiro</TM_WizardHat.label>
+  <TM_WizardHat.description>Um chapéu clássico estilizado sob qualquer feiticeiro ou bruxa. Este chapéu tem divisões secretas de transferência, além de bônus sociais e de drogas.
+
+O chapéu do feiticeiro está enfeitado e oferece vantagens adicionais aos magos e lutadores treinados:
+Energia máxima: + 5%
+Força secreta: + 5%</TM_WizardHat.description>
+
+  <ArcaneHood.label>Capuz secreto</ArcaneHood.label>
+  <ArcaneHood.description>Um capuz preferido pelos mágicos por suas propriedades mágicas, peso leve e conforto. O método de colagem de encantos no tecido antes de o capuz render melhores resultados charmosos.
+
+O capuz secreto é encantado e oferece vantagens adicionais aos magos e lutadores treinados:
+Energia Máxima: + 10%
+Recuperação de Energia: + 10%
+Resistência secreta: + 10%</ArcaneHood.description>
+
+  <HoodOfMadness.label>Capuz da loucura</HoodOfMadness.label>
+  <HoodOfMadness.description>Um capuz escuro que tem reputação de ser amaldiçoado, embora as suas propriedades mágicas sejam inegáveis. Aqueles que usam este capuz ganham a capacidade de ver as manifestações de energia secreta e aprender coisas que de outra forma não saberiam. a aparência do capuz e o medo dos segredos revelados levam mais à desconfiança de quem usa o capuz. Da mesma forma, aqueles que veem os olhos deste capuz começam a não confiar nos outros.
+
+O capuz da loucura é encantado e oferece vantagens adicionais aos magos e lutadores treinados:
+Classe de reforço XP: + 30%
+Resistência secreta: 30%</HoodOfMadness.description>
+
+  <RoyalHelm.label>Capacete valente</RoyalHelm.label>
+  <RoyalHelm.description>Capacete em forma de barbuto, projetado para a máxima proteção, sem restrição visual ou de voz. Estes capacetes são um complemento à armadura de um conjunto de bravura e reforçam ainda mais a capacidade mágica do proprietário, além de fornecer proteção física digna de atenção.
+
+O capacete é encantado e oferece vantagens adicionais aos magos e combatentes treinados:
+Custos de Kast: -5%
+Classe de reforço XP: + 10%</RoyalHelm.description>
+
+  <ParagonHelm.label>Capacete de Paragon</ParagonHelm.label>
+  <ParagonHelm.description>O capacete muito enfeitado era para identificar guerreiros de elite valentes.
+
+O capacete de paragão está encantado e oferece vantagens adicionais aos magos e lutadores treinados:
+Custos de Kast: -5%
+Classe de reforço XP: + 15%
+Energia Máxima: + 5%
+Resolução secreta: + 10%</ParagonHelm.description>
+
+  <TM_DreamcatcherCoronet.label>Coroa do Pescador de Sonhos</TM_DreamcatcherCoronet.label>
+  <TM_DreamcatcherCoronet.description>Um chapéu de pele animal com uma coroa de chifres de veado. Este capuz marca o hospedeiro como o líder espiritual da tribo. Dizem que a roupa do pescador de sonhos dá aos utilizadores dotados a capacidade de ver a natureza com os olhos do seu animal espiritual.
+
+Os misticos ganham força adicional no símbolo deste fato:
+Energia máxima: + 25
+Ganho de experiência em sala de aula: + 20%
+Resistência secreta: + 20%</TM_DreamcatcherCoronet.description>
+
+
+</LanguageData>

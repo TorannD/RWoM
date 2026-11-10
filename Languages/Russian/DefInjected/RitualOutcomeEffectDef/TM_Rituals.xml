@@ -1,0 +1,41 @@
+<LanguageData><TM_SeverMagic.description>Наблюдающие рабы будут подавлены на 100%. В зависимости от качества ритуала участники получат настроение от {MINMOOD} до {MAXMOOD} на {MOODDAYS} дней.</TM_SeverMagic.description>
+	<TM_SeverMagic.comps.1.label>моральный ориентир присутствует</TM_SeverMagic.comps.1.label>
+	<TM_SeverMagic.comps.2.label>количество участников</TM_SeverMagic.comps.2.label>
+	<TM_SeverMagic.comps.3.label>начиналось с алтаря или идеограммы</TM_SeverMagic.comps.3.label>
+	<TM_SeverMagic.comps.4.label>впечатление от помещения</TM_SeverMagic.comps.4.label>
+	<TM_SeverMagic.outcomeChances.0.label>Неудачный</TM_SeverMagic.outcomeChances.0.label>
+	<TM_SeverMagic.outcomeChances.0.description>{0} был неудачен. Маг отреагировал в страхе и отчаянии.</TM_SeverMagic.outcomeChances.0.description>
+	<TM_SeverMagic.outcomeChances.1.label>Смертельный</TM_SeverMagic.outcomeChances.1.label>
+	<TM_SeverMagic.outcomeChances.1.description>{0} был смертельным. Ритуал был предназначен для того, чтобы отрезать мага от магии, а не убить мага.</TM_SeverMagic.outcomeChances.1.description>
+	<TM_SeverMagic.outcomeChances.2.label>Успешный</TM_SeverMagic.outcomeChances.2.label>
+	<TM_SeverMagic.outcomeChances.2.description>Операция {0} прошла успешно. Искатель пустоты эффективно отсек магию мага.</TM_SeverMagic.outcomeChances.2.description>
+	<TM_SeverMagic.outcomeChances.3.label>Безупречный</TM_SeverMagic.outcomeChances.3.label>
+	<TM_SeverMagic.outcomeChances.3.description>{0} был безупречен - церемония принесла магу сочувствие и свободу.</TM_SeverMagic.outcomeChances.3.description>
+	<!-- Bestow Magic-->
+	<TM_BestowMagic.description>Наблюдающие рабы будут подавлены на 100%. В зависимости от качества ритуала участники получат настроение от {MINMOOD} до {MAXMOOD} на {MOODDAYS} дней.</TM_BestowMagic.description>
+	<TM_BestowMagic.comps.1.label>моральный ориентир присутствует</TM_BestowMagic.comps.1.label>
+	<TM_BestowMagic.comps.2.label>количество участников</TM_BestowMagic.comps.2.label>
+	<TM_BestowMagic.comps.3.label>начиналось с алтаря или идеограммы</TM_BestowMagic.comps.3.label>
+	<TM_BestowMagic.comps.4.label>впечатление от помещения</TM_BestowMagic.comps.4.label>
+	<TM_BestowMagic.outcomeChances.0.label>Неудачный</TM_BestowMagic.outcomeChances.0.label>
+	<TM_BestowMagic.outcomeChances.0.description>{0} был неудачным. Искатель пустоты не смог установить магическую связь.</TM_BestowMagic.outcomeChances.0.description>
+	<TM_BestowMagic.outcomeChances.1.label>Успешный</TM_BestowMagic.outcomeChances.1.label>
+	<TM_BestowMagic.outcomeChances.1.description>Операция {0} прошла успешно. Искатель пустоты даровал искру магии.</TM_BestowMagic.outcomeChances.1.description>
+	<TM_BestowMagic.outcomeChances.2.label>Вдохновленный</TM_BestowMagic.outcomeChances.2.label>
+	<TM_BestowMagic.outcomeChances.2.description>{0} было безупречно - церемония подтвердила наши убеждения, принося дар магии и даруя вдохновляющие видения.</TM_BestowMagic.outcomeChances.2.description>
+	<!-- Arcane Pathway-->
+	<TM_BestowMagicClass.description>Наблюдающие рабы будут подавлены на 100%. В зависимости от качества ритуала участники получат настроение от {MINMOOD} до {MAXMOOD} на {MOODDAYS} дней.</TM_BestowMagicClass.description>
+	<TM_BestowMagicClass.comps.1.label>моральный ориентир присутствует</TM_BestowMagicClass.comps.1.label>
+	<TM_BestowMagicClass.comps.2.label>количество участников</TM_BestowMagicClass.comps.2.label>
+	<TM_BestowMagicClass.comps.3.label>начиналось с алтаря или идеограммы</TM_BestowMagicClass.comps.3.label>
+	<TM_BestowMagicClass.comps.4.label>впечатление от помещения</TM_BestowMagicClass.comps.4.label>
+	<TM_BestowMagicClass.outcomeChances.0.label>Пресный</TM_BestowMagicClass.outcomeChances.0.label>
+	<TM_BestowMagicClass.outcomeChances.0.description>{0} был успешным, но ему не хватало какого-либо реального чувства или энергии.</TM_BestowMagicClass.outcomeChances.0.description>
+	<TM_BestowMagicClass.outcomeChances.1.label>Обнадеживающий</TM_BestowMagicClass.outcomeChances.1.label>
+	<TM_BestowMagicClass.outcomeChances.1.description>Операция {0} прошла успешно. Одаренный человек сделал большой шаг к тому, чтобы стать более мощным преимуществом для нашей колонии.</TM_BestowMagicClass.outcomeChances.1.description>
+	<TM_BestowMagicClass.outcomeChances.2.label>Вдохновляющий</TM_BestowMagicClass.outcomeChances.2.label>
+	<TM_BestowMagicClass.outcomeChances.2.description>{0} был вдохновляющим - благодаря великолепному зрелищу тайной и эмоциональной энергии колония приобрела еще одного могущественного мага.</TM_BestowMagicClass.outcomeChances.2.description>
+	<TM_SeverMagic.comps.3.expectedThingLabelTip>алтарь или идеограмма</TM_SeverMagic.comps.3.expectedThingLabelTip>
+	<TM_BestowMagic.comps.3.expectedThingLabelTip>алтарь или идеограмма</TM_BestowMagic.comps.3.expectedThingLabelTip>
+	<TM_BestowMagicClass.comps.3.expectedThingLabelTip>алтарь или идеограмма</TM_BestowMagicClass.comps.3.expectedThingLabelTip>
+</LanguageData>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <JobDef>
+    <defName>TM_ReadSniperFocus</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying the sniper combat form.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_ReadSniperPatientAim</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying the sniper combat form.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SniperObservation</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SniperObservation</driverClass>
+    <reportString>observing a sector.</reportString>
+  </JobDef>
+</Defs>

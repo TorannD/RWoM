@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Misc for Golems -->
+
+  <JobDriver_GolemDespawn.reportString>desativação</JobDriver_GolemDespawn.reportString>
+  <JobDriver_GolemDespawnWait.reportString>desativação</JobDriver_GolemDespawnWait.reportString>
+  <JobDriver_GolemSelfTend.reportString>limpeza automática</JobDriver_GolemSelfTend.reportString>
+  <JobDriver_MechaMine.reportString>protocolo de mineração</JobDriver_MechaMine.reportString>
+  <JobDriver_FleshHarvest.reportString>limpeza de plantas</JobDriver_FleshHarvest.reportString>
+  <JobDriver_FleshChop.reportString>cortar plantas</JobDriver_FleshChop.reportString>
+  <JobDriver_GolemAbilityJob.reportString>usar a capacidade</JobDriver_GolemAbilityJob.reportString>
+  <JobDriver_GolemAttackStatic.reportString>Apanhar o TargetA como alvo.</JobDriver_GolemAttackStatic.reportString>
+
+
+</LanguageData>

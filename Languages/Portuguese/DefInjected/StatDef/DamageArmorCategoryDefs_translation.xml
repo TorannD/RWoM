@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Armor Ratings -->
+
+  <ArmorRating_Alignment.label>Armadura - Harmonia</ArmorRating_Alignment.label>
+  <ArmorRating_Alignment.description>Proteção contra os ataques da magia da luz, das trevas e da morte.</ArmorRating_Alignment.description>
+
+  <StuffPower_Armor_Harmony.label>Armadura - Harmonia</StuffPower_Armor_Harmony.label>
+  <StuffPower_Armor_Harmony.description>Proteção contra os ataques da magia da luz, das trevas e da morte.</StuffPower_Armor_Harmony.description>
+
+
+</LanguageData>

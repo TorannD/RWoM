@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TableArcaneForge.label>forja arcana</TableArcaneForge.label>
+  
+  <TableArcaneForge.description>La forja arcana permite a un mago blandir el poder arcano puro para crear objetos materiales.\n\nCientíficamente, la forja arcana podría describirse como un fabricador de materia, aunque sus mecánicas exactas aún no se han determinado. Solo aquellos que poseen la capacidad de manipular el poder arcano pueden utilizarla.\n\nEl uso de la forja arcana aumenta drásticamente la velocidad de fabricación, pero consume maná. La calidad de los objetos se determina mediante la habilidad de intelecto del mago y su nivel de clase.</TableArcaneForge.description>
+  
+  
+  <TableGemcutting.label>mesa de gemas mágicas</TableGemcutting.label>
+  
+  <TableGemcutting.description>Un banco de trabajo utilizado para refinar piedras de encantamiento.</TableGemcutting.description>
+  
+  
+  <TableMagicCircle.label>círculo mágico</TableMagicCircle.label>
+  
+  <TableMagicCircle.description>El círculo mágico es una estructura que amplifica la magia al alinear lo físico y lo arcano en un punto focal. Aunque parezca simple, el círculo está perfilado con intrincadas runas y construido con una precisión detallada.\n\nLos magos pueden usar el círculo mágico para aumentar su poder o combinar su energía con la de otros magos para crear efectos únicos y poderosos. El círculo puede albergar hasta seis magos.\n\nEl tipo de material utilizado en la construcción afecta directamente la calidad del círculo mágico:\nPiedra (cualquiera): sin bonificaciones\nAcero: sin bonificación\nMadera: sin bonificación\nJade: probabilidad de éxito +30%\nPlata: reembolsa el 25% del coste de material\nPlasteca: puntos de evento +15%, duración +10%\nOro: puntos de evento +20%, duración +20%, reembolsa el 15% del coste de material\nUranio: duración y probabilidad de éxito +20%\nArcalleum: probabilidad de éxito +15%, reembolsa el 25% del coste de maná\n\n*Nota de administración: el círculo se reabastecerá a sí mismo cuando detecte magos capaces de realizar el ritual.</TableMagicCircle.description>
+  
+  
+  <TableMagicPrinter.label>mesa de escribano</TableMagicPrinter.label>
+  
+  <TableMagicPrinter.description>Una prensa de impresión utilizada para confeccionar libros y pergaminos.</TableMagicPrinter.description>
+  
+  
+  <TableSmallMagicCircle.label>punto focal mágico</TableSmallMagicCircle.label>
+  
+  <TableSmallMagicCircle.description>Los puntos focales arcanos son el subproducto de la investigación de las líneas ley mágicas y la interconectividad arcana. El punto focal permite a un mago visualizar su conexión con gaia y con otros magos, permitiéndoles una mayor interacción con la naturaleza, el orden y el caos. El punto focal puede enlazar el poder arcano de dos magos para realizar poderosos rituales.\n\nEl tipo de material utilizado en la construcción afecta directamente la calidad del círculo mágico:\nPiedra (cualquiera): sin bonificaciones\nAcero: sin bonificación\nMadera: sin bonificación\nJade: probabilidad de éxito +15%\nPlata: reembolsa el 15% del coste de material\nPlasteca: puntos de evento +15%\nOro: puntos de evento +10%, duración +15%, reembolsa el 10% del coste de material\nUranio: duración y probabilidad de éxito +10%\nArcalleum: probabilidad de éxito +10%, reembolsa el 10% del coste de maná\n\n*Nota de administración: el círculo se reabastecerá a sí mismo cuando detecte magos capaces de realizar el ritual. No se puede obligar a los magos a trabajar en el punto focal, sino que realizarán los rituales cuando se cumplan las condiciones.</TableSmallMagicCircle.description>
+  
+</LanguageData>

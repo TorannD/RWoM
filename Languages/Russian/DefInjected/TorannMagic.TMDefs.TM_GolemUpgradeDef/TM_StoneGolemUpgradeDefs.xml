@@ -1,0 +1,30 @@
+<LanguageData><TM_Golem_StoneRepair.label>восстановите часть</TM_Golem_StoneRepair.label>
+
+  <TM_Golem_StoneMaxEnergy.label>накопитель энергии</TM_Golem_StoneMaxEnergy.label>
+  <TM_Golem_StoneMaxEnergy.description>Увеличивает максимальную энергию на 120 за уровень. Начальная максимальная энергия составляет 800.</TM_Golem_StoneMaxEnergy.description>
+
+  <TM_Golem_StoneEnergyEfficiency.label>энергоэффективность</TM_Golem_StoneEnergyEfficiency.label>
+  <TM_Golem_StoneEnergyEfficiency.description>Повышает энергоэффективность на 10% за уровень. Начальная энергоэффективность составляет 50%.</TM_Golem_StoneEnergyEfficiency.description>
+
+  <TM_Golem_StoneEnergyRate.label>регенерация энергии</TM_Golem_StoneEnergyRate.label>
+  <TM_Golem_StoneEnergyRate.description>Увеличивает скорость заряда энергии на 20% за уровень. Начальная скорость перезарядки составляет 20 энергозатрат в час.</TM_Golem_StoneEnergyRate.description>
+
+  <TM_Golem_StoneHardening.label>затвердение</TM_Golem_StoneHardening.label>
+  <TM_Golem_StoneHardening.description>Повышает общую защиту:
+Тупой урон: +[4,8,12]%
+Режущий урон: +[11,22,33]%
+Температура: +[6,12,18]%</TM_Golem_StoneHardening.description>
+
+  <TM_Golem_StoneCompactor.label>Уплотнитель камня</TM_Golem_StoneCompactor.label>
+  <TM_Golem_StoneCompactor.description>Позволяет голему дробить каменные куски в пригодные для использования кирпичи. Этот процесс происходит сам по себе после того, как каменные куски помещаются в голема, и требует, чтобы голем находился в состоянии покоя.</TM_Golem_StoneCompactor.description>
+
+  <TM_Golem_StoneToBricks.label>изготовление</TM_Golem_StoneToBricks.label>
+  <TM_Golem_StoneToBricks.description>Со временем превращает каменные куски в кирпичи</TM_Golem_StoneToBricks.description>
+
+  <TM_Golem_StoneLifeStage.label>каркасный слой</TM_Golem_StoneLifeStage.label>
+  <TM_Golem_StoneLifeStage.description>Увеличивает статистику:
+Движение: +[20%/35%/50%]
+Здоровье: +[40%/70%/100%]</TM_Golem_StoneLifeStage.description>
+
+
+</LanguageData>

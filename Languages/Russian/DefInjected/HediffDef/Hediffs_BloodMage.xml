@@ -1,0 +1,18 @@
+<LanguageData><TM_BloodHD.label>Магия Крови</TM_BloodHD.label>
+  <TM_BloodHD.description>Это объясняет силу крови мага крови.</TM_BloodHD.description>
+  <TM_BloodHD.stages.0.label />
+
+  <TM_RendHD.label>Кровоизлияние</TM_RendHD.label>
+  <TM_RendHD.description>Ужасная рана, вызывающая сильное кровотечение.</TM_RendHD.description>
+  <TM_RendHD.stages.0.label />
+
+  <TM_BloodForBloodHD.label>Отток Крови</TM_BloodForBloodHD.label>
+  <TM_BloodForBloodHD.description>Переносит кровь от этой цели к магу крови. В процессе лечения раны заживают.</TM_BloodForBloodHD.description>
+  <TM_BloodForBloodHD.stages.0.label />
+
+  <TM_BloodShieldHD.label>Кровавый Щит</TM_BloodShieldHD.label>
+  <TM_BloodShieldHD.description>Окутанный защитным пузырем жизненной энергии; энергия от каждого удара по кровяному щиту восстанавливает здоровье защищенной Пешке.</TM_BloodShieldHD.description>
+  <TM_BloodShieldHD.stages.0.label />
+
+
+</LanguageData>

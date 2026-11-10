@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Abhorrent -->
+
+  <TM_Mages_Abhorrent.label>odeiam a magia</TM_Mages_Abhorrent.label>
+  <TM_Mages_Abhorrent.description>A magia é uma abominação que deve ser levada e limpa da existência. A manipulação da energia do mago é contra a ordem natural. O assassinato de um mágico inimigo é justificado independentemente das circunstâncias. Deixar um mágico livre viver numa colónia é ridicularizar as nossas crenças. Os mágicos devem ser rapidamente mortos ou escravizados até que se livrem deles. O uso da magia é totalmente proibido.</TM_Mages_Abhorrent.description>
+  <TM_Mages_Abhorrent.comps.1.description>Eu matei o mago</TM_Mages_Abhorrent.comps.1.description>
+  <TM_Mages_Abhorrent.comps.2.description>Matámos o mago</TM_Mages_Abhorrent.comps.2.description>
+  <TM_Mages_Abhorrent.comps.4.description>uso da magia</TM_Mages_Abhorrent.comps.4.description>
+  <TM_Mages_Abhorrent.comps.5.description>mago na colónia</TM_Mages_Abhorrent.comps.5.description>
+  <TM_Mages_Abhorrent.comps.6.description>mago na colónia</TM_Mages_Abhorrent.comps.6.description>
+
+
+  <!-- Disapprove -->
+
+  <TM_Mages_Disapprove.label>não aprovam a magia</TM_Mages_Disapprove.label>
+  <TM_Mages_Disapprove.description>É preciso evitar a dependência de uma fonte de energia desconhecida e imprevisível. A ciência e a tecnologia são o futuro, e as suas vantagens podem ser aproveitadas por todos, e todos podem contribuir para eles. A colônia deve limitar o número de mágicos disponíveis a 10% ou menos e apenas os residentes mais fiéis, e o número de feitiços deve ser limitado a 5 por dia. Os magos devem ser escravos para que conheçam o seu lugar legítimo. O cumprimento destas regras vai permitir que a nossa colónia prospere e tornar todos mais felizes.</TM_Mages_Disapprove.description>
+  <TM_Mages_Disapprove.comps.0.description>uso regulado da magia</TM_Mages_Disapprove.comps.0.description>
+  <TM_Mages_Disapprove.comps.1.description>existência controlada de mágicos</TM_Mages_Disapprove.comps.1.description>
+
+
+  <!-- Approve -->
+
+  <TM_Mages_Approve.label>aprovam a magia</TM_Mages_Approve.label>
+  <TM_Mages_Approve.description>A magia é um recurso poderoso e útil, e seria uma loucura abandonar o seu potencial. Os mágicos permitem-nos usar este recurso e podem melhorar a nossa qualidade de vida. Devido ao seu valor para a nossa colónia, os magos devem ser tratados com respeito como aristocratas. Temos de concentrar os nossos esforços e aumentar o nosso conhecimento sobre este poder misterioso.</TM_Mages_Approve.description>
+  <TM_Mages_Approve.comps.1.description>uso da magia</TM_Mages_Approve.comps.1.description>
+  <TM_Mages_Approve.comps.2.description>uso da magia</TM_Mages_Approve.comps.2.description>
+  <TM_Mages_Approve.comps.3.description>magos na colónia</TM_Mages_Approve.comps.3.description>
+  <TM_Mages_Approve.comps.5.description>cumpriu a quebra da magia</TM_Mages_Approve.comps.5.description>
+
+
+  <!-- Venerated -->
+
+  <TM_Mages_Venerated.label>reverenciam a magia</TM_Mages_Venerated.label>
+  <TM_Mages_Venerated.description>A magia é maravilhosa, mística, poderosa e infinita. A Ana é capaz de realizar tarefas normais ou destruir os nossos inimigos num instante. É uma fonte de criação e destruição, e é respeitável. Aqueles que podem usar esse poder são abençoados - tocados pela divindade - e devem ser erguidos sobre todos os outros. Matar um mágico inimigo é nojento e só deve ser feito em último caso. A magia abre caminho para a nossa salvação! O seu uso apoia a nossa causa, e temos de decidir estender a bênção da magia a todos.</TM_Mages_Venerated.description>
+  <TM_Mages_Venerated.comps.2.description>Eu matei o mago</TM_Mages_Venerated.comps.2.description>
+  <TM_Mages_Venerated.comps.3.description>Matámos o mago</TM_Mages_Venerated.comps.3.description>
+  <TM_Mages_Venerated.comps.5.description>usou a magia</TM_Mages_Venerated.comps.5.description>
+  <TM_Mages_Venerated.comps.6.description>testemunha de magia</TM_Mages_Venerated.comps.6.description>
+  <TM_Mages_Venerated.comps.7.description>mago na colónia</TM_Mages_Venerated.comps.7.description>
+  <TM_Mages_Venerated.comps.8.description>prisioneiro mago</TM_Mages_Venerated.comps.8.description>
+  <TM_Mages_Venerated.comps.9.description>escravo-mago</TM_Mages_Venerated.comps.9.description>
+  <TM_Mages_Venerated.comps.11.description>cumpriu a quebra da magia</TM_Mages_Venerated.comps.11.description>
+
+
+  <!-- Transcendent Rituals -->
+
+  <TM_SeverenceRitual.label>quebrar a magia</TM_SeverenceRitual.label>
+  <TM_SeverenceRitual.description>O buscador do vazio corta a magia do alvo. O público vai ver o buscador do vazio fazer um discurso de união, separar a magia do mágico e pronunciar algumas palavras finais. O objectivo pode tentar aplicar o último feitiço de retaliação se o ritual for mal executado. Se tivermos sucesso, o alvo estará livre de magia.</TM_SeverenceRitual.description>
+
+  <TM_BestowMagicRitual.label>dar magia</TM_BestowMagicRitual.label>
+  <TM_BestowMagicRitual.description>O buscador do vazio vai tentar estabelecer uma ligação entre o alvo e a magia. O público vai ver o buscador do vazio dizer algumas palavras de sabedoria, tentar dar uma faísca de magia, e depois pronunciar algumas palavras finais. Este ritual pode falhar e só pode ser realizado em uma data específica.</TM_BestowMagicRitual.description>
+
+  <TM_BestowClassRitual.label>Caminho secreto</TM_BestowClassRitual.label>
+  <TM_BestowClassRitual.description>O buscador do vazio guiará o peão que tem o dom da magia durante o ritual para se tornar um mágico. O público vai ver o mago a tentar realizar a sua inspiração sob a orientação de um buscador de vazio. Quando terminar, o alvo terá a sua classe inspirada de magia.</TM_BestowClassRitual.description>
+
+
+</LanguageData>

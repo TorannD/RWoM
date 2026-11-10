@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mind Ward -->
+
+  <MarbleMindTD.stages.0.label>ментальний захист</MarbleMindTD.stages.0.label>
+  <MarbleMindTD.stages.0.description>Ваш розум зміцнений проти прийдешніх неприємностей.</MarbleMindTD.stages.0.description>
+
+
+  <!-- soul orb infusion debuff -->
+
+  <TM_TraitInfusion.stages.0.label>Поглинені риси характеру</TM_TraitInfusion.stages.0.label>
+  <TM_TraitInfusion.stages.0.description>Ці зміни змушують мене відчувати себе чужим самому собі, і потрібно деякий час, щоб заново відкрити, хто я такий.</TM_TraitInfusion.stages.0.description>
+
+
+</LanguageData>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Skeletal_Shoulder.label>плече</Skeletal_Shoulder.label>
+  <Skeletal_Leg.label>ноги</Skeletal_Leg.label>
+  <Skeletal_Foot.label>ноги</Skeletal_Foot.label>
+  <Skeletal_Neck.label>шия</Skeletal_Neck.label>
+  <Skeletal_Head.label>голова</Skeletal_Head.label>
+  <Skeletal_Jaw.label>щелепи</Skeletal_Jaw.label>
+  <Skeletal_Arm.label>рука</Skeletal_Arm.label>
+  <Skeletal_Hand.label>руки</Skeletal_Hand.label>
+  <Skeletal_Finger.label>палець</Skeletal_Finger.label>
+  <Skeletal_Toe.label>шкарпетка</Skeletal_Toe.label>
+  <Skeletal_Ribcage.label>грудна клітина</Skeletal_Ribcage.label>
+
+
+</LanguageData>

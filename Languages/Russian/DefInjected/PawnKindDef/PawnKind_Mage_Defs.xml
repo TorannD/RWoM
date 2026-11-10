@@ -1,0 +1,14 @@
+<LanguageData><SeerDefender.label>Волшебный Защитник</SeerDefender.label>
+  <SeerDefender.labelPlural>защитники магии</SeerDefender.labelPlural>
+
+  <SeerSpearman.label>Гвардеец</SeerSpearman.label>
+  <SeerSpearman.labelPlural>Копьеносец</SeerSpearman.labelPlural>
+
+  <SeerBowman.label>Провидец Стрелок</SeerBowman.label>
+  <SeerBowman.labelPlural>Лучники-Провидцы</SeerBowman.labelPlural>
+
+  <SeerElite.label>Элита Провидцев</SeerElite.label>
+  <SeerElite.labelPlural>Элита Провидцев</SeerElite.labelPlural>
+
+
+</LanguageData>

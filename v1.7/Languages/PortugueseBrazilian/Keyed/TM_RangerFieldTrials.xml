@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerMasteryHint>Inimigos diferentes pegos em suas armadilhas {0}/8 · Incêndios em depósitos apagados {1}/12</TM_RangerMasteryHint>
+  <TM_RangerFireHint>Apague um incêndio sobre ou ao lado de mercadorias inflamáveis aceitas no depósito da colônia. Cada setor de 12×12 conta uma vez por dia. Incêndios iniciados pela sua facção não contam.</TM_RangerFireHint>
+  <TM_RangerMasteryClaim>Aprender {0}</TM_RangerMasteryClaim>
+  <TM_RangerAscensionHint>Nível de guerreiro {0}/30 · Retiradas aliadas pela trilha segura {1}/8 · Turnos de cuidados com animais {2}/10</TM_RangerAscensionHint>
+  <TM_RangerWoundHint>Como médico, trate um ferimento real de um animal da colônia. Conta um turno concluído por dia.</TM_RangerWoundHint>
+  <TM_RangerChooseUltimate>Escolher técnica de ascensão</TM_RangerChooseUltimate>
+  <TM_RangerEarnedUltimate>Técnica de ascensão: {0}</TM_RangerEarnedUltimate>
+</LanguageData>

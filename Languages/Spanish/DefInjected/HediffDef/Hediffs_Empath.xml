@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_EmotionSuppressionHD.label>emociones suprimidas</TM_EmotionSuppressionHD.label>
+  
+  <TM_EmotionSuppressionHD.description>Las emociones de este peón están siendo suprimidas; este peón no sufrirá una crisis mental y la mayoría de los pensamientos relacionados con el estado de ánimo se filtrarán.</TM_EmotionSuppressionHD.description>
+  
+  
+  <TM_EmpathHD.label>empático</TM_EmpathHD.label>
+  
+  <TM_EmpathHD.description>Representa la habilidad de un empático para controlar sus capacidades innatas.</TM_EmpathHD.description>
+  
+  <TM_EmpathHD.stages.Uncontrolled.label>incontrolado</TM_EmpathHD.stages.Uncontrolled.label>
+  
+  <TM_EmpathHD.stages.Untrained.label>sin entrenar</TM_EmpathHD.stages.Untrained.label>
+  
+  <TM_EmpathHD.stages.Familiar.label>familiarizado</TM_EmpathHD.stages.Familiar.label>
+  
+  <TM_EmpathHD.stages.Trained.label>entrenado</TM_EmpathHD.stages.Trained.label>
+  
+  <TM_EmpathHD.stages.Skilled.label>hábil</TM_EmpathHD.stages.Skilled.label>
+  
+  <TM_EmpathHD.stages.Mastery.label>maestría</TM_EmpathHD.stages.Mastery.label>
+  
+  
+  <TM_HarvestPassionHD.label>cosecha de pasión</TM_HarvestPassionHD.label>
+  
+  <TM_HarvestPassionHD.description>Otro peón le está robando una pasión.</TM_HarvestPassionHD.description>
+  
+  
+  <TM_MindKillerHD.label>shock emocional</TM_MindKillerHD.label>
+  
+  <TM_MindKillerHD.description>Este peón se ha visto desbordado por una oleada de emociones y es incapaz de pensar o actuar con intención clara; esto puede hacer que suelte su arma o huya aterrorizado.</TM_MindKillerHD.description>
+  
+  <TM_MindKillerHD.stages.recovering.label>recuperándose</TM_MindKillerHD.stages.recovering.label>
+  
+  <TM_MindKillerHD.stages.I.label>I</TM_MindKillerHD.stages.I.label>
+  
+  <TM_MindKillerHD.stages.II.label>II</TM_MindKillerHD.stages.II.label>
+  
+  <TM_MindKillerHD.stages.III.label>III</TM_MindKillerHD.stages.III.label>
+  
+  
+  <TM_OutOfBodyHD.label>fuera del cuerpo</TM_OutOfBodyHD.label>
+  
+  <TM_OutOfBodyHD.description>Las emociones y la consciencia de este peón se han unido a otro peón; este cuerpo es ahora mismo una cáscara vacía.</TM_OutOfBodyHD.description>
+  
+  
+  <TM_SuppressiveAuraHD.label>aura supresora</TM_SuppressiveAuraHD.label>
+  
+  <TM_SuppressiveAuraHD.description>El empático está suprimiendo las emociones de los peones cercanos; los peones afectados no podrán sufrir una crisis mental ni tener ningún pensamiento relacionado con el estado de ánimo que el empático no permita.</TM_SuppressiveAuraHD.description>
+  
+  
+  <TM_SymbiosisHD.label>simbiosis</TM_SymbiosisHD.label>
+  
+  <TM_SymbiosisHD.description>Las emociones y la consciencia de este peón han sido reforzadas y fortalecidas por la mente de un empático. A todos los efectos, la mente del empático está unida a este peón: si este peón muere, el empático también morirá.</TM_SymbiosisHD.description>
+  
+  <TM_SymbiosisHD.stages.I.label>I</TM_SymbiosisHD.stages.I.label>
+  
+  <TM_SymbiosisHD.stages.II.label>II</TM_SymbiosisHD.stages.II.label>
+  
+  <TM_SymbiosisHD.stages.III.label>III</TM_SymbiosisHD.stages.III.label>
+  
+  <TM_SymbiosisHD.stages.IV.label>IV</TM_SymbiosisHD.stages.IV.label>
+  
+</LanguageData>

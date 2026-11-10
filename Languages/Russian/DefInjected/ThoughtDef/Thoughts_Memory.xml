@@ -1,0 +1,28 @@
+<LanguageData><!-- ah, the memories-->
+	<TM_TakingOrdersTD.stages.0.label>принимаю заказы</TM_TakingOrdersTD.stages.0.label>
+	<TM_TakingOrdersTD.stages.0.description>Кто-то снова раздавал мне приказы. Со временем это начинает раздражать.</TM_TakingOrdersTD.stages.0.description>
+	<RangerSoldBondedPet.stages.0.label>Продал связанного питомца</RangerSoldBondedPet.stages.0.label>
+	<RangerSoldBondedPet.stages.0.description>Я позволил(а) продать своего связанного зверя в рабство. Звериный мир ещё не скоро простит мне это. (Связь с животными отключена, пока действует этот эффект настроения.)</RangerSoldBondedPet.stages.0.description>
+	<RangerPetDied.stages.0.label>Связанное животное погибло</RangerPetDied.stages.0.label>
+	<RangerPetDied.stages.0.description>Мой верный спутник-животное умер. Такое чувство, что я потерял частичку самого себя.</RangerPetDied.stages.0.description>
+	<Polymorphed.stages.0.label>полиморф вопреки воле</Polymorphed.stages.0.label>
+	<Polymorphed.stages.0.description>Меня подвергли полиморфии и заставили существовать в теле животного. Это бесчеловечно.</Polymorphed.stages.0.description>
+	<Polymorphed_Transhumanist.stages.0.label>полиморф!</Polymorphed_Transhumanist.stages.0.label>
+	<Polymorphed_Transhumanist.stages.0.description>Меня превратили в дикое животное — и это оказалось восхитительно!</Polymorphed_Transhumanist.stages.0.description>
+	<WarlockEmpathy.stages.0.label>Сопереживание</WarlockEmpathy.stages.0.label>
+	<WarlockEmpathy.stages.0.description>Я могу чувствовать эмоции тех, кто меня окружает.</WarlockEmpathy.stages.0.description>
+	<PsychicEmpathy.stages.0.label>Сопереживание</PsychicEmpathy.stages.0.label>
+	<PsychicEmpathy.stages.0.description>Я не могу объяснить, почему испытываю такие сильные эмоции.</PsychicEmpathy.stages.0.description>
+	<TM_MemoryWipe.stages.0.label>с чистого листа</TM_MemoryWipe.stages.0.label>
+	<TM_MemoryWipe.stages.0.description>Я не помню последних нескольких дней. Возможно, так даже лучше.</TM_MemoryWipe.stages.0.description>
+	<AteMysteryMeatDirect.stages.0.label>ел мясо миньона</AteMysteryMeatDirect.stages.0.label>
+	<AteMysteryMeatDirect.stages.0.description>Я съел(а) какое-то отвратительное таинственное мясо с мёртвого миньона. Оно было смешано с грязью и другой разлагающейся мерзостью, которую я даже не смог(ла) опознать. Неужели это был ноготь?!</AteMysteryMeatDirect.stages.0.description>
+	<AteMysteryMeatAsIngredient.stages.0.label>ел вареное мясо миньона</AteMysteryMeatAsIngredient.stages.0.label>
+	<AteMysteryMeatAsIngredient.stages.0.description>Я съел(а) блюдо, приготовленное из мяса миньона. Никакие специи не смогли заглушить ощущение, что я ем нечто по-настоящему отвратительное.</AteMysteryMeatAsIngredient.stages.0.description>
+	<TM_PhantomLimb.stages.0.label>фантомная конечность</TM_PhantomLimb.stages.0.label>
+	<TM_PhantomLimb.stages.0.description>Неужели эти части тела действительно мои? Я чувствую себя гостем в собственном теле.</TM_PhantomLimb.stages.0.description>
+	<TM_PleasantDreamsTD.stages.0.label>приятные сны</TM_PleasantDreamsTD.stages.0.label>
+	<TM_PleasantDreamsTD.stages.0.description>Мои сны наполнены воспоминаниями и событиями, которые делают меня счастливым.</TM_PleasantDreamsTD.stages.0.description>
+	<TM_BrightDayTD.stages.0.label>светлый день</TM_BrightDayTD.stages.0.label>
+	<TM_BrightDayTD.stages.0.description>Дух Света озарил мой день.</TM_BrightDayTD.stages.0.description>
+</LanguageData>

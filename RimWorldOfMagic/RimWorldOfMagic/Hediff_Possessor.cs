@@ -90,9 +90,9 @@ namespace TorannMagic
             CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
             if (comp != null)
             {
-                pwrVal = TM_Calc.GetMagicSkillLevel(pawn, TorannMagicDefOf.TM_Possess, "_pwr", false);
-                verVal = TM_Calc.GetMagicSkillLevel(pawn, TorannMagicDefOf.TM_Possess, "_ver", false);
-                effVal = TM_Calc.GetMagicSkillLevel(pawn, TorannMagicDefOf.TM_Possess, "_eff", false);
+                pwrVal = TM_Calc.GetMagicSkillLevel(pawn, TorannMagicDefOf.TM_SpiritPossession, "_pwr", false);
+                verVal = TM_Calc.GetMagicSkillLevel(pawn, TorannMagicDefOf.TM_SpiritPossession, "_ver", false);
+                effVal = TM_Calc.GetMagicSkillLevel(pawn, TorannMagicDefOf.TM_SpiritPossession, "_eff", false);
             }
             this.Severity = .5f + pwrVal;
         }

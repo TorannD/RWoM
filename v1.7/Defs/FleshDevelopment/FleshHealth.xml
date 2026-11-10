@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- No stat/capacity stages: these entries project the saved development, never grant bonuses. -->
+  <HediffDef Name="TM_FleshHealthBase" Abstract="True">
+    <hediffClass>TorannMagic.FleshDevelopment.Hediff_FleshDevelopment</hediffClass>
+    <initialSeverity>1</initialSeverity>
+    <isBad>false</isBad>
+    <tendable>false</tendable>
+    <defaultLabelColor>(0.95,0.4,0.4)</defaultLabelColor>
+  </HediffDef>
+  <HediffDef ParentName="TM_FleshHealthBase"><defName>TM_FleshProgressHD</defName><label>flesh development</label><description>This undead grows stronger by consuming corpses. Its current level, experience and available skill points are shown below.</description></HediffDef>
+  <HediffDef ParentName="TM_FleshHealthBase"><defName>TM_FleshMobilityHD</defName><label>mobile flesh</label><description>Developed flesh improves movement speed. The learned rank and its bonus are shown below.</description></HediffDef>
+  <HediffDef ParentName="TM_FleshHealthBase"><defName>TM_FleshStrengthHD</defName><label>mighty flesh</label><description>Developed flesh increases melee damage. The learned rank and its bonus are shown below.</description></HediffDef>
+  <HediffDef ParentName="TM_FleshHealthBase"><defName>TM_FleshIndustryHD</defName><label>industrious flesh</label><description>Developed flesh improves general work speed. The learned rank and its bonus are shown below.</description></HediffDef>
+  <HediffDef ParentName="TM_FleshHealthBase"><defName>TM_FleshCapacityHD</defName><label>flesh capacity</label><description>Developed flesh increases maximum Thirst. The learned rank and current capacity are shown below.</description></HediffDef>
+  <HediffDef ParentName="TM_FleshHealthBase"><defName>TM_FleshEmpowerHD</defName><label>empowered flesh</label><description>Flesh empowerment temporarily increases movement and general work speed. The active rank, bonus and remaining time are shown below.</description></HediffDef>
+  <HediffDef ParentName="TM_FleshHealthBase"><defName>TM_FleshHardenHD</defName><label>hardened skin</label><description>Hardened skin temporarily adds sharp and blunt armor. The active rank, bonus and remaining time are shown below.</description></HediffDef>
+  <HediffDef ParentName="TM_FleshHealthBase"><defName>TM_FleshFeastHD</defName><label>feast of flesh</label><description>Feast of Flesh is active. Its remaining time, Thirst and any uncontrolled rage are shown below.</description></HediffDef>
+</Defs>

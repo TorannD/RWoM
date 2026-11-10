@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_FleshProgressHD.description>Нежить развивается, поедая трупы. Ниже указаны её текущий уровень, опыт и доступные очки навыков.</TM_FleshProgressHD.description>
+  <TM_FleshMobilityHD.description>Развитая плоть повышает скорость передвижения. Ниже указаны изученный ранг и его бонус.</TM_FleshMobilityHD.description>
+  <TM_FleshStrengthHD.description>Развитая плоть увеличивает урон в ближнем бою. Ниже указаны изученный ранг и его бонус.</TM_FleshStrengthHD.description>
+  <TM_FleshIndustryHD.description>Развитая плоть повышает общую скорость работы. Ниже указаны изученный ранг и его бонус.</TM_FleshIndustryHD.description>
+  <TM_FleshCapacityHD.description>Развитая плоть увеличивает максимальную Жажду. Ниже указаны изученный ранг и текущая вместимость шкалы.</TM_FleshCapacityHD.description>
+  <TM_FleshEmpowerHD.description>Усиление плоти временно повышает скорость передвижения и общую скорость работы. Ниже указаны активный ранг, бонус и оставшееся время.</TM_FleshEmpowerHD.description>
+  <TM_FleshHardenHD.description>Усиление кожи временно повышает броню от острых и тупых ударов. Ниже указаны активный ранг, бонус и оставшееся время.</TM_FleshHardenHD.description>
+  <TM_FleshFeastHD.description>Пир Плоти активен. Ниже указаны оставшееся время, Жажда и состояние неконтролируемой ярости.</TM_FleshFeastHD.description>
+</LanguageData>

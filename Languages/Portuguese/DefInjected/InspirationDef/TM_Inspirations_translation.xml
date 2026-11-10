@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ID_Introspection.label>auto-análise</ID_Introspection.label>
+  <ID_Introspection.beginLetterLabel>Inspiração: auto-análise</ID_Introspection.beginLetterLabel>
+  <ID_Introspection.beginLetter>O GLOBO acabou de ser inspirado. [PAWN _ pronoon] aprenderá 2 vezes mais rápido nas próximas 48 horas.</ID_Introspection.beginLetter>
+  <ID_Introspection.endMessage>(auto-análise) não está mais inspirado.</ID_Introspection.endMessage>
+  <ID_Introspection.baseInspectLine>Inspiração: Auto-análise</ID_Introspection.baseInspectLine>
+
+  <ID_ManaRegen.label>regeneração de maná</ID_ManaRegen.label>
+  <ID_ManaRegen.beginLetterLabel>Inspiração: regeneração de maná</ID_ManaRegen.beginLetterLabel>
+  <ID_ManaRegen.beginLetter>O GLOBO acabou de ser inspirado. [PAWN _ pronoon] irá recrutar Manu 2 vezes mais rápido nas próximas 72 horas.</ID_ManaRegen.beginLetter>
+  <ID_ManaRegen.endMessage>(regeneração do maná) não está mais inspirado.</ID_ManaRegen.endMessage>
+  <ID_ManaRegen.baseInspectLine>Inspiração: regeneração de maná</ID_ManaRegen.baseInspectLine>
+
+  <ID_Outgoing.label>público</ID_Outgoing.label>
+  <ID_Outgoing.beginLetterLabel>Inspiração: atividade social</ID_Outgoing.beginLetterLabel>
+  <ID_Outgoing.beginLetter>O GLOBO acabou de ser inspirado. [PAWN _ pronoon] será mais ativo socialmente e com maior probabilidade de ter interações sociais positivas nas próximas 24 horas.</ID_Outgoing.beginLetter>
+  <ID_Outgoing.endMessage>(ativismo social) não está mais inspirado.</ID_Outgoing.endMessage>
+  <ID_Outgoing.baseInspectLine>Inspiração: público</ID_Outgoing.baseInspectLine>
+
+  <ID_MiningFrenzy.label>Loucura da montanha</ID_MiningFrenzy.label>
+  <ID_MiningFrenzy.beginLetterLabel>Inspiração: Loucura da montanha</ID_MiningFrenzy.beginLetterLabel>
+  <ID_MiningFrenzy.beginLetter>O GLOBO acabou de ser inspirado. [PAWN _ pronoon] vai produzir 50% mais rápido e dar 50% mais recursos durante a extração nas próximas 72 horas.</ID_MiningFrenzy.beginLetter>
+  <ID_MiningFrenzy.endMessage>(loucura da montanha) não está mais inspirado.</ID_MiningFrenzy.endMessage>
+  <ID_MiningFrenzy.baseInspectLine>Inspiração: Loucura da montanha</ID_MiningFrenzy.baseInspectLine>
+
+  <ID_FarmingFrenzy.label>loucura agrícola</ID_FarmingFrenzy.label>
+  <ID_FarmingFrenzy.beginLetterLabel>Inspiração: loucura agrícola</ID_FarmingFrenzy.beginLetterLabel>
+  <ID_FarmingFrenzy.beginLetter>O GLOBO acabou de ser inspirado. [PAWN _ pronoon] vai colher 50% mais rápido com 50% maior rendimento durante o trabalho de corte de plantas nas próximas 72 horas.</ID_FarmingFrenzy.beginLetter>
+  <ID_FarmingFrenzy.endMessage>(loucura agrícola) não está mais inspirado.</ID_FarmingFrenzy.endMessage>
+  <ID_FarmingFrenzy.baseInspectLine>Inspiração: loucura agrícola</ID_FarmingFrenzy.baseInspectLine>
+
+  <ID_Champion.label>campeão</ID_Champion.label>
+  <ID_Champion.beginLetterLabel>Inspiração: campeão</ID_Champion.beginLetterLabel>
+  <ID_Champion.beginLetter>Se 0, ele foi heroicamente inspirado. [PAWN _ pronoon] sonha em ser campeão nas histórias contadas pelos bardos e viverá de acordo com essas expectativas nas próximas 72 horas.</ID_Champion.beginLetter>
+  <ID_Champion.endMessage>(campeão) não está mais inspirado.</ID_Champion.endMessage>
+  <ID_Champion.baseInspectLine>Inspiração: Campeão</ID_Champion.baseInspectLine>
+
+  <ID_Enlightened.label>iluminado</ID_Enlightened.label>
+  <ID_Enlightened.beginLetterLabel>Inspiração: iluminação</ID_Enlightened.beginLetterLabel>
+  <ID_Enlightened.beginLetter>Se você está entrando em um período de iluminação. [PAWN _ pronoon] a consciência será ampliada significativamente nas próximas 72 horas.</ID_Enlightened.beginLetter>
+  <ID_Enlightened.endMessage>(iluminação) não está mais inspirado.</ID_Enlightened.endMessage>
+  <ID_Enlightened.baseInspectLine>Inspiração: iluminação</ID_Enlightened.baseInspectLine>
+
+  <ID_ArcanePathways.label>Caminho secreto</ID_ArcanePathways.label>
+  <ID_ArcanePathways.beginLetterLabel>Inspiração: caminho secreto</ID_ArcanePathways.beginLetterLabel>
+  <ID_ArcanePathways.beginLetter>Se calhar viu uma visão de sentido secreto. [PAWN _ pronoon] pode alcançar o poder de &lt; 1 03 usando um buscador de vazio. Este ritual deve ser realizado dentro de dois dias, ou a inspiração será perdida.</ID_ArcanePathways.beginLetter>
+  <ID_ArcanePathways.endMessage>Se não conseguir chegar a um caminho secreto, por meio da inspiração.</ID_ArcanePathways.endMessage>
+  <ID_ArcanePathways.baseInspectLine>Inspiração: Caminho secreto</ID_ArcanePathways.baseInspectLine>
+
+
+</LanguageData>

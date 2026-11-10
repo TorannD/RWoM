@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_BladeArt.label>entrenamiento corporal</TM_BladeArt.label>
+  
+  <TM_BladeArt.description>Entrenamiento que mejora las capacidades físicas.\n\nNivel 0: Movimiento +10 %, Manipulación +10 %\nNivel 1: Movimiento +15 %, Manipulación +15 %\nNivel 2: Movimiento +20 %, Manipulación +20 %, Respiración +10 %\nNivel 3: Movimiento +25 %, Manipulación +25 %, Respiración +15 %, Bombeo de sangre +10 %, Filtración de sangre +10 %</TM_BladeArt.description>
+  
+  
+  <TM_BladeFocus.label>entrenamiento con espada</TM_BladeFocus.label>
+  
+  <TM_BladeFocus.description>Entrenamiento que mejora la técnica y la destreza con armas cuerpo a cuerpo y eleva el rango del bailarín de espadas. Cada nivel cambia su rasgo para reflejar su nivel de habilidad.\n\nRangos:\nEspadachín: Velocidad +0,15 c/s, TMB -3 %, Probabilidad de acierto +3 %, Esquiva +5 %, Precisión de disparo -20 %, Velocidad de trabajo global -10 %\nMaestro de la espada: Velocidad +0,2 c/s, TMB -5 %, Probabilidad de acierto +6 %, Esquiva +10 %, Precisión de disparo -25 %, Velocidad de trabajo global -8 %\nBailarín de espadas: Velocidad +0,3 c/s, TMB -8 %, Probabilidad de acierto +10 %, Esquiva +15 %, Precisión de disparo -28 %, Velocidad de trabajo global -6 %, Umbral de dolor +5 %\nBailarín de espadas legendario: Velocidad +0,4 c/s, TMB -10 %, Probabilidad de acierto +15 %, Esquiva +20 %, Precisión de disparo -30 %, Velocidad de trabajo global -5 %, Umbral de dolor +10 %</TM_BladeFocus.description>
+  
+  
+  <TM_BladeSpin.label>giro de espada</TM_BladeSpin.label>
+  
+  <TM_BladeSpin.description>El maestro de la espada parece desdibujarse durante una fracción de segundo y golpea a todos los objetivos cercanos en un torbellino de acero.</TM_BladeSpin.description>
+  
+  
+  <TM_PhaseStrike.label>golpe de fase</TM_PhaseStrike.label>
+  
+  <TM_PhaseStrike.description>El bailarín de espadas combina su concentración afilada como una navaja con el filo de su hoja para deslizarse entre realidades y aparecer en un lugar elegido, donde asesta un golpe despiadado contra enemigos desprevenidos.\n\nPreparación: 0,3 s\nEnfriamiento: 25 s\nAlcance: 30</TM_PhaseStrike.description>
+  
+  
+  <TM_PhaseStrike_I.label>golpe de fase (I)</TM_PhaseStrike_I.label>
+  
+  <TM_PhaseStrike_I.description>El bailarín de espadas combina su concentración afilada como una navaja con el filo de su hoja para deslizarse entre realidades y aparecer en un lugar elegido, donde asesta un golpe despiadado contra enemigos desprevenidos.\n\nPreparación: 0,2 s\nEnfriamiento: 23 s\nAlcance: 35</TM_PhaseStrike_I.description>
+  
+  
+  <TM_PhaseStrike_II.label>golpe de fase (II)</TM_PhaseStrike_II.label>
+  
+  <TM_PhaseStrike_II.description>El bailarín de espadas combina su concentración afilada como una navaja con el filo de su hoja para deslizarse entre realidades y aparecer en un lugar elegido, donde asesta un golpe despiadado contra enemigos desprevenidos.\n\nPreparación: 0,1 s\nEnfriamiento: 21 s\nAlcance: 40</TM_PhaseStrike_II.description>
+  
+  
+  <TM_PhaseStrike_III.label>golpe de fase (III)</TM_PhaseStrike_III.label>
+  
+  <TM_PhaseStrike_III.description>El bailarín de espadas combina su concentración afilada como una navaja con el filo de su hoja para deslizarse entre realidades y aparecer en un lugar elegido, donde asesta un golpe despiadado contra enemigos desprevenidos.\n\nPreparación: 0 s\nEnfriamiento: 20 s\nAlcance: 45</TM_PhaseStrike_III.description>
+  
+  
+  <TM_SeismicSlash.label>tajo sísmico</TM_SeismicSlash.label>
+  
+  <TM_SeismicSlash.description>Sirviéndose del alma impasible de su hoja, el bailarín de espadas desata un tajo que desgarra el tejido del espacio a lo largo de una línea.</TM_SeismicSlash.description>
+  
+</LanguageData>

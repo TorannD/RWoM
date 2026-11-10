@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Material Resource Recipes -->
+
+  <TM_MakeManaweave.label>Манаткань</TM_MakeManaweave.label>
+  <TM_MakeManaweave.description>Сплетіть ману, магіцит і тканину в манаткань</TM_MakeManaweave.description>
+  <TM_MakeManaweave.jobString>wплетіння мани</TM_MakeManaweave.jobString>
+
+  <TM_MakeArcalleum.label>аркалеум</TM_MakeArcalleum.label>
+  <TM_MakeArcalleum.description>Сплавте сталь, нефрит, срібло і магіцит в сплав аркаллеуму</TM_MakeArcalleum.description>
+  <TM_MakeArcalleum.jobString>Виплавка аркалеуму</TM_MakeArcalleum.jobString>
+
+
+</LanguageData>

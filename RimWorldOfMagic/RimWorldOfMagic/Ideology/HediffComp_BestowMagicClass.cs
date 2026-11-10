@@ -70,6 +70,11 @@ namespace TorannMagic.Ideology
                         this.shouldRemove = true;
                     }
                 }
+                if ((delayedInspiration || botchedRitual) && ClassProgression.ClassEnrollment.HasChosenClass(Pawn))
+                {
+                    shouldRemove = true;
+                    return;
+                }
                 if(delayedInspiration)
                 {
                     ticksTillInspiration--;
@@ -81,7 +86,9 @@ namespace TorannMagic.Ideology
                 }
                 if(botchedRitual)
                 {
-                    CompUseEffect_LearnMagic.FixTrait(this.Pawn, this.Pawn.story.traits.allTraits);
+                    // A botched magical bestow cannot remove a physical gift received earlier.
+                    var gift = Pawn.story.traits.GetTrait(TorannMagicDefOf.TM_Gifted);
+                    if (gift != null) Pawn.story.traits.RemoveTrait(gift);
                     this.shouldRemove = true;
                 }
             }

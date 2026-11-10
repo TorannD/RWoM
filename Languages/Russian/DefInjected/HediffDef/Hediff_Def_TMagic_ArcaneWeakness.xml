@@ -1,0 +1,16 @@
+<LanguageData><TM_ArcaneWeakness.label>тайная слабость</TM_ArcaneWeakness.label>
+  <TM_ArcaneWeakness.description>Тайная слабость — побочный эффект частого применения магии. Слабые способности, стоящие меньше 25 маны, её не вызывают. Чем выше затраты маны у способности, тем сильнее тайная слабость, которая ляжет на мага.</TM_ArcaneWeakness.description>
+  <TM_ArcaneWeakness.stages.0.label>ослабленный</TM_ArcaneWeakness.stages.0.label>
+  <TM_ArcaneWeakness.stages.1.label>высушенный</TM_ArcaneWeakness.stages.1.label>
+  <TM_ArcaneWeakness.stages.2.label>серьезно болен</TM_ArcaneWeakness.stages.2.label>
+  <TM_ArcaneWeakness.stages.3.label>кататонический</TM_ArcaneWeakness.stages.3.label>
+  <TM_ArcaneWeakness.stages.4.label>клиническая смерть</TM_ArcaneWeakness.stages.4.label>
+
+  <TM_CursedHD.label>тайное проклятие</TM_CursedHD.label>
+  <TM_CursedHD.description>Тайное проклятие — следствие проклятой черты. Поражённая пешка постоянно страдает от тайной слабости, которая со временем усиливается и может перерасти в затяжную болезнь. Магия способна частично смягчить последствия проклятия, но боль при этом остаётся и даже придаёт необычную ясность ума. Снять проклятие можно, лишь избавив пешку от самой магической черты.</TM_CursedHD.description>
+  <TM_CursedHD.stages.0.label>блеклый</TM_CursedHD.stages.0.label>
+  <TM_CursedHD.stages.1.label>умеренный</TM_CursedHD.stages.1.label>
+  <TM_CursedHD.stages.2.label>повышенный</TM_CursedHD.stages.2.label>
+
+
+</LanguageData>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- orb of conviction -->
+
+  <TM_Artifact_Conviction.label>Convicção</TM_Artifact_Conviction.label>
+  <TM_Artifact_Conviction.description>Convença o peão a juntar-se à sua causa. Este poder vai causar danos pesados ao feitiço.
+
+Usar a Crença vai destruir a esfera.</TM_Artifact_Conviction.description>
+
+
+  <!-- winter's reign -->
+
+  <TM_Weapon_WintersFury.label>A fúria do inverno</TM_Weapon_WintersFury.label>
+  <TM_Weapon_WintersFury.description>Cobre o mapa com ondas de nuvens escuras e ferozes que carregam o desprezo corrosivo do inverno.</TM_Weapon_WintersFury.description>
+
+
+</LanguageData>

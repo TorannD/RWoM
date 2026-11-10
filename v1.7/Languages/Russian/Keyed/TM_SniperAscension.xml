@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_SniperAscensionRequirements>Уровень воина {0}/30. Выполните одно из испытаний: прикрыть спасение союзников ({1}/6) или провести эвакуационные учения ({2}/8).</TM_SniperAscensionRequirements>
+  <TM_SniperAscensionDrillHint>Выберите две кровати колонии на расстоянии от 12 клеток друг от друга. Снайпер отработает действия у каждой. Засчитываются одни завершённые учения в сутки.</TM_SniperAscensionDrillHint>
+  <TM_SniperAscensionLearned>Техника Вознесения: «{0}».</TM_SniperAscensionLearned>
+  <TM_SniperAscend>Выбрать технику Вознесения</TM_SniperAscend>
+  <TM_SniperChooseCloak>{0} — скрытность (окончательный выбор)</TM_SniperChooseCloak>
+  <TM_SniperChooseOpening>{0} — серия выстрелов (окончательный выбор)</TM_SniperChooseOpening>
+  <TM_SniperBeginDrill>Провести учения по эвакуации</TM_SniperBeginDrill>
+  <TM_SniperDrillFirst>Выберите первую кровать колонии.</TM_SniperDrillFirst>
+  <TM_SniperDrillSecond>Выберите вторую кровать не ближе 12 клеток от первой.</TM_SniperDrillSecond>
+  <TM_SniperAscensionRescueHint>Во время угрозы призовите снайпера с дальнобойным оружием. Пока другой колонист несёт раненого, держите его кровать в поле зрения с расстояния до 35 клеток. Каждый спасённый союзник учитывается один раз.</TM_SniperAscensionRescueHint>
+  <TM_SniperOpeningUnavailable>Требуются «Единственный просвет», 60% выносливости и завершённая перезарядка.</TM_SniperOpeningUnavailable>
+</LanguageData>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MagicArtifact_RerollSpiritBond.label>Pergaminho do Espírito Conector</MagicArtifact_RerollSpiritBond.label>
+  <MagicArtifact_RerollSpiritBond.description>Este pergaminho pode ser usado para alterar o xamã espiritual animal. A nova ligação escolherá aleatoriamente um novo tipo de espírito para a ligação.</MagicArtifact_RerollSpiritBond.description>
+  <MagicArtifact_RerollSpiritBond.comps.2.useLabel>Usar</MagicArtifact_RerollSpiritBond.comps.2.useLabel>
+
+  <TM_Artifact_ClassExtraction.label>Fragmento de extração de espírito</TM_Artifact_ClassExtraction.label>
+  <TM_Artifact_ClassExtraction.description>Este misterioso fragmento é capaz de extrair os talentos de combate ou clandestinos de um peão e transformá-los em essência. O fragmento é destruído depois de usado.
+
+* Nota: Este item remove completamente a classe do peão e quaisquer habilidades e habilidades associadas. O peão pode aprender outra classe depois de extrair o espírito.</TM_Artifact_ClassExtraction.description>
+  <TM_Artifact_ClassExtraction.comps.3.useLabel>Use fragmento de extração</TM_Artifact_ClassExtraction.comps.3.useLabel>
+
+  <TM_MagicArtifact_MightEssence.label>Essência da habilidade</TM_MagicArtifact_MightEssence.label>
+  <TM_MagicArtifact_MightEssence.description>A essência da habilidade bruta e combativa. O engajamento da entidade é uma experiência de combate.</TM_MagicArtifact_MightEssence.description>
+  <TM_MagicArtifact_MightEssence.comps.0.useLabel>Use a essência de habilidade</TM_MagicArtifact_MightEssence.comps.0.useLabel>
+
+  <TM_MagicArtifact_MagicEssence.label>Essência da magia</TM_MagicArtifact_MagicEssence.label>
+  <TM_MagicArtifact_MagicEssence.description>A essência da habilidade bruta e mágica. A absorção da entidade oferece uma experiência secreta.</TM_MagicArtifact_MagicEssence.description>
+  <TM_MagicArtifact_MagicEssence.comps.0.useLabel>Use essência de magia</TM_MagicArtifact_MagicEssence.comps.0.useLabel>
+
+
+</LanguageData>

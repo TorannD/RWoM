@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadBladeFocus>Study Blade Focus — better melee, lower shooting accuracy and work speed (permanent)</TM_ReadBladeFocus>
+  <TM_ReadBladeMemory>Study Blade Memory — bonus damage when switching enemies (permanent)</TM_ReadBladeMemory>
+  <TM_BladeMemoryName>Blade Memory</TM_BladeMemoryName>
+  <TM_BladeMemoryTraining>A melee weapon hit after switching to a different adjacent enemy deals 2% more primary damage. Training adds 2 percentage points per rank, up to 10%. Once every 6 seconds.</TM_BladeMemoryTraining>
+</LanguageData>

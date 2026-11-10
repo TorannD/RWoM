@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_StoneGolem_HardeningHD.label>endurecimiento</TM_StoneGolem_HardeningHD.label>
+  
+  <TM_StoneGolem_HardeningHD.description>Mejora la protección física.</TM_StoneGolem_HardeningHD.description>
+  
+  <TM_StoneGolem_HardeningHD.stages.I.label>I</TM_StoneGolem_HardeningHD.stages.I.label>
+  
+  <TM_StoneGolem_HardeningHD.stages.II.label>II</TM_StoneGolem_HardeningHD.stages.II.label>
+  
+  <TM_StoneGolem_HardeningHD.stages.III.label>III</TM_StoneGolem_HardeningHD.stages.III.label>
+  
+</LanguageData>

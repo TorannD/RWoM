@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Flesh_Casting>Preparing {0}.</TM_Flesh_Casting>
+  <TM_Flesh_HealthLevel>level {0}</TM_Flesh_HealthLevel>
+  <TM_Flesh_HealthRank>rank {0}/{1}</TM_Flesh_HealthRank>
+  <TM_Flesh_HealthMobility>Movement speed: +{0}%</TM_Flesh_HealthMobility>
+  <TM_Flesh_HealthStrength>Melee damage: +{0}%</TM_Flesh_HealthStrength>
+  <TM_Flesh_HealthIndustry>General work speed: +{0}% (including crafting)</TM_Flesh_HealthIndustry>
+  <TM_Flesh_HealthCapacity>Maximum thirst: +{0} (total: {1})</TM_Flesh_HealthCapacity>
+  <TM_Flesh_Title>Flesh Development</TM_Flesh_Title>
+  <TM_Flesh_Open>Open this raised undead's permanent flesh progression.</TM_Flesh_Open>
+  <TM_Flesh_Stats>Level {0}   •   Experience {1}/{2}   •   Skill points: {3}</TM_Flesh_Stats>
+  <TM_Flesh_Experience>Experience</TM_Flesh_Experience>
+  <TM_Flesh_Thirst>Thirst: {0}/{1}</TM_Flesh_Thirst>
+  <TM_Flesh_Stop>Stop this undead's Feast</TM_Flesh_Stop>
+  <TM_Flesh_StopAll>Stop all owned Feasts</TM_Flesh_StopAll>
+  <TM_Flesh_StopDesc>The owner stops Feast freely; thirst and cooldown remain.</TM_Flesh_StopDesc>
+  <TM_Flesh_Rage>Feast rage: bites continue until 20% thirst or the owner's stop command.</TM_Flesh_Rage>
+  <TM_Flesh_Gate>Feast unlock requirements — maximize every skill below:</TM_Flesh_Gate>
+  <TM_Flesh_Upgrade>Upgrade (1 point)</TM_Flesh_Upgrade>
+  <TM_Flesh_Use>Use</TM_Flesh_Use>
+  <TM_Flesh_Cooldown>Ready in {0} seconds</TM_Flesh_Cooldown>
+  <TM_Flesh_Ready>Ready</TM_Flesh_Ready>
+  <TM_Flesh_Active>Active: {0} seconds</TM_Flesh_Active>
+  <TM_Flesh_Devour>Devour Flesh</TM_Flesh_Devour>
+  <TM_Flesh_DevourDesc>Consume a corpse at melee range: XP depends on remaining meat and freshness. Every 5 meat reduces thirst by 1. Living organic targets: 4/6/8 damage by rank, no XP. Cooldown: 5 seconds. Successful bites on living targets also add 1% toxic buildup, reduced by toxic resistance.</TM_Flesh_DevourDesc>
+  <TM_Flesh_Restore>Restore Flesh</TM_Flesh_Restore>
+  <TM_Flesh_RestoreDesc>Fully heal injuries, scars and missing natural parts. Implants remain. Cost: ALL current-level XP (must be above zero). Levels and points remain. Cooldown by rank: 1000/900/800 seconds.</TM_Flesh_RestoreDesc>
+  <TM_Flesh_Empower>Empower Flesh</TM_Flesh_Empower>
+  <TM_Flesh_EmpowerDesc>Preparation: 2 seconds; interruption costs nothing. Movement and general work speed: +10/20/30% by rank. Cost: +10 thirst. Duration and cooldown: 300 seconds. On expiry: 10% chance to injure natural limbs for 10% maximum health.</TM_Flesh_EmpowerDesc>
+  <TM_Flesh_Harden>Harden Skin</TM_Flesh_Harden>
+  <TM_Flesh_HardenDesc>Preparation: 2 seconds; interruption costs nothing. Sharp and blunt armor: +20/35/50 percentage points by rank. Cost: +15 thirst. Duration and cooldown: 300 seconds. On expiry the torso suffers damage equal to half its maximum health.</TM_Flesh_HardenDesc>
+  <TM_Flesh_Feast>Feast of Flesh</TM_Flesh_Feast>
+  <TM_Flesh_FeastDesc>Preparation: 5 seconds; interruption costs nothing. One rank. Requires all other skills maximized. Sets thirst to 50%; +1 thirst/second for 60 seconds. Successful melee hits: 20% chance to consume an organic part, including vital organs. Maximum thirst triggers rage; 0 thirst ends Feast. Cooldown: 1000 seconds. During Feast every melee attack is a bite; successful bites have a separate 30% chance to infect a surviving organic wound. Misses and fully absorbed hits do not trigger these effects. Successful bites on living targets also add 1% toxic buildup, reduced by toxic resistance.</TM_Flesh_FeastDesc>
+  <TM_Flesh_Mobility>Mobile Flesh</TM_Flesh_Mobility>
+  <TM_Flesh_MobilityDesc>Each rank adds +2% movement speed. 10 ranks: +20% total.</TM_Flesh_MobilityDesc>
+  <TM_Flesh_Strength>Mighty Flesh</TM_Flesh_Strength>
+  <TM_Flesh_StrengthDesc>Each rank adds +3% melee damage. 10 ranks: +30% total.</TM_Flesh_StrengthDesc>
+  <TM_Flesh_Industry>Industrious Flesh</TM_Flesh_Industry>
+  <TM_Flesh_IndustryDesc>Each rank adds +2% general work speed, including crafting once. 10 ranks: +20% total.</TM_Flesh_IndustryDesc>
+  <TM_Flesh_Capacity>Flesh Capacity</TM_Flesh_Capacity>
+  <TM_Flesh_CapacityDesc>Each rank adds 10 maximum thirst. 8 ranks: 20 → 100. Natural thirst: +10/day. At 80%: −10% movement/work; at maximum: −20%.</TM_Flesh_CapacityDesc>
+  <TM_FleshRejectUnavailable>This undead must be alive, standing, under your control and not in a mental state.</TM_FleshRejectUnavailable>
+  <TM_FleshRejectUnlearned>This skill has not been learned.</TM_FleshRejectUnlearned>
+  <TM_FleshRejectCooldown>This skill is cooling down.</TM_FleshRejectCooldown>
+  <TM_FleshRejectActive>This effect is already active.</TM_FleshRejectActive>
+  <TM_FleshRejectNoExperience>Restoration requires current-level experience.</TM_FleshRejectNoExperience>
+  <TM_Flesh_ActiveKind>Active</TM_Flesh_ActiveKind>
+  <TM_Flesh_PassiveKind>Passive</TM_Flesh_PassiveKind>
+  <TM_Flesh_NoPoints>Not enough skill points</TM_Flesh_NoPoints>
+  <TM_Flesh_MaxRank>Maximum rank</TM_Flesh_MaxRank>
+  <TM_Flesh_ThirstLabel>Thirst</TM_Flesh_ThirstLabel>
+  <TM_Flesh_ThirstTip>Accumulated hunger: +10 per day. Eating flesh reduces Thirst. At 80%: -10% movement/work; at maximum: -20%.</TM_Flesh_ThirstTip>
+  <TM_Flesh_DebugLevelUp>+1 level</TM_Flesh_DebugLevelUp>
+  <TM_Flesh_StatTotal>Combined flesh multiplier: {0}</TM_Flesh_StatTotal>
+  <TM_Flesh_HealthRemaining>{0} s remaining</TM_Flesh_HealthRemaining>
+  <TM_Flesh_HealthRage>Uncontrolled rage</TM_Flesh_HealthRage>
+  <TM_Flesh_HealthEmpower>Movement and general work speed: +{0}%.</TM_Flesh_HealthEmpower>
+  <TM_Flesh_HealthHarden>Sharp and blunt armor: +{0} percentage points.</TM_Flesh_HealthHarden>
+  <TM_Flesh_HealthFeast>Feast is active. Current Thirst: {1}/{2}. Rage persists until Thirst falls to 20% or the owner stops it.</TM_Flesh_HealthFeast>
+  <TM_Flesh_BiteRules>Undead melee attacks outside Feast have a 10% chance to become critical bites (+50% damage). Successful bites add 1% toxic buildup, reduced by toxic resistance.</TM_Flesh_BiteRules>
+</LanguageData>

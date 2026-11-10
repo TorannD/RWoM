@@ -1,0 +1,43 @@
+<LanguageData><TM_BullChargeHD.label>заряжать</TM_BullChargeHD.label>
+  <TM_BullChargeHD.description>Бросаясь в бой.</TM_BullChargeHD.description>
+  <TM_BullChargeHD.stages.0.label />
+
+  <TM_FrailtyCurseHD.label>Проклятый</TM_FrailtyCurseHD.label>
+  <TM_FrailtyCurseHD.description>Взгляд дурного глаза наложил это проклятие.</TM_FrailtyCurseHD.description>
+  <TM_FrailtyCurseHD.stages.0.label>хилый</TM_FrailtyCurseHD.stages.0.label>
+  <TM_FrailtyCurseHD.stages.1.label>покалеченный</TM_FrailtyCurseHD.stages.1.label>
+
+  <TM_FleshGolem_SkullPlateHD.label>черепная пластина</TM_FleshGolem_SkullPlateHD.label>
+  <TM_FleshGolem_SkullPlateHD.description>Улучшает броню над черепом.</TM_FleshGolem_SkullPlateHD.description>
+  <TM_FleshGolem_SkullPlateHD.stages.0.label />
+
+  <TM_FleshGolem_ShoulderPlatesHD.label>плечевые пластины</TM_FleshGolem_ShoulderPlatesHD.label>
+  <TM_FleshGolem_ShoulderPlatesHD.description>Улучшает броню вокруг плеч.</TM_FleshGolem_ShoulderPlatesHD.description>
+  <TM_FleshGolem_ShoulderPlatesHD.stages.0.label />
+
+  <TM_FleshGolem_ChestCageHD.label>грудная клетка</TM_FleshGolem_ChestCageHD.label>
+  <TM_FleshGolem_ChestCageHD.description>Отражает атаки от груди и туловища, лучше всего работает против более крупного оружия.</TM_FleshGolem_ChestCageHD.description>
+  <TM_FleshGolem_ChestCageHD.stages.0.label />
+
+  <TM_FleshGolem_SpineGuardHD.label>защита позвоночника</TM_FleshGolem_SpineGuardHD.label>
+  <TM_FleshGolem_SpineGuardHD.description>Отражает атаки от спины.</TM_FleshGolem_SpineGuardHD.description>
+  <TM_FleshGolem_SpineGuardHD.stages.0.label />
+
+  <TM_FleshGolem_LegPlatesHD.label>ножные пластины</TM_FleshGolem_LegPlatesHD.label>
+  <TM_FleshGolem_LegPlatesHD.description>Улучшает броню вокруг ног.</TM_FleshGolem_LegPlatesHD.description>
+  <TM_FleshGolem_LegPlatesHD.stages.0.label />
+
+  <TM_FleshGolem_BracerGuardHD.label>наручная защита</TM_FleshGolem_BracerGuardHD.label>
+  <TM_FleshGolem_BracerGuardHD.description>возможность блокировать атаки</TM_FleshGolem_BracerGuardHD.description>
+  <TM_FleshGolem_BracerGuardHD.stages.0.label />
+
+  <TM_FleshGolem_HasteHD.label>стремительность</TM_FleshGolem_HasteHD.label>
+  <TM_FleshGolem_HasteHD.description>Крылья придают движению ловкость.</TM_FleshGolem_HasteHD.description>
+  <TM_FleshGolem_HasteHD.stages.0.label />
+
+  <TM_FleshGolem_EyesT1HD.label>четырехугольный прицел</TM_FleshGolem_EyesT1HD.label>
+  <TM_FleshGolem_EyesT1HD.description>Зрение улучшается с помощью четырех глаз.</TM_FleshGolem_EyesT1HD.description>
+  <TM_FleshGolem_EyesT1HD.stages.0.label />
+
+
+</LanguageData>

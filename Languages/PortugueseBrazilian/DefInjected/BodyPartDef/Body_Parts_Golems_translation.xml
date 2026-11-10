@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- GOLEM Generic -->
+
+  <Golem_Body.label>torso</Golem_Body.label>
+  <Golem_Back.label>costas</Golem_Back.label>
+  <Golem_Spine.label>espinha dorsal</Golem_Spine.label>
+  <Golem_Abdomen.label>abdominal</Golem_Abdomen.label>
+  <Golem_Guts.label>entranhas</Golem_Guts.label>
+  <Golem_Chest.label>seios</Golem_Chest.label>
+  <Golem_Heart.label>coração</Golem_Heart.label>
+  <Golem_Ribcage.label>peito</Golem_Ribcage.label>
+  <Golem_Lung.label>pulmão</Golem_Lung.label>
+  <Golem_Neck.label>pescoço</Golem_Neck.label>
+  <Golem_Head.label>cabeça</Golem_Head.label>
+  <Golem_Skull.label>crânio</Golem_Skull.label>
+  <Golem_Brain.label>cérebro</Golem_Brain.label>
+  <Golem_Face.label>cara</Golem_Face.label>
+  <Golem_Eye.label>olho</Golem_Eye.label>
+  <Golem_Ear.label>orelha</Golem_Ear.label>
+  <Golem_Nose.label>nariz</Golem_Nose.label>
+  <Golem_Jaw.label>mandíbula</Golem_Jaw.label>
+  <Golem_Tongue.label>idioma</Golem_Tongue.label>
+  <Golem_Shoulder.label>ombro</Golem_Shoulder.label>
+  <Golem_RightArm.label>mão direita</Golem_RightArm.label>
+  <Golem_LeftArm.label>mão esquerda</Golem_LeftArm.label>
+  <Golem_Hand.label>mão</Golem_Hand.label>
+  <Golem_Waist.label>lombar</Golem_Waist.label>
+  <Golem_Leg.label>pé</Golem_Leg.label>
+  <Golem_Femur.label>fémur</Golem_Femur.label>
+  <Golem_Tibia.label>Osso de bolha</Golem_Tibia.label>
+  <Golem_Foot.label>pé</Golem_Foot.label>
+
+
+  <!-- MECHA GOLEM -->
+
+  <Mecha_Body.label>corpo</Mecha_Body.label>
+  <Mecha_Back.label>placa traseira</Mecha_Back.label>
+  <Mecha_Spine.label>canal espinhal</Mecha_Spine.label>
+  <Mecha_Abdomen.label>abdominal</Mecha_Abdomen.label>
+  <Mecha_EnergyCompactor.label>compactador de energia</Mecha_EnergyCompactor.label>
+  <Mecha_Chest.label>Placa de nudez</Mecha_Chest.label>
+  <Mecha_Core.label>CPU</Mecha_Core.label>
+  <Mecha_CoreProcessor.label>núcleo do processador</Mecha_CoreProcessor.label>
+  <Mecha_Neck.label>alqueta</Mecha_Neck.label>
+  <Mecha_Head.label>esqueleto da cabeça</Mecha_Head.label>
+  <Mecha_SkullPlate.label>placa craniana</Mecha_SkullPlate.label>
+  <Mecha_AI.label>Núcleo de IA</Mecha_AI.label>
+  <Mecha_Optics.label>óptica</Mecha_Optics.label>
+  <Mecha_Sensors.label>sensores</Mecha_Sensors.label>
+  <Mecha_Transmitter.label>transmissores</Mecha_Transmitter.label>
+  <Mecha_LeftShoulder.label>ombro esquerdo</Mecha_LeftShoulder.label>
+  <Mecha_LeftArm.label>mão esquerda</Mecha_LeftArm.label>
+  <Mecha_LeftArm_Axe.label>peles-machado</Mecha_LeftArm_Axe.label>
+  <Mecha_LeftArm_Sword.label>peles-espada</Mecha_LeftArm_Sword.label>
+  <Mecha_RightShoulder.label>ombro direito</Mecha_RightShoulder.label>
+  <Mecha_RightArm.label>mão direita</Mecha_RightArm.label>
+  <Mecha_RightArm_Hammer.label>peles-martelo</Mecha_RightArm_Hammer.label>
+  <Mecha_Base.label>base de movimento da máquina</Mecha_Base.label>
+
+
+  <!-- FLESH GOLEM -->
+
+  <Flesh_Body.label>torso</Flesh_Body.label>
+  <Flesh_Back.label>costas</Flesh_Back.label>
+  <Flesh_Spine.label>espinha dorsal</Flesh_Spine.label>
+  <Flesh_Wings.label>asas</Flesh_Wings.label>
+  <Flesh_Abdomen.label>abdominal</Flesh_Abdomen.label>
+  <Flesh_Guts.label>entranhas</Flesh_Guts.label>
+  <Flesh_Chest.label>seios</Flesh_Chest.label>
+  <Flesh_Heart.label>coração</Flesh_Heart.label>
+  <Flesh_Ribcage.label>peito</Flesh_Ribcage.label>
+  <Flesh_Lung.label>pulmão</Flesh_Lung.label>
+  <Flesh_Neck.label>pescoço</Flesh_Neck.label>
+  <Flesh_Head.label>cabeça</Flesh_Head.label>
+  <Flesh_Skull.label>crânio</Flesh_Skull.label>
+  <Flesh_Brain.label>cérebro</Flesh_Brain.label>
+  <Flesh_Face.label>cara</Flesh_Face.label>
+  <Flesh_Eye.label>olho</Flesh_Eye.label>
+  <Flesh_LowerEye.label>olho</Flesh_LowerEye.label>
+  <Flesh_EvilEye.label>Olho malvado</Flesh_EvilEye.label>
+  <Flesh_Tusks.label>presas</Flesh_Tusks.label>
+  <Flesh_Ear.label>orelha</Flesh_Ear.label>
+  <Flesh_Nose.label>nariz</Flesh_Nose.label>
+  <Flesh_Jaw.label>mandíbula</Flesh_Jaw.label>
+  <Flesh_Tongue.label>idioma</Flesh_Tongue.label>
+  <Flesh_Horns.label>chifres</Flesh_Horns.label>
+  <Flesh_Shoulder.label>ombro</Flesh_Shoulder.label>
+  <Flesh_RightArm.label>mão direita</Flesh_RightArm.label>
+  <Flesh_LeftArm.label>mão esquerda</Flesh_LeftArm.label>
+  <Flesh_Hand.label>mão</Flesh_Hand.label>
+  <Flesh_LeftArm_Brace.label>parêntese esquerdo</Flesh_LeftArm_Brace.label>
+  <Flesh_LeftArm_Cleaver.label>tesão esquerdo</Flesh_LeftArm_Cleaver.label>
+  <Flesh_RightArm_Brace.label>parêntese direito</Flesh_RightArm_Brace.label>
+  <Flesh_RightArm_Cleaver.label>tesão direito</Flesh_RightArm_Cleaver.label>
+  <Flesh_Waist.label>lombar</Flesh_Waist.label>
+  <Flesh_Leg.label>pé</Flesh_Leg.label>
+  <Flesh_Femur.label>fémur</Flesh_Femur.label>
+  <Flesh_Tibia.label>Osso de bolha</Flesh_Tibia.label>
+  <Flesh_Foot.label>pé</Flesh_Foot.label>
+
+
+  <!-- HOLLOW GOLEM -->
+
+  <Hollow_Weapon.label>abalo espremido para armas</Hollow_Weapon.label>
+  <Hollow_Axe.label>Machado espremido</Hollow_Axe.label>
+  <Hollow_Staff.label>bastão expelido</Hollow_Staff.label>
+  <Hollow_Core.label>Núcleo cativo</Hollow_Core.label>
+  <Hollow_CoreSlotA.label>Núcleo cativo</Hollow_CoreSlotA.label>
+  <Hollow_CoreSlotB.label>Núcleo cativo</Hollow_CoreSlotB.label>
+
+
+  <!-- STONE GOLEM -->
+
+  <Stone_Core.label>núcleo de pedra</Stone_Core.label>
+  <Stone_SlotA.label>núcleo de pedra (a)</Stone_SlotA.label>
+  <Stone_SlotB.label>núcleo de pedra (b)</Stone_SlotB.label>
+
+
+  <!-- MAHARAL GOLEM -->
+
+  <Maharal_Core.label>núcleo maharal</Maharal_Core.label>
+  <Maharal_SlotA.label>núcleo maharal (a)</Maharal_SlotA.label>
+  <Maharal_SlotB.label>núcleo maharal (b)</Maharal_SlotB.label>
+
+
+</LanguageData>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Golem_FleshRestore.label>recupere a parte</TM_Golem_FleshRestore.label>
+
+  <TM_Golem_FleshMaxEnergy.label>resistência muscular</TM_Golem_FleshMaxEnergy.label>
+  <TM_Golem_FleshMaxEnergy.description>Aumenta a energia máxima em 400 por nível. A energia máxima inicial é de 800.</TM_Golem_FleshMaxEnergy.description>
+
+  <TM_Golem_FleshEnergyEfficiency.label>eficiência muscular</TM_Golem_FleshEnergyEfficiency.label>
+  <TM_Golem_FleshEnergyEfficiency.description>Aumenta a eficiência energética em 10% por nível. A eficiência energética inicial é de 50%.</TM_Golem_FleshEnergyEfficiency.description>
+
+  <TM_Golem_FleshEnergyRate.label>fusão de energia</TM_Golem_FleshEnergyRate.label>
+  <TM_Golem_FleshEnergyRate.description>Aumenta a velocidade de carga de energia em 20% por nível. A velocidade inicial de recarga é de 100 custos de energia por hora.</TM_Golem_FleshEnergyRate.description>
+
+  <TM_Golem_Flesh_LeftArmBrace.label>bandagem para a mão esquerda</TM_Golem_Flesh_LeftArmBrace.label>
+  <TM_Golem_Flesh_LeftArmBrace.description>Aumenta a chance de bloqueio em 20%, dobrando com a algema direita.</TM_Golem_Flesh_LeftArmBrace.description>
+
+  <TM_Golem_Flesh_LeftArmCleaver.label>tesaco para a mão esquerda</TM_Golem_Flesh_LeftArmCleaver.label>
+  <TM_Golem_Flesh_LeftArmCleaver.description>Permite a coleta de plantas e inclui o ataque de fragmentação AoE.
+
+Escaldar
+Custo da fúria: 15
+Danos: 15
+Saliência: 2c</TM_Golem_Flesh_LeftArmCleaver.description>
+
+  <TM_Golem_Flesh_RightArmBrace.label>bandagem para a mão direita</TM_Golem_Flesh_RightArmBrace.label>
+  <TM_Golem_Flesh_RightArmBrace.description>Aumenta a chance de bloqueio em 20%, dobrando com a algema esquerda.</TM_Golem_Flesh_RightArmBrace.description>
+
+  <TM_Golem_Flesh_RightArmCleaver.label>tesaco para a mão direita</TM_Golem_Flesh_RightArmCleaver.label>
+  <TM_Golem_Flesh_RightArmCleaver.description>Permite que o golem corte as plantas e inclui o ataque de fragmentação AoE.
+
+Escaldar
+Custo da fúria: 15
+Danos: 15
+Saliência: 2c</TM_Golem_Flesh_RightArmCleaver.description>
+
+  <TM_Golem_Flesh_Tusks.label>presas</TM_Golem_Flesh_Tusks.label>
+  <TM_Golem_Flesh_Tusks.description>Adiciona um forte ataque de mordida.</TM_Golem_Flesh_Tusks.description>
+
+  <TM_Golem_Flesh_Horns.label>chifres</TM_Golem_Flesh_Horns.label>
+  <TM_Golem_Flesh_Horns.description>Adiciona capacidade de ataque e ataque.
+
+Ataque de boi
+Custo da fúria: 5
+Tempo de recarga: 10 segundos</TM_Golem_Flesh_Horns.description>
+
+  <TM_Golem_Flesh_EyesT1.label>mira tetragonal</TM_Golem_Flesh_EyesT1.label>
+  <TM_Golem_Flesh_EyesT1.description>Aumenta a visão em 100%.</TM_Golem_Flesh_EyesT1.description>
+
+  <TM_Golem_Flesh_EyesT2.label>Olho malvado</TM_Golem_Flesh_EyesT2.label>
+  <TM_Golem_Flesh_EyesT2.description>Inclui a capacidade que assusta e desacelera os inimigos.
+
+Olho malvado
+Custo da fúria: 10
+Tempo de recarga: 2,2s
+Faixa: 40</TM_Golem_Flesh_EyesT2.description>
+
+  <TM_Golem_Flesh_Wings.label>asas</TM_Golem_Flesh_Wings.label>
+  <TM_Golem_Flesh_Wings.description>Adiciona a capacidade que pode dar velocidade ao gol.
+
+Apuração
+Custo da fúria: 15
+Tempo de recarga: 6 segundos
+Duplo ataque e velocidade de deslocamento</TM_Golem_Flesh_Wings.description>
+
+  <TM_Golem_Flesh_SkullPlate.label>placa craniana</TM_Golem_Flesh_SkullPlate.label>
+  <TM_Golem_Flesh_SkullPlate.description>Aumenta a blindagem:
+Dano estúpido: 12%
+corte de danos: 18%
+temperatura: 8%</TM_Golem_Flesh_SkullPlate.description>
+
+  <TM_Golem_Flesh_ShoulderPlates.label>Placas de úmero</TM_Golem_Flesh_ShoulderPlates.label>
+  <TM_Golem_Flesh_ShoulderPlates.description>Aumenta a blindagem:
+Dano estúpido: 14%
+corte de danos: 12%
+temperatura: 10%</TM_Golem_Flesh_ShoulderPlates.description>
+
+  <TM_Golem_Flesh_ChestCage.label>peito</TM_Golem_Flesh_ChestCage.label>
+  <TM_Golem_Flesh_ChestCage.description>Aumenta a blindagem:
+Dano estúpido:	28%
+corte de danos: 10%
+temperatura: 5%</TM_Golem_Flesh_ChestCage.description>
+
+  <TM_Golem_Flesh_SpineGuard.label>proteção da coluna</TM_Golem_Flesh_SpineGuard.label>
+  <TM_Golem_Flesh_SpineGuard.description>Aumenta a blindagem:
+Dano estúpido:	12%
+corte de danos: 14%
+temperatura: 5%</TM_Golem_Flesh_SpineGuard.description>
+
+  <TM_Golem_Flesh_LegPlates.label>placas de faca</TM_Golem_Flesh_LegPlates.label>
+  <TM_Golem_Flesh_LegPlates.description>Aumenta a blindagem:
+Dano estúpido: 10%
+corte de danos: 15%
+temperatura: 8%</TM_Golem_Flesh_LegPlates.description>
+
+  <TM_Golem_FleshLifeStage.label>potência da máquina</TM_Golem_FleshLifeStage.label>
+  <TM_Golem_FleshLifeStage.description>Aumenta as estatísticas e adiciona a capacidade de desmembrar.
+Movimento: + [20 %/35 %/50%]
+Saúde: + [30 %/50 %/70%]
+
+Desmembrar
+Custo da fúria: 25
+Recarga: 13 segundos
+Intervalo: 1s</TM_Golem_FleshLifeStage.description>
+
+
+</LanguageData>

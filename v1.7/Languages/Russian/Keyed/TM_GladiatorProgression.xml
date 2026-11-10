@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadGladiatorSprint>Спринт — поддерживаемое ускорение, резерв 30 выносливости (перезарядка 30 с) · Выбор окончательный</TM_ReadGladiatorSprint>
+  <TM_ReadGladiatorManeuver>Манёвр — скорость +8% на 8 с, расход 12% выносливости (перезарядка 25 с) · Выбор окончательный</TM_ReadGladiatorManeuver>
+  <TM_GladiatorReliefDrill>Учение: подойти к союзнику с 8 клеток</TM_GladiatorReliefDrill>
+  <TM_GladiatorDefenseChoice>Выбрать защитную технику</TM_GladiatorDefenseChoice>
+  <TM_GladiatorChooseFortitude>Стойкость — постоянная защита себя (окончательно)</TM_GladiatorChooseFortitude>
+  <TM_GladiatorChooseCover>Прикрыть — принять до 20 урона от выстрелов по союзнику за 6 с (окончательно)</TM_GladiatorChooseCover>
+  <TM_GladiatorUseCover>Прикрыть союзника — 20% выносливости, перезарядка 30 с</TM_GladiatorUseCover>
+  <TM_GladiatorAttackChoice>Выбрать технику ближнего боя</TM_GladiatorAttackChoice>
+  <TM_GladiatorHoldDrill>Удержать строй: принять удар или пройти учение с союзником</TM_GladiatorHoldDrill>
+  <TM_GladiatorChooseCleave>Cleave — автоматический взмах (окончательно)</TM_GladiatorChooseCleave>
+  <TM_GladiatorChooseSweep>Взмах — вручную по двум противникам (окончательно)</TM_GladiatorChooseSweep>
+  <TM_GladiatorLevelGate>Для Вознесения нужен 30-й уровень воина.</TM_GladiatorLevelGate>
+  <TM_GladiatorEvacTrial>Выпускное испытание: спасти раненого в бою или провести эвакуационное учение.</TM_GladiatorEvacTrial>
+  <TM_GladiatorUltimateChoice>Выбрать ульту</TM_GladiatorUltimateChoice>
+  <TM_GladiatorPickWhirlwind>Вихрь — классическая техника (окончательно)</TM_GladiatorPickWhirlwind>
+  <TM_GladiatorPickLastCircle>Последний круг — держать зону радиусом 4 клетки 20 с (окончательно)</TM_GladiatorPickLastCircle>
+  <TM_GladiatorCastCircle>Последний круг — 60% выносливости, подготовка 5 с, перезарядка 2 суток</TM_GladiatorCastCircle>
+  <TM_LastCircleDetails>Нужно оружие ближнего боя. До четырёх ближайших союзников получают по 25 защиты на 20 с. Три взмаха поражают до трёх врагов каждый. Скорость −30%. Выход из круга прекращает действие. Взрывы проходят сквозь защиту. Прерывание подготовки расходует 6% выносливости и задерживает новую попытку на 6000 тиков.</TM_LastCircleDetails>
+</LanguageData>

@@ -1,0 +1,36 @@
+<LanguageData><!-- v1.5\Defs\PawnDefs\Races_SpiritAnimals.xml-->
+	<!--             EN: spirit bear-->
+	<TM_SpiritBear.label>дух медведя</TM_SpiritBear.label>
+	<!--                   EN: spirit bears-->
+	<TM_SpiritBear.labelPlural>духи медведей</TM_SpiritBear.labelPlural>
+	<!--                                EN: Plural spirit bear-->
+	<TM_SpiritBear.lifeStages.0.labelPlural>духи медведей</TM_SpiritBear.lifeStages.0.labelPlural>
+	<!--                 EN: spirit mongoose-->
+	<TM_SpiritMongoose.label>дух мангуста</TM_SpiritMongoose.label>
+	<!--                       EN: spirit mongoose-->
+	<TM_SpiritMongoose.labelPlural>духи мангустов</TM_SpiritMongoose.labelPlural>
+	<!--                                    EN: Plural spirit mongoose-->
+	<TM_SpiritMongoose.lifeStages.0.labelPlural>духи мангустов</TM_SpiritMongoose.lifeStages.0.labelPlural>
+	<!--             EN: spirit crow-->
+	<TM_SpiritCrow.label>дух ворона</TM_SpiritCrow.label>
+	<!--                   EN: spirit crows-->
+	<TM_SpiritCrow.labelPlural>духи воронов</TM_SpiritCrow.labelPlural>
+	<!--                          EN: flight1-->
+	<TM_SpiritCrow.lifeStages.0.label>полёт 1</TM_SpiritCrow.lifeStages.0.label>
+	<!--                                EN: Plural spirit crow-->
+	<TM_SpiritCrow.lifeStages.0.labelPlural>духи воронов</TM_SpiritCrow.lifeStages.0.labelPlural>
+	<!--                          EN: flight2-->
+	<TM_SpiritCrow.lifeStages.1.label>полёт 2</TM_SpiritCrow.lifeStages.1.label>
+	<!--                                EN: Plural spirit crow-->
+	<TM_SpiritCrow.lifeStages.1.labelPlural>духи воронов</TM_SpiritCrow.lifeStages.1.labelPlural>
+	<!--                          EN: crow chick-->
+	<TM_SpiritCrow.lifeStages.2.label>воронёнок</TM_SpiritCrow.lifeStages.2.label>
+	<!--                                EN: Plural spirit crow-->
+	<TM_SpiritCrow.lifeStages.2.labelPlural>воронята</TM_SpiritCrow.lifeStages.2.labelPlural>
+	<!--                          EN: crow fledgling-->
+	<TM_SpiritCrow.lifeStages.3.label>молодой ворон</TM_SpiritCrow.lifeStages.3.label>
+	<!--                                EN: Plural spirit crow-->
+	<TM_SpiritCrow.lifeStages.3.labelPlural>молодые вороны</TM_SpiritCrow.lifeStages.3.labelPlural>
+	<!--                                EN: Plural spirit crow-->
+	<TM_SpiritCrow.lifeStages.4.labelPlural>духи воронов</TM_SpiritCrow.lifeStages.4.labelPlural>
+</LanguageData>

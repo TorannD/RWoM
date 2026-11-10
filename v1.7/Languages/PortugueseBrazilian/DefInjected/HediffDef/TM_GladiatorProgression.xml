@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_GladiatorManeuverHD.label>manobrando</TM_GladiatorManeuverHD.label>
+  <TM_LastCircleStance.label>defendendo o último círculo</TM_LastCircleStance.label>
+  <TM_GladiatorManeuverHD.description>O gladiador se move mais rápido por um curto período.</TM_GladiatorManeuverHD.description>
+  <TM_LastCircleStance.description>O gladiador se move mais devagar enquanto mantém o último círculo.</TM_LastCircleStance.description>
+</LanguageData>

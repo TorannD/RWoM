@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MasterTomePriest.label>книга мастерства: священник</TM_MasterTomePriest.label>
+  <TM_MasterTomePriest.description>Редкая книга для священника, выполнившего требования мастерства. Чтение завершает соответствующее посвящение и расходует книгу. Можно купить у торговцев или получить в награду за задание; изготовить её нельзя.</TM_MasterTomePriest.description>
+  <TM_MasterTomePriest.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomePriest.comps.1.useLabel>
+  <TM_MasterTomeNecromancer.label>книга мастерства: некромант</TM_MasterTomeNecromancer.label>
+  <TM_MasterTomeNecromancer.description>Редкая книга для некроманта, выполнившего требования мастерства. Чтение завершает соответствующее посвящение и расходует книгу. Можно купить у торговцев или получить в награду за задание; изготовить её нельзя.</TM_MasterTomeNecromancer.description>
+  <TM_MasterTomeNecromancer.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeNecromancer.comps.1.useLabel>
+  <TM_MasterTomeFire.label>том мастерства: маг огня</TM_MasterTomeFire.label>
+  <TM_MasterTomeFire.description>Редкий том для мага огня, выполнившего требования для достижения мастерства. Чтение завершает соответствующее посвящение и расходует том. Можно приобрести у торговцев или получить в награду за задание; изготовить нельзя.</TM_MasterTomeFire.description>
+  <TM_MasterTomeFire.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeFire.comps.1.useLabel>
+  <TM_MasterTomeIce.label>том мастерства: маг льда</TM_MasterTomeIce.label>
+  <TM_MasterTomeIce.description>Редкий том для мага льда, выполнившего требования для достижения мастерства. Чтение завершает соответствующее посвящение и расходует том. Можно приобрести у торговцев или получить в награду за задание; изготовить нельзя.</TM_MasterTomeIce.description>
+  <TM_MasterTomeIce.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeIce.comps.1.useLabel>
+  <TM_MasterTomeLightning.label>том мастерства: маг молнии</TM_MasterTomeLightning.label>
+  <TM_MasterTomeLightning.description>Редкий том для мага молнии, выполнившего требования мастерства. Чтение завершает соответствующее посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить его нельзя.</TM_MasterTomeLightning.description>
+  <TM_MasterTomeLightning.comps.1.useLabel>Читать {0_label}</TM_MasterTomeLightning.comps.1.useLabel>
+  <TM_MasterTomeArcanist.label>том мастерства: арканист</TM_MasterTomeArcanist.label>
+  <TM_MasterTomeArcanist.description>Редкий том для арканиста, выполнившего условия мастерства. Чтение завершает соответствующее посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить его нельзя.</TM_MasterTomeArcanist.description>
+  <TM_MasterTomeArcanist.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeArcanist.comps.1.useLabel>
+  <TM_MasterTomePaladin.label>том мастерства паладина</TM_MasterTomePaladin.label>
+  <TM_MasterTomePaladin.description>Редкий том для паладина после выполнения испытания мастерства. Чтение завершает посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomePaladin.description>
+  <TM_MasterTomePaladin.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomePaladin.comps.1.useLabel>
+  <TM_MasterTomeSummoner.label>том мастерства призывателя</TM_MasterTomeSummoner.label>
+  <TM_MasterTomeSummoner.description>Редкий том для призывателя после выполнения испытания мастерства. Чтение завершает посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeSummoner.description>
+  <TM_MasterTomeSummoner.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeSummoner.comps.1.useLabel>
+  <TM_MasterTomeDruid.label>том мастерства друида</TM_MasterTomeDruid.label>
+  <TM_MasterTomeDruid.description>Редкий том для друида после выполнения испытания мастерства. Чтение завершает посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeDruid.description>
+  <TM_MasterTomeDruid.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeDruid.comps.1.useLabel>
+  <TM_MasterTomeBard.label>том мастерства барда</TM_MasterTomeBard.label>
+  <TM_MasterTomeBard.description>Редкий том для барда после выполнения испытания мастерства. Чтение завершает посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeBard.description>
+  <TM_MasterTomeBard.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeBard.comps.1.useLabel>
+  <TM_MasterTomeWarlock.label>том мастерства: чернокнижник</TM_MasterTomeWarlock.label>
+  <TM_MasterTomeWarlock.description>Редкий том мастерства выбранной демонической ветви. Чтение после испытания мастерства повышает ступень и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeWarlock.description>
+  <TM_MasterTomeSuccubus.label>том мастерства: суккуб</TM_MasterTomeSuccubus.label>
+  <TM_MasterTomeSuccubus.description>Редкий том мастерства выбранной демонической ветви. Чтение после испытания мастерства повышает ступень и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeSuccubus.description>
+  <TM_MasterTomeWarlock.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeWarlock.comps.1.useLabel>
+  <TM_MasterTomeSuccubus.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeSuccubus.comps.1.useLabel>
+  <TM_MasterTomeGeomancer.label>том мастерства геомант</TM_MasterTomeGeomancer.label>
+  <TM_MasterTomeGeomancer.description>Редкий том для геомант после выполнения испытания мастерства. Чтение завершает посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeGeomancer.description>
+  <TM_MasterTomeGeomancer.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeGeomancer.comps.1.useLabel>
+  <TM_MasterTomeTechnomancer.label>том мастерства техноманта</TM_MasterTomeTechnomancer.label>
+  <TM_MasterTomeTechnomancer.description>Редкий том для техноманта после выполнения испытания мастерства. Чтение завершает посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeTechnomancer.description>
+  <TM_MasterTomeTechnomancer.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeTechnomancer.comps.1.useLabel>
+  <TM_MasterTomeBloodMage.label>том мастерства мага крови</TM_MasterTomeBloodMage.label>
+  <TM_MasterTomeBloodMage.description>Редкий том для мага крови после выполнения испытания мастерства. Чтение завершает посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeBloodMage.description>
+  <TM_MasterTomeBloodMage.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeBloodMage.comps.1.useLabel>
+  <TM_MasterTomeEnchanter.label>том мастерства зачарователя</TM_MasterTomeEnchanter.label>
+  <TM_MasterTomeEnchanter.description>Редкий том для зачарователя после выполнения испытания мастерства. Чтение завершает посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeEnchanter.description>
+  <TM_MasterTomeEnchanter.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeEnchanter.comps.1.useLabel>
+  <TM_MasterTomeChronomancer.label>том мастерства хрономанта</TM_MasterTomeChronomancer.label>
+  <TM_MasterTomeChronomancer.description>Редкий том для хрономанта после выполнения испытания мастерства. Чтение завершает посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeChronomancer.description>
+  <TM_MasterTomeChronomancer.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeChronomancer.comps.1.useLabel>
+  <TM_MasterTomeBrightmage.label>том мастерства мага света</TM_MasterTomeBrightmage.label>
+  <TM_MasterTomeBrightmage.description>Редкий том для мага света после выполнения испытания мастерства. Чтение завершает посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeBrightmage.description>
+  <TM_MasterTomeBrightmage.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeBrightmage.comps.1.useLabel>
+  <TM_MasterTomeShaman.label>том мастерства шамана</TM_MasterTomeShaman.label>
+  <TM_MasterTomeShaman.description>Редкий том для шамана после выполнения испытания мастерства. Чтение завершает посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeShaman.description>
+  <TM_MasterTomeShaman.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeShaman.comps.1.useLabel>
+  <TM_MasterTomeGolemancer.label>том мастерства големанта</TM_MasterTomeGolemancer.label>
+  <TM_MasterTomeGolemancer.description>Редкий том для големанта после выполнения испытания мастерства. Чтение завершает посвящение и расходует том. Доступен у торговцев и в наградах за задания; изготовить нельзя.</TM_MasterTomeGolemancer.description>
+  <TM_MasterTomeGolemancer.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeGolemancer.comps.1.useLabel>
+  <TM_MasterTomeChaos.label>мастерский том мага хаоса</TM_MasterTomeChaos.label>
+  <TM_MasterTomeChaos.description>Редкий том для адепта Хаоса. Перед чтением пройдите испытание заклинаниями из разных наборов. Можно найти у торговцев или получить в награду за задание.</TM_MasterTomeChaos.description>
+  <TM_MasterTomeChaos.comps.1.useLabel>Прочитать {0_label}</TM_MasterTomeChaos.comps.1.useLabel>
+</LanguageData>

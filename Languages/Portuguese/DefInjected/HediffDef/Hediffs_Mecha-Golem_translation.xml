@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Mecha-Golem_GatlingCannonHD.label>Canhão de Gatling</TM_Mecha-Golem_GatlingCannonHD.label>
+  <TM_Mecha-Golem_GatlingCannonHD.description>O canhão de Gatling colocado no ombro direito.</TM_Mecha-Golem_GatlingCannonHD.description>
+  <TM_Mecha-Golem_GatlingCannonHD.stages.0.label></TM_Mecha-Golem_GatlingCannonHD.stages.0.label>
+
+  <TM_Mecha-Golem_BallisticPlateHD.label>Placa balística</TM_Mecha-Golem_BallisticPlateHD.label>
+  <TM_Mecha-Golem_BallisticPlateHD.description>Melhora a blindagem, mas reduz a velocidade de movimento.</TM_Mecha-Golem_BallisticPlateHD.description>
+  <TM_Mecha-Golem_BallisticPlateHD.stages.0.label></TM_Mecha-Golem_BallisticPlateHD.stages.0.label>
+  <TM_Mecha-Golem_BallisticPlateHD.stages.1.label></TM_Mecha-Golem_BallisticPlateHD.stages.1.label>
+  <TM_Mecha-Golem_BallisticPlateHD.stages.2.label></TM_Mecha-Golem_BallisticPlateHD.stages.2.label>
+
+  <TM_Mecha-Golem_FlameCoreHD.label>Coração ardente</TM_Mecha-Golem_FlameCoreHD.label>
+  <TM_Mecha-Golem_FlameCoreHD.description>As atualizações do núcleo da chama aumentam a velocidade de movimento e reduzem o tempo de recarga para ataques e capacidades.</TM_Mecha-Golem_FlameCoreHD.description>
+  <TM_Mecha-Golem_FlameCoreHD.stages.0.label>Mk.1</TM_Mecha-Golem_FlameCoreHD.stages.0.label>
+  <TM_Mecha-Golem_FlameCoreHD.stages.1.label>Mk.2</TM_Mecha-Golem_FlameCoreHD.stages.1.label>
+  <TM_Mecha-Golem_FlameCoreHD.stages.2.label>Mk.3</TM_Mecha-Golem_FlameCoreHD.stages.2.label>
+
+  <TM_Mecha-Golem_WaterCoreHD.label>Coração d&apos; água</TM_Mecha-Golem_WaterCoreHD.label>
+  <TM_Mecha-Golem_WaterCoreHD.description>As atualizações do processador com núcleo de água aumentam a blindagem e a regeneração e melhoram a economia de energia.</TM_Mecha-Golem_WaterCoreHD.description>
+  <TM_Mecha-Golem_WaterCoreHD.stages.0.label>Mk.1</TM_Mecha-Golem_WaterCoreHD.stages.0.label>
+  <TM_Mecha-Golem_WaterCoreHD.stages.1.label>Mk.2</TM_Mecha-Golem_WaterCoreHD.stages.1.label>
+  <TM_Mecha-Golem_WaterCoreHD.stages.2.label>Mk.3</TM_Mecha-Golem_WaterCoreHD.stages.2.label>
+
+  <TM_Mecha-Golem_EarthCoreHD.label>Núcleo da Terra</TM_Mecha-Golem_EarthCoreHD.label>
+  <TM_Mecha-Golem_EarthCoreHD.description>As atualizações do CPU aumentam a blindagem e a proteção.</TM_Mecha-Golem_EarthCoreHD.description>
+  <TM_Mecha-Golem_EarthCoreHD.stages.0.label>Mk.1</TM_Mecha-Golem_EarthCoreHD.stages.0.label>
+  <TM_Mecha-Golem_EarthCoreHD.stages.1.label>Mk.2</TM_Mecha-Golem_EarthCoreHD.stages.1.label>
+  <TM_Mecha-Golem_EarthCoreHD.stages.2.label>Mk.3</TM_Mecha-Golem_EarthCoreHD.stages.2.label>
+
+  <TM_Mecha-Golem_LightningCoreHD.label>Núcleo relâmpago</TM_Mecha-Golem_LightningCoreHD.label>
+  <TM_Mecha-Golem_LightningCoreHD.description>As atualizações do Núcleo Relâmpago aumentam a velocidade de deslocamento e processamento.</TM_Mecha-Golem_LightningCoreHD.description>
+  <TM_Mecha-Golem_LightningCoreHD.stages.0.label>Mk.1</TM_Mecha-Golem_LightningCoreHD.stages.0.label>
+  <TM_Mecha-Golem_LightningCoreHD.stages.1.label>Mk.2</TM_Mecha-Golem_LightningCoreHD.stages.1.label>
+  <TM_Mecha-Golem_LightningCoreHD.stages.2.label>Mk.3</TM_Mecha-Golem_LightningCoreHD.stages.2.label>
+
+
+</LanguageData>

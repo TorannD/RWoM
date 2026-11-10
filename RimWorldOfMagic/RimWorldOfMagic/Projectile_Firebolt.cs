@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-    class Projectile_Firebolt : Projectile_AbilityBase
+    class Projectile_Firebolt : ClassProgression.Projectile_SpiritBolt
     {
 
-        private int pwrVal = 0;
-        private float arcaneDmg = 1f;
+        protected override string SkillStem => "TM_Firebolt";
+        protected override System.Collections.Generic.List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_Firebolt;
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Map map = base.Map;
@@ -20,7 +20,7 @@ namespace TorannMagic
 
             Pawn pawn = this.launcher as Pawn;
             Pawn victim = hitThing as Pawn;
-            if (pawn != null)
+            if (!projected && pawn != null)
             {
                 CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
                 MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Firebolt.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Firebolt_pwr");
@@ -33,7 +33,7 @@ namespace TorannMagic
                 }
             }
             
-            GenExplosion.DoExplosion(base.Position, map, 0.4f, TMDamageDefOf.DamageDefOf.Firebolt, this.launcher, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1, null) * arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, this.intendedTarget.Thing, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0.6f, false);
+            GenExplosion.DoExplosion(base.Position, map, 0.4f, TMDamageDefOf.DamageDefOf.Firebolt, SpellInstigator, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1, null) * arcaneDmg), 0, this.def.projectile.soundExplode, def, this.equipmentDef, this.intendedTarget.Thing, null, 0f, 1, null, null, 0, false, null, 0f, 1, 0.6f, false);
             CellRect cellRect = CellRect.CenteredOn(base.Position, 3);
             cellRect.ClipInsideMap(map);
 
@@ -41,7 +41,7 @@ namespace TorannMagic
             if (victim != null)
             {                
                 int dmg = Mathf.RoundToInt(((this.def.projectile.GetDamageAmount(1,null) / 3) * pwrVal)* arcaneDmg);  //projectile = 16
-                if (ModOptions.Settings.Instance.AIHardMode && this.launcher is Pawn && !pawn.IsColonist)
+                if (!projected && ModOptions.Settings.Instance.AIHardMode && this.launcher is Pawn && !pawn.IsColonist)
                 {
                     dmg += 10;
                 }
@@ -55,7 +55,10 @@ namespace TorannMagic
             bool flag = e != null;
             if (flag)
             {
-                e.TakeDamage(dinfo);
+                var trial = type == TMDamageDefOf.DamageDefOf.Firebolt
+                    ? ClassProgression.FireboltDamageTrial.Capture(SpellInstigator as Pawn, e) : null;
+                var damage = e.TakeDamage(dinfo);
+                ClassProgression.FireboltDamageTrial.Complete(trial, damage?.totalDamageDealt ?? 0f);
             }
         }
     }    

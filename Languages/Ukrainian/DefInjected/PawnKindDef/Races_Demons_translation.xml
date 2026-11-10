@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- demon special attack manuevers -->
+
+  <TM_Demon.label>фонова служба</TM_Demon.label>
+  <TM_Demon.labelPlural>демони</TM_Demon.labelPlural>
+  <TM_Demon.lifeStages.0.label>фонова служба</TM_Demon.lifeStages.0.label>
+  <TM_Demon.lifeStages.0.labelPlural>демони</TM_Demon.lifeStages.0.labelPlural>
+
+  <TM_LesserDemon.label>менший фоновий демон</TM_LesserDemon.label>
+  <TM_LesserDemon.labelPlural>менші демони</TM_LesserDemon.labelPlural>
+  <TM_LesserDemon.lifeStages.0.label>фонова служба</TM_LesserDemon.lifeStages.0.label>
+  <TM_LesserDemon.lifeStages.0.labelPlural>демони</TM_LesserDemon.lifeStages.0.labelPlural>
+
+
+</LanguageData>

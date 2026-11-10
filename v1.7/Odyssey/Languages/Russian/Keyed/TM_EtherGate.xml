@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_EtherGateSummon>Призвать эфирного слугу</TM_EtherGateSummon>
+  <TM_EtherGateSummonDesc>Потратить 100 маготоплива, чтобы призвать слугу для переноски на одни сутки. Еда, сон и воздух не требуются. Также добывает с начальным навыком горного дела 10 и строит с начальным навыком строительства 5. Приоритет работ: строительство, обозначенная добыча, затем переноска.</TM_EtherGateSummonDesc>
+  <TM_EtherGateUnavailable>Врата должны стоять на карте, принадлежать вашей фракции и быть включены.</TM_EtherGateUnavailable>
+  <TM_EtherGateNoFuel>Требуется 100 маготоплива.</TM_EtherGateNoFuel>
+  <TM_EtherGateNoLanding>Рядом с вратами нет безопасного места для слуги.</TM_EtherGateNoLanding>
+  <TM_EtherGateFailed>Призыв не удался. Маготопливо не потрачено.</TM_EtherGateFailed>
+  <TM_EtherGateBusy>Идёт призыв.</TM_EtherGateBusy>
+  <TM_EtherServantRemaining>Осталось времени: {0}</TM_EtherServantRemaining>
+</LanguageData>

@@ -1,0 +1,6 @@
+<LanguageData><!-- Golem Needs are added using a harmony patch for matching thing defs-->
+	<TM_GolemEnergy.label>энергия</TM_GolemEnergy.label>
+	<TM_GolemEnergy.description>Уровень энергии голема.</TM_GolemEnergy.description>
+	<TM_GolemRage.label>ярость</TM_GolemRage.label>
+	<TM_GolemRage.description>Уровень ярости голема.</TM_GolemRage.description>
+</LanguageData>

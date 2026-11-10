@@ -1,0 +1,48 @@
+﻿<LanguageData><Projectile_TM_SpawnThing.label>создание магического предмета</Projectile_TM_SpawnThing.label>
+	<!-- Heater-->
+	<Projectile_Heater.label>создание магического обогревателя</Projectile_Heater.label>
+	<!-- Cooler-->
+	<Projectile_Cooler.label>создание магического охладителя</Projectile_Cooler.label>
+	<!-- Power Node-->
+	<Projectile_PowerNode.label>создание магического силового узла</Projectile_PowerNode.label>
+	<!-- Light Node-->
+	<Projectile_Sunlight.label>создание магического источника света</Projectile_Sunlight.label>
+	<!-- Remove Moisture-->
+	<Projectile_DryGround.label>иссушение почвы</Projectile_DryGround.label>
+	<!-- Add Moisture-->
+	<Projectile_WetGround.label>орошение почвы</Projectile_WetGround.label>
+	<!-- Charge Battery-->
+	<Projectile_ChargeBattery.label>зарядка батареи</Projectile_ChargeBattery.label>
+	<!-- Smoke Cloud-->
+	<Projectile_SmokeCloud.label>облако дыма</Projectile_SmokeCloud.label>
+	<!-- Extinguish-->
+	<Projectile_Extinguish.label>тушить</Projectile_Extinguish.label>
+	<!-- EMP-->
+	<Projectile_EMP.label>ЭМИ</Projectile_EMP.label>
+	<!-- Transfer mana-->
+	<Projectile_TransferMana.label>передача маны</Projectile_TransferMana.label>
+	<!-- siphon mana-->
+	<Projectile_SiphonMana.label>вытягивание маны</Projectile_SiphonMana.label>
+	<!-- Flight-->
+	<FlyingObject_Flight.label>летающий объект</FlyingObject_Flight.label>
+	<Projectile_Flight.label>полет</Projectile_Flight.label>
+	<!-- Fertile land-->
+	<Projectile_FertileLands.label>плодородные земли</Projectile_FertileLands.label>
+	<!-- dirt devil-->
+	<Projectile_DirtDevil.label>земляной дьявол</Projectile_DirtDevil.label>
+	<FlyingObject_DirtDevil.label>летающий объект</FlyingObject_DirtDevil.label>
+	<!-- Arcane Bolt-->
+	<Projectile_ArcaneBolt.label>магический болт</Projectile_ArcaneBolt.label>
+	<!-- Throwing Knife-->
+	<Projectile_ThrowingKnife.label>метательный нож</Projectile_ThrowingKnife.label>
+	<!-- Lightning Trap-->
+	<FlyingObject_LightningTrap.label>молния</FlyingObject_LightningTrap.label>
+	<!-- briar patch-->
+	<Projectile_BriarPatch.label>терновый куст</Projectile_BriarPatch.label>
+	<!-- Tempest Strike-->
+	<Projectile_TempestStrike.label>Штормовой удар</Projectile_TempestStrike.label>
+	<FlyingObject_Advanced.label>летящий объект</FlyingObject_Advanced.label>
+	<FlyingObject_Spinning.label>вращающийся объект</FlyingObject_Spinning.label>
+	<FlyingObject_SpinningBone.label>вращающаяся кость</FlyingObject_SpinningBone.label>
+	<Projectile_Default.label>снаряд</Projectile_Default.label>
+</LanguageData>

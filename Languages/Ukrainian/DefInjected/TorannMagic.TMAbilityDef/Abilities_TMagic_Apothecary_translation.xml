@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Herbalist - ability is never used, influences how much hediff is gained while harvesting plants -->
+
+  <TM_Herbalist.label>Травник</TM_Herbalist.label>
+  <TM_Herbalist.description>Навчання траволікуванню дозволяє аптекарю визначати і ефективно збирати інгредієнти для своїх сумішей.</TM_Herbalist.description>
+
+
+  <!-- Poison Flask -->
+
+  <TM_PoisonFlask.label>Фляжка з отрутою</TM_PoisonFlask.label>
+  <TM_PoisonFlask.description>Киньте отруйну суміш, яка вибухне густою хмарою отруйного газу. Отруйний газ залишатиметься поблизу протягом невеликого часу, перш ніж розсіятися. Будь-яка людина, яка вдихає пари, отримає корозійне пошкодження горла і легенів.</TM_PoisonFlask.description>
+
+  <TM_Elixir.label>Еліксир</TM_Elixir.label>
+  <TM_Elixir.description>Трав &quot;яні еліксири створюються з суміші сильнодіючих трав, рослинних екстрактів та інших органічних речовин. Ефективність трав&apos;яного еліксиру обумовлена негайною реакцією інгредієнтів при їх поєднанні. Хімічна реакція має короткий період напіврозпаду, що робить її непрактичною і неекономічною для масового виробництва і розповсюдження. При негайному вживанні потужна користь еліксиру для здоров&apos;я досить велика, щоб повернути пішака з межі смерті. Дія еліксиру триває майже добу.</TM_Elixir.description>
+
+  <TM_SoothingBalm.label>Бальзам, який заспокоює</TM_SoothingBalm.label>
+  <TM_SoothingBalm.description>Заспокійливий бальзам аптекаря можна наносити на відкриті рани, щоб боротися з інфекцією, сприяти згортанню крові і зменшити біль. Побічні ефекти можуть включати галюцинації, почуття ейфорії і втрату свідомості.</TM_SoothingBalm.description>
+
+
+  <!-- Fire suppression Flask -->
+
+  <TM_FireSuppressionFlask.label>Колба для Пожежогасіння</TM_FireSuppressionFlask.label>
+  <TM_FireSuppressionFlask.description>Киньте каністру з протипожежною рідиною, яка швидко гасить полум&apos;я.
+
+Дальність: 20
+Перезарядка: 30
+Радіус: 6</TM_FireSuppressionFlask.description>
+
+  <TM_FireSuppressionFlask_I.label>Колба для Пожежогасіння</TM_FireSuppressionFlask_I.label>
+  <TM_FireSuppressionFlask_I.description>Киньте каністру з протипожежною рідиною, яка швидко гасить полум&apos;я.
+
+Дальність: 25
+Перезарядка: 20
+Радіус: 8</TM_FireSuppressionFlask_I.description>
+
+  <TM_FireSuppressionFlask_II.label>Колба для Пожежогасіння</TM_FireSuppressionFlask_II.label>
+  <TM_FireSuppressionFlask_II.description>Киньте каністру з протипожежною рідиною, яка швидко гасить полум&apos;я.
+
+Дальність: 30
+Перезарядка: 15
+Радіус: 10</TM_FireSuppressionFlask_II.description>
+
+  <TM_FireSuppressionFlask_III.label>Колба для Пожежогасіння</TM_FireSuppressionFlask_III.label>
+  <TM_FireSuppressionFlask_III.description>Киньте каністру з протипожежною рідиною, яка швидко гасить полум&apos;я.
+
+Дальність: 34
+Перезарядка: 10
+Радіус: 11</TM_FireSuppressionFlask_III.description>
+
+
+  <!-- Herbal Clarity -->
+
+  <TM_HerbalClarity.label>Ясність</TM_HerbalClarity.label>
+  <TM_HerbalClarity.description>Управляє сумішшю, яка допомагає споживачеві відкритися таємному. Регенерація мани збільшена до 300%, а психічна чутливість збільшена до 50%. Ефекти знижують психічну стійкість. Ясність зберігається кілька днів, але з часом втрачає силу. Використання цього препарату може бути ризикованим, навіть смертельним для мага, в поєднанні з подією витоку мани - використовуйте з обережністю.
+
+* Здатність може автоматично розігруватися, коли у найближчого мага рівень мани нижче 20.</TM_HerbalClarity.description>
+
+
+  <!-- Bliss -->
+
+  <TM_HerbalBliss.label>Блаженство</TM_HerbalBliss.label>
+  <TM_HerbalBliss.description>Вводить один з найнебезпечніших препаратів, відомих в регіоні, можливо, поступається тільки люциферуму. Засіб вводить користувача в стан блаженства, здатного замаскувати майже всі емоції і біль. Для створення цього препарату може бути використана творча суміш місцевого рослинного екстракту та інгредієнтів. Вірний приказці «невігластво - це блаженство», цей препарат призведе до того, що користувач повільно втратить свої набуті навички, а набуті навички, перебуваючи під впливом цього препарату, будуть сильно пригнічені.
+
+* Здатність може автоматично транслюватися, коли настрій найближчої пішаки нижче 5%.</TM_HerbalBliss.description>
+
+
+  <!-- Колба для Пожаротушения -->
+
+</LanguageData>

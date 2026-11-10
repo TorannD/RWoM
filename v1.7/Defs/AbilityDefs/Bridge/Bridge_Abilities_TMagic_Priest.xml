@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Advancedheal</defName>
+    <label>Advanced Heal</label>
+    <description>Invokes holy power to greatly heal the wounds of a target. Base heal restores 14 health for up to 3 wounds. Will immediately seal the bleeding of wounds from missing bodyparts.</description>
+    <spellId>rwom.tm_advancedheal</spellId>
+    <iconPath>UI/advancedheal</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_AdvancedHeal</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <abilityDef>TM_AdvancedHeal</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Projectile_Priest</defaultProjectile>
+      <warmupTime>2.5</warmupTime>
+      <SecondsToRecharge>8.0</SecondsToRecharge>
+      <range>25</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>30</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Purify</defName>
+    <label>Purify</label>
+    <description>Invokes holy power to purify scars on the body, mind, and soul.</description>
+    <spellId>rwom.tm_purify</spellId>
+    <iconPath>UI/purify</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Purify</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Purify</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>TM_Projectile_Priest</defaultProjectile>
+      <warmupTime>6</warmupTime>
+      <SecondsToRecharge>600</SecondsToRecharge>
+      <range>16</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>30</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Healingcircle</defName>
+    <label>Healing Circle</label>
+    <description>Creates a field of light that heals friendly pawns within. Base ability heals 1 wound by 10 health for each pawn healed. Cannot heal injuries of missing bodyparts.
+		
+Circle radius: 3
+Range: 30</description>
+    <spellId>rwom.tm_healingcircle</spellId>
+    <iconPath>UI/healingcircle</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>TM_Projectile_HealingCircle</defaultProjectile>
+      <abilityDef>TM_HealingCircle</abilityDef>
+      <warmupTime>4</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>30</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_HealingcircleI</defName>
+    <label>Healing Circle (I)</label>
+    <description>Creates a field of light that heals friendly pawns within. Base ability heals 1 wound by 10 health for each pawn healed. Cannot heal injuries of missing bodyparts.
+		
+Circle radius: 4
+Range: 35</description>
+    <spellId>rwom.tm_healingcircle_i</spellId>
+    <iconPath>UI/healingcircle</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>TM_Projectile_HealingCircle_I</defaultProjectile>
+      <abilityDef>TM_HealingCircle_I</abilityDef>
+      <warmupTime>4</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>35</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_HealingcircleII</defName>
+    <label>Healing Circle (II)</label>
+    <description>Creates a field of light that heals friendly pawns within. Base ability heals 1 wound by 10 health for each pawn healed. Cannot heal injuries of missing bodyparts.
+		
+Circle radius: 5.5
+Range: 40</description>
+    <spellId>rwom.tm_healingcircle_ii</spellId>
+    <iconPath>UI/healingcircle</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>TM_Projectile_HealingCircle_II</defaultProjectile>
+      <abilityDef>TM_HealingCircle_II</abilityDef>
+      <warmupTime>4</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>40</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_HealingcircleIII</defName>
+    <label>Healing Circle (III)</label>
+    <description>Creates a field of light that heals friendly pawns within. Base ability heals 1 wound by 10 health for each pawn healed. Cannot heal injuries of missing bodyparts.
+		
+Circle radius: 7
+Range: 45</description>
+    <spellId>rwom.tm_healingcircle_iii</spellId>
+    <iconPath>UI/healingcircle</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>TM_Projectile_HealingCircle_III</defaultProjectile>
+      <abilityDef>TM_HealingCircle_III</abilityDef>
+      <warmupTime>4</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>45</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Bestowmight</defName>
+    <label>Bestow Might</label>
+    <description>Blesses a single target with greatly increased physical power. 
+		
+Duration: 		30-40s
+Physical capacity: 	+40%
+Physical demand: 	+50%
+Pain:		-40%</description>
+    <spellId>rwom.tm_bestowmight</spellId>
+    <iconPath>UI/bestowmight</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>TM_Projectile_Priest</defaultProjectile>
+      <abilityDef>TM_BestowMight</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>60.0</SecondsToRecharge>
+      <range>30</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>BestowMightHD</hediffDef>
+          <applyChance>1</applyChance>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_BestowmightI</defName>
+    <label>Bestow Might (I)</label>
+    <description>Blesses a single target with greatly increased physical power.
+		
+Duration: 		50-60s
+Physical capacity: 	+60%
+Physical demand: 	+60%
+Pain:		-50%</description>
+    <spellId>rwom.tm_bestowmight_i</spellId>
+    <iconPath>UI/bestowmight</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>TM_Projectile_Priest</defaultProjectile>
+      <abilityDef>TM_BestowMight_I</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>60.0</SecondsToRecharge>
+      <range>30</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>BestowMightHD_I</hediffDef>
+          <applyChance>1</applyChance>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_BestowmightII</defName>
+    <label>Bestow Might (II)</label>
+    <description>Blesses a single target with greatly increased physical power.
+		
+Duration: 		50-60s
+Physical capacity: 	+80%
+Physical demand: 	+70%
+Pain:		-60%</description>
+    <spellId>rwom.tm_bestowmight_ii</spellId>
+    <iconPath>UI/bestowmight</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>TM_Projectile_Priest</defaultProjectile>
+      <abilityDef>TM_BestowMight_II</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>60.0</SecondsToRecharge>
+      <range>30</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>BestowMightHD_II</hediffDef>
+          <applyChance>1</applyChance>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_BestowmightIII</defName>
+    <label>Bestow Might (III)</label>
+    <description>Blesses a single target with greatly increased physical power.
+		
+Duration: 		100-115s
+Physical capacity: 	~+100%
+Physical demand: 	+100%
+Pain:		-70%</description>
+    <spellId>rwom.tm_bestowmight_iii</spellId>
+    <iconPath>UI/bestowmight</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>TM_Projectile_Priest</defaultProjectile>
+      <abilityDef>TM_BestowMight_III</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>60.0</SecondsToRecharge>
+      <range>30</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>BestowMightHD_III</hediffDef>
+          <applyChance>1</applyChance>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Resurrection</defName>
+    <label>Resurrection</label>
+    <description>Resurrection restores the life of a recently deceased pawn. This places an immense demand on the Priest and resurrected pawn and both will be weak for several days while their strength recovers. Resurrection comes at a price; the resurrected pawn will forfeit up to 35% of their skills and may develop detrimental health conditions.</description>
+    <spellId>rwom.tm_resurrection</spellId>
+    <iconPath>UI/resurrection</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_Resurrection</abilityDef>
+      <isViolent>false</isViolent>
+      <defaultProjectile>Projectile_Resurrection</defaultProjectile>
+      <warmupTime>10</warmupTime>
+      <SecondsToRecharge>600</SecondsToRecharge>
+      <range>6</range>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>30</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AlwaysHits>true</AlwaysHits>
+      <requireLineOfSight>false</requireLineOfSight>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

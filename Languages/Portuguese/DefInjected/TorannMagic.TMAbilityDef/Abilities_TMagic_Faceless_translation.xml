@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Disguise start -->
+
+  <TM_Disguise.label>Fraude</TM_Disguise.label>
+  <TM_Disguise.description>O sem rosto manipula a luz e o movimento para que sua forma pareça sem sentido para qualquer observador; No nível subconsciente, qualquer observador repudia cognitivamente o sem rosto como um objeto insignificante e inofensivo, tornando essencialmente o sem rosto invisível.
+
+A camuflagem não vai enganar um peão que já vê uma ameaça sem rosto.</TM_Disguise.description>
+
+
+  <!-- Mimic start -->
+
+  <TM_Mimic.label>Mimic</TM_Mimic.label>
+  <TM_Mimic.description>Os sem rosto copiam a capacidade aleatória de um mágico ou um lutador. Apenas uma capacidade pode ser preservada ao mesmo tempo. Essa capacidade é preservada após o uso; reutilizar a capacidade substitui a capacidade preservada.</TM_Mimic.description>
+
+
+  <!-- Reversal Start -->
+
+  <TM_Reversal.label>Retrocesso</TM_Reversal.label>
+  <TM_Reversal.description>Vira a energia cinética de todos os ataques de combate próximo e projéteis por um curto período. Os sem rosto não terão danos com estes ataques. O uso direto e os ataques explosivos não podem ser cancelados.</TM_Reversal.description>
+
+
+  <!-- Transpose Start -->
+
+  <TM_Transpose.label>Remodelação</TM_Transpose.label>
+  <TM_Transpose.description>Mudem de lugar com o peão-alvo. Sem rosto e alvo serão desorientados após a transposição. Um sem rosto terá a capacidade de retroceder por um curto período.
+Tempo de aplicação: .8s
+Distância: 40
+Retrocesso: 15</TM_Transpose.description>
+
+  <TM_Transpose_I.label>Mudança I</TM_Transpose_I.label>
+  <TM_Transpose_I.description>Mudem de lugar com o peão-alvo. Sem rosto e alvo serão desorientados após a transposição. Um sem rosto terá a capacidade de retroceder por um curto período.
+Tempo de aplicação: .6s
+Distância: 44
+Retrocesso: 13</TM_Transpose_I.description>
+
+  <TM_Transpose_II.label>Mudança II</TM_Transpose_II.label>
+  <TM_Transpose_II.description>Mudem de lugar com o peão-alvo. Sem rosto e alvo serão desorientados após a transposição. Um sem rosto terá a capacidade de retroceder por um curto período.
+Tempo de aplicação: .4s
+Distância: 47
+Retrocesso: 11</TM_Transpose_II.description>
+
+  <TM_Transpose_III.label>Mudança III</TM_Transpose_III.label>
+  <TM_Transpose_III.description>Mudem de lugar com o peão-alvo. Sem rosto e alvo serão desorientados após a transposição. Um sem rosto terá a capacidade de retroceder por um curto período.
+Tempo de aplicação: .2s
+Distância: 50
+Retrocesso: 9</TM_Transpose_III.description>
+
+
+  <!-- Possess -->
+
+  <TM_Possess.label>Dominação</TM_Possess.label>
+  <TM_Possess.description>Como um boneco, o sem rosto aplica a mente e o corpo para causar uma insegurança extrema no peão alvo - permitindo-lhes controlar o seu objetivo através da sugestão mental e da coerção.
+
+Os inimigos mais próximos dificilmente descobririam a posse imediatamente, a menos que percebessem a atividade suspeita. Se descobertos, facções neutras e amigáveis considerarão a agressão de um peão obcecado como um ato de hostilidade.
+
+Somente seres com a mente humana capazes de duvidar de si mesmos podem estar obcecados.</TM_Possess.description>
+
+
+</LanguageData>

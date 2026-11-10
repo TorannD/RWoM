@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_CommanderTD.stages.0.label>Peão carismático</TM_CommanderTD.stages.0.label>
+  <TM_CommanderTD.stages.0.description>Estava emocionalmente carregado! Não sei o que é, mas coisas boas acontecem em torno de um comandante tão carismático.</TM_CommanderTD.stages.0.description>
+
+  <TM_CommanderTD_I.stages.0.label>Comandante carismático</TM_CommanderTD_I.stages.0.label>
+  <TM_CommanderTD_I.stages.0.description>Estava emocionalmente carregado! Coisas boas acontecem em torno de um comandante tão carismático, embora não esteja claro como.</TM_CommanderTD_I.stages.0.description>
+
+  <TM_CommanderTD_II.stages.0.label>Líder carismático</TM_CommanderTD_II.stages.0.label>
+  <TM_CommanderTD_II.stages.0.description>Estava emocionalmente carregado! Há coisas boas a acontecer em torno de um líder tão carismático.</TM_CommanderTD_II.stages.0.description>
+
+  <TM_CommanderTD_III.stages.0.label>Visionário carismático</TM_CommanderTD_III.stages.0.label>
+  <TM_CommanderTD_III.stages.0.description>Estava emocionalmente carregado! Há coisas boas a acontecer em torno de um visionário tão carismático.</TM_CommanderTD_III.stages.0.description>
+
+  <TM_TaskMasterTD.stages.0.label>Assistente de tarefas</TM_TaskMasterTD.stages.0.label>
+  <TM_TaskMasterTD.stages.0.description>Cada aspecto da minha vida tornou-se microcontrolável; Mal tenho tempo para comer bem.</TM_TaskMasterTD.stages.0.description>
+
+
+</LanguageData>

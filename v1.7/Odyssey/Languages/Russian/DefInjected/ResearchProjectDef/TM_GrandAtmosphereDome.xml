@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GrandAtmosphereDomes.label>большие атмосферные купола</TM_GrandAtmosphereDomes.label>
+  <TM_GrandAtmosphereDomes.description>Позволяет строить купола, которые после ритуала создают пригодную для дыхания атмосферу на всей локальной карте, расходуя маготопливо.</TM_GrandAtmosphereDomes.description>
+</LanguageData>

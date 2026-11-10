@@ -1,0 +1,12 @@
+<LanguageData><!-- Sprint start-->
+	<TM_Gladiator_Sprint.label>Спринт</TM_Gladiator_Sprint.label>
+	<!-- Fortitude start-->
+	<TM_Gladiator_Fortitude.label>Сила духа</TM_Gladiator_Fortitude.label>
+	<!-- Grapple Start-->
+	<Projectile_Grapple.label>абордажный крюк</Projectile_Grapple.label>
+	<!-- Cleave Start-->
+	<Projectile_Cleave.label>Раскол</Projectile_Cleave.label>
+	<!-- Whirlwind-->
+	<FlyingObject_Whirlwind.label>летающий объект</FlyingObject_Whirlwind.label>
+	<Projectile_Whirlwind.label>Вихрь</Projectile_Whirlwind.label>
+</LanguageData>

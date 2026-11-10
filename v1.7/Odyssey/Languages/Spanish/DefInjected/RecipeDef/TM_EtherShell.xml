@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_MakeCastScroll_EtherShell.label>fabricar pergamino de lanzamiento de envoltura etérea</TM_MakeCastScroll_EtherShell.label>
+  <TM_MakeCastScroll_EtherShell.description>Requiere un mago que conozca Envoltura etérea. Protege al mago o a un peón aliado del vacío y del frío extremo durante un día. Otorga resistencia total al vacío, evita las quemaduras por vacío y reduce la temperatura mínima confortable en 300 °C. No protege de balas, fuego ni calor, ni cura heridas. No se acumula ni se renueva mientras está activa. Se usa desde el inventario. Consume un pergamino tras un lanzamiento exitoso. Cualquiera puede usarlo sin maná ni conocer magia. Duración fija de un día. Alcance: 12 casillas. Preparación: 1 segundo. Recarga: 60 segundos.</TM_MakeCastScroll_EtherShell.description>
+  <TM_MakeCastScroll_EtherShell.jobString>fabricando pergamino de lanzamiento de envoltura etérea.</TM_MakeCastScroll_EtherShell.jobString>
+  <TM_MakeSpellStaff_EtherShell.label>fabricar bastón cargado de envoltura etérea</TM_MakeSpellStaff_EtherShell.label>
+  <TM_MakeSpellStaff_EtherShell.description>Requiere un mago que conozca Envoltura etérea. Protege al mago o a un peón aliado del vacío y del frío extremo durante un día. Otorga resistencia total al vacío, evita las quemaduras por vacío y reduce la temperatura mínima confortable en 300 °C. No protege de balas, fuego ni calor, ni cura heridas. No se acumula ni se renueva mientras está activa. Se equipa como arma principal. Tiene 10 usos, no se recarga y desaparece tras el último uso. Cualquiera puede usarlo sin maná ni conocer magia. Duración fija de un día. Alcance: 12 casillas. Preparación: 1 segundo. Recarga: 60 segundos.</TM_MakeSpellStaff_EtherShell.description>
+  <TM_MakeSpellStaff_EtherShell.jobString>fabricando bastón cargado de envoltura etérea.</TM_MakeSpellStaff_EtherShell.jobString>
+</LanguageData>

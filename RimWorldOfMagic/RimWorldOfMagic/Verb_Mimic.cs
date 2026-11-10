@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using Verse;
 using AbilityUser;
@@ -54,6 +54,11 @@ namespace TorannMagic
 
         protected override bool TryCastShot()
         {
+            if (ClassProgression.FacelessMartialPath.Path(CasterPawn) != null)
+            {
+                burstShotsLeft = 0;
+                return CanHitTargetFrom(CasterPawn.Position, currentTarget) && ClassProgression.FacelessImitation.Learn(CasterPawn, currentTarget.Pawn);
+            }
             bool result = false;
 
             if (this.currentTarget != null && base.CasterPawn != null && this.currentTarget.Thing is Pawn targetPawn)

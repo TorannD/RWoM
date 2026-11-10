@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +11,15 @@ namespace TorannMagic.Golems
 {
     public class TMPawnGolem : TMPawnSummoned
     {
+
+        public void ToggleRangedAttacks()
+        {
+            rangedToggle = !rangedToggle;
+            if (rangedToggle)
+            {
+                this.jobs.EndCurrentJob(JobCondition.InterruptForced);
+            }
+        }
         public Material frameMatInt = null;
         public List<DrawMesh> drawQueue = new List<DrawMesh>();
         public List<GolemDrawClass> drawTempMesh = new List<GolemDrawClass>();
@@ -564,14 +573,7 @@ namespace TorannMagic.Golems
                 command_Toggle.defaultDesc = "CommandHoldFireDesc".Translate();
                 command_Toggle.icon = ContentFinder<Texture2D>.Get("UI/Commands/HoldFire");
                 command_Toggle.hotKey = KeyBindingDefOf.Misc6;
-                command_Toggle.toggleAction = delegate
-                {
-                    rangedToggle = !rangedToggle;
-                    if (rangedToggle)
-                    {
-                        this.jobs.EndCurrentJob(JobCondition.InterruptForced);
-                    }
-                };
+                command_Toggle.toggleAction = ToggleRangedAttacks;
                 command_Toggle.isActive = (() => rangedToggle);
                 gizmoList.Add((Gizmo)command_Toggle);
             }

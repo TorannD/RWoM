@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Minion_Head.label>capítulo</Minion_Head.label>
+  <Minion_Brain.label>cérebro</Minion_Brain.label>
+  <Minion_Eye.label>olho</Minion_Eye.label>
+  <Minion_RightHorn.label>corno direito</Minion_RightHorn.label>
+  <Minion_LeftHorn.label>Chifre esquerdo</Minion_LeftHorn.label>
+  <Minion_LeftArm.label>mão esquerda</Minion_LeftArm.label>
+  <Minion_RightArm.label>mão direita</Minion_RightArm.label>
+  <Minion_Mouth.label>boca</Minion_Mouth.label>
+  <Minion_Jaw.label>mandíbulas</Minion_Jaw.label>
+  <Minion_Core.label>coração</Minion_Core.label>
+
+
+</LanguageData>

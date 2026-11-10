@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_Flesh_Casting>Підготовка: {0}.</TM_Flesh_Casting>
+  <TM_Flesh_HealthLevel>рівень {0}</TM_Flesh_HealthLevel>
+  <TM_Flesh_HealthRank>ранг {0}/{1}</TM_Flesh_HealthRank>
+  <TM_Flesh_HealthMobility>Швидкість пересування: +{0}%</TM_Flesh_HealthMobility>
+  <TM_Flesh_HealthStrength>Шкода в ближньому бою: +{0}%</TM_Flesh_HealthStrength>
+  <TM_Flesh_HealthIndustry>Загальна швидкість роботи: +{0}% (включно з виготовленням)</TM_Flesh_HealthIndustry>
+  <TM_Flesh_HealthCapacity>Максимальна спрага: +{0} (усього: {1})</TM_Flesh_HealthCapacity>
+  <TM_Flesh_Title>Розвиток плоті</TM_Flesh_Title>
+  <TM_Flesh_Open>Відкрити постійний розвиток плоті цієї піднятої нежиті.</TM_Flesh_Open>
+  <TM_Flesh_Stats>Рівень {0}   •   Досвід {1}/{2}   •   Очки навичок: {3}</TM_Flesh_Stats>
+  <TM_Flesh_Experience>Досвід</TM_Flesh_Experience>
+  <TM_Flesh_Thirst>Спрага: {0}/{1}</TM_Flesh_Thirst>
+  <TM_Flesh_Stop>Зупинити Бенкет цієї нежиті</TM_Flesh_Stop>
+  <TM_Flesh_StopAll>Зупинити Бенкети всієї підлеглої нежиті</TM_Flesh_StopAll>
+  <TM_Flesh_StopDesc>Власник зупиняє Бенкет без витрат; спрага та час відновлення залишаються.</TM_Flesh_StopDesc>
+  <TM_Flesh_Rage>Лють Бенкету: укуси тривають, доки спрага не знизиться до 20% або власник не накаже зупинитися.</TM_Flesh_Rage>
+  <TM_Flesh_Gate>Умови розблокування Бенкету — розвиньте всі наведені нижче навички до максимуму:</TM_Flesh_Gate>
+  <TM_Flesh_Upgrade>Підвищити (1 очко)</TM_Flesh_Upgrade>
+  <TM_Flesh_Use>Застосувати</TM_Flesh_Use>
+  <TM_Flesh_Cooldown>Готовність через {0} с</TM_Flesh_Cooldown>
+  <TM_Flesh_Ready>Готово</TM_Flesh_Ready>
+  <TM_Flesh_Active>Діє: {0} с</TM_Flesh_Active>
+  <TM_Flesh_Devour>Поїдання плоті</TM_Flesh_Devour>
+  <TM_Flesh_DevourDesc>Поглинає труп на відстані ближнього бою: досвід залежить від залишку м'яса та свіжості. Кожні 5 одиниць м'яса знижують спрагу на 1. Живі органічні цілі: 4/6/8 шкоди залежно від рангу, без досвіду. Відновлення: 5 секунд. Успішний укус живої цілі також додає 1% токсичного отруєння з урахуванням токсичної стійкості.</TM_Flesh_DevourDesc>
+  <TM_Flesh_Restore>Відновлення плоті</TM_Flesh_Restore>
+  <TM_Flesh_RestoreDesc>Повністю лікує травми, шрами й відновлює відсутні природні частини тіла. Імпланти залишаються. Ціна: ВЕСЬ досвід, накопичений на поточному рівні (має бути більше нуля). Рівні й очки залишаються. Відновлення за рангами: 1000/900/800 секунд.</TM_Flesh_RestoreDesc>
+  <TM_Flesh_Empower>Посилення плоті</TM_Flesh_Empower>
+  <TM_Flesh_EmpowerDesc>Підготовка: 2 секунди; переривання нічого не витрачає. Швидкість пересування та загальної роботи: +10/20/30% за рангами. Ціна: +10 спраги. Тривалість і відновлення: 300 секунд. Після завершення: 10% шанс завдати природним кінцівкам шкоди в розмірі 10% їхнього максимального здоров'я.</TM_Flesh_EmpowerDesc>
+  <TM_Flesh_Harden>Зміцнення шкіри</TM_Flesh_Harden>
+  <TM_Flesh_HardenDesc>Підготовка: 2 секунди; переривання нічого не витрачає. Броня проти гострої та тупої шкоди: +20/35/50 відсоткових пунктів за рангами. Ціна: +15 спраги. Тривалість і відновлення: 300 секунд. Після завершення тулуб отримує шкоду в розмірі половини його максимального здоров'я.</TM_Flesh_HardenDesc>
+  <TM_Flesh_Feast>Бенкет плоті</TM_Flesh_Feast>
+  <TM_Flesh_FeastDesc>Підготовка: 5 секунд; переривання нічого не витрачає. Один ранг. Потрібен максимальний розвиток усіх інших навичок. Встановлює спрагу на 50%; +1 спраги за секунду протягом 60 секунд. Успішні удари в ближньому бою: 20% шанс поглинути органічну частину тіла, включно з життєво важливими органами. Максимальна спрага викликає лють; за 0 спраги Бенкет завершується. Відновлення: 1000 секунд. Під час Бенкету кожна атака в ближньому бою — укус; успішний укус має окремий шанс 30% заразити інфекцією вцілілу органічну рану. Промахи та повністю поглинуті удари не спричиняють цих ефектів. Успішний укус живої цілі також додає 1% токсичного отруєння з урахуванням токсичної стійкості.</TM_Flesh_FeastDesc>
+  <TM_Flesh_Mobility>Рухлива плоть</TM_Flesh_Mobility>
+  <TM_Flesh_MobilityDesc>Кожен ранг додає +2% швидкості пересування. 10 рангів: разом +20%.</TM_Flesh_MobilityDesc>
+  <TM_Flesh_Strength>Могутня плоть</TM_Flesh_Strength>
+  <TM_Flesh_StrengthDesc>Кожен ранг додає +3% шкоди в ближньому бою. 10 рангів: разом +30%.</TM_Flesh_StrengthDesc>
+  <TM_Flesh_Industry>Працьовита плоть</TM_Flesh_Industry>
+  <TM_Flesh_IndustryDesc>Кожен ранг додає +2% загальної швидкості роботи; бонус до виготовлення враховується лише один раз. 10 рангів: разом +20%.</TM_Flesh_IndustryDesc>
+  <TM_Flesh_Capacity>Місткість плоті</TM_Flesh_Capacity>
+  <TM_Flesh_CapacityDesc>Кожен ранг додає 10 максимальної спраги. 8 рангів: 20 → 100. Природне зростання спраги: +10 за добу. За 80%: −10% пересування/роботи; за максимуму: −20%.</TM_Flesh_CapacityDesc>
+  <TM_FleshRejectUnavailable>Ця нежить має бути живою, не збитою з ніг, під вашим контролем і без психічного зриву.</TM_FleshRejectUnavailable>
+  <TM_FleshRejectUnlearned>Цю навичку ще не вивчено.</TM_FleshRejectUnlearned>
+  <TM_FleshRejectCooldown>Ця навичка відновлюється.</TM_FleshRejectCooldown>
+  <TM_FleshRejectActive>Цей ефект уже діє.</TM_FleshRejectActive>
+  <TM_FleshRejectNoExperience>Для відновлення потрібен досвід поточного рівня.</TM_FleshRejectNoExperience>
+  <TM_Flesh_ActiveKind>Активна</TM_Flesh_ActiveKind>
+  <TM_Flesh_PassiveKind>Пасивна</TM_Flesh_PassiveKind>
+  <TM_Flesh_NoPoints>Бракує очок навичок</TM_Flesh_NoPoints>
+  <TM_Flesh_MaxRank>Максимальний ранг</TM_Flesh_MaxRank>
+  <TM_Flesh_ThirstLabel>Спрага</TM_Flesh_ThirstLabel>
+  <TM_Flesh_ThirstTip>Накопичений голод: +10 за добу. Поїдання плоті знижує Спрагу. За 80%: −10% пересування/роботи; за максимуму: −20%.</TM_Flesh_ThirstTip>
+  <TM_Flesh_DebugLevelUp>+1 рівень</TM_Flesh_DebugLevelUp>
+  <TM_Flesh_StatTotal>Загальний множник розвитку плоті: {0}</TM_Flesh_StatTotal>
+  <TM_Flesh_HealthRemaining>Залишилося {0} с</TM_Flesh_HealthRemaining>
+  <TM_Flesh_HealthRage>Неконтрольована лють</TM_Flesh_HealthRage>
+  <TM_Flesh_HealthEmpower>Швидкість пересування та загальна швидкість роботи: +{0}%.</TM_Flesh_HealthEmpower>
+  <TM_Flesh_HealthHarden>Броня від гострих і тупих ударів: +{0} відсоткових пунктів.</TM_Flesh_HealthHarden>
+  <TM_Flesh_HealthFeast>Бенкет активний. Поточна Спрага: {1}/{2}. Лють триває, доки Спрага не знизиться до 20% або господар не зупинить її.</TM_Flesh_HealthFeast>
+  <TM_Flesh_BiteRules>Поза Бенкетом атака нежиті в ближньому бою має 10% шанс стати критичним укусом (+50% шкоди). Успішні укуси додають 1% токсичного отруєння з урахуванням токсичної стійкості.</TM_Flesh_BiteRules>
+</LanguageData>

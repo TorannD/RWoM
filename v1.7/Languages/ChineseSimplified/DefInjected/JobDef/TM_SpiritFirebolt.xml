@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritFirebolt.reportString>透过宿主施放火焰箭。</TM_SpiritFirebolt.reportString>
+  <TM_SpiritIcebolt.reportString>透过宿主施放冰箭。</TM_SpiritIcebolt.reportString>
+  <TM_SpiritFireball.reportString>透过宿主施放火球。</TM_SpiritFireball.reportString>
+  <TM_SpiritSnowball.reportString>透过宿主施放雪球。</TM_SpiritSnowball.reportString>
+  <TM_SpiritFireclaw.reportString>正通过宿主施展火爪。</TM_SpiritFireclaw.reportString>
+  <TM_SpiritBlizzard.reportString>正通过灵体宿主施放暴风雪。</TM_SpiritBlizzard.reportString>
+  <TM_SpiritFrostRay.reportString>正通过灵体宿主施放冰霜射线。</TM_SpiritFrostRay.reportString>
+  <TM_SpiritFrostRay_I.reportString>正通过灵体宿主施放冰霜射线。</TM_SpiritFrostRay_I.reportString>
+  <TM_SpiritFrostRay_II.reportString>正通过灵体宿主施放冰霜射线。</TM_SpiritFrostRay_II.reportString>
+  <TM_SpiritFrostRay_III.reportString>正通过灵体宿主施放冰霜射线。</TM_SpiritFrostRay_III.reportString>
+  <TM_SpiritFirestorm.reportString>正通过灵体宿主施放火焰风暴。</TM_SpiritFirestorm.reportString>
+</LanguageData>

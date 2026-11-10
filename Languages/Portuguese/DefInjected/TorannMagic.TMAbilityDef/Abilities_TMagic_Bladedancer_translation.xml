@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- blade focus -->
+
+  <TM_BladeFocus.label>Treino de lâmina</TM_BladeFocus.label>
+  <TM_BladeFocus.description>Um treino que melhora a tecnologia e a habilidade da posse de armas de combate próximo e aumenta o status de espadachim. Cada nível vai alterar a linha de dançar com as lâminas para refletir seu nível de habilidade.
+
+Rangi:
+Espada: Velocidade + 0.15c/s, MBT -3%, Chance de impacto + 3%, Inclinação + 5%, Precisão de tiro. -20%, Velocidade total -10%
+Lâmina Mestre: Velocidade + 0.2c/s, MBT -5%, Chance de acertar + 6%, Inclinação + 10%, Precisão de tiro. -25%, Velocidade total -8%
+Dançando com lâmina: Velocidade + 0.3c/s, MBT -8%, Chance de acertar + 10%, Inclinação + 15%, Precisão de tiro. -28%, Velocidade total de funcionamento -6%, Limite de dor + 5%
+Lendário dançante com lâmina: Velocidade + 0.4c/s, MBT -10%, Chance de acertar + 15%, Inclinação + 20%, Precisão de tiro. -30%, Velocidade total de funcionamento -5%, Limite de dor + 10%</TM_BladeFocus.description>
+
+
+  <!-- blade art start -->
+
+  <TM_BladeArt.label>Treino Corporal</TM_BladeArt.label>
+  <TM_BladeArt.description>Treino que aumenta a capacidade física.
+
+Nível 0: Movimento + 10%, Manipulação + 10%
+Nível 1: Movimento + 15%, Manipulação + 15%
+Nível 2: Movimento + 20%, Manipulação + 20%, Respiração + 10%
+Nível 3: Movimento + 25%, Manipulação + 25%, Respiração + 15%, Transbordamento de sangue + 10%, Filtragem de sangue + 10%</TM_BladeArt.description>
+
+
+  <!-- BladeSpin Start -->
+
+  <TM_BladeSpin.label>Rotação dos Klinks</TM_BladeSpin.label>
+  <TM_BladeSpin.description>O Mestre da Lâmina parece estar vago durante um segundo, atingindo todos os alvos mais próximos com uma escala de aço.</TM_BladeSpin.description>
+
+
+  <!-- Seismic Slash Start -->
+
+  <TM_SeismicSlash.label>Corte sísmico</TM_SeismicSlash.label>
+  <TM_SeismicSlash.description>Ao conter a alma insensível da lâmina, o espadachim dá um golpe que rompe o tecido do espaço ao longo da linha.</TM_SeismicSlash.description>
+
+
+  <!-- Phase Strike Start -->
+
+  <TM_PhaseStrike.label>Tiro de fase</TM_PhaseStrike.label>
+  <TM_PhaseStrike.description>Dançando com as lâminas, esbanjando o seu foco para deslizar-se entre a realidade, aparecendo no local escolhido para executar um forte golpe contra os inimigos que não suspeitam.
+
+Preparação: .3s
+Retrocesso: 25s
+Raio: 30</TM_PhaseStrike.description>
+
+  <TM_PhaseStrike_I.label>Tiro de fase (I)</TM_PhaseStrike_I.label>
+  <TM_PhaseStrike_I.description>Dançando com as lâminas, esbanjando o seu foco para deslizar-se entre a realidade, aparecendo no local escolhido para executar um forte golpe contra os inimigos que não suspeitam.
+
+Preparação: .2s
+Retrocesso: 23s
+Raio: 35</TM_PhaseStrike_I.description>
+
+  <TM_PhaseStrike_II.label>Tiro de fase (II)</TM_PhaseStrike_II.label>
+  <TM_PhaseStrike_II.description>Dançando com as lâminas, esbanjando o seu foco para deslizar-se entre a realidade, aparecendo no local escolhido para executar um forte golpe contra os inimigos que não suspeitam.
+
+Preparação: .1s
+Retrocesso: 21s
+Raio: 40</TM_PhaseStrike_II.description>
+
+  <TM_PhaseStrike_III.label>Tiro de fase (III)</TM_PhaseStrike_III.label>
+  <TM_PhaseStrike_III.description>Dançando com as lâminas, esbanjando o seu foco para deslizar-se entre a realidade, aparecendo no local escolhido para executar um forte golpe contra os inimigos que não suspeitam.
+
+Preparação: 0s
+Retrocesso: 20s
+Raio: 45</TM_PhaseStrike_III.description>
+
+
+  <!-- Фазовый выстрел Start -->
+
+</LanguageData>

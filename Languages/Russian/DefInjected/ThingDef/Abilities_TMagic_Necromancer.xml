@@ -1,0 +1,18 @@
+<LanguageData><!-- Raise Undead-->
+	<Projectile_RaiseUndead.label>Поднять нежить</Projectile_RaiseUndead.label>
+	<!-- death mark-->
+	<Projectile_DeathMark.label>Метка смерти</Projectile_DeathMark.label>
+	<!-- fog of torment-->
+	<Projectile_FogOfTorment.label>туман мучений</Projectile_FogOfTorment.label>
+	<!-- consume corpse-->
+	<Projectile_ConsumeCorpse.label>поглощение трупа</Projectile_ConsumeCorpse.label>
+	<Projectile_ConsumeCorpse_Mass.label>массовое поглощение трупов</Projectile_ConsumeCorpse_Mass.label>
+	<!-- corpse explosion-->
+	<Projectile_CorpseExplosion.label>взрыв трупа</Projectile_CorpseExplosion.label>
+	<!-- Death Bolt-->
+	<Projectile_DeathBolt.label>смертельный болт</Projectile_DeathBolt.label>
+	<Projectile_DeathBolt_I.label>смертельный болт</Projectile_DeathBolt_I.label>
+	<Projectile_DeathBolt_II.label>смертельный болт</Projectile_DeathBolt_II.label>
+	<Projectile_DeathBolt_III.label>смертельный болт</Projectile_DeathBolt_III.label>
+	<FlyingObject_DeathBolt.label>взрыв</FlyingObject_DeathBolt.label>
+</LanguageData>

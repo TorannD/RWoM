@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Teleporter.label>Teleportador</TM_Teleporter.label>
+  <TM_Teleporter.description>Plataforma de portaria usada para colocar cápsulas de teletransporte.</TM_Teleporter.description>
+
+  <TM_Teleporter_I.label>Teletransportador (I)</TM_Teleporter_I.label>
+  <TM_Teleporter_I.description>Plataforma de portaria usada para colocar cápsulas de teletransporte.</TM_Teleporter_I.description>
+
+  <TM_Teleporter_II.label>Teletransportador (II)</TM_Teleporter_II.label>
+  <TM_Teleporter_II.description>Plataforma de portaria usada para colocar cápsulas de teletransporte.</TM_Teleporter_II.description>
+
+  <TM_Teleporter_III.label>Teletransportador (III)</TM_Teleporter_III.label>
+  <TM_Teleporter_III.description>Plataforma de portaria usada para colocar cápsulas de teletransporte.</TM_Teleporter_III.description>
+
+  <TM_TeleportPod.label>Teletransporte</TM_TeleportPod.label>
+  <TM_TeleportPod.description>Um grande cilindro plano usado pelos bruxos para o transporte rápido entre as localidades.</TM_TeleportPod.description>
+
+  <TM_TeleportPod_I.label>Teletransporte (I)</TM_TeleportPod_I.label>
+  <TM_TeleportPod_I.description>Um grande cilindro plano usado pelos bruxos para o transporte rápido entre as localidades.</TM_TeleportPod_I.description>
+
+  <TM_TeleportPod_II.label>Local de transporte (II)</TM_TeleportPod_II.label>
+  <TM_TeleportPod_II.description>Um grande cilindro plano usado pelos bruxos para o transporte rápido entre as localidades.</TM_TeleportPod_II.description>
+
+  <TM_TeleportPod_III.label>Teletransporte (III)</TM_TeleportPod_III.label>
+  <TM_TeleportPod_III.description>Um grande cilindro plano usado pelos bruxos para o transporte rápido entre as localidades.</TM_TeleportPod_III.description>
+
+  <Portfuel.label>Combustível de teletransporte</Portfuel.label>
+  <Portfuel.description>A energia secreta está a ser derramada pelas garrafas de combustível. Usado para carregar portais.</Portfuel.description>
+
+  <TM_Heater.label>Aquecedor mágico</TM_Heater.label>
+  <TM_Heater.description>Torneira de espaço ativa em plano de fogo que pode ser usado para aquecer espaços fechados. Também pode ser usado para várias tarefas culinárias ou criativas. Dura cerca de 3 dias.</TM_Heater.description>
+
+  <TM_Cooler.label>Cooler mágico</TM_Cooler.label>
+  <TM_Cooler.description>Torneira ativa em plano de gelo que pode ser usado para resfriar espaços fechados.</TM_Cooler.description>
+
+  <TM_PowerNode.label>Nó de energia mágica</TM_PowerNode.label>
+  <TM_PowerNode.description>Um nó secreto de energia que fornece alimentação por um período limitado de tempo.</TM_PowerNode.description>
+
+  <TM_Sunlight.label>Luz do Sol</TM_Sunlight.label>
+  <TM_Sunlight.description>O bolso espacial que emite uma fonte de luz contínua é forte o suficiente para criar a colheita.</TM_Sunlight.description>
+
+  <TM_Sentinel.label>Sentinel</TM_Sentinel.label>
+  <TM_Sentinel.description>Esta estátua é feita de pedra e tem a forma de uma criatura horrorosa. A estátua é menor do que o homem médio e tem um aspecto de corte rude, embora, como você notou, os olhos, orelhas e garras parecem ter detalhes menores.
+
+Quando você se aproxima da estátua, o brilho assustador nos olhos de uma guarda de pedra parece estar a seguir-te, e você sente que está a ser observado.</TM_Sentinel.description>
+
+  <TM_MageLightTD.label>luz mágica</TM_MageLightTD.label>
+  <TM_MageLightTD.description>A fonte de luz criada pelo mágico.</TM_MageLightTD.description>
+
+  <TM_LightPod.label>Raio de luz</TM_LightPod.label>
+  <TM_LightPod.description>Mover-se pelo raio de luz.</TM_LightPod.description>
+
+
+</LanguageData>

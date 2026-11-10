@@ -11,12 +11,8 @@ using Verse.AI;
 
 namespace TorannMagic
 {
-    public class Verb_MindKiller : Verb_UseAbility
+    public class Verb_MindKiller : ClassProgression.Verb_SpiritTargetable
     {
-        float radius = 15f;
-        float penetrationChance = .5f;
-        int targetsMax = 8;
-        float maxMoodBurn = .3f;
 
         protected override bool TryCastShot()
         {
@@ -25,18 +21,20 @@ namespace TorannMagic
             bool flag = caster != null && !caster.Dead && !caster.Downed;
             if (flag)
             {
-                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
+                var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(caster, Ability);
+                if (owner == null) return false;
+                CompAbilityUserMagic comp = owner.GetCompAbilityUserMagic();
                 int pwrVal = 0;
                 int verVal = 0;
                 if (comp != null && comp.MagicData != null)
                 {
-                    pwrVal = TM_Calc.GetSkillPowerLevel(caster, this.Ability.Def as TMAbilityDef, false);
-                    verVal = TM_Calc.GetSkillVersatilityLevel(caster, this.Ability.Def as TMAbilityDef, false);
+                    pwrVal = TM_Calc.GetSkillPowerLevel(owner, this.Ability.Def as TMAbilityDef, false);
+                    verVal = TM_Calc.GetSkillVersatilityLevel(owner, this.Ability.Def as TMAbilityDef, false);
                 }
-                radius += (verVal * 2);
-                penetrationChance += (verVal * .1f);
-                targetsMax += (pwrVal * 2);
-                maxMoodBurn = .3f + (pwrVal * .08f);
+                float radius = 15f + verVal * 2;
+                float penetrationChance = .5f + verVal * .1f;
+                int targetsMax = 8 + pwrVal * 2;
+                float maxMoodBurn = .3f + (pwrVal * .08f);
 
                 SoundInfo info = SoundInfo.InMap(new TargetInfo(caster.Position, caster.Map, false), MaintenanceType.None);
                 info.volumeFactor = .8f;
@@ -86,7 +84,9 @@ namespace TorannMagic
                                 DrawEffects(caster, p);
                                 Need n = p.needs.mood;
                                 float curLvl = Mathf.Clamp(n.CurLevel, 0, maxMoodBurn);
+                                var trial = ClassProgression.EmpathTrials.CaptureMood(this.Ability, p, caster);
                                 n.CurLevel -= curLvl;
+                                ClassProgression.EmpathTrials.CompleteMood(trial);
                                 TM_Action.DamageEntities(p, null, n.CurLevel * 20f, DamageDefOf.Stun, caster);
                                 if(Rand.Chance(curLvl + .25f) && p.Faction != caster.Faction)
                                 {
@@ -110,7 +110,7 @@ namespace TorannMagic
                 }
             }
 
-            return true;
+            return flag;
         }  
         
         public void DrawEffects(Pawn caster, Pawn target)

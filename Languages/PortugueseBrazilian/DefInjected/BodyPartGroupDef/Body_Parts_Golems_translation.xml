@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- GOLEM Generic -->
+
+  <Golem_Eyes.label>olhos</Golem_Eyes.label>
+  <Golem_Arms.label>esmagador</Golem_Arms.label>
+
+
+  <!-- MECHA GOLEM -->
+
+  <Mecha_LeftArm.label>mão esquerda</Mecha_LeftArm.label>
+  <Mecha_LeftArm_Axe.label>peles-machado</Mecha_LeftArm_Axe.label>
+  <Mecha_LeftArm_Sword.label>peles-espada</Mecha_LeftArm_Sword.label>
+  <Mecha_RightArm.label>mão direita</Mecha_RightArm.label>
+  <Mecha_RightArm_Hammer.label>martelo mecânico</Mecha_RightArm_Hammer.label>
+  <Mecha_Base.label>corpo partido</Mecha_Base.label>
+
+
+  <!-- FLESH GOLEM -->
+
+  <Flesh_Eyes.label>olhos</Flesh_Eyes.label>
+  <Flesh_Tusks.label>presas</Flesh_Tusks.label>
+  <Flesh_Horns.label>chifres</Flesh_Horns.label>
+  <Flesh_Arms.label>esmagador</Flesh_Arms.label>
+  <Flesh_LeftArm_Brace.label> </Flesh_LeftArm_Brace.label>
+  <Flesh_LeftArm_Cleaver.label>lenha</Flesh_LeftArm_Cleaver.label>
+  <Flesh_RightArm_Brace.label> </Flesh_RightArm_Brace.label>
+  <Flesh_RightArm_Cleaver.label>lenha</Flesh_RightArm_Cleaver.label>
+
+
+  <!-- HOLLOW GOLEM -->
+
+  <Hollow_Axe.label>Machado espremido</Hollow_Axe.label>
+  <Hollow_Staff.label>bastão expelido</Hollow_Staff.label>
+  <Hollow_Claws.label>garras crespas</Hollow_Claws.label>
+  <Hollow_Decay.label>desintegração do toque</Hollow_Decay.label>
+  <Hollow_FocusGems.label>pedra de foco</Hollow_FocusGems.label>
+
+
+  <!-- STONE GOLEM -->
+
+  <Stone_Arms.label>mãos</Stone_Arms.label>
+
+
+  <!-- MAHARAL GOLEM -->
+
+  <Maharal_Arms.label>mãos</Maharal_Arms.label>
+
+
+</LanguageData>

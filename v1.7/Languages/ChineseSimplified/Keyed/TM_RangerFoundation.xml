@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadRangerTraining>学习游侠训练：获得传统野外技能，部分工作的效率降低（永久选择）</TM_ReadRangerTraining>
+  <TM_ReadRangerTrailLore>学习识途：提高露天搬运货物时的移动速度（永久选择）</TM_ReadRangerTrailLore>
+  <TM_TrailLoreName>识途</TM_TrailLoreName>
+  <TM_TrailLoreTraining>露天搬运货物时移动速度提高2%。每阶再提高2个百分点，最高10%。</TM_TrailLoreTraining>
+</LanguageData>

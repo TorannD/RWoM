@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Arcane forge alternate recipe's -->
+
+  <ArcaneForge_ElephantSpear.label>списи слона</ArcaneForge_ElephantSpear.label>
+  <ArcaneForge_ElephantSpear.description>Список слона виготовлено з використанням бивнів слона і, як правило, є символом статусу, призначеним для мисливців за головами або вождів племені. На древці вигравірувано незначні чари, що ще більше підвищують бойові здібності користувача.
+
+Ця зброя зачарована і дає додаткові переваги навченим магам і бійцям:
+Максимальна Енергія: +10%
+Збільшення Урона: +10%
+Таємний Опір: +20%</ArcaneForge_ElephantSpear.description>
+  <ArcaneForge_ElephantSpear.jobString>Кувати списи слона</ArcaneForge_ElephantSpear.jobString>
+
+  <ArcaneForge_ThrumboAxe.label>сокира трумбо</ArcaneForge_ThrumboAxe.label>
+  <ArcaneForge_ThrumboAxe.description>Сокира, створена з використанням рогів Трумбо, які сплавляються разом із застібкою, зробленою з магіциту. Ця застібка зберігає таємний потенціал і передає його у вигляді фізичної сили при помаху сокири, дозволяючи йому наносити потужні удари, здатні розсікти кількох супротивників. На древці також вигравірувані магічні руни, щоб збільшити силу власника.
+
+Ця зброя зачарована і дає додаткові переваги навченим магам і бійцям:
+Максимальна Енергія: +10%
+Збільшення Урона: +20%
+Таємний Опір: +30%</ArcaneForge_ThrumboAxe.description>
+  <ArcaneForge_ThrumboAxe.jobString>Кувати сокиру трумбо</ArcaneForge_ThrumboAxe.jobString>
+
+  <ArcaneForge_ThrumboSaber.label>шабля трумбо</ArcaneForge_ThrumboSaber.label>
+  <ArcaneForge_ThrumboSaber.description>Гостре, як бритва, леза, викуте з рогу трамбо і наповнене таємною енергією. Шабля трамбо легше металевих лез, і її леза може прорізати будь-яку броню, крім самої товстої. Багато майстрів клинка віддають перевагу цій зброї, оскільки вона розрахована на швидкість і смертоносність. Додаткові заклинання також можуть прискорити користувачів, подвоюючи їх швидкість атаки на короткий період.
+
+Ця зброя зачарована і дає додаткові переваги навченим магам і бійцям:
+Перезарядка здібностей: -10%
+Збільшення Урона: +10%
+Швидкість під час удару (25%)</ArcaneForge_ThrumboSaber.description>
+  <ArcaneForge_ThrumboSaber.jobString>Кувати шаблю трумбо</ArcaneForge_ThrumboSaber.jobString>
+
+  <ArcaneForge_ElephantBow.label>Цибуля слона</ArcaneForge_ElephantBow.label>
+  <ArcaneForge_ElephantBow.description>Цибуля у формі слонів&apos;їх бивнів. Бівні освячуються, щоб зменшити жорсткість і зменшити вагу, і розм&apos;якшуються, замочуючи їх у магічній суміші, яка збільшує гнучкість. Цибуля слона пропонує значні поліпшення в дальності і точності для далеких цілей над великою цибулею, хоча вона трохи складніша в обігу.
+
+Цибуля слона прикрашена гравіюванням з незначними чарами і є кращою зброєю багатьох досвідчених рейнджерів і мисливців.
+
+Ця зброя зачарована і дає додаткові переваги навченим магам і бійцям:
+Максимальна Енергія: +5%
+Відновлення Енергії: +5%
+Збільшення Урона: +10%
+Можливість Перезарядки: -10%</ArcaneForge_ElephantBow.description>
+  <ArcaneForge_ElephantBow.jobString>Кувати цибулю слона</ArcaneForge_ElephantBow.jobString>
+
+  <ArcaneForge_ThrumBow.label>Цибуля трумбо</ArcaneForge_ThrumBow.label>
+  <ArcaneForge_ThrumBow.description>Цибуля, зроблена з рогу трумбо. Ріг освячується, щоб зменшити вагу, і розм&apos;якшується, замочуючи його в магічній суміші, яка надає Рогу дивовижну гнучкість. Цибуля додатково посилюється за допомогою вбудованих чар і таємних гравюр, які переміщуються по всій довжині цибулі. Кажуть, що цибуля майже чутлива і здатна визначити намічену мету через ментальний зв&apos;язок з власником. Стріли, випущені з цієї цибулі, майже завжди влучали в намічену ціль. Однак цей ефект має тенденцію обманювати власні можливості користувачів.
+
+Ця зброя зачарована і дає додаткові переваги навченим магам і бійцям:
+Максимальна Енергія: +20%
+Відновлення Енергії: +10%
+Збільшення Урона: +20%
+Можливість Перезарядки: -10%
+Клас XP: -20%</ArcaneForge_ThrumBow.description>
+  <ArcaneForge_ThrumBow.jobString>Кувати цибулю трумбо</ArcaneForge_ThrumBow.jobString>
+
+  <ArcaneForge_Replication.label>Реплікаційна кузня</ArcaneForge_Replication.label>
+  <ArcaneForge_Replication.description>Зберігання даних для репліковування об&apos;єктів</ArcaneForge_Replication.description>
+  <ArcaneForge_Replication.jobString>реплікація</ArcaneForge_Replication.jobString>
+
+  <ArcaneForge_Replication_Restore.label>Реплікаційна кузня</ArcaneForge_Replication_Restore.label>
+  <ArcaneForge_Replication_Restore.description>Зберігання даних для репліковування об&apos;єктів</ArcaneForge_Replication_Restore.description>
+  <ArcaneForge_Replication_Restore.jobString>реплікація</ArcaneForge_Replication_Restore.jobString>
+
+  <ArcaneForge_ChunkToMagicyte.jobString>Наповнення уламку маною.</ArcaneForge_ChunkToMagicyte.jobString>
+  <ArcaneForge_ChunkToMagicyte.label>наповнити уламок</ArcaneForge_ChunkToMagicyte.label>
+  <ArcaneForge_ChunkToMagicyte.description>Наповнює кам&apos;яні уламки маною для створення магіциту.</ArcaneForge_ChunkToMagicyte.description>
+
+
+</LanguageData>

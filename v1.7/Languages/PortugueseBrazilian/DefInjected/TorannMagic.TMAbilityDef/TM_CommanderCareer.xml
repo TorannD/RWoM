@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_CommanderWorkCrew.label>Equipe de trabalho</TM_CommanderWorkCrew.label>
+  <TM_CommanderWorkCrew.description>Até três aliados que aceitem trabalham 10/15/20% mais rápido durante 10 segundos. Custo 20%, recarga 45 segundos.</TM_CommanderWorkCrew.description>
+  <TM_CommanderRally.label>Ponto de reunião</TM_CommanderRally.label>
+  <TM_CommanderRally.description>Alcance 12. Até 2/3/4 aliados num raio de três células recebem 15 de proteção por 8 segundos. Custo 25%, recarga 40 segundos.</TM_CommanderRally.description>
+  <TM_CommanderOperationEvac.label>Todos para casa: evacuação</TM_CommanderOperationEvac.label>
+  <TM_CommanderOperationEvac.description>Após 5 segundos, até quatro aliados ganham 20% de velocidade e 25 de proteção durante 20 segundos. Requer linha de visão. Custo 60%, recarga conjunta de dois dias.</TM_CommanderOperationEvac.description>
+  <TM_CommanderOperationAid.label>Todos para casa: trabalho urgente</TM_CommanderOperationAid.label>
+  <TM_CommanderOperationAid.description>Após 5 segundos, até quatro aliados resgatam, tratam ou reparam mais depressa durante 20 segundos. Consome materiais. Recarga conjunta de dois dias.</TM_CommanderOperationAid.description>
+</LanguageData>

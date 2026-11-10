@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_PomanaSenseTD.stages.0.label>помана сенс</TM_PomanaSenseTD.stages.0.label>
+  <TM_PomanaSenseTD.stages.0.description>Мій розум розслаблений, думки ясні, я відчуваю себе більш усвідомленим і задоволеним своїм місцем у Всесвіті.</TM_PomanaSenseTD.stages.0.description>
+
+  <TM_SyrriumSenseTD.stages.0.label>Сирріум сенс</TM_SyrriumSenseTD.stages.0.label>
+  <TM_SyrriumSenseTD.stages.0.description>Мій розум розслаблений, і відповіді, здається, течуть до мене, ніби я налаштована на всесвіт.</TM_SyrriumSenseTD.stages.0.description>
+
+
+  <!-- Syrrium addiction -->
+
+  <TM_SyrriumWithdrawalTD.stages.1.label>вихід сирріуму</TM_SyrriumWithdrawalTD.stages.1.label>
+  <TM_SyrriumWithdrawalTD.stages.1.description>В голові у мене все переплуталося. З сиріумом я був чудовий, я впевнений, що всі були вражені моїм інтелектом. Ось хто я такий, мені це потрібно!</TM_SyrriumWithdrawalTD.stages.1.description>
+
+
+</LanguageData>

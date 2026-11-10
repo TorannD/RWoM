@@ -1,0 +1,37 @@
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritCastGladiatorSweep</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>sweeping at TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastGrapple</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>grappling TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastWhirlwind</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritHostedMartial</driverClass>
+    <reportString>launching a whirlwind towards TargetB.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCastLastCircle</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_LastCircle</driverClass>
+    <reportString>preparing the last circle.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritGladiatorCover</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorDefense</driverClass>
+    <reportString>covering TargetA.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritGladiatorRelief</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorDefense</driverClass>
+    <reportString>practising relief with TargetA.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritGladiatorEvacuation</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorDefense</driverClass>
+    <reportString>practising evacuation with TargetA.</reportString>
+  </JobDef>
+</Defs>

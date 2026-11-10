@@ -1,0 +1,66 @@
+﻿<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_SuperSoldier.xml-->
+	<!--             EN: Pistol Specialization-->
+	<TM_PistolSpec.label>Специализация на пистолетах</TM_PistolSpec.label>
+	<!--                   EN: Weapon Specialization: Pistol
+
+This specialization improves all aspects of pistols: accuracy, damage, shot delay, shot count, range, and more.
+Weapon specializations apply automatically when a Super Soldier equips a weapon in their specialization category. Specialized weapons are denoted by a "++" after the item name.
+
+Super Soldiers with a specialized pistol equipped gain a unique "double tap" talent which will occasionally ignore cooldown and immediately begin another shot burst; this talent consumes stamina when it occurs.-->
+	<TM_PistolSpec.description>Специализация на пистолетах.
+
+Эта специализация улучшает все характеристики пистолетов: точность, урон, задержку между выстрелами, число выстрелов, дальность и многое другое. Она применяется автоматически, когда суперсолдат берёт в руки оружие своей специализации. Такие образцы помечаются символами "++" после названия предмета.
+
+Суперсолдат с подходящим пистолетом получает уникальный приём "двойной выстрел": иногда он игнорирует откат и сразу начинает новую очередь. При срабатывании этот эффект расходует выносливость.</TM_PistolSpec.description>
+	<!--             EN: Pistol Whip-->
+	<TM_PistolWhip.label>Удар рукоятью пистолета</TM_PistolWhip.label>
+	<!--                   EN: A sudden attack using the pistol stock as a blunt weapon; successful attacks will stun a target, leaving them dazed for a short period, and may also disarm them.-->
+	<TM_PistolWhip.description>Внезапная атака с использованием пистолетного приклада в качестве тупого оружия; успешные атаки оглушают цель, оставляя ее ошеломленной на короткое время, а также могут обезоружить ее.</TM_PistolWhip.description>
+	<!--            EN: Rifle Specialization-->
+	<TM_RifleSpec.label>Специализация на автоматах</TM_RifleSpec.label>
+	<!--                  EN: Weapon Specialization: Rifle
+
+This specialization improves all aspects of rifles: accuracy, damage, shot delay, shot count, range, and more.
+Weapon specializations apply automatically when a Super Soldier equips a weapon in their specialization category. Specialized weapons are denoted by a "++" after the item name.-->
+	<TM_RifleSpec.description>Специализация на винтовках.
+
+Эта специализация улучшает все характеристики винтовок: точность, урон, задержку между выстрелами, число выстрелов, дальность и многое другое. Она применяется автоматически, когда суперсолдат берёт в руки оружие своей специализации. Такие образцы помечаются символами "++" после названия предмета.</TM_RifleSpec.description>
+	<!--                  EN: Suppressing Fire-->
+	<TM_SuppressingFire.label>Подавляющий огонь</TM_SuppressingFire.label>
+	<!--                        EN: Suppress enemy positions with a storm of bullets.-->
+	<TM_SuppressingFire.description>Подавляйте вражеские позиции ураганом пуль.</TM_SuppressingFire.description>
+	<!--          EN: Подствольный гранатомёт Mk203-->
+	<TM_Mk203GL.label>Подствольный гранатомёт Mk203</TM_Mk203GL.label>
+	<!--                EN: Fires a grenade using the Mk203 under-barrel grenade launcher.-->
+	<TM_Mk203GL.description>Стреляет гранатой с помощью подствольного гранатомета Mk203.</TM_Mk203GL.description>
+	<!--              EN: Shotgun Specialization-->
+	<TM_ShotgunSpec.label>Специализация на дробовиках</TM_ShotgunSpec.label>
+	<!--                    EN: Weapon Specialization: Shotgun
+
+This specialization improves all aspects of shotguns: accuracy, damage, shot delay, shot count, range, and more.
+Weapon specializations apply automatically when a Super Soldier equips a weapon in their specialization category. Specialized weapons are denoted by a "++" after the item name.-->
+	<TM_ShotgunSpec.description>Специализация Оружия: Дробовик
+
+Эта специализация улучшает все аспекты дробовиков: точность, урон, задержку выстрела, количество выстрелов, дальность стрельбы и многое другое.
+Специализация оружия применяется автоматически, когда суперсолдат оснащает оружие в своей категории специализации. Специализированное оружие обозначается буквой "++" после названия предмета.</TM_ShotgunSpec.description>
+	<!--           EN: Buckshot-->
+	<TM_Buckshot.label>Картечь</TM_Buckshot.label>
+	<!--                 EN: A shotgun shell that fires multiple pellets. The sheer volume of rounds discharged can be devastating at short range, but disperses rapidly.-->
+	<TM_Buckshot.description>Ружейный снаряд, стреляющий несколькими дробинками. Сам объем выпущенных снарядов может быть разрушительным на короткой дистанции, но быстро рассеивается.</TM_Buckshot.description>
+	<!--                  EN: Breaching charge-->
+	<TM_BreachingCharge.label>Проломный заряд</TM_BreachingCharge.label>
+	<!--                        EN: Throws a specialized explosive that excels at destroying structures or stopping enemy clusters. Deals 30x damage to structures.-->
+	<TM_BreachingCharge.description>Бросает специализированный заряд, особенно эффективный против построек и плотных скоплений врагов. Наносит строениям урон, увеличенный в 30 раз.</TM_BreachingCharge.description>
+	<!--      EN: CQC-->
+	<TM_CQC.label>Ближний бой</TM_CQC.label>
+	<!--            EN: Close Quarters Combat (CQC) is common training for Soldiers that allows them to smoothly execute a vicious combo attack against an enemy in melee range.-->
+	<TM_CQC.description>Подготовка к ближнему бою позволяет солдату быстро и без заминки проводить жестокую серию ударов по врагу на короткой дистанции.</TM_CQC.description>
+	<!--           EN: Self Aid-->
+	<TM_FirstAid.label>Самопомощь</TM_FirstAid.label>
+	<!--                 EN: Self Aid is possible for Super Soldiers as a result of the genetic enhancements they acquire from the serum. This ability allows them to consciously focus energy to rapid tend wounds. Self Aid is unable to tend grievous wounds, such as missing body parts.-->
+	<TM_FirstAid.description>Суперсолдат способен оказать себе первую помощь благодаря генетическим улучшениям, полученным от сыворотки. Эта способность позволяет ему сознательно направлять энергию на быстрое лечение ран. Она не действует на тяжёлые повреждения вроде утраты частей тела.</TM_FirstAid.description>
+	<!--             EN: 60mm Mortar-->
+	<TM_60mmMortar.label>60-мм миномёт</TM_60mmMortar.label>
+	<!--                   EN: Soften up enemy targets before a fight even begins with a personal mortar system. The 60mm Mortar can easily be transported by a Super Soldier and quickly deployed to launch 3-rounds of indirect fire.-->
+	<TM_60mmMortar.description>Разогрейте вражеские цели еще до начала боя с помощью персональной минометной системы. 60-мм миномет может быть легко транспортирован суперсолдатом и быстро развернут для запуска 3-х выстрелов непрямого огня.</TM_60mmMortar.description>
+</LanguageData>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Bullet_DefensePylon.label>energía mágica concentrada</Bullet_DefensePylon.label>
+  
+  
+  <Bullet_Mark-IV.label>proyectil Mark-IV</Bullet_Mark-IV.label>
+  
+  
+  <Bullet_Shell_TechnoTurretExplosive.label>proyectil de alta explosión</Bullet_Shell_TechnoTurretExplosive.label>
+  
+  
+  <DefensePylon.label>Pilón de defensa mágica</DefensePylon.label>
+  
+  <DefensePylon.description>Un pilón de defensa mágica. Creado al materializar energía mágica para formar una base y luego canalizar la corriente arcana hacia un punto focal que emite ráfagas de energía pura.</DefensePylon.description>
+  
+  
+  <DefensePylon_I.label>Pilón de defensa mágica (I)</DefensePylon_I.label>
+  
+  <DefensePylon_I.description>Un pilón de defensa mágica. Creado al materializar energía mágica para formar una base y luego canalizar la corriente arcana hacia un punto focal que emite ráfagas de energía pura.</DefensePylon_I.description>
+  
+  
+  <DefensePylon_II.label>Pilón de defensa mágica (II)</DefensePylon_II.label>
+  
+  <DefensePylon_II.description>Un pilón de defensa mágica. Creado al materializar energía mágica para formar una base y luego canalizar la corriente arcana hacia un punto focal que emite ráfagas de energía pura.</DefensePylon_II.description>
+  
+  
+  <DefensePylon_III.label>Pilón de defensa mágica (III)</DefensePylon_III.label>
+  
+  <DefensePylon_III.description>Un pilón de defensa mágica. Creado al materializar energía mágica para formar una base y luego canalizar la corriente arcana hacia un punto focal que emite ráfagas de energía pura.</DefensePylon_III.description>
+  
+  
+  <FlyingObject_60mmMortar.label>mortero de 60mm</FlyingObject_60mmMortar.label>
+  
+  
+  <FlyingObject_RocketSmall.label>cohete pequeño</FlyingObject_RocketSmall.label>
+  
+  
+  <Gun_Mark-IV.label>Sistema de armamento Mark-IV</Gun_Mark-IV.label>
+  
+  <Gun_Mark-IV.description>Cañón y controles de disparo del sistema de armamento Mark-IV.</Gun_Mark-IV.description>
+  
+  <Gun_Mark-IV.verbs.Verb_Shoot.label>disparo de sistema de armamento Mark-IV</Gun_Mark-IV.verbs.Verb_Shoot.label>
+  
+  
+  <Gun_Mark-IV_RL.label>Sistema de armamento Mark-IV</Gun_Mark-IV_RL.label>
+  
+  <Gun_Mark-IV_RL.description>Cañón y controles de disparo del sistema de armamento Mark-IV.</Gun_Mark-IV_RL.description>
+  
+  <Gun_Mark-IV_RL.verbs.Verb_Shoot.label>disparo de sistema de armamento Mark-IV</Gun_Mark-IV_RL.verbs.Verb_Shoot.label>
+
+  
+  
+  <Gun_Mark-IV_RL_MTR.label>Sistema de armamento Mark-IV</Gun_Mark-IV_RL_MTR.label>
+  
+  <Gun_Mark-IV_RL_MTR.description>Cañón y controles de disparo del sistema de armamento Mark-IV.</Gun_Mark-IV_RL_MTR.description>
+  
+  <Gun_Mark-IV_RL_MTR.verbs.Verb_Shoot.label>disparo de sistema de armamento Mark-IV</Gun_Mark-IV_RL_MTR.verbs.Verb_Shoot.label>
+  
+  
+  <Launcher_DefensePylon.label>punto de enfoque de energía</Launcher_DefensePylon.label>
+  
+  <Launcher_DefensePylon.description>Punto focal de un pilón de defensa arcana, capaz de acumular y emitir ráfagas de energía mágica pura.</Launcher_DefensePylon.description>
+  
+  <Launcher_DefensePylon.verbs.Verb_Shoot.label>disparo de punto de enfoque de energía</Launcher_DefensePylon.verbs.Verb_Shoot.label>
+  
+  
+  <Launcher_DefensePylon_I.label>punto de enfoque de energía</Launcher_DefensePylon_I.label>
+  
+  <Launcher_DefensePylon_I.description>Punto focal de un pilón de defensa arcana, capaz de acumular y emitir ráfagas de energía mágica pura.</Launcher_DefensePylon_I.description>
+  
+  <Launcher_DefensePylon_I.verbs.Verb_Shoot.label>disparo de punto de enfoque de energía</Launcher_DefensePylon_I.verbs.Verb_Shoot.label>
+  
+  
+  <Launcher_DefensePylon_II.label>punto de enfoque de energía</Launcher_DefensePylon_II.label>
+  
+  <Launcher_DefensePylon_II.description>Punto focal de un pilón de defensa arcana, capaz de acumular y emitir ráfagas de energía mágica pura.</Launcher_DefensePylon_II.description>
+  
+  <Launcher_DefensePylon_II.verbs.Verb_Shoot.label>disparo de punto de enfoque de energía</Launcher_DefensePylon_II.verbs.Verb_Shoot.label>
+  
+  
+  <Launcher_DefensePylon_III.label>punto de enfoque de energía</Launcher_DefensePylon_III.label>
+  
+  <Launcher_DefensePylon_III.description>Punto focal de un pilón de defensa arcana, capaz de acumular y emitir ráfagas de energía mágica pura.</Launcher_DefensePylon_III.description>
+  
+  <Launcher_DefensePylon_III.verbs.Verb_Shoot.label>disparo de punto de enfoque de energía</Launcher_DefensePylon_III.verbs.Verb_Shoot.label>
+  
+  
+  <TM_60mmMortar_Base.label>Tubo de mortero de 60mm</TM_60mmMortar_Base.label>
+  
+  <TM_60mmMortar_Base.description>El mortero de 60mm es un sistema de fuego indirecto personalmente transportable y desplegable. Debido al peso del sistema, los proyectiles suelen distribuirse para su transporte. El sistema está diseñado para fuego indirecto y solo los aficionados intentan usarlo en puntería directa, ya que es impreciso y expone al morterista.\n\nEl alcance y la potencia de fuego de este sistema son limitados en comparación con los sistemas fijos debido a la capacidad de contención del tubo del mortero y al cartucho de propulsión.</TM_60mmMortar_Base.description>
+  
+  
+  <TM_ArcaneBarrier.label>Barrera arcana</TM_ArcaneBarrier.label>
+  
+  <TM_ArcaneBarrier.description>Un muro infranqueable hecho de poder arcano solidificado. Proporciona protección o crea una barrera impenetrable.</TM_ArcaneBarrier.description>
+  
+  
+  <TM_EarthTotem.label>Tótem de tierra</TM_EarthTotem.label>
+  
+  <TM_EarthTotem.description>Un tótem chamánico decorado con tallados simétricos que emana una sensación de solidez. La conexión del tótem con la tierra le permite provocar ondas sísmicas que hacen tambalear a los enemigos cercanos.</TM_EarthTotem.description>
+
+  
+  
+  <TM_HealingTotem.label>Tótem de sanación</TM_HealingTotem.label>
+  
+  <TM_HealingTotem.description>Un tótem chamánico decorado con formas fluidas y armoniosas. El tótem de sanación es capaz de atraer espíritus amistosos que restaurarán el vigor y la salud de los aliados cercanos.</TM_HealingTotem.description>
+  
+  
+  <TM_LightningTotem.label>Tótem de relámpagos</TM_LightningTotem.label>
+  
+  <TM_LightningTotem.description>Un tótem chamánico decorado con tallados elaborados y excéntricos, que chisporrotea con relámpagos elementales.</TM_LightningTotem.description>
+  
+  
+  <TM_ManaMine.label>Mina de maná</TM_ManaMine.label>
+  
+  <TM_ManaMine.description>Un poderoso explosivo creado al comprimir maná y materia. De la mina se extienden filamentos de poder psíquico; cuando una víctima altera el cordón psíquico, este colapsa el campo de contención y detona la mina. Radio de explosión de 2.4 m.</TM_ManaMine.description>
+  
+  
+  <TM_ManaMine_I.label>Mina de maná I</TM_ManaMine_I.label>
+  
+  <TM_ManaMine_I.description>Un poderoso explosivo creado al comprimir maná y materia. De la mina se extienden filamentos de poder psíquico; cuando una víctima altera el cordón psíquico, este colapsa el campo de contención y detona la mina. Radio de explosión de 2.9 m.</TM_ManaMine_I.description>
+  
+  
+  <TM_ManaMine_II.label>Mina de maná II</TM_ManaMine_II.label>
+  
+  <TM_ManaMine_II.description>Un poderoso explosivo creado al comprimir maná y materia. De la mina se extienden filamentos de poder psíquico; cuando una víctima altera el cordón psíquico, este colapsa el campo de contención y detona la mina. Radio de explosión de 3.8 m.</TM_ManaMine_II.description>
+  
+  
+  <TM_ManaMine_III.label>Mina de maná III</TM_ManaMine_III.label>
+  
+  <TM_ManaMine_III.description>Un poderoso explosivo creado al comprimir maná y materia. De la mina se extienden filamentos de poder psíquico; cuando una víctima altera el cordón psíquico, este colapsa el campo de contención y detona la mina. Radio de explosión de 4.7 m.</TM_ManaMine_III.description>
+  
+  
+  <TM_PoisonTrap.label>Trampa de veneno</TM_PoisonTrap.label>
+  
+  <TM_PoisonTrap.description>Una trampa creada con ramas e hilo que se mezcla perfectamente con el entorno para un ojo inexperto, pero cuyo olor sirve de advertencia inequívoca para los animales. Al activarse, libera partículas de veneno druídico en el aire. El veneno es tóxico y sirve tanto para herir como para incapacitar a la víctima.</TM_PoisonTrap.description>
+  
+  
+  <TM_TechnoTurret_Base.label>Mark-IV</TM_TechnoTurret_Base.label>
+  
+  <TM_TechnoTurret_Base.description>La Mark-IV es una torreta desplegable que proporciona la potencia de fuego de un sistema de armamento pesado. Utiliza la miniaturización para permitir al usuario transportar fácilmente el sistema cuando no está en uso. El componente clave de la Mark-IV es el convertidor de materia, que utiliza energía pura para reparar y reabastecer la torreta cuando está miniaturizada, permitiendo una conversión nominal de energía a materia. Sin embargo, incluso usando plasteca e hipertejido para reforzar el sistema de armamento, el material era simplemente incapaz de soportar la presión ejercida durante el proceso de conversión y era muy propenso a averías y fallos de componentes.\n\nDesde entonces, los tecnomantes han adaptado el sistema y utilizan su control sobre la energía arcana para proporcionar munición a la torreta mientras está desplegada, así como energía para las reparaciones y el proceso de miniaturización.\n\nDebido a su peso, la Mark-IV no se puede mover mientras está desplegada.</TM_TechnoTurret_Base.description>
+  
+  
+  <TM_TechnoTurret_Base_RL.label>Mark-IV</TM_TechnoTurret_Base_RL.label>
+  
+  <TM_TechnoTurret_Base_RL.description>La Mark-IV es una torreta desplegable que proporciona la potencia de fuego de un sistema de armamento pesado. Utiliza la miniaturización para permitir al usuario transportar fácilmente el sistema cuando no está en uso. El componente clave de la Mark-IV es el convertidor de materia, que utiliza energía pura para reparar y reabastecer la torreta cuando está miniaturizada, permitiendo una conversión nominal de energía a materia. Sin embargo, incluso usando plasteca e hipertejido para reforzar el sistema de armamento, el material era simplemente incapaz de soportar la presión ejercida durante el proceso de conversión y era muy propenso a averías y fallos de componentes.\n\nDesde entonces, los tecnomantes han adaptado el sistema y utilizan su control sobre la energía arcana para proporcionar munición a la torreta mientras está desplegada, así como energía para las reparaciones y el proceso de miniaturización.\n\nDebido a su peso, la Mark-IV no se puede mover mientras está desplegada.</TM_TechnoTurret_Base_RL.description>
+  
+  
+  <TM_TechnoTurret_Base_RL_MTR.label>Mark-IV</TM_TechnoTurret_Base_RL_MTR.label>
+  
+<TM_TechnoTurret_Base_RL_MTR.description>La Mark-IV es una torreta desplegable que proporciona la potencia de fuego de un sistema de armamento pesado. Utiliza la miniaturización para permitir al usuario transportar fácilmente el sistema cuando no está en uso. El componente clave de la Mark-IV es el convertidor de materia, que utiliza energía pura para reparar y reabastecer la torreta cuando está miniaturizada, permitiendo una conversión nominal de energía a materia. Sin embargo, incluso usando plasteca e hipertejido para reforzar el sistema de armamento, el material era simplemente incapaz de soportar la presión ejercida durante el proceso de conversión y era muy propenso a averías y fallos de componentes.\n\nDesde entonces, los tecnomantes han adaptado el sistema y utilizan su control sobre la energía arcana para proporcionar munición a la torreta mientras está desplegada, así como energía para las reparaciones y el proceso de miniaturización.\n\nDebido a su peso, la Mark-IV no se puede mover mientras está desplegada.</TM_TechnoTurret_Base_RL_MTR.description>
+<TM_Trap_Lightning.label>Trampa de relámpagos</TM_Trap_Lightning.label>
+<TM_Trap_Lightning.description>Una trampa creada al contener relámpagos elementales dentro de una barrera arcana; libera su energía embotellada cada vez que un enemigo altera un cordón arcano cercano.</TM_Trap_Lightning.description>
+  
+</LanguageData>

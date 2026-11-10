@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritResurrection.reportString>resucita a través del cuerpo del huésped.</TM_SpiritResurrection.reportString>
+  <TM_SpiritHealingCircle.reportString>invoca un círculo de sanación a través del cuerpo del huésped.</TM_SpiritHealingCircle.reportString>
+  <TM_SpiritHealingCircle_I.reportString>invoca un círculo de sanación a través del cuerpo del huésped.</TM_SpiritHealingCircle_I.reportString>
+  <TM_SpiritHealingCircle_II.reportString>invoca un círculo de sanación a través del cuerpo del huésped.</TM_SpiritHealingCircle_II.reportString>
+  <TM_SpiritHealingCircle_III.reportString>invoca un círculo de sanación a través del cuerpo del huésped.</TM_SpiritHealingCircle_III.reportString>
+  <TM_SpiritBestowMight.reportString>otorgando fuerza a través del huésped del espíritu.</TM_SpiritBestowMight.reportString>
+  <TM_SpiritBestowMight_I.reportString>otorgando fuerza a través del huésped del espíritu.</TM_SpiritBestowMight_I.reportString>
+  <TM_SpiritBestowMight_II.reportString>otorgando fuerza a través del huésped del espíritu.</TM_SpiritBestowMight_II.reportString>
+  <TM_SpiritBestowMight_III.reportString>otorgando fuerza a través del huésped del espíritu.</TM_SpiritBestowMight_III.reportString>
+</LanguageData>

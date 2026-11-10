@@ -1,0 +1,14 @@
+<LanguageData><FlyingObject_PsionicLeap.label>псионический прыжок</FlyingObject_PsionicLeap.label>
+	<TM_Psionic_Projectile.label>псионический снаряд</TM_Psionic_Projectile.label>
+	<!-- Psionic Barrier start-->
+	<TM_Projectile_PsionicBarrier.label>псионический барьер</TM_Projectile_PsionicBarrier.label>
+	<!-- Psionic Blast Start-->
+	<TM_Projectile_PsionicBlast.label>псионический взрыв</TM_Projectile_PsionicBlast.label>
+	<!-- Psionic Dash start-->
+	<FlyingObject_PsionicDash.label>псионический рывок</FlyingObject_PsionicDash.label>
+	<Projectile_PsionicDash.label>псионический рывок</Projectile_PsionicDash.label>
+	<!-- PsionicStorm-->
+	<FlyingObject_PsionicStorm.label>пси шторм</FlyingObject_PsionicStorm.label>
+	<Projectile_PsionicStorm.label>Псионический шторм</Projectile_PsionicStorm.label>
+	<FlyingObject_PsiStorm.label>пси шторм</FlyingObject_PsiStorm.label>
+</LanguageData>

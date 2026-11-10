@@ -1,0 +1,10 @@
+<LanguageData><!-- Misc for Golems-->
+	<JobDriver_GolemDespawn.reportString>деактивация</JobDriver_GolemDespawn.reportString>
+	<JobDriver_GolemDespawnWait.reportString>деактивация</JobDriver_GolemDespawnWait.reportString>
+	<JobDriver_GolemSelfTend.reportString>автоматическая уборка</JobDriver_GolemSelfTend.reportString>
+	<JobDriver_MechaMine.reportString>протокол добычи полезных ископаемых</JobDriver_MechaMine.reportString>
+	<JobDriver_FleshHarvest.reportString>уборка растений</JobDriver_FleshHarvest.reportString>
+	<JobDriver_FleshChop.reportString>срезать растения</JobDriver_FleshChop.reportString>
+	<JobDriver_GolemAbilityJob.reportString>использовать способность</JobDriver_GolemAbilityJob.reportString>
+	<JobDriver_GolemAttackStatic.reportString>берёт TargetA на прицел.</JobDriver_GolemAttackStatic.reportString>
+</LanguageData>

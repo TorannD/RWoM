@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_SeverMagic.spectatorFilter.description>O público deve estar preparado para ver o que se passa.</TM_SeverMagic.spectatorFilter.description>
+  <TM_SeverMagic.roles.0.label>buscador de vazio</TM_SeverMagic.roles.0.label>
+  <TM_SeverMagic.roles.1.label>mago</TM_SeverMagic.roles.1.label>
+  <TM_SeverMagic.roles.2.label>Instrução</TM_SeverMagic.roles.2.label>
+
+
+  <!-- Bestow Magic -->
+
+  <TM_BestowMagic.spectatorFilter.description>O público deve estar preparado para ver o que se passa.</TM_BestowMagic.spectatorFilter.description>
+  <TM_BestowMagic.roles.0.label>buscador de vazio</TM_BestowMagic.roles.0.label>
+  <TM_BestowMagic.roles.1.label>ocioso</TM_BestowMagic.roles.1.label>
+  <TM_BestowMagic.roles.2.label>Instrução</TM_BestowMagic.roles.2.label>
+
+
+  <!-- Arcane Pathway -->
+
+  <TM_ArcanePathway.spectatorFilter.description>O público deve estar preparado para ver o que se passa.</TM_ArcanePathway.spectatorFilter.description>
+  <TM_ArcanePathway.roles.0.label>buscador de vazio</TM_ArcanePathway.roles.0.label>
+  <TM_ArcanePathway.roles.1.label>inspirado em dotação</TM_ArcanePathway.roles.1.label>
+  <TM_ArcanePathway.roles.2.label>Instrução</TM_ArcanePathway.roles.2.label>
+
+
+  <TM_SeverMagic.roles.0.missingDesc>buscador de vazio</TM_SeverMagic.roles.0.missingDesc>
+  <TM_SeverMagic.roles.1.missingDesc>mago</TM_SeverMagic.roles.1.missingDesc>
+  <TM_BestowMagic.roles.0.missingDesc>buscador de vazio</TM_BestowMagic.roles.0.missingDesc>
+  <TM_BestowMagic.roles.1.missingDesc>colônia sem poder ou magia</TM_BestowMagic.roles.1.missingDesc>
+  <TM_ArcanePathway.roles.0.missingDesc>buscador de vazio</TM_ArcanePathway.roles.0.missingDesc>
+  <TM_ArcanePathway.roles.1.missingDesc>colono com uma linha dotada, inspirado em se tornar uma das classes de mágicos</TM_ArcanePathway.roles.1.missingDesc>
+
+</LanguageData>

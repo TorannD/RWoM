@@ -1,0 +1,31 @@
+<LanguageData><!-- special attack manuevers-->
+	<TM_SkeletonLichR.label>Скелет лича</TM_SkeletonLichR.label>
+	<TM_SkeletonLichR.description>Увядшие  кости древнего лича, воплощенного духом злобы и ненависти; кем бы или чем бы ни было это существо когда-то, его больше нет; его единственная цель-уничтожить все живое и заменить его нежитью.</TM_SkeletonLichR.description>
+	<TM_SkeletonLichR.tools.0.label>левая рука</TM_SkeletonLichR.tools.0.label>
+	<TM_SkeletonLichR.tools.1.label>правая рука</TM_SkeletonLichR.tools.1.label>
+	<TM_SkeletonLichR.tools.2.label>мертвый взгляд</TM_SkeletonLichR.tools.2.label>
+	<!-- No Leather: Butcher Products-->
+	<!-- Meat Amount: 0-->
+	<TM_SkeletonLichR_Corpse.label>Скелет лича труп</TM_SkeletonLichR_Corpse.label>
+	<TM_SkeletonLichR_Corpse.description>Скелет лича труп</TM_SkeletonLichR_Corpse.description>
+	<!-- special attack manuevers-->
+	<TM_GiantSkeletonR.label>Гигантский скелет</TM_GiantSkeletonR.label>
+	<TM_GiantSkeletonR.description>Огромный скелет; эта мерзость была создана либо из костей гигантского существа, либо путем объединения костей меньших существ. Этот скелет одушевлен некромантией и воплощен мстительным духом, который бродил по миру в течение многих веков-достаточно долго, чтобы развить простую, целеустремленную ненависть к жизни.</TM_GiantSkeletonR.description>
+	<TM_GiantSkeletonR.tools.0.label>левый кулак</TM_GiantSkeletonR.tools.0.label>
+	<TM_GiantSkeletonR.tools.1.label>правый кулак</TM_GiantSkeletonR.tools.1.label>
+	<TM_GiantSkeletonR.tools.2.label>зубы</TM_GiantSkeletonR.tools.2.label>
+	<!-- No Leather: Butcher Products-->
+	<!-- Meat Amount: 0-->
+	<TM_GiantSkeletonR_Corpse.label>Гигантский скелет труп</TM_GiantSkeletonR_Corpse.label>
+	<TM_GiantSkeletonR_Corpse.description>Гигантский скелет труп</TM_GiantSkeletonR_Corpse.description>
+	<!-- special attack manuevers-->
+	<TM_SkeletonR.label>Скелет</TM_SkeletonR.label>
+	<TM_SkeletonR.description>Физическая оболочка существ, поднятых силой некромантии; их единственный инстинкт-подчиняться своему хозяину и уничтожать все живое.</TM_SkeletonR.description>
+	<TM_SkeletonR.tools.0.label>левый кулак</TM_SkeletonR.tools.0.label>
+	<TM_SkeletonR.tools.1.label>правый кулак</TM_SkeletonR.tools.1.label>
+	<TM_SkeletonR.tools.2.label>зубы</TM_SkeletonR.tools.2.label>
+	<!-- No Leather: Butcher Products-->
+	<!-- Meat Amount: 0-->
+	<TM_SkeletonR_Corpse.label>Скелет труп</TM_SkeletonR_Corpse.label>
+	<TM_SkeletonR_Corpse.description>Скелет труп</TM_SkeletonR_Corpse.description>
+</LanguageData>

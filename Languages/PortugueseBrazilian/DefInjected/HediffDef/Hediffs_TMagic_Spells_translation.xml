@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+
+  <TM_ArcaneHD.label>misteriosidade</TM_ArcaneHD.label>
+  <TM_ArcaneHD.description>Força secreta destrutiva</TM_ArcaneHD.description>
+  <TM_ArcaneHD.comps.0.labelTendedWell>desligado</TM_ArcaneHD.comps.0.labelTendedWell>
+  <TM_ArcaneHD.comps.0.labelTendedWellInner>costurado</TM_ArcaneHD.comps.0.labelTendedWellInner>
+  <TM_ArcaneHD.comps.0.labelSolidTendedWell>curado</TM_ArcaneHD.comps.0.labelSolidTendedWell>
+  <TM_ArcaneHD.injuryProps.destroyedLabel>detonado</TM_ArcaneHD.injuryProps.destroyedLabel>
+  <TM_ArcaneHD.injuryProps.destroyedOutLabel>detonado</TM_ArcaneHD.injuryProps.destroyedOutLabel>
+
+  <TM_ThrumboCleave.label>Divisão</TM_ThrumboCleave.label>
+  <TM_ThrumboCleave.description>O ataque é poderoso o suficiente para penetrar vários objetos ao mesmo tempo.</TM_ThrumboCleave.description>
+  <TM_ThrumboCleave.labelNoun>ferimento enorme</TM_ThrumboCleave.labelNoun>
+  <TM_ThrumboCleave.comps.0.labelTendedWell>desligado</TM_ThrumboCleave.comps.0.labelTendedWell>
+  <TM_ThrumboCleave.comps.0.labelTendedWellInner>costurado</TM_ThrumboCleave.comps.0.labelTendedWellInner>
+  <TM_ThrumboCleave.comps.0.labelSolidTendedWell>curado</TM_ThrumboCleave.comps.0.labelSolidTendedWell>
+  <TM_ThrumboCleave.injuryProps.destroyedLabel>Cortado</TM_ThrumboCleave.injuryProps.destroyedLabel>
+  <TM_ThrumboCleave.injuryProps.destroyedOutLabel>Cortado de</TM_ThrumboCleave.injuryProps.destroyedOutLabel>
+
+  <TM_BlazingPowerHD.label>Força ardente</TM_BlazingPowerHD.label>
+  <TM_BlazingPowerHD.description>Uma força secreta apontada através da capacidade de foco.</TM_BlazingPowerHD.description>
+  <TM_BlazingPowerHD.comps.0.labelTendedWell>desligado</TM_BlazingPowerHD.comps.0.labelTendedWell>
+  <TM_BlazingPowerHD.comps.0.labelTendedWellInner>costurado</TM_BlazingPowerHD.comps.0.labelTendedWellInner>
+  <TM_BlazingPowerHD.comps.0.labelSolidTendedWell>curado</TM_BlazingPowerHD.comps.0.labelSolidTendedWell>
+  <TM_BlazingPowerHD.injuryProps.destroyedLabel>destruído</TM_BlazingPowerHD.injuryProps.destroyedLabel>
+  <TM_BlazingPowerHD.injuryProps.destroyedOutLabel>destruído</TM_BlazingPowerHD.injuryProps.destroyedOutLabel>
+
+  <TM_Holy.label>Raiva Santa</TM_Holy.label>
+  <TM_Holy.description>Energia destrutiva da área da luz.</TM_Holy.description>
+  <TM_Holy.comps.0.labelTendedWell>desligado</TM_Holy.comps.0.labelTendedWell>
+  <TM_Holy.comps.0.labelTendedWellInner>costurado</TM_Holy.comps.0.labelTendedWellInner>
+  <TM_Holy.comps.0.labelSolidTendedWell>curado</TM_Holy.comps.0.labelSolidTendedWell>
+  <TM_Holy.injuryProps.destroyedLabel>queimado</TM_Holy.injuryProps.destroyedLabel>
+  <TM_Holy.injuryProps.destroyedOutLabel>queimado</TM_Holy.injuryProps.destroyedOutLabel>
+
+  <TM_SpiritHD.label>Espírito</TM_SpiritHD.label>
+  <TM_SpiritHD.description>Energia espiritual danosa.</TM_SpiritHD.description>
+  <TM_SpiritHD.comps.0.labelTendedWell>desligado</TM_SpiritHD.comps.0.labelTendedWell>
+  <TM_SpiritHD.comps.0.labelTendedWellInner>costurado</TM_SpiritHD.comps.0.labelTendedWellInner>
+  <TM_SpiritHD.comps.0.labelSolidTendedWell>curado</TM_SpiritHD.comps.0.labelSolidTendedWell>
+  <TM_SpiritHD.injuryProps.destroyedLabel>omertwel</TM_SpiritHD.injuryProps.destroyedLabel>
+  <TM_SpiritHD.injuryProps.destroyedOutLabel>omertwel</TM_SpiritHD.injuryProps.destroyedOutLabel>
+
+  <TM_MagicMissile.label>Foguete mágico</TM_MagicMissile.label>
+  <TM_MagicMissile.description>A energia secreta foi projetada por picos pequenos e focados.</TM_MagicMissile.description>
+  <TM_MagicMissile.comps.0.labelTendedWell>desligado</TM_MagicMissile.comps.0.labelTendedWell>
+  <TM_MagicMissile.comps.0.labelTendedWellInner>costurado</TM_MagicMissile.comps.0.labelTendedWellInner>
+  <TM_MagicMissile.comps.0.labelSolidTendedWell>curado</TM_MagicMissile.comps.0.labelSolidTendedWell>
+  <TM_MagicMissile.injuryProps.destroyedLabel>cortado</TM_MagicMissile.injuryProps.destroyedLabel>
+  <TM_MagicMissile.injuryProps.destroyedOutLabel>cortar</TM_MagicMissile.injuryProps.destroyedOutLabel>
+
+  <TM_ManaMine.label>explosão de maná</TM_ManaMine.label>
+  <TM_ManaMine.description>Liberação explosiva de maná contido no ar.</TM_ManaMine.description>
+  <TM_ManaMine.comps.0.labelTendedWell>desligado</TM_ManaMine.comps.0.labelTendedWell>
+  <TM_ManaMine.comps.0.labelTendedWellInner>costurado</TM_ManaMine.comps.0.labelTendedWellInner>
+  <TM_ManaMine.comps.0.labelSolidTendedWell>curado</TM_ManaMine.comps.0.labelSolidTendedWell>
+  <TM_ManaMine.injuryProps.destroyedLabel>detonado</TM_ManaMine.injuryProps.destroyedLabel>
+  <TM_ManaMine.injuryProps.destroyedOutLabel>queimado</TM_ManaMine.injuryProps.destroyedOutLabel>
+
+  <TM_Firebolt.label>Bola de fogo</TM_Firebolt.label>
+  <TM_Firebolt.description>Uma flecha de fogo natural projetada.</TM_Firebolt.description>
+  <TM_Firebolt.comps.0.labelTendedWell>desligado</TM_Firebolt.comps.0.labelTendedWell>
+  <TM_Firebolt.comps.0.labelTendedWellInner>costurado</TM_Firebolt.comps.0.labelTendedWellInner>
+  <TM_Firebolt.comps.0.labelSolidTendedWell>curado</TM_Firebolt.comps.0.labelSolidTendedWell>
+  <TM_Firebolt.injuryProps.destroyedLabel>queimado</TM_Firebolt.injuryProps.destroyedLabel>
+  <TM_Firebolt.injuryProps.destroyedOutLabel>queimado</TM_Firebolt.injuryProps.destroyedOutLabel>
+
+  <TM_LightningCloud.label>Relâmpago</TM_LightningCloud.label>
+  <TM_LightningCloud.description>Descarga elétrica atmosférica causada pela condensação de partículas carregadas.</TM_LightningCloud.description>
+  <TM_LightningCloud.comps.0.labelTendedWell>desligado</TM_LightningCloud.comps.0.labelTendedWell>
+  <TM_LightningCloud.comps.0.labelTendedWellInner>costurado</TM_LightningCloud.comps.0.labelTendedWellInner>
+  <TM_LightningCloud.comps.0.labelSolidTendedWell>curado</TM_LightningCloud.comps.0.labelSolidTendedWell>
+  <TM_LightningCloud.injuryProps.destroyedLabel>derretido</TM_LightningCloud.injuryProps.destroyedLabel>
+  <TM_LightningCloud.injuryProps.destroyedOutLabel>queimado</TM_LightningCloud.injuryProps.destroyedOutLabel>
+
+  <TM_Lightning.label>Relâmpago</TM_Lightning.label>
+  <TM_Lightning.description>Uma grande descarga elétrica.</TM_Lightning.description>
+  <TM_Lightning.comps.0.labelTendedWell>desligado</TM_Lightning.comps.0.labelTendedWell>
+  <TM_Lightning.comps.0.labelTendedWellInner>costurado</TM_Lightning.comps.0.labelTendedWellInner>
+  <TM_Lightning.comps.0.labelSolidTendedWell>curado</TM_Lightning.comps.0.labelSolidTendedWell>
+  <TM_Lightning.injuryProps.destroyedLabel>derretido</TM_Lightning.injuryProps.destroyedLabel>
+  <TM_Lightning.injuryProps.destroyedOutLabel>queimado</TM_Lightning.injuryProps.destroyedOutLabel>
+
+  <FrostRay.label>raio gelado</FrostRay.label>
+  <FrostRay.description>Um monte de energia super hipotermica.</FrostRay.description>
+  <FrostRay.comps.0.labelTendedWell>desligado</FrostRay.comps.0.labelTendedWell>
+  <FrostRay.comps.0.labelTendedWellInner>costurado</FrostRay.comps.0.labelTendedWellInner>
+  <FrostRay.comps.0.labelSolidTendedWell>curado</FrostRay.comps.0.labelSolidTendedWell>
+  <FrostRay.injuryProps.destroyedLabel>protetor</FrostRay.injuryProps.destroyedLabel>
+  <FrostRay.injuryProps.destroyedOutLabel>Destruído</FrostRay.injuryProps.destroyedOutLabel>
+
+  <Snowball.label>Bola de neve</Snowball.label>
+  <Snowball.description>Gelo avermelhado e neve.</Snowball.description>
+  <Snowball.comps.0.labelTendedWell>desligado</Snowball.comps.0.labelTendedWell>
+  <Snowball.comps.0.labelTendedWellInner>costurado</Snowball.comps.0.labelTendedWellInner>
+  <Snowball.comps.0.labelSolidTendedWell>curado</Snowball.comps.0.labelSolidTendedWell>
+  <Snowball.injuryProps.destroyedLabel>livre de preço</Snowball.injuryProps.destroyedLabel>
+  <Snowball.injuryProps.destroyedOutLabel>Destruído</Snowball.injuryProps.destroyedOutLabel>
+
+  <Blizzard.label>Tempestade de neve</Blizzard.label>
+  <Blizzard.description>Uma tempestade de gelo e neve.</Blizzard.description>
+  <Blizzard.comps.0.labelTendedWell>desligado</Blizzard.comps.0.labelTendedWell>
+  <Blizzard.comps.0.labelTendedWellInner>costurado</Blizzard.comps.0.labelTendedWellInner>
+  <Blizzard.comps.0.labelSolidTendedWell>curado</Blizzard.comps.0.labelSolidTendedWell>
+  <Blizzard.injuryProps.destroyedLabel>congelado</Blizzard.injuryProps.destroyedLabel>
+  <Blizzard.injuryProps.destroyedOutLabel>Destruído</Blizzard.injuryProps.destroyedOutLabel>
+
+  <Iceshard.label>quebra-gelo</Iceshard.label>
+  <Iceshard.description>Um pedaço de gelo em movimento formou-se com bordas afiadas, como um barbear.</Iceshard.description>
+  <Iceshard.comps.0.labelTendedWell>desligado</Iceshard.comps.0.labelTendedWell>
+  <Iceshard.comps.0.labelTendedWellInner>costurado</Iceshard.comps.0.labelTendedWellInner>
+  <Iceshard.comps.0.labelSolidTendedWell>curado</Iceshard.comps.0.labelSolidTendedWell>
+  <Iceshard.injuryProps.destroyedLabel>Triturado</Iceshard.injuryProps.destroyedLabel>
+  <Iceshard.injuryProps.destroyedOutLabel>Desfeito em pedaços</Iceshard.injuryProps.destroyedOutLabel>
+
+  <TM_GrapplingHook.label>gancho de abordagem</TM_GrapplingHook.label>
+  <TM_GrapplingHook.description>Atrai os alvos mais perto.</TM_GrapplingHook.description>
+  <TM_GrapplingHook.comps.0.labelTendedWell>desligado</TM_GrapplingHook.comps.0.labelTendedWell>
+  <TM_GrapplingHook.comps.0.labelTendedWellInner>costurado</TM_GrapplingHook.comps.0.labelTendedWellInner>
+  <TM_GrapplingHook.comps.0.labelSolidTendedWell>curado</TM_GrapplingHook.comps.0.labelSolidTendedWell>
+  <TM_GrapplingHook.injuryProps.destroyedLabel>arrancado</TM_GrapplingHook.injuryProps.destroyedLabel>
+  <TM_GrapplingHook.injuryProps.destroyedOutLabel>arrancado</TM_GrapplingHook.injuryProps.destroyedOutLabel>
+
+  <TM_Whirlwind_Knockdown.label>Nocaute vórtice</TM_Whirlwind_Knockdown.label>
+  <TM_Whirlwind_Knockdown.description>Espantado por uma onda de ataques.</TM_Whirlwind_Knockdown.description>
+  <TM_Whirlwind_Knockdown.comps.0.labelTendedWell>desligado</TM_Whirlwind_Knockdown.comps.0.labelTendedWell>
+  <TM_Whirlwind_Knockdown.comps.0.labelTendedWellInner>costurado</TM_Whirlwind_Knockdown.comps.0.labelTendedWellInner>
+  <TM_Whirlwind_Knockdown.comps.0.labelSolidTendedWell>curado</TM_Whirlwind_Knockdown.comps.0.labelSolidTendedWell>
+  <TM_Whirlwind_Knockdown.injuryProps.destroyedLabel>cortado</TM_Whirlwind_Knockdown.injuryProps.destroyedLabel>
+  <TM_Whirlwind_Knockdown.injuryProps.destroyedOutLabel>cortado</TM_Whirlwind_Knockdown.injuryProps.destroyedOutLabel>
+
+  <TM_DisablingShot_HD.label>tiro de desativação</TM_DisablingShot_HD.label>
+  <TM_DisablingShot_HD.description>Um projétil para desarmar do que para matar.</TM_DisablingShot_HD.description>
+  <TM_DisablingShot_HD.comps.0.labelTendedWell>desligado</TM_DisablingShot_HD.comps.0.labelTendedWell>
+  <TM_DisablingShot_HD.comps.0.labelTendedWellInner>costurado</TM_DisablingShot_HD.comps.0.labelTendedWellInner>
+  <TM_DisablingShot_HD.comps.0.labelSolidTendedWell>curado</TM_DisablingShot_HD.comps.0.labelSolidTendedWell>
+  <TM_DisablingShot_HD.injuryProps.destroyedLabel>disparado</TM_DisablingShot_HD.injuryProps.destroyedLabel>
+  <TM_DisablingShot_HD.injuryProps.destroyedOutLabel>disparado</TM_DisablingShot_HD.injuryProps.destroyedOutLabel>
+
+  <TM_arcaneSpectre.label>corte espiritual</TM_arcaneSpectre.label>
+  <TM_arcaneSpectre.description>O dano espiritual de um fantasma.</TM_arcaneSpectre.description>
+  <TM_arcaneSpectre.labelNoun>cortado</TM_arcaneSpectre.labelNoun>
+  <TM_arcaneSpectre.comps.0.labelTendedWell>desligado</TM_arcaneSpectre.comps.0.labelTendedWell>
+  <TM_arcaneSpectre.comps.0.labelTendedWellInner>costurado</TM_arcaneSpectre.comps.0.labelTendedWellInner>
+  <TM_arcaneSpectre.comps.0.labelSolidTendedWell>curado</TM_arcaneSpectre.comps.0.labelSolidTendedWell>
+  <TM_arcaneSpectre.injuryProps.destroyedLabel>cortado</TM_arcaneSpectre.injuryProps.destroyedLabel>
+  <TM_arcaneSpectre.injuryProps.destroyedOutLabel>cortado</TM_arcaneSpectre.injuryProps.destroyedOutLabel>
+
+  <TM_BloodyCutHD.label>corte de sangue</TM_BloodyCutHD.label>
+  <TM_BloodyCutHD.description>Um corte profundo que está a sangrar muito.</TM_BloodyCutHD.description>
+  <TM_BloodyCutHD.labelNoun>corte de sangue</TM_BloodyCutHD.labelNoun>
+  <TM_BloodyCutHD.comps.0.labelTendedWell>desligado</TM_BloodyCutHD.comps.0.labelTendedWell>
+  <TM_BloodyCutHD.comps.0.labelTendedWellInner>costurado</TM_BloodyCutHD.comps.0.labelTendedWellInner>
+  <TM_BloodyCutHD.comps.0.labelSolidTendedWell>curado</TM_BloodyCutHD.comps.0.labelSolidTendedWell>
+  <TM_BloodyCutHD.injuryProps.destroyedLabel>cortado</TM_BloodyCutHD.injuryProps.destroyedLabel>
+  <TM_BloodyCutHD.injuryProps.destroyedOutLabel>cortado</TM_BloodyCutHD.injuryProps.destroyedOutLabel>
+
+  <TM_DisablingBlowHD.label>Choque de desativação</TM_DisablingBlowHD.label>
+  <TM_DisablingBlowHD.description>O ataque próximo devia ter sido desativado do que morto.</TM_DisablingBlowHD.description>
+  <TM_DisablingBlowHD.comps.0.labelTendedWell>desligado</TM_DisablingBlowHD.comps.0.labelTendedWell>
+  <TM_DisablingBlowHD.comps.0.labelTendedWellInner>costurado</TM_DisablingBlowHD.comps.0.labelTendedWellInner>
+  <TM_DisablingBlowHD.comps.0.labelSolidTendedWell>curado</TM_DisablingBlowHD.comps.0.labelSolidTendedWell>
+  <TM_DisablingBlowHD.injuryProps.destroyedLabel>partido</TM_DisablingBlowHD.injuryProps.destroyedLabel>
+  <TM_DisablingBlowHD.injuryProps.destroyedOutLabel>esmagado</TM_DisablingBlowHD.injuryProps.destroyedOutLabel>
+
+  <TM_ChiBurnHD.label>Fogo de Qi</TM_ChiBurnHD.label>
+  <TM_ChiBurnHD.description>Danos causados pela explosão de energia qi.</TM_ChiBurnHD.description>
+  <TM_ChiBurnHD.comps.0.labelTendedWell>desligado</TM_ChiBurnHD.comps.0.labelTendedWell>
+  <TM_ChiBurnHD.comps.0.labelTendedWellInner>costurado</TM_ChiBurnHD.comps.0.labelTendedWellInner>
+  <TM_ChiBurnHD.comps.0.labelSolidTendedWell>curado</TM_ChiBurnHD.comps.0.labelSolidTendedWell>
+  <TM_ChiBurnHD.injuryProps.destroyedLabel>queimado</TM_ChiBurnHD.injuryProps.destroyedLabel>
+  <TM_ChiBurnHD.injuryProps.destroyedOutLabel>desmoronou-se</TM_ChiBurnHD.injuryProps.destroyedOutLabel>
+
+  <TM_ChiFistHD.label>ataque</TM_ChiFistHD.label>
+  <TM_ChiFistHD.description>Um ataque em combate próximo de um monge.</TM_ChiFistHD.description>
+  <TM_ChiFistHD.comps.0.labelTendedWell>desligado</TM_ChiFistHD.comps.0.labelTendedWell>
+  <TM_ChiFistHD.comps.0.labelTendedWellInner>costurado</TM_ChiFistHD.comps.0.labelTendedWellInner>
+  <TM_ChiFistHD.comps.0.labelSolidTendedWell>curado</TM_ChiFistHD.comps.0.labelSolidTendedWell>
+  <TM_ChiFistHD.injuryProps.destroyedLabel>quebrado</TM_ChiFistHD.injuryProps.destroyedLabel>
+  <TM_ChiFistHD.injuryProps.destroyedOutLabel>removido</TM_ChiFistHD.injuryProps.destroyedOutLabel>
+
+  <TM_ToxinHD.label>toxina</TM_ToxinHD.label>
+  <TM_ToxinHD.labelNoun>toxina</TM_ToxinHD.labelNoun>
+  <TM_ToxinHD.description>Danos com toxinas.</TM_ToxinHD.description>
+  <TM_ToxinHD.comps.0.labelTendedWell>processado</TM_ToxinHD.comps.0.labelTendedWell>
+  <TM_ToxinHD.comps.0.labelTendedWellInner>processado</TM_ToxinHD.comps.0.labelTendedWellInner>
+  <TM_ToxinHD.comps.0.labelSolidTendedWell>processado</TM_ToxinHD.comps.0.labelSolidTendedWell>
+  <TM_ToxinHD.injuryProps.destroyedLabel>destruído</TM_ToxinHD.injuryProps.destroyedLabel>
+
+  <TM_LightDD.label>Luz</TM_LightDD.label>
+  <TM_LightDD.description>Energia destrutiva da área da luz.</TM_LightDD.description>
+  <TM_LightDD.comps.0.labelTendedWell>vendado</TM_LightDD.comps.0.labelTendedWell>
+  <TM_LightDD.comps.0.labelTendedWellInner>costurado</TM_LightDD.comps.0.labelTendedWellInner>
+  <TM_LightDD.comps.0.labelSolidTendedWell>curado</TM_LightDD.comps.0.labelSolidTendedWell>
+  <TM_LightDD.injuryProps.destroyedLabel>queimado</TM_LightDD.injuryProps.destroyedLabel>
+  <TM_LightDD.injuryProps.destroyedOutLabel>queimado</TM_LightDD.injuryProps.destroyedOutLabel>
+
+  <TM_Dismember.label>desmembrar</TM_Dismember.label>
+  <TM_Dismember.description>Um ataque que afasta o membro (ou a cabeça) do alvo.</TM_Dismember.description>
+  <TM_Dismember.labelNoun>ferimento extenso</TM_Dismember.labelNoun>
+  <TM_Dismember.comps.0.labelTendedWell>vendado</TM_Dismember.comps.0.labelTendedWell>
+  <TM_Dismember.comps.0.labelTendedWellInner>costurado</TM_Dismember.comps.0.labelTendedWellInner>
+  <TM_Dismember.comps.0.labelSolidTendedWell>curado</TM_Dismember.comps.0.labelSolidTendedWell>
+  <TM_Dismember.injuryProps.destroyedLabel>arrancado</TM_Dismember.injuryProps.destroyedLabel>
+  <TM_Dismember.injuryProps.destroyedOutLabel>arrancado</TM_Dismember.injuryProps.destroyedOutLabel>
+
+  <TM_PartRemovalHD.label>perdido</TM_PartRemovalHD.label>
+  <TM_PartRemovalHD.description>Parte do corpo ausente.</TM_PartRemovalHD.description>
+  <TM_PartRemovalHD.labelNoun>perdido</TM_PartRemovalHD.labelNoun>
+  <TM_PartRemovalHD.injuryProps.destroyedLabel>perdido</TM_PartRemovalHD.injuryProps.destroyedLabel>
+  <TM_PartRemovalHD.injuryProps.destroyedOutLabel>perdido</TM_PartRemovalHD.injuryProps.destroyedOutLabel>
+
+  <TM_DecayDamage.label>Desintegração</TM_DecayDamage.label>
+  <TM_DecayDamage.description>Desintegração orgânica.</TM_DecayDamage.description>
+  <TM_DecayDamage.comps.0.labelTendedWell>vendado</TM_DecayDamage.comps.0.labelTendedWell>
+  <TM_DecayDamage.comps.0.labelTendedWellInner>costurado</TM_DecayDamage.comps.0.labelTendedWellInner>
+  <TM_DecayDamage.comps.0.labelSolidTendedWell>processado</TM_DecayDamage.comps.0.labelSolidTendedWell>
+  <TM_DecayDamage.injuryProps.destroyedLabel>sem vida</TM_DecayDamage.injuryProps.destroyedLabel>
+  <TM_DecayDamage.injuryProps.destroyedOutLabel>decomposição</TM_DecayDamage.injuryProps.destroyedOutLabel>
+
+  <TM_SymbiosisDamage.label>simbiose</TM_SymbiosisDamage.label>
+  <TM_SymbiosisDamage.description>Danos causados pela ligação simbiótica.</TM_SymbiosisDamage.description>
+  <TM_SymbiosisDamage.labelNoun>transferência simbiótica</TM_SymbiosisDamage.labelNoun>
+  <TM_SymbiosisDamage.comps.0.labelTendedWell>costurado</TM_SymbiosisDamage.comps.0.labelTendedWell>
+  <TM_SymbiosisDamage.comps.0.labelTendedWellInner>costurado</TM_SymbiosisDamage.comps.0.labelTendedWellInner>
+  <TM_SymbiosisDamage.comps.0.labelSolidTendedWell>recolhido</TM_SymbiosisDamage.comps.0.labelSolidTendedWell>
+  <TM_SymbiosisDamage.injuryProps.destroyedLabel>destruído</TM_SymbiosisDamage.injuryProps.destroyedLabel>
+  <TM_SymbiosisDamage.injuryProps.destroyedOutLabel>separado</TM_SymbiosisDamage.injuryProps.destroyedOutLabel>
+
+  <TM_Frozen.label>vento gelado</TM_Frozen.label>
+  <TM_Frozen.description>Vento gelado que se espalha.</TM_Frozen.description>
+  <TM_Frozen.comps.0.labelTendedWell>costurado</TM_Frozen.comps.0.labelTendedWell>
+  <TM_Frozen.comps.0.labelTendedWellInner>costurado</TM_Frozen.comps.0.labelTendedWellInner>
+  <TM_Frozen.comps.0.labelSolidTendedWell>costurado</TM_Frozen.comps.0.labelSolidTendedWell>
+  <TM_Frozen.injuryProps.destroyedLabel>Bloqueado</TM_Frozen.injuryProps.destroyedLabel>
+  <TM_Frozen.injuryProps.destroyedOutLabel>Bloqueado</TM_Frozen.injuryProps.destroyedOutLabel>
+
+
+  <TM_ArcaneHD.comps.1.permanentLabel>destruído pela força secreta</TM_ArcaneHD.comps.1.permanentLabel>
+  <TM_ThrumboCleave.comps.2.permanentLabel>cicatriz</TM_ThrumboCleave.comps.2.permanentLabel>
+  <TM_BlazingPowerHD.comps.1.permanentLabel>destruído pela força ardente</TM_BlazingPowerHD.comps.1.permanentLabel>
+  <TM_Holy.comps.1.permanentLabel>destruído pelo poder santo</TM_Holy.comps.1.permanentLabel>
+  <TM_SpiritHD.comps.1.permanentLabel>desprovido de espírito</TM_SpiritHD.comps.1.permanentLabel>
+  <TM_MagicMissile.comps.1.permanentLabel>tocado por segredo</TM_MagicMissile.comps.1.permanentLabel>
+  <TM_ManaMine.comps.1.permanentLabel>destruído por uma explosão de maná</TM_ManaMine.comps.1.permanentLabel>
+  <TM_Firebolt.comps.1.permanentLabel>cicatriz de queimadura</TM_Firebolt.comps.1.permanentLabel>
+  <TM_LightningCloud.comps.1.permanentLabel>destruído pela corrente elétrica</TM_LightningCloud.comps.1.permanentLabel>
+  <TM_Lightning.comps.1.permanentLabel>atingido por um raio</TM_Lightning.comps.1.permanentLabel>
+  <FrostRay.comps.1.permanentLabel>cicatriz de congelamento</FrostRay.comps.1.permanentLabel>
+  <Snowball.comps.1.permanentLabel>cicatriz de congelamento</Snowball.comps.1.permanentLabel>
+  <Blizzard.comps.1.permanentLabel>destruído por uma tempestade de neve</Blizzard.comps.1.permanentLabel>
+  <Iceshard.comps.1.permanentLabel>cicatriz de fragmento de gelo</Iceshard.comps.1.permanentLabel>
+  <TM_GrapplingHook.comps.2.permanentLabel>arrancado</TM_GrapplingHook.comps.2.permanentLabel>
+  <TM_Whirlwind_Knockdown.comps.2.permanentLabel>cortado</TM_Whirlwind_Knockdown.comps.2.permanentLabel>
+  <TM_DisablingShot_HD.comps.2.permanentLabel>disparado</TM_DisablingShot_HD.comps.2.permanentLabel>
+  <TM_arcaneSpectre.comps.2.permanentLabel>cicatriz pálida</TM_arcaneSpectre.comps.2.permanentLabel>
+  <TM_BloodyCutHD.comps.2.permanentLabel>cicatrizes de corte</TM_BloodyCutHD.comps.2.permanentLabel>
+  <TM_DisablingBlowHD.comps.2.permanentLabel>partido</TM_DisablingBlowHD.comps.2.permanentLabel>
+  <TM_ChiBurnHD.comps.1.permanentLabel>destruído</TM_ChiBurnHD.comps.1.permanentLabel>
+  <TM_ChiFistHD.comps.1.permanentLabel>destruído</TM_ChiFistHD.comps.1.permanentLabel>
+  <TM_ToxinHD.comps.2.permanentLabel>carne tóxica</TM_ToxinHD.comps.2.permanentLabel>
+  <TM_LightDD.comps.1.permanentLabel>queimado pela luz</TM_LightDD.comps.1.permanentLabel>
+
+</LanguageData>

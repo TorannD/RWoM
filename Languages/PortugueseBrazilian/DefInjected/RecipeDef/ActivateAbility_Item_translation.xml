@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <AdministerShardOfExtraction.label>controlar o fragmento de extração</AdministerShardOfExtraction.label>
+  <AdministerShardOfExtraction.description>Tira a natureza de combate e secreta do peão. É um objeto descartável que remove para sempre a turma do peão e transforma-o em essência. Essência pode ser usada para a experiência de classe. O fragmento foi destruído após o processo de extração.</AdministerShardOfExtraction.description>
+  <AdministerShardOfExtraction.jobString>Uso de fragmento de extração</AdministerShardOfExtraction.jobString>
+
+
+</LanguageData>

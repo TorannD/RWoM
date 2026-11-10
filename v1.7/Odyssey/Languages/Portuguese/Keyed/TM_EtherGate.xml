@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_EtherGateSummon>Invocar servo etéreo</TM_EtherGateSummon>
+  <TM_EtherGateSummonDesc>Gasta 100 de combustível arcano para invocar um transportador durante um dia. Não precisa de comida, sono ou ar. Também minera com perícia inicial de Mineração 10 e constrói com perícia inicial de Construção 5. Prioridade: construção, mineração designada e transporte.</TM_EtherGateSummonDesc>
+  <TM_EtherGateUnavailable>O portal tem de estar num mapa, pertencer à tua fação e estar ligado.</TM_EtherGateUnavailable>
+  <TM_EtherGateNoFuel>Requer 100 de combustível arcano.</TM_EtherGateNoFuel>
+  <TM_EtherGateNoLanding>Não há espaço seguro junto ao portal para o servo.</TM_EtherGateNoLanding>
+  <TM_EtherGateFailed>A invocação falhou. Não foi gasto combustível arcano.</TM_EtherGateFailed>
+  <TM_EtherGateBusy>Invocação em curso.</TM_EtherGateBusy>
+  <TM_EtherServantRemaining>Tempo restante: {0}</TM_EtherServantRemaining>
+</LanguageData>

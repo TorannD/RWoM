@@ -14,6 +14,14 @@ namespace TorannMagic.Conditions
         bool initialized = false;
         bool disabled = false;
         public Thing thing;
+        private int debugElement = -1;
+
+        public void ConfigureDebug(IntVec3 cell, int element)
+        {
+            if (element < 0 || element > 3) throw new ArgumentOutOfRangeException(nameof(element));
+            centerLocation = new IntVec2(cell.x, cell.z);
+            debugElement = element;
+        }
 
         public override void GameConditionTick()
         {
@@ -43,8 +51,9 @@ namespace TorannMagic.Conditions
             {
                 base.Init();
                 this.disabled = false;
-                this.FindGoodCenterLocation();
+                if (debugElement < 0) this.FindGoodCenterLocation();
                 this.thing = ThingMaker.MakeThing(ThingDef.Named("TM_ElementalRift"), ThingDefOf.BlocksGranite);
+                if (debugElement >= 0) ((Building_TMElementalRift)thing).SetDebugElement(debugElement);
                 GenSpawn.Spawn(thing, centerLocation.ToIntVec3, this.SingleMap, Rot4.North, WipeMode.Vanish, false);
                 Faction faction = Find.FactionManager.FirstFactionOfDef(FactionDef.Named("TM_ElementalFaction"));
                 if (!faction.HostileTo(Faction.OfPlayer))

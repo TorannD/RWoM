@@ -16,8 +16,37 @@ namespace TorannMagic
         public int verVal = 0;
         public int pwrVal = 0;
 
+        internal void BeginFromHost(LocalTargetInfo target)
+        {
+            currentTarget=target;
+            WarmupComplete();
+        }
+
+        private Pawn SkillOwner(Pawn body)
+        {
+            var owner=Ability?.Pawn ?? body;
+            if(owner==body) return body;
+            return ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(body,out var held) && held==owner &&
+                ClassProgression.SpiritRebirthState.TryGet(owner,out var state) && !state.DepletionPending ? owner : null;
+        }
+
+        internal void DrainEnergy(Pawn victim)
+        {
+            var owner=SkillOwner(CasterPawn);
+            var chi=owner?.health?.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD);
+            if(chi==null || victim==null) return;
+            Need energy=null;
+            if(TM_Calc.IsMagicUser(victim)) energy=victim.GetCompAbilityUserMagic()?.Mana;
+            else if(TM_Calc.IsMightUser(victim)) energy=victim.GetCompAbilityUserMight()?.Stamina;
+            if(energy==null) return;
+            float amount=Mathf.Clamp(energy.CurLevel,0,.25f);
+            chi.Severity+=amount*100;
+            energy.CurLevel-=amount;
+        }
+
         protected override bool TryCastShot()
         {
+            if(SkillOwner(CasterPawn)==null) {burstShotsLeft=0;return false;}
             bool continueAttack = true;
             if (this.CasterPawn.equipment.Primary == null)
             {
@@ -33,21 +62,7 @@ namespace TorannMagic
                     }
                     if(verVal > 1 && Rand.Chance(.4f))
                     {
-                        if(TM_Calc.IsMagicUser(targetPawn))
-                        {
-                            CompAbilityUserMagic compMagic = targetPawn.GetCompAbilityUserMagic();
-                            float manaDrain = Mathf.Clamp(compMagic.Mana.CurLevel, 0, .25f);
-                            this.CasterPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD).Severity += (manaDrain * 100);
-                            compMagic.Mana.CurLevel -= manaDrain;
-
-                        }
-                        else if(TM_Calc.IsMightUser(targetPawn))
-                        {
-                            CompAbilityUserMight compMight = targetPawn.GetCompAbilityUserMight();
-                            float staminaDrain = Mathf.Clamp(compMight.Stamina.CurLevel, 0, .25f);
-                            this.CasterPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_ChiHD).Severity += (staminaDrain * 100);
-                            compMight.Stamina.CurLevel -= staminaDrain;
-                        }
+                        DrainEnergy(targetPawn);
                     }
                     if(verVal > 2 && Rand.Chance(.1f))
                     {
@@ -98,13 +113,15 @@ namespace TorannMagic
 
         public int GetAttackDmg(Pawn pawn)
         {
-            CompAbilityUserMight comp = pawn.GetCompAbilityUserMight();
+            var owner=SkillOwner(pawn);
+            if(owner==null) return 0;
+            CompAbilityUserMight comp = owner.GetCompAbilityUserMight();
             //MightPowerSkill pwr = comp.MightData.MightPowerSkill_TigerStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_TigerStrike_pwr");
             //MightPowerSkill ver = comp.MightData.MightPowerSkill_TigerStrike.FirstOrDefault((MightPowerSkill x) => x.label == "TM_TigerStrike_ver");
             //verVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_TigerStrike, "TM_TigerStrike", "_ver", true);
             //pwrVal = TM_Calc.GetMightSkillLevel(pawn, comp.MightData.MightPowerSkill_TigerStrike, "TM_TigerStrike", "_pwr", true);
-            verVal = TM_Calc.GetSkillVersatilityLevel(pawn, this.Ability.Def as TMAbilityDef, false);
-            pwrVal = TM_Calc.GetSkillPowerLevel(pawn, this.Ability.Def as TMAbilityDef, false);
+            verVal = TM_Calc.GetSkillVersatilityLevel(owner, this.Ability.Def as TMAbilityDef, false);
+            pwrVal = TM_Calc.GetSkillPowerLevel(owner, this.Ability.Def as TMAbilityDef, false);
             MightPowerSkill str = comp.MightData.MightPowerSkill_global_strength.FirstOrDefault((MightPowerSkill x) => x.label == "TM_global_strength_pwr");
             //this.verVal = ver.level;
             //this.pwrVal = pwr.level;

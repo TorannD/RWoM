@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_TravelSafety_Warning>{0} may be harmed at the destination: {1}. Proceed with this move?</TM_TravelSafety_Warning>
+  <TM_TravelSafety_Vacuum>vacuum</TM_TravelSafety_Vacuum>
+  <TM_TravelSafety_Cold>dangerous cold</TM_TravelSafety_Cold>
+  <TM_TravelSafety_Heat>dangerous heat</TM_TravelSafety_Heat>
+  <TM_TravelSafety_ShellExpiring>Ether Shell will expire soon</TM_TravelSafety_ShellExpiring>
+  <TM_TravelSafety_Changed>The destination is no longer safe. Issue a new move order to confirm the risk.</TM_TravelSafety_Changed>
+  <TM_BladePassageRefused>{0} cannot use Blade Passage on that target: no clear flight path (an adjacent, downed, non-hostile or already blocked target is invalid).</TM_BladePassageRefused>
+  <TM_CommanderNoTakers>No colonist took the {0} order: working colonists within 6 cells of the marked spot accept it (Social raises the odds for other orders).</TM_CommanderNoTakers>
+</LanguageData>

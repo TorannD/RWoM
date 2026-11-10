@@ -18,6 +18,25 @@ namespace TorannMagic
         IntVec3 strikePos = default(IntVec3);
         Pawn caster;
         private float radius = 4;
+        private bool trainingCaptured;
+
+        internal void CaptureTraining(Pawn source)
+        {
+            if(trainingCaptured) return;
+            verVal=TM_Calc.GetSkillVersatilityLevel(source,TorannMagicDefOf.TM_RifleSpec,true);
+            trainingCaptured=true;
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref trainingCaptured,"trainingCaptured",false);
+            Scribe_Values.Look(ref initialized,"initialized",false);
+            Scribe_Values.Look(ref verVal,"verVal",0);
+            Scribe_Values.Look(ref mightPwr,"mightPwr",1f);
+            Scribe_Values.Look(ref strikePos,"strikePos");
+            Scribe_Values.Look(ref radius,"radius",4f);
+        }
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
@@ -28,9 +47,8 @@ namespace TorannMagic
             {
                 caster = this.launcher as Pawn;
                 this.strikePos = base.Position;
-                CompAbilityUserMight comp = caster.GetCompAbilityUserMight();
                 //verVal = TM_Calc.GetMightSkillLevel(caster, comp.MightData.MightPowerSkill_RifleSpec, "TM_RifleSpec", "_ver", true);
-                verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_RifleSpec, true);
+                if(!trainingCaptured) verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_RifleSpec, true);
                 this.radius = this.def.projectile.explosionRadius;
                 this.initialized = true;
             }

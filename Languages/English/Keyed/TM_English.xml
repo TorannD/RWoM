@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
 <!-- Notification messages  -->
@@ -53,7 +53,6 @@
 <TM_CannotUseOnLiving>This spell cannot be used on the living.</TM_CannotUseOnLiving>
 <TM_CannontConsumeCorpseType>Cannot consume this type of corpse.</TM_CannontConsumeCorpseType>
 <TM_InvalidCorpseType>Corpse type is invalid for Consume Corpse.</TM_InvalidCorpseType>
-<TM_Learn>Learn</TM_Learn>
 <TM_GatewayBeyondMaximumRange>Target tile is beyond reach of Gateway.</TM_GatewayBeyondMaximumRange>
 <TM_InvalidGatewaySelection>Invalid target tile for Gateway.</TM_InvalidGatewaySelection>
 <TM_InvalidGatewayNotOccupied>Gateway can only be used on map tiles occupied by colonists.</TM_InvalidGatewayNotOccupied>
@@ -308,6 +307,8 @@
 <supportTraitChance>Supporting Trait Commonality</supportTraitChance>
 <TM_ClassWarning>**Change class settings only when starting a new game**</TM_ClassWarning>
 <TM_RequiresRestart>**Any change requires a game restart**</TM_RequiresRestart>
+<TM_NewProgressionBeta>New class progression (beta)</TM_NewProgressionBeta>
+  <TM_NewProgressionBetaDesc>Enables the experimental new class progression system. Only read when the game starts: changing this option requires a restart. When disabled, the mod uses the classic class system.</TM_NewProgressionBetaDesc>
 <TM_ClassOptions>Class Options</TM_ClassOptions>
 <TM_EnabledClasses>Enabled Classes</TM_EnabledClasses>
 <TM_EnabledMages>Mages</TM_EnabledMages>
@@ -2301,7 +2302,6 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 <!-- ============ Right Click Menu Options =============-->
 <TM_Use>Use {0}</TM_Use>
 <TM_Read>Read {0}</TM_Read>
-<TM_Learn>Learn {0}</TM_Learn>
 <TM_Inject>Inject {0}</TM_Inject>
 
 <!-- ============ Magic Card info =============-->
@@ -2327,6 +2327,254 @@ Level 3: all 4 effects</TM_CombatDrugs_pwr_desc>
 
 <!-- ============ Miscellaneous =============-->
 <TM_UndeadVerbatum>Undead</TM_UndeadVerbatum>
+  <TM_GrimoireDesc>Open this character's Grimoire: class levels, resources and abilities.</TM_GrimoireDesc>
+  <TM_GrimoireSub>Class levels, mana and abilities at a glance.</TM_GrimoireSub>
+  <TM_GrimoireIsekaiHint>Isekai Leveling's native integration by Jelly Creative grants bonuses to maximum mana and stamina, their regeneration, ability cooldowns and resource costs.</TM_GrimoireIsekaiHint>
+  <TM_Stats>Attributes</TM_Stats>
+  <TM_StatsMight>Combat attributes</TM_StatsMight>
+  <TM_GrimoireResources>Resources</TM_GrimoireResources>
+  <TM_LevelUp>Upgrade</TM_LevelUp>
+  <TM_SlavesCanScribe>Allow slaves to write class tomes</TM_SlavesCanScribe>
+  <AU_DISABLED>DISABLED</AU_DISABLED>
+  <TM_GrimoireTabMode>Grimoire on the ability bar</TM_GrimoireTabMode>
+  <TM_GrimoireTabModeDesc>Enabled: show a Grimoire button on the ability bar. Disabled: open the same window from a Grimoire inspect tab.</TM_GrimoireTabModeDesc>
+  <TM_GrimoireOpen>Open Grimoire</TM_GrimoireOpen>
+  <TM_GrimoireTabHint>The Grimoire window is already open.</TM_GrimoireTabHint>
+  <TM_AIMarkingDesc>Show class icons over non-colonist mages and fighters, including neutral and friendly visitors.</TM_AIMarkingDesc>
+  <TM_AIFighterMarkingDesc>Legacy option: no independent effect. Non-colonist fighter icons currently follow the AI mage-marking setting.</TM_AIFighterMarkingDesc>
+  <TM_AIFriendlyMarkingDesc>Show class icons over your colonist mages and fighters.</TM_AIFriendlyMarkingDesc>
+  <XPMultiplierDesc>Multiplier for magic and might experience awarded for using abilities.</XPMultiplierDesc>
+  <NeedMultiplierDesc>Multiplier for mana regeneration.</NeedMultiplierDesc>
+  <MagicyteChanceDesc>Chance to obtain raw magicyte while mining.</MagicyteChanceDesc>
+  <TM_DeathRetaliationIsLethalDesc>Allow retaliation to inflict lethal self-injury on the retaliating pawn, except for recovery effects. Disabling this does not make damage to other pawns non-lethal.</TM_DeathRetaliationIsLethalDesc>
+  <TM_DeathRetaliationChanceDesc>Chance for a downed hostile mage or fighter to prepare retaliation. Prisoners cannot retaliate.</TM_DeathRetaliationChanceDesc>
+  <TM_DeathRetaliationDelayDesc>Multiplier for the retaliation countdown after it starts; higher values delay the effect.</TM_DeathRetaliationDelayDesc>
+  <TM_enableAutocastDesc>Enable automatic use of colonists' magic and combat abilities whose AC toggle is enabled.</TM_enableAutocastDesc>
+  <TM_autocastUndraftedThresholdDesc>Minimum mana or stamina percentage for undrafted autocasting. Also used by regular NPC autocast checks.</TM_autocastUndraftedThresholdDesc>
+  <TM_autocastDraftedThresholdDesc>Minimum mana or stamina percentage for drafted autocasting with fire at will enabled. Monks bypass the stamina threshold.</TM_autocastDraftedThresholdDesc>
+  <TM_autocastEvaluationFrequencyDesc>Base interval between autocast checks, in game seconds. Higher values mean fewer checks; actual intervals are randomized.</TM_autocastEvaluationFrequencyDesc>
+  <TM_autocastAnimalsDesc>Include animals in supported automatic target searches, such as healing.</TM_autocastAnimalsDesc>
+  <AICanCastDesc>Allow non-colonist mages and fighters to use AI-controlled abilities.</AICanCastDesc>
+  <AIHardModeDesc>Strengthen many NPC magic and combat abilities and increase the chance of NPC mages knowing master spells.</AIHardModeDesc>
+  <TM_AggressiveAICastingDesc>Increase NPC casting activity and halve base cooldowns and mana/stamina costs.</TM_AggressiveAICastingDesc>
+  <TM_SlavesCanScribeDesc>Allow slaves to write class tomes and torn class manuscripts when the usual class requirements are met.</TM_SlavesCanScribeDesc>
+  <TM_UndeadUpkeepMultiplierDesc>Multiplier for the mana-regeneration penalty of maintaining undead; zero disables that penalty.</TM_UndeadUpkeepMultiplierDesc>
+  <TM_ParacyteSoftCapDesc>Local paracyte load tolerated before mana regeneration is reduced. Each paracyte plant counts as 1; if enabled, each mage counts as 2.</TM_ParacyteSoftCapDesc>
+  <TM_ParacyteMagesCountDesc>Count map mages as two paracytes each when calculating the mana-regeneration penalty; excludes animals, wild people and Faceless.</TM_ParacyteMagesCountDesc>
+  <unrestrictedBloodTypesForBloodMagicDesc>Allow blood collection and ignition to use other races' blood types, without bypassing other spell requirements.</unrestrictedBloodTypesForBloodMagicDesc>
+  <TM_UnrestrictedWeaponCopyDesc>Allow the Technomancer to copy ranged weapons below Industrial tech level or with nonstandard firing verbs. Melee weapons remain excluded.</TM_UnrestrictedWeaponCopyDesc>
+  <TM_ClassOptionsDesc>Choose enabled magic and combat classes and support traits, and adjust their generation chances.</TM_ClassOptionsDesc>
+  <TM_FactionOptionsDesc>Adjust mage and fighter generation multipliers for each faction.</TM_FactionOptionsDesc>
+  <TM_EventOptionsDesc>Open difficulty settings for rift, wandering-lich and demon-assault events.</TM_EventOptionsDesc>
+  <TM_GolemOptionsDesc>Configure golem display: dormant frames, colonist-bar entries and screen shake.</TM_GolemOptionsDesc>
+  <TM_DisplayOptionsDesc>Configure icons, camera behavior, Grimoire placement, undead appearance and clothing rendering.</TM_DisplayOptionsDesc>
+  <TM_Grimoire>Grimoire</TM_Grimoire>
+  <TM_Learn>Learn</TM_Learn>
+
+  <!-- Grimoire classic-mode and progression UI strings (missing entirely before). -->
+  <TM_GrimoireClassicRequirements>Classic rules: spells are learned with class points in the Grimoire; some spells also require their scroll or book to be read first.</TM_GrimoireClassicRequirements>
+  <TM_GrimoireClassicRules>Classic rules</TM_GrimoireClassicRules>
+  <TM_GrimoireLearningItems>Learning items required:</TM_GrimoireLearningItems>
+  <TM_GrimoireNoLearningItems>No learning items required.</TM_GrimoireNoLearningItems>
+  <TM_GrimoireLearned>Learned</TM_GrimoireLearned>
+  <TM_GrimoireRankMax>Max rank</TM_GrimoireRankMax>
+  <TM_GrimoireRank>Rank</TM_GrimoireRank>
+  <TM_GrimoireScrollUnspecified>Unspecified scroll</TM_GrimoireScrollUnspecified>
+  <TM_ProgressionOpenGrimoire>Open Grimoire</TM_ProgressionOpenGrimoire>
+  <TM_ProgressionOpenGrimoireDesc>Open the class Grimoire.</TM_ProgressionOpenGrimoireDesc>
+  <TM_ProgressionEnrollMage>Become a mage (new progression)</TM_ProgressionEnrollMage>
+  <TM_ProgressionEnrollMageDesc>Enroll into the experimental new class progression as an apprentice mage.</TM_ProgressionEnrollMageDesc>
+  <TM_SleepingSpells>Unresolved spells</TM_SleepingSpells>
+  <TM_SleepingSpellsDesc>Known spell whose definition is missing from the current version. It is skipped by autocast and becomes usable again if the spell returns.</TM_SleepingSpellsDesc>
+  <TM_ProgressionBookUnavailable>This book belongs to the new class progression and cannot be used without enrollment.</TM_ProgressionBookUnavailable>
+  <TM_ProgressionStageLocked>This spell is locked behind a progression stage that has not been reached yet.</TM_ProgressionStageLocked>
+  <TM_ProgressionTrialDone>Trial completed.</TM_ProgressionTrialDone>
+  <TM_ProgressionTrialPending>Trial not completed yet.</TM_ProgressionTrialPending>
+  <TM_ProgressionSharedLearning>Shared learning</TM_ProgressionSharedLearning>
 
 
+  <!-- Beta progression UI strings. -->
+  <TM_ProgressionArcanistAscension>Arcanist ascension ritual</TM_ProgressionArcanistAscension>
+  <TM_ProgressionArcanistAscensionRequirements>Arcanist ascension requirements:</TM_ProgressionArcanistAscensionRequirements>
+  <TM_ProgressionArcanistAttunement>Arcanist attunement ritual</TM_ProgressionArcanistAttunement>
+  <TM_ProgressionArcanistAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionArcanistAttunementHint>
+  <TM_ProgressionArcanistFoundationTrial>Arcanist foundation trial</TM_ProgressionArcanistFoundationTrial>
+  <TM_ProgressionArcanistMasteryTrial>Arcanist mastery trial</TM_ProgressionArcanistMasteryTrial>
+  <TM_ProgressionBardAscension>Bard ascension ritual</TM_ProgressionBardAscension>
+  <TM_ProgressionBardAscensionRequirements>Bard ascension requirements:</TM_ProgressionBardAscensionRequirements>
+  <TM_ProgressionBardAttunement>Bard attunement ritual</TM_ProgressionBardAttunement>
+  <TM_ProgressionBardAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionBardAttunementHint>
+  <TM_ProgressionBardFoundationTrial>Bard foundation trial</TM_ProgressionBardFoundationTrial>
+  <TM_ProgressionBardMasteryTrial>Bard mastery trial</TM_ProgressionBardMasteryTrial>
+  <TM_ProgressionBloodMageAscension>Blood mage ascension ritual</TM_ProgressionBloodMageAscension>
+  <TM_ProgressionBloodMageAscensionRequirements>Blood mage ascension requirements:</TM_ProgressionBloodMageAscensionRequirements>
+  <TM_ProgressionBloodMageAttunement>Blood mage attunement ritual</TM_ProgressionBloodMageAttunement>
+  <TM_ProgressionBloodMageAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionBloodMageAttunementHint>
+  <TM_ProgressionBloodMageFoundationTrial>Blood mage foundation trial</TM_ProgressionBloodMageFoundationTrial>
+  <TM_ProgressionBloodMageMasteryTrial>Blood mage mastery trial</TM_ProgressionBloodMageMasteryTrial>
+  <TM_ProgressionBrightmageAscension>Brightmage ascension ritual</TM_ProgressionBrightmageAscension>
+  <TM_ProgressionBrightmageAscensionRequirements>Brightmage ascension requirements:</TM_ProgressionBrightmageAscensionRequirements>
+  <TM_ProgressionBrightmageAttunement>Brightmage attunement ritual</TM_ProgressionBrightmageAttunement>
+  <TM_ProgressionBrightmageAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionBrightmageAttunementHint>
+  <TM_ProgressionBrightmageFoundationTrial>Brightmage foundation trial</TM_ProgressionBrightmageFoundationTrial>
+  <TM_ProgressionBrightmageMasteryTrial>Brightmage mastery trial</TM_ProgressionBrightmageMasteryTrial>
+  <TM_ProgressionChronomancerAscension>Chronomancer ascension ritual</TM_ProgressionChronomancerAscension>
+  <TM_ProgressionChronomancerAscensionRequirements>Chronomancer ascension requirements:</TM_ProgressionChronomancerAscensionRequirements>
+  <TM_ProgressionChronomancerAttunement>Chronomancer attunement ritual</TM_ProgressionChronomancerAttunement>
+  <TM_ProgressionChronomancerAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionChronomancerAttunementHint>
+  <TM_ProgressionChronomancerFoundationTrial>Chronomancer foundation trial</TM_ProgressionChronomancerFoundationTrial>
+  <TM_ProgressionChronomancerMasteryTrial>Chronomancer mastery trial</TM_ProgressionChronomancerMasteryTrial>
+  <TM_ProgressionDruidAscension>Druid ascension ritual</TM_ProgressionDruidAscension>
+  <TM_ProgressionDruidAscensionRequirements>Druid ascension requirements:</TM_ProgressionDruidAscensionRequirements>
+  <TM_ProgressionDruidAttunement>Druid attunement ritual</TM_ProgressionDruidAttunement>
+  <TM_ProgressionDruidAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionDruidAttunementHint>
+  <TM_ProgressionDruidFoundationTrial>Druid foundation trial</TM_ProgressionDruidFoundationTrial>
+  <TM_ProgressionDruidMasteryTrial>Druid mastery trial</TM_ProgressionDruidMasteryTrial>
+  <TM_ProgressionEmpathAscension>Empath ascension ritual</TM_ProgressionEmpathAscension>
+  <TM_ProgressionEmpathAscensionRequirements>Empath ascension requirements:</TM_ProgressionEmpathAscensionRequirements>
+  <TM_ProgressionEmpathAttunement>Empath attunement ritual</TM_ProgressionEmpathAttunement>
+  <TM_ProgressionEmpathAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionEmpathAttunementHint>
+  <TM_ProgressionEmpathFoundationTrial>Empath foundation trial</TM_ProgressionEmpathFoundationTrial>
+  <TM_ProgressionEmpathMasteryTrial>Empath mastery trial</TM_ProgressionEmpathMasteryTrial>
+  <TM_ProgressionEnchanterAscension>Enchanter ascension ritual</TM_ProgressionEnchanterAscension>
+  <TM_ProgressionEnchanterAscensionRequirements>Enchanter ascension requirements:</TM_ProgressionEnchanterAscensionRequirements>
+  <TM_ProgressionEnchanterAttunement>Enchanter attunement ritual</TM_ProgressionEnchanterAttunement>
+  <TM_ProgressionEnchanterAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionEnchanterAttunementHint>
+  <TM_ProgressionEnchanterFoundationTrial>Enchanter foundation trial</TM_ProgressionEnchanterFoundationTrial>
+  <TM_ProgressionEnchanterMasteryTrial>Enchanter mastery trial</TM_ProgressionEnchanterMasteryTrial>
+  <TM_ProgressionFireAscension>Fire mage ascension ritual</TM_ProgressionFireAscension>
+  <TM_ProgressionFireAscensionRequirements>Fire mage ascension requirements:</TM_ProgressionFireAscensionRequirements>
+  <TM_ProgressionFireAttunement>Fire mage attunement ritual</TM_ProgressionFireAttunement>
+  <TM_ProgressionFireAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionFireAttunementHint>
+  <TM_ProgressionFireFoundationTrial>Fire mage foundation trial</TM_ProgressionFireFoundationTrial>
+  <TM_ProgressionFireMasteryTrial>Fire mage mastery trial</TM_ProgressionFireMasteryTrial>
+  <TM_ProgressionGeomancerAscension>Geomancer ascension ritual</TM_ProgressionGeomancerAscension>
+  <TM_ProgressionGeomancerAscensionRequirements>Geomancer ascension requirements:</TM_ProgressionGeomancerAscensionRequirements>
+  <TM_ProgressionGeomancerAttunement>Geomancer attunement ritual</TM_ProgressionGeomancerAttunement>
+  <TM_ProgressionGeomancerAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionGeomancerAttunementHint>
+  <TM_ProgressionGeomancerFoundationTrial>Geomancer foundation trial</TM_ProgressionGeomancerFoundationTrial>
+  <TM_ProgressionGeomancerMasteryTrial>Geomancer mastery trial</TM_ProgressionGeomancerMasteryTrial>
+  <TM_ProgressionGolemancerAscension>Golemancer ascension ritual</TM_ProgressionGolemancerAscension>
+  <TM_ProgressionGolemancerAscensionRequirements>Golemancer ascension requirements:</TM_ProgressionGolemancerAscensionRequirements>
+  <TM_ProgressionGolemancerAttunement>Golemancer attunement ritual</TM_ProgressionGolemancerAttunement>
+  <TM_ProgressionGolemancerAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionGolemancerAttunementHint>
+  <TM_ProgressionGolemancerFoundationTrial>Golemancer foundation trial</TM_ProgressionGolemancerFoundationTrial>
+  <TM_ProgressionGolemancerMasteryTrial>Golemancer mastery trial</TM_ProgressionGolemancerMasteryTrial>
+  <TM_ProgressionIceAscension>Ice mage ascension ritual</TM_ProgressionIceAscension>
+  <TM_ProgressionIceAscensionRequirements>Ice mage ascension requirements:</TM_ProgressionIceAscensionRequirements>
+  <TM_ProgressionIceAttunement>Ice mage attunement ritual</TM_ProgressionIceAttunement>
+  <TM_ProgressionIceAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionIceAttunementHint>
+  <TM_ProgressionIceFoundationTrial>Ice mage foundation trial</TM_ProgressionIceFoundationTrial>
+  <TM_ProgressionIceMasteryTrial>Ice mage mastery trial</TM_ProgressionIceMasteryTrial>
+  <TM_ProgressionLightningAscension>Storm caster ascension ritual</TM_ProgressionLightningAscension>
+  <TM_ProgressionLightningAscensionRequirements>Storm caster ascension requirements:</TM_ProgressionLightningAscensionRequirements>
+  <TM_ProgressionLightningAttunement>Storm caster attunement ritual</TM_ProgressionLightningAttunement>
+  <TM_ProgressionLightningAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionLightningAttunementHint>
+  <TM_ProgressionLightningFoundationTrial>Storm caster foundation trial</TM_ProgressionLightningFoundationTrial>
+  <TM_ProgressionLightningMasteryTrial>Storm caster mastery trial</TM_ProgressionLightningMasteryTrial>
+  <TM_ProgressionNecromancerAscension>Necromancer ascension ritual</TM_ProgressionNecromancerAscension>
+  <TM_ProgressionNecromancerAscensionRequirements>Necromancer ascension requirements:</TM_ProgressionNecromancerAscensionRequirements>
+  <TM_ProgressionNecromancerAttunement>Necromancer attunement ritual</TM_ProgressionNecromancerAttunement>
+  <TM_ProgressionNecromancerAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionNecromancerAttunementHint>
+  <TM_ProgressionNecromancerFoundationTrial>Necromancer foundation trial</TM_ProgressionNecromancerFoundationTrial>
+  <TM_ProgressionNecromancerMasteryTrial>Necromancer mastery trial</TM_ProgressionNecromancerMasteryTrial>
+  <TM_ProgressionPaladinAscension>Paladin ascension ritual</TM_ProgressionPaladinAscension>
+  <TM_ProgressionPaladinAscensionRequirements>Paladin ascension requirements:</TM_ProgressionPaladinAscensionRequirements>
+  <TM_ProgressionPaladinAttunement>Paladin attunement ritual</TM_ProgressionPaladinAttunement>
+  <TM_ProgressionPaladinAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionPaladinAttunementHint>
+  <TM_ProgressionPaladinFoundationTrial>Paladin foundation trial</TM_ProgressionPaladinFoundationTrial>
+  <TM_ProgressionPaladinMasteryTrial>Paladin mastery trial</TM_ProgressionPaladinMasteryTrial>
+  <TM_ProgressionPriestAscension>Priest ascension ritual</TM_ProgressionPriestAscension>
+  <TM_ProgressionPriestAscensionRequirements>Priest ascension requirements:</TM_ProgressionPriestAscensionRequirements>
+  <TM_ProgressionPriestAttunement>Priest attunement ritual</TM_ProgressionPriestAttunement>
+  <TM_ProgressionPriestAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionPriestAttunementHint>
+  <TM_ProgressionPriestFoundationTrial>Priest foundation trial</TM_ProgressionPriestFoundationTrial>
+  <TM_ProgressionPriestMasteryTrial>Priest mastery trial</TM_ProgressionPriestMasteryTrial>
+  <TM_ProgressionShamanAscension>Shaman ascension ritual</TM_ProgressionShamanAscension>
+  <TM_ProgressionShamanAscensionRequirements>Shaman ascension requirements:</TM_ProgressionShamanAscensionRequirements>
+  <TM_ProgressionShamanAttunement>Shaman attunement ritual</TM_ProgressionShamanAttunement>
+  <TM_ProgressionShamanAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionShamanAttunementHint>
+  <TM_ProgressionShamanFoundationTrial>Shaman foundation trial</TM_ProgressionShamanFoundationTrial>
+  <TM_ProgressionShamanMasteryTrial>Shaman mastery trial</TM_ProgressionShamanMasteryTrial>
+  <TM_ProgressionSummonerAscension>Summoner ascension ritual</TM_ProgressionSummonerAscension>
+  <TM_ProgressionSummonerAscensionRequirements>Summoner ascension requirements:</TM_ProgressionSummonerAscensionRequirements>
+  <TM_ProgressionSummonerAttunement>Summoner attunement ritual</TM_ProgressionSummonerAttunement>
+  <TM_ProgressionSummonerAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionSummonerAttunementHint>
+  <TM_ProgressionSummonerFoundationTrial>Summoner foundation trial</TM_ProgressionSummonerFoundationTrial>
+  <TM_ProgressionSummonerMasteryTrial>Summoner mastery trial</TM_ProgressionSummonerMasteryTrial>
+  <TM_ProgressionSuccubusAscension>Succubus ascension ritual</TM_ProgressionSuccubusAscension>
+  <TM_ProgressionSuccubusAscensionRequirements>Succubus ascension requirements:</TM_ProgressionSuccubusAscensionRequirements>
+  <TM_ProgressionSuccubusAttunement>Succubus attunement ritual</TM_ProgressionSuccubusAttunement>
+  <TM_ProgressionSuccubusAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionSuccubusAttunementHint>
+  <TM_ProgressionSuccubusFoundationTrial>Succubus foundation trial</TM_ProgressionSuccubusFoundationTrial>
+  <TM_ProgressionSuccubusMasteryTrial>Succubus mastery trial</TM_ProgressionSuccubusMasteryTrial>
+  <TM_ProgressionTechnomancerAscension>Technomancer ascension ritual</TM_ProgressionTechnomancerAscension>
+  <TM_ProgressionTechnomancerAscensionRequirements>Technomancer ascension requirements:</TM_ProgressionTechnomancerAscensionRequirements>
+  <TM_ProgressionTechnomancerAttunement>Technomancer attunement ritual</TM_ProgressionTechnomancerAttunement>
+  <TM_ProgressionTechnomancerAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionTechnomancerAttunementHint>
+  <TM_ProgressionTechnomancerFoundationTrial>Technomancer foundation trial</TM_ProgressionTechnomancerFoundationTrial>
+  <TM_ProgressionTechnomancerMasteryTrial>Technomancer mastery trial</TM_ProgressionTechnomancerMasteryTrial>
+  <TM_ProgressionWarlockAscension>Warlock ascension ritual</TM_ProgressionWarlockAscension>
+  <TM_ProgressionWarlockAscensionRequirements>Warlock ascension requirements:</TM_ProgressionWarlockAscensionRequirements>
+  <TM_ProgressionWarlockAttunement>Warlock attunement ritual</TM_ProgressionWarlockAttunement>
+  <TM_ProgressionWarlockAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionWarlockAttunementHint>
+  <TM_ProgressionWarlockFoundationTrial>Warlock foundation trial</TM_ProgressionWarlockFoundationTrial>
+  <TM_ProgressionWarlockMasteryTrial>Warlock mastery trial</TM_ProgressionWarlockMasteryTrial>
+  <TM_ProgressionArcanistTrialProgress>Arcane missile trial damage: {0}</TM_ProgressionArcanistTrialProgress>
+  <TM_ProgressionBloodMageTrialProgress>Ignite trial damage: {0}</TM_ProgressionBloodMageTrialProgress>
+  <TM_ProgressionBrightmageTrialProgress>Light lance trial damage: {0}</TM_ProgressionBrightmageTrialProgress>
+  <TM_ProgressionShamanTrialProgress>Healing trial done: {0} health restored</TM_ProgressionShamanTrialProgress>
+  <TM_ProgressionSummonerTrialProgress>Summon control time: {0} in-game hours</TM_ProgressionSummonerTrialProgress>
+  <TM_ProgressionIceTrialProgress>Distinct chilled victims: {0}</TM_ProgressionIceTrialProgress>
+  <TM_ProgressionGeomancerTrialProgress>Walls raised: {0}</TM_ProgressionGeomancerTrialProgress>
+  <TM_ProgressionDruidTrialProgress>Soothed animals: {0}</TM_ProgressionDruidTrialProgress>
+  <TM_ProgressionAscension>Ascension</TM_ProgressionAscension>
+  <TM_ProgressionAscensionRequirements>Ascension requirements:</TM_ProgressionAscensionRequirements>
+  <TM_ProgressionAscensionUnavailable>requirements not met</TM_ProgressionAscensionUnavailable>
+  <TM_ProgressionNextBook>Next: read {0}</TM_ProgressionNextBook>
+  <TM_ProgressionNoviceChoices>Novice spell choices: {0} / {1}</TM_ProgressionNoviceChoices>
+  <TM_ProgressionPriestVow>Priest vow: healing the faithful. Harming allies weakens the healing gift.</TM_ProgressionPriestVow>
+  <TM_ProgressionServantTime>Servant control remaining: {0} h</TM_ProgressionServantTime>
+  <TM_ProgressionChooseDemonBranch>Read {1} to choose the {0} branch</TM_ProgressionChooseDemonBranch>
+  <TM_ProgressionFireboltDamage>Firebolt trial damage: {0}</TM_ProgressionFireboltDamage>
+  <TM_ProgressionFireboltTrial>Firebolt trial</TM_ProgressionFireboltTrial>
+  <TM_ProgressionFireclawTrial>Fireclaw trial</TM_ProgressionFireclawTrial>
+  <TM_ProgressionFoundationBook>Foundation: read {1} to begin the {0} path</TM_ProgressionFoundationBook>
+  <TM_ProgressionNecromancerControlTrial>Necromancer servant control trial</TM_ProgressionNecromancerControlTrial>
+  <TM_ProgressionNecromancerDeathMarkTrial>Necromancer death mark trial</TM_ProgressionNecromancerDeathMarkTrial>
+  <TM_ProgressionPriestHealingTrial>Priest healing trial</TM_ProgressionPriestHealingTrial>
+  <TM_ProgressionPriestPurificationTrial>Priest purification trial: permanently remove a scar</TM_ProgressionPriestPurificationTrial>
+  <TM_ProgressionPaladinAttunementHint>Perform the attunement at a magic circle while the required offering is in your inventory.</TM_ProgressionPaladinAttunementHint>
+  <TM_ProgressionVocation_Mage>Mage</TM_ProgressionVocation_Mage>
+  <TM_ProgressionVocation_Warrior>Warrior</TM_ProgressionVocation_Warrior>
+  <TM_ProgressionVocation_WarriorMage>Warrior-mage</TM_ProgressionVocation_WarriorMage>
+  <TM_ProgressionStage_Foundation>Foundation</TM_ProgressionStage_Foundation>
+  <TM_ProgressionStage_Adept>Adept</TM_ProgressionStage_Adept>
+  <TM_ProgressionStage_Master>Master</TM_ProgressionStage_Master>
+  <TM_ProgressionStage_Ascended>Ascended</TM_ProgressionStage_Ascended>
+  <TM_ProgressionLightningTrialProgress>Bolt trial damage: {0}, distinct storm victims: {1}</TM_ProgressionLightningTrialProgress>
+  <TM_ArcaneBolt_pwr_desc>Increases Arcane Bolt damage.</TM_ArcaneBolt_pwr_desc>
+  <TM_ArcaneBolt_eff_desc>Reduces the mana cost of Arcane Bolt.</TM_ArcaneBolt_eff_desc>
+  <TM_ArcaneBolt_ver_desc>Increases the number of Arcane Bolt casts before cooldown scales.</TM_ArcaneBolt_ver_desc>
+  <TM_MageLight_pwr_desc>Increases Mage Light radius and brightness.</TM_MageLight_pwr_desc>
+  <TM_MageLight_eff_desc>Reduces the mana upkeep of Mage Light.</TM_MageLight_eff_desc>
+  <TM_MageLight_ver_desc>Extends Mage Light duration.</TM_MageLight_ver_desc>
+  <TM_Extinguish_pwr_desc>Increases the extinguish area.</TM_Extinguish_pwr_desc>
+  <TM_Extinguish_eff_desc>Reduces the mana cost of Extinguish.</TM_Extinguish_eff_desc>
+  <TM_Extinguish_ver_desc>Increases Extinguish effectiveness.</TM_Extinguish_ver_desc>
+  <TM_Heater_pwr_desc>Increases Heater warmth output.</TM_Heater_pwr_desc>
+  <TM_Heater_eff_desc>Reduces the mana upkeep of Heater.</TM_Heater_eff_desc>
+  <TM_Heater_ver_desc>Extends Heater duration.</TM_Heater_ver_desc>
+  <TM_Cooler_pwr_desc>Increases Cooler cooling output.</TM_Cooler_pwr_desc>
+  <TM_Cooler_eff_desc>Reduces the mana upkeep of Cooler.</TM_Cooler_eff_desc>
+  <TM_Cooler_ver_desc>Extends Cooler duration.</TM_Cooler_ver_desc>
+  <TM_SmokeCloud_pwr_desc>Increases Smoke Cloud size.</TM_SmokeCloud_pwr_desc>
+  <TM_SmokeCloud_eff_desc>Reduces the mana cost of Smoke Cloud.</TM_SmokeCloud_eff_desc>
+  <TM_SmokeCloud_ver_desc>Extends Smoke Cloud duration.</TM_SmokeCloud_ver_desc>
+  <TM_SynthToggleLabel>Auto-synthesis: mana + chemfuel</TM_SynthToggleLabel>
+  <TM_SynthToggleDesc>Slowly converts stored mana and chemfuel into magofuel in this tank (~50 per day). Pauses while the tank is at its target or inputs are missing.</TM_SynthToggleDesc>
+  <TM_SynthLoad>Load chemfuel ({0})</TM_SynthLoad>
+  <TM_SynthLoadDesc>Take chemfuel from stacks near the synthesizer into its fuel hopper.</TM_SynthLoadDesc>
+  <TM_SynthInspect>Chemfuel hopper: {0} — synthesizing 50 magofuel/day</TM_SynthInspect>
+  <TM_PoolInspect>Beacon network pool: mana {0}/{1}, magofuel {2}/{3} ({4} tanks)</TM_PoolInspect>
 </LanguageData>

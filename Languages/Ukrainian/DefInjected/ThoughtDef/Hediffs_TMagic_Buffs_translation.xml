@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Soothing Breeze -->
+
+  <SoothingBreeze.stages.0.label>заспокійливий бриз</SoothingBreeze.stages.0.label>
+  <SoothingBreeze.stages.0.description>Щось заспокійливо діє на мене, я мислю ясно і витрачаю менше енергії на безглузді турботи.</SoothingBreeze.stages.0.description>
+
+  <SoothingBreeze_I.stages.0.label>заспокійливий бриз</SoothingBreeze_I.stages.0.label>
+  <SoothingBreeze_I.stages.0.description>Щось діє на мене заспокійливо, я ясно міркую і менше витрачаю енергії на безглузді турботи..</SoothingBreeze_I.stages.0.description>
+
+  <SoothingBreeze_II.stages.0.label>заспокійливий бриз</SoothingBreeze_II.stages.0.label>
+  <SoothingBreeze_II.stages.0.description>Коли вітер дме мені в спину, я відчуваю себе спокійним, розслабленим і зосередженим, і у мене є енергія, щоб продовжувати йти.</SoothingBreeze_II.stages.0.description>
+
+  <SoothingBreeze_III.stages.0.label>заспокійливий бриз</SoothingBreeze_III.stages.0.label>
+  <SoothingBreeze_III.stages.0.description>Всі відволікаючі фактори були змиті, я повністю зосереджений і впевнений в собі, щоб виконати всі завдання досконало.</SoothingBreeze_III.stages.0.description>
+
+
+  <!-- (Paladin) Ray of Hope -->
+
+  <RayofHope.stages.0.label>Тінь надії</RayofHope.stages.0.label>
+  <RayofHope.stages.0.description>Там, де є тінь, є і світло</RayofHope.stages.0.description>
+
+  <RayofHope_I.stages.0.label>Проблиск надії</RayofHope_I.stages.0.label>
+  <RayofHope_I.stages.0.description>У мене є цей проблиск надії, якого раніше не було!</RayofHope_I.stages.0.description>
+
+  <RayofHope_II.stages.0.label>Промінь надії</RayofHope_II.stages.0.label>
+  <RayofHope_II.stages.0.description>Крізь цей похмурий настрій пробивається промінь світла, і я нарешті відчуваю, що у нас є шанс.</RayofHope_II.stages.0.description>
+
+  <RayofHope_III.stages.0.label>Маяк надії</RayofHope_III.stages.0.label>
+  <RayofHope_III.stages.0.description>Все нещастя, яке випало на нашу долю, згорає від яскравого світла, я відчуваю приплив енергії і відчуваю себе приголомшливо!</RayofHope_III.stages.0.description>
+
+  <AMP_I.stages.0.label>накачаний</AMP_I.stages.0.label>
+  <AMP_I.stages.0.description>Я почуваюся чудово. Це краще, ніж Go-сік.</AMP_I.stages.0.description>
+
+  <AMP_II.stages.0.label>підсилювач</AMP_II.stages.0.label>
+  <AMP_II.stages.0.description>Це просто приголомшливо! Я міг би бігти, як вітер, і битися, як лев, - ніщо не зупинить мене!</AMP_II.stages.0.description>
+
+  <AMP_III.stages.0.label>вируюча енергія</AMP_III.stages.0.label>
+  <AMP_III.stages.0.description>Мене переповнює сила, я відчуваю себе нестримним.</AMP_III.stages.0.description>
+
+  <Shadow.stages.0.label>нервовий</Shadow.stages.0.label>
+  <Shadow.stages.0.description>Щось тут не так...</Shadow.stages.0.description>
+
+  <Shadow_I.stages.0.label>стурбований</Shadow_I.stages.0.label>
+  <Shadow_I.stages.0.description>У мене покалює в потилиці, ніби за мною постійно стежать... це моторошно.</Shadow_I.stages.0.description>
+
+  <Shadow_II.stages.0.label>нервовий</Shadow_II.stages.0.label>
+  <Shadow_II.stages.0.description>Я продовжую бачити щось краєм ока, мені здається, що хтось йде прямо за мною, і це змушує мене нервувати.</Shadow_II.stages.0.description>
+
+  <Shadow_III.stages.0.label>збожеволілий</Shadow_III.stages.0.label>
+  <Shadow_III.stages.0.description>Поруч зі мною є ще одна людина, яка допомагає мені у всьому, що я роблю. Він знає, що робити, перш ніж я це зроблю. Невже я одержимий?!</Shadow_III.stages.0.description>
+
+
+  <!-- Blind -->
+
+  <TM_Blind.stages.0.label>засліплений</TM_Blind.stages.0.label>
+  <TM_Blind.stages.0.description>Там був спалах світла і те, що він відкрив мені... Я не можу... Я більше нічого не хочу бачити!</TM_Blind.stages.0.description>
+
+
+  <!-- успокаивающий бриз -->
+  <!-- Ray of Hope -->
+
+</LanguageData>

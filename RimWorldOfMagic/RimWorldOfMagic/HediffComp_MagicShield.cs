@@ -101,7 +101,7 @@ namespace TorannMagic
                     this.Initialize();
                 }
                 ResolveSeverityChange();
-                if (SevChange > 0.005f)
+                if (SevChange > 0.005f && base.Pawn.Spawned)
                 {
                     TM_Action.DisplayShield(base.Pawn, SevChange);
                 }
@@ -126,6 +126,13 @@ namespace TorannMagic
         {
             if (!broken)
             {
+                // World pawns still tick and expire, but have no map for effects.
+                this.energy = 0f;
+                broken = true;
+                if (!base.Pawn.Spawned)
+                {
+                    return;
+                }
                 TorannMagicDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(base.Pawn.Position, base.Pawn.Map, false));
                 FleckMaker.Static(base.Pawn.TrueCenter(), base.Pawn.Map, FleckDefOf.ExplosionFlash, 12f);
                 for (int i = 0; i < 6; i++)
@@ -133,8 +140,6 @@ namespace TorannMagic
                     Vector3 loc = base.Pawn.TrueCenter() + Vector3Utility.HorizontalVectorFromAngle((float)Rand.Range(0, 360)) * Rand.Range(0.3f, 0.6f);
                     FleckMaker.ThrowDustPuff(loc, base.Pawn.Map, Rand.Range(0.8f, 1.2f));
                 }
-                this.energy = 0f;
-                broken = true;
             }
         }
 

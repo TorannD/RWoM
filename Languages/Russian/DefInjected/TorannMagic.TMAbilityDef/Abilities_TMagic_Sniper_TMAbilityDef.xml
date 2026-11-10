@@ -1,0 +1,82 @@
+﻿<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_Sniper.xml-->
+	<!--              EN: Sniper Training-->
+	<TM_SniperFocus.label>Тренировка снайпера</TM_SniperFocus.label>
+	<!--                    EN: Training that improves technique and status as sniper. Each level will change the trait of the sniper to reflect their skill level.
+
+Ranks:
+Sharpshooter: Speed +0.1c/s, Aiming Delay -10%, Shooting Acc. +2%, Research and work speed -10%, tame and train animal -10%
+Sniper: Speed +0.15c/s, Aiming Delay -15%, Shooting Acc. +4%, Research and work speed -13%, tame and train animal -13%
+Master Sniper: Speed +0.2c/s, Aiming Delay -22%, Shooting Acc. +6%, Research and work speed -15%, tame and train animal -15%
+Legendary Sniper: Speed +0.25c/s, Aiming Delay -30%, Shooting Acc. +8%, Research and work speed -16%, tame and train animal -16%-->
+	<TM_SniperFocus.description>Обучение, которое улучшает технику и статус снайпера. Каждый уровень будет изменять черту снайпера, чтобы отразить их уровень мастерства.
+
+Уровни:
+Стрелок: Скорость +0.1c/s, Задержка прицеливания -10%, Точность стрельбы +2%, Скорость работы и исследований -10%, Приручение и обучение животных -10%
+Снайпер: Скорость +0.15c/s, Задержка прицеливания -15%, Точность стрельбы +4%, Скорость работы и исследований -13%, Приручение и обучение животных -13%
+Мастерский снайпер: Скорость +0.2c/s, Задержка прицеливания -22%, Точность стрельбы +6%, Скорость работы и исследований -15%, Приручение и обучение животных -15%
+Легендарный снайпер: Скорость +0.25c/s, Задержка прицеливания -30%, Точность стрельбы +8%, Скорость работы и исследований -16%, Приручение и обучение животных -16%</TM_SniperFocus.description>
+	<!-- Хедшот-->
+	<TM_Headshot.label>Хедшот</TM_Headshot.label>
+	<!--                 EN: A lethal shot that targets a vital bodypart like the head or heart. Effective on non-humanoids and humanoids alike. Headshot success chance is reduced against targets with thick armor protecting their vital organs.-->
+	<TM_Headshot.description>Смертельный выстрел, который нацеливается на жизненно важные части тела, такие как голова или сердце. Эффективен как для негуманоидов, так и для гуманоидов. Шансы на успех выстрела в голову уменьшаются против целей с толстой броней, защищающей их жизненно важные органы.</TM_Headshot.description>
+	<!-- Обездвиживающий выстрел-->
+	<TM_DisablingShot.label>Обездвиживающий выстрел</TM_DisablingShot.label>
+	<!--                      EN: A shot that aims to disable the opponent rather than kill. The sniper fires non-lethal rounds that release a jolt of electricity, briefly paralyzing the target for several seconds. Armored targets are unaffected.
+
+Range: 20
+Firing Delay: 2.5s
+Recharge 45s-->
+	<TM_DisablingShot.description>Выстрел, который направлен на то, чтобы вывести противника из строя, а не убить. Снайпер стреляет нелетальными снарядами, которые выпускают электрический разряд, ненадолго парализуя цель. Бронированные цели не пострадают.
+
+Дистанция: 20
+Задержка выстрела: 2.5s
+Перезарядка 45s</TM_DisablingShot.description>
+	<!--                  EN: Disabling Shot (I)-->
+	<TM_DisablingShot_I.label>Обездвиживающий выстрел (I)</TM_DisablingShot_I.label>
+	<!--                        EN: A shot that aims to disable the opponent rather than kill. The sniper fires non-lethal rounds that release a jolt of electricity, briefly paralyzing the target for several seconds. Armored targets are unaffected.
+
+Range: 22
+Firing Delay: 2.3s
+Recharge 43s-->
+	<TM_DisablingShot_I.description>Выстрел, который направлен на то, чтобы вывести противника из строя, а не убить. Снайпер стреляет нелетальными снарядами, которые выпускают электрический разряд, ненадолго парализуя цель. Бронированные цели не пострадают.
+
+Дистанция: 22
+Задержка выстрела: 2.3s
+Перезарядка 43s</TM_DisablingShot_I.description>
+	<!--                   EN: Disabling Shot (II)-->
+	<TM_DisablingShot_II.label>Обездвиживающий выстрел (II)</TM_DisablingShot_II.label>
+	<!--                         EN: A shot that aims to disable the opponent rather than kill. The sniper fires non-lethal rounds that release a jolt of electricity, briefly paralyzing the target for several seconds. Armored targets are unaffected.
+
+Range: 25
+Firing Delay: 2.1s
+Recharge 41s-->
+	<TM_DisablingShot_II.description>Выстрел, который направлен на то, чтобы вывести противника из строя, а не убить. Снайпер стреляет нелетальными снарядами, которые выпускают электрический разряд, ненадолго парализуя цель. Бронированные цели не пострадают.
+
+Дистанция: 25
+Задержка выстрела: 2.1s
+Перезарядка 41s</TM_DisablingShot_II.description>
+	<!--                    EN: Disabling Shot (III)-->
+	<TM_DisablingShot_III.label>Обездвиживающий выстрел (III)</TM_DisablingShot_III.label>
+	<!--                          EN: A shot that aims to disable the opponent rather than kill. The sniper fires non-lethal rounds that release a jolt of electricity, briefly paralyzing the target for several seconds. Armored targets are unaffected.
+
+Range: 27
+Firing Delay: 2s
+Recharge 40s-->
+	<TM_DisablingShot_III.description>Выстрел, который направлен на то, чтобы вывести противника из строя, а не убить. Снайпер стреляет нелетальными снарядами, которые выпускают электрический разряд, ненадолго парализуя цель. Бронированные цели не пострадают.
+
+Дистанция: 27
+Задержка выстрела: 2s
+Перезарядка 40s</TM_DisablingShot_III.description>
+	<!--            EN: Anti-Armor-->
+	<TM_AntiArmor.label>Анти-броня</TM_AntiArmor.label>
+	<!--                  EN: The sniper carries anti armor rounds for those special occasions. When this ammunition shatters, it releases nanites that will shred any armor they make contact with. Relatively ineffective against soft targets but does extra damage to armored targets, as long as the resistance on impact activates the nanites. Armored targets may be any mechanoid or a target with a Sharp armor rating above 100%.-->
+	<TM_AntiArmor.description>Снайпер носит с собой противотанковые патроны для таких особых случаев. Когда этот боеприпас разлетается вдребезги, он высвобождает наниты, которые разорвут любую броню, с которой они соприкоснутся. Относительно неэффективен против небронированных целей, но наносит двойной урон всему остальному.</TM_AntiArmor.description>
+	<!--               EN: Shadow Slayer-->
+	<TM_ShadowSlayer.label>Инвиз</TM_ShadowSlayer.label>
+	<!--                     EN: A trained sniper is an expert at stealth and positioning, and knows the right time and place to strike.
+
+The shadow slayer cloaking field is a long duration form of invisibility. Unlike normal cloaking technology, this stealth field relies heavily on a form of predictive cloaking that rapidly wears off when the user performs rapid or violent actions (such as firing a weapon).-->
+	<TM_ShadowSlayer.description>Опытный снайпер является экспертом в скрытности и позиционировании, а также знает правильное время и место для нанесения удара.
+
+Маскирующее поле убийцы теней - это долговременная форма невидимости. В отличие от обычной технологии маскировки, это поле скрытности в значительной степени зависит от формы прогнозирующей маскировки, которая быстро исчезает, когда пользователь выполняет быстрые или насильственные действия (например, стреляет из оружия).</TM_ShadowSlayer.description>
+</LanguageData>

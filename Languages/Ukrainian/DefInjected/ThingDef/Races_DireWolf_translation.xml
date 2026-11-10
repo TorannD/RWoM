@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Dire Wolf -->
+
+  <TM_Dire_WolfR.label>зловісний вовк</TM_Dire_WolfR.label>
+  <TM_Dire_WolfR.description>Зловісні вовки бродять по півночі великими зграями і не бояться ні людини, ні мегаслоту. Дикий хижак, озброєний гострими як бритва зубами і вовною, схожою на сталеву нитку, зловісні вовки настільки ж люті, як і будь-яка відома істота. Вони часто пов&apos;язані з міфічними переказами і, як кажуть, мають унікальний зв&apos;язок з таємними силами.</TM_Dire_WolfR.description>
+  <TM_Dire_WolfR.tools.0.label>ліва лапа</TM_Dire_WolfR.tools.0.label>
+  <TM_Dire_WolfR.tools.1.label>права лапа</TM_Dire_WolfR.tools.1.label>
+  <TM_Dire_WolfR.tools.3.label>голова</TM_Dire_WolfR.tools.3.label>
+
+
+</LanguageData>

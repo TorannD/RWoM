@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Soothe</defName>
+    <label>Soothing Breeze</label>
+    <description>Creates a soothing aura around the caster that periodically buffs an ally.
+		
+Soothing Breeze: Arcane augmentation that assists the worker, reducing pain and fatigue and increasing focus.
+	
+Application Frequency: 	80-90s	
+Duration:	200-223s
+Consciousness:	+10%
+Mood increase:	+2
+Rest and pain: 	-10%
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.</description>
+    <spellId>rwom.tm_soothe</spellId>
+    <iconPath>UI/soothe</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ApplyAura</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Buff_Soothe</defaultProjectile>
+      <abilityDef>TM_Soothe</abilityDef>
+      <warmupTime>6</warmupTime>
+      <SecondsToRecharge>10.0</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SootheI</defName>
+    <label>Soothing Breeze</label>
+    <description>Creates a soothing aura around the caster that periodically buffs an ally.
+		
+Soothing Breeze: Arcane augmentation that assists the worker, reducing pain and fatigue and increasing focus.
+	
+Application Frequency: 	80-90s	
+Duration:	200-223s
+Consciousness: 	+12%
+Mood increase:	+3
+Rest and pain: 	-12%
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.</description>
+    <spellId>rwom.tm_soothe_i</spellId>
+    <iconPath>UI/soothe</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ApplyAura</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Buff_Soothe</defaultProjectile>
+      <abilityDef>TM_Soothe_I</abilityDef>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>10.0</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SootheII</defName>
+    <label>Soothing Breeze</label>
+    <description>Creates a soothing aura around the caster that periodically buffs an ally.
+		
+Soothing Breeze: Arcane augmentation that assists the worker, reducing pain and fatigue and increasing focus
+	
+Application Frequency: 	80-90s	
+Duration:	500-600s
+Consciousness 	+14%
+Mood increase:	+4
+Rest and pain: 	-14%
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.</description>
+    <spellId>rwom.tm_soothe_ii</spellId>
+    <iconPath>UI/soothe</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ApplyAura</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Buff_Soothe</defaultProjectile>
+      <abilityDef>TM_Soothe_II</abilityDef>
+      <warmupTime>4</warmupTime>
+      <SecondsToRecharge>10.0</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_SootheIII</defName>
+    <label>Soothing Breeze</label>
+    <description>Creates a soothing aura around the caster that periodically buffs an ally.
+		
+Soothing Breeze: Arcane augmentation that assists the worker, reducing pain and fatigue and increasing focus
+	
+Application Frequency: 	80-90s	
+Duration:	500-600s
+Consciousness: 	+15%
+Mood increase:	+5
+Rest and pain:	-15%
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.</description>
+    <spellId>rwom.tm_soothe_iii</spellId>
+    <iconPath>UI/soothe</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ApplyAura</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_Soothe_III</abilityDef>
+      <warmupTime>3</warmupTime>
+      <SecondsToRecharge>10.0</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Frostray</defName>
+    <label>Frost Ray</label>
+    <description>Rapidly extending ray of super cooled particles that damages and freezes targets.
+		
+Recharge time: 12s
+Range: 28
+Shots: 1</description>
+    <spellId>rwom.tm_frostray</spellId>
+    <iconPath>Spells/FrostRay</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility_TrueBurst</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Laser_FrostRay</defaultProjectile>
+      <abilityDef>TM_FrostRay</abilityDef>
+      <warmupTime>1.5</warmupTime>
+      <SecondsToRecharge>12.0</SecondsToRecharge>
+      <range>28</range>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+      <isPrimary>true</isPrimary>
+      <soundCast>DropPod_Open</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_FrostrayI</defName>
+    <label>Frost Ray</label>
+    <description>Rapidly extending ray of super cooled particles that damages and freezes targets.
+		
+Recharge time: 10s
+Range: 30
+Shots: 1</description>
+    <spellId>rwom.tm_frostray_i</spellId>
+    <iconPath>Spells/FrostRay</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility_TrueBurst</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Laser_FrostRay</defaultProjectile>
+      <abilityDef>TM_FrostRay_I</abilityDef>
+      <warmupTime>1.5</warmupTime>
+      <SecondsToRecharge>10.0</SecondsToRecharge>
+      <range>30</range>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+      <isPrimary>true</isPrimary>
+      <soundCast>DropPod_Open</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>3</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_FrostrayII</defName>
+    <label>Frost Ray</label>
+    <description>Rapidly extending ray of super cooled particles that damages and freezes targets.
+		
+Recharge time: 8s
+Range: 32
+Shots: 2</description>
+    <spellId>rwom.tm_frostray_ii</spellId>
+    <iconPath>Spells/FrostRay</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility_TrueBurst</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Laser_FrostRay</defaultProjectile>
+      <abilityDef>TM_FrostRay_II</abilityDef>
+      <warmupTime>1.8</warmupTime>
+      <SecondsToRecharge>8.0</SecondsToRecharge>
+      <range>32</range>
+      <burstShotCount>2</burstShotCount>
+      <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+      <isPrimary>true</isPrimary>
+      <soundCast>DropPod_Open</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_FrostrayIII</defName>
+    <label>Frost Ray</label>
+    <description>Rapidly extending ray of super cooled particles that damages and freezes targets.
+		
+Recharge time: 8s
+Range: 34
+Shots: 3</description>
+    <spellId>rwom.tm_frostray_iii</spellId>
+    <iconPath>Spells/FrostRay</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility_TrueBurst</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Laser_FrostRay</defaultProjectile>
+      <abilityDef>TM_FrostRay_III</abilityDef>
+      <warmupTime>2.0</warmupTime>
+      <SecondsToRecharge>8.0</SecondsToRecharge>
+      <range>34</range>
+      <burstShotCount>3</burstShotCount>
+      <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+      <isPrimary>true</isPrimary>
+      <soundCast>DropPod_Open</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>5</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Snowball</defName>
+    <label>Snowball</label>
+    <description>Launch a massive ball of ice and snow that damages and freezes a large area upon impact.</description>
+    <spellId>rwom.tm_snowball</spellId>
+    <iconPath>Spells/Snowball</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Snowball</defaultProjectile>
+      <abilityDef>TM_Snowball</abilityDef>
+      <warmupTime>1.5</warmupTime>
+      <SecondsToRecharge>15.0</SecondsToRecharge>
+      <range>55</range>
+      <burstShotCount>1</burstShotCount>
+      <forcedMissRadius>12.4</forcedMissRadius>
+      <soundCast>TM_Launch</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>false</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Icebolt</defName>
+    <label>Icebolt</label>
+    <description>Launches a bolt of ice specially created to shatter into glass-like shards upon impact, causing damage and severe bleeding.</description>
+    <spellId>rwom.tm_icebolt</spellId>
+    <iconPath>Spells/Icebolt</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>true</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Icebolt</defaultProjectile>
+      <abilityDef>TM_Icebolt</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>8</SecondsToRecharge>
+      <range>42</range>
+      <soundCast>Shot_ChargeRifle</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <forcedMissRadius>1.5</forcedMissRadius>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <extraDamages>
+        <li>
+          <damage>3</damage>
+          <damageDef>Iceshard</damageDef>
+          <chance>0.6</chance>
+        </li>
+      </extraDamages>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Rainmaker</defName>
+    <label>Rainmaker</label>
+    <description>Alters the conditions in the atmosphere causing it to rain. If it's already raining, this ability will stop the rain.</description>
+    <spellId>rwom.tm_rainmaker</spellId>
+    <iconPath>UI/rain</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Rainmaker</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Rainmaker</defaultProjectile>
+      <abilityDef>TM_Rainmaker</abilityDef>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <range>0</range>
+      <isViolent>false</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Blizzard</defName>
+    <label>Blizzard</label>
+    <description>Calls forth a deadly blizzard to bury your enemies in ice.</description>
+    <spellId>rwom.tm_blizzard</spellId>
+    <iconPath>UI/blizzard</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Blizzard</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Blizzard</defaultProjectile>
+      <abilityDef>TM_Blizzard</abilityDef>
+      <warmupTime>2.0</warmupTime>
+      <SecondsToRecharge>60.0</SecondsToRecharge>
+      <range>100</range>
+      <forcedMissRadius>50</forcedMissRadius>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>15</ticksBetweenBurstShots>
+      <isPrimary>true</isPrimary>
+      <soundCast>DropPod_Leaving</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>100</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

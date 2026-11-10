@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritTechnoShield.reportString>projetando um escudo cinético através do hospedeiro do espírito.</TM_SpiritTechnoShield.reportString>
+  <TM_SpiritSabotage.reportString>sabotando máquinas através do hospedeiro do espírito.</TM_SpiritSabotage.reportString>
+  <TM_SpiritOverdrive.reportString>sobrecarregando máquinas através do hospedeiro do espírito.</TM_SpiritOverdrive.reportString>
+  <TM_SpiritOrbitalStrike.reportString>solicitando um ataque orbital através do hospedeiro do espírito.</TM_SpiritOrbitalStrike.reportString>
+  <TM_SpiritOrbitalStrike_I.reportString>solicitando um ataque orbital através do hospedeiro do espírito.</TM_SpiritOrbitalStrike_I.reportString>
+  <TM_SpiritOrbitalStrike_II.reportString>solicitando um ataque orbital através do hospedeiro do espírito.</TM_SpiritOrbitalStrike_II.reportString>
+  <TM_SpiritOrbitalStrike_III.reportString>solicitando um ataque orbital através do hospedeiro do espírito.</TM_SpiritOrbitalStrike_III.reportString>
+  <TM_SpiritTechnoTurret.reportString>implantando uma torre Mark-IV através do hospedeiro do espírito.</TM_SpiritTechnoTurret.reportString>
+  <TM_SpiritTechnoWeapon.reportString>copiando uma arma através do hospedeiro do espírito.</TM_SpiritTechnoWeapon.reportString>
+  <TM_SpiritNanoStimulant.reportString>ativando um nanoestimulante no hospedeiro do espírito.</TM_SpiritNanoStimulant.reportString>
+</LanguageData>

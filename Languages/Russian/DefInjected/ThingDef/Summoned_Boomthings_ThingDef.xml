@@ -1,0 +1,15 @@
+<LanguageData><!-- v1.5\Defs\PawnDefs\Summoned_Boomthings.xml-->
+	<!--                 EN: leap-->
+	<FlyingObject_Leap.label>прыжок</FlyingObject_Leap.label>
+	<!--        EN: poppi-->
+	<TM_Poppi.label>ПОППИ</TM_Poppi.label>
+	<!--              EN: Deceptively harmless and impossibly cute, these little critters want nothing more than to bound into your arms and light up your life.-->
+	<TM_Poppi.description>Обманчиво безобидные и невероятно милые, эти маленькие твари не хотят ничего больше, чем прыгнуть в ваши объятия и "осветить" вашу жизнь.</TM_Poppi.description>
+	<!--                EN: snuggle-->
+	<TM_Poppi.tools.0.label>прижался</TM_Poppi.tools.0.label>
+	<TM_Poppi_Leather.label>шкура Поппи</TM_Poppi_Leather.label>
+	<TM_Poppi_Leather.description>шкура Поппи</TM_Poppi_Leather.description>
+	<TM_Poppi_Leather.stuffProps.stuffAdjective>шкура Поппи</TM_Poppi_Leather.stuffProps.stuffAdjective>
+	<TM_Poppi_Corpse.label>труп Поппи</TM_Poppi_Corpse.label>
+	<TM_Poppi_Corpse.description>труп Поппи</TM_Poppi_Corpse.description>
+</LanguageData>

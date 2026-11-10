@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Skeletal_Arm.label>brazo</Skeletal_Arm.label>
+  
+  
+  <Skeletal_Finger.label>dedo</Skeletal_Finger.label>
+  
+  
+  <Skeletal_Foot.label>pie</Skeletal_Foot.label>
+  
+  
+  <Skeletal_Hand.label>mano</Skeletal_Hand.label>
+  
+  
+  <Skeletal_Head.label>cabeza</Skeletal_Head.label>
+  
+  
+  <Skeletal_Jaw.label>mandíbula</Skeletal_Jaw.label>
+  
+  
+  <Skeletal_Leg.label>pierna</Skeletal_Leg.label>
+  
+  
+  <Skeletal_Neck.label>cuello</Skeletal_Neck.label>
+  
+  
+  <Skeletal_Ribcage.label>caja torácica</Skeletal_Ribcage.label>
+  
+  
+  <Skeletal_Shoulder.label>hombro</Skeletal_Shoulder.label>
+  
+  
+  <Skeletal_Toe.label>dedo del pie</Skeletal_Toe.label>
+  
+</LanguageData>

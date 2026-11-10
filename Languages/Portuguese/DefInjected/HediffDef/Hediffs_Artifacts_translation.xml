@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mending -->
+
+  <TM_ArtifactMendingHD.label>Conserto</TM_ArtifactMendingHD.label>
+  <TM_ArtifactMendingHD.description>Conserta e conserta roupas e armas equipadas.</TM_ArtifactMendingHD.description>
+
+
+  <!-- Health Charm -->
+
+  <TM_ArtifactHealthHD.label>Melhoria da Saúde</TM_ArtifactHealthHD.label>
+  <TM_ArtifactHealthHD.description>Aumenta a cicatrização natural.</TM_ArtifactHealthHD.description>
+
+
+  <!-- Cat Eyes -->
+
+  <TM_ArtifactCatEyesHD.label>Olhar escuro</TM_ArtifactCatEyesHD.label>
+  <TM_ArtifactCatEyesHD.description>Melhora a visão e dá uma pequena visão noturna.</TM_ArtifactCatEyesHD.description>
+
+
+  <!-- Strength of Stone -->
+
+  <TM_ArtifactStrengthHD.label>Resistência da pedra</TM_ArtifactStrengthHD.label>
+  <TM_ArtifactStrengthHD.description>Encantamento que aumenta a manipulação.</TM_ArtifactStrengthHD.description>
+
+
+  <!-- Mind Ward -->
+
+  <TM_ArtifactMindHD.label>A Casa Mental</TM_ArtifactMindHD.label>
+  <TM_ArtifactMindHD.description>Um mascote único que ajuda o Peão a dividir suas emoções para se recuperar rapidamente de uma crise mental.</TM_ArtifactMindHD.description>
+
+
+  <!-- Renewal -->
+
+  <TM_ArtifactRenewalHD.label>Atualização</TM_ArtifactRenewalHD.label>
+  <TM_ArtifactRenewalHD.description>Melhora a qualidade do sono.</TM_ArtifactRenewalHD.description>
+
+
+  <!-- Arcane Recovery -->
+
+  <TM_ArtifactArcaneRecoveryHD.label>Recuperação secreta</TM_ArtifactArcaneRecoveryHD.label>
+  <TM_ArtifactArcaneRecoveryHD.description>Aumenta a velocidade de recuperação da fraqueza secreta; não reduz o número de fraquezas secretas adquiridas.</TM_ArtifactArcaneRecoveryHD.description>
+
+
+  <!-- Pathfinding -->
+
+  <TM_ArtifactPathfindingHD.label>Inovador</TM_ArtifactPathfindingHD.label>
+  <TM_ArtifactPathfindingHD.description>Um mascote que estabelece sobrenatural um caminho fácil através de qualquer obstáculo; É uma multa por obstrução e local.</TM_ArtifactPathfindingHD.description>
+
+
+  <!-- Defensive Bracers -->
+
+  <TM_ArtifactBlockHD.label>Bloqueio</TM_ArtifactBlockHD.label>
+  <TM_ArtifactBlockHD.description>Bloqueia ataques físicos; evita danos causados por ataques bloqueados com sucesso.</TM_ArtifactBlockHD.description>
+
+  <TM_ArtifactDeflectHD.label>Bloqueio defeituoso</TM_ArtifactDeflectHD.label>
+  <TM_ArtifactDeflectHD.description>Bloqueia os ataques e pode desviar os projéteis para os inimigos mais próximos; impede danos de um ataque refletido com sucesso.</TM_ArtifactDeflectHD.description>
+
+
+  <!-- Energy Pool Boosts -->
+
+  <TM_Artifact_BloodBoostHD.label>Aumento do Nível de Sangue</TM_Artifact_BloodBoostHD.label>
+  <TM_Artifact_BloodBoostHD.description>Aumenta a magia máxima do sangue disponível para o mago sanguíneo.</TM_Artifact_BloodBoostHD.description>
+
+  <TM_Artifact_PsionicBoostHD.label>Impulso Psíquico</TM_Artifact_PsionicBoostHD.label>
+  <TM_Artifact_PsionicBoostHD.description>Aumenta a energia psique máxima do psicônico.</TM_Artifact_PsionicBoostHD.description>
+
+  <TM_Artifact_HateBoostHD.label>Aumento do Ódio</TM_Artifact_HateBoostHD.label>
+  <TM_Artifact_HateBoostHD.description>Aumenta o máximo de ódio disponível para o cavaleiro da morte.</TM_Artifact_HateBoostHD.description>
+
+
+  <!-- soul orb infusion debuff -->
+
+  <TM_TraitInfusionHD.label>Injecção de Traços de Caráter</TM_TraitInfusionHD.label>
+  <TM_TraitInfusionHD.description>O peão adquiriu traços de caráter graças à injeção mágica; Isso vai afetar a sua autodestruição.</TM_TraitInfusionHD.description>
+
+
+  <!-- Winter's Staff -->
+
+  <TM_WinterStaffHD.label>Frio de inverno</TM_WinterStaffHD.label>
+  <TM_WinterStaffHD.description>Retira o calor e a energia do corpo; impede o impacto térmico. Só para os mágicos, baixa a temperatura do quarto.</TM_WinterStaffHD.description>
+
+
+</LanguageData>

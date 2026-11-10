@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_NeedTravel.stages.0.label>замкнений</TM_NeedTravel.stages.0.label>
+  <TM_NeedTravel.stages.0.description>Я застряг тут назавжди. Мені потрібно поїхати звідси і подивитися світ!</TM_NeedTravel.stages.0.description>
+  <TM_NeedTravel.stages.1.label>пригоди</TM_NeedTravel.stages.1.label>
+  <TM_NeedTravel.stages.1.description>Ніщо не зрівняється з тим, щоб бути на дорозі і бачити нові місця.</TM_NeedTravel.stages.1.description>
+
+
+</LanguageData>

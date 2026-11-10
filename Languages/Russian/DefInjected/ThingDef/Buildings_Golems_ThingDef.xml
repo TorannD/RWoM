@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+	<TM_MechaGolem_Workstation.label>бездействующий меха-голем</TM_MechaGolem_Workstation.label>
+
+	<TM_MechaGolem_Workstation.description>Бездействующий меха-голем сочетает промышленную инженерию с магическими принципами, превращаясь в боевую роботизированную платформу. Он может подключаться к электросети, чтобы быстрее восполнять заряд. Помимо базовых задач вроде переноски и уборки, меха-голема можно оснастить шахтным лазером для быстрого бурения породы. В его арсенале сочетаются промышленное вооружение, простое оружие и броня.
+
+В состоянии покоя голема можно изменять и улучшать.</TM_MechaGolem_Workstation.description>
+
+	<TM_UnfinishedMechaGolem.label>незаконченный меха-голем</TM_UnfinishedMechaGolem.label>
+
+	<TM_UnfinishedMechaGolem.description>Незаконченный меха-голем.</TM_UnfinishedMechaGolem.description>
+
+	<TM_UnfinishedMechaGolemUpgrade.label>незавершенное обновление меха-голема</TM_UnfinishedMechaGolemUpgrade.label>
+
+	<TM_UnfinishedMechaGolemUpgrade.description>Незавершенное обновление меха-голема.</TM_UnfinishedMechaGolemUpgrade.description>
+
+	<TM_FleshGolem_Workstation.label>спящий голем из плоти</TM_FleshGolem_Workstation.label>
+
+	<TM_FleshGolem_Workstation.description>Спящий голем из плоти — это двуногая масса органического вещества, собранная главным образом из частей тел мёртвых существ. Такой голем опасен в бою и обладает множеством атак. Помимо базовых задач вроде переноски и уборки, его можно оснастить тесаком для заготовки древесины и сбора растений.
+
+В состоянии покоя голема можно изменять и улучшать. Он медленно восстанавливает энергию сам по себе, но подпитка свежим мясом заметно ускоряет процесс.</TM_FleshGolem_Workstation.description>
+
+	<TM_UnfinishedFleshGolem.label>незаконченный голем из плоти</TM_UnfinishedFleshGolem.label>
+
+	<TM_UnfinishedFleshGolem.description>Незаконченный голем из плоти.</TM_UnfinishedFleshGolem.description>
+
+	<TM_UnfinishedFleshGolemUpgrade.label>незавершенный апгрейд голема из плоти</TM_UnfinishedFleshGolemUpgrade.label>
+
+	<TM_UnfinishedFleshGolemUpgrade.description>Незавершенное обновление голема из плоти.</TM_UnfinishedFleshGolemUpgrade.description>
+
+	<TM_HollowGolem_Workstation.label>дремлющий полый голем</TM_HollowGolem_Workstation.label>
+
+	<TM_HollowGolem_Workstation.description>Дремлющий полый голем — это сгущённая мана, заключённая в пустой доспех и удерживаемая магическими печатями. В неактивном состоянии он выглядит как пустой набор брони. Подпитывая себя окружающей маной, такой голем может снижать или полностью подавлять её естественное восстановление у магов поблизости; эффект складывается с влиянием других магов и парацитовых растений.
+
+Помимо базовых задач вроде переноски и уборки, полого голема можно оснастить источником света, исследовательскими модулями и даже миномётной системой.</TM_HollowGolem_Workstation.description>
+
+	<TM_UnfinishedHollowGolem.label>незаконченный полый голем</TM_UnfinishedHollowGolem.label>
+
+	<TM_UnfinishedHollowGolem.description>Незаконченный полый голем.</TM_UnfinishedHollowGolem.description>
+
+	<TM_UnfinishedHollowGolemUpgrade.label>незавершенный апгрейд голема</TM_UnfinishedHollowGolemUpgrade.label>
+
+	<TM_UnfinishedHollowGolemUpgrade.description>Незаконченный апгрейд голема.</TM_UnfinishedHollowGolemUpgrade.description>
+
+	<TM_StoneGolem_Workstation.label>спящий каменный голем</TM_StoneGolem_Workstation.label>
+
+	<TM_StoneGolem_Workstation.description>Каменные големы воплощают самые простые принципы големантии: это грубые конструкции из камня и породы, которым придана гуманоидная форма. Они медлительны, зато разрушить их крайне трудно. В неактивном состоянии голема можно оснастить уплотнителем породы — механизмом, который дробит каменные обломки и спрессовывает их в кирпичи прямо внутри конструкции. Для этого нужны энергия и загруженные в голема каменные куски.
+
+В состоянии покоя голема можно изменять и улучшать.</TM_StoneGolem_Workstation.description>
+
+	<TM_UnfinishedStoneGolem.label>Незаконченный каменный голем.</TM_UnfinishedStoneGolem.label>
+
+	<TM_UnfinishedStoneGolem.description>Незаконченный каменный голем.</TM_UnfinishedStoneGolem.description>
+
+	<TM_UnfinishedStoneGolemUpgrade.label>незавершенный апгрейд голема</TM_UnfinishedStoneGolemUpgrade.label>
+
+	<TM_UnfinishedStoneGolemUpgrade.description>Незаконченный апгрейд голема.</TM_UnfinishedStoneGolemUpgrade.description>
+
+	<TM_MaharalGolem_Workstation.label>спящий голем махарал</TM_MaharalGolem_Workstation.label>
+
+	<TM_MaharalGolem_Workstation.description>Големы Махарала строятся на базовых принципах големантии и представляют собой простые глиняные конструкции, обтянутые кожей. Такой голем способен выполнять основные работы и защищаться, а в спящем состоянии его можно усилить так, чтобы он выделял немного тепла и энергии.
+
+В состоянии покоя голема можно изменять и улучшать. Он медленно восстанавливает энергию сам по себе. Полная активация занимает до 5 секунд.</TM_MaharalGolem_Workstation.description>
+
+	<TM_UnfinishedMaharalGolem.label>Незаконченный голем махарала.</TM_UnfinishedMaharalGolem.label>
+
+	<TM_UnfinishedMaharalGolem.description>Незаконченный голем махарала.</TM_UnfinishedMaharalGolem.description>
+
+	<TM_UnfinishedMaharalGolemUpgrade.label>незавершенный апгрейд голема</TM_UnfinishedMaharalGolemUpgrade.label>
+
+	<TM_UnfinishedMaharalGolemUpgrade.description>Незаконченный апгрейд голема.</TM_UnfinishedMaharalGolemUpgrade.description>
+	<TM_UnfinishedSilkGolemUpgrade.description>Незавершённое улучшение шёлкового голема.</TM_UnfinishedSilkGolemUpgrade.description>
+
+	<TM_StrawGolem_Workstation.label>спящий соломенный голем</TM_StrawGolem_Workstation.label>
+	<TM_StrawGolem_Workstation.description>Соломенные големы созданы по базовым принципам големантии — это простые конструкции из дерева и сена, собранные в гуманоидной форме. Дешёвые и неприхотливые, они особенно хороши для полевых работ и посева новых культур. Лёгкие и гибкие, они отлично справляются с уборкой, но крайне огнеопасны. Даже в спящем режиме соломенные големы ускоряют рост растений поблизости.
+
+В состоянии покоя голема можно модифицировать и улучшать.</TM_StrawGolem_Workstation.description>
+
+	<TM_UnfinishedStrawGolem.label>незавершённый соломенный голем</TM_UnfinishedStrawGolem.label>
+	<TM_UnfinishedStrawGolem.description>Незаконченный каркас соломенного голема.</TM_UnfinishedStrawGolem.description>
+
+	<TM_UnfinishedStrawGolemUpgrade.label>незавершённое улучшение соломенного голема</TM_UnfinishedStrawGolemUpgrade.label>
+	<TM_UnfinishedStrawGolemUpgrade.description>Часть апгрейда для соломенного голема. Требует доработки.</TM_UnfinishedStrawGolemUpgrade.description>
+
+	<TM_WoodGolem_Workstation.label>спящий деревянный голем</TM_WoodGolem_Workstation.label>
+	<TM_WoodGolem_Workstation.description>Деревянные големы следуют основам големантии — это полые сферы из дерева, камня и стали с магическим ядром внутри. Способны на простые ремёсла, уход за животными, готовку и синтез препаратов. Дёшевы и универсальны для ранней колонии, но хрупки и медлительны.
+
+В спящем режиме голема можно модернизировать. Восстанавливает энергию медленно. Активация занимает до 4 секунд.</TM_WoodGolem_Workstation.description>
+
+	<TM_UnfinishedWoodGolem.label>незавершённый деревянный голем</TM_UnfinishedWoodGolem.label>
+	<TM_UnfinishedWoodGolem.description>Грубая заготовка деревянного голема.</TM_UnfinishedWoodGolem.description>
+
+	<TM_UnfinishedWoodGolemUpgrade.label>незавершённое улучшение деревянного голема</TM_UnfinishedWoodGolemUpgrade.label>
+	<TM_UnfinishedWoodGolemUpgrade.description>Незаконченный модуль для апгрейда голема.</TM_UnfinishedWoodGolemUpgrade.description>
+
+	<TM_SilkGolem_Workstation.label>спящий шёлковый голем</TM_SilkGolem_Workstation.label>
+	<TM_SilkGolem_Workstation.description>Шёлковые големы — это мягкие конструкции из ткани и шёлка с изменчивой формой. Их стихия — социальные задачи и надзор, но для тяжёлой работы или боёв они не годятся из-за хрупкости.
+
+В спящем режиме поддаются модификациям. Медленно восполняют энергию. Активируются за 2 секунды.</TM_SilkGolem_Workstation.description>
+
+	<TM_UnfinishedSilkGolem.label>незавершённый шёлковый голем</TM_UnfinishedSilkGolem.label>
+	<TM_UnfinishedSilkGolem.description>Несобранный каркас из переплетённых нитей.</TM_UnfinishedSilkGolem.description>
+
+	<TM_UnfinishedSilkGolemUpgrade.label>незавершённое улучшение шёлкового голема</TM_UnfinishedSilkGolemUpgrade.label>
+	<TM_UnfinishedSilkGolemUpgrade.description>Часть улучшения для шёлкового голема. Пока не функционирует.</TM_UnfinishedSilkGolemUpgrade.description>
+	<TM_FleshGolem_Workstation_Blueprint_Install.label>установка: спящий голем из плоти</TM_FleshGolem_Workstation_Blueprint_Install.label>
+	<TM_HollowGolem_Workstation_Blueprint_Install.label>установка: спящий пустотный голем</TM_HollowGolem_Workstation_Blueprint_Install.label>
+	<TM_MaharalGolem_Workstation_Blueprint_Install.label>установка: спящий голем Махарала</TM_MaharalGolem_Workstation_Blueprint_Install.label>
+	<TM_MechaGolem_Workstation_Blueprint_Install.label>установка: спящий меха-голем</TM_MechaGolem_Workstation_Blueprint_Install.label>
+	<TM_StoneGolem_Workstation_Blueprint_Install.label>установка: спящий каменный голем</TM_StoneGolem_Workstation_Blueprint_Install.label>
+</LanguageData>

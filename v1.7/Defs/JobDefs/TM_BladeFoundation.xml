@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <JobDef>
+    <defName>TM_ReadBladeFocus</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying the Bladedancer combat form.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_ReadBladeMemory</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_GladiatorInitiation</driverClass>
+    <reportString>studying the Bladedancer combat form.</reportString>
+  </JobDef>
+</Defs>

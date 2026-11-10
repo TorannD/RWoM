@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Provisioner Aura -->
+
+  <TM_ProvisionerAura.label>Provedor</TM_ProvisionerAura.label>
+  <TM_ProvisionerAura.description>O uso da capacidade alterna a aura do Provedor, melhorando o descanso e reduzindo a fome dos peões mais próximos. Pode ser melhorado para reparar o equipamento, aumentar a velocidade natural de cicatrização e aumentar a regeneração de energia. Esta aura requer 60 forças para apoiar.</TM_ProvisionerAura.description>
+
+
+  <!-- Task Master Aura -->
+
+  <TM_TaskMasterAura.label>Especialista em tarefas</TM_TaskMasterAura.label>
+  <TM_TaskMasterAura.description>O uso da capacidade alterna a aura do mestre de tarefas: aumenta a velocidade de trabalho, a velocidade das refeições e a capacidade, mas faz com que os peões sejam menos sociais. Os peões sob a atenção do mestre de tarefas receberão uma multa de humor. Esta aura requer 70 forças para apoiar.</TM_TaskMasterAura.description>
+
+
+  <!-- Commander Aura -->
+
+  <TM_CommanderAura.label>Comandante</TM_CommanderAura.label>
+  <TM_CommanderAura.description>O uso da habilidade altera a aura do comandante: melhora o humor de todos os peões mais próximos, mas reduz a sua produtividade. Enquanto esta aura está ligada, o Comandante vai procurar os peões que se partiram por causa do stress mental e dar-lhes um discurso motivacional para ultrapassar a camada. Os peões que ultrapassarem a separação mental assim não terão remorsos. Esta aura requer 80% de resistência.</TM_CommanderAura.description>
+
+
+  <!-- Stay Alert -->
+
+  <TM_StayAlert.label>Fiquem vigilantes!</TM_StayAlert.label>
+  <TM_StayAlert.description>Dá uma equipa a todos os peões por perto para permanecerem em alerta máximo. Os peões afetados vão adormecer e melhorar a visão.
+
+Retrocesso: 120s
+Objetivo máximo: 10
+Distância: 14
+
+Os peões podem desviar as equipas se a habilidade social do comandante for inferior a 10; a habilidade social 5 terá 50% de chance de ser desviada por cada peão na distância.
+Os comandos provocam os ânimos de deboff; cada equipa aumenta a gravidade do deboff.
+As equipas não afetam o comandante.</TM_StayAlert.description>
+
+  <TM_StayAlert_I.label>Fiquem vigilantes!</TM_StayAlert_I.label>
+  <TM_StayAlert_I.description>Dá uma equipa a todos os peões por perto para permanecerem em alerta máximo. Os peões afetados vão adormecer e melhorar a visão.
+
+
+Retrocesso: 110s
+Meta máxima: 12
+Distância: 16
+
+Os peões podem desviar as equipas se a habilidade social do comandante for inferior a 10; a habilidade social 5 terá 50% de chance de ser rejeitado por cada peão em ​​radiuse ação.
+Os comandos provocam os ânimos de deboff; cada equipa aumenta a gravidade do deboff.
+As equipas não afetam o comandante.</TM_StayAlert_I.description>
+
+  <TM_StayAlert_II.label>Fiquem vigilantes!</TM_StayAlert_II.label>
+  <TM_StayAlert_II.description>Dá uma equipa a todos os peões por perto para permanecerem em alerta máximo. Os peões afetados vão adormecer e melhorar a visão.
+
+
+Retrocesso: 100s
+Objetivo máximo: 14
+Distância: 18
+
+Os peões podem desviar as equipas se a habilidade social do comandante for inferior a 10; a habilidade social 5 terá 50% de chance de ser desviada por cada peão na distância.
+Os comandos provocam os ânimos de deboff; cada equipa aumenta a gravidade do deboff.
+As equipas não afetam o comandante.</TM_StayAlert_II.description>
+
+  <TM_StayAlert_III.label>Fiquem vigilantes!</TM_StayAlert_III.label>
+  <TM_StayAlert_III.description>Dá uma equipa a todos os peões por perto para permanecerem em alerta máximo. Os peões afetados vão adormecer e melhorar a visão.
+
+
+Retrocesso: 90s
+Objetivo máximo: 15
+Distância: 20
+
+Os peões podem desviar as equipas se a habilidade social do comandante for inferior a 10; a habilidade social 5 terá 50% de chance de ser desviada por cada peão na distância.
+Os comandos provocam os ânimos de deboff; cada equipa aumenta a gravidade do deboff.
+As equipas não afetam o comandante.</TM_StayAlert_III.description>
+
+
+  <!-- Move Out -->
+
+  <TM_MoveOut.label>Sai daqui!</TM_MoveOut.label>
+  <TM_MoveOut.description>Dá uma equipa a todos os peões mais próximos. Os peões atingidos instantaneamente ganham movimento elevado e impedem que os peões se abalem ou se atordoem. Os peões diminuíram o movimento no final da equipa para recuperar a sua energia.
+
+Retrocesso: 120s
+Objetivo máximo: 10
+Distância: 14
+
+Os peões podem desviar as equipas se a habilidade social do comandante for inferior a 10; a habilidade social 5 terá 50% de chance de ser desviado por cada peão na range.
+Os comandos provocam os ânimos de deboff; cada equipa aumenta a gravidade do deboff.
+As equipas não afetam o comandante.</TM_MoveOut.description>
+
+  <TM_MoveOut_I.label>Sai daqui!</TM_MoveOut_I.label>
+  <TM_MoveOut_I.description>Dá uma equipa a todos os peões mais próximos. Os peões atingidos instantaneamente ganham movimento elevado e impedem que os peões se abalem ou se atordoem. Os peões diminuíram o movimento no final da equipa para recuperar a sua energia.
+
+Retrocesso: 110s
+Meta máxima: 12
+Distância: 16
+
+Os peões podem desviar as equipas se a habilidade social do comandante for inferior a 10; a habilidade social 5 terá 50% de chance de ser desviada por cada peão na Distância.
+Os comandos provocam os ânimos de deboff; cada equipa aumenta a gravidade do deboff.
+As equipas não afetam o comandante.</TM_MoveOut_I.description>
+
+  <TM_MoveOut_II.label>Sai daqui!</TM_MoveOut_II.label>
+  <TM_MoveOut_II.description>Dá uma equipa a todos os peões mais próximos. Os peões atingidos instantaneamente ganham movimento elevado e impedem que os peões se abalem ou se atordoem. Os peões diminuíram o movimento no final da equipa para recuperar a sua energia.
+
+Retrocesso: 100s
+Objetivo máximo: 14
+Distância: 18
+
+Os peões podem desviar as equipas se a habilidade social do comandante for inferior a 10; a habilidade social 5 terá 50% de chance de ser desviada por cada peão na Distância.
+Os comandos provocam os ânimos de deboff; cada equipa aumenta a gravidade do deboff.
+As equipas não afetam o comandante.</TM_MoveOut_II.description>
+
+  <TM_MoveOut_III.label>Sai daqui!</TM_MoveOut_III.label>
+  <TM_MoveOut_III.description>Dá uma equipa a todos os peões mais próximos. Os peões atingidos instantaneamente ganham movimento elevado e impedem que os peões se abalem ou se atordoem. Os peões diminuíram o movimento no final da equipa para recuperar a sua energia.
+
+Retrocesso: 90s
+Objetivo máximo: 15
+Distância: 20
+
+Os peões podem desviar as equipas se a habilidade social do comandante for inferior a 10; a habilidade social 5 terá 50% de chance de ser desviada por cada peão na Distância.
+Os comandos provocam os ânimos de deboff; cada equipa aumenta a gravidade do deboff.
+As equipas não afetam o comandante.</TM_MoveOut_III.description>
+
+
+  <!-- Hold The Line -->
+
+  <TM_HoldTheLine.label>Mantém a Fronteira!</TM_HoldTheLine.label>
+  <TM_HoldTheLine.description>Dá um comando a todos os peões mais próximos para manter a linha. Os peões afetados terão resistência ao urônio, tolerância à dor, estabilidade mental e maior velocidade de tiro, mas terão movimento reduzido.
+
+Retrocesso: 200s
+Objetivos máximos: 7
+Distância: 10
+
+Os peões podem desviar as equipas se a habilidade social do comandante for inferior a 10; a habilidade social 5 terá 50% de chance de ser desviada por cada peão na Distância.
+Os comandos provocam os ânimos de deboff; cada equipa aumenta a gravidade do deboff.
+As equipas não afetam o comandante.</TM_HoldTheLine.description>
+
+  <TM_HoldTheLine_I.label>Mantém a Fronteira!</TM_HoldTheLine_I.label>
+  <TM_HoldTheLine_I.description>Dá um comando a todos os peões mais próximos para manter a linha. Os peões afetados terão resistência ao urônio, tolerância à dor, estabilidade mental e maior velocidade de tiro, mas terão movimento reduzido.
+
+Retrocesso: 180s
+Objetivo máximo: 8
+Distância: 12
+
+Os peões podem desviar as equipas se a habilidade social do comandante for inferior a 10; a habilidade social 5 terá 50% de chance de ser desviada por cada peão na Distância.
+Os comandos provocam os ânimos de deboff; cada equipa aumenta a gravidade do deboff.
+As equipas não afetam o comandante.</TM_HoldTheLine_I.description>
+
+  <TM_HoldTheLine_II.label>Mantém a Fronteira!</TM_HoldTheLine_II.label>
+  <TM_HoldTheLine_II.description>Dá um comando a todos os peões mais próximos para manter a linha. Os peões afetados terão resistência ao urônio, tolerância à dor, estabilidade mental e maior velocidade de tiro, mas terão movimento reduzido.
+
+Retrocesso: 160s
+Objetivo máximo: 9
+Distância: 14
+
+Os peões podem desviar as equipas se a habilidade social do comandante for inferior a 10; a habilidade social 5 terá 50% de chance de ser desviada por cada peão na Distância.
+Os comandos provocam os ânimos de deboff; cada equipa aumenta a gravidade do deboff.
+As equipas não afetam o comandante.</TM_HoldTheLine_II.description>
+
+  <TM_HoldTheLine_III.label>Mantém a Fronteira!</TM_HoldTheLine_III.label>
+  <TM_HoldTheLine_III.description>Dá um comando a todos os peões mais próximos para manter a linha. Os peões afetados terão resistência ao urônio, tolerância à dor, estabilidade mental e maior velocidade de tiro, mas terão movimento reduzido.
+
+Retrocesso: 150s
+Objetivo máximo: 10
+Distância: 15
+
+Os peões podem desviar as equipas se a habilidade social do comandante for inferior a 10; a habilidade social 5 terá 50% de chance de ser desviada por cada peão na Distância.
+Os comandos provocam os ânimos de deboff; cada equipa aumenta a gravidade do deboff.
+As equipas não afetam o comandante.</TM_HoldTheLine_III.description>
+
+
+</LanguageData>

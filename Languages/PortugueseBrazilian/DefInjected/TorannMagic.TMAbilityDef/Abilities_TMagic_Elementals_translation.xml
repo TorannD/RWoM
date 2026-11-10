@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Icebolt -->
+
+  <TM_Elemental_Icebolt.label>bola de gelo básica</TM_Elemental_Icebolt.label>
+  <TM_Elemental_Icebolt.description>Uma bola de gelo especialmente concebida para se romper em fragmentos de impacto, causando hemorragia severa e danos em uma pequena área.</TM_Elemental_Icebolt.description>
+
+
+  <!-- Firebolt -->
+
+  <TM_Elemental_Firebolt.label>Bola de fogo</TM_Elemental_Firebolt.label>
+  <TM_Elemental_Firebolt.description>Um surto de fogo mágico. Está a incendiar o alvo.</TM_Elemental_Firebolt.description>
+
+
+</LanguageData>

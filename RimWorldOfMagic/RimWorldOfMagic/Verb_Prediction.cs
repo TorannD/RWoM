@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -9,42 +9,39 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-    public class Verb_Prediction : Verb_UseAbility
+    public class Verb_Prediction : ClassProgression.Verb_SpiritTargetable
     {
-        private int pwrVal = 0;
+        protected override bool TryCastShot() => ApplyHostedEffect();
 
-        protected override bool TryCastShot()
+        protected override bool ApplyHostedEffect()
         {
-            Pawn caster = base.CasterPawn;
-            Pawn pawn = this.currentTarget.Thing as Pawn;
-            MagicPower magicPower = caster.GetCompAbilityUserMagic().MagicData.MagicPowersC.FirstOrDefault<MagicPower>((MagicPower x) => x.abilityDef == TorannMagicDefOf.TM_Prediction);
-            MagicPowerSkill pwr = base.CasterPawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Prediction.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Prediction_pwr");
-            pwrVal = pwr.level;
-            CompAbilityUserMagic comp = base.CasterPawn.GetCompAbilityUserMagic();
-            
-            if (ModOptions.Settings.Instance.AIHardMode && !this.CasterPawn.IsColonist)
+            var body = CasterPawn;
+            var target = currentTarget.Pawn;
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(body,Ability);
+            var comp = owner?.GetCompAbilityUserMagic();
+            if (target != body || target?.Spawned != true || target.Dead || comp == null) return false;
+            var data = comp.MagicData;
+            var power = data.MagicPowersC.FirstOrDefault(p => p.abilityDef == TorannMagicDefOf.TM_Prediction);
+            if (power == null) return false;
+            var hediff = target.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_PredictionHD);
+            if (hediff != null)
             {
-                pwrVal = 4;
+                if (hediff.TryGetComp<HediffComp_Prediction>()?.Owner != owner) return false;
+                target.health.RemoveHediff(hediff);
+                AutoCast.AutocastPolicy.SetAutocast(comp,power,false);
             }
-            else if(!this.CasterPawn.IsColonist && this.CasterPawn.Faction != null && this.CasterPawn.Faction.HostileTo(Faction.OfPlayerSilentFail))
+            else
             {
-                pwrVal = 5;
-            }
-            bool flag = pawn != null && !pawn.Dead;
-            if (flag)
-            {
-                if (pawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_PredictionHD))
-                {
-                    Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_PredictionHD);
-                    pawn.health.RemoveHediff(hediff);                    
-                    magicPower.AutoCast = false;
-                }
-                else
-                {
-                    HealthUtility.AdjustSeverity(pawn, TorannMagicDefOf.TM_PredictionHD, .5f + pwrVal);
-                    //TM_MoteMaker.ThrowNoteMote(pawn.DrawPos, pawn.Map, .8f);
-                    magicPower.AutoCast = true;
-                }
+                int rank = ClassProgression.SpiritRebirthRuntime.SavedRank(data,"TM_Prediction_pwr");
+                if (ModOptions.Settings.Instance.AIHardMode && !body.IsColonist) rank = 4;
+                else if (!body.IsColonist && body.Faction?.HostileTo(Faction.OfPlayerSilentFail) == true) rank = 5;
+                var trial = ClassProgression.ChronomancerTrials.CapturePrediction(Ability,target);
+                HealthUtility.AdjustSeverity(target,TorannMagicDefOf.TM_PredictionHD,.5f + rank);
+                var effect = target.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_PredictionHD)?.TryGetComp<HediffComp_Prediction>();
+                if (effect == null) return false;
+                effect.projectedOwner = owner == body ? null : owner;
+                ClassProgression.ChronomancerTrials.CompletePrediction(trial);
+                AutoCast.AutocastPolicy.SetAutocast(comp,power,true);
             }
             return true;
         }

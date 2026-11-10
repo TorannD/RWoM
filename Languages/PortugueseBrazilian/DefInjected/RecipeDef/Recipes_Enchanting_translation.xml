@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Gem Recipes -->
+
+  <CutMinorMPGem.label>pequena pedra de propriedade</CutMinorMPGem.label>
+  <CutMinorMPGem.description>Limpem e limpem o magicida não tratado, transformando-o numa pedra preciosa capaz de manter as reservas de maná.</CutMinorMPGem.description>
+  <CutMinorMPGem.jobString>colorir uma pequena pedra de posse</CutMinorMPGem.jobString>
+
+  <CutMPGem.label>pedra de posse</CutMPGem.label>
+  <CutMPGem.description>Limpem e limpem o magicida, transformando-o numa pedra preciosa capaz de manter as reservas de maná.</CutMPGem.description>
+  <CutMPGem.jobString>colorir a pedra de posse</CutMPGem.jobString>
+
+  <CutMajorMPGem.label>grande pedra de propriedade</CutMajorMPGem.label>
+  <CutMajorMPGem.description>Limpem e limpem o magicida, transformando-o numa pedra preciosa capaz de manter as reservas de maná.</CutMajorMPGem.description>
+  <CutMajorMPGem.jobString>colorir a grande pedra de posse</CutMajorMPGem.jobString>
+
+  <CutMinorCoolDownGem.label>pequena pedra de aceleração</CutMinorCoolDownGem.label>
+  <CutMinorCoolDownGem.description>Limpem e limpem o magicida, transformando-o numa pedra preciosa capaz de acelerar o retrocesso de poderes.</CutMinorCoolDownGem.description>
+  <CutMinorCoolDownGem.jobString>colorir uma pequena pedra de aceleração</CutMinorCoolDownGem.jobString>
+
+  <CutCoolDownGem.label>pedra de aceleração</CutCoolDownGem.label>
+  <CutCoolDownGem.description>Limpem e limpem o magicida, transformando-o numa pedra preciosa capaz de acelerar o retrocesso de poderes.</CutCoolDownGem.description>
+  <CutCoolDownGem.jobString>colorir a pedra de aceleração</CutCoolDownGem.jobString>
+
+  <CutMajorCoolDownGem.label>grande pedra de aceleração</CutMajorCoolDownGem.label>
+  <CutMajorCoolDownGem.description>Limpem e limpem o magicida, transformando-o numa pedra preciosa capaz de acelerar o retrocesso de poderes.</CutMajorCoolDownGem.description>
+  <CutMajorCoolDownGem.jobString>colorir uma grande pedra de aceleração</CutMajorCoolDownGem.jobString>
+
+  <CutMinorMPCostGem.label>pequena pedra de preservação</CutMinorMPCostGem.label>
+  <CutMinorMPCostGem.description>Refogue e limpe o magicite, transformando-o numa preciosa pedra preciosa capaz de reduzir o que você precisa.</CutMinorMPCostGem.description>
+  <CutMinorMPCostGem.jobString>colorir uma pequena pedra de preservação</CutMinorMPCostGem.jobString>
+
+  <CutMPCostGem.label>pedra de preservação</CutMPCostGem.label>
+  <CutMPCostGem.description>Refogue e limpe o magicite, transformando-o numa preciosa pedra preciosa capaz de reduzir o que você precisa.</CutMPCostGem.description>
+  <CutMPCostGem.jobString>colorir a pedra de preservação</CutMPCostGem.jobString>
+
+  <CutMajorMPCostGem.label>grande pedra de preservação</CutMajorMPCostGem.label>
+  <CutMajorMPCostGem.description>Refogue e limpe o magicite, transformando-o numa preciosa pedra preciosa capaz de reduzir o que você precisa.</CutMajorMPCostGem.description>
+  <CutMajorMPCostGem.jobString>colorir uma grande pedra de preservação</CutMajorMPCostGem.jobString>
+
+  <CutMinorMPRegenRateGem.label>pequena pedra de regeneração</CutMinorMPRegenRateGem.label>
+  <CutMinorMPRegenRateGem.description>Limpem e limpem o magicida, transformando-o numa preciosa pedra preciosa capaz de acelerar a regeneração do maná.</CutMinorMPRegenRateGem.description>
+  <CutMinorMPRegenRateGem.jobString>colorir uma pequena pedra de regeneração</CutMinorMPRegenRateGem.jobString>
+
+  <CutMPRegenRateGem.label>pedra de regeneração</CutMPRegenRateGem.label>
+  <CutMPRegenRateGem.description>Limpem e limpem o magicida, transformando-o numa preciosa pedra preciosa capaz de acelerar a regeneração do maná.</CutMPRegenRateGem.description>
+  <CutMPRegenRateGem.jobString>colorir a pedra de regeneração</CutMPRegenRateGem.jobString>
+
+  <CutMajorMPRegenRateGem.label>grande pedra de regeneração</CutMajorMPRegenRateGem.label>
+  <CutMajorMPRegenRateGem.description>Limpem e limpem o magicida, transformando-o numa preciosa pedra preciosa capaz de acelerar a regeneração do maná.</CutMajorMPRegenRateGem.description>
+  <CutMajorMPRegenRateGem.jobString>colorir uma grande pedra de regeneração</CutMajorMPRegenRateGem.jobString>
+
+  <CutMinorXPGainGem.label>pequena pedra de treinamento</CutMinorXPGainGem.label>
+  <CutMinorXPGainGem.description>Refogue e limpe o magicite, transformando-o numa preciosa pedra preciosa que aumenta a experiência adquirida com a utilização de poderes.</CutMinorXPGainGem.description>
+  <CutMinorXPGainGem.jobString>colorir uma pequena pedra de treinamento</CutMinorXPGainGem.jobString>
+
+  <CutXPGainGem.label>pedra de treinamento</CutXPGainGem.label>
+  <CutXPGainGem.description>Refogue e limpe o magicite, transformando-o numa preciosa pedra preciosa que aumenta a experiência adquirida com a utilização de poderes.</CutXPGainGem.description>
+  <CutXPGainGem.jobString>colorir pedra de treinamento</CutXPGainGem.jobString>
+
+  <CutMajorXPGainGem.label>grande pedra de treinamento</CutMajorXPGainGem.label>
+  <CutMajorXPGainGem.description>Refogue e limpe o magicite, transformando-o numa preciosa pedra preciosa que aumenta a experiência adquirida com a utilização de poderes.</CutMajorXPGainGem.description>
+  <CutMajorXPGainGem.jobString>colorir uma grande pedra de treinamento</CutMajorXPGainGem.jobString>
+
+  <CutMinorArcaneResGem.label>pequena pedra de resistência</CutMinorArcaneResGem.label>
+  <CutMinorArcaneResGem.description>Limpem e limpem o magicida, transformando-o numa pedra preciosa que aumenta a resistência aos ataques mágicos.</CutMinorArcaneResGem.description>
+  <CutMinorArcaneResGem.jobString>colorir uma pequena pedra de resistência</CutMinorArcaneResGem.jobString>
+
+  <CutArcaneResGem.label>pedra de resistência</CutArcaneResGem.label>
+  <CutArcaneResGem.description>Limpem e limpem o magicida, transformando-o numa pedra preciosa que aumenta a resistência aos ataques mágicos.</CutArcaneResGem.description>
+  <CutArcaneResGem.jobString>colorir a pedra de resistência</CutArcaneResGem.jobString>
+
+  <CutMajorArcaneResGem.label>grande pedra de resistência</CutMajorArcaneResGem.label>
+  <CutMajorArcaneResGem.description>Limpem e limpem o magicida, transformando-o numa pedra preciosa que aumenta a resistência aos ataques mágicos.</CutMajorArcaneResGem.description>
+  <CutMajorArcaneResGem.jobString>colorir uma grande pedra de resistência</CutMajorArcaneResGem.jobString>
+
+  <CutMinorArcaneDmgGem.label>pequena pedra de poder</CutMinorArcaneDmgGem.label>
+  <CutMinorArcaneDmgGem.description>Transforme-o numa preciosa pedra preciosa que aumenta o poder dos feitiços.</CutMinorArcaneDmgGem.description>
+  <CutMinorArcaneDmgGem.jobString>colorir uma pequena pedra de poder</CutMinorArcaneDmgGem.jobString>
+
+  <CutArcaneDmgGem.label>pedra de poder</CutArcaneDmgGem.label>
+  <CutArcaneDmgGem.description>Transforme-o numa preciosa pedra preciosa que aumenta o poder dos feitiços.</CutArcaneDmgGem.description>
+  <CutArcaneDmgGem.jobString>colorir a pedra do poder</CutArcaneDmgGem.jobString>
+
+  <CutMajorArcaneDmgGem.label>grande pedra de poder</CutMajorArcaneDmgGem.label>
+  <CutMajorArcaneDmgGem.description>Transforme-o numa preciosa pedra preciosa que aumenta o poder dos feitiços.</CutMajorArcaneDmgGem.description>
+  <CutMajorArcaneDmgGem.jobString>colorir uma grande pedra de poder</CutMajorArcaneDmgGem.jobString>
+
+  <CutMinorArcaneWonderGem.label>pequena pedra de dúvida</CutMinorArcaneWonderGem.label>
+  <CutMinorArcaneWonderGem.description>Limpem e limpem o magicida, transformando-o numa preciosa pedra preciosa, capaz de usar todos os tipos de encantos.</CutMinorArcaneWonderGem.description>
+  <CutMinorArcaneWonderGem.jobString>colorir uma pequena pedra de dúvida</CutMinorArcaneWonderGem.jobString>
+
+  <CutArcaneWonderGem.label>pedra dúvida</CutArcaneWonderGem.label>
+  <CutArcaneWonderGem.description>Limpem e limpem o magicida, transformando-o numa preciosa pedra preciosa, capaz de usar todos os tipos de encantos.</CutArcaneWonderGem.description>
+  <CutArcaneWonderGem.jobString>colorir a pedra da dúvida</CutArcaneWonderGem.jobString>
+
+  <CutMajorArcaneWonderGem.label>grande pedra de dúvida</CutMajorArcaneWonderGem.label>
+  <CutMajorArcaneWonderGem.description>Limpem e limpem o magicida, transformando-o numa preciosa pedra preciosa, capaz de usar todos os tipos de encantos.</CutMajorArcaneWonderGem.description>
+  <CutMajorArcaneWonderGem.jobString>colorir a grande pedra da dúvida</CutMajorArcaneWonderGem.jobString>
+
+
+  <!-- Refinement Recipes -->
+
+  <ManaPotion_Refined.label>Poção de maná</ManaPotion_Refined.label>
+  <ManaPotion_Refined.description>Ervas misturadas com pó de magicita para obter 2 poções de maná.</ManaPotion_Refined.description>
+  <ManaPotion_Refined.jobString>Edifício poção maná</ManaPotion_Refined.jobString>
+
+
+</LanguageData>

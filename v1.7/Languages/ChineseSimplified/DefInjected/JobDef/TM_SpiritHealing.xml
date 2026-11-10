@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritHeal.reportString>正通过宿主施展治疗。</TM_SpiritHeal.reportString>
+  <TM_SpiritAdvancedHeal.reportString>正通过宿主施展高级治疗。</TM_SpiritAdvancedHeal.reportString>
+  <TM_SpiritPurify.reportString>正通过宿主施展净化。</TM_SpiritPurify.reportString>
+  <TM_SpiritRegenerate.reportString>正通过宿主施展再生。</TM_SpiritRegenerate.reportString>
+</LanguageData>

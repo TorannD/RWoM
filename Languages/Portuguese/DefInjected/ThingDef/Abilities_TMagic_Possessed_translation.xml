@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Spirit Possession -->
+
+  <Projectile_SpiritPossession.label>dominar</Projectile_SpiritPossession.label>
+
+
+  <!-- Distort Spirit -->
+
+  <Projectile_DistortSpirit.label>distorcer o espírito</Projectile_DistortSpirit.label>
+
+
+  <!-- Summon Spirit Animal -->
+
+  <Projectile_SummonSpiritAnimals.label>chamar os espíritos animais</Projectile_SummonSpiritAnimals.label>
+
+
+  <!-- Spirit Storm -->
+
+  <Projectile_SpiritStorm.label>tempestade espiritual</Projectile_SpiritStorm.label>
+  <FlyingObject_SpiritStorm.label>tempestade espiritual</FlyingObject_SpiritStorm.label>
+
+
+</LanguageData>

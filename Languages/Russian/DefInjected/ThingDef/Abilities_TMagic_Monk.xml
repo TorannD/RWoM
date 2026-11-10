@@ -1,0 +1,6 @@
+<LanguageData><!-- Dragon Strike-->
+	<FlyingObject_DragonStrike.label>Удар Дракона</FlyingObject_DragonStrike.label>
+	<Projectile_DragonStrike.label>Удар Дракона</Projectile_DragonStrike.label>
+	<!-- Thunder Strike-->
+	<Projectile_ThunderStrike.label>Удар Грома</Projectile_ThunderStrike.label>
+</LanguageData>

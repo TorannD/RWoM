@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_MonkPalmSeal.label>Palm seal</TM_Bridge_MonkPalmSeal.label>
+  <TM_Bridge_MonkPalmSeal.description>Strike an adjacent enemy unarmed for 16/22/28 spiritual damage and interrupt for one second. Base cost 20 chi; cooldown 30 seconds.</TM_Bridge_MonkPalmSeal.description>
+  <TM_Bridge_MonkSilentMeridian.label>Silent meridian</TM_Bridge_MonkSilentMeridian.label>
+  <TM_Bridge_MonkSilentMeridian.description>Remain unarmed and stationary. After five seconds three pulses over twelve seconds deal 12 spiritual damage each to up to four enemies in sight within five cells. The first stuns for two seconds and drains up to 15% of one resource. Costs 60% chi; cooldown two days.</TM_Bridge_MonkSilentMeridian.description>
+</LanguageData>

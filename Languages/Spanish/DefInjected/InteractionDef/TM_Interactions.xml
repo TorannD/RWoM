@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_EntertainAuraID.label>entretuvo</TM_EntertainAuraID.label>
+  
+  <TM_EntertainAuraID.logRulesInitiator.rulesStrings.0>r_logentry-&gt;Tuvo una charla entretenida con [RECIPIENT_nameDef].</TM_EntertainAuraID.logRulesInitiator.rulesStrings.0>
+  
+  <TM_EntertainAuraID.logRulesRecipient.rulesStrings.0>r_logentry-&gt;Tuvo una charla entretenida con [INITIATOR_nameDef].</TM_EntertainAuraID.logRulesRecipient.rulesStrings.0>
+  
+  
+  <TM_EntertainID.label>entretuvo</TM_EntertainID.label>
+  
+  <TM_EntertainID.logRulesInitiator.rulesStrings.0>r_logentry-&gt;Entretuvo a [RECIPIENT_nameDef].</TM_EntertainID.logRulesInitiator.rulesStrings.0>
+  
+  <TM_EntertainID.logRulesRecipient.rulesStrings.0>r_logentry-&gt;Se entretuvo con [INITIATOR_nameDef].</TM_EntertainID.logRulesRecipient.rulesStrings.0>
+  
+  
+  <TM_MagicLore.label>habló de teorías y prácticas mágicas</TM_MagicLore.label>
+  
+  <TM_MagicLore.logRulesInitiator.rulesStrings.0>r_logentry-&gt;Instruyó a [RECIPIENT_nameDef] en magia.</TM_MagicLore.logRulesInitiator.rulesStrings.0>
+  
+  <TM_MagicLore.logRulesRecipient.rulesStrings.0>r_logentry-&gt;Aprendió teorías mágicas de [INITIATOR_nameDef].</TM_MagicLore.logRulesRecipient.rulesStrings.0>
+  
+  
+  <TM_MightLore.label>habló de técnicas de combate</TM_MightLore.label>
+  
+  <TM_MightLore.logRulesInitiator.rulesStrings.0>r_logentry-&gt;Enseñó técnicas de combate a [RECIPIENT_nameDef].</TM_MightLore.logRulesInitiator.rulesStrings.0>
+  
+  <TM_MightLore.logRulesRecipient.rulesStrings.0>r_logentry-&gt;Recibió entrenamiento de combate de [INITIATOR_nameDef].</TM_MightLore.logRulesRecipient.rulesStrings.0>
+  
+</LanguageData>

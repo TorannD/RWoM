@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadRangerTraining>Изучить подготовку следопыта — классические полевые навыки со штрафами к работе (окончательно)</TM_ReadRangerTraining>
+  <TM_ReadRangerTrailLore>Изучить «Знание троп» — быстрее переносить грузы под открытым небом (окончательно)</TM_ReadRangerTrailLore>
+  <TM_TrailLoreName>Знание троп</TM_TrailLoreName>
+  <TM_TrailLoreTraining>При переноске груза под открытым небом скорость передвижения увеличивается на 2%. Каждый ранг добавляет ещё 2 процентных пункта, вплоть до 10%.</TM_TrailLoreTraining>
+</LanguageData>

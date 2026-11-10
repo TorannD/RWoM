@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- demon special attack manuevers -->
+
+  <TM_DemonR.label>Demónio</TM_DemonR.label>
+  <TM_DemonR.description>Libertado do inferno, este demónio vai derrubar a sua maldade não contida sobre qualquer ser no seu caminho. Não há juízo e hipótese de submeter o demónio; Destruam-no ou serão destruídos.</TM_DemonR.description>
+  <TM_DemonR.tools.0.label>pata esquerda</TM_DemonR.tools.0.label>
+  <TM_DemonR.tools.1.label>pata direita</TM_DemonR.tools.1.label>
+  <TM_DemonR.tools.2.label>cavaquinho</TM_DemonR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_DemonR_Corpse.label>Corpo de demónio</TM_DemonR_Corpse.label>
+  <TM_DemonR_Corpse.description>Corpo de demónio</TM_DemonR_Corpse.description>
+
+
+  <!-- demon special attack manuevers -->
+
+  <TM_LesserDemonR.label>Menor Demónio</TM_LesserDemonR.label>
+  <TM_LesserDemonR.description>Libertado do inferno, este demónio inferior vai derrubar a sua maldade não contida sobre todos os seres no seu caminho, sem exceção. Não há raciocínio ou submissão ao demônio; Destruam-no ou sejam destruídos.</TM_LesserDemonR.description>
+  <TM_LesserDemonR.tools.0.label>pata esquerda</TM_LesserDemonR.tools.0.label>
+  <TM_LesserDemonR.tools.1.label>pata direita</TM_LesserDemonR.tools.1.label>
+  <TM_LesserDemonR.tools.2.label>cavaquinho</TM_LesserDemonR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_LesserDemonR_Corpse.label>Corpo do Menor Demónio</TM_LesserDemonR_Corpse.label>
+  <TM_LesserDemonR_Corpse.description>Corpo do Menor Demónio</TM_LesserDemonR_Corpse.description>
+
+
+</LanguageData>

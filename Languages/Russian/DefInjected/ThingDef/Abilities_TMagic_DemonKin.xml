@@ -1,0 +1,20 @@
+<LanguageData><Projectile_Warlock.label>снаряд по умолчанию</Projectile_Warlock.label>
+	<!-- ShadowBolt-->
+	<Projectile_ShadowBolt.label>Тёмный болт</Projectile_ShadowBolt.label>
+	<FlyingObject_ShadowBolt.label>Тёмный болт</FlyingObject_ShadowBolt.label>
+	<!-- Attraction-->
+	<Projectile_Attraction.label>привлечение</Projectile_Attraction.label>
+	<!-- Repulsion-->
+	<Projectile_Repulsion.label>отражение</Projectile_Repulsion.label>
+	<Projectile_Repulsion_I.label>отражение</Projectile_Repulsion_I.label>
+	<Projectile_Repulsion_II.label>отражение</Projectile_Repulsion_II.label>
+	<Projectile_Repulsion_III.label>отражение</Projectile_Repulsion_III.label>
+	<!-- Scorn-->
+	<Projectile_Scorn.label>презрение</Projectile_Scorn.label>
+	<!-- PsychicShock-->
+	<Projectile_PsychicShock.label>психический шок</Projectile_PsychicShock.label>
+	<!-- SummonDemon-->
+	<Projectile_SummonDemon.label>вызов демона</Projectile_SummonDemon.label>
+	<FlyingObject_DemonFlight.label>летающий объект</FlyingObject_DemonFlight.label>
+	<FlyingObject_DemonBolt.label>демоническое пламя</FlyingObject_DemonBolt.label>
+</LanguageData>

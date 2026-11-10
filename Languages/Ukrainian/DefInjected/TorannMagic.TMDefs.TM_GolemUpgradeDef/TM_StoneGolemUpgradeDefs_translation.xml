@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Golem_StoneRepair.label>відновіть частину</TM_Golem_StoneRepair.label>
+
+  <TM_Golem_StoneMaxEnergy.label>накопичувач енергії</TM_Golem_StoneMaxEnergy.label>
+  <TM_Golem_StoneMaxEnergy.description>Збільшує максимальну енергію на 120 за рівень. Початкова максимальна енергія становить 800.</TM_Golem_StoneMaxEnergy.description>
+
+  <TM_Golem_StoneEnergyEfficiency.label>енергоефективність</TM_Golem_StoneEnergyEfficiency.label>
+  <TM_Golem_StoneEnergyEfficiency.description>Підвищує енергоефективність на 10% за рівень. Початкова енергоефективність становить 50%.</TM_Golem_StoneEnergyEfficiency.description>
+
+  <TM_Golem_StoneEnergyRate.label>регенерація енергії</TM_Golem_StoneEnergyRate.label>
+  <TM_Golem_StoneEnergyRate.description>Збільшує швидкість заряду енергії на 20% за рівень. Початкова швидкість перезарядки становить 20 енерговитрат на годину.</TM_Golem_StoneEnergyRate.description>
+
+  <TM_Golem_StoneHardening.label>затвердження</TM_Golem_StoneHardening.label>
+  <TM_Golem_StoneHardening.description>Підвищує загальний захист:
+Тупий збиток: +[4,8,12]%
+Ріжучий збиток: +[11,22,33]%
+Температура: +[6,12,18]%</TM_Golem_StoneHardening.description>
+
+  <TM_Golem_StoneCompactor.label>Ущільнювач каменю</TM_Golem_StoneCompactor.label>
+  <TM_Golem_StoneCompactor.description>Дозволяє голему дробити кам&apos;яні шматки в придатні для використання цеглини. Цей процес відбувається сам по собі після того, як кам&apos;яні шматки поміщаються в голема, і вимагає, щоб голем перебував у стані спокою.</TM_Golem_StoneCompactor.description>
+
+  <TM_Golem_StoneToBricks.label>виготовлення</TM_Golem_StoneToBricks.label>
+  <TM_Golem_StoneToBricks.description>З часом перетворює кам &quot;яні шматки на цеглу</TM_Golem_StoneToBricks.description>
+
+  <TM_Golem_StoneLifeStage.label>каркасний шар</TM_Golem_StoneLifeStage.label>
+  <TM_Golem_StoneLifeStage.description>Збільшує статистику:
+Рух: +[20%/35%/50%]
+Здоров&apos;я: +[40%/70%/100%]</TM_Golem_StoneLifeStage.description>
+
+
+</LanguageData>

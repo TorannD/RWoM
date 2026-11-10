@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Soulbond</defName>
+    <label>SoulBond</label>
+    <description>Demons, or those possessing the power of a demon, can creates a soul bond (soul contract) with another pawn who will sustain (or host) the bond. The bond provides energy from the soul of the host to the demonkin, in exchange, the emotions of the host are washed away in bliss. The soul bond also creates a link that allows the demonkin to travel to, or summon, the host.
+		
+The soul bond contract may be canceled at any time by the demonkin by re-using the ability on the current host. Creating a soul bond with another host will cancel any previous contracts. The contract will also end if either party dies or is destroyed. 
+
+Succubi and Warlocks form distinct types of soul bonds - warlocks bonds are mentally reciprocal while a succubus bonds are physical in nature. Demonkin can only sustain a single bond; hosts can only sustain a single bond of each type (mental/physical).</description>
+    <spellId>rwom.tm_soulbond</spellId>
+    <iconPath>UI/soulbond</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SoulBond</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_Warlock</defaultProjectile>
+      <abilityDef>TM_SoulBond</abilityDef>
+      <warmupTime>4</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <range>20</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Gong</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Shadowcall</defName>
+    <label>Shadow Call</label>
+    <description>Commands the soul of a bonded host to travel to your location.</description>
+    <spellId>rwom.tm_shadowcall</spellId>
+    <iconPath>UI/shadowcall</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ShadowCall</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Warlock</defaultProjectile>
+      <abilityDef>TM_ShadowCall</abilityDef>
+      <warmupTime>0.5</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Shadowstep</defName>
+    <label>Shadow Step</label>
+    <description>Step through shadow to the location of your soul bonded host.</description>
+    <spellId>rwom.tm_shadowstep</spellId>
+    <iconPath>UI/shadowstep</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ShadowStep</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Warlock</defaultProjectile>
+      <abilityDef>TM_ShadowStep</abilityDef>
+      <warmupTime>.5</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Shadowbolt</defName>
+    <label>Shadow Bolt</label>
+    <description>Launches a Shadow Bolt. Any creature caught in its path is touched by the shadow. Upon impact, Shadow energy is released in a violent wave of darkness.
+		
+Cast time: 2s
+Cooldown : 20s
+Range: 40</description>
+    <spellId>rwom.tm_shadowbolt</spellId>
+    <iconPath>UI/shadowbolt</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_ShadowBolt</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ShadowBolt</defaultProjectile>
+      <abilityDef>TM_ShadowBolt</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>20</SecondsToRecharge>
+      <range>40</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Woosh</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ShadowboltI</defName>
+    <label>Shadow Bolt</label>
+    <description>Launches a Shadow Bolt. Any creature caught in its path is touched by the shadow. Upon impact, Shadow energy is released in a violent wave of darkness.
+		
+Cast time: 1.8s
+Cooldown : 18s
+Range: 45</description>
+    <spellId>rwom.tm_shadowbolt_i</spellId>
+    <iconPath>UI/shadowbolt</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_ShadowBolt</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ShadowBolt</defaultProjectile>
+      <abilityDef>TM_ShadowBolt_I</abilityDef>
+      <warmupTime>1.8</warmupTime>
+      <SecondsToRecharge>18</SecondsToRecharge>
+      <range>45</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Woosh</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ShadowboltII</defName>
+    <label>Shadow Bolt</label>
+    <description>Launches a Shadow Bolt. Any creature caught in its path is touched by the shadow. Upon impact, Shadow energy is released in a violent wave of darkness.
+		
+Cast time: 1.6s
+Cooldown : 16s
+Range: 50</description>
+    <spellId>rwom.tm_shadowbolt_ii</spellId>
+    <iconPath>UI/shadowbolt</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_ShadowBolt</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ShadowBolt</defaultProjectile>
+      <abilityDef>TM_ShadowBolt_II</abilityDef>
+      <warmupTime>1.6</warmupTime>
+      <SecondsToRecharge>16</SecondsToRecharge>
+      <range>50</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Woosh</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_ShadowboltIII</defName>
+    <label>Shadow Bolt</label>
+    <description>Launches a Shadow Bolt. Any creature caught in its path is touched by the shadow. Upon impact, Shadow energy is released in a violent wave of darkness.
+		
+Cast time: 1.5s
+Cooldown : 15s
+Range: 55</description>
+    <spellId>rwom.tm_shadowbolt_iii</spellId>
+    <iconPath>UI/shadowbolt</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_ShadowBolt</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ShadowBolt</defaultProjectile>
+      <abilityDef>TM_ShadowBolt_III</abilityDef>
+      <warmupTime>1.5</warmupTime>
+      <SecondsToRecharge>15</SecondsToRecharge>
+      <range>55</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Woosh</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <muzzleFlashScale>2</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Dominate</defName>
+    <label>Dominate</label>
+    <description>Command the shadow to envelope your enemies in a living nightmare that will surround them in their greatest fears. Nearby enemies close enough to witness the fear in a dominated pawn may also succumb to fear and allow the shadow to dominate their own mind.
+		
+Warlocks and Succubi dominate their foes in different ways. Warlocks will attempt to break the mind of their enemies, while a succubus will reduce the physical prowess of their victims.</description>
+    <spellId>rwom.tm_dominate</spellId>
+    <iconPath>UI/dominate_c</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Dominate</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Warlock</defaultProjectile>
+      <abilityDef>TM_Dominate</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>120</SecondsToRecharge>
+      <range>50</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Woosh</soundCast>
+      <soundCastTail>TM_Vibration</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Attraction</defName>
+    <label>Attraction</label>
+    <description>Creates a large shadow well that draws all nearby pawns into its center. Shadows will cling to any creature affected by Attraction, drastically reducing their movement speed for a short time.
+
+Cast time: 3s
+Range: 40
+Cooldown: 60</description>
+    <spellId>rwom.tm_attraction</spellId>
+    <iconPath>UI/repulsion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Attraction</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Attraction</defaultProjectile>
+      <abilityDef>TM_Attraction</abilityDef>
+      <warmupTime>3</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>40</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_AttractionI</defName>
+    <label>Attraction</label>
+    <description>Creates a large shadow well that draws all nearby pawns into its center. Shadows will cling to any creature affected by Attraction, drastically reducing their movement speed for a short time.
+
+Cast time: 2.6s
+Range: 45
+Cooldown: 55</description>
+    <spellId>rwom.tm_attraction_i</spellId>
+    <iconPath>UI/repulsion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Attraction</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Attraction</defaultProjectile>
+      <abilityDef>TM_Attraction</abilityDef>
+      <warmupTime>2.6</warmupTime>
+      <SecondsToRecharge>55</SecondsToRecharge>
+      <range>45</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_AttractionII</defName>
+    <label>Attraction</label>
+    <description>Creates a large shadow well that draws all nearby pawns into its center. Shadows will cling to any creature affected by Attraction, drastically reducing their movement speed for a short time.
+
+Cast time: 2.3s
+Range: 50
+Cooldown: 50</description>
+    <spellId>rwom.tm_attraction_ii</spellId>
+    <iconPath>UI/repulsion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Attraction</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Attraction</defaultProjectile>
+      <abilityDef>TM_Attraction_II</abilityDef>
+      <warmupTime>2.3</warmupTime>
+      <SecondsToRecharge>50</SecondsToRecharge>
+      <range>50</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_AttractionIII</defName>
+    <label>Attraction</label>
+    <description>Creates a large shadow well that draws all nearby pawns into its center. Shadows will cling to any creature affected by Attraction, drastically reducing their movement speed for a short time.
+
+Cast time: 2s
+Range: 55
+Cooldown: 45</description>
+    <spellId>rwom.tm_attraction_iii</spellId>
+    <iconPath>UI/repulsion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Attraction</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Attraction</defaultProjectile>
+      <abilityDef>TM_Attraction_III</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>45</SecondsToRecharge>
+      <range>55</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <soundCastTail>TM_VibrationLow</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Repulsion</defName>
+    <label>Repulsion</label>
+    <description>The Warlock generates a burst of energy at a target cell with enough force to launch nearby creatures away from the center.
+
+Cast time: 1s
+Range: 40
+Cooldown: 30s
+Radius: 5</description>
+    <spellId>rwom.tm_repulsion</spellId>
+    <iconPath>UI/repulsion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Repulsion</defaultProjectile>
+      <abilityDef>TM_Repulsion</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>40</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Pulse</soundCast>
+      <soundCastTail>TM_SoftExplosion</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_RepulsionI</defName>
+    <label>Repulsion</label>
+    <description>The Warlock generates a burst of energy at a target cell with enough force to launch nearby creatures away from the center.
+
+Cast time: .8s
+Range: 47
+Cooldown: 25s
+Radius: 6</description>
+    <spellId>rwom.tm_repulsion_i</spellId>
+    <iconPath>UI/repulsion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Repulsion_I</defaultProjectile>
+      <abilityDef>TM_Repulsion_I</abilityDef>
+      <warmupTime>.8</warmupTime>
+      <SecondsToRecharge>25</SecondsToRecharge>
+      <range>47</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Pulse</soundCast>
+      <soundCastTail>TM_SoftExplosion</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_RepulsionII</defName>
+    <label>Repulsion</label>
+    <description>The Warlock generates a burst of energy at a target cell with enough force to launch nearby creatures away from the center.
+
+Cast time: .6s
+Range: 54
+Cooldown: 20s
+Radius: 7</description>
+    <spellId>rwom.tm_repulsion_ii</spellId>
+    <iconPath>UI/repulsion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Repulsion_II</defaultProjectile>
+      <abilityDef>TM_Repulsion_II</abilityDef>
+      <warmupTime>.6</warmupTime>
+      <SecondsToRecharge>20</SecondsToRecharge>
+      <range>54</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Pulse</soundCast>
+      <soundCastTail>TM_SoftExplosion</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_RepulsionIII</defName>
+    <label>Repulsion</label>
+    <description>The Warlock generates a burst of energy at a target cell with enough force to launch nearby creatures away from the center.
+
+Cast time: .5s
+Range: 60
+Cooldown: 15s
+Radius: 8</description>
+    <spellId>rwom.tm_repulsion_iii</spellId>
+    <iconPath>UI/repulsion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Repulsion_III</defaultProjectile>
+      <abilityDef>TM_Repulsion_III</abilityDef>
+      <warmupTime>.5</warmupTime>
+      <SecondsToRecharge>15</SecondsToRecharge>
+      <range>60</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Pulse</soundCast>
+      <soundCastTail>TM_SoftExplosion</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Scorn</defName>
+    <label>Scorn</label>
+    <description>The succubus uses her demonic powers to partially transform into a winged demon, launching herself towards a distant location to crush her foes in a torrent of dark fury.
+		
+A succubus will retain her partial demon form for a short period after using this ability, granting her improved physical capacities and a damage shield.</description>
+    <spellId>rwom.tm_scorn</spellId>
+    <iconPath>UI/scorn</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Scorn</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_Scorn</defaultProjectile>
+      <abilityDef>TM_Scorn</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>300</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Launch</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <muzzleFlashScale>10</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Psychicshock</defName>
+    <label>Psychic Shock</label>
+    <description>The Warlock removes all mental barriers and projects a powerful wave of psychic energy. Any pawns caught in the wave will be bombarded by psychic power and will briefly be subjected to the will of the Warlock. 
+		
+The Warlock who will use the minds of others to propagate the psychic wave. The Warlock will also attempt to destroy the mind of any enemy touched by psychic energy. Being subjected to this mental assault will disorient pawns for a short period and may even disorient the warlock if he is affected by reflected psychic energy. Psychic Shock receives a bonus based on the psychic sensitivity of the warlock and may fail to affect pawns with reduced psychic sensitivity.</description>
+    <spellId>rwom.tm_psychicshock</spellId>
+    <iconPath>UI/psychicshock</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_PsychicShock</defaultProjectile>
+      <abilityDef>TM_PsychicShock</abilityDef>
+      <warmupTime>.2</warmupTime>
+      <SecondsToRecharge>240</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Pulse</soundCast>
+      <soundCastTail>TM_SoftExplosion</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Summondemon</defName>
+    <label>Summon Demon</label>
+    <description>Manifest true demonic power through the manipulation of both physical and mental soul bonds. This dark power exacts a heavy toll and its use should only be considered under dire circumstances.
+ 
+The summoning is initiated when a Succubus anchors the physical offering and is completed when a Warlock finalizes the terms of the demonic contract.</description>
+    <spellId>rwom.tm_summondemon</spellId>
+    <iconPath>UI/summon_demon</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SummonDemon</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Warlock</defaultProjectile>
+      <abilityDef>TM_SummonDemon</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>1200</SecondsToRecharge>
+      <range>0</range>
+      <soundCast>TM_VibrationLow</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetItems>false</canTargetItems>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Torann Magic Damage Defs -->
+
+  <TM_Arcane.label>Таємничий</TM_Arcane.label>
+  <TM_Arcane.deathMessage>{0} був знищений таємною силою.</TM_Arcane.deathMessage>
+
+  <TM_BlazingPower.label>Вогняний пил</TM_BlazingPower.label>
+  <TM_BlazingPower.deathMessage>{0} був знищений вогняним пилом.</TM_BlazingPower.deathMessage>
+
+  <TM_Holy.label>Святий</TM_Holy.label>
+  <TM_Holy.deathMessage>{0} був зруйнований святою силою.</TM_Holy.deathMessage>
+
+  <TM_Shadow.label>Тінь</TM_Shadow.label>
+  <TM_Shadow.deathMessage>{0} був поглинений тінню.</TM_Shadow.deathMessage>
+
+  <TM_ChiBurn.label>Ци-опік</TM_ChiBurn.label>
+  <TM_ChiBurn.deathMessage>{0} був переповнений духовною енергією.</TM_ChiBurn.deathMessage>
+
+  <TM_ChiFist.label>удар</TM_ChiFist.label>
+  <TM_ChiFist.deathMessage>{0} був знищений бойовими мистецтвами.</TM_ChiFist.deathMessage>
+
+  <TM_PsionicInjury.label>Псионик</TM_PsionicInjury.label>
+  <TM_PsionicInjury.deathMessage>{0} був знищений псіонічною силою.</TM_PsionicInjury.deathMessage>
+
+  <TM_Spirit.label>Дух</TM_Spirit.label>
+  <TM_Spirit.deathMessage>{0} був спустошений духом.</TM_Spirit.deathMessage>
+
+  <TM_Death.label>Смерть</TM_Death.label>
+  <TM_Death.deathMessage>{0} був узятий смерті.</TM_Death.deathMessage>
+
+  <TM_Torment.label>Мука</TM_Torment.label>
+  <TM_Torment.deathMessage>{0} був поглинений болем.</TM_Torment.deathMessage>
+
+  <TM_DeathBolt.label>Смертельний болт</TM_DeathBolt.label>
+  <TM_DeathBolt.deathMessage>{0} був поглинений агонією.</TM_DeathBolt.deathMessage>
+
+  <TM_CorpseExplosion.label>вибух трупа</TM_CorpseExplosion.label>
+  <TM_CorpseExplosion.deathMessage>{0} був зруйнований від вибуху трупа.</TM_CorpseExplosion.deathMessage>
+
+  <TM_Overwhelm.label>непереборне світло</TM_Overwhelm.label>
+  <TM_Overwhelm.deathMessage>{0} був зруйнований святою силою.</TM_Overwhelm.deathMessage>
+
+  <TM_Heal_I.label>Зцілення (I)</TM_Heal_I.label>
+  <TM_Heal_I.deathMessage>{0} був убитий.</TM_Heal_I.deathMessage>
+
+  <TM_MagicMissile.label>Магічний Снаряд</TM_MagicMissile.label>
+  <TM_MagicMissile.deathMessage>{0} був знищений таємною магією.</TM_MagicMissile.deathMessage>
+
+  <TM_MagicMissile_Weak.label>магічна енергія</TM_MagicMissile_Weak.label>
+  <TM_MagicMissile_Weak.deathMessage>{0} був знищений таємною магією.</TM_MagicMissile_Weak.deathMessage>
+
+  <TM_ManaMine.label>Ману-міна</TM_ManaMine.label>
+  <TM_ManaMine.deathMessage>{0} був знищений таємною магією.</TM_ManaMine.deathMessage>
+
+  <TM_Fireball_I.label>Магія Вогню</TM_Fireball_I.label>
+  <TM_Fireball_I.deathMessage>{0} був знищений стихійним вогнем.</TM_Fireball_I.deathMessage>
+
+  <TM_Fireball_II.label>Магія Вогню</TM_Fireball_II.label>
+  <TM_Fireball_II.deathMessage>{0} був знищений стихійним вогнем.</TM_Fireball_II.deathMessage>
+
+  <TM_Fireball_III.label>Магія Вогню</TM_Fireball_III.label>
+  <TM_Fireball_III.deathMessage>{0} був знищений стихійним вогнем.</TM_Fireball_III.deathMessage>
+
+  <TM_Firestorm_Tiny.label>Магія Вогню</TM_Firestorm_Tiny.label>
+  <TM_Firestorm_Tiny.deathMessage>{0} був знищений стихійним вогнем.</TM_Firestorm_Tiny.deathMessage>
+
+  <TM_Firestorm_Small.label>Магія Вогню</TM_Firestorm_Small.label>
+  <TM_Firestorm_Small.deathMessage>{0} був знищений стихійним вогнем.</TM_Firestorm_Small.deathMessage>
+
+  <TM_Firestorm_Large.label>Магія Вогню</TM_Firestorm_Large.label>
+  <TM_Firestorm_Large.deathMessage>{0} був знищений стихійним вогнем.</TM_Firestorm_Large.deathMessage>
+
+  <TM_HailDD.label>Град</TM_HailDD.label>
+  <TM_HailDD.deathMessage>{0} забитий до смерті градом.</TM_HailDD.deathMessage>
+
+  <TM_Blizzard_Small.label>Крижана Магія</TM_Blizzard_Small.label>
+  <TM_Blizzard_Small.deathMessage>{0} замерз насмерть у заметіль.</TM_Blizzard_Small.deathMessage>
+
+  <TM_Blizzard_Large.label>Крижана Магія</TM_Blizzard_Large.label>
+  <TM_Blizzard_Large.deathMessage>{0} замерз насмерть у заметіль.</TM_Blizzard_Large.deathMessage>
+
+  <TM_Lightning.label>Магія блискавки</TM_Lightning.label>
+  <TM_Lightning.deathMessage>{0} був знищений стихійною блискавкою.</TM_Lightning.deathMessage>
+
+  <TM_LightningCloud.label>Магія блискавки</TM_LightningCloud.label>
+  <TM_LightningCloud.deathMessage>{0} був знищений стихійною блискавкою.</TM_LightningCloud.deathMessage>
+
+  <FrostRay.label>морозний промінь</FrostRay.label>
+  <FrostRay.deathMessage>{0} замерз до смерті.</FrostRay.deathMessage>
+
+  <Snowball.label>Снігова куля</Snowball.label>
+  <Snowball.deathMessage>{0} замерз до смерті.</Snowball.deathMessage>
+
+  <Iceshard.label>Крижана куля</Iceshard.label>
+  <Iceshard.deathMessage>{0} розсипалася на осколки льоду.</Iceshard.deathMessage>
+
+  <Firebolt.label>Вогняна куля</Firebolt.label>
+  <Firebolt.deathMessage>{0} був поглинений вогнем.</Firebolt.deathMessage>
+
+  <RayofHope.label>Магічне збільшення</RayofHope.label>
+  <RayofHope.deathMessage>{0} таємничо пішов.</RayofHope.deathMessage>
+
+  <SoothingBreeze.label>Магічне збільшення</SoothingBreeze.label>
+  <SoothingBreeze.deathMessage>{0} таємничо пішов.</SoothingBreeze.deathMessage>
+
+  <AMP.label>Магічне збільшення</AMP.label>
+  <AMP.deathMessage>{0} таємничо пішов.</AMP.deathMessage>
+
+  <Shadow.label>Магічне збільшення</Shadow.label>
+  <Shadow.deathMessage>{0} таємничо пішов.</Shadow.deathMessage>
+
+  <TM_GrapplingHook.label>захоплений Хук</TM_GrapplingHook.label>
+  <TM_GrapplingHook.deathMessage>{0} був розірваний.</TM_GrapplingHook.deathMessage>
+
+  <TM_Whirlwind.label>Вихор</TM_Whirlwind.label>
+  <TM_Whirlwind.deathMessage>{0} був вирубаний.</TM_Whirlwind.deathMessage>
+
+  <TM_Cleave.label>Розкол</TM_Cleave.label>
+  <TM_Cleave.deathMessage>{0} був розрубаний навпіл потужним ударом.</TM_Cleave.deathMessage>
+
+  <TM_Headshot.label>Постріл у голову</TM_Headshot.label>
+  <TM_Headshot.deathMessage>{0} був убитий пострілом в голову.</TM_Headshot.deathMessage>
+
+  <TM_DisablingShot.label>Вимикає постріл</TM_DisablingShot.label>
+  <TM_DisablingShot.deathMessage>{0} помер від вимикаючого пострілу...</TM_DisablingShot.deathMessage>
+
+  <TM_Tranquilizer.label>Вимикає постріл</TM_Tranquilizer.label>
+  <TM_Tranquilizer.deathMessage>{0} помер від вимикаючого пострілу...</TM_Tranquilizer.deathMessage>
+
+  <TM_Poison.label>Отрута</TM_Poison.label>
+  <TM_Poison.deathMessage>{0} піддався отруті.</TM_Poison.deathMessage>
+
+  <TM_PhaseStrike.label>Фазовий удар</TM_PhaseStrike.label>
+  <TM_PhaseStrike.deathMessage>{0} була вирізана на шматки.</TM_PhaseStrike.deathMessage>
+
+  <TM_Arrow.label>шторм зі стрілами</TM_Arrow.label>
+  <TM_Arrow.deathMessage>{0} був застрелений.</TM_Arrow.deathMessage>
+
+  <TM_Shrapnel.label>додаткова втрата рейнджера</TM_Shrapnel.label>
+  <TM_Shrapnel.deathMessage>{0} був застрелений.</TM_Shrapnel.deathMessage>
+
+  <TM_ArcaneSpectre.label>чародійний привид</TM_ArcaneSpectre.label>
+  <TM_ArcaneSpectre.deathMessage>{0} був знищений злим духом</TM_ArcaneSpectre.deathMessage>
+
+  <TM_ElectricalBurn.label>електричний опік</TM_ElectricalBurn.label>
+  <TM_ElectricalBurn.deathMessage>{0} був убитий електричним струмом.</TM_ElectricalBurn.deathMessage>
+
+  <TM_BloodyCut.label>кривавий поріз</TM_BloodyCut.label>
+  <TM_BloodyCut.deathMessage>{0} загинув від того, що пролив забагато крові</TM_BloodyCut.deathMessage>
+
+  <TM_BloodBurn.label>кривавий опік</TM_BloodBurn.label>
+  <TM_BloodBurn.deathMessage>{0} був спалений до смерті.</TM_BloodBurn.deathMessage>
+
+  <TM_Enchanted_Fire.label>вогняні чари</TM_Enchanted_Fire.label>
+  <TM_Enchanted_Fire.deathMessage>{0} був спалений до смерті.</TM_Enchanted_Fire.deathMessage>
+
+  <TM_Enchanted_Ice.label>крижані чари</TM_Enchanted_Ice.label>
+  <TM_Enchanted_Ice.deathMessage>{0} замерз до смерті.</TM_Enchanted_Ice.deathMessage>
+
+  <TM_DisablingBlow.label>вимикає удар</TM_DisablingBlow.label>
+  <TM_DisablingBlow.deathMessage>{0} помер від удару тупим предметом...</TM_DisablingBlow.deathMessage>
+
+  <TM_DragonStrike.label>Удар дракона</TM_DragonStrike.label>
+  <TM_DragonStrike.deathMessage>{0} був убитий бойовими мистецтвами: Удар дракона</TM_DragonStrike.deathMessage>
+
+  <TM_TigerStrike.label>удар тигра</TM_TigerStrike.label>
+  <TM_TigerStrike.deathMessage>{0} був убитий бойовими мистецтвами: Удар тигра</TM_TigerStrike.deathMessage>
+
+  <TM_CQC.label>CQC</TM_CQC.label>
+  <TM_CQC.deathMessage>{0} зазнав поразки в ближньому бою.</TM_CQC.deathMessage>
+
+  <TM_BreachingCharge.label>пробивний заряд</TM_BreachingCharge.label>
+  <TM_BreachingCharge.deathMessage>{0} помер під час вибуху.</TM_BreachingCharge.deathMessage>
+
+
+  <!-- Toxin: damages inner organs without damaging outside parts -->
+
+  <TM_Toxin.label>токсин</TM_Toxin.label>
+  <TM_Toxin.deathMessage>{0} був убитий токсином.</TM_Toxin.deathMessage>
+
+  <TM_BurningLight.label>Палаюче світло</TM_BurningLight.label>
+  <TM_BurningLight.deathMessage>{0} був переможений у палаючому світлі.</TM_BurningLight.deathMessage>
+
+  <TM_PainDD.label>Біль</TM_PainDD.label>
+  <TM_PainDD.deathMessage>{0} помер від нестерпного болю.</TM_PainDD.deathMessage>
+
+  <TM_DistortionDD.label>спотворення</TM_DistortionDD.label>
+  <TM_DistortionDD.deathMessage>{0} був знищений.</TM_DistortionDD.deathMessage>
+
+  <TM_PersonnelBombDD.deathMessage>{0} був убитий.</TM_PersonnelBombDD.deathMessage>
+
+  <TM_Dismember.label>розрив</TM_Dismember.label>
+  <TM_Dismember.deathMessage>{0} був розірваний на частини.</TM_Dismember.deathMessage>
+
+  <TM_PartRemoval.label>вилучення</TM_PartRemoval.label>
+  <TM_PartRemoval.deathMessage>{0} було вилучено.</TM_PartRemoval.deathMessage>
+
+  <TM_DecayDD.label>Розпад</TM_DecayDD.label>
+  <TM_DecayDD.deathMessage>тіло {0} розклалося.</TM_DecayDD.deathMessage>
+
+  <TM_SymbiosisDD.label>Симбіоз</TM_SymbiosisDD.label>
+  <TM_SymbiosisDD.deathMessage>{0} Загинув разом з господарем симбіозу.</TM_SymbiosisDD.deathMessage>
+
+  <TM_FreezingWindsDD.deathMessage>{0} був убитий.</TM_FreezingWindsDD.deathMessage>
+
+
+  <TM_PersonnelBombDD.label>Бомба</TM_PersonnelBombDD.label>
+
+</LanguageData>

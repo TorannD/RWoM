@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadPsionicProjector>研习动能投射</TM_ReadPsionicProjector>
+  <TM_ReadPsionicAccelerator>研习动能加速</TM_ReadPsionicAccelerator>
+  <TM_PsionicFoundationTrial>抵挡敌方攻击或造成动能伤害 {0}/200，或修复 {1}/20 座因灾受损的不同建筑。</TM_PsionicFoundationTrial>
+  <TM_PsionicAdeptTrial>营救 {0}/10 名不同的受伤盟友，或在盟友倒地时运送 {1}/30 批应急物资（每小时一次）。</TM_PsionicAdeptTrial>
+  <TM_PsionicMasterTrial>完成 {0}/12 天灵能勤务。武技等级 {1}/30。</TM_PsionicMasterTrial>
+  <TM_PsionicAdvance>进入下一阶段</TM_PsionicAdvance>
+  <TM_PsionicCrucibleUnavailable>需要 60% 灵能和 30% 耐力。</TM_PsionicCrucibleUnavailable>
+  <TM_PsionicProjectorInfo>投射拦截弹丸时消耗的灵能降低10%，冲击伤害降低10%。</TM_PsionicProjectorInfo>
+  <TM_PsionicAcceleratorInfo>冲击伤害提高8%。维持屏障期间暂停恢复灵能。</TM_PsionicAcceleratorInfo>
+</LanguageData>

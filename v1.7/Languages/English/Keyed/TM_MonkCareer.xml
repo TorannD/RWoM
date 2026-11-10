@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadMonkRestorative>Restorative meditation — Classic healing meditation.</TM_ReadMonkRestorative>
+  <TM_ReadMonkCultivation>Focused cultivation — Gain 6/8/10 chi after 600 uninterrupted ticks, according to Palm Seal rank.</TM_ReadMonkCultivation>
+  <TM_MonkFoundationTrial>Interrupt enemy preparations: {0}/8, or treat different wounds: {1}/20.</TM_MonkFoundationTrial>
+  <TM_MonkAdeptTrial>Cultivate and provide medical aid within 24 hours: {0}/10 days.</TM_MonkAdeptTrial>
+  <TM_MonkMasterTrial>Unarmed rescues: {0}/8 or days extinguishing home fires: {1}/10. Might level {2}/30.</TM_MonkMasterTrial>
+  <TM_MonkSealRank>Palm seal: rank {0}/3</TM_MonkSealRank>
+  <TM_MonkAdvance>Advance discipline</TM_MonkAdvance>
+  <TM_MonkMeridianUnavailable>Requires ascension, free hands, 60% chi and a ready meridian.</TM_MonkMeridianUnavailable>
+</LanguageData>

@@ -1,0 +1,32 @@
+<LanguageData><TM_MedicalSupplyHD.label>Медицинские принадлежности</TM_MedicalSupplyHD.label>
+  <TM_MedicalSupplyHD.description>Включает в себя медикаменты, которыми располагает Полевой медик.</TM_MedicalSupplyHD.description>
+  <TM_MedicalSupplyHD.stages.0.label />
+
+  <TM_EmergencyHD.label>Чрезвычайная ситуация</TM_EmergencyHD.label>
+  <TM_EmergencyHD.description>Я сделаю все, что в моих силах.</TM_EmergencyHD.description>
+  <TM_EmergencyHD.stages.0.label>I</TM_EmergencyHD.stages.0.label>
+
+  <TM_MedigelHD.label>Медигель</TM_MedigelHD.label>
+  <TM_MedigelHD.description>Медигель увеличивает скорость заживления и борется с инфекциями.</TM_MedigelHD.description>
+  <TM_MedigelHD.stages.0.label>I</TM_MedigelHD.stages.0.label>
+
+  <TM_CombatDrugsPain_HD.label>Боевые наркотики (обезболивающее)</TM_CombatDrugsPain_HD.label>
+  <TM_CombatDrugsPain_HD.description>Боевые препараты, уменьшающие боль</TM_CombatDrugsPain_HD.description>
+  <TM_CombatDrugsPain_HD.stages.0.label />
+
+  <TM_CombatDrugsMoving_HD.label>Боевые наркотики (движение)</TM_CombatDrugsMoving_HD.label>
+  <TM_CombatDrugsMoving_HD.description>Боевые препараты, усиливающие передвижение</TM_CombatDrugsMoving_HD.description>
+  <TM_CombatDrugsMoving_HD.stages.0.label />
+
+  <TM_CombatDrugsAwareness_HD.label>Боевые наркотики (сознание)</TM_CombatDrugsAwareness_HD.label>
+  <TM_CombatDrugsAwareness_HD.description>Боевые препараты, усиливающие сознание</TM_CombatDrugsAwareness_HD.description>
+  <TM_CombatDrugsAwareness_HD.stages.0.label />
+
+  <TM_CombatDrugsAccuracy_HD.label>Боевые наркотики (точность)</TM_CombatDrugsAccuracy_HD.label>
+  <TM_CombatDrugsAccuracy_HD.description>Боевые препараты, усиливающие точность</TM_CombatDrugsAccuracy_HD.description>
+  <TM_CombatDrugsAccuracy_HD.stages.0.label />
+
+
+  <TM_MedicalSupplyHD.comps.0.regenPerTickUpgradeName>медицинские принадлежности не предназначены для восстановления</TM_MedicalSupplyHD.comps.0.regenPerTickUpgradeName>
+  <TM_MedicalSupplyHD.comps.HediffComp_AbilityResource.regenPerTickUpgradeName>медицинские принадлежности не предназначены для регенерации</TM_MedicalSupplyHD.comps.HediffComp_AbilityResource.regenPerTickUpgradeName>
+</LanguageData>

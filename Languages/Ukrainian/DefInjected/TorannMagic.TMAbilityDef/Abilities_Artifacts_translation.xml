@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- orb of conviction -->
+
+  <TM_Artifact_Conviction.label>Переконання</TM_Artifact_Conviction.label>
+  <TM_Artifact_Conviction.description>Переконайте пішака приєднатися до вашої справи. Ця сила завдасть важкої шкоди заклинателю.
+
+Використання Переконання знищить сферу.</TM_Artifact_Conviction.description>
+
+
+  <!-- winter's reign -->
+
+  <TM_Weapon_WintersFury.label>Лють зими</TM_Weapon_WintersFury.label>
+  <TM_Weapon_WintersFury.description>Покриває карту темних, лютих хмар, що котяться хвилями, несуть їдке презирство зими.</TM_Weapon_WintersFury.description>
+
+
+</LanguageData>

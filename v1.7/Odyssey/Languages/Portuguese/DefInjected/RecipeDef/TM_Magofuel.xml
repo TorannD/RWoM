@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_RefineMagofuel.label>refinar combustível arcano x50</TM_RefineMagofuel.label>
+  <TM_RefineMagofuel.description>Combine 50 unidades de quimicombustível e 200 de magicita para produzir 50 de combustível arcano. Requer uma forja arcana e mantém as suas condições normais de trabalho mágico e consumo de mana.</TM_RefineMagofuel.description>
+  <TM_RefineMagofuel.jobString>a refinar combustível arcano.</TM_RefineMagofuel.jobString>
+</LanguageData>

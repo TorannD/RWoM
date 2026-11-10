@@ -1,0 +1,8 @@
+<LanguageData>
+  <TM_ChooseUnifiedWanderer>Обрати шлях Мандрівника</TM_ChooseUnifiedWanderer>
+  <TM_ConfirmUnifiedWanderer>Стати воїном-магом і вивчати малу магію та польові навички? Це вибір класу. Книга не потрібна.</TM_ConfirmUnifiedWanderer>
+  <TM_WandererSurvey>Позначити маршрут</TM_WandererSurvey>
+  <TM_WandererSurveyInfo>Позначте маршрут від 12 клітин і прочитайте повний том будь-якого класу. Для майстерності потрібні 24 клітини та майстерський том. Розмітка коштує 10% кожного ресурсу шляху. Книга пропонує шість навичок, оберіть дві.</TM_WandererSurveyInfo>
+  <TM_WandererLessons>Обрати навичку (залишилося {0})</TM_WandererLessons>
+  <TM_BestowRecipientUnavailable>{0} вже має цей дар або обрав клас.</TM_BestowRecipientUnavailable>
+</LanguageData>

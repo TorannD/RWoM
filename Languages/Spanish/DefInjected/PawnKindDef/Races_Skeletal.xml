@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_GiantSkeleton.label>esqueleto gigante</TM_GiantSkeleton.label>
+  
+  <TM_GiantSkeleton.lifeStages.giant_skeleton.label>esqueleto gigante</TM_GiantSkeleton.lifeStages.giant_skeleton.label>
+  
+  <TM_GiantSkeleton.lifeStages.giant_skeleton.labelPlural>esqueletos gigantes</TM_GiantSkeleton.lifeStages.giant_skeleton.labelPlural>
+  
+  
+  <TM_Skeleton.label>esqueleto</TM_Skeleton.label>
+  
+  <TM_Skeleton.lifeStages.skeleton.label>esqueleto</TM_Skeleton.lifeStages.skeleton.label>
+  
+  <TM_Skeleton.lifeStages.skeleton.labelPlural>esqueletos</TM_Skeleton.lifeStages.skeleton.labelPlural>
+  
+  
+  <TM_SkeletonLich.label>lich esquelético</TM_SkeletonLich.label>
+  
+  <TM_SkeletonLich.lifeStages.skeleton_lich.label>lich esquelético</TM_SkeletonLich.lifeStages.skeleton_lich.label>
+  
+  <TM_SkeletonLich.lifeStages.skeleton_lich.labelPlural>liches esqueléticos</TM_SkeletonLich.lifeStages.skeleton_lich.labelPlural>
+  
+</LanguageData>

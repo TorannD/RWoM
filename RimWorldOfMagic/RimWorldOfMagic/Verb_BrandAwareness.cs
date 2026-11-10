@@ -1,125 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using RimWorld;
-using AbilityUser;
 using Verse;
-using Verse.AI;
-using TorannMagic.TMDefs;
+using RimWorld;
+using TorannMagic.ClassProgression;
 using UnityEngine;
 
 namespace TorannMagic
 {
-    public class Verb_BrandAwareness : Verb_UseAbility
+    public abstract class Verb_Brand : Verb_SpiritTargetable
     {
+        protected abstract HediffDef Effect { get; }
+        internal virtual bool Accepts(Pawn body, Pawn target) => target != null && !target.Dead && target != body &&
+            target.Spawned && target.Map == body.Map && target.health?.hediffSet != null;
 
-        private int verVal = 0;
-        private int pwrVal = 0;
-        private float arcaneDmg = 1f;
-        bool validTarg;
-        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
-        {
-            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map))
-            {
-                if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
-                {
-                    validTarg = true;
-                }
-                else
-                {
-                    //out of range
-                    validTarg = false;
-                }
-            }
-            else
-            {
-                validTarg = false;
-            }
-            return validTarg;
-        }
+        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo target)
+            => target.IsValid && target.Cell.InBounds(CasterPawn.Map) && !target.Cell.Fogged(CasterPawn.Map)
+                && (root - target.Cell).LengthHorizontal < verbProps.range;
 
         protected override bool TryCastShot()
         {
-            bool flag = false;
-            Pawn caster = this.CasterPawn;            
-            
-            if(caster != null && this.CurrentTarget.HasThing && this.CurrentTarget.Thing is Pawn)
-            {
-                Pawn hitPawn = this.currentTarget.Thing as Pawn;
-                CompAbilityUserMagic casterComp = caster.GetCompAbilityUserMagic();
-
-                if (casterComp != null && hitPawn.health != null && hitPawn.health.hediffSet != null && hitPawn != caster)
-                {
-                    TM_Action.UpdateBrand(hitPawn, caster, casterComp, TorannMagicDefOf.TM_AwarenessBrandHD);
-
-                    UpdateHediffComp(hitPawn);
-
-                    DoBrandingEffect(hitPawn);
-                }
-                else
-                {
-                    Messages.Message("TM_InvalidTarget".Translate(CasterPawn.LabelShort, this.Ability.Def.label), MessageTypeDefOf.RejectInput);
-                }
-            }
-            else
-            {
-                Messages.Message("TM_InvalidTarget".Translate(CasterPawn.LabelShort, this.Ability.Def.label), MessageTypeDefOf.RejectInput);
-            }
-
-            this.PostCastShot(flag, out flag);
-            return flag;
+            if (!ApplyHostedEffect())
+                Messages.Message("TM_InvalidTarget".Translate(CasterPawn.LabelShort, Ability.Def.label), MessageTypeDefOf.RejectInput);
+            bool result = false;
+            PostCastShot(result, out result);
+            return result;
         }
 
-        private void UpdateHediffComp(Pawn hitPawn)
+        protected override bool ApplyHostedEffect()
         {
-            Hediff hd = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_AwarenessBrandHD);
-            if (hd != null)
-            {
-                HediffComp_BrandingBase hdc = hd.TryGetComp<HediffComp_BrandingBase>();
-                if (hdc != null)
-                {
-                    hdc.BranderPawn = this.CasterPawn;
-                }
-            }
+            var owner = SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            var magic = owner?.GetCompAbilityUserMagic();
+            var target = currentTarget.Pawn;
+            if (magic == null || !Accepts(CasterPawn, target)) return false;
+            var trial = GolemancerTrials.CaptureBrand(Ability, target);
+            TM_Action.UpdateBrand(target, owner, magic, Effect);
+            var marker = target.health.hediffSet.GetFirstHediffOfDef(Effect)?.TryGetComp<HediffComp_BrandingBase>();
+            if (marker == null) return false;
+            marker.BranderPawn = owner;
+            GolemancerTrials.CompleteBrand(trial);
+            if (owner != CasterPawn) GolemancerLifecycle.SyncBrandControl(magic);
+            DrawBrand(target);
+            return true;
         }
 
-        private void DoBrandingEffect(Pawn hitPawn)
+        protected virtual void DrawBrand(Pawn target)
         {
-            if(hitPawn != null && hitPawn.Map != null)
-            {
-                TargetInfo ti = new TargetInfo(hitPawn.Position, hitPawn.Map, false);
-                TM_MoteMaker.MakeOverlay(ti, TorannMagicDefOf.TM_Mote_PsycastAreaEffect, hitPawn.Map, Vector3.zero, 1f, 0f, .1f, .4f, 1.2f, -3f);
-            }
-            //Effecter effect = EffecterDefOf.Skip_EntryNoDelay.Spawn();
-            //effect.Trigger(new TargetInfo(this.CasterPawn), new TargetInfo(hitPawn));
-            //effect.Cleanup();
-
-            //Effecter effectExit = EffecterDefOf.Skip_ExitNoDelay.Spawn();
-            //effectExit.Trigger(new TargetInfo(hitPawn), new TargetInfo(hitPawn));
-            //effectExit.Cleanup();
+            TM_MoteMaker.MakeOverlay(new TargetInfo(target.Position, target.Map), TorannMagicDefOf.TM_Mote_PsycastAreaEffect,
+                target.Map, Vector3.zero, 1f, 0f, .1f, .4f, 1.2f, -3f);
         }
+    }
 
-        //private void ChangeExistingBrand(Pawn hitPawn, CompAbilityUserMagic casterComp)
-        //{
-        //    Hediff oldBrand = hitPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_AwarenessBrandHD);
-        //    if (oldBrand != null)
-        //    {
-        //        HediffComp_BrandingBase hd_br = oldBrand.TryGetComp<HediffComp_BrandingBase>();
-        //        if (hd_br != null)
-        //        {
-        //            if (!hd_br.BranderPawn.DestroyedOrNull())
-        //            {
-        //                CompAbilityUserMagic branderComp = hd_br.BranderPawn.GetCompAbilityUserMagic();
-        //                if (branderComp != null && branderComp.BrandedPawns != null && branderComp.BrandedPawns.Contains(hitPawn))
-        //                {
-        //                    branderComp.BrandedPawns.Remove(hitPawn);
-        //                }
-        //            }
-        //            hd_br.BranderPawn = this.CasterPawn; 
-        //            casterComp.BrandedPawns.Add()
-        //        }
-        //        //hitPawn.health.RemoveHediff(oldBrand);
-        //    }
-        //}
+    public class Verb_BrandAwareness : Verb_Brand
+    {
+        protected override HediffDef Effect => TorannMagicDefOf.TM_AwarenessBrandHD;
+
     }
 }

@@ -1,0 +1,6 @@
+<LanguageData>
+  <TM_MagicalGravEngine.label>motor gravitacional mágico</TM_MagicalGravEngine.label>
+  <TM_MagicalGravEngine.description>Um motor gravitacional arcano construível com a capacidade de elevação de um motor normal. Aceita apenas extensores de campo mágicos, além do equipamento normal e dos propulsores mágicos. Armazena 100 unidades de combustível mágico e 500 de mana; começa vazio e fornece ambos os recursos através de sinalizadores de mana. Os magos podem carregar a reserva de mana; também pode converter combustível mágico em mana. Não cobra um custo adicional de lançamento. Os colonos podem aproximar-se do núcleo para receber marcas de regresso. Cada marca consome 1 de magocombustível por dia. O regresso custa 10 por peão; uma caravana completa pode regressar com animais, prisioneiros e carga.</TM_MagicalGravEngine.description>
+  <TM_MagicalGravExtender.label>extensor de campo gravitacional mágico</TM_MagicalGravExtender.label>
+  <TM_MagicalGravExtender.description>Amplia o campo e o suporte da subestrutura de um motor gravitacional mágico. O suporte, alcance e limite de extensores seguem as regras instaladas das naves gravitacionais. Não se liga a motores normais.</TM_MagicalGravExtender.description>
+</LanguageData>

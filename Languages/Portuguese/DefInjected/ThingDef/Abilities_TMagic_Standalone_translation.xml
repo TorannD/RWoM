@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Projectile_TM_SpawnThing.label>espavunha de um objeto mágico</Projectile_TM_SpawnThing.label>
+
+
+  <!-- Heater -->
+
+  <Projectile_Heater.label>aquecedor mágico espumante</Projectile_Heater.label>
+
+
+  <!-- Cooler -->
+
+  <Projectile_Cooler.label>spawn de cooler mágico</Projectile_Cooler.label>
+
+
+  <!-- Power Node -->
+
+  <Projectile_PowerNode.label>fio de força mágica</Projectile_PowerNode.label>
+
+
+  <!-- Light Node -->
+
+  <Projectile_Sunlight.label>espuma de luz mágica</Projectile_Sunlight.label>
+
+
+  <!-- Remove Moisture -->
+
+  <Projectile_DryGround.label>drenagem da terra</Projectile_DryGround.label>
+
+
+  <!-- Add Moisture -->
+
+  <Projectile_WetGround.label>hidratação do solo</Projectile_WetGround.label>
+
+
+  <!-- Charge Battery -->
+
+  <Projectile_ChargeBattery.label>Carregar bateria</Projectile_ChargeBattery.label>
+
+
+  <!-- Smoke Cloud -->
+
+  <Projectile_SmokeCloud.label>nuvem de fumo</Projectile_SmokeCloud.label>
+
+
+  <!-- Extinguish -->
+
+  <Projectile_Extinguish.label>apagar</Projectile_Extinguish.label>
+
+
+  <!-- EMP -->
+
+  <Projectile_EMP.label>AMY</Projectile_EMP.label>
+
+
+  <!-- Transfer mana -->
+
+  <Projectile_TransferMana.label>transferência de maná</Projectile_TransferMana.label>
+
+
+  <!-- siphon mana -->
+
+  <Projectile_SiphonMana.label>sifone man</Projectile_SiphonMana.label>
+
+
+  <!-- Flight -->
+
+  <FlyingObject_Flight.label>objeto voador</FlyingObject_Flight.label>
+  <Projectile_Flight.label>voo</Projectile_Flight.label>
+
+
+  <!-- Fertile land -->
+
+  <Projectile_FertileLands.label>terras férteis</Projectile_FertileLands.label>
+
+
+  <!-- dirt devil -->
+
+  <Projectile_DirtDevil.label>diabo de terra</Projectile_DirtDevil.label>
+  <FlyingObject_DirtDevil.label>objeto voador</FlyingObject_DirtDevil.label>
+
+
+  <!-- Arcane Bolt -->
+
+  <Projectile_ArcaneBolt.label>bolt mágico</Projectile_ArcaneBolt.label>
+
+
+  <!-- Throwing Knife -->
+
+  <Projectile_ThrowingKnife.label>Faca de lançamento</Projectile_ThrowingKnife.label>
+
+
+  <!-- Lightning Trap -->
+
+  <FlyingObject_LightningTrap.label>relâmpago</FlyingObject_LightningTrap.label>
+
+
+  <!-- briar patch -->
+
+  <Projectile_BriarPatch.label>peixe de turno</Projectile_BriarPatch.label>
+
+
+  <!-- Tempest Strike -->
+
+  <Projectile_TempestStrike.label>Choque de tempestade</Projectile_TempestStrike.label>
+
+
+</LanguageData>

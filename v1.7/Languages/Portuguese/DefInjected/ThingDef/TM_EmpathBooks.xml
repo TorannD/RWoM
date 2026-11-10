@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Torn_BookOfEmpathy.label>manuscrito rasgado: empata</Torn_BookOfEmpathy.label>
+  <Torn_BookOfEmpathy.description>Ensina Empatia e Assassino da mente a um novo mago. A leitura conclui a iniciação básica e consome o manuscrito.</Torn_BookOfEmpathy.description>
+  <Torn_BookOfEmpathy.comps.1.useLabel>Ler {0_label}</Torn_BookOfEmpathy.comps.1.useLabel>
+  <BookOfEmpathy.label>tomo arcano: empata</BookOfEmpathy.label>
+  <BookOfEmpathy.description>Ensina Aura esmagadora a um empata que tenha concluído a prova básica. A leitura conclui a iniciação como adepto e consome o tomo.</BookOfEmpathy.description>
+  <BookOfEmpathy.comps.1.useLabel>Ler {0_label}</BookOfEmpathy.comps.1.useLabel>
+  <TM_MasterTomeEmpath.label>tomo de mestre: empata</TM_MasterTomeEmpath.label>
+  <TM_MasterTomeEmpath.description>Ensina Colher paixão e a habilidade associada Incitar paixão a um empata que tenha concluído a prova de mestria. A leitura conclui a iniciação como mestre e consome o tomo. Disponível em comerciantes e como recompensa de missões; não pode ser fabricado.</TM_MasterTomeEmpath.description>
+  <TM_MasterTomeEmpath.comps.1.useLabel>Ler {0_label}</TM_MasterTomeEmpath.comps.1.useLabel>
+</LanguageData>

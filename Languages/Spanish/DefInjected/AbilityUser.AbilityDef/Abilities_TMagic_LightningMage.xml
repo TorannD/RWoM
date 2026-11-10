@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_AMP.label>AMP</TM_AMP.label>
+  
+  <TM_AMP.description>Bendición: Aumentado por Poder Mágico, o «AMP» por sus siglas en inglés. Potenciación temporal que incrementa drásticamente la capacidad física a costa de someter al cuerpo a un mayor esfuerzo.\n\nDuración: 30-40 s\nCapacidad física: ~+30 %\nDemanda física: +40 %\nDolor: -20 %</TM_AMP.description>
+  
+  
+  <TM_AMP_I.label>AMP (I)</TM_AMP_I.label>
+  
+  <TM_AMP_I.description>Bendición: Aumentado por Poder Mágico, o «AMP» por sus siglas en inglés. Potenciación temporal que incrementa drásticamente la capacidad física a costa de someter al cuerpo a un mayor esfuerzo.\n\nDuración: 30-40 s\nCapacidad física: ~+50 %\nDemanda física: +60 %\nDolor: -20 %</TM_AMP_I.description>
+  
+  
+  <TM_AMP_II.label>AMP (II)</TM_AMP_II.label>
+  
+  <TM_AMP_II.description>Bendición: Aumentado por Poder Mágico, o «AMP» por sus siglas en inglés. Potenciación temporal que incrementa drásticamente la capacidad física a costa de someter al cuerpo a un mayor esfuerzo.\n\nDuración: 50-60 s\nCapacidad física: ~+65 %\nDemanda física: +60 %\nDolor: -30 %</TM_AMP_II.description>
+  
+  
+  <TM_AMP_III.label>AMP (III)</TM_AMP_III.label>
+  
+  <TM_AMP_III.description>Bendición: Aumentado por Poder Mágico, o «AMP» por sus siglas en inglés. Potenciación temporal que incrementa drásticamente la capacidad física a costa de someter al cuerpo a un mayor esfuerzo.\n\nDuración: 50-60 s\nCapacidad física: ~+80 %\nDemanda física: +100 %\nDolor: -40 %</TM_AMP_III.description>
+  
+  
+  <TM_EyeOfTheStorm.label>ojo de la tormenta</TM_EyeOfTheStorm.label>
+  
+  <TM_EyeOfTheStorm.description>Libera una esfera de energía eléctrica pura que aniquila todo a su paso.</TM_EyeOfTheStorm.description>
+  
+  
+  <TM_LightningBolt.label>rayo</TM_LightningBolt.label>
+  
+  <TM_LightningBolt.description>Lanza un rayo que impacta contra el objetivo.</TM_LightningBolt.description>
+  
+  
+  <TM_LightningCloud.label>nube de rayos</TM_LightningCloud.label>
+  
+  <TM_LightningCloud.description>Crea una zona cargada de electricidad. Daña y aturde a todo lo que quede envuelto en sus brumas.</TM_LightningCloud.description>
+  
+  
+  <TM_LightningStorm.label>tormenta eléctrica</TM_LightningStorm.label>
+  
+  <TM_LightningStorm.description>Desata una tormenta eléctrica feroz e incontrolable sobre la ubicación objetivo.</TM_LightningStorm.description>
+  
+</LanguageData>

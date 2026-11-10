@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadApothecaryHerbalist>Estudiar recolección</TM_ReadApothecaryHerbalist>
+  <TM_ReadApothecaryFreshStock>Estudiar conservación</TM_ReadApothecaryFreshStock>
+  <TM_ApothecaryGatherInfo>La cosecha da un 5% más de hierbas.</TM_ApothecaryGatherInfo>
+  <TM_ApothecaryFreshInfo>Las hierbas se estropean un 10% más despacio.</TM_ApothecaryFreshInfo>
+  <TM_ApothecaryStock>Hierbas: {0}/{1}</TM_ApothecaryStock>
+  <TM_ApothecaryTrialGather>Obtén hierbas de 30 plantas maduras sanas distintas ({0}/30).</TM_ApothecaryTrialGather>
+  <TM_ApothecaryTrialTreat>Trata 20 heridas recientes distintas ({0}/20) o alivia 12 intoxicaciones alimentarias con antídoto ({1}/12).</TM_ApothecaryTrialTreat>
+  <TM_ApothecaryTrialShift>Completa 12 días de servicio médico ({0}/12). La ascensión requiere nivel marcial 30 ({1}/30).</TM_ApothecaryTrialShift>
+  <TM_ApothecaryClaim>Obtener el siguiente grado</TM_ApothecaryClaim>
+  <TM_ApothecaryKitUnavailable>Requiere cuatro medicinas herbales al alcance y un 60% de hierbas.</TM_ApothecaryKitUnavailable>
+  <TM_ApothecaryAntitoxinLow>Requiere un 20% de hierbas.</TM_ApothecaryAntitoxinLow>
+</LanguageData>

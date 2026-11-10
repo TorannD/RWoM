@@ -1,0 +1,16 @@
+<LanguageData><!-- Lesser Sentinel-->
+	<TM_Lesser_Sentinel.label>малый сентинел</TM_Lesser_Sentinel.label>
+	<TM_Lesser_Sentinel.labelPlural>малые сентинелы</TM_Lesser_Sentinel.labelPlural>
+	<TM_Lesser_Sentinel.lifeStages.0.label>малый сентинел</TM_Lesser_Sentinel.lifeStages.0.label>
+	<TM_Lesser_Sentinel.lifeStages.0.labelPlural>каменные сентинелы</TM_Lesser_Sentinel.lifeStages.0.labelPlural>
+	<!-- Sentinel-->
+	<TM_Sentinel.label>Сентинел</TM_Sentinel.label>
+	<TM_Sentinel.labelPlural>Сентинелы</TM_Sentinel.labelPlural>
+	<TM_Sentinel.lifeStages.0.label>Сентинел</TM_Sentinel.lifeStages.0.label>
+	<TM_Sentinel.lifeStages.0.labelPlural>каменные сентинелы</TM_Sentinel.lifeStages.0.labelPlural>
+	<!-- Greater Sentinel-->
+	<TM_Greater_Sentinel.label>Большой Сентинел</TM_Greater_Sentinel.label>
+	<TM_Greater_Sentinel.labelPlural>большие Сентинелы</TM_Greater_Sentinel.labelPlural>
+	<TM_Greater_Sentinel.lifeStages.0.label>Большой Сентинел</TM_Greater_Sentinel.lifeStages.0.label>
+	<TM_Greater_Sentinel.lifeStages.0.labelPlural>каменные сентинелы</TM_Greater_Sentinel.lifeStages.0.labelPlural>
+</LanguageData>

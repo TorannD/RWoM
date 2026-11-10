@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using AbilityUser;
 using UnityEngine;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    class Verb_DeathMark : Verb_UseAbility  
+    class Verb_DeathMark : ClassProgression.Verb_SpiritTargetable
     {
 
         private int verVal;
@@ -41,23 +41,21 @@ namespace TorannMagic
         protected override bool TryCastShot()
         {
             bool result = false;
-            Pawn p = this.CasterPawn;
-            CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
-            verVal = TM_Calc.GetSkillVersatilityLevel(p, this.Ability.Def as TMAbilityDef);
-            pwrVal = TM_Calc.GetSkillPowerLevel(p, this.Ability.Def as TMAbilityDef);
-            //MagicPowerSkill pwr = comp.MagicData.MagicPowerSkill_DeathMark.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathMark_pwr");
-            //MagicPowerSkill ver = comp.MagicData.MagicPowerSkill_DeathMark.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_DeathMark_ver");
-            //verVal = ver.level;
-            //pwrVal = pwr.level;
-            //this.arcaneDmg = comp.arcaneDmg;
-            //if (p.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    MightPowerSkill mpwr = p.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-            //    MightPowerSkill mver = p.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-            //    pwrVal = mpwr.level;
-            //    verVal = mver.level;
-            //}
-
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+            if (owner == null) return false;
+            var comp = owner.GetCompAbilityUserMagic();
+            if (comp?.MagicData == null) return false;
+            if (owner != CasterPawn)
+            {
+                var skills = comp.MagicData.MagicPowerSkill_DeathMark;
+                verVal = ClassProgression.Projectile_SpiritBolt.SpellRank(owner, skills, "TM_DeathMark", "_ver");
+                pwrVal = ClassProgression.Projectile_SpiritBolt.SpellRank(owner, skills, "TM_DeathMark", "_pwr");
+            }
+            else
+            {
+                verVal = TM_Calc.GetSkillVersatilityLevel(owner, Ability.Def as TMAbilityDef);
+                pwrVal = TM_Calc.GetSkillPowerLevel(owner, Ability.Def as TMAbilityDef);
+            }
             if (this.currentTarget != null && base.CasterPawn != null)
             {
                 
@@ -73,9 +71,11 @@ namespace TorannMagic
                         Pawn victim = this.TargetsAoE[i].Thing as Pawn;
                         if(!victim.RaceProps.IsMechanoid)
                         {
-                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(this.CasterPawn, victim, true)))
+                            if (Rand.Chance(TM_Calc.GetSpellSuccessChance(owner, victim, true)))
                             {
-                                HealthUtility.AdjustSeverity(victim, HediffDef.Named("TM_DeathMarkCurse"), (Rand.Range(1f + pwrVal, 4 + 2 * pwrVal) * this.arcaneDmg));
+                                float markSeverity = Rand.Range(1f + pwrVal, 4 + 2 * pwrVal) * this.arcaneDmg;
+                                HealthUtility.AdjustSeverity(victim, HediffDef.Named("TM_DeathMarkCurse"), markSeverity);
+                                ClassProgression.NecromancerDeathMarkTrial.Applied(this.CasterPawn, victim, this.Ability, markSeverity);
                                 TM_MoteMaker.ThrowSiphonMote(victim.DrawPos, victim.Map, 1.4f);
                                 if (comp.Pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_LichHD"), false))
                                 {

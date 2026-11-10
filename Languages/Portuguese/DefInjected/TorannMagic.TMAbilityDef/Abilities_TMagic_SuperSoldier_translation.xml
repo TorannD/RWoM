@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Pistol Spec - ability is never used -->
+
+  <TM_PistolSpec.label>Especialização em pistolas</TM_PistolSpec.label>
+  <TM_PistolSpec.description>Especialização em Armas: Arma
+
+Esta especialidade melhora todos os aspectos das armas: precisão, danos, retardo de tiro, número de tiros, alcance e muito mais.
+A especialização em armas é usada automaticamente quando o supersoldado equipar armas na sua categoria de especialização. Uma arma especializada é designada «+ +» após o nome do item.
+
+Supersoldados com uma especialização de pistolas equipada com um talento único de «tiro duplo», que às vezes ignora a recarga e inicia uma nova série de tiros; este talento consome resistência quando isso acontece.</TM_PistolSpec.description>
+
+
+  <!-- Pistol Whip -->
+
+  <TM_PistolWhip.label>Chicote de pistola</TM_PistolWhip.label>
+  <TM_PistolWhip.description>Ataque repentino com arma de pistola como arma estúpida; ataques bem sucedidos atordoam o alvo, deixando-o espantado por um curto período de tempo, e podem desarmá-lo.</TM_PistolWhip.description>
+
+
+  <!-- Rifle Spec - ability is never used -->
+
+  <TM_RifleSpec.label>Especialização em máquinas automáticas</TM_RifleSpec.label>
+  <TM_RifleSpec.description>Especialização em Armas: Espingarda
+
+Esta especialidade melhora todos os aspectos da espingarda, precisão, danos, retardo de tiro, número de tiros, alcance e muito mais.
+A especialização em armas é usada automaticamente quando o supersoldado equipar armas na sua categoria de especialização. Uma arma especializada é designada «+ +» após o nome do item.</TM_RifleSpec.description>
+
+
+  <!-- Suppressing Fire -->
+
+  <TM_SuppressingFire.label>Fogo esmagador</TM_SuppressingFire.label>
+  <TM_SuppressingFire.description>Suprime as posições inimigas com um furacão de balas.</TM_SuppressingFire.description>
+
+
+  <!-- mk203 gl -->
+
+  <TM_Mk203GL.label>Mk203_GL</TM_Mk203GL.label>
+  <TM_Mk203GL.description>Dispara uma granada com um lança-granadas Mk203.</TM_Mk203GL.description>
+
+
+  <!-- Shotgun Spec - ability is never used -->
+
+  <TM_ShotgunSpec.label>Especialização em caçambas</TM_ShotgunSpec.label>
+  <TM_ShotgunSpec.description>Especialização em Armas
+
+Esta especialidade melhora todos os aspectos das caçambas: precisão, danos, retardo de tiro, número de tiros, alcance e muito mais.
+A especialização em armas é usada automaticamente quando o supersoldado equipar armas na sua categoria de especialização. Uma arma especializada é identificada como «+ +» após o nome do item.</TM_ShotgunSpec.description>
+
+
+  <!-- Buckshot -->
+
+  <TM_Buckshot.label>Mapear</TM_Buckshot.label>
+  <TM_Buckshot.description>Um projétil de espingarda que dispara várias facções. O próprio volume de projéteis disparados pode ser devastador a curta distância, mas rapidamente dispersa-se.</TM_Buckshot.description>
+
+
+  <!-- Breaching Charge -->
+
+  <TM_BreachingCharge.label>Carga de perfuração</TM_BreachingCharge.label>
+  <TM_BreachingCharge.description>Atira explosivos especializados que lidam com a destruição de estruturas ou a paragem de aglomerados inimigos. Prejudica 30 vezes as estruturas.</TM_BreachingCharge.description>
+
+
+  <!-- CQC -->
+
+  <TM_CQC.label>Combate Próximo</TM_CQC.label>
+  <TM_CQC.description>O combate médio é um treino normal para os soldados, que lhes permite executar suavemente um ataque conturbado contra o inimigo em combate próximo.</TM_CQC.description>
+
+
+  <!-- First Aid -->
+
+  <TM_FirstAid.label>Auto-ajuda</TM_FirstAid.label>
+  <TM_FirstAid.description>A auto-ajuda é possível para supersoldados como resultado de melhorias genéticas que eles recebem do soro. Esta capacidade permite-lhes concentrar a energia conscientemente para curar rapidamente as feridas. A auto-ajuda é incapaz de tratar ferimentos graves, como a falta de partes do corpo.</TM_FirstAid.description>
+
+
+  <!-- 60mm Mortar -->
+
+  <TM_60mmMortar.label>morteiro 60mm</TM_60mmMortar.label>
+  <TM_60mmMortar.description>Aqueça os alvos inimigos antes do combate com um sistema de morteiro pessoal. Um morteiro de 60 mm pode ser facilmente transportado pelo supersoldado e rapidamente implantado para disparar 3 tiros de fogo indireto.</TM_60mmMortar.description>
+
+
+</LanguageData>

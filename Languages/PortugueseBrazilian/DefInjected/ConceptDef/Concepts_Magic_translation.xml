@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Concepts about magic taught through the learning readout, when opportunities arise -->
+
+  <TM_Portals.label>Magia - Portais</TM_Portals.label>
+  <TM_Portals.helpText>Os portais mágicos são o topo da força mágica. Há várias coisas que você precisa saber sobre o uso dos portais:
+
+1. Só um mágico secreto treinado para a magia do Portal pode acionar o portal.
+a) a possibilidade de ativar o portal só aparece quando um maga secreto tiver maná suficiente (70%) para ativar.
+b. quando o mago secreto ativa o portal, ele vai mover o menu de escolha para o mapa do mundo - apenas um mapa ativo pelos colonos pode ser escolhido.
+c. a ativação esgotará o mago por um curto período de tempo, por isso escolha o destino com cuidado.
+
+2. Uma vez ativado, qualquer mágico pode carregar o portal.
+a) opções para usar (passar) um portal ou enviar itens através de um portal só aparecem quando o portal tiver energia secreta suficiente para realizar a ação.
+b. apenas um peão pode usar o portal ao mesmo tempo; cada peão esgota o portal 5% da sua energia máxima.
+c. todos os itens são transmitidos simultaneamente; o custo de transferência de itens através do portal é de 10% da sua energia máxima.
+
+3. Qualquer peão pode usar o portal.
+
+4. Apenas os mágicos podem guiar os objetos através do portal.
+
+5. Apenas os magos podem desativar o portal.
+
+6. Quando o portal é desativado, ele mantém a força secreta armazenada até que o portal seja reativado.
+Os portais devem ser desativados antes de serem reativados e atribuídos a um novo destino.
+
+7. Proteja o seu portal. Ele é frágil, caro e guarda uma grande quantidade de energia...
+</TM_Portals.helpText>
+
+  <TM_Enchanting.label>Magia - Encantamento</TM_Enchanting.label>
+  <TM_Enchanting.helpText>Os encantamentos oferecem aos mágicos a oportunidade de encher armas e blindagem com melhorias. Há várias coisas que você deve saber sobre encantamentos:
+
+1. Só os mágicos podem fazer feitiçaria! O processo de encantamento requer maná, por isso os peões do mundo não podem usar as Pedras Encantadas.
+
+2. Para encantar um objeto, a sua colônia deve cumprir os seguintes pré-requisitos:
+a. sua colônia deve ter verstaco para cortar pedras preciosas, pesquisa de encantamento no menu da pesquisa.
+b. recolham a magicismo; Pode ser encontrado em qualquer pedra que possa ser encontrada.
+c. crie pedras encantadas na verstaca para entulho de pedras preciosas.
+
+3. Assim que você criar uma pedra preciosa mágica de sua escolha, você vai precisar de um mágico para executar o feitiço.
+a. ao selecionar o mago, clique com o botão direito do mouse na pedra encantada e selecione a opção para usar a pedra preciosa para encantar
+b. depois que um mágico segurar uma pedra preciosa, clique com o botão direito do rato em qualquer arma ou roupa que esteja no chão e escolha o feitiço. O mago que faz o feitiço não pode ser chamado.
+</TM_Enchanting.helpText>
+
+  <TM_EnchantingII.label>Magia - Encantamento II</TM_EnchantingII.label>
+  <TM_EnchantingII.helpText>Encantamento: Parte II
+
+4. O encantamento é constante e cada objeto pode conter um feitiço de cada tipo. Novos encantos do mesmo tipo substituem os existentes. Enfeitar um elemento não aumenta seu valor. Uma coisa encantada consome uma pedra preciosa encantada. Atualmente, não há forma de tirar o feitiço do objeto.
+
+5. O magicite bruto (e pedras preciosas sofisticadas) também pode ser comprado com fornecedores selecionados. O processo de extração profunda de minério permite a aquisição de magicita. Os usuários de carreira podem adicionar magicita aos minerais produzidos, cujo valor recomendado é 0,4%
+
+6. Se você quiser deixar cair uma pedra mágica, escolha o mago que segura a pedra mágica, clique com o botão direito do mouse em qualquer quadrado aberto e escolha o menu
+para deixar cair uma pedra preciosa.
+
+7. Os feitiços de objetos podem ser visualizados em itens individuais do equipamento, selecionando um objeto no chão e usando a guia «Encantamento». Os efeitos coletivos sobre um peão podem ser vistos na guia de saúde, e uma breve descrição dos feitiços será exibida na guia de equipamento do peão.
+</TM_EnchantingII.helpText>
+
+
+</LanguageData>

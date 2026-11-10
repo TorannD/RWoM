@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Enchanting Gems -->
+
+  <TM_EStone_maxMP_minor.label>Pequena pedra mágica de retenção</TM_EStone_maxMP_minor.label>
+  <TM_EStone_maxMP_minor.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Olhar atentamente para a pedra dá ao observador uma sensação assustadora de tontura, como se estivesse a olhar para um poço sem fundo. Esta pedra preciosa pode ser usada para encher um objeto com potencial mágico, aumentando a energia máxima de qualquer mágico ou lutador que leva um objeto em 5%.</TM_EStone_maxMP_minor.description>
+  <TM_EStone_maxMP_minor.stuffProps.stuffAdjective>Pequena pedra mágica de retenção</TM_EStone_maxMP_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_maxMP.label>Pedra mágica de retenção</TM_EStone_maxMP.label>
+  <TM_EStone_maxMP.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Olhar atentamente para a pedra dá ao observador uma sensação assustadora de tontura, como se estivesse a olhar para um poço sem fundo. Esta pedra preciosa pode ser usada para encher um objeto com potencial mágico, aumentando a energia máxima de qualquer mágico ou lutador que leva um objeto em 10%.</TM_EStone_maxMP.description>
+  <TM_EStone_maxMP.stuffProps.stuffAdjective>Pedra mágica de retenção</TM_EStone_maxMP.stuffProps.stuffAdjective>
+
+  <TM_EStone_maxMP_major.label>Grande Pedra Mágica de retenção</TM_EStone_maxMP_major.label>
+  <TM_EStone_maxMP_major.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Olhar atentamente para a pedra dá ao observador uma sensação assustadora de tontura, como se estivesse a olhar para um poço sem fundo. Esta pedra preciosa pode ser usada para encher um objeto com potencial mágico, aumentando a energia máxima de qualquer mágico ou lutador que leva um objeto em 15%.</TM_EStone_maxMP_major.description>
+  <TM_EStone_maxMP_major.stuffProps.stuffAdjective>Grande Pedra Mágica de retenção</TM_EStone_maxMP_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_mpRegenRate_minor.label>Pequena pedra mágica regeneração</TM_EStone_mpRegenRate_minor.label>
+  <TM_EStone_mpRegenRate_minor.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Esta pedra preciosa pode ser usada para encher o objeto, aumentando a velocidade de regeneração da energia de qualquer mágico ou lutador que leva este objeto em 5%.</TM_EStone_mpRegenRate_minor.description>
+  <TM_EStone_mpRegenRate_minor.stuffProps.stuffAdjective>Pequena pedra mágica regeneração</TM_EStone_mpRegenRate_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_mpRegenRate.label>Pedra mágica de regeneração</TM_EStone_mpRegenRate.label>
+  <TM_EStone_mpRegenRate.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Esta pedra preciosa pode ser usada para preencher o objeto, aumentando a velocidade de regeneração da energia de qualquer mágico ou lutador que leva este objeto em 10%.</TM_EStone_mpRegenRate.description>
+  <TM_EStone_mpRegenRate.stuffProps.stuffAdjective>Pedra mágica de regeneração</TM_EStone_mpRegenRate.stuffProps.stuffAdjective>
+
+  <TM_EStone_mpRegenRate_major.label>Grande Pedra Mágica regeneração</TM_EStone_mpRegenRate_major.label>
+  <TM_EStone_mpRegenRate_major.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Esta pedra preciosa pode ser usada para preencher o objeto, aumentando a velocidade de regeneração da energia de qualquer mágico ou lutador que leva este objeto em 15%.</TM_EStone_mpRegenRate_major.description>
+  <TM_EStone_mpRegenRate_major.stuffProps.stuffAdjective>Grande Pedra Mágica regeneração</TM_EStone_mpRegenRate_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_mpCost_minor.label>Pequena pedra mágica de preservação</TM_EStone_mpCost_minor.label>
+  <TM_EStone_mpCost_minor.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Ao ser introduzida no objeto, esta pedra preciosa reduz o custo energético de qualquer feitiço em 3%.</TM_EStone_mpCost_minor.description>
+  <TM_EStone_mpCost_minor.stuffProps.stuffAdjective>Pequena pedra mágica de preservação</TM_EStone_mpCost_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_mpCost.label>Pedra mágica mágica preservação</TM_EStone_mpCost.label>
+  <TM_EStone_mpCost.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Ao ser introduzida no objeto, esta pedra preciosa reduz o custo energético de qualquer feitiço em 5%.</TM_EStone_mpCost.description>
+  <TM_EStone_mpCost.stuffProps.stuffAdjective>Pedra mágica de preservação</TM_EStone_mpCost.stuffProps.stuffAdjective>
+
+  <TM_EStone_mpCost_major.label>Grande Pedra Mágica Preservação</TM_EStone_mpCost_major.label>
+  <TM_EStone_mpCost_major.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Ao ser introduzida no objeto, esta pedra preciosa reduz o custo energético de qualquer feitiço em 7%.</TM_EStone_mpCost_major.description>
+  <TM_EStone_mpCost_major.stuffProps.stuffAdjective>Grande Pedra Mágica Preservação</TM_EStone_mpCost_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_coolDown_minor.label>Pequena pedra mágica de aceleração</TM_EStone_coolDown_minor.label>
+  <TM_EStone_coolDown_minor.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Ao ser introduzida no objeto, esta pedra preciosa reduz o tempo de recarga de qualquer capacidade em 3%.</TM_EStone_coolDown_minor.description>
+  <TM_EStone_coolDown_minor.stuffProps.stuffAdjective>Pequena pedra mágica de aceleração</TM_EStone_coolDown_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_coolDown.label>Pedra mágica de aceleração</TM_EStone_coolDown.label>
+  <TM_EStone_coolDown.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Quando ele entra no objeto, esta pedra preciosa reduz o tempo de recarga de qualquer capacidade em 5%.</TM_EStone_coolDown.description>
+  <TM_EStone_coolDown.stuffProps.stuffAdjective>Pedra mágica de aceleração</TM_EStone_coolDown.stuffProps.stuffAdjective>
+
+  <TM_EStone_coolDown_major.label>Grande Pedra Mágica de Aceleração</TM_EStone_coolDown_major.label>
+  <TM_EStone_coolDown_major.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Quando ele entra no objeto, esta pedra preciosa reduz o tempo de recarga de qualquer capacidade em 7%.</TM_EStone_coolDown_major.description>
+  <TM_EStone_coolDown_major.stuffProps.stuffAdjective>Grande Pedra Mágica de Aceleração</TM_EStone_coolDown_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_xpGain_minor.label>Pequena pedra mágica de aprendizagem</TM_EStone_xpGain_minor.label>
+  <TM_EStone_xpGain_minor.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Quando ele entra no objeto, esta pedra preciosa ajuda o proprietário, mantendo a mimética residual da capacidade, permitindo que o proprietário adquira mais 5% de experiência pelo uso da capacidade.</TM_EStone_xpGain_minor.description>
+  <TM_EStone_xpGain_minor.stuffProps.stuffAdjective>Pequena pedra mágica de aprendizagem</TM_EStone_xpGain_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_xpGain.label>Pedra mágica de aprendizagem</TM_EStone_xpGain.label>
+  <TM_EStone_xpGain.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Quando ele entra no objeto, esta pedra preciosa ajuda o proprietário, mantendo a mimética residual da capacidade, permitindo que o proprietário adquira mais 5% de experiência pelo uso da capacidade. 10%.</TM_EStone_xpGain.description>
+  <TM_EStone_xpGain.stuffProps.stuffAdjective>Pedra mágica de aprendizagem</TM_EStone_xpGain.stuffProps.stuffAdjective>
+
+  <TM_EStone_xpGain_major.label>Grande Pedra Mágica Aprendizado</TM_EStone_xpGain_major.label>
+  <TM_EStone_xpGain_major.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Quando ele entra no objeto, esta pedra preciosa ajuda o proprietário, mantendo a mimética residual da capacidade, permitindo que o proprietário adquira mais 5% de experiência pelo uso da capacidade. 15%.</TM_EStone_xpGain_major.description>
+  <TM_EStone_xpGain_major.stuffProps.stuffAdjective>Grande Pedra Mágica Aprendizado</TM_EStone_xpGain_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_arcaneRes_minor.label>Pequena pedra mágica da resistência</TM_EStone_arcaneRes_minor.label>
+  <TM_EStone_arcaneRes_minor.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Quando ele entra no objeto, esta preciosa pedra cria uma barreira que afasta a energia secreta ativa, reduzindo os danos gerados por fontes secretas em 10%.</TM_EStone_arcaneRes_minor.description>
+  <TM_EStone_arcaneRes_minor.stuffProps.stuffAdjective>Pequena pedra mágica da resistência</TM_EStone_arcaneRes_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_arcaneRes.label>A Pedra Mágica da Resistência</TM_EStone_arcaneRes.label>
+  <TM_EStone_arcaneRes.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Quando ele entra no objeto, esta preciosa pedra cria uma barreira que afasta a energia secreta ativa, reduzindo os danos gerados por fontes secretas em 10%</TM_EStone_arcaneRes.description>
+  <TM_EStone_arcaneRes.stuffProps.stuffAdjective>A Pedra Mágica da Resistência</TM_EStone_arcaneRes.stuffProps.stuffAdjective>
+
+  <TM_EStone_arcaneRes_major.label>Grande Pedra Mágica da Resistência</TM_EStone_arcaneRes_major.label>
+  <TM_EStone_arcaneRes_major.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Quando ele entra no objeto, esta preciosa pedra cria uma barreira que afasta a energia secreta ativa, reduzindo os danos gerados por fontes secretas em 10%</TM_EStone_arcaneRes_major.description>
+  <TM_EStone_arcaneRes_major.stuffProps.stuffAdjective>Grande Pedra Mágica da Resistência</TM_EStone_arcaneRes_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_arcaneDmg_minor.label>Pequena Pedra Mágica da Força</TM_EStone_arcaneDmg_minor.label>
+  <TM_EStone_arcaneDmg_minor.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Quando ele entra num objeto, este feitiço aumenta a força do ataque, aumentando os danos de capacidade em 4%.</TM_EStone_arcaneDmg_minor.description>
+  <TM_EStone_arcaneDmg_minor.stuffProps.stuffAdjective>Pequena Pedra Mágica da Força</TM_EStone_arcaneDmg_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_arcaneDmg.label>A Pedra Mágica da Força</TM_EStone_arcaneDmg.label>
+  <TM_EStone_arcaneDmg.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Quando ele entra num objeto, este feitiço aumenta a força do ataque, aumentando os danos de capacidade em 8%.</TM_EStone_arcaneDmg.description>
+  <TM_EStone_arcaneDmg.stuffProps.stuffAdjective>A Pedra Mágica da Força</TM_EStone_arcaneDmg.stuffProps.stuffAdjective>
+
+  <TM_EStone_arcaneDmg_major.label>Grande Pedra Mágica da Força</TM_EStone_arcaneDmg_major.label>
+  <TM_EStone_arcaneDmg_major.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Quando ele entra num objeto, este feitiço aumenta a força do ataque, aumentando em 12% os danos de capacidade.</TM_EStone_arcaneDmg_major.description>
+  <TM_EStone_arcaneDmg_major.stuffProps.stuffAdjective>Grande Pedra Mágica da Força</TM_EStone_arcaneDmg_major.stuffProps.stuffAdjective>
+
+  <TM_EStone_wonder_minor.label>Pequena pedra mágica espanto</TM_EStone_wonder_minor.label>
+  <TM_EStone_wonder_minor.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Esta pedra preciosa está a bater com força. Esta pedra preciosa pode ser usada para encher o objeto com potencial mágico, fornecendo bónus para todas as categorias de feitiços.</TM_EStone_wonder_minor.description>
+  <TM_EStone_wonder_minor.stuffProps.stuffAdjective>Pequena pedra mágica espanto</TM_EStone_wonder_minor.stuffProps.stuffAdjective>
+
+  <TM_EStone_wonder.label>Pedra mágica espanto</TM_EStone_wonder.label>
+  <TM_EStone_wonder.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Esta pedra preciosa está a bater com força. Esta pedra preciosa pode ser usada para encher o objeto com potencial mágico, fornecendo bónus para todas as categorias de feitiços.</TM_EStone_wonder.description>
+  <TM_EStone_wonder.stuffProps.stuffAdjective>Pedra mágica espanto</TM_EStone_wonder.stuffProps.stuffAdjective>
+
+  <TM_EStone_wonder_major.label>Grande Pedra Mágica espanto</TM_EStone_wonder_major.label>
+  <TM_EStone_wonder_major.description>Uma pedra mágica que pode ser usada por um mágico para encantar um objeto com energia mágica. Esta pedra preciosa está a bater com força. Esta pedra preciosa pode ser usada para encher o objeto com potencial mágico, fornecendo bónus para todas as categorias de feitiços.</TM_EStone_wonder_major.description>
+  <TM_EStone_wonder_major.stuffProps.stuffAdjective>Grande Pedra Mágica espanto</TM_EStone_wonder_major.stuffProps.stuffAdjective>
+
+
+  <!-- Raw Magicyte -->
+
+  <RawMagicyte.label>Magicita não processada</RawMagicyte.label>
+  <RawMagicyte.description>Uma pedra que parece enrolar-se numa superfície de vidro, como se a força misteriosa estivesse envolta no centro da pedra. Aparentemente composta pela mesma pedra da qual foi esculpida, esta pedra bastante indecente é levemente suja, mesmo no escuro, e emite uma assinatura de energia que os mágicos podem detectar ao tocar na pedra.
+
+Magicite não processado pode ser limpo para fazer muitas pedras preciosas encantadoras na mesa de corte de pedras preciosas.</RawMagicyte.description>
+  <RawMagicyte.stuffProps.stuffAdjective>magicita não processada</RawMagicyte.stuffProps.stuffAdjective>
+
+
+</LanguageData>

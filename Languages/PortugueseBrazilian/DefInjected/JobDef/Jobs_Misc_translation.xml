@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Misc jobs -->
+
+  <JobDriver_DoMagicBill.reportString>faz magia no TargetA.</JobDriver_DoMagicBill.reportString>
+  <JobDriver_AssistMagicCircle.reportString>preparação do círculo mágico</JobDriver_AssistMagicCircle.reportString>
+  <PlacePoisonTrap.reportString>instalação de uma armadilha venenosa</PlacePoisonTrap.reportString>
+  <JobDriver_PlaceLightningTrap.reportString>colocação da armadilha relâmpago</JobDriver_PlaceLightningTrap.reportString>
+  <JobDriver_SleepNow.reportString>dorme (berço)</JobDriver_SleepNow.reportString>
+  <JobDriver_Entertain.reportString>diverte</JobDriver_Entertain.reportString>
+  <JobDriver_DoFor.reportString>preparação do ataque</JobDriver_DoFor.reportString>
+  <JobDriver_SummonDemon.reportString>marca sacrifício</JobDriver_SummonDemon.reportString>
+  <JobDriver_PsionicBarrier.reportString>projetar uma barreira psicónica</JobDriver_PsionicBarrier.reportString>
+  <JobDriver_TM_Teach.reportString>treinamento e orientação</JobDriver_TM_Teach.reportString>
+  <JobDriver_TM_GotoAndWait.reportString>espera local</JobDriver_TM_GotoAndWait.reportString>
+  <JobDriver_TM_Meditate.reportString>meditação profunda</JobDriver_TM_Meditate.reportString>
+  <JobDriver_TM_Command.reportString>motivação</JobDriver_TM_Command.reportString>
+  <JobDriver_GotoAndCast.reportString>trabalho mágico</JobDriver_GotoAndCast.reportString>
+  <JobDriver_Discord.reportString>criação de uma discórdia</JobDriver_Discord.reportString>
+  <JobDriver_SpiritDrain.reportString>espírito exaustivo</JobDriver_SpiritDrain.reportString>
+
+
+</LanguageData>

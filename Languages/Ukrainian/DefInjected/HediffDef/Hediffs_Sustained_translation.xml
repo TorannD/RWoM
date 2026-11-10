@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Gear Repair -->
+
+  <TM_HediffGearRepair.label>Зубчастий Ремонт</TM_HediffGearRepair.label>
+  <TM_HediffGearRepair.description>Технічне обслуговування та догляд за обладнанням.</TM_HediffGearRepair.description>
+  <TM_HediffGearRepair.stages.0.label>I</TM_HediffGearRepair.stages.0.label>
+
+
+  <!-- Inner Healing -->
+
+  <TM_HediffInnerHealing.label>внутрішнє зцілення</TM_HediffInnerHealing.label>
+  <TM_HediffInnerHealing.description>Покращує природне загоєння ран.</TM_HediffInnerHealing.description>
+  <TM_HediffInnerHealing.stages.0.label>I</TM_HediffInnerHealing.stages.0.label>
+
+
+  <!-- Heavy Blow -->
+
+  <TM_HediffHeavyBlow.label>Важкий Удар</TM_HediffHeavyBlow.label>
+  <TM_HediffHeavyBlow.description>Збільшує завдану шкоду з кожним фізичним ударом.</TM_HediffHeavyBlow.description>
+  <TM_HediffHeavyBlow.stages.0.label>I</TM_HediffHeavyBlow.stages.0.label>
+  <TM_HediffHeavyBlow.stages.1.label>II</TM_HediffHeavyBlow.stages.1.label>
+  <TM_HediffHeavyBlow.stages.2.label>III</TM_HediffHeavyBlow.stages.2.label>
+  <TM_HediffHeavyBlow.stages.3.label>IV</TM_HediffHeavyBlow.stages.3.label>
+
+
+  <!-- Strong Back -->
+
+  <TM_HediffStrongBack.label>міцна спина</TM_HediffStrongBack.label>
+  <TM_HediffStrongBack.description>Збільшує вантажопідйомність.</TM_HediffStrongBack.description>
+  <TM_HediffStrongBack.stages.0.label>I</TM_HediffStrongBack.stages.0.label>
+  <TM_HediffStrongBack.stages.1.label>II</TM_HediffStrongBack.stages.1.label>
+  <TM_HediffStrongBack.stages.2.label>III</TM_HediffStrongBack.stages.2.label>
+
+
+  <!-- Thick Skin -->
+
+  <TM_HediffThickSkin.label>товста шкіра</TM_HediffThickSkin.label>
+  <TM_HediffThickSkin.description>Зміцнює шкіру, роблячи її більш жорсткою.</TM_HediffThickSkin.description>
+  <TM_HediffThickSkin.stages.0.label>I</TM_HediffThickSkin.stages.0.label>
+  <TM_HediffThickSkin.stages.1.label>II</TM_HediffThickSkin.stages.1.label>
+  <TM_HediffThickSkin.stages.2.label>III</TM_HediffThickSkin.stages.2.label>
+  <TM_HediffThickSkin.stages.3.label>IV</TM_HediffThickSkin.stages.3.label>
+
+  <TM_HediffFightersFocus.label>Бойове фокусування</TM_HediffFightersFocus.label>
+  <TM_HediffFightersFocus.description>Ментальне фокусування для бійців.</TM_HediffFightersFocus.description>
+  <TM_HediffFightersFocus.stages.0.label>I</TM_HediffFightersFocus.stages.0.label>
+  <TM_HediffFightersFocus.stages.1.label>II</TM_HediffFightersFocus.stages.1.label>
+
+
+  <!-- Sprint -->
+
+  <TM_HediffSprint.label>Спринт</TM_HediffSprint.label>
+  <TM_HediffSprint.description>Рухатися швидше.</TM_HediffSprint.description>
+  <TM_HediffSprint.stages.0.label>I</TM_HediffSprint.stages.0.label>
+  <TM_HediffSprint.stages.1.label>II</TM_HediffSprint.stages.1.label>
+  <TM_HediffSprint.stages.2.label>III</TM_HediffSprint.stages.2.label>
+  <TM_HediffSprint.stages.3.label>IV</TM_HediffSprint.stages.3.label>
+
+
+  <!-- Burning Fury -->
+
+  <TM_BurningFuryHD.label>Пекуча Лють</TM_BurningFuryHD.label>
+  <TM_BurningFuryHD.description>Випромінює щит з сирої енергії, який одночасно відхиляє атаки і завдає шкоди найближчим ворогам.</TM_BurningFuryHD.description>
+  <TM_BurningFuryHD.stages.0.label>I</TM_BurningFuryHD.stages.0.label>
+
+
+</LanguageData>

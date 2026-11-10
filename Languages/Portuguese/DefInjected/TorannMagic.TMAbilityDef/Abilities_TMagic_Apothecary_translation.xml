@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Herbalist - ability is never used, influences how much hediff is gained while harvesting plants -->
+
+  <TM_Herbalist.label>Erva</TM_Herbalist.label>
+  <TM_Herbalist.description>A formação em ervas permite ao farmacêutico identificar e recolher os ingredientes para suas misturas de forma eficaz.</TM_Herbalist.description>
+
+
+  <!-- Poison Flask -->
+
+  <TM_PoisonFlask.label>Chafariz com veneno</TM_PoisonFlask.label>
+  <TM_PoisonFlask.description>Jogue a mistura venenosa que vai explodir com uma espessa nuvem de gás venenoso. O gás venenoso permanecerá perto por um pouco de tempo antes de se dissipar. Qualquer pessoa que respire vapor terá danos corrosivos na garganta e nos pulmões.</TM_PoisonFlask.description>
+
+  <TM_Elixir.label>Elixir</TM_Elixir.label>
+  <TM_Elixir.description>Os elixires de ervas são criados a partir de uma mistura de ervas fortes, extratos vegetais e outras substâncias orgânicas. A eficácia do elixir de ervas deve-se à resposta imediata dos ingredientes ao combiná-los. A reação química tem um curto período de semiárido, tornando-a pouco prática e pouco econômica para a produção e distribuição em massa. Com o uso imediato, os fortes benefícios do elixir para a saúde são grandes o suficiente para recuperar o peão à beira da morte. O elixir dura quase 24 horas.</TM_Elixir.description>
+
+  <TM_SoothingBalm.label>Balsam tranquilizador</TM_SoothingBalm.label>
+  <TM_SoothingBalm.description>O bálsamo tranquilizador do farmacêutico pode ser aplicado em feridas abertas para combater a infecção, promover a coagulação do sangue e reduzir a dor. Os efeitos secundários podem incluir alucinações, sensação de euforia e perda de consciência.</TM_SoothingBalm.description>
+
+
+  <!-- Fire suppression Flask -->
+
+  <TM_FireSuppressionFlask.label>Colba para Incêndio</TM_FireSuppressionFlask.label>
+  <TM_FireSuppressionFlask.description>Jogue um tanque de líquido anti-incêndio que apague as chamas rapidamente.
+
+Alcance: 20
+Recarga: 30
+Raio: 6</TM_FireSuppressionFlask.description>
+
+  <TM_FireSuppressionFlask_I.label>Colba para Incêndio</TM_FireSuppressionFlask_I.label>
+  <TM_FireSuppressionFlask_I.description>Jogue um tanque de líquido anti-incêndio que apague as chamas rapidamente.
+
+Alcance: 25
+Recarga: 20
+Raio: 8</TM_FireSuppressionFlask_I.description>
+
+  <TM_FireSuppressionFlask_II.label>Colba para Incêndio</TM_FireSuppressionFlask_II.label>
+  <TM_FireSuppressionFlask_II.description>Jogue um tanque de líquido anti-incêndio que apague as chamas rapidamente.
+
+Alcance: 30
+Recarga: 15
+Raio: 10</TM_FireSuppressionFlask_II.description>
+
+  <TM_FireSuppressionFlask_III.label>Colba para Incêndio</TM_FireSuppressionFlask_III.label>
+  <TM_FireSuppressionFlask_III.description>Jogue um tanque de líquido anti-incêndio que apague as chamas rapidamente.
+
+Alcance: 34
+Recarga: 10
+Raio: 11</TM_FireSuppressionFlask_III.description>
+
+
+  <!-- Herbal Clarity -->
+
+  <TM_HerbalClarity.label>Claridade</TM_HerbalClarity.label>
+  <TM_HerbalClarity.description>Controla uma mistura que ajuda o consumidor a descobrir o segredo. A regeneração do maná foi aumentada para 300% e a sensibilidade mental aumentou para 50%. Os efeitos reduzem a resistência mental. A clareza permanece por vários dias, mas com o tempo perde força. O uso desta droga pode ser arriscado, até mesmo fatal para um mago, combinado com um evento de fuga de maná - use com cautela.
+
+* A capacidade pode ser automaticamente jogada quando o maga mais próximo tem um nível de maná inferior a 20.</TM_HerbalClarity.description>
+
+
+  <!-- Bliss -->
+
+  <TM_HerbalBliss.label>Felicidade</TM_HerbalBliss.label>
+  <TM_HerbalBliss.description>Introduz uma das drogas mais perigosas conhecidas na região, talvez inferior apenas ao luciferum. O recurso introduz o usuário em um estado de felicidade capaz de disfarçar quase todas as emoções e dores. Para criar esta droga pode ser usado uma mistura criativa de extrato vegetal local e ingredientes. Fiel ao ditado «ignorância é beato», este medicamento fará com que o usuário perca lentamente suas habilidades adquiridas, e as habilidades adquiridas, sob a influência desta droga, serão severamente suprimidas.
+
+* A capacidade pode ser transmitida automaticamente quando o humor do peão mais próximo é inferior a 5%.</TM_HerbalBliss.description>
+
+
+  <!-- Колба для Пожаротушения -->
+
+</LanguageData>

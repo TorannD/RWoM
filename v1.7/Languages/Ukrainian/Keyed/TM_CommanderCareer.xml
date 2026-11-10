@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadCommanderProvisioner>Посвята: постачальник</TM_ReadCommanderProvisioner>
+  <TM_ReadCommanderSignals>Посвята: чіткі сигнали</TM_ReadCommanderSignals>
+  <TM_CommanderSupplyTrial>Доставки під керівництвом: {0}/12. Дайте «Робочу команду» союзнику, який завершить перенесення до закінчення наказу.</TM_CommanderSupplyTrial>
+  <TM_CommanderEvacTrial>Виведено союзників із небезпеки: {0}/8 або завершено ремонтів під наказом: {1}/16. Робочу команду слід дати під час ремонту споруди, пошкодженої ворогом або пожежею не з вини колонії.</TM_CommanderEvacTrial>
+  <TM_CommanderServiceTrial>Дні служби: {0}/10 або екстрені роботи: {1}/10. Рівень воїна: {2}/30.</TM_CommanderServiceTrial>
+  <TM_CommanderAdvance>Підвищити ступінь командира</TM_CommanderAdvance>
+  <TM_CommanderEveryoneHome>Операція «Усі додому»</TM_CommanderEveryoneHome>
+  <TM_CommanderChoseOperation>Вознесіння: «Усі додому».</TM_CommanderChoseOperation>
+  <TM_CommanderChoseAura>Вознесіння: аура командира.</TM_CommanderChoseAura>
+  <TM_CommanderOperationUnavailable>Потрібна операція Вознесіння, 60% витривалості й завершена перезарядка.</TM_CommanderOperationUnavailable>
+  <TM_CommanderDoctrineSupply>Постачальник отримує звичайну ауру постачання. Робоча команда посилює лише призначену роботу.</TM_CommanderDoctrineSupply>
+  <TM_CommanderDoctrineSignals>Чіткі сигнали підвищують імовірність прийняття наказу на 2/4/6/8/10 відсоткових пунктів, максимум до 95%.</TM_CommanderDoctrineSignals>
+</LanguageData>

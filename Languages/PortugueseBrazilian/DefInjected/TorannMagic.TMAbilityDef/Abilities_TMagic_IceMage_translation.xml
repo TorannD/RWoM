@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Soothe start -->
+
+  <TM_Soothe.label>Brisa calmante</TM_Soothe.label>
+  <TM_Soothe.description>Cria uma aura tranquilizadora em torno de um feitiço que aumenta periodicamente os aliados.
+
+Brisa calmante: Reforço secreto que ajuda o trabalhador, reduzindo a dor e o cansaço e aumentando a concentração de atenção.
+
+Preparação: 80-90s
+Duração: 200-223s
+Consciência: + 10%
+Aumento de humor: + 2
+Cansaço e dor: -10%
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_Soothe.description>
+
+  <TM_Soothe_I.label>Brisa calmante</TM_Soothe_I.label>
+  <TM_Soothe_I.description>Cria uma aura tranquilizadora em torno de um feitiço que aumenta periodicamente os aliados.
+
+Brisa calmante: Reforço secreto que ajuda o trabalhador, reduzindo a dor e o cansaço e aumentando a concentração de atenção.
+
+Preparação: 80-90s
+Duração: 200-223s
+Consciência: + 12%
+Aumento de humor: + 3
+Cansaço e dor: -12%
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_Soothe_I.description>
+
+  <TM_Soothe_II.label>Brisa calmante</TM_Soothe_II.label>
+  <TM_Soothe_II.description>Cria uma aura tranquilizadora em torno de um feitiço que aumenta periodicamente os aliados.
+
+Brisa calmante: Reforço secreto que ajuda o trabalhador, reduzindo a dor e o cansaço e aumentando a concentração de atenção.
+
+Preparação: 80-90s
+Duração: 500-600s
+Consciência: + 14%
+Aumento de humor: + 4
+Cansaço e dor: -14%
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_Soothe_II.description>
+
+  <TM_Soothe_III.label>Brisa calmante</TM_Soothe_III.label>
+  <TM_Soothe_III.description>Cria uma aura tranquilizadora em torno de um feitiço que aumenta periodicamente os aliados.
+
+Brisa calmante: Reforço secreto que ajuda o trabalhador, reduzindo a dor e o cansaço e aumentando a concentração de atenção.
+
+Preparação: 80-90s
+Duração: 500-600s
+Consciência: + 14%
+Aumento de humor: + 4
+Cansaço e dor: -14%
+
+São necessários 40 manás para manter e reduzir a regeneração do maná em 30%; repita o feitiço para a desativação. O feitiço ganha experiência sempre que um aliado ganha um buff.</TM_Soothe_III.description>
+
+
+  <!-- FrostRay -->
+
+  <TM_FrostRay.label>Raio de frio</TM_FrostRay.label>
+  <TM_FrostRay.description>Um raio de partículas hipotermias que se espalha rapidamente, que danifica e congela alvos.
+
+Preparação: 12s
+Alcance: 28
+Batidas: 1</TM_FrostRay.description>
+
+  <TM_FrostRay_I.label>Raio de frio</TM_FrostRay_I.label>
+  <TM_FrostRay_I.description>Um raio de partículas hipotermias que se espalha rapidamente, que danifica e congela alvos.
+
+Preparação: 10s
+Alcance: 30
+Batidas: 1</TM_FrostRay_I.description>
+
+  <TM_FrostRay_II.label>Raio de frio</TM_FrostRay_II.label>
+  <TM_FrostRay_II.description>Um raio de partículas hipotermias que se espalha rapidamente, que danifica e congela alvos.
+
+Preparação: 8s
+Alcance: 32
+Batidas: 2</TM_FrostRay_II.description>
+
+  <TM_FrostRay_III.label>Raio de frio</TM_FrostRay_III.label>
+  <TM_FrostRay_III.description>Um raio de partículas hipotermias que se espalha rapidamente, que danifica e congela alvos.
+
+Preparação: 8s
+Alcance: 34
+Batidas: 3</TM_FrostRay_III.description>
+
+
+  <!-- Snowball -->
+
+  <TM_Snowball.label>Bola de neve</TM_Snowball.label>
+  <TM_Snowball.description>Execute uma bola maciça de gelo e neve que danifica e congela uma grande área.</TM_Snowball.description>
+
+
+  <!-- Icebolt -->
+
+  <TM_Icebolt.label>parafuso de gelo</TM_Icebolt.label>
+  <TM_Icebolt.description>Ativa uma carga de gelo especialmente concebida para se espalhar em fragmentos semelhantes ao vidro, causando danos e hemorragia severa.</TM_Icebolt.description>
+
+
+  <!-- Rainmaker Start -->
+
+  <TM_Rainmaker.label>Criador da chuva</TM_Rainmaker.label>
+  <TM_Rainmaker.description>Altera as condições da atmosfera, provocando chuva. Se já chover, esta capacidade vai parar a chuva.</TM_Rainmaker.description>
+
+
+  <!-- Blizzard -->
+
+  <TM_Blizzard.label>Tempestade de neve</TM_Blizzard.label>
+  <TM_Blizzard.description>Provoca uma tempestade de neve mortal para enterrar os seus inimigos no gelo.</TM_Blizzard.description>
+
+
+</LanguageData>

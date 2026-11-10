@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Heal start -->
+
+  <TM_Paladin_Heal.label>Tratar</TM_Paladin_Heal.label>
+
+
+  <!-- Shield start -->
+
+  <TM_Paladin_Shield.label>Escudo</TM_Paladin_Shield.label>
+
+
+  <!-- Valiant Charge -->
+
+  <FlyingObject_ValiantCharge.label>objeto voador</FlyingObject_ValiantCharge.label>
+  <Projectile_ValiantCharge.label>Vórtice</Projectile_ValiantCharge.label>
+
+
+  <!-- Overwhelm start -->
+
+  <TM_Paladin_Overwhelm.label>Esmagar</TM_Paladin_Overwhelm.label>
+
+
+  <!-- Holy Wrath -->
+
+  <Projectile_HolyWrath.label>raiva santa</Projectile_HolyWrath.label>
+
+
+</LanguageData>

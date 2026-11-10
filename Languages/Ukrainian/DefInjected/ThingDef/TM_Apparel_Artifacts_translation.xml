@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Artifact_Silver.label>Ртутна підвіска</TM_Artifact_Silver.label>
+  <TM_Artifact_Silver.description>Кулон, зачарований срібною есенцією. Відомий як ртутний кулон, цей дорогий артефакт, як кажуть, дає підвищену спритність своєму власнику.</TM_Artifact_Silver.description>
+
+  <TM_Artifact_Slate.label>Кулон лагодження</TM_Artifact_Slate.label>
+  <TM_Artifact_Slate.description>Кулон, зачарований сутністю сланцю. Шиферна підвіска для лагодження буде повільно відновлювати довговічність всього зношеного обладнання.</TM_Artifact_Slate.description>
+
+  <TM_Artifact_Medicine.label>Оберіг здоров&apos;я</TM_Artifact_Medicine.label>
+  <TM_Artifact_Medicine.description>Цей амулет поліпшує здоров&apos;я носія, даруючи підвищений імунітет до хвороб і допомагає ранам швидше заживати.</TM_Artifact_Medicine.description>
+
+  <TM_Artifact_Limestone.label>Кулон «Котяче око»</TM_Artifact_Limestone.label>
+  <TM_Artifact_Limestone.description>Кулон, зачарований есенцією вапняку. Носій отримує покращений зір і може бачити в темряві. Цей кулон випромінює м&apos;яке світіння.</TM_Artifact_Limestone.description>
+
+  <TM_Artifact_Granite.label>Кільце праці</TM_Artifact_Granite.label>
+  <TM_Artifact_Granite.description>Перстень, зачарований сутністю граніту. Це кільце дає носію збільшену здатність до роботи і маніпулацій.</TM_Artifact_Granite.description>
+
+  <TM_Artifact_Marble.label>Кулон ментального захисту</TM_Artifact_Marble.label>
+  <TM_Artifact_Marble.description>Кулон, зачарований сутністю мармуру. Цей кулон покращує психічний стан своїх носіїв і забезпечує ментальний якір. Кулон іноді дозволяє своєму носієві вирватися з ментальних станів.</TM_Artifact_Marble.description>
+
+  <TM_Artifact_Sandstone.label>Оберіг відпочинку</TM_Artifact_Sandstone.label>
+  <TM_Artifact_Sandstone.description>Кулон, зачарований сутністю піщаника. Цей кулон покращує якість відпочинку його володарів і не дозволяє перехожим порушувати їх сон.</TM_Artifact_Sandstone.description>
+
+  <TM_Artifact_Steel.label>Амулет захисту</TM_Artifact_Steel.label>
+  <TM_Artifact_Steel.description>Кулон, зачарований сутністю стали. Цей кулон чарівним чином покращує захист своїх власників.</TM_Artifact_Steel.description>
+
+  <TM_Artifact_Iron.label>Амулет незначного захисту</TM_Artifact_Iron.label>
+  <TM_Artifact_Iron.description>Кулон, зачарований сутністю заліза. Цей кулон чарівним чином покращує захист своїх власників.</TM_Artifact_Iron.description>
+
+  <TM_Artifact_Jade.label>Кільце таємного відновлення</TM_Artifact_Jade.label>
+  <TM_Artifact_Jade.description>Перстень, зачарований есенцією нефриту. Це кільце збільшує швидкість відновлення його власника від таємної слабкості.</TM_Artifact_Jade.description>
+
+  <TM_Artifact_Gold.label>Перстень Владі</TM_Artifact_Gold.label>
+  <TM_Artifact_Gold.description>Перстень, зачарований сутністю золота. Це кільце підвищує навички ведення переговорів у тих, хто його носить.</TM_Artifact_Gold.description>
+
+  <TM_Artifact_Magicyte.label>Перстень знань</TM_Artifact_Magicyte.label>
+  <TM_Artifact_Magicyte.description>Перстень, зачарований сутністю магіциту. Це кільце покращує швидкість навчання.</TM_Artifact_Magicyte.description>
+
+  <TM_Artifact_Wood.label>Перстень слідопиту</TM_Artifact_Wood.label>
+  <TM_Artifact_Wood.description>Перстень, зачарований деревною есенцією. Володар цього кільця не буде уповільнений рельєфом місцевості і поліпшив добування їжі, перебуваючи в каравані.</TM_Artifact_Wood.description>
+
+
+  <!-- Craftable Artifacts -->
+
+  <TM_Artifact_BracersOfThePacifist.label>Наручи пацифістську</TM_Artifact_BracersOfThePacifist.label>
+  <TM_Artifact_BracersOfThePacifist.description>Ці наручі здаються не більш ніж тонкою тканиною, обернутою в шкіру, але їх нічим не примітний зовнішній вигляд спростовується чудовою силою. Цей предмет може носити тільки пацифіст.
+
+Магії:
+Максимальна енергія + 40%
+Енергія Регенерації + 40%
+Таємний опір + 50%
+Таємне відновлення - зменшує час відновлення від таємної слабкості</TM_Artifact_BracersOfThePacifist.description>
+
+  <TM_Artifact_BracersOfDefense.label>Наручи захисту</TM_Artifact_BracersOfDefense.label>
+  <TM_Artifact_BracersOfDefense.description>Наруки виготовлені із загартованого матеріалу, який дозволяє власнику блокувати фізичні атаки. Ймовірність блокування - 40%.
+
+Магії:
+Таємний опір 10%</TM_Artifact_BracersOfDefense.description>
+
+  <TM_Artifact_BracersOfDeflection.label>Наручи відхилення</TM_Artifact_BracersOfDeflection.label>
+  <TM_Artifact_BracersOfDeflection.description>Наруки виготовлені з реактивного матеріалу, який дозволяє власнику блокувати атаки і відхиляти снаряди. Шанс блокування 30%, всі заблоковані атаки відбиваються в межах 8 комірок.
+
+Магії:
+Таємний опір 10%</TM_Artifact_BracersOfDeflection.description>
+
+  <TM_Artifact_RingOfKeenIntellect.label>Кільце гострого розуму</TM_Artifact_RingOfKeenIntellect.label>
+  <TM_Artifact_RingOfKeenIntellect.description>Кільце, яке розширює розум і підвищує гостроту розуму, але збільшує розумову напругу.
+
+Магії:
+Приріст XP + 25%</TM_Artifact_RingOfKeenIntellect.description>
+
+  <TM_Artifact_RingOfBlood.label>Кільце крові</TM_Artifact_RingOfBlood.label>
+  <TM_Artifact_RingOfBlood.description>Перстень з темним каменем; потоки темно-червоного і чорного кольору кружляють під його поверхнею. Цей тип кільця був вперше створений стародавнім вампіром для збільшення запасів крові і може бути використаний магом крові для зберігання магії крові.
+
+Сила кільця крові залежить від слави його носія і буде рости з кожним убитим або переможеним людиною.</TM_Artifact_RingOfBlood.description>
+
+  <TM_Artifact_RingOfEternalBlue.label>Перстень Вічного Сяйва</TM_Artifact_RingOfEternalBlue.label>
+  <TM_Artifact_RingOfEternalBlue.description>Перстень, який, здається, пульсує м&apos;яким блакитним світлом. Це кільце підвищує психічну чутливість і відповідає взаємністю на психічну чутливість свого носія.
+
+Кільце вічного сяйва збільшить енергію псіоніків пропорційно до їхньої психічної чутливості.</TM_Artifact_RingOfEternalBlue.description>
+
+  <TM_Artifact_RingOfMalice.label>Перстень злоби</TM_Artifact_RingOfMalice.label>
+  <TM_Artifact_RingOfMalice.description>Це кільце випромінює темну ауру і постійно холодно на дотик. Кільце злоби збільшує холостий і максимальний рівні ненависті лицаря смерті.
+
+Сила кільця злоби залежить від слави його носія і буде рости з кожною отриманою або нанесеною раною.</TM_Artifact_RingOfMalice.description>
+
+  <TM_Artifact_OrbOfConviction.label>Кулька Переконання</TM_Artifact_OrbOfConviction.label>
+  <TM_Artifact_OrbOfConviction.description>Також відомий як зрадницьке безділля, куля божевілля і викрадач розуму-куля переконання є потужним і небезпечним артефактом. Коли він наповнений переконаністю і магією заклинача, він може бути використаний, щоб натиснути на цю переконаність іншого.
+
+У разі успіху мета негайно приєднається до фракції заклинателів, але буде схильна до психічного шоку.
+
+Тільки наймогутніші маги можуть керувати силою цього артефакту, але навіть тоді він буде коштувати дуже дорого. Куля вибухне, як тільки закляття буде кинуто, і може бути використано тільки один раз.</TM_Artifact_OrbOfConviction.description>
+
+  <TM_Artifact_OrbOfSouls.label>Куля душі (порожня)</TM_Artifact_OrbOfSouls.label>
+  <TM_Artifact_OrbOfSouls.description>Куля душі - це могутній і небезпечний артефакт. Він не вимагає ніякої зовнішньої сили і може витягти душу пішаки, що володіє рисами характеру.
+
+У разі успіху сфера душ поглине всі риси об&apos;єкта; об&apos;єкт втратить поглинені риси. Цей процес майже завжди призводить до летального результату.
+
+Після заповнення сфера душ може бути використана для передачі поглинених рис в іншу людиноподібну пішака.</TM_Artifact_OrbOfSouls.description>
+
+  <TM_Artifact_OrbOfSouls_Full.label>Куля душі (заповнена)</TM_Artifact_OrbOfSouls_Full.label>
+  <TM_Artifact_OrbOfSouls_Full.description>Куля душі - це могутній і небезпечний артефакт. Ця куля ввібрала в себе риси і може бути використана, щоб влити ці риси в людиноподібну пішака.
+
+Конфліктуючі риси ніколи не можуть перейти в цільову пішаку. Якщо пішак володіє більш ніж 7 ознаками, тобто 75% ймовірність того, що випадкова, існуюча ознака буде замінена на ознаку, яка вводиться.
+
+Куля вибухне і буде знищена, як тільки риси будуть звільнені.</TM_Artifact_OrbOfSouls_Full.description>
+
+  <TM_Artifact_OrbOfEternal.label>Сфера Вічного</TM_Artifact_OrbOfEternal.label>
+  <TM_Artifact_OrbOfEternal.description>Одноразове використання вливання магічної енергії, приготованої для зцілення ран, відновлення кінцівок і лікування хвороб. Цілюща енергія буде націлена і зцілить єдиний найгірший стан здоров&apos;я, що впливає на когось у будь-який момент часу.
+
+Сфери Вічного використовувалися магами, правителями та елітою для продовження життя. Ці кулі цінні і рідкісні в основному через секретність, що оточує процес створення кулі.</TM_Artifact_OrbOfEternal.description>
+  <TM_Artifact_OrbOfEternal.comps.1.useLabel>Використовуйте кулю вічного</TM_Artifact_OrbOfEternal.comps.1.useLabel>
+
+  <TM_Artifact_NecroticOrb.label>Некротична куля</TM_Artifact_NecroticOrb.label>
+  <TM_Artifact_NecroticOrb.description>Артефакт, здатний містити некротичну енергію, необхідну для підтримки життя нежиті. Некротична куля функціонує майже як батарея; коли він оснащений пішаком, він поглинає енергію від некроманту, як якби сам був нежиттю. Коли некромант не отримує ніякої енергії, він розсіює її, щоб підтримувати ніжити.
+
+Лише одна куля може бути оснащена пішаком. Кулі набувають чинності тільки тоді, коли вони оснащені.</TM_Artifact_NecroticOrb.description>
+
+
+</LanguageData>

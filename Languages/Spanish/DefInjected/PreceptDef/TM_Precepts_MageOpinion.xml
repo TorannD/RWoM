@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_BestowClassRitual.label>senda arcana</TM_BestowClassRitual.label>
+  
+  <TM_BestowClassRitual.description>Un buscavacío guiará durante un ritual a un personaje que posea el don de la magia para que se convierta en mago. El público verá cómo el mago intenta hacer realidad su inspiración con la guía del buscavacío. Al terminar, el objetivo adquirirá su clase mágica inspirada.</TM_BestowClassRitual.description>
+  
+  
+  <TM_BestowMagicRitual.label>conceder magia</TM_BestowMagicRitual.label>
+  
+  <TM_BestowMagicRitual.description>Un buscavacío intentará tender un puente entre el objetivo y la magia. El público verá cómo el buscavacío dice unas palabras de sabiduría, intenta conceder la chispa de la magia y luego dice unas palabras de cierre. Este ritual puede fallar y solo puede realizarse en una fecha concreta.</TM_BestowMagicRitual.description>
+  
+  
+  <TM_Mages_Abhorrent.label>aborrecer la magia</TM_Mages_Abhorrent.label>
+  
+  <TM_Mages_Abhorrent.description>La magia es una abominación que debe ser repudiada y purgada de la existencia. La manipulación de la energía por parte de los magos va contra el orden natural. Matar a un mago enemigo está justificado sean cuales sean las circunstancias. Permitir que un mago libre resida en la colonia es una burla a nuestras creencias. Los magos deben ser ejecutados con rapidez o esclavizados hasta poder deshacerse de ellos. El uso de la magia está absolutamente prohibido y los magos son odiados.</TM_Mages_Abhorrent.description>
+  
+  <TM_Mages_Abhorrent.comps.1.description>maté a un mago</TM_Mages_Abhorrent.comps.1.description>
+  
+  <TM_Mages_Abhorrent.comps.2.description>matamos a un mago</TM_Mages_Abhorrent.comps.2.description>
+  
+  <TM_Mages_Abhorrent.comps.4.description>usó magia</TM_Mages_Abhorrent.comps.4.description>
+  
+  <TM_Mages_Abhorrent.comps.5.description>mago en la colonia</TM_Mages_Abhorrent.comps.5.description>
+  
+  <TM_Mages_Abhorrent.comps.6.description>mago en la colonia</TM_Mages_Abhorrent.comps.6.description>
+  
+  
+  <TM_Mages_Approve.label>aprobar la magia</TM_Mages_Approve.label>
+  
+  <TM_Mages_Approve.description>La magia es un recurso poderoso y útil; sería una locura descartar su potencial. Los magos nos permiten aprovechar este recurso y pueden mejorar nuestra calidad de vida. Por su valor para la colonia, los magos deben ser tratados con un respeto similar al de un noble. Se entiende y se tolera que quienes tienen poder tengan en menor estima a quienes no lo tienen. Debemos concentrar nuestros esfuerzos y ampliar nuestro conocimiento de este misterioso poder.</TM_Mages_Approve.description>
+  
+  <TM_Mages_Approve.comps.1.description>uso de magia</TM_Mages_Approve.comps.1.description>
+  
+  <TM_Mages_Approve.comps.2.description>uso de magia</TM_Mages_Approve.comps.2.description>
+  
+  <TM_Mages_Approve.comps.3.description>magos en la colonia</TM_Mages_Approve.comps.3.description>
+  
+  <TM_Mages_Approve.comps.5.description>realizó la separación de la magia</TM_Mages_Approve.comps.5.description>
+  
+  
+  <TM_Mages_Disapprove.label>desaprobar la magia</TM_Mages_Disapprove.label>
+  
+  <TM_Mages_Disapprove.description>Debe evitarse depender de una fuente de poder desconocida e impredecible. La ciencia y la tecnología son el futuro, y todos pueden disfrutar de sus beneficios y contribuir a ellos. La colonia debe limitar el número de magos libres al 10 % o menos, y solo a los residentes más vigilantes, y el número de hechizos debe limitarse a 5 al día. Los magos deben ser esclavizados para que conozcan su lugar, y siempre serán vistos con un leve desdén. Respetar estas reglas permitirá que nuestra colonia prospere y haga más felices a todos.</TM_Mages_Disapprove.description>
+  
+  <TM_Mages_Disapprove.comps.0.description>uso regulado de la magia</TM_Mages_Disapprove.comps.0.description>
+  
+  <TM_Mages_Disapprove.comps.1.description>existencia regulada de magos</TM_Mages_Disapprove.comps.1.description>
+  
+  
+  <TM_Mages_Venerated.label>venerar la magia</TM_Mages_Venerated.label>
+  
+  <TM_Mages_Venerated.description>La magia es maravillosa, mística, poderosa e infinita. Es capaz de realizar tareas mundanas o aniquilar a nuestros enemigos en un parpadeo. Es fuente tanto de creación como de destrucción y digna de reverencia. Quienes pueden aprovechar este poder son bendecidos, tocados por la divinidad, y deben ser exaltados por encima de todos los demás. Matar a un mago enemigo es abominable y solo debe hacerse como último recurso. Los magos son tenidos en alta estima, y quienes carecen de magia son seres inferiores. ¡La magia revela el camino hacia nuestra salvación! Su uso respalda nuestra causa, y debemos comprometernos a extender la bendición de la magia a todos.</TM_Mages_Venerated.description>
+  
+  <TM_Mages_Venerated.comps.2.description>maté a un mago</TM_Mages_Venerated.comps.2.description>
+  
+  <TM_Mages_Venerated.comps.3.description>matamos a un mago</TM_Mages_Venerated.comps.3.description>
+  
+  <TM_Mages_Venerated.comps.5.description>usó magia</TM_Mages_Venerated.comps.5.description>
+  
+  <TM_Mages_Venerated.comps.6.description>presenció magia</TM_Mages_Venerated.comps.6.description>
+  
+  <TM_Mages_Venerated.comps.7.description>mago en la colonia</TM_Mages_Venerated.comps.7.description>
+  
+  <TM_Mages_Venerated.comps.8.description>mago prisionero</TM_Mages_Venerated.comps.8.description>
+  
+  <TM_Mages_Venerated.comps.9.description>mago esclavo</TM_Mages_Venerated.comps.9.description>
+  
+  <TM_Mages_Venerated.comps.11.description>realizó la separación de la magia</TM_Mages_Venerated.comps.11.description>
+  
+  
+  <TM_SeverenceRitual.label>separar la magia</TM_SeverenceRitual.label>
+  
+  <TM_SeverenceRitual.description>Un buscavacío separará la magia de un objetivo. El público verá cómo el buscavacío pronuncia un discurso de unificación, separa la magia de un mago y dice unas palabras de cierre. El objetivo puede intentar un último hechizo de represalia si el ritual se ejecuta mal. Si tiene éxito, el objetivo quedará libre de magia.</TM_SeverenceRitual.description>
+  
+</LanguageData>

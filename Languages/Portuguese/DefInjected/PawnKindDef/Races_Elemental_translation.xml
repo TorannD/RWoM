@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Earth Elemental -->
+
+  <TM_LesserEarth_Elemental.label>Pequeno básico da terra</TM_LesserEarth_Elemental.label>
+  <TM_LesserEarth_Elemental.labelPlural>Pequenas raízes da terra</TM_LesserEarth_Elemental.labelPlural>
+  <TM_LesserEarth_Elemental.lifeStages.0.label>Pequeno básico da terra</TM_LesserEarth_Elemental.lifeStages.0.label>
+  <TM_LesserEarth_Elemental.lifeStages.0.labelPlural>primário da terra</TM_LesserEarth_Elemental.lifeStages.0.labelPlural>
+
+  <TM_Earth_Elemental.label>primário da terra</TM_Earth_Elemental.label>
+  <TM_Earth_Elemental.labelPlural>primário da terra</TM_Earth_Elemental.labelPlural>
+  <TM_Earth_Elemental.lifeStages.0.label>primário da terra</TM_Earth_Elemental.lifeStages.0.label>
+  <TM_Earth_Elemental.lifeStages.0.labelPlural>primário da terra</TM_Earth_Elemental.lifeStages.0.labelPlural>
+
+  <TM_GreaterEarth_Elemental.label>o grande básico da terra</TM_GreaterEarth_Elemental.label>
+  <TM_GreaterEarth_Elemental.labelPlural>Grandes fundamentais da terra</TM_GreaterEarth_Elemental.labelPlural>
+  <TM_GreaterEarth_Elemental.lifeStages.0.label>o grande básico da terra</TM_GreaterEarth_Elemental.lifeStages.0.label>
+  <TM_GreaterEarth_Elemental.lifeStages.0.labelPlural>Grandes fundamentais da terra</TM_GreaterEarth_Elemental.lifeStages.0.labelPlural>
+
+
+  <!-- Fire Elemental -->
+
+  <TM_LesserFire_Elemental.label>Pequeno básico de fogo</TM_LesserFire_Elemental.label>
+  <TM_LesserFire_Elemental.labelPlural>Pequenas origens de fogo</TM_LesserFire_Elemental.labelPlural>
+  <TM_LesserFire_Elemental.lifeStages.0.label>Pequeno básico de fogo</TM_LesserFire_Elemental.lifeStages.0.label>
+  <TM_LesserFire_Elemental.lifeStages.0.labelPlural>Pequenas origens de fogo</TM_LesserFire_Elemental.lifeStages.0.labelPlural>
+
+  <TM_Fire_Elemental.label>primário de fogo</TM_Fire_Elemental.label>
+  <TM_Fire_Elemental.labelPlural>primário do fogo</TM_Fire_Elemental.labelPlural>
+  <TM_Fire_Elemental.lifeStages.0.label>primário de fogo</TM_Fire_Elemental.lifeStages.0.label>
+  <TM_Fire_Elemental.lifeStages.0.labelPlural>primário do fogo</TM_Fire_Elemental.lifeStages.0.labelPlural>
+
+  <TM_GreaterFire_Elemental.label>um grande básico de fogo</TM_GreaterFire_Elemental.label>
+  <TM_GreaterFire_Elemental.labelPlural>Grandes fundamentais do fogo</TM_GreaterFire_Elemental.labelPlural>
+  <TM_GreaterFire_Elemental.lifeStages.0.label>um grande básico de fogo</TM_GreaterFire_Elemental.lifeStages.0.label>
+  <TM_GreaterFire_Elemental.lifeStages.0.labelPlural>Grandes fundamentais do fogo</TM_GreaterFire_Elemental.lifeStages.0.labelPlural>
+
+
+  <!-- Water Elemental -->
+
+  <TM_LesserWater_Elemental.label>Pequeno básico de água</TM_LesserWater_Elemental.label>
+  <TM_LesserWater_Elemental.labelPlural>Pequenas estruturas de água</TM_LesserWater_Elemental.labelPlural>
+  <TM_LesserWater_Elemental.lifeStages.0.label>Pequeno básico de água</TM_LesserWater_Elemental.lifeStages.0.label>
+  <TM_LesserWater_Elemental.lifeStages.0.labelPlural>Pequenas estruturas de água</TM_LesserWater_Elemental.lifeStages.0.labelPlural>
+
+  <TM_Water_Elemental.label>básico da água</TM_Water_Elemental.label>
+  <TM_Water_Elemental.labelPlural>primário da água</TM_Water_Elemental.labelPlural>
+  <TM_Water_Elemental.lifeStages.0.label>básico da água</TM_Water_Elemental.lifeStages.0.label>
+  <TM_Water_Elemental.lifeStages.0.labelPlural>primário da água</TM_Water_Elemental.lifeStages.0.labelPlural>
+
+  <TM_GreaterWater_Elemental.label>grande básico de água</TM_GreaterWater_Elemental.label>
+  <TM_GreaterWater_Elemental.labelPlural>Grandes alicerces de água</TM_GreaterWater_Elemental.labelPlural>
+  <TM_GreaterWater_Elemental.lifeStages.0.label>grande básico de água</TM_GreaterWater_Elemental.lifeStages.0.label>
+  <TM_GreaterWater_Elemental.lifeStages.0.labelPlural>Grandes alicerces de água</TM_GreaterWater_Elemental.lifeStages.0.labelPlural>
+
+
+  <!-- Wind Elemental -->
+
+  <TM_LesserWind_Elemental.label>Pequeno básico do vento</TM_LesserWind_Elemental.label>
+  <TM_LesserWind_Elemental.labelPlural>Pequenas estruturas de água</TM_LesserWind_Elemental.labelPlural>
+  <TM_LesserWind_Elemental.lifeStages.0.label>Pequeno básico do vento</TM_LesserWind_Elemental.lifeStages.0.label>
+  <TM_LesserWind_Elemental.lifeStages.0.labelPlural>visp</TM_LesserWind_Elemental.lifeStages.0.labelPlural>
+
+  <TM_Wind_Elemental.label>O básico do vento</TM_Wind_Elemental.label>
+  <TM_Wind_Elemental.labelPlural>primário da água</TM_Wind_Elemental.labelPlural>
+  <TM_Wind_Elemental.lifeStages.0.label>O básico do vento</TM_Wind_Elemental.lifeStages.0.label>
+  <TM_Wind_Elemental.lifeStages.0.labelPlural>primário da água</TM_Wind_Elemental.lifeStages.0.labelPlural>
+
+  <TM_GreaterWind_Elemental.label>grande básico de água</TM_GreaterWind_Elemental.label>
+  <TM_GreaterWind_Elemental.labelPlural>Grandes alicerces de água</TM_GreaterWind_Elemental.labelPlural>
+  <TM_GreaterWind_Elemental.lifeStages.0.label>grande básico de água</TM_GreaterWind_Elemental.lifeStages.0.label>
+  <TM_GreaterWind_Elemental.lifeStages.0.labelPlural>fundamentais do vento</TM_GreaterWind_Elemental.lifeStages.0.labelPlural>
+
+
+</LanguageData>

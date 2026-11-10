@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+	<defName>CastAbilityVerb</defName>
+	<driverClass>AbilityUser.JobDriver_CastAbilityVerb</driverClass>
+	<reportString>Using an ability</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+	<defName>CastAbilitySelf</defName>
+	<driverClass>AbilityUser.JobDriver_CastAbilitySelf</driverClass>
+	<reportString>Using an ability</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+</Defs>

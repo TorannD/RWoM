@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Seers.label>comunidad arcana</Seers.label>
+  
+  <Seers.description>Se sabe poco de esta facción reservada. Poseen cierta tecnología, pero no parecen depender de ella. Trabajan con herramientas sencillas y se defienden con armas de fuego.\n\nParticipan en los asuntos prácticos del comercio, la confianza y la supervivencia, pero su interés principal no está claro.\n\nSegún los relatos de viajeros y la información reunida de otras facciones, conocen y utilizan poderes y artefactos misteriosos.</Seers.description>
+  
+  <Seers.leaderTitle>Rey Mago</Seers.leaderTitle>
+  
+  <Seers.pawnSingular>vidente</Seers.pawnSingular>
+  
+  <Seers.pawnsPlural>videntes</Seers.pawnsPlural>
+  
+</LanguageData>

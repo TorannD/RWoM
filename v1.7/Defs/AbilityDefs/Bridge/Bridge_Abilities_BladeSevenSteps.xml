@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_BladeSevenSteps</defName>
+    <label>form of seven steps</label>
+    <description>Choose a clear route up to 12 cells long. After five seconds of preparation the dancer walks the marked cells, striking adjacent enemies for 55% weapon damage. Up to seven strikes, three enemies, and three strikes per enemy. The form lasts up to 14 seconds. Incoming combat damage increases by 15% while traversing the route. Movement slows by 20% for six seconds afterward. Base cost: 60% stamina. Cooldown: two days.</description>
+    <spellId>rwom.tm_bladesevensteps</spellId>
+    <iconPath>UI/phased</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_BladeSevenSteps</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_BladeSevenSteps</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_PhaseStrike</defaultProjectile>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>2000</SecondsToRecharge>
+      <range>12</range>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

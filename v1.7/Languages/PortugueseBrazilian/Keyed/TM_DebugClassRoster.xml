@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_RosterPreferred>Todas as classes (preferir novas iniciações)</TM_RosterPreferred>
+  <TM_RosterFoundations>Apenas novas iniciações</TM_RosterFoundations>
+  <TM_RosterClassicNative>Classes nativas (manter progressão clássica)</TM_RosterClassicNative>
+  <TM_RosterMigration>Classes nativas (permitir conversão ao carregar)</TM_RosterMigration>
+  <TM_RosterAddons>Classes clássicas de expansões, incluindo Kure</TM_RosterAddons>
+  <TM_RosterReport>Foram criados {0} de {1} colonos. Consulte o registro para cada classe.</TM_RosterReport>
+</LanguageData>

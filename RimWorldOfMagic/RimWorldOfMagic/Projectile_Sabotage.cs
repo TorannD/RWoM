@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using Verse.AI;
 using Verse.Sound;
 using AbilityUser;
@@ -28,20 +28,13 @@ namespace TorannMagic
         }
     }
 
-    class Projectile_Sabotage : Projectile_AbilityBase
+    class Projectile_Sabotage : ClassProgression.Projectile_SpiritBolt
     {
         int age = -1;
         int duration = 1800;
-        int verVal = 0;
-        int pwrVal = 0;
-        float arcaneDmg = 1;
-        int strikeDelay = 120;
-        int lastStrike = 0;
-        int targetThingCount = 0;
-        bool initialized = false;
-
-        List<IntVec3> targetCells;
-        List<SabotageThing> targetThings;
+        bool initialized;
+        protected override string SkillStem => "TM_Sabotage";
+        protected override List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_Sabotage;
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
@@ -54,6 +47,12 @@ namespace TorannMagic
 
         protected override void Tick()
         {
+            // Native impact is complete. A loaded projectile may no longer enter Impact again.
+            if (initialized)
+            {
+                base.Destroy();
+                return;
+            }
             base.Tick();
             this.age++;
         }
@@ -62,141 +61,77 @@ namespace TorannMagic
         {
             Map map = base.Map;
             base.Impact(hitThing);
-            ThingDef def = this.def;
-
-            Pawn caster = this.launcher as Pawn;
-            if (!this.initialized)
+            if (Destroyed || map == null) return;
+            if (initialized) { age = duration; return; }
+            initialized = true;
+            var caster = SourcePawn;
+            if (caster == null) { age = duration; return; }
+            if (!projected)
             {
-                
-                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
+                var magic = caster.GetCompAbilityUserMagic();
+                if (magic == null) { age = duration; return; }
+                var skills = Skills(magic.MagicData);
+                pwrVal = SpellRank(caster, skills, SkillStem, "_pwr");
+                verVal = SpellRank(caster, skills, SkillStem, "_ver");
+                arcaneDmg = magic.arcaneDmg;
+                if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist) pwrVal = verVal = 3;
+            }
+            SoundInfo info = SoundInfo.InMap(new TargetInfo(base.Position, this.Map, false), MaintenanceType.None);
+            info.pitchFactor = .5f;
+            info.volumeFactor = .8f;
+            SoundDefOf.PsychicPulseGlobal.PlayOneShot(info);
+            Effecter SabotageEffect = TorannMagicDefOf.TM_SabotageExplosion.Spawn();
+            SabotageEffect.Trigger(new TargetInfo(base.Position, this.Map, false), new TargetInfo(base.Position, this.Map, false));
+            SabotageEffect.Cleanup();
+            var targetCells = GenRadial.RadialCellsAround(Position, def.projectile.explosionRadius, true)
+                .Where(cell => cell.InBounds(map)).ToList();
 
-                pwrVal = comp.MagicData.MagicPowerSkill_Sabotage.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Sabotage_pwr").level;
-                verVal = comp.MagicData.MagicPowerSkill_Sabotage.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Sabotage_ver").level;
-                if (caster.story.traits.HasTrait(TorannMagicDefOf.Faceless))
+            var hitBuildings = new HashSet<Building>();
+            foreach (var cell in targetCells)
+            {
+                if (!Rand.Chance((.5f + .1f * verVal) * arcaneDmg)) continue;
+                float roll = Rand.Value;
+                var pawn = cell.GetFirstPawn(map);
+                if (pawn != null && TM_Calc.IsRobotPawn(pawn))
                 {
-                    MightPowerSkill mpwr = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-                    MightPowerSkill mver = caster.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-                    pwrVal = mpwr.level;
-                    verVal = mver.level;
+                    TM_Action.DoAction_SabotagePawn(pawn, caster, roll, pwrVal, arcaneDmg, SpellInstigator);
+                    age = duration;
+                    continue;
                 }
-                this.arcaneDmg = comp.arcaneDmg;
-                if (ModOptions.Settings.Instance.AIHardMode && !caster.IsColonist)
+                var building = cell.GetFirstBuilding(map);
+                if (building != null && hitBuildings.Add(building)) SabotageBuilding(building, map, roll);
+            }
+        }
+
+        private void SabotageBuilding(Building building, Map map, float roll)
+        {
+            var instigator = projected ? SpellInstigator : null;
+            var power = building.GetComp<CompPowerTrader>();
+            if (building.GetComp<CompPower>() is CompPower comp && comp.Props.PowerConsumption != 0 && power != null && power.powerOutputInt != 0)
+            {
+                GenExplosion.DoExplosion(building.Position, map, 2 + pwrVal + Mathf.RoundToInt(power.powerOutputInt / 400), DamageDefOf.Stun, instigator);
+                GenExplosion.DoExplosion(building.Position, map, 1 + pwrVal + Mathf.RoundToInt(power.powerOutputInt / 600), TMDamageDefOf.DamageDefOf.TM_ElectricalBurn, instigator);
+            }
+            if (building is Building_Battery battery && battery.def.thingClass == typeof(Building_Battery))
+            {
+                var storage = battery.GetComp<CompPowerBattery>();
+                if (roll <= .5f)
                 {
-                    pwrVal = 3;
-                    verVal = 3;
+                    Traverse.Create(battery).Field("ticksToExplode").SetValue(Rand.Range(40, 130) - 5 * pwrVal);
+                    storage.SetStoredEnergyPct(.81f);
                 }
-                SoundInfo info = SoundInfo.InMap(new TargetInfo(base.Position, this.Map, false), MaintenanceType.None);
-                info.pitchFactor = .5f;
-                info.volumeFactor = .8f;
-                SoundDefOf.PsychicPulseGlobal.PlayOneShot(info);
-                Effecter SabotageEffect = TorannMagicDefOf.TM_SabotageExplosion.Spawn();
-                SabotageEffect.Trigger(new TargetInfo(base.Position, this.Map, false), new TargetInfo(base.Position, this.Map, false));
-                SabotageEffect.Cleanup();
-                targetCells = new List<IntVec3>();
-                targetCells.Clear();
-                targetCells = GenRadial.RadialCellsAround(base.Position, this.def.projectile.explosionRadius, true).ToList();
-                this.targetThings = new List<SabotageThing>();
-                this.targetThings.Clear();
-                this.initialized = true;
-
-                Pawn targetPawn = null;
-                Building targetBuilding = null;
-
-                for (int i = 0; i < this.targetCells.Count; i++)
+                else
                 {
-                    if (Rand.Chance((.5f + (.1f * verVal)) * this.arcaneDmg))
-                    {
-                        float rnd = Rand.Range(0, 1f);
-                        targetPawn = this.targetCells[i].GetFirstPawn(this.Map);
-                        if (targetPawn != null)
-                        {
-                            if (TM_Calc.IsRobotPawn(targetPawn))
-                            {
-                                TM_Action.DoAction_SabotagePawn(targetPawn, caster, rnd, pwrVal, this.arcaneDmg, this.launcher);
-                                this.age = this.duration;
-                            }
-                            else
-                            {
-                                targetPawn = null;
-                                //Log.Message("pawn not a robot, mechanoid, or android");
-                            }
-                        }
-
-                        targetBuilding = this.targetCells[i].GetFirstBuilding(this.Map);
-                        if (targetPawn == null && targetBuilding != null)
-                        {
-                            CompPower compP = targetBuilding.GetComp<CompPower>();
-                            CompPowerTrader cpt = targetBuilding.GetComp<CompPowerTrader>();
-                            if (compP != null && compP.Props.PowerConsumption != 0 && cpt != null && cpt.powerOutputInt != 0)
-                            {
-                                if (true)
-                                {
-                                    //stun/electrical explosion
-                                    GenExplosion.DoExplosion(targetBuilding.Position, base.Map, 2 + pwrVal + Mathf.RoundToInt(cpt.powerOutputInt / 400), DamageDefOf.Stun, null);
-                                    GenExplosion.DoExplosion(targetBuilding.Position, base.Map, 1 + pwrVal + Mathf.RoundToInt(cpt.powerOutputInt / 600), TMDamageDefOf.DamageDefOf.TM_ElectricalBurn, null);
-
-                                }
-                                else if (rnd <= .66f)
-                                {
-                                    //electrical burn short circuit
-                                }
-                                else
-                                {
-
-                                }
-
-                            }
-
-                            Building_Battery targetBattery = targetBuilding as Building_Battery;
-                            if (targetBattery != null && targetBattery.def.thingClass.ToString() == "RimWorld.Building_Battery")
-                            {
-                                CompPowerBattery compB = targetBattery.GetComp<CompPowerBattery>();
-                                if (rnd <= .5f)
-                                {
-                                    Traverse.Create(root: targetBattery).Field(name: "ticksToExplode").SetValue(Rand.Range(40, 130) - (5*pwrVal));
-                                    compB.SetStoredEnergyPct(.81f);
-                                }
-                                else
-                                {
-                                    GenExplosion.DoExplosion(targetBattery.Position, base.Map, 2 + pwrVal + Mathf.RoundToInt(compB.StoredEnergy / 200), DamageDefOf.EMP, null);
-                                    compB.DrawPower(compB.StoredEnergy);
-                                }
-
-                            }
-
-                            Building_TurretGun targetTurret = targetBuilding as Building_TurretGun;
-                            if (targetTurret != null && targetTurret.gun != null)
-                            {
-                                if (rnd <= .5f)
-                                {
-                                    targetTurret.SetFaction(Faction.OfAncientsHostile, null);
-                                }
-                                else
-                                {
-                                    GenExplosion.DoExplosion(targetTurret.Position, base.Map, 2 + pwrVal, TMDamageDefOf.DamageDefOf.TM_ElectricalBurn, null); //20 default damage
-                                }
-                            }
-                        }
-                        else
-                        {
-                            //Log.Message("no thing to sabotage");
-                        }
-                        targetPawn = null;
-                        targetBuilding = null;
-                    }
+                    GenExplosion.DoExplosion(battery.Position, map, 2 + pwrVal + Mathf.RoundToInt(storage.StoredEnergy / 200), DamageDefOf.EMP, instigator);
+                    storage.DrawPower(storage.StoredEnergy);
                 }
             }
-            else if(this.targetThings.Count > 0)
+            if (building is Building_TurretGun turret && turret.gun != null)
             {
-                this.age = this.duration;
+                if (roll <= .5f) turret.SetFaction(Faction.OfAncientsHostile, null);
+                else GenExplosion.DoExplosion(turret.Position, map, 2 + pwrVal, TMDamageDefOf.DamageDefOf.TM_ElectricalBurn, instigator);
             }
-            else
-            {
-                this.age = this.duration;
-            }
-
-            
-        }            
+        }
 
         public override void ExposeData()
         {
@@ -204,8 +139,6 @@ namespace TorannMagic
             Scribe_Values.Look<bool>(ref this.initialized, "initialized", true, false);
             Scribe_Values.Look<int>(ref this.age, "age", -1, false);
             Scribe_Values.Look<int>(ref this.duration, "duration", 1800, false);
-            Scribe_Values.Look<int>(ref this.strikeDelay, "shockDelay", 0, false);
-            Scribe_Values.Look<int>(ref this.lastStrike, "lastStrike", 0, false);
             Scribe_Values.Look<int>(ref this.verVal, "verVal", 0, false);
             Scribe_Values.Look<int>(ref this.pwrVal, "pwrVal", 0, false);
         }

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaSiphon.label>sifão de mana</TM_ManaSiphon.label>
+  <TM_ManaSiphon.description>Estação passiva onde magos plenamente formados, atribuídos ao trabalho mágico, doam mana a depósitos de combustível mágico ligados através de faróis de mana. Por padrão, preserva 20% da mana pessoal e aceita no máximo 80% da capacidade por visita. Ambos os limites podem ser configurados de 0% a 100%. O mago tem de recuperar toda a mana antes de voltar. Uma reserva interna de 100 pontos de mana recolhe o excedente de uma transferência já iniciada e envia-o automaticamente aos depósitos ligados quando há espaço. Os magos deixam de doar quando os depósitos estão cheios. O sifão não armazena combustível e não precisa de eletricidade.</TM_ManaSiphon.description>
+</LanguageData>

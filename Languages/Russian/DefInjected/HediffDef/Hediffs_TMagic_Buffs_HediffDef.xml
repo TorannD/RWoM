@@ -1,0 +1,422 @@
+﻿<LanguageData><!-- v1.5\Defs\HediffDefs\Hediffs_TMagic_Buffs.xml-->
+	<!--              EN: Uncertain Future-->
+	<TM_Uncertainty.label>Неопределённое будущее</TM_Uncertainty.label>
+	<!--                    EN: Used to control mage promotions.-->
+	<TM_Uncertainty.description>Используется для контроля продвижения магов по званию.</TM_Uncertainty.description>
+	<!--                        EN: Soothing Aura-->
+	<TM_SoothingBreeze_AuraHD.label>Успокаивающая аура</TM_SoothingBreeze_AuraHD.label>
+	<!--                              EN: An aura that generates and bestows a soothing presence on nearby pawns.-->
+	<TM_SoothingBreeze_AuraHD.description>Аура, окутывающая ближайших пешек умиротворяющим присутствием.</TM_SoothingBreeze_AuraHD.description>
+	<!--                                 EN: I-->
+	<TM_SoothingBreeze_AuraHD.stages.0.label>I</TM_SoothingBreeze_AuraHD.stages.0.label>
+	<!--                                 EN: II-->
+	<TM_SoothingBreeze_AuraHD.stages.1.label>II</TM_SoothingBreeze_AuraHD.stages.1.label>
+	<!--                                 EN: III-->
+	<TM_SoothingBreeze_AuraHD.stages.2.label>III</TM_SoothingBreeze_AuraHD.stages.2.label>
+	<!--                                 EN: IV-->
+	<TM_SoothingBreeze_AuraHD.stages.3.label>IV</TM_SoothingBreeze_AuraHD.stages.3.label>
+	<!--              EN: Soothing Breeze-->
+	<SoothingBreeze.label>Успокаивающий бриз</SoothingBreeze.label>
+	<!--                    EN: A soothing presence that calms the spirit.-->
+	<SoothingBreeze.description>Умиротворяющее присутствие, успокаивающее душу.</SoothingBreeze.description>
+	<!--                       EN: I-->
+	<SoothingBreeze.stages.0.label>успокаивающий бриз</SoothingBreeze.stages.0.label>
+	<!--                EN: Soothing Breeze-->
+	<SoothingBreeze_I.label>Успокаивающий бриз</SoothingBreeze_I.label>
+	<!--                      EN: A soothing presence that calms the spirit.-->
+	<SoothingBreeze_I.description>Умиротворяющее присутствие, успокаивающее душу.</SoothingBreeze_I.description>
+	<!--                         EN: II-->
+	<SoothingBreeze_I.stages.0.label>успокаивающий бриз</SoothingBreeze_I.stages.0.label>
+	<!--                 EN: Soothing Breeze-->
+	<SoothingBreeze_II.label>Успокаивающий бриз</SoothingBreeze_II.label>
+	<!--                       EN: A soothing presence that calms the spirit.-->
+	<SoothingBreeze_II.description>Умиротворяющее присутствие, успокаивающее душу.</SoothingBreeze_II.description>
+	<!--                          EN: III-->
+	<SoothingBreeze_II.stages.0.label>успокаивающий бриз</SoothingBreeze_II.stages.0.label>
+	<!--                  EN: Soothing Breeze-->
+	<SoothingBreeze_III.label>Успокаивающий бриз</SoothingBreeze_III.label>
+	<!--                        EN: A soothing presence that calms the spirit.-->
+	<SoothingBreeze_III.description>Умиротворяющее присутствие, успокаивающее душу.</SoothingBreeze_III.description>
+	<!--                           EN: IV-->
+	<SoothingBreeze_III.stages.0.label>успокаивающий бриз</SoothingBreeze_III.stages.0.label>
+	<!--                   EN: Aura of Warmth-->
+	<TM_InnerFire_AuraHD.label>Аура тепла</TM_InnerFire_AuraHD.label>
+	<!--                         EN: An aura that generates and bestows warmth and confidence.-->
+	<TM_InnerFire_AuraHD.description>Аура, которая генерирует и дарит тепло и уверенность.</TM_InnerFire_AuraHD.description>
+	<!--                            EN: I-->
+	<TM_InnerFire_AuraHD.stages.0.label>I</TM_InnerFire_AuraHD.stages.0.label>
+	<!--                            EN: II-->
+	<TM_InnerFire_AuraHD.stages.1.label>II</TM_InnerFire_AuraHD.stages.1.label>
+	<!--                            EN: III-->
+	<TM_InnerFire_AuraHD.stages.2.label>III</TM_InnerFire_AuraHD.stages.2.label>
+	<!--                            EN: IV-->
+	<TM_InnerFire_AuraHD.stages.3.label>IV</TM_InnerFire_AuraHD.stages.3.label>
+	<!--           EN: Inner Fire-->
+	<InnerFireHD.label>Внутренний Огонь</InnerFireHD.label>
+	<!--                 EN: Fortifies the spirit, giving the pawn increased endurance and resistances.-->
+	<InnerFireHD.description>Укрепляет дух, придавая пешке повышенную выносливость и сопротивляемость.</InnerFireHD.description>
+	<!--                    EN: I-->
+	<InnerFireHD.stages.0.label>I</InnerFireHD.stages.0.label>
+	<!--             EN: Inner Fire-->
+	<InnerFire_IHD.label>Внутренний Огонь</InnerFire_IHD.label>
+	<!--                   EN: Fortifies the spirit, giving the pawn increased endurance and resistances.-->
+	<InnerFire_IHD.description>Укрепляет дух, придавая пешке повышенную выносливость и сопротивляемость.</InnerFire_IHD.description>
+	<!--                      EN: II-->
+	<InnerFire_IHD.stages.0.label>II</InnerFire_IHD.stages.0.label>
+	<!--              EN: Inner Fire-->
+	<InnerFire_IIHD.label>Внутренний Огонь</InnerFire_IIHD.label>
+	<!--                    EN: Fortifies the spirit, giving the pawn increased endurance and resistances.-->
+	<InnerFire_IIHD.description>Укрепляет дух, придавая пешке повышенную выносливость и сопротивляемость.</InnerFire_IIHD.description>
+	<!--                       EN: III-->
+	<InnerFire_IIHD.stages.0.label>III</InnerFire_IIHD.stages.0.label>
+	<!--               EN: Inner Fire-->
+	<InnerFire_IIIHD.label>Внутренний Огонь</InnerFire_IIIHD.label>
+	<!--                     EN: Fortifies the spirit, giving the pawn increased endurance and resistances.-->
+	<InnerFire_IIIHD.description>Укрепляет дух, придавая пешке повышенную выносливость и сопротивляемость.</InnerFire_IIIHD.description>
+	<!--                        EN: IV-->
+	<InnerFire_IIIHD.stages.0.label>IV</InnerFire_IIIHD.stages.0.label>
+	<!--                   EN: Aura of Hope-->
+	<TM_RayOfHope_AuraHD.label>Аура надежды</TM_RayOfHope_AuraHD.label>
+	<!--                         EN: An aura that generates and bestows an uplifting presence.-->
+	<TM_RayOfHope_AuraHD.description>Аура, которая порождает и дарует вдохновляющее ощущение.</TM_RayOfHope_AuraHD.description>
+	<!--                            EN: I-->
+	<TM_RayOfHope_AuraHD.stages.0.label>I</TM_RayOfHope_AuraHD.stages.0.label>
+	<!--                            EN: II-->
+	<TM_RayOfHope_AuraHD.stages.1.label>II</TM_RayOfHope_AuraHD.stages.1.label>
+	<!--                            EN: III-->
+	<TM_RayOfHope_AuraHD.stages.2.label>III</TM_RayOfHope_AuraHD.stages.2.label>
+	<!--                            EN: IV-->
+	<TM_RayOfHope_AuraHD.stages.3.label>IV</TM_RayOfHope_AuraHD.stages.3.label>
+	<!--         EN: Ray of Hope-->
+	<RayofHope.label>Луч надежды</RayofHope.label>
+	<!--               EN: An uplifting presence that enlivens the spirit.-->
+	<RayofHope.description>Воодушевляющее присутствие, укрепляющее дух.</RayofHope.description>
+	<!--                  EN: I-->
+	<RayofHope.stages.0.label>Тень надежды</RayofHope.stages.0.label>
+	<!--           EN: Ray of Hope-->
+	<RayofHope_I.label>Луч надежды</RayofHope_I.label>
+	<!--                 EN: An uplifting presence that enlivens the spirit.-->
+	<RayofHope_I.description>Воодушевляющее присутствие, укрепляющее дух.</RayofHope_I.description>
+	<!--                    EN: II-->
+	<RayofHope_I.stages.0.label>Проблеск надежды</RayofHope_I.stages.0.label>
+	<!--            EN: Ray of Hope-->
+	<RayofHope_II.label>Луч надежды</RayofHope_II.label>
+	<!--                  EN: An uplifting presence that enlivens the spirit.-->
+	<RayofHope_II.description>Воодушевляющее присутствие, укрепляющее дух.</RayofHope_II.description>
+	<!--                     EN: III-->
+	<RayofHope_II.stages.0.label>Луч надежды</RayofHope_II.stages.0.label>
+	<!--             EN: Ray of Hope-->
+	<RayofHope_III.label>Луч надежды</RayofHope_III.label>
+	<!--                   EN: An uplifting presence that enlivens the spirit.-->
+	<RayofHope_III.description>Воодушевляющее присутствие, укрепляющее дух.</RayofHope_III.description>
+	<!--                      EN: IV-->
+	<RayofHope_III.stages.0.label>Маяк надежды</RayofHope_III.stages.0.label>
+	<!--     EN: AMP-->
+	<AMP_I.label>AMP</AMP_I.label>
+	<!--           EN: A burst of energy that amplifies physical attributes.-->
+	<AMP_I.description>Взрыв энергии, который усиливает физические свойства.</AMP_I.description>
+	<!--              EN: I-->
+	<AMP_I.stages.0.label>накачанный</AMP_I.stages.0.label>
+	<!--      EN: AMP-->
+	<AMP_II.label>AMP</AMP_II.label>
+	<!--            EN: A burst of energy that amplifies physical attributes.-->
+	<AMP_II.description>Взрыв энергии, который усиливает физические свойства.</AMP_II.description>
+	<!--               EN: II-->
+	<AMP_II.stages.0.label>усилитель</AMP_II.stages.0.label>
+	<!--       EN: AMP-->
+	<AMP_III.label>AMP</AMP_III.label>
+	<!--             EN: A burst of energy that amplifies physical attributes.-->
+	<AMP_III.description>Взрыв энергии, который усиливает физические свойства.</AMP_III.description>
+	<!--                EN: III-->
+	<AMP_III.stages.0.label>бурлящая энергия</AMP_III.stages.0.label>
+	<!--                EN: Shadow Aura-->
+	<TM_Shadow_AuraHD.label>Ореол тьмы</TM_Shadow_AuraHD.label>
+	<!--                      EN: An aura that generates and bestows a shadowy presence.-->
+	<TM_Shadow_AuraHD.description>Аура, которая порождает и дарует теневое присутствие.</TM_Shadow_AuraHD.description>
+	<!--                         EN: I-->
+	<TM_Shadow_AuraHD.stages.0.label>I</TM_Shadow_AuraHD.stages.0.label>
+	<!--                         EN: II-->
+	<TM_Shadow_AuraHD.stages.1.label>II</TM_Shadow_AuraHD.stages.1.label>
+	<!--                         EN: III-->
+	<TM_Shadow_AuraHD.stages.2.label>III</TM_Shadow_AuraHD.stages.2.label>
+	<!--                         EN: IV-->
+	<TM_Shadow_AuraHD.stages.3.label>IV</TM_Shadow_AuraHD.stages.3.label>
+	<!--      EN: Arcane Shadow-->
+	<Shadow.label>Арканная тень</Shadow.label>
+	<!--            EN: A shadowy presence that precipitates action.-->
+	<Shadow.description>Тенистое присутствие, ускоряющее действия.</Shadow.description>
+	<!--        EN: Arcane Shadow-->
+	<Shadow_I.label>Таинственная тень</Shadow_I.label>
+	<!--              EN: A shadowy presence that precipitates action.-->
+	<Shadow_I.description>Призрачное присутствие, которое ускоряет действия.</Shadow_I.description>
+	<!--                 EN: I-->
+	<Shadow_I.stages.0.label>озабоченный</Shadow_I.stages.0.label>
+	<!--         EN: Arcane Shadow-->
+	<Shadow_II.label>Таинственная тень</Shadow_II.label>
+	<!--               EN: A shadowy presence that precipitates action.-->
+	<Shadow_II.description>Призрачное присутствие, которое ускоряет действия.</Shadow_II.description>
+	<!--                  EN: II-->
+	<Shadow_II.stages.0.label>нервный</Shadow_II.stages.0.label>
+	<!--          EN: Arcane Shadow-->
+	<Shadow_III.label>Таинственная тень</Shadow_III.label>
+	<!--                EN: A shadowy presence that precipitates action.-->
+	<Shadow_III.description>Призрачное присутствие, которое ускоряет действия.</Shadow_III.description>
+	<!--                   EN: III-->
+	<Shadow_III.stages.0.label>обезумевший</Shadow_III.stages.0.label>
+	<!--             EN: Bestow Might-->
+	<BestowMightHD.label>Дар могущества</BestowMightHD.label>
+	<!--                   EN: A mighty combat boon.-->
+	<BestowMightHD.description>Могущественный боевой дар.</BestowMightHD.description>
+	<!--                      EN: I-->
+	<BestowMightHD.stages.0.label>I</BestowMightHD.stages.0.label>
+	<!--               EN: Bestow Might-->
+	<BestowMightHD_I.label>Дар могущества</BestowMightHD_I.label>
+	<!--                     EN: A mighty combat boon.-->
+	<BestowMightHD_I.description>Могущественный боевой дар.</BestowMightHD_I.description>
+	<!--                        EN: II-->
+	<BestowMightHD_I.stages.0.label>II</BestowMightHD_I.stages.0.label>
+	<!--                EN: Bestow Might-->
+	<BestowMightHD_II.label>Дар могущества</BestowMightHD_II.label>
+	<!--                      EN: A mighty combat boon.-->
+	<BestowMightHD_II.description>Могущественный боевой дар.</BestowMightHD_II.description>
+	<!--                         EN: III-->
+	<BestowMightHD_II.stages.0.label>III</BestowMightHD_II.stages.0.label>
+	<!--                 EN: Bestow Might-->
+	<BestowMightHD_III.label>Дар могущества</BestowMightHD_III.label>
+	<!--                       EN: A mighty combat boon.-->
+	<BestowMightHD_III.description>Могущественный боевой дар.</BestowMightHD_III.description>
+	<!--                          EN: IV-->
+	<BestowMightHD_III.stages.0.label>IV</BestowMightHD_III.stages.0.label>
+	<!--               EN: Ranger Bond-->
+	<TM_RangerBondHD.label>Связь рейнджера</TM_RangerBondHD.label>
+	<!--                     EN: Represents the bond this animal shares with a Ranger. Increases physical attributes and enhances healing.-->
+	<TM_RangerBondHD.description>Представляет собой связь, которую это животное разделяет с рейнджером. Увеличивает физические свойства и усиливает исцеление.</TM_RangerBondHD.description>
+	<!--                        EN: I-->
+	<TM_RangerBondHD.stages.0.label>I</TM_RangerBondHD.stages.0.label>
+	<!--                        EN: II-->
+	<TM_RangerBondHD.stages.1.label>II</TM_RangerBondHD.stages.1.label>
+	<!--                        EN: III-->
+	<TM_RangerBondHD.stages.2.label>III</TM_RangerBondHD.stages.2.label>
+	<!--                        EN: IV-->
+	<TM_RangerBondHD.stages.3.label>IV</TM_RangerBondHD.stages.3.label>
+	<!--               EN: Shield-->
+	<TM_HediffShield.label>Щит</TM_HediffShield.label>
+	<!--                     EN: Absorbs damage.-->
+	<TM_HediffShield.description>Поглощает урон.</TM_HediffShield.description>
+	<!--                EN: Shield-->
+	<TM_MagicShieldHD.label>Щит</TM_MagicShieldHD.label>
+	<!--                      EN: Absorbs damage.-->
+	<TM_MagicShieldHD.description>Поглощает урон.</TM_MagicShieldHD.description>
+	<!--                 EN: Sprint (I)-->
+	<TM_HediffSprint_I.label>Спринт (I)</TM_HediffSprint_I.label>
+	<!--                       EN: Increases movement.-->
+	<TM_HediffSprint_I.description>Увеличивает передвижение.</TM_HediffSprint_I.description>
+	<!--                  EN: Sprint (II)-->
+	<TM_HediffSprint_II.label>Спринт (II)</TM_HediffSprint_II.label>
+	<!--                        EN: Increases movement.-->
+	<TM_HediffSprint_II.description>Увеличивает передвижение.</TM_HediffSprint_II.description>
+	<!--                   EN: Sprint (III)-->
+	<TM_HediffSprint_III.label>Спринт (III)</TM_HediffSprint_III.label>
+	<!--                         EN: Increases movement.-->
+	<TM_HediffSprint_III.description>Увеличивает передвижение.</TM_HediffSprint_III.description>
+	<!--                     EN: Invulnerable-->
+	<TM_HediffInvulnerable.label>Неуязвимый</TM_HediffInvulnerable.label>
+	<!--                           EN: Prevents damage while active.-->
+	<TM_HediffInvulnerable.description>Предотвращает повреждения, когда активен.</TM_HediffInvulnerable.description>
+	<!--                          EN: Invulnerable-->
+	<TM_HediffTimedInvulnerable.label>Неуязвимый</TM_HediffTimedInvulnerable.label>
+	<!--                                EN: Prevents damage while active.-->
+	<TM_HediffTimedInvulnerable.description>Предотвращает повреждения, когда активен.</TM_HediffTimedInvulnerable.description>
+	<!--                  EN: Fortitude-->
+	<TM_HediffFortitude.label>Стойкость духа</TM_HediffFortitude.label>
+	<!--                        EN: Mitigates all damage by a set amount.-->
+	<TM_HediffFortitude.description>Уменьшает весь ущерб на определенную величину.</TM_HediffFortitude.description>
+	<!--               EN: Mana Shield-->
+	<TM_ManaShieldHD.label>Щит маны</TM_ManaShieldHD.label>
+	<!--                     EN: Sacrifices magical energy to absorb damage.-->
+	<TM_ManaShieldHD.description>Жертвует магической энергией, чтобы поглотить урон.</TM_ManaShieldHD.description>
+	<!--        EN: Blinded-->
+	<TM_Blind.label>Ослепленный</TM_Blind.label>
+	<!--              EN: Reduces sight.-->
+	<TM_Blind.description>Снижает зрение.</TM_Blind.description>
+	<!--                 EN: I-->
+	<TM_Blind.stages.0.label>ослепленный</TM_Blind.stages.0.label>
+	<!--                 EN: II-->
+	<TM_Blind.stages.1.label>II</TM_Blind.stages.1.label>
+	<!--                 EN: III-->
+	<TM_Blind.stages.2.label>III</TM_Blind.stages.2.label>
+	<!--               EN: Regeneration-->
+	<TM_Regeneration.label>Регенерация</TM_Regeneration.label>
+	<!--                     EN: Regenerates health and heals wounds over time. Each tick will restore health to an injury until the injury is healed.-->
+	<TM_Regeneration.description>Восстанавливает здоровье и со временем заживляет раны. Каждый тик будет восстанавливать здоровье до тех пор, пока травма не будет исцелена.</TM_Regeneration.description>
+	<!--                 EN: Regeneration (I)-->
+	<TM_Regeneration_I.label>Регенерация (I)</TM_Regeneration_I.label>
+	<!--                       EN: Regenerates health and heals wounds over time. Each tick will restore health to an injury until the injury is healed.-->
+	<TM_Regeneration_I.description>Восстанавливает здоровье и со временем заживляет раны. Каждый тик будет восстанавливать здоровье до тех пор, пока травма не будет исцелена.</TM_Regeneration_I.description>
+	<!--                  EN: Regeneration (II)-->
+	<TM_Regeneration_II.label>Регенерация (II)</TM_Regeneration_II.label>
+	<!--                        EN: Regenerates health and heals wounds over time. Each tick will restore health to an injury until the injury is healed.-->
+	<TM_Regeneration_II.description>Восстанавливает здоровье и со временем заживляет раны. Каждый тик будет восстанавливать здоровье до тех пор, пока травма не будет исцелена.</TM_Regeneration_II.description>
+	<!--                   EN: Regeneration (III)-->
+	<TM_Regeneration_III.label>Регенерация (III)</TM_Regeneration_III.label>
+	<!--                         EN: Regenerates health and heals wounds over time. Each tick will restore health to an injury until the injury is healed.-->
+	<TM_Regeneration_III.description>Восстанавливает здоровье и со временем заживляет раны. Каждый тик будет восстанавливать здоровье до тех пор, пока травма не будет исцелена.</TM_Regeneration_III.description>
+	<!--             EN: Bladedancer-->
+	<TM_BladeArtHD.label>Танцующий с клинком</TM_BladeArtHD.label>
+	<!--                   EN: Bladedancer stat boon.-->
+	<TM_BladeArtHD.description>Дар танцующего с клинками</TM_BladeArtHD.description>
+	<!--                      EN: I-->
+	<TM_BladeArtHD.stages.0.label>I</TM_BladeArtHD.stages.0.label>
+	<!--                      EN: II-->
+	<TM_BladeArtHD.stages.1.label>II</TM_BladeArtHD.stages.1.label>
+	<!--                      EN: III-->
+	<TM_BladeArtHD.stages.2.label>III</TM_BladeArtHD.stages.2.label>
+	<!--                      EN: IV-->
+	<TM_BladeArtHD.stages.3.label>IV</TM_BladeArtHD.stages.3.label>
+	<!--                EN: Bow Mastery-->
+	<TM_BowTrainingHD.label>Мастерство лука</TM_BowTrainingHD.label>
+	<!--                      EN: Ranger stat and bow enhancement boon.-->
+	<TM_BowTrainingHD.description>Статы рейнджера и мастерство лука повышены</TM_BowTrainingHD.description>
+	<!--                         EN: I-->
+	<TM_BowTrainingHD.stages.0.label>I</TM_BowTrainingHD.stages.0.label>
+	<!--                         EN: II-->
+	<TM_BowTrainingHD.stages.1.label>II</TM_BowTrainingHD.stages.1.label>
+	<!--                         EN: III-->
+	<TM_BowTrainingHD.stages.2.label>III</TM_BowTrainingHD.stages.2.label>
+	<!--                         EN: IV-->
+	<TM_BowTrainingHD.stages.3.label>IV</TM_BowTrainingHD.stages.3.label>
+	<!--              EN: Spell Mending-->
+	<SpellMendingHD.label>Починка</SpellMendingHD.label>
+	<!--                    EN: Rapidly repairs equipped apparel and weapons.-->
+	<SpellMendingHD.description>Быстрый ремонт экипированной одежды и оружия.</SpellMendingHD.description>
+	<!--                       EN: active-->
+	<SpellMendingHD.stages.0.label>активный</SpellMendingHD.stages.0.label>
+	<!--                       EN: enhanced-->
+	<SpellMendingHD.stages.1.label>расширенный</SpellMendingHD.stages.1.label>
+	<!--                 EN: Resurrection weakness-->
+	<TM_ResurrectionHD.label>Слабость после воскрешения</TM_ResurrectionHD.label>
+	<!--                       EN: Result of being resurrected through magic.-->
+	<TM_ResurrectionHD.description>Результат воскрешения с помощью магии.</TM_ResurrectionHD.description>
+	<!--                          EN: I-->
+	<TM_ResurrectionHD.stages.0.label>I</TM_ResurrectionHD.stages.0.label>
+	<!--                          EN: II-->
+	<TM_ResurrectionHD.stages.1.label>II</TM_ResurrectionHD.stages.1.label>
+	<!--                          EN: III-->
+	<TM_ResurrectionHD.stages.2.label>III</TM_ResurrectionHD.stages.2.label>
+	<!--                  EN: Returned from Death-->
+	<TM_DeathReversalHD.label>Воскрешенный из Мертвых</TM_DeathReversalHD.label>
+	<!--                        EN: The backlash resulting from reversing death.-->
+	<TM_DeathReversalHD.description>Обратная реакция, вызванная обращением смерти вспять.</TM_DeathReversalHD.description>
+	<!--                           EN: I-->
+	<TM_DeathReversalHD.stages.0.label>I</TM_DeathReversalHD.stages.0.label>
+	<!--                           EN: II-->
+	<TM_DeathReversalHD.stages.1.label>II</TM_DeathReversalHD.stages.1.label>
+	<!--                           EN: III-->
+	<TM_DeathReversalHD.stages.2.label>III</TM_DeathReversalHD.stages.2.label>
+	<!--                    EN: Disease Immunity-->
+	<TM_DiseaseImmunityHD.label>Повышенный иммунитет</TM_DiseaseImmunityHD.label>
+	<!--                          EN: Increases natural disease immunity rates.-->
+	<TM_DiseaseImmunityHD.description>Повышает естественный уровень иммунитета к болезням.</TM_DiseaseImmunityHD.description>
+	<!--                             EN: I-->
+	<TM_DiseaseImmunityHD.stages.0.label>I</TM_DiseaseImmunityHD.stages.0.label>
+	<!--                     EN: Disease Immunity-->
+	<TM_DiseaseImmunity2HD.label>Повышенный иммунитет</TM_DiseaseImmunity2HD.label>
+	<!--                           EN: Increases natural disease immunity rates.-->
+	<TM_DiseaseImmunity2HD.description>Повышает естественный уровень иммунитета к болезням.</TM_DiseaseImmunity2HD.description>
+	<!--                              EN: II-->
+	<TM_DiseaseImmunity2HD.stages.0.label>II</TM_DiseaseImmunity2HD.stages.0.label>
+	<!--         EN: Blur-->
+	<TM_BlurHD.label>Размытость</TM_BlurHD.label>
+	<!--               EN: Manipulates possibility to avoid damage.-->
+	<TM_BlurHD.description>Манипуляция светом для возможности избежать повреждение</TM_BlurHD.description>
+	<!--                 EN: Invisibility-->
+	<TM_InvisibilityHD.label>Невидимость</TM_InvisibilityHD.label>
+	<!--                       EN: Causes the affected pawn to become invisible and untargetable by nearby enemies.-->
+	<TM_InvisibilityHD.description>Приводит к тому, что пешка становится невидимой для ближайших врагов.</TM_InvisibilityHD.description>
+	<!--                          EN: I-->
+	<TM_InvisibilityHD.stages.0.label>I</TM_InvisibilityHD.stages.0.label>
+	<!--              EN: Magelight-->
+	<TM_MageLightHD.label>Магический свет</TM_MageLightHD.label>
+	<!--                    EN: A small light sustained by magic.-->
+	<TM_MageLightHD.description>Маленький огонек, поддерживаемый магией.</TM_MageLightHD.description>
+	<!--              EN: Slow-->
+	<TM_FrostSlowHD.label>Замедлен</TM_FrostSlowHD.label>
+	<!--                    EN: Slowed limbs affected by frost.-->
+	<TM_FrostSlowHD.description>Замедленные из-за мороза конечности</TM_FrostSlowHD.description>
+	<!--                       EN: frost-->
+	<TM_FrostSlowHD.stages.0.label>мороз</TM_FrostSlowHD.stages.0.label>
+	<!--         EN: Heat Protection-->
+	<TM_CoolHD.label>Защита от тепла</TM_CoolHD.label>
+	<!--               EN: A small boon that cools and increases resistance to high temperatures.-->
+	<TM_CoolHD.description>Небольшое благо, которое охлаждает и повышает устойчивость к высоким температурам.</TM_CoolHD.description>
+	<!--                  EN: Cooler-->
+	<TM_CoolHD.stages.0.label>Кулер</TM_CoolHD.stages.0.label>
+	<!--              EN: Refreshed-->
+	<TM_RefreshedHD.label>Обновленный</TM_RefreshedHD.label>
+	<!--                    EN: Refreshes a pawn, reducing weariness.-->
+	<TM_RefreshedHD.description>Освежает пешку, уменьшая усталость.</TM_RefreshedHD.description>
+	<!--                       EN: Cooler-->
+	<TM_RefreshedHD.stages.0.label>Кулер</TM_RefreshedHD.stages.0.label>
+	<!--         EN: Cold Protection-->
+	<TM_WarmHD.label>Защита от холода</TM_WarmHD.label>
+	<!--               EN: A small boon that heats and increases resilience to cold temperatures-->
+	<TM_WarmHD.description>Небольшое благо, которое нагревает и повышает устойчивость к холодным температурам</TM_WarmHD.description>
+	<!--                  EN: Heater-->
+	<TM_WarmHD.stages.0.label>Нагреватель</TM_WarmHD.stages.0.label>
+	<!--                 EN: Shock Therapy-->
+	<TM_ShockTherapyHD.label>Шоковая терапия</TM_ShockTherapyHD.label>
+	<!--                       EN: Trains the mind to improve behavior.-->
+	<TM_ShockTherapyHD.description>Тренирует ум, чтобы улучшить поступки.</TM_ShockTherapyHD.description>
+	<!--                          EN: Power Node-->
+	<TM_ShockTherapyHD.stages.0.label>Энергетическая нода</TM_ShockTherapyHD.stages.0.label>
+	<!--         EN: Jolt-->
+	<TM_JoltHD.label>Толчок</TM_JoltHD.label>
+	<!--               EN: A small boon that increases physical energy.-->
+	<TM_JoltHD.description>Небольшое благо, которое увеличивает физическую энергию.</TM_JoltHD.description>
+	<!--                  EN: I-->
+	<TM_JoltHD.stages.0.label>I</TM_JoltHD.stages.0.label>
+	<!--                  EN: II-->
+	<TM_JoltHD.stages.1.label>II</TM_JoltHD.stages.1.label>
+	<!--                  EN: III-->
+	<TM_JoltHD.stages.2.label>III</TM_JoltHD.stages.2.label>
+	<!--                EN: Energy Regeneration-->
+	<TM_EnergyRegenHD.label>Регенерация энергии</TM_EnergyRegenHD.label>
+	<!--                      EN: Increases energy regeneration rates as a multiple of the buff's severity.-->
+	<TM_EnergyRegenHD.description>В несколько раз ускоряет восстановление энергии; сила эффекта зависит от уровня усиления.</TM_EnergyRegenHD.description>
+	<!--             EN: SS Serum-->
+	<TM_SS_SerumHD.label>Сыворотка СС</TM_SS_SerumHD.label>
+	<!--                   EN: A chemical enhancing physical abilities and magical resistance; reduces magical power and energy regeneration. The potency of the chemical increases in 3 stages and takes 100 days to fully mature. Pawns will recover consciousness 2 days after taking the serum.-->
+	<TM_SS_SerumHD.description>Химическое вещество, повышающее физические способности и магическую устойчивость; уменьшает магическую силу и регенерацию энергии. Сила действия этого химического вещества возрастает в 3 этапа и занимает 100 дней, чтобы полностью созреть.</TM_SS_SerumHD.description>
+	<!--                      EN: Stage 0-->
+	<TM_SS_SerumHD.stages.0.label>Стадия 0</TM_SS_SerumHD.stages.0.label>
+	<!--                      EN: Stage 1-->
+	<TM_SS_SerumHD.stages.1.label>Стадия 1</TM_SS_SerumHD.stages.1.label>
+	<!--                      EN: Stage 2-->
+	<TM_SS_SerumHD.stages.2.label>Стадия 2</TM_SS_SerumHD.stages.2.label>
+	<!--                      EN: Stage 3-->
+	<TM_SS_SerumHD.stages.3.label>Стадия 3</TM_SS_SerumHD.stages.3.label>
+	<!--                      EN: Shadow Slayer Cloak-->
+	<TM_ShadowSlayerCloakHD.label>Плащ Убийцы Теней</TM_ShadowSlayerCloakHD.label>
+	<!--                            EN: Shadow slayer cloaking field is active - performing actions that the predictive engine is unable to track will rapidly erode the cloaking field.-->
+	<TM_ShadowSlayerCloakHD.description>Маскирующее поле Убийцы Теней активно - выполнение действий, которые механизм прогнозирования не может отследить, быстро разрушит маскирующее поле.</TM_ShadowSlayerCloakHD.description>
+	<!--                  EN: Haste-->
+	<TM_SeverityHasteHD.label>Поспешность</TM_SeverityHasteHD.label>
+	<!--                        EN: Attack rate is doubled.-->
+	<TM_SeverityHasteHD.description>Скорость атаки удваивается.</TM_SeverityHasteHD.description>
+	<!--               EN: Heat shield-->
+	<TM_HeatShieldHD.label>Тепловой экран</TM_HeatShieldHD.label>
+	<!--                     EN: Increases heat resistance and cannot catch fire.-->
+	<TM_HeatShieldHD.description>Повышает термостойкость и не может загореться.</TM_HeatShieldHD.description>
+	<!--            EN: Evasion-->
+	<TM_EvasionHD.label>Уклонение</TM_EvasionHD.label>
+	<!--                  EN: Allows the pawn the ability to dodge any non-explosive attack. The dodge rate corresponds to the severity of the buff.-->
+	<TM_EvasionHD.description>Даёт пешке шанс уклониться от любой невзрывной атаки. Вероятность уклонения зависит от силы эффекта.</TM_EvasionHD.description>
+	<!--               EN: Adrenaline-->
+	<TM_AdrenalineHD.label>Адреналин</TM_AdrenalineHD.label>
+	<!--                     EN: A burst of adrenaline that boosts physical performance.-->
+	<TM_AdrenalineHD.description>Всплеск адреналина, повышающий физическую силу</TM_AdrenalineHD.description>
+	<!--                 EN: Undeath Shroud-->
+	<TM_UndeadShroudHD.label>Покров Нежити</TM_UndeadShroudHD.label>
+	<!--                       EN: The forces of undeath cling to this pawn.-->
+	<TM_UndeadShroudHD.description>Силы нежити окутывают это существо.</TM_UndeadShroudHD.description>
+</LanguageData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Regrowth.label>recupere parte do corpo (apenas Druid, precisa de 90% de maná)</Regrowth.label>
+  <Regrowth.description>Use a força druida para recuperar partes do corpo.</Regrowth.description>
+  <Regrowth.jobString>Reconstruir parte do corpo.</Regrowth.jobString>
+
+  <UniversalRegrowth.label>recupere parte do corpo (apenas Druid, precisa de 90% de maná)</UniversalRegrowth.label>
+  <UniversalRegrowth.description>Use a força druida para recuperar partes do corpo.</UniversalRegrowth.description>
+  <UniversalRegrowth.jobString>Reconstruir parte do corpo.</UniversalRegrowth.jobString>
+
+
+</LanguageData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GrandDomeRitual>启动大气穹顶（仪式）</TM_GrandDomeRitual>
+  <TM_GrandDomeUnavailable>需要运转正常且有燃料的穹顶，以及能消耗10%法力并保留20%法力的法师。</TM_GrandDomeUnavailable>
+  <TM_GrandDomeUnarmed>未启动：需要启动仪式</TM_GrandDomeUnarmed>
+  <TM_GrandDomeStandby>待机：另一个穹顶正在保护此地图</TM_GrandDomeStandby>
+  <TM_GrandDomeActive>运行中：覆盖整张当前地图</TM_GrandDomeActive>
+  <TM_GrandDomeLowFuel>大气穹顶燃料不足：还能维持{0}天。</TM_GrandDomeLowFuel>
+  <TM_GrandDomeExhausted>大气穹顶燃料耗尽。补充燃料后需要重新进行启动仪式。</TM_GrandDomeExhausted>
+</LanguageData>

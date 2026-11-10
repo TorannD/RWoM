@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>RWoM Integrations</name>
+  <author>HUGINN (RWoM original author: Torann)</author>
+  <packageId>huginn.rwom.integrations</packageId>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <modVersion>0.1</modVersion>
+  <modDependencies>
+    <li>
+      <packageId>huginn.rwom.core</packageId>
+      <displayName>RWoM Core</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3833946439</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>Torann.ARimworldOfMagic</packageId>
+      <displayName>A RimWorld of Magic (Continued)</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3823345404</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>huginn.rwom.core</li>
+    <li>Torann.ARimworldOfMagic</li>
+    <li>Kure.AROM</li>
+    <li>vanillaexpanded.gravship</li>
+    <li>vanillaexpanded.gravship2</li>
+    <li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+    <li>VanillaExpanded.VPsycastsE</li>
+    <li>erdelf.HumanoidAlienRaces</li>
+    <li>MemeGoddess.GiddyUp</li>
+    <li>Dreadarm.SimpleSidearms</li>
+    <li>zetrith.multiplayer</li>
+    <li>rwmt.multiplayer</li>
+    <li>Poupun.IsekaiDungeonsAddon</li>
+    <li>RimWorks.RimLogging</li>
+    <!-- Optional: only when present. The Ability AI compat assembly references
+         AbilityAI's types, so its assembly has to load first. -->
+    <li>saintwacko.AbilityAI</li>
+    <!-- Optional: only when present. The Character Editor compat assembly
+         patches the editor's StartEditor entry, so its assembly has to load
+         first. -->
+    <li>void.charactereditor</li>
+  </loadAfter>
+  <loadBefore>
+    <li>rwmt.MultiplayerCompatibility</li>
+  </loadBefore>
+  <description>Optional third-party compatibility for A RimWorld of Magic (Continued).
+
+INTEGRATIONS
+Each entry names the author or maintainer of the targeted version.
+
+- Vanilla Gravship Expanded - Chapters 1 and 2 (Vanilla Expanded team): oxygen pipes, flight fuel, gravengine power and shield interception.
+- Vanilla Psycasts Expanded / Vanilla Expanded Framework (Vanilla Expanded team): prevents overlapping RWoM and external casts.
+- Kure's Class Expansion - 1.7 Unofficial (kelnmaari): repairs Pridestalker class degrees and stamina-potion addiction links.
+- Humanoid Alien Races (erdelf): respects race and backstory trait restrictions.
+- Pawnmorpher (The Pawnmorpher Team): preserves RWoM progression components during race changes; this does not port Pawnmorpher itself to 1.7.
+- Giddy-Up 2 - Continued (Meme Goddess): mounting and dismounting hooks for RWoM abilities.
+- Simple Sidearms - Reworked (Dreadarm): preserves remembered weapons when RWoM abilities change equipment.
+- (1.7)Multiplayer-temp (RimWorld Multiplayer Team): ability and command synchronization, including owner-aware casts across maps.
+- ISEKAI DUNGEONS ADD-ON (Poupun): RWoM dungeon definitions; the external exact-name compatibility check still applies.
+- RimLogging / Logging Framework (RimWorks): optional structured diagnostics, with Verse.Log fallback.
+- MedPod (sumghai): excludes Arcane Weakness from treatment.
+- Hellsing ARMS Ultimate (Baskerville): connects holy and decay damage effects.
+- Ability AI (SaintWacko): hands RWoM autocast ownership to Ability AI — colonist autocast, NPC casting, movement, summons and area spells are decided there, with rules for 250 spells; right-click a spell button for Ability AI's autocast menu. Without Ability AI the classic RWoM autocast is untouched.
+
+RETAINED LEGACY HOOKS
+These preserve existing behavior; they are not a claim of full 1.7 support.
+
+- Prison Labor (Avius, Hazzer): retains prisoner-work checks for sentinels.
+- No Job Authors (Jellypowered): allows shared unfinished work at magic workstations.
+- Children, school and learning (Dylan): replaces inherited full classes with matching potential on birth.
+
+Targets are optional and are not bundled. Official RimWorld DLC support remains in RWoM Content.
+
+DEVELOPMENT PACKAGE
+Use matching RWoM Core, Content and Integrations builds. Do not combine with older RWoM releases that still contain these adapters. Final package and save-compatibility acceptance is in progress; this is not yet a public release.
+
+Load after Core, Content and the installed optional targets. Read README.md for migration and rollback instructions.</description>
+  <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3833946677</url>
+</ModMetaData>

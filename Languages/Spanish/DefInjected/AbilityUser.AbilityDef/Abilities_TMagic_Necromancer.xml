@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<TM_ConsumeCorpse.label>consumir cadáver</TM_ConsumeCorpse.label>
+
+<TM_ConsumeCorpse.description>Consume un cadáver o un no muerto para reponer maná. La ropa, los objetos y el equipo se quedan, pero todo el material del cadáver se consume (carne/cuero).\n\nCoste de maná: 3\nAlcance: 50\nEnfriamiento: 20 s\nTiempo de lanzamiento: 2 s</TM_ConsumeCorpse.description>
+
+<TM_ConsumeCorpse_I.label>consumir cadáver I</TM_ConsumeCorpse_I.label>
+
+<TM_ConsumeCorpse_I.description>Consume un cadáver o un no muerto para reponer maná. La ropa, los objetos y el equipo se quedan, pero todo el material del cadáver se consume (carne/cuero).\n\nCoste de maná: 2,5\nAlcance: 60\nEnfriamiento: 18 s\nTiempo de lanzamiento: 1,8 s</TM_ConsumeCorpse_I.description>
+
+<TM_ConsumeCorpse_II.label>consumir cadáver II</TM_ConsumeCorpse_II.label>
+
+<TM_ConsumeCorpse_II.description>Consume un cadáver o un no muerto para reponer maná. La ropa, los objetos y el equipo se quedan, pero todo el material del cadáver se consume (carne/cuero).\n\nCoste de maná: 2\nAlcance: 70\nEnfriamiento: 16 s\nTiempo de lanzamiento: 1,5 s</TM_ConsumeCorpse_II.description>
+
+<TM_ConsumeCorpse_III.label>consumir cadáver III</TM_ConsumeCorpse_III.label>
+
+<TM_ConsumeCorpse_III.description>Consume un cadáver o un no muerto para reponer maná. La ropa, los objetos y el equipo se quedan, pero todo el material del cadáver se consume (carne/cuero).\n\nCoste de maná: 1,5\nAlcance: 80\nEnfriamiento: 15 s\nTiempo de lanzamiento: 1,2 s</TM_ConsumeCorpse_III.description>
+
+<TM_ConsumeCorpse_Mass.label>consumir cadáver: en masa</TM_ConsumeCorpse_Mass.label>
+
+<TM_ConsumeCorpse_Mass.description>Consume un grupo de cadáveres o no muertos para reponer maná. La ropa, los objetos y el equipo se quedan, pero todo el material del cadáver se consume (carne/cuero).</TM_ConsumeCorpse_Mass.description>
+
+<TM_CorpseExplosion.label>explosión de cadáver</TM_CorpseExplosion.label>
+
+<TM_CorpseExplosion.description>Mezcla energía arcana con los productos químicos del interior de un cadáver o no muerto para que el cuerpo explote tras un breve retardo. La explosión no consume el equipo automáticamente, pero puede destruirlo.\n\nCoste de maná: 20 %\nAlcance: 40\nEnfriamiento: 10 s\nTiempo de lanzamiento: 2 s</TM_CorpseExplosion.description>
+
+<TM_CorpseExplosion_I.label>explosión de cadáver I</TM_CorpseExplosion_I.label>
+
+<TM_CorpseExplosion_I.description>Mezcla energía arcana con los productos químicos del interior de un cadáver o no muerto para que el cuerpo explote tras un breve retardo. La explosión no consume el equipo automáticamente, pero puede destruirlo.\n\nCoste de maná: 22 %\nAlcance: 50\nEnfriamiento: 7 s\nTiempo de lanzamiento: 1,5 s</TM_CorpseExplosion_I.description>
+
+<TM_CorpseExplosion_II.label>explosión de cadáver II</TM_CorpseExplosion_II.label>
+
+<TM_CorpseExplosion_II.description>Mezcla energía arcana con los productos químicos del interior de un cadáver o no muerto para que el cuerpo explote tras un breve retardo. La explosión no consume el equipo automáticamente, pero puede destruirlo.\n\nCoste de maná: 24 %\nAlcance: 60\nEnfriamiento: 5 s\nTiempo de lanzamiento: 1 s</TM_CorpseExplosion_II.description>
+
+<TM_CorpseExplosion_III.label>explosión de cadáver III</TM_CorpseExplosion_III.label>
+
+<TM_CorpseExplosion_III.description>Mezcla energía arcana con los productos químicos del interior de un cadáver o no muerto para que el cuerpo explote tras un breve retardo. La explosión no consume el equipo automáticamente, pero puede destruirlo.\n\nCoste de maná: 25 %\nAlcance: 70\nEnfriamiento: 4 s\nTiempo de lanzamiento: 0,5 s</TM_CorpseExplosion_III.description>
+
+<TM_DeathBolt.label>descarga mortal</TM_DeathBolt.label>
+
+<TM_DeathBolt.description>Lanza descargas de poder que transportan la angustia de los muertos; causa un dolor intenso a cualquier criatura viva atrapada en la explosión.\n\nRadio de explosión: 1,6 m\nEnfriamiento: 15 s\nDescargas: 2\nAlcance: 40</TM_DeathBolt.description>
+
+<TM_DeathBolt_I.label>descarga mortal I</TM_DeathBolt_I.label>
+
+<TM_DeathBolt_I.description>Lanza descargas de poder que transportan la angustia de los muertos; causa un dolor intenso a cualquier criatura viva atrapada en la explosión.\n\nRadio de explosión: 2 m\nEnfriamiento: 14 s\nDescargas: 2\nAlcance: 40</TM_DeathBolt_I.description>
+
+<TM_DeathBolt_II.label>descarga mortal II</TM_DeathBolt_II.label>
+
+<TM_DeathBolt_II.description>Lanza descargas de poder que transportan la angustia de los muertos; causa un dolor intenso a cualquier criatura viva atrapada en la explosión.\n\nRadio de explosión: 2 m\nEnfriamiento: 13 s\nDescargas: 3\nAlcance: 40</TM_DeathBolt_II.description>
+
+<TM_DeathBolt_III.label>descarga mortal III</TM_DeathBolt_III.label>
+
+<TM_DeathBolt_III.description>Lanza descargas de poder que transportan la angustia de los muertos; causa un dolor intenso a cualquier criatura viva atrapada en la explosión.\n\nRadio de explosión: 2,4 m\nEnfriamiento: 12 s\nDescargas: 3\nAlcance: 50</TM_DeathBolt_III.description>
+
+<TM_DeathMark.label>marca de la muerte</TM_DeathMark.label>
+
+<TM_DeathMark.description>Marca a una víctima con una maldición que hace que su vida pase ante sus ojos. Las víctimas malditas pierden la concentración y las ganas de luchar, lo que reduce su ritmo de ataque. Marcar objetivos para la muerte potencia la descarga mortal. No funciona con mecanoides.\n\nObjetivos máximos: 4\nTiempo de lanzamiento: 3 s\nEnfriamiento: 120 s\nAlcance: 34</TM_DeathMark.description>
+
+<TM_DeathMark_I.label>marca de la muerte I</TM_DeathMark_I.label>
+
+<TM_DeathMark_I.description>Marca a una víctima con una maldición que hace que su vida pase ante sus ojos. Las víctimas malditas pierden la concentración y las ganas de luchar, lo que reduce su ritmo de ataque. Marcar objetivos para la muerte potencia la descarga mortal. No funciona con mecanoides.\n\nObjetivos máximos: 5\nTiempo de lanzamiento: 2,5 s\nEnfriamiento: 90 s\nAlcance: 38</TM_DeathMark_I.description>
+
+<TM_DeathMark_II.label>marca de la muerte II</TM_DeathMark_II.label>
+
+<TM_DeathMark_II.description>Marca a una víctima con una maldición que hace que su vida pase ante sus ojos. Las víctimas malditas pierden la concentración y las ganas de luchar, lo que reduce su ritmo de ataque. Marcar objetivos para la muerte potencia la descarga mortal. No funciona con mecanoides.\n\nObjetivos máximos: 6\nTiempo de lanzamiento: 2 s\nEnfriamiento: 60 s\nAlcance: 42</TM_DeathMark_II.description>
+
+<TM_DeathMark_III.label>marca de la muerte III</TM_DeathMark_III.label>
+
+<TM_DeathMark_III.description>Marca a una víctima con una maldición que hace que su vida pase ante sus ojos. Las víctimas malditas pierden la concentración y las ganas de luchar, lo que reduce su ritmo de ataque. Marcar objetivos para la muerte potencia la descarga mortal. No funciona con mecanoides.\n\nObjetivos máximos: 7\nTiempo de lanzamiento: 1,8 s\nEnfriamiento: 45 s\nAlcance: 46</TM_DeathMark_III.description>
+
+<TM_DismissUndead.label>despedir no muerto</TM_DismissUndead.label>
+
+<TM_DismissUndead.description>Despide a un no muerto.</TM_DismissUndead.description>
+
+<TM_FogOfTorment.label>niebla de tormento</TM_FogOfTorment.label>
+
+<TM_FogOfTorment.description>Crea una niebla que causa dolor y sufrimiento a toda criatura viva que se encuentre en su interior. Los no muertos dentro de la niebla se curan lentamente y no sufren penalizaciones por ella.</TM_FogOfTorment.description>
+
+<TM_LichForm.label>forma de liche</TM_LichForm.label>
+
+<TM_LichForm.description>Transforma al nigromante en un liche no muerto, otorgándole una existencia inmortal y poder arcano. Una vez usada, no hay vuelta atrás.\n\nVentajas:\nManá máximo: +50\nRegeneración de maná: +50 %\nAdquiere inmunidades antinaturales a las enfermedades, resistencia al daño y regeneración de salud, y se sustenta con maná (ya no necesita dormir ni comer)\nAdquiere la habilidad: Vuelo\nAdquiere la habilidad: Descarga mortal\n\nPenalizaciones:\nYa no puede realizar trabajos de cuidados, sociales, con animales, de extinción de incendios, artísticos ni pesados.\nPierde toda la pasión por el trabajo, salvo por el combate y la investigación.\nVelocidad de aprendizaje reducida un 40 % y velocidad de trabajo global reducida un 75 %\nVelocidad de movimiento: -2,0 c/s</TM_LichForm.description>
+
+<TM_RaiseUndead.label>alzar no muertos</TM_RaiseUndead.label>
+
+<TM_RaiseUndead.description>Alza no muertos a partir de cadáveres. Solo funciona con criaturas biológicas que estuvieron vivas en el pasado.\n\nLos no muertos permanecerán bajo el control del nigromante indefinidamente. El nigromante pagará un coste de mantenimiento de maná del 30 % de la regeneración de maná base por cada no muerto de tipo humanoide. Los animales no muertos tienen un coste de mantenimiento del 15 % por cada 100 de poder de combate.\n\nNo hay límite al número de no muertos que puede controlar un nigromante; sin embargo, cuando el nigromante se queda sin maná para mantenerlos, estos serán consumidos automáticamente hasta que el número de no muertos activos se reduzca a una cantidad manejable.</TM_RaiseUndead.description>
+</LanguageData>

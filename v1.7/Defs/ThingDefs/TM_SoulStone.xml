@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef>
+    <defName>TM_SoulStone</defName>
+    <label>soul stone</label>
+    <description>A crystal that can shelter a spirit. An occupied soul stone cannot be damaged or destroyed. After implantation, the spirit must recover for seven full days in a living host before leaving voluntarily.</description>
+    <thingClass>TorannMagic.ClassProgression.Thing_SoulStone</thingClass>
+    <category>Item</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Item</altitudeLayer>
+    <selectable>true</selectable>
+    <alwaysHaulable>true</alwaysHaulable>
+    <rotatable>false</rotatable>
+    <useHitPoints>true</useHitPoints>
+    <destroyable>true</destroyable>
+    <stackLimit>1</stackLimit>
+    <tradeability>None</tradeability>
+    <generateCommonality>0</generateCommonality>
+    <thingCategories><li>ItemsMisc</li></thingCategories>
+    <tradeTags />
+    <thingSetMakerTags />
+    <statBases>
+      <Mass>0.2</Mass>
+      <MaxHitPoints>150</MaxHitPoints>
+      <MarketValue>0</MarketValue>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+    <graphicData>
+      <texPath>Things/Items/SoulStone</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+  </ThingDef>
+</Defs>

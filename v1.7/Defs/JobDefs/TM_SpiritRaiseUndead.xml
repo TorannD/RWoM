@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>TM_SpiritRaiseUndead</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>raising undead through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritDeathMark</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>placing a death mark through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritDeathMark_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>placing a death mark through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritDeathMark_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>placing a death mark through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritDeathMark_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>placing a death mark through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritConsumeCorpse</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>consuming corpses through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritConsumeCorpse_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>consuming corpses through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritConsumeCorpse_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>consuming corpses through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritConsumeCorpse_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>consuming corpses through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritConsumeCorpse_Mass</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>consuming corpses through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCorpseExplosion</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>arming a corpse explosion through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCorpseExplosion_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>arming a corpse explosion through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCorpseExplosion_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>arming a corpse explosion through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritCorpseExplosion_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>arming a corpse explosion through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritFogOfTorment</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting fog of torment through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritDeathBolt</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting death bolts through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritDeathBolt_I</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting death bolts through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritDeathBolt_II</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting death bolts through a spirit host.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>TM_SpiritDeathBolt_III</defName>
+    <driverClass>TorannMagic.ClassProgression.JobDriver_SpiritBolt</driverClass>
+    <reportString>casting death bolts through a spirit host.</reportString>
+  </JobDef>
+</Defs>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_BrittleBonesHD.label>Huesos quebradizos</TM_BrittleBonesHD.label>
+  
+  <TM_BrittleBonesHD.description>Se produce al exponerse a temperaturas extremadamente frías y hace que los huesos y ligamentos se vuelvan quebradizos, lo que reduce el movimiento y la manipulación. Los no muertos con esta afección requieren un 50 % más de maná para mantenerse.</TM_BrittleBonesHD.description>
+  
+  <TM_BrittleBonesHD.stages.I.label>I</TM_BrittleBonesHD.stages.I.label>
+  
+  <TM_BrittleBonesHD.stages.II.label>II</TM_BrittleBonesHD.stages.II.label>
+  
+  <TM_BrittleBonesHD.stages.III.label>III</TM_BrittleBonesHD.stages.III.label>
+  
+  
+  <TM_DeathBoltHD.label>rayo de la muerte</TM_DeathBoltHD.label>
+  
+  <TM_DeathBoltHD.description>Energía destructiva que mata a todos los seres vivos.</TM_DeathBoltHD.description>
+  
+  <TM_DeathBoltHD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_DeathBoltHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_DeathBoltHD.comps.HediffComp_GetsPermanent.permanentLabel>derretida</TM_DeathBoltHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_DeathBoltHD.injuryProps.destroyedLabel>derretido</TM_DeathBoltHD.injuryProps.destroyedLabel>
+  
+  <TM_DeathBoltHD.injuryProps.destroyedOutLabel>derretido</TM_DeathBoltHD.injuryProps.destroyedOutLabel>
+  
+  <TM_DeathBoltHD.labelNounPretty>{0} en {1}</TM_DeathBoltHD.labelNounPretty>
+  
+  
+  <TM_DeathMarkCurse.label>Marca de la muerte</TM_DeathMarkCurse.label>
+  
+  <TM_DeathMarkCurse.description>Marcado por la muerte, este personaje no puede concentrarse en el presente porque su mente está fija en su muerte inevitable.</TM_DeathMarkCurse.description>
+  
+  <TM_DeathMarkCurse.stages.clumsy.label>torpe</TM_DeathMarkCurse.stages.clumsy.label>
+  
+  <TM_DeathMarkCurse.stages.fumbling.label>desmañado</TM_DeathMarkCurse.stages.fumbling.label>
+  
+  <TM_DeathMarkCurse.stages.cursed.label>maldito</TM_DeathMarkCurse.stages.cursed.label>
+  
+  
+  <TM_DeathMarkHD.label>Marca de la muerte</TM_DeathMarkHD.label>
+  
+  <TM_DeathMarkHD.description>Marcado por la muerte, este personaje morirá pronto y será reanimado como no muerto. (no se usa)</TM_DeathMarkHD.description>
+  
+  
+  <TM_LichHD.label>Lich</TM_LichHD.label>
+  
+  <TM_LichHD.description>Un personaje que ha alcanzado la inmortalidad al cortar su conexión con el ciclo de la vida y la muerte.</TM_LichHD.description>
+  
+  <TM_LichHD.stages.Undead.label>No muerto</TM_LichHD.stages.Undead.label>
+  
+  
+  <TM_SlaggedHD.label>Escorificado</TM_SlaggedHD.label>
+  
+  <TM_SlaggedHD.description>Se produce al exponerse a temperaturas extremadamente altas y hace que la materia orgánica se descomponga e incluso se derrita. Los no muertos afectados por esta condición requieren un 50 % más de maná para mantenerse.</TM_SlaggedHD.description>
+  
+  <TM_SlaggedHD.stages.I.label>I</TM_SlaggedHD.stages.I.label>
+  
+  <TM_SlaggedHD.stages.II.label>II</TM_SlaggedHD.stages.II.label>
+  
+  <TM_SlaggedHD.stages.III.label>III</TM_SlaggedHD.stages.III.label>
+  
+  
+  <TM_Torment_HD.label>Atormentado</TM_Torment_HD.label>
+  
+  <TM_Torment_HD.description>Atormentado con dolor por la magia oscura.</TM_Torment_HD.description>
+  
+  <TM_Torment_HD.stages.pain.label>dolor</TM_Torment_HD.stages.pain.label>
+  
+  <TM_Torment_HD.stages.agony.label>agonía</TM_Torment_HD.stages.agony.label>
+  
+  <TM_Torment_HD.stages.torment.label>tormento</TM_Torment_HD.stages.torment.label>
+  
+  
+  <TM_TormentHD.label>Tormento</TM_TormentHD.label>
+  
+  <TM_TormentHD.description>Dolor provocado por energía oscura.</TM_TormentHD.description>
+  
+  <TM_TormentHD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_TormentHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_TormentHD.comps.HediffComp_GetsPermanent.permanentLabel>podrida</TM_TormentHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_TormentHD.injuryProps.destroyedLabel>derretido</TM_TormentHD.injuryProps.destroyedLabel>
+  
+  <TM_TormentHD.injuryProps.destroyedOutLabel>derretido</TM_TormentHD.injuryProps.destroyedOutLabel>
+  
+  <TM_TormentHD.labelNounPretty>{0} en {1}</TM_TormentHD.labelNounPretty>
+  
+  
+  <TM_UndeadAnimalHD.label>No muerto</TM_UndeadAnimalHD.label>
+  
+  <TM_UndeadAnimalHD.description>Un personaje animado por energía necrótica. No posee voluntad propia y requiere dirección y energía continuas de un nigromante.</TM_UndeadAnimalHD.description>
+  
+  <TM_UndeadAnimalHD.stages.I.label>I</TM_UndeadAnimalHD.stages.I.label>
+  
+  <TM_UndeadAnimalHD.stages.II.label>II</TM_UndeadAnimalHD.stages.II.label>
+  
+  <TM_UndeadAnimalHD.stages.III.label>III</TM_UndeadAnimalHD.stages.III.label>
+  
+  <TM_UndeadAnimalHD.stages.IV.label>IV</TM_UndeadAnimalHD.stages.IV.label>
+  
+  
+  <TM_UndeadHD.label>No muerto</TM_UndeadHD.label>
+  
+  <TM_UndeadHD.description>Un personaje animado por energía necrótica. No posee voluntad propia y requiere dirección y energía continuas de un nigromante.</TM_UndeadHD.description>
+  
+  <TM_UndeadHD.stages.I.label>I</TM_UndeadHD.stages.I.label>
+  
+  <TM_UndeadHD.stages.II.label>II</TM_UndeadHD.stages.II.label>
+  
+  <TM_UndeadHD.stages.III.label>III</TM_UndeadHD.stages.III.label>
+  
+  <TM_UndeadHD.stages.IV.label>IV</TM_UndeadHD.stages.IV.label>
+  
+  
+  <TM_UndeadStageHD.label>Estado del cuerpo</TM_UndeadStageHD.label>
+  
+  <TM_UndeadStageHD.description>El estado actual del no muerto.</TM_UndeadStageHD.description>
+  
+  <TM_UndeadStageHD.stages.Rotting.label>Putrefacto</TM_UndeadStageHD.stages.Rotting.label>
+  
+  <TM_UndeadStageHD.stages.Dessicated.label>Desecado</TM_UndeadStageHD.stages.Dessicated.label>
+  
+</LanguageData>

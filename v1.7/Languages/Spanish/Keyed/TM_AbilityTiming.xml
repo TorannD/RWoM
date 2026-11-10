@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+<TM_GlobalCooldown>Recarga de habilidades</TM_GlobalCooldown>
+<TM_GlobalWarmup>Preparación de habilidades</TM_GlobalWarmup>
+<TM_GlobalTimingDesc>Se aplica a todas las habilidades de RWoM, incluidos enemigos y clases adicionales. 100% es normal; valores menores son más rápidos. Las recargas en curso no se recalculan.</TM_GlobalTimingDesc>
+</LanguageData>

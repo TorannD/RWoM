@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Golem_MechaRepair.label>recupere a parte</TM_Golem_MechaRepair.label>
+
+  <TM_Golem_MechaMaxEnergy.label>elemento de energia</TM_Golem_MechaMaxEnergy.label>
+  <TM_Golem_MechaMaxEnergy.description>Aumenta a energia máxima em 500 por nível. A energia máxima inicial é de 1.000.</TM_Golem_MechaMaxEnergy.description>
+
+  <TM_Golem_MechaEnergyEfficiency.label>conversor de energia</TM_Golem_MechaEnergyEfficiency.label>
+  <TM_Golem_MechaEnergyEfficiency.description>Aumenta a eficiência energética em 10% por nível. A eficiência energética inicial é de 50%.</TM_Golem_MechaEnergyEfficiency.description>
+
+  <TM_Golem_MechaEnergyRate.label>Núcleo neural elétrico</TM_Golem_MechaEnergyRate.label>
+  <TM_Golem_MechaEnergyRate.description>Aumenta a velocidade de carga de energia em 20% por nível. A velocidade inicial de recarga é de 50 custos de energia por hora quando desligado da rede elétrica. A conexão com a fonte de alimentação aumenta a velocidade de recarga.</TM_Golem_MechaEnergyRate.description>
+
+  <TM_Golem_MechaExtinguisher.label>extintor de incêndio</TM_Golem_MechaExtinguisher.label>
+  <TM_Golem_MechaExtinguisher.description>Adiciona a possibilidade de apagar fogos rapidamente.</TM_Golem_MechaExtinguisher.description>
+
+  <TM_Golem_MechaBallisticPlate.label>placa balística</TM_Golem_MechaBallisticPlate.label>
+  <TM_Golem_MechaBallisticPlate.description>Aumenta a blindagem, mas reduz o movimento para cada nível:
+Danos estúpidos: + [24,37,49]%
+Corte de danos: + [35,53,68]%
+Temperatura: + [40,60,75]%
+Movimento: - [.3c, .5c, .6c]%</TM_Golem_MechaBallisticPlate.description>
+
+  <TM_Golem_MechaAxe.label>peles-machado</TM_Golem_MechaAxe.label>
+  <TM_Golem_MechaAxe.description>Adiciona um rápido ataque de corte útil para destruir massas desacompanhadas.</TM_Golem_MechaAxe.description>
+
+  <TM_Golem_MechaSword.label>peles-espada</TM_Golem_MechaSword.label>
+  <TM_Golem_MechaSword.description>Adiciona um forte ataque de corte útil para quebrar a proteção e cortar membros.</TM_Golem_MechaSword.description>
+
+  <TM_Golem_MechaHammer.label>peles-martelo</TM_Golem_MechaHammer.label>
+  <TM_Golem_MechaHammer.description>Adiciona um ataque estúpido sem piedade, mais poderoso do que os punhos dos golems.</TM_Golem_MechaHammer.description>
+
+  <TM_Golem_MechaGatlingCannon.label>Canhão de Gatling</TM_Golem_MechaGatlingCannon.label>
+  <TM_Golem_MechaGatlingCannon.description>Disparou uma fila de 12 tiros.
+Tempo de recarga: 5 segundos
+Custos de energia: 40
+Faixa: 40</TM_Golem_MechaGatlingCannon.description>
+
+  <TM_Golem_MechaMiningLaser.label>Laser de mineração</TM_Golem_MechaMiningLaser.label>
+  <TM_Golem_MechaMiningLaser.description>Permite que o golem extraia certos segmentos da parede.
+Custos de energia: 20</TM_Golem_MechaMiningLaser.description>
+
+  <TM_Golem_MechaFlameCore.label>coração ardente</TM_Golem_MechaFlameCore.label>
+  <TM_Golem_MechaFlameCore.description>Aumenta passivamente as características do golem e adiciona a capacidade que queima a sujeira próxima.
+Movimento: + [0,5c/0,9c/1,2c]
+Processamento: + [10 %/20 %/30%]
+Dano Capacidade: + [10 %/20 %/30%]
+Custo de energia: + [10 %/20 %/30%]
+
+Protocolo de limpeza
+Tempo de recarga: 6 segundos
+Intervalo: 2c
+Custos de energia: 4 dólares por lama</TM_Golem_MechaFlameCore.description>
+
+  <TM_Golem_MechaWaterCore.label>Núcleo de água</TM_Golem_MechaWaterCore.label>
+  <TM_Golem_MechaWaterCore.description>Aumenta passivamente as características do golem e adiciona um mecanismo de recuperação autônomo.
+Armadura: + [5 %/10 %/15%]
+Recarga de capacidade: - [10 %/20 %/30%]
+Bónus de Cura: + [100 %/200 %/300%]
+Custo de energia: - [15 %/30 %/45%]
+
+Reparação Autônoma
+Tempo de recarga: 3 segundos
+Custos de energia: 10 (D), 30 (A)
+Número de curas: 8</TM_Golem_MechaWaterCore.description>
+
+  <TM_Golem_MechaEarthCore.label>núcleo da terra</TM_Golem_MechaEarthCore.label>
+  <TM_Golem_MechaEarthCore.description>Aumenta passivamente as características do golem e adiciona a capacidade de proteção.
+Armadura: + [10 %/18 %/25%]
+Recarga de capacidade: + [5 %/10 %/15%]
+Bónus de Cura: + [60 %/120 %/180%]
+Custo de energia: + [5 %/10 %/15%]
+Processamento: + [15 %/30 %/45%]
+
+Protocolo de proteção
+Tempo de recarga: 10 segundos
+Custo de energia: 10
+Número de escudos: 120</TM_Golem_MechaEarthCore.description>
+
+  <TM_Golem_MechaLightningCore.label>núcleo relâmpago</TM_Golem_MechaLightningCore.label>
+  <TM_Golem_MechaLightningCore.description>Aumenta passivamente as características do golem e adiciona um revestimento reflexivo à carapaça do golem, que produz uma descarga elétrica que atordoará os atacantes em uma batalha próxima.
+Movimento: + [1.2c/1.8c/2.2c]
+Recarga de capacidade: - [15 %/30 %/45%]
+Custo de energia: + [10 %/20 %/30%]
+Processamento: - [5 %/10 %/15%]</TM_Golem_MechaLightningCore.description>
+
+  <TM_Golem_MechaFlameShard.label>fragmento de fogo</TM_Golem_MechaFlameShard.label>
+  <TM_Golem_MechaFlameShard.description>Aumenta as características do golem:
+Movimento: + [15 %/30 %/40%]
+Saúde: + [15 %/30 %/40%]</TM_Golem_MechaFlameShard.description>
+
+  <TM_Golem_MechaWaterShard.label>fragmento de água</TM_Golem_MechaWaterShard.label>
+  <TM_Golem_MechaWaterShard.description>Aumenta as características do golem:
+Movimento: + [10 %/15 %/20%]
+Saúde: + [30 %/50 %/70%]</TM_Golem_MechaWaterShard.description>
+
+  <TM_Golem_MechaEarthShard.label>fragmento de terra</TM_Golem_MechaEarthShard.label>
+  <TM_Golem_MechaEarthShard.description>Aumenta as características do golem:
+Saúde: + [40 %/80 %/120%]</TM_Golem_MechaEarthShard.description>
+
+  <TM_Golem_MechaLightningShard.label>fragmento relâmpago</TM_Golem_MechaLightningShard.label>
+  <TM_Golem_MechaLightningShard.description>Aumenta as características do golem:
+Movimento: + [25 %/50 %/75%]</TM_Golem_MechaLightningShard.description>
+
+
+</LanguageData>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Gear Repair -->
+
+  <TM_GearRepair.label>Reparação de dentes</TM_GearRepair.label>
+  <TM_GearRepair.description>Ativa ou desativa a capacidade de combate sustentável para reparar o equipamento - lentamente restabelece roupas e armas equipadas. São necessárias 20 resistências para aguentar.</TM_GearRepair.description>
+
+
+  <!-- Inner Healing -->
+
+  <TM_InnerHealing.label>cura interna</TM_InnerHealing.label>
+  <TM_InnerHealing.description>Ativa ou desativa a capacidade de combate sustentável da cura interna - sacrificando a energia física para aumentar a velocidade de cura e imunidade às doenças. É preciso 10 resistências para aguentar.</TM_InnerHealing.description>
+
+
+  <!-- Heavy Blow -->
+
+  <TM_HeavyBlow.label>um duro golpe</TM_HeavyBlow.label>
+  <TM_HeavyBlow.description>Ativa ou desativa a capacidade de combate resistente a um duro golpe - aumenta em 20% os danos causados por todos os ataques. São necessárias 30 resistências para aguentar.</TM_HeavyBlow.description>
+
+
+  <!-- Strong Back -->
+
+  <TM_StrongBack.label>costas fortes</TM_StrongBack.label>
+  <TM_StrongBack.description>Ativa ou desativa a capacidade de combate robusta das costas - aumenta a capacidade de transposição em 40% e a capacidade em 30%, mas provoca um aumento de 10% na taxa de exaustão. É preciso 10 resistências para aguentar.</TM_StrongBack.description>
+
+
+  <!-- Thick Skin -->
+
+  <TM_ThickSkin.label>Pele grossa</TM_ThickSkin.label>
+  <TM_ThickSkin.description>Ativa ou desativa a capacidade de combate sustentável da pele grossa - aumenta todos os valores da reserva em 10% e aumenta ligeiramente os limites de temperatura. São necessárias 30 resistências para aguentar.</TM_ThickSkin.description>
+
+
+  <!-- Fighters Focus -->
+
+  <TM_FightersFocus.label>Foco do lutador</TM_FightersFocus.label>
+  <TM_FightersFocus.description>Ativa ou desativa a capacidade de combate sustentável de focar o lutador - aumenta o limite de corte mental em 5% e o limite de dor em 20%. Precisa de 15 resistências para aguentar.</TM_FightersFocus.description>
+
+
+  <!-- Burning Fury -->
+
+  <TM_BurningFury.label>Fúria Furiosa</TM_BurningFury.label>
+  <TM_BurningFury.description>Ativa ou desativa a capacidade de combate persistente à fúria acesa.
+
+A fúria acesa causa danos periódicos ao fogo aos inimigos mais próximos, assim como ao feitiço. Ele também está a incendiar feridas sangrentas e a usar reforço de combate no feitiço.
+
+Raiva furiosa:
+Movimento + 10%
+Respiração + 40%
+Circulação de sangue + 40%
+Limite de dor + 40%
+Armadura (aquecimento) + 100%
+
+Enquanto estiver ativo, o feitiço não pode ser apanhado e vai reduzir os danos de entrada em 35%.
+
+Esta capacidade consome a resistência e é automaticamente cancelada assim que a resistência do feitiço chega a 0.</TM_BurningFury.description>
+
+
+</LanguageData>

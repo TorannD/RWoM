@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <HediffDef>
+    <defName>TM_EtherShellHD</defName>
+    <label>ether shell</label>
+    <description>Protects the caster or an allied pawn from vacuum and extreme cold for one day. Grants full vacuum resistance, prevents vacuum burns and lowers minimum comfortable temperature by 300 C. Does not protect from bullets, fire or heat, and does not heal injuries. Cannot stack or refresh while active.</description>
+    <hediffClass>TorannMagic.Odyssey.Hediff_EtherShell</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <preventVacuumBurns>true</preventVacuumBurns>
+        <statOffsets>
+          <VacuumResistance>1</VacuumResistance>
+          <ComfyTemperatureMin>-300</ComfyTemperatureMin>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <TorannMagic.TMAbilityDef ParentName="BaseMagicAbility">
+    <defName>TM_EtherShell</defName>
+    <label>Ether Shell</label>
+    <description>Protects the caster or an allied pawn from vacuum and extreme cold for one day. Grants full vacuum resistance, prevents vacuum burns and lowers minimum comfortable temperature by 300 C. Does not protect from bullets, fire or heat, and does not heal injuries. Cannot stack or refresh while active. Range: 12 cells. Preparation: 1 second. Cooldown: 60 seconds. Costs 25% mana before efficiency modifiers.</description>
+    <abilityClass>TorannMagic.Odyssey.EtherShellAbility</abilityClass>
+    <uiIconPath>UI/Abilities/EtherShell</uiIconPath>
+    <manaCost>0.25</manaCost>
+    <efficiencyReductionPercent>0.1</efficiencyReductionPercent>
+    <learnItem>SpellOf_EtherShell</learnItem>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_EtherShell</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>true</requiresLineOfSight>
+      <defaultProjectile>Projectile_TM_SpawnThing</defaultProjectile>
+      <abilityDef>TM_EtherShell</abilityDef>
+      <warmupTime>1</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <range>12</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>TM_Vibration</soundCast>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </MainVerb>
+  </TorannMagic.TMAbilityDef>
+  <TorannMagic.TM_CustomPowerDef>
+    <defName>TM_EtherShellPower</defName>
+    <customPower>
+      <forMage>true</forMage>
+      <maxLevel>0</maxLevel>
+      <learnCost>2</learnCost>
+      <costToLevel>1</costToLevel>
+      <requiresScroll>true</requiresScroll>
+      <chaosMageUseable>false</chaosMageUseable>
+      <abilityDefs>
+        <li>TM_EtherShell</li>
+      </abilityDefs>
+      <skills>
+        <li>
+          <label>TM_EtherShell_eff</label>
+          <description>TM_EtherShell_eff_desc</description>
+          <levelMax>3</levelMax>
+          <costToLevel>1</costToLevel>
+        </li>
+        <li><label>TM_EtherShell_ver</label><description>TM_EtherShell_ver_desc</description><levelMax>3</levelMax><costToLevel>1</costToLevel></li>
+      </skills>
+    </customPower>
+  </TorannMagic.TM_CustomPowerDef>
+  <ThingDef ParentName="ArcaneSpellBase">
+    <defName>SpellOf_EtherShell</defName>
+    <label>Mage Spell: Ether Shell</label>
+    <description>Teaches Ether Shell to a mage able to learn general spells. Protects the caster or an allied pawn from vacuum and extreme cold for one day. Grants full vacuum resistance, prevents vacuum burns and lowers minimum comfortable temperature by 300 C. Does not protect from bullets, fire or heat, and does not heal injuries. Cannot stack or refresh while active.</description>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>1075</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+    <graphicData>
+      <texPath>Books/scroll</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <RawMagicyte>200</RawMagicyte>
+      <DevilstrandCloth>40</DevilstrandCloth>
+    </costList>
+    <recipeMaker>
+      <workAmount>2000</workAmount>
+      <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <recipeUsers>
+        <li>TableMagicPrinter</li>
+      </recipeUsers>
+      <effectWorking>Smelt</effectWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>2</Crafting>
+        <Intellectual>8</Intellectual>
+      </skillRequirements>
+      <researchPrerequisite>TM_AdvancedScribing</researchPrerequisite><researchPrerequisites><li>OrbitalTech</li></researchPrerequisites>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="TM_CastScrollBase">
+    <defName>TM_CastScroll_EtherShell</defName>
+    <label>ether shell cast scroll</label>
+    <description>Protects the caster or an allied pawn from vacuum and extreme cold for one day. Grants full vacuum resistance, prevents vacuum burns and lowers minimum comfortable temperature by 300 C. Does not protect from bullets, fire or heat, and does not heal injuries. Cannot stack or refresh while active. Use from inventory. Consumes one scroll on a successful cast. Anyone can use it without mana or learned magic. Fixed one-day duration; range 12 cells, preparation 1 second, cooldown 60 seconds.</description>
+    <statBases>
+      <MarketValue>360</MarketValue>
+    </statBases>
+    <graphicData>
+      <texPath>Items/SpellItems/Scroll_EtherShell</texPath>
+    </graphicData>
+    <comps>
+      <li Class="TorannMagic.SpellItems.CompProperties_SpellItem">
+        <spell>EtherShell</spell>
+        <maxUses>1</maxUses>
+        <requiresEquipped>false</requiresEquipped>
+        <range>12</range>
+        <warmupTicks>60</warmupTicks>
+        <cooldownTicks>3600</cooldownTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  <RecipeDef ParentName="TM_SpellItemRecipeBase">
+    <defName>TM_MakeCastScroll_EtherShell</defName>
+    <label>make ether shell cast scroll</label>
+    <description>Requires a mage who knows Ether Shell. Protects the caster or an allied pawn from vacuum and extreme cold for one day. Grants full vacuum resistance, prevents vacuum burns and lowers minimum comfortable temperature by 300 C. Does not protect from bullets, fire or heat, and does not heal injuries. Cannot stack or refresh while active. Use from inventory. Consumes one scroll on a successful cast. Anyone can use it without mana or learned magic. Fixed one-day duration; range 12 cells, preparation 1 second, cooldown 60 seconds.</description>
+    <jobString>making ether shell cast scroll.</jobString>
+    <researchPrerequisite>TM_AdvancedScribing</researchPrerequisite><researchPrerequisites><li>OrbitalTech</li></researchPrerequisites>
+    <workAmount>1800</workAmount>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter Inherit="False">
+      <thingDefs>
+        <li>RawMagicyte</li>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <TM_CastScroll_EtherShell>1</TM_CastScroll_EtherShell>
+    </products>
+    <modExtensions>
+      <li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement">
+        <requiredSpell>TM_EtherShell</requiredSpell>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+  <ThingDef ParentName="TM_SpellStaffBase">
+    <defName>TM_SpellStaff_EtherShell</defName>
+    <label>charged ether shell staff</label>
+    <description>Protects the caster or an allied pawn from vacuum and extreme cold for one day. Grants full vacuum resistance, prevents vacuum burns and lowers minimum comfortable temperature by 300 C. Does not protect from bullets, fire or heat, and does not heal injuries. Cannot stack or refresh while active. Equip as the primary weapon. Holds 10 uses, cannot recharge and disappears after its last use. Anyone can use it without mana or learned magic. Fixed one-day duration; range 12 cells, preparation 1 second, cooldown 60 seconds.</description>
+    <statBases>
+      <MarketValue>3000</MarketValue>
+    </statBases>
+    <graphicData>
+      <texPath>Items/SpellItems/Staff_EtherShell</texPath>
+    </graphicData>
+    <comps>
+      <li Class="TorannMagic.SpellItems.CompProperties_SpellItem">
+        <spell>EtherShell</spell>
+        <maxUses>10</maxUses>
+        <requiresEquipped>true</requiresEquipped>
+        <range>12</range>
+        <warmupTicks>60</warmupTicks>
+        <cooldownTicks>3600</cooldownTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  <RecipeDef ParentName="TM_SpellItemRecipeBase">
+    <defName>TM_MakeSpellStaff_EtherShell</defName>
+    <label>make charged ether shell staff</label>
+    <description>Requires a mage who knows Ether Shell. Protects the caster or an allied pawn from vacuum and extreme cold for one day. Grants full vacuum resistance, prevents vacuum burns and lowers minimum comfortable temperature by 300 C. Does not protect from bullets, fire or heat, and does not heal injuries. Cannot stack or refresh while active. Equip as the primary weapon. Holds 10 uses, cannot recharge and disappears after its last use. Anyone can use it without mana or learned magic. Fixed one-day duration; range 12 cells, preparation 1 second, cooldown 60 seconds.</description>
+    <jobString>making charged ether shell staff.</jobString>
+    <researchPrerequisite>TM_AdvancedScribing</researchPrerequisite><researchPrerequisites><li>OrbitalTech</li></researchPrerequisites>
+    <workAmount>8000</workAmount>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>TM_CastScroll_EtherShell</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RawMagicyte</li>
+          </thingDefs>
+        </filter>
+        <count>435</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Jade</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter Inherit="False">
+      <thingDefs>
+        <li>TM_CastScroll_EtherShell</li>
+        <li>RawMagicyte</li>
+        <li>WoodLog</li>
+        <li>Jade</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <TM_SpellStaff_EtherShell>1</TM_SpellStaff_EtherShell>
+    </products>
+    <modExtensions>
+      <li Class="TorannMagic.SpellItems.SpellItemRecipeRequirement">
+        <requiredSpell>TM_EtherShell</requiredSpell>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+</Defs>

@@ -1,0 +1,12 @@
+<LanguageData>
+	<TM_Artifact_ClassExtraction.comps.2.useLabel>Использовать: {0_label}</TM_Artifact_ClassExtraction.comps.2.useLabel>
+	<TM_Decimation.comps.5.enchantedAction.actionLabel>Разлом</TM_Decimation.comps.5.enchantedAction.actionLabel>
+	<TM_DemonFang.comps.5.enchantedAction.actionLabel>Яд</TM_DemonFang.comps.5.enchantedAction.actionLabel>
+	<TM_GloryMaul.comps.5.enchantedAction.actionLabel>Даровать мощь</TM_GloryMaul.comps.5.enchantedAction.actionLabel>
+	<TM_Ruunbled.comps.5.enchantedAction.actionLabel>Стремительность</TM_Ruunbled.comps.5.enchantedAction.actionLabel>
+	<TM_ThrumboSaber.comps.5.enchantedAction.actionLabel>Стремительность</TM_ThrumboSaber.comps.5.enchantedAction.actionLabel>
+	<TM_HollowGolem.verbs.TorannMagic.Golems.Verb_DarkBolt.label>ㅤ</TM_HollowGolem.verbs.TorannMagic.Golems.Verb_DarkBolt.label>
+	<TM_HollowGolem.verbs.TorannMagic.Golems.Verb_FireBlossom.label>ㅤ</TM_HollowGolem.verbs.TorannMagic.Golems.Verb_FireBlossom.label>
+	<TM_HollowGolem.verbs.TorannMagic.Golems.Verb_IceBlossom.label>ㅤ</TM_HollowGolem.verbs.TorannMagic.Golems.Verb_IceBlossom.label>
+	<TM_HollowGolem.verbs.TorannMagic.Weapon.Verb_BlazingPower.label>ㅤ</TM_HollowGolem.verbs.TorannMagic.Weapon.Verb_BlazingPower.label>
+</LanguageData>

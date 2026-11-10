@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using UnityEngine;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace TorannMagic
     public class HediffComp_Empath : HediffComp
     {
 
-        private bool initialized = false;
+        internal int SourceId;
         private bool removeNow = false;
 
         private int eventFrequency = 1251;
@@ -25,6 +25,7 @@ namespace TorannMagic
         public override void CompExposeData()
         {
             base.CompExposeData();
+            Scribe_Values.Look(ref SourceId, "empathSourceId", 0);
         }
 
         public string labelCap
@@ -46,8 +47,14 @@ namespace TorannMagic
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
-            CompAbilityUserMagic comp = this.Pawn.GetCompAbilityUserMagic();
-            if (spawned && comp != null && comp.IsMagicUser && this.Pawn.needs.mood != null)
+            var owner = Pawn;
+            if (SourceId != 0 && (!ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(Pawn,out owner) || owner.thingIDNumber != SourceId))
+            {
+                removeNow = true;
+                return;
+            }
+            CompAbilityUserMagic comp = owner.GetCompAbilityUserMagic();
+            if (spawned && comp != null && (SourceId != 0 || comp.IsMagicUser) && this.Pawn.needs?.mood != null)
             {
                 pwrVal = comp.MagicData.GetSkill_Power(TorannMagicDefOf.TM_Empathy).level;
                 verVal = comp.MagicData.GetSkill_Versatility(TorannMagicDefOf.TM_Empathy).level;
@@ -72,6 +79,7 @@ namespace TorannMagic
                 if (Find.TickManager.TicksGame % this.eventFrequency == 0)
                 {
                     Initialize();
+                    if (removeNow) return;
                     EmotionalInspiration(base.Pawn);                    
 
                     List<Pawn> pList = (from mp in Pawn.Map.mapPawns.AllPawnsSpawned

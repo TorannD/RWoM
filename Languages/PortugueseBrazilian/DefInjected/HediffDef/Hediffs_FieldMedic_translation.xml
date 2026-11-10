@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_MedicalSupplyHD.label>Insumos médicos</TM_MedicalSupplyHD.label>
+  <TM_MedicalSupplyHD.description>Inclui os medicamentos de que dispõe o Médico de Campo.</TM_MedicalSupplyHD.description>
+  <TM_MedicalSupplyHD.stages.0.label></TM_MedicalSupplyHD.stages.0.label>
+
+  <TM_EmergencyHD.label>Emergência</TM_EmergencyHD.label>
+  <TM_EmergencyHD.description>Farei tudo o que puder.</TM_EmergencyHD.description>
+  <TM_EmergencyHD.stages.0.label>I</TM_EmergencyHD.stages.0.label>
+
+  <TM_MedigelHD.label>Medigel</TM_MedigelHD.label>
+  <TM_MedigelHD.description>Medigel aumenta a taxa de cicatrização e combate infecções.</TM_MedigelHD.description>
+  <TM_MedigelHD.stages.0.label>I</TM_MedigelHD.stages.0.label>
+
+  <TM_CombatDrugsPain_HD.label>Drogas de combate (analgésico)</TM_CombatDrugsPain_HD.label>
+  <TM_CombatDrugsPain_HD.description>Medicamentos de combate que reduzem a dor</TM_CombatDrugsPain_HD.description>
+  <TM_CombatDrugsPain_HD.stages.0.label></TM_CombatDrugsPain_HD.stages.0.label>
+
+  <TM_CombatDrugsMoving_HD.label>Drogas de combate (movimento)</TM_CombatDrugsMoving_HD.label>
+  <TM_CombatDrugsMoving_HD.description>Medicamentos de combate que aumentam a movimentação</TM_CombatDrugsMoving_HD.description>
+  <TM_CombatDrugsMoving_HD.stages.0.label></TM_CombatDrugsMoving_HD.stages.0.label>
+
+  <TM_CombatDrugsAwareness_HD.label>Drogas de combate (consciência)</TM_CombatDrugsAwareness_HD.label>
+  <TM_CombatDrugsAwareness_HD.description>Medicamentos de combate que aumentam a consciência</TM_CombatDrugsAwareness_HD.description>
+  <TM_CombatDrugsAwareness_HD.stages.0.label></TM_CombatDrugsAwareness_HD.stages.0.label>
+
+  <TM_CombatDrugsAccuracy_HD.label>Drogas de combate (precisão)</TM_CombatDrugsAccuracy_HD.label>
+  <TM_CombatDrugsAccuracy_HD.description>Medicamentos de combate que aumentam a precisão</TM_CombatDrugsAccuracy_HD.description>
+  <TM_CombatDrugsAccuracy_HD.stages.0.label></TM_CombatDrugsAccuracy_HD.stages.0.label>
+
+
+  <TM_MedicalSupplyHD.comps.0.regenPerTickUpgradeName>insumos médicos não são para restauração</TM_MedicalSupplyHD.comps.0.regenPerTickUpgradeName>
+  <TM_MedicalSupplyHD.comps.HediffComp_AbilityResource.regenPerTickUpgradeName>insumos médicos não são para regeneração</TM_MedicalSupplyHD.comps.HediffComp_AbilityResource.regenPerTickUpgradeName>
+</LanguageData>

@@ -1,0 +1,196 @@
+﻿<Defs>
+  <ThingDef ParentName="GravshipComponentBase">
+    <defName>TM_MagicalGravEngine</defName>
+    <label>magical grav engine</label>
+    <description>A buildable arcane grav engine with the lifting capacity of a standard grav engine. Uses only magical grav field extenders and supports ordinary gravship equipment and magical thrusters. Stores 100 magofuel and 500 mana, starts empty, and supplies both through mana beacons. Mages can charge its mana reserve; magofuel can also be converted into mana. Does not consume an additional launch fee. Colonists can approach the core to receive return marks. Maintaining each mark costs 1 magofuel per day. Returning costs 10 magofuel per pawn; an entire caravan can return with its animals, prisoners and cargo.</description>
+    <thingClass>TorannMagic.Odyssey.Building_MagicalGravEngine</thingClass>
+    <drawerType>RealtimeOnly</drawerType>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedGravEngine</minifiedDef>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Buildings/MagicalGravEngine</texPath>
+      <drawSize>(3.3,3.3)</drawSize>
+      <!-- The engine art has a single valid view; keep the sprite unrotated while
+           the building itself still rotates so the interaction cell follows
+           placement rotation (4 approach spots). -->
+      <drawRotated>false</drawRotated>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>800</MaxHitPoints>
+      <Mass>30</Mass>
+      <GravshipRange>0</GravshipRange>
+      <SubstructureSupport>500</SubstructureSupport>
+      <WorkToBuild>60000</WorkToBuild>
+    </statBases>
+    <size>(3,3)</size>
+    <rotatable>true</rotatable>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.6</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>20</pathCost>
+    <canOverlapZones>false</canOverlapZones>
+    <building>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+      <deconstructible>true</deconstructible>
+      <relatedBuildCommands>
+        <li>GravshipHull</li>
+      </relatedBuildCommands>
+      <relatedTerrain>
+        <li>Substructure</li>
+      </relatedTerrain>
+    </building>
+    <comps>
+      <li Class="TorannMagic.Odyssey.CompProperties_CoreReturn" />
+      <li Class="TorannMagic.Odyssey.CompProperties_CrystalGlow"><state>Reservoir</state><diameter>1.25</diameter><north>(0.5,0.4)</north><east>(0.5,0.4)</east><south>(0.5,0.4)</south><west>(0.5,0.4)</west></li>
+      <li Class="CompProperties_SubstructureFootprint">
+        <radius>18.9</radius>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>8</glowRadius>
+        <glowColor>(0,218,255,0)</glowColor>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>TM_MagicalGravExtender</li>
+          <li>PilotConsole</li>
+          <li>ChemfuelTank</li>
+          <li>LargeChemfuelTank</li>
+          <li>SmallThruster</li>
+          <li>LargeThruster</li>
+          <li>FuelOptimizer</li>
+          <li>SignalJammer</li>
+          <li>PilotSubpersonaCore</li>
+          <li>GravshipShieldGenerator</li>
+          <li>TM_SmallMagicalThruster</li>
+          <li>TM_LargeMagicalThruster</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>GravshipEngine_Ambient</sound>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>100</fuelCapacity>
+        <initialFuelPercent>0</initialFuelPercent>
+        <fuelConsumptionRate>0</fuelConsumptionRate>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <functionsInVacuum>true</functionsInVacuum>
+        <fuelMultiplier>1</fuelMultiplier>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>100</initialConfigurableTargetFuelLevel>
+        <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <showFuelGizmo>true</showFuelGizmo>
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <fuelFilter>
+          <thingDefs>
+            <li>TM_Magofuel</li>
+          </thingDefs>
+        </fuelFilter>
+      </li>
+      <li Class="TorannMagic.Odyssey.CompProperties_MagofuelReservoir">
+        <manaCapacity>500</manaCapacity>
+      </li>
+      <li Class="TorannMagic.Odyssey.CompProperties_ManaNetworkEndpoint">
+        <defaultManaMode>Send</defaultManaMode>
+        <defaultFuelMode>Send</defaultFuelMode>
+      </li>
+    </comps>
+    <designationCategory>TM_RWoM</designationCategory>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <uiOrder>2200</uiOrder>
+    <costList>
+      <Steel>600</Steel>
+      <GravlitePanel>240</GravlitePanel>
+      <RawMagicyte>600</RawMagicyte>
+      <ComponentIndustrial>12</ComponentIndustrial>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <researchPrerequisites>
+      <li>TM_MagicalGravtech</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="GravshipComponentBase">
+    <defName>TM_MagicalGravExtender</defName>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <tickerType>Normal</tickerType>
+    <label>magical grav field extender</label>
+    <description>Extends the field and substructure support of a magical grav engine. Uses the support, range and extender limit of the installed gravship rules. Cannot link to ordinary grav engines.</description>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Buildings/MagicalGravExtender</texPath>
+      <drawSize>(1.8,1.8)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Mass>15</Mass>
+      <WorkToBuild>16000</WorkToBuild>
+    </statBases>
+    <fillPercent>0.4</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>14</pathCost>
+    <canOverlapZones>false</canOverlapZones>
+    <designationCategory>TM_RWoM</designationCategory>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+    <researchPrerequisites>
+      <li>TM_MagicalGravtech</li>
+    </researchPrerequisites>
+    <costList>
+      <Steel>100</Steel>
+      <GravlitePanel>60</GravlitePanel>
+      <RawMagicyte>160</RawMagicyte>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers>
+      <li>PlaceWorker_InRangeOfGravEngine</li>
+    </placeWorkers>
+    <building>
+      <relatedTerrain>
+        <li>Substructure</li>
+      </relatedTerrain>
+    </building>
+    <comps>
+      <li Class="TorannMagic.Odyssey.CompProperties_CoreReturn" />
+      <li Class="TorannMagic.Odyssey.CompProperties_ExtenderOrbit" />
+      <li Class="CompProperties_SubstructureFootprint">
+        <radius>16.9</radius>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(0,218,255,0)</glowColor>
+      </li>
+      <li Class="CompProperties_GravshipFacility">
+        <statOffsets>
+          <SubstructureSupport>250</SubstructureSupport>
+        </statOffsets>
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>6</maxSimultaneous>
+        <maxDistance>18.9</maxDistance>
+        <onlyRequiresLooseConnection>true</onlyRequiresLooseConnection>
+        <!-- Extends the support so may support itself -->
+      </li>
+    </comps>
+    <uiOrder>2300</uiOrder>
+    <size>(1,1)</size>
+  </ThingDef>
+  <ResearchProjectDef>
+    <defName>TM_MagicalGravtech</defName>
+    <label>magical gravtech</label>
+    <description>Combine orbital engineering, mana storage and magic circle geometry to construct magical grav engines and their dedicated field extenders.</description>
+    <baseCost>6000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <tab>TMagic</tab>
+    <prerequisites>
+      <li>TM_MagofuelRefining</li>
+      <li>TM_MagicCircle</li>
+      <li>OrbitalTech</li>
+    </prerequisites>
+    <researchViewX>6</researchViewX>
+    <researchViewY>5</researchViewY>
+  </ResearchProjectDef>
+</Defs>

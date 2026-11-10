@@ -1,0 +1,17 @@
+<LanguageData><TM_ChaosTraditionHD.label>Хаотический Поток</TM_ChaosTraditionHD.label>
+  <TM_ChaosTraditionHD.description>Осуществление контроля над реальностью посредством объективной интерпретации, что приводит к акцентированию физической и ментальной стойкости мага Хаоса.</TM_ChaosTraditionHD.description>
+  <TM_ChaosTraditionHD.stages.0.label>I</TM_ChaosTraditionHD.stages.0.label>
+  <TM_ChaosTraditionHD.stages.1.label>II</TM_ChaosTraditionHD.stages.1.label>
+  <TM_ChaosTraditionHD.stages.2.label>III</TM_ChaosTraditionHD.stages.2.label>
+
+  <TM_ChaoticMindHD.label>Хаотичный Разум</TM_ChaoticMindHD.label>
+  <TM_ChaoticMindHD.description>Осуществление контроля над реальностью посредством объективной интерпретации, что приводит к акцентированию физической и ментальной стойкости мага Хаоса.</TM_ChaoticMindHD.description>
+  <TM_ChaoticMindHD.stages.0.label>мысль</TM_ChaoticMindHD.stages.0.label>
+
+  <TM_ControlledChaosHD.label>подконтрольный Хаос</TM_ControlledChaosHD.label>
+  <TM_ControlledChaosHD.description>Осуществление контроля над реальностью посредством объективной интерпретации, что приводит к акцентированию физической и ментальной стойкости мага Хаоса.</TM_ControlledChaosHD.description>
+  <TM_ControlledChaosHD.stages.0.label>ХАОС</TM_ControlledChaosHD.stages.0.label>
+  <TM_ControlledChaosHD.stages.1.label />
+
+
+</LanguageData>

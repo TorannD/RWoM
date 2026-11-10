@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MasteryRitual>Specialize {0}: {1} ({2} magicyte{3})</TM_MasteryRitual>
+  <TM_Mastery_focus>Focus (+25% primary blast damage)</TM_Mastery_focus>
+  <TM_Mastery_reach>Reach (+25% primary blast radius)</TM_Mastery_reach>
+  <TM_Mastery_depth>Deep healing (+25% per wound)</TM_Mastery_depth>
+  <TM_Mastery_breadth>Broad healing (one extra wound)</TM_Mastery_breadth>
+  <TM_MasteryCurrent>{0} mastery: {1}</TM_MasteryCurrent>
+  <TM_MasteryHint>Choose or replace a specialization for the same price at a large magic circle. Keep offerings in the mage's inventory or within five cells of the circle's center.</TM_MasteryHint>
+</LanguageData>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Empathy</defName>
+    <label>Empathy</label>
+    <description>An empath has the ability to experience the emotions of those around them reverberate their emotions to better understand the feelings of others, or to convey their own emotions. These innate abilities have been augmented by arcane power, magnifying the effects of empathy. Pawns in proximity to the empath will occasionally experience the faded emotions of the empath, both good and bad. The more good emotions an empath is feeling, the more likely nearby pawns will gain positive empathic feelings. Mastery of empathic abilities can make it an effective mood management tool, but an untrained and stressed out empath can cause despair to an entire colony.</description>
+    <spellId>rwom.tm_empathy</spellId>
+    <iconPath>UI/Empathy</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_SB</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_Empathy</abilityDef>
+      <warmupTime>0</warmupTime>
+      <SecondsToRecharge>2</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>0</range>
+      <isViolent>false</isViolent>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Mindkiller</defName>
+    <label>Mind Killer</label>
+    <description>Releases an empathic wail that floods all nearby pawns with emotions. Reactions can vary, but most living organisms have difficulty dealing with the overwhelming surge of emotions. Can cause hostile pawns to go berserk. The higher an affected pawns mood, the more emotional energy is released. When untrained, this skill may affect nearby allies.</description>
+    <spellId>rwom.tm_mindkiller</spellId>
+    <iconPath>UI/MindKiller</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_MindKiller</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_MindKiller</abilityDef>
+      <warmupTime>.5</warmupTime>
+      <SecondsToRecharge>5</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>15</range>
+      <requireLineOfSight>false</requireLineOfSight>
+      <isViolent>true</isViolent>
+      <soundCast>TM_Vibration</soundCast>
+      <muzzleFlashScale>5</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Suppressiveaura</defName>
+    <label>Suppressive Aura</label>
+    <description>Creates an aura around the empath that suppresses the emotions of other pawns, allowing them to feel only what the empath wishes them to feel. With training, the empath can allow positive emotions and suppress negative emotions. Side effects of the aura may cause transference of the emotions of the empath. Emotionally suppressed pawns will not experience mental breaks.</description>
+    <spellId>rwom.tm_suppressiveaura</spellId>
+    <iconPath>UI/suppressiveaura</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_ToggleHediff</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_SuppressiveAura</abilityDef>
+      <warmupTime>.25</warmupTime>
+      <SecondsToRecharge>10</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>0</range>
+      <requireLineOfSight>false</requireLineOfSight>
+      <isViolent>false</isViolent>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Harvestpassion</defName>
+    <label>Harvest Passion</label>
+    <description>Attempts to steal a work passion from the target pawn. The caster must sacrifice an active inspiration to activate this ability. Once all joy is removed from the target pawn, the effect attempts to transfer a passion to the caster. The joy of the caster is also consumed each iteration. If a passion is not transferred to the caster before their joy is depleted, then the ability ends. Both the caster and target will suffer shocking trauma while the effect is active. The passion harvested is always random.</description>
+    <spellId>rwom.tm_harvestpassion</spellId>
+    <iconPath>UI/harvestpassion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_HarvestPassion</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_HarvestPassion</abilityDef>
+      <warmupTime>3</warmupTime>
+      <SecondsToRecharge>600</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>15</range>
+      <isViolent>false</isViolent>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Incitepassion</defName>
+    <label>Incite Passion</label>
+    <description>Transfers a work passion from the caster to a target. This ability is always successful. This ability cannot be used by slaves. The transferred passion can be selected by right clicking on the ability icon. A random passion is transferred if no passion is specified.</description>
+    <spellId>rwom.tm_incitepassion</spellId>
+    <iconPath>UI/incitepassion</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_IncitePassion</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_IncitePassion</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>600</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>15</range>
+      <isViolent>false</isViolent>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Symbiosis</defName>
+    <label>Symbiosis</label>
+    <description>Entwines the fate of the empath with the target. The empath will enter into a mentally vacant state, unable to control their own body as they project their will to reinforce the will of a target pawn. The empath will still maintain any pre-existing effects or aura's. The target will receive emotional fortitude and mental strength in return. The symbiote may experience physical after-effects of injuries taken by their host. If the host dies while the empath is a symbiote, the empath will also die. The symbiosis will end when the empath's mood expires and can be manually ended if the host and symbiote are in close proximity.</description>
+    <spellId>rwom.tm_symbiosis</spellId>
+    <iconPath>UI/symbiosis</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_Symbiosis</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_Symbiosis</abilityDef>
+      <warmupTime>3</warmupTime>
+      <SecondsToRecharge>1200</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>15</range>
+      <requireLineOfSight>false</requireLineOfSight>
+      <isViolent>false</isViolent>
+      <soundCast>TM_Vibration</soundCast>
+      <muzzleFlashScale>1</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Fadeemotions</defName>
+    <label>Fade Emotion</label>
+    <description>Reduces mood of the empath and the target to rid the target of negative memories. After the first memory, each additional negative memory will consume 30 mood from the target to be removed. The effect ends with the target has less than 30 mood or no remaining negative memories. The first memory always consumes 30 mood from the target. This ability has no affect on situational mood modifiers.</description>
+    <spellId>rwom.tm_fadeemotions</spellId>
+    <iconPath>UI/emotionfade</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_FadeEmotions</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_Default</defaultProjectile>
+      <abilityDef>TM_FadeEmotions</abilityDef>
+      <warmupTime>4</warmupTime>
+      <SecondsToRecharge>60</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>25</range>
+      <isViolent>false</isViolent>
+      <soundCast>TM_Vibration</soundCast>
+      <muzzleFlashScale>1</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <requireLineOfSight>false</requireLineOfSight>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

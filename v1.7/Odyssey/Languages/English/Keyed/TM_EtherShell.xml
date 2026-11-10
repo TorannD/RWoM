@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_EtherShell_eff>Efficiency</TM_EtherShell_eff>
+  <TM_EtherShell_eff_desc>Reduces mana cost by 10% per level, up to three levels.</TM_EtherShell_eff_desc>
+  <TM_EtherShell_AlreadyProtected>This pawn already has an ether shell.</TM_EtherShell_AlreadyProtected>
+  <TM_EtherShell_Unavailable>Ether Shell is unavailable.</TM_EtherShell_Unavailable>
+  <TM_EtherShell_ver>Duration</TM_EtherShell_ver>
+  <TM_EtherShell_ver_desc>Adds 25% of the base duration per level: 30, 36 or 42 hours. Scrolls and staves remain at 24 hours.</TM_EtherShell_ver_desc>
+</LanguageData>

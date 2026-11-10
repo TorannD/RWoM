@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_LightCapacitanceHD.label>A força da luz</TM_LightCapacitanceHD.label>
+  <TM_LightCapacitanceHD.description>A quantidade de energia de luz acumulada disponível para o magu funciona como um catalisador para a magia da luz.</TM_LightCapacitanceHD.description>
+  <TM_LightCapacitanceHD.stages.0.label></TM_LightCapacitanceHD.stages.0.label>
+
+  <TM_LightBurstHD.label>Flash deslumbrante</TM_LightBurstHD.label>
+  <TM_LightBurstHD.description>Dor, cegueira e desorientação como resultado da exposição à luz intensa nos sentidos. Peões desorientados são incapazes de distinguir inimigos de aliados.</TM_LightBurstHD.description>
+  <TM_LightBurstHD.stages.0.label>Visão apertada</TM_LightBurstHD.stages.0.label>
+  <TM_LightBurstHD.stages.1.label>deslumbrado</TM_LightBurstHD.stages.1.label>
+  <TM_LightBurstHD.stages.2.label>desorientado</TM_LightBurstHD.stages.2.label>
+
+
+</LanguageData>

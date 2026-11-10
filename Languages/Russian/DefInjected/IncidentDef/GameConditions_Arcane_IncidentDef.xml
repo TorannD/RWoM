@@ -1,0 +1,46 @@
+<LanguageData><!-- v1.5\Defs\GameConditionDefs\GameConditions_Arcane.xml-->
+	<!--         EN: mana drain-->
+	<ManaDrain.label>истощение маны</ManaDrain.label>
+	<!--               EN: Mana drain-->
+	<ManaDrain.letterLabel>Истощение маны</ManaDrain.letterLabel>
+	<!--              EN: The planet's celestial alignment is shifting, causing an ebb in mana.\n\nAll creatures attuned with magical powers will slowly lose mana.\n\nCreatures may become physically ill if they have no mana remaining.-->
+	<ManaDrain.letterText>Небесные тела изменили свое положение, вызывая отток маны.\n\nВсе существа, связанные с магией, будут постепенно терять ману.\n\nПри полном истощении маны существа могут заболеть.</ManaDrain.letterText>
+	<!--         EN: mana surge-->
+	<ManaSurge.label>прилив маны</ManaSurge.label>
+	<!--               EN: Mana surge-->
+	<ManaSurge.letterLabel>Прилив маны</ManaSurge.letterLabel>
+	<!--              EN: The planet's celestial alignment has shifted, causing a surge in mana.  All creatures attuned with magical powers will gain mana at an increased rate.-->
+	<ManaSurge.letterText>Изменение положения небесных тел вызвало прилив маны.\n\nВсе магические существа будут восстанавливать ману с увеличенной скоростью.</ManaSurge.letterText>
+	<!--                    EN: mana sickness-->
+	<Disease_ManaSickness.label>магическая болезнь</Disease_ManaSickness.label>
+	<!--                          EN: Mana sickness-->
+	<Disease_ManaSickness.letterLabel>Магическая болезнь</Disease_ManaSickness.letterLabel>
+	<!--                         EN: {0} has gotten sick from {1}.\n\nEnsure you have a medical bed and a doctor. Make sure that {2} gets proper treatment and spends as much time in bed as possible.  During this period {0} will be unable to gain mana.-->
+	<Disease_ManaSickness.letterText>{0} заболел(а) из-за {1}.
+
+Подготовьте медицинскую кровать и врача. {2} должен(на) получать лечение и как можно больше времени проводить в постели. В этот период {0} не сможет восстанавливать ману.</Disease_ManaSickness.letterText>
+	<!--                EN: elemental assault-->
+	<ElementalAssault.label>нашествие стихий</ElementalAssault.label>
+	<!--                      EN: Elemental assault-->
+	<ElementalAssault.letterLabel>Нашествие стихий</ElementalAssault.letterLabel>
+	<!--                     EN: Hostile elementals have created a breach into your world and are preparing to send assault teams through the rift!\n\nRifts cause mayhem in the atmosphere as energy leaks through the rift into your world. The following effects occur for each rift element:\n\nFire Rift: meteor showers and heat waves.\nEarth Rift: toxic fumes and causes animals to go berserk\nIce Rift: hailstorms and rapid decline in temperature\nAir Rift: lightning storms\n\nDestroy the rift to end this nightmare!-->
+	<ElementalAssault.letterText>Враждебные стихии прорвались в ваш мир через разлом!\n\nРазломы вызывают хаос в атмосфере, пропуская чужеродную энергию. Эффекты зависят от типа разлома:\n\nОгненный: метеоритные дожди и жара\nЗемляной: ядовитые испарения и бешенство животных\nЛедяной: град и резкое похолодание\nВоздушный: грозы\n\nУничтожьте разлом, чтобы прекратить этот кошмар!</ElementalAssault.letterText>
+	<!--             EN: Wandering lich-->
+	<WanderingLich.label>странствующий лич</WanderingLich.label>
+	<!--                   EN: Wandering lich-->
+	<WanderingLich.letterLabel>Странствующий лич</WanderingLich.letterLabel>
+	<!--                  EN: An ancient lich has wandered into the area and is preparing to assault your colony.\n\nLichs are powerful creatures by themselves, but their true strength resides in their ability to create animated undead from the corpses of the deceased.\n\nThis lich is an ancient being that despises all life, and your merry band of living -things- has so far resisted being snuffed out. It will actively seek to end your story of survival by creating a horde of undead to overwhelm your defenses.\n\nThe lich will periodically create new skeleton warriors to attack the colony; allowing the lich to complete a ritual near an exposed corpse will increase the chance skeleton giants are created. Ultimately, the lich will assault the colony itself, if waves of undead are unable to complete the task first.-->
+	<WanderingLich.letterText>Древний лич появился в этих землях и готовится атаковать вашу колонию.\n\nЛичи могущественны сами по себе, но их истинная сила - в способности оживлять мертвецов.\n\nЭтот лич ненавидит всё живое и стремится уничтожить ваш отряд выживших, создавая орды нежити.\n\nЛич будет периодически призывать скелетов. Если он проведет ритуал возле трупа, могут появиться скелеты-гиганты.\nЕсли атаки нежити не сломят вас, лич атакует лично.</WanderingLich.letterText>
+	<!--            EN: demon attack-->
+	<DemonAssault.label>демоническая атака</DemonAssault.label>
+	<!--                  EN: Demon attack-->
+	<DemonAssault.letterLabel>Демоническая атака</DemonAssault.letterLabel>
+	<!--                 EN: The end is nigh - rampaging demons are attacking your colony!\nLike a herald to impending doom, fire and ash have begun falling from the skies.\n\nThese infernal beings have an assortment of attacks and challenging tactics.\nHowever, demons are unable to remain in this realm for extended periods and will be force to return to their hellish plane in about 3 hours. Defeat or outlast this nightmare.\nThere is very little time to prepare.\n\nGood luck!-->
+	<DemonAssault.letterText>Конец близок - демоны атакуют вашу колонию!\nС неба падают огонь и пепел, предвещая гибель.\n\nЭти исчадия ада используют разнообразные атаки и тактики.\nОни смогут оставаться в этом мире лишь около 3 часов, после чего вернутся в свой адский мир.\nВремени на подготовку почти нет.\n\nУдачи!</DemonAssault.letterText>
+	<!--            EN: mana storm-->
+	<TM_ManaStorm.label>магическая буря</TM_ManaStorm.label>
+	<!--                  EN: Mana storm-->
+	<TM_ManaStorm.letterLabel>Магическая буря</TM_ManaStorm.letterLabel>
+	<!--                 EN: Chaotic forces are causing a dangerous mana tides.\n\nDuring a mana storm, attempts to use mana to realize magical intent external to the caster will harm the caster proportionally to the mana cost of the spell. This damage is applied before the spell incantation begins. Unformed use of mana and internal use of magic, such as the transfer of mana or dispelling an enchantment is unaffected. Magic circles or foci cannot be used during this event. While the mana storm is active, energy costs are halved and mana reduction limit is removed.-->
+	<TM_ManaStorm.letterText>Хаотические силы вызывают опасные колебания маны.\n\nПри попытке сотворить заклинание маг получит урон, пропорциональный стоимости заклинания.\nВнутренняя магия (передача маны, рассеивание чар) не затрагивается.\nМагические круги и фокусы не работают.\nВо время бури стоимость заклинаний снижена вдвое, а ограничение расхода маны снято.</TM_ManaStorm.letterText>
+</LanguageData>

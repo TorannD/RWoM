@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+	<TM_HollowGolem_RepairComponent.label>Восстановление деталей</TM_HollowGolem_RepairComponent.label>
+	<TM_HollowGolem_RepairComponent.description>Заменяет недостающие части голема, которые не требуют обновления.</TM_HollowGolem_RepairComponent.description>
+	<TM_HollowGolem_RepairComponent.jobString>создание части голема</TM_HollowGolem_RepairComponent.jobString>
+	<TM_HollowGolem_EnergyCell.label>ячейка маны</TM_HollowGolem_EnergyCell.label>
+	<TM_HollowGolem_EnergyCell.description>Создает карман маны для хранения дополнительной маны.</TM_HollowGolem_EnergyCell.description>
+	<TM_HollowGolem_EnergyCell.jobString>создание кармана маны</TM_HollowGolem_EnergyCell.jobString>
+	<TM_HollowGolem_EnergyConverter.label>преобразователь маны</TM_HollowGolem_EnergyConverter.label>
+	<TM_HollowGolem_EnergyConverter.description>Увеличивает эффективность поглощения и использования маны големом на 10%.</TM_HollowGolem_EnergyConverter.description>
+	<TM_HollowGolem_EnergyConverter.jobString>создание фильтра маны</TM_HollowGolem_EnergyConverter.jobString>
+	<TM_HollowGolem_EnergyCharge.label>полярность маны</TM_HollowGolem_EnergyCharge.label>
+	<TM_HollowGolem_EnergyCharge.description>Увеличивает скорость регенерации маны голема на 6 в час.</TM_HollowGolem_EnergyCharge.description>
+	<TM_HollowGolem_EnergyCharge.jobString>выравнивание полярностей маны</TM_HollowGolem_EnergyCharge.jobString>
+	<TM_HollowGolem_Axe.label>Выдолбленный топор</TM_HollowGolem_Axe.label>
+	<TM_HollowGolem_Axe.description>Присоединяет громовой топор к тайным конечностям полого голема. При взмахе этот топор высвобождает волну тайной энергии, которая способна пробить нескольких врагов и практически любую броню.</TM_HollowGolem_Axe.description>
+	<TM_HollowGolem_Axe.jobString>изготовление выдолбленного топора</TM_HollowGolem_Axe.jobString>
+	<TM_HollowGolem_Staff.label>Выдолбленный Посох</TM_HollowGolem_Staff.label>
+	<TM_HollowGolem_Staff.description>Сплавляет посох пылающей силы и посох защитника с полым големом, создавая полый посох. Полый голем может использовать этот посох для запуска магических снарядов, не потребляя энергии.</TM_HollowGolem_Staff.description>
+	<TM_HollowGolem_Staff.jobString>изготовление выдолбленного посоха</TM_HollowGolem_Staff.jobString>
+	<TM_HollowGolem_Armor.label>Выдолбленный Нагрудник</TM_HollowGolem_Armor.label>
+	<TM_HollowGolem_Armor.description>Улучшает броню голема:
+Тупой урон: +21%
+Режущий урон: +32%
+Температура: +14%</TM_HollowGolem_Armor.description>
+	<TM_HollowGolem_Armor.jobString>создание части голема</TM_HollowGolem_Armor.jobString>
+	<TM_HollowGolem_Helm.label>Выдолбленный Шлем</TM_HollowGolem_Helm.label>
+	<TM_HollowGolem_Helm.description>Увеличивает броню голема, защищая голову:
+Тупой урон: +22%
+Режущий урон: +7%
+Температура: +9%</TM_HollowGolem_Helm.description>
+	<TM_HollowGolem_Helm.jobString>создание части голема</TM_HollowGolem_Helm.jobString>
+	<TM_HollowGolem_Shoulder.label>Выдолбленные Наплечники</TM_HollowGolem_Shoulder.label>
+	<TM_HollowGolem_Shoulder.description>Увеличивает броню голема с помощью брони, защищающей плечи и шею:
+Тупой урон: +8%
+Режущий урон: +19%
+Температура: +6%</TM_HollowGolem_Shoulder.description>
+	<TM_HollowGolem_Shoulder.jobString>создание части голема</TM_HollowGolem_Shoulder.jobString>
+	<TM_HollowGolem_Crown.label>Венец пробуждения</TM_HollowGolem_Crown.label>
+	<TM_HollowGolem_Crown.description>Оснащает полого голема Короной Пробуждения, которая позволяет ему обнаруживать и сводить на нет магию других пешек.</TM_HollowGolem_Crown.description>
+	<TM_HollowGolem_Crown.jobString>создание части голема</TM_HollowGolem_Crown.jobString>
+	<TM_HollowGolem_Cloak.label>Исчезающий плащ</TM_HollowGolem_Cloak.label>
+	<TM_HollowGolem_Cloak.description>Оснащает полого голема Плащом Исчезновения, позволяющим ему мгновенно перемещаться в другое место.
+
+Тупой урон: +10%
+Режущий урон: +5%
+Температура: +15%
+Гармония: +5%
+Скорость перемещения +.4c/s
+
+Способность: Исчезать</TM_HollowGolem_Cloak.description>
+	<TM_HollowGolem_Cloak.jobString>создание части голема</TM_HollowGolem_Cloak.jobString>
+	<TM_HollowGolem_PGFire.label>Защитный камень: Огонь</TM_HollowGolem_PGFire.label>
+	<TM_HollowGolem_PGFire.description>Оснащает голема огненным амулетом, который обеспечивает защиту от огня. Пылающая ярость снижает урон от всех атак на 35%, прижигает раны, предотвращает шатание и сжигает ближайших врагов. Можно носить только один защитный камень.
+
+Время перезарядки: 1200 секунд
+Продолжительность: 100 секунд
+Затраты на энергию: 50</TM_HollowGolem_PGFire.description>
+	<TM_HollowGolem_PGFire.jobString>создание части голема</TM_HollowGolem_PGFire.jobString>
+	<TM_HollowGolem_PGWater.label>Защитный камень: Вода</TM_HollowGolem_PGWater.label>
+	<TM_HollowGolem_PGWater.description>Оснащает голема амулетом воды, который позволяет голему уклоняться от атак. Шанс уклониться от атаки пропорционален проценту энергии голема и уменьшает энергию голема на 5 за каждое уклонение.</TM_HollowGolem_PGWater.description>
+	<TM_HollowGolem_PGWater.jobString>создание части голема</TM_HollowGolem_PGWater.jobString>
+	<TM_HollowGolem_PGArcane.label>Защитный камень: Тайный</TM_HollowGolem_PGArcane.label>
+	<TM_HollowGolem_PGArcane.description>Оснащает голема тайным амулетом, который активирует способность "Колодец отчаяния". Колодец отчаяния заключает область в обратный щит, который пропускает снаряды внутрь, но блокирует их выход.</TM_HollowGolem_PGArcane.description>
+	<TM_HollowGolem_PGArcane.jobString>создание части голема</TM_HollowGolem_PGArcane.jobString>
+	<TM_HollowGolem_PGDeath.label>Камень защиты: Смерть</TM_HollowGolem_PGDeath.label>
+	<TM_HollowGolem_PGDeath.description>Оснащает голема амулетом смерти, который окружает голема аурой смерти. Ближайшие враги могут быть поражены проклятием, которое снижает их силу воли и способность сражаться.</TM_HollowGolem_PGDeath.description>
+	<TM_HollowGolem_PGDeath.jobString>создание части голема</TM_HollowGolem_PGDeath.jobString>
+	<TM_HollowGolem_PGDoom.label>Защитный камень: Бездна Смерти</TM_HollowGolem_PGDoom.label>
+	<TM_HollowGolem_PGDoom.description>Оснащает голема амулетом бездны смерти, который замедляет ближайших врагов в поле, ослабляющем движение. Этот эффект может срабатывать каждые 15 секунд и поражает врагов в пределах 30 клеток.</TM_HollowGolem_PGDoom.description>
+	<TM_HollowGolem_PGDoom.jobString>создание части голема</TM_HollowGolem_PGDoom.jobString>
+	<TM_HollowGolem_FGFire.label>Фокус камень: Огонь</TM_HollowGolem_FGFire.label>
+	<TM_HollowGolem_FGFire.description>Украшает полого голема камнем фокусировки элемента огня, позволяющим ему использовать способность "цветок огня". Огненный цветок создает 25 взрывных молний и нацеливается на скопление врагов от 6 до 50 клеток. Потребляет 40 энергии. Цели могут загореться. Может быть прикреплен только один камень фокуса.</TM_HollowGolem_FGFire.description>
+	<TM_HollowGolem_FGFire.jobString>создание части голема</TM_HollowGolem_FGFire.jobString>
+	<TM_HollowGolem_FGIce.label>Фокус камень: Лед</TM_HollowGolem_FGIce.label>
+	<TM_HollowGolem_FGIce.description>Украшает полого голема драгоценным камнем, содержащим элементальную воду, позволяя ему использовать способность "цветок льда". Ледяной цветок создает взрыв из 20 ледяных осколков и нацеливается на группу врагов на расстоянии от 8 до 60 клеток. Затраты энергии 60. Осколки льда вызывают сильное кровотечение. К голему может быть прикреплен только один камень фокусировки.</TM_HollowGolem_FGIce.description>
+	<TM_HollowGolem_FGIce.jobString>создание части голема</TM_HollowGolem_FGIce.jobString>
+	<TM_HollowGolem_FGArcane.label>фокус-камень: тайный</TM_HollowGolem_FGArcane.label>
+	<TM_HollowGolem_FGArcane.description>Украшает полого голема драгоценным камнем с конденсированной тайной энергией, позволяя ему выпускать концентрированный заряд тёмной силы. Тайный болт поражает врагов на расстоянии до 100 клеток. Затраты энергии: 80. К голему можно прикрепить только один фокус-камень.</TM_HollowGolem_FGArcane.description>
+	<TM_HollowGolem_FGArcane.jobString>создание части голема</TM_HollowGolem_FGArcane.jobString>
+	<TM_HollowGolem_FGDeath.label>Фокус камень: Смерть</TM_HollowGolem_FGDeath.label>
+	<TM_HollowGolem_FGDeath.description>Украшает полого голема драгоценным камнем, содержащим сущность смерти, окружая голема полем, излучающим смерть. Поле смерти периодически поражает ближайших врагов. Эта способность - единственный камень фокуса, который не требует применения заклинания. Поражает врагов в пределах 10 клеток от голема. Стоит 20 энергии, но получает бесплатный удар за любую пешку, которая умирает в пределах поля. К голему может быть прикреплен только один камень фокусировки.</TM_HollowGolem_FGDeath.description>
+	<TM_HollowGolem_FGDeath.jobString>создание части голема</TM_HollowGolem_FGDeath.jobString>
+	<TM_HollowGolem_OrbOfExtinguishedFlames.label>Шар потухшего пламени</TM_HollowGolem_OrbOfExtinguishedFlames.label>
+	<TM_HollowGolem_OrbOfExtinguishedFlames.description>Оснащение полого голема Шаром Потухшего Пламени позволяет ему заглянуть за завесу смерти, чтобы извлечь знания. Очки в активной исследовательской технологии будут увеличиваться за каждую убитую пешку на карте. Шар также может быть переключен для обнаружения и поглощения любого огня в пределах 25 ячеек и излучает слабый серебристый свет. Эти эффекты активны только тогда, когда полый голем находится в состоянии покоя. Пламя всепожирающей апатии и сфера гаснущего пламени не могут использоваться вместе, эти два обновления используют один и тот же слот для компонентов.</TM_HollowGolem_OrbOfExtinguishedFlames.description>
+	<TM_HollowGolem_OrbOfExtinguishedFlames.jobString>создание части голема</TM_HollowGolem_OrbOfExtinguishedFlames.jobString>
+	<TM_HollowGolem_FlamesOfDevouringApathy.label>Пламя всепожирающей апатии</TM_HollowGolem_FlamesOfDevouringApathy.label>
+	<TM_HollowGolem_FlamesOfDevouringApathy.description>Пламя Всепожирающей Апатии наделяет полого голема способностью регулировать температуру. Пламя также поглотит любую грязь в пределах 25 клеток и испустит слабый мистический свет. Эти эффекты активны только тогда, когда полый голем находится в состоянии покоя. Пламя всепожирающей апатии и сфера гаснущего пламени не могут использоваться вместе, эти два обновления используют один и тот же слот для компонентов.</TM_HollowGolem_FlamesOfDevouringApathy.description>
+	<TM_HollowGolem_FlamesOfDevouringApathy.jobString>создание части голема</TM_HollowGolem_FlamesOfDevouringApathy.jobString>
+	<TM_HollowGolem_CoAFire.label>Герб: Огонь</TM_HollowGolem_CoAFire.label>
+	<TM_HollowGolem_CoAFire.description>Наделяет пустотелого голема настроенным на огонь гербом, который даёт следующие преимущества за уровень обновления [1/2/3]:
+Движение: +[0.2c/0.3c/0.35c]
+Тепловая броня: +[30%/50%/60%]
+Обработка: +[10%/20%/30%]
+Перезарядка: -[10%/20%/30%]
+
+Кроме того, прикосновение к распаду наносит дополнительный урон от ожога, и голем может поглощать близлежащий огонь, чтобы восстановить здоровье.</TM_HollowGolem_CoAFire.description>
+	<TM_HollowGolem_CoAFire.jobString>создание части голема</TM_HollowGolem_CoAFire.jobString>
+	<TM_HollowGolem_CoAIce.label>Герб: Вода</TM_HollowGolem_CoAIce.label>
+	<TM_HollowGolem_CoAIce.description>наделяет пустотелого голема гербом, настроенным на воду, который обеспечивает следующие преимущества для каждого уровня обновления [1/2/3]:
+Броня: +[5%/10%/15%]
+Перезарядка способностей: -[10%/20%/30%]
+Обработка: +[10%/20%/30%]
+
+Кроме того, прикосновение к распаду исцеляет голема и одну дружественную пешку в пределах 10 + 3 * клетки уровня для 10 + 4 * уровнь здоровья.</TM_HollowGolem_CoAIce.description>
+	<TM_HollowGolem_CoAIce.jobString>создание части голема</TM_HollowGolem_CoAIce.jobString>
+	<TM_HollowGolem_CoAArcane.label>Герб: Тайный</TM_HollowGolem_CoAArcane.label>
+	<TM_HollowGolem_CoAArcane.description>Наделяет полого голема тайным настроенным гербом, который даёт следующие преимущества за уровень обновления [1/2/3]:
+Перезарядка способностей: -[12%/24%/36%]
+Урон Способности: +[10%/20%/30%]
+Обработка: +[15%/30%/45%]
+
+Кроме того, прикосновение к разрушению восстанавливает 20 + 5* энергия уровня за удар.</TM_HollowGolem_CoAArcane.description>
+	<TM_HollowGolem_CoAArcane.jobString>создание части голема</TM_HollowGolem_CoAArcane.jobString>
+	<TM_HollowGolem_CoADeath.label>Герб: Смерть</TM_HollowGolem_CoADeath.label>
+	<TM_HollowGolem_CoADeath.description>Одевает пустотелого голема гербом, настроенным на смерть, который даёт следующие преимущества за уровень обновления [1/2/3]:
+Броня: +[5%/10%/15%]
+Перезарядка способностей: -[8%/16%/24%]
+Урон Способности: +[10%/20%/30%]
+Обработка: -[5%/10%/15%]
+
+Кроме того, прикосновение смерти на 50% эффективнее и наносит двойной удар.</TM_HollowGolem_CoADeath.description>
+	<TM_HollowGolem_CoADeath.jobString>создание части голема</TM_HollowGolem_CoADeath.jobString>
+	<TM_HollowGolem_AffinityFire.label>Родство: Огонь</TM_HollowGolem_AffinityFire.label>
+	<TM_HollowGolem_AffinityFire.description>Усиливает связь голема со стихией огня; оранжевый цвет глаз. Родство с огнем даёт следующие преимущества для каждого уровня обновления [1/2/3]:
+Движение: +[25/40/50]%
+Здоровье: +[40/60/75]%</TM_HollowGolem_AffinityFire.description>
+	<TM_HollowGolem_AffinityFire.jobString>применение элементного родства</TM_HollowGolem_AffinityFire.jobString>
+	<TM_HollowGolem_AffinityIce.label>Родство: Вода</TM_HollowGolem_AffinityIce.label>
+	<TM_HollowGolem_AffinityIce.description>Усиливает связь голема со стихией воды; светло-голубой цвет глаз. Родство с водой обеспечивает следующие преимущества для каждого уровня обновления [1/2/3]
+Движение: +[20/30/35]%
+Здоровье: +[50/75/90]%</TM_HollowGolem_AffinityIce.description>
+	<TM_HollowGolem_AffinityIce.jobString>применение элементного родства</TM_HollowGolem_AffinityIce.jobString>
+	<TM_HollowGolem_AffinityArcane.label>Родство: Тайное</TM_HollowGolem_AffinityArcane.label>
+	<TM_HollowGolem_AffinityArcane.description>Усиливает магическое выравнивание голема; пурпурный цвет глаз. Тайное родство обеспечивает следующие преимущества для каждого уровня обновления [1/2/3]
+Движение: +[15/25/30]%
+Здоровье: +[55/85/100]%</TM_HollowGolem_AffinityArcane.description>
+	<TM_HollowGolem_AffinityArcane.jobString>применение элементного родства</TM_HollowGolem_AffinityArcane.jobString>
+	<TM_HollowGolem_AffinityDeath.label>Родство: Смерть</TM_HollowGolem_AffinityDeath.label>
+	<TM_HollowGolem_AffinityDeath.description>Усиливает связь голема с магией смерти; зеленый цвет глаз. Родство со смертью даёт следующие преимущества для каждого уровня обновления [1/2/3]
+Движение: +[15.10.2010]%
+Здоровье: +[65/90/110]%</TM_HollowGolem_AffinityDeath.description>
+	<TM_HollowGolem_AffinityDeath.jobString>изготовление обновления голема</TM_HollowGolem_AffinityDeath.jobString>
+</LanguageData>

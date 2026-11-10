@@ -1,0 +1,10 @@
+<LanguageData><!-- v1.5\Defs\ThingDefs\ManaPotion.xml-->
+	<!--          EN: Mana Potion-->
+	<ManaPotion.label>Зелье маны</ManaPotion.label>
+	<!--                EN: A magical supplement that allows arcane users to rapidly recover mana. Mana potions work by acting as a natural suppressant to the bodies mana absorption resistances \n\nUsers are warned, bypassing natural resistances can cause mental and sensory damage.-->
+	<ManaPotion.description>Магическое зелье, позволяющее магам быстро восстанавливать ману. Оно временно подавляет естественное сопротивление организма поглощению маны. Производитель предупреждает, что обход таких ограничений может вызвать умственные и сенсорные нарушения.</ManaPotion.description>
+	<!--                                   EN: Consume {0}-->
+	<ManaPotion.ingestible.ingestCommandString>Потреблено {0}</ManaPotion.ingestible.ingestCommandString>
+	<!--                                  EN: Consuming {0}.-->
+	<ManaPotion.ingestible.ingestReportString>Потреблено {0}.</ManaPotion.ingestible.ingestReportString>
+</LanguageData>

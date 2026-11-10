@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_StoneGolem_HardeningHD.label>solidificação</TM_StoneGolem_HardeningHD.label>
+  <TM_StoneGolem_HardeningHD.description>Melhora a proteção física.</TM_StoneGolem_HardeningHD.description>
+  <TM_StoneGolem_HardeningHD.stages.0.label>I</TM_StoneGolem_HardeningHD.stages.0.label>
+  <TM_StoneGolem_HardeningHD.stages.1.label>II</TM_StoneGolem_HardeningHD.stages.1.label>
+  <TM_StoneGolem_HardeningHD.stages.2.label>III</TM_StoneGolem_HardeningHD.stages.2.label>
+
+
+</LanguageData>

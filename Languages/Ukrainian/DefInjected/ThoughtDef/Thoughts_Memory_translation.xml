@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- ah, the memories -->
+
+  <TM_TakingOrdersTD.stages.0.label>приймаю замовлення</TM_TakingOrdersTD.stages.0.label>
+  <TM_TakingOrdersTD.stages.0.description>Ще одна пішака віддавала мені накази. Це може стати дратівливим.</TM_TakingOrdersTD.stages.0.description>
+
+  <RangerSoldBondedPet.stages.0.label>Продано Зв&apos;язане Вихованець</RangerSoldBondedPet.stages.0.label>
+  <RangerSoldBondedPet.stages.0.description>Я дозволив продати свого супутника-тварину в рабство. Звірине царство невдовзі пробачить мені. (зв&apos;язок з тваринами відключено, поки цей ефект настрою активний)</RangerSoldBondedPet.stages.0.description>
+
+  <RangerPetDied.stages.0.label>Зв &quot;язана тварина померла</RangerPetDied.stages.0.label>
+  <RangerPetDied.stages.0.description>Мій вірний супутник-тварина помер. Таке відчуття, що я втратив частинку самого себе.</RangerPetDied.stages.0.description>
+
+  <Polymorphed.stages.0.label>поліморфний всупереч волі</Polymorphed.stages.0.label>
+  <Polymorphed.stages.0.description>Я був поліморфізований і змушений існувати в тілі тварини, як це нелюдяно.</Polymorphed.stages.0.description>
+
+  <Polymorphed_Transhumanist.stages.0.label>поліморфний!</Polymorphed_Transhumanist.stages.0.label>
+  <Polymorphed_Transhumanist.stages.0.description>Я був перетворений на дику тварину - і це було дивно!.</Polymorphed_Transhumanist.stages.0.description>
+
+  <WarlockEmpathy.stages.0.label>Співпереживання</WarlockEmpathy.stages.0.label>
+  <WarlockEmpathy.stages.0.description>Я можу відчувати емоції тих, хто мене оточує.</WarlockEmpathy.stages.0.description>
+
+  <PsychicEmpathy.stages.0.label>Співпереживання</PsychicEmpathy.stages.0.label>
+  <PsychicEmpathy.stages.0.description>Я не можу пояснити, чому відчуваю такі сильні емоції.</PsychicEmpathy.stages.0.description>
+
+  <TM_MemoryWipe.stages.0.label>з чистого аркуша</TM_MemoryWipe.stages.0.label>
+  <TM_MemoryWipe.stages.0.description>Я не можу згадати останні кілька днів, можливо, це і на краще.</TM_MemoryWipe.stages.0.description>
+
+  <AteMysteryMeatDirect.stages.0.label>їв м&apos;ясо міньйону</AteMysteryMeatDirect.stages.0.label>
+  <AteMysteryMeatDirect.stages.0.description>Я з&apos;їв якесь огидне таємниче м&apos;ясо від мертвого міньйону. Він був змішаний з брудом та іншими речами, які я не міг ідентифікувати. Невже це був ніготь?!</AteMysteryMeatDirect.stages.0.description>
+
+  <AteMysteryMeatAsIngredient.stages.0.label>їв варене м&apos;ясо міньйону</AteMysteryMeatAsIngredient.stages.0.label>
+  <AteMysteryMeatAsIngredient.stages.0.description>Я з&apos;їв обід, приготовлений з м&apos;яса міньйону. Жодна кількість приправ чи спецій не могла запобігти враженню, що я їм щось огидне.</AteMysteryMeatAsIngredient.stages.0.description>
+
+  <TM_PhantomLimb.stages.0.label>фантомна кінцівка</TM_PhantomLimb.stages.0.label>
+  <TM_PhantomLimb.stages.0.description>Невже ці частини тіла дійсно мої? Я відчуваю себе гостем у власному тілі.</TM_PhantomLimb.stages.0.description>
+
+  <TM_PleasantDreamsTD.stages.0.label>приємних сновидінь</TM_PleasantDreamsTD.stages.0.label>
+  <TM_PleasantDreamsTD.stages.0.description>Мої сни наповнені спогадами і подіями, які роблять мене щасливим.</TM_PleasantDreamsTD.stages.0.description>
+
+  <TM_BrightDayTD.stages.0.label>світлий день</TM_BrightDayTD.stages.0.label>
+  <TM_BrightDayTD.stages.0.description>Дух Світу озарив мій день.</TM_BrightDayTD.stages.0.description>
+
+
+</LanguageData>

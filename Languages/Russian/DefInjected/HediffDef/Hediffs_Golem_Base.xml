@@ -1,0 +1,5 @@
+<LanguageData><!-- These go in natural parts, but don't replace them-->
+	<TM_GolemHD.label>Голем</TM_GolemHD.label>
+	<TM_GolemHD.description>Эффекты здоровья применяются ко всем големам.</TM_GolemHD.description>
+	<TM_GolemHD.stages.0.label />
+</LanguageData>

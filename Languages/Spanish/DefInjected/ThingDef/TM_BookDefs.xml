@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_CombatManual.label>manual de combate</TM_CombatManual.label>
+  
+  <TM_CombatManual.description>Un manual que describe diversas técnicas de combate.</TM_CombatManual.description>
+  
+  
+  <TM_Grimoire.label>grimorio</TM_Grimoire.label>
+  
+  <TM_Grimoire.description>Un libro que devela los misterios de la magia. Estos volúmenes pueden ayudar al lector a canalizar poderes arcanos.</TM_Grimoire.description>
+
+  
+</LanguageData>

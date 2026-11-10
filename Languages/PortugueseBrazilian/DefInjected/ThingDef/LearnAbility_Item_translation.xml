@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Partial Scripts -->
+
+  <BookOfQuestion.label>O Skort Secreto:??</BookOfQuestion.label>
+  <BookOfQuestion.description>Ensina um peão dotado como usar forças mágicas...</BookOfQuestion.description>
+  <BookOfQuestion.comps.0.useLabel>Ler</BookOfQuestion.comps.0.useLabel>
+
+  <Torn_BookOfInnerFire.label>Manuscrito rasgado: Mago do fogo</Torn_BookOfInnerFire.label>
+  <Torn_BookOfInnerFire.description>Ensina aos peões dotados como usar o elemento de fogo.
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfInnerFire.description>
+  <Torn_BookOfInnerFire.comps.0.useLabel>Ler</Torn_BookOfInnerFire.comps.0.useLabel>
+
+  <Torn_BookOfHeartOfFrost.label>Manuscrito rasgado: O mágico do gelo</Torn_BookOfHeartOfFrost.label>
+  <Torn_BookOfHeartOfFrost.description>Ensina aos peões dotados como usar os elementos de gelo e água.
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfHeartOfFrost.description>
+  <Torn_BookOfHeartOfFrost.comps.0.useLabel>Ler</Torn_BookOfHeartOfFrost.comps.0.useLabel>
+
+  <Torn_BookOfStormBorn.label>Manuscrito rasgado: Mago relâmpago</Torn_BookOfStormBorn.label>
+  <Torn_BookOfStormBorn.description>Ensina aos peões dotados como usar elementos relâmpagos.
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfStormBorn.description>
+  <Torn_BookOfStormBorn.comps.0.useLabel>Ler</Torn_BookOfStormBorn.comps.0.useLabel>
+
+  <Torn_BookOfArcanist.label>Manuscrito rasgado: O mágico da magia secreta</Torn_BookOfArcanist.label>
+  <Torn_BookOfArcanist.description>Ensina aos peões dotados como usar a força secreta.
+Este script misterioso é incompleto, e o leitor talvez não possa descobrir alguns (ou mesmo todos) feitiços secretos.</Torn_BookOfArcanist.description>
+  <Torn_BookOfArcanist.comps.0.useLabel>Ler</Torn_BookOfArcanist.comps.0.useLabel>
+
+  <Torn_BookOfValiant.label>Manuscrito rasgado: Paladino</Torn_BookOfValiant.label>
+  <Torn_BookOfValiant.description>Ensina aos peões dotados como usar o poder sagrado.
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfValiant.description>
+  <Torn_BookOfValiant.comps.0.useLabel>Ler</Torn_BookOfValiant.comps.0.useLabel>
+
+  <Torn_BookOfSummoner.label>Manuscrito rasgado: Recrutador</Torn_BookOfSummoner.label>
+  <Torn_BookOfSummoner.description>Ensina aos peões dotados como chamar as forças de fora e controlá-las em diferentes dimensões.
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfSummoner.description>
+  <Torn_BookOfSummoner.comps.0.useLabel>Ler</Torn_BookOfSummoner.comps.0.useLabel>
+
+  <Torn_BookOfNature.label>Manuscrito rasgado: Druide</Torn_BookOfNature.label>
+  <Torn_BookOfNature.description>Ensina aos peões dotados como usar elementos da natureza.
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfNature.description>
+  <Torn_BookOfNature.comps.0.useLabel>Ler</Torn_BookOfNature.comps.0.useLabel>
+
+  <Torn_BookOfUndead.label>Manuscrito rasgado: Necromântia</Torn_BookOfUndead.label>
+  <Torn_BookOfUndead.description>Ensina aos peões dotados como controlar as forças da vida e da morte. Muitas outras classes mágicas não gostam de necromantes. Fiquem vigilantes.
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfUndead.description>
+  <Torn_BookOfUndead.comps.0.useLabel>Ler</Torn_BookOfUndead.comps.0.useLabel>
+
+  <Torn_BookOfPriest.label>Manuscrito rasgado: Padre</Torn_BookOfPriest.label>
+  <Torn_BookOfPriest.description>Ensina aos peões dotados como dar poder à vida e à cura. Os sacerdotes não são capazes de cometer violência.
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfPriest.description>
+  <Torn_BookOfPriest.comps.0.useLabel>Ler</Torn_BookOfPriest.comps.0.useLabel>
+
+  <Torn_BookOfBard.label>Manuscrito rasgado: Bard</Torn_BookOfBard.label>
+  <Torn_BookOfBard.description>Ensina aos peões dotados como se tornar um bardo profissional. Os bardos não estão adaptados ao trabalho normal, e este tipo de trabalho será desligado.
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfBard.description>
+  <Torn_BookOfBard.comps.0.useLabel>Ler</Torn_BookOfBard.comps.0.useLabel>
+
+  <Torn_BookOfDemons.label>Manuscrito quebrado: Demologia</Torn_BookOfDemons.label>
+  <Torn_BookOfDemons.description>O processo de acordo com o demônio para o poder foi detalhado. Este tratado liga o patrono, literalmente, a uma entidade demoníaca que afeta a sua composição genética. Esta ligação afeta homens e mulheres de várias formas. Os demónios só aceitam um contrato se o usuário tiver um dom mágico.
+
+* Nota gravada na parte inferior da primeira página * este cenário não está totalmente claro o que o demônio recebe do acordo... use com cuidado.
+
+Este script misterioso é incompleto e não explica todo o processo de contratação; o resultado pode não permitir acesso total a todas as capacidades imediatamente.</Torn_BookOfDemons.description>
+  <Torn_BookOfDemons.comps.0.useLabel>Ler</Torn_BookOfDemons.comps.0.useLabel>
+
+  <Torn_BookOfEarth.label>Manuscrito quebrado: Geomante</Torn_BookOfEarth.label>
+  <Torn_BookOfEarth.description>Ensina aos peões dotados como combinar as leis da física e da magia juntos
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfEarth.description>
+  <Torn_BookOfEarth.comps.0.useLabel>Ler</Torn_BookOfEarth.comps.0.useLabel>
+
+  <Torn_BookOfMagitech.label>Manuscrito rasgado: Tecnomante</Torn_BookOfMagitech.label>
+  <Torn_BookOfMagitech.description>Ensina um peão dotado aos caminhos de um Tecnomante capaz de ver a ligação entre a ciência e a magia.
+Este script misterioso é incompleto, e o leitor não vai reconhecer nenhuma capacidade de apoio dos tecnômagos, mas ainda pode escolher o seu caminho principal da tecnomagia.</Torn_BookOfMagitech.description>
+  <Torn_BookOfMagitech.comps.0.useLabel>Ler</Torn_BookOfMagitech.comps.0.useLabel>
+
+  <Torn_BookOfHemomancy.label>Manuscrito rasgado: Mago do sangue</Torn_BookOfHemomancy.label>
+  <Torn_BookOfHemomancy.description>Ensina um peão dotado a tornar-se hemomante, ou um mágico do sangue, e a usar o poder do sangue para alimentar a sua magia.
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfHemomancy.description>
+  <Torn_BookOfHemomancy.comps.0.useLabel>Ler</Torn_BookOfHemomancy.comps.0.useLabel>
+
+  <Torn_BookOfEnchanter.label>Manuscrito rasgado: Feiticeiro</Torn_BookOfEnchanter.label>
+  <Torn_BookOfEnchanter.description>Ensina a um peão dotado como se tornar um feiticeiro capaz de manipular matéria e material para servir o seu propósito.
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfEnchanter.description>
+  <Torn_BookOfEnchanter.comps.0.useLabel>Ler</Torn_BookOfEnchanter.comps.0.useLabel>
+
+  <Torn_BookOfChronomancer.label>Manuscrito rasgado Cronomante</Torn_BookOfChronomancer.label>
+  <Torn_BookOfChronomancer.description>Ensina a um peão dotado como se tornar um cronomante capaz de ver e manipular realidades no tempo.
+Este script misterioso é incompleto, e o leitor talvez não possa aprender alguns (ou mesmo todos) feitiços.</Torn_BookOfChronomancer.description>
+  <Torn_BookOfChronomancer.comps.0.useLabel>Ler</Torn_BookOfChronomancer.comps.0.useLabel>
+
+  <Torn_BookOfChaos.label>Manuscrito rasgado: Caos Mago</Torn_BookOfChaos.label>
+  <Torn_BookOfChaos.description>Ensina um peão dotado à tradição do caos.</Torn_BookOfChaos.description>
+  <Torn_BookOfChaos.comps.0.useLabel>Ler</Torn_BookOfChaos.comps.0.useLabel>
+
+  <Torn_BookOfTheSun.label>Manuscrito rasgado: O mágico da luz</Torn_BookOfTheSun.label>
+  <Torn_BookOfTheSun.description>Ensina um peão dotado a tornar-se um mágico da luz. Os mágicos da luz manipulam o poder da luz solar, criando uma magia poderosa e destrutiva.</Torn_BookOfTheSun.description>
+  <Torn_BookOfTheSun.comps.0.useLabel>Ler</Torn_BookOfTheSun.comps.0.useLabel>
+
+  <Torn_BookOfShamanism.label>Manuscrito rasgado: Xamã</Torn_BookOfShamanism.label>
+  <Torn_BookOfShamanism.description>Ensina um peão dotado como se tornar um xamã; o líder da tribo concentrou-se na magia ritual para criar maldades e encantos poderosos, e expandiu sua influência através dos totems.</Torn_BookOfShamanism.description>
+  <Torn_BookOfShamanism.comps.0.useLabel>Ler</Torn_BookOfShamanism.comps.0.useLabel>
+
+  <Torn_BookOfGolemancy.label>Manuscrito rasgado: Golemant</Torn_BookOfGolemancy.label>
+  <Torn_BookOfGolemancy.description>Ensina um peão dotado como se tornar um golemante; um mago isolador que direciona a energia secreta para objetos comuns usando símbolos e runas.</Torn_BookOfGolemancy.description>
+  <Torn_BookOfGolemancy.comps.0.useLabel>Ler</Torn_BookOfGolemancy.comps.0.useLabel>
+
+
+  <!-- Arcane Scripts -->
+
+  <BookOfInnerFire.label>Compilação secreta: O Mágico do Fogo</BookOfInnerFire.label>
+  <BookOfInnerFire.description>Ensina aos peões dotados como usar o elemento de fogo.</BookOfInnerFire.description>
+  <BookOfInnerFire.comps.0.useLabel>Ler</BookOfInnerFire.comps.0.useLabel>
+
+  <BookOfHeartOfFrost.label>Coletânea secreta: O mágico do gelo</BookOfHeartOfFrost.label>
+  <BookOfHeartOfFrost.description>Ensina aos peões dotados como usar os elementos de gelo e água.</BookOfHeartOfFrost.description>
+  <BookOfHeartOfFrost.comps.0.useLabel>Ler</BookOfHeartOfFrost.comps.0.useLabel>
+
+  <BookOfStormBorn.label>Coletânea secreta: Um mágico relâmpago</BookOfStormBorn.label>
+  <BookOfStormBorn.description>Ensina aos peões dotados como usar elementos de gelo.</BookOfStormBorn.description>
+  <BookOfStormBorn.comps.0.useLabel>Ler</BookOfStormBorn.comps.0.useLabel>
+
+  <BookOfArcanist.label>Compilação secreta: Um mágico da magia secreta</BookOfArcanist.label>
+  <BookOfArcanist.description>Ensina aos peões dotados como usar a força secreta.</BookOfArcanist.description>
+  <BookOfArcanist.comps.0.useLabel>Ler</BookOfArcanist.comps.0.useLabel>
+
+  <BookOfValiant.label>Livro divino: Paladino</BookOfValiant.label>
+  <BookOfValiant.description>Ensina um peão dotado a tornar-se paladino.</BookOfValiant.description>
+  <BookOfValiant.comps.0.useLabel>Ler</BookOfValiant.comps.0.useLabel>
+
+  <BookOfSummoner.label>Compilação secreta: Recrutador</BookOfSummoner.label>
+  <BookOfSummoner.description>Ensina um peão dotado a ser recrutador.</BookOfSummoner.description>
+  <BookOfSummoner.comps.0.useLabel>Ler</BookOfSummoner.comps.0.useLabel>
+
+  <BookOfDruid.label>Compilação secreta: Druide</BookOfDruid.label>
+  <BookOfDruid.description>Ensina um peão dotado a tornar-se Druide.</BookOfDruid.description>
+  <BookOfDruid.comps.0.useLabel>Ler</BookOfDruid.comps.0.useLabel>
+
+  <BookOfNecromancer.label>Compilação secreta Necromântia</BookOfNecromancer.label>
+  <BookOfNecromancer.description>Ensina a um peão dotado como se tornar um Necromante. Muitas outras classes mágicas não gostam de necromantes. Fiquem vigilantes.</BookOfNecromancer.description>
+  <BookOfNecromancer.comps.0.useLabel>Ler</BookOfNecromancer.comps.0.useLabel>
+
+  <BookOfPriest.label>Compilação secreta: Padre</BookOfPriest.label>
+  <BookOfPriest.description>Ensina um peão dotado a tornar-se padre. Os sacerdotes não são capazes de cometer violência.</BookOfPriest.description>
+  <BookOfPriest.comps.0.useLabel>Ler</BookOfPriest.comps.0.useLabel>
+
+  <BookOfBard.label>Compilação secreta: Bard</BookOfBard.label>
+  <BookOfBard.description>Ensina um peão dotado a tornar-se um bardo. Os bardos não são capazes de fazer o trabalho normal.</BookOfBard.description>
+  <BookOfBard.comps.0.useLabel>Ler</BookOfBard.comps.0.useLabel>
+
+  <BookOfDemons.label>Compilação secreta Demagógica</BookOfDemons.label>
+  <BookOfDemons.description>O processo de acordo com o demônio para o poder foi detalhado. Este tratado liga o patrono, literalmente, a uma entidade demoníaca que afeta a sua composição genética. Esta ligação afeta homens e mulheres de várias formas. Os demónios só aceitam um contrato se o usuário tiver um dom mágico.
+
+* Nota grampeada na parte inferior da primeira página * este cenário não está bem claro o que o demônio recebe do acordo... use com cuidado.</BookOfDemons.description>
+  <BookOfDemons.comps.0.useLabel>Ler</BookOfDemons.comps.0.useLabel>
+
+  <BookOfEarth.label>Compilação secreta: Geomant</BookOfEarth.label>
+  <BookOfEarth.description>Ensina um peão dotado a dominar a terra, combinando e alterando as leis físicas.</BookOfEarth.description>
+  <BookOfEarth.comps.0.useLabel>Ler</BookOfEarth.comps.0.useLabel>
+
+  <BookOfMagitech.label>Compilação secreta: Tecnomante</BookOfMagitech.label>
+  <BookOfMagitech.description>Ensina um peão dotado aos caminhos de um Tecnomante capaz de ver a ligação entre a ciência e a magia.</BookOfMagitech.description>
+  <BookOfMagitech.comps.0.useLabel>Ler</BookOfMagitech.comps.0.useLabel>
+
+  <BookOfHemomancy.label>Compilação secreta: O mágico do sangue</BookOfHemomancy.label>
+  <BookOfHemomancy.description>Ensina um peão dotado a tornar-se hemomante, e um mago do sangue que usa o sangue para aumentar a magia.</BookOfHemomancy.description>
+  <BookOfHemomancy.comps.0.useLabel>Ler</BookOfHemomancy.comps.0.useLabel>
+
+  <BookOfEnchanter.label>Compilação secreta: Feiticeiro</BookOfEnchanter.label>
+  <BookOfEnchanter.description>Ensina a um peão dotado como se tornar um feiticeiro capaz de manipular matéria e material para servir o seu propósito.</BookOfEnchanter.description>
+  <BookOfEnchanter.comps.0.useLabel>Ler</BookOfEnchanter.comps.0.useLabel>
+
+  <BookOfChronomancer.label>Compilação secreta Cronomante</BookOfChronomancer.label>
+  <BookOfChronomancer.description>Ensina um peão dotado a tornar-se um cronomante que manipula a realidade.</BookOfChronomancer.description>
+  <BookOfChronomancer.comps.0.useLabel>Ler</BookOfChronomancer.comps.0.useLabel>
+
+  <BookOfChaos.label>Compilação secreta: Caos Mago</BookOfChaos.label>
+  <BookOfChaos.description>Ensina a um peão dotado como se tornar um mágico do caos, um adepto de todas as classes mágicas.</BookOfChaos.description>
+  <BookOfChaos.comps.0.useLabel>Ler</BookOfChaos.comps.0.useLabel>
+
+  <BookOfTheSun.label>Compilação secreta: O Mágico da Luz</BookOfTheSun.label>
+  <BookOfTheSun.description>Ensina um peão dotado a tornar-se um mágico da luz. Os mágicos da luz manipulam o poder da luz solar, criando uma magia poderosa e destrutiva.</BookOfTheSun.description>
+  <BookOfTheSun.comps.0.useLabel>Ler</BookOfTheSun.comps.0.useLabel>
+
+  <BookOfShamanism.label>Compilação secreta: Xamã</BookOfShamanism.label>
+  <BookOfShamanism.description>Ensina um peão dotado como se tornar um xamã; o líder da tribo concentrou-se na magia ritual para criar maldades e encantos poderosos, e expandiu sua influência através dos totems.</BookOfShamanism.description>
+  <BookOfShamanism.comps.0.useLabel>Ler</BookOfShamanism.comps.0.useLabel>
+
+  <BookOfGolemancy.label>Compilação secreta: Golemant</BookOfGolemancy.label>
+  <BookOfGolemancy.description>Ensina um peão dotado como se tornar um golemante; um mago isolador que direciona a energia secreta para objetos comuns usando símbolos e runas.</BookOfGolemancy.description>
+  <BookOfGolemancy.comps.0.useLabel>Ler</BookOfGolemancy.comps.0.useLabel>
+
+
+  <!-- Combat Forms -->
+
+  <BookOfGladiator.label>Forma de combate: Gladiador</BookOfGladiator.label>
+  <BookOfGladiator.description>Ensina um peão fisicamente hábil como aprender a arte do gladiador.</BookOfGladiator.description>
+  <BookOfGladiator.comps.0.useLabel>Ler</BookOfGladiator.comps.0.useLabel>
+
+  <BookOfPsionic.label>Poder de Combate: Psicônico</BookOfPsionic.label>
+  <BookOfPsionic.description>Ensina um peão fisicamente hábil como usar energia psicónica.
+
+* No fundo da página, está gravada uma nota de rodapé: &quot;Só aqueles com alta sensibilidade mental podem aprender a manipular a energia psicónica... Ou é isso ou encontrar uma maneira de começar rapidamente a atividade mental &quot;.</BookOfPsionic.description>
+  <BookOfPsionic.comps.0.useLabel>Ler</BookOfPsionic.comps.0.useLabel>
+
+  <BookOfFaceless.label>Uniforme de combate: Sem rosto</BookOfFaceless.label>
+  <BookOfFaceless.description>Ensina um peão fisicamente hábil como adaptar sua forma e estilo de luta para qualquer situação</BookOfFaceless.description>
+  <BookOfFaceless.comps.0.useLabel>Ler</BookOfFaceless.comps.0.useLabel>
+
+  <BookOfSniper.label>Estilo de combate: Atirador</BookOfSniper.label>
+  <BookOfSniper.description>Ensina um peão fisicamente hábil como ser o atirador mais ponteiro.</BookOfSniper.description>
+  <BookOfSniper.comps.0.useLabel>Ler</BookOfSniper.comps.0.useLabel>
+
+  <BookOfBladedancer.label>Estilo de combate: Dançando com lâminas</BookOfBladedancer.label>
+  <BookOfBladedancer.description>Ensina um peão fisicamente hábil como possuir lâmina com habilidade</BookOfBladedancer.description>
+  <BookOfBladedancer.comps.0.useLabel>Ler</BookOfBladedancer.comps.0.useLabel>
+
+  <BookOfRanger.label>Estilo de combate: Ranger</BookOfRanger.label>
+  <BookOfRanger.description>Ensina um peão fisicamente hábil como se tornar um ranger</BookOfRanger.description>
+  <BookOfRanger.comps.0.useLabel>Ler</BookOfRanger.comps.0.useLabel>
+
+  <BookOfDeathKnight.label>Estilo de combate: Cavaleiro da Morte</BookOfDeathKnight.label>
+  <BookOfDeathKnight.description>Ensina um peão fisicamente hábil a aceitar o inevitável e tornar-se cavaleiro da morte.</BookOfDeathKnight.description>
+  <BookOfDeathKnight.comps.0.useLabel>Ler</BookOfDeathKnight.comps.0.useLabel>
+
+  <BookOfMonk.label>Estilo de combate: Monge</BookOfMonk.label>
+  <BookOfMonk.description>Ensina um peão fisicamente hábil a afinar a mente e o corpo em armas letais.</BookOfMonk.description>
+  <BookOfMonk.comps.0.useLabel>Ler</BookOfMonk.comps.0.useLabel>
+
+  <BookOfCommander.label>Estilo de combate: Comandante da Guerra</BookOfCommander.label>
+  <BookOfCommander.description>Ensina um peão fisicamente hábil a tornar-se um líder carismático.</BookOfCommander.description>
+  <BookOfCommander.comps.0.useLabel>Ler</BookOfCommander.comps.0.useLabel>
+
+  <BookOfSuperSoldier.label>Soro, supersoldado</BookOfSuperSoldier.label>
+  <BookOfSuperSoldier.description>Coloque um soro ao Peão que reforce o seu estado físico. Desliga o peão por alguns dias enquanto o soro entra em ação e se desenvolve em várias etapas. Qualquer peão pode tomar soro, mas só os peões fisicamente habilidosos podem adquirir a linha do supersoldado. Este soro vai reduzir o potencial mágico.</BookOfSuperSoldier.description>
+  <BookOfSuperSoldier.comps.0.useLabel>Digitar</BookOfSuperSoldier.comps.0.useLabel>
+
+
+  <!-- Custom class books -->
+
+  <BookOfShadow.label>Volume secreto: Sombra</BookOfShadow.label>
+  <BookOfShadow.description>Uma noite profunda, o medo se manifesta no reflexo da lâmina - a sombra desperta.</BookOfShadow.description>
+  <BookOfShadow.comps.0.useLabel>Ler</BookOfShadow.comps.0.useLabel>
+
+  <BookOfApothecary.label>Estilo de combate: farmacêutico</BookOfApothecary.label>
+  <BookOfApothecary.description>Ensina um peão fisicamente experiente a tornar-se farmacêutico.</BookOfApothecary.description>
+  <BookOfApothecary.comps.0.useLabel>Ler</BookOfApothecary.comps.0.useLabel>
+
+
+  <!-- Magic Spells - Single -->
+
+  <SpellOf_ArcaneBolt.label>Feitiço mágico: parafuso mágico</SpellOf_ArcaneBolt.label>
+  <SpellOf_ArcaneBolt.description>Ensina ao mago como projetar energia secreta com força.</SpellOf_ArcaneBolt.description>
+  <SpellOf_ArcaneBolt.comps.0.useLabel>Ler</SpellOf_ArcaneBolt.comps.0.useLabel>
+
+  <SpellOf_Blink.label>Feitiço mágico: Panqueca</SpellOf_Blink.label>
+  <SpellOf_Blink.description>Ensina o mago como navegar rapidamente a curta distância</SpellOf_Blink.description>
+  <SpellOf_Blink.comps.0.useLabel>Ler</SpellOf_Blink.comps.0.useLabel>
+
+  <SpellOf_Blur.label>Feitiço mágico: Desfocar</SpellOf_Blur.label>
+  <SpellOf_Blur.description>Ensina o mago como distorcer a luz em torno do seu corpo</SpellOf_Blur.description>
+  <SpellOf_Blur.comps.0.useLabel>Ler</SpellOf_Blur.comps.0.useLabel>
+
+  <SpellOf_Cooler.label>Feitiço mágico: Refogar calor</SpellOf_Cooler.label>
+  <SpellOf_Cooler.description>Ensina o mago como criar uma fonte de refrigeração temporária</SpellOf_Cooler.description>
+  <SpellOf_Cooler.comps.0.useLabel>Ler</SpellOf_Cooler.comps.0.useLabel>
+
+  <SpellOf_DirtDevil.label>Feitiço mágico: Diabo da Terra</SpellOf_DirtDevil.label>
+  <SpellOf_DirtDevil.description>Ensina o mago a criar um vórtice que limpa a lama dentro da casa</SpellOf_DirtDevil.description>
+  <SpellOf_DirtDevil.comps.0.useLabel>Ler</SpellOf_DirtDevil.comps.0.useLabel>
+
+  <SpellOf_EMP.label>Feitiço mágico: AMY</SpellOf_EMP.label>
+  <SpellOf_EMP.description>Ensina o mago a criar um impulso elétrico magnético em uma determinada área.</SpellOf_EMP.description>
+  <SpellOf_EMP.comps.0.useLabel>Ler</SpellOf_EMP.comps.0.useLabel>
+
+  <SpellOf_Extinguish.label>Feitiço mágico: Apagar</SpellOf_Extinguish.label>
+  <SpellOf_Extinguish.description>Ensina ao mago como remover um elemento de fogo em uma determinada área, dissipando o fogo.</SpellOf_Extinguish.description>
+  <SpellOf_Extinguish.comps.0.useLabel>Ler</SpellOf_Extinguish.comps.0.useLabel>
+
+  <SpellOf_Heal.label>Feitiço mágico: Cura</SpellOf_Heal.label>
+  <SpellOf_Heal.description>Ensina ao mago como manipular forças secretas para curar ferimentos.</SpellOf_Heal.description>
+  <SpellOf_Heal.comps.0.useLabel>Ler</SpellOf_Heal.comps.0.useLabel>
+
+  <SpellOf_HeatShield.label>Fire Spell: Heat Shield</SpellOf_HeatShield.label>
+  <SpellOf_HeatShield.description>Teaches a fire mage how to create a protective barrier against heat and fire.</SpellOf_HeatShield.description>
+  <SpellOf_HeatShield.comps.0.useLabel>Read</SpellOf_HeatShield.comps.0.useLabel>
+
+  <SpellOf_Heater.label>Feitiço mágico: Aquecedor</SpellOf_Heater.label>
+  <SpellOf_Heater.description>Ensina o mago a criar uma fonte de calor temporário.</SpellOf_Heater.description>
+  <SpellOf_Heater.comps.0.useLabel>Ler</SpellOf_Heater.comps.0.useLabel>
+
+  <SpellOf_Ignite.label>Feitiço mágico: Incendiar</SpellOf_Ignite.label>
+  <SpellOf_Ignite.description>Ensina o mago a concentrar o calor no ponto.</SpellOf_Ignite.description>
+  <SpellOf_Ignite.comps.0.useLabel>Ler</SpellOf_Ignite.comps.0.useLabel>
+
+  <SpellOf_MageLight.label>Feitiço mágico: Luz mágica</SpellOf_MageLight.label>
+  <SpellOf_MageLight.description>Ensina o mago a criar uma pequena bola de luz.</SpellOf_MageLight.description>
+  <SpellOf_MageLight.comps.0.useLabel>Ler</SpellOf_MageLight.comps.0.useLabel>
+
+  <SpellOf_PowerNode.label>Feitiço mágico: Nódoa de energia</SpellOf_PowerNode.label>
+  <SpellOf_PowerNode.description>Ensina ao mago como criar um fio de energia que transforme energia secreta em eletricidade. Produz 600 energias.</SpellOf_PowerNode.description>
+  <SpellOf_PowerNode.comps.0.useLabel>Ler</SpellOf_PowerNode.comps.0.useLabel>
+
+  <SpellOf_Rain.label>Feitiço mágico: Chuva</SpellOf_Rain.label>
+  <SpellOf_Rain.description>Ensina o mago como concentrar a energia na atmosfera para criar chuva</SpellOf_Rain.description>
+  <SpellOf_Rain.comps.0.useLabel>Ler</SpellOf_Rain.comps.0.useLabel>
+
+  <SpellOf_SnapFreeze.label>Feitiço mágico</SpellOf_SnapFreeze.label>
+  <SpellOf_SnapFreeze.description>Ensina ao mago como remover todo o calor no local indicado.</SpellOf_SnapFreeze.description>
+  <SpellOf_SnapFreeze.comps.0.useLabel>Ler</SpellOf_SnapFreeze.comps.0.useLabel>
+
+  <SpellOf_SmokeCloud.label>Feitiço mágico: Nuvem de fumo</SpellOf_SmokeCloud.label>
+  <SpellOf_SmokeCloud.description>Ensina o mago como atear fogo em pedaços de ar para criar uma nuvem de fumaça no local especificado</SpellOf_SmokeCloud.description>
+  <SpellOf_SmokeCloud.comps.0.useLabel>Ler</SpellOf_SmokeCloud.comps.0.useLabel>
+
+  <SpellOf_Sunlight.label>Feitiço mágico: Luz solar</SpellOf_Sunlight.label>
+  <SpellOf_Sunlight.description>Ensina ao mago como criar uma luz tão brilhante que as plantas podem crescer. Suportado por um mágico que reduz o volume máximo e a regeneração do maná no hospedeiro.</SpellOf_Sunlight.description>
+  <SpellOf_Sunlight.comps.0.useLabel>Ler</SpellOf_Sunlight.comps.0.useLabel>
+
+  <SpellOf_BrandSiphon.label>Feitiço de Golemant: Mark Sifon</SpellOf_BrandSiphon.label>
+  <SpellOf_BrandSiphon.description>Ensina uma sigla holemante para criar uma marca de sifonização.</SpellOf_BrandSiphon.description>
+  <SpellOf_BrandSiphon.comps.0.useLabel>Ler</SpellOf_BrandSiphon.comps.0.useLabel>
+
+  <SpellOf_BrandFitness.label>Feitiço de Golemant Marca Fitness</SpellOf_BrandFitness.label>
+  <SpellOf_BrandFitness.description>Ensina um holemante para criar uma marca fitness.</SpellOf_BrandFitness.description>
+  <SpellOf_BrandFitness.comps.0.useLabel>Ler</SpellOf_BrandFitness.comps.0.useLabel>
+
+  <SpellOf_BrandEmotion.label>Feitiço de Golemant: Marca de emoção</SpellOf_BrandEmotion.label>
+  <SpellOf_BrandEmotion.description>Ensina uma sigla holemante para criar uma marca emocional.</SpellOf_BrandEmotion.description>
+  <SpellOf_BrandEmotion.comps.0.useLabel>Ler</SpellOf_BrandEmotion.comps.0.useLabel>
+
+  <SpellOf_BrandVitality.label>Feitiço de Golemant: Marca de vitalidade</SpellOf_BrandVitality.label>
+  <SpellOf_BrandVitality.description>Ensina uma sigla holemante para criar uma marca de vitalidade.</SpellOf_BrandVitality.description>
+  <SpellOf_BrandVitality.comps.0.useLabel>Ler</SpellOf_BrandVitality.comps.0.useLabel>
+
+  <SpellOf_BrandProtection.label>Feitiço do Golemante: Marca Protetora</SpellOf_BrandProtection.label>
+  <SpellOf_BrandProtection.description>Ensina uma sigla holemante para criar uma marca de proteção.</SpellOf_BrandProtection.description>
+  <SpellOf_BrandProtection.comps.0.useLabel>Ler</SpellOf_BrandProtection.comps.0.useLabel>
+
+  <SpellOf_BrandAwareness.label>Feitiço de Golemant: Uma marca reconhecível</SpellOf_BrandAwareness.label>
+  <SpellOf_BrandAwareness.description>Ensina uma sigla holemante para criar uma marca reconhecível.</SpellOf_BrandAwareness.description>
+  <SpellOf_BrandAwareness.comps.0.useLabel>Ler</SpellOf_BrandAwareness.comps.0.useLabel>
+
+  <SpellOf_ChargeBattery.label>Feitiço relâmpago: Carregar bateria</SpellOf_ChargeBattery.label>
+  <SpellOf_ChargeBattery.description>Ensina o mago a carregar a bateria, enchendo-a de energia mágica.
+Produz 400Wd.</SpellOf_ChargeBattery.description>
+  <SpellOf_ChargeBattery.comps.0.useLabel>Ler</SpellOf_ChargeBattery.comps.0.useLabel>
+
+  <SpellOf_CauterizeWound.label>Feitiço de fogo: encolher ferimento</SpellOf_CauterizeWound.label>
+  <SpellOf_CauterizeWound.description>Ensina o mágico de fogo como usar a força da luz para limpar e fechar as feridas instantaneamente - pode deixar cicatrizes de queimaduras.</SpellOf_CauterizeWound.description>
+  <SpellOf_CauterizeWound.comps.0.useLabel>Ler</SpellOf_CauterizeWound.comps.0.useLabel>
+
+  <SpellOf_ConsumeCorpse_Mass.label>Feitiço necromante - Absorção em massa de cadáver</SpellOf_ConsumeCorpse_Mass.label>
+  <SpellOf_ConsumeCorpse_Mass.description>Ensina um necromante a usar «Absorção de Cadáver» para apontar vários corpos dentro do alcance.</SpellOf_ConsumeCorpse_Mass.description>
+  <SpellOf_ConsumeCorpse_Mass.comps.0.useLabel>Ler</SpellOf_ConsumeCorpse_Mass.comps.0.useLabel>
+
+  <SpellOf_Discord.label>Feitiço do Bardo: Discórdia</SpellOf_Discord.label>
+  <SpellOf_Discord.description>Ensina ao bardo como quebrar a harmonia mental do peão alvo.</SpellOf_Discord.description>
+  <SpellOf_Discord.comps.0.useLabel>Ler</SpellOf_Discord.comps.0.useLabel>
+
+  <SpellOf_DryGround.label>Feitiço de fogo: terra seca</SpellOf_DryGround.label>
+  <SpellOf_DryGround.description>Ensina um mágico de fogo como encher a terra com calor, tirando a maior parte da água de um pedaço de terra.</SpellOf_DryGround.description>
+  <SpellOf_DryGround.comps.0.useLabel>Ler</SpellOf_DryGround.comps.0.useLabel>
+
+  <SpellOf_WetGround.label>Feitiço de gelo: solo hidratado</SpellOf_WetGround.label>
+  <SpellOf_WetGround.description>Ensina o mago gelado como encher a terra com umidade e nutrientes, transformando a areia em um solo utilizável.</SpellOf_WetGround.description>
+  <SpellOf_WetGround.comps.0.useLabel>Ler</SpellOf_WetGround.comps.0.useLabel>
+
+
+  <!-- Advanced Scribing -->
+
+  <SpellOf_MagicWardrobe.label>Feitiço de Maga: Armário mágico</SpellOf_MagicWardrobe.label>
+  <SpellOf_MagicWardrobe.description>Ensina ao usuário como criar um bolso de volume para armazenar um conjunto de equipamentos de reserva.</SpellOf_MagicWardrobe.description>
+  <SpellOf_MagicWardrobe.comps.0.useLabel>Ler</SpellOf_MagicWardrobe.comps.0.useLabel>
+
+  <SpellOf_Invisibility.label>Feitiço mágico: Invisibilidade</SpellOf_Invisibility.label>
+  <SpellOf_Invisibility.description>Ensina ao mago como manipular a luz para se tornar invisível.</SpellOf_Invisibility.description>
+  <SpellOf_Invisibility.comps.0.useLabel>Ler</SpellOf_Invisibility.comps.0.useLabel>
+
+  <SpellOf_LightningTrap.label>Feitiço mágico: armadilha relâmpago</SpellOf_LightningTrap.label>
+  <SpellOf_LightningTrap.description>Ensina ao mago como criar uma armadilha cheia de uma carga relâmpago.</SpellOf_LightningTrap.description>
+  <SpellOf_LightningTrap.comps.0.useLabel>Ler</SpellOf_LightningTrap.comps.0.useLabel>
+
+  <SpellOf_ManaShield.label>Feitiço mágico: Escudo de maná</SpellOf_ManaShield.label>
+  <SpellOf_ManaShield.description>Ensina o mago a criar uma barreira protetora de maná.</SpellOf_ManaShield.description>
+  <SpellOf_ManaShield.comps.0.useLabel>Ler</SpellOf_ManaShield.comps.0.useLabel>
+
+  <SpellOf_ShieldOther.label>Feitiço do Santo Feitiço: Escudo do Outro</SpellOf_ShieldOther.label>
+  <SpellOf_ShieldOther.description>Ensina o santo feitiço (paladino, padre etc.) como proteger o outro de danos.</SpellOf_ShieldOther.description>
+  <SpellOf_ShieldOther.comps.0.useLabel>Ler</SpellOf_ShieldOther.comps.0.useLabel>
+
+  <SpellOf_SpellMending.label>Feitiço mágico: Reparação</SpellOf_SpellMending.label>
+  <SpellOf_SpellMending.description>Ensina o mago a reconstruir e reparar o equipamento desgastado no peão.</SpellOf_SpellMending.description>
+  <SpellOf_SpellMending.comps.0.useLabel>Ler</SpellOf_SpellMending.comps.0.useLabel>
+
+  <SpellOf_SiphonMana.label>Feitiço mágico: Sifon maná</SpellOf_SiphonMana.label>
+  <SpellOf_SiphonMana.description>Ensina ao mago como tirar a Manu de outro mágico. Quando você usar uma criatura que não possui uma mana, seus traços físicos serão exaustos (nenhum maná será obtido). O efeito é potencialmente mortal.</SpellOf_SiphonMana.description>
+  <SpellOf_SiphonMana.comps.0.useLabel>Ler</SpellOf_SiphonMana.comps.0.useLabel>
+
+  <SpellOf_SummonMinion.label>Feitiço mágico: Apelo Minion</SpellOf_SummonMinion.label>
+  <SpellOf_SummonMinion.description>Ensina o mago como chamar o Minion para ajudar nos assuntos do dia-a-dia.</SpellOf_SummonMinion.description>
+  <SpellOf_SummonMinion.comps.0.useLabel>Ler</SpellOf_SummonMinion.comps.0.useLabel>
+
+  <SpellOf_Teleport.label>Feitiço mágico: Teleporte</SpellOf_Teleport.label>
+  <SpellOf_Teleport.description>Ensina o mago como manipular energia secreta para criar um portal para se mover rapidamente.</SpellOf_Teleport.description>
+  <SpellOf_Teleport.comps.0.useLabel>Ler</SpellOf_Teleport.comps.0.useLabel>
+
+  <SpellOf_TransferMana.label>Feitiço mágico: Transferência de maná</SpellOf_TransferMana.label>
+  <SpellOf_TransferMana.description>Ensina ao mago como entregar a Manu a outro mágico. Se o Mana cru for inserido em um receptor que não é mágico, as suas propriedades físicas aumentam temporariamente.</SpellOf_TransferMana.description>
+  <SpellOf_TransferMana.comps.0.useLabel>Ler</SpellOf_TransferMana.comps.0.useLabel>
+
+  <SpellOf_FadeEmotions.label>Capacidade de Empatia: Suprimir Emoções</SpellOf_FadeEmotions.label>
+  <SpellOf_FadeEmotions.description>Este pergaminho descreve como a empatia pode usar os seus poderes para focar as emoções da memória negativa, para que o peão alvo possa soltar as emoções e seguir em frente.</SpellOf_FadeEmotions.description>
+  <SpellOf_FadeEmotions.comps.0.useLabel>Ler</SpellOf_FadeEmotions.comps.0.useLabel>
+
+  <SpellOf_BlankMind.label>Feitiço do feiticeiro: Pura mente</SpellOf_BlankMind.label>
+  <SpellOf_BlankMind.description>Ensina ao feiticeiro como apagar as memórias e tirar o peão do estado mental ou causar um longo atordoamento dos inimigos.</SpellOf_BlankMind.description>
+  <SpellOf_BlankMind.comps.0.useLabel>Ler</SpellOf_BlankMind.comps.0.useLabel>
+
+  <SpellOf_BriarPatch.label>Feitiço do Druide - O ferimento de um canhoto</SpellOf_BriarPatch.label>
+  <SpellOf_BriarPatch.description>Ensina a druida como criar rapidamente um obstáculo feito de losas espinhosas.</SpellOf_BriarPatch.description>
+  <SpellOf_BriarPatch.comps.0.useLabel>Ler</SpellOf_BriarPatch.comps.0.useLabel>
+
+  <SpellOf_FertileLands.label>Feitiço de druído: solo fértil</SpellOf_FertileLands.label>
+  <SpellOf_FertileLands.description>Ensina druida como tornar o solo mais cheio e fértil</SpellOf_FertileLands.description>
+  <SpellOf_FertileLands.comps.0.useLabel>Ler</SpellOf_FertileLands.comps.0.useLabel>
+
+  <SpellOf_AlterStorm.label>Feitiço de gelo: Tempestade variável</SpellOf_AlterStorm.label>
+  <SpellOf_AlterStorm.description>Ensina mago gelado como alterar as condições da tempestade para produzir vários efeitos.</SpellOf_AlterStorm.description>
+  <SpellOf_AlterStorm.comps.0.useLabel>Ler</SpellOf_AlterStorm.comps.0.useLabel>
+
+  <SpellOf_MechaniteReprogramming.label>Feitiço do Tecnomante: reprogramação de mecânicos</SpellOf_MechaniteReprogramming.label>
+  <SpellOf_MechaniteReprogramming.description>Ensina o técnico a reprogramar mehanitas de fibra ou sensorial de modo a reforçar as propriedades do hospedeiro.</SpellOf_MechaniteReprogramming.description>
+  <SpellOf_MechaniteReprogramming.comps.0.useLabel>Ler</SpellOf_MechaniteReprogramming.comps.0.useLabel>
+
+  <SpellOf_Overdrive.label>Feitiço do tecnomante: sobrecarga</SpellOf_Overdrive.label>
+  <SpellOf_Overdrive.description>Ensina ao técnico como acelerar ou contornar as funções de defesa de dispositivos mecânicos, elétricos e robóticos, fazendo com que eles operem a uma velocidade drasticamente maior por um curto período de tempo.</SpellOf_Overdrive.description>
+  <SpellOf_Overdrive.comps.0.useLabel>Ler</SpellOf_Overdrive.comps.0.useLabel>
+
+  <SpellOf_Sabotage.label>Feitiço do Tecnômetro: Sabotagem</SpellOf_Sabotage.label>
+  <SpellOf_Sabotage.description>Ensina o técnico a criar um circuito de feedback em quase qualquer sistema mecânico, levando-o a falhas catastróficas.</SpellOf_Sabotage.description>
+  <SpellOf_Sabotage.comps.0.useLabel>Ler</SpellOf_Sabotage.comps.0.useLabel>
+
+  <SpellOf_TechnoShield.label>Feitiço do Tecnomante: escudo cinético</SpellOf_TechnoShield.label>
+  <SpellOf_TechnoShield.description>Ensina a um técnico como criar um campo de força unidimensional em torno de um alvo capaz de afastar os projéteis que entram ou aumentar a velocidade dos projéteis que saem.</SpellOf_TechnoShield.description>
+  <SpellOf_TechnoShield.comps.0.useLabel>Ler</SpellOf_TechnoShield.comps.0.useLabel>
+
+
+  <!-- Master Scribing -->
+
+  <SpellOf_BattleHymn.label>Feitiço do bardo: hino de guerra</SpellOf_BattleHymn.label>
+  <SpellOf_BattleHymn.description>Ensina um hino marcial ao bardo.</SpellOf_BattleHymn.description>
+  <SpellOf_BattleHymn.comps.0.useLabel>Ler</SpellOf_BattleHymn.comps.0.useLabel>
+
+  <SpellOf_Blizzard.label>Feitiço de gelo: tempestade de neve</SpellOf_Blizzard.label>
+  <SpellOf_Blizzard.description>Ensina o mago do gelo e da água a concentrar a energia no céu de forma a causar a tempestade de neve.</SpellOf_Blizzard.description>
+  <SpellOf_Blizzard.comps.0.useLabel>Ler</SpellOf_Blizzard.comps.0.useLabel>
+
+  <SpellOf_BloodMoon.label>Feitiço: Lua de sangue</SpellOf_BloodMoon.label>
+  <SpellOf_BloodMoon.description>Ensina o mago do sangue a causar um bando de demónios de sangue.</SpellOf_BloodMoon.description>
+  <SpellOf_BloodMoon.comps.0.useLabel>Ler</SpellOf_BloodMoon.comps.0.useLabel>
+
+  <SpellOf_EyeOfTheStorm.label>Feitiço relâmpago: olho da tempestade</SpellOf_EyeOfTheStorm.label>
+  <SpellOf_EyeOfTheStorm.description>Ensina a maga relâmpago como conter a fúria desmedida da tempestade em uma pequena esfera e projetá-la na trajetória definida.</SpellOf_EyeOfTheStorm.description>
+  <SpellOf_EyeOfTheStorm.comps.0.useLabel>Ler</SpellOf_EyeOfTheStorm.comps.0.useLabel>
+
+  <SpellOf_Firestorm.label>Feitiço de fogo: tempestade de fogo</SpellOf_Firestorm.label>
+  <SpellOf_Firestorm.description>Ensina o mágico a criar uma tempestade de fogo.</SpellOf_Firestorm.description>
+  <SpellOf_Firestorm.comps.0.useLabel>Ler</SpellOf_Firestorm.comps.0.useLabel>
+
+  <SpellOf_FoldReality.label>Feitiço do Mago das Trevas</SpellOf_FoldReality.label>
+  <SpellOf_FoldReality.description>Ensina um mágico negro a dobrar a realidade para abrir uma janela temporária entre as colónias.</SpellOf_FoldReality.description>
+  <SpellOf_FoldReality.comps.0.useLabel>Ler</SpellOf_FoldReality.comps.0.useLabel>
+
+  <SpellOf_GuardianSpirit.label>Feitiço do xamã: Espírito Guardião</SpellOf_GuardianSpirit.label>
+  <SpellOf_GuardianSpirit.description>Ensina ao xamã como chamar o seu espírito de guarda.</SpellOf_GuardianSpirit.description>
+  <SpellOf_GuardianSpirit.comps.0.useLabel>Ler</SpellOf_GuardianSpirit.comps.0.useLabel>
+
+  <SpellOf_HolyWrath.label>Feitiço paladino: raiva santa</SpellOf_HolyWrath.label>
+  <SpellOf_HolyWrath.description>Ensina o paladino a causar a ira dos deuses.</SpellOf_HolyWrath.description>
+  <SpellOf_HolyWrath.comps.0.useLabel>Ler</SpellOf_HolyWrath.comps.0.useLabel>
+
+  <SpellOf_LichForm.label>Feitiço de necromante: forma de larva</SpellOf_LichForm.label>
+  <SpellOf_LichForm.description>Ensina um necromante a forma de uma larva.</SpellOf_LichForm.description>
+  <SpellOf_LichForm.comps.0.useLabel>Ler</SpellOf_LichForm.comps.0.useLabel>
+
+  <SpellOf_LivingWall.label>Feitiço do Golemante: Muro vivo</SpellOf_LivingWall.label>
+  <SpellOf_LivingWall.description>Ensina-nos como dar vontade à parede.</SpellOf_LivingWall.description>
+  <SpellOf_LivingWall.comps.0.useLabel>Ler</SpellOf_LivingWall.comps.0.useLabel>
+
+  <SpellOf_Meteor.label>Feitiço Geomante: Meteorito</SpellOf_Meteor.label>
+  <SpellOf_Meteor.description>Ensina um geomante a chamar um meteorito maciço para enterrar uma área em pedras e destroços.</SpellOf_Meteor.description>
+  <SpellOf_Meteor.comps.0.useLabel>Ler</SpellOf_Meteor.comps.0.useLabel>
+
+  <SpellOf_OrbitalStrike.label>Feitiço do Tecnomante: tiro orbital</SpellOf_OrbitalStrike.label>
+  <SpellOf_OrbitalStrike.description>Ensina a um técnico como acessar satélites antigos e sistemas orbitais e usá-los para lançar um ataque orbital.</SpellOf_OrbitalStrike.description>
+  <SpellOf_OrbitalStrike.comps.0.useLabel>Ler</SpellOf_OrbitalStrike.comps.0.useLabel>
+
+  <SpellOf_PsychicShock.label>Feitiço de feitiço, choque mental</SpellOf_PsychicShock.label>
+  <SpellOf_PsychicShock.description>Ensina ao feiticeiro como usar os seus poderes extrassolares para causar um choque mental poderoso que esmaga e reflete do peão mais próximo.</SpellOf_PsychicShock.description>
+  <SpellOf_PsychicShock.comps.0.useLabel>Ler</SpellOf_PsychicShock.comps.0.useLabel>
+
+  <SpellOf_Recall.label>Feitiço de cronomante: retorno</SpellOf_Recall.label>
+  <SpellOf_Recall.description>Ensina o cronomante a recuperar a sua existência física ao passado.</SpellOf_Recall.description>
+  <SpellOf_Recall.comps.0.useLabel>Ler</SpellOf_Recall.comps.0.useLabel>
+
+  <SpellOf_RegrowLimb.label>Feitiço do druído: criar um membro</SpellOf_RegrowLimb.label>
+  <SpellOf_RegrowLimb.description>Ensina druida como reconstruir membros, combinando natureza, forças secretas e medicina.</SpellOf_RegrowLimb.description>
+  <SpellOf_RegrowLimb.comps.0.useLabel>Ler</SpellOf_RegrowLimb.comps.0.useLabel>
+
+  <SpellOf_Resurrection.label>Feitiço do padre: ressuscitação</SpellOf_Resurrection.label>
+  <SpellOf_Resurrection.description>Ensina ao padre como recuperar a faísca da vida de um recém-morto.</SpellOf_Resurrection.description>
+  <SpellOf_Resurrection.comps.0.useLabel>Ler</SpellOf_Resurrection.comps.0.useLabel>
+
+  <SpellOf_Scorn.label>Feitiço Sucuba: Desprezo</SpellOf_Scorn.label>
+  <SpellOf_Scorn.description>Ensina a sucuba como libertar toda a maldade que esconde no seu coração demoníaco.</SpellOf_Scorn.description>
+  <SpellOf_Scorn.comps.0.useLabel>Ler</SpellOf_Scorn.comps.0.useLabel>
+
+  <SpellOf_Shapeshift.label>Feitiço do feiticeiro: mudança de aspecto</SpellOf_Shapeshift.label>
+  <SpellOf_Shapeshift.description>Ensina ao feiticeiro como fazer a transformação sobre si mesmo sem perder a sua personalidade.</SpellOf_Shapeshift.description>
+  <SpellOf_Shapeshift.comps.0.useLabel>Ler</SpellOf_Shapeshift.comps.0.useLabel>
+
+  <SpellOf_SummonPoppi.label>Feitiço do Recrutador: chamar Poppy</SpellOf_SummonPoppi.label>
+  <SpellOf_SummonPoppi.description>Ensina ao recrutador como chamar um grupo de simpáticos poppies.</SpellOf_SummonPoppi.description>
+  <SpellOf_SummonPoppi.comps.0.useLabel>Ler</SpellOf_SummonPoppi.comps.0.useLabel>
+
+  <SpellOf_SpiritOfLight.label>Feitiço da Magia Luminosa: Espírito da Luz</SpellOf_SpiritOfLight.label>
+  <SpellOf_SpiritOfLight.description>Ensina Mago Claro como chamar o Espírito da Luz.</SpellOf_SpiritOfLight.description>
+  <SpellOf_SpiritOfLight.comps.0.useLabel>Ler</SpellOf_SpiritOfLight.comps.0.useLabel>
+
+
+  <!-- Fighter Skills - Single -->
+
+  <SkillOf_ThrowingKnife.label>Habilidade de combate: faca de lançamento</SkillOf_ThrowingKnife.label>
+  <SkillOf_ThrowingKnife.description>Ensina a turma do lutador como atirar uma faca. Os pacifistas não aprendem essa habilidade.</SkillOf_ThrowingKnife.description>
+  <SkillOf_ThrowingKnife.comps.0.useLabel>Ler</SkillOf_ThrowingKnife.comps.0.useLabel>
+
+  <SkillOf_BurningFury.label>Habilidade de combate: fúria acesa</SkillOf_BurningFury.label>
+  <SkillOf_BurningFury.description>Ensina a turma do lutador a acionar a aura da fúria.</SkillOf_BurningFury.description>
+  <SkillOf_BurningFury.comps.0.useLabel>Ler</SkillOf_BurningFury.comps.0.useLabel>
+
+  <SkillOf_FightersFocus.label>Capacidade de combate: foco do lutador</SkillOf_FightersFocus.label>
+  <SkillOf_FightersFocus.description>Ensina a classe de lutadores como se dedicar a destacar a resistência para suportar um grande exercício mental e físico.</SkillOf_FightersFocus.description>
+  <SkillOf_FightersFocus.comps.0.useLabel>Ler</SkillOf_FightersFocus.comps.0.useLabel>
+
+  <SkillOf_GearRepair.label>Capacidade de Combate: Reparação de dentes</SkillOf_GearRepair.label>
+  <SkillOf_GearRepair.description>Ensina à turma de lutadores como dedicar parte de sua resistência a manter e reparar equipamentos desgastados.</SkillOf_GearRepair.description>
+  <SkillOf_GearRepair.comps.0.useLabel>Ler</SkillOf_GearRepair.comps.0.useLabel>
+
+  <SkillOf_HeavyBlow.label>Capacidade de combate: duro impacto</SkillOf_HeavyBlow.label>
+  <SkillOf_HeavyBlow.description>Ensina a classe de lutadores como destacar parte da resistência para aumentar a força de cada ataque.</SkillOf_HeavyBlow.description>
+  <SkillOf_HeavyBlow.comps.0.useLabel>Ler</SkillOf_HeavyBlow.comps.0.useLabel>
+
+  <SkillOf_InnerHealing.label>Habilidade de combate: cura interna</SkillOf_InnerHealing.label>
+  <SkillOf_InnerHealing.description>Ensina à classe de combatentes como emitir resistência e energia física para aumentar a velocidade de cura e melhorar a imunidade a doenças.</SkillOf_InnerHealing.description>
+  <SkillOf_InnerHealing.comps.0.useLabel>Ler</SkillOf_InnerHealing.comps.0.useLabel>
+
+  <SkillOf_Legion.label>Habilidade de combate: legião</SkillOf_Legion.label>
+  <SkillOf_Legion.description>Ensina a um lutador como repetir o combate, de outra classe de caças.</SkillOf_Legion.description>
+  <SkillOf_Legion.comps.0.useLabel>Ler</SkillOf_Legion.comps.0.useLabel>
+
+  <SkillOf_PommelStrike.label>Habilidade de Combate</SkillOf_PommelStrike.label>
+  <SkillOf_PommelStrike.description>Ensina a classe de lutadores como executar uma batida não letal para abafar ou derrubar o alvo.</SkillOf_PommelStrike.description>
+  <SkillOf_PommelStrike.comps.0.useLabel>Ler</SkillOf_PommelStrike.comps.0.useLabel>
+
+  <SkillOf_Sprint.label>Habilidade de combate: sprint</SkillOf_Sprint.label>
+  <SkillOf_Sprint.description>Ensina-nos a andar a uma velocidade mais rápida.</SkillOf_Sprint.description>
+  <SkillOf_Sprint.comps.0.useLabel>Ler</SkillOf_Sprint.comps.0.useLabel>
+
+  <SkillOf_StrongBack.label>Habilidade de combate: costas fortes</SkillOf_StrongBack.label>
+  <SkillOf_StrongBack.description>Ensina à classe de combatentes como destacar o estoque de resistência para aumentar a capacidade de carga.</SkillOf_StrongBack.description>
+  <SkillOf_StrongBack.comps.0.useLabel>Ler</SkillOf_StrongBack.comps.0.useLabel>
+
+  <SkillOf_Taunt.label>Habilidade de combate: gozação</SkillOf_Taunt.label>
+  <SkillOf_Taunt.description>Ensina uma turma de combatentes a zombar dos inimigos mais próximos.</SkillOf_Taunt.description>
+  <SkillOf_Taunt.comps.0.useLabel>Ler</SkillOf_Taunt.comps.0.useLabel>
+
+  <SkillOf_TempestStrike.label>Habilidade de combate de tempestade</SkillOf_TempestStrike.label>
+  <SkillOf_TempestStrike.description>Ensina um lutador de classe A a técnica de bater numa sequência rápida com a sua arma.</SkillOf_TempestStrike.description>
+  <SkillOf_TempestStrike.comps.0.useLabel>Ler</SkillOf_TempestStrike.comps.0.useLabel>
+
+  <SkillOf_ThickSkin.label>Capacidade de combate: pele gorda</SkillOf_ThickSkin.label>
+  <SkillOf_ThickSkin.description>Ensina à classe de lutadores como destacar o estoque de resistência para aumentar os valores da armadura e do limite de temperatura.</SkillOf_ThickSkin.description>
+  <SkillOf_ThickSkin.comps.0.useLabel>Ler</SkillOf_ThickSkin.comps.0.useLabel>
+
+  <SkillOf_HerbalBliss.label>Receita farmacêutica: Beato</SkillOf_HerbalBliss.label>
+  <SkillOf_HerbalBliss.description>Ensina ao farmacêutico como criar o Beato, um remédio que provoca um estado de felicidade capaz de disfarçar completamente quase todas as emoções e dores. Esta droga também provoca perda de habilidades e atrasa drasticamente a sua aquisição.</SkillOf_HerbalBliss.description>
+  <SkillOf_HerbalBliss.comps.0.useLabel>Ler</SkillOf_HerbalBliss.comps.0.useLabel>
+
+  <SkillOf_HerbalClarity.label>Receita farmacêutica: Claridade</SkillOf_HerbalClarity.label>
+  <SkillOf_HerbalClarity.description>Ensina ao farmacêutico como criar a Claridade - uma cura que reduz a resistência à magia, dá aos mágicos um grande impulso para a regeneração do maná e aumenta a sensibilidade mental. Também pode causar a deterioração da resistência mental.</SkillOf_HerbalClarity.description>
+  <SkillOf_HerbalClarity.comps.0.useLabel>Ler</SkillOf_HerbalClarity.comps.0.useLabel>
+
+
+  <!-- Gems of Insight -->
+
+  <GemstoneOfInsight_Magic.label>Pedra da perspicácia mágica</GemstoneOfInsight_Magic.label>
+  <GemstoneOfInsight_Magic.description>Enche o utilizador de espírito mágico, dando-lhe uma característica de caráter «magicamente dotado».
+
+* * Nota: O uso deste item substitui um sinal aleatório se o usuário tiver no máximo 7 sinais. E não pode ser usado por um peão com traços existentes de mágico ou lutador * *</GemstoneOfInsight_Magic.description>
+  <GemstoneOfInsight_Magic.comps.0.useLabel>Usar</GemstoneOfInsight_Magic.comps.0.useLabel>
+
+  <GemstoneOfInsight_Might.label>Pedra de perspicácia física</GemstoneOfInsight_Might.label>
+  <GemstoneOfInsight_Might.description>Enche o utilizador de espírito de guerreiro, dando-lhe a característica de «adepto físico».
+
+* * Nota: O uso deste item substitui um sinal aleatório se o usuário tiver no máximo 7 sinais. E não pode ser usado por um peão com traços existentes de magia ou um lutador * *</GemstoneOfInsight_Might.description>
+  <GemstoneOfInsight_Might.comps.0.useLabel>Usar</GemstoneOfInsight_Might.comps.0.useLabel>
+
+
+</LanguageData>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Minion_Head.label>голова</Minion_Head.label>
+  <Minion_Brain.label>мозок</Minion_Brain.label>
+  <Minion_Eye.label>око</Minion_Eye.label>
+  <Minion_RightHorn.label>правий ріг</Minion_RightHorn.label>
+  <Minion_LeftHorn.label>лівий Ріг</Minion_LeftHorn.label>
+  <Minion_LeftArm.label>ліва рука</Minion_LeftArm.label>
+  <Minion_RightArm.label>права рука</Minion_RightArm.label>
+  <Minion_Mouth.label>рот</Minion_Mouth.label>
+  <Minion_Jaw.label>щелепи</Minion_Jaw.label>
+  <Minion_Core.label>сердечник</Minion_Core.label>
+
+
+</LanguageData>

@@ -1,0 +1,6 @@
+<LanguageData><AdministerShardOfExtraction.label>управлять осколком извлечения</AdministerShardOfExtraction.label>
+  <AdministerShardOfExtraction.description>Извлекает боевую и тайную сущность из пешки. Это одноразовый предмет, который навсегда удалит класс пешки и преобразует его в сущность. Эссенция может быть использована для получения классового опыта. Осколок уничтожается после процесса извлечения.</AdministerShardOfExtraction.description>
+  <AdministerShardOfExtraction.jobString>Использование осколка извлечения</AdministerShardOfExtraction.jobString>
+
+
+</LanguageData>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_SeverMagic.spectatorFilter.description>Глядачі повинні бути готові спостерігати за тим, що відбувається.</TM_SeverMagic.spectatorFilter.description>
+  <TM_SeverMagic.roles.0.label>шукач порожнечі</TM_SeverMagic.roles.0.label>
+  <TM_SeverMagic.roles.1.label>маг</TM_SeverMagic.roles.1.label>
+  <TM_SeverMagic.roles.2.label>інструкція</TM_SeverMagic.roles.2.label>
+
+
+  <!-- Bestow Magic -->
+
+  <TM_BestowMagic.spectatorFilter.description>Глядачі повинні бути готові спостерігати за тим, що відбувається.</TM_BestowMagic.spectatorFilter.description>
+  <TM_BestowMagic.roles.0.label>шукач порожнечі</TM_BestowMagic.roles.0.label>
+  <TM_BestowMagic.roles.1.label>бездарний</TM_BestowMagic.roles.1.label>
+  <TM_BestowMagic.roles.2.label>інструкція</TM_BestowMagic.roles.2.label>
+
+
+  <!-- Arcane Pathway -->
+
+  <TM_ArcanePathway.spectatorFilter.description>Глядачі повинні бути готові спостерігати за тим, що відбувається.</TM_ArcanePathway.spectatorFilter.description>
+  <TM_ArcanePathway.roles.0.label>шукач порожнечі</TM_ArcanePathway.roles.0.label>
+  <TM_ArcanePathway.roles.1.label>натхненно обдарований</TM_ArcanePathway.roles.1.label>
+  <TM_ArcanePathway.roles.2.label>інструкція</TM_ArcanePathway.roles.2.label>
+
+
+  <TM_SeverMagic.roles.0.missingDesc>шукач порожнечі</TM_SeverMagic.roles.0.missingDesc>
+  <TM_SeverMagic.roles.1.missingDesc>маг</TM_SeverMagic.roles.1.missingDesc>
+  <TM_BestowMagic.roles.0.missingDesc>шукач порожнечі</TM_BestowMagic.roles.0.missingDesc>
+  <TM_BestowMagic.roles.1.missingDesc>колоніст без дару сили або магії</TM_BestowMagic.roles.1.missingDesc>
+  <TM_ArcanePathway.roles.0.missingDesc>шукач порожнечі</TM_ArcanePathway.roles.0.missingDesc>
+  <TM_ArcanePathway.roles.1.missingDesc>колоніст з обдарованою рисою, натхненний стати одним з класів магів</TM_ArcanePathway.roles.1.missingDesc>
+
+</LanguageData>

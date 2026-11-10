@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>TorannMagic.Multiplayer</AssemblyName>
+    <DefaultItemExcludes>$(DefaultItemExcludes);obj/**;bin/**</DefaultItemExcludes>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GameDir Condition="'$(GameDir)' == ''">C:/Program Files (x86)/Steam/steamapps/common/RimWorld</GameDir>
+    <HarmonyDir Condition="'$(HarmonyDir)' == ''">C:/Program Files (x86)/Steam/steamapps/workshop/content/294100/2009463077/1.7/Assemblies</HarmonyDir>
+    <JecsDir Condition="'$(JecsDir)' == ''">C:/Program Files (x86)/Steam/steamapps/workshop/content/294100/3312959701/1.7/Assemblies</JecsDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="RimWorld.MultiplayerAPI" Version="0.6.0" ExcludeAssets="runtime" />
+    <Reference Include="TorannMagic"><HintPath>$(ModAssemblyPath)</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(HarmonyDir)/0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="AbilityUser"><HintPath>$(JecsDir)/AbilityUser.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(GameDir)/Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityStubs"><HintPath>$(GameDir)/UnityStubs.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

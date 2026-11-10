@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <AncientMail.label>Cota de malla antigua</AncientMail.label>
+  
+  <AncientMail.description>Una cota de malla forjada con un diseño antiguo que ofrece una defensa física superior a la media. El diseño de la armadura incluye un grabado simétrico de runas arcanas que otorgan a quien la lleva un poder mejorado. Una vez fabricadas, estas runas atraen a un espíritu antiguo que encarna la malla y concede a su portador una probabilidad de causar daño arcano adicional tras cualquier ataque; sin embargo, esto tiene un precio: todas las habilidades requerirán más energía, y el portador es asaltado por pesadillas que van minando poco a poco sus resistencias mentales.\n\nLa cota de malla antigua está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +8 %\nRegen. de energía: +10 %\nCostes de energía: +15 %\nResistencia arcana: +20 %\n\nPotenciada por Espectro arcano: 50 % de probabilidad de infligir un 20 % de daño adicional</AncientMail.description>
+  
+  
+  <ArcaneHood.label>Capucha arcana</ArcaneHood.label>
+  
+  <ArcaneHood.description>Una capucha preferida por los magos por sus propiedades mágicas, su ligereza y su comodidad. El método de infundir encantamientos en la tela antes de tejer la capucha ofrece mejores resultados de encantamiento.\n\nLa Capucha arcana está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +10 %\nRegen. de energía: +10 %\nResistencia arcana: +10 %</ArcaneHood.description>
+  
+  
+  <ArchMageRobe.label>Túnicas del archimago</ArchMageRobe.label>
+  
+  <ArchMageRobe.description>Túnicas diseñadas por una raza superior para la clase más alta de usuarios de magia, dignos de poder y visión adicionales. Estas túnicas ligeras y vaporosas parecen impulsar a quien las lleva, como si lo transportara una gran bestia alada.\n\nLas Túnicas del archimago están encantadas y otorgan ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +25\nRegen. de energía: +25 %\nReutilización de habilidades: -20 %\nCostes de energía: -10 %\nResist. arcana: +15 %\nDaño de habilidades: +20 %</ArchMageRobe.description>
+  
+  
+  <DarkRobe.label>Túnica de mago</DarkRobe.label>
+  
+  <DarkRobe.description>Túnicas que visten los heraldos de la magia. Quienes llevan esta túnica demuestran su disposición a hacer sacrificios físicos para aumentar su poder innato.\n\nLas túnicas de mago están encantadas y otorgan ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +17,5 %\nRegen. de energía: +10 %\nReutilización de habilidades: -15 %\nCostes de energía: -15 %\nGanancia de XP de clase: +10 %\nPoder arcano: +10 %</DarkRobe.description>
+  
+  
+  <DemonLordCloak.label>Capa de supremacía</DemonLordCloak.label>
+  
+  <DemonLordCloak.description>Una capa enormemente potenciada por poder arcano que se cree que fue creada por primera vez para un caballero negro que actuaba como embajador de un demonio astral. Es difícil enfocar la vista en la tela de un modo que solo puede describirse como "ruido visual", y los pliegues se mueven de forma antinatural, como si no estuvieran sujetos a las leyes de la naturaleza. Los pocos que han llevado esta capa en combate juran que posee conciencia propia y cuentan historias de cómo la tela los protegió de una destrucción segura. Otros afirman que esas observaciones fueron meras alucinaciones de necios desquiciados. Por estas afirmaciones se rumorea que la capa posee la capacidad de mitigar por completo los ataques contra quien la lleva, pero nadie ha logrado reproducir esos resultados con fiabilidad.\n\nLas Túnicas de supremacía están encantadas y otorgan ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +40 %\nRegen. de energía: +40 %\nReutilización de habilidades: -20 %\n\nPotenciada por Cambio fantasmal: 20 % de probabilidad de evitar un ataque</DemonLordCloak.description>
+  
+  
+  <HoodOfMadness.label>Capucha de la locura</HoodOfMadness.label>
+  
+  <HoodOfMadness.description>Una cogulla oscura con fama de maldita, aunque sus propiedades mágicas son innegables. Quienes se la ponen adquieren la capacidad de ver manifestaciones de energía arcana y de aprender cosas que de otro modo no sabrían. El aspecto de la capucha y el miedo a los secretos revelados llevan a la mayoría a desconfiar de quienes la visten. Asimismo, quienes ven a través de los ojos de esta capucha empiezan a desconfiar de quienes los rodean.\n\nLa Capucha de la locura está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nGanancia de XP de clase: +30 %\nResistencia arcana: 30 %</HoodOfMadness.description>
+  
+  
+  <ParagonHelm.label>Yelmo del paragón</ParagonHelm.label>
+  
+  <ParagonHelm.description>Un yelmo muy encantado destinado a identificar a los guerreros de élite de los Valientes.\n\nEl Yelmo del paragón está encantado y otorga ventajas adicionales a magos y luchadores entrenados:\nCostes de energía: -5 %\nGanancia de XP de clase: +15 %\nEnergía máx.: +5 %\nResist. arcana: +10 %</ParagonHelm.description>
+  
+  
+  <RoyalArmor.label>Armadura del valiente</RoyalArmor.label>
+  
+  <RoyalArmor.description>Una coraza grabada con símbolos sagrados, diseñada para proteger las zonas vitales sin restringir el movimiento. Se dice que la llevaron guerreros sagrados de una era pasada que mantenían la paz con justicia y compasión a partes iguales. Se desconoce qué fue de esa orden, aunque cuesta creer que tuviera algo que ver con su pericia en la fabricación de armaduras.\n\nLa Armadura del valiente está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nCostes de energía: -10 %\nGanancia de XP de clase: +10 %</RoyalArmor.description>
+  
+  
+  <RoyalHelm.label>Yelmo del valiente</RoyalHelm.label>
+  
+  <RoyalHelm.description>Un yelmo con forma de barbuta diseñado para maximizar la protección sin restringir la visión ni la voz. Estos yelmos complementan el conjunto de la Armadura del valiente y potencian aún más las capacidades arcanas de quien los lleva, además de ofrecer una notable protección física.\n\nEl Yelmo del valiente está encantado y otorga ventajas adicionales a magos y luchadores entrenados:\nCostes de energía: -5 %\nGanancia de XP de clase: +10 %</RoyalHelm.description>
+  
+  
+  <TM_DiscipleHood.label>Capucha de discípulo</TM_DiscipleHood.label>
+  
+  <TM_DiscipleHood.description>Adornada con símbolos y sigilos de profundo significado en el camino elegido por el discípulo, esta capucha se convierte en un lienzo de arte sagrado. Cada puntada cuenta una historia de pruebas afrontadas, sabiduría ganada y el viaje continuo hacia un plano superior de comprensión. La capucha sirve no solo como cobertura física, sino como barrera metafísica que protege al discípulo de distracciones e influencias mundanas.\n\nLa Capucha de discípulo está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +25 %\nRegen. de energía: +5 %\nCostes de energía: -5 %\nGanancia de XP de clase: +10 %\nResistencia arcana: +15 %</TM_DiscipleHood.description>
+  
+  
+  <TM_DiscipleRobe.label>Túnica de discípulo</TM_DiscipleRobe.label>
+  
+  <TM_DiscipleRobe.description>El uniforme de un discípulo ferviente: este conjunto se compone de diversos bolsillos, bolsas y correas diseñados para que el discípulo esté preparado ante cualquier situación. Quienes visten la túnica de discípulo valoran la protección y la adaptabilidad.\n\nLas túnicas de discípulo están encantadas y otorgan ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +20 %\nRegen. de energía: +5 %\nCostes de energía: -5 %\nGanancia de XP de clase: +10 %\nResist. arcana: +30 %</TM_DiscipleRobe.description>
+  
+  
+  <TM_DragonSlayer.label>Placas del matadragones</TM_DragonSlayer.label>
+  
+  <TM_DragonSlayer.description>Esta obra maestra de artesanía y resistencia es una sinfonía de placas superpuestas con esmero sobre una malla blindada que ofrece una protección inigualable. Remaches relucientes y bordes dentados trazan un patrón que recuerda a llamas etéreas que envuelven a un guerrero sin miedo. Forjadas en el crisol del peligro, las placas del matadragones son un símbolo de desafío contra los tiranos escamosos que ensombrecen el cielo y las abominaciones mecánicas que devastan la tierra. Imbuida de energías encantadas, la armadura irradia un poder mágico que actúa como luz guía, asegurando que este guerrero saldrá victorioso entre fuego y colmillos.\n\nLas Placas del matadragones están encantadas y otorgan ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +30\nRegen. de energía: +20 %\nReutilización de habilidades: -20 %\nCostes de energía: -20 %\nResist. arcana: +30 %\nDaño de habilidades: +30 %</TM_DragonSlayer.description>
+  
+  
+  <TM_DreamcatcherBuckskin.label>Piel de ante atrapasueños</TM_DreamcatcherBuckskin.label>
+  
+  <TM_DreamcatcherBuckskin.description>Una piel de ante de retazos de cuero trenzado, adornada con recuerdos de animales e impregnada de energías místicas. Usada principalmente por los líderes místicos tribales, la piel de ante atrapasueños representa la conexión onírica entre la naturaleza y los espíritus.\n\nLos místicos obtienen poder adicional del simbolismo de este atuendo:\nEnergía máx.: +40\nGanancia de XP de clase: +30 %\nResist. arcana: +25 %</TM_DreamcatcherBuckskin.description>
+  
+  
+  <TM_DreamcatcherCoronet.label>Corona atrapasueños</TM_DreamcatcherCoronet.label>
+  
+  <TM_DreamcatcherCoronet.description>Un tocado de retazos de cuero animal coronado por una majestuosa cornamenta. Esta capucha señala a quien la lleva como líder espiritual de una tribu. Se dice que el atuendo atrapasueños concede a los usuarios dotados la capacidad de ver la naturaleza a través de los ojos de su animal espiritual.\n\nLos místicos obtienen poder adicional del simbolismo de este atuendo:\nEnergía máx.: +25\nGanancia de XP de clase: +20 %\nResist. arcana: +20 %</TM_DreamcatcherCoronet.description>
+  
+  
+  <TM_HoodOfProtection.label>Capucha de protección</TM_HoodOfProtection.label>
+  
+  <TM_HoodOfProtection.description>Una capucha sencilla que aumenta la protección, tanto mágica como mundana. El método de infundir encantamientos en la tela antes de tejer la capucha ofrece mejores resultados de encantamiento.\n\nLa Capucha de protección está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nResistencia arcana: +10 %</TM_HoodOfProtection.description>
+  
+  
+  <TM_MaestersCloak.label>Capa del errante</TM_MaestersCloak.label>
+  
+  <TM_MaestersCloak.description>Una capa diseñada para magos viajeros que protege de los elementos y mejora la velocidad de recuperación de energía. El método de infundir gemas arcanas en la tela durante su confección ofrece una eficacia de encantamiento inigualable.\n\nEsta capa está encantada y otorga ventajas adicionales a los magos entrenados:\nEnergía máx.: +12 %\nReutilización de habilidades: -20 %\nResistencia arcana: +5 %</TM_MaestersCloak.description>
+  
+  
+  <TM_MantleOfProtection.label>Manto de protección</TM_MantleOfProtection.label>
+  
+  <TM_MantleOfProtection.description>Un abrigo suelto, a modo de capa, que se lleva sobre otras prendas y ofrece protección adicional contra el clima y otros peligros. El Manto de protección está imbuido de runas de resguardo para reforzar su defensa. El método de infundir gemas arcanas en la tela durante su confección ofrece una eficacia de encantamiento inigualable.\n\nEsta capa está encantada y otorga ventajas adicionales a los magos entrenados:\nGanancia de XP de clase: +20 %\nResistencia arcana: +30 %</TM_MantleOfProtection.description>
+  
+  
+  <TM_Necromancer_Body.label>Sudario del segador de almas</TM_Necromancer_Body.label>
+  
+  <TM_Necromancer_Body.description>Este conjunto oscuro y místico está confeccionado con una elegancia macabra, combinando motivos de hueso y encantamientos sombríos para ofrecer protección y servir de conducto de los poderes impíos del nigromante. El Sudario del segador de almas es un testimonio del dominio del nigromante sobre las fuerzas de la muerte, y lo envuelve en un aura de poder ominoso mientras manipula el tejido mismo de la vida y el más allá. Aunque cualquiera puede llevar el sudario, sus propiedades únicas mejoran el control del nigromante sobre los no muertos.\n\nLos nigromantes obtienen poder adicional del simbolismo de esta oscura prenda:\nEnergía máx.: +40\nRegen. de energía: +30 %\nPoder arcano: +30 %\n\nSudario de no muerte: reduce un 30 % los costes de mantenimiento de no muertos de este nigromante y aumenta un 15 % el movimiento y el poder de ataque de los no muertos cercanos</TM_Necromancer_Body.description>
+  
+  
+  <TM_Necromancer_Hood.label>Cogulla del segador de almas</TM_Necromancer_Hood.label>
+  
+  <TM_Necromancer_Hood.description>Esta prenda ominosa está tejida con telas sombrías e imbuida de encantamientos oscuros, y oculta el rostro del nigromante bajo una máscara de tela y hueso. La Cogulla del segador de almas sirve no solo como accesorio práctico para proteger a quien la lleva de miradas indiscretas, sino también como manifestación simbólica de la comunión del nigromante con los reinos más allá de la vida. Su aura espectral y su diseño siniestro la convierten en un adorno adecuado para quienes dominan los poderes de los no muertos y recorren los caminos de las artes nigrománticas.\n\nLos nigromantes obtienen poder adicional del simbolismo de este objeto:\nEnergía máx.: +20\nRegen. de energía: +5 %\n\nSudario de no muerte: reduce un 20 % los costes de mantenimiento de no muertos de este nigromante y aumenta un 10 % el movimiento y el poder de ataque de los no muertos cercanos</TM_Necromancer_Hood.description>
+  
+  
+  <TM_Necromancer_Mask.label>Máscara del segador de almas</TM_Necromancer_Mask.label>
+  
+  <TM_Necromancer_Mask.description>Elaborada con una elegancia sobrenatural, esta inquietante máscara combina materiales oscuros y símbolos arcanos, ocultando el rostro del nigromante tras una fachada pavorosa. Su aura espectral y su diseño siniestro la convierten en un adorno adecuado para quienes dominan los poderes de la no muerte y recorren los caminos de las artes nigrománticas.\n\nLos nigromantes obtienen poder adicional del simbolismo de este objeto:\nEnergía máx.: +10\nRegen. de energía: +5 %\n\nSudario de no muerte: reduce un 10 % los costes de mantenimiento de no muertos de este nigromante y aumenta un 5 % el movimiento y el poder de ataque de los no muertos cercanos</TM_Necromancer_Mask.description>
+  
+  
+  <TM_SagesMask.label>Máscara de serenidad</TM_SagesMask.label>
+  
+  <TM_SagesMask.description>Esta máscara es una cautivadora mezcla de misterio y sabiduría, elaborada con esmero para velar el rostro de quien la lleva. Delicadas líneas grabadas en su superficie representan una intrincada danza de símbolos antiguos y trazos rítmicos que forman un semblante de sabiduría y poder. Las máscaras de esta naturaleza están pensadas para suprimir los sentidos físicos de quien las lleva, otorgándole mayor concentración y enfoque.\n\nLa Máscara de serenidad está encantada y otorga ventajas adicionales a magos y luchadores entrenados:\nCostes de energía: -10 %\nRegen. de energía: +10 %\nGanancia de XP de clase: +10 %\nPoder arcano: +10 %</TM_SagesMask.description>
+  
+  
+  <TM_WizardHat.label>Sombrero de mago</TM_WizardHat.label>
+  
+  <TM_WizardHat.description>Un sombrero clásico con el estilo de cualquier mago o bruja. Tiene compartimentos secretos para llevar objetos y concede bonificaciones sociales y a la producción de drogas.\n\nEl Sombrero de mago está encantado y otorga ventajas adicionales a magos y luchadores entrenados:\nEnergía máx.: +5 %\nPoder arcano: +5 %</TM_WizardHat.description>
+  
+</LanguageData>

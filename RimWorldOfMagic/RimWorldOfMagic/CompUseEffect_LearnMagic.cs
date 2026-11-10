@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +8,29 @@ namespace TorannMagic
 {
 	public class CompUseEffect_LearnMagic : CompUseEffect
 	{
+        public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
+        {
+            if (parent?.def?.defName == "BookOfShadow")
+                foreach (var form in ClassProgression.JobDriver_GladiatorInitiation.Choices(selPawn, parent)) yield return form;
+            foreach (var option in ClassProgression.ClassInitiationMenu.Options(selPawn, parent)) yield return option;
+        }
+        public override AcceptanceReport CanBeUsedBy(Pawn user)
+        {
+            if (!ClassProgression.ClassIdentity.TryGetState(user, out _)) return base.CanBeUsedBy(user);
+            return ClassProgression.WandererLessons.Accepts(user, parent) || ClassProgression.ClassInitiation.CanUseFoundation(user, parent, out _)
+                || ClassProgression.ClassInitiation.CanUseAdept(user, parent, out _)
+                || ClassProgression.ClassInitiation.CanUseMaster(user, parent, out _)
+                ? (AcceptanceReport)true : (AcceptanceReport)"TM_ProgressionBookUnavailable".Translate();
+        }
 
 		public override void DoEffect(Pawn user)
-		{
+        {
+            if (ClassProgression.ClassIdentity.TryGetState(user, out _))
+            {
+                if (!ClassProgression.ClassInitiation.CompleteBook(user, parent))
+                    Messages.Message("TM_ProgressionBookUnavailable".Translate(), user, MessageTypeDefOf.RejectInput, false);
+                return;
+            }
             if (parent.def != null || user.IsShambler || user.IsGhoul)
             {
                 bool customClass = false;
@@ -546,6 +566,19 @@ namespace TorannMagic
                                 user.LabelShort
                             ), MessageTypeDefOf.RejectInput);
                     }
+                }
+                // Editor-created pawns may not have ability-user components yet.
+                TorannMagic.Utils.TM_PawnTracker.EnsureClassComps(user);
+                TorannMagic.Utils.TM_PawnTracker.ResolveComps(user);
+                CompAbilityUserMagic grantedMagic = user.GetCompAbilityUserMagic();
+                if (grantedMagic != null && grantedMagic.IsMagicUser)
+                {
+                    grantedMagic.ResolveMana();
+                }
+                CompAbilityUserMight grantedMight = user.GetCompAbilityUserMight();
+                if (grantedMight != null && grantedMight.IsMightUser)
+                {
+                    grantedMight.ResolveStamina();
                 }
             }
             else

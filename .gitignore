@@ -1,0 +1,14 @@
+.vs/
+RimWorldOfMagic/RimWorldOfMagic/obj/
+RimWorldOfMagic/RimWorldOfMagic/bin/
+*.user
+docs/superpowers/
+docs/TorannMagic.Core/Source/obj/
+TorannMagic.Core/Source/bin/
+Compatibility/TorannMagic.VGE/obj/
+TorannMagic.Core/Source/obj/
+docs/
+!/TorannMagic.Core/Docs/
+!/docs/
+/docs/*
+!/docs/integrations/

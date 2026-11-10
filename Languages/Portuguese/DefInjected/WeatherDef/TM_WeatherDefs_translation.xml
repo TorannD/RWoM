@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_HealingRainWD.label>Chuva de cura</TM_HealingRainWD.label>
+  <TM_HealingRainWD.description>Chuva delicada com propriedades curativas. Qualquer criatura exposta à chuva curativa vai recuperar lentamente as suas feridas.</TM_HealingRainWD.description>
+
+  <TM_HailstormWD.label>tempestade com granizo</TM_HailstormWD.label>
+  <TM_HailstormWD.description>Chuva feroz com granizo que atinge áreas de terra com ondas mortíferas de gelo. O movimento e a precisão são muito difíceis.</TM_HailstormWD.description>
+
+
+</LanguageData>

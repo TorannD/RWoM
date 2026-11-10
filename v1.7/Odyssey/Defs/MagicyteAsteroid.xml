@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Loaded only by the Odyssey conditional load folder. Vanilla locations are untouched. -->
+  <GeneratedLocationDef>
+    <defName>TM_MagicyteAsteroids</defName>
+    <worldObjectDef>TM_MagicyteAsteroid</worldObjectDef>
+    <layerDefs><li>Orbit</li></layerDefs>
+    <weight>0.15</weight>
+    <preciousResources><li>TM_MineableMagicyte</li></preciousResources>
+  </GeneratedLocationDef>
+  <WorldObjectDef ParentName="GeneratedAsteroid">
+    <defName>TM_MagicyteAsteroid</defName>
+    <label>magicyte-rich asteroid</label>
+    <description>A vacstone asteroid containing unusually rich pockets of magicyte. Its crystals can be mined for raw magicyte and occasionally yield an enchantment gem.\n\nThis location can be reached using transport pods, shuttles, or a gravship.</description>
+    <expandingIconTexture>World/MagicyteAsteroid</expandingIconTexture>
+    <mapGenerator>TM_MagicyteAsteroid</mapGenerator>
+  </WorldObjectDef>
+  <MapGeneratorDef ParentName="SpaceMapGenerator">
+    <defName>TM_MagicyteAsteroid</defName>
+    <label>magicyte-rich asteroid</label>
+    <genSteps>
+      <li>TM_MagicyteAsteroid</li>
+      <li>AsteroidBasicTransportPods</li>
+      <li>AncientMiningCharge_Asteroid</li>
+      <li>AncientExplosivesCrate_Asteroid</li>
+      <li>AncientDrillPlatform_Asteroid</li>
+      <li>AncientTuneller_Asteroid</li>
+      <li>MechShipChunk_Asteroid</li>
+      <li>RockChunks</li>
+      <li>TM_MagicyteAsteroidVeins</li>
+    </genSteps>
+  </MapGeneratorDef>
+  <GenStepDef>
+    <defName>TM_MagicyteAsteroid</defName>
+    <order>200</order>
+    <genStep Class="TorannMagic.Resources.GenStep_MagicyteAsteroid">
+      <numChunks>4~6</numChunks>
+      <ruinsChance>0.1</ruinsChance>
+      <archeanTreeChance>0.25</archeanTreeChance>
+      <!-- Preserve the native ordinary resource pass; magicyte uses its own bounded pass. -->
+      <mineableCounts>
+        <MineableGold>14~22</MineableGold>
+        <MineableSilver>50~70</MineableSilver>
+        <MineableSteel>80~110</MineableSteel>
+        <MineableUranium>15~25</MineableUranium>
+        <MineablePlasteel>12~15</MineablePlasteel>
+        <MineableComponentsIndustrial>65~85</MineableComponentsIndustrial>
+        <MineableJade>20~35</MineableJade>
+      </mineableCounts>
+    </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>TM_MagicyteAsteroidVeins</defName>
+    <order>1800</order>
+    <genStep Class="TorannMagic.Resources.GenStep_MagicyteVeins"><richAsteroid>true</richAsteroid></genStep>
+  </GenStepDef>
+</Defs>

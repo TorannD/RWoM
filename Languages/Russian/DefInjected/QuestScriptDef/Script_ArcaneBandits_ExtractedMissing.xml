@@ -1,0 +1,10 @@
+<LanguageData>
+	<TM_OpportunitySite_ArcaneBandits.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.value.slateRef>Срок задания истёк: [resolvedQuestName]</TM_OpportunitySite_ArcaneBandits.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.value.slateRef>
+	<TM_OpportunitySite_ArcaneBandits.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.value.slateRef>Арканные бандиты успешно похитили артефакты у [asker_faction_name]. [asker_label] недоволен вами.</TM_OpportunitySite_ArcaneBandits.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.value.slateRef>
+	<TM_OpportunitySite_ArcaneBandits.root.nodes.siteAllEnemiesDefeated.node.customLetterLabel.value.slateRef>Награда доставлена</TM_OpportunitySite_ArcaneBandits.root.nodes.siteAllEnemiesDefeated.node.customLetterLabel.value.slateRef>
+	<TM_OpportunitySite_ArcaneBandits.root.nodes.siteAllEnemiesDefeated.node.customLetterText.value.slateRef>Вы разгромили арканных бандитов!
+
+Оплата от [asker_faction_name] уже доставлена.</TM_OpportunitySite_ArcaneBandits.root.nodes.siteAllEnemiesDefeated.node.customLetterText.value.slateRef>
+	<TM_OpportunitySite_ArcaneBandits.root.nodes.siteDestroyed.node.nodes.Letter.label.value.slateRef>Задание провалено: [resolvedQuestName]</TM_OpportunitySite_ArcaneBandits.root.nodes.siteDestroyed.node.nodes.Letter.label.value.slateRef>
+	<TM_OpportunitySite_ArcaneBandits.root.nodes.siteDestroyed.node.nodes.Letter.text.value.slateRef>После вашего неудачного нападения арканные бандиты сразу перешли в атаку и похитили несколько артефактов. [asker_label] разочарован вами.</TM_OpportunitySite_ArcaneBandits.root.nodes.siteDestroyed.node.nodes.Letter.text.value.slateRef>
+</LanguageData>

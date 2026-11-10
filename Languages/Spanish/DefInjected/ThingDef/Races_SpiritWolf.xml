@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_SpiritWolfR.label>lobo espiritual</TM_SpiritWolfR.label>
+  
+  <TM_SpiritWolfR.description>Los lobos espirituales se materializan en el plano físico por mandato de un poderoso chamán. Los lobos son mamíferos peligrosos incluso en solitario, pero resultan temibles cuando cazan en manada. El lobo espiritual se desvanecerá en el éter tras un breve periodo o si es derrotado.</TM_SpiritWolfR.description>
+  
+  <TM_SpiritWolfR.race.meatLabel>carne</TM_SpiritWolfR.race.meatLabel>
+  
+  <TM_SpiritWolfR.tools.left_claw.label>garra izquierda</TM_SpiritWolfR.tools.left_claw.label>
+  
+  <TM_SpiritWolfR.tools.right_claw.label>garra derecha</TM_SpiritWolfR.tools.right_claw.label>
+  
+  <TM_SpiritWolfR.tools.head.label>cabeza</TM_SpiritWolfR.tools.head.label>
+  
+</LanguageData>

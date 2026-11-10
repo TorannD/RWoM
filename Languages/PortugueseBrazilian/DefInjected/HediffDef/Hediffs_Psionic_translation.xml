@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_PsionicHD.label>Energia Psicónica</TM_PsionicHD.label>
+  <TM_PsionicHD.description>Isso explica a energia única do psicônico.</TM_PsionicHD.description>
+
+  <TM_PsionicInjuryHD.label>Psicônico</TM_PsionicInjuryHD.label>
+  <TM_PsionicInjuryHD.description>Uma lesão causada pelo poder psicônico.</TM_PsionicInjuryHD.description>
+  <TM_PsionicInjuryHD.comps.0.labelTendedWell>vendado</TM_PsionicInjuryHD.comps.0.labelTendedWell>
+  <TM_PsionicInjuryHD.comps.0.labelTendedWellInner>costurado</TM_PsionicInjuryHD.comps.0.labelTendedWellInner>
+  <TM_PsionicInjuryHD.comps.0.labelSolidTendedWell>configuração</TM_PsionicInjuryHD.comps.0.labelSolidTendedWell>
+  <TM_PsionicInjuryHD.injuryProps.destroyedLabel>Começa a começar.</TM_PsionicInjuryHD.injuryProps.destroyedLabel>
+  <TM_PsionicInjuryHD.injuryProps.destroyedOutLabel>Explodido</TM_PsionicInjuryHD.injuryProps.destroyedOutLabel>
+
+  <TM_PsionicSpeedHD.label>velocidade psicónica</TM_PsionicSpeedHD.label>
+  <TM_PsionicSpeedHD.description>Velocidade aumentada através do reforço psicônico.</TM_PsionicSpeedHD.description>
+  <TM_PsionicSpeedHD.stages.0.label>I</TM_PsionicSpeedHD.stages.0.label>
+
+  <TM_PsionicSpeedHD_I.label>velocidade psicónica</TM_PsionicSpeedHD_I.label>
+  <TM_PsionicSpeedHD_I.description>Velocidade aumentada através do reforço psicônico.</TM_PsionicSpeedHD_I.description>
+  <TM_PsionicSpeedHD_I.stages.0.label>II</TM_PsionicSpeedHD_I.stages.0.label>
+
+  <TM_PsionicSpeedHD_II.label>velocidade psicónica</TM_PsionicSpeedHD_II.label>
+  <TM_PsionicSpeedHD_II.description>Velocidade aumentada através do reforço psicônico.</TM_PsionicSpeedHD_II.description>
+  <TM_PsionicSpeedHD_II.stages.0.label>III</TM_PsionicSpeedHD_II.stages.0.label>
+
+  <TM_PsionicSpeedHD_III.label>velocidade psicónica</TM_PsionicSpeedHD_III.label>
+  <TM_PsionicSpeedHD_III.description>Velocidade aumentada através do reforço psicônico.</TM_PsionicSpeedHD_III.description>
+  <TM_PsionicSpeedHD_III.stages.0.label>IV</TM_PsionicSpeedHD_III.stages.0.label>
+
+  <TM_PsionicManipulationHD.label>manipulação psicónica</TM_PsionicManipulationHD.label>
+  <TM_PsionicManipulationHD.description>Maior agilidade graças ao reforço psicônico.</TM_PsionicManipulationHD.description>
+  <TM_PsionicManipulationHD.stages.0.label>I</TM_PsionicManipulationHD.stages.0.label>
+
+  <TM_PsionicManipulationHD_I.label>manipulação psicónica</TM_PsionicManipulationHD_I.label>
+  <TM_PsionicManipulationHD_I.description>Maior agilidade graças ao reforço psicônico.</TM_PsionicManipulationHD_I.description>
+  <TM_PsionicManipulationHD_I.stages.0.label>II</TM_PsionicManipulationHD_I.stages.0.label>
+
+  <TM_PsionicManipulationHD_II.label>manipulação psicónica</TM_PsionicManipulationHD_II.label>
+  <TM_PsionicManipulationHD_II.description>Maior agilidade graças ao reforço psicônico.</TM_PsionicManipulationHD_II.description>
+  <TM_PsionicManipulationHD_II.stages.0.label>III</TM_PsionicManipulationHD_II.stages.0.label>
+
+  <TM_PsionicManipulationHD_III.label>manipulação psicónica</TM_PsionicManipulationHD_III.label>
+  <TM_PsionicManipulationHD_III.description>Maior agilidade graças ao reforço psicônico.</TM_PsionicManipulationHD_III.description>
+  <TM_PsionicManipulationHD_III.stages.0.label>IV</TM_PsionicManipulationHD_III.stages.0.label>
+
+
+  <TM_PsionicInjuryHD.comps.1.permanentLabel>destruído pelo poder psicônico</TM_PsionicInjuryHD.comps.1.permanentLabel>
+  <TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWell>vendado</TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWell>
+  <TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWellInner>Usca</TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  <TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelSolidTendedWell>conjunto</TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  <TM_PsionicInjuryHD.comps.HediffComp_GetsPermanent.permanentLabel>destruído pelo poder psicônico</TM_PsionicInjuryHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  <TM_PsionicInjuryHD.labelNounPretty>Se você quiser um 0, um 1</TM_PsionicInjuryHD.labelNounPretty>
+
+</LanguageData>

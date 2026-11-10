@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Earth Elemental -->
+
+  <TM_LesserEarth_Elemental.label>малий елементаль землі</TM_LesserEarth_Elemental.label>
+  <TM_LesserEarth_Elemental.labelPlural>малі елементалі землі</TM_LesserEarth_Elemental.labelPlural>
+  <TM_LesserEarth_Elemental.lifeStages.0.label>малий елементаль землі</TM_LesserEarth_Elemental.lifeStages.0.label>
+  <TM_LesserEarth_Elemental.lifeStages.0.labelPlural>елементаль землі</TM_LesserEarth_Elemental.lifeStages.0.labelPlural>
+
+  <TM_Earth_Elemental.label>елементаль землі</TM_Earth_Elemental.label>
+  <TM_Earth_Elemental.labelPlural>елементалі землі</TM_Earth_Elemental.labelPlural>
+  <TM_Earth_Elemental.lifeStages.0.label>елементаль землі</TM_Earth_Elemental.lifeStages.0.label>
+  <TM_Earth_Elemental.lifeStages.0.labelPlural>елементалі землі</TM_Earth_Elemental.lifeStages.0.labelPlural>
+
+  <TM_GreaterEarth_Elemental.label>великий елементаль землі</TM_GreaterEarth_Elemental.label>
+  <TM_GreaterEarth_Elemental.labelPlural>великі елементалі землі</TM_GreaterEarth_Elemental.labelPlural>
+  <TM_GreaterEarth_Elemental.lifeStages.0.label>великий елементаль землі</TM_GreaterEarth_Elemental.lifeStages.0.label>
+  <TM_GreaterEarth_Elemental.lifeStages.0.labelPlural>великі елементалі землі</TM_GreaterEarth_Elemental.lifeStages.0.labelPlural>
+
+
+  <!-- Fire Elemental -->
+
+  <TM_LesserFire_Elemental.label>малий елементаль вогню</TM_LesserFire_Elemental.label>
+  <TM_LesserFire_Elemental.labelPlural>малі елементалі вогню</TM_LesserFire_Elemental.labelPlural>
+  <TM_LesserFire_Elemental.lifeStages.0.label>малий елементаль вогню</TM_LesserFire_Elemental.lifeStages.0.label>
+  <TM_LesserFire_Elemental.lifeStages.0.labelPlural>малі елементалі вогню</TM_LesserFire_Elemental.lifeStages.0.labelPlural>
+
+  <TM_Fire_Elemental.label>елементаль вогню</TM_Fire_Elemental.label>
+  <TM_Fire_Elemental.labelPlural>елементалі вогню</TM_Fire_Elemental.labelPlural>
+  <TM_Fire_Elemental.lifeStages.0.label>елементаль вогню</TM_Fire_Elemental.lifeStages.0.label>
+  <TM_Fire_Elemental.lifeStages.0.labelPlural>елементалі вогню</TM_Fire_Elemental.lifeStages.0.labelPlural>
+
+  <TM_GreaterFire_Elemental.label>великий елементаль вогню</TM_GreaterFire_Elemental.label>
+  <TM_GreaterFire_Elemental.labelPlural>великі елементалі вогню</TM_GreaterFire_Elemental.labelPlural>
+  <TM_GreaterFire_Elemental.lifeStages.0.label>великий елементаль вогню</TM_GreaterFire_Elemental.lifeStages.0.label>
+  <TM_GreaterFire_Elemental.lifeStages.0.labelPlural>великі елементалі вогню</TM_GreaterFire_Elemental.lifeStages.0.labelPlural>
+
+
+  <!-- Water Elemental -->
+
+  <TM_LesserWater_Elemental.label>малий елементаль води</TM_LesserWater_Elemental.label>
+  <TM_LesserWater_Elemental.labelPlural>малі елементалі води</TM_LesserWater_Elemental.labelPlural>
+  <TM_LesserWater_Elemental.lifeStages.0.label>малий елементаль води</TM_LesserWater_Elemental.lifeStages.0.label>
+  <TM_LesserWater_Elemental.lifeStages.0.labelPlural>малі елементалі води</TM_LesserWater_Elemental.lifeStages.0.labelPlural>
+
+  <TM_Water_Elemental.label>елементаль води</TM_Water_Elemental.label>
+  <TM_Water_Elemental.labelPlural>елементалі води</TM_Water_Elemental.labelPlural>
+  <TM_Water_Elemental.lifeStages.0.label>елементаль води</TM_Water_Elemental.lifeStages.0.label>
+  <TM_Water_Elemental.lifeStages.0.labelPlural>елементалі води</TM_Water_Elemental.lifeStages.0.labelPlural>
+
+  <TM_GreaterWater_Elemental.label>великий елементаль води</TM_GreaterWater_Elemental.label>
+  <TM_GreaterWater_Elemental.labelPlural>великі елементалі води</TM_GreaterWater_Elemental.labelPlural>
+  <TM_GreaterWater_Elemental.lifeStages.0.label>великий елементаль води</TM_GreaterWater_Elemental.lifeStages.0.label>
+  <TM_GreaterWater_Elemental.lifeStages.0.labelPlural>великі елементалі води</TM_GreaterWater_Elemental.lifeStages.0.labelPlural>
+
+
+  <!-- Wind Elemental -->
+
+  <TM_LesserWind_Elemental.label>малий елементаль вітру</TM_LesserWind_Elemental.label>
+  <TM_LesserWind_Elemental.labelPlural>малі елементалі води</TM_LesserWind_Elemental.labelPlural>
+  <TM_LesserWind_Elemental.lifeStages.0.label>малий елементаль вітру</TM_LesserWind_Elemental.lifeStages.0.label>
+  <TM_LesserWind_Elemental.lifeStages.0.labelPlural>вісп</TM_LesserWind_Elemental.lifeStages.0.labelPlural>
+
+  <TM_Wind_Elemental.label>елементаль вітру</TM_Wind_Elemental.label>
+  <TM_Wind_Elemental.labelPlural>елементалі води</TM_Wind_Elemental.labelPlural>
+  <TM_Wind_Elemental.lifeStages.0.label>елементаль вітру</TM_Wind_Elemental.lifeStages.0.label>
+  <TM_Wind_Elemental.lifeStages.0.labelPlural>елементалі води</TM_Wind_Elemental.lifeStages.0.labelPlural>
+
+  <TM_GreaterWind_Elemental.label>великий елементаль води</TM_GreaterWind_Elemental.label>
+  <TM_GreaterWind_Elemental.labelPlural>великі елементалі води</TM_GreaterWind_Elemental.labelPlural>
+  <TM_GreaterWind_Elemental.lifeStages.0.label>великий елементаль води</TM_GreaterWind_Elemental.lifeStages.0.label>
+  <TM_GreaterWind_Elemental.lifeStages.0.labelPlural>елементалі вітру</TM_GreaterWind_Elemental.lifeStages.0.labelPlural>
+
+
+</LanguageData>

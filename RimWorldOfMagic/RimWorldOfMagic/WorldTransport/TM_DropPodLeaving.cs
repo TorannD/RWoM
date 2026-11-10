@@ -14,7 +14,7 @@ namespace TorannMagic.WorldTransport
     [StaticConstructorOnStartup]
     public class TM_DropPodLeaving : FlyShipLeaving
     {
-        public IntVec3 arrivalCell = default(IntVec3);
+        public IntVec3 arrivalCell = IntVec3.Invalid;
         public bool draftFlag = false;
 
         private bool alreadyLeft;
@@ -28,6 +28,13 @@ namespace TorannMagic.WorldTransport
         private static readonly MaterialPropertyBlock MatPropertyBlock = new MaterialPropertyBlock();
 
         private const int beamLength = 200;
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref arrivalCell, "TM_lightArrivalCell", IntVec3.Invalid);
+            Scribe_Values.Look(ref draftFlag, "TM_lightDrafted");
+        }
 
         protected override void LeaveMap()
         {

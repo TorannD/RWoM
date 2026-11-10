@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_MonkPalmSeal.label>掌印</TM_Bridge_MonkPalmSeal.label>
+  <TM_Bridge_MonkPalmSeal.description>徒手打击相邻敌人，造成16/22/28点灵力伤害并打断1秒。基础消耗20点气，冷却30秒。</TM_Bridge_MonkPalmSeal.description>
+  <TM_Bridge_MonkSilentMeridian.label>寂静经脉</TM_Bridge_MonkSilentMeridian.label>
+  <TM_Bridge_MonkSilentMeridian.description>徒手原地引导5秒，在12秒内发出三次脉冲，每次对5格内最多4名可见敌人造成12点灵力伤害。首次脉冲眩晕2秒，并抽取一种资源，最多为其上限的15%。消耗60%的气，冷却2天。</TM_Bridge_MonkSilentMeridian.description>
+</LanguageData>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- special attack manuevers -->
+
+  <TM_SkeletonLich.label>esqueleto-lic</TM_SkeletonLich.label>
+  <TM_SkeletonLich.labelPlural>esqueletos larvos</TM_SkeletonLich.labelPlural>
+  <TM_SkeletonLich.lifeStages.0.label>esqueleto-lic</TM_SkeletonLich.lifeStages.0.label>
+  <TM_SkeletonLich.lifeStages.0.labelPlural>Esceletra</TM_SkeletonLich.lifeStages.0.labelPlural>
+
+  <TM_GiantSkeleton.label>esqueleto gigante</TM_GiantSkeleton.label>
+  <TM_GiantSkeleton.labelPlural>esqueletos gigantes</TM_GiantSkeleton.labelPlural>
+  <TM_GiantSkeleton.lifeStages.0.label>esqueleto gigante</TM_GiantSkeleton.lifeStages.0.label>
+  <TM_GiantSkeleton.lifeStages.0.labelPlural>esqueletado</TM_GiantSkeleton.lifeStages.0.labelPlural>
+
+  <TM_Skeleton.label>esqueleton</TM_Skeleton.label>
+  <TM_Skeleton.labelPlural>esqueletos</TM_Skeleton.labelPlural>
+  <TM_Skeleton.lifeStages.0.label>esqueleton</TM_Skeleton.lifeStages.0.label>
+  <TM_Skeleton.lifeStages.0.labelPlural>esqueletado</TM_Skeleton.lifeStages.0.labelPlural>
+
+
+</LanguageData>

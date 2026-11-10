@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_EmpathHD.label>empata</TM_EmpathHD.label>
+  <TM_EmpathHD.description>É a habilidade da empatia para controlar as suas habilidades congênitas.</TM_EmpathHD.description>
+  <TM_EmpathHD.stages.0.label>Incontrolável</TM_EmpathHD.stages.0.label>
+  <TM_EmpathHD.stages.1.label>Não preparado</TM_EmpathHD.stages.1.label>
+  <TM_EmpathHD.stages.2.label>Conhecido</TM_EmpathHD.stages.2.label>
+  <TM_EmpathHD.stages.3.label>Treinado</TM_EmpathHD.stages.3.label>
+  <TM_EmpathHD.stages.4.label>Hábil</TM_EmpathHD.stages.4.label>
+  <TM_EmpathHD.stages.5.label>Assistente</TM_EmpathHD.stages.5.label>
+
+  <TM_MindKillerHD.label>choque emocional</TM_MindKillerHD.label>
+  <TM_MindKillerHD.description>Este peão estava cheio de emoção e incapaz de pensar ou agir com uma intenção clara; isso pode levar um peão a largar a arma ou fugir com medo.</TM_MindKillerHD.description>
+  <TM_MindKillerHD.stages.0.label>restauração</TM_MindKillerHD.stages.0.label>
+  <TM_MindKillerHD.stages.1.label>I</TM_MindKillerHD.stages.1.label>
+  <TM_MindKillerHD.stages.2.label>II</TM_MindKillerHD.stages.2.label>
+  <TM_MindKillerHD.stages.3.label>III</TM_MindKillerHD.stages.3.label>
+
+  <TM_HarvestPassionHD.label>coleta de paixão</TM_HarvestPassionHD.label>
+  <TM_HarvestPassionHD.description>A paixão é roubada por outro peão.</TM_HarvestPassionHD.description>
+  <TM_HarvestPassionHD.stages.0.label></TM_HarvestPassionHD.stages.0.label>
+
+  <TM_SuppressiveAuraHD.label>aura esmagadora</TM_SuppressiveAuraHD.label>
+  <TM_SuppressiveAuraHD.description>A empata suprime as emoções dos peões mais próximos; os peões afetados não podem entrar no intervalo mental ou obter qualquer pensamento relacionado com o estado de espírito que não seja permitido pela empatia.</TM_SuppressiveAuraHD.description>
+  <TM_SuppressiveAuraHD.stages.0.label></TM_SuppressiveAuraHD.stages.0.label>
+
+  <TM_EmotionSuppressionHD.label>emoções suprimidas</TM_EmotionSuppressionHD.label>
+  <TM_EmotionSuppressionHD.description>As emoções deste peão são suprimidas; este peão não sofrerá nenhuma perturbação mental, e a maioria dos pensamentos relacionados com o estado de espírito serão filtrados.</TM_EmotionSuppressionHD.description>
+  <TM_EmotionSuppressionHD.stages.0.label></TM_EmotionSuppressionHD.stages.0.label>
+
+  <TM_SymbiosisHD.label>simbiose</TM_SymbiosisHD.label>
+  <TM_SymbiosisHD.description>A emoção e a consciência deste peão foram reforçadas e fortalecidas pela mente da empatia. Basicamente, a mente da empatia está ligada a este peão. Se este peão morrer, a empatia também morre.</TM_SymbiosisHD.description>
+  <TM_SymbiosisHD.stages.0.label>I</TM_SymbiosisHD.stages.0.label>
+  <TM_SymbiosisHD.stages.1.label>II</TM_SymbiosisHD.stages.1.label>
+  <TM_SymbiosisHD.stages.2.label>III</TM_SymbiosisHD.stages.2.label>
+  <TM_SymbiosisHD.stages.3.label>IV</TM_SymbiosisHD.stages.3.label>
+
+  <TM_OutOfBodyHD.label>fora do corpo</TM_OutOfBodyHD.label>
+  <TM_OutOfBodyHD.description>As emoções e a consciência deste peão foram acopladas a outro peão; este corpo atualmente é uma casca vazia.</TM_OutOfBodyHD.description>
+  <TM_OutOfBodyHD.stages.0.label></TM_OutOfBodyHD.stages.0.label>
+
+
+</LanguageData>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MagofuelGenerator.label>gerador de magocombustível</TM_MagofuelGenerator.label>
+  <TM_MagofuelGenerator.description>Queima magocombustível para fornecer 3000 W a uma rede elétrica. Durante a geração consome 3 unidades de combustível por dia e liberta 6 unidades de calor por segundo. Funciona no vácuo. Para quando é desligado, avaria, fica sem ligação à rede ou sem combustível. O combustível por queimar no núcleo é conservado quando o gerador para ou é transportado.</TM_MagofuelGenerator.description>
+</LanguageData>
+

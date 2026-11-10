@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_OffensiveMagic.label>uso ofensivo ou vulgar da magia</TM_OffensiveMagic.label>
+  <TM_KilledMage.label>matou o mago</TM_KilledMage.label>
+  <TM_KilledFighter.label>matou um lutador</TM_KilledFighter.label>
+  <TM_UsedMagic.label>usou a capacidade mágica</TM_UsedMagic.label>
+  <TM_UsedManeuver.label>usou a capacidade de combate</TM_UsedManeuver.label>
+  <TM_KilledHumanlike.label>Matou alguém</TM_KilledHumanlike.label>
+  <TM_SeverMagicEvent.label>afastou o mago da magia</TM_SeverMagicEvent.label>
+  <TM_BestowMagicEvent.label>dotado de um dom de magia</TM_BestowMagicEvent.label>
+  <TM_BestowClassEvent.label>classe mágica inspirada</TM_BestowClassEvent.label>
+
+
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritMonkMeridian.reportString>正在引导静默经脉。</TM_SpiritMonkMeridian.reportString>
+  <TM_SpiritPalmSeal.reportString>正在对TargetB施展掌印。</TM_SpiritPalmSeal.reportString>
+  <TM_SpiritMeditate.reportString>在灵魂的指引下冥想。</TM_SpiritMeditate.reportString>
+  <TM_SpiritTigerStrike.reportString>正在对TargetB施展猛虎连击。</TM_SpiritTigerStrike.reportString>
+  <TM_SpiritDragonStrike.reportString>正在施展巨龙打击。</TM_SpiritDragonStrike.reportString>
+  <TM_SpiritChiBurst.reportString>正在释放气爆。</TM_SpiritChiBurst.reportString>
+</LanguageData>

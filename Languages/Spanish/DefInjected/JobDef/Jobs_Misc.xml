@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <JobDriver_AssistMagicCircle.reportString>preparando el círculo mágico.</JobDriver_AssistMagicCircle.reportString>
+  
+  
+  <JobDriver_Discord.reportString>creando discordia.</JobDriver_Discord.reportString>
+  
+  
+  <JobDriver_DoFor.reportString>preparando un ataque.</JobDriver_DoFor.reportString>
+  
+  
+  <JobDriver_DoMagicBill.reportString>realizando una orden de magia en TargetA.</JobDriver_DoMagicBill.reportString>
+  
+  
+  <JobDriver_Entertain.reportString>entreteniendo.</JobDriver_Entertain.reportString>
+  
+  
+  <JobDriver_GotoAndCast.reportString>realizando una tarea mágica.</JobDriver_GotoAndCast.reportString>
+  
+  
+  <JobDriver_PlaceLightningTrap.reportString>colocando una trampa de rayos.</JobDriver_PlaceLightningTrap.reportString>
+  
+  
+  <JobDriver_PsionicBarrier.reportString>proyectando una barrera psiónica.</JobDriver_PsionicBarrier.reportString>
+  
+  
+  <JobDriver_SleepNow.reportString>durmiendo (nana).</JobDriver_SleepNow.reportString>
+  
+  
+  <JobDriver_SpiritDrain.reportString>drenando espíritu.</JobDriver_SpiritDrain.reportString>
+  
+  
+  <JobDriver_SummonDemon.reportString>marcando un sacrificio.</JobDriver_SummonDemon.reportString>
+  
+  
+  <JobDriver_TM_Command.reportString>motivando a un personaje.</JobDriver_TM_Command.reportString>
+  
+  
+  <JobDriver_TM_GotoAndWait.reportString>esperando en el lugar.</JobDriver_TM_GotoAndWait.reportString>
+  
+  
+  <JobDriver_TM_Meditate.reportString>en meditación profunda.</JobDriver_TM_Meditate.reportString>
+  
+  
+  <JobDriver_TM_Teach.reportString>entrenando e instruyendo.</JobDriver_TM_Teach.reportString>
+  
+  
+  <PlacePoisonTrap.reportString>colocando una trampa de veneno.</PlacePoisonTrap.reportString>
+  
+</LanguageData>

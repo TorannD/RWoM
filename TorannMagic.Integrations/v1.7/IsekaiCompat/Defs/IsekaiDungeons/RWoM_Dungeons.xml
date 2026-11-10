@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       A RimWorld of Magic × Isekai Dungeons: RWoM-flavoured gates.
+
+       Loaded only when Poupun.IsekaiDungeonsAddon is active (LoadFolders.xml
+       IfModActive). Rosters use RWoM PawnKindDef defNames as plain strings —
+       the dungeon framework drops entries whose defs are missing, and
+       requiresFullRoster keeps these gates out of the pool entirely if the
+       magic mod content is not present.
+
+       Ranks: 0=F 1=E 2=D 3=C 4=B 5=A 6=S 7=SS 8=SSS 9=Nation.
+       ═══════════════════════════════════════════════════════════════════ -->
+
+  <!-- ═ Flame Rift — C..A — fire elementals ═ -->
+  <IsekaiDungeons.DungeonKindDef ParentName="IsekaiDungeonBase">
+    <defName>TorannMagic_FlameRift</defName>
+    <label>flame rift</label>
+    <description>A seam between worlds glowing at the edges. Fire bleeds through from an elemental plane, and the things it congeals into walk the tunnels looking for anything to burn. Mages say the heat here feeds their own flame spells — the rift certainly does nothing to hide how much mana soaks its walls.</description>
+    <mapGenerator>IsekaiDungeons_Dungeon</mapGenerator>
+    <minRank>C</minRank>
+    <maxRank>A</maxRank>
+    <selectionWeight>1.1</selectionWeight>
+    <layoutMode>Carve</layoutMode>
+    <roster>
+      <li><kind>TM_LesserFire_Elemental</kind><weight>3</weight></li>
+      <li><kind>TM_Fire_Elemental</kind><weight>2</weight><minDepth>0.3</minDepth></li>
+      <li><kind>TM_GreaterFire_Elemental</kind><weight>1</weight><minDepth>0.55</minDepth></li>
+    </roster>
+    <bosses>
+      <li>TM_GreaterFire_Elemental</li>
+    </bosses>
+    <requiresFullRoster>true</requiresFullRoster>
+  </IsekaiDungeons.DungeonKindDef>
+
+  <!-- ═ Tide Rift — C..A — water and wind elementals ═ -->
+  <IsekaiDungeons.DungeonKindDef ParentName="IsekaiDungeonBase">
+    <defName>TorannMagic_TideRift</defName>
+    <label>tide rift</label>
+    <description>Wind screams down a wet throat of stone. This seam opened onto the crossing of two elemental planes — water and air — and their denizens dispute the territory loudly and constantly. Storm mages consider the crossing a pilgrimage site. The elementals consider them provocations.</description>
+    <mapGenerator>IsekaiDungeons_Dungeon</mapGenerator>
+    <minRank>C</minRank>
+    <maxRank>A</maxRank>
+    <selectionWeight>1.0</selectionWeight>
+    <layoutMode>Carve</layoutMode>
+    <roster>
+      <li><kind>TM_LesserWater_Elemental</kind><weight>3</weight></li>
+      <li><kind>TM_LesserWind_Elemental</kind><weight>3</weight></li>
+      <li><kind>TM_Water_Elemental</kind><weight>2</weight><minDepth>0.3</minDepth></li>
+      <li><kind>TM_Wind_Elemental</kind><weight>2</weight><minDepth>0.3</minDepth></li>
+      <li><kind>TM_GreaterWater_Elemental</kind><weight>1</weight><minDepth>0.55</minDepth></li>
+      <li><kind>TM_GreaterWind_Elemental</kind><weight>1</weight><minDepth>0.55</minDepth></li>
+    </roster>
+    <bosses>
+      <li>TM_GreaterWind_Elemental</li>
+    </bosses>
+    <requiresFullRoster>true</requiresFullRoster>
+  </IsekaiDungeons.DungeonKindDef>
+
+  <!-- ═ Bone Crypt — D..B — the necromancer's legions ═ -->
+  <IsekaiDungeons.DungeonKindDef ParentName="IsekaiDungeonBase">
+    <defName>TorannMagic_BoneCrypt</defName>
+    <label>bone crypt</label>
+    <description>Some necromancer's work outlived the necromancer. The crypt keeps raising its garrison on a schedule nobody remembers setting, and lately the bones have started marching in rank and file, which suggests something in there is still giving orders. Guild doctrine is blunt: whatever is organizing the dead down there needs killing before it organizes an excursion up here.</description>
+    <mapGenerator>IsekaiDungeons_Dungeon</mapGenerator>
+    <minRank>D</minRank>
+    <maxRank>B</maxRank>
+    <selectionWeight>1.15</selectionWeight>
+    <layoutMode>Carve</layoutMode>
+    <roster>
+      <li><kind>TM_Skeleton</kind><weight>4</weight></li>
+      <li><kind>TM_GiantSkeleton</kind><weight>1.5</weight><minDepth>0.4</minDepth></li>
+    </roster>
+    <bosses>
+      <li>TM_SkeletonLich</li>
+    </bosses>
+    <requiresFullRoster>true</requiresFullRoster>
+  </IsekaiDungeons.DungeonKindDef>
+
+  <!-- ═ Demon Gate — B..S — lesser demons and their lord ═ -->
+  <IsekaiDungeons.DungeonKindDef ParentName="IsekaiDungeonBase">
+    <defName>TorannMagic_DemonGate</defName>
+    <label>demon gate</label>
+    <description>This seam did not open by accident. Something on the far side pried it, and lesser demons slip through to feed and grow until the day their lord steps through to claim the landing zone as a beachhead. Clearing the gate delays that day. Killing what waits at the back of the tunnel delays it longer — and demon lords keep excellent grudges.</description>
+    <mapGenerator>IsekaiDungeons_Dungeon</mapGenerator>
+    <minRank>B</minRank>
+    <maxRank>S</maxRank>
+    <selectionWeight>1.0</selectionWeight>
+    <layoutMode>Carve</layoutMode>
+    <roster>
+      <li><kind>TM_LesserDemon</kind><weight>3</weight></li>
+      <li><kind>TM_Demon</kind><weight>1.5</weight><minDepth>0.4</minDepth></li>
+    </roster>
+    <bosses>
+      <li>TM_Demon</li>
+    </bosses>
+    <requiresFullRoster>true</requiresFullRoster>
+  </IsekaiDungeons.DungeonKindDef>
+
+</Defs>

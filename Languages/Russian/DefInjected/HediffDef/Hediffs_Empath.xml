@@ -1,0 +1,41 @@
+﻿<LanguageData><TM_EmpathHD.label>эмпат</TM_EmpathHD.label>
+  <TM_EmpathHD.description>Представляет собой умение эмпата контролировать свои врожденные способности.</TM_EmpathHD.description>
+  <TM_EmpathHD.stages.0.label>Неконтролируемый</TM_EmpathHD.stages.0.label>
+  <TM_EmpathHD.stages.1.label>Неподготовленный</TM_EmpathHD.stages.1.label>
+  <TM_EmpathHD.stages.2.label>Знакомый</TM_EmpathHD.stages.2.label>
+  <TM_EmpathHD.stages.3.label>Тренированный</TM_EmpathHD.stages.3.label>
+  <TM_EmpathHD.stages.4.label>Умелый</TM_EmpathHD.stages.4.label>
+  <TM_EmpathHD.stages.5.label>Мастер</TM_EmpathHD.stages.5.label>
+
+  <TM_MindKillerHD.label>эмоциональный шок</TM_MindKillerHD.label>
+  <TM_MindKillerHD.description>Разум этой пешки захлестнул поток эмоций. Ей трудно ясно мыслить и действовать осознанно; в таком состоянии она может бросить оружие или в панике обратиться в бегство.</TM_MindKillerHD.description>
+  <TM_MindKillerHD.stages.0.label>восстановление</TM_MindKillerHD.stages.0.label>
+  <TM_MindKillerHD.stages.1.label>I</TM_MindKillerHD.stages.1.label>
+  <TM_MindKillerHD.stages.2.label>II</TM_MindKillerHD.stages.2.label>
+  <TM_MindKillerHD.stages.3.label>III</TM_MindKillerHD.stages.3.label>
+
+  <TM_HarvestPassionHD.label>сбор страсти</TM_HarvestPassionHD.label>
+  <TM_HarvestPassionHD.description>Страсть крадется другой пешкой.</TM_HarvestPassionHD.description>
+  <TM_HarvestPassionHD.stages.0.label />
+
+  <TM_SuppressiveAuraHD.label>подавляющая аура</TM_SuppressiveAuraHD.label>
+  <TM_SuppressiveAuraHD.description>Эмпат подавляет эмоции ближайших пешек; затронутые пешки не смогут войти в ментальный перерыв или получить какие-либо мысли, связанные с настроением, которые не разрешены эмпатом.</TM_SuppressiveAuraHD.description>
+  <TM_SuppressiveAuraHD.stages.0.label />
+
+  <TM_EmotionSuppressionHD.label>подавленные эмоции</TM_EmotionSuppressionHD.label>
+  <TM_EmotionSuppressionHD.description>Эмоции этой пешки подавлены. Она не подвержена психическим срывам, а большинство мыслей, влияющих на настроение, приглушено.</TM_EmotionSuppressionHD.description>
+  <TM_EmotionSuppressionHD.stages.0.label />
+
+  <TM_SymbiosisHD.label>симбиоз</TM_SymbiosisHD.label>
+  <TM_SymbiosisHD.description>Чувства и восприятие этой пешки усилены разумом эмпата. Их сознания связаны между собой: если эта пешка умрёт, эмпат тоже погибнет.</TM_SymbiosisHD.description>
+  <TM_SymbiosisHD.stages.0.label>I</TM_SymbiosisHD.stages.0.label>
+  <TM_SymbiosisHD.stages.1.label>II</TM_SymbiosisHD.stages.1.label>
+  <TM_SymbiosisHD.stages.2.label>III</TM_SymbiosisHD.stages.2.label>
+  <TM_SymbiosisHD.stages.3.label>IV</TM_SymbiosisHD.stages.3.label>
+
+  <TM_OutOfBodyHD.label>вне тела</TM_OutOfBodyHD.label>
+  <TM_OutOfBodyHD.description>Эмоции и осознание этой пешки были прикреплены к другой пешке; это тело в настоящее время является пустой оболочкой.</TM_OutOfBodyHD.description>
+  <TM_OutOfBodyHD.stages.0.label />
+
+
+</LanguageData>

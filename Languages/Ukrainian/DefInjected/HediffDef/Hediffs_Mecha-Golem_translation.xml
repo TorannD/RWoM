@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Mecha-Golem_GatlingCannonHD.label>Гармата Гатлінга</TM_Mecha-Golem_GatlingCannonHD.label>
+  <TM_Mecha-Golem_GatlingCannonHD.description>Гармата Гатлінга, встановлена на правому плечі.</TM_Mecha-Golem_GatlingCannonHD.description>
+  <TM_Mecha-Golem_GatlingCannonHD.stages.0.label></TM_Mecha-Golem_GatlingCannonHD.stages.0.label>
+
+  <TM_Mecha-Golem_BallisticPlateHD.label>Балістична пластина</TM_Mecha-Golem_BallisticPlateHD.label>
+  <TM_Mecha-Golem_BallisticPlateHD.description>Покращує броню, але знижує швидкість пересування.</TM_Mecha-Golem_BallisticPlateHD.description>
+  <TM_Mecha-Golem_BallisticPlateHD.stages.0.label></TM_Mecha-Golem_BallisticPlateHD.stages.0.label>
+  <TM_Mecha-Golem_BallisticPlateHD.stages.1.label></TM_Mecha-Golem_BallisticPlateHD.stages.1.label>
+  <TM_Mecha-Golem_BallisticPlateHD.stages.2.label></TM_Mecha-Golem_BallisticPlateHD.stages.2.label>
+
+  <TM_Mecha-Golem_FlameCoreHD.label>Полум &quot;яний сердечник</TM_Mecha-Golem_FlameCoreHD.label>
+  <TM_Mecha-Golem_FlameCoreHD.description>Оновлення ядра полум&apos;я збільшує швидкість пересування і зменшує час перезарядки для атак і здібностей.</TM_Mecha-Golem_FlameCoreHD.description>
+  <TM_Mecha-Golem_FlameCoreHD.stages.0.label>Mk.1</TM_Mecha-Golem_FlameCoreHD.stages.0.label>
+  <TM_Mecha-Golem_FlameCoreHD.stages.1.label>Mk.2</TM_Mecha-Golem_FlameCoreHD.stages.1.label>
+  <TM_Mecha-Golem_FlameCoreHD.stages.2.label>Mk.3</TM_Mecha-Golem_FlameCoreHD.stages.2.label>
+
+  <TM_Mecha-Golem_WaterCoreHD.label>Водяна серцевина</TM_Mecha-Golem_WaterCoreHD.label>
+  <TM_Mecha-Golem_WaterCoreHD.description>Оновлення процесора з водяним ядром збільшують броню і регенерацію, а також покращують енергозбереження.</TM_Mecha-Golem_WaterCoreHD.description>
+  <TM_Mecha-Golem_WaterCoreHD.stages.0.label>Mk.1</TM_Mecha-Golem_WaterCoreHD.stages.0.label>
+  <TM_Mecha-Golem_WaterCoreHD.stages.1.label>Mk.2</TM_Mecha-Golem_WaterCoreHD.stages.1.label>
+  <TM_Mecha-Golem_WaterCoreHD.stages.2.label>Mk.3</TM_Mecha-Golem_WaterCoreHD.stages.2.label>
+
+  <TM_Mecha-Golem_EarthCoreHD.label>Ядро Землі</TM_Mecha-Golem_EarthCoreHD.label>
+  <TM_Mecha-Golem_EarthCoreHD.description>Оновлення процесора Ядра землі збільшують броню і захист.</TM_Mecha-Golem_EarthCoreHD.description>
+  <TM_Mecha-Golem_EarthCoreHD.stages.0.label>Mk.1</TM_Mecha-Golem_EarthCoreHD.stages.0.label>
+  <TM_Mecha-Golem_EarthCoreHD.stages.1.label>Mk.2</TM_Mecha-Golem_EarthCoreHD.stages.1.label>
+  <TM_Mecha-Golem_EarthCoreHD.stages.2.label>Mk.3</TM_Mecha-Golem_EarthCoreHD.stages.2.label>
+
+  <TM_Mecha-Golem_LightningCoreHD.label>Ядро блискавки</TM_Mecha-Golem_LightningCoreHD.label>
+  <TM_Mecha-Golem_LightningCoreHD.description>Оновлення Ядра блискавки збільшують швидкість переміщення та обробки.</TM_Mecha-Golem_LightningCoreHD.description>
+  <TM_Mecha-Golem_LightningCoreHD.stages.0.label>Mk.1</TM_Mecha-Golem_LightningCoreHD.stages.0.label>
+  <TM_Mecha-Golem_LightningCoreHD.stages.1.label>Mk.2</TM_Mecha-Golem_LightningCoreHD.stages.1.label>
+  <TM_Mecha-Golem_LightningCoreHD.stages.2.label>Mk.3</TM_Mecha-Golem_LightningCoreHD.stages.2.label>
+
+
+</LanguageData>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- special attack manuevers -->
+
+  <TM_SkeletonLichR.label>Скелет ліча</TM_SkeletonLichR.label>
+  <TM_SkeletonLichR.description>Зів &quot;ялі кістки стародавнього ліча, втіленого духом злоби й ненависті; ким би чи чим би не була ця істота колись, її більше немає; його єдина мета-знищити все живе і замінити його нежиттю.</TM_SkeletonLichR.description>
+  <TM_SkeletonLichR.tools.0.label>ліва рука</TM_SkeletonLichR.tools.0.label>
+  <TM_SkeletonLichR.tools.1.label>права рука</TM_SkeletonLichR.tools.1.label>
+  <TM_SkeletonLichR.tools.2.label>мертвий погляд</TM_SkeletonLichR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_SkeletonLichR_Corpse.label>Скелет ліча труп</TM_SkeletonLichR_Corpse.label>
+  <TM_SkeletonLichR_Corpse.description>Скелет ліча труп</TM_SkeletonLichR_Corpse.description>
+
+
+  <!-- special attack manuevers -->
+
+  <TM_GiantSkeletonR.label>Гігантський скелет</TM_GiantSkeletonR.label>
+  <TM_GiantSkeletonR.description>Величезний скелет; ця мерзота була створена або з кісток гігантської істоти, або шляхом об&apos;єднання кісток менших істот. Цей скелет одушевлений некромантією і втілений мстивим духом, який бродив по світу протягом багатьох століть-досить довго, щоб розвинути просту, цілеспрямовану ненависть до життя.</TM_GiantSkeletonR.description>
+  <TM_GiantSkeletonR.tools.0.label>лівий кулак</TM_GiantSkeletonR.tools.0.label>
+  <TM_GiantSkeletonR.tools.1.label>правий кулак</TM_GiantSkeletonR.tools.1.label>
+  <TM_GiantSkeletonR.tools.2.label>зуби</TM_GiantSkeletonR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_GiantSkeletonR_Corpse.label>Гігантський скелет труп</TM_GiantSkeletonR_Corpse.label>
+  <TM_GiantSkeletonR_Corpse.description>Гігантський скелет труп</TM_GiantSkeletonR_Corpse.description>
+
+
+  <!-- special attack manuevers -->
+
+  <TM_SkeletonR.label>Скелет</TM_SkeletonR.label>
+  <TM_SkeletonR.description>Фізична оболонка істот, піднятих силою некромантії; їх єдиний інстинкт-підкорятися своєму господареві і знищувати все живе.</TM_SkeletonR.description>
+  <TM_SkeletonR.tools.0.label>лівий кулак</TM_SkeletonR.tools.0.label>
+  <TM_SkeletonR.tools.1.label>правий кулак</TM_SkeletonR.tools.1.label>
+  <TM_SkeletonR.tools.2.label>зуби</TM_SkeletonR.tools.2.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_SkeletonR_Corpse.label>Скелет труп</TM_SkeletonR_Corpse.label>
+  <TM_SkeletonR_Corpse.description>Скелет труп</TM_SkeletonR_Corpse.description>
+
+
+</LanguageData>

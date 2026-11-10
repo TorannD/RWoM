@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Flesh_Casting>Подготавливает: {0}.</TM_Flesh_Casting>
+  <TM_Flesh_HealthLevel>уровень {0}</TM_Flesh_HealthLevel>
+  <TM_Flesh_HealthRank>ранг {0}/{1}</TM_Flesh_HealthRank>
+  <TM_Flesh_HealthMobility>Скорость передвижения: +{0}%</TM_Flesh_HealthMobility>
+  <TM_Flesh_HealthStrength>Урон в ближнем бою: +{0}%</TM_Flesh_HealthStrength>
+  <TM_Flesh_HealthIndustry>Скорость работы: +{0}% (включая изготовление)</TM_Flesh_HealthIndustry>
+  <TM_Flesh_HealthCapacity>Максимальная жажда: +{0} (всего: {1})</TM_Flesh_HealthCapacity>
+  <TM_Flesh_Title>Развитие Плоти</TM_Flesh_Title>
+  <TM_Flesh_Open>Открыть постоянное развитие плоти этой поднятой нежити.</TM_Flesh_Open>
+  <TM_Flesh_Stats>Уровень {0}   •   Опыт {1}/{2}   •   Очки навыков: {3}</TM_Flesh_Stats>
+  <TM_Flesh_Experience>Опыт</TM_Flesh_Experience>
+  <TM_Flesh_Thirst>Жажда: {0}/{1}</TM_Flesh_Thirst>
+  <TM_Flesh_Stop>Остановить Пир этой нежити</TM_Flesh_Stop>
+  <TM_Flesh_StopAll>Остановить Пир всей своей нежити</TM_Flesh_StopAll>
+  <TM_Flesh_StopDesc>Владелец останавливает Пир бесплатно; Жажда и КД сохраняются.</TM_Flesh_StopDesc>
+  <TM_Flesh_Rage>Ярость Пира: укусы продолжаются до 20% Жажды или команды владельца.</TM_Flesh_Rage>
+  <TM_Flesh_Gate>Условия открытия Пира — полностью развить все навыки:</TM_Flesh_Gate>
+  <TM_Flesh_Upgrade>Повысить (1 очко)</TM_Flesh_Upgrade>
+  <TM_Flesh_Use>Применить</TM_Flesh_Use>
+  <TM_Flesh_Cooldown>Готовность через {0} сек.</TM_Flesh_Cooldown>
+  <TM_Flesh_Ready>Готово</TM_Flesh_Ready>
+  <TM_Flesh_Active>Действует: {0} сек.</TM_Flesh_Active>
+  <TM_Flesh_Devour>Поедание плоти</TM_Flesh_Devour>
+  <TM_Flesh_DevourDesc>Съедает труп вблизи: опыт зависит от оставшегося мяса и свежести. Каждые 5 ед. мяса снижают Жажду на 1. Живой органической цели: 4/6/8 урона по рангу, без опыта. КД: 5 секунд. Успешный укус живой цели также добавляет 1% токсического отравления с учётом токсической устойчивости.</TM_Flesh_DevourDesc>
+  <TM_Flesh_Restore>Восстановление плоти</TM_Flesh_Restore>
+  <TM_Flesh_RestoreDesc>Полностью лечит травмы, шрамы и утраченные естественные части. Импланты сохраняются. Цена: ВЕСЬ опыт текущего уровня (нужен ненулевой опыт). Уровень и очки сохраняются. КД по рангу: 1000/900/800 сек.</TM_Flesh_RestoreDesc>
+  <TM_Flesh_Empower>Усиление плоти</TM_Flesh_Empower>
+  <TM_Flesh_EmpowerDesc>Подготовка: 2 сек.; прерывание не расходует ресурс и не запускает КД. Движение и общая работа: +10/20/30% по рангу. Цена: +10 Жажды. Длительность и КД: 300 сек. При завершении: 10% шанс повредить естественные конечности на 10% их максимального здоровья.</TM_Flesh_EmpowerDesc>
+  <TM_Flesh_Harden>Усиление кожи</TM_Flesh_Harden>
+  <TM_Flesh_HardenDesc>Подготовка: 2 сек.; прерывание не расходует ресурс и не запускает КД. Броня от острого и тупого урона: +20/35/50 процентных пунктов по рангу. Цена: +15 Жажды. Длительность и КД: 300 сек. При завершении урон туловищу равен половине его максимального здоровья.</TM_Flesh_HardenDesc>
+  <TM_Flesh_Feast>Пир плоти</TM_Flesh_Feast>
+  <TM_Flesh_FeastDesc>Подготовка: 5 сек.; прерывание не расходует ресурс и не запускает КД. Один ранг. Требует полного развития остальных навыков. Устанавливает Жажду на 50%; +1/сек. в течение 60 сек. Успешный удар вблизи: 20% шанс съесть органическую часть, включая жизненно важную. Максимум Жажды вызывает Ярость; 0 завершает Пир. КД: 1000 сек. Во время Пира каждая ближняя атака — укус; успешный укус имеет отдельный шанс 30% заразить инфекцией оставшуюся органическую рану. Промахи и полностью поглощённые удары не вызывают эти эффекты. Успешный укус живой цели также добавляет 1% токсического отравления с учётом токсической устойчивости.</TM_Flesh_FeastDesc>
+  <TM_Flesh_Mobility>Подвижная плоть</TM_Flesh_Mobility>
+  <TM_Flesh_MobilityDesc>Каждый ранг: +2% скорости движения. 10 рангов: всего +20%.</TM_Flesh_MobilityDesc>
+  <TM_Flesh_Strength>Могучая плоть</TM_Flesh_Strength>
+  <TM_Flesh_StrengthDesc>Каждый ранг: +3% урона в ближнем бою. 10 рангов: всего +30%.</TM_Flesh_StrengthDesc>
+  <TM_Flesh_Industry>Трудолюбивая плоть</TM_Flesh_Industry>
+  <TM_Flesh_IndustryDesc>Каждый ранг: +2% общей скорости работы, включая крафт без повторного бонуса. 10 рангов: всего +20%.</TM_Flesh_IndustryDesc>
+  <TM_Flesh_Capacity>Вместимость плоти</TM_Flesh_Capacity>
+  <TM_Flesh_CapacityDesc>Каждый ранг: +10 максимальной Жажды. 8 рангов: 20 → 100. Прирост: +10/сутки. От 80%: −10% движения/работы; на максимуме: −20%.</TM_Flesh_CapacityDesc>
+  <TM_FleshRejectUnavailable>Нежить должна быть жива, на ногах и под вашим управлением, без психического срыва.</TM_FleshRejectUnavailable>
+  <TM_FleshRejectUnlearned>Этот навык ещё не изучен.</TM_FleshRejectUnlearned>
+  <TM_FleshRejectCooldown>Навык восстанавливается.</TM_FleshRejectCooldown>
+  <TM_FleshRejectActive>Этот эффект уже действует.</TM_FleshRejectActive>
+  <TM_FleshRejectNoExperience>Для восстановления нужен опыт текущего уровня.</TM_FleshRejectNoExperience>
+  <TM_Flesh_ActiveKind>Активный</TM_Flesh_ActiveKind>
+  <TM_Flesh_PassiveKind>Пассивный</TM_Flesh_PassiveKind>
+  <TM_Flesh_NoPoints>Не хватает очков навыков</TM_Flesh_NoPoints>
+  <TM_Flesh_MaxRank>Максимальный ранг</TM_Flesh_MaxRank>
+  <TM_Flesh_ThirstLabel>Жажда</TM_Flesh_ThirstLabel>
+  <TM_Flesh_ThirstTip>Накопленный голод: +10 в сутки. Поедание плоти снижает Жажду. От 80%: −10% движения и работы; на максимуме: −20%.</TM_Flesh_ThirstTip>
+  <TM_Flesh_DebugLevelUp>+1 уровень</TM_Flesh_DebugLevelUp>
+  <TM_Flesh_StatTotal>Общий множитель развития плоти: {0}</TM_Flesh_StatTotal>
+  <TM_Flesh_HealthRemaining>Осталось {0} с</TM_Flesh_HealthRemaining>
+  <TM_Flesh_HealthRage>Неконтролируемая ярость</TM_Flesh_HealthRage>
+  <TM_Flesh_HealthEmpower>Скорость передвижения и общая скорость работы: +{0}%.</TM_Flesh_HealthEmpower>
+  <TM_Flesh_HealthHarden>Броня от острых и тупых ударов: +{0} процентных пунктов.</TM_Flesh_HealthHarden>
+  <TM_Flesh_HealthFeast>Пир активен. Текущая Жажда: {1}/{2}. Ярость длится до снижения Жажды до 20% или команды хозяина.</TM_Flesh_HealthFeast>
+  <TM_Flesh_BiteRules>Вне Пира ближняя атака нежити с шансом 10% становится критическим укусом (+50% урона). Успешные укусы добавляют 1% токсического отравления с учётом токсической устойчивости.</TM_Flesh_BiteRules>
+</LanguageData>

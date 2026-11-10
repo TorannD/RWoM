@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Explosion! -->
+
+  <TM_Explosion.label>Вибух!</TM_Explosion.label>
+  <TM_Explosion.description>Темрява, оповита світлом, скажене полум&apos;я, одягнене в ніч, в ім&apos;я багрових демонів, нехай проявиться крах твого походження. Закличи переді мною корінь сили, прихований у квітучому королівстві загибелі. Вибух!</TM_Explosion.description>
+
+
+  <!-- Taunt -->
+
+  <TM_Taunt.label>Насмішка</TM_Taunt.label>
+  <TM_Taunt.description>Насміхається над найближчими цілями, щоб атакувати цю пішаку.</TM_Taunt.description>
+
+
+  <!-- Shield Other -->
+
+  <TM_ShieldOther.label>Щит</TM_ShieldOther.label>
+  <TM_ShieldOther.description>Захищає ціль від пошкоджень протягом 60 секунд або до тих пір, поки щит не буде зламаний.
+Поглинає до 80 урона.
+Щит поглинає додаткову шкоду. 5 за кожен рівень заклинача.</TM_ShieldOther.description>
+
+
+</LanguageData>

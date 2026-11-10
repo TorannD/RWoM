@@ -1,0 +1,100 @@
+﻿<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_Paladin.xml-->
+	<!--              EN: Ray of Hope-->
+	<TM_P_RayofHope.label>Луч надежды</TM_P_RayofHope.label>
+	<!--                    EN: Creates an aura of hope around the caster that periodically buffs an ally.
+
+Ray of Hope: Arcane augmentation that assists the worker, improving their physical capacities and mood
+
+Application Frequency: 	80-90s
+Duration:  200-223s
+Manipulation, Moving:  +15%
+Mood increase:	+3
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.-->
+	<TM_P_RayofHope.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_P_RayofHope.description>
+	<!--                EN: Ray of Hope-->
+	<TM_P_RayofHope_I.label>Луч надежды</TM_P_RayofHope_I.label>
+	<!--                      EN: Creates an aura of hope around the caster that periodically buffs an ally.
+
+Ray of Hope: Arcane augmentation that assists the worker, improving their physical capacities and mood
+
+Application Frequency: 	80-90s
+Duration: 200-223s
+Manipulation, Moving: +18%
+Mood increase:	+4
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.-->
+	<TM_P_RayofHope_I.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_P_RayofHope_I.description>
+	<!--                 EN: Ray of Hope-->
+	<TM_P_RayofHope_II.label>Луч надежды</TM_P_RayofHope_II.label>
+	<!--                       EN: Creates an aura of hope around the caster that periodically buffs an ally.
+
+Ray of Hope: Arcane augmentation that assists the worker, improving their physical capacities and mood
+
+Application Frequency: 80-90s
+Duration: 500-600s
+Manipulation, Moving: +20%
+Mood increase:	+5
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.-->
+	<TM_P_RayofHope_II.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_P_RayofHope_II.description>
+	<!--                  EN: Ray of Hope-->
+	<TM_P_RayofHope_III.label>Луч надежды</TM_P_RayofHope_III.label>
+	<!--                        EN: Creates an aura of hope around the caster that periodically buffs an ally.
+
+Ray of Hope: Arcane augmentation that assists the worker, improving their physical capacities and mood
+
+Application Frequency: 	80-90s
+Duration:	500-600s
+Manipulation, Moving:  +22%
+Mood increase:	+5
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.-->
+	<TM_P_RayofHope_III.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_P_RayofHope_III.description>
+	<!--       EN: Heal-->
+	<TM_Heal.label>Лечение</TM_Heal.label>
+	<!--             EN: Invokes holy power to heal the wounds of a target. Base heal restores 8 health for up to 3 wounds. Cannot heal injuries of missing bodyparts.-->
+	<TM_Heal.description>Призывает святую силу, чтобы исцелить раны цели. Базовое исцеление восстанавливает 8 здоровья для 3-х ран. Невозможно отрастить отсутствующие части тела.</TM_Heal.description>
+	<!--         EN: Shield-->
+	<TM_Shield.label>Щит</TM_Shield.label>
+	<!--               EN: Protects the paladin from damage for 50s or until the shield is broken.
+Absorbs up to 100 damage.-->
+	<TM_Shield.description>Защищает паладина от повреждений в течение 50 секунд или до тех пор, пока щит не будет сломан.
+Поглощает до 100 урона.</TM_Shield.description>
+	<!--           EN: Shield-->
+	<TM_Shield_I.label>Щит</TM_Shield_I.label>
+	<!--                 EN: Protects the paladin from damage for 50s or until the shield is broken.
+Absorbs up to 125 damage.
+Reduces recharge to 30s.-->
+	<TM_Shield_I.description>Защищает паладина от повреждений в течение 50 секунд или до тех пор, пока щит не будет сломан.
+Поглощает до 120 урона
+Уменьшает перезарядку до 30s.</TM_Shield_I.description>
+	<!--            EN: Shield-->
+	<TM_Shield_II.label>Щит</TM_Shield_II.label>
+	<!--                  EN: Protects the paladin from damage for 50s or until the shield is broken.
+Absorbs up to 135 damage.
+Reduces recharge to 27s.-->
+	<TM_Shield_II.description>Защищает паладина от повреждений в течение 50 секунд или до тех пор, пока щит не будет сломан.
+Поглощает до 135 урона
+Уменьшает перезарядку до 27s.</TM_Shield_II.description>
+	<!--             EN: Shield-->
+	<TM_Shield_III.label>Щит</TM_Shield_III.label>
+	<!--                   EN: Protects the paladin from damage for 50s or until the shield is broken.
+Absorbs up to 150 damage.
+Reduces recharge to 25s.-->
+	<TM_Shield_III.description>Защищает паладина от повреждений в течение 50 секунд или до тех пор, пока щит не будет сломан.
+Поглощает до 150 урона
+Уменьшает перезарядку до 25s.</TM_Shield_III.description>
+	<!--                EN: Valiant Charge-->
+	<TM_ValiantCharge.label>Заряд доблести</TM_ValiantCharge.label>
+	<!--                      EN: The Paladin is flies with the wings of an angel to fly to a distant location, shattering the ground with holy power upon landing.-->
+	<TM_ValiantCharge.description>Паладин летит с крыльями ангела, чтобы долететь до отдаленного места, разбивая землю святой силой при приземлении.</TM_ValiantCharge.description>
+	<!-- Подавляющий удар-->
+	<TM_Overwhelm.label>Подавляющий удар</TM_Overwhelm.label>
+	<!--                  EN: Holy power is unleashed from the paladin, overwhelming the physical and mental senses of any nearby creatures.-->
+	<TM_Overwhelm.description>Священная сила высвобождается из паладина, подавляя физические и ментальные чувства всех находящихся поблизости существ.</TM_Overwhelm.description>
+	<!--            EN: Holy Wrath-->
+	<TM_HolyWrath.label>Святой Гнев</TM_HolyWrath.label>
+	<!--                  EN: Calls forth holy wrath upon the land.-->
+	<TM_HolyWrath.description>Призывает святой гнев на землю.</TM_HolyWrath.description>
+</LanguageData>

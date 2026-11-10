@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Craftable Artifacts -->
+
+  <AdministerOrbOfTheEternal.label>bola celestial eterna</AdministerOrbOfTheEternal.label>
+  <AdministerOrbOfTheEternal.description>Usa a força da Esfera do Eterno. É uma injeção descartável de energia mágica que vai sanar as feridas, recuperar membros e curar doenças. A energia de cura vai visar e curar o único estado de saúde pior que afeta alguém a qualquer momento.</AdministerOrbOfTheEternal.description>
+  <AdministerOrbOfTheEternal.jobString>Usar a Esfera do Eterno.</AdministerOrbOfTheEternal.jobString>
+
+
+</LanguageData>

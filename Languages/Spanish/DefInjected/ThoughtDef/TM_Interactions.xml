@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_EntertainedAuraTD.stages.social_entertainment.label>entretenimiento social</TM_EntertainedAuraTD.stages.social_entertainment.label>
+  
+  <TM_EntertainedAuraTD.stages.social_entertainment.description>Me lo he pasado muy bien charlando con los demás.</TM_EntertainedAuraTD.stages.social_entertainment.description>
+  
+  
+  <TM_EntertainedTD.stages.entertained.label>entretenimiento</TM_EntertainedTD.stages.entertained.label>
+  
+  <TM_EntertainedTD.stages.entertained.description>Este lugar no está tan mal; hay gente que me hace olvidar mis preocupaciones y reírme un poco.</TM_EntertainedTD.stages.entertained.description>
+  
+  
+  <TM_EntertainerAuraTD.stages.social_interaction.label>interacción social</TM_EntertainerAuraTD.stages.social_interaction.label>
+  
+  <TM_EntertainerAuraTD.stages.social_interaction.description>Me gusta mucho relacionarme con la gente de por aquí; me hace feliz llevar un poco de alegría a los demás.</TM_EntertainerAuraTD.stages.social_interaction.description>
+  
+  
+  <TM_MagicLoreTD.stages.gained_arcane_knowledge.label>conocimiento arcano adquirido</TM_MagicLoreTD.stages.gained_arcane_knowledge.label>
+  
+  <TM_MagicLoreTD.stages.gained_arcane_knowledge.description>Las palabras de un poderoso mago me han iluminado; ahora solo me queda aplicar estos conocimientos...</TM_MagicLoreTD.stages.gained_arcane_knowledge.description>
+  
+  
+  <TM_MightLoreTD.stages.gained_combat_experience.label>experiencia de combate adquirida</TM_MightLoreTD.stages.gained_combat_experience.label>
+  
+  <TM_MightLoreTD.stages.gained_combat_experience.description>Un luchador con más experiencia me ha enseñado a mejorar mis técnicas de combate.</TM_MightLoreTD.stages.gained_combat_experience.description>
+  
+</LanguageData>

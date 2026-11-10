@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Botched_BestowMagicTD.stages.botched_gifting_ritual.label>ritual del don fallido</TM_Botched_BestowMagicTD.stages.botched_gifting_ritual.label>
+  
+  <TM_Botched_BestowMagicTD.stages.botched_gifting_ritual.description>El ritual del don salió mal y no se concedió ninguna chispa mágica.</TM_Botched_BestowMagicTD.stages.botched_gifting_ritual.description>
+  
+  
+  <TM_Botched_SeverMagicTD.stages.botched_severence_ritual.label>ritual de separación fallido</TM_Botched_SeverMagicTD.stages.botched_severence_ritual.label>
+  
+  <TM_Botched_SeverMagicTD.stages.botched_severence_ritual.description>El ritual de separación salió mal y dio al mago la oportunidad de contraatacar.</TM_Botched_SeverMagicTD.stages.botched_severence_ritual.description>
+  
+  
+  <TM_Flawless_BestowMagicTD.stages.enlightened_gifting_ritual.label>ritual del don iluminado</TM_Flawless_BestowMagicTD.stages.enlightened_gifting_ritual.label>
+  
+  <TM_Flawless_BestowMagicTD.stages.enlightened_gifting_ritual.description>Fue como si los cielos se abrieran para bendecir el ritual y un coro de voces cantara la gloria de nuestra causa.</TM_Flawless_BestowMagicTD.stages.enlightened_gifting_ritual.description>
+  
+  
+  <TM_Flawless_SeverMagicTD.stages.flawless_severence_ritual.label>ritual de separación impecable</TM_Flawless_SeverMagicTD.stages.flawless_severence_ritual.label>
+  
+  <TM_Flawless_SeverMagicTD.stages.flawless_severence_ritual.description>El coro de voces, la intensidad del portador del vacío, la mirada de inevitabilidad en el rostro del mago... ¡nada puede detener nuestra cruzada!</TM_Flawless_SeverMagicTD.stages.flawless_severence_ritual.description>
+  
+  
+  <TM_Good_BestowMagicClassTD.stages.inspiring_arcane_path_ritual.label>ritual de senda arcana inspirador</TM_Good_BestowMagicClassTD.stages.inspiring_arcane_path_ritual.label>
+  
+  <TM_Good_BestowMagicClassTD.stages.inspiring_arcane_path_ritual.description>El ritual de senda arcana fue fantástico, con una gran carga emocional y mágica: ¡siempre es maravilloso ver a alguien cumplir sus sueños!</TM_Good_BestowMagicClassTD.stages.inspiring_arcane_path_ritual.description>
+  
+  
+  <TM_Lethal_SeverMagicTD.stages.lethal_severence_ritual.label>ritual de separación letal</TM_Lethal_SeverMagicTD.stages.lethal_severence_ritual.label>
+  
+  <TM_Lethal_SeverMagicTD.stages.lethal_severence_ritual.description>Aquel ritual careció de orden y la técnica fue pésima, y acabó matando al mago.</TM_Lethal_SeverMagicTD.stages.lethal_severence_ritual.description>
+  
+  
+  <TM_MagicSeverenceTD.stages.Severed_from_magic.label>separación de la magia</TM_MagicSeverenceTD.stages.Severed_from_magic.label>
+  
+  <TM_MagicSeverenceTD.stages.Severed_from_magic.description>He perdido algo que una vez definió quién era; siento una mezcla de desesperación y vacío.</TM_MagicSeverenceTD.stages.Severed_from_magic.description>
+  
+  
+  <TM_Moderate_BestowMagicClassTD.stages.successful_arcane_path_ritual.label>ritual de senda arcana exitoso</TM_Moderate_BestowMagicClassTD.stages.successful_arcane_path_ritual.label>
+  
+  <TM_Moderate_BestowMagicClassTD.stages.successful_arcane_path_ritual.description>El ritual de elección de senda arcana fue alentador e interesante.</TM_Moderate_BestowMagicClassTD.stages.successful_arcane_path_ritual.description>
+  
+  
+  <TM_Poor_BestowMagicClassTD.stages.bland_arcane_path_ritual.label>ritual de senda arcana insulso</TM_Poor_BestowMagicClassTD.stages.bland_arcane_path_ritual.label>
+  
+  <TM_Poor_BestowMagicClassTD.stages.bland_arcane_path_ritual.description>El ritual para guiar a un mago hacia su senda arcana fue insulso y poco interesante.</TM_Poor_BestowMagicClassTD.stages.bland_arcane_path_ritual.description>
+  
+  
+  <TM_SeverMagic_ForApproveTD.stages.allowed_sever_magic.label>permitió la separación de la magia</TM_SeverMagic_ForApproveTD.stages.allowed_sever_magic.label>
+  
+  <TM_SeverMagic_ForApproveTD.stages.allowed_sever_magic.description>En nuestra colonia se realizó un ritual para separar la magia de un mago; qué acto tan despreciable y bárbaro.</TM_SeverMagic_ForApproveTD.stages.allowed_sever_magic.description>
+  
+  
+  <TM_SeverMagic_ForVeneratedTD.stages.allowed_sever_magic.label>permitió la separación de la magia</TM_SeverMagic_ForVeneratedTD.stages.allowed_sever_magic.label>
+  
+  <TM_SeverMagic_ForVeneratedTD.stages.allowed_sever_magic.description>En nuestra colonia se realizó un ritual para separar la magia de un mago; este atroz acto de barbarie es una afrenta a todo lo que creemos.</TM_SeverMagic_ForVeneratedTD.stages.allowed_sever_magic.description>
+  
+  
+  <TM_Success_BestowMagicTD.stages.successful_gifting_ritual.label>ritual del don exitoso</TM_Success_BestowMagicTD.stages.successful_gifting_ritual.label>
+  
+  <TM_Success_BestowMagicTD.stages.successful_gifting_ritual.description>El ritual del don concedió con éxito la chispa mágica.</TM_Success_BestowMagicTD.stages.successful_gifting_ritual.description>
+  
+  
+  <TM_Success_SeverMagicTD.stages.successful_severence_ritual.label>ritual de separación exitoso</TM_Success_SeverMagicTD.stages.successful_severence_ritual.label>
+  
+  <TM_Success_SeverMagicTD.stages.successful_severence_ritual.description>El ritual de separación fue un éxito y nos liberó de la opresión de otro mago.</TM_Success_SeverMagicTD.stages.successful_severence_ritual.description>
+  
+</LanguageData>

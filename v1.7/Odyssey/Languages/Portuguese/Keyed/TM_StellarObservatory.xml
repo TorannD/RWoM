@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_StellarRitual>Iniciar adivinhação estelar (ritual)</TM_StellarRitual>
+  <TM_StellarIdle>Inativo: requer um ritual de adivinhação</TM_StellarIdle>
+  <TM_StellarSearching>À procura: falta {0}</TM_StellarSearching>
+  <TM_StellarWaiting>Procura concluída: a aguardar um destino orbital elegível</TM_StellarWaiting>
+  <TM_StellarCooldown>Intervalo mágico partilhado: {0}</TM_StellarCooldown>
+  <TM_StellarUnavailable>Requer um observatório operacional, um mago, 100 de mana e 50 de magocombustível na rede, um destino orbital elegível e o fim do intervalo partilhado.</TM_StellarUnavailable>
+  <TM_StellarDiscovery>A adivinhação estelar revelou</TM_StellarDiscovery>
+</LanguageData>

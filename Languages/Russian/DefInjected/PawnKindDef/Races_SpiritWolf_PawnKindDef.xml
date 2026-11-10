@@ -1,0 +1,8 @@
+<LanguageData><!-- v1.5\Defs\PawnDefs\Races_SpiritWolf.xml-->
+	<!--             EN: spirit wolf-->
+	<TM_SpiritWolf.label>дух волка</TM_SpiritWolf.label>
+	<!--                   EN: spirit wolves-->
+	<TM_SpiritWolf.labelPlural>духи волков</TM_SpiritWolf.labelPlural>
+	<!--                                EN: Plural spirit wolf-->
+	<TM_SpiritWolf.lifeStages.0.labelPlural>духи волков</TM_SpiritWolf.lifeStages.0.labelPlural>
+</LanguageData>

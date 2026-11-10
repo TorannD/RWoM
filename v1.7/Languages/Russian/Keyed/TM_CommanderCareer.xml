@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadCommanderProvisioner>Посвящение: снабженец</TM_ReadCommanderProvisioner>
+  <TM_ReadCommanderSignals>Посвящение: ясные сигналы</TM_ReadCommanderSignals>
+  <TM_CommanderSupplyTrial>Поставки под руководством: {0}/12. Отдайте «Рабочую команду» союзнику, который закончит перенос груза до конца приказа.</TM_CommanderSupplyTrial>
+  <TM_CommanderEvacTrial>Выведено из опасности союзников: {0}/8, завершено ремонтов под приказом: {1}/16. Используйте «Выдвигаемся» рядом с угрозой или «Рабочую команду» по ремонтнику. «Рабочая команда» должна быть отдана во время ремонта постройки, повреждённой врагом или пожаром, возникшим не по вине колонии.</TM_CommanderEvacTrial>
+  <TM_CommanderServiceTrial>Дни службы: {0}/10 или полезные экстренные команды: {1}/10. Завершайте работы под приказом. Уровень воина: {2}/30.</TM_CommanderServiceTrial>
+  <TM_CommanderAdvance>Повысить ступень командира</TM_CommanderAdvance>
+  <TM_CommanderEveryoneHome>Операция «Все домой»</TM_CommanderEveryoneHome>
+  <TM_CommanderChoseOperation>Вознесение: операция «Все домой».</TM_CommanderChoseOperation>
+  <TM_CommanderChoseAura>Вознесение: аура командира.</TM_CommanderChoseAura>
+  <TM_CommanderOperationUnavailable>Нужны операция Вознесения, 60% выносливости и завершённая перезарядка.</TM_CommanderOperationUnavailable>
+  <TM_CommanderDoctrineSupply>Снабженец получает штатную ауру снабжения. Усиление «Рабочей команды» действует только на назначенную работу.</TM_CommanderDoctrineSupply>
+  <TM_CommanderDoctrineSignals>Ясные сигналы повышают шанс принятия приказа на 2/4/6/8/10 процентных пунктов, максимум до 95%.</TM_CommanderDoctrineSignals>
+</LanguageData>

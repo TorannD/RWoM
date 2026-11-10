@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_TomeRaidChoice>Asaltantes</TM_TomeRaidChoice>
+  <TM_TomeRiftChoice>Grieta elemental de una sola oleada</TM_TomeRiftChoice>
+  <TM_TomeRiftLocked>La amenaza es insuficiente o no hay una facción elemental hostil</TM_TomeRiftLocked>
+  <TM_TomeRiftDescription>Se abrirá una grieta cerca de {0}. En una hora de juego emergerán {1} guardianes elementales (unos {2} puntos de amenaza). La grieta se cerrará. Repele al grupo en dos días para reclamar {3}.</TM_TomeRiftDescription>
+</LanguageData>

@@ -1,0 +1,68 @@
+﻿<LanguageData><!-- shroud-->
+	<TM_Shroud.label>Покров Тьмы</TM_Shroud.label>
+	<TM_Shroud.description>Покров Тьмы - это плащ ощутимой злобы и страха, который поглощает всю энергию, находящуюся поблизости.
+
+Покров имеет множество различных функций и является важнейшим компонентом обучения рыцаря смерти. Прежде всего, плащ обеспечивает защитный бонус против всех типов повреждений и немного увеличивает урон от оружия.
+
+Он также способен затвердевать и мстить против атаки, используя урон духа.
+
+И последнее, но не менее важное: покров способен уничтожать снаряды рядом с рыцарем смерти, поглощая их в пустоте.  Снаряды, выпущенные с расстояния менее 6 ячеек, никогда не будут аннулированы.
+
+Все эти функции усиливаются по мере роста уровня ненависти и должны иметь достаточный уровень ненависти, чтобы функционировать вообще.</TM_Shroud.description>
+	<!-- wave of fear-->
+	<TM_WaveOfFear.label>волна страха</TM_WaveOfFear.label>
+	<TM_WaveOfFear.description>Высвобождает волну ужаса, заставляющую врагов сжиматься от страха. Она также сильно снижает защиту от тьмы и света, замедляет движение и уменьшает скорость атаки.</TM_WaveOfFear.description>
+	<!-- Spite-->
+	<TM_Spite.label>Злоба</TM_Spite.label>
+	<TM_Spite.description>Освободите обузданную ненависть и проецируйте волну злобы на цель. Злоба должна иметь ненависть, чтобы быть использованной.
+
+Время каста: 1s
+Откат : 5s
+Дальность: 21</TM_Spite.description>
+	<TM_Spite_I.label>Злоба I</TM_Spite_I.label>
+	<TM_Spite_I.description>Освободите обузданную ненависть и проецируйте волну злобы на цель. Злоба должна иметь ненависть, чтобы быть использованной.
+
+Время каста: .8s
+Откат : 4s
+Дальность: 24</TM_Spite_I.description>
+	<TM_Spite_II.label>Злоба II</TM_Spite_II.label>
+	<TM_Spite_II.description>Освободите обузданную ненависть и проецируйте волну злобы на цель. Злоба должна иметь ненависть, чтобы быть использованной.
+
+Время каста: .6s
+Откат : 3s
+Дальность: 27</TM_Spite_II.description>
+	<TM_Spite_III.label>Злоба III</TM_Spite_III.label>
+	<TM_Spite_III.description>Освободите обузданную ненависть и проецируйте волну злобы на цель. Злоба должна иметь ненависть, чтобы быть использованной.
+
+Время каста: .4s
+Откат : 2s
+Дальность: 30</TM_Spite_III.description>
+	<!-- life steal-->
+	<TM_LifeSteal.label>Кража Жизни</TM_LifeSteal.label>
+	<TM_LifeSteal.description>Высасывайте дух из врагов, пораженных в ближнем бою, чтобы вернуть жизнь и энергию рыцарю смерти.</TM_LifeSteal.description>
+	<!-- grave blade-->
+	<TM_GraveBlade.label>Могильный КлинокМогильный Клинок</TM_GraveBlade.label>
+	<TM_GraveBlade.description>Духовные клинки бьют из могилы.
+
+Дальность: 30
+Время каста: 1.6s
+Радиус: 3.0</TM_GraveBlade.description>
+	<TM_GraveBlade_I.label>Могильный Клинок I</TM_GraveBlade_I.label>
+	<TM_GraveBlade_I.description>Духовные клинки бьют из могилы.
+
+Дальность: 33
+Время каста: 1.4s
+Радиус: 3.4</TM_GraveBlade_I.description>
+	<TM_GraveBlade_II.label>Могильный Клинок II</TM_GraveBlade_II.label>
+	<TM_GraveBlade_II.description>Духовные клинки бьют из могилы.
+
+Дальность: 36
+Время каста: 1.2s
+Радиус: 3.8</TM_GraveBlade_II.description>
+	<TM_GraveBlade_III.label>Могильный Клинок III</TM_GraveBlade_III.label>
+	<TM_GraveBlade_III.description>Духовные клинки бьют из могилы.
+
+Дальность: 39
+Время каста: 1s
+Радиус: 4.2</TM_GraveBlade_III.description>
+</LanguageData>

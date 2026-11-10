@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using AbilityUser;
 using System.Collections.Generic;
 using RimWorld;
@@ -46,41 +46,29 @@ namespace TorannMagic
             return validTarg;
         }
 
+        internal static bool PayForPulse(Pawn owner, TMAbilityDef spell, int remaining, int total)
+        {
+            int stopAt = 3;
+            if (!owner.DestroyedOrNull())
+            {
+                if (owner.GetCompAbilityUserMagic() != null) stopAt = TM_Calc.GetSkillPowerLevel(owner, spell, true);
+                var light = owner.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_LightCapacitanceHD)?.TryGetComp<HediffComp_LightCapacitance>();
+                if (light != null) light.LightEnergy -= 3f;
+            }
+            return remaining == total || remaining > stopAt;
+        }
+
         protected override bool TryCastShot()
         {
-            int shotCount = 3;
-            if(!base.CasterPawn.DestroyedOrNull())
-            {
-                CompAbilityUserMagic comp = base.CasterPawn.GetCompAbilityUserMagic();
-                if (comp != null)
-                {
-                    //shotCount -= TM_Calc.GetMagicSkillLevel(base.CasterPawn, comp.MagicData.MagicPowerSkill_LightLance, "TM_LightLance", "_pwr", true);
-                    shotCount = TM_Calc.GetSkillPowerLevel(base.CasterPawn, this.Ability.Def as TMAbilityDef, true);
-                }
-                if (base.CasterPawn.health.hediffSet.HasHediff(TorannMagicDefOf.TM_LightCapacitanceHD))
-                {
-                    HediffComp_LightCapacitance hd = base.CasterPawn.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_LightCapacitanceHD).TryGetComp<HediffComp_LightCapacitance>();
-                    hd.LightEnergy -= 3f;
-                }
-            }
+            if (!PayForPulse(CasterPawn, Ability.Def as TMAbilityDef, burstShotsLeft, verbProps.burstShotCount)) return false;
             if (this.burstShotsLeft == this.verbProps.burstShotCount)
             {
                 return base.TryCastShot();
             }
-            else if (this.burstShotsLeft > (0 + shotCount))
-            {
-                bool outResult = true;
-                PostCastShot(outResult, out outResult);
-                if (!outResult)
-                {
-                    Ability.Notify_AbilityFailed(UseAbilityProps.refundsPointsAfterFailing);
-                }
-                return outResult;
-            }
-            else
-            {
-                return false;
-            }
+            bool outResult = true;
+            PostCastShot(outResult, out outResult);
+            if (!outResult) Ability.Notify_AbilityFailed(UseAbilityProps.refundsPointsAfterFailing);
+            return outResult;
         }
 
         public virtual void Effect()
@@ -89,14 +77,16 @@ namespace TorannMagic
             bool flag = t.Cell != default(IntVec3);
             if (flag)
             {
-                Thing launchedThing = new Thing()
-                {
-                    def = TorannMagicDefOf.FlyingObject_LightLance
-                };
-                Pawn casterPawn = base.CasterPawn;
-                FlyingObject_LightLance flyingObject = (FlyingObject_LightLance)GenSpawn.Spawn(ThingDef.Named("FlyingObject_LightLance"), this.CasterPawn.Position, this.CasterPawn.Map);
-                flyingObject.Launch(this.CasterPawn, t.Cell, launchedThing);
+                Emit(CasterPawn, Ability, t);
             }
+        }
+
+        internal static void Emit(Pawn body, PawnAbility ability, LocalTargetInfo target)
+        {
+            var trial = ClassProgression.BrightmageTrials.CaptureSpawn(ability);
+            var lance = (FlyingObject_LightLance)GenSpawn.Spawn(TorannMagicDefOf.FlyingObject_LightLance, body.Position, body.Map);
+            lance.LaunchFromCaster(body, ability.Pawn, target);
+            ClassProgression.BrightmageTrials.CompleteSpawn(trial, lance);
         }
 
         public override void PostCastShot(bool inResult, out bool outResult)

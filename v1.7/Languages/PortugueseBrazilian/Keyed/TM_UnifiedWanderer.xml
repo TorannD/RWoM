@@ -1,0 +1,8 @@
+<LanguageData>
+  <TM_ChooseUnifiedWanderer>Escolher o caminho do andarilho</TM_ChooseUnifiedWanderer>
+  <TM_ConfirmUnifiedWanderer>Escolher a classe de guerreiro-mago para treinar truques e habilidades de campo? Não requer livro.</TM_ConfirmUnifiedWanderer>
+  <TM_WandererSurvey>Marcar um ponto da rota</TM_WandererSurvey>
+  <TM_WandererSurveyInfo>Marque uma rota de 12 células e leia um tomo completo de qualquer classe. Para a maestria, percorra 24 células e leia um tomo de mestre. A marca custa 10% de cada recurso do caminho. Escolha duas das seis habilidades por livro.</TM_WandererSurveyInfo>
+  <TM_WandererLessons>Escolher habilidade ({0} restantes)</TM_WandererLessons>
+  <TM_BestowRecipientUnavailable>{0} já tem esse dom ou escolheu uma classe.</TM_BestowRecipientUnavailable>
+</LanguageData>

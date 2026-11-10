@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritBlink.reportString>здійснює стрибок через тіло носія.</TM_SpiritBlink.reportString>
+  <TM_SpiritBlink_I.reportString>здійснює стрибок через тіло носія.</TM_SpiritBlink_I.reportString>
+  <TM_SpiritBlink_II.reportString>здійснює стрибок через тіло носія.</TM_SpiritBlink_II.reportString>
+  <TM_SpiritBlink_III.reportString>здійснює стрибок через тіло носія.</TM_SpiritBlink_III.reportString>
+  <TM_SpiritSummon.reportString>прикликає ціль через тіло носія.</TM_SpiritSummon.reportString>
+  <TM_SpiritSummon_I.reportString>прикликає ціль через тіло носія.</TM_SpiritSummon_I.reportString>
+  <TM_SpiritSummon_II.reportString>прикликає ціль через тіло носія.</TM_SpiritSummon_II.reportString>
+  <TM_SpiritSummon_III.reportString>прикликає ціль через тіло носія.</TM_SpiritSummon_III.reportString>
+  <TM_SpiritMagicMissile.reportString>випускає магічні стріли через тіло носія.</TM_SpiritMagicMissile.reportString>
+  <TM_SpiritMagicMissile_I.reportString>випускає магічні стріли через тіло носія.</TM_SpiritMagicMissile_I.reportString>
+  <TM_SpiritMagicMissile_II.reportString>випускає магічні стріли через тіло носія.</TM_SpiritMagicMissile_II.reportString>
+  <TM_SpiritMagicMissile_III.reportString>випускає магічні стріли через тіло носія.</TM_SpiritMagicMissile_III.reportString>
+  <TM_SpiritTeleport.reportString>відкриває транспортний портал через носія Духа.</TM_SpiritTeleport.reportString>
+  <TM_SpiritFoldReality.reportString>викривляє реальність через носія Духа.</TM_SpiritFoldReality.reportString>
+</LanguageData>

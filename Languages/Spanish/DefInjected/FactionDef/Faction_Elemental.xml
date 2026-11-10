@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_ElementalFaction.label>Elementales</TM_ElementalFaction.label>
+  
+  <TM_ElementalFaction.description>Espíritus elementales invocados desde sus planos de poder. Esta facción es necesaria para ciertos eventos o acciones de RimWorld of Magic.</TM_ElementalFaction.description>
+  
+  <TM_ElementalFaction.fixedName>Elementales</TM_ElementalFaction.fixedName>
+  
+  <TM_ElementalFaction.leaderTitle>líder</TM_ElementalFaction.leaderTitle>
+  
+  <TM_ElementalFaction.pawnSingular>elemental</TM_ElementalFaction.pawnSingular>
+  
+  <TM_ElementalFaction.pawnsPlural>elementales</TM_ElementalFaction.pawnsPlural>
+
+  
+  <TM_SkeletalFaction.label>Esqueletos</TM_SkeletalFaction.label>
+  
+  <TM_SkeletalFaction.description>Esqueletos y no muertos alzados por el poder arcano. Esta facción es necesaria para ciertos eventos o acciones de RimWorld of Magic.</TM_SkeletalFaction.description>
+  
+  <TM_SkeletalFaction.fixedName>Esqueletos</TM_SkeletalFaction.fixedName>
+  
+  <TM_SkeletalFaction.leaderTitle>líder</TM_SkeletalFaction.leaderTitle>
+  
+  <TM_SkeletalFaction.pawnSingular>esqueleto</TM_SkeletalFaction.pawnSingular>
+  
+  <TM_SkeletalFaction.pawnsPlural>esqueletos</TM_SkeletalFaction.pawnsPlural>
+
+  
+  <TM_SummonedFaction.label>Ser invocado</TM_SummonedFaction.label>
+  
+  <TM_SummonedFaction.description>Seres invocados desde otras dimensiones o planos de existencia mediante el poder arcano. Esta facción es necesaria para ciertos eventos o acciones de RimWorld of Magic.</TM_SummonedFaction.description>
+  
+  <TM_SummonedFaction.fixedName>Invocados</TM_SummonedFaction.fixedName>
+  
+  <TM_SummonedFaction.leaderTitle>líder</TM_SummonedFaction.leaderTitle>
+  
+  <TM_SummonedFaction.pawnSingular>invocado</TM_SummonedFaction.pawnSingular>
+  
+  <TM_SummonedFaction.pawnsPlural>invocados</TM_SummonedFaction.pawnsPlural>
+
+</LanguageData>

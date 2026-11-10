@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- lightning -->
+
+  <Projectile_Lightning.label>relâmpago</Projectile_Lightning.label>
+
+
+  <!-- Chain Lightning -->
+
+  <Projectile_ChainLightning.label>raio de cadeia</Projectile_ChainLightning.label>
+
+
+  <!-- Spirit Wolves -->
+
+  <Projectile_SpiritWolves.label>espírito dos lobos</Projectile_SpiritWolves.label>
+  <Projectile_SpiritWolves_I.label>espírito dos lobos</Projectile_SpiritWolves_I.label>
+  <Projectile_SpiritWolves_II.label>espírito dos lobos</Projectile_SpiritWolves_II.label>
+  <Projectile_SpiritWolves_III.label>espírito dos lobos</Projectile_SpiritWolves_III.label>
+  <FlyingObject_SpiritWolves.label>espírito dos lobos</FlyingObject_SpiritWolves.label>
+
+
+</LanguageData>

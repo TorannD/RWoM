@@ -1,0 +1,12 @@
+<LanguageData><!-- v1.5\Defs\GolemDefs\Abilities_Golem.xml-->
+	<!--                        EN: blazing power-->
+	<Projectile_BlazingEnergy.label>Пылающая энергия</Projectile_BlazingEnergy.label>
+	<!--                          EN: Firebolt-->
+	<Projectile_FireBlossomBolt.label>Молния</Projectile_FireBlossomBolt.label>
+	<!--                         EN: Icebolt-->
+	<Projectile_IceBlossomBolt.label>Леденой снаряд</Projectile_IceBlossomBolt.label>
+	<!--                   EN: Darkbolt-->
+	<Projectile_DarkBolt.label>Молния тьмы</Projectile_DarkBolt.label>
+	<!--                        EN: Reverse Shield-->
+	<Projectile_ReverseShield.label>Обратный щит</Projectile_ReverseShield.label>
+</LanguageData>

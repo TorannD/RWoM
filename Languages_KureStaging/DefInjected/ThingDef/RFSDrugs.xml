@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RFS_StaminaPotion.label>Зелье выносливости</RFS_StaminaPotion.label>
+  <RFS_StaminaPotion.description>Странный напиток, горький, острый и кислый одновременно, но почему-то приятный для питья. Если его выпьет боец, его максимальная выносливость временно станет 500, а также он получит небольшое ускорение регенерации выносливости.
+
+Классы с ситуативным запасом выносливости (Ганбрейкер, Голокузнец, Картежник, Трубадур, Страж, Разрушитель чар, Вестник сумерек) вместо этого получат увеличенный запас выносливости с 0 до базового значения 50.
+
+Внезапный прилив энергии может перегрузить организм, поэтому частый прием не рекомендуется.</RFS_StaminaPotion.description>
+  <RFS_StaminaPotion.ingestible.ingestCommandString>Выпить {0}</RFS_StaminaPotion.ingestible.ingestCommandString>
+  <RFS_StaminaPotion.ingestible.ingestReportString>Выпивает {0}.</RFS_StaminaPotion.ingestible.ingestReportString>
+</LanguageData>

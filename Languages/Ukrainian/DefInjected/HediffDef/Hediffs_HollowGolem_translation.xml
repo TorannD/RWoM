@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_DecayHD.label>Розпад</TM_DecayHD.label>
+  <TM_DecayHD.description>Швидко розкладається, роз&apos;їдає і розчиняє матеріал і тканини.</TM_DecayHD.description>
+  <TM_DecayHD.stages.0.label></TM_DecayHD.stages.0.label>
+
+  <TM_DeathFieldHD.label>Поле смерті</TM_DeathFieldHD.label>
+  <TM_DeathFieldHD.description>Періодично вражає довколишні цілі магією смерті.</TM_DeathFieldHD.description>
+  <TM_DeathFieldHD.stages.0.label></TM_DeathFieldHD.stages.0.label>
+
+  <TM_DoomFieldHD.label>Безодня смерті</TM_DoomFieldHD.label>
+  <TM_DoomFieldHD.description>Періодично уповільнює довколишні цілі з їх неминучою загибеллю.</TM_DoomFieldHD.description>
+  <TM_DoomFieldHD.stages.0.label></TM_DoomFieldHD.stages.0.label>
+
+  <TM_HollowGolem_BreastPlateHD.label>нагрудний знак</TM_HollowGolem_BreastPlateHD.label>
+  <TM_HollowGolem_BreastPlateHD.description>Захищає тулуб і груди від атак.</TM_HollowGolem_BreastPlateHD.description>
+  <TM_HollowGolem_BreastPlateHD.stages.0.label></TM_HollowGolem_BreastPlateHD.stages.0.label>
+
+  <TM_HollowGolem_HelmHD.label>шолом</TM_HollowGolem_HelmHD.label>
+  <TM_HollowGolem_HelmHD.description>Захищає голову і череп.</TM_HollowGolem_HelmHD.description>
+  <TM_HollowGolem_HelmHD.stages.0.label></TM_HollowGolem_HelmHD.stages.0.label>
+
+  <TM_HollowGolem_ShoulderHD.label>плечі</TM_HollowGolem_ShoulderHD.label>
+  <TM_HollowGolem_ShoulderHD.description>Захищає плечі, комір і шию.</TM_HollowGolem_ShoulderHD.description>
+  <TM_HollowGolem_ShoulderHD.stages.0.label></TM_HollowGolem_ShoulderHD.stages.0.label>
+
+  <TM_HollowGolem_CrownHD.label>вінець пробудження</TM_HollowGolem_CrownHD.label>
+  <TM_HollowGolem_CrownHD.description>Зміцнює силу волі і забезпечує незначний захист від фізичних атак.</TM_HollowGolem_CrownHD.description>
+  <TM_HollowGolem_CrownHD.stages.0.label></TM_HollowGolem_CrownHD.stages.0.label>
+
+  <TM_HollowGolem_CloakHD.label>зникаючий плеолог</TM_HollowGolem_CloakHD.label>
+  <TM_HollowGolem_CloakHD.description>Збільшує швидкість пересування і забезпечує невеликий ступінь захисту.</TM_HollowGolem_CloakHD.description>
+  <TM_HollowGolem_CloakHD.stages.0.label></TM_HollowGolem_CloakHD.stages.0.label>
+
+  <TM_HollowGolem_CoAFireHD.label>Герб: Вогонь</TM_HollowGolem_CoAFireHD.label>
+  <TM_HollowGolem_CoAFireHD.description>Збільшує швидкість пересування і термостійкість.</TM_HollowGolem_CoAFireHD.description>
+  <TM_HollowGolem_CoAFireHD.stages.0.label>I</TM_HollowGolem_CoAFireHD.stages.0.label>
+  <TM_HollowGolem_CoAFireHD.stages.1.label>II</TM_HollowGolem_CoAFireHD.stages.1.label>
+  <TM_HollowGolem_CoAFireHD.stages.2.label>III</TM_HollowGolem_CoAFireHD.stages.2.label>
+
+  <TM_HollowGolem_CoAIceHD.label>Гербовий щит</TM_HollowGolem_CoAIceHD.label>
+  <TM_HollowGolem_CoAIceHD.description>Збільшує броню.</TM_HollowGolem_CoAIceHD.description>
+  <TM_HollowGolem_CoAIceHD.stages.0.label>I</TM_HollowGolem_CoAIceHD.stages.0.label>
+  <TM_HollowGolem_CoAIceHD.stages.1.label>II</TM_HollowGolem_CoAIceHD.stages.1.label>
+  <TM_HollowGolem_CoAIceHD.stages.2.label>III</TM_HollowGolem_CoAIceHD.stages.2.label>
+
+
+</LanguageData>

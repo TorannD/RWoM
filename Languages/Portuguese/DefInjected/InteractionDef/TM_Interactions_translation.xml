@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Learning interactions -->
+
+  <TM_MagicLore.label>discutir teorias e práticas mágicas</TM_MagicLore.label>
+  <TM_MagicLore.logRulesInitiator.rulesStrings.0>r _ logentry- &gt; Mentor [RECIPIENT_nameDef] em magia.</TM_MagicLore.logRulesInitiator.rulesStrings.0>
+  <TM_MagicLore.logRulesRecipient.rulesStrings.0>r _ logentry- &gt; Estudou teorias mágicas em [INITIATOR_nameDef].</TM_MagicLore.logRulesRecipient.rulesStrings.0>
+
+  <TM_MightLore.label>discutir técnicas de combate</TM_MightLore.label>
+  <TM_MightLore.logRulesInitiator.rulesStrings.0>r _ logentry- &gt; Treinou técnicas de combate [RECIPIENT_nameDef].</TM_MightLore.logRulesInitiator.rulesStrings.0>
+  <TM_MightLore.logRulesRecipient.rulesStrings.0>r _ logentry- &gt; Treinado para técnicas de combate [INITIATOR_nameDef].</TM_MightLore.logRulesRecipient.rulesStrings.0>
+
+
+  <!-- Social interactions -->
+
+  <TM_EntertainID.label>espremido</TM_EntertainID.label>
+  <TM_EntertainID.logRulesInitiator.rulesStrings.0>r _ logentry- &gt; Entretenimento [RECIPIENT_nameDef].</TM_EntertainID.logRulesInitiator.rulesStrings.0>
+  <TM_EntertainID.logRulesRecipient.rulesStrings.0>r _ logentry- &gt; Foi divertido [INITIATOR_nameDef].</TM_EntertainID.logRulesRecipient.rulesStrings.0>
+
+  <TM_EntertainAuraID.label>espremido</TM_EntertainAuraID.label>
+  <TM_EntertainAuraID.logRulesInitiator.rulesStrings.0>r _ logentry- &gt; Teve uma conversa interessante com [RECIPIENT_nameDef].</TM_EntertainAuraID.logRulesInitiator.rulesStrings.0>
+  <TM_EntertainAuraID.logRulesRecipient.rulesStrings.0>r _ logentry- &gt; Teve uma conversa interessante com [INITIATOR_nameDef].</TM_EntertainAuraID.logRulesRecipient.rulesStrings.0>
+
+
+</LanguageData>

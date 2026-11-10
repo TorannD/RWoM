@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <ManaPotion.label>poción de maná</ManaPotion.label>
+  
+  <ManaPotion.description>Un suplemento mágico que permite a los usuarios de lo arcano recuperar maná rápidamente. Las pociones de maná actúan como supresor natural de las resistencias del cuerpo a la absorción de maná.\n\nSe advierte a los usuarios de que eludir las resistencias naturales puede causar daños mentales y sensoriales.</ManaPotion.description>
+  
+  <ManaPotion.ingestible.ingestCommandString>Consumir {0}</ManaPotion.ingestible.ingestCommandString>
+  
+  <ManaPotion.ingestible.ingestReportString>Consumiendo {0}.</ManaPotion.ingestible.ingestReportString>
+  
+</LanguageData>

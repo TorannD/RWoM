@@ -11,160 +11,78 @@ using HarmonyLib;
 
 namespace TorannMagic
 {
-    public class Verb_ReverseTime : Verb_UseAbility
+    public class Verb_ReverseTime : ClassProgression.Verb_SpiritTargetable
     {
 
         private int verVal =0;
         private int pwrVal =0;
         private float arcaneDmg = 1f;
 
-        bool validTarg;
-        //can be used with shieldbelt
-        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
+        private static bool Supported(Thing target) => target?.Spawned == true && (target is Pawn living && !living.Dead ||
+            target is Corpse corpse && corpse.InnerPawn?.Dead == true && corpse.TryGetComp<CompRottable>() != null ||
+            target.def.category == ThingCategory.Item && (Projectile_AccelerateTime.CanAgeItem(target) ||
+                target.TryGetComp<CompRottable>() != null && target.GetStatValue(StatDefOf.Nutrition) > 0));
+
+        private Thing ResolveTarget(LocalTargetInfo target)
         {
-            if (targ.Thing != null && targ.Thing == this.caster)
+            var map = CasterPawn?.Map;
+            if (map == null || !target.IsValid || !target.Cell.InBounds(map)) return null;
+            if (target.HasThing) return target.Thing.Map == map && Supported(target.Thing) ? target.Thing : null;
+            // A bare cell is sufficient only when it identifies one eligible target.
+            Thing found = null;
+            foreach (var thing in target.Cell.GetThingList(map))
             {
-                return this.verbProps.targetParams.canTargetSelf;
+                if (!Supported(thing)) continue;
+                if (found != null) return null;
+                found = thing;
             }
-            if (targ.IsValid && targ.CenterVector3.InBoundsWithNullCheck(base.CasterPawn.Map) && !targ.Cell.Fogged(base.CasterPawn.Map) && targ.Cell.Walkable(base.CasterPawn.Map))
-            {
-                if ((root - targ.Cell).LengthHorizontal < this.verbProps.range)
-                {
-                    ShootLine shootLine;
-                    validTarg = this.TryFindShootLineFromTo(root, targ, out shootLine);
-                }
-                else
-                {
-                    validTarg = false;
-                }
-            }
-            else
-            {
-                validTarg = false;
-            }
-            return validTarg;
+            return found;
         }
 
-        private void Initialize()
+        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo target)
         {
-            Pawn pawn = this.CasterPawn;
-            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            //MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ReverseTime.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ReverseTime_pwr");
-            //MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ReverseTime.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_ReverseTime_ver");
-            //
-            //pwrVal = pwr.level;
-            //verVal = ver.level;
-            //arcaneDmg = comp.arcaneDmg;
-            //if (pawn.story.traits.HasTrait(TorannMagicDefOf.Faceless))
-            //{
-            //    MightPowerSkill mpwr = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_pwr");
-            //    MightPowerSkill mver = pawn.GetCompAbilityUserMight().MightData.MightPowerSkill_Mimic.FirstOrDefault((MightPowerSkill x) => x.label == "TM_Mimic_ver");
-            //    pwrVal = mpwr.level;
-            //    verVal = mver.level;
-            //}
-            //if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
-            //{
-            //    pwrVal = 3;
-            //    verVal = 3;
-            //}
-            pwrVal = TM_Calc.GetSkillPowerLevel(pawn, this.Ability.Def as TMAbilityDef);
-            verVal = TM_Calc.GetSkillVersatilityLevel(pawn, this.Ability.Def as TMAbilityDef);
+            if (ResolveTarget(target) == null) return false;
+            if (target.Thing == caster) return verbProps.targetParams.canTargetSelf;
+            var map = CasterPawn.Map;
+            return !target.Cell.Fogged(map) && target.Cell.Walkable(map) &&
+                (root - target.Cell).LengthHorizontal < verbProps.range && TryFindShootLineFromTo(root,target,out _);
         }
 
         protected override bool TryCastShot()
         {
-            bool flag = false;
-            Initialize();
+            PostCastShot(ApplyHostedEffect(),out bool fired);
+            return fired;
+        }
 
-            bool flagPawn = false;
-            bool flagStuffItem = false;
-            bool flagNoStuffItem = false;
-            bool flagNutrition = false;
-            bool flagCorpse = false;
-
-            Pawn targetPawn = this.currentTarget.Thing as Pawn;
-            if (targetPawn == null)
+        protected override bool ApplyHostedEffect()
+        {
+            var body = CasterPawn;
+            var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(body,Ability);
+            var target = ResolveTarget(currentTarget);
+            if (target == null || owner == null) return false;
+            var comp = owner.GetCompAbilityUserMagic();
+            if (comp == null) return false;
+            bool hosted = owner != body;
+            pwrVal = hosted ? ClassProgression.SpiritRebirthRuntime.SavedRank(comp.ExistingMagicData,"TM_ReverseTime_pwr")
+                : TM_Calc.GetSkillPowerLevel(owner,Ability.Def as TMAbilityDef);
+            verVal = hosted ? ClassProgression.SpiritRebirthRuntime.SavedRank(comp.ExistingMagicData,"TM_ReverseTime_ver")
+                : TM_Calc.GetSkillVersatilityLevel(owner,Ability.Def as TMAbilityDef);
+            var location = new TargetInfo(target.Position,body.Map);
+            if (target is Pawn pawn)
             {
-                this.currentTarget.Cell.GetFirstPawn(this.CasterPawn.Map);
+                bool enemy = pawn.Faction == null || pawn.Faction != body.Faction;
+                AgePawn(pawn,Mathf.RoundToInt((enemy ? 2500 : 15000) * (1 + .1f * verVal)),enemy);
             }
-
-            if (targetPawn != null)
+            else if (target is Corpse)
             {
-                if (targetPawn.Faction != null && targetPawn.Faction == this.CasterPawn.Faction)
-                {
-                    AgePawn(targetPawn, Mathf.RoundToInt((6 * 2500) * (1 + (.1f * verVal))), false);
-                }
-                else
-                {
-                    AgePawn(targetPawn, Mathf.RoundToInt((2500) * (1 + (.1f * verVal))), true);
-                }
-                flagPawn = true;
+                if (!AgeCorpse(target,owner)) return false;
             }
-
-            if (!flagPawn)
-            {
-                List<Thing> thingList = this.currentTarget.Cell.GetThingList(caster.Map);
-                Thing ageThing = null;
-
-
-                for (int i = 0; i < thingList.Count; i++)
-                {
-                    if (thingList[i] != null && !(thingList[i] is Pawn) && !(thingList[i] is Building))
-                    {
-                        //if (thingList[i].def.thingCategories != null && thingList[i].def.thingCategories.Count > 0 && (thingList[i].def.thingCategories.Contains(ThingCategoryDefOf.ResourcesRaw) || thingList[i].def.thingCategories.Contains(ThingCategoryDefOf.StoneBlocks) || thingList[i].def.defName == "RawMagicyte"))                    
-                        if (thingList[i].def.MadeFromStuff)
-                        {
-                            //Log.Message("stuff item");
-                            flagStuffItem = true;
-                            ageThing = thingList[i];
-                            break;
-                        }
-                        if (!thingList[i].def.MadeFromStuff && thingList[i].TryGetComp<CompQuality>() != null)
-                        {
-                            //Log.Message("non stuff item");
-                            flagNoStuffItem = true;
-                            ageThing = thingList[i];
-                            break;
-                        }
-                        if ((thingList[i].def.statBases != null && thingList[i].GetStatValue(StatDefOf.Nutrition) > 0) && !(thingList[i] is Corpse))
-                        {
-                            //Log.Message("food item");
-                            flagNutrition = true;
-                            ageThing = thingList[i];
-                            break;
-                        }
-                        if (thingList[i] is Corpse)
-                        {
-                            //Log.Message("corpse");
-                            flagCorpse = true;
-                            ageThing = thingList[i];
-                            break;
-                        }
-                    }
-                }
-
-                if (ageThing != null)
-                {
-                    if (flagNoStuffItem || flagStuffItem)
-                    {
-                        AgeThing(ageThing);
-                    }
-                    else if (flagNutrition)
-                    {
-                        AgeFood(ageThing);
-                    }
-                    else if (flagCorpse)
-                    {
-                        AgeCorpse(ageThing);
-                    }
-                }
-            }
-            Effecter ReverseEffect = TorannMagicDefOf.TM_TimeReverseEffecter.Spawn();
-            ReverseEffect.Trigger(new TargetInfo(this.currentTarget.Cell, this.CasterPawn.Map, false), new TargetInfo(this.currentTarget.Cell, this.CasterPawn.Map, false));
-            ReverseEffect.Cleanup();
-
-            this.PostCastShot(flag, out flag);
-            return flag;
+            else if (Projectile_AccelerateTime.CanAgeItem(target)) AgeThing(target);
+            else AgeFood(target);
+            var effect = TorannMagicDefOf.TM_TimeReverseEffecter.Spawn();
+            try { effect.Trigger(location, location); }
+            finally { effect.Cleanup(); }
+            return true;
         }
 
         private void AgePawn(Pawn pawn, int duration, bool isBad)
@@ -179,7 +97,7 @@ namespace TorannMagic
                 }
                 else
                 {
-                    if (pawn.Faction == this.CasterPawn.Faction || (Rand.Chance((.5f + verVal) * TM_Calc.GetSpellSuccessChance(this.CasterPawn, pawn, false))))
+                    if (pawn.Faction == this.CasterPawn.Faction || (Rand.Chance((.5f + verVal) * TM_Calc.GetSpellSuccessChance(ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn,Ability), pawn, false))))
                     {
                         if(isBad)
                         {
@@ -218,7 +136,7 @@ namespace TorannMagic
 
         private void AgeThing(Thing thing)
         {
-
+            var trial = ClassProgression.ChronomancerTrials.CaptureReverse(this.Ability, thing, false);
             thing.HitPoints = Mathf.Clamp(thing.HitPoints + Mathf.RoundToInt((200 + (100 * pwrVal)) * this.arcaneDmg), 0, thing.MaxHitPoints);
             if (thing is Apparel apparelThing)
             {
@@ -227,49 +145,44 @@ namespace TorannMagic
                     Traverse.Create(root: apparelThing).Field(name: "wornByCorpseInt").SetValue(false);
                 }
             }
+            ClassProgression.ChronomancerTrials.CompleteReverse(trial);
             TransmutateEffects(thing.Position, 4);
         }
 
         private void AgeFood(Thing thing)
         {
+            var trial = ClassProgression.ChronomancerTrials.CaptureReverse(this.Ability, thing, true);
             CompRottable compRot = thing.TryGetComp<CompRottable>();
             if(compRot != null)
             {
-                compRot.RotProgress = compRot.RotProgress * (.4f - (.125f * pwrVal));
+                compRot.RotProgress = compRot.RotProgress * Math.Max(0f,.4f - .125f * pwrVal);
             }
+            ClassProgression.ChronomancerTrials.CompleteReverse(trial);
         }
 
-        private void AgeCorpse(Thing thing)
+        private bool AgeCorpse(Thing thing, Pawn owner)
         {
-            CompRottable compRot = thing.TryGetComp<CompRottable>();
-            if (compRot != null)
+            var corpse = (Corpse)thing;
+            var rot = corpse.TryGetComp<CompRottable>();
+            if (rot == null) return false;
+            if (rot.RotProgress > 5000 + 5000 * pwrVal)
             {
-                if(compRot.RotProgress <= (5000 + (5000*pwrVal)))
-                {
-                    Corpse corpse = thing as Corpse;
-                    if (corpse != null && verVal >= 3)
-                    {
-                        TransmutateEffects(corpse.Position, 10);
-                        Pawn innerPawn = corpse.InnerPawn;
-                        ResurrectionUtility.TryResurrectWithSideEffects(innerPawn);
-                        AgePawn(innerPawn, Mathf.RoundToInt((6*2500) * (1 + (.1f * verVal))), false);
-                        HealthUtility.AdjustSeverity(innerPawn, TorannMagicDefOf.TM_DeathReversalHD, 1f);
-                        Projectile_Resurrection.ApplyHealthDefects(innerPawn, .25f, .3f);
-                        Projectile_Resurrection.ReduceSkillsOfPawn(innerPawn, Rand.Range(.30f, .40f));
-                        HealthUtility.AdjustSeverity(this.CasterPawn, TorannMagicDefOf.TM_DeathReversalHD, Rand.Range(.4f, .6f));
-                        //Projectile_Resurrection.ApplyHealthDefects(this.CasterPawn, .15f, .2f);
-                        Projectile_Resurrection.ReduceSkillsOfPawn(this.CasterPawn, Rand.Range(.15f, .25f));
-                    }
-                }
-                else
-                {
-                    compRot.RotProgress = compRot.RotProgress * (.4f - (.125f * pwrVal));
-                    if(compRot.RotProgress <= 20000)
-                    {
-                        compRot.RotProgress = 20001;
-                    }
-                }
+                float restored = Math.Max(20001,rot.RotProgress * Math.Max(0f,.4f - .125f * pwrVal));
+                if (restored >= rot.RotProgress) return false;
+                rot.RotProgress = restored;
+                return true;
             }
+            var dead = corpse.InnerPawn;
+            var position = corpse.Position;
+            if (verVal < 3 || dead?.Dead != true || !ResurrectionUtility.TryResurrectWithSideEffects(dead)) return false;
+            TransmutateEffects(position,10);
+            AgePawn(dead,Mathf.RoundToInt(15000 * (1 + .1f * verVal)),false);
+            HealthUtility.AdjustSeverity(dead,TorannMagicDefOf.TM_DeathReversalHD,1f);
+            Projectile_Resurrection.ApplyHealthDefects(dead,.25f,.3f);
+            Projectile_Resurrection.ReduceSkillsOfPawn(dead,Rand.Range(.30f,.40f));
+            HealthUtility.AdjustSeverity(CasterPawn,TorannMagicDefOf.TM_DeathReversalHD,Rand.Range(.4f,.6f));
+            Projectile_Resurrection.ReduceSkillsOfPawn(owner,Rand.Range(.15f,.25f));
+            return true;
         }
 
         public void TransmutateEffects(IntVec3 position, int intensity)

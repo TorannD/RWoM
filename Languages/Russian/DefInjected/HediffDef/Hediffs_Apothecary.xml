@@ -1,0 +1,24 @@
+<LanguageData><TM_ApothecaryHerbsHD.label>аптекарские травы</TM_ApothecaryHerbsHD.label>
+  <TM_ApothecaryHerbsHD.description>Травы, семена и другие ингредиенты, используемые аптекарем для приготовления различных предметов.</TM_ApothecaryHerbsHD.description>
+  <TM_ApothecaryHerbsHD.stages.0.label />
+
+  <TM_HerbalElixirHD.label>травяной эликсир</TM_HerbalElixirHD.label>
+  <TM_HerbalElixirHD.description>Травяной эликсир, который усиливает восстановление здоровья и борется с болезнями, а также улучшает психическое здоровье и уменьшает усталость.</TM_HerbalElixirHD.description>
+  <TM_HerbalElixirHD.stages.0.label>легкий</TM_HerbalElixirHD.stages.0.label>
+  <TM_HerbalElixirHD.stages.1.label>активный</TM_HerbalElixirHD.stages.1.label>
+  <TM_HerbalElixirHD.stages.2.label>сильный</TM_HerbalElixirHD.stages.2.label>
+
+  <TM_SoothingBalmHD.label>успокаивающий бальзам</TM_SoothingBalmHD.label>
+  <TM_SoothingBalmHD.description>Бальзам для местного применения, используемый для остановки кровотечения, заживления ран и уменьшения боли. Успокаивающий бальзам действует как мягкий анестетик и снижает осознанность пациента.</TM_SoothingBalmHD.description>
+
+  <TM_HerbalClarityHD.label>Ясность</TM_HerbalClarityHD.label>
+  <TM_HerbalClarityHD.description>Зелье, которое помогает потребителю открыться тайному. Регенерация маны увеличена до 300%, а психическая чувствительность увеличена до 50%. Эффекты также снижают психическую устойчивость. Действие этого препарата длится несколько дней, но со временем теряет силу.</TM_HerbalClarityHD.description>
+  <TM_HerbalClarityHD.stages.0.label>легкий</TM_HerbalClarityHD.stages.0.label>
+  <TM_HerbalClarityHD.stages.1.label>активный</TM_HerbalClarityHD.stages.1.label>
+  <TM_HerbalClarityHD.stages.2.label>вибрирующий</TM_HerbalClarityHD.stages.2.label>
+
+  <TM_HerbalBlissHD.label>Блаженство</TM_HerbalBlissHD.label>
+  <TM_HerbalBlissHD.description>Вводит пользователя в состояние блаженства, способное почти полностью замаскировать эмоции и боль. Этот препарат приведет к тому, что потребитель медленно потеряет навыки, а приобретение навыков под воздействием этого препарата сильно подавляется.</TM_HerbalBlissHD.description>
+
+
+</LanguageData>

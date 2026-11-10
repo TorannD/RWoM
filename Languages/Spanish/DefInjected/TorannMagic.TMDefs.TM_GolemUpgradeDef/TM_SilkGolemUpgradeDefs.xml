@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_Golem_SilkEnergyEfficiency.label>eficiencia energética</TM_Golem_SilkEnergyEfficiency.label>
+  
+  <TM_Golem_SilkEnergyEfficiency.description>Aumenta la eficiencia energética un 8 % por nivel. La eficiencia energética inicial es del 40 %.</TM_Golem_SilkEnergyEfficiency.description>
+  
+  
+  <TM_Golem_SilkEnergyRate.label>regeneración de energía</TM_Golem_SilkEnergyRate.label>
+  
+  <TM_Golem_SilkEnergyRate.description>Aumenta la velocidad de carga de energía un 10 % por nivel. La velocidad de recarga inicial es de 20 de energía por hora.</TM_Golem_SilkEnergyRate.description>
+  
+  
+  <TM_Golem_SilkLifeStage.label>nivel de armazón</TM_Golem_SilkLifeStage.label>
+  
+  <TM_Golem_SilkLifeStage.description>Aumenta las estadísticas:\nMovimiento: +[20 %/30 %/40 %]\nSalud: +[20 %/40 %/60 %]</TM_Golem_SilkLifeStage.description>
+  
+  
+  <TM_Golem_SilkMaxEnergy.label>almacenamiento de energía</TM_Golem_SilkMaxEnergy.label>
+  
+  <TM_Golem_SilkMaxEnergy.description>Aumenta la energía máxima en 100 por nivel. La energía máxima inicial es 300.</TM_Golem_SilkMaxEnergy.description>
+  
+  
+  <TM_Golem_SilkRepair.label>restaurar parte</TM_Golem_SilkRepair.label>
+  
+  
+  <TM_Golem_SilkSkills.label>mejora de habilidades</TM_Golem_SilkSkills.label>
+  
+  <TM_Golem_SilkSkills.description>Aumenta en 1 por nivel la habilidad de vigilancia. Empieza con un nivel de habilidad de 7.</TM_Golem_SilkSkills.description>
+  
+</LanguageData>

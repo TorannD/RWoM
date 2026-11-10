@@ -15,8 +15,52 @@ namespace TorannMagic
         private bool necroValid = true;
         private int lichStrike = 0;
         private bool initialized = false;
+        private bool collapsingForDeadOwner;
+
+        public override void CompPostPostAdd(DamageInfo? dinfo)
+        {
+            base.CompPostPostAdd(dinfo);
+            FleshDevelopment.FleshRepository.Ensure(Pawn);
+        }
+
+        public override void CompPostTickInterval(ref float severityAdjustment, int delta)
+        {
+            base.CompPostTickInterval(ref severityAdjustment, delta);
+            if (CollapseForDeadOwner()) return;
+            FleshDevelopment.FleshActions.Tick(Pawn);
+        }
+
+        private bool CollapseForDeadOwner()
+        {
+            var pawn = Pawn;
+            if (pawn == null || pawn.Dead || collapsingForDeadOwner) return true;
+            // A reference can be unresolved while loading/raising: keep the existing
+            // maintenance grace for that case. A confirmed death needs no grace.
+            if (linkedPawn == null || !linkedPawn.Dead
+                || pawn.def == TorannMagicDefOf.TM_SkeletonR
+                || pawn.def == TorannMagicDefOf.TM_GiantSkeletonR) return false;
+            collapsingForDeadOwner = true;
+            try { pawn.Kill(null, null); }
+            finally { collapsingForDeadOwner = false; }
+            return true;
+        }
 
         public Pawn linkedPawn = null;
+        public override void Notify_Spawned()
+        {
+            base.Notify_Spawned();
+            ClassProgression.NecromancerControlTrial.ServantLifecycle(linkedPawn, Pawn, false);
+        }
+        public override void CompPostPostRemoved()
+        {
+            base.CompPostPostRemoved();
+            ClassProgression.NecromancerControlTrial.ServantLifecycle(linkedPawn, Pawn, true);
+        }
+        public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
+        {
+            base.Notify_PawnDied(dinfo, culprit);
+            ClassProgression.NecromancerControlTrial.ServantLifecycle(linkedPawn, Pawn, true);
+        }
         private static readonly string[] nonStandardNeedsToAutoFulfill = new[] {
             "Mood",
             "Suppression",
@@ -102,6 +146,8 @@ namespace TorannMagic
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
+            if (CollapseForDeadOwner()) return;
+            FleshDevelopment.FleshActions.Tick(Pawn);
             bool flag = base.Pawn != null;
             if (flag)
             {

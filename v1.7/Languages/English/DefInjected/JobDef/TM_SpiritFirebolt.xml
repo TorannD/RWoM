@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritFirebolt.reportString>casting firebolt through a spirit host.</TM_SpiritFirebolt.reportString>
+  <TM_SpiritIcebolt.reportString>casting icebolt through a spirit host.</TM_SpiritIcebolt.reportString>
+  <TM_SpiritFireball.reportString>casting fireball through a spirit host.</TM_SpiritFireball.reportString>
+  <TM_SpiritSnowball.reportString>casting snowball through a spirit host.</TM_SpiritSnowball.reportString>
+  <TM_SpiritFireclaw.reportString>casting fireclaw through a spirit host.</TM_SpiritFireclaw.reportString>
+  <TM_SpiritBlizzard.reportString>casting blizzard through a spirit host.</TM_SpiritBlizzard.reportString>
+  <TM_SpiritFrostRay.reportString>casting frost ray through a spirit host.</TM_SpiritFrostRay.reportString>
+  <TM_SpiritFrostRay_I.reportString>casting frost ray through a spirit host.</TM_SpiritFrostRay_I.reportString>
+  <TM_SpiritFrostRay_II.reportString>casting frost ray through a spirit host.</TM_SpiritFrostRay_II.reportString>
+  <TM_SpiritFrostRay_III.reportString>casting frost ray through a spirit host.</TM_SpiritFrostRay_III.reportString>
+  <TM_SpiritFirestorm.reportString>casting firestorm through a spirit host.</TM_SpiritFirestorm.reportString>
+</LanguageData>

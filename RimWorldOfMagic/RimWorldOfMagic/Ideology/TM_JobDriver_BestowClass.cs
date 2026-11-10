@@ -27,7 +27,8 @@ namespace TorannMagic.Ideology
 
         public static void BestowClass(Pawn pawn, Pawn doer)
         {
-            Thoughts.TM_Inspiration_ArcanePathway inspiration = pawn.Inspiration as Thoughts.TM_Inspiration_ArcanePathway;
+            if (ClassProgression.ClassEnrollment.HasChosenClass(pawn)
+                || !(pawn?.Inspiration is Thoughts.TM_Inspiration_ArcanePathway inspiration)) return;
 
             TraitDef td = TM_Data.EnabledMagicTraits[inspiration.mageIndex];
             if (td != null)
@@ -41,6 +42,7 @@ namespace TorannMagic.Ideology
                 {
                     CompUseEffect_LearnMagic.FixBardSkills(pawn);
                 }
+                ClassProgression.ClassEnrollment.ConsumePotentials(pawn);
                 pawn.story.traits.GainTrait(new Trait(td, td.degreeDatas.FirstOrDefault().degree, false));
                 pawn.mindState.inspirationHandler.EndInspiration(inspiration);
             }
@@ -139,7 +141,7 @@ namespace TorannMagic.Ideology
             {
                 if (age >= (int)(durationTicks * .95f))
                 {
-                    if (target.Inspired && target.Inspiration.def == TorannMagicDefOf.ID_ArcanePathways)
+                    if (!ClassProgression.ClassEnrollment.HasChosenClass(target) && target.Inspired && target.Inspiration.def == TorannMagicDefOf.ID_ArcanePathways)
                     {
                         BestowClass(target, pawn);
                         CreateHistoryEventDef(target);

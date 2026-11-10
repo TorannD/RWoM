@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Heal start -->
+
+  <TM_Paladin_Heal.label>Лікувати</TM_Paladin_Heal.label>
+
+
+  <!-- Shield start -->
+
+  <TM_Paladin_Shield.label>Щит</TM_Paladin_Shield.label>
+
+
+  <!-- Valiant Charge -->
+
+  <FlyingObject_ValiantCharge.label>літаючий об&apos;єкт</FlyingObject_ValiantCharge.label>
+  <Projectile_ValiantCharge.label>Вихор</Projectile_ValiantCharge.label>
+
+
+  <!-- Overwhelm start -->
+
+  <TM_Paladin_Overwhelm.label>Розтрощити</TM_Paladin_Overwhelm.label>
+
+
+  <!-- Holy Wrath -->
+
+  <Projectile_HolyWrath.label>святий гнів</Projectile_HolyWrath.label>
+
+
+</LanguageData>

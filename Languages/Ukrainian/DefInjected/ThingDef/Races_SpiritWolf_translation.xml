@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Dire Wolf -->
+
+  <TM_SpiritWolfR.label>дух вовка</TM_SpiritWolfR.label>
+  <TM_SpiritWolfR.description>Духи вовків об&apos;єднуються у фізичному світі за наказом могутнього шамана. Вовки - небезпечний ссавець поодинці, при полюванні зграєю їх слід побоюватися. Дух вовка зникне назад в ефір через короткий проміжок часу або якщо він буде переможений.</TM_SpiritWolfR.description>
+  <TM_SpiritWolfR.tools.0.label>ліва лапа</TM_SpiritWolfR.tools.0.label>
+  <TM_SpiritWolfR.tools.1.label>права лапа</TM_SpiritWolfR.tools.1.label>
+  <TM_SpiritWolfR.tools.3.label>голова</TM_SpiritWolfR.tools.3.label>
+  <TM_SpiritWolfR_Leather.label>шкіра духу вовка</TM_SpiritWolfR_Leather.label>
+  <TM_SpiritWolfR_Leather.description>шкіра духу вовка</TM_SpiritWolfR_Leather.description>
+  <TM_SpiritWolfR_Leather.stuffProps.stuffAdjective>шкіра духу вовка</TM_SpiritWolfR_Leather.stuffProps.stuffAdjective>
+  <!-- Meat Amount: 0 -->
+  <TM_SpiritWolfR_Corpse.label>труп духу вовка</TM_SpiritWolfR_Corpse.label>
+  <TM_SpiritWolfR_Corpse.description>труп духу вовка</TM_SpiritWolfR_Corpse.description>
+
+
+</LanguageData>

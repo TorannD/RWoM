@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_NeedTravel.stages.trapped.label>estancamiento</TM_NeedTravel.stages.trapped.label>
+  
+  <TM_NeedTravel.stages.trapped.description>Llevo una eternidad en este lugar. ¡Necesito salir de aquí y ver mundo!</TM_NeedTravel.stages.trapped.description>
+  
+  <TM_NeedTravel.stages.adventuring.label>de aventura</TM_NeedTravel.stages.adventuring.label>
+  
+  <TM_NeedTravel.stages.adventuring.description>Nada supera estar en el camino y ver lugares nuevos.</TM_NeedTravel.stages.adventuring.description>
+  
+</LanguageData>

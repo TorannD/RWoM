@@ -1,0 +1,51 @@
+<LanguageData><TM_EnchantedBodyHD.label>Зачарованное Тело</TM_EnchantedBodyHD.label>
+  <TM_EnchantedBodyHD.description>Создание Зачарованных частей тела для повышения физических возможностей.</TM_EnchantedBodyHD.description>
+  <TM_EnchantedBodyHD.stages.0.label>Рука</TM_EnchantedBodyHD.stages.0.label>
+  <TM_EnchantedBodyHD.stages.1.label>Две Руки</TM_EnchantedBodyHD.stages.1.label>
+  <TM_EnchantedBodyHD.stages.2.label>Руки и глаза</TM_EnchantedBodyHD.stages.2.label>
+  <TM_EnchantedBodyHD.stages.3.label>Руки и глаза ++</TM_EnchantedBodyHD.stages.3.label>
+
+  <TM_EnchantedAuraHD.label>Зачарованная Аурой</TM_EnchantedAuraHD.label>
+  <TM_EnchantedAuraHD.description>Заколдованный аспект окружает пешку, усиливая качества, рассматриваемые как красота, нежность и привлекательность.</TM_EnchantedAuraHD.description>
+  <TM_EnchantedAuraHD.stages.0.label>I</TM_EnchantedAuraHD.stages.0.label>
+  <TM_EnchantedAuraHD.stages.1.label>II</TM_EnchantedAuraHD.stages.1.label>
+  <TM_EnchantedAuraHD.stages.2.label>III</TM_EnchantedAuraHD.stages.2.label>
+  <TM_EnchantedAuraHD.stages.3.label>IV</TM_EnchantedAuraHD.stages.3.label>
+
+  <TM_ShapeshiftHD.label>Оборотень</TM_ShapeshiftHD.label>
+  <TM_ShapeshiftHD.description>Улучшает силу любой животной формы, принятой оборотнем.</TM_ShapeshiftHD.description>
+  <TM_ShapeshiftHD.stages.0.label>I</TM_ShapeshiftHD.stages.0.label>
+  <TM_ShapeshiftHD.stages.1.label>II</TM_ShapeshiftHD.stages.1.label>
+  <TM_ShapeshiftHD.stages.2.label>III</TM_ShapeshiftHD.stages.2.label>
+  <TM_ShapeshiftHD.stages.3.label>IV</TM_ShapeshiftHD.stages.3.label>
+
+  <TM_WeaponEnchantment_FireHD.label>Зачарованное Оружие</TM_WeaponEnchantment_FireHD.label>
+  <TM_WeaponEnchantment_FireHD.description>Зачаровывает в настоящее время оснащенное оружие элементарным огнем, который может сжечь или поджечь объект. Это колдовство закончится, если оружие не будет оснащено или заменено.</TM_WeaponEnchantment_FireHD.description>
+  <TM_WeaponEnchantment_FireHD.stages.0.label>Огонь (I)</TM_WeaponEnchantment_FireHD.stages.0.label>
+  <TM_WeaponEnchantment_FireHD.stages.1.label>Огонь (II)</TM_WeaponEnchantment_FireHD.stages.1.label>
+  <TM_WeaponEnchantment_FireHD.stages.2.label>Огонь (III)</TM_WeaponEnchantment_FireHD.stages.2.label>
+  <TM_WeaponEnchantment_FireHD.stages.3.label>Огонь (IV)</TM_WeaponEnchantment_FireHD.stages.3.label>
+
+  <TM_WeaponEnchantment_IceHD.label>Зачарованное Оружие</TM_WeaponEnchantment_IceHD.label>
+  <TM_WeaponEnchantment_IceHD.description>Зачаровывает в настоящее время оснащенное оружие элементарным льдом, который может замедлить объект. Это колдовство закончится, если оружие не будет оснащено или заменено.</TM_WeaponEnchantment_IceHD.description>
+  <TM_WeaponEnchantment_IceHD.stages.0.label>Лёд (I)</TM_WeaponEnchantment_IceHD.stages.0.label>
+  <TM_WeaponEnchantment_IceHD.stages.1.label>Лёд (II)</TM_WeaponEnchantment_IceHD.stages.1.label>
+  <TM_WeaponEnchantment_IceHD.stages.2.label>Лёд (III)</TM_WeaponEnchantment_IceHD.stages.2.label>
+  <TM_WeaponEnchantment_IceHD.stages.3.label>Лёд (IV)</TM_WeaponEnchantment_IceHD.stages.3.label>
+
+  <TM_WeaponEnchantment_LitHD.label>Зачарованное Оружие</TM_WeaponEnchantment_LitHD.label>
+  <TM_WeaponEnchantment_LitHD.description>Зачаровывает в настоящее время оснащенное оружие элементарной молнией, которая посылает ошеломляющие ударные волны через объект. Это колдовство закончится, если оружие не будет оснащено или заменено.</TM_WeaponEnchantment_LitHD.description>
+  <TM_WeaponEnchantment_LitHD.stages.0.label>Оглушение (I)</TM_WeaponEnchantment_LitHD.stages.0.label>
+  <TM_WeaponEnchantment_LitHD.stages.1.label>Оглушение (II)</TM_WeaponEnchantment_LitHD.stages.1.label>
+  <TM_WeaponEnchantment_LitHD.stages.2.label>Оглушение (III)</TM_WeaponEnchantment_LitHD.stages.2.label>
+  <TM_WeaponEnchantment_LitHD.stages.3.label>Оглушение (IV)</TM_WeaponEnchantment_LitHD.stages.3.label>
+
+  <TM_WeaponEnchantment_DarkHD.label>Зачарованное Оружие</TM_WeaponEnchantment_DarkHD.label>
+  <TM_WeaponEnchantment_DarkHD.description>Зачаровывает в настоящее время оснащенное оружие прикосновением тьмы, которая вызывает слепоту. Это колдовство закончится, если оружие не будет оснащено или заменено.</TM_WeaponEnchantment_DarkHD.description>
+  <TM_WeaponEnchantment_DarkHD.stages.0.label>Слепота (I)</TM_WeaponEnchantment_DarkHD.stages.0.label>
+  <TM_WeaponEnchantment_DarkHD.stages.1.label>Слепота (II)</TM_WeaponEnchantment_DarkHD.stages.1.label>
+  <TM_WeaponEnchantment_DarkHD.stages.2.label>Слепота (III)</TM_WeaponEnchantment_DarkHD.stages.2.label>
+  <TM_WeaponEnchantment_DarkHD.stages.3.label>Слепота (IV)</TM_WeaponEnchantment_DarkHD.stages.3.label>
+
+
+</LanguageData>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReservoirCharge>储存魔力：{0} / {1}</TM_ReservoirCharge>
+  <TM_ReservoirReserve>个人魔力保留量：{0}</TM_ReservoirReserve>
+  <TM_ReservoirConvert>转化魔法燃料</TM_ReservoirConvert>
+  <TM_ReservoirConvertDesc>将魔法燃料转化为最多{0}单位储存魔力。仅对实际接收的充能消耗燃料。</TM_ReservoirConvertDesc>
+  <TM_ReservoirReserveLabel>魔力保留量：{0}</TM_ReservoirReserveLabel>
+  <TM_ReservoirReserveDesc>选择法师为此储罐充能时至少保留的个人魔力百分比。</TM_ReservoirReserveDesc>
+  <TM_ReservoirChargeJob>用魔力为储罐充能</TM_ReservoirChargeJob>
+  <TM_ReservoirUnavailable>需要一名可用的友方法师，且其魔力高于个人保留量。</TM_ReservoirUnavailable>
+  <TM_ReservoirFuelReserveLabel>受保护魔法燃料：{0}</TM_ReservoirFuelReserveLabel>
+  <TM_ReservoirFuelReserveDesc>保护固定数量的燃料，使普通设备、转化和仪式无法消耗。飞行与生命维持可以使用这些燃料。生命维持可能耗尽储备，因此不能保证返航所需燃料。 获准用于生命维持的转化所产生的法力将按通常规则共享。</TM_ReservoirFuelReserveDesc>
+  <TM_ReservoirFuelReserveInspect>受保护魔法燃料：{0}；普通用途可用：{1}\n飞行与生命维持可使用储备；不保证返航燃料。</TM_ReservoirFuelReserveInspect>
+</LanguageData>

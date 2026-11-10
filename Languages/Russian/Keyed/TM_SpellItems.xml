@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpellItem_InvalidTarget>Выберите допустимую цель.</TM_SpellItem_InvalidTarget>
+  <TM_SpellItem_OutOfRange>Цель слишком далеко.</TM_SpellItem_OutOfRange>
+  <TM_SpellItem_NoLineOfSight>Цель вне прямой видимости.</TM_SpellItem_NoLineOfSight>
+  <TM_SpellItem_NoInjuries>Нет ран, способных заживать естественным путём.</TM_SpellItem_NoInjuries>
+  <TM_SpellItem_Occupied>Место назначения занято.</TM_SpellItem_Occupied>
+  <TM_SpellItem_SameCell>Выберите другое место назначения.</TM_SpellItem_SameCell>
+  <TM_SpellItem_HostileTarget>Нельзя исцелить враждебную цель.</TM_SpellItem_HostileTarget>
+  <TM_SpellItem_UndeadTarget>Нельзя исцелить нежить или механоидов.</TM_SpellItem_UndeadTarget>
+  <TM_SpellItem_NotHeld>Предмет должен находиться в инвентаре или быть экипирован.</TM_SpellItem_NotHeld>
+  <TM_SpellItem_CannotUse>Этот персонаж не может использовать предмет.</TM_SpellItem_CannotUse>
+  <TM_SpellItem_Empty>Не осталось зарядов.</TM_SpellItem_Empty>
+  <TM_SpellItem_Cooldown>Предмет ещё не готов к повторному применению.</TM_SpellItem_Cooldown>
+  <TM_SpellItem_Busy>Заклинание из предмета уже применяется.</TM_SpellItem_Busy>
+  <TM_SpellItem_Uses>Заряды: {0}/{1}</TM_SpellItem_Uses>
+  <TM_SpellItem_CastLabel>{0} {1}</TM_SpellItem_CastLabel>
+  <TM_SpellItem_Description>Применить фиксированное заклинание из предмета. Не требует маны или изучения заклинания.</TM_SpellItem_Description>
+  <TM_SpellItem_Casting>применяет {0}.</TM_SpellItem_Casting>
+<TM_SpellItem_NoTreatment>Нет подходящего состояния для лечения или этот эффект уже действует.</TM_SpellItem_NoTreatment><TM_SpellItem_EnterPortal>Войти в портал</TM_SpellItem_EnterPortal>
+  <TM_SpellItem_RequiredKnowledge>Для изготовления нужно изучить заклинание «{0}».</TM_SpellItem_RequiredKnowledge>
+</LanguageData>

@@ -1,0 +1,8 @@
+<Defs>
+  <TorannMagic.ClassProgression.ClassDisciplineDef>
+    <defName>TM_DisciplineSuperSoldier</defName>
+    <label>super soldier</label>
+    <profileId>rwom.supersoldier</profileId>
+    <domain>Might</domain>
+  </TorannMagic.ClassProgression.ClassDisciplineDef>
+</Defs>

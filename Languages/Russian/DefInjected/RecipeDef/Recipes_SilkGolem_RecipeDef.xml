@@ -1,0 +1,42 @@
+<LanguageData><!-- v1.5\Defs\GolemDefs\Recipes_SilkGolem.xml-->
+	<!--                        EN: Part restoration-->
+	<TM_SilkGolem_RepairBlock.label>Ремонт компонентов</TM_SilkGolem_RepairBlock.label>
+	<!--                              EN: Replaces missing golem parts that do not require an upgrade.-->
+	<TM_SilkGolem_RepairBlock.description>Заменяет отсутствующие части голема, не требующие улучшения.</TM_SilkGolem_RepairBlock.description>
+	<!--                            EN: crafting golem part-->
+	<TM_SilkGolem_RepairBlock.jobString>изготовление части голема</TM_SilkGolem_RepairBlock.jobString>
+	<!--                      EN: energy cell-->
+	<TM_SilkGolem_EnergyMax.label>Энергоячейка</TM_SilkGolem_EnergyMax.label>
+	<!--                            EN: Creates an energy cell that increases maximum energy by 100 per cell.-->
+	<TM_SilkGolem_EnergyMax.description>Создаёт энергоячейку, увеличивающую максимальный запас энергии на 100 единиц.</TM_SilkGolem_EnergyMax.description>
+	<!--                          EN: creating energy cell-->
+	<TM_SilkGolem_EnergyMax.jobString>создание энергоячейки</TM_SilkGolem_EnergyMax.jobString>
+	<!--                            EN: energy converter-->
+	<TM_SilkGolem_EnergyConverter.label>Энергоконвертер</TM_SilkGolem_EnergyConverter.label>
+	<!--                                  EN: Increases the efficiency of energy absorbed and used by the golem by 8%.-->
+	<TM_SilkGolem_EnergyConverter.description>Увеличивает эффективность поглощения и использования энергии големом на 8%.</TM_SilkGolem_EnergyConverter.description>
+	<!--                                EN: constructing energy converter-->
+	<TM_SilkGolem_EnergyConverter.jobString>сборка энергоконвертера</TM_SilkGolem_EnergyConverter.jobString>
+	<!--                        EN: energy generator-->
+	<TM_SilkGolem_EnergyRegen.label>Генератор энергии</TM_SilkGolem_EnergyRegen.label>
+	<!--                              EN: Increases the energy regeneration rate of the golem by 10%.-->
+	<TM_SilkGolem_EnergyRegen.description>Увеличивает скорость восстановления энергии голема на 10%.</TM_SilkGolem_EnergyRegen.description>
+	<!--                            EN: constructing energy generator-->
+	<TM_SilkGolem_EnergyRegen.jobString>сборка генератора энергии</TM_SilkGolem_EnergyRegen.jobString>
+	<!--                      EN: frame tier-->
+	<TM_SilkGolem_LifeStage.label>Уровень каркаса</TM_SilkGolem_LifeStage.label>
+	<!--                            EN: Improves and refines the golem's frame each level [1,2,3]:
+Movement:	+[20/30/40]%
+Health:		+[20/40/60]%-->
+	<TM_SilkGolem_LifeStage.description>Улучшает и модернизирует каркас голема на каждом уровне [1,2,3]:
+Скорость:	+[20/30/40]%
+Здоровье:	+[20/40/60]%</TM_SilkGolem_LifeStage.description>
+	<!--                          EN: improving golem frame-->
+	<TM_SilkGolem_LifeStage.jobString>улучшение каркаса голема</TM_SilkGolem_LifeStage.jobString>
+	<!--                   EN: Skills-->
+	<TM_SilkGolem_Skills.label>Навыки</TM_SilkGolem_Skills.label>
+	<!--                         EN: The silk golem improves the quality of wardening by 1 skill point.-->
+	<TM_SilkGolem_Skills.description>Шёлковый голем повышает качество ухода за животными на 1 уровень.</TM_SilkGolem_Skills.description>
+	<!--                       EN: crafting golem upgrade-->
+	<TM_SilkGolem_Skills.jobString>изготовление улучшения голема</TM_SilkGolem_Skills.jobString>
+</LanguageData>

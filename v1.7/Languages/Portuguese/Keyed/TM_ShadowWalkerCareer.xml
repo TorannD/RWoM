@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadShadowWalkerStrike>Emboscada — começa com Golpe sombrio.</TM_ReadShadowWalkerStrike>
+  <TM_ReadShadowWalkerPoison>Envenenador — começa com Beladona.</TM_ReadShadowWalkerPoison>
+  <TM_ShadowWalkerHits>Atinge ou envenena inimigos diferentes com a técnica aprendida: {0}/{1}.</TM_ShadowWalkerHits>
+  <TM_ShadowWalkerCombo>Atinge inimigos envenenados ou usa uma técnica sob o véu: {0}/{1} inimigos diferentes.</TM_ShadowWalkerCombo>
+  <TM_ShadowWalkerStrongStrike>Sombra letal — Golpe sombrio causa mais 20% de dano.</TM_ShadowWalkerStrongStrike>
+  <TM_ShadowWalkerLongVeil>Véu longo — Véu das sombras dura mais 50%.</TM_ShadowWalkerLongVeil>
+</LanguageData>

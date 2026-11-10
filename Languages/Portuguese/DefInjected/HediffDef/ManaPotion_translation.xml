@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManaPotionHigh.label>euforia mística</ManaPotionHigh.label>
+  <ManaPotionHigh.description>A consciência aumenta com o consumo de maná líquido.</ManaPotionHigh.description>
+
+
+  <!-- Mana potion addiction -->
+
+  <ManaPotionTolerance.label>tolerância com zelo de maná</ManaPotionTolerance.label>
+  <ManaPotionTolerance.description>Adaptação natural para normalizar os efeitos do consumo de maná líquido.</ManaPotionTolerance.description>
+
+  <ManaPotionAddiction.label>dependência de poções de maná</ManaPotionAddiction.label>
+  <ManaPotionAddiction.description>A vontade de consumir as cabras da maná tornou-se uma necessidade.</ManaPotionAddiction.description>
+  <ManaPotionAddiction.stages.1.label>exibição</ManaPotionAddiction.stages.1.label>
+
+
+</LanguageData>

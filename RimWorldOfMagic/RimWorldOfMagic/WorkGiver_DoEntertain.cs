@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using Verse;
 using Verse.AI;
 using RimWorld;
-using System.Collections.Generic;
+using System.Linq;
 
 
 namespace TorannMagic
@@ -32,94 +32,27 @@ namespace TorannMagic
 
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            Pawn pawn2 = t as Pawn;
-            CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            if (pawn.health.hediffSet.HasHediff(HediffDef.Named("TM_EntertainingHD"), false) && comp.nextEntertainTick < Find.TickManager.TicksGame)
-            {
-                if (pawn2 != null && pawn2 != pawn && pawn2.RaceProps.Humanlike && pawn2.IsColonist && pawn2.Awake() && !pawn2.Drafted && !pawn.Drafted && !pawn2.Downed && pawn2.CanCasuallyInteractNow())
-                {
-                    if ((pawn.Position - pawn2.Position).LengthHorizontal < 50f && !GenAI.EnemyIsNear(pawn2, 40f))
-                    {
-                        IEnumerable<Pawn> breakingPawnsExtreme = BreakRiskAlertUtility.PawnsAtRiskExtreme;
-                        foreach (Pawn current in breakingPawnsExtreme)
-                        {
-                            if(current == pawn2)
-                            {
-                                bool flag = true;
-                                LocalTargetInfo target = pawn2;
-                                List<Thought_Memory> pawn2Memories = pawn.needs.mood.thoughts.memories.Memories;
-                                for(int i = 0; i < pawn2Memories.Count; i++)
-                                {
-                                    if (pawn2Memories[i].def.defName == "TM_EntertainedTD" && pawn2Memories[i].MoodOffset() > 11f)
-                                    {
-                                        flag = false;                                    
-                                    }
-                                }   
-                                if(flag && pawn.CanReserve(target, 1, -1, null, forced))
-                                {
-                                    return true;
-                                }
-                                return false;
-                            }
-                        }
-                        IEnumerable<Pawn> breakingPawnsMajor = BreakRiskAlertUtility.PawnsAtRiskMajor;
-                        foreach (Pawn current in breakingPawnsMajor)
-                        {
-                            if (current == pawn2)
-                            {
-                                bool flag = true;
-                                List<Thought_Memory> pawn2Memories = pawn.needs.mood.thoughts.memories.Memories;
-                                for (int i = 0; i < pawn2Memories.Count; i++)
-                                {
-                                    if (pawn2Memories[i].def.defName == "TM_EntertainedTD")
-                                    {
-                                        flag = false;
-                                    }
-                                }
-                                if (flag)
-                                {
-                                    return true;
-                                }
-                                return false;
-                            }
-                        }
-                        IEnumerable<Pawn> breakingPawnsMinor = BreakRiskAlertUtility.PawnsAtRiskMinor;
-                        foreach (Pawn current in breakingPawnsMinor)
-                        {
-                            if (current == pawn2)
-                            {
-                                bool flag = true;
-                                List<Thought_Memory> pawn2Memories = pawn.needs.mood.thoughts.memories.Memories;
-                                for (int i = 0; i < pawn2Memories.Count; i++)
-                                {
-                                    if (pawn2Memories[i].def.defName == "TM_EntertainedTD")
-                                    {
-                                        flag = false;
-                                    }
-                                }
-                                if (flag)
-                                {
-                                   
-                                    return true;
-                                }
-                                return false;
-                            }
-                        }
-                    }
-                }
-            }
-            return false;
+            if (!(t is Pawn recipient) || recipient == pawn || !recipient.RaceProps.Humanlike || !recipient.IsColonist ||
+                !recipient.Awake() || recipient.Drafted || pawn.Drafted || recipient.Downed || !recipient.CanCasuallyInteractNow())
+                return false;
+            var owner = ClassProgression.BardTrials.EntertainmentOwner(pawn);
+            if (owner == null || owner.GetCompAbilityUserMagic().nextEntertainTick >= Find.TickManager.TicksGame ||
+                (pawn.Position - recipient.Position).LengthHorizontal >= 50f || GenAI.EnemyIsNear(recipient, 40f) ||
+                !pawn.CanReserve(recipient, 1, -1, null, forced)) return false;
+            var memories = recipient.needs?.mood?.thoughts?.memories?.Memories;
+            if (memories == null) return false;
+            if (BreakRiskAlertUtility.PawnsAtRiskExtreme.Contains(recipient))
+                return !memories.Any(m => m.def.defName == "TM_EntertainedTD" && m.MoodOffset() > 11f);
+            return (BreakRiskAlertUtility.PawnsAtRiskMajor.Contains(recipient) ||
+                BreakRiskAlertUtility.PawnsAtRiskMinor.Contains(recipient)) &&
+                !memories.Any(m => m.def.defName == "TM_EntertainedTD");
         }
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            //Pawn pawn2 = t as Pawn;
-            //CompAbilityUserMagic comp = pawn.GetCompAbilityUserMagic();
-            //if(comp.nextEntertainTick >= Find.TickManager.TicksGame)
-            //{
-            //    return null;
-            //}
-            return new Job(TorannMagicDefOf.JobDriver_Entertain, t);        
+            var owner = ClassProgression.BardTrials.EntertainmentOwner(pawn);
+            return owner == null ? null : JobMaker.MakeJob(TorannMagicDefOf.JobDriver_Entertain, t, owner);
+
         }
     }
 }

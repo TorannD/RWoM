@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Techno Bit -->
+
+  <TM_TechnoBit.label>techno-bit</TM_TechnoBit.label>
+  <TM_TechnoBit.description>O techno-bit é uma pequena bola autônoma que ajuda o técnico em muitas tarefas e oferece-lhe mais suporte. O assistente de techno-bit pode ser trocado e não executará tarefas enquanto estiver desligado.
+
+O techno-bit ajuda em kraft, mineração e construção. Ele também vai reparar edifícios próximos, andróides e mehanoides.
+
+Chamado: Usa o seu sistema anti-RV para acionar pequenos explosivos com atraso no tempo para o alvo do tecnômetro. Faz reparos rápidos para os peões ou edifícios robóticos próximos.</TM_TechnoBit.description>
+
+
+  <!-- Techno Turret -->
+
+  <TM_TechnoTurret.label>Mark-IV turel</TM_TechnoTurret.label>
+  <TM_TechnoTurret.description>Vira e estabelece uma ligação neural com o turelo Mark-IV. Mark IV é controlado remotamente por um feitiço. Quando a torre for implantada, qualquer atividade ou movimento do feitiço irá cortar a comunicação neural e reduzir o sistema de combate Mark-IV. Mísseis e morteiros consomem manu por um único tiro.
+
+O Mark-IV é automaticamente miniaturizado quando sofre danos críticos e pode causar feedback neural com o técnico que serve o sistema.</TM_TechnoTurret.description>
+
+
+  <!-- Techno Weapon -->
+
+  <TM_TechnoWeapon.label>Armas de Engenharia</TM_TechnoWeapon.label>
+  <TM_TechnoWeapon.description>O Tecnomante aplica seus conhecimentos de tecnologia e magia para criar uma versão modificada das armas existentes. Esta arma foi derramada de maná cru e está fisicamente atrelada ao tecnômetro como uma extensão do seu corpo.
+Isso faz com que as armas se desintegrem se separarem do técnico. Esta arma será automaticamente equipada com um técnico assim que for criada.
+
+Especialistas em armas também têm acesso a munições modificadas e nanostimuladores para melhorar a capacidade de combate.
+
+Para criar uma arma techno, destina-se às armas no chão. A arma de destino deve ser de longo alcance, com nível industrial ou técnico superior, e usar uma ação de fogo padrão.</TM_TechnoWeapon.description>
+
+
+  <!-- Nano Stimulant -->
+
+  <TM_NanoStimulant.label>Estimulador Nano</TM_NanoStimulant.label>
+  <TM_NanoStimulant.description>Injecção de nanites que aumenta temporariamente a capacidade de combate do utilizador. Este estimulante é sintetizado especificamente por um tecnólogo para sua própria composição biológica e genética única. Não causa dependência química, mas é prejudicial para qualquer outro peão.
+
+Os nanitos são alimentados pela mãe e energia dentro do corpo e rapidamente causam fadiga.
+
+Quando os nanicos queimam, formam plaquetas para incendiar e parar a hemorragia e até curar pequenas feridas. O uso de nanostimuladores acelera qualquer doença ou infecção ativa.</TM_NanoStimulant.description>
+
+
+  <!-- Techno Shield -->
+
+  <TM_TechnoShield.label>Escudo cinético</TM_TechnoShield.label>
+  <TM_TechnoShield.description>Cerca o alvo com um campo cinético que afasta os projéteis que se aproximam. O escudo cinético é capaz de desviar projéteis dependendo da sua energia cinética, os projéteis mais pesados são mais difíceis de desviar e vão perfurar escudos de pouca energia.
+
+A quantidade de energia cinética envolvida no desvio é determinada pelo valor do dano que teria sido causado pelo projétil.</TM_TechnoShield.description>
+
+
+  <!-- Sabotage -->
+
+  <TM_Sabotage.label>Sabotagem</TM_Sabotage.label>
+  <TM_Sabotage.description>A sabotagem substitui os alvos por fusíveis mecânicos, funções lógicas e qualquer outro sistema operado dentro de uma pequena área. Os efeitos da sabotagem podem variar de redução de características mecânicas, desligamento temporário, autodestruição, falha catastrófica e até a perda da capacidade de distinguir um ao outro do inimigo.
+
+Pode ser aplicada a baterias, geradores de energia, torres, robôs, andróides e mehanoides.</TM_Sabotage.description>
+
+
+  <!-- Overdrive -->
+
+  <TM_Overdrive.label>Sobrecarga</TM_Overdrive.label>
+  <TM_Overdrive.description>Sobrecarregue o sistema mecânico, elétrico ou artificial, fabricado com nanonites que empurram o sistema para fora dele. A Overdrave causará danos no sistema.
+
+Pode ser aplicada a geradores de energia, torres, robôs, andróides e mechanoides.</TM_Overdrive.description>
+
+
+  <!-- OrbitalStrike -->
+
+  <TM_OrbitalStrike.label>Tiro orbital</TM_OrbitalStrike.label>
+  <TM_OrbitalStrike.description>Invadam a rede de satélites orbitais e digam uma meta. Usando assinaturas aleatórias e secretas para camuflar sua atividade, os técnicos podem constantemente manipular sistemas avançados sem serem identificados ou bloqueados positivamente.
+
+Distância: 70
+Preparação: 3s
+Raio: 2.5</TM_OrbitalStrike.description>
+
+  <TM_OrbitalStrike_I.label>Tiro orbital I</TM_OrbitalStrike_I.label>
+  <TM_OrbitalStrike_I.description>Invadam a rede de satélites orbitais e digam uma meta. Usando assinaturas aleatórias e secretas para camuflar sua atividade, os técnicos podem constantemente manipular sistemas avançados sem serem identificados ou bloqueados positivamente.
+
+Distância: 80
+Preparação: 2.1s
+Raio: 4.2</TM_OrbitalStrike_I.description>
+
+  <TM_OrbitalStrike_II.label>Tiro orbital II</TM_OrbitalStrike_II.label>
+  <TM_OrbitalStrike_II.description>Invadam a rede de satélites orbitais e digam uma meta. Usando assinaturas aleatórias e secretas para camuflar sua atividade, os técnicos podem constantemente manipular sistemas avançados sem serem identificados ou bloqueados positivamente.
+
+Distância: 90
+Preparação: 1,8s
+Raio: 5.0</TM_OrbitalStrike_II.description>
+
+  <TM_OrbitalStrike_III.label>Tiro orbital III</TM_OrbitalStrike_III.label>
+  <TM_OrbitalStrike_III.description>Invadam a rede de satélites orbitais e digam uma meta. Usando assinaturas aleatórias e secretas para camuflar sua atividade, os técnicos podem constantemente manipular sistemas avançados sem serem identificados ou bloqueados positivamente.
+
+Distância: 100
+Preparação: 1.6s
+Raio: 5,6</TM_OrbitalStrike_III.description>
+
+
+</LanguageData>

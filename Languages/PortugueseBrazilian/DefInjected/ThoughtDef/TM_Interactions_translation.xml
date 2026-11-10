@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Learning interactions -->
+
+  <TM_MagicLoreTD.stages.0.label>ganhou conhecimento secreto</TM_MagicLoreTD.stages.0.label>
+  <TM_MagicLoreTD.stages.0.description>Fui iluminado pelas palavras de um mago poderoso, e agora tenho de usar esse conhecimento...</TM_MagicLoreTD.stages.0.description>
+
+  <TM_MightLoreTD.stages.0.label>experiência de combate adquirida</TM_MightLoreTD.stages.0.label>
+  <TM_MightLoreTD.stages.0.description>Um lutador mais experiente ensinou-me a melhorar as suas técnicas de combate.</TM_MightLoreTD.stages.0.description>
+
+
+  <!-- Social interactions -->
+
+  <TM_EntertainedTD.stages.0.label>divertido</TM_EntertainedTD.stages.0.label>
+  <TM_EntertainedTD.stages.0.description>Este lugar não é assim tão mau; Há pessoas aqui que me fazem esquecer as minhas preocupações e rir-me um pouco.</TM_EntertainedTD.stages.0.description>
+
+  <TM_EntertainedAuraTD.stages.0.label>entretenimento social</TM_EntertainedAuraTD.stages.0.label>
+  <TM_EntertainedAuraTD.stages.0.description>Estava a divertir-me com outras pessoas.</TM_EntertainedAuraTD.stages.0.description>
+
+  <TM_EntertainerAuraTD.stages.0.label>interação social</TM_EntertainerAuraTD.stages.0.label>
+  <TM_EntertainerAuraTD.stages.0.description>Gosto muito de falar com as pessoas que me rodeiam, o que me deixa feliz em trazer um pouco de alegria aos outros.</TM_EntertainerAuraTD.stages.0.description>
+
+
+</LanguageData>

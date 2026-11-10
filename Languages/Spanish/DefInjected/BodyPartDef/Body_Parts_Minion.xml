@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Minion_Brain.label>cerebro</Minion_Brain.label>
+  
+  
+  <Minion_Core.label>núcleo</Minion_Core.label>
+  
+  
+  <Minion_Eye.label>ojo</Minion_Eye.label>
+  
+  
+  <Minion_Head.label>cabeza</Minion_Head.label>
+  
+  
+  <Minion_Jaw.label>mandíbula</Minion_Jaw.label>
+  
+  
+  <Minion_LeftArm.label>brazo izquierdo</Minion_LeftArm.label>
+  
+  
+  <Minion_LeftHorn.label>cuerno izquierdo</Minion_LeftHorn.label>
+  
+  
+  <Minion_Mouth.label>boca</Minion_Mouth.label>
+  
+  
+  <Minion_RightArm.label>brazo derecho</Minion_RightArm.label>
+  
+  
+  <Minion_RightHorn.label>cuerno derecho</Minion_RightHorn.label>
+  
+</LanguageData>

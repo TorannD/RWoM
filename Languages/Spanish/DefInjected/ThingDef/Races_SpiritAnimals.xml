@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_SpiritBearR.label>oso espiritual</TM_SpiritBearR.label>
+  
+  <TM_SpiritBearR.description>El oso espiritual es emblema de estabilidad y fuerza. A lo largo de los tiempos se ha admirado a este animal como una poderosa inspiración para quienes necesitan valor para plantar cara a la adversidad. El oso espiritual es un guía poderoso que refuerza la fuerza física y la constitución, y protegerá activamente a sus crías.</TM_SpiritBearR.description>
+  
+  <TM_SpiritBearR.tools.left_paw.label>zarpa izquierda</TM_SpiritBearR.tools.left_paw.label>
+  
+  <TM_SpiritBearR.tools.right_paw.label>zarpa derecha</TM_SpiritBearR.tools.right_paw.label>
+  
+  <TM_SpiritBearR.tools.mauled.label>mordisco brutal</TM_SpiritBearR.tools.mauled.label>
+  
+  <TM_SpiritBearR.tools.head.label>cabeza</TM_SpiritBearR.tools.head.label>
+  
+  
+  <TM_SpiritCrowR.label>cuervo espiritual</TM_SpiritCrowR.label>
+  
+  <TM_SpiritCrowR.description>El cuervo es un animal espiritual asociado con los misterios de la vida y la magia. El cuervo espiritual aporta perspicacia y medios para respaldar las intenciones. También es señal de fortuna, aunque no siempre buena. Si el cuervo te ha elegido como animal espiritual o tótem, te ayuda a desarrollar el poder de la visión, la transformación y la conexión con la magia, y te asistirá en esos empeños.</TM_SpiritCrowR.description>
+  
+  <TM_SpiritCrowR.tools.claws.label>garras</TM_SpiritCrowR.tools.claws.label>
+  
+  <TM_SpiritCrowR.tools.beak.label>pico</TM_SpiritCrowR.tools.beak.label>
+  
+  <TM_SpiritCrowR.tools.head.label>cabeza</TM_SpiritCrowR.tools.head.label>
+  
+  
+  <TM_SpiritMongooseR.label>mangosta espiritual</TM_SpiritMongooseR.label>
+  
+  <TM_SpiritMongooseR.description>La mangosta es un animal espiritual astuto y adaptable. Representa una curiosidad insaciable por el mundo que la rodea, unida al buen juicio de mirar antes de saltar. La mangosta usa su astucia y su agilidad para asestar rápidamente golpes letales a un enemigo o para llevar recursos con presteza. Además, es el más juguetón de los animales espirituales.</TM_SpiritMongooseR.description>
+  
+  <TM_SpiritMongooseR.tools.left_claw.label>garra izquierda</TM_SpiritMongooseR.tools.left_claw.label>
+  
+  <TM_SpiritMongooseR.tools.right_claw.label>garra derecha</TM_SpiritMongooseR.tools.right_claw.label>
+  
+  <TM_SpiritMongooseR.tools.head.label>cabeza</TM_SpiritMongooseR.tools.head.label>
+  
+</LanguageData>

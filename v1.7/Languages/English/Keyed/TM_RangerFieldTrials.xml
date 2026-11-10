@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerMasteryHint>Enemies caught by your traps {0}/8 · Storage fires cleared {1}/12</TM_RangerMasteryHint>
+  <TM_RangerFireHint>Extinguish an uncontrolled fire on or next to flammable goods accepted in colony storage. A 12×12 sector counts once per day. Fires started by your faction do not count.</TM_RangerFireHint>
+  <TM_RangerMasteryClaim>Learn {0}</TM_RangerMasteryClaim>
+  <TM_RangerAscensionHint>Warrior level {0}/30 · Allied retreats using Safe Trail {1}/8 · Animal care shifts {2}/10</TM_RangerAscensionHint>
+  <TM_RangerWoundHint>As a doctor, treat an actual wound on a colony animal. One completed care shift counts per day.</TM_RangerWoundHint>
+  <TM_RangerChooseUltimate>Choose ascension technique</TM_RangerChooseUltimate>
+  <TM_RangerEarnedUltimate>Ascension technique: {0}</TM_RangerEarnedUltimate>
+</LanguageData>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_MechaGolem_Workstation.label>peles golem inativas</TM_MechaGolem_Workstation.label>
+  <TM_MechaGolem_Workstation.description>Peles golem inativas. O design de peles-golem combina engenharia industrial com atributos mágicos para viabilizar a construção robótica. Este golem pode ligar-se às redes elétricas existentes para acelerar a velocidade de carregamento. Além de tarefas básicas, como transporte e limpeza, peles-golem podem ser equipadas com laser mineiro para perfuração rápida na espécie montanha. Os peles-golem combinam armas e armaduras industriais e simples no seu arsenal.
+
+Em estado de repouso, o golem pode ser alterado ou melhorado. As peles-golem recarregam lentamente a energia, mas o acesso às fontes de energia vai aumentar a velocidade de recarga. Golem também pode fornecer energia para a rede elétrica quando há escassez de energia.</TM_MechaGolem_Workstation.description>
+  <TM_MechaGolem_Workstation_Blueprint_Install.label>peles-golem inativas (desenho)</TM_MechaGolem_Workstation_Blueprint_Install.label>
+
+  <TM_UnfinishedMechaGolem.label>peles-golem inacabadas</TM_UnfinishedMechaGolem.label>
+  <TM_UnfinishedMechaGolem.description>Peles-golem inacabadas.</TM_UnfinishedMechaGolem.description>
+
+  <TM_UnfinishedMechaGolemUpgrade.label>atualização incompleta de peles-golem</TM_UnfinishedMechaGolemUpgrade.label>
+  <TM_UnfinishedMechaGolemUpgrade.description>Atualização incompleta de peles-golem.</TM_UnfinishedMechaGolemUpgrade.description>
+
+  <TM_FleshGolem_Workstation.label>golem de carne adormecida</TM_FleshGolem_Workstation.label>
+  <TM_FleshGolem_Workstation.description>Um golem adormecido de carne. Os golems de carne são uma massa de dois pés de matéria orgânica composta principalmente por partes dos corpos de seres mortos. O Golem é um lutador temido, com muitos ataques e capacidades que aumentam a sua letalidade. Além de tarefas básicas, tais como transporte e limpeza, o golem de carne pode usar tesacos de colheita para colher árvores ou plantas.
+
+Em estado de repouso, o golem pode ser alterado ou melhorado. O golem de carne recarrega lentamente a energia por si só, mas fornecer-lhe carne fresca vai aumentar a velocidade de recarga.</TM_FleshGolem_Workstation.description>
+  <TM_FleshGolem_Workstation_Blueprint_Install.label>golem de carne adormecido (desenho)</TM_FleshGolem_Workstation_Blueprint_Install.label>
+
+  <TM_UnfinishedFleshGolem.label>golem inacabado de carne</TM_UnfinishedFleshGolem.label>
+  <TM_UnfinishedFleshGolem.description>Um golem de carne inacabada.</TM_UnfinishedFleshGolem.description>
+
+  <TM_UnfinishedFleshGolemUpgrade.label>upgrade incompleto de golem de carne</TM_UnfinishedFleshGolemUpgrade.label>
+  <TM_UnfinishedFleshGolemUpgrade.description>Renovação incompleta de golem de carne.</TM_UnfinishedFleshGolemUpgrade.description>
+
+  <TM_HollowGolem_Workstation.label>Golem crespo</TM_HollowGolem_Workstation.label>
+  <TM_HollowGolem_Workstation.description>O sonolento está nu. Os nus vazios são uma combinação de maná condensado amarrado e protegido por várias partes da armadura. Com o seu uniforme inativo, o nu é como uma armadura vazia. Este golem usa o manu ambiente para se alimentar, o que pode levar a uma redução geral, mesmo negativa, da velocidade de regeneração do maná para os mágicos. Esta redução é combinada com os mágicos existentes e os arbustos espinhosos parasitas. Além de tarefas básicas, tais como transporte e limpeza, o nu pode ser equipado para fornecer iluminação, aumentar a pesquisa e agir como um sistema de morteiros. Como uma criatura com uma mana animada, eles são capazes de usar muitas formas de energia mágica sem sofrer com as fragilidades humanas.
+
+Em estado de repouso, o golem pode ser alterado ou melhorado. O nu está lentamente recarregando a energia em si, mas pode ser trocado para obter maná dos mágicos mais próximos.</TM_HollowGolem_Workstation.description>
+  <TM_HollowGolem_Workstation_Blueprint_Install.label>Nu branco adormecido (desenho)</TM_HollowGolem_Workstation_Blueprint_Install.label>
+
+  <TM_UnfinishedHollowGolem.label>não concluído nu branco</TM_UnfinishedHollowGolem.label>
+  <TM_UnfinishedHollowGolem.description>Nu inacabado.</TM_UnfinishedHollowGolem.description>
+
+  <TM_UnfinishedHollowGolemUpgrade.label>upgrade de golem incompleto</TM_UnfinishedHollowGolemUpgrade.label>
+  <TM_UnfinishedHollowGolemUpgrade.description>Um upgrade de golem inacabado.</TM_UnfinishedHollowGolemUpgrade.description>
+
+  <TM_StoneGolem_Workstation.label>golem de pedra adormecido</TM_StoneGolem_Workstation.label>
+  <TM_StoneGolem_Workstation.description>Os golos de pedra aplicam os princípios básicos da holemantia e são construções simples em pedra e rocha que lhes dão uma forma humanóide. Apesar de simples e barato, o golem de pedra não é tratado e depende em grande parte de runas mágicas para mobilidade. O peso material e a dependência do poder mágico para a revitalização tornam o holem de pedra lento, mas difícil de destruir. Em sua forma inativa, o golem de pedra pode ser reforçado com um compactador de rocha, que é um processo automatizado que fraciona a rocha e forma tijolos a partir dela. Este processo requer energia e pedaços de pedra que devem ser colocados no holem.
+
+Em estado de repouso, o golem pode ser alterado ou melhorado. O nu está a recarregar a energia por si só. Este golem demora até 10 segundos a ser ativado.</TM_StoneGolem_Workstation.description>
+  <TM_StoneGolem_Workstation_Blueprint_Install.label>Holo de pedra adormecido (desenho)</TM_StoneGolem_Workstation_Blueprint_Install.label>
+
+  <TM_UnfinishedStoneGolem.label>Um golem de pedra inacabado.</TM_UnfinishedStoneGolem.label>
+  <TM_UnfinishedStoneGolem.description>Um golem de pedra inacabado.</TM_UnfinishedStoneGolem.description>
+
+  <TM_UnfinishedStoneGolemUpgrade.label>upgrade de golem incompleto</TM_UnfinishedStoneGolemUpgrade.label>
+  <TM_UnfinishedStoneGolemUpgrade.description>Um upgrade de golem inacabado.</TM_UnfinishedStoneGolemUpgrade.description>
+
+  <TM_MaharalGolem_Workstation.label>golem maharal adormecido</TM_MaharalGolem_Workstation.label>
+  <TM_MaharalGolem_Workstation.description>Os golemas do Maharal aplicam os princípios básicos da golemantia e são construções simples de argila enroladas na pele. Golem Maharal é capaz de realizar tarefas básicas e defender-se. Em sua forma adormecida, o maharal golem pode ser reforçado para emitir uma pequena quantidade de calor e energia.
+
+Em estado de repouso, o golem pode ser alterado ou melhorado. O nu está a recarregar a energia por si só. Este golem demora até 5 segundos a ser ativado.</TM_MaharalGolem_Workstation.description>
+  <TM_MaharalGolem_Workstation_Blueprint_Install.label>golem maharal inativo (desenho)</TM_MaharalGolem_Workstation_Blueprint_Install.label>
+
+  <TM_UnfinishedMaharalGolem.label>Um golem maharala inacabado.</TM_UnfinishedMaharalGolem.label>
+  <TM_UnfinishedMaharalGolem.description>Um golem maharala inacabado.</TM_UnfinishedMaharalGolem.description>
+
+  <TM_UnfinishedMaharalGolemUpgrade.label>upgrade de golem incompleto</TM_UnfinishedMaharalGolemUpgrade.label>
+  <TM_UnfinishedMaharalGolemUpgrade.description>Um upgrade de golem inacabado.</TM_UnfinishedMaharalGolemUpgrade.description>
+
+
+</LanguageData>

@@ -1,0 +1,9 @@
+<LanguageData><!-- Accelerate Time-->
+	<Projectile_AccelerateTime.label>Ускорение времени</Projectile_AccelerateTime.label>
+	<!-- Chronostatic Field-->
+	<Projectile_ChronostaticField.label>Пузырь времени</Projectile_ChronostaticField.label>
+	<Projectile_ChronostaticField_I.label>Пузырь времени</Projectile_ChronostaticField_I.label>
+	<Projectile_ChronostaticField_II.label>Пузырь времени</Projectile_ChronostaticField_II.label>
+	<Projectile_ChronostaticField_III.label>Пузырь времени</Projectile_ChronostaticField_III.label>
+	<FlyingObject_TimeDelay.label>Пузырь времени</FlyingObject_TimeDelay.label>
+</LanguageData>

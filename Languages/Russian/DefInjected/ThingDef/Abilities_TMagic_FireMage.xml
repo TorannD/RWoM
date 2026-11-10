@@ -1,0 +1,11 @@
+<LanguageData><!-- Ray of Hope start-->
+	<Buff_RayofHope.label>Луч света</Buff_RayofHope.label>
+	<!-- Firebolt-->
+	<Projectile_Firebolt.label>Шаровая молния</Projectile_Firebolt.label>
+	<!-- Fireball-->
+	<Projectile_Fireball.label>огненный шар</Projectile_Fireball.label>
+	<!-- Fire Claw-->
+	<Projectile_Fireclaw.label>Огненный коготь</Projectile_Fireclaw.label>
+	<!-- Firestorm-->
+	<Projectile_Firestorm.label>Огненный шторм</Projectile_Firestorm.label>
+</LanguageData>

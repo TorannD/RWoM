@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <Meat_TM_LesserEarth_ElementalR.label>стихийная пыль</Meat_TM_LesserEarth_ElementalR.label>
+  <Meat_TM_LesserEarth_ElementalR.description>стихийная пыль</Meat_TM_LesserEarth_ElementalR.description>
+  <Meat_TM_Earth_ElementalR.label>стихийная пыль</Meat_TM_Earth_ElementalR.label>
+  <Meat_TM_Earth_ElementalR.description>стихийная пыль</Meat_TM_Earth_ElementalR.description>
+  <Meat_TM_GreaterEarth_ElementalR.label>стихийная пыль</Meat_TM_GreaterEarth_ElementalR.label>
+  <Meat_TM_GreaterEarth_ElementalR.description>стихийная пыль</Meat_TM_GreaterEarth_ElementalR.description>
+  <Meat_TM_LesserFire_ElementalR.label>стихийная пыль</Meat_TM_LesserFire_ElementalR.label>
+  <Meat_TM_LesserFire_ElementalR.description>стихийная пыль</Meat_TM_LesserFire_ElementalR.description>
+  <Meat_TM_Fire_ElementalR.label>стихийная пыль</Meat_TM_Fire_ElementalR.label>
+  <Meat_TM_Fire_ElementalR.description>стихийная пыль</Meat_TM_Fire_ElementalR.description>
+  <Meat_TM_GreaterFire_ElementalR.label>стихийная пыль</Meat_TM_GreaterFire_ElementalR.label>
+  <Meat_TM_GreaterFire_ElementalR.description>стихийная пыль</Meat_TM_GreaterFire_ElementalR.description>
+  <Meat_TM_LesserWater_ElementalR.label>стихийная пыль</Meat_TM_LesserWater_ElementalR.label>
+  <Meat_TM_LesserWater_ElementalR.description>стихийная пыль</Meat_TM_LesserWater_ElementalR.description>
+  <Meat_TM_Water_ElementalR.label>стихийная пыль</Meat_TM_Water_ElementalR.label>
+  <Meat_TM_Water_ElementalR.description>стихийная пыль</Meat_TM_Water_ElementalR.description>
+  <Meat_TM_GreaterWater_ElementalR.label>стихийная пыль</Meat_TM_GreaterWater_ElementalR.label>
+  <Meat_TM_GreaterWater_ElementalR.description>стихийная пыль</Meat_TM_GreaterWater_ElementalR.description>
+  <Meat_TM_LesserWind_ElementalR.label>стихийная пыль</Meat_TM_LesserWind_ElementalR.label>
+  <Meat_TM_LesserWind_ElementalR.description>стихийная пыль</Meat_TM_LesserWind_ElementalR.description>
+  <Meat_TM_Wind_ElementalR.label>стихийная пыль</Meat_TM_Wind_ElementalR.label>
+  <Meat_TM_Wind_ElementalR.description>стихийная пыль</Meat_TM_Wind_ElementalR.description>
+  <Meat_TM_GreaterWind_ElementalR.label>стихийная пыль</Meat_TM_GreaterWind_ElementalR.label>
+  <Meat_TM_GreaterWind_ElementalR.description>стихийная пыль</Meat_TM_GreaterWind_ElementalR.description>
+  <Meat_TM_DemonR.label>демоническая плоть</Meat_TM_DemonR.label>
+  <Meat_TM_DemonR.description>демоническая плоть</Meat_TM_DemonR.description>
+  <Meat_TM_LesserDemonR.label>демоническая плоть</Meat_TM_LesserDemonR.label>
+  <Meat_TM_LesserDemonR.description>демоническая плоть</Meat_TM_LesserDemonR.description>
+  <Meat_TM_MinionR.label>таинственное мясо</Meat_TM_MinionR.label>
+  <Meat_TM_MinionR.description>таинственное мясо</Meat_TM_MinionR.description>
+  <Meat_TM_GreaterMinionR.label>таинственное мясо</Meat_TM_GreaterMinionR.label>
+  <Meat_TM_GreaterMinionR.description>таинственное мясо</Meat_TM_GreaterMinionR.description>
+  <Meat_TM_InvisMinionR.label>таинственное мясо</Meat_TM_InvisMinionR.label>
+  <Meat_TM_InvisMinionR.description>таинственное мясо</Meat_TM_InvisMinionR.description>
+  <Meat_TM_Lesser_SentinelR.label>каменное мясо</Meat_TM_Lesser_SentinelR.label>
+  <Meat_TM_Lesser_SentinelR.description>каменное мясо</Meat_TM_Lesser_SentinelR.description>
+  <Meat_TM_SentinelR.label>каменное мясо</Meat_TM_SentinelR.label>
+  <Meat_TM_SentinelR.description>каменное мясо</Meat_TM_SentinelR.description>
+  <Meat_TM_Greater_SentinelR.label>каменное мясо</Meat_TM_Greater_SentinelR.label>
+  <Meat_TM_Greater_SentinelR.description>каменное мясо</Meat_TM_Greater_SentinelR.description>
+  <Meat_TM_SummonedPawn.label>мясо</Meat_TM_SummonedPawn.label>
+  <Meat_TM_SummonedPawn.description>мясо</Meat_TM_SummonedPawn.description>
+  <Meat_TM_SummonedPawnLife.label>мясо</Meat_TM_SummonedPawnLife.label>
+  <Meat_TM_SummonedPawnLife.description>мясо</Meat_TM_SummonedPawnLife.description>
+  <Meat_TM_Dire_WolfR.label>мясо волка</Meat_TM_Dire_WolfR.label>
+  <Meat_TM_Dire_WolfR.description>мясо волка</Meat_TM_Dire_WolfR.description>
+  <Meat_TM_SpiritWolfR.label>мясо духовного волка</Meat_TM_SpiritWolfR.label>
+  <Meat_TM_SpiritWolfR.description>мясо духовного волка</Meat_TM_SpiritWolfR.description>
+  <Meat_TM_Undead.label>мясо нежити</Meat_TM_Undead.label>
+  <Meat_TM_Undead.description>мясо нежити</Meat_TM_Undead.description>
+  <Meat_TM_Poppi.label>мясо Поппи</Meat_TM_Poppi.label>
+  <Meat_TM_Poppi.description>мясо Поппи</Meat_TM_Poppi.description>
+</LanguageData>

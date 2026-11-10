@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SiphonReserveDesc>Mana mínima conservada pelo mago doador. Configurável de 0% a 100%.</TM_SiphonReserveDesc>
+  <TM_SiphonDonationDesc>Fração máxima da capacidade de mana doada numa visita. Configurável de 0% a 100%. Outra visita exige a recuperação total da mana.</TM_SiphonDonationDesc>
+  <TM_SiphonNeedsFullMana>É necessário recuperar toda a mana antes de voltar a doar.</TM_SiphonNeedsFullMana>
+  <TM_SiphonReserveLabel>Reserva pessoal de mana</TM_SiphonReserveLabel>
+  <TM_SiphonNoTanks>Nenhum depósito ligado pode aceitar mana.</TM_SiphonNoTanks>
+  <TM_SiphonDonationLabel>Doação máxima por visita</TM_SiphonDonationLabel>
+  <TM_SiphonInspect>Reserva pessoal: {0}; doação máxima por visita: {1}</TM_SiphonInspect>
+</LanguageData>

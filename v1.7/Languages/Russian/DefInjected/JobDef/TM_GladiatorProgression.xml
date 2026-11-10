@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ReadGladiatorSprint.reportString>изучает боевую форму гладиатора.</TM_ReadGladiatorSprint.reportString>
+  <TM_ReadGladiatorManeuver.reportString>изучает боевую форму гладиатора.</TM_ReadGladiatorManeuver.reportString>
+  <TM_GladiatorReliefDrill.reportString>подходит на помощь союзнику.</TM_GladiatorReliefDrill.reportString>
+  <TM_GladiatorCoverAlly.reportString>прикрывает союзника.</TM_GladiatorCoverAlly.reportString>
+  <TM_GladiatorEvacuationDrill.reportString>отрабатывает эвакуацию.</TM_GladiatorEvacuationDrill.reportString>
+  <TM_GladiatorLastCircle.reportString>готовит Последний круг.</TM_GladiatorLastCircle.reportString>
+</LanguageData>

@@ -1,0 +1,13 @@
+<LanguageData><!-- Learning interactions-->
+	<TM_MagicLoreTD.stages.0.label>получил тайные знания</TM_MagicLoreTD.stages.0.label>
+	<TM_MagicLoreTD.stages.0.description>Меня просветили слова могущественного мага, и теперь я просто должен применить это знание...</TM_MagicLoreTD.stages.0.description>
+	<TM_MightLoreTD.stages.0.label>получил(а) боевой опыт</TM_MightLoreTD.stages.0.label>
+	<TM_MightLoreTD.stages.0.description>Более опытный боец научил меня, как улучшить свои боевые приемы.</TM_MightLoreTD.stages.0.description>
+	<!-- Social interactions-->
+	<TM_EntertainedTD.stages.0.label>развлечён(а)</TM_EntertainedTD.stages.0.label>
+	<TM_EntertainedTD.stages.0.description>Это место не так уж плохо; здесь есть люди, которые заставляют меня забыть о своих тревогах и немного посмеяться.</TM_EntertainedTD.stages.0.description>
+	<TM_EntertainedAuraTD.stages.0.label>приятное общение</TM_EntertainedAuraTD.stages.0.label>
+	<TM_EntertainedAuraTD.stages.0.description>Мне было очень приятно общаться с другими людьми.</TM_EntertainedAuraTD.stages.0.description>
+	<TM_EntertainerAuraTD.stages.0.label>радость общения</TM_EntertainerAuraTD.stages.0.label>
+	<TM_EntertainerAuraTD.stages.0.description>Мне нравится общаться с окружающими. Приятно приносить другим немного радости.</TM_EntertainerAuraTD.stages.0.description>
+</LanguageData>

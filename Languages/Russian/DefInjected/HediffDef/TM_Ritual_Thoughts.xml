@@ -1,0 +1,9 @@
+<LanguageData><!-- SEVER MAGIC-->
+	<TM_MagicSeverenceHD.label>Магическое разъединение</TM_MagicSeverenceHD.label>
+	<TM_MagicSeverenceHD.description>Эта пешка недавно потеряла связь с магией и будет страдать от потери направления и цели, пока не сможет заполнить пустоту другой целью.</TM_MagicSeverenceHD.description>
+	<TM_MagicSeverenceHD.stages.0.label />
+	<!-- BESTOW MAGIC-->
+	<TM_BestowMagicClassHD.label>Дар магии</TM_BestowMagicClassHD.label>
+	<TM_BestowMagicClassHD.description>Этой пешке недавно была дарована искра магии.</TM_BestowMagicClassHD.description>
+	<TM_BestowMagicClassHD.stages.0.label />
+</LanguageData>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  
+  <TM_Golemancy.label>Golemancia</TM_Golemancy.label>
+  <TM_Golemancy.description>La golemancia es el arte de infundir energía mágica en un objeto mediante runas o inscripciones que crean un vínculo con quien las lanza. Este vínculo energético se utiliza habitualmente para animar objetos, convertir energía o recopilar información.
+
+Tanto el gólem como su golemante mejoran sus capacidades cuando trabajan juntos. Un gólem solo puede asignarse a un peón, pero un mismo peón puede tener asignados varios gólems. Los beneficios de la golemancia solo se aplican a los gólems asignados.
+
+Los gólems pueden fabricarse en sus respectivas estaciones de trabajo una vez completada la investigación correspondiente. Consulta la pestaña de investigación para ver cada tipo de gólem y su estación de trabajo asociada.</TM_Golemancy.description>
+
+  
+  <TM_RuneCarving.label>Grabado de runas</TM_RuneCarving.label>
+  <TM_RuneCarving.description>El grabado de runas es un arte mágico que permite imbuir permanentemente un objeto con poder mágico. Desde hace mucho tiempo, este proceso se utiliza para inscribir runas en equipos y armas con el fin de otorgarles propiedades mágicas. El golemante utiliza un proceso similar, aunque más delicado, para mejorar las capacidades de las partes del cuerpo mediante runas. Aunque solo pueden mejorarse determinadas partes, se puede mejorar cualquier variante de esas partes.
+
+El grabado de runas requiere recursos adicionales en una zona de almacenamiento señalizada: 225 unidades de magicyte, 2 pociones de maná y 1 medicamento. El éxito depende de la habilidad del golemante en artesanía, arte y el uso de habilidades. También debe tener habilitado el trabajo médico, ya que el grabado de runas es una operación médica. El procedimiento nunca tendrá éxito si se desactiva la habilidad de artesanía o la de arte.
+
+Para aplicar las runas, selecciona al peón que quieras inscribir y crea la operación de grabado de runas desde sus opciones de salud. Todos los componentes deben estar disponibles para que aparezca la opción de operación.</TM_RuneCarving.description>
+
+  
+  <TM_Branding.label>Marcas mágicas</TM_Branding.label>
+  <TM_Branding.description>Las marcas mágicas permiten crear una marca temporal de origen mágico sobre un peón, estableciendo un vínculo entre quien la aplica y quien la recibe. Se pueden colocar varias marcas en un mismo peón, siempre que sean de tipos diferentes. El lanzador puede crear tantas marcas como desee, pero cada una reduce su regeneración de energía. Las marcas quedarán inactivas si el lanzador se queda sin maná. Las marcas constituyen un tipo especial de hechizo y cada una debe aprenderse por separado. La habilidad de marcar afecta a todos los tipos de marcas.</TM_Branding.description>
+
+  
+  <TM_SiphonBrand.label>Marca: Drenaje</TM_SiphonBrand.label>
+  <TM_SiphonBrand.description>La marca de drenaje puede aplicarse a otro mago para transferir periódicamente su maná al lanzador.
+
+Las marcas son una forma de magia semipermanente, normalmente creada mediante algún tipo de señal o grabado, como un tatuaje mágico, que establece un vínculo entre dos peones. Las marcas requieren un flujo constante de maná para mantenerse; sin embargo, quedarán inactivas si el lanzador no puede sostener el hechizo. La marca desaparece si el lanzador muere o decide disiparla.</TM_SiphonBrand.description>
+
+  
+  <TM_FitnessBrand.label>Marca: Condición física</TM_FitnessBrand.label>
+  <TM_FitnessBrand.description>La marca de condición física puede aplicarse a otro peón para mejorar su rendimiento físico.
+
+Las marcas son una forma de magia semipermanente, normalmente creada mediante algún tipo de señal o grabado, como un tatuaje mágico, que establece un vínculo entre dos peones. Las marcas requieren un flujo constante de maná para mantenerse; sin embargo, quedarán inactivas si el lanzador no puede sostener el hechizo. La marca desaparece si el lanzador muere o decide disiparla.</TM_FitnessBrand.description>
+
+  
+  <TM_EmotionBrand.label>Marca: Emociones</TM_EmotionBrand.label>
+  <TM_EmotionBrand.description>La marca de emociones puede aplicarse a otro peón para mejorar su estado de ánimo.
+
+Las marcas son una forma de magia semipermanente, normalmente creada mediante algún tipo de señal o grabado, como un tatuaje mágico, que establece un vínculo entre dos peones. Las marcas requieren un flujo constante de maná para mantenerse; sin embargo, quedarán inactivas si el lanzador no puede sostener el hechizo. La marca desaparece si el lanzador muere o decide disiparla.</TM_EmotionBrand.description>
+
+  
+  <TM_VitalityBrand.label>Marca: Vitalidad</TM_VitalityBrand.label>
+  <TM_VitalityBrand.description>La marca de vitalidad puede aplicarse a otro peón para mejorar su salud general, su capacidad de curación y su resistencia a las enfermedades.
+
+Las marcas son una forma de magia semipermanente, normalmente creada mediante algún tipo de señal o grabado, como un tatuaje mágico, que establece un vínculo entre dos peones. Las marcas requieren un flujo constante de maná para mantenerse; sin embargo, quedarán inactivas si el lanzador no puede sostener el hechizo. La marca desaparece si el lanzador muere o decide disiparla.</TM_VitalityBrand.description>
+
+  
+  <TM_ProtectionBrand.label>Marca: Protección</TM_ProtectionBrand.label>
+  <TM_ProtectionBrand.description>La marca de protección puede aplicarse a otro peón para absorber ataques. La runa de protección se recarga periódicamente.
+
+Las marcas son una forma de magia semipermanente, normalmente creada mediante algún tipo de señal o grabado, como un tatuaje mágico, que establece un vínculo entre dos peones. Las marcas requieren un flujo constante de maná para mantenerse; sin embargo, quedarán inactivas si el lanzador no puede sostener el hechizo. La marca desaparece si el lanzador muere o decide disiparla.</TM_ProtectionBrand.description>
+
+  
+  <TM_AwarenessBrand.label>Marca: Percepción</TM_AwarenessBrand.label>
+  <TM_AwarenessBrand.description>La marca de percepción puede aplicarse a otro peón para mejorar su visión, audición, habla e intelecto.
+
+Las marcas son una forma de magia semipermanente, normalmente creada mediante algún tipo de señal o grabado, como un tatuaje mágico, que establece un vínculo entre dos peones. Las marcas requieren un flujo constante de maná para mantenerse; sin embargo, quedarán inactivas si el lanzador no puede sostener el hechizo. La marca desaparece si el lanzador muere o decide disiparla.</TM_AwarenessBrand.description>
+
+  
+  <TM_DispelBranding.label>Disipar marcas</TM_DispelBranding.label>
+  <TM_DispelBranding.description>Disipa todas las marcas activas.</TM_DispelBranding.description>
+
+  
+  <TM_SigilSurge.label>Sobrecarga de sigilos</TM_SigilSurge.label>
+  <TM_SigilSurge.description>Al activar esta habilidad, todas las marcas reciben una sobrecarga de energía. Esta habilidad provoca un dolor moderado al golemante y triplica el consumo de energía de cada marca. Vuelve a usarla para detener la sobrecarga.</TM_SigilSurge.description>
+
+  
+  <TM_SigilDrain.label>Drenaje de sigilos</TM_SigilDrain.label>
+  <TM_SigilDrain.description>Al activar esta habilidad, todas las marcas invierten sus efectos y otorgan beneficios al lanzador en lugar de al peón marcado. Esta habilidad provoca un dolor moderado al peón marcado y concede beneficios al lanzador por cada marca que controle. Vuelve a usarla para detener el drenaje.</TM_SigilDrain.description>
+
+  
+  <TM_LivingWall.label>Muro viviente</TM_LivingWall.label>
+  <TM_LivingWall.description>Encanta un muro para dotarlo de un propósito y permitirle desarrollar una inteligencia rudimentaria. El muro viviente atacará a los enemigos que estén a su alcance y se reparará cuando sufra daños. La criatura animada que habita en el muro puede desplazarse a cualquier segmento adyacente y considera toda sección conectada del muro como una extensión de sí misma. Intentará desplazarse hasta el segmento de muro más cercano al enemigo más próximo. No puede desplazarse entre segmentos desconectados y solo puede pasar a otro segmento adyacente en dirección cardinal. El lanzador solo puede mantener un único muro viviente, independientemente del tamaño del muro que ocupe. Varios muros vivientes pueden ocupar un mismo muro.</TM_LivingWall.description>
+
+  
+  <TM_DispelLivingWall.label>Disipar muro viviente</TM_DispelLivingWall.label>
+  <TM_DispelLivingWall.description>Disipa el muro viviente.</TM_DispelLivingWall.description>
+
+</LanguageData>

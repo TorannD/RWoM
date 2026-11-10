@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Magic.label>Magia</TM_Magic.label>
+  <TM_Magic.labelShort>Magia</TM_Magic.labelShort>
+  <TM_Magic.pawnLabel>Magia</TM_Magic.pawnLabel>
+  <TM_Magic.gerundLabel>Manipulação mágica</TM_Magic.gerundLabel>
+  <TM_Magic.description>Execute tarefas secretas e dependentes do mago</TM_Magic.description>
+  <TM_Magic.verb>Faz magia</TM_Magic.verb>
+
+
+</LanguageData>

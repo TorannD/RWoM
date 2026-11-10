@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_PoisonTrap.label>Armadilha de veneno</TM_PoisonTrap.label>
+  <TM_PoisonTrap.description>Uma armadilha criada a partir de paus e latas é facilmente fundida com a área do olho não treinado, mas pelo cheiro é um aviso infalível para os animais. Partículas de veneno druídico são lançadas para o ar quando a vítima lança uma armadilha. Este veneno é tóxico e serve tanto para ferir como para desativar a vítima.</TM_PoisonTrap.description>
+
+  <TM_Trap_Lightning.label>Armadilha Com relâmpago</TM_Trap_Lightning.label>
+  <TM_Trap_Lightning.description>Uma armadilha criada através da manutenção de um raio básico dentro de uma barreira secreta; Ela libera a energia derramada pelas garrafas sempre que o inimigo quebra o fio secreto ao lado.</TM_Trap_Lightning.description>
+
+  <TM_ManaMine.label>Mina maná</TM_ManaMine.label>
+  <TM_ManaMine.description>Um explosivo poderoso criado por compressão de maná e matéria. Tentáculos de força mental são puxados pela mina; Quando uma vítima quebra o fio mental, destrói o campo de contenção e explode uma mina. 2.4m de raio de explosão.</TM_ManaMine.description>
+
+  <TM_ManaMine_I.label>Mina maná</TM_ManaMine_I.label>
+  <TM_ManaMine_I.description>Um explosivo poderoso criado por compressão de maná e matéria. Tentáculos de força mental são puxados pela mina; Quando uma vítima quebra o fio mental, destrói o campo de contenção e explode uma mina. 2.9m de raio de explosão.</TM_ManaMine_I.description>
+
+  <TM_ManaMine_II.label>Mina maná</TM_ManaMine_II.label>
+  <TM_ManaMine_II.description>Um explosivo poderoso criado por compressão de maná e matéria. Tentáculos de força mental são puxados pela mina; Quando uma vítima quebra o fio mental, destrói o campo de contenção e explode uma mina. 3,8m de raio de explosão.</TM_ManaMine_II.description>
+
+  <TM_ManaMine_III.label>Mina maná</TM_ManaMine_III.label>
+  <TM_ManaMine_III.description>Um explosivo poderoso criado por compressão de maná e matéria. Tentáculos de força mental são puxados pela mina; Quando uma vítima quebra o fio mental, destrói o campo de contenção e explode uma mina. 4.7m de raio de explosão.</TM_ManaMine_III.description>
+
+
+  <!-- Level 0 -->
+
+  <DefensePylon.label>pilão de proteção mágica</DefensePylon.label>
+  <DefensePylon.description>Pilão de proteção mágico. Cria-se materializando a energia mágica para formar a base e então direcionar a corrente secreta para um ponto focal que emite picos de energia crua.</DefensePylon.description>
+
+  <Launcher_DefensePylon.label>ponto de foco de energia</Launcher_DefensePylon.label>
+  <Launcher_DefensePylon.description>Ponto focal de um pilão secreto de proteção capaz de coletar e emitir picos de energia mágica crua.</Launcher_DefensePylon.description>
+
+  <Bullet_DefensePylon.label>energia mágica focada</Bullet_DefensePylon.label>
+
+
+  <!-- Level 1 -->
+
+  <DefensePylon_I.label>Pilão de proteção mágica (I)</DefensePylon_I.label>
+  <DefensePylon_I.description>E um pilão mágico de protecção. Cria-se materializando a energia mágica para formar a base e, em seguida, direcionar o fluxo mágico para um ponto focal que emite picos de energia crua.</DefensePylon_I.description>
+
+  <Launcher_DefensePylon_I.label>ponto de foco de energia</Launcher_DefensePylon_I.label>
+  <Launcher_DefensePylon_I.description>Ponto focal de um pilão secreto de proteção capaz de coletar e emitir picos de energia mágica crua.</Launcher_DefensePylon_I.description>
+
+
+  <!-- Level 2 -->
+
+  <DefensePylon_II.label>Pilão de proteção mágica (II)</DefensePylon_II.label>
+  <DefensePylon_II.description>E um pilão mágico de protecção. Cria-se materializando a energia mágica para formar a base e, em seguida, direcionar o fluxo mágico para um ponto focal que emite picos de energia crua.</DefensePylon_II.description>
+
+  <Launcher_DefensePylon_II.label>ponto de foco de energia</Launcher_DefensePylon_II.label>
+  <Launcher_DefensePylon_II.description>Ponto focal de um pilão secreto de proteção capaz de coletar e emitir picos de energia mágica crua.</Launcher_DefensePylon_II.description>
+
+
+  <!-- Level 3 -->
+
+  <DefensePylon_III.label>Pilão de proteção mágica (III)</DefensePylon_III.label>
+  <DefensePylon_III.description>E um pilão mágico de protecção. Cria-se materializando a energia mágica para formar a base e, em seguida, direcionar o fluxo mágico para um ponto focal que emite picos de energia crua.</DefensePylon_III.description>
+
+  <Launcher_DefensePylon_III.label>ponto de foco de energia</Launcher_DefensePylon_III.label>
+  <Launcher_DefensePylon_III.description>Ponto focal de um pilão secreto de proteção capaz de coletar e emitir picos de energia mágica crua.</Launcher_DefensePylon_III.description>
+
+
+  <!-- Magic Walls -->
+
+  <TM_ArcaneBarrier.label>barreira de feijoada</TM_ArcaneBarrier.label>
+  <TM_ArcaneBarrier.description>Uma parede intransponível feita de força mágica solidificada. Protege ou cria uma barreira intransponível.</TM_ArcaneBarrier.description>
+
+
+  <!-- Techno Turret -->
+
+  <TM_TechnoTurret_Base.label>Mark-IV</TM_TechnoTurret_Base.label>
+  <TM_TechnoTurret_Base.description>Mark-IV é uma torre em implantação que fornece o poder de fogo de um sistema de armas pesadas. Ele usa a miniaturização para permitir que o usuário transporte facilmente o sistema quando ele não estiver em uso. O componente-chave da Mark-IV é um conversor de matéria que usa energia crua para reparar e reabastecer a reserva da torre quando ela está em miniaturização, permitindo a conversão nominal da energia em matéria. No entanto, mesmo com o uso de plástico e hipervolocação para fortalecer o sistema de armamento, este material simplesmente não suportou a pressão exercida por ele durante a conversão e foi muito suscetível à destruição e falha dos componentes.
+
+Desde então, os técnicos adaptaram o sistema e usam seu controle de energia secreta para fornecer munição à torre durante a implantação e energia para reparos e processo de miniaturização.
+
+Devido ao seu peso, o Mark-IV não pode ser movido durante a implantação.</TM_TechnoTurret_Base.description>
+
+  <TM_TechnoTurret_Base_RL.label>Mark-IV</TM_TechnoTurret_Base_RL.label>
+  <TM_TechnoTurret_Base_RL.description>Mark-IV é uma torre em implantação que fornece o poder de fogo de um sistema de armas pesadas. Ele usa a miniaturização para permitir que o usuário transporte facilmente o sistema quando ele não estiver em uso. O componente-chave da Mark-IV é um conversor de matéria que usa energia crua para reparar e reabastecer a reserva da torre quando ela está em miniaturização, permitindo a conversão nominal da energia em matéria. No entanto, mesmo com o uso de plástico e hipervolocação para fortalecer o sistema de armamento, este material simplesmente não suportou a pressão exercida por ele durante a conversão e foi muito suscetível à destruição e falha dos componentes.
+
+Desde então, os técnicos adaptaram o sistema e usam seu controle de energia secreta para fornecer munição à torre durante a implantação e energia para reparos e processo de miniaturização.
+
+Devido ao seu peso, o Mark-IV não pode ser movido durante a implantação.</TM_TechnoTurret_Base_RL.description>
+
+  <TM_TechnoTurret_Base_RL_MTR.label>Mark-IV</TM_TechnoTurret_Base_RL_MTR.label>
+  <TM_TechnoTurret_Base_RL_MTR.description>Mark-IV é uma torre em implantação que fornece o poder de fogo de um sistema de armas pesadas. Ele usa a miniaturização para permitir que o usuário transporte facilmente o sistema quando ele não estiver em uso. O componente-chave da Mark-IV é um conversor de matéria que usa energia crua para reparar e reabastecer a reserva da torre quando ela está em miniaturização, permitindo a conversão nominal da energia em matéria. No entanto, mesmo com o uso de plástico e hipervolocação para fortalecer o sistema de armamento, este material simplesmente não suportou a pressão exercida por ele durante a conversão e foi muito suscetível à destruição e falha dos componentes.
+
+Desde então, os técnicos adaptaram o sistema e usam seu controle de energia secreta para fornecer munição à torre durante a implantação e energia para reparos e processo de miniaturização.
+
+Devido ao seu peso, o Mark-IV não pode ser movido durante a implantação.</TM_TechnoTurret_Base_RL_MTR.description>
+
+  <Bullet_Mark-IV.label>Balas Mark-IV</Bullet_Mark-IV.label>
+
+  <Gun_Mark-IV.label>Sistema de armas Mark-IV</Gun_Mark-IV.label>
+  <Gun_Mark-IV.description>Um tronco Mark-IV e um sistema de controlo de fogo.</Gun_Mark-IV.description>
+
+  <Gun_Mark-IV_RL.label>Sistema de armas Mark-IV</Gun_Mark-IV_RL.label>
+  <Gun_Mark-IV_RL.description>Um tronco Mark-IV e um sistema de controlo de fogo.</Gun_Mark-IV_RL.description>
+
+  <Gun_Mark-IV_RL_MTR.label>Sistema de armas Mark-IV</Gun_Mark-IV_RL_MTR.label>
+  <Gun_Mark-IV_RL_MTR.description>Um tronco Mark-IV e um sistema de controlo de fogo.</Gun_Mark-IV_RL_MTR.description>
+
+  <FlyingObject_RocketSmall.label>foguete pequeno</FlyingObject_RocketSmall.label>
+  <Bullet_Shell_TechnoTurretExplosive.label>Não é um projétil</Bullet_Shell_TechnoTurretExplosive.label>
+
+
+  <!-- 60mm Mortar -->
+
+  <TM_60mmMortar_Base.label>60mm Tromba de morteiro</TM_60mmMortar_Base.label>
+  <TM_60mmMortar_Base.description>Um morteiro de 60 mm é um sistema de fogo indireto portável e implantável. Devido ao peso do sistema, as invólucras são normalmente distribuídas para transporte. O sistema é projetado para fogo indireto, e apenas os amadores tentam usá-lo para uma pista direta, porque é ao mesmo tempo impreciso e expõe os morteiros.
+
+O alcance e o poder de fogo do sistema são limitados em comparação com os sistemas fixos devido à capacidade de proteção do cano de morteiro e da bala explosiva.</TM_60mmMortar_Base.description>
+
+  <FlyingObject_60mmMortar.label>projétil de 60mm</FlyingObject_60mmMortar.label>
+
+
+  <!-- Lightning Totem -->
+
+  <TM_LightningTotem.label>Totem relâmpago</TM_LightningTotem.label>
+  <TM_LightningTotem.description>Um totem xamânico decorado com uma complexa, peculiar esculpida e relâmpago natural.</TM_LightningTotem.description>
+
+
+  <!-- Healing Totem -->
+
+  <TM_HealingTotem.label>O curador Totem</TM_HealingTotem.label>
+  <TM_HealingTotem.description>Totem xamânico decorado com formas fluidas e complementares. O totem curador é capaz de atrair espíritos amigos que devolvem força e saúde aos aliados mais próximos.</TM_HealingTotem.description>
+
+
+  <!-- Earth Totem -->
+
+  <TM_EarthTotem.label>Totem terrestre</TM_EarthTotem.label>
+  <TM_EarthTotem.description>Um totem xamânico decorado com uma rosca simétrica que emite um sentido de união. A ligação do totem com a terra permite-lhe causar ondas sísmicas que atingem os inimigos mais próximos.</TM_EarthTotem.description>
+
+
+</LanguageData>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Accelerate Time -->
+
+  <Projectile_AccelerateTime.label>Acelerar o tempo</Projectile_AccelerateTime.label>
+
+
+  <!-- Chronostatic Field -->
+
+  <Projectile_ChronostaticField.label>Bolha do tempo</Projectile_ChronostaticField.label>
+  <Projectile_ChronostaticField_I.label>Bolha do tempo</Projectile_ChronostaticField_I.label>
+  <Projectile_ChronostaticField_II.label>Bolha do tempo</Projectile_ChronostaticField_II.label>
+  <Projectile_ChronostaticField_III.label>Bolha do tempo</Projectile_ChronostaticField_III.label>
+  <FlyingObject_TimeDelay.label>Bolha do tempo</FlyingObject_TimeDelay.label>
+
+
+</LanguageData>

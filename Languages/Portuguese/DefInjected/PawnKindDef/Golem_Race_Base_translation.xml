@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- STONE GOLEM -->
+
+  <TM_StoneGolemK.label>golem de pedra</TM_StoneGolemK.label>
+  <TM_StoneGolemK.labelPlural>Golem de pedra</TM_StoneGolemK.labelPlural>
+
+  <TM_SandstoneGolemK.label>golem de areia</TM_SandstoneGolemK.label>
+  <TM_SandstoneGolemK.labelPlural>Golos de areia</TM_SandstoneGolemK.labelPlural>
+
+  <TM_LimestoneGolemK.label>golem de calcário</TM_LimestoneGolemK.label>
+  <TM_LimestoneGolemK.labelPlural>Golems de calcário</TM_LimestoneGolemK.labelPlural>
+
+  <TM_GraniteGolemK.label>golem de granito</TM_GraniteGolemK.label>
+  <TM_GraniteGolemK.labelPlural>Golos de granito</TM_GraniteGolemK.labelPlural>
+
+  <TM_SlateGolemK.label>Nu de xisto</TM_SlateGolemK.label>
+  <TM_SlateGolemK.labelPlural>Golos de xisto</TM_SlateGolemK.labelPlural>
+
+  <TM_MarbleGolemK.label>golem de mármore</TM_MarbleGolemK.label>
+  <TM_MarbleGolemK.labelPlural>Golem de mármore</TM_MarbleGolemK.labelPlural>
+
+
+  <!-- MECHA GOLEM -->
+
+  <TM_MechaGolemK.label>peles-golem</TM_MechaGolemK.label>
+  <TM_MechaGolemK.labelPlural>peles-golems</TM_MechaGolemK.labelPlural>
+
+
+  <!-- FLESH GOLEM -->
+
+  <TM_FleshGolemK.label>golem de carne</TM_FleshGolemK.label>
+  <TM_FleshGolemK.labelPlural>golem de carne</TM_FleshGolemK.labelPlural>
+
+
+  <!-- HOLLOW GOLEM -->
+
+  <TM_HollowGolemK.label>vazio de nu</TM_HollowGolemK.label>
+  <TM_HollowGolemK.labelPlural>nus vazios</TM_HollowGolemK.labelPlural>
+
+
+  <!-- MAHARAL GOLEM -->
+
+  <TM_MaharalGolemK.label>maharal-golem</TM_MaharalGolemK.label>
+  <TM_MaharalGolemK.labelPlural>maharal golems</TM_MaharalGolemK.labelPlural>
+
+
+</LanguageData>

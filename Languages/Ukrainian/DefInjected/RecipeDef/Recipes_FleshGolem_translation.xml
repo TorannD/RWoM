@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Flesh Golem upgrade recipes -->
+
+  <TM_FleshGolem_RestorePart.label>відновити частину тіла</TM_FleshGolem_RestorePart.label>
+  <TM_FleshGolem_RestorePart.description>Відновлює відсутні частини голема, які не потребують спеціального оновлення.</TM_FleshGolem_RestorePart.description>
+  <TM_FleshGolem_RestorePart.jobString>пересадка частини голему</TM_FleshGolem_RestorePart.jobString>
+
+  <TM_FleshGolem_MuscleTissue.label>трансплантат м&apos;язової тканини</TM_FleshGolem_MuscleTissue.label>
+  <TM_FleshGolem_MuscleTissue.description>Прищеплює голему м&apos;язову тканину для підвищення сили і витривалості.</TM_FleshGolem_MuscleTissue.description>
+  <TM_FleshGolem_MuscleTissue.jobString>пересадка м&apos;язової тканини</TM_FleshGolem_MuscleTissue.jobString>
+
+  <TM_FleshGolem_DigestiveOrgans.label>додати органи травлення</TM_FleshGolem_DigestiveOrgans.label>
+  <TM_FleshGolem_DigestiveOrgans.description>Збільшує ефективність поглинання та використання енергії големом на 10% для доданої травної системи.</TM_FleshGolem_DigestiveOrgans.description>
+  <TM_FleshGolem_DigestiveOrgans.jobString>додавання органів травлення</TM_FleshGolem_DigestiveOrgans.jobString>
+
+  <TM_FleshGolem_EnergySynthesis.label>покращує засвоєння поживних речовин</TM_FleshGolem_EnergySynthesis.label>
+  <TM_FleshGolem_EnergySynthesis.description>Збільшує швидкість розповсюдження енергії по всьому голему.</TM_FleshGolem_EnergySynthesis.description>
+  <TM_FleshGolem_EnergySynthesis.jobString>покращення м &quot;язового метаболізму</TM_FleshGolem_EnergySynthesis.jobString>
+
+  <TM_FleshGolem_LifeStage.label>збільште біомасу автомата</TM_FleshGolem_LifeStage.label>
+  <TM_FleshGolem_LifeStage.description>Підсилює голема з плоті, видаляючи зайві або непотрібні частини тіла або органи і замінюючи їх додатковими м&apos;язовими тканинами, сухожиллями і кістками, щоб ще більше перетворити голема з плоті на смертоносну тварюку. Це оновлення надає такі переваги для кожного рівня оновлення [1/2/3]:
+Рух: +[20%/35%/50%]
+Здоров&apos;я: +[30%/50%/70%]
+
+Крім того, це оновлення дозволяє голему з плоті використовувати свою лють, щоб відривати кінцівки у своїх ворогів.</TM_FleshGolem_LifeStage.description>
+  <TM_FleshGolem_LifeStage.jobString>посилення голему з плоті</TM_FleshGolem_LifeStage.jobString>
+
+  <TM_FleshGolem_LeftArm_Bracer.label>виготовити лівий браслет глому</TM_FleshGolem_LeftArm_Bracer.label>
+  <TM_FleshGolem_LeftArm_Bracer.description>Додає металевий браслет до руки голему з плоті, щоб збільшити втрату від тупого удару і дозволити блокування.</TM_FleshGolem_LeftArm_Bracer.description>
+  <TM_FleshGolem_LeftArm_Bracer.jobString>створення браслета голему</TM_FleshGolem_LeftArm_Bracer.jobString>
+
+  <TM_FleshGolem_RightArm_Bracer.label>виготовити правий браслет глому</TM_FleshGolem_RightArm_Bracer.label>
+  <TM_FleshGolem_RightArm_Bracer.description>Додає металевий браслет до руки голему з плоті, щоб збільшити втрату від тупого удару і дозволити блокування.</TM_FleshGolem_RightArm_Bracer.description>
+  <TM_FleshGolem_RightArm_Bracer.jobString>створення браслета голему</TM_FleshGolem_RightArm_Bracer.jobString>
+
+  <TM_FleshGolem_LeftArm_Cleaver.label>виготовити лівий тесак глому</TM_FleshGolem_LeftArm_Cleaver.label>
+  <TM_FleshGolem_LeftArm_Cleaver.description>Додає металевий тесак до руки голему з плоті, що дозволяє використовувати ріжучу атаку AoE і дозволяє голему збирати рослини і дерева.</TM_FleshGolem_LeftArm_Cleaver.description>
+  <TM_FleshGolem_LeftArm_Cleaver.jobString>створення тесака для голему</TM_FleshGolem_LeftArm_Cleaver.jobString>
+
+  <TM_FleshGolem_RightArm_Cleaver.label>виготовити правий тесак глому</TM_FleshGolem_RightArm_Cleaver.label>
+  <TM_FleshGolem_RightArm_Cleaver.description>Додає металевий тесак до руки голему з плоті, що дозволяє використовувати ріжучу атаку AoE і дозволяє голему збирати рослини і дерева.</TM_FleshGolem_RightArm_Cleaver.description>
+  <TM_FleshGolem_RightArm_Cleaver.jobString>створення тесака для голему</TM_FleshGolem_RightArm_Cleaver.jobString>
+
+  <TM_FleshGolem_Tusks.label>прикріпите бивні</TM_FleshGolem_Tusks.label>
+  <TM_FleshGolem_Tusks.description>Вставляє ікла у хвали голему з плоті.</TM_FleshGolem_Tusks.description>
+  <TM_FleshGolem_Tusks.jobString>прикріплення кликів голему</TM_FleshGolem_Tusks.jobString>
+
+  <TM_FleshGolem_Horns.label>прикріпите роги</TM_FleshGolem_Horns.label>
+  <TM_FleshGolem_Horns.description>Прикріплює роги до черепу голему з плоті. Роги дають голему з плоті смертельну атаку кров&apos;ю і дозволяють голему кинутися в бій.</TM_FleshGolem_Horns.description>
+  <TM_FleshGolem_Horns.jobString>прикріплення рогів</TM_FleshGolem_Horns.jobString>
+
+  <TM_FleshGolem_SkullPlate.label>трансплантат черепної пластини</TM_FleshGolem_SkullPlate.label>
+  <TM_FleshGolem_SkullPlate.description>Прищеплює металеву пластину навколо черепа голему з плоті.</TM_FleshGolem_SkullPlate.description>
+  <TM_FleshGolem_SkullPlate.jobString>пересадка черепної пластини</TM_FleshGolem_SkullPlate.jobString>
+
+  <TM_FleshGolem_ShoulderPlates.label>трансплантат плечових пластин</TM_FleshGolem_ShoulderPlates.label>
+  <TM_FleshGolem_ShoulderPlates.description>Прищеплює металеві пластини на плечі голему з плоті.</TM_FleshGolem_ShoulderPlates.description>
+  <TM_FleshGolem_ShoulderPlates.jobString>пересадка плечових пластин</TM_FleshGolem_ShoulderPlates.jobString>
+
+  <TM_FleshGolem_ChestCage.label>прикріпите грудну клітку</TM_FleshGolem_ChestCage.label>
+  <TM_FleshGolem_ChestCage.description>Покращує лобову броню тіла, прищеплюючи клітку, зроблену з кісток людських трупів, навколо грудей.</TM_FleshGolem_ChestCage.description>
+  <TM_FleshGolem_ChestCage.jobString>прикріплення кісткової грудної клітини</TM_FleshGolem_ChestCage.jobString>
+
+  <TM_FleshGolem_SpineGuard.label>прикріпите захист хребта</TM_FleshGolem_SpineGuard.label>
+  <TM_FleshGolem_SpineGuard.description>Покращує броню спини, прищеплюючи панцир, зроблений з кісток трупа, вздовж хребта голему з плоті.</TM_FleshGolem_SpineGuard.description>
+  <TM_FleshGolem_SpineGuard.jobString>прикріплення кісткової пластини хребта</TM_FleshGolem_SpineGuard.jobString>
+
+  <TM_FleshGolem_Wings.label>прикріпите крила</TM_FleshGolem_Wings.label>
+  <TM_FleshGolem_Wings.description>Збільшує швидкість і баланс, прищеплюючи крила до спини голему з плоті. Ці крила не призначені для польоту, швидше вони служать голему, допомагаючи йому компенсувати частину його значної маси під час бою.</TM_FleshGolem_Wings.description>
+  <TM_FleshGolem_Wings.jobString>прикріплення крил</TM_FleshGolem_Wings.jobString>
+
+  <TM_FleshGolem_LegPlates.label>прикріпите ножні пластини</TM_FleshGolem_LegPlates.label>
+  <TM_FleshGolem_LegPlates.description>Прищеплює металеві пластини навколо ніг голему з плоті.</TM_FleshGolem_LegPlates.description>
+  <TM_FleshGolem_LegPlates.jobString>прикріплення ножних пластин</TM_FleshGolem_LegPlates.jobString>
+
+  <TM_FleshGolem_EyesT1.label>вставити чотири очі</TM_FleshGolem_EyesT1.label>
+  <TM_FleshGolem_EyesT1.description>Вставляє пару очей під оригінальну пару, яка покращує зір і зменшує ймовірність того, що голем може бути повністю засліплений.</TM_FleshGolem_EyesT1.description>
+  <TM_FleshGolem_EyesT1.jobString>вставити очі</TM_FleshGolem_EyesT1.jobString>
+
+  <TM_FleshGolem_EyesT2.label>вирізати зле око</TM_FleshGolem_EyesT2.label>
+  <TM_FleshGolem_EyesT2.description>Вирізає очницю в лобі голему з плоті, заповнену формованою магічною речовиною у формі ока. Навколо ока вигравірувано таємні символи, що утворюють магічний зв&apos;язок між големом і оком. Зле око здатне виявити пригнічену лють голему з плоті, щоб проклясти свою мету слабкістю.</TM_FleshGolem_EyesT2.description>
+  <TM_FleshGolem_EyesT2.jobString>вирізання злого ока</TM_FleshGolem_EyesT2.jobString>
+
+
+</LanguageData>

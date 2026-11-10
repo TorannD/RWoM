@@ -1,0 +1,44 @@
+<LanguageData><TM_PsionicHD.label>Псионическая Энергия</TM_PsionicHD.label>
+	<TM_PsionicHD.description>Это объясняет уникальную энергию псионика.</TM_PsionicHD.description>
+	<TM_PsionicInjuryHD.label>Псионик</TM_PsionicInjuryHD.label>
+	<TM_PsionicInjuryHD.description>Травма, вызванная псионической силой.</TM_PsionicInjuryHD.description>
+	<TM_PsionicInjuryHD.comps.0.labelTendedWell>перевязано</TM_PsionicInjuryHD.comps.0.labelTendedWell>
+	<TM_PsionicInjuryHD.comps.0.labelTendedWellInner>зашитый</TM_PsionicInjuryHD.comps.0.labelTendedWellInner>
+	<TM_PsionicInjuryHD.comps.0.labelSolidTendedWell>настройка</TM_PsionicInjuryHD.comps.0.labelSolidTendedWell>
+	<TM_PsionicInjuryHD.injuryProps.destroyedLabel>начинается</TM_PsionicInjuryHD.injuryProps.destroyedLabel>
+	<TM_PsionicInjuryHD.injuryProps.destroyedOutLabel>взорван</TM_PsionicInjuryHD.injuryProps.destroyedOutLabel>
+	<TM_PsionicSpeedHD.label>псионическая скорость</TM_PsionicSpeedHD.label>
+	<TM_PsionicSpeedHD.description>Увеличенная скорость через псионическое усиление.</TM_PsionicSpeedHD.description>
+	<TM_PsionicSpeedHD.stages.0.label>I</TM_PsionicSpeedHD.stages.0.label>
+	<TM_PsionicSpeedHD_I.label>псионическая скорость</TM_PsionicSpeedHD_I.label>
+	<TM_PsionicSpeedHD_I.description>Увеличенная скорость через псионическое усиление.</TM_PsionicSpeedHD_I.description>
+	<TM_PsionicSpeedHD_I.stages.0.label>II</TM_PsionicSpeedHD_I.stages.0.label>
+	<TM_PsionicSpeedHD_II.label>псионическая скорость</TM_PsionicSpeedHD_II.label>
+	<TM_PsionicSpeedHD_II.description>Увеличенная скорость через псионическое усиление.</TM_PsionicSpeedHD_II.description>
+	<TM_PsionicSpeedHD_II.stages.0.label>III</TM_PsionicSpeedHD_II.stages.0.label>
+	<TM_PsionicSpeedHD_III.label>псионическая скорость</TM_PsionicSpeedHD_III.label>
+	<TM_PsionicSpeedHD_III.description>Увеличенная скорость через псионическое усиление.</TM_PsionicSpeedHD_III.description>
+	<TM_PsionicSpeedHD_III.stages.0.label>IV</TM_PsionicSpeedHD_III.stages.0.label>
+	<TM_PsionicManipulationHD.label>псионические манипуляции</TM_PsionicManipulationHD.label>
+	<TM_PsionicManipulationHD.description>Повышенная ловкость благодаря псионическому усилению.</TM_PsionicManipulationHD.description>
+	<TM_PsionicManipulationHD.stages.0.label>I</TM_PsionicManipulationHD.stages.0.label>
+	<TM_PsionicManipulationHD_I.label>псионические манипуляции</TM_PsionicManipulationHD_I.label>
+	<TM_PsionicManipulationHD_I.description>Повышенная ловкость благодаря псионическому усилению.</TM_PsionicManipulationHD_I.description>
+	<TM_PsionicManipulationHD_I.stages.0.label>II</TM_PsionicManipulationHD_I.stages.0.label>
+	<TM_PsionicManipulationHD_II.label>псионические манипуляции</TM_PsionicManipulationHD_II.label>
+	<TM_PsionicManipulationHD_II.description>Повышенная ловкость благодаря псионическому усилению.</TM_PsionicManipulationHD_II.description>
+	<TM_PsionicManipulationHD_II.stages.0.label>III</TM_PsionicManipulationHD_II.stages.0.label>
+	<TM_PsionicManipulationHD_III.label>псионические манипуляции</TM_PsionicManipulationHD_III.label>
+	<TM_PsionicManipulationHD_III.description>Повышенная ловкость благодаря псионическому усилению.</TM_PsionicManipulationHD_III.description>
+	<TM_PsionicManipulationHD_III.stages.0.label>IV</TM_PsionicManipulationHD_III.stages.0.label>
+	<TM_PsionicInjuryHD.comps.1.permanentLabel>уничтожен псионической силой</TM_PsionicInjuryHD.comps.1.permanentLabel>
+	<TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWell>перевязано</TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWell>
+	<TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWellInner>ушит</TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+	<TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelSolidTendedWell>набор</TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+	<TM_PsionicInjuryHD.comps.HediffComp_GetsPermanent.permanentLabel>уничтожен псионической силой</TM_PsionicInjuryHD.comps.HediffComp_GetsPermanent.permanentLabel>
+	<TM_PsionicInjuryHD.labelNounPretty>{0} в {1}</TM_PsionicInjuryHD.labelNounPretty>
+	<TM_AdrenalineHD.stages.0.label>I</TM_AdrenalineHD.stages.0.label>
+	<TM_AdrenalineHD.stages.1.label>II</TM_AdrenalineHD.stages.1.label>
+	<TM_AdrenalineHD.stages.2.label>III</TM_AdrenalineHD.stages.2.label>
+	<TM_AdrenalineHD.stages.3.label>IV</TM_AdrenalineHD.stages.3.label>
+</LanguageData>

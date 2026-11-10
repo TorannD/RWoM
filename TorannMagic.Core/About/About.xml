@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>RWoM Core (Ability Framework)</name>
+  <author>HUGINN</author>
+  <packageId>huginn.rwom.core</packageId>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+  <loadBefore>
+    <li>Torann.ARimworldOfMagic</li>
+  </loadBefore>
+  <description>[h1]RWoM Core — Ability Framework[/h1]
+
+A shared integration layer for A RimWorld of Magic (Continued) and third-party add-ons.
+
+[b]Included features[/b]
+[list]
+[*]Stable spell identifiers and definition lookup, so integrations can identify abilities independently of their displayed names.
+[*]Access to existing need-based resources, including mana and stamina: read current and maximum values, consume resources and add resources within their normal limits.
+[*]Read-only spell knowledge: learned abilities, ranks, upgrades and saved autocast settings supplied by the main mod.
+[*]Read-only class information for new progression paths, classic classes and hybrids, including progression stages where applicable.
+[*]Cast eligibility queries for manual actions and automatic AI use. These checks respect the main mod's restrictions without starting a cast or charging its cost.
+[*]External cast ownership registration: automatic RWoM casting can yield to another add-on without Core depending on that add-on.
+[*]Developer documentation, a compilable example and integration instructions for AI coding agents in the Docs folder.
+[/list]
+
+[b]What Core does not do[/b]
+Core does not grant classes, abilities or mana by itself. A RimWorld of Magic (Continued) supplies the gameplay, grimoire, progression and casting. Core does not provide a general class-enrollment, spell-learning or cast-execution API. Knowledge and class queries require a compatible gameplay provider; integrations must handle its absence. Resources stored in hediffs are not exposed by the need-based resource API.
+
+[b]Installation[/b]
+Load Harmony, then RWoM Core, then A RimWorld of Magic (Continued) and its class add-ons. Core is optional for the main mod, but an add-on that directly uses Core requires it. Install only one copy and restart the game after changing assemblies or load order.
+
+[b]For developers[/b]
+Start with Docs/README.md, then Docs/API.md and Docs/Examples. AI agents should also read Docs/AGENTS.md. Use stable namespaced spell IDs, preserve unresolved saved IDs, and let the main mod own progression and normal casting payments.</description>
+  <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3833946439</url>
+</ModMetaData>

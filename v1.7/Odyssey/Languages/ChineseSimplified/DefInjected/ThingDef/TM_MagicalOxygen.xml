@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MagicalOxygen.label>魔法制氧机</TM_MagicalOxygen.label>
+  <TM_MagicalOxygen.description>在自身和相连法力信标周围5格范围内创造可呼吸的大气，即使处于开放真空中也能生效。使用法力或魔晶，无需电力，不会自动切换资源。每台制氧机每秒消耗0.1法力，可支持250格；每块魔晶可满负荷运行100秒。覆盖区域更大时只能提供部分气压，直到更多制氧机接入网络。可储存100法力和50魔晶。不提供热量或温度防护。 供给每秒检查一次；一次未获供给时保留空气，连续两次未获供给后恢复真空。 在非真空的行星上，大气模式保持待机：不消耗资源，不从网络补充法力，也不会触发自动燃料转换。VGE 管网输出在行星上仍会消耗资源。</TM_MagicalOxygen.description>
+  <TM_MagicalOxygen.comps.0.fuelLabel>魔晶</TM_MagicalOxygen.comps.0.fuelLabel>
+  <TM_MagicalOxygen.comps.0.fuelGizmoLabel>魔晶</TM_MagicalOxygen.comps.0.fuelGizmoLabel>
+</LanguageData>

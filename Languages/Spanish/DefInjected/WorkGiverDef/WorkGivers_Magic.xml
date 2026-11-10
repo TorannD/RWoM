@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <ChargeStructure.label>cargar objeto arcano</ChargeStructure.label>
+  
+  <ChargeStructure.gerund>cargando objeto arcano</ChargeStructure.gerund>
+  
+  <ChargeStructure.verb>cargar objeto arcano</ChargeStructure.verb>
+  
+  
+  <DoBillsArcaneForge.label>trabajar magia</DoBillsArcaneForge.label>
+  
+  <DoBillsArcaneForge.gerund>trabajando magia</DoBillsArcaneForge.gerund>
+  
+  <DoBillsArcaneForge.verb>trabajar magia</DoBillsArcaneForge.verb>
+  
+  
+  <DoBillsGemcutting.label>hacer pedidos en la mesa de tallado de gemas</DoBillsGemcutting.label>
+  
+  <DoBillsGemcutting.gerund>tallando gemas</DoBillsGemcutting.gerund>
+  
+  <DoBillsGemcutting.verb>fabricar</DoBillsGemcutting.verb>
+  
+  
+  <DoBillsGolemBuilding.label>trabajar en gólem</DoBillsGolemBuilding.label>
+  
+  <DoBillsGolemBuilding.gerund>trabajando en gólems</DoBillsGolemBuilding.gerund>
+  
+  <DoBillsGolemBuilding.verb>trabajar en gólems</DoBillsGolemBuilding.verb>
+  
+  
+  <DoBillsPrintingPress.label>hacer pedidos en la mesa de impresión</DoBillsPrintingPress.label>
+  
+  <DoBillsPrintingPress.gerund>imprimiendo</DoBillsPrintingPress.gerund>
+  
+  <DoBillsPrintingPress.verb>fabricar</DoBillsPrintingPress.verb>
+  
+  
+  <DoCommanderMotivate.label>motivar a personaje</DoCommanderMotivate.label>
+  
+  <DoCommanderMotivate.gerund>motivando</DoCommanderMotivate.gerund>
+  
+  <DoCommanderMotivate.verb>motivar</DoCommanderMotivate.verb>
+  
+  
+  <DoEntertain.label>entretener a colonista</DoEntertain.label>
+  
+  <DoEntertain.gerund>entreteniendo</DoEntertain.gerund>
+  
+  <DoEntertain.verb>entretener</DoEntertain.verb>
+  
+</LanguageData>

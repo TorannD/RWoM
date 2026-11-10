@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Amp</defName>
+    <label>AMP</label>
+    <description>Blessing: Augmented by Magical Power - aka "AMP."  Short term augmentation that drastically increases physical capacity at the cost of increased stress on the body.
+
+Duration: 		30-40s
+Physical capacity: 	~+30%
+Physical demand: 	+40%
+Pain:		-20%</description>
+    <spellId>rwom.tm_amp</spellId>
+    <iconPath>UI/amp</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Buff_AMP</defaultProjectile>
+      <abilityDef>TM_AMP</abilityDef>
+      <warmupTime>2</warmupTime>
+      <SecondsToRecharge>600.0</SecondsToRecharge>
+      <range>40</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+      <TargetAoEProperties>
+        <targetClass>Pawn</targetClass>
+        <showRangeOnSelect>true</showRangeOnSelect>
+        <friendlyFire>true</friendlyFire>
+        <startsFromCaster>false</startsFromCaster>
+        <maxTargets>5</maxTargets>
+        <range>5</range>
+      </TargetAoEProperties>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>AMP_I</hediffDef>
+          <applyChance>1</applyChance>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_AmpI</defName>
+    <label>AMP</label>
+    <description>Blessing: Augmented by Magical Power - aka "AMP."  Drastically increases physical capacity at the cost of increased stress on the body.
+		
+Duration: 		30-40s
+Physical capacity: 	~+50%
+Physical demand: 	+60%
+Pain:		-20%</description>
+    <spellId>rwom.tm_amp_i</spellId>
+    <iconPath>UI/amp</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Buff_AMP</defaultProjectile>
+      <abilityDef>TM_AMP_I</abilityDef>
+      <warmupTime>4</warmupTime>
+      <SecondsToRecharge>600.0</SecondsToRecharge>
+      <range>40</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+      <TargetAoEProperties>
+        <targetClass>Pawn</targetClass>
+        <showRangeOnSelect>true</showRangeOnSelect>
+        <friendlyFire>true</friendlyFire>
+        <startsFromCaster>false</startsFromCaster>
+        <maxTargets>6</maxTargets>
+        <range>6</range>
+      </TargetAoEProperties>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>AMP_I</hediffDef>
+          <applyChance>1.0</applyChance>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_AmpII</defName>
+    <label>AMP</label>
+    <description>Blessing: Augmented by Magical Power - aka "AMP."  Drastically increases physical capacity at the cost of increased stress on the body.
+		
+Duration: 		50-60s
+Physical capacity: 	~+65%
+Physical demand: 	+60%
+Pain:		-30%</description>
+    <spellId>rwom.tm_amp_ii</spellId>
+    <iconPath>UI/amp</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Buff_AMP</defaultProjectile>
+      <abilityDef>TM_AMP_II</abilityDef>
+      <warmupTime>4</warmupTime>
+      <SecondsToRecharge>600.0</SecondsToRecharge>
+      <range>40</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+      <TargetAoEProperties>
+        <targetClass>Pawn</targetClass>
+        <showRangeOnSelect>true</showRangeOnSelect>
+        <friendlyFire>true</friendlyFire>
+        <startsFromCaster>false</startsFromCaster>
+        <maxTargets>8</maxTargets>
+        <range>8</range>
+      </TargetAoEProperties>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>AMP_II</hediffDef>
+          <applyChance>1.0</applyChance>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_AmpIII</defName>
+    <label>AMP</label>
+    <description>Blessing: Augmented by Magical Power - aka "AMP."  Drastically increases physical capacity at the cost of increased stress on the body.
+		
+Duration: 		50-60s
+Physical capacity: 	~+80%
+Physical demand: 	+100%
+Pain:		-40%</description>
+    <spellId>rwom.tm_amp_iii</spellId>
+    <iconPath>UI/amp</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_BLOS</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>true</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Buff_AMP</defaultProjectile>
+      <abilityDef>TM_AMP_III</abilityDef>
+      <warmupTime>4</warmupTime>
+      <SecondsToRecharge>600.0</SecondsToRecharge>
+      <range>40</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Message_PositiveEvent</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <AbilityTargetCategory>TargetAoE</AbilityTargetCategory>
+      <TargetAoEProperties>
+        <targetClass>Pawn</targetClass>
+        <showRangeOnSelect>true</showRangeOnSelect>
+        <friendlyFire>true</friendlyFire>
+        <startsFromCaster>false</startsFromCaster>
+        <maxTargets>10</maxTargets>
+        <range>15</range>
+      </TargetAoEProperties>
+      <isPrimary>true</isPrimary>
+      <isViolent>false</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <hediffsToApply>
+        <li>
+          <hediffDef>AMP_III</hediffDef>
+          <applyChance>1.0</applyChance>
+        </li>
+      </hediffsToApply>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Lightningcloud</defName>
+    <label>Lightning Cloud</label>
+    <description>Creates an area charged with lightning. Damages and stuns anything in its mists.</description>
+    <spellId>rwom.tm_lightningcloud</spellId>
+    <iconPath>UI/stormcloud</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Verb_LightningCloud</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_LightningCloud</defaultProjectile>
+      <abilityDef>TM_LightningCloud</abilityDef>
+      <warmupTime>2.5</warmupTime>
+      <SecondsToRecharge>120.0</SecondsToRecharge>
+      <range>80</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>Explosion_Smoke</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <isViolent>true</isViolent>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Lightningbolt</defName>
+    <label>Lightning Bolt</label>
+    <description>Launch a bolt of lightning to strike your target.</description>
+    <spellId>rwom.tm_lightningbolt</spellId>
+    <iconPath>UI/lightningbolt2</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility_TrueBurst</verbClass>
+      <tooltipShowProjectileDamage>true</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Laser_LightningBolt</defaultProjectile>
+      <abilityDef>TM_LightningBolt</abilityDef>
+      <warmupTime>.6</warmupTime>
+      <SecondsToRecharge>20.0</SecondsToRecharge>
+      <range>38</range>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+      <isPrimary>true</isPrimary>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>8</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Lightningstorm</defName>
+    <label>Lightning Storm</label>
+    <description>Create a fierce, but uncontrolled, lightning storm over the target location.</description>
+    <spellId>rwom.tm_lightningstorm</spellId>
+    <iconPath>UI/lightningstorm</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_LightningStorm</defaultProjectile>
+      <abilityDef>TM_LightningStorm</abilityDef>
+      <warmupTime>5</warmupTime>
+      <SecondsToRecharge>300</SecondsToRecharge>
+      <burstShotCount>1</burstShotCount>
+      <range>200</range>
+      <isViolent>true</isViolent>
+      <soundCast>ThrowGrenade</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <AlwaysHits>true</AlwaysHits>
+      <isPrimary>true</isPrimary>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_Eyeofthestorm</defName>
+    <label>Eye of the Storm</label>
+    <description>Release a ball of pure electrical energy that annihilates everything it its path.</description>
+    <spellId>rwom.tm_eyeofthestorm</spellId>
+    <iconPath>Spells/eyeofthestorm</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.Effect_EyeOfTheStorm</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <requiresLineOfSight>false</requiresLineOfSight>
+      <defaultProjectile>Projectile_EyeOfTheStorm</defaultProjectile>
+      <abilityDef>TM_EyeOfTheStorm</abilityDef>
+      <AbilityTargetCategory>TargetLocation</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <warmupTime>0.5</warmupTime>
+      <SecondsToRecharge>10.0</SecondsToRecharge>
+      <range>80</range>
+      <isViolent>true</isViolent>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>TM_Launch</soundCast>
+      <muzzleFlashScale>4</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+    </verbProperties>
+  </AbilityDef>
+</Defs>

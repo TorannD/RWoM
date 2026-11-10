@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <ArcaneStashTreasure.label>сокровище</ArcaneStashTreasure.label>
+  <ArcaneStashTreasure.description>Тайник неизвестного мага, в котором спрятан ценный предмет.</ArcaneStashTreasure.description>
+  <ArcaneDefenders.label>арканные защитники</ArcaneDefenders.label>
+  <ArcaneDefenders.description>Это место сторожит магическая механизированная охрана.</ArcaneDefenders.description>
+  <EnemyRaidOnArrival.label>вражеский налёт</EnemyRaidOnArrival.label>
+  <EnemyRaidOnArrival.description>В этом месте засел враждебный отряд, тоже охотящийся за арканной силой и готовый бросить вам вызов ради неё.</EnemyRaidOnArrival.description>
+</LanguageData>

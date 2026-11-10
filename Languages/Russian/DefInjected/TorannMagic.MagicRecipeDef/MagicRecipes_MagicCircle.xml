@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+	<TM_HeatWaveMR.label>изменение: тепловая волна</TM_HeatWaveMR.label>
+	<TM_HeatWaveMR.description>Накрывает карту тепловой волной.
+Кастеров: 3
+Маны: 50 на каждого
+Шанс неудачи: 5%
+Ответная реакция на ошибку: 0</TM_HeatWaveMR.description>
+	<TM_HeatWaveMR.jobString>вызывает тепловую волну</TM_HeatWaveMR.jobString>
+	<TM_ColdSnapMR.label>изменение: похолодание</TM_ColdSnapMR.label>
+	<TM_ColdSnapMR.description>Накрывает карту похолоданием.
+Кастеров: 3
+Маны: 50 на каждого
+Шанс неудачи: 5%
+Ответная реакция на ошибку: 0</TM_ColdSnapMR.description>
+	<TM_ColdSnapMR.jobString>вызывает холодную волну</TM_ColdSnapMR.jobString>
+	<TM_NameWindMR.label>изменение: ветер имён</TM_NameWindMR.label>
+	<TM_NameWindMR.description>Вызывает по всей карте сильные ветра на несколько дней.
+Кастеров: 1
+Маны: 40 на каждого
+Шанс неудачи: 10%
+Ответная реакция на ошибку: 6</TM_NameWindMR.description>
+	<TM_NameWindMR.jobString>вызывает ветер</TM_NameWindMR.jobString>
+	<TM_PsychicSootheMR.label>изменение: психическое успокоение</TM_PsychicSootheMR.label>
+	<TM_PsychicSootheMR.description>Создаёт успокаивающие психические эманации.
+Кастеров: 3
+Маны: 50 на каждого
+Шанс неудачи: 25%
+Ответная реакция на ошибку: 10</TM_PsychicSootheMR.description>
+	<TM_PsychicSootheMR.jobString>создание психического успокоения</TM_PsychicSootheMR.jobString>
+	<TM_HealingRainMR.label>изменение: целебный дождь</TM_HealingRainMR.label>
+	<TM_HealingRainMR.description>Омывает карту целебным дождём.
+Кастеров: 1
+Маны: 60 на каждого
+Шанс неудачи: 20%
+Ответная реакция на ошибку: 10</TM_HealingRainMR.description>
+	<TM_HealingRainMR.jobString>формирование целебного дождя</TM_HealingRainMR.jobString>
+	<TM_NaturesGiftMR.label>изменение: дар природы</TM_NaturesGiftMR.label>
+	<TM_NaturesGiftMR.description>Порождает полезное случайное природное событие.
+Кастеров: 3
+Маны: 40 на каждого
+Шанс неудачи: 25%
+Ответная реакция на ошибку: 12</TM_NaturesGiftMR.description>
+	<TM_NaturesGiftMR.jobString>изменение вероятности события</TM_NaturesGiftMR.jobString>
+	<TM_CallOfTheWildMR.label>Изменение: зов дикой природы</TM_CallOfTheWildMR.label>
+	<TM_CallOfTheWildMR.description>Привлекает внимание диких животных.
+Кастеров: 2
+Маны: 60 на каждого
+Шанс неудачи: 20%
+Ответная реакция на ошибку: 12</TM_CallOfTheWildMR.description>
+	<TM_CallOfTheWildMR.jobString>изменение вероятности события</TM_CallOfTheWildMR.jobString>
+	<TM_TerrestrialBeaconMR.label>изменение: земной маяк</TM_TerrestrialBeaconMR.label>
+	<TM_TerrestrialBeaconMR.description>Меняет траекторию падающих объектов так, чтобы они приземлялись рядом.
+Кастеров: 2
+Маны: 60 на каждого
+Шанс неудачи: 25%
+Ответная реакция на ошибку: 12</TM_TerrestrialBeaconMR.description>
+	<TM_TerrestrialBeaconMR.jobString>изменение вероятности события</TM_TerrestrialBeaconMR.jobString>
+	<TM_MeteorFallMR.label>заклинание: метеоритный дождь</TM_MeteorFallMR.label>
+	<TM_MeteorFallMR.description>Вызывает падение нескольких метеоритов поблизости.
+Кастеров: 3
+Маны: 60 на каждого
+Шанс неудачи: 15%
+Ответная реакция на ошибку: 0</TM_MeteorFallMR.description>
+	<TM_MeteorFallMR.jobString>Призывает метеориты</TM_MeteorFallMR.jobString>
+	<TM_CreateSkeletonMR.label>Заклинание: скелет</TM_CreateSkeletonMR.label>
+	<TM_CreateSkeletonMR.description>Создаёт анимированный скелет из одного трупа; он будет защищать колонию 5 дней или до уничтожения.
+Кастеров: 1
+Маны: 50 на каждого
+Шанс неудачи: 10%
+Ответная реакция на ошибку: 8</TM_CreateSkeletonMR.description>
+	<TM_CreateSkeletonMR.jobString>создание скелета</TM_CreateSkeletonMR.jobString>
+	<TM_CreateGiantSkeletonMR.label>Заклинание: гигантский скелет</TM_CreateGiantSkeletonMR.label>
+	<TM_CreateGiantSkeletonMR.description>Создаёт гигантский анимированный скелет из груды трупов; он будет защищать колонию 5 дней или до уничтожения.
+Кастеров: 4
+Маны: 50 на каждого
+Шанс неудачи: 25%
+Ответная реакция на ошибку: 12</TM_CreateGiantSkeletonMR.description>
+	<TM_CreateGiantSkeletonMR.jobString>Оживление скелета</TM_CreateGiantSkeletonMR.jobString>
+	<TM_SummonSpiritMR.label>Заклинание: дух-владелец</TM_SummonSpiritMR.label>
+	<TM_SummonSpiritMR.description>Призывает блуждающего духа.
+Ролики: 3
+Мана: 40 шт.
+Шанс провала: 25%
+Неудачный люфт: 15</TM_SummonSpiritMR.description>
+	<TM_SummonSpiritMR.jobString>блуждающий дух</TM_SummonSpiritMR.jobString>
+	<TM_RuunbledMR.label>Заклинание: мистическое оружие</TM_RuunbledMR.label>
+	<TM_RuunbledMR.description>Призывает мистическое оружие.
+Кастеров: 3
+Маны: 60 на каждого
+Шанс неудачи: 50%
+Ответная реакция на ошибку: 10</TM_RuunbledMR.description>
+	<TM_RuunbledMR.jobString>вызов мистического оружия</TM_RuunbledMR.jobString>
+	<TM_ArcaneAugmentationMR.label>Заклинание: тайное увеличение</TM_ArcaneAugmentationMR.label>
+	<TM_ArcaneAugmentationMR.description>Накладывает множество тайных усилений на поселенцев.
+Кастеров: 3
+Макс. целей: 10
+Маны: 40 на каждого
+Шанс неудачи: 15%
+Ответная реакция на ошибку: 6</TM_ArcaneAugmentationMR.description>
+	<TM_ArcaneAugmentationMR.jobString>применение тайных бафы</TM_ArcaneAugmentationMR.jobString>
+	<TM_BlightWildlifeMR.label>Заклинание: упадок дикой природы</TM_BlightWildlifeMR.label>
+	<TM_BlightWildlifeMR.description>Поражает чумой всю дикую фауну на карте.
+Кастеров: 3
+Маны: 40 на каждого
+Шанс неудачи: 15%
+Ответная реакция на ошибку: 6</TM_BlightWildlifeMR.description>
+	<TM_BlightWildlifeMR.jobString>заклятие дикой природы</TM_BlightWildlifeMR.jobString>
+	<TM_BeastialRageMR.label>Заклинание: ярость хищника</TM_BeastialRageMR.label>
+	<TM_BeastialRageMR.description>Разъяряет хищников на карте и направляет их ярость на ваших врагов.
+Кастеров: 2
+Маны: 40 на каждого
+Шанс неудачи: 35%
+Ответная реакция на ошибку: 10</TM_BeastialRageMR.description>
+	<TM_BeastialRageMR.jobString>разъяренные хищники</TM_BeastialRageMR.jobString>
+	<TM_ArcaneInspirationMR.label>Заклинание: тайное вдохновение</TM_ArcaneInspirationMR.label>
+	<TM_ArcaneInspirationMR.description>Ищет тайные откровения и дарует вдохновение.
+Кастеров: 1
+Маны: 50 на каждого
+Шанс неудачи: 15%
+Ответная реакция на ошибку: 6</TM_ArcaneInspirationMR.description>
+	<TM_ArcaneInspirationMR.jobString>погружение в тайну</TM_ArcaneInspirationMR.jobString>
+	<TM_DivineBlessingMR.label>Заклинание: божественное благословение</TM_DivineBlessingMR.label>
+	<TM_DivineBlessingMR.description>Молит высшую силу проявить милосердие к больным пешкам.
+Кастеров: 3
+Маны: 60 на каждого
+Шанс неудачи: 40%
+Ответная реакция на ошибку: 0</TM_DivineBlessingMR.description>
+	<TM_DivineBlessingMR.jobString>в поисках божественного благословения</TM_DivineBlessingMR.jobString>
+	<TM_SummonDemonMR.label>заклинание: призыв демона *испытание*</TM_SummonDemonMR.label>
+	<TM_SummonDemonMR.description>Привлекает демонического противника.
+Кастеров: 6
+Маны: 40 на каждого
+Шанс неудачи: 20%
+Ответная реакция на ошибку: 20</TM_SummonDemonMR.description>
+	<TM_SummonDemonMR.jobString>вызов демона</TM_SummonDemonMR.jobString>
+	<TM_SummonWanderingLichMR.label>заклинание: призыв блуждающего лича *испытание*</TM_SummonWanderingLichMR.label>
+	<TM_SummonWanderingLichMR.description>Привлекает внимание блуждающего лича.
+Кастеров: 6
+Маны: 40 на каждого
+Шанс неудачи: 20%
+Ответная реакция на ошибку: 20</TM_SummonWanderingLichMR.description>
+	<TM_SummonWanderingLichMR.jobString>вызов лича</TM_SummonWanderingLichMR.jobString>
+</LanguageData>

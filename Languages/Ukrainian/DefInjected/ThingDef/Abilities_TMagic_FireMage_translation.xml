@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Ray of Hope start -->
+
+  <Buff_RayofHope.label>Промінь світла</Buff_RayofHope.label>
+
+
+  <!-- Firebolt -->
+
+  <Projectile_Firebolt.label>Шарова блискавка</Projectile_Firebolt.label>
+
+
+  <!-- Fireball -->
+
+  <Projectile_Fireball.label>вогняна куля</Projectile_Fireball.label>
+
+
+  <!-- Fire Claw -->
+
+  <Projectile_Fireclaw.label>Вогняний кіготь</Projectile_Fireclaw.label>
+
+
+  <!-- Firestorm -->
+
+  <Projectile_Firestorm.label>Вогняний шторм</Projectile_Firestorm.label>
+
+
+</LanguageData>

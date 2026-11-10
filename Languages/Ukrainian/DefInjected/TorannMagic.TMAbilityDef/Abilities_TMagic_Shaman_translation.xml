@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Totems -->
+
+  <TM_Totems.label>Тотеми</TM_Totems.label>
+  <TM_Totems.description>Тотеми - це форма магії, яка прив&apos;язує елементальний дух до фізичного світу, дозволяючи йому впливати на об&apos;єкти поруч з тотемом. Ця здатність збільшує контроль над усіма типами тотемів.</TM_Totems.description>
+
+
+  <!-- Create lightning totem -->
+
+  <TM_SummonTotemLightning.label>Тотем: Блискавка</TM_SummonTotemLightning.label>
+  <TM_SummonTotemLightning.description>Створює тотем блискавки в цільовій області. Триває 1 ігрова година і розряджає електричні розряди у ворогів в радіусі 40 метрів кожні 2-3 секунди.</TM_SummonTotemLightning.description>
+
+
+  <!-- Create earth totem -->
+
+  <TM_SummonTotemEarth.label>Тотем: Земля</TM_SummonTotemEarth.label>
+  <TM_SummonTotemEarth.description>Створює тотем землі в цільовій області. Триває 1 ігрова година і викликає поштовхи кожні 3-4 секунди, які хитають всі пішаки в межах 5 клітин.</TM_SummonTotemEarth.description>
+
+
+  <!-- Create healing totem -->
+
+  <TM_SummonTotemHealing.label>Тотем: Зцілення</TM_SummonTotemHealing.label>
+  <TM_SummonTotemHealing.description>Створює зціляючий тотем в цільовому місці розташування. Триває 1 ігрова година і періодично лікує довколишні пішаки.</TM_SummonTotemHealing.description>
+
+
+  <!-- Chain Lightning -->
+
+  <TM_ChainLightning.label>Ланцюгова блискавка</TM_ChainLightning.label>
+  <TM_ChainLightning.description>Потужний розряд блискавки, який розгалужується після потрапляння в свою першу ціль.</TM_ChainLightning.description>
+
+
+  <!-- Enrage -->
+
+  <TM_Enrage.label>Приводити в лють</TM_Enrage.label>
+  <TM_Enrage.description>Накладає на мету закляття, яке змушує їх емоції (настрій) ставати паливом для бойової люті. Закляття згорить саме по собі, як тільки всі емоції будуть витрачені. Ворожі цілі негайно впадуть у несамовитість, якщо їх розум сприйнятливий.
+
+Розлючена пішака отримує поліпшені рухи і маніпуляції, підвищену стійкість до болю, не може бути приголомшена і збільшує шкоди в ближньому бою на відсоток, рівний силі люті (бонус до урону 20-50%).</TM_Enrage.description>
+
+
+  <!-- Hex -->
+
+  <TM_Hex.label>Прокляття</TM_Hex.label>
+  <TM_Hex.description>Прокляття (I) - вішає прокляття на пішаки, додаткові ефекти можуть бути застосовані до проклятих цілей. Проходить через 6 ігрових годин.
+
+Максимальна кількість цілей: 4
+Радіус: 3
+Дальність: 36
+Підготовка: 1 сек.</TM_Hex.description>
+
+  <TM_Hex_I.label>Прокляття</TM_Hex_I.label>
+  <TM_Hex_I.description>Прокляття (II) - вішає прокляття на пішаки, додаткові ефекти можуть бути застосовані до проклятих цілей. Проходить через 6 ігрових годин.
+
+Максимальна кількість цілей: 5
+Радіус: 3
+Дальність: 40
+Підготовка: .8 сек.</TM_Hex_I.description>
+
+  <TM_Hex_II.label>Прокляття</TM_Hex_II.label>
+  <TM_Hex_II.description>Прокляття (III) - вішає прокляття на пішаки, додаткові ефекти можуть бути застосовані до проклятих цілей. Проходить через 6 ігрових годин.
+
+Максимальна кількість цілей: 5
+Радіус: 4
+Дальність: 43
+Підготовка: .7 сек.</TM_Hex_II.description>
+
+  <TM_Hex_III.label>Прокляття</TM_Hex_III.label>
+  <TM_Hex_III.description>Прокляття (IV) - вішає прокляття на пішаки, додаткові ефекти можуть бути застосовані до проклятих цілей. Проходить через 6 ігрових годин.
+
+Максимальна кількість цілей: 6
+Радіус: 4
+Дальність: 45
+Підготовка: .6 сек.</TM_Hex_III.description>
+
+  <TM_Hex_Pain.label>Біль (Прокляття)</TM_Hex_Pain.label>
+  <TM_Hex_Pain.description>Всі зачаровані пішаки відчувають сильний біль.</TM_Hex_Pain.description>
+
+  <TM_Hex_CriticalFail.label>Критичний промах (Прокляття)</TM_Hex_CriticalFail.label>
+  <TM_Hex_CriticalFail.description>Накладає недовговічне прокляття на всі зачаровані цілі, що викликає крайнє невезіння.</TM_Hex_CriticalFail.description>
+
+  <TM_Hex_MentalAssault.label>Психічний тиск (Прокляття)</TM_Hex_MentalAssault.label>
+  <TM_Hex_MentalAssault.description>Змушує всі зачаровані цілі відчувати драматичний і, можливо, приголомшливий сплеск емоцій.</TM_Hex_MentalAssault.description>
+
+
+  <!-- Spirit Wolves -->
+
+  <TM_SpiritWolves.label>Дух вовків</TM_SpiritWolves.label>
+  <TM_SpiritWolves.description>Проявляє зграю парфумів вовків. Парфуми вовки завдають ментальної шкоди, яка ігнорує броню і оглушає.
+
+Дальність: 50
+Підготовка: 3 секунди
+Перезарядка: 120 секунд</TM_SpiritWolves.description>
+
+  <TM_SpiritWolves_I.label>Дух вовків (I)</TM_SpiritWolves_I.label>
+  <TM_SpiritWolves_I.description>Проявляє зграю парфумів вовків. Парфуми вовки завдають ментальної шкоди, яка ігнорує броню і оглушає.
+
+Дальність: 55
+Підготовка: 2.7 сек
+Перезарядка: 110 сек</TM_SpiritWolves_I.description>
+
+  <TM_SpiritWolves_II.label>Дух вовків (II)</TM_SpiritWolves_II.label>
+  <TM_SpiritWolves_II.description>Проявляє зграю парфумів вовків. Парфуми вовки завдають ментальної шкоди, яка ігнорує броню і оглушає.
+
+Дальність: 60
+Підготовка: 2.5 сек
+Перезарядка: 100 сек</TM_SpiritWolves_II.description>
+
+  <TM_SpiritWolves_III.label>Дух вовків (III)</TM_SpiritWolves_III.label>
+  <TM_SpiritWolves_III.description>Проявляє зграю парфумів вовків. Парфуми вовки завдають ментальної шкоди, яка ігнорує броню і оглушає.
+
+Дальність: 65
+Підготовка: 2.4 сек
+Перезарядка: 90 сек</TM_SpiritWolves_III.description>
+
+
+  <!-- Guardian Spirit -->
+
+  <TM_GuardianSpirit.label>Дух-охоронець</TM_GuardianSpirit.label>
+  <TM_GuardianSpirit.description>Викликає духа-хранителя. Парфуми-хранителі проявляються як могутні тварини з унікальними силами і здібностями.
+
+Дух Ведмедя - уособлює захист і стійкість; видасть рев проти будь-кого, хто подумає ігнорувати цього небезпечного звіра.
+
+Дух Мангуста - уособлює хитрість і спритність; здатний прослизнути крізь царство духів, щоб нанести смертельну приховану атаку.
+
+Дух Ворона - уособлює магію і проникливість; накладає закляття на ворогів і посилює мудрість свого підопічного.
+
+Після визначення тип духу-зберігача залишається колишнім, проте його можна примусово змінити за допомогою сувою прив&apos;язки духу.</TM_GuardianSpirit.description>
+
+  <TM_DismissGuardianSpirit.label>Звільнити Духа-Хранителя</TM_DismissGuardianSpirit.label>
+  <TM_DismissGuardianSpirit.description>Звільняє духа-хранителя, щоб повернутися в царство духів.</TM_DismissGuardianSpirit.description>
+
+
+</LanguageData>

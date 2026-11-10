@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <TM_SpiritDistortionHD.label>distorsión espiritual</TM_SpiritDistortionHD.label>
+  
+  <TM_SpiritDistortionHD.description>El espíritu de este personaje está distorsionado y no puede mantener la cohesión con su cuerpo. Este personaje es vulnerable y recibirá más daño.</TM_SpiritDistortionHD.description>
+  
+  
+  <TM_SpiritDrainHD.label>drenaje de espíritu</TM_SpiritDrainHD.label>
+  
+  <TM_SpiritDrainHD.description>A este personaje le han drenado el espíritu y su futuro se ve sombrío.</TM_SpiritDrainHD.description>
+  
+  <TM_SpiritDrainHD.stages.recovering.label>recuperándose</TM_SpiritDrainHD.stages.recovering.label>
+  
+  <TM_SpiritDrainHD.stages.minor.label>leve</TM_SpiritDrainHD.stages.minor.label>
+  
+  <TM_SpiritDrainHD.stages.low.label>bajo</TM_SpiritDrainHD.stages.low.label>
+  
+  <TM_SpiritDrainHD.stages.moderate.label>moderado</TM_SpiritDrainHD.stages.moderate.label>
+  
+  <TM_SpiritDrainHD.stages.severe.label>grave</TM_SpiritDrainHD.stages.severe.label>
+  
+  <TM_SpiritDrainHD.stages.deadly.label>mortal</TM_SpiritDrainHD.stages.deadly.label>
+  
+  
+  <TM_SpiritPossessionHD.label>posesión espiritual</TM_SpiritPossessionHD.label>
+  
+  <TM_SpiritPossessionHD.description>Poseído por un espíritu.</TM_SpiritPossessionHD.description>
+  
+  <TM_SpiritPossessionHD.stages.distorted.label>distorsionado</TM_SpiritPossessionHD.stages.distorted.label>
+  
+  <TM_SpiritPossessionHD.stages.conflicted.label>en conflicto</TM_SpiritPossessionHD.stages.conflicted.label>
+  
+  <TM_SpiritPossessionHD.stages.unstable.label>inestable</TM_SpiritPossessionHD.stages.unstable.label>
+  
+  <TM_SpiritPossessionHD.stages.stable.label>estable</TM_SpiritPossessionHD.stages.stable.label>
+  
+  <TM_SpiritPossessionHD.stages.cooperative.label>cooperativo</TM_SpiritPossessionHD.stages.cooperative.label>
+  
+  <TM_SpiritPossessionHD.stages.harmonious.label>armonioso</TM_SpiritPossessionHD.stages.harmonious.label>
+  
+  
+  <TM_SpiritPossessorHD.label>espíritu</TM_SpiritPossessorHD.label>
+  
+  <TM_SpiritPossessorHD.description>Este personaje es un espíritu, incapaz de interactuar con el mundo físico de la forma habitual. Los espíritus no pueden sufrir daño físico, pero perderán fuerza espiritual si su forma recibe daño.</TM_SpiritPossessorHD.description>
+  
+  <TM_SpiritPossessorHD.stages.I.label>I</TM_SpiritPossessorHD.stages.I.label>
+  
+  <TM_SpiritPossessorHD.stages.II.label>II</TM_SpiritPossessorHD.stages.II.label>
+  
+  <TM_SpiritPossessorHD.stages.III.label>III</TM_SpiritPossessorHD.stages.III.label>
+  
+  <TM_SpiritPossessorHD.stages.IV.label>IV</TM_SpiritPossessorHD.stages.IV.label>
+  
+</LanguageData>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_MonkPalmSeal.label>Sello de la palma</TM_MonkPalmSeal.label>
+  <TM_MonkPalmSeal.description>Golpea sin armas a un enemigo adyacente. Inflige 16/22/28 de daño espiritual e interrumpe un segundo. Coste base: 20 de chi. Recarga: 30 segundos.</TM_MonkPalmSeal.description>
+  <TM_MonkSilentMeridian.label>Meridiano silencioso</TM_MonkSilentMeridian.label>
+  <TM_MonkSilentMeridian.description>Permanece inmóvil y sin armas. Tras cinco segundos, tres pulsos en doce segundos infligen 12 de daño espiritual cada uno a cuatro enemigos visibles a cinco casillas. El primero aturde dos segundos y consume hasta un 15% de un recurso. Coste: 60% de chi. Recarga: dos días.</TM_MonkSilentMeridian.description>
+</LanguageData>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Work tables -->
+
+  <TableGemcutting.label>mesa para fazer pedras preciosas</TableGemcutting.label>
+  <TableGemcutting.description>Verstack para processamento de pedras preciosas</TableGemcutting.description>
+  <TableGemcutting_Blueprint.label>mesa para fazer pedras preciosas (projeto)</TableGemcutting_Blueprint.label>
+  <TableGemcutting_Blueprint_Install.label>mesa para fazer pedras preciosas (projeto)</TableGemcutting_Blueprint_Install.label>
+  <TableGemcutting_Frame.label>mesa para fazer pedras preciosas (construção)</TableGemcutting_Frame.label>
+  <TableGemcutting_Frame.description>Verstack para processamento de pedras preciosas</TableGemcutting_Frame.description>
+
+  <TableMagicPrinter.label>Mesa de escrever</TableMagicPrinter.label>
+  <TableMagicPrinter.description>Impressão usada para fazer livros e pergaminhos.</TableMagicPrinter.description>
+  <TableMagicPrinter_Blueprint.label>mesa de escrever (projeto)</TableMagicPrinter_Blueprint.label>
+  <TableMagicPrinter_Blueprint_Install.label>mesa de escrever (projeto)</TableMagicPrinter_Blueprint_Install.label>
+  <TableMagicPrinter_Frame.label>mesa de escrever (construção)</TableMagicPrinter_Frame.label>
+  <TableMagicPrinter_Frame.description>Impressão usada para fazer livros e pergaminhos.</TableMagicPrinter_Frame.description>
+
+  <TableArcaneForge.label>forja mística</TableArcaneForge.label>
+  <TableArcaneForge.description>A forja mística permite que o mago possua poder secreto para criar objetos materiais.
+
+Cientificamente, a forja mística pode ser descrita como um fabrico de matéria, embora a mecânica precisa ainda não tenha sido definida. Só quem tem a capacidade de manipular a força secreta pode usar esta forja.
+
+O uso da forja aumenta drasticamente a velocidade do kraft, mas consome a Manu. A qualidade dos itens é determinada pela inteligência do mago e seu nível de classe.</TableArcaneForge.description>
+  <TableArcaneForge_Blueprint.label>forja mística (projeto)</TableArcaneForge_Blueprint.label>
+  <TableArcaneForge_Blueprint_Install.label>forja mística (projeto)</TableArcaneForge_Blueprint_Install.label>
+  <TableArcaneForge_Frame.label>forja mística (construção)</TableArcaneForge_Frame.label>
+  <TableArcaneForge_Frame.description>A forja mística permite que o mago possua poder secreto para criar objetos materiais.
+
+Cientificamente, a forja mística pode ser descrita como um fabrico de matéria, embora a mecânica precisa ainda não tenha sido definida. Só quem tem a capacidade de manipular a força secreta pode usar esta forja.
+
+O uso da forja aumenta drasticamente a velocidade do kraft, mas consome a Manu. A qualidade dos itens é determinada pela inteligência do mago e seu nível de classe.</TableArcaneForge_Frame.description>
+
+  <TableMagicCircle.label>círculo mágico</TableMagicCircle.label>
+  <TableMagicCircle.description>O círculo mágico é um projeto que aumenta a magia, focando a física e a magia. Embora possa parecer simples, o círculo é traçado por rumas complexas e construído com precisão detalhada.
+
+Os mágicos podem usar o círculo mágico para aumentar sua força ou combinar sua energia com outros mágicos para criar efeitos únicos e poderosos. O círculo pode acomodar até seis mágicos.
+
+O tipo de material usado na construção afeta diretamente a qualidade do círculo mágico.
+Pedra (qualquer): nenhum bónus
+Aço: sem bónus
+Árvore: sem bónus
+Jade: chance de sucesso + 30%
+Prata: restituição de 25% do valor do material
+Plástico: pontos de evento + 15%, duração + 10%
+Ouro: pontos de evento + 20%, duração + 20%, devolução de 15% do valor do material
+Urânio: duração e chance de sucesso + 20%
+Arkalleum: chance de sucesso + 15%, devolução de 25% do valor do maná
+
+* Nota do administrador: o círculo vai alimentar-se quando ele descobrir mágicos capazes de executar o ritual.</TableMagicCircle.description>
+  <TableMagicCircle_Blueprint.label>círculo mágico (projeto)</TableMagicCircle_Blueprint.label>
+  <TableMagicCircle_Frame.label>círculo mágico (construção)</TableMagicCircle_Frame.label>
+  <TableMagicCircle_Frame.description>O círculo mágico é um projeto que aumenta a magia, focando a física e a magia. Embora possa parecer simples, o círculo é traçado por rumas complexas e construído com precisão detalhada.
+
+Os mágicos podem usar o círculo mágico para aumentar sua força ou combinar sua energia com outros mágicos para criar efeitos únicos e poderosos. O círculo pode acomodar até seis mágicos.
+
+O tipo de material usado na construção afeta diretamente a qualidade do círculo mágico.
+Pedra (qualquer): nenhum bónus
+Aço: sem bónus
+Árvore: sem bónus
+Jade: chance de sucesso + 30%
+Prata: restituição de 25% do valor do material
+Plástico: pontos de evento + 15%, duração + 10%
+Ouro: pontos de evento + 20%, duração + 20%, devolução de 15% do valor do material
+Urânio: duração e chance de sucesso + 20%
+Arkalleum: chance de sucesso + 15%, devolução de 25% do valor do maná
+
+* Nota do administrador: o círculo vai alimentar-se quando ele descobrir mágicos capazes de executar o ritual.</TableMagicCircle_Frame.description>
+
+  <TableSmallMagicCircle.label>foco mágico</TableSmallMagicCircle.label>
+  <TableSmallMagicCircle.description>O truque mágico é um subproduto de pesquisa de linhas de lei mágicas e interconexão secreta. O ponto focal permite que o mago visualize a sua ligação com Haia e outros mágicos, permitindo que eles interajam melhor com a natureza, ordem e caos. O truque mágico pode ligar a força secreta de dois mágicos para fazer rituais poderosos.
+
+O tipo de material usado na construção afeta diretamente a qualidade do círculo mágico.
+Pedra (qualquer): nenhum bónus
+Aço: sem bónus
+Árvore: sem bónus
+Jade: chance de sucesso + 15%
+Prata: devolução de 15% do valor do material
+Plástico: pontos de evento + 15%
+Ouro: pontos de evento + 10%, duração + 15%, devolução de 10% do valor do material
+Urânio: duração e chance de sucesso + 10%
+Arkalleum: chance de sucesso + 10%, devolução de 10% do valor do maná
+
+* Nota do administrador: o círculo vai alimentar-se quando ele descobrir mágicos capazes de executar o ritual. Os magos não podem ser forçados a trabalhar no foco, mas vão cumprir os rituais quando as condições forem cumpridas.</TableSmallMagicCircle.description>
+  <TableSmallMagicCircle_Blueprint.label>foco mágico (projeto)</TableSmallMagicCircle_Blueprint.label>
+  <TableSmallMagicCircle_Frame.label>truque mágico (construção)</TableSmallMagicCircle_Frame.label>
+  <TableSmallMagicCircle_Frame.description>O truque mágico é um subproduto de pesquisa de linhas de lei mágicas e interconexão secreta. O ponto focal permite que o mago visualize a sua ligação com Haia e outros mágicos, permitindo que eles interajam melhor com a natureza, ordem e caos. O truque mágico pode ligar a força secreta de dois mágicos para fazer rituais poderosos.
+
+O tipo de material usado na construção afeta diretamente a qualidade do círculo mágico.
+Pedra (qualquer): nenhum bónus
+Aço: sem bónus
+Árvore: sem bónus
+Jade: chance de sucesso + 15%
+Prata: devolução de 15% do valor do material
+Plástico: pontos de evento + 15%
+Ouro: pontos de evento + 10%, duração + 15%, devolução de 10% do valor do material
+Urânio: duração e chance de sucesso + 10%
+Arkalleum: chance de sucesso + 10%, devolução de 10% do valor do maná
+
+* Nota do administrador: o círculo vai alimentar-se quando ele descobrir mágicos capazes de executar o ritual. Os magos não podem ser forçados a trabalhar no foco, mas vão cumprir os rituais quando as condições forem cumpridas.</TableSmallMagicCircle_Frame.description>
+
+
+</LanguageData>

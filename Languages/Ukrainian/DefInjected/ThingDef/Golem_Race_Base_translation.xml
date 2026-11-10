@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- STONE GOLEM -->
+
+  <TM_StoneGolem.label>кам&apos;яний голем</TM_StoneGolem.label>
+  <TM_StoneGolem.tools.0.label>розбити</TM_StoneGolem.tools.0.label>
+  <TM_StoneGolem.tools.1.label>лівий кулак</TM_StoneGolem.tools.1.label>
+  <TM_StoneGolem.tools.2.label>правий кулак</TM_StoneGolem.tools.2.label>
+  <TM_StoneGolem.description>Простий голем, створений з каменю і жвавий магією.</TM_StoneGolem.description>
+  <TM_StoneGolem_Leather.label>шкіра кам&apos;яного голему</TM_StoneGolem_Leather.label>
+  <TM_StoneGolem_Leather.description>шкіра кам&apos;яного голему</TM_StoneGolem_Leather.description>
+  <TM_StoneGolem_Leather.stuffProps.stuffAdjective>шкіра кам&apos;яного голему</TM_StoneGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_StoneGolem_Corpse.label>труп кам&apos;яного голему</TM_StoneGolem_Corpse.label>
+  <TM_StoneGolem_Corpse.description>труп кам&apos;яного голему</TM_StoneGolem_Corpse.description>
+
+
+  <!-- STONE GOLEM -->
+
+  <TM_SandstoneGolem.label>голем з піщаника</TM_SandstoneGolem.label>
+  <TM_SandstoneGolem.tools.0.label>розбити</TM_SandstoneGolem.tools.0.label>
+  <TM_SandstoneGolem.tools.1.label>лівий кулак</TM_SandstoneGolem.tools.1.label>
+  <TM_SandstoneGolem.tools.2.label>правий кулак</TM_SandstoneGolem.tools.2.label>
+  <TM_SandstoneGolem.description>Простий голем, створений з каменю і жвавий магією.</TM_SandstoneGolem.description>
+  <TM_SandstoneGolem_Leather.label>шкіра голему з піщаника</TM_SandstoneGolem_Leather.label>
+  <TM_SandstoneGolem_Leather.description>шкіра голему з піщаника</TM_SandstoneGolem_Leather.description>
+  <TM_SandstoneGolem_Leather.stuffProps.stuffAdjective>шкіра голему з піщаника</TM_SandstoneGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_SandstoneGolem_Corpse.label>труп голему з піщаника</TM_SandstoneGolem_Corpse.label>
+  <TM_SandstoneGolem_Corpse.description>труп голему з піщаника</TM_SandstoneGolem_Corpse.description>
+
+
+  <!-- STONE GOLEM -->
+
+  <TM_LimestoneGolem.label>вапняковий голем</TM_LimestoneGolem.label>
+  <TM_LimestoneGolem.tools.0.label>розбити</TM_LimestoneGolem.tools.0.label>
+  <TM_LimestoneGolem.tools.1.label>лівий кулак</TM_LimestoneGolem.tools.1.label>
+  <TM_LimestoneGolem.tools.2.label>правий кулак</TM_LimestoneGolem.tools.2.label>
+  <TM_LimestoneGolem.description>Простий голем, створений з каменю і жвавий магією.</TM_LimestoneGolem.description>
+  <TM_LimestoneGolem_Leather.label>шкіра вапнякового голему</TM_LimestoneGolem_Leather.label>
+  <TM_LimestoneGolem_Leather.description>шкіра вапнякового голему</TM_LimestoneGolem_Leather.description>
+  <TM_LimestoneGolem_Leather.stuffProps.stuffAdjective>шкіра вапнякового голему</TM_LimestoneGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_LimestoneGolem_Corpse.label>труп вапнякового голему</TM_LimestoneGolem_Corpse.label>
+  <TM_LimestoneGolem_Corpse.description>труп вапнякового голему</TM_LimestoneGolem_Corpse.description>
+
+
+  <!-- STONE GOLEM -->
+
+  <TM_GraniteGolem.label>гранітний голем</TM_GraniteGolem.label>
+  <TM_GraniteGolem.tools.0.label>розбити</TM_GraniteGolem.tools.0.label>
+  <TM_GraniteGolem.tools.1.label>лівий кулак</TM_GraniteGolem.tools.1.label>
+  <TM_GraniteGolem.tools.2.label>правий кулак</TM_GraniteGolem.tools.2.label>
+  <TM_GraniteGolem.description>Простий голем, створений з каменю і жвавий магією.</TM_GraniteGolem.description>
+  <TM_GraniteGolem_Leather.label>шкіра гранітного голему</TM_GraniteGolem_Leather.label>
+  <TM_GraniteGolem_Leather.description>шкіра гранітного голему</TM_GraniteGolem_Leather.description>
+  <TM_GraniteGolem_Leather.stuffProps.stuffAdjective>шкіра гранітного голему</TM_GraniteGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_GraniteGolem_Corpse.label>труп гранітного голему</TM_GraniteGolem_Corpse.label>
+  <TM_GraniteGolem_Corpse.description>труп гранітного голему</TM_GraniteGolem_Corpse.description>
+
+
+  <!-- STONE GOLEM -->
+
+  <TM_SlateGolem.label>сланцевий голем</TM_SlateGolem.label>
+  <TM_SlateGolem.tools.0.label>розбити</TM_SlateGolem.tools.0.label>
+  <TM_SlateGolem.tools.1.label>лівий кулак</TM_SlateGolem.tools.1.label>
+  <TM_SlateGolem.tools.2.label>правий кулак</TM_SlateGolem.tools.2.label>
+  <TM_SlateGolem.description>Простий голем, створений з каменю і жвавий магією.</TM_SlateGolem.description>
+  <TM_SlateGolem_Leather.label>шиферна шкіра голему</TM_SlateGolem_Leather.label>
+  <TM_SlateGolem_Leather.description>шиферна шкіра голему</TM_SlateGolem_Leather.description>
+  <TM_SlateGolem_Leather.stuffProps.stuffAdjective>шиферна шкіра голему</TM_SlateGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_SlateGolem_Corpse.label>труп сланцевого голему</TM_SlateGolem_Corpse.label>
+  <TM_SlateGolem_Corpse.description>труп сланцевого голему</TM_SlateGolem_Corpse.description>
+
+
+  <!-- STONE GOLEM -->
+
+  <TM_MarbleGolem.label>мармуровий голем</TM_MarbleGolem.label>
+  <TM_MarbleGolem.tools.0.label>розбити</TM_MarbleGolem.tools.0.label>
+  <TM_MarbleGolem.tools.1.label>лівий кулак</TM_MarbleGolem.tools.1.label>
+  <TM_MarbleGolem.tools.2.label>правий кулак</TM_MarbleGolem.tools.2.label>
+  <TM_MarbleGolem.description>Простий голем, створений з каменю і жвавий магією.</TM_MarbleGolem.description>
+  <TM_MarbleGolem_Leather.label>шкіра мармурового голему</TM_MarbleGolem_Leather.label>
+  <TM_MarbleGolem_Leather.description>шкіра мармурового голему</TM_MarbleGolem_Leather.description>
+  <TM_MarbleGolem_Leather.stuffProps.stuffAdjective>шкіра мармурового голему</TM_MarbleGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_MarbleGolem_Corpse.label>труп мармурового голему</TM_MarbleGolem_Corpse.label>
+  <TM_MarbleGolem_Corpse.description>труп мармурового голему</TM_MarbleGolem_Corpse.description>
+
+
+  <!-- MECHA GOLEM -->
+
+  <TM_MechaGolem.label>хутро-голем</TM_MechaGolem.label>
+  <TM_MechaGolem.description>Голем, створений з необробленого матеріалу і отримав базову автономію завдяки поєднанню схем і магії.</TM_MechaGolem.description>
+  <TM_MechaGolem.tools.0.label>розбите тіло</TM_MechaGolem.tools.0.label>
+  <TM_MechaGolem.tools.1.label>лівий кулак</TM_MechaGolem.tools.1.label>
+  <TM_MechaGolem.tools.2.label>хутро-сокира</TM_MechaGolem.tools.2.label>
+  <TM_MechaGolem.tools.3.label>хутро-меч</TM_MechaGolem.tools.3.label>
+  <TM_MechaGolem.tools.4.label>правий кулак</TM_MechaGolem.tools.4.label>
+  <TM_MechaGolem.tools.5.label>хутро-молот</TM_MechaGolem.tools.5.label>
+  <!-- No Leather: Butcher Products -->
+  <TM_MechaGolem_Meat.label>м&apos;ясо хутра-голему</TM_MechaGolem_Meat.label>
+  <TM_MechaGolem_Meat.description>м&apos;ясо хутра-голему</TM_MechaGolem_Meat.description>
+  <TM_MechaGolem_Corpse.label>труп хутра-голему</TM_MechaGolem_Corpse.label>
+  <TM_MechaGolem_Corpse.description>труп хутра-голему</TM_MechaGolem_Corpse.description>
+
+
+  <!-- FLESH GOLEM -->
+
+  <TM_FleshGolem.label>голем з плоті</TM_FleshGolem.label>
+  <TM_FleshGolem.description>Голем, створений з плоті, кісток та органів інших істот, який отримав базову автономію завдяки поєднанню біоінженерії та магії.</TM_FleshGolem.description>
+  <TM_FleshGolem.tools.0.label>кров</TM_FleshGolem.tools.0.label>
+  <TM_FleshGolem.tools.1.label>ікла</TM_FleshGolem.tools.1.label>
+  <TM_FleshGolem.tools.2.label>лівий кулак</TM_FleshGolem.tools.2.label>
+  <TM_FleshGolem.tools.3.label>лівий щиток</TM_FleshGolem.tools.3.label>
+  <TM_FleshGolem.tools.4.label>лівий тесак</TM_FleshGolem.tools.4.label>
+  <TM_FleshGolem.tools.5.label>правий кулак</TM_FleshGolem.tools.5.label>
+  <TM_FleshGolem.tools.6.label>правий щиток</TM_FleshGolem.tools.6.label>
+  <TM_FleshGolem.tools.7.label>правий тесак</TM_FleshGolem.tools.7.label>
+  <TM_FleshGolem_Leather.label>шкіра голему з плоті</TM_FleshGolem_Leather.label>
+  <TM_FleshGolem_Leather.description>шкіра голему з плоті</TM_FleshGolem_Leather.description>
+  <TM_FleshGolem_Leather.stuffProps.stuffAdjective>шкіра голему з плоті</TM_FleshGolem_Leather.stuffProps.stuffAdjective>
+  <!-- Use Meat From: Human -->
+  <TM_FleshGolem_Corpse.label>труп голему з плоті</TM_FleshGolem_Corpse.label>
+  <TM_FleshGolem_Corpse.description>труп голему з плоті</TM_FleshGolem_Corpse.description>
+
+
+  <!-- HOLLOW GOLEM -->
+
+  <TM_HollowGolem.label>порожній голем</TM_HollowGolem.label>
+  <TM_HollowGolem.description>Голем, створений з конденсованої магії і таємних каталізаторів. Броня, що оточує полого голему, прив&apos;язує магічний центр до фізичного місця розташування і захищає його фізичну цілісність. Порожній голем здатний використовувати величезну кількість магічної енергії для різних цілей, що робить його одним з найгнучкіших големів, розроблених на сьогоднішній день. Порожній голем поглинає магічну енергію з атмосфери, так само, як парацит, зі зменшенням мани, еквівалентним 10 парацитам тернових кущів.</TM_HollowGolem.description>
+  <TM_HollowGolem.verbs.0.label>палаюча енергія</TM_HollowGolem.verbs.0.label>
+  <TM_HollowGolem.verbs.1.label>блискавки</TM_HollowGolem.verbs.1.label>
+  <TM_HollowGolem.verbs.2.label>осколки льоду</TM_HollowGolem.verbs.2.label>
+  <TM_HollowGolem.verbs.3.label>блискавка темряви</TM_HollowGolem.verbs.3.label>
+  <TM_HollowGolem.tools.0.label>лапа</TM_HollowGolem.tools.0.label>
+  <TM_HollowGolem.tools.1.label>дотик до розпаду</TM_HollowGolem.tools.1.label>
+  <TM_HollowGolem.tools.2.label>порожня сокира</TM_HollowGolem.tools.2.label>
+  <TM_HollowGolem.tools.3.label>порожній посох</TM_HollowGolem.tools.3.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_HollowGolem_Corpse.label>труп полого голему</TM_HollowGolem_Corpse.label>
+  <TM_HollowGolem_Corpse.description>труп полого голему</TM_HollowGolem_Corpse.description>
+
+
+  <!-- MAHARAL GOLEM -->
+
+  <TM_MaharalGolem.label>махарал голем</TM_MaharalGolem.label>
+  <TM_MaharalGolem.description>Голем, створений з суміші формованого каменю, загорнутий у шкіру.</TM_MaharalGolem.description>
+  <TM_MaharalGolem.tools.0.label>лівий кулак</TM_MaharalGolem.tools.0.label>
+  <TM_MaharalGolem.tools.1.label>правий кулак</TM_MaharalGolem.tools.1.label>
+  <!-- No Leather: Butcher Products -->
+  <!-- Meat Amount: 0 -->
+  <TM_MaharalGolem_Corpse.label>труп голему махарала</TM_MaharalGolem_Corpse.label>
+  <TM_MaharalGolem_Corpse.description>труп голему махарала</TM_MaharalGolem_Corpse.description>
+
+
+</LanguageData>

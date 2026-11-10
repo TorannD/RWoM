@@ -1,0 +1,15 @@
+<LanguageData><!-- Shadow start-->
+	<Buff_Shadow.label>Тень</Buff_Shadow.label>
+	<!-- Magic Missile-->
+	<Projectile_MagicMissile.label>Волшебный снаряд</Projectile_MagicMissile.label>
+	<!-- Teleport start-->
+	<Projectile_Teleport.label>Телепорт</Projectile_Teleport.label>
+	<!-- Blink Start-->
+	<Projectile_Blink.label>Мерцание</Projectile_Blink.label>
+	<!-- Summon Start-->
+	<Projectile_Summon.label>Призыв</Projectile_Summon.label>
+	<TM_SummonedPawn.label>летающий объект</TM_SummonedPawn.label>
+	<MovingObject.label>движущийся объект</MovingObject.label>
+	<!-- Fold Reality-->
+	<Projectile_FoldReality.label>свернуть реальность</Projectile_FoldReality.label>
+</LanguageData>

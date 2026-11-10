@@ -12,7 +12,7 @@ using HarmonyLib;
 namespace TorannMagic
 {
     [StaticConstructorOnStartup]
-    public class Projectile_Refraction : Projectile_AbilityBase
+    public class Projectile_Refraction : ClassProgression.Projectile_SpiritBolt
     {
         private bool initialized = false;
         private bool wallActive = false;
@@ -25,10 +25,14 @@ namespace TorannMagic
         List<IntVec3> wallPositions = new List<IntVec3>();
         LocalTargetInfo secondTarget = null;
         Pawn caster;
+        private bool promptOpened;
+        private bool promptCancelled;
+        private HashSet<int> mirrored = new HashSet<int>();
+        private HashSet<int> crossing = new HashSet<int>();
         public static readonly MaterialPropertyBlock MatPropertyBlock = new MaterialPropertyBlock();
 
-        private int pwrVal = 0;
-        private int verVal = 0;
+        protected override List<MagicPowerSkill> Skills(MagicData data) => data.MagicPowerSkill_Refraction;
+        protected override string SkillStem => "TM_Refraction";
         private float wallEnergy = 1500f;
 
         //unsaved variables
@@ -49,25 +53,33 @@ namespace TorannMagic
             Scribe_Values.Look<Vector3>(ref this.wallDir, "wallDir", default(Vector3), false);
             Scribe_Values.Look<Vector3>(ref this.wallEnd, "wallEnd", default(Vector3), false);
             Scribe_References.Look<Pawn>(ref this.caster, "caster", false);
+            Scribe_TargetInfo.Look(ref secondTarget, "TM_refractionEndpoint");
+            Scribe_Values.Look(ref promptCancelled, "TM_refractionCancelled");
             Scribe_Collections.Look<IntVec3>(ref this.wallPositions, "wallPositions", LookMode.Value);
+            Scribe_Collections.Look(ref mirrored, "TM_refractionMirrored", LookMode.Value);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && mirrored == null) mirrored = new HashSet<int>();
         }
 
         public void BeginTargetingWithVerb(TMAbilityDef verbToAdd, TargetingParameters targetParams, Action<LocalTargetInfo> action, Pawn caster = null, Action actionWhenFinished = null, Texture2D mouseAttachment = null)
         {
-            AccessTools.Field(typeof(Targeter), "action").SetValue(Find.Targeter, action);
-            AccessTools.Field(typeof(Targeter), "targetParams").SetValue(Find.Targeter, targetParams);
-            AccessTools.Field(typeof(Targeter), "caster").SetValue(Find.Targeter, caster);
-            AccessTools.Field(typeof(Targeter), "actionWhenFinished").SetValue(Find.Targeter, actionWhenFinished);
-            AccessTools.Field(typeof(Targeter), "mouseAttachment").SetValue(Find.Targeter, mouseAttachment);
+            Find.Targeter.BeginTargeting(targetParams, action, caster: caster, actionWhenFinished: actionWhenFinished, mouseAttachment: mouseAttachment);
         }
 
         private void GetSecondTarget()
         {
-            Find.Targeter.StopTargeting();
-            this.BeginTargetingWithVerb(TorannMagicDefOf.TM_CompVerb, TorannMagicDefOf.TM_CompVerb.MainVerb.targetParams, delegate (LocalTargetInfo info)
-            {
-                secondTarget = info;
-            }, caster, null, null);
+            if (promptOpened || promptCancelled || Find.CurrentMap != Map || Find.Targeter.IsTargeting) return;
+            var body = launcher as Pawn;
+            if (body?.Spawned != true || body.Map != Map ||
+                projected && (!ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(body, out var soul) || soul != caster))
+            { promptCancelled = true; return; }
+            promptOpened = true;
+            bool Available() => Spawned && Find.CurrentMap == Map && body.Spawned && !body.Dead && body.Map == Map &&
+                (!projected || ClassProgression.SpiritRebirthState.TryGetPossessingSpirit(body,out var held) && held == caster);
+            bool Valid(LocalTargetInfo info) => Available() && info.IsValid && info.Cell != Position && info.Cell.InBounds(Map);
+            Find.Targeter.BeginTargeting(TorannMagicDefOf.TM_CompVerb.MainVerb.targetParams,
+                info => { if (Valid(info)) { secondTarget = new LocalTargetInfo(info.Cell); promptCancelled = false; } },
+                highlightAction: null, targetValidator: Valid, actionWhenFinished: () => { if (!secondTarget.IsValid) promptCancelled = true; },
+                onUpdateAction: _ => { if (!Available()) Find.Targeter.StopTargeting(); });
         }
 
         private void GetWallCells()
@@ -79,7 +91,7 @@ namespace TorannMagic
             for(int i = 0; i < wallLength; i++)
             {
                 cell = (wallStart + (wallDir * i)).ToIntVec3();
-                if (!wallPositions.Contains(cell))
+                if (cell.InBounds(Map) && !wallPositions.Contains(cell))
                 {
                     wallPositions.Add(cell);
                 }
@@ -90,11 +102,11 @@ namespace TorannMagic
         {
             if (caster != null)
             {
-                CompAbilityUserMagic comp = caster.GetCompAbilityUserMagic();
-                //pwrVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Refraction, "TM_Refraction", "_pwr", TorannMagicDefOf.TM_Refraction.canCopy);
-                //verVal = TM_Calc.GetMagicSkillLevel(caster, comp.MagicData.MagicPowerSkill_Refraction, "TM_Refraction", "_ver", TorannMagicDefOf.TM_Refraction.canCopy);
-                pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_Refraction);
-                verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_Refraction);
+                if (!projected)
+                {
+                    pwrVal = TM_Calc.GetSkillPowerLevel(caster, TorannMagicDefOf.TM_Refraction);
+                    verVal = TM_Calc.GetSkillVersatilityLevel(caster, TorannMagicDefOf.TM_Refraction);
+                }
                 if (caster.health.hediffSet.HasHediff(TorannMagicDefOf.TM_LightCapacitanceHD))
                 {
                     HediffComp_LightCapacitance hd = caster.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_LightCapacitanceHD).TryGetComp<HediffComp_LightCapacitance>();
@@ -108,18 +120,19 @@ namespace TorannMagic
         {
             Map map = base.Map;
             base.Impact(hitThing);
-            ThingDef def = this.def;
+            if (!Spawned || map == null) return;
             if (!this.initialized)
             {
-                caster = this.launcher as Pawn;
+                caster = SourcePawn;
                 Initialize();
-                GetSecondTarget();
                 this.initialized = true;
             }
 
             if (caster != null && !caster.DestroyedOrNull() && !caster.Dead)
             {
-                if (!this.wallActive && this.secondTarget != null)
+                if (!wallActive && !secondTarget.IsValid) GetSecondTarget();
+                if (promptCancelled) { age = duration + 1; Destroy(); return; }
+                if (!this.wallActive && this.secondTarget.IsValid)
                 {
                     this.age = 0;
                     this.duration = 1500 + (verVal * 150);
@@ -136,7 +149,7 @@ namespace TorannMagic
                 {
                     if (Find.TickManager.TicksGame % 6 == 0)
                     {
-                        FleckMaker.ThrowDustPuff(base.Position, caster.Map, Rand.Range(.6f, .9f));
+                        FleckMaker.ThrowDustPuff(base.Position, map, Rand.Range(.6f, .9f));
                     }
                 }
                 else
@@ -158,12 +171,15 @@ namespace TorannMagic
 
         public void RefractProjectiles()
         {
+            if (wallEnergy <= 0f) { age = duration + 1; Destroy(); return; }
             float eMissVar = .1f + (.015f * pwrVal);
             float fMissVar = .05f - (.01f * pwrVal);
+            crossing.Clear();
             for (int k = 0; k < this.wallPositions.Count; k++)
             {
+                if (!wallPositions[k].InBounds(Map)) continue;
                 List<Thing> cellList = this.wallPositions[k].GetThingList(this.Map);
-                for (int i = 0; i < cellList.Count; i++)
+                for (int i = cellList.Count - 1; i >= 0; i--)
                 {
                     Thing t = cellList[i];
                     if (t is Projectile proj && t.def.defName != "Projectile_Refraction")
@@ -183,12 +199,13 @@ namespace TorannMagic
                                 LocalTargetInfo initialTarget = proj.intendedTarget;
                                 targetVec.x += Mathf.RoundToInt(Rand.Range(-eMissVar, eMissVar) * targetRange);
                                 targetVec.z += Mathf.RoundToInt(Rand.Range(-eMissVar, eMissVar) * targetRange);
-                                TM_CopyAndLaunchProjectile.CopyAndLaunchThingFromPosition(proj.def, proj.Launcher, wallPositions[k], this.Map, targetVec, intendedTarget, ProjectileHitFlags.All, null);
+                                TM_CopyAndLaunchProjectile.CopyAndLaunchThingFromPosition(proj.def, proj.Launcher, wallPositions[k], this.Map, targetVec.ClampInsideMap(Map), initialTarget, ProjectileHitFlags.All, null);
                                 proj.Destroy(DestroyMode.Vanish);
                                 this.wallEnergy -= proj.def.projectile.GetDamageAmount(1f, null);
                             }
                             else
                             {
+                                if (!crossing.Add(proj.thingIDNumber) || mirrored.Contains(proj.thingIDNumber)) continue;
                                 Vector3 displayEffect = this.wallPositions[k].ToVector3Shifted();
                                 displayEffect.x += Rand.Range(-.2f, .2f);
                                 displayEffect.z += Rand.Range(-.2f, .2f);
@@ -198,13 +215,17 @@ namespace TorannMagic
                                 LocalTargetInfo initialTarget = proj.intendedTarget;
                                 targetCell.x += Mathf.RoundToInt(Rand.Range(-fMissVar, fMissVar) * targetRange);
                                 targetCell.z += Mathf.RoundToInt(Rand.Range(-fMissVar, fMissVar) * targetRange);
-                                TM_CopyAndLaunchProjectile.CopyAndLaunchThingFromPosition(proj.def, proj.Launcher, wallPositions[k], this.Map, targetCell, initialTarget, ProjectileHitFlags.All);
+                                TM_CopyAndLaunchProjectile.CopyAndLaunchThingFromPosition(proj.def, proj.Launcher, wallPositions[k], this.Map, targetCell.ClampInsideMap(Map), initialTarget, ProjectileHitFlags.All);
                                 this.wallEnergy -= proj.def.projectile.GetDamageAmount(1f, null);
                             }
+                            if (wallEnergy <= 0f) { age = duration + 1; Destroy(); return; }
                         }
                     }
                 }
             }
+            var previous = mirrored;
+            mirrored = crossing;
+            crossing = previous;
         }
 
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)

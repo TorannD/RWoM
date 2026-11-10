@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <AbilityDef Class="TorannMagic.TMBridgeAbilityDef" ParentName="TMBridgeAbilityBase">
+    <defName>TM_Bridge_BladePassage</defName>
+    <label>blade passage</label>
+    <description>Cross a clear path toward an enemy within 6/8/10 cells and strike once for 90% melee weapon damage. Requires an empty landing cell beside the target. Base stamina cost: 20%. Cooldown: 30 seconds. Base recovery: 1 second.</description>
+    <spellId>rwom.tm_bladepassage</spellId>
+    <iconPath>UI/phased</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>TorannMagic.ClassProgression.Verb_BladePassage</verbClass>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+      <hasStandardCommand>true</hasStandardCommand>
+      <abilityDef>TM_BladePassage</abilityDef>
+      <isViolent>true</isViolent>
+      <defaultProjectile>Projectile_PhaseStrike</defaultProjectile>
+      <warmupTime>0.5</warmupTime>
+      <defaultCooldownTime>1</defaultCooldownTime>
+      <SecondsToRecharge>30</SecondsToRecharge>
+      <range>10</range>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+      <AbilityTargetCategory>TargetThing</AbilityTargetCategory>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>
+

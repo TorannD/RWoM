@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -149,7 +149,9 @@ namespace TorannMagic
         private void TransferMana(CompAbilityUserMagic comp, float magnitude)
         {
             this.ArcaneEnergyCur -= 7;
+            float manaBefore = comp.Mana.CurLevel;
             comp.Mana.CurLevel += .05f;
+            this.GetComp<Visuals.CompLegacyBuildingEffects>()?.NotifyTransfer(comp.Mana.CurLevel - manaBefore, Find.TickManager.TicksGame);
             for (int i = 0; i < 4; i++)
             {
                 Vector3 moteDirection = TM_Calc.GetVector(this.Position, comp.Pawn.Position);

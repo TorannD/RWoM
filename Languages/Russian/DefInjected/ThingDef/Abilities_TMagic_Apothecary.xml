@@ -1,0 +1,8 @@
+<LanguageData><!-- Poison Flask-->
+	<Projectile_PoisonFlask.label>Фляжка с ядом</Projectile_PoisonFlask.label>
+	<!-- Fire suppression Flask-->
+	<Projectile_FireDousingFlask.label>Колба для пожаротушения</Projectile_FireDousingFlask.label>
+	<Projectile_FireDousingFlask_I.label>Колба для пожаротушения</Projectile_FireDousingFlask_I.label>
+	<Projectile_FireDousingFlask_II.label>Колба для пожаротушения</Projectile_FireDousingFlask_II.label>
+	<Projectile_FireDousingFlask_III.label>Колба для пожаротушения</Projectile_FireDousingFlask_III.label>
+</LanguageData>

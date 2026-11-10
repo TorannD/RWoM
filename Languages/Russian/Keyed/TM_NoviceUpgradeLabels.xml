@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ArcaneBolt_pwr>Урон</TM_ArcaneBolt_pwr>
+  <TM_ArcaneBolt_eff>Экономия маны</TM_ArcaneBolt_eff>
+  <TM_ArcaneBolt_ver>Число применений</TM_ArcaneBolt_ver>
+  <TM_MageLight_pwr>Радиус света</TM_MageLight_pwr>
+  <TM_MageLight_eff>Экономия маны</TM_MageLight_eff>
+  <TM_MageLight_ver>Длительность</TM_MageLight_ver>
+  <TM_Extinguish_pwr>Область действия</TM_Extinguish_pwr>
+  <TM_Extinguish_eff>Экономия маны</TM_Extinguish_eff>
+  <TM_Extinguish_ver>Сила тушения</TM_Extinguish_ver>
+  <TM_Heater_pwr>Сила обогрева</TM_Heater_pwr>
+  <TM_Heater_eff>Экономия маны</TM_Heater_eff>
+  <TM_Heater_ver>Длительность</TM_Heater_ver>
+  <TM_Cooler_pwr>Сила охлаждения</TM_Cooler_pwr>
+  <TM_Cooler_eff>Экономия маны</TM_Cooler_eff>
+  <TM_Cooler_ver>Длительность</TM_Cooler_ver>
+  <TM_SmokeCloud_pwr>Размер облака</TM_SmokeCloud_pwr>
+  <TM_SmokeCloud_eff>Экономия маны</TM_SmokeCloud_eff>
+  <TM_SmokeCloud_ver>Длительность</TM_SmokeCloud_ver>
+</LanguageData>

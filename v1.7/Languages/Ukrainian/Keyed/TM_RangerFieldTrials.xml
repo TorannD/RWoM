@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_RangerMasteryHint>Різних ворогів у ваших пастках: {0}/8 · Загашено складських пожеж: {1}/12</TM_RangerMasteryHint>
+  <TM_RangerFireHint>Власноруч загасіть пожежу на горючих запасах колонії або поруч із ними. Запаси мають бути в придатному сховищі. Ділянка 12×12 зараховується раз на добу. Підпали вашої фракції не рахуються.</TM_RangerFireHint>
+  <TM_RangerMasteryClaim>Опанувати «{0}»</TM_RangerMasteryClaim>
+  <TM_RangerAscensionHint>Рівень воїна: {0}/30 · Відступи союзників безпечною стежкою: {1}/8 · Зміни догляду за тваринами: {2}/10</TM_RangerAscensionHint>
+  <TM_RangerWoundHint>Працюючи лікарем, обробіть справжню рану тварини колонії. Зараховується одна завершена зміна на добу.</TM_RangerWoundHint>
+  <TM_RangerChooseUltimate>Обрати техніку Вознесіння</TM_RangerChooseUltimate>
+  <TM_RangerEarnedUltimate>Техніка Вознесіння: «{0}»</TM_RangerEarnedUltimate>
+</LanguageData>

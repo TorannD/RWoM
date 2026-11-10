@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FlyingObject_PsionicLeap.label>Salto psicônico</FlyingObject_PsionicLeap.label>
+  <TM_Psionic_Projectile.label>projétil psicônico</TM_Psionic_Projectile.label>
+
+
+  <!-- Psionic Barrier start -->
+
+  <TM_Projectile_PsionicBarrier.label>barreira psicónica</TM_Projectile_PsionicBarrier.label>
+
+
+  <!-- Psionic Blast Start -->
+
+  <TM_Projectile_PsionicBlast.label>Explosão psicónica</TM_Projectile_PsionicBlast.label>
+
+
+  <!-- Psionic Dash start -->
+
+  <FlyingObject_PsionicDash.label>Passo psicônico</FlyingObject_PsionicDash.label>
+  <Projectile_PsionicDash.label>Passo psicônico</Projectile_PsionicDash.label>
+
+
+  <!-- PsionicStorm -->
+
+  <FlyingObject_PsionicStorm.label>tempestade psy</FlyingObject_PsionicStorm.label>
+  <Projectile_PsionicStorm.label>Tempestade Psicónica</Projectile_PsionicStorm.label>
+  <FlyingObject_PsiStorm.label>tempestade psy</FlyingObject_PsiStorm.label>
+
+
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_EtherGateSummon>召唤以太仆从</TM_EtherGateSummon>
+  <TM_EtherGateSummonDesc>消耗100魔能燃料，召唤搬运仆从一天。无需食物、睡眠或空气。 还可采矿和建造，初始采矿技能为10级，建造技能为5级。工作优先级：建造、指定采矿、搬运。</TM_EtherGateSummonDesc>
+  <TM_EtherGateUnavailable>以太之门必须放置在地图上、属于你的派系且已开启。</TM_EtherGateUnavailable>
+  <TM_EtherGateNoFuel>需要100魔能燃料。</TM_EtherGateNoFuel>
+  <TM_EtherGateNoLanding>以太之门旁没有可供仆从出现的安全位置。</TM_EtherGateNoLanding>
+  <TM_EtherGateFailed>召唤失败，未消耗魔能燃料。</TM_EtherGateFailed>
+  <TM_EtherGateBusy>正在召唤。</TM_EtherGateBusy>
+  <TM_EtherServantRemaining>剩余时间：{0}</TM_EtherServantRemaining>
+</LanguageData>

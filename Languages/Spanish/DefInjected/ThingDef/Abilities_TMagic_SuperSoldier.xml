@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Projectile_BreachingCharge.label>carga de demolición</Projectile_BreachingCharge.label>
+  
+  
+  <Projectile_Buckshot.label>perdigón de postas</Projectile_Buckshot.label>
+  
+  
+  <Projectile_Mk203GL.label>Granada</Projectile_Mk203GL.label>
+  
+  
+  <TM_PistolSpec_Base0.label>arma de especialista en pistolas</TM_PistolSpec_Base0.label>
+  
+  <TM_PistolSpec_Base0.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base0.description>
+  
+  <TM_PistolSpec_Base0.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base0.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base0.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base0.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base1.label>arma de especialista en pistolas</TM_PistolSpec_Base1.label>
+  
+  <TM_PistolSpec_Base1.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base1.description>
+  
+  <TM_PistolSpec_Base1.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base1.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base1.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base1.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base10.label>arma de especialista en pistolas</TM_PistolSpec_Base10.label>
+  
+  <TM_PistolSpec_Base10.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base10.description>
+  
+  <TM_PistolSpec_Base10.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base10.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base10.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base10.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_PistolSpec_Base11.label>arma de especialista en pistolas</TM_PistolSpec_Base11.label>
+  
+  <TM_PistolSpec_Base11.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base11.description>
+  
+  <TM_PistolSpec_Base11.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base11.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base11.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base11.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base12.label>arma de especialista en pistolas</TM_PistolSpec_Base12.label>
+  
+  <TM_PistolSpec_Base12.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base12.description>
+  
+  <TM_PistolSpec_Base12.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base12.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base12.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base12.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base13.label>arma de especialista en pistolas</TM_PistolSpec_Base13.label>
+  
+  <TM_PistolSpec_Base13.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base13.description>
+  
+  <TM_PistolSpec_Base13.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base13.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base13.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base13.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base14.label>arma de especialista en pistolas</TM_PistolSpec_Base14.label>
+  
+  <TM_PistolSpec_Base14.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base14.description>
+  
+  <TM_PistolSpec_Base14.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base14.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base14.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base14.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_PistolSpec_Base15.label>arma de especialista en pisolas</TM_PistolSpec_Base15.label>
+  
+  <TM_PistolSpec_Base15.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base15.description>
+  
+  <TM_PistolSpec_Base15.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base15.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base15.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base15.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base16.label>arma de especialista en pistolas</TM_PistolSpec_Base16.label>
+  
+  <TM_PistolSpec_Base16.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base16.description>
+  
+  <TM_PistolSpec_Base16.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base16.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base16.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base16.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base17.label>arma de especialista en pistolas</TM_PistolSpec_Base17.label>
+  
+  <TM_PistolSpec_Base17.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base17.description>
+  
+  <TM_PistolSpec_Base17.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base17.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base17.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base17.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base18.label>arma de especialista en pistolas</TM_PistolSpec_Base18.label>
+  
+  <TM_PistolSpec_Base18.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base18.description>
+  
+  <TM_PistolSpec_Base18.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base18.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base18.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base18.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base19.label>arma de especialista en pistolas</TM_PistolSpec_Base19.label>
+  
+  <TM_PistolSpec_Base19.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base19.description>
+  
+  <TM_PistolSpec_Base19.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base19.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base19.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base19.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base2.label>arma de especialista en pistolas</TM_PistolSpec_Base2.label>
+  
+  <TM_PistolSpec_Base2.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base2.description>
+  
+  <TM_PistolSpec_Base2.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base2.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base2.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base2.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base3.label>arma de especialista en pistolas</TM_PistolSpec_Base3.label>
+  
+  <TM_PistolSpec_Base3.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base3.description>
+  
+  <TM_PistolSpec_Base3.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base3.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base3.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base3.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_PistolSpec_Base4.label>arma de especialista en pistolas</TM_PistolSpec_Base4.label>
+  
+  <TM_PistolSpec_Base4.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base4.description>
+  
+  <TM_PistolSpec_Base4.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base4.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base4.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base4.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base5.label>arma de especialista en pistolas</TM_PistolSpec_Base5.label>
+  
+  <TM_PistolSpec_Base5.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base5.description>
+  
+  <TM_PistolSpec_Base5.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base5.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base5.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base5.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base6.label>arma de especialista en pistolas</TM_PistolSpec_Base6.label>
+  
+  <TM_PistolSpec_Base6.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base6.description>
+  
+  <TM_PistolSpec_Base6.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base6.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base6.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base6.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base7.label>arma de especialista en pistolas</TM_PistolSpec_Base7.label>
+  
+  <TM_PistolSpec_Base7.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base7.description>
+  
+  <TM_PistolSpec_Base7.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base7.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base7.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base7.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base8.label>arma de especialista en pistolas</TM_PistolSpec_Base8.label>
+  
+  <TM_PistolSpec_Base8.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base8.description>
+  
+  <TM_PistolSpec_Base8.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base8.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base8.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base8.verbs.Verb_Shoot.label>
+  
+  
+  <TM_PistolSpec_Base9.label>arma de especialista en pistolas</TM_PistolSpec_Base9.label>
+  
+  <TM_PistolSpec_Base9.description>Una pistola en las manos de un especialista.</TM_PistolSpec_Base9.description>
+  
+  <TM_PistolSpec_Base9.tools.pistol_whip.label>culatazo</TM_PistolSpec_Base9.tools.pistol_whip.label>
+  
+  <TM_PistolSpec_Base9.verbs.Verb_Shoot.label>disparo de especialista en pistolas</TM_PistolSpec_Base9.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_RifleSpec_Base0.label>arma de especialista en fusiles</TM_RifleSpec_Base0.label>
+  
+  <TM_RifleSpec_Base0.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base0.description>
+  
+  <TM_RifleSpec_Base0.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base0.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base0.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base0.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base1.label>arma de especialista en fusiles</TM_RifleSpec_Base1.label>
+  
+  <TM_RifleSpec_Base1.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base1.description>
+  
+  <TM_RifleSpec_Base1.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base1.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base1.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base1.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base10.label>arma de especialista en fusiles</TM_RifleSpec_Base10.label>
+  
+  <TM_RifleSpec_Base10.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base10.description>
+  
+  <TM_RifleSpec_Base10.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base10.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base10.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base10.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base11.label>arma de especialista en fusiles</TM_RifleSpec_Base11.label>
+  
+  <TM_RifleSpec_Base11.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base11.description>
+  
+  <TM_RifleSpec_Base11.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base11.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base11.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base11.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base12.label>arma de especialista en fusiles</TM_RifleSpec_Base12.label>
+  
+  <TM_RifleSpec_Base12.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base12.description>
+  
+  <TM_RifleSpec_Base12.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base12.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base12.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base12.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base13.label>arma de especialista en fusiles</TM_RifleSpec_Base13.label>
+  
+  <TM_RifleSpec_Base13.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base13.description>
+  
+  <TM_RifleSpec_Base13.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base13.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base13.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base13.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base14.label>arma de especialista en fusiles</TM_RifleSpec_Base14.label>
+  
+  <TM_RifleSpec_Base14.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base14.description>
+  
+  <TM_RifleSpec_Base14.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base14.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base14.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base14.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_RifleSpec_Base15.label>arma de especialista en fusiles</TM_RifleSpec_Base15.label>
+  
+  <TM_RifleSpec_Base15.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base15.description>
+  
+  <TM_RifleSpec_Base15.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base15.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base15.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base15.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base16.label>arma de especialista en fusiles</TM_RifleSpec_Base16.label>
+  
+  <TM_RifleSpec_Base16.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base16.description>
+  
+  <TM_RifleSpec_Base16.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base16.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base16.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base16.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base17.label>arma de especialista en fusiles</TM_RifleSpec_Base17.label>
+  
+  <TM_RifleSpec_Base17.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base17.description>
+  
+  <TM_RifleSpec_Base17.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base17.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base17.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base17.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base18.label>arma de especialista en fusiles</TM_RifleSpec_Base18.label>
+  
+  <TM_RifleSpec_Base18.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base18.description>
+  
+  <TM_RifleSpec_Base18.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base18.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base18.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base18.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base19.label>arma de especialista en fusiles</TM_RifleSpec_Base19.label>
+  
+  <TM_RifleSpec_Base19.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base19.description>
+  
+  <TM_RifleSpec_Base19.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base19.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base19.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base19.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base2.label>arma de especialista en fusiles</TM_RifleSpec_Base2.label>
+  
+  <TM_RifleSpec_Base2.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base2.description>
+  
+  <TM_RifleSpec_Base2.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base2.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base2.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base2.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_RifleSpec_Base3.label>arma de especialista en fusiles</TM_RifleSpec_Base3.label>
+  
+  <TM_RifleSpec_Base3.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base3.description>
+  
+  <TM_RifleSpec_Base3.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base3.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base3.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base3.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base4.label>arma de especialista en fusiles</TM_RifleSpec_Base4.label>
+  
+  <TM_RifleSpec_Base4.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base4.description>
+  
+  <TM_RifleSpec_Base4.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base4.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base4.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base4.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base5.label>arma de especialista en fusiles</TM_RifleSpec_Base5.label>
+  
+  <TM_RifleSpec_Base5.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base5.description>
+  
+  <TM_RifleSpec_Base5.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base5.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base5.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base5.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base6.label>arma de especialista en fusiles</TM_RifleSpec_Base6.label>
+  
+  <TM_RifleSpec_Base6.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base6.description>
+  
+  <TM_RifleSpec_Base6.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base6.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base6.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base6.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base7.label>arma de especialista en fusiles</TM_RifleSpec_Base7.label>
+  
+  <TM_RifleSpec_Base7.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base7.description>
+  
+  <TM_RifleSpec_Base7.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base7.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base7.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base7.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base8.label>arma de especialista en fusiles</TM_RifleSpec_Base8.label>
+  
+  <TM_RifleSpec_Base8.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base8.description>
+  
+  <TM_RifleSpec_Base8.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base8.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base8.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base8.verbs.Verb_Shoot.label>
+  
+  
+  <TM_RifleSpec_Base9.label>arma de especialista en fusiles</TM_RifleSpec_Base9.label>
+  
+  <TM_RifleSpec_Base9.description>Un fusil en las manos de un especialista.</TM_RifleSpec_Base9.description>
+  
+  <TM_RifleSpec_Base9.tools.rifle_stock.label>culatazo</TM_RifleSpec_Base9.tools.rifle_stock.label>
+  
+  <TM_RifleSpec_Base9.verbs.Verb_Shoot.label>disparo de especialista en fusiles</TM_RifleSpec_Base9.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base0.label>arma de especialista en escopetas</TM_ShotgunSpec_Base0.label>
+  
+  <TM_ShotgunSpec_Base0.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base0.description>
+
+  
+  <TM_ShotgunSpec_Base0.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base0.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base0.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base0.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base1.label>arma de especialista en escopetas</TM_ShotgunSpec_Base1.label>
+  
+  <TM_ShotgunSpec_Base1.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base1.description>
+  
+  <TM_ShotgunSpec_Base1.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base1.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base1.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base1.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base10.label>arma de especialista en escopetas</TM_ShotgunSpec_Base10.label>
+  
+  <TM_ShotgunSpec_Base10.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base10.description>
+  
+  <TM_ShotgunSpec_Base10.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base10.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base10.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base10.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base11.label>arma de especialista en escopetas</TM_ShotgunSpec_Base11.label>
+  
+  <TM_ShotgunSpec_Base11.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base11.description>
+  
+  <TM_ShotgunSpec_Base11.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base11.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base11.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base11.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base12.label>arma de especialista en escopetas</TM_ShotgunSpec_Base12.label>
+  
+  <TM_ShotgunSpec_Base12.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base12.description>
+  
+  <TM_ShotgunSpec_Base12.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base12.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base12.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base12.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base13.label>arma de especialista en escopetas</TM_ShotgunSpec_Base13.label>
+  
+  <TM_ShotgunSpec_Base13.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base13.description>
+  
+  <TM_ShotgunSpec_Base13.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base13.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base13.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base13.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base14.label>arma de especialista en escopetas</TM_ShotgunSpec_Base14.label>
+  
+  <TM_ShotgunSpec_Base14.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base14.description>
+  
+  <TM_ShotgunSpec_Base14.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base14.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base14.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base14.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base15.label>arma de especialista en escopetas</TM_ShotgunSpec_Base15.label>
+  
+  <TM_ShotgunSpec_Base15.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base15.description>
+  
+  <TM_ShotgunSpec_Base15.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base15.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base15.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base15.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_ShotgunSpec_Base16.label>arma de especialista en escopetas</TM_ShotgunSpec_Base16.label>
+  
+  <TM_ShotgunSpec_Base16.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base16.description>
+  
+  <TM_ShotgunSpec_Base16.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base16.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base16.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base16.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base17.label>arma de especialista en escopetas</TM_ShotgunSpec_Base17.label>
+  
+  <TM_ShotgunSpec_Base17.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base17.description>
+  
+  <TM_ShotgunSpec_Base17.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base17.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base17.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base17.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base18.label>arma de especialista en escopetas</TM_ShotgunSpec_Base18.label>
+  
+  <TM_ShotgunSpec_Base18.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base18.description>
+  
+  <TM_ShotgunSpec_Base18.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base18.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base18.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base18.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base19.label>arma de especialista en escopetas</TM_ShotgunSpec_Base19.label>
+  
+  <TM_ShotgunSpec_Base19.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base19.description>
+  
+  <TM_ShotgunSpec_Base19.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base19.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base19.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base19.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base2.label>arma de especialista en escopetas</TM_ShotgunSpec_Base2.label>
+  
+  <TM_ShotgunSpec_Base2.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base2.description>
+  
+  <TM_ShotgunSpec_Base2.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base2.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base2.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base2.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base3.label>arma de especialista en escopetas</TM_ShotgunSpec_Base3.label>
+  
+  <TM_ShotgunSpec_Base3.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base3.description>
+  
+  <TM_ShotgunSpec_Base3.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base3.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base3.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base3.verbs.Verb_Shoot.label>
+
+  
+  
+  <TM_ShotgunSpec_Base4.label>arma de especialista en escopetas</TM_ShotgunSpec_Base4.label>
+  
+  <TM_ShotgunSpec_Base4.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base4.description>
+  
+  <TM_ShotgunSpec_Base4.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base4.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base4.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base4.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base5.label>arma de especialista en escopetas</TM_ShotgunSpec_Base5.label>
+  
+  <TM_ShotgunSpec_Base5.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base5.description>
+  
+  <TM_ShotgunSpec_Base5.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base5.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base5.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base5.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base6.label>arma de especialista en escopetas</TM_ShotgunSpec_Base6.label>
+  
+  <TM_ShotgunSpec_Base6.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base6.description>
+  
+  <TM_ShotgunSpec_Base6.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base6.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base6.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base6.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base7.label>arma de especialista en escopetas</TM_ShotgunSpec_Base7.label>
+  
+  <TM_ShotgunSpec_Base7.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base7.description>
+  
+  <TM_ShotgunSpec_Base7.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base7.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base7.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base7.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base8.label>arma de especialista en escopetas</TM_ShotgunSpec_Base8.label>
+  
+  <TM_ShotgunSpec_Base8.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base8.description>
+  
+  <TM_ShotgunSpec_Base8.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base8.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base8.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base8.verbs.Verb_Shoot.label>
+  
+  
+  <TM_ShotgunSpec_Base9.label>arma de especialista en escopetas</TM_ShotgunSpec_Base9.label>
+  
+  <TM_ShotgunSpec_Base9.description>Una escopeta en las manos de un especialista.</TM_ShotgunSpec_Base9.description>
+  
+  <TM_ShotgunSpec_Base9.tools.weapon_smash.label>culatazo</TM_ShotgunSpec_Base9.tools.weapon_smash.label>
+  
+  <TM_ShotgunSpec_Base9.verbs.Verb_Shoot.label>disparo de especialista en escopetas</TM_ShotgunSpec_Base9.verbs.Verb_Shoot.label>
+
+  
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ReadShadowWalkerStrike>Ambusher — begin with Shadow Strike.</TM_ReadShadowWalkerStrike>
+  <TM_ReadShadowWalkerPoison>Poisoner — begin with Nightshade.</TM_ReadShadowWalkerPoison>
+  <TM_ShadowWalkerHits>Strike or poison different enemies with your trained technique: {0}/{1}.</TM_ShadowWalkerHits>
+  <TM_ShadowWalkerCombo>Strike poisoned enemies or apply a trained technique while cloaked: {0}/{1} different enemies.</TM_ShadowWalkerCombo>
+  <TM_ShadowWalkerStrongStrike>Deadly shadow — Shadow Strike deals 20% more damage.</TM_ShadowWalkerStrongStrike>
+  <TM_ShadowWalkerLongVeil>Long veil — Veil of Shadows lasts 50% longer.</TM_ShadowWalkerLongVeil>
+</LanguageData>

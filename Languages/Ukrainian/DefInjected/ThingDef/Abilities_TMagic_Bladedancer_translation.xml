@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- blade focus -->
+
+  <Projectile_BladeFocus.label>Фокус клинка</Projectile_BladeFocus.label>
+
+
+  <!-- blade art start -->
+
+  <Projectile_BladeArt.label>Тренування Тіла</Projectile_BladeArt.label>
+
+
+  <!-- BladeSpin Start -->
+
+  <Projectile_BladeSpin.label>Кручення Клинків</Projectile_BladeSpin.label>
+
+
+  <!-- Seismic Slash Start -->
+
+  <Projectile_SeismicSlash.label>Сейсмічний розкол</Projectile_SeismicSlash.label>
+
+
+  <!-- Phase Strike Start -->
+
+  <Projectile_PhaseStrike.label>Фазовий удар</Projectile_PhaseStrike.label>
+
+
+</LanguageData>

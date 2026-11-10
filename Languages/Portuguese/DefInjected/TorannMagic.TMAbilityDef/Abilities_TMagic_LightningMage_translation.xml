@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- <ThingDef Class="TorannMagic.TMAbilityDef" ParentName="BaseAbility"> -->
+
+  <TM_AMP.label>UMS</TM_AMP.label>
+  <TM_AMP.description>Bênção: Fortalecimento pelo Poder Mágico - também conhecido como UMS. Um reforço de curto prazo que aumenta drasticamente a capacidade física aumentando a carga corporal.
+
+Duração: 30-40s
+Desempenho Físico de £ + 30%
+Necessidade física: + 40%
+Dor: -20%</TM_AMP.description>
+
+  <TM_AMP_I.label>UMS</TM_AMP_I.label>
+  <TM_AMP_I.description>Bênção: Fortalecimento pelo Poder Mágico - também conhecido como UMS. Um reforço de curto prazo que aumenta drasticamente a capacidade física aumentando a carga corporal.
+
+Duração: 30-40s
+Desempenho Físico de £ + 50%
+Necessidade física: + 60%
+Dor: -20%</TM_AMP_I.description>
+
+  <TM_AMP_II.label>UMS</TM_AMP_II.label>
+  <TM_AMP_II.description>Bênção: Fortalecimento pelo Poder Mágico - também conhecido como UMS. Um reforço de curto prazo que aumenta drasticamente a capacidade física aumentando a carga corporal.
+
+Duração: 50-60s
+Desempenho Físico de £ + 65%
+Necessidade física: + 60%
+Dor: -30%</TM_AMP_II.description>
+
+  <TM_AMP_III.label>UMS</TM_AMP_III.label>
+  <TM_AMP_III.description>Bênção: Fortalecimento pelo Poder Mágico - também conhecido como UMS. Um reforço de curto prazo que aumenta drasticamente a capacidade física aumentando a carga corporal.
+
+Duração: 50-60s
+Desempenho Físico de £ + 80%
+Necessidade física: + 100%
+Dor: -40%</TM_AMP_III.description>
+
+
+  <!-- Lightning Cloud -->
+
+  <TM_LightningCloud.label>Nuvem de tempestade</TM_LightningCloud.label>
+  <TM_LightningCloud.description>Cria uma área carregada de relâmpago. Danifica e abafou tudo o que está nesta nuvem.</TM_LightningCloud.description>
+
+
+  <!-- Lightning Bolt -->
+
+  <TM_LightningBolt.label>Impacto relâmpago</TM_LightningBolt.label>
+  <TM_LightningBolt.description>Use um relâmpago para atingir o vosso alvo.</TM_LightningBolt.description>
+
+
+  <!-- Lightning Storm -->
+
+  <TM_LightningStorm.label>Tempestade de tempestade</TM_LightningStorm.label>
+  <TM_LightningStorm.description>Crie uma tempestade forte mas incontrolável sobre a área de destino.</TM_LightningStorm.description>
+
+
+  <!-- Eye of the Storm -->
+
+  <TM_EyeOfTheStorm.label>Olho da tempestade</TM_EyeOfTheStorm.label>
+  <TM_EyeOfTheStorm.description>Libere uma bola de energia elétrica limpa que destrói tudo no seu caminho.</TM_EyeOfTheStorm.description>
+
+
+</LanguageData>

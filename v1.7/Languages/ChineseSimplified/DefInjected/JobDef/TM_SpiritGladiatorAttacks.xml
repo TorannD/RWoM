@@ -1,0 +1,9 @@
+<LanguageData>
+  <TM_SpiritCastGladiatorSweep.reportString>正在横扫TargetB。</TM_SpiritCastGladiatorSweep.reportString>
+  <TM_SpiritCastGrapple.reportString>正在用钩索拉拽TargetB。</TM_SpiritCastGrapple.reportString>
+  <TM_SpiritCastWhirlwind.reportString>正在卷起旋风冲向TargetB。</TM_SpiritCastWhirlwind.reportString>
+  <TM_SpiritCastLastCircle.reportString>正在准备最终之环。</TM_SpiritCastLastCircle.reportString>
+  <TM_SpiritGladiatorCover.reportString>正在掩护TargetA。</TM_SpiritGladiatorCover.reportString>
+  <TM_SpiritGladiatorRelief.reportString>正在与TargetA演练支援。</TM_SpiritGladiatorRelief.reportString>
+  <TM_SpiritGladiatorEvacuation.reportString>正在与TargetA演练撤离。</TM_SpiritGladiatorEvacuation.reportString>
+</LanguageData>

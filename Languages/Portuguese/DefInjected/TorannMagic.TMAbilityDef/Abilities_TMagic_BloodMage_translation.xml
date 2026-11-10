@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Blood Gift -->
+
+  <TM_BloodGift.label>Vítima sangrenta</TM_BloodGift.label>
+  <TM_BloodGift.description>Juntando sangue e Manu em uma forma híbrida de poder usada para fazer magia sanguínea. A utilização do sacrifício sanguíneo provoca várias incisões profundas para permitir o acesso ao sangue, e a une à mana para gerar imediatamente o poder mágico do sangue.
+
+Mágicos do sangue podem lentamente gerar o poder mágico do sangue a partir de feridas abertas que sangram sem uso de maná, e podem treinar usando sangue fresco e aberto perto deles para alimentar a magia do sangue.
+
+O mago do sangue vai perder lentamente o poder mágico do sangue quando eles já não sangram.</TM_BloodGift.description>
+
+
+  <!-- Ignite Blood -->
+
+  <TM_IgniteBlood.label>Inflamação de sangue</TM_IgniteBlood.label>
+  <TM_IgniteBlood.description>Inflama e queima qualquer sangue aberto num surto de fogo. O fogo continua a espalhar-se para o sangue próximo.</TM_IgniteBlood.description>
+
+
+  <!-- Blood For Blood -->
+
+  <TM_BloodForBlood.label>Sangue por sangue</TM_BloodForBlood.label>
+  <TM_BloodForBlood.description>Amaldiçoa o sangue alvo para que aqueça e acelere até que saia de cada poro da vítima. Esta maldição tem várias consequências.
+
+O sangue que é expulso do alvo transforma-se num nevoeiro que o feitiço absorve como energia reparadora e usa para sanar feridas e reabastecer sangue. Esta capacidade vai curar lentamente as cicatrizes e outras lesões constantes do feitiço.
+
+Ferimentos e danos no alvo também serão curados quando o sangue sair de seu corpo. O alvo perde parte do seu sangue a cada impulso e, como qualquer ferimento, pode causar incapacidade ou morte se perderem demasiado sangue.
+
+A taxa de transferência e cura aumenta tanto para o feitiço como para a vítima, dependendo do quanto a vítima sangrar. Estes efeitos são iguais quando usados em peões amigos ou inimigos, mas causarão indignação se usados para reprimir ou matar um peão aliado ou neutro.</TM_BloodForBlood.description>
+
+
+  <!-- Blood Shield -->
+
+  <TM_BloodShield.label>Escudo de sangue</TM_BloodShield.label>
+  <TM_BloodShield.description>Cerca o alvo em uma barreira formada pela energia sanguínea do feitiço. A energia do escudo vai recuperar lentamente o peão que ele protege. Qualquer dano causado por um escudo dissipa parte desta energia, mas também provoca um aumento de cura em um Peão protegido.
+
+Parte do estrago consumido pelo escudo será causado ao feitiço devido à ligação sanguínea - o que inclui a cura gradual. Enquanto o mago sanguíneo que sustenta o escudo tem o poder mágico do sangue, qualquer dano devolvido irá extrair a força do sangue, mas se o mago do sangue não tiver o poder mágico do sangue, o dano devolvido causará danos físicos ao mago do sangue.
+
+Os mágicos do sangue não podem criar um escudo de sangue.</TM_BloodShield.description>
+
+
+  <!-- Rend -->
+
+  <TM_Rend.label>Separação</TM_Rend.label>
+  <TM_Rend.description>Faz com que o sangue da vítima rejeite ferozmente o seu dono e seja expelido de várias feridas, causando uma hemorragia maciça.
+
+Distância: 35
+Raio: 3
+Objetivo máximo: 3
+Retrocesso: 40
+Tempo de aplicação: 1,5s</TM_Rend.description>
+
+  <TM_Rend_I.label>Quebra I</TM_Rend_I.label>
+  <TM_Rend_I.description>Faz com que o sangue da vítima rejeite ferozmente o seu dono e seja expelido de várias feridas, causando uma hemorragia maciça.
+
+Distância: 38
+Raio: 4
+Meta máxima: 4
+Retrocesso: 30
+Tempo de aplicação: 1.3s</TM_Rend_I.description>
+
+  <TM_Rend_II.label>Ruptura (II)</TM_Rend_II.label>
+  <TM_Rend_II.description>Faz com que o sangue da vítima rejeite ferozmente o seu dono e seja expelido de várias feridas, causando uma hemorragia maciça.
+
+Distância: 41
+Raio: 4
+Objetivo máximo: 5
+Retrocesso: 20
+Tempo de aplicação: 1.1s</TM_Rend_II.description>
+
+  <TM_Rend_III.label>Separação (III)</TM_Rend_III.label>
+  <TM_Rend_III.description>Faz com que o sangue da vítima rejeite ferozmente o seu dono e seja expelido de várias feridas, causando uma hemorragia maciça.
+
+Distância: 44
+Raio: 5
+Objetivo máximo: 5
+Retrocesso: 10
+Tempo de aplicação: 1s</TM_Rend_III.description>
+
+
+  <!-- Blood Moon -->
+
+  <TM_BloodMoon.label>Lua de sangue</TM_BloodMoon.label>
+  <TM_BloodMoon.description>Cerca a área na magia do sangue, provocando demónios de raiva e horror para caçar inimigos dentro do círculo.</TM_BloodMoon.description>
+
+  <TM_BloodMoon_I.label>Lua de sangue I</TM_BloodMoon_I.label>
+  <TM_BloodMoon_I.description>Cerca a área na magia do sangue, provocando demónios de raiva e horror para caçar inimigos dentro do círculo.</TM_BloodMoon_I.description>
+
+  <TM_BloodMoon_II.label>Lua de sangue II</TM_BloodMoon_II.label>
+  <TM_BloodMoon_II.description>Cerca a área na magia do sangue, provocando demónios de raiva e horror para caçar inimigos dentro do círculo.</TM_BloodMoon_II.description>
+
+  <TM_BloodMoon_III.label>Lua de sangue III</TM_BloodMoon_III.label>
+  <TM_BloodMoon_III.description>Cerca a área na magia do sangue, provocando demónios de raiva e horror para caçar inimigos dentro do círculo.</TM_BloodMoon_III.description>
+
+
+</LanguageData>

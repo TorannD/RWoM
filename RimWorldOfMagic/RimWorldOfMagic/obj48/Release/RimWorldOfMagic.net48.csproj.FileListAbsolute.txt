@@ -1,0 +1,5 @@
+D:\golang\RWoM\RWoM\v1.6\Assemblies\TorannMagic.dll
+D:\golang\RWoM\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj48\Release\RimWorldOfMagic.net48.csproj.AssemblyReference.cache
+D:\golang\RWoM\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj48\Release\RimWorldOfMagic.net48.GeneratedMSBuildEditorConfig.editorconfig
+D:\golang\RWoM\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj48\Release\RimWorldOfMagic.net48.csproj.CoreCompileInputs.cache
+D:\golang\RWoM\RWoM\RimWorldOfMagic\RimWorldOfMagic\obj48\Release\TorannMagic.dll

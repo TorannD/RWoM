@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Portal.label>Портал</TM_Portal.label>
+  <TM_Portal.description>Миттєві подорожі між двома порталами.</TM_Portal.description>
+  <TM_Portal_Blueprint.label>Портал (проект)</TM_Portal_Blueprint.label>
+  <TM_Portal_Frame.label>Портал (побудова)</TM_Portal_Frame.label>
+  <TM_Portal_Frame.description>Миттєві подорожі між двома порталами.</TM_Portal_Frame.description>
+
+  <TM_ElementalRift.label>Елементальний розлом</TM_ElementalRift.label>
+  <TM_ElementalRift.description>розлом, викликаний ізгоями-елементалями.</TM_ElementalRift.description>
+
+  <TM_ElementalRift_Defenders.label>Елементальний розлом</TM_ElementalRift_Defenders.label>
+  <TM_ElementalRift_Defenders.description>розлом, створений шукачем порожнечі</TM_ElementalRift_Defenders.description>
+
+
+</LanguageData>

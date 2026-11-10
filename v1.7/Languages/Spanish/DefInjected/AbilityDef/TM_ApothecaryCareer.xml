@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_Bridge_ApothecaryAntitoxin.label>Antídoto</TM_Bridge_ApothecaryAntitoxin.label>
+  <TM_Bridge_ApothecaryGoldenHour.label>Botiquín de la hora dorada</TM_Bridge_ApothecaryGoldenHour.label>
+  <TM_Bridge_ApothecaryAntitoxin.description>Alivia la intoxicación alimentaria en un 20% al tocar al paciente. Una vez por episodio. Cuesta un 20% de las hierbas máximas. Recarga: 40 segundos.</TM_Bridge_ApothecaryAntitoxin.description>
+  <TM_Bridge_ApothecaryGoldenHour.description>Sin moverte, trata hasta cuatro aliados a ocho casillas durante 20 segundos. Cura hasta 20 puntos de heridas recientes por paciente y reduce el sangrado a la mitad. Consume el 60% de hierbas y cuatro medicinas herbales en el inventario o al alcance. Recarga: dos días.</TM_Bridge_ApothecaryGoldenHour.description>
+</LanguageData>

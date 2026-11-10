@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Movement.label>загадкова швидкість</TM_Movement.label>
+  <TM_Movement.description>Магічна енергія, що збільшує швидкість руху пішаки.</TM_Movement.description>
+  <TM_Movement.stages.0.label>I</TM_Movement.stages.0.label>
+  <TM_Movement.stages.1.label>II</TM_Movement.stages.1.label>
+  <TM_Movement.stages.2.label>III</TM_Movement.stages.2.label>
+  <TM_Movement.stages.3.label>IV</TM_Movement.stages.3.label>
+  <TM_Movement.stages.4.label>V</TM_Movement.stages.4.label>
+
+  <TM_Manipulation.label>магічна спритність</TM_Manipulation.label>
+  <TM_Manipulation.description>Магічна енергія, яка збільшує спритність (маніпуляція).</TM_Manipulation.description>
+  <TM_Manipulation.stages.0.label>I</TM_Manipulation.stages.0.label>
+  <TM_Manipulation.stages.1.label>II</TM_Manipulation.stages.1.label>
+  <TM_Manipulation.stages.2.label>III</TM_Manipulation.stages.2.label>
+  <TM_Manipulation.stages.3.label>IV</TM_Manipulation.stages.3.label>
+  <TM_Manipulation.stages.4.label>V</TM_Manipulation.stages.4.label>
+
+  <TM_Breathing.label>насичений кисень</TM_Breathing.label>
+  <TM_Breathing.description>Магічна енергія, що збільшує ефективність і здатність дихати.</TM_Breathing.description>
+  <TM_Breathing.stages.0.label>I</TM_Breathing.stages.0.label>
+  <TM_Breathing.stages.1.label>II</TM_Breathing.stages.1.label>
+  <TM_Breathing.stages.2.label>III</TM_Breathing.stages.2.label>
+  <TM_Breathing.stages.3.label>IV</TM_Breathing.stages.3.label>
+  <TM_Breathing.stages.4.label>V</TM_Breathing.stages.4.label>
+
+  <TM_Sight.label>загадкове бачення</TM_Sight.label>
+  <TM_Sight.description>Магічна енергія, яка збільшує зір.</TM_Sight.description>
+  <TM_Sight.stages.0.label>I</TM_Sight.stages.0.label>
+  <TM_Sight.stages.1.label>II</TM_Sight.stages.1.label>
+  <TM_Sight.stages.2.label>III</TM_Sight.stages.2.label>
+  <TM_Sight.stages.3.label>IV</TM_Sight.stages.3.label>
+  <TM_Sight.stages.4.label>V</TM_Sight.stages.4.label>
+
+  <TM_AntiMovement.label>таємна повільність</TM_AntiMovement.label>
+  <TM_AntiMovement.description>Магічна енергія, що зменшує рух.</TM_AntiMovement.description>
+  <TM_AntiMovement.stages.0.label>I</TM_AntiMovement.stages.0.label>
+  <TM_AntiMovement.stages.1.label>II</TM_AntiMovement.stages.1.label>
+  <TM_AntiMovement.stages.2.label>III</TM_AntiMovement.stages.2.label>
+  <TM_AntiMovement.stages.3.label>IV</TM_AntiMovement.stages.3.label>
+  <TM_AntiMovement.stages.4.label>приголомшений</TM_AntiMovement.stages.4.label>
+
+  <TM_AntiManipulation.label>таємний калік</TM_AntiManipulation.label>
+  <TM_AntiManipulation.description>Магічна енергія, що зменшує спритність (маніпуляція).</TM_AntiManipulation.description>
+  <TM_AntiManipulation.stages.0.label>I</TM_AntiManipulation.stages.0.label>
+  <TM_AntiManipulation.stages.1.label>II</TM_AntiManipulation.stages.1.label>
+  <TM_AntiManipulation.stages.2.label>III</TM_AntiManipulation.stages.2.label>
+  <TM_AntiManipulation.stages.3.label>IV</TM_AntiManipulation.stages.3.label>
+  <TM_AntiManipulation.stages.4.label>приголомшений</TM_AntiManipulation.stages.4.label>
+
+  <TM_AntiBreathing.label>таємна задуха</TM_AntiBreathing.label>
+  <TM_AntiBreathing.description>Таємна сила, яка зменшує циркуляцію повітря.</TM_AntiBreathing.description>
+  <TM_AntiBreathing.stages.0.label>I</TM_AntiBreathing.stages.0.label>
+  <TM_AntiBreathing.stages.1.label>II</TM_AntiBreathing.stages.1.label>
+  <TM_AntiBreathing.stages.2.label>III</TM_AntiBreathing.stages.2.label>
+  <TM_AntiBreathing.stages.3.label>IV</TM_AntiBreathing.stages.3.label>
+  <TM_AntiBreathing.stages.4.label>приголомшений</TM_AntiBreathing.stages.4.label>
+
+  <TM_AntiSight.label>таємна сліпота</TM_AntiSight.label>
+  <TM_AntiSight.description>Магічна енергія, що знижує зір.</TM_AntiSight.description>
+  <TM_AntiSight.stages.0.label>I</TM_AntiSight.stages.0.label>
+  <TM_AntiSight.stages.1.label>II</TM_AntiSight.stages.1.label>
+  <TM_AntiSight.stages.2.label>III</TM_AntiSight.stages.2.label>
+  <TM_AntiSight.stages.3.label>IV</TM_AntiSight.stages.3.label>
+  <TM_AntiSight.stages.4.label>приголомшений</TM_AntiSight.stages.4.label>
+
+  <TM_MuteHD.label>Немота</TM_MuteHD.label>
+  <TM_MuteHD.description>Прокляття, яке перешкоджає використанню магічних здібностей.</TM_MuteHD.description>
+  <TM_MuteHD.stages.0.label></TM_MuteHD.stages.0.label>
+
+
+</LanguageData>

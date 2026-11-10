@@ -1,0 +1,79 @@
+﻿<LanguageData><!-- Нежить-->
+	<TM_UndeadHD.label>Нежить</TM_UndeadHD.label>
+	<TM_UndeadHD.description>Существо, оживлённое некротической энергией. Не имеет собственной воли и требует постоянного контроля и подпитки от некроманта.</TM_UndeadHD.description>
+	<TM_UndeadHD.stages.0.label>I</TM_UndeadHD.stages.0.label>
+	<TM_UndeadHD.stages.1.label>II</TM_UndeadHD.stages.1.label>
+	<TM_UndeadHD.stages.2.label>III</TM_UndeadHD.stages.2.label>
+	<TM_UndeadHD.stages.3.label>IV</TM_UndeadHD.stages.3.label>
+	<!-- Лич-->
+	<TM_LichHD.label>Лич</TM_LichHD.label>
+	<TM_LichHD.description>Существо, достигшее бессмертия, разорвав связь с циклом жизни и смерти.</TM_LichHD.description>
+	<TM_LichHD.stages.0.label>Нежить</TM_LichHD.stages.0.label>
+	<!-- Неживотное-->
+	<TM_UndeadAnimalHD.label>Неживотное</TM_UndeadAnimalHD.label>
+	<TM_UndeadAnimalHD.description>Животное, оживлённое некротической энергией. Не имеет собственной воли и требует постоянного контроля от некроманта.</TM_UndeadAnimalHD.description>
+	<TM_UndeadAnimalHD.stages.0.label>I</TM_UndeadAnimalHD.stages.0.label>
+	<TM_UndeadAnimalHD.stages.1.label>II</TM_UndeadAnimalHD.stages.1.label>
+	<TM_UndeadAnimalHD.stages.2.label>III</TM_UndeadAnimalHD.stages.2.label>
+	<TM_UndeadAnimalHD.stages.3.label>IV</TM_UndeadAnimalHD.stages.3.label>
+	<!-- Метка смерти-->
+	<TM_DeathMarkHD.label>Метка смерти</TM_DeathMarkHD.label>
+	<TM_DeathMarkHD.description>Отмеченный смертью, этот юнит скоро погибнет и будет обращён в нежить. (не используется)</TM_DeathMarkHD.description>
+	<!-- Проклятие Метки Смерти-->
+	<TM_DeathMarkCurse.label>Проклятие Метки Смерти</TM_DeathMarkCurse.label>
+	<TM_DeathMarkCurse.description>Отмеченный смертью, этот юнит не может сосредоточиться на настоящем из-за мыслей о неминуемой гибели.</TM_DeathMarkCurse.description>
+	<TM_DeathMarkCurse.stages.0.label>неуклюжий</TM_DeathMarkCurse.stages.0.label>
+	<TM_DeathMarkCurse.stages.1.label>спотыкающийся</TM_DeathMarkCurse.stages.1.label>
+	<TM_DeathMarkCurse.stages.2.label>проклятый</TM_DeathMarkCurse.stages.2.label>
+	<!-- Мучения-->
+	<TM_TormentHD.label>Мучения</TM_TormentHD.label>
+	<TM_TormentHD.description>Боль, вызванная тёмной энергией.</TM_TormentHD.description>
+	<TM_TormentHD.comps.0.labelTendedWell>перевязано</TM_TormentHD.comps.0.labelTendedWell>
+	<TM_TormentHD.comps.0.labelTendedWellInner>зашито</TM_TormentHD.comps.0.labelTendedWellInner>
+	<TM_TormentHD.comps.0.labelSolidTendedWell>зафиксировано</TM_TormentHD.comps.0.labelSolidTendedWell>
+	<TM_TormentHD.injuryProps.destroyedLabel>расплавлено</TM_TormentHD.injuryProps.destroyedLabel>
+	<TM_TormentHD.injuryProps.destroyedOutLabel>расплавлен</TM_TormentHD.injuryProps.destroyedOutLabel>
+	<!-- Стрела Смерти-->
+	<TM_DeathBoltHD.label>Стрела Смерти</TM_DeathBoltHD.label>
+	<TM_DeathBoltHD.description>Разрушительная энергия, убивающая всё живое.</TM_DeathBoltHD.description>
+	<TM_DeathBoltHD.comps.0.labelTendedWell>перевязано</TM_DeathBoltHD.comps.0.labelTendedWell>
+	<TM_DeathBoltHD.comps.0.labelTendedWellInner>зашито</TM_DeathBoltHD.comps.0.labelTendedWellInner>
+	<TM_DeathBoltHD.comps.0.labelSolidTendedWell>зафиксировано</TM_DeathBoltHD.comps.0.labelSolidTendedWell>
+	<TM_DeathBoltHD.injuryProps.destroyedLabel>расплавлено</TM_DeathBoltHD.injuryProps.destroyedLabel>
+	<TM_DeathBoltHD.injuryProps.destroyedOutLabel>расплавлен</TM_DeathBoltHD.injuryProps.destroyedOutLabel>
+	<!-- Мученик-->
+	<TM_Torment_HD.label>Мученик</TM_Torment_HD.label>
+	<TM_Torment_HD.description>Истязаемый тёмной магией.</TM_Torment_HD.description>
+	<TM_Torment_HD.stages.0.label>боль</TM_Torment_HD.stages.0.label>
+	<TM_Torment_HD.stages.1.label>агония</TM_Torment_HD.stages.1.label>
+	<TM_Torment_HD.stages.2.label>мучение</TM_Torment_HD.stages.2.label>
+	<!-- Стадия нежити-->
+	<TM_UndeadStageHD.label>Стадия разложения</TM_UndeadStageHD.label>
+	<TM_UndeadStageHD.description>Текущая стадия разложения нежити.</TM_UndeadStageHD.description>
+	<TM_UndeadStageHD.stages.0.label>Гниение</TM_UndeadStageHD.stages.0.label>
+	<TM_UndeadStageHD.stages.1.label>Высыхание</TM_UndeadStageHD.stages.1.label>
+	<!-- Хрупкие кости-->
+	<TM_BrittleBonesHD.label>Хрупкие кости</TM_BrittleBonesHD.label>
+	<TM_BrittleBonesHD.description>Возникает при экстремально низких температурах, делает кости и связки хрупкими, снижая подвижность. Нежить с этим эффектом требует на 50% больше маны для поддержания.</TM_BrittleBonesHD.description>
+	<TM_BrittleBonesHD.stages.0.label>I</TM_BrittleBonesHD.stages.0.label>
+	<TM_BrittleBonesHD.stages.1.label>II</TM_BrittleBonesHD.stages.1.label>
+	<TM_BrittleBonesHD.stages.2.label>III</TM_BrittleBonesHD.stages.2.label>
+	<!-- Обугливание-->
+	<TM_SlaggedHD.label>Обугливание</TM_SlaggedHD.label>
+	<TM_SlaggedHD.description>Возникает при экстремально высоких температурах, вызывает разложение и плавление органики. Нежить с этим эффектом требует на 50% больше маны для поддержания.</TM_SlaggedHD.description>
+	<TM_SlaggedHD.stages.0.label>I</TM_SlaggedHD.stages.0.label>
+	<TM_SlaggedHD.stages.1.label>II</TM_SlaggedHD.stages.1.label>
+	<TM_SlaggedHD.stages.2.label>III</TM_SlaggedHD.stages.2.label>
+	<!-- Технические термины (сохранены оригинальные теги)-->
+	<TM_TormentHD.comps.1.permanentLabel>гниение</TM_TormentHD.comps.1.permanentLabel>
+	<TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWell>перевязано</TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWell>
+	<TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWellInner>зашито</TM_TormentHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+	<TM_TormentHD.comps.HediffComp_TendDuration.labelSolidTendedWell>зафиксировано</TM_TormentHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+	<TM_TormentHD.comps.HediffComp_GetsPermanent.permanentLabel>разлагается</TM_TormentHD.comps.HediffComp_GetsPermanent.permanentLabel>
+	<TM_TormentHD.labelNounPretty>{0} в {1}</TM_TormentHD.labelNounPretty>
+	<TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWell>перевязано</TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWell>
+	<TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWellInner>зашито</TM_DeathBoltHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+	<TM_DeathBoltHD.comps.HediffComp_TendDuration.labelSolidTendedWell>зафиксировано</TM_DeathBoltHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+	<TM_DeathBoltHD.comps.HediffComp_GetsPermanent.permanentLabel>расплавлено</TM_DeathBoltHD.comps.HediffComp_GetsPermanent.permanentLabel>
+	<TM_DeathBoltHD.labelNounPretty>{0} в {1}</TM_DeathBoltHD.labelNounPretty>
+</LanguageData>

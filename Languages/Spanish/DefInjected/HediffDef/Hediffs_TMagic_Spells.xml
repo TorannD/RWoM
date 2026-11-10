@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <Blizzard.label>ventisca</Blizzard.label>
+  
+  <Blizzard.description>Una tormenta de hielo y nieve.</Blizzard.description>
+  
+  <Blizzard.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</Blizzard.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <Blizzard.comps.HediffComp_TendDuration.labelTendedWell>vendada</Blizzard.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <Blizzard.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</Blizzard.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <Blizzard.comps.HediffComp_GetsPermanent.permanentLabel>destruida en una ventisca</Blizzard.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <Blizzard.injuryProps.destroyedLabel>congelado</Blizzard.injuryProps.destroyedLabel>
+  
+  <Blizzard.injuryProps.destroyedOutLabel>hecho añicos</Blizzard.injuryProps.destroyedOutLabel>
+  
+  <Blizzard.labelNounPretty>{0} en {1}</Blizzard.labelNounPretty>
+  
+  
+  <FrostRay.label>rayo de escarcha</FrostRay.label>
+  
+  <FrostRay.description>Descarga de energía superenfriada.</FrostRay.description>
+  
+  <FrostRay.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</FrostRay.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <FrostRay.comps.HediffComp_TendDuration.labelTendedWell>vendada</FrostRay.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <FrostRay.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</FrostRay.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <FrostRay.comps.HediffComp_GetsPermanent.permanentLabel>cicatriz de congelación</FrostRay.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <FrostRay.injuryProps.destroyedLabel>congelado</FrostRay.injuryProps.destroyedLabel>
+  
+  <FrostRay.injuryProps.destroyedOutLabel>hecho añicos</FrostRay.injuryProps.destroyedOutLabel>
+  
+  <FrostRay.labelNounPretty>{0} en {1}</FrostRay.labelNounPretty>
+  
+  
+  <Iceshard.label>fragmento de hielo</Iceshard.label>
+  
+  <Iceshard.description>Una descarga de hielo proyectada con bordes afilados como cuchillas.</Iceshard.description>
+  
+  <Iceshard.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</Iceshard.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <Iceshard.comps.HediffComp_TendDuration.labelTendedWell>vendada</Iceshard.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <Iceshard.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</Iceshard.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <Iceshard.comps.HediffComp_GetsPermanent.permanentLabel>cicatriz de fragmento de hielo</Iceshard.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <Iceshard.injuryProps.destroyedLabel>destrozado</Iceshard.injuryProps.destroyedLabel>
+  
+  <Iceshard.injuryProps.destroyedOutLabel>hecho trizas</Iceshard.injuryProps.destroyedOutLabel>
+  
+  <Iceshard.labelNounPretty>{0} en {1}</Iceshard.labelNounPretty>
+  
+  
+  <Snowball.label>bola de nieve</Snowball.label>
+  
+  <Snowball.description>Hielo y nieve compactados.</Snowball.description>
+  
+  <Snowball.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</Snowball.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <Snowball.comps.HediffComp_TendDuration.labelTendedWell>vendada</Snowball.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <Snowball.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</Snowball.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <Snowball.comps.HediffComp_GetsPermanent.permanentLabel>cicatriz de congelación</Snowball.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <Snowball.injuryProps.destroyedLabel>congelado</Snowball.injuryProps.destroyedLabel>
+  
+  <Snowball.injuryProps.destroyedOutLabel>hecho añicos</Snowball.injuryProps.destroyedOutLabel>
+  
+  <Snowball.labelNounPretty>{0} en {1}</Snowball.labelNounPretty>
+  
+  
+  <TM_ArcaneHD.label>arcano</TM_ArcaneHD.label>
+  
+  <TM_ArcaneHD.description>Poder arcano destructivo.</TM_ArcaneHD.description>
+  
+  <TM_ArcaneHD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_ArcaneHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_ArcaneHD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_ArcaneHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_ArcaneHD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_ArcaneHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_ArcaneHD.comps.HediffComp_GetsPermanent.permanentLabel>destruida por poder arcano</TM_ArcaneHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_ArcaneHD.injuryProps.destroyedLabel>volado</TM_ArcaneHD.injuryProps.destroyedLabel>
+  
+  <TM_ArcaneHD.injuryProps.destroyedOutLabel>volado</TM_ArcaneHD.injuryProps.destroyedOutLabel>
+  
+  <TM_ArcaneHD.labelNounPretty>{0} en {1}</TM_ArcaneHD.labelNounPretty>
+  
+  
+  <TM_arcaneSpectre.label>corte espiritual</TM_arcaneSpectre.label>
+  
+  <TM_arcaneSpectre.description>Daño espiritual causado por un espectro.</TM_arcaneSpectre.description>
+  
+  <TM_arcaneSpectre.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_arcaneSpectre.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_arcaneSpectre.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_arcaneSpectre.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_arcaneSpectre.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_arcaneSpectre.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_arcaneSpectre.comps.HediffComp_GetsPermanent.permanentLabel>cicatriz pálida</TM_arcaneSpectre.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_arcaneSpectre.injuryProps.destroyedLabel>cortado</TM_arcaneSpectre.injuryProps.destroyedLabel>
+  
+  <TM_arcaneSpectre.injuryProps.destroyedOutLabel>extirpado</TM_arcaneSpectre.injuryProps.destroyedOutLabel>
+  
+  <TM_arcaneSpectre.labelNoun>un corte</TM_arcaneSpectre.labelNoun>
+  
+  <TM_arcaneSpectre.labelNounPretty>{0} en {1}</TM_arcaneSpectre.labelNounPretty>
+  
+  
+  <TM_BlazingPowerHD.label>Poder abrasador</TM_BlazingPowerHD.label>
+  
+  <TM_BlazingPowerHD.description>Poder arcano dirigido a través de un recipiente de enfoque.</TM_BlazingPowerHD.description>
+  
+  <TM_BlazingPowerHD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_BlazingPowerHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_BlazingPowerHD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_BlazingPowerHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_BlazingPowerHD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_BlazingPowerHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_BlazingPowerHD.comps.HediffComp_GetsPermanent.permanentLabel>destruida por poder abrasador</TM_BlazingPowerHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_BlazingPowerHD.injuryProps.destroyedLabel>destruido</TM_BlazingPowerHD.injuryProps.destroyedLabel>
+  
+  <TM_BlazingPowerHD.injuryProps.destroyedOutLabel>destruido</TM_BlazingPowerHD.injuryProps.destroyedOutLabel>
+  
+  <TM_BlazingPowerHD.labelNounPretty>{0} en {1}</TM_BlazingPowerHD.labelNounPretty>
+  
+  
+  <TM_BloodyCutHD.label>corte sangrante</TM_BloodyCutHD.label>
+  
+  <TM_BloodyCutHD.description>Un corte profundo que sangra abundantemente.</TM_BloodyCutHD.description>
+  
+  <TM_BloodyCutHD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_BloodyCutHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_BloodyCutHD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_BloodyCutHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_BloodyCutHD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_BloodyCutHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_BloodyCutHD.comps.HediffComp_GetsPermanent.permanentLabel>cicatriz de corte</TM_BloodyCutHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_BloodyCutHD.injuryProps.destroyedLabel>cortado</TM_BloodyCutHD.injuryProps.destroyedLabel>
+  
+  <TM_BloodyCutHD.injuryProps.destroyedOutLabel>extirpado</TM_BloodyCutHD.injuryProps.destroyedOutLabel>
+  
+  <TM_BloodyCutHD.labelNoun>un corte sangrante</TM_BloodyCutHD.labelNoun>
+  
+  <TM_BloodyCutHD.labelNounPretty>{0} en {1}</TM_BloodyCutHD.labelNounPretty>
+  
+  
+  <TM_ChiBurnHD.label>quemadura de chi</TM_ChiBurnHD.label>
+  
+  <TM_ChiBurnHD.description>Daño sufrido por una ráfaga de energía chi.</TM_ChiBurnHD.description>
+  
+  <TM_ChiBurnHD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_ChiBurnHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_ChiBurnHD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_ChiBurnHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_ChiBurnHD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_ChiBurnHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_ChiBurnHD.comps.HediffComp_GetsPermanent.permanentLabel>destruida</TM_ChiBurnHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_ChiBurnHD.injuryProps.destroyedLabel>quemado</TM_ChiBurnHD.injuryProps.destroyedLabel>
+  
+  <TM_ChiBurnHD.injuryProps.destroyedOutLabel>desintegrado</TM_ChiBurnHD.injuryProps.destroyedOutLabel>
+  
+  <TM_ChiBurnHD.labelNounPretty>{0} en {1}</TM_ChiBurnHD.labelNounPretty>
+  
+  
+  <TM_ChiFistHD.label>golpe</TM_ChiFistHD.label>
+  
+  <TM_ChiFistHD.description>Un golpe cuerpo a cuerpo de un monje.</TM_ChiFistHD.description>
+  
+  <TM_ChiFistHD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_ChiFistHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_ChiFistHD.comps.HediffComp_TendDuration.labelTendedWell>atendida</TM_ChiFistHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_ChiFistHD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_ChiFistHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_ChiFistHD.comps.HediffComp_GetsPermanent.permanentLabel>destruida</TM_ChiFistHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_ChiFistHD.injuryProps.destroyedLabel>roto</TM_ChiFistHD.injuryProps.destroyedLabel>
+  
+  <TM_ChiFistHD.injuryProps.destroyedOutLabel>extirpado</TM_ChiFistHD.injuryProps.destroyedOutLabel>
+  
+  <TM_ChiFistHD.labelNounPretty>{0} en {1}</TM_ChiFistHD.labelNounPretty>
+  
+  
+  <TM_DecayDamage.label>Putrefacción</TM_DecayDamage.label>
+  
+  <TM_DecayDamage.description>Descomposición orgánica.</TM_DecayDamage.description>
+  
+  <TM_DecayDamage.comps.HediffComp_TendDuration.labelSolidTendedWell>tratada</TM_DecayDamage.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_DecayDamage.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_DecayDamage.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_DecayDamage.comps.HediffComp_TendDuration.labelTendedWellInner>atendida</TM_DecayDamage.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_DecayDamage.comps.HediffComp_GetsPermanent.permanentLabel>sin vida</TM_DecayDamage.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_DecayDamage.injuryProps.destroyedLabel>sin vida</TM_DecayDamage.injuryProps.destroyedLabel>
+  
+  <TM_DecayDamage.injuryProps.destroyedOutLabel>descompuesto</TM_DecayDamage.injuryProps.destroyedOutLabel>
+  
+  <TM_DecayDamage.labelNounPretty>{0} en {1}</TM_DecayDamage.labelNounPretty>
+  
+  
+  <TM_DisablingBlowHD.label>golpe incapacitante</TM_DisablingBlowHD.label>
+  
+  <TM_DisablingBlowHD.description>Un golpe cuerpo a cuerpo pensado para incapacitar en lugar de matar.</TM_DisablingBlowHD.description>
+  
+  <TM_DisablingBlowHD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_DisablingBlowHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_DisablingBlowHD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_DisablingBlowHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_DisablingBlowHD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_DisablingBlowHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_DisablingBlowHD.comps.HediffComp_GetsPermanent.permanentLabel>aplastada</TM_DisablingBlowHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_DisablingBlowHD.injuryProps.destroyedLabel>aplastado</TM_DisablingBlowHD.injuryProps.destroyedLabel>
+  
+  <TM_DisablingBlowHD.injuryProps.destroyedOutLabel>machacado</TM_DisablingBlowHD.injuryProps.destroyedOutLabel>
+  
+  <TM_DisablingBlowHD.labelNounPretty>{0} en {1}</TM_DisablingBlowHD.labelNounPretty>
+  
+  
+  <TM_DisablingShot_HD.label>disparo incapacitante</TM_DisablingShot_HD.label>
+  
+  <TM_DisablingShot_HD.description>Un proyectil diseñado para incapacitar en lugar de matar.</TM_DisablingShot_HD.description>
+  
+  <TM_DisablingShot_HD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_DisablingShot_HD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_DisablingShot_HD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_DisablingShot_HD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_DisablingShot_HD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_DisablingShot_HD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_DisablingShot_HD.comps.HediffComp_GetsPermanent.permanentLabel>arrancada de un disparo</TM_DisablingShot_HD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_DisablingShot_HD.injuryProps.destroyedLabel>arrancado de un disparo</TM_DisablingShot_HD.injuryProps.destroyedLabel>
+  
+  <TM_DisablingShot_HD.injuryProps.destroyedOutLabel>destrozado de un disparo</TM_DisablingShot_HD.injuryProps.destroyedOutLabel>
+  
+  <TM_DisablingShot_HD.labelNounPretty>{0} en {1}</TM_DisablingShot_HD.labelNounPretty>
+  
+  
+  <TM_Dismember.label>desmembramiento</TM_Dismember.label>
+  
+  <TM_Dismember.description>Un ataque que arranca una extremidad (o la cabeza) del objetivo.</TM_Dismember.description>
+  
+  <TM_Dismember.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_Dismember.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_Dismember.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_Dismember.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_Dismember.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_Dismember.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_Dismember.injuryProps.destroyedLabel>arrancado</TM_Dismember.injuryProps.destroyedLabel>
+  
+  <TM_Dismember.injuryProps.destroyedOutLabel>arrancado de raíz</TM_Dismember.injuryProps.destroyedOutLabel>
+  
+  <TM_Dismember.labelNoun>una herida enorme</TM_Dismember.labelNoun>
+  
+  <TM_Dismember.labelNounPretty>{0} en {1}</TM_Dismember.labelNounPretty>
+  
+  
+  <TM_Firebolt.label>Descarga de fuego</TM_Firebolt.label>
+  
+  <TM_Firebolt.description>Descarga proyectada de fuego elemental.</TM_Firebolt.description>
+  
+  <TM_Firebolt.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_Firebolt.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_Firebolt.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_Firebolt.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_Firebolt.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_Firebolt.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_Firebolt.comps.HediffComp_GetsPermanent.permanentLabel>cicatriz de quemadura</TM_Firebolt.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_Firebolt.injuryProps.destroyedLabel>quemado</TM_Firebolt.injuryProps.destroyedLabel>
+  
+  <TM_Firebolt.injuryProps.destroyedOutLabel>calcinado</TM_Firebolt.injuryProps.destroyedOutLabel>
+  
+  <TM_Firebolt.labelNounPretty>{0} en {1}</TM_Firebolt.labelNounPretty>
+  
+  
+  <TM_Frozen.label>vientos helados</TM_Frozen.label>
+  
+  <TM_Frozen.description>Vientos gélidos.</TM_Frozen.description>
+  
+  <TM_Frozen.comps.HediffComp_TendDuration.labelSolidTendedWell>atendida</TM_Frozen.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_Frozen.comps.HediffComp_TendDuration.labelTendedWell>atendida</TM_Frozen.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_Frozen.comps.HediffComp_TendDuration.labelTendedWellInner>atendida</TM_Frozen.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_Frozen.comps.HediffComp_GetsPermanent.permanentLabel>congelación</TM_Frozen.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_Frozen.injuryProps.destroyedLabel>congelado</TM_Frozen.injuryProps.destroyedLabel>
+  
+  <TM_Frozen.injuryProps.destroyedOutLabel>congelado</TM_Frozen.injuryProps.destroyedOutLabel>
+  
+  <TM_Frozen.labelNounPretty>{0} en {1}</TM_Frozen.labelNounPretty>
+  
+  
+  <TM_GrapplingHook.label>Gancho de agarre</TM_GrapplingHook.label>
+  
+  <TM_GrapplingHook.description>Atrae a los objetivos hacia sí.</TM_GrapplingHook.description>
+  
+  <TM_GrapplingHook.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_GrapplingHook.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_GrapplingHook.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_GrapplingHook.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_GrapplingHook.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_GrapplingHook.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_GrapplingHook.comps.HediffComp_GetsPermanent.permanentLabel>arrancada</TM_GrapplingHook.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_GrapplingHook.injuryProps.destroyedLabel>arrancado</TM_GrapplingHook.injuryProps.destroyedLabel>
+  
+  <TM_GrapplingHook.injuryProps.destroyedOutLabel>arrancado de raíz</TM_GrapplingHook.injuryProps.destroyedOutLabel>
+  
+  <TM_GrapplingHook.labelNounPretty>{0} en {1}</TM_GrapplingHook.labelNounPretty>
+  
+  
+  <TM_Holy.label>Ira sagrada</TM_Holy.label>
+  
+  <TM_Holy.description>Fe convertida en energía destructiva.</TM_Holy.description>
+  
+  <TM_Holy.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_Holy.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_Holy.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_Holy.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_Holy.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_Holy.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_Holy.comps.HediffComp_GetsPermanent.permanentLabel>destruida por poder sagrado</TM_Holy.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_Holy.injuryProps.destroyedLabel>quemado</TM_Holy.injuryProps.destroyedLabel>
+  
+  <TM_Holy.injuryProps.destroyedOutLabel>calcinado</TM_Holy.injuryProps.destroyedOutLabel>
+  
+  <TM_Holy.labelNounPretty>{0} en {1}</TM_Holy.labelNounPretty>
+  
+  
+  <TM_LightDD.label>Luz</TM_LightDD.label>
+  
+  <TM_LightDD.description>Energía destructiva del dominio de la luz.</TM_LightDD.description>
+  
+  <TM_LightDD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_LightDD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_LightDD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_LightDD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_LightDD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_LightDD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_LightDD.comps.HediffComp_GetsPermanent.permanentLabel>quemada por la luz</TM_LightDD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_LightDD.injuryProps.destroyedLabel>consumido por la luz</TM_LightDD.injuryProps.destroyedLabel>
+  
+  <TM_LightDD.injuryProps.destroyedOutLabel>calcinado</TM_LightDD.injuryProps.destroyedOutLabel>
+  
+  <TM_LightDD.labelNounPretty>{0} en {1}</TM_LightDD.labelNounPretty>
+  
+  
+  <TM_Lightning.label>Rayo</TM_Lightning.label>
+  
+  <TM_Lightning.description>Una potente descarga de electricidad.</TM_Lightning.description>
+  
+  <TM_Lightning.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_Lightning.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_Lightning.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_Lightning.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_Lightning.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_Lightning.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_Lightning.comps.HediffComp_GetsPermanent.permanentLabel>alcanzada por un rayo</TM_Lightning.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_Lightning.injuryProps.destroyedLabel>derretido</TM_Lightning.injuryProps.destroyedLabel>
+  
+  <TM_Lightning.injuryProps.destroyedOutLabel>calcinado</TM_Lightning.injuryProps.destroyedOutLabel>
+  
+  <TM_Lightning.labelNounPretty>{0} en {1}</TM_Lightning.labelNounPretty>
+  
+  
+  <TM_LightningCloud.label>Relámpago</TM_LightningCloud.label>
+  
+  <TM_LightningCloud.description>Descarga eléctrica ambiental causada por la condensación de partículas cargadas.</TM_LightningCloud.description>
+  
+  <TM_LightningCloud.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_LightningCloud.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_LightningCloud.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_LightningCloud.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_LightningCloud.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_LightningCloud.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_LightningCloud.comps.HediffComp_GetsPermanent.permanentLabel>electrocutada</TM_LightningCloud.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_LightningCloud.injuryProps.destroyedLabel>derretido</TM_LightningCloud.injuryProps.destroyedLabel>
+  
+  <TM_LightningCloud.injuryProps.destroyedOutLabel>calcinado</TM_LightningCloud.injuryProps.destroyedOutLabel>
+  
+  <TM_LightningCloud.labelNounPretty>{0} en {1}</TM_LightningCloud.labelNounPretty>
+  
+  
+  <TM_MagicMissile.label>Proyectil mágico</TM_MagicMissile.label>
+  
+  <TM_MagicMissile.description>Energía arcana proyectada en pequeñas ráfagas concentradas.</TM_MagicMissile.description>
+  
+  <TM_MagicMissile.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_MagicMissile.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_MagicMissile.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_MagicMissile.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_MagicMissile.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_MagicMissile.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_MagicMissile.comps.HediffComp_GetsPermanent.permanentLabel>tocada por lo arcano</TM_MagicMissile.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_MagicMissile.injuryProps.destroyedLabel>cercenado</TM_MagicMissile.injuryProps.destroyedLabel>
+  
+  <TM_MagicMissile.injuryProps.destroyedOutLabel>extirpado</TM_MagicMissile.injuryProps.destroyedOutLabel>
+  
+  <TM_MagicMissile.labelNounPretty>{0} en {1}</TM_MagicMissile.labelNounPretty>
+  
+  
+  <TM_ManaMine.label>explosión de maná</TM_ManaMine.label>
+  
+  <TM_ManaMine.description>Liberación explosiva de maná contenido.</TM_ManaMine.description>
+  
+  <TM_ManaMine.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_ManaMine.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_ManaMine.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_ManaMine.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_ManaMine.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_ManaMine.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_ManaMine.comps.HediffComp_GetsPermanent.permanentLabel>destruida por una explosión de maná</TM_ManaMine.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_ManaMine.injuryProps.destroyedLabel>volado</TM_ManaMine.injuryProps.destroyedLabel>
+  
+  <TM_ManaMine.injuryProps.destroyedOutLabel>calcinado</TM_ManaMine.injuryProps.destroyedOutLabel>
+  
+  <TM_ManaMine.labelNounPretty>{0} en {1}</TM_ManaMine.labelNounPretty>
+  
+  
+  <TM_PartRemovalHD.label>ausente</TM_PartRemovalHD.label>
+  
+  <TM_PartRemovalHD.description>Una parte del cuerpo ausente.</TM_PartRemovalHD.description>
+  
+  <TM_PartRemovalHD.injuryProps.destroyedLabel>ausente</TM_PartRemovalHD.injuryProps.destroyedLabel>
+  
+  <TM_PartRemovalHD.injuryProps.destroyedOutLabel>ausente</TM_PartRemovalHD.injuryProps.destroyedOutLabel>
+  
+  <TM_PartRemovalHD.labelNoun>ausente</TM_PartRemovalHD.labelNoun>
+  
+  <TM_PartRemovalHD.labelNounPretty>{0} en {1}</TM_PartRemovalHD.labelNounPretty>
+  
+  
+  <TM_SpiritHD.label>Espíritu</TM_SpiritHD.label>
+  
+  <TM_SpiritHD.description>Energía espiritual dañina.</TM_SpiritHD.description>
+  
+  <TM_SpiritHD.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_SpiritHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_SpiritHD.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_SpiritHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_SpiritHD.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_SpiritHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_SpiritHD.comps.HediffComp_GetsPermanent.permanentLabel>drenada de espíritu</TM_SpiritHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_SpiritHD.injuryProps.destroyedLabel>sin vida</TM_SpiritHD.injuryProps.destroyedLabel>
+  
+  <TM_SpiritHD.injuryProps.destroyedOutLabel>sin vida</TM_SpiritHD.injuryProps.destroyedOutLabel>
+  
+  <TM_SpiritHD.labelNounPretty>{0} en {1}</TM_SpiritHD.labelNounPretty>
+  
+  
+  <TM_SymbiosisDamage.label>simbiosis</TM_SymbiosisDamage.label>
+  
+  <TM_SymbiosisDamage.description>Daño transmitido a través de una conexión simbiótica.</TM_SymbiosisDamage.description>
+  
+  <TM_SymbiosisDamage.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_SymbiosisDamage.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_SymbiosisDamage.comps.HediffComp_TendDuration.labelTendedWell>atendida</TM_SymbiosisDamage.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_SymbiosisDamage.comps.HediffComp_TendDuration.labelTendedWellInner>atendida</TM_SymbiosisDamage.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_SymbiosisDamage.comps.HediffComp_GetsPermanent.permanentLabel>lesión residual</TM_SymbiosisDamage.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_SymbiosisDamage.injuryProps.destroyedLabel>destruido</TM_SymbiosisDamage.injuryProps.destroyedLabel>
+  
+  <TM_SymbiosisDamage.injuryProps.destroyedOutLabel>seccionado</TM_SymbiosisDamage.injuryProps.destroyedOutLabel>
+  
+  <TM_SymbiosisDamage.labelNoun>transferencia simbiótica</TM_SymbiosisDamage.labelNoun>
+  
+  <TM_SymbiosisDamage.labelNounPretty>{0} en {1}</TM_SymbiosisDamage.labelNounPretty>
+  
+  
+  <TM_ThrumboCleave.label>tajo</TM_ThrumboCleave.label>
+  
+  <TM_ThrumboCleave.description>Un ataque lo bastante potente como para cortar a través de varios objetos.</TM_ThrumboCleave.description>
+  
+  <TM_ThrumboCleave.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_ThrumboCleave.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_ThrumboCleave.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_ThrumboCleave.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_ThrumboCleave.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_ThrumboCleave.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_ThrumboCleave.comps.HediffComp_GetsPermanent.permanentLabel>cicatriz</TM_ThrumboCleave.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_ThrumboCleave.injuryProps.destroyedLabel>cercenado</TM_ThrumboCleave.injuryProps.destroyedLabel>
+  
+  <TM_ThrumboCleave.injuryProps.destroyedOutLabel>cercenado</TM_ThrumboCleave.injuryProps.destroyedOutLabel>
+  
+  <TM_ThrumboCleave.labelNoun>una herida enorme</TM_ThrumboCleave.labelNoun>
+  
+  <TM_ThrumboCleave.labelNounPretty>{0} en {1}</TM_ThrumboCleave.labelNounPretty>
+  
+  
+  <TM_ToxinHD.label>toxina</TM_ToxinHD.label>
+  
+  <TM_ToxinHD.description>Daño causado por toxinas.</TM_ToxinHD.description>
+  
+  <TM_ToxinHD.comps.HediffComp_TendDuration.labelSolidTendedWell>atendida</TM_ToxinHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_ToxinHD.comps.HediffComp_TendDuration.labelTendedWell>atendida</TM_ToxinHD.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_ToxinHD.comps.HediffComp_TendDuration.labelTendedWellInner>atendida</TM_ToxinHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_ToxinHD.comps.HediffComp_GetsPermanent.permanentLabel>tejido tóxico</TM_ToxinHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_ToxinHD.injuryProps.destroyedLabel>destruido</TM_ToxinHD.injuryProps.destroyedLabel>
+  
+  <TM_ToxinHD.labelNoun>toxina</TM_ToxinHD.labelNoun>
+  
+  <TM_ToxinHD.labelNounPretty>{0} en {1}</TM_ToxinHD.labelNounPretty>
+  
+  
+  <TM_Whirlwind_Knockdown.label>Derribo del torbellino</TM_Whirlwind_Knockdown.label>
+  
+  <TM_Whirlwind_Knockdown.description>Abrumado por una lluvia de ataques.</TM_Whirlwind_Knockdown.description>
+  
+  <TM_Whirlwind_Knockdown.comps.HediffComp_TendDuration.labelSolidTendedWell>entablillada</TM_Whirlwind_Knockdown.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  
+  <TM_Whirlwind_Knockdown.comps.HediffComp_TendDuration.labelTendedWell>vendada</TM_Whirlwind_Knockdown.comps.HediffComp_TendDuration.labelTendedWell>
+  
+  <TM_Whirlwind_Knockdown.comps.HediffComp_TendDuration.labelTendedWellInner>suturada</TM_Whirlwind_Knockdown.comps.HediffComp_TendDuration.labelTendedWellInner>
+  
+  <TM_Whirlwind_Knockdown.comps.HediffComp_GetsPermanent.permanentLabel>cercenada</TM_Whirlwind_Knockdown.comps.HediffComp_GetsPermanent.permanentLabel>
+  
+  <TM_Whirlwind_Knockdown.injuryProps.destroyedLabel>cercenado</TM_Whirlwind_Knockdown.injuryProps.destroyedLabel>
+  
+  <TM_Whirlwind_Knockdown.injuryProps.destroyedOutLabel>extirpado</TM_Whirlwind_Knockdown.injuryProps.destroyedOutLabel>
+  
+  <TM_Whirlwind_Knockdown.labelNounPretty>{0} en {1}</TM_Whirlwind_Knockdown.labelNounPretty>
+  
+</LanguageData>

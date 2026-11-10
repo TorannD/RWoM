@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ManaSickness.label>doença do maná</TM_ManaSickness.label>
+  <TM_ManaSickness.description>A doença de maná atinge os mágicos quando eles têm 0 maná e sua regeneração é negativa. A doença de maná acaba por matar o mago se não for revertida. Os jogadores podem avaliar a regeneração do maná de maga na guia magia, colocando o cursor sobre o valor de regeneração do maná para exibir uma dica pop-up que mostra os depositantes que influenciam a regeneração do maná.</TM_ManaSickness.description>
+  <TM_ManaSickness.stages.0.label>debilitado</TM_ManaSickness.stages.0.label>
+  <TM_ManaSickness.stages.1.label>doente</TM_ManaSickness.stages.1.label>
+  <TM_ManaSickness.stages.2.label>Morte clínica</TM_ManaSickness.stages.2.label>
+
+  <TM_ArcaneSickness.label>doença secreta</TM_ArcaneSickness.label>
+  <TM_ArcaneSickness.description>Uma doença causada por magia estragada.</TM_ArcaneSickness.description>
+  <TM_ArcaneSickness.stages.0.label>menores</TM_ArcaneSickness.stages.0.label>
+  <TM_ArcaneSickness.stages.1.label>menores</TM_ArcaneSickness.stages.1.label>
+  <TM_ArcaneSickness.stages.2.label>moderado</TM_ArcaneSickness.stages.2.label>
+  <TM_ArcaneSickness.stages.3.label>sério</TM_ArcaneSickness.stages.3.label>
+  <TM_ArcaneSickness.stages.4.label>Extrim</TM_ArcaneSickness.stages.4.label>
+  <TM_ArcaneSickness.stages.5.label>Extrim</TM_ArcaneSickness.stages.5.label>
+
+
+</LanguageData>

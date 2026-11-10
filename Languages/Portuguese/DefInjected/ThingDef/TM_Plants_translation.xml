@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Plant_Pomanasyrrium.label>mercenário de mamanasiriuma</TM_Plant_Pomanasyrrium.label>
+  <TM_Plant_Pomanasyrrium.description>A planta é impregnada de leituras como tendo propriedades míticas de dar sabedoria, discernimento e clareza a quem consome seus frutos. No entanto, ele é difícil de cultivar e não tem o mesmo nível de produtividade de outras plantas culturais, por isso não é poupado por jardineiros ou agricultores.
+
+O fruto que ele produz, conhecido mais como Pomana, pode ser consumido em queijo e bastante delicioso, mas tem baixo valor nutricional. Assim como a ambrosia, causa uma leve euforia e contribui para o bem-estar mental.</TM_Plant_Pomanasyrrium.description>
+
+  <TM_RawPomanasyrrium.label>Fruta de batano</TM_RawPomanasyrrium.label>
+  <TM_RawPomanasyrrium.description>Fruto do tamanho de um punho com tons que vão do laranja escuro ao roxo escuro, o Pomana é considerado primeiramente uma delícia devido à sua comunidade e geralmente é consumido cru. Quando ingerido com queijo, ele provoca uma leve sensação eufórica de bem-estar mental e, como foi descoberto, abre caminhos mentais, ampliando a consciência.</TM_RawPomanasyrrium.description>
+
+  <TM_RawPomanaMash.label>purê de pomana</TM_RawPomanaMash.label>
+  <TM_RawPomanaMash.description>Subproduto amargo e não apetitoso na extração de sirrium de mamanasirium cru. Este subproduto mantém algum valor nutricional, mas principalmente permanece para o consumo animal ou como base nutricional para a comida.</TM_RawPomanaMash.description>
+
+  <TM_Syrrium.label>Sírio</TM_Syrrium.label>
+  <TM_Syrrium.description>Sirrium é destilado de pomana através do processo de fervura de purê de frutas, que separa a sirrium do pomo. Quando ingerido, o queijo provoca um efeito muito mais intenso do que o pomão cru. Os efeitos químicos classificam o líquido como uma droga e podem causar uma leve dependência química, mas sua isca mais excitante é que alguns começam a se sentir menos capazes sem a droga e consomem o sírio para manter sua confiança e equilíbrio mental.
+
+As alegações de que o mamanasirium dá uma epifania e clareza são ignoradas pela maioria como fantasias, mas estudos de química mostram que esses efeitos são reais, pelo menos para os mágicos. Os benefícios da sirrium são considerados a principal causa para o cultivo de pomanasirrium. Com a purificação correta, descobriu-se que a exposição ao sirrium aumentava o acesso dos mágicos a Mana, acelerando suas marés e marés e reduzindo os esforços necessários ao uso da força secreta. Estes efeitos não serão ajustados aos benefícios obtidos com a ingestão de frutas cruas.</TM_Syrrium.description>
+  <TM_Syrrium.ingestible.ingestCommandString>Beber por 0</TM_Syrrium.ingestible.ingestCommandString>
+  <TM_Syrrium.ingestible.ingestReportString>Para beber, por favor.</TM_Syrrium.ingestible.ingestReportString>
+
+
+  <!-- Syrrium addiction -->
+
+  <TM_Plant_Paracyte.label>Arborização de arboreto espinhoso</TM_Plant_Paracyte.label>
+  <TM_Plant_Paracyte.description>O paracito thornbusch é uma planta geneticamente modificada que absorve a Manu durante a transposição secreta e coleta-a numa boneca. À medida que a planta amadurece, a boneca se solidifica em um magicida que pode ser colhido. O resto da planta é composta por quase espinhos de vidro e borrachas rígidas.
+
+O paracito é difícil de criar, e apenas os herbáceos experientes podem plantá-lo e recolhê-lo de forma segura, mas, com todas as suas dificuldades, ele tem uma beleza delicada e emite uma aurora essencial que reflete a luz ao longo de suas bordas cristalinas.
+
+Nota: As plantas parasitas reduzirão a regeneração do maná para todos os mágicos no mapa se o número de plantas paracitas ultrapassar o chapéu macio. Verifique as configurações de moda para o valor «chapéu mole». Os planos de parágrafos não afetam a recuperação da maná quando a quantidade total no mapa é menor do que a do chapéu macio.</TM_Plant_Paracyte.description>
+
+  <TM_Plant_Briar.label>videiras espinhosas</TM_Plant_Briar.label>
+  <TM_Plant_Briar.description>O perigo de fugas de madeira confusas cobertas de espinhos malignos que desaceleram qualquer movimento. Estas espinhas são picantes como um barbear e podem passar mesmo roupas gordas.</TM_Plant_Briar.description>
+
+
+</LanguageData>

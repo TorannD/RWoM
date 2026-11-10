@@ -1,0 +1,14 @@
+<LanguageData><TM_Tranquilizer_HD.label>Успокоенный</TM_Tranquilizer_HD.label>
+  <TM_Tranquilizer_HD.description>Эффекты транквилизатора.</TM_Tranquilizer_HD.description>
+  <TM_Tranquilizer_HD.stages.0.label>Замедленный</TM_Tranquilizer_HD.stages.0.label>
+  <TM_Tranquilizer_HD.stages.1.label>Успокоенный</TM_Tranquilizer_HD.stages.1.label>
+  <TM_Tranquilizer_HD.stages.2.label>Парализованный</TM_Tranquilizer_HD.stages.2.label>
+
+  <TM_Slow_HD.label>Замедленный</TM_Slow_HD.label>
+  <TM_Slow_HD.description>Эффекты способности, снижающей физическую и умственную подвижность.</TM_Slow_HD.description>
+  <TM_Slow_HD.stages.0.label>незначительный</TM_Slow_HD.stages.0.label>
+  <TM_Slow_HD.stages.1.label>сильный</TM_Slow_HD.stages.1.label>
+  <TM_Slow_HD.stages.2.label>экстремальный</TM_Slow_HD.stages.2.label>
+
+
+</LanguageData>

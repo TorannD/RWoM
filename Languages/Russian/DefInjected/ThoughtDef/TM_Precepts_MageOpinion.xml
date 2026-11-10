@@ -1,0 +1,103 @@
+<LanguageData><!-- Abhorrent Thoughts-->
+	<TM_KilledMage_Abhorrent_Social.stages.0.label>убийца магов</TM_KilledMage_Abhorrent_Social.stages.0.label>
+	<TM_KilledMage_Abhorrent_Mood.stages.0.label>убил мага</TM_KilledMage_Abhorrent_Mood.stages.0.label>
+	<TM_KilledMage_Abhorrent_Mood.stages.0.description>Я убил мага! Одной аномалией меньше, о которой стоит беспокоиться.</TM_KilledMage_Abhorrent_Mood.stages.0.description>
+	<TM_KilledMage_Know_Abhorrent_Mood.stages.0.label>мы убили мага</TM_KilledMage_Know_Abhorrent_Mood.stages.0.label>
+	<TM_KilledMage_Know_Abhorrent_Mood.stages.0.description>Мы убили мага! Наша колония восторжествует над этими мерзостями.</TM_KilledMage_Know_Abhorrent_Mood.stages.0.description>
+	<TM_MagicUse_Abhorrent_Social.stages.0.label>применил магию</TM_MagicUse_Abhorrent_Social.stages.0.label>
+	<TM_MagicUse_Know_Abhorrent_Mood.stages.0.label>мы использовали магию</TM_MagicUse_Know_Abhorrent_Mood.stages.0.label>
+	<TM_MagicUse_Know_Abhorrent_Mood.stages.0.description>В нашей колонии использовали магию — какой отвратительный и грязный поступок.</TM_MagicUse_Know_Abhorrent_Mood.stages.0.description>
+	<TM_MagesInColony_Abhorrent_Mood.stages.0.label>свобода от магов</TM_MagesInColony_Abhorrent_Mood.stages.0.label>
+	<TM_MagesInColony_Abhorrent_Mood.stages.0.description>Наша колония свободна от отвратительных махинаций магов.</TM_MagesInColony_Abhorrent_Mood.stages.0.description>
+	<TM_MagesInColony_Abhorrent_Mood.stages.1.label>мерзость мага</TM_MagesInColony_Abhorrent_Mood.stages.1.label>
+	<TM_MagesInColony_Abhorrent_Mood.stages.1.description>Свободный маг был допущен в колонию; уничтожьте или поработите мерзость!</TM_MagesInColony_Abhorrent_Mood.stages.1.description>
+	<TM_MagesInColonySlave_Abhorrent_Mood.stages.0.label>раб-маг</TM_MagesInColonySlave_Abhorrent_Mood.stages.0.label>
+	<TM_MagesInColonySlave_Abhorrent_Mood.stages.0.description>Мы поработили мага; нам не нужна его магия, ему лучше умереть.</TM_MagesInColonySlave_Abhorrent_Mood.stages.0.description>
+	<TM_IsMage_Abhorrent_Social.stages.0.label>маг</TM_IsMage_Abhorrent_Social.stages.0.label>
+	<!-- Disapprove Thoughts-->
+	<TM_MagicUse_Disapprove_Mood.stages.0.label>использование магии ограничено</TM_MagicUse_Disapprove_Mood.stages.0.label>
+	<TM_MagicUse_Disapprove_Mood.stages.0.description>Мы успешно ограничиваем использование магии.</TM_MagicUse_Disapprove_Mood.stages.0.description>
+	<TM_MagicUse_Disapprove_Mood.stages.1.label>слишком много магии</TM_MagicUse_Disapprove_Mood.stages.1.label>
+	<TM_MagicUse_Disapprove_Mood.stages.1.description>Магии используется слишком много. Для колонии это нехорошо.</TM_MagicUse_Disapprove_Mood.stages.1.description>
+	<TM_MagicUse_Disapprove_Mood.stages.2.label>чрезмерное использование магии</TM_MagicUse_Disapprove_Mood.stages.2.label>
+	<TM_MagicUse_Disapprove_Mood.stages.2.description>Используется слишком много магии!</TM_MagicUse_Disapprove_Mood.stages.2.description>
+	<TM_MagicUse_Disapprove_Mood.stages.3.label>магическое доминирование</TM_MagicUse_Disapprove_Mood.stages.3.label>
+	<TM_MagicUse_Disapprove_Mood.stages.3.description>Магия полностью пропитала всё вокруг; выходит, наша идеология оказалась ложью.</TM_MagicUse_Disapprove_Mood.stages.3.description>
+	<TM_MagesInColony_Disapprove_Mood.stages.0.label>ограниченные маги</TM_MagesInColony_Disapprove_Mood.stages.0.label>
+	<TM_MagesInColony_Disapprove_Mood.stages.0.description>Мы строго следим за тем, сколько свободных магов может жить в нашей колонии.</TM_MagesInColony_Disapprove_Mood.stages.0.description>
+	<TM_MagesInColony_Disapprove_Mood.stages.1.label>слишком много магов</TM_MagesInColony_Disapprove_Mood.stages.1.label>
+	<TM_MagesInColony_Disapprove_Mood.stages.1.description>В колонии слишком много свободных магов, это нужно быстро контролировать - сделайте их рабами!</TM_MagesInColony_Disapprove_Mood.stages.1.description>
+	<TM_MagesInColony_Disapprove_Mood.stages.2.label>чрезмерное количество магов</TM_MagesInColony_Disapprove_Mood.stages.2.label>
+	<TM_MagesInColony_Disapprove_Mood.stages.2.description>Количество магов в колонии чрезмерно и выходит из-под контроля; мы должны немедленно поработить всех магов, чтобы восстановить порядок и дисциплину.</TM_MagesInColony_Disapprove_Mood.stages.2.description>
+	<TM_MagesInColony_Disapprove_Mood.stages.3.label>разгул магов</TM_MagesInColony_Disapprove_Mood.stages.3.label>
+	<TM_MagesInColony_Disapprove_Mood.stages.3.description>Мы явно потерпели неудачу в ограничении количества свободных магов в колонии.</TM_MagesInColony_Disapprove_Mood.stages.3.description>
+	<TM_MagesInColony_Disapprove_Mood.stages.4.label>большинство магов</TM_MagesInColony_Disapprove_Mood.stages.4.label>
+	<TM_MagesInColony_Disapprove_Mood.stages.4.description>Сейчас свободных магов больше, чем нет; чего мы вообще пытаемся достичь?</TM_MagesInColony_Disapprove_Mood.stages.4.description>
+	<TM_IsMage_Disapprove_Social.stages.0.label>маг</TM_IsMage_Disapprove_Social.stages.0.label>
+	<!-- Approve Thoughts-->
+	<TM_MagicUse_Know_Approve_Mood.stages.0.label>волшебное изобилие</TM_MagicUse_Know_Approve_Mood.stages.0.label>
+	<TM_MagicUse_Know_Approve_Mood.stages.0.description>Я окружен могущественной магией - наша колония наверняка выдержит любое испытание.</TM_MagicUse_Know_Approve_Mood.stages.0.description>
+	<TM_MagicUse_Know_Approve_Mood.stages.1.label>использование магии</TM_MagicUse_Know_Approve_Mood.stages.1.label>
+	<TM_MagicUse_Know_Approve_Mood.stages.1.description>Я увидел какое-то волшебство, и это было потрясающе!</TM_MagicUse_Know_Approve_Mood.stages.1.description>
+	<TM_MagicUse_Know_Approve_Mood.stages.2.label>отсутствие магии</TM_MagicUse_Know_Approve_Mood.stages.2.label>
+	<TM_MagicUse_Know_Approve_Mood.stages.2.description>В последнее время я не видел никакой магии; неужели мои надежды напрасны?</TM_MagicUse_Know_Approve_Mood.stages.2.description>
+	<TM_MagicUse_Approve_Mood.stages.0.label>волшебный порыв</TM_MagicUse_Approve_Mood.stages.0.label>
+	<TM_MagicUse_Approve_Mood.stages.0.description>Магическая энергия пронизывает меня, и кажется, будто мне всё по силам!</TM_MagicUse_Approve_Mood.stages.0.description>
+	<TM_MagicUse_Approve_Mood.stages.1.label>использование магии</TM_MagicUse_Approve_Mood.stages.1.label>
+	<TM_MagicUse_Approve_Mood.stages.1.description>Я использовал магию, и это было здорово.</TM_MagicUse_Approve_Mood.stages.1.description>
+	<TM_MagicUse_Approve_Mood.stages.2.label>отсутствие магии</TM_MagicUse_Approve_Mood.stages.2.label>
+	<TM_MagicUse_Approve_Mood.stages.2.description>В последнее время я не использовал никакой магии; я чувствую себя оторванным от своей силы.</TM_MagicUse_Approve_Mood.stages.2.description>
+	<TM_MagesInColony_Approve_Mood.stages.0.label>доминирование магов</TM_MagesInColony_Approve_Mood.stages.0.label>
+	<TM_MagesInColony_Approve_Mood.stages.0.description>Количество магов наглядно демонстрирует превосходство нашей колонии.</TM_MagesInColony_Approve_Mood.stages.0.description>
+	<TM_MagesInColony_Approve_Mood.stages.1.label>изобилие магов</TM_MagesInColony_Approve_Mood.stages.1.label>
+	<TM_MagesInColony_Approve_Mood.stages.1.description>Наша колония благословлена множеством магов. С таким даром успех почти неизбежен!</TM_MagesInColony_Approve_Mood.stages.1.description>
+	<TM_MagesInColony_Approve_Mood.stages.2.label>коллектив магов</TM_MagesInColony_Approve_Mood.stages.2.label>
+	<TM_MagesInColony_Approve_Mood.stages.2.description>Количество магов в колонии обогащает многие аспекты жизни.</TM_MagesInColony_Approve_Mood.stages.2.description>
+	<TM_MagesInColony_Approve_Mood.stages.3.label>присутствующие маги</TM_MagesInColony_Approve_Mood.stages.3.label>
+	<TM_MagesInColony_Approve_Mood.stages.3.description>У нас в колонии есть несколько магов, которые будут наставлять нас на пути магии.</TM_MagesInColony_Approve_Mood.stages.3.description>
+	<TM_MagesInColony_Approve_Mood.stages.4.label>никаких магов</TM_MagesInColony_Approve_Mood.stages.4.label>
+	<TM_MagesInColony_Approve_Mood.stages.4.description>Как мы можем полагаться на магию, если у нас в колонии нет мага?</TM_MagesInColony_Approve_Mood.stages.4.description>
+	<TM_IsMage_Approve_Social.stages.0.label>маг</TM_IsMage_Approve_Social.stages.0.label>
+	<TM_IsMage_Approve_Social.stages.1.label>родство с магом</TM_IsMage_Approve_Social.stages.1.label>
+	<TM_IsMage_Approve_Social.stages.2.label>не маг</TM_IsMage_Approve_Social.stages.2.label>
+	<TM_PerformedSeverenceRitual_Social.stages.0.label>варварский ритуал</TM_PerformedSeverenceRitual_Social.stages.0.label>
+	<TM_PerformedSeverenceRitual_Social.stages.1.label>злодейский ритуал</TM_PerformedSeverenceRitual_Social.stages.1.label>
+	<!-- Venerated Thoughts-->
+	<TM_KilledMage_Venerated_Social.stages.0.label>убийца магов</TM_KilledMage_Venerated_Social.stages.0.label>
+	<TM_KilledMage_Venerated_Mood.stages.0.label>убийца магов</TM_KilledMage_Venerated_Mood.stages.0.label>
+	<TM_KilledMage_Venerated_Mood.stages.0.description>Я убил существо, наделенное магией... как я могу жить с этим?</TM_KilledMage_Venerated_Mood.stages.0.description>
+	<TM_KilledMage_Venerated_Mood.stages.1.label>убийца магов</TM_KilledMage_Venerated_Mood.stages.1.label>
+	<TM_KilledMage_Venerated_Mood.stages.1.description>Я был вынужден убить другого мага, и это тяжелым грузом лежит на моей совести.</TM_KilledMage_Venerated_Mood.stages.1.description>
+	<TM_KilledMage_Know_Venerated_Mood.stages.0.label>убил мага</TM_KilledMage_Know_Venerated_Mood.stages.0.label>
+	<TM_KilledMage_Know_Venerated_Mood.stages.0.description>Мы убили мага; это противоречит нашей главной идеологии!</TM_KilledMage_Know_Venerated_Mood.stages.0.description>
+	<TM_MagicUse_Venerated_Social.stages.0.label>использовал магию</TM_MagicUse_Venerated_Social.stages.0.label>
+	<TM_MagicUse_Know_Venerated_Mood.stages.0.label>волшебное изобилие</TM_MagicUse_Know_Venerated_Mood.stages.0.label>
+	<TM_MagicUse_Know_Venerated_Mood.stages.0.description>Я в восторге и ужасе от силы магии!</TM_MagicUse_Know_Venerated_Mood.stages.0.description>
+	<TM_MagicUse_Know_Venerated_Mood.stages.1.label>использование магии</TM_MagicUse_Know_Venerated_Mood.stages.1.label>
+	<TM_MagicUse_Know_Venerated_Mood.stages.1.description>Я был свидетелем великолепной магии!</TM_MagicUse_Know_Venerated_Mood.stages.1.description>
+	<TM_MagicUse_Know_Venerated_Mood.stages.2.label>отсутствие магии</TM_MagicUse_Know_Venerated_Mood.stages.2.label>
+	<TM_MagicUse_Know_Venerated_Mood.stages.2.description>В последнее время я не видел никакой магии; ее отсутствие оставляет меня подавленным.</TM_MagicUse_Know_Venerated_Mood.stages.2.description>
+	<TM_MagicUse_Venerated_Mood.stages.0.label>волшебный порыв</TM_MagicUse_Venerated_Mood.stages.0.label>
+	<TM_MagicUse_Venerated_Mood.stages.0.description>магическая энергия проносится сквозь меня, я чувствую, что могу сделать все, что угодно!</TM_MagicUse_Venerated_Mood.stages.0.description>
+	<TM_MagicUse_Venerated_Mood.stages.1.label>использование магии</TM_MagicUse_Venerated_Mood.stages.1.label>
+	<TM_MagicUse_Venerated_Mood.stages.1.description>Я использовал магию; это основная часть моего существа и подтверждает уверенность в моем превосходстве.</TM_MagicUse_Venerated_Mood.stages.1.description>
+	<TM_MagicUse_Venerated_Mood.stages.2.label>магическое разрушение</TM_MagicUse_Venerated_Mood.stages.2.label>
+	<TM_MagicUse_Venerated_Mood.stages.2.description>В последнее время я не использовал никакой магии; я чувствую себя оторванным от своей силы.</TM_MagicUse_Venerated_Mood.stages.2.description>
+	<TM_MagesInColony_Venerated_Mood.stages.0.label>доминирование магов</TM_MagesInColony_Venerated_Mood.stages.0.label>
+	<TM_MagesInColony_Venerated_Mood.stages.0.description>Успех нашей колонии обеспечивается силой магии.</TM_MagesInColony_Venerated_Mood.stages.0.description>
+	<TM_MagesInColony_Venerated_Mood.stages.1.label>изобилие магов</TM_MagesInColony_Venerated_Mood.stages.1.label>
+	<TM_MagesInColony_Venerated_Mood.stages.1.description>Наша колония, несомненно, отмечена величием, раз её украшают столь многие маги; их объединённая сила неудержима.</TM_MagesInColony_Venerated_Mood.stages.1.description>
+	<TM_MagesInColony_Venerated_Mood.stages.2.label>коллектив магов</TM_MagesInColony_Venerated_Mood.stages.2.label>
+	<TM_MagesInColony_Venerated_Mood.stages.2.description>Подобно гобелену, количество магов в колонии начало раскрывать грандиозный замысел.</TM_MagesInColony_Venerated_Mood.stages.2.description>
+	<TM_MagesInColony_Venerated_Mood.stages.3.label>присутствующие маги</TM_MagesInColony_Venerated_Mood.stages.3.label>
+	<TM_MagesInColony_Venerated_Mood.stages.3.description>Маги в нашей колонии будут направлять нас по выбранному нами пути.</TM_MagesInColony_Venerated_Mood.stages.3.description>
+	<TM_MagesInColony_Venerated_Mood.stages.4.label>никаких магов</TM_MagesInColony_Venerated_Mood.stages.4.label>
+	<TM_MagesInColony_Venerated_Mood.stages.4.description>Неужели магия покинула нас?!</TM_MagesInColony_Venerated_Mood.stages.4.description>
+	<TM_MagesPrisoner_Venerated_Mood.stages.0.label>заключенный маг</TM_MagesPrisoner_Venerated_Mood.stages.0.label>
+	<TM_MagesPrisoner_Venerated_Mood.stages.0.description>Мы заключили в тюрьму мага, уверены ли мы, что наши действия оправданы?</TM_MagesPrisoner_Venerated_Mood.stages.0.description>
+	<TM_MagesSlave_Venerated_Mood.stages.0.label>раб-маг</TM_MagesSlave_Venerated_Mood.stages.0.label>
+	<TM_MagesSlave_Venerated_Mood.stages.0.description>Мы поработили мага. Это низкий и постыдный поступок.</TM_MagesSlave_Venerated_Mood.stages.0.description>
+	<TM_IsMage_Venerated_Social.stages.0.label>маг</TM_IsMage_Venerated_Social.stages.0.label>
+	<TM_IsMage_Venerated_Social.stages.1.label>родство с магом</TM_IsMage_Venerated_Social.stages.1.label>
+	<TM_IsMage_Venerated_Social.stages.2.label>не маг</TM_IsMage_Venerated_Social.stages.2.label>
+</LanguageData>

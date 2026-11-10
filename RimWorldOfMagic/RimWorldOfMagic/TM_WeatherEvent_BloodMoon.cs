@@ -71,11 +71,15 @@ namespace TorannMagic
             }
         }
 
-        public TM_WeatherEvent_BloodMoon(Map map, int duration, float darkness) : base(map)
+        public TM_WeatherEvent_BloodMoon(Map map, int duration, float darkness)
+            : this(map,duration,darkness,0,new Vector2(Rand.Range(-5f,5f),Rand.Range(-5f,0f))) { }
+
+        internal TM_WeatherEvent_BloodMoon(Map map, int duration, float darkness, int elapsed, Vector2 shadow) : base(map)
 		{
             this.duration = duration;
             this.darkness = darkness;
-            this.shadowVector = new Vector2(Rand.Range(-5f, 5f), Rand.Range(-5f, 0f));
+            this.shadowVector = shadow;
+            this.age = elapsed;
         }
 
         public override void FireEvent()

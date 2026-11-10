@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Demon_Body.label>позолочена скриня</Demon_Body.label>
+  <Demon_Spine.label>броньований хребет</Demon_Spine.label>
+  <Demon_Abdomen.label>черевець</Demon_Abdomen.label>
+  <Demon_Chest.label>позолочена скриня</Demon_Chest.label>
+  <Demon_Heart.label>демонічне серце</Demon_Heart.label>
+  <Demon_Heart_Hidden.label>тіньове серце</Demon_Heart_Hidden.label>
+  <Demon_RibCage.label>грудна клітина</Demon_RibCage.label>
+  <Demon_LeftLung.label>ліва легеня</Demon_LeftLung.label>
+  <Demon_RightLung.label>права легеня</Demon_RightLung.label>
+  <Demon_Head.label>голова</Demon_Head.label>
+  <Demon_Neck.label>шия</Demon_Neck.label>
+  <Demon_DeathMask.label>броньована маска смерті</Demon_DeathMask.label>
+  <Demon_Skull.label>броньований череп</Demon_Skull.label>
+  <Demon_Brain.label>мозок</Demon_Brain.label>
+  <Demon_Horn1.label>лівий Ріг</Demon_Horn1.label>
+  <Demon_Horn2.label>лівий верхній ріг</Demon_Horn2.label>
+  <Demon_Horn3.label>правий верхній ріг</Demon_Horn3.label>
+  <Demon_Horn4.label>правий ріг</Demon_Horn4.label>
+  <Demon_SightSensor.label>внутрішній зір</Demon_SightSensor.label>
+  <Demon_SixthSense.label>внутрішнє почуття</Demon_SixthSense.label>
+  <Demon_Mandible.label>жвали</Demon_Mandible.label>
+  <Demon_LeftWing.label>ліве крило</Demon_LeftWing.label>
+  <Demon_RightWing.label>праве крило</Demon_RightWing.label>
+  <Demon_LeftArm.label>ліва рука</Demon_LeftArm.label>
+  <Demon_RightArm.label>права рука</Demon_RightArm.label>
+  <Demon_LeftLeg.label>ліва нога</Demon_LeftLeg.label>
+  <Demon_RightLeg.label>права нога</Demon_RightLeg.label>
+
+
+</LanguageData>

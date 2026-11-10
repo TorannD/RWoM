@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- priest projectile -->
+
+  <TM_Projectile_Priest.label>padre projétil</TM_Projectile_Priest.label>
+
+
+  <!-- Healing Circle -->
+
+  <TM_Projectile_HealingCircle.label>Círculo de cura</TM_Projectile_HealingCircle.label>
+  <TM_Projectile_HealingCircle_I.label>Círculo de cura</TM_Projectile_HealingCircle_I.label>
+  <TM_Projectile_HealingCircle_II.label>Círculo de cura</TM_Projectile_HealingCircle_II.label>
+  <TM_Projectile_HealingCircle_III.label>Círculo de cura</TM_Projectile_HealingCircle_III.label>
+
+
+  <!-- Resurrection -->
+
+  <Projectile_Resurrection.label>ressurreição</Projectile_Resurrection.label>
+
+
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_CoreReturnMark.label>return mark</TM_CoreReturnMark.label>
+  <TM_CoreReturnMark.description>Bound to a magical core. Return costs 10 magofuel; upkeep costs 1 magofuel per day.</TM_CoreReturnMark.description>
+</LanguageData>

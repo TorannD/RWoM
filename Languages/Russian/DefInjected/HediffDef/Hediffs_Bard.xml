@@ -1,0 +1,41 @@
+<LanguageData><TM_LullabyHD.label>Колыбельная</TM_LullabyHD.label>
+	<TM_LullabyHD.description>Уменьшает сознания пешки.</TM_LullabyHD.description>
+	<TM_LullabyHD.stages.0.label>I</TM_LullabyHD.stages.0.label>
+	<TM_LullabyHD.stages.1.label>II</TM_LullabyHD.stages.1.label>
+	<TM_LullabyHD.stages.2.label>III</TM_LullabyHD.stages.2.label>
+	<TM_LullabyHD.stages.3.label>IV</TM_LullabyHD.stages.3.label>
+	<TM_InspirationalHD.label>Вдохновляющий</TM_InspirationalHD.label>
+	<TM_InspirationalHD.description>Заставляет других получать вдохновение.</TM_InspirationalHD.description>
+	<TM_InspirationalHD.stages.0.label>Бард</TM_InspirationalHD.stages.0.label>
+	<TM_EntertainingHD.label>Развлекательный</TM_EntertainingHD.label>
+	<TM_EntertainingHD.description>Активно ищет других пешек, чтобы поднять настроение и развлечь.</TM_EntertainingHD.description>
+	<TM_EntertainingHD.stages.0.label>Бард</TM_EntertainingHD.stages.0.label>
+	<TM_SingBattleHymnHD.label>боевой напев</TM_SingBattleHymnHD.label>
+	<TM_SingBattleHymnHD.description>Распевая громкий Боевой гимн, чтобы подстегнуть союзников к победе.</TM_SingBattleHymnHD.description>
+	<TM_SingBattleHymnHD.stages.0.label>Бард</TM_SingBattleHymnHD.stages.0.label>
+	<!-- Battle hymn-->
+	<TM_BattleHymnHD.label>Боевой Гимн</TM_BattleHymnHD.label>
+	<TM_BattleHymnHD.description>Вдохновленный и воодушевленный боевым гимном.</TM_BattleHymnHD.description>
+	<TM_BattleHymnHD.stages.0.label>I</TM_BattleHymnHD.stages.0.label>
+	<TM_BattleHymnHD.stages.1.label>II</TM_BattleHymnHD.stages.1.label>
+	<TM_BattleHymnHD.stages.2.label>III</TM_BattleHymnHD.stages.2.label>
+	<TM_BattleHymnHD.stages.3.label>IV</TM_BattleHymnHD.stages.3.label>
+	<TM_BattleHymnHD.stages.4.label>V</TM_BattleHymnHD.stages.4.label>
+	<TM_BattleHymnHD.stages.5.label>VI</TM_BattleHymnHD.stages.5.label>
+	<TM_BattleHymnHD.stages.6.label>VII</TM_BattleHymnHD.stages.6.label>
+	<TM_BattleHymnHD.stages.7.label>VIII</TM_BattleHymnHD.stages.7.label>
+	<TM_BattleHymnHD.stages.8.label>IX</TM_BattleHymnHD.stages.8.label>
+	<TM_BattleHymnHD.stages.9.label>X</TM_BattleHymnHD.stages.9.label>
+	<TM_DiscordHD.label>Диссонанс</TM_DiscordHD.label>
+	<TM_DiscordHD.description>Под психологическим давлением.</TM_DiscordHD.description>
+	<TM_DiscordHD.stages.0.label>ментальный туман</TM_DiscordHD.stages.0.label>
+	<TM_DiscordHD.stages.1.label>искажение</TM_DiscordHD.stages.1.label>
+	<TM_DiscordHD.stages.2.label>нестабильный</TM_DiscordHD.stages.2.label>
+	<TM_DiscordHD.stages.3.label>невменяемость</TM_DiscordHD.stages.3.label>
+	<TM_DiscordSafeHD.label>Диссонанс</TM_DiscordSafeHD.label>
+	<TM_DiscordSafeHD.description>Под психологическим давлением.</TM_DiscordSafeHD.description>
+	<TM_DiscordSafeHD.stages.0.label>ментальный туман</TM_DiscordSafeHD.stages.0.label>
+	<TM_DiscordSafeHD.stages.1.label>искажение</TM_DiscordSafeHD.stages.1.label>
+	<TM_DiscordSafeHD.stages.2.label>нестабильный</TM_DiscordSafeHD.stages.2.label>
+	<TM_DiscordSafeHD.stages.3.label>ошеломленный</TM_DiscordSafeHD.stages.3.label>
+</LanguageData>

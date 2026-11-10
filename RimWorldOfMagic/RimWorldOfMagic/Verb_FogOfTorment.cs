@@ -17,13 +17,12 @@ namespace TorannMagic
             TargetAoEProperties targetAoEProperties = UseAbilityProps.abilityDef.MainVerb.TargetAoEProperties;
             if (targetAoEProperties == null || !targetAoEProperties.showRangeOnSelect)
             {
-                CompAbilityUserMagic comp = this.CasterPawn.GetCompAbilityUserMagic();
+                var owner = ClassProgression.SpiritRebirthCasting.SkillOwner(CasterPawn, Ability);
+                var comp = owner?.GetCompAbilityUserMagic();
                 float adjustedRadius = verbProps.defaultProjectile?.projectile?.explosionRadius ?? 1f;
-                if (comp != null && comp.MagicData != null)
-                {
-                    int verVal = TM_Calc.GetSkillVersatilityLevel(this.CasterPawn, this.Ability.Def as TMAbilityDef);
-                    adjustedRadius += verVal;
-                }
+                if (comp?.MagicData != null)
+                    adjustedRadius += ClassProgression.Projectile_SpiritBolt.SpellRank(owner,
+                        comp.MagicData.MagicPowerSkill_FogOfTorment, "TM_FogOfTorment", "_ver");
                 return adjustedRadius;
             }
             return (float)targetAoEProperties.range;

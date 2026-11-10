@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_RefineMagofuel.label>виготовити магопаливо x50</TM_RefineMagofuel.label>
+  <TM_RefineMagofuel.description>Поєднати 50 одиниць хімпалива і 200 одиниць магіциту, щоб отримати 50 одиниць магопалива. Потребує арканної кузні; діють звичайні правила магічної роботи та витрат мани кузні.</TM_RefineMagofuel.description>
+  <TM_RefineMagofuel.jobString>виготовляє магопаливо.</TM_RefineMagofuel.jobString>
+</LanguageData>

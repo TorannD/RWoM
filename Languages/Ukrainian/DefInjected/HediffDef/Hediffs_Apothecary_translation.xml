@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ApothecaryHerbsHD.label>аптекарські трави</TM_ApothecaryHerbsHD.label>
+  <TM_ApothecaryHerbsHD.description>Трави, насіння та інші інгредієнти, що використовуються аптекарем для приготування різних предметів.</TM_ApothecaryHerbsHD.description>
+  <TM_ApothecaryHerbsHD.stages.0.label></TM_ApothecaryHerbsHD.stages.0.label>
+
+  <TM_HerbalElixirHD.label>трав&apos;яний еліксир</TM_HerbalElixirHD.label>
+  <TM_HerbalElixirHD.description>Трав&apos;яний еліксир, який посилює відновлення здоров&apos;я і бореться з хворобами, а також покращує психічне здоров&apos;я і зменшує втому.</TM_HerbalElixirHD.description>
+  <TM_HerbalElixirHD.stages.0.label>легкий</TM_HerbalElixirHD.stages.0.label>
+  <TM_HerbalElixirHD.stages.1.label>активний</TM_HerbalElixirHD.stages.1.label>
+  <TM_HerbalElixirHD.stages.2.label>сильний</TM_HerbalElixirHD.stages.2.label>
+
+  <TM_SoothingBalmHD.label>бальзам, який заспокоює</TM_SoothingBalmHD.label>
+  <TM_SoothingBalmHD.description>Бальзам для місцевого застосування, який використовується для зупинки кровотечі, загоєння ран і зменшення болю. Заспокійливий бальзам діє як м&apos;який анестетик і знижує усвідомленість пацієнта.</TM_SoothingBalmHD.description>
+
+  <TM_HerbalClarityHD.label>Ясність</TM_HerbalClarityHD.label>
+  <TM_HerbalClarityHD.description>Зілля, яке допомагає споживачеві відкритися таємному. Регенерація мани збільшена до 300%, а психічна чутливість збільшена до 50%. Ефекти також знижують психічну стійкість. Дія цього препарату триває кілька днів, але з часом втрачає силу.</TM_HerbalClarityHD.description>
+  <TM_HerbalClarityHD.stages.0.label>легкий</TM_HerbalClarityHD.stages.0.label>
+  <TM_HerbalClarityHD.stages.1.label>активний</TM_HerbalClarityHD.stages.1.label>
+  <TM_HerbalClarityHD.stages.2.label>вібруючий</TM_HerbalClarityHD.stages.2.label>
+
+  <TM_HerbalBlissHD.label>Блаженство</TM_HerbalBlissHD.label>
+  <TM_HerbalBlissHD.description>Вводить користувача в стан блаженства, здатний майже повністю замаскувати емоції і біль. Цей препарат призведе до того, що споживач повільно втратить навички, а набуття навичок під впливом цього препарату сильно пригнічується.</TM_HerbalBlissHD.description>
+
+
+</LanguageData>

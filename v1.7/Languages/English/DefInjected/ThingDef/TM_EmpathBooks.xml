@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Torn_BookOfEmpathy.label>torn script: empath</Torn_BookOfEmpathy.label>
+  <Torn_BookOfEmpathy.description>Introduces a new mage to Empathy and Mind Killer. Reading completes Foundation initiation and consumes the script.</Torn_BookOfEmpathy.description>
+  <Torn_BookOfEmpathy.comps.1.useLabel>Read {0_label}</Torn_BookOfEmpathy.comps.1.useLabel>
+  <BookOfEmpathy.label>arcane tome: empath</BookOfEmpathy.label>
+  <BookOfEmpathy.description>Teaches Suppressive Aura to an empath who has completed the Foundation trial. Reading completes Adept initiation and consumes the tome.</BookOfEmpathy.description>
+  <BookOfEmpathy.comps.1.useLabel>Read {0_label}</BookOfEmpathy.comps.1.useLabel>
+  <TM_MasterTomeEmpath.label>master tome: empath</TM_MasterTomeEmpath.label>
+  <TM_MasterTomeEmpath.description>Teaches Harvest Passion and its Incite Passion ability to an empath who has completed the mastery trial. Reading completes Master initiation and consumes the tome. Available from traders and quest rewards; it cannot be crafted.</TM_MasterTomeEmpath.description>
+  <TM_MasterTomeEmpath.comps.1.useLabel>Read {0_label}</TM_MasterTomeEmpath.comps.1.useLabel>
+</LanguageData>

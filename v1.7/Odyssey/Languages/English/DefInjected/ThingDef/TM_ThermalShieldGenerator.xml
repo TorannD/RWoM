@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <TM_ThermalShieldGenerator.label>thermal shield generator</TM_ThermalShieldGenerator.label>
+  <TM_ThermalShieldGenerator.description>Protects against cold within 5 cells of itself and connected mana beacons, on land or in space. Uses only mana stored in its 100-mana buffer. Only one generator operates per connected network; additional generators remain on standby. Consumes 0.001 mana per cold cell per second (0.1 mana per second for 100 cold cells). Full strength raises effective cold exposure to at least 21°C. Insufficient mana provides partial protection toward 21°C. Does not cool hot areas, supply oxygen, or physically heat rooms.</TM_ThermalShieldGenerator.description>
+</LanguageData>

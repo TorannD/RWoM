@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_PsionicHD.label>Пенсіонічна Енергія</TM_PsionicHD.label>
+  <TM_PsionicHD.description>Це пояснює унікальну енергію псіоніка.</TM_PsionicHD.description>
+
+  <TM_PsionicInjuryHD.label>Псионик</TM_PsionicInjuryHD.label>
+  <TM_PsionicInjuryHD.description>Травма, викликана псіонічною силою.</TM_PsionicInjuryHD.description>
+  <TM_PsionicInjuryHD.comps.0.labelTendedWell>перев&apos;язаний</TM_PsionicInjuryHD.comps.0.labelTendedWell>
+  <TM_PsionicInjuryHD.comps.0.labelTendedWellInner>зашитий</TM_PsionicInjuryHD.comps.0.labelTendedWellInner>
+  <TM_PsionicInjuryHD.comps.0.labelSolidTendedWell>налаштування</TM_PsionicInjuryHD.comps.0.labelSolidTendedWell>
+  <TM_PsionicInjuryHD.injuryProps.destroyedLabel>починається</TM_PsionicInjuryHD.injuryProps.destroyedLabel>
+  <TM_PsionicInjuryHD.injuryProps.destroyedOutLabel>підірвано</TM_PsionicInjuryHD.injuryProps.destroyedOutLabel>
+
+  <TM_PsionicSpeedHD.label>псіонічна швидкість</TM_PsionicSpeedHD.label>
+  <TM_PsionicSpeedHD.description>Збільшена швидкість через псіонічне посилення.</TM_PsionicSpeedHD.description>
+  <TM_PsionicSpeedHD.stages.0.label>I</TM_PsionicSpeedHD.stages.0.label>
+
+  <TM_PsionicSpeedHD_I.label>псіонічна швидкість</TM_PsionicSpeedHD_I.label>
+  <TM_PsionicSpeedHD_I.description>Збільшена швидкість через псіонічне посилення.</TM_PsionicSpeedHD_I.description>
+  <TM_PsionicSpeedHD_I.stages.0.label>II</TM_PsionicSpeedHD_I.stages.0.label>
+
+  <TM_PsionicSpeedHD_II.label>псіонічна швидкість</TM_PsionicSpeedHD_II.label>
+  <TM_PsionicSpeedHD_II.description>Збільшена швидкість через псіонічне посилення.</TM_PsionicSpeedHD_II.description>
+  <TM_PsionicSpeedHD_II.stages.0.label>III</TM_PsionicSpeedHD_II.stages.0.label>
+
+  <TM_PsionicSpeedHD_III.label>псіонічна швидкість</TM_PsionicSpeedHD_III.label>
+  <TM_PsionicSpeedHD_III.description>Збільшена швидкість через псіонічне посилення.</TM_PsionicSpeedHD_III.description>
+  <TM_PsionicSpeedHD_III.stages.0.label>IV</TM_PsionicSpeedHD_III.stages.0.label>
+
+  <TM_PsionicManipulationHD.label>псіонічні маніпуляції</TM_PsionicManipulationHD.label>
+  <TM_PsionicManipulationHD.description>Підвищена спритність завдяки псіонічному посиленню.</TM_PsionicManipulationHD.description>
+  <TM_PsionicManipulationHD.stages.0.label>I</TM_PsionicManipulationHD.stages.0.label>
+
+  <TM_PsionicManipulationHD_I.label>псіонічні маніпуляції</TM_PsionicManipulationHD_I.label>
+  <TM_PsionicManipulationHD_I.description>Підвищена спритність завдяки псіонічному посиленню.</TM_PsionicManipulationHD_I.description>
+  <TM_PsionicManipulationHD_I.stages.0.label>II</TM_PsionicManipulationHD_I.stages.0.label>
+
+  <TM_PsionicManipulationHD_II.label>псіонічні маніпуляції</TM_PsionicManipulationHD_II.label>
+  <TM_PsionicManipulationHD_II.description>Підвищена спритність завдяки псіонічному посиленню.</TM_PsionicManipulationHD_II.description>
+  <TM_PsionicManipulationHD_II.stages.0.label>III</TM_PsionicManipulationHD_II.stages.0.label>
+
+  <TM_PsionicManipulationHD_III.label>псіонічні маніпуляції</TM_PsionicManipulationHD_III.label>
+  <TM_PsionicManipulationHD_III.description>Підвищена спритність завдяки псіонічному посиленню.</TM_PsionicManipulationHD_III.description>
+  <TM_PsionicManipulationHD_III.stages.0.label>IV</TM_PsionicManipulationHD_III.stages.0.label>
+
+
+  <TM_PsionicInjuryHD.comps.1.permanentLabel>знищений псіонічною силою</TM_PsionicInjuryHD.comps.1.permanentLabel>
+  <TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWell>перев&apos;язаний</TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWell>
+  <TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWellInner>ушить</TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelTendedWellInner>
+  <TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelSolidTendedWell>набір</TM_PsionicInjuryHD.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  <TM_PsionicInjuryHD.comps.HediffComp_GetsPermanent.permanentLabel>знищений псіонічною силою</TM_PsionicInjuryHD.comps.HediffComp_GetsPermanent.permanentLabel>
+  <TM_PsionicInjuryHD.labelNounPretty>{0} у {1}</TM_PsionicInjuryHD.labelNounPretty>
+
+</LanguageData>

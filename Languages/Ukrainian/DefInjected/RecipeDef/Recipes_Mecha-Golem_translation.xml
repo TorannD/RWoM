@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mecha Golem upgrade recipes -->
+
+  <TM_Mecha-Golem_RepairComponent.label>ремонтний компонент</TM_Mecha-Golem_RepairComponent.label>
+  <TM_Mecha-Golem_RepairComponent.description>Замінює відсутні частини голему, які не потребують спеціального оновлення.</TM_Mecha-Golem_RepairComponent.description>
+  <TM_Mecha-Golem_RepairComponent.jobString>створення частини голему</TM_Mecha-Golem_RepairComponent.jobString>
+
+  <TM_Mecha-Golem_EnergyCell.label>силовий елемент</TM_Mecha-Golem_EnergyCell.label>
+  <TM_Mecha-Golem_EnergyCell.description>Створює силовий осередок і встановлює його в хутра-голему.</TM_Mecha-Golem_EnergyCell.description>
+  <TM_Mecha-Golem_EnergyCell.jobString>створення силової комірки</TM_Mecha-Golem_EnergyCell.jobString>
+
+  <TM_Mecha-Golem_EnergyConverter.label>перетворювач енергії</TM_Mecha-Golem_EnergyConverter.label>
+  <TM_Mecha-Golem_EnergyConverter.description>Збільшує ефективність поглинання та використання енергії големом на 10%.</TM_Mecha-Golem_EnergyConverter.description>
+  <TM_Mecha-Golem_EnergyConverter.jobString>створення силового перетворювача</TM_Mecha-Golem_EnergyConverter.jobString>
+
+  <TM_Mecha-Golem_EnergyCharge.label>електричне нейро-ядро</TM_Mecha-Golem_EnergyCharge.label>
+  <TM_Mecha-Golem_EnergyCharge.description>Збільшує швидкість заряду енергії голему на 10 на годину.</TM_Mecha-Golem_EnergyCharge.description>
+  <TM_Mecha-Golem_EnergyCharge.jobString>модернізація електричної нейромережі</TM_Mecha-Golem_EnergyCharge.jobString>
+
+  <TM_Mecha-Golem_Axe.label>хутро-сокира</TM_Mecha-Golem_Axe.label>
+  <TM_Mecha-Golem_Axe.description>Виковує сокиру і прикріплює її до кріплення на лівій руці.</TM_Mecha-Golem_Axe.description>
+  <TM_Mecha-Golem_Axe.jobString>створення частини голему</TM_Mecha-Golem_Axe.jobString>
+
+  <TM_Mecha-Golem_Sword.label>хутро-меч</TM_Mecha-Golem_Sword.label>
+  <TM_Mecha-Golem_Sword.description>Виковує меч і прикріплює його до кріплення на лівій руці.</TM_Mecha-Golem_Sword.description>
+  <TM_Mecha-Golem_Sword.jobString>створення частини голему</TM_Mecha-Golem_Sword.jobString>
+
+  <TM_Mecha-Golem_Hammer.label>хутро-молот</TM_Mecha-Golem_Hammer.label>
+  <TM_Mecha-Golem_Hammer.description>Виковує молот і кріпить його до кріплення правої руки.</TM_Mecha-Golem_Hammer.description>
+  <TM_Mecha-Golem_Hammer.jobString>створення частини голему</TM_Mecha-Golem_Hammer.jobString>
+
+  <TM_Mecha-Golem_GatlingCannon.label>гармата гатлінгу</TM_Mecha-Golem_GatlingCannon.label>
+  <TM_Mecha-Golem_GatlingCannon.description>Прикріплює мініган до правого плечового кріплення хутра-голему.</TM_Mecha-Golem_GatlingCannon.description>
+  <TM_Mecha-Golem_GatlingCannon.jobString>створення частини голему</TM_Mecha-Golem_GatlingCannon.jobString>
+
+  <TM_Mecha-Golem_MiningLaser.label>шахтарський лазер</TM_Mecha-Golem_MiningLaser.label>
+  <TM_Mecha-Golem_MiningLaser.description>Створює шахтарський лазер для кріплення до лівого плечового кріплення.</TM_Mecha-Golem_MiningLaser.description>
+  <TM_Mecha-Golem_MiningLaser.jobString>створення частини голему</TM_Mecha-Golem_MiningLaser.jobString>
+
+  <TM_Mecha-Golem_Extinguisher.label>вогнегасник</TM_Mecha-Golem_Extinguisher.label>
+  <TM_Mecha-Golem_Extinguisher.description>Додає вбудовані вентиляційні отвори для випуску пари, які можна використовувати для швидкого розсіювання вогню на големі і навколо нього.</TM_Mecha-Golem_Extinguisher.description>
+  <TM_Mecha-Golem_Extinguisher.jobString>створення частини голему</TM_Mecha-Golem_Extinguisher.jobString>
+
+  <TM_Mecha-Golem_BallisticPlate.label>балістична пластина</TM_Mecha-Golem_BallisticPlate.label>
+  <TM_Mecha-Golem_BallisticPlate.description>Покращує бронежилет голему за допомогою балістичної пластини; накладає штраф за пересування.</TM_Mecha-Golem_BallisticPlate.description>
+  <TM_Mecha-Golem_BallisticPlate.jobString>створення частини голему</TM_Mecha-Golem_BallisticPlate.jobString>
+
+  <TM_Mecha-Golem_FlameCore.label>процесор ядра полум&apos;я</TM_Mecha-Golem_FlameCore.label>
+  <TM_Mecha-Golem_FlameCore.description>Процесор ядра полум &quot;я забезпечує такі переваги для кожного рівня оновлення [1/2/3]:
+Рух: +[0,5c/0,9c/1,2c]
+Обробка: +[10%/20%/30%]
+Втрата Здібності: +[10%/20%/30%]
+Вартість енергії: +[10%/20%/30%]
+
+Крім того, вогняне ядро дозволяє голему притягувати і спалювати прилеглий бруд, отримуючи при цьому енергію.</TM_Mecha-Golem_FlameCore.description>
+  <TM_Mecha-Golem_FlameCore.jobString>Створення оновлення голема</TM_Mecha-Golem_FlameCore.jobString>
+
+  <TM_Mecha-Golem_WaterCore.label>процесор з водяним ядром</TM_Mecha-Golem_WaterCore.label>
+  <TM_Mecha-Golem_WaterCore.description>Процесор з водяним ядром забезпечує такі переваги для кожного рівня оновлення [1/2/3]:
+Броня: +[5%/10%/15%]
+Перезарядка здібностей: -[10%/20%/30%]
+Бонус за Зцілення: +[100%/200%/300%]
+Вартість енергії: -[15%/30%/45%]
+
+Крім того, водне ядро дозволяє голему швидко відновлювати здоров&apos;я під час активності і відновлювати здоров&apos;я в його сплячому стані.</TM_Mecha-Golem_WaterCore.description>
+  <TM_Mecha-Golem_WaterCore.jobString>оновлення крафтового голему</TM_Mecha-Golem_WaterCore.jobString>
+
+  <TM_Mecha-Golem_EarthCore.label>процесор із земним ядром</TM_Mecha-Golem_EarthCore.label>
+  <TM_Mecha-Golem_EarthCore.description>Процесор з ядром землі забезпечує такі переваги для кожного рівня оновлення [1/2/3]:
+Броня: +[10%/18%/25%]
+Перезарядка здібностей: +[5%/10%/15%]
+Бонус за Зцілення: +[60%/120%/180%]
+Вартість енергії: +[5%/10%/15%]
+Обробка: +[15%/30%/45%]
+
+Крім того, ядро землі дозволяє голему захищати себе від пошкоджень.</TM_Mecha-Golem_EarthCore.description>
+  <TM_Mecha-Golem_EarthCore.jobString>Створення оновлення голема</TM_Mecha-Golem_EarthCore.jobString>
+
+  <TM_Mecha-Golem_LightningCore.label>процесор з ядром блискавки</TM_Mecha-Golem_LightningCore.label>
+  <TM_Mecha-Golem_LightningCore.description>Процесор з ядром блискавки забезпечує такі переваги для кожного рівня оновлення [1/2/3]:
+Рух: +[1.2c/1.8c/2.2c]
+Перезарядка здібностей: -[15%/30%/45%]
+Вартість енергії: +[10%/20%/30%]
+Обробка: -[5%/10%/15%]
+
+Крім того, ядро блискавки дає голему можливість завдати удару атакуючим в ближньому бою ударом енергії, на короткий час оглушаючи їх.</TM_Mecha-Golem_LightningCore.description>
+  <TM_Mecha-Golem_LightningCore.jobString>Створення оновлення голема</TM_Mecha-Golem_LightningCore.jobString>
+
+  <TM_Mecha-Golem_FlameShard.label>Основа вогняного осколка</TM_Mecha-Golem_FlameShard.label>
+  <TM_Mecha-Golem_FlameShard.description>База автомата з осколками полум&apos;я надає такі переваги для кожного рівня оновлення [1/2/3]:
+Рух: +[15%/30%/40%]
+Здоров&apos;я: +[15%/30%/40%]</TM_Mecha-Golem_FlameShard.description>
+  <TM_Mecha-Golem_FlameShard.jobString>Створення оновлення голема</TM_Mecha-Golem_FlameShard.jobString>
+
+  <TM_Mecha-Golem_WaterShard.label>Основа водяного осколка</TM_Mecha-Golem_WaterShard.label>
+  <TM_Mecha-Golem_WaterShard.description>База автомата з водяним осколком забезпечує такі переваги для кожного рівня оновлення [1/2/3]:
+Рух: +[10%/15%/20%]
+Здоров&apos;я: +[30%/50%/70%]</TM_Mecha-Golem_WaterShard.description>
+  <TM_Mecha-Golem_WaterShard.jobString>Створення оновлення голема</TM_Mecha-Golem_WaterShard.jobString>
+
+  <TM_Mecha-Golem_EarthShard.label>Основа земляного осколка</TM_Mecha-Golem_EarthShard.label>
+  <TM_Mecha-Golem_EarthShard.description>База автоматів осколків землі надає такі переваги для кожного рівня оновлення [1/2/3]:
+Здоров&apos;я: +[40%/80%/120%]</TM_Mecha-Golem_EarthShard.description>
+  <TM_Mecha-Golem_EarthShard.jobString>Створення оновлення голема</TM_Mecha-Golem_EarthShard.jobString>
+
+  <TM_Mecha-Golem_LightningShard.label>Основа осколка блискавки</TM_Mecha-Golem_LightningShard.label>
+  <TM_Mecha-Golem_LightningShard.description>База автомата з осколками блискавки надає такі переваги для кожного рівня оновлення [1/2/3]:
+Рух: +[25%/50%/75%]</TM_Mecha-Golem_LightningShard.description>
+  <TM_Mecha-Golem_LightningShard.jobString>Створення оновлення голема</TM_Mecha-Golem_LightningShard.jobString>
+
+
+</LanguageData>

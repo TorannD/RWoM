@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -131,6 +131,8 @@ namespace TorannMagic
                 }
             }
 
+            // Isekai-style theme: dark panel with bracket corners.
+            TorannMagic.Utils.TMIsekaiUI.Panel(rect);
             Rect sRect = new Rect(rect.x, rect.y, rect.width - 36f, rect.height + 56f + sizeY);
             scrollPosition = GUI.BeginScrollView(rect, scrollPosition, sRect, false, true);
             
@@ -143,17 +145,28 @@ namespace TorannMagic
                     float x = Text.CalcSize("TM_Header".Translate()).x;
                     Rect rect2 = new Rect(rect.width / 2f - (x / 2), rect.y, rect.width, MagicCardUtility.HeaderSize);
                     Text.Font = GameFont.Small;
+                    GUI.color = new Color(0.85f, 0.65f, 0.30f);
                     Widgets.Label(rect2, "TM_Header".Translate().CapitalizeFirst());
+                    GUI.color = Color.white;
                     Text.Font = GameFont.Small;
+                    // Grimoire: isekai-style character window (TMPIsekai integration UI).
+                    Rect grimoireBtn = new Rect(rect.width - 104f, rect2.y - 2f, 100f, MagicCardUtility.HeaderSize - 2f);
+                    if (Widgets.ButtonText(grimoireBtn, "TM_Grimoire".Translate()))
+                    {
+                        Window_TMGrimoire.OpenFor(pawn);
+                    }
                     Widgets.DrawLineHorizontal(rect.x - 10f, rect2.yMax, rect.width - 15f);
                     Rect rect9 = new Rect(rect.x, rect2.yMax + MagicCardUtility.Padding, rect2.width, MagicCardUtility.SkillsColumnHeight);
+                    TorannMagic.Utils.TMIsekaiUI.Panel(new Rect(rect9.x + 4f, rect9.y, rect9.width - 8f, MagicCardUtility.SkillsColumnHeight + MagicCardUtility.Padding * 2f));
                     Rect inRect = new Rect(rect9.x, rect9.y + MagicCardUtility.Padding, MagicCardUtility.SkillsColumnDivider, MagicCardUtility.SkillsColumnHeight);
                     Rect inRect2 = new Rect(rect9.x + MagicCardUtility.SkillsColumnDivider, rect9.y + MagicCardUtility.Padding, rect9.width - MagicCardUtility.SkillsColumnDivider, MagicCardUtility.SkillsColumnHeight);
                     MagicCardUtility.InfoPane(inRect, pawn.GetCompAbilityUserMagic(), pawn);
                     float x5 = Text.CalcSize("TM_Spells".Translate()).x;
                     Rect rect10 = new Rect(rect.width / 2f - x5 / 2f, rect9.yMax - 60f, rect.width, MagicCardUtility.HeaderSize);
                     Text.Font = GameFont.Small;
+                    GUI.color = new Color(0.85f, 0.65f, 0.30f);
                     Widgets.Label(rect10, "TM_Spells".Translate().CapitalizeFirst());
+                    GUI.color = Color.white;
                     Text.Font = GameFont.Small;
                     Widgets.DrawLineHorizontal(rect.x - 10f, rect10.yMax, rect.width - 15f);
                     Rect rect11 = new Rect(rect.x, rect10.yMax + MagicCardUtility.SectionOffset, rect10.width, MagicCardUtility.PowersColumnHeight);
@@ -467,7 +480,7 @@ namespace TorannMagic
                             //    MagicCardUtility.PowersGUIHandler(inRect3, pawn.GetCompAbilityUserMagic(), pawn.GetCompAbilityUserMagic().MagicData.MagicPowersC, pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Prediction, pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_AlterFate, pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_AccelerateTime, pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ReverseTime, pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_ChronostaticField, null, TexButton.TMTex_SkillPointUsed);
                             //}
                         }
-                        else if (pawn.story.traits.HasTrait(TorannMagicDefOf.ChaosMage))
+                        else if (TorannMagic.ClassProgression.ClassIdentity.IsChaosMage(pawn))
                         {
                             Rect inRect3 = new Rect(rect.x, rect11.y, MagicCardUtility.PowersColumnWidth, MagicCardUtility.PowersColumnHeight);
                             List<MagicPower> CMList = new List<MagicPower>();
@@ -1858,10 +1871,7 @@ namespace TorannMagic
 
                     Text.Font = GameFont.Small;
                     Rect rect = new Rect(MagicCardUtility.MagicCardSize.x / 2f - MagicCardUtility.MagicButtonSize, num, MagicCardUtility.MagicButtonSize, MagicCardUtility.MagicButtonSize);
-                    if (itnum > 1)
-                    {
-                        Widgets.DrawLineHorizontal(0f + 20f, rect.y - 2f, MagicCardUtility.MagicCardSize.x - 40f);
-                    }
+                    TorannMagic.Utils.TMIsekaiUI.Panel(new Rect(16f, num - 8f, MagicCardUtility.MagicCardSize.x - 32f, MagicCardUtility.MagicButtonSize + MagicCardUtility.TextSize + 14f));
                     if (power.level < power.maxLevel && (power.TMabilityDefs.Count > 1 || TM_Calc.IsIconAbility_02(power.abilityDef)))
                     {
                         TooltipHandler.TipRegion(rect, () => string.Concat(new string[]
@@ -1906,9 +1916,9 @@ namespace TorannMagic
                         flag999 = false;
                     }
                     Rect rectLabel = new Rect(0f + 20f, rect.yMin, 350f - 44f, MagicCardUtility.MagicButtonPointSize);
-                    //GUI.color = Color.yellow;
+                    GUI.color = new Color(0.95f, 0.80f, 0.35f);
                     Widgets.Label(rectLabel, power.abilityDef.LabelCap);
-                    //GUI.color = Color.white;
+                    GUI.color = Color.white;
                     if (!power.learned)
                     {
                         Widgets.DrawTextureFitted(rect, power.Icon, 1f);

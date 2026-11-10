@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData><UnfinishedArcane.label>Незаконченный Рваный Скрипт</UnfinishedArcane.label>
+  <UnfinishedArcane.description>Черновой тайный свиток, готовый принять в себя записи о пробуждении магических сил. Обученный маг может перенести в него свои теории, наблюдения и основы класса. После этого книга позволит другой одарённой пешке изучить тот же путь. Повреждённые и неполные записи всё равно способны обучить магическому классу, но набор стартовых способностей при этом будет случайным.</UnfinishedArcane.description>
+  <UnfinishedArcane.comps.0.useLabel>Писать</UnfinishedArcane.comps.0.useLabel>
+
+  <UnfinishedAdvArcane.label>Незаконченная Тайная Книга</UnfinishedAdvArcane.label>
+  <UnfinishedAdvArcane.description>Черновой тайный том, предназначенный для подробной записи магического пути. Обученный маг может занести в него свои знания, после чего книга позволит другой одарённой пешке освоить тот же класс. Полный том передаёт почти все классовые способности, кроме мастерской. Одарённые пешки также могут использовать такую заготовку для записи собственных теорий и в итоге открыть для себя случайный магический класс.</UnfinishedAdvArcane.description>
+  <UnfinishedAdvArcane.comps.0.useLabel>Писать</UnfinishedAdvArcane.comps.0.useLabel>
+
+  <UnfinishedMartial.label>Незаконченная Боевая Книга</UnfinishedMartial.label>
+  <UnfinishedMartial.description>Книга, готовая быть наполненной секретами раскрытия боевых сил...
+
+Используйте обученного бойца, чтобы записать свои боевые приемы в Книгу. Затем книга может быть использована для обучения другой пешки этой боевой технике.
+
+Физически искусные пешки могут записывать свои исследования и тренировки в этой книге, чтобы разработать концепции случайного класса бойцов.</UnfinishedMartial.description>
+  <UnfinishedMartial.comps.0.useLabel>Писать</UnfinishedMartial.comps.0.useLabel>
+
+
+</LanguageData>

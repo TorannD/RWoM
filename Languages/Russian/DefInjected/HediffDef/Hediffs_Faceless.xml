@@ -1,0 +1,58 @@
+<LanguageData><TM_DisguiseHD.label>Обман</TM_DisguiseHD.label>
+  <TM_DisguiseHD.description>Укутанный в хитроумную маску, чтобы обмануть противников.</TM_DisguiseHD.description>
+  <TM_DisguiseHD.stages.0.label>I</TM_DisguiseHD.stages.0.label>
+
+  <TM_DisguiseHD_I.label>Обман</TM_DisguiseHD_I.label>
+  <TM_DisguiseHD_I.description>Укутанный в хитроумную маску, чтобы обмануть противников.</TM_DisguiseHD_I.description>
+  <TM_DisguiseHD_I.stages.0.label>II</TM_DisguiseHD_I.stages.0.label>
+
+  <TM_DisguiseHD_II.label>Обман</TM_DisguiseHD_II.label>
+  <TM_DisguiseHD_II.description>Укутанный в хитроумную маску, чтобы обмануть противников.</TM_DisguiseHD_II.description>
+  <TM_DisguiseHD_II.stages.0.label>III</TM_DisguiseHD_II.stages.0.label>
+
+  <TM_DisguiseHD_III.label>Обман</TM_DisguiseHD_III.label>
+  <TM_DisguiseHD_III.description>Укутанный в хитроумную маску, чтобы обмануть противников.</TM_DisguiseHD_III.description>
+  <TM_DisguiseHD_III.stages.0.label>IV</TM_DisguiseHD_III.stages.0.label>
+
+  <TM_ReversalHD.label>Реверсивная Позиция</TM_ReversalHD.label>
+  <TM_ReversalHD.description>Обращает энергию атаки обратно на атакующего.</TM_ReversalHD.description>
+  <TM_ReversalHD.stages.0.label>I</TM_ReversalHD.stages.0.label>
+
+  <TM_PossessionHD.label>Одержимость</TM_PossessionHD.label>
+  <TM_PossessionHD.description>Поступки находятся под влиянием мастера обмана.</TM_PossessionHD.description>
+  <TM_PossessionHD.stages.0.label>I</TM_PossessionHD.stages.0.label>
+
+  <TM_PossessionHD_I.label>Одержимость</TM_PossessionHD_I.label>
+  <TM_PossessionHD_I.description>Поступки находятся под влиянием мастера обмана.</TM_PossessionHD_I.description>
+  <TM_PossessionHD_I.stages.0.label>II</TM_PossessionHD_I.stages.0.label>
+
+  <TM_PossessionHD_II.label>Одержимость</TM_PossessionHD_II.label>
+  <TM_PossessionHD_II.description>Поступки находятся под влиянием мастера обмана.</TM_PossessionHD_II.description>
+  <TM_PossessionHD_II.stages.0.label>III</TM_PossessionHD_II.stages.0.label>
+
+  <TM_PossessionHD_III.label>Одержимость</TM_PossessionHD_III.label>
+  <TM_PossessionHD_III.description>Поступки находятся под влиянием мастера обмана.</TM_PossessionHD_III.description>
+  <TM_PossessionHD_III.stages.0.label>IV</TM_PossessionHD_III.stages.0.label>
+
+  <TM_CoOpPossessionHD.label>Одержимость</TM_CoOpPossessionHD.label>
+  <TM_CoOpPossessionHD.description>Поступки находятся под влиянием мастера обмана.</TM_CoOpPossessionHD.description>
+  <TM_CoOpPossessionHD.stages.0.label>I</TM_CoOpPossessionHD.stages.0.label>
+
+  <TM_CoOpPossessionHD_I.label>Одержимость</TM_CoOpPossessionHD_I.label>
+  <TM_CoOpPossessionHD_I.description>Поступки находятся под влиянием мастера обмана.</TM_CoOpPossessionHD_I.description>
+  <TM_CoOpPossessionHD_I.stages.0.label>II</TM_CoOpPossessionHD_I.stages.0.label>
+
+  <TM_CoOpPossessionHD_II.label>Одержимость</TM_CoOpPossessionHD_II.label>
+  <TM_CoOpPossessionHD_II.description>Поступки находятся под влиянием мастера обмана.</TM_CoOpPossessionHD_II.description>
+  <TM_CoOpPossessionHD_II.stages.0.label>III</TM_CoOpPossessionHD_II.stages.0.label>
+
+  <TM_CoOpPossessionHD_III.label>Одержимость</TM_CoOpPossessionHD_III.label>
+  <TM_CoOpPossessionHD_III.description>Поступки находятся под влиянием мастера обмана.</TM_CoOpPossessionHD_III.description>
+  <TM_CoOpPossessionHD_III.stages.0.label>IV</TM_CoOpPossessionHD_III.stages.0.label>
+
+  <TM_DisorientedVomit.label>дезориентированный</TM_DisorientedVomit.label>
+  <TM_DisorientedVomit.description>Дезориентирован после смены места с другой пешкой.</TM_DisorientedVomit.description>
+  <TM_DisorientedVomit.stages.0.label>I</TM_DisorientedVomit.stages.0.label>
+
+
+</LanguageData>

@@ -1,0 +1,9 @@
+<LanguageData>
+  <TM_SpiritCastGladiatorSweep.reportString>завдає розмашистого удару по TargetB.</TM_SpiritCastGladiatorSweep.reportString>
+  <TM_SpiritCastGrapple.reportString>притягує TargetB гаком.</TM_SpiritCastGrapple.reportString>
+  <TM_SpiritCastWhirlwind.reportString>стрімко летить вихором до TargetB.</TM_SpiritCastWhirlwind.reportString>
+  <TM_SpiritCastLastCircle.reportString>готує останнє коло.</TM_SpiritCastLastCircle.reportString>
+  <TM_SpiritGladiatorCover.reportString>прикриває TargetA.</TM_SpiritGladiatorCover.reportString>
+  <TM_SpiritGladiatorRelief.reportString>тренується приходити на допомогу TargetA.</TM_SpiritGladiatorRelief.reportString>
+  <TM_SpiritGladiatorEvacuation.reportString>тренується евакуювати TargetA.</TM_SpiritGladiatorEvacuation.reportString>
+</LanguageData>

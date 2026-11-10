@@ -1,0 +1,228 @@
+﻿<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_Arcanist.xml-->
+	<!--         EN: Shadow-->
+	<TM_Shadow.label>Тень</TM_Shadow.label>
+	<!--               EN: Creates a shadow aura around the caster that periodically buffs an ally.
+
+Shadow: Arcane augmentation that assists the worker improving their physical capacity but causes a mood decrease.
+
+Application Frequency: 	80-90s
+Duration:	500-600s
+Manipulation, Sight, Hearing, Blood filtration: +10%
+Moving, Consciousness:	+5%
+Mood decrease: -3
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.-->
+	<TM_Shadow.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_Shadow.description>
+	<!--           EN: Shadow-->
+	<TM_Shadow_I.label>Тень</TM_Shadow_I.label>
+	<!--                 EN: Creates a shadow aura around the caster that periodically buffs an ally.
+
+Shadow: Arcane augmentation that assists the worker improving their physical capacity but causes a mood decrease.
+
+Application Frequency: 	80-90s
+Duration:	500-600s
+Manipulation, Sight, Hearing, Talking: +20%
+Moving, Consciousness, Metabolism, Blood filtration: +10%
+Mood decrease:	-4
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.-->
+	<TM_Shadow_I.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_Shadow_I.description>
+	<!--            EN: Shadow-->
+	<TM_Shadow_II.label>Тень</TM_Shadow_II.label>
+	<!--                  EN: Creates a shadow aura around the caster that periodically buffs an ally.
+
+Shadow: Arcane augmentation that assists the worker improving their physical capacity but causes a mood decrease.
+
+Application Frequency: 	80-90s
+Duration:	1100-1250s
+Manipulation, Sight, Hearing, Talking: +25%
+Moving, Metabolism, Blood filtration: +15%
+Consciousness: 	+10%
+Mood decrease:	-6
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.-->
+	<TM_Shadow_II.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_Shadow_II.description>
+	<!--             EN: Shadow-->
+	<TM_Shadow_III.label>Тень</TM_Shadow_III.label>
+	<!--                   EN: Creates a shadow aura around the caster that periodically buffs an ally.
+
+Shadow: Arcane augmentation that assists the worker improving their physical capacity but causes a mood decrease.
+
+Application Frequency: 	80-90s
+Duration:	1100-1250s
+Manipulation, Sight, Hearing, Talking: +25%
+Moving, Metabolism, Blood filtration: +20%
+Consciousness: 	+15%
+Mood decrease:	-8
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.-->
+	<TM_Shadow_III.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_Shadow_III.description>
+	<!--               EN: Magic Missile-->
+	<TM_MagicMissile.label>Волшебная стрела</TM_MagicMissile.label>
+	<!-- Выпускает шквал магических стрел по врагам.
+
+Шанс дезориентации: 3%
+Время каста: 2.5с
+Дальность: 24
+Снаряды: 14 за 2.8с
+Урон: 4-->
+	<TM_MagicMissile.description>Выпускает шквал магических стрел по врагам.
+
+Шанс дезориентации: 3%
+Время каста: 2.5с
+Дальность: 24
+Снаряды: 14 за 2.8с
+Урон: 4</TM_MagicMissile.description>
+	<!--                 EN: Magic Missile-->
+	<TM_MagicMissile_I.label>Волшебный снаряд</TM_MagicMissile_I.label>
+	<!--                       EN: Fire a wave of magic missiles at enemies.
+
+Chance to confuse: 5%
+Casting time: 2s
+Range: 28
+Projectiles: 17 over 2.83s
+Damage: 5-->
+	<TM_MagicMissile_I.description>Стреляйте волной магических снарядов по врагам.
+
+Шанс провалить: 5%
+Подготовка: 2 с
+Дистанция: 28
+Количество снарядов: 17 за 2,83с
+Урон: 5</TM_MagicMissile_I.description>
+	<!--                  EN: Magic Missile-->
+	<TM_MagicMissile_II.label>Волшебный снаряд</TM_MagicMissile_II.label>
+	<!--                        EN: Fire a wave of magic missiles at enemies.
+
+Chance to confuse: 7%
+Casting time: 1.5s
+Range: 32
+Projectiles: 20 over 2.67s
+Damage: 6-->
+	<TM_MagicMissile_II.description>Стреляйте волной магических снарядов по врагам.
+
+Шанс провалить: 7%
+Подготовка: 1.5 с
+Дистанция: 32
+Количество снарядов: 20 за 2,67с
+Урон: 6</TM_MagicMissile_II.description>
+	<!--                   EN: Magic Missile-->
+	<TM_MagicMissile_III.label>Волшебный снаряд</TM_MagicMissile_III.label>
+	<!--                         EN: Fire a wave of magic missiles at enemies.
+
+Chance to confuse: 9%
+Casting time: 1s
+Range: 36
+Projectiles: 24 over 2.4s
+Damage: 7-->
+	<TM_MagicMissile_III.description>Стреляйте волной магических снарядов по врагам.
+
+Шанс провалить: 9%
+Подготовка: 1 с
+Дистанция: 36
+Количество снарядов: 24 за 2,4с
+Урон: 7</TM_MagicMissile_III.description>
+	<!--           EN: Teleport-->
+	<TM_Teleport.label>Телепорт</TM_Teleport.label>
+	<!--                 EN: Mass teleport spell. Creates a temporary method of long range transport; be warned, the portal collapses after a brief period causing a feedback explosion at the point the portal was created.-->
+	<TM_Teleport.description>Заклинание массовой телепортации. Создает временный способ транспортировки на большие расстояния; имейте в виду, что портал разрушается через короткий промежуток времени, вызывая взрыв обратной связи в точке создания портала.</TM_Teleport.description>
+	<!--        EN: Blink-->
+	<TM_Blink.label>Мерцание</TM_Blink.label>
+	<!--              EN: Instantly moves the caster to the target location.
+
+Casting time: .5s
+Recharge time: 10s
+Range: 30-->
+	<TM_Blink.description>Мгновенно перемещает заклинателя в целевое местоположение.
+
+Подготовка: .5с
+Откат: 10с
+Дальность: 30</TM_Blink.description>
+	<!--          EN: Blink-->
+	<TM_Blink_I.label>Мерцание</TM_Blink_I.label>
+	<!--                EN: Instantly moves the caster to the target location.
+
+Casting time: .3s
+Recharge time: 8s
+Range: 50-->
+	<TM_Blink_I.description>Мгновенно перемещает заклинателя в целевое местоположение.
+
+Подготовка: .3с
+Откат: 8с
+Дальность: 50</TM_Blink_I.description>
+	<!--           EN: Blink-->
+	<TM_Blink_II.label>Мерцание</TM_Blink_II.label>
+	<!--                 EN: Instantly moves the caster to the target location.
+
+Casting time: .1s
+Recharge time: 6s
+Range: 70-->
+	<TM_Blink_II.description>Мгновенно перемещает заклинателя в целевое местоположение.
+
+Подготовка: .1с
+Откат: 6с
+Дальность: 70</TM_Blink_II.description>
+	<!--            EN: Blink-->
+	<TM_Blink_III.label>Мерцание</TM_Blink_III.label>
+	<!--                  EN: Instantly moves the caster to the target location.
+
+Casting time: 0s
+Recharge time: 5s
+Range: 90-->
+	<TM_Blink_III.description>Мгновенно перемещает заклинателя в целевое местоположение.
+
+Подготовка: 0с
+Откат: 5с
+Дальность: 90</TM_Blink_III.description>
+	<!--         EN: Summon-->
+	<TM_Summon.label>Призыв</TM_Summon.label>
+	<!--               EN: Summon objects to the casters location.
+
+Casting time: 3s
+Recharge time: 20s
+Range: 70-->
+	<TM_Summon.description>Вызывайте предметы в локацию заклинателей.
+
+Подготовка: 3с
+Откат: 20с
+Дальность: 70</TM_Summon.description>
+	<!--           EN: Summon-->
+	<TM_Summon_I.label>Призыв</TM_Summon_I.label>
+	<!--                 EN: Summon objects to the casters location.
+
+Casting time: 2.7s
+Recharge time: 18s
+Range: 80-->
+	<TM_Summon_I.description>Вызывайте предметы в локацию заклинателей.
+
+Подготовка: 2.7с
+Откат: 18с
+Дальность: 80</TM_Summon_I.description>
+	<!--            EN: Summon-->
+	<TM_Summon_II.label>Призыв</TM_Summon_II.label>
+	<!--                  EN: Summon objects to the casters location.
+
+Casting time: 2.5s
+Recharge time: 16s
+Range: 90-->
+	<TM_Summon_II.description>Вызывайте предметы в локацию заклинателей.
+
+Подготовка: 2.5с
+Откат: 16с
+Дальность: 90</TM_Summon_II.description>
+	<!--             EN: Summon-->
+	<TM_Summon_III.label>Призыв</TM_Summon_III.label>
+	<!--                   EN: Summon objects to the casters location.
+
+Casting time: 2.4s
+Recharge time: 15s
+Range: 100-->
+	<TM_Summon_III.description>Вызывайте предметы в локацию заклинателей.
+
+Подготовка: 2.4с
+Откат: 15с
+Дальность: 100</TM_Summon_III.description>
+	<!--              EN: Gateway-->
+	<TM_FoldReality.label>Врата</TM_FoldReality.label>
+	<!--                    EN: Folds reality to open a gateway to another player controlled location and instantly moves all pawns and items in a 7 cell radius around the target cell to the caster.-->
+	<TM_FoldReality.description>Складывает реальность, чтобы открыть врата в другую локацию, контролируемую игроком, и мгновенно перемещает все пешки и предметы в радиусе 7 клеток вокруг целевой ячейки к заклинателю.</TM_FoldReality.description>
+</LanguageData>

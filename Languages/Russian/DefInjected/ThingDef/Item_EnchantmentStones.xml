@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+	<TM_EStone_maxMP_minor.label>Маленький магический камень удержания</TM_EStone_maxMP_minor.label>
+	<TM_EStone_maxMP_minor.description>Магический камень для зачарования предметов. Если долго смотреть в его глубину, возникает неприятное чувство, будто заглядываешь в бездонный колодец. Этот самоцвет можно вплести в вещь, чтобы увеличить максимальный запас энергии мага или бойца, который её носит, на 5%.</TM_EStone_maxMP_minor.description>
+	<TM_EStone_maxMP_minor.stuffProps.stuffAdjective>Маленький магический камень удержания</TM_EStone_maxMP_minor.stuffProps.stuffAdjective>
+	<TM_EStone_maxMP.label>Магический камень удержания</TM_EStone_maxMP.label>
+	<TM_EStone_maxMP.description>Магический камень для зачарования предметов. Если долго смотреть в его глубину, возникает неприятное чувство, будто заглядываешь в бездонный колодец. Этот самоцвет можно вплести в вещь, чтобы увеличить максимальный запас энергии мага или бойца, который её носит, на 10%.</TM_EStone_maxMP.description>
+	<TM_EStone_maxMP.stuffProps.stuffAdjective>Магический камень удержания</TM_EStone_maxMP.stuffProps.stuffAdjective>
+	<TM_EStone_maxMP_major.label>Большой Магический камень удержания</TM_EStone_maxMP_major.label>
+	<TM_EStone_maxMP_major.description>Магический камень для зачарования предметов. Если долго смотреть в его глубину, возникает неприятное чувство, будто заглядываешь в бездонный колодец. Этот самоцвет можно вплести в вещь, чтобы увеличить максимальный запас энергии мага или бойца, который её носит, на 15%.</TM_EStone_maxMP_major.description>
+	<TM_EStone_maxMP_major.stuffProps.stuffAdjective>Большой Магический камень удержания</TM_EStone_maxMP_major.stuffProps.stuffAdjective>
+	<TM_EStone_mpRegenRate_minor.label>Маленький магический камень регенерации</TM_EStone_mpRegenRate_minor.label>
+	<TM_EStone_mpRegenRate_minor.description>Магический камень для зачарования предметов. Этот драгоценный камень можно использовать для наполнения предмета, увеличивая скорость регенерации энергии любого мага или бойца, носящего этот предмет, на 5%.</TM_EStone_mpRegenRate_minor.description>
+	<TM_EStone_mpRegenRate_minor.stuffProps.stuffAdjective>Маленький магический камень регенерации</TM_EStone_mpRegenRate_minor.stuffProps.stuffAdjective>
+	<TM_EStone_mpRegenRate.label>Магический камень регенерации</TM_EStone_mpRegenRate.label>
+	<TM_EStone_mpRegenRate.description>Магический камень для зачарования предметов. Этот драгоценный камень можно использовать для наполнения предмета, увеличивая скорость регенерации энергии любого мага или бойца, носящего этот предмет, на 10%.</TM_EStone_mpRegenRate.description>
+	<TM_EStone_mpRegenRate.stuffProps.stuffAdjective>Магический камень регенерации</TM_EStone_mpRegenRate.stuffProps.stuffAdjective>
+	<TM_EStone_mpRegenRate_major.label>Большой Магический камень регенерации</TM_EStone_mpRegenRate_major.label>
+	<TM_EStone_mpRegenRate_major.description>Магический камень для зачарования предметов. Этот драгоценный камень можно использовать для наполнения предмета, увеличивая скорость регенерации энергии любого мага или бойца, носящего этот предмет, на 15%.</TM_EStone_mpRegenRate_major.description>
+	<TM_EStone_mpRegenRate_major.stuffProps.stuffAdjective>Большой Магический камень регенерации</TM_EStone_mpRegenRate_major.stuffProps.stuffAdjective>
+	<TM_EStone_mpCost_minor.label>Маленький магический камень сохранения</TM_EStone_mpCost_minor.label>
+	<TM_EStone_mpCost_minor.description>Магический камень для зачарования предметов. При внедрении в предмет этот драгоценный камень снижает энергетическую стоимость любого заклинания на 3%.</TM_EStone_mpCost_minor.description>
+	<TM_EStone_mpCost_minor.stuffProps.stuffAdjective>Маленький магический камень сохранения</TM_EStone_mpCost_minor.stuffProps.stuffAdjective>
+	<TM_EStone_mpCost.label>Магический магический камень сохранения</TM_EStone_mpCost.label>
+	<TM_EStone_mpCost.description>Магический камень для зачарования предметов. При внедрении в предмет этот драгоценный камень снижает энергетическую стоимость любого заклинания на 5%.</TM_EStone_mpCost.description>
+	<TM_EStone_mpCost.stuffProps.stuffAdjective>Магический камень сохранения</TM_EStone_mpCost.stuffProps.stuffAdjective>
+	<TM_EStone_mpCost_major.label>Большой Магический камень сохранения</TM_EStone_mpCost_major.label>
+	<TM_EStone_mpCost_major.description>Магический камень для зачарования предметов. При внедрении в предмет этот драгоценный камень снижает энергетическую стоимость любого заклинания на 7%.</TM_EStone_mpCost_major.description>
+	<TM_EStone_mpCost_major.stuffProps.stuffAdjective>Большой Магический камень сохранения</TM_EStone_mpCost_major.stuffProps.stuffAdjective>
+	<TM_EStone_coolDown_minor.label>Маленький магический камень ускорения</TM_EStone_coolDown_minor.label>
+	<TM_EStone_coolDown_minor.description>Магический камень для зачарования предметов. При внедрении в предмет этот драгоценный камень уменьшает таймер перезарядки любой способности на 3%.</TM_EStone_coolDown_minor.description>
+	<TM_EStone_coolDown_minor.stuffProps.stuffAdjective>Маленький магический камень ускорения</TM_EStone_coolDown_minor.stuffProps.stuffAdjective>
+	<TM_EStone_coolDown.label>Магический камень ускорения</TM_EStone_coolDown.label>
+	<TM_EStone_coolDown.description>Магический камень для зачарования предметов. Когда он проникает в предмет, этот драгоценный камень уменьшает таймер перезарядки любой способности на 5%.</TM_EStone_coolDown.description>
+	<TM_EStone_coolDown.stuffProps.stuffAdjective>Магический камень ускорения</TM_EStone_coolDown.stuffProps.stuffAdjective>
+	<TM_EStone_coolDown_major.label>Большой Магический камень ускорения</TM_EStone_coolDown_major.label>
+	<TM_EStone_coolDown_major.description>Магический камень для зачарования предметов. Когда он проникает в предмет, этот драгоценный камень уменьшает таймер перезарядки любой способности на 7%.</TM_EStone_coolDown_major.description>
+	<TM_EStone_coolDown_major.stuffProps.stuffAdjective>Большой Магический камень ускорения</TM_EStone_coolDown_major.stuffProps.stuffAdjective>
+	<TM_EStone_xpGain_minor.label>Маленький магический камень обучения</TM_EStone_xpGain_minor.label>
+	<TM_EStone_xpGain_minor.description>Магический камень для зачарования предметов. Когда он проникает в предмет, этот драгоценный камень помогает владельцу, сохраняя остаточную мимикрию способности, позволяя владельцу дополнительно получать опыт за использование способностей на 5%.</TM_EStone_xpGain_minor.description>
+	<TM_EStone_xpGain_minor.stuffProps.stuffAdjective>Маленький магический камень обучения</TM_EStone_xpGain_minor.stuffProps.stuffAdjective>
+	<TM_EStone_xpGain.label>Магический камень обучения</TM_EStone_xpGain.label>
+	<TM_EStone_xpGain.description>Магический камень для зачарования предметов. Когда он проникает в предмет, этот драгоценный камень помогает владельцу, сохраняя остаточную мимикрию способности, позволяя владельцу дополнительно получать опыт за использование способностей на 5%. 10%.</TM_EStone_xpGain.description>
+	<TM_EStone_xpGain.stuffProps.stuffAdjective>Магический камень обучения</TM_EStone_xpGain.stuffProps.stuffAdjective>
+	<TM_EStone_xpGain_major.label>Большой Магический камень обучения</TM_EStone_xpGain_major.label>
+	<TM_EStone_xpGain_major.description>Магический камень для зачарования предметов. Когда он проникает в предмет, этот драгоценный камень помогает владельцу, сохраняя остаточную мимикрию способности, позволяя владельцу дополнительно получать опыт за использование способностей на 5%. 15%.</TM_EStone_xpGain_major.description>
+	<TM_EStone_xpGain_major.stuffProps.stuffAdjective>Большой Магический камень обучения</TM_EStone_xpGain_major.stuffProps.stuffAdjective>
+	<TM_EStone_arcaneRes_minor.label>Маленький магический камень сопротивления</TM_EStone_arcaneRes_minor.label>
+	<TM_EStone_arcaneRes_minor.description>Магический камень для зачарования предметов. Когда он проникает в предмет, этот драгоценный камень создает барьер, который отталкивает активную тайную энергию, уменьшая урон, получаемый от тайных источников на 10%.</TM_EStone_arcaneRes_minor.description>
+	<TM_EStone_arcaneRes_minor.stuffProps.stuffAdjective>Маленький магический камень сопротивления</TM_EStone_arcaneRes_minor.stuffProps.stuffAdjective>
+	<TM_EStone_arcaneRes.label>Магический камень сопротивления</TM_EStone_arcaneRes.label>
+	<TM_EStone_arcaneRes.description>Магический камень для зачарования предметов. Когда он проникает в предмет, этот драгоценный камень создает барьер, который отталкивает активную тайную энергию, уменьшая урон, получаемый от тайных источников на 10%</TM_EStone_arcaneRes.description>
+	<TM_EStone_arcaneRes.stuffProps.stuffAdjective>Магический камень сопротивления</TM_EStone_arcaneRes.stuffProps.stuffAdjective>
+	<TM_EStone_arcaneRes_major.label>Большой Магический камень сопротивления</TM_EStone_arcaneRes_major.label>
+	<TM_EStone_arcaneRes_major.description>Магический камень для зачарования предметов. Когда он проникает в предмет, этот драгоценный камень создает барьер, который отталкивает активную тайную энергию, уменьшая урон, получаемый от тайных источников на 10%</TM_EStone_arcaneRes_major.description>
+	<TM_EStone_arcaneRes_major.stuffProps.stuffAdjective>Большой Магический камень сопротивления</TM_EStone_arcaneRes_major.stuffProps.stuffAdjective>
+	<TM_EStone_arcaneDmg_minor.label>Маленький магический камень силы</TM_EStone_arcaneDmg_minor.label>
+	<TM_EStone_arcaneDmg_minor.description>Магический камень для зачарования предметов. Когда он проникает в предмет, это заклинание увеличивает силу атаки, увеличивая урон способностей на 4%.</TM_EStone_arcaneDmg_minor.description>
+	<TM_EStone_arcaneDmg_minor.stuffProps.stuffAdjective>Маленький магический камень силы</TM_EStone_arcaneDmg_minor.stuffProps.stuffAdjective>
+	<TM_EStone_arcaneDmg.label>Магический камень силы</TM_EStone_arcaneDmg.label>
+	<TM_EStone_arcaneDmg.description>Магический камень для зачарования предметов. Когда он проникает в предмет, это заклинание увеличивает силу атаки, увеличивая урон способностей на 8%.</TM_EStone_arcaneDmg.description>
+	<TM_EStone_arcaneDmg.stuffProps.stuffAdjective>Магический камень силы</TM_EStone_arcaneDmg.stuffProps.stuffAdjective>
+	<TM_EStone_arcaneDmg_major.label>Большой Магический камень силы</TM_EStone_arcaneDmg_major.label>
+	<TM_EStone_arcaneDmg_major.description>Магический камень для зачарования предметов. Когда он проникает в предмет, это заклинание увеличивает силу атаки, увеличивая урон способностей на 12%.</TM_EStone_arcaneDmg_major.description>
+	<TM_EStone_arcaneDmg_major.stuffProps.stuffAdjective>Большой Магический камень силы</TM_EStone_arcaneDmg_major.stuffProps.stuffAdjective>
+	<TM_EStone_wonder_minor.label>Маленький магический камень изумления</TM_EStone_wonder_minor.label>
+	<TM_EStone_wonder_minor.description>Магический камень для зачарования предметов. Этот драгоценный камень гудит с интенсивной силой. Этот драгоценный камень можно использовать для наполнения предмета магическим потенциалом, предоставляя бонусы для всех категорий заклинаний.</TM_EStone_wonder_minor.description>
+	<TM_EStone_wonder_minor.stuffProps.stuffAdjective>Маленький магический камень изумления</TM_EStone_wonder_minor.stuffProps.stuffAdjective>
+	<TM_EStone_wonder.label>Магический камень изумления</TM_EStone_wonder.label>
+	<TM_EStone_wonder.description>Магический камень для зачарования предметов. Этот драгоценный камень гудит с интенсивной силой. Этот драгоценный камень можно использовать для наполнения предмета магическим потенциалом, предоставляя бонусы для всех категорий заклинаний.</TM_EStone_wonder.description>
+	<TM_EStone_wonder.stuffProps.stuffAdjective>Магический камень изумления</TM_EStone_wonder.stuffProps.stuffAdjective>
+	<TM_EStone_wonder_major.label>Большой Магический камень изумления</TM_EStone_wonder_major.label>
+	<TM_EStone_wonder_major.description>Магический камень для зачарования предметов. Этот драгоценный камень гудит с интенсивной силой. Этот драгоценный камень можно использовать для наполнения предмета магическим потенциалом, предоставляя бонусы для всех категорий заклинаний.</TM_EStone_wonder_major.description>
+	<TM_EStone_wonder_major.stuffProps.stuffAdjective>Большой Магический камень изумления</TM_EStone_wonder_major.stuffProps.stuffAdjective>
+
+	<RawMagicyte.label>Необработанный магицит</RawMagicyte.label>
+	<RawMagicyte.description>Невзрачный на первый взгляд камень, внутри которого будто дремлет тусклое свечение. Даже в темноте магицит едва заметно мерцает и оставляет при прикосновении характерный энергетический след, который чувствуют маги. Необработанный магицит можно очистить и огранить на столе камнереза, получив основу для множества зачарованных самоцветов.</RawMagicyte.description>
+	<RawMagicyte.stuffProps.stuffAdjective>необработанный магицит</RawMagicyte.stuffProps.stuffAdjective>
+</LanguageData>

@@ -1,0 +1,15 @@
+<LanguageData><TM_SunderArmorHD.label>Пробитая броня</TM_SunderArmorHD.label>
+  <TM_SunderArmorHD.description>Снижает рейтинг брони.</TM_SunderArmorHD.description>
+  <TM_SunderArmorHD.stages.0.label>I</TM_SunderArmorHD.stages.0.label>
+  <TM_SunderArmorHD.stages.1.label>II</TM_SunderArmorHD.stages.1.label>
+  <TM_SunderArmorHD.stages.2.label>III</TM_SunderArmorHD.stages.2.label>
+  <TM_SunderArmorHD.stages.3.label>IV</TM_SunderArmorHD.stages.3.label>
+  <TM_SunderArmorHD.stages.4.label>V</TM_SunderArmorHD.stages.4.label>
+  <TM_SunderArmorHD.stages.5.label>VI</TM_SunderArmorHD.stages.5.label>
+  <TM_SunderArmorHD.stages.6.label>VII</TM_SunderArmorHD.stages.6.label>
+
+  <TM_FrailtyHD.label>Хрупкость</TM_FrailtyHD.label>
+  <TM_FrailtyHD.description>Цель получает больше урона из всех источников.</TM_FrailtyHD.description>
+
+
+</LanguageData>

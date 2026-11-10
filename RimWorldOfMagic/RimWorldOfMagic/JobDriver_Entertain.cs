@@ -11,7 +11,12 @@ namespace TorannMagic
     internal class JobDriver_Entertain : JobDriver
     {
         private const TargetIndex entertaineeTI = TargetIndex.A;
-        CompAbilityUserMagic comp;
+        private Pawn SongOwner => job.targetB.Pawn ?? pawn;
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref age, "TM_entertainWorkTicks", -1);
+        }
 
         int age = -1;
         int duration = 120;
@@ -31,27 +36,21 @@ namespace TorannMagic
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            comp = pawn.GetCompAbilityUserMagic();
+            this.FailOn(() => ClassProgression.BardTrials.EntertainmentOwner(pawn) != SongOwner);
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
+            this.FailOn(() => entertaineePawn?.Spawned != true || !entertaineePawn.Awake());
             this.FailOnDowned(TargetIndex.A);
             this.FailOnMentalState(TargetIndex.A);
             Toil entertain = new Toil()
             {
-                initAction = () =>
-                {
-                    if (!entertaineePawn.Spawned && !entertaineePawn.Awake())
-                    {
-                        return;
-                    }
-                },
                 tickAction = () =>
                 {
                     if (age > duration)
                     {
-                        this.pawn.interactions.TryInteractWith(entertaineePawn, TorannMagicDefOf.TM_EntertainID);
+                        ClassProgression.BardTrials.Entertain(this.pawn, entertaineePawn);
                         FleckMaker.ThrowMicroSparks(this.pawn.DrawPos, this.pawn.Map);
+                        SongOwner.GetCompAbilityUserMagic().nextEntertainTick = Find.TickManager.TicksGame + 2000;
                         this.EndJobWith(JobCondition.Succeeded);
-                        comp.nextEntertainTick = Find.TickManager.TicksGame + 2000;
                         age = 0;
                     }
                     age++;

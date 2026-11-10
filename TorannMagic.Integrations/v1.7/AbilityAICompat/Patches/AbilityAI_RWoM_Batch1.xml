@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- RWoM Integrations, Ability AI handover, rule batch 1.
+       This load root only activates with saintwacko.AbilityAI active, so the
+       AbilityAIExtension classes resolve without a FindMod gate.
+       Batch 1 covers recast-safe shapes only: single-target damage, stop-
+       bleeding and pain heals, and firefighting. Buffs, summons, area damage
+       and travel need per-spell hediff/radius metadata harvested from the
+       original spell defs and follow in a later batch. Tiers of the same
+       spell repeat the same rule. -->
+
+  <!-- Single-target damage: cast at the worst threat in range. -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/AbilityDef[defName="TM_Bridge_Arcanebolt" or defName="TM_Bridge_Firebolt" or defName="TM_Bridge_ElementalFirebolt" or defName="TM_Bridge_Fireclaw" or defName="TM_Bridge_Icebolt" or defName="TM_Bridge_ElementalIcebolt" or defName="TM_Bridge_Lightningbolt" or defName="TM_Bridge_Frostray" or defName="TM_Bridge_FrostrayI" or defName="TM_Bridge_FrostrayII" or defName="TM_Bridge_FrostrayIII" or defName="TM_Bridge_Shadowstrike" or defName="TM_Bridge_Poison" or defName="TM_Bridge_Discord"]</xpath>
+    <value>
+      <li Class="AbilityAI.AbilityAIExtension">
+        <workerClass>AbilityAI.AbilityAIWorker_TargetHostile</workerClass>
+        <priority>3</priority>
+        <approachDistance>8</approachDistance>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Pommel Strike: a melee weapon strike (stun), only on a target the
+       caster is already fighting. -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/AbilityDef[defName="TM_Bridge_Pommelstrike"]</xpath>
+    <value>
+      <li Class="AbilityAI.AbilityAIExtension">
+        <workerClass>AbilityAI.AbilityAIWorker_TargetHostile</workerClass>
+        <priority>4</priority>
+        <meleeOnly>true</meleeOnly>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Advanced Heal: rescue a bleeding, downed ally first, tend a badly
+       hurting ally otherwise. The gates re-check pain and bleeding each
+       evaluation, so a healed pawn never causes a recast. -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/AbilityDef[defName="TM_Bridge_Advancedheal"]</xpath>
+    <value>
+      <li Class="AbilityAI.AbilityAIExtension">
+        <workerClass>AbilityAI.AbilityAIWorker_Rescue</workerClass>
+        <priority>7</priority>
+        <minBleedRate>0.4</minBleedRate>
+      </li>
+      <li Class="AbilityAI.AbilityAIExtension">
+        <workerClass>AbilityAI.AbilityAIWorker_TargetFriendly</workerClass>
+        <priority>3</priority>
+        <minPain>0.35</minPain>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Cauterize Wounds: stop serious bleeding. -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/AbilityDef[defName="TM_Bridge_Cauterizewound"]</xpath>
+    <value>
+      <li Class="AbilityAI.AbilityAIExtension">
+        <workerClass>AbilityAI.AbilityAIWorker_TargetFriendly</workerClass>
+        <priority>4</priority>
+        <minBleedRate>0.5</minBleedRate>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Extinguish: fires near the caster's side. Helpful, any time. -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/AbilityDef[defName="TM_Bridge_Extinguish"]</xpath>
+    <value>
+      <li Class="AbilityAI.AbilityAIExtension">
+        <workerClass>AbilityAI.AbilityAIWorker_Firefighting</workerClass>
+        <priority>2</priority>
+      </li>
+      <!-- A non-violent ability: AbilityDef.hostile defaults to true. -->
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AbilityDef[defName="TM_Bridge_Extinguish" or defName="TM_Bridge_Advancedheal" or defName="TM_Bridge_Cauterizewound"]</xpath>
+    <value>
+      <hostile>false</hostile>
+    </value>
+  </Operation>
+</Patch>

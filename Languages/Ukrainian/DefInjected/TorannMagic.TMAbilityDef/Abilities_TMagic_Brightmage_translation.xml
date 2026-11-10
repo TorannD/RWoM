@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Light Lance -->
+
+  <TM_LightLance.label>Світлове Списки</TM_LightLance.label>
+  <TM_LightLance.description>Сфокусуйте світло в інтенсивний промінь, який спалює все на своєму шляху. Ця здатність посилюється накопиченим світлом.</TM_LightLance.description>
+
+
+  <!-- Sunfire -->
+
+  <TM_Sunfire.label>Сонячне світло</TM_Sunfire.label>
+  <TM_Sunfire.description>Область мети пронизана палаючими смугами світла. Ця здатність посилюється накопиченим світлом.
+
+Підготовка: 3с
+Дальність: 50
+Перезарядка: 60с
+Радіус: 5
+Кількість: 13</TM_Sunfire.description>
+
+  <TM_Sunfire_I.label>Сонячне світло (I)</TM_Sunfire_I.label>
+  <TM_Sunfire_I.description>Область мети пронизана палаючими смугами світла. Ця здатність посилюється накопиченим світлом.
+
+Підготовка: 2.7с
+Дальність: 55
+Перезарядка: 60с
+Радіус: 6
+Кількість: 14</TM_Sunfire_I.description>
+
+  <TM_Sunfire_II.label>Сонячне Світло (II)</TM_Sunfire_II.label>
+  <TM_Sunfire_II.description>Область мети пронизана палаючими смугами світла. Ця здатність посилюється накопиченим світлом.
+
+Підготовка: 2.4с
+Дальність: 60
+Перезарядка: 50с
+Радіус: 7
+Кількість: 15</TM_Sunfire_II.description>
+
+  <TM_Sunfire_III.label>Сонячне Світло (III)</TM_Sunfire_III.label>
+  <TM_Sunfire_III.description>Область мети пронизана палаючими смугами світла. Ця здатність посилюється накопиченим світлом.
+
+Підготовка: 2.2с
+Дальність: 65
+Перезарядка: 45с
+Радіус: 8
+Кількість: 16</TM_Sunfire_III.description>
+
+
+  <!-- Light Burst -->
+
+  <TM_LightBurst.label>Спалах Світла</TM_LightBurst.label>
+  <TM_LightBurst.description>Створює спалахи світла, які засліплюють і дезорієнтують пішаків, які потрапили під вибух. Дезорієнтовані пішаки не зможуть відрізнити друга від ворога і можуть стріляти по найближчих дружніх пішаках. Ця здатність посилюється накопиченим світлом.</TM_LightBurst.description>
+
+
+  <!-- Light Skip -->
+
+  <TM_LightSkip.label>Світловий стрибок</TM_LightSkip.label>
+  <TM_LightSkip.description>Заклинатель керує хвилею світла для майже миттєвого переміщення. Ні позиція заклинателя, ні позиція мети не можуть бути перекриті.</TM_LightSkip.description>
+
+
+  <!-- Mass Light Skip -->
+
+  <TM_LightSkipMass.label>Масовий Світловий Стрибок</TM_LightSkipMass.label>
+  <TM_LightSkipMass.description>Заклинач і всі союзники в радіусі 5 клітин переміщуються на хвилях світла майже миттєво. Пішаки під дахом переміщені не будуть.</TM_LightSkipMass.description>
+
+
+  <!-- Global Light Skip -->
+
+  <TM_LightSkipGlobal.label>Глобальний Світловий стрибок</TM_LightSkipGlobal.label>
+  <TM_LightSkipGlobal.description>Заклинач і всі союзники в радіусі 5 клітин переміщуються на хвилях світла майже миттєво. Пішаки під дахом переміщені не будуть.</TM_LightSkipGlobal.description>
+
+
+  <!-- Refraction -->
+
+  <TM_Refraction.label>Заломлення</TM_Refraction.label>
+  <TM_Refraction.description>Створює стіну світла, яка впливає на снаряди, коли вони проходять крізь стіну. Ворожі снаряди можуть відхилятися від намічених цілей. Дружні снаряди можуть використовувати частину світлової енергії для створення дзеркального відбиття снаряда. Стіна протримається близько 25 секунд або до тих пір, поки в ній не закінчиться енергія. Ця здатність посилюється накопиченим світлом.</TM_Refraction.description>
+
+
+  <!-- Spirit of Light (SoL) -->
+
+  <TM_SpiritOfLight.label>Дух Світла</TM_SpiritOfLight.label>
+  <TM_SpiritOfLight.description>Викликає Духа Світла, який допомагає і захищає заклинателя. Ця здатність вимагає 60 мани для підтримки і зменшує регенерацію мани на 75%. Використовуйте цю здатність знову, щоб позбутися духу. Духа Світла здатний накопичувати світлову енергію і використовує світлову енергію для виконання дій.
+
+Дух Світла працює автономно, щоб допомогти заклинателю, і буде виконувати наступні дії:
+o Відбиває атаки
+o Припалює рани збитих пішаків
+o Атакує ворогів (тільки при заклику)
+o Покращує настрій найближчих союзників
+o Створює вибух радості
+o Захищає сни заклинача</TM_SpiritOfLight.description>
+
+
+  <!-- Create Light -->
+
+  <TM_SoL_CreateLight.label>Створіть світло</TM_SoL_CreateLight.label>
+  <TM_SoL_CreateLight.description>Направляє Дух Світла на створення світла в певній області. Це зменшує регенерацію світла Духа на 70%. Використовуйте цю здатність знову в будь-якому місці, щоб вимкнути світло.</TM_SoL_CreateLight.description>
+
+
+  <!-- Equalize -->
+
+  <TM_SoL_Equalize.label>Врівноважити</TM_SoL_Equalize.label>
+  <TM_SoL_Equalize.description>Вирівнює світлову енергію між Духом Світла і заклинателем.</TM_SoL_Equalize.description>
+
+
+</LanguageData>

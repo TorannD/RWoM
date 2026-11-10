@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_BlackStar.stages.0.label>Черная Звезда</TM_BlackStar.stages.0.label>
+  <TM_BlackStar.stages.0.description>Мне сегодня ужасно не везет. Я чувствую, что мне следовало просто остаться дома...</TM_BlackStar.stages.0.description>
+  <TM_Serenade.stages.0.label>Серенада</TM_Serenade.stages.0.label>
+  <TM_Serenade.stages.0.description>Это была прекрасная музыка. Она успокоила мою душу.</TM_Serenade.stages.0.description>
+  <TM_HomeCooking.stages.0.label>Ностальгия</TM_HomeCooking.stages.0.label>
+  <TM_HomeCooking.stages.0.description>Эта еда напоминает мне о доме...</TM_HomeCooking.stages.0.description>
+  <TM_TheEwer.stages.0.label>Кувшин</TM_TheEwer.stages.0.label>
+  <TM_TheEwer.stages.0.description>Я чувствую, что звезды наблюдают за мной сегодня.</TM_TheEwer.stages.0.description>
+  <TM_Antidepressants.stages.0.label>Антидепресанты</TM_Antidepressants.stages.0.label>
+  <TM_Antidepressants.stages.0.description>Теперь все кажется таким ясным. В любом случае, что меня так расстраивало?</TM_Antidepressants.stages.0.description>
+  <TM_Somnolence.stages.0.label>Ожившие кошмары</TM_Somnolence.stages.0.label>
+  <TM_Somnolence.stages.0.description>Пожалуйста...хватит...</TM_Somnolence.stages.0.description>
+  <TM_FetalPose.stages.0.label>Унижение</TM_FetalPose.stages.0.label>
+  <TM_FetalPose.stages.0.description>Пожалуйста не трогайте меня...</TM_FetalPose.stages.0.description>
+  <TM_MeanWords.stages.0.label>Подлые слова</TM_MeanWords.stages.0.label>
+  <TM_MeanWords.stages.0.description>Кто-то сказал мне что-то плохое.</TM_MeanWords.stages.0.description>
+  <TM_Berate.stages.0.label>Обруган</TM_Berate.stages.0.label>
+  <TM_Berate.stages.0.description>Враг сказал мне что-то ужасное. Мне немного плохо.</TM_Berate.stages.0.description>
+  <TM_KindWords.stages.0.label>Добрые слова</TM_KindWords.stages.0.label>
+  <TM_KindWords.stages.0.description>Кто-то сказал мне что-то приятное.</TM_KindWords.stages.0.description>
+  <TM_Praise.stages.0.label>Похвалили</TM_Praise.stages.0.label>
+  <TM_Praise.stages.0.description>Меня похвалили! Как приятно.</TM_Praise.stages.0.description>
+  <TM_Acclaim.stages.0.label>Чуткие слова</TM_Acclaim.stages.0.label>
+  <TM_Acclaim.stages.0.description>Кто-то недавно признал мои достижения.</TM_Acclaim.stages.0.description>
+  <TM_Motivate.stages.0.label>Мотивирован</TM_Motivate.stages.0.label>
+  <TM_Motivate.stages.0.description>Союзник недавно невероятно меня нахваливал!</TM_Motivate.stages.0.description>
+  <TM_Cheer.stages.0.label>Превознесли</TM_Cheer.stages.0.label>
+  <TM_Cheer.stages.0.description>Кто-то недавно меня подбадривал, я не могу перестать улыбаться везде, куда бы я ни пошел.</TM_Cheer.stages.0.description>
+  <TM_DragonStance.stages.0.label>Негодование Дракона</TM_DragonStance.stages.0.label>
+  <TM_DragonStance.stages.0.description>Я чувствую своим телом все нечистоты мира. Похоже, этого существования мне больше не достаточно.</TM_DragonStance.stages.0.description>
+</LanguageData>

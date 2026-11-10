@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Sprint start -->
+
+  <TM_Sprint.label>Sprint</TM_Sprint.label>
+  <TM_Sprint.description>Ativa ou desativa a capacidade de combate sustentável do sprint - que aumenta significativamente a velocidade de movimento, mas provoca exaustão. Precisa de 30 resistências para manter</TM_Sprint.description>
+
+  <TM_Sprint_I.label>Sprint</TM_Sprint_I.label>
+  <TM_Sprint_I.description>Ativa ou desativa a capacidade de combate sustentável do sprint - que aumenta significativamente a velocidade de movimento, mas provoca exaustão. Precisa de 30 resistências para manter</TM_Sprint_I.description>
+
+  <TM_Sprint_II.label>Sprint</TM_Sprint_II.label>
+  <TM_Sprint_II.description>Ativa ou desativa a capacidade de combate sustentável do sprint - que aumenta significativamente a velocidade de movimento, mas provoca exaustão. Precisa de 30 resistências para manter</TM_Sprint_II.description>
+
+  <TM_Sprint_III.label>Sprint</TM_Sprint_III.label>
+  <TM_Sprint_III.description>Ativa ou desativa a capacidade de combate sustentável do sprint - que aumenta significativamente a velocidade de movimento, mas provoca exaustão. Precisa de 30 resistências para manter</TM_Sprint_III.description>
+
+
+  <!-- Fortitude start -->
+
+  <TM_Fortitude.label>Resistência</TM_Fortitude.label>
+  <TM_Fortitude.description>Atenua os danos ao valor definido a cada ferimento.
+Flexibilização básica: 2</TM_Fortitude.description>
+
+
+  <!-- Grapple Start -->
+
+  <TM_Grapple.label>Captura</TM_Grapple.label>
+  <TM_Grapple.description>Agarra com força e joga o inimigo para o Gladiador, e depois agita a perna com força, derrubando o inimigo.
+
+Tempo de aplicação: 1s
+Distância: 12</TM_Grapple.description>
+
+  <TM_Grapple_I.label>Captura</TM_Grapple_I.label>
+  <TM_Grapple_I.description>Agarra com força e joga o inimigo para o Gladiador, e depois agita a perna com força, derrubando o inimigo.
+Tempo de aplicação: .6s
+Distância: 14</TM_Grapple_I.description>
+
+  <TM_Grapple_II.label>Captura</TM_Grapple_II.label>
+  <TM_Grapple_II.description>Agarra com força e joga o inimigo para o Gladiador, e depois agita a perna com força, derrubando o inimigo.
+
+Tempo de aplicação: .4s
+Distância: 17</TM_Grapple_II.description>
+
+  <TM_Grapple_III.label>Captura</TM_Grapple_III.label>
+  <TM_Grapple_III.description>Agarra com força e joga o inimigo para o Gladiador, e depois agita a perna com força, derrubando o inimigo.
+
+Tempo de aplicação: .2s
+Distância: 20</TM_Grapple_III.description>
+
+
+  <!-- Cleave Start -->
+
+  <TM_Cleave.label>Divisão</TM_Cleave.label>
+  <TM_Cleave.description>Executa um golpe poderoso e deslumbrante que pode atingir vários inimigos próximos ao alvo. Enquanto o Gladiador tem resistência suficiente, esta capacidade funciona automaticamente quando o gladiador executa um ataque próximo. A hipótese de divisão é calculada com base na massa de armas - armas mais pesadas com maior probabilidade de dividir.</TM_Cleave.description>
+
+
+  <!-- Whirlwind -->
+
+  <TM_Whirlwind.label>Vórtice</TM_Whirlwind.label>
+  <TM_Whirlwind.description>O gladiador lança-se em um ataque raivoso, dançando em frente num vórtice feroz de aço e morte.</TM_Whirlwind.description>
+
+
+</LanguageData>

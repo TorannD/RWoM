@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  
+  <ArcaneForge_ChunkToMagicyte.label>infundir trozo</ArcaneForge_ChunkToMagicyte.label>
+  
+  <ArcaneForge_ChunkToMagicyte.description>Infunde maná a trozos de piedra para crear magicita.</ArcaneForge_ChunkToMagicyte.description>
+  
+  <ArcaneForge_ChunkToMagicyte.jobString>Infundiendo maná a un trozo.</ArcaneForge_ChunkToMagicyte.jobString>
+  
+  
+  <ArcaneForge_ElephantBow.label>arco de elefante</ArcaneForge_ElephantBow.label>
+  
+  <ArcaneForge_ElephantBow.description>Un arco moldeado con colmillos de elefante. Los colmillos se vacían para reducir la rigidez y el peso, y se ablandan sumergiéndolos en un compuesto de magicita que aumenta su flexibilidad. El arco de elefante ofrece mejoras notables de alcance y precisión contra objetivos lejanos respecto al arco largo, aunque es algo más difícil de manejar.\n\nEl arco de elefante lleva grabados encantamientos menores y es el arma preferida de muchos exploradores y cazadores experimentados.\n\nEsta arma está encantada y ofrece beneficios adicionales a magos y luchadores entrenados:\nEnergía máx.: +5 %\nRegeneración de energía: +5 %\nAumento de daño: +10 %\nTiempo de reutilización de habilidades: -10 %</ArcaneForge_ElephantBow.description>
+  
+  <ArcaneForge_ElephantBow.jobString>Forjando arco de elefante.</ArcaneForge_ElephantBow.jobString>
+  
+  
+  <ArcaneForge_ElephantSpear.label>lanza de elefante</ArcaneForge_ElephantSpear.label>
+  
+  <ArcaneForge_ElephantSpear.description>La lanza de elefante se fabrica con los colmillos de un elefante y suele ser un símbolo de estatus reservado a los cazadores de cabezas o a los líderes de una tribu. El asta está grabada con encantamientos menores que potencian aún más las capacidades de combate de quien la empuña.\n\nEsta arma está encantada y ofrece beneficios adicionales a magos y luchadores entrenados:\nEnergía máx.: +10 %\nAumento de daño: +10 %\nResistencia arcana: +20 %</ArcaneForge_ElephantSpear.description>
+  
+  <ArcaneForge_ElephantSpear.jobString>Forjando lanza de elefante.</ArcaneForge_ElephantSpear.jobString>
+  
+  
+  <ArcaneForge_Replication.label>replicación de forja</ArcaneForge_Replication.label>
+  
+  <ArcaneForge_Replication.description>Datos almacenados con los detalles y diseños de objetos replicados.</ArcaneForge_Replication.description>
+  
+  <ArcaneForge_Replication.jobString>Replicando.</ArcaneForge_Replication.jobString>
+  
+  
+  <ArcaneForge_Replication_Restore.label>replicación de forja</ArcaneForge_Replication_Restore.label>
+  
+  <ArcaneForge_Replication_Restore.description>Datos almacenados con los detalles y diseños de objetos replicados.</ArcaneForge_Replication_Restore.description>
+  
+  <ArcaneForge_Replication_Restore.jobString>Replicando.</ArcaneForge_Replication_Restore.jobString>
+  
+  
+  <ArcaneForge_ThrumboAxe.label>hacha de thrumbo</ArcaneForge_ThrumboAxe.label>
+  
+  <ArcaneForge_ThrumboAxe.description>Un hacha fabricada con cuernos de thrumbo unidos mediante un cierre de magicita. Este cierre almacena potencial arcano y lo transfiere como fuerza física al blandir el hacha, lo que permite asestar golpes poderosos capaces de hendir a varios oponentes. El asta también está grabada con runas mágicas que aumentan el poder de quien la empuña.\n\nEsta arma está encantada y ofrece beneficios adicionales a magos y luchadores entrenados:\nEnergía máx.: +10 %\nAumento de daño: +20 %\nResistencia arcana: +30 %</ArcaneForge_ThrumboAxe.description>
+  
+  <ArcaneForge_ThrumboAxe.jobString>Forjando hacha de thrumbo.</ArcaneForge_ThrumboAxe.jobString>
+  
+  
+  <ArcaneForge_ThrumboSaber.label>sable de thrumbo</ArcaneForge_ThrumboSaber.label>
+  
+  <ArcaneForge_ThrumboSaber.description>Una hoja afilada como una navaja, forjada con el cuerno de un thrumbo e imbuida de energía arcana. El sable de thrumbo es más ligero que las hojas de metal y su filo corta todas las armaduras salvo las más gruesas. Muchos maestros de la espada prefieren esta arma porque está pensada para la velocidad y la letalidad. Otros encantamientos pueden acelerar a quien la usa y duplicar su velocidad de ataque durante un breve periodo.\n\nEsta arma está encantada y ofrece beneficios adicionales a magos y luchadores entrenados:\nTiempo de reutilización de habilidades: -10 %\nAumento de daño: +10 %\nPresteza al golpear (25 %)</ArcaneForge_ThrumboSaber.description>
+  
+  <ArcaneForge_ThrumboSaber.jobString>Forjando sable de thrumbo.</ArcaneForge_ThrumboSaber.jobString>
+  
+  
+  <ArcaneForge_ThrumBow.label>arco thrum</ArcaneForge_ThrumBow.label>
+  
+  <ArcaneForge_ThrumBow.description>Un arco moldeado con el cuerno de un thrumbo. El cuerno se vacía para reducir el peso y se ablanda sumergiéndolo en un compuesto de magicita que le aporta una flexibilidad sorprendente. Además, el arco se refuerza con encantamientos incrustados y grabados arcanos que recorren toda su longitud. Se dice que el arco es casi sensible, capaz de determinar el objetivo deseado mediante un vínculo mental con quien lo empuña. Las flechas disparadas con él casi siempre alcanzan su objetivo. Este efecto, sin embargo, tiende a engañar al usuario sobre su propia capacidad.\n\nEsta arma está encantada y ofrece beneficios adicionales a magos y luchadores entrenados:\nEnergía máx.: +20 %\nRegeneración de energía: +10 %\nAumento de daño: +20 %\nTiempo de reutilización de habilidades: -10 %\nExperiencia de clase obtenida: -20 %</ArcaneForge_ThrumBow.description>
+  
+  <ArcaneForge_ThrumBow.jobString>Forjando arco thrum.</ArcaneForge_ThrumBow.jobString>
+  
+</LanguageData>

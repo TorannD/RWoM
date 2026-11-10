@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThoughtDef><defName>TM_CommanderOperationFatigue</defName><durationDays>0.1</durationDays><stackLimit>1</stackLimit><thoughtClass>Thought_Memory</thoughtClass><stages><li><label>command fatigue</label><description>That last operation took a lot out of me.</description><baseMoodEffect>-4</baseMoodEffect></li></stages></ThoughtDef>
+</Defs>

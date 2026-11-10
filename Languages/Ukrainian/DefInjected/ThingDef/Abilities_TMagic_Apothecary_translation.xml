@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Poison Flask -->
+
+  <Projectile_PoisonFlask.label>Фляжка з отрутою</Projectile_PoisonFlask.label>
+
+
+  <!-- Fire suppression Flask -->
+
+  <Projectile_FireDousingFlask.label>Колба для пожежогасіння</Projectile_FireDousingFlask.label>
+  <Projectile_FireDousingFlask_I.label>Колба для пожежогасіння</Projectile_FireDousingFlask_I.label>
+  <Projectile_FireDousingFlask_II.label>Колба для пожежогасіння</Projectile_FireDousingFlask_II.label>
+  <Projectile_FireDousingFlask_III.label>Колба для пожежогасіння</Projectile_FireDousingFlask_III.label>
+
+
+</LanguageData>

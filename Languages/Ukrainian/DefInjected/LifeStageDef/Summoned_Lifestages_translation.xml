@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_LesserElemental_Lifestage.label>малий елементаль</TM_LesserElemental_Lifestage.label>
+  <TM_Elemental_Lifestage.label>елементаль</TM_Elemental_Lifestage.label>
+  <TM_GreaterElemental_Lifestage.label>великий елементаль</TM_GreaterElemental_Lifestage.label>
+  <TM_Minion_Lifestage.label>міньйон</TM_Minion_Lifestage.label>
+  <TM_GreaterMinion_Lifestage.label>великий міньйон</TM_GreaterMinion_Lifestage.label>
+  <TM_Demon_Lifestage.label>фонова служба</TM_Demon_Lifestage.label>
+  <TM_LesserDemon_Lifestage.label>менший фоновий демон</TM_LesserDemon_Lifestage.label>
+  <TM_LesserSentinel_Lifestage.label>малий Сентінел</TM_LesserSentinel_Lifestage.label>
+  <TM_Sentinel_Lifestage.label>Сентінел</TM_Sentinel_Lifestage.label>
+  <TM_GreaterSentinel_Lifestage.label>великий Сентінел</TM_GreaterSentinel_Lifestage.label>
+  <TM_Skeleton_Lifestage.label>скелет</TM_Skeleton_Lifestage.label>
+  <TM_GiantSkeleton_Lifestage.label>гігантський скелет</TM_GiantSkeleton_Lifestage.label>
+  <TM_SkeletonLich_Lifestage.label>ліч-скелет</TM_SkeletonLich_Lifestage.label>
+
+
+</LanguageData>

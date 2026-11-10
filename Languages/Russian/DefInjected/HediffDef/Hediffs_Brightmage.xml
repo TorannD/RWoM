@@ -1,0 +1,12 @@
+<LanguageData><TM_LightCapacitanceHD.label>Сила света</TM_LightCapacitanceHD.label>
+  <TM_LightCapacitanceHD.description>Количество накопленной световой энергии, доступной магу, действует как катализатор для магии света.</TM_LightCapacitanceHD.description>
+  <TM_LightCapacitanceHD.stages.0.label />
+
+  <TM_LightBurstHD.label>Ослепительная Вспышка</TM_LightBurstHD.label>
+  <TM_LightBurstHD.description>Боль, слепота и дезориентация в результате воздействия интенсивного света на органы чувств. Дезориентированные пешки не в состоянии отличить врагов от союзников.</TM_LightBurstHD.description>
+  <TM_LightBurstHD.stages.0.label>тусклое зрение</TM_LightBurstHD.stages.0.label>
+  <TM_LightBurstHD.stages.1.label>ослепленный</TM_LightBurstHD.stages.1.label>
+  <TM_LightBurstHD.stages.2.label>дезориентированный</TM_LightBurstHD.stages.2.label>
+
+
+</LanguageData>

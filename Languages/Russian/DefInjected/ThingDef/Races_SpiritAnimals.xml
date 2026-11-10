@@ -1,0 +1,42 @@
+<LanguageData><!-- Spirit Bear-->
+	<TM_SpiritBearR.label>дух медведя</TM_SpiritBearR.label>
+	<TM_SpiritBearR.description>Дух медведя символизирует устойчивость и силу. На протяжении веков он вдохновлял тех, кому требовалось мужество, чтобы выстоять перед невзгодами. Дух медведя укрепляет тело и физическую мощь и яростно защищает своих детёнышей.</TM_SpiritBearR.description>
+	<TM_SpiritBearR.tools.0.label>левая лапа</TM_SpiritBearR.tools.0.label>
+	<TM_SpiritBearR.tools.1.label>правая лапа</TM_SpiritBearR.tools.1.label>
+	<TM_SpiritBearR.tools.2.label>отрванная часть</TM_SpiritBearR.tools.2.label>
+	<TM_SpiritBearR.tools.3.label>голова</TM_SpiritBearR.tools.3.label>
+	<TM_SpiritBearR_Leather.label>кожа духовного медведя</TM_SpiritBearR_Leather.label>
+	<TM_SpiritBearR_Leather.description>кожа духовного медведя</TM_SpiritBearR_Leather.description>
+	<TM_SpiritBearR_Leather.stuffProps.stuffAdjective>кожа духовного медведя</TM_SpiritBearR_Leather.stuffProps.stuffAdjective>
+	<TM_SpiritBearR_Meat.label>мясо духовного медведя</TM_SpiritBearR_Meat.label>
+	<TM_SpiritBearR_Meat.description>мясо духовного медведя</TM_SpiritBearR_Meat.description>
+	<TM_SpiritBearR_Corpse.label>труп медведя-духа</TM_SpiritBearR_Corpse.label>
+	<TM_SpiritBearR_Corpse.description>труп медведя-духа</TM_SpiritBearR_Corpse.description>
+	<!-- Spirit Mongoose-->
+	<TM_SpiritMongooseR.label>дух мангуста</TM_SpiritMongooseR.label>
+	<TM_SpiritMongooseR.description>Дух мангуста умен, подвижен и легко приспосабливается к любым условиям. Он воплощает ненасытное любопытство к миру, но вместе с тем отлично чувствует, когда стоит прыгать, а когда лучше выждать. Мангуст полагается на хитрость и ловкость: он быстро наносит смертельные удары и столь же быстро доставляет ресурсы. Среди духовных животных именно он остаётся самым игривым.</TM_SpiritMongooseR.description>
+	<TM_SpiritMongooseR.tools.0.label>левый коготь</TM_SpiritMongooseR.tools.0.label>
+	<TM_SpiritMongooseR.tools.1.label>правый коготь</TM_SpiritMongooseR.tools.1.label>
+	<TM_SpiritMongooseR.tools.3.label>голова</TM_SpiritMongooseR.tools.3.label>
+	<TM_SpiritMongooseR_Leather.label>шкура духа мангуста</TM_SpiritMongooseR_Leather.label>
+	<TM_SpiritMongooseR_Leather.description>шкура духа мангуста</TM_SpiritMongooseR_Leather.description>
+	<TM_SpiritMongooseR_Leather.stuffProps.stuffAdjective>из шкуры духа мангуста</TM_SpiritMongooseR_Leather.stuffProps.stuffAdjective>
+	<TM_SpiritMongooseR_Meat.label>мясо духа мангуста</TM_SpiritMongooseR_Meat.label>
+	<TM_SpiritMongooseR_Meat.description>мясо духа мангуста</TM_SpiritMongooseR_Meat.description>
+	<TM_SpiritMongooseR_Corpse.label>труп духа мангуста</TM_SpiritMongooseR_Corpse.label>
+	<TM_SpiritMongooseR_Corpse.description>труп духа мангуста</TM_SpiritMongooseR_Corpse.description>
+	<!-- Spirit Crow-->
+	<TM_SpiritCrowR.label>дух ворона</TM_SpiritCrowR.label>
+	<TM_SpiritCrowR.description>Ворона - это духовное животное, связанное с тайнами жизни и магией. Ворон духа обеспечивает понимание и средства поддержки намерений. Это также признак удачи, хотя и не всегда удачи. Если ворон выбрал вас в качестве своего духа или тотемного животного, он поддерживает вас в развитии силы зрения, трансформации и связи с магией и поможет в этих начинаниях.</TM_SpiritCrowR.description>
+	<TM_SpiritCrowR.tools.0.label>когти</TM_SpiritCrowR.tools.0.label>
+	<TM_SpiritCrowR.tools.1.label>клюв</TM_SpiritCrowR.tools.1.label>
+	<TM_SpiritCrowR.tools.2.label>голова</TM_SpiritCrowR.tools.2.label>
+	<TM_SpiritCrowR_Leather.label>кожа духа ворона</TM_SpiritCrowR_Leather.label>
+	<TM_SpiritCrowR_Leather.description>кожа духа ворона</TM_SpiritCrowR_Leather.description>
+	<TM_SpiritCrowR_Leather.stuffProps.stuffAdjective>кожа духа ворона</TM_SpiritCrowR_Leather.stuffProps.stuffAdjective>
+	<TM_SpiritCrowR_Meat.label>мясо духа ворона</TM_SpiritCrowR_Meat.label>
+	<TM_SpiritCrowR_Meat.description>мясо духа ворона</TM_SpiritCrowR_Meat.description>
+	<TM_SpiritCrowR_Corpse.label>труп духа ворона</TM_SpiritCrowR_Corpse.label>
+	<TM_SpiritCrowR_Corpse.description>труп духа ворона</TM_SpiritCrowR_Corpse.description>
+	<TM_SpiritCrow.lifeStages.4.label>дух ворона</TM_SpiritCrow.lifeStages.4.label>
+</LanguageData>

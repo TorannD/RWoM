@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 
 namespace TorannMagic
@@ -42,6 +42,22 @@ namespace TorannMagic
             }
         }
 
+        internal Pawn SkillOwner
+        {
+            get
+            {
+                var source = symbiote?.health?.hediffSet?.GetFirstHediffOfDef(TorannMagicDefOf.TM_OutOfBodyHD)?.TryGetComp<HediffComp_SymbiosisCaster>();
+                return source?.symbiosisHost == Pawn ? source.SkillOwner : null;
+            }
+        }
+
+        public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
+        {
+            base.Notify_PawnDied(dinfo,culprit);
+            if (Pawn.Dead && symbiote?.Dead == false && SkillOwner != null)
+                symbiote.Kill(new DamageInfo(TMDamageDefOf.DamageDefOf.TM_SymbiosisDD, 1f),null);
+        }
+
         private void Initialize()
         {
             bool spawned = base.Pawn.Spawned;
@@ -64,26 +80,13 @@ namespace TorannMagic
                 }
                 if (Find.TickManager.TicksGame % 201 == 0)
                 {
-                    if (symbiote.DestroyedOrNull())
+                    var owner = SkillOwner;
+                    if (symbiote.DestroyedOrNull() || symbiote.Dead || !symbiote.Downed || owner == null)
                     {
-                        this.shouldRemove = true;
+                        shouldRemove = true;
+                        return;
                     }
-                    else if (symbiote.Dead || !symbiote.Downed)
-                    {
-                        this.shouldRemove = true;
-                    }                    
-                    if(this.symbiote.health != null && this.symbiote.health.hediffSet != null)
-                    {
-                        if(this.symbiote.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_OutOfBodyHD) == null)
-                        {
-                            this.shouldRemove = true;
-                        }
-                    }
-                    else
-                    {
-                        this.shouldRemove = true;
-                    }
-                    float effVal = TM_Calc.GetSkillPowerLevel(symbiote, TorannMagicDefOf.TM_Symbiosis);
+                    float effVal = TM_Calc.GetSkillPowerLevel(owner, TorannMagicDefOf.TM_Symbiosis);
                     if(base.Pawn.needs != null)
                     {
                         if (base.Pawn.needs.mood != null)
@@ -104,13 +107,7 @@ namespace TorannMagic
                         }
                     }
                 }
-                if (this.Pawn.Dead && this.symbiote != null && !this.symbiote.Dead)
-                {
-                    this.shouldRemove = true;
-                    DamageInfo dinfo = new DamageInfo(TMDamageDefOf.DamageDefOf.TM_SymbiosisDD, 1f);
-                    this.symbiote.Kill(dinfo, null);
-                    RemoveSymbioteHediff();                    
-                }
+
             }
         }
 
@@ -119,7 +116,7 @@ namespace TorannMagic
             if (this.symbiote != null && this.symbiote.health != null && this.symbiote.health.hediffSet != null)
             {
                 Hediff hd = this.symbiote.health.hediffSet.GetFirstHediffOfDef(TorannMagicDefOf.TM_OutOfBodyHD);
-                if (hd != null)
+                if (hd?.TryGetComp<HediffComp_SymbiosisCaster>()?.symbiosisHost == Pawn)
                 {
                     this.symbiote.health.RemoveHediff(hd);
                 }

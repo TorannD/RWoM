@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+
+  <TM_MinionR.label>миньон</TM_MinionR.label>
+  <TM_MinionR.description>Миньоны — злобные, ленивые и трусливые твари из жалкого карманного измерения. Это парящие комки плоти с огромным глазом, короткими ручонками и мерзкой ухмылкой. В бою они ненадёжны и охотнее бегут, чем сражаются. На простую работу вроде переноски и уборки их ещё хватает, но понятие порядка у них весьма условное. Обученный маг может призвать миньона и заставить его немного помочь по хозяйству, если время от времени давать ему передышку от «дьявольского начальства». Если задача наскучит или покажется слишком трудной, он мгновенно улизнёт обратно в своё измерение.</TM_MinionR.description>
+  <TM_MinionR.tools.0.label>рога</TM_MinionR.tools.0.label>
+  <TM_MinionR.tools.1.label>укус</TM_MinionR.tools.1.label>
+  <TM_MinionR_Leather.label>кожа миньона</TM_MinionR_Leather.label>
+  <TM_MinionR_Leather.description>кожа миньона</TM_MinionR_Leather.description>
+  <TM_MinionR_Leather.stuffProps.stuffAdjective>кожа миньона</TM_MinionR_Leather.stuffProps.stuffAdjective>
+  <TM_MinionR_Meat.label>таинственное мясо</TM_MinionR_Meat.label>
+  <TM_MinionR_Meat.description>таинственное мясо</TM_MinionR_Meat.description>
+  <TM_MinionR_Corpse.label>труп миньона</TM_MinionR_Corpse.label>
+  <TM_MinionR_Corpse.description>труп миньона</TM_MinionR_Corpse.description>
+  <TM_GreaterMinionR.label>высший миньон</TM_GreaterMinionR.label>
+  <TM_GreaterMinionR.description>Высшие миньоны — те же злобные, ленивые и трусливые твари из карманного измерения, только крупнее и наглее. Они выглядят как парящие комья плоти с огромным глазом, короткими ручонками, ухмылкой и несколькими рогами. В бою они ненадёжны, а на работе склонны валять дурака. На простую переноску и уборку их ещё хватает, но при первой же возможности они увильнут или исчезнут обратно в своём измерении. Призвать такого слугу может обученный маг, готовый мириться с его дурным нравом.</TM_GreaterMinionR.description>
+  <TM_GreaterMinionR.tools.0.label>рога</TM_GreaterMinionR.tools.0.label>
+  <TM_GreaterMinionR.tools.1.label>укус</TM_GreaterMinionR.tools.1.label>
+  <TM_GreaterMinionR_Leather.label>шкура высшего миньона</TM_GreaterMinionR_Leather.label>
+  <TM_GreaterMinionR_Leather.description>шкура высшего миньона</TM_GreaterMinionR_Leather.description>
+  <TM_GreaterMinionR_Leather.stuffProps.stuffAdjective>из шкуры высшего миньона</TM_GreaterMinionR_Leather.stuffProps.stuffAdjective>
+  <TM_GreaterMinionR_Meat.label>таинственное мясо</TM_GreaterMinionR_Meat.label>
+  <TM_GreaterMinionR_Meat.description>таинственное мясо</TM_GreaterMinionR_Meat.description>
+  <TM_GreaterMinionR_Corpse.label>труп высшего миньона</TM_GreaterMinionR_Corpse.label>
+  <TM_GreaterMinionR_Corpse.description>труп высшего миньона</TM_GreaterMinionR_Corpse.description>
+  <TM_MinionR.race.meatLabel>таинственное мясо</TM_MinionR.race.meatLabel>
+	<TM_MinionR.meatLabel>таинственное мясо</TM_MinionR.meatLabel>
+  <TM_GreaterMinionR.race.meatLabel>таинственное мясо</TM_GreaterMinionR.race.meatLabel>
+	<TM_GreaterMinionR.meatLabel>таинственное мясо</TM_GreaterMinionR.meatLabel>
+
+	<TM_Base_Minion.race.meatLabel>таинственное мясо</TM_Base_Minion.race.meatLabel>
+	<TM_Base_Minion.meatLabel>таинственное мясо</TM_Base_Minion.meatLabel>
+  <TM_InvisMinionR.label>могущественный миньон</TM_InvisMinionR.label>
+  <TM_InvisMinionR.description>Миньон — озорное, ленивое и жестокое трусливое создание из жалкого измерения. Он похож на парящий мясистый шар с парой глаз, короткими ручонками, ухмылкой и рогами. Польза от такого существа сомнительна: оно умеет немного драться и выполнять простую работу, но предпочитает бездельничать и сбегает, как только становится слишком опасно или скучно. Обученный маг может сравнительно легко призвать миньона и заставить его помогать по хозяйству, если иногда давать ему передышку от «демонического начальства».</TM_InvisMinionR.description>
+  <TM_InvisMinionR.tools.0.label>рога</TM_InvisMinionR.tools.0.label>
+  <TM_InvisMinionR.tools.1.label>укус</TM_InvisMinionR.tools.1.label>
+  <TM_InvisMinionR_Leather.label>шкура могущественного миньона</TM_InvisMinionR_Leather.label>
+  <TM_InvisMinionR_Leather.description>шкура могущественного миньона</TM_InvisMinionR_Leather.description>
+  <TM_InvisMinionR_Leather.stuffProps.stuffAdjective>из шкуры могущественного миньона</TM_InvisMinionR_Leather.stuffProps.stuffAdjective>
+  <TM_InvisMinionR_Meat.label>таинственное мясо</TM_InvisMinionR_Meat.label>
+  <TM_InvisMinionR_Meat.description>таинственное мясо</TM_InvisMinionR_Meat.description>
+  <TM_InvisMinionR_Corpse.label>труп могущественного миньона</TM_InvisMinionR_Corpse.label>
+  <TM_InvisMinionR_Corpse.description>труп могущественного миньона</TM_InvisMinionR_Corpse.description>
+</LanguageData>

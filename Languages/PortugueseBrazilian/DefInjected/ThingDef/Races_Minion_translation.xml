@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Minion Race -->
+
+  <TM_MinionR.label>mignon</TM_MinionR.label>
+  <TM_MinionR.description>Os Mignon são uma cueca preguiçosa, preguiçosa, cruel, que vem de um plano patético de existir. Parecem almôndegas flutuantes com um olho gigante. Têm braços curtos, uma boca que parece estar presa num sorriso abominável e dois ou três chifres.
+Não dá para saber como se movem, apesar de supor que tenha alguma coisa a ver com a maldade quente e podre que os persegue por todo o lado.
+A sua utilidade está aberta à discussão; Eles têm pouca capacidade de combate e preferem fugir do que lutar. Eles podem-executar tarefas simples, como transporte e limpeza (embora pareçam ter outra definição de «limpo»). No entanto, parece mais provável que eles vão ficar sem fôlego perto da televisão ou fumar um trenzinho (ou ambos) do que fazer algo produtivo.
+Podem ser causadas por... magos treinados, e em troca de deixá-los descansar do seu «chefe diabólico», eles estão dispostos a «ajudar» em toda a casa.
+Às vezes, eles expressam o desejo de bater em objetos e, geralmente, podem ser convencidos a bater em pedras próximas.
+Se se tornam demasiado difíceis ou se aborrecem, fogem de onde vêm.</TM_MinionR.description>
+  <TM_MinionR.tools.0.label>chifres</TM_MinionR.tools.0.label>
+  <TM_MinionR.tools.1.label>mordida</TM_MinionR.tools.1.label>
+  <TM_MinionR_Leather.label>pele de mignon</TM_MinionR_Leather.label>
+  <TM_MinionR_Leather.description>pele de mignon</TM_MinionR_Leather.description>
+  <TM_MinionR_Leather.stuffProps.stuffAdjective>pele de mignon</TM_MinionR_Leather.stuffProps.stuffAdjective>
+  <TM_MinionR_Meat.label>carne misteriosa</TM_MinionR_Meat.label>
+  <TM_MinionR_Meat.description>carne misteriosa</TM_MinionR_Meat.description>
+  <TM_MinionR_Corpse.label>corpo de Minion</TM_MinionR_Corpse.label>
+  <TM_MinionR_Corpse.description>corpo de Minion</TM_MinionR_Corpse.description>
+
+  <TM_GreaterMinionR.label>grande mignon</TM_GreaterMinionR.label>
+  <TM_GreaterMinionR.description>Os Mignon são uma cueca preguiçosa, preguiçosa, cruel, que vem de um plano patético de existir. Parecem almôndegas flutuantes com um olho gigante. Têm braços curtos, uma boca que parece estar presa num sorriso abominável e dois ou três chifres.
+Não dá para saber como se movem, apesar de supor que tenha alguma coisa a ver com a maldade quente e podre que os persegue por todo o lado.
+A sua utilidade está aberta à discussão; Eles têm pouca capacidade de combate e preferem fugir do que lutar. Eles podem-executar tarefas simples, como transporte e limpeza (embora pareçam ter outra definição de «limpo»). No entanto, parece mais provável que eles vão ficar sem fôlego perto da televisão ou fumar um trenzinho (ou ambos) do que fazer algo produtivo.
+Podem ser causadas por... magos treinados, e em troca de deixá-los descansar do seu «chefe diabólico», eles estão dispostos a «ajudar» em toda a casa.
+Às vezes, eles expressam o desejo de bater em objetos e, geralmente, podem ser convencidos a bater em pedras próximas.
+Se se tornam demasiado difíceis ou se aborrecem, fogem de onde vêm.</TM_GreaterMinionR.description>
+  <TM_GreaterMinionR.tools.0.label>chifres</TM_GreaterMinionR.tools.0.label>
+  <TM_GreaterMinionR.tools.1.label>mordida</TM_GreaterMinionR.tools.1.label>
+  <TM_GreaterMinionR_Leather.label>pele grande de minião</TM_GreaterMinionR_Leather.label>
+  <TM_GreaterMinionR_Leather.description>pele grande de minião</TM_GreaterMinionR_Leather.description>
+  <TM_GreaterMinionR_Leather.stuffProps.stuffAdjective>pele grande de minião</TM_GreaterMinionR_Leather.stuffProps.stuffAdjective>
+  <TM_GreaterMinionR_Meat.label>carne misteriosa</TM_GreaterMinionR_Meat.label>
+  <TM_GreaterMinionR_Meat.description>carne misteriosa</TM_GreaterMinionR_Meat.description>
+  <TM_GreaterMinionR_Corpse.label>grande corpo de Minion</TM_GreaterMinionR_Corpse.label>
+  <TM_GreaterMinionR_Corpse.description>grande corpo de Minion</TM_GreaterMinionR_Corpse.description>
+
+
+</LanguageData>

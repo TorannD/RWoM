@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Psionic Augmentation -->
+
+  <TM_PsionicAugmentation.label>Melhoria Psicónica</TM_PsionicAugmentation.label>
+  <TM_PsionicAugmentation.description>O poder psicônico é uma demonstração física de energia mental como energia cinética ou potencial. O psicônico é capaz de usar este poder de forma mais eficaz, guiando-o por todo o corpo para aumentar as ações físicas.
+
+Um psicônico bem treinado é capaz de alcançar feitos físicos incríveis usando uma mistura de força psicónica e física. O aumento psicônico torna-se em segunda natureza e ocorre naturalmente, tanto no combate como fora dele.</TM_PsionicAugmentation.description>
+
+
+  <!-- Psionic Barrier start -->
+
+  <TM_PsionicBarrier.label>Barreira Psicónica</TM_PsionicBarrier.label>
+  <TM_PsionicBarrier.description>O psicônico constitui uma barreira mental que afasta a energia cinética em uma pequena área em torno do usuário. O uso desta capacidade requer concentração constante para manter a barreira, e o psicônico não poderá realizar qualquer outra ação enquanto estiver ativo.
+
+Esta capacidade requer 2 pontos para melhorar.</TM_PsionicBarrier.description>
+
+  <TM_PsionicBarrier_Projected.label>Barreira Psicónica</TM_PsionicBarrier_Projected.label>
+  <TM_PsionicBarrier_Projected.description>O psicônico constitui uma barreira mental que afasta a energia cinética em uma pequena área em torno do usuário. O uso desta capacidade requer concentração constante para manter a barreira, e o psicônico não poderá realizar qualquer outra ação enquanto estiver ativo.
+
+Esta barreira pode ser projetada para um destino específico.</TM_PsionicBarrier_Projected.description>
+
+
+  <!-- Psionic Blast Start -->
+
+  <TM_PsionicBlast.label>Explosão Psicónica</TM_PsionicBlast.label>
+  <TM_PsionicBlast.description>Projeta uma energia psíquica volátil que cria uma pequena detonação ao colidir com um objeto físico. Pode ser projetado até cinco flashes, dependendo da energia disponível para o psicônico.
+
+Tempo de aplicação:	2s
+Retrocesso:	12s
+Distância:		28</TM_PsionicBlast.description>
+
+  <TM_PsionicBlast_I.label>Explosão Psicónica I</TM_PsionicBlast_I.label>
+  <TM_PsionicBlast_I.description>Projeta uma energia psíquica volátil que cria uma pequena detonação ao colidir com um objeto físico. Pode ser projetado até cinco flashes, dependendo da energia disponível para o psicônico.
+
+Tempo de aplicação:	1.6s
+Retrocesso:	10s
+Distância:		34</TM_PsionicBlast_I.description>
+
+  <TM_PsionicBlast_II.label>Explosão Psicónica II</TM_PsionicBlast_II.label>
+  <TM_PsionicBlast_II.description>Projeta uma energia psíquica volátil que cria uma pequena detonação ao colidir com um objeto físico. Pode ser projetado até cinco flashes, dependendo da energia disponível para o psicônico.
+
+Tempo de aplicação:	1.2s
+Retrocesso:	8s
+Distância:		40</TM_PsionicBlast_II.description>
+
+  <TM_PsionicBlast_III.label>Explosão Psicónica III</TM_PsionicBlast_III.label>
+  <TM_PsionicBlast_III.description>Projeta uma energia psíquica volátil que cria uma pequena detonação ao colidir com um objeto físico. Pode ser projetado até cinco flashes, dependendo da energia disponível para o psicônico.
+
+Tempo de aplicação:	.8s
+Retrocesso:	6s
+Distância:		46</TM_PsionicBlast_III.description>
+
+
+  <!-- Psionic Dash start -->
+
+  <TM_PsionicDash.label>Um Passo Psicônico</TM_PsionicDash.label>
+  <TM_PsionicDash.description>O psicônico enche seu corpo de uma enorme quantidade de energia e usa-a para se mover rapidamente. Cada passo emite ondas de energia.</TM_PsionicDash.description>
+
+
+  <!-- PsionicStorm -->
+
+  <TM_PsionicStorm.label>Tempestade Psíquica</TM_PsionicStorm.label>
+  <TM_PsionicStorm.description>O psicônico destrói todas as barreiras mentais e libera o seu poder psicônico desenfreado. Devido à natureza deste ataque, o psicônico desperdiçará grandes quantidades de energia e permanecerá vulnerável, incapaz de demonstrar força psicónica durante o período seguinte ao ataque.</TM_PsionicStorm.description>
+
+
+</LanguageData>

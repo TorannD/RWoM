@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Movement.label>velocidade misteriosa</TM_Movement.label>
+  <TM_Movement.description>Energia mágica que aumenta a velocidade do peão.</TM_Movement.description>
+  <TM_Movement.stages.0.label>I</TM_Movement.stages.0.label>
+  <TM_Movement.stages.1.label>II</TM_Movement.stages.1.label>
+  <TM_Movement.stages.2.label>III</TM_Movement.stages.2.label>
+  <TM_Movement.stages.3.label>IV</TM_Movement.stages.3.label>
+  <TM_Movement.stages.4.label>V</TM_Movement.stages.4.label>
+
+  <TM_Manipulation.label>agilidade mágica</TM_Manipulation.label>
+  <TM_Manipulation.description>Energia mágica que aumenta a agilidade (manipulação).</TM_Manipulation.description>
+  <TM_Manipulation.stages.0.label>I</TM_Manipulation.stages.0.label>
+  <TM_Manipulation.stages.1.label>II</TM_Manipulation.stages.1.label>
+  <TM_Manipulation.stages.2.label>III</TM_Manipulation.stages.2.label>
+  <TM_Manipulation.stages.3.label>IV</TM_Manipulation.stages.3.label>
+  <TM_Manipulation.stages.4.label>V</TM_Manipulation.stages.4.label>
+
+  <TM_Breathing.label>Oxigênio saturado</TM_Breathing.label>
+  <TM_Breathing.description>Energia mágica que aumenta a eficiência e a capacidade de respirar.</TM_Breathing.description>
+  <TM_Breathing.stages.0.label>I</TM_Breathing.stages.0.label>
+  <TM_Breathing.stages.1.label>II</TM_Breathing.stages.1.label>
+  <TM_Breathing.stages.2.label>III</TM_Breathing.stages.2.label>
+  <TM_Breathing.stages.3.label>IV</TM_Breathing.stages.3.label>
+  <TM_Breathing.stages.4.label>V</TM_Breathing.stages.4.label>
+
+  <TM_Sight.label>visão misteriosa</TM_Sight.label>
+  <TM_Sight.description>Energia mágica que aumenta a visão.</TM_Sight.description>
+  <TM_Sight.stages.0.label>I</TM_Sight.stages.0.label>
+  <TM_Sight.stages.1.label>II</TM_Sight.stages.1.label>
+  <TM_Sight.stages.2.label>III</TM_Sight.stages.2.label>
+  <TM_Sight.stages.3.label>IV</TM_Sight.stages.3.label>
+  <TM_Sight.stages.4.label>V</TM_Sight.stages.4.label>
+
+  <TM_AntiMovement.label>lentidão secreta</TM_AntiMovement.label>
+  <TM_AntiMovement.description>Energia mágica que reduz o movimento.</TM_AntiMovement.description>
+  <TM_AntiMovement.stages.0.label>I</TM_AntiMovement.stages.0.label>
+  <TM_AntiMovement.stages.1.label>II</TM_AntiMovement.stages.1.label>
+  <TM_AntiMovement.stages.2.label>III</TM_AntiMovement.stages.2.label>
+  <TM_AntiMovement.stages.3.label>IV</TM_AntiMovement.stages.3.label>
+  <TM_AntiMovement.stages.4.label>espantado</TM_AntiMovement.stages.4.label>
+
+  <TM_AntiManipulation.label>calça secreta</TM_AntiManipulation.label>
+  <TM_AntiManipulation.description>Energia mágica que reduz a agilidade (manipulação).</TM_AntiManipulation.description>
+  <TM_AntiManipulation.stages.0.label>I</TM_AntiManipulation.stages.0.label>
+  <TM_AntiManipulation.stages.1.label>II</TM_AntiManipulation.stages.1.label>
+  <TM_AntiManipulation.stages.2.label>III</TM_AntiManipulation.stages.2.label>
+  <TM_AntiManipulation.stages.3.label>IV</TM_AntiManipulation.stages.3.label>
+  <TM_AntiManipulation.stages.4.label>espantado</TM_AntiManipulation.stages.4.label>
+
+  <TM_AntiBreathing.label>asfixia secreta</TM_AntiBreathing.label>
+  <TM_AntiBreathing.description>Uma força secreta que reduz a circulação do ar.</TM_AntiBreathing.description>
+  <TM_AntiBreathing.stages.0.label>I</TM_AntiBreathing.stages.0.label>
+  <TM_AntiBreathing.stages.1.label>II</TM_AntiBreathing.stages.1.label>
+  <TM_AntiBreathing.stages.2.label>III</TM_AntiBreathing.stages.2.label>
+  <TM_AntiBreathing.stages.3.label>IV</TM_AntiBreathing.stages.3.label>
+  <TM_AntiBreathing.stages.4.label>espantado</TM_AntiBreathing.stages.4.label>
+
+  <TM_AntiSight.label>cegueira secreta</TM_AntiSight.label>
+  <TM_AntiSight.description>Energia mágica que reduz a visão.</TM_AntiSight.description>
+  <TM_AntiSight.stages.0.label>I</TM_AntiSight.stages.0.label>
+  <TM_AntiSight.stages.1.label>II</TM_AntiSight.stages.1.label>
+  <TM_AntiSight.stages.2.label>III</TM_AntiSight.stages.2.label>
+  <TM_AntiSight.stages.3.label>IV</TM_AntiSight.stages.3.label>
+  <TM_AntiSight.stages.4.label>espantado</TM_AntiSight.stages.4.label>
+
+  <TM_MuteHD.label>Demota</TM_MuteHD.label>
+  <TM_MuteHD.description>Uma maldição que impede o uso de poderes mágicos.</TM_MuteHD.description>
+  <TM_MuteHD.stages.0.label></TM_MuteHD.stages.0.label>
+
+
+</LanguageData>

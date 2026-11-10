@@ -1,0 +1,36 @@
+<LanguageData><!-- v1.5\Defs\AbilityDefs\Skyfallers.xml-->
+	<!-- EN: light beam (leaving)-->
+	<TM_LightPodLeaving.label>луч света (уходящий)</TM_LightPodLeaving.label>
+	<!-- EN: light beam (incoming)-->
+	<TM_LightPodIncoming.label>световой луч (входящий)</TM_LightPodIncoming.label>
+	<!-- EN: light pod-->
+	<TM_ActiveLightPod.label>световой пучок</TM_ActiveLightPod.label>
+	<!-- EN: firestorm (large)-->
+	<TM_Firestorm_Large.label>огненная буря (крупная)</TM_Firestorm_Large.label>
+	<!-- EN: firestorm (small)-->
+	<TM_Firestorm_Small.label>огненная буря (малая)</TM_Firestorm_Small.label>
+	<!-- EN: firestorm (tiny)-->
+	<TM_Firestorm_Tiny.label>огненная буря (крошечная)</TM_Firestorm_Tiny.label>
+	<!-- EN: blizzard(tiny)-->
+	<TM_Blizzard_Tiny.label>снежная буря (крошечная)</TM_Blizzard_Tiny.label>
+	<!-- EN: blizzard(small)-->
+	<TM_Blizzard_Small.label>снежная буря (малая)</TM_Blizzard_Small.label>
+	<!-- EN: Blizzard (large)-->
+	<TM_Blizzard_Large.label>снежная буря (крупная)</TM_Blizzard_Large.label>
+	<!-- EN: arrow storm-->
+	<TM_ArrowStorm.label>град из стрел</TM_ArrowStorm.label>
+	<!-- EN: scorn leaving-->
+	<TM_ScornLeaving.label>презрительный уход</TM_ScornLeaving.label>
+	<!-- EN: scorn incoming-->
+	<TM_ScornIncoming.label>презрительное прибытие</TM_ScornIncoming.label>
+	<!-- EN: meteorite-->
+	<TM_Meteorite.label>метеорит</TM_Meteorite.label>
+	<!-- EN: meteorite-->
+	<TM_Meteorite_I.label>метеорит I</TM_Meteorite_I.label>
+	<!-- EN: meteorite-->
+	<TM_Meteorite_II.label>метеорит II</TM_Meteorite_II.label>
+	<!-- EN: meteorite-->
+	<TM_Meteorite_III.label>метеорит III</TM_Meteorite_III.label>
+	<!-- EN: hail-->
+	<TM_Hail.label>град</TM_Hail.label>
+</LanguageData>

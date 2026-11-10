@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- lightning -->
+
+  <Projectile_Lightning.label>блискавка</Projectile_Lightning.label>
+
+
+  <!-- Chain Lightning -->
+
+  <Projectile_ChainLightning.label>ланцюгова блискавка</Projectile_ChainLightning.label>
+
+
+  <!-- Spirit Wolves -->
+
+  <Projectile_SpiritWolves.label>дух вовків</Projectile_SpiritWolves.label>
+  <Projectile_SpiritWolves_I.label>дух вовків</Projectile_SpiritWolves_I.label>
+  <Projectile_SpiritWolves_II.label>дух вовків</Projectile_SpiritWolves_II.label>
+  <Projectile_SpiritWolves_III.label>дух вовків</Projectile_SpiritWolves_III.label>
+  <FlyingObject_SpiritWolves.label>дух вовків</FlyingObject_SpiritWolves.label>
+
+
+</LanguageData>

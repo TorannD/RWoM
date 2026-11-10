@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_SpiritChainLightning.reportString>正在施放连锁闪电。</TM_SpiritChainLightning.reportString>
+  <TM_SpiritSummonTotemEarth.reportString>正在召唤大地图腾。</TM_SpiritSummonTotemEarth.reportString>
+  <TM_SpiritSummonTotemLightning.reportString>正在召唤闪电图腾。</TM_SpiritSummonTotemLightning.reportString>
+  <TM_SpiritSummonTotemHealing.reportString>正在召唤治疗图腾。</TM_SpiritSummonTotemHealing.reportString>
+  <TM_SpiritEnrage.reportString>正在施放激怒。</TM_SpiritEnrage.reportString>
+  <TM_SpiritHex.reportString>正在施放诅咒。</TM_SpiritHex.reportString>
+  <TM_SpiritHex_I.reportString>正在施放诅咒。</TM_SpiritHex_I.reportString>
+  <TM_SpiritHex_II.reportString>正在施放诅咒。</TM_SpiritHex_II.reportString>
+  <TM_SpiritHex_III.reportString>正在施放诅咒。</TM_SpiritHex_III.reportString>
+  <TM_SpiritHex_Pain.reportString>正在施加痛苦。</TM_SpiritHex_Pain.reportString>
+  <TM_SpiritHex_CriticalFail.reportString>正在招致厄运。</TM_SpiritHex_CriticalFail.reportString>
+  <TM_SpiritHex_MentalAssault.reportString>正在攻击心智。</TM_SpiritHex_MentalAssault.reportString>
+  <TM_SpiritGuardianSpirit.reportString>正在召唤守护灵。</TM_SpiritGuardianSpirit.reportString>
+  <TM_SpiritDismissGuardianSpirit.reportString>正在遣返守护灵。</TM_SpiritDismissGuardianSpirit.reportString>
+</LanguageData>

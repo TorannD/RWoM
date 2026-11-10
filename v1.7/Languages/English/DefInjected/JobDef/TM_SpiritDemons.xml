@@ -1,0 +1,21 @@
+<LanguageData>
+  <TM_SpiritSoulBond.reportString>forming a soul bond.</TM_SpiritSoulBond.reportString>
+  <TM_SpiritShadowBolt.reportString>casting a shadow bolt.</TM_SpiritShadowBolt.reportString>
+  <TM_SpiritShadowBolt_I.reportString>casting a shadow bolt.</TM_SpiritShadowBolt_I.reportString>
+  <TM_SpiritShadowBolt_II.reportString>casting a shadow bolt.</TM_SpiritShadowBolt_II.reportString>
+  <TM_SpiritShadowBolt_III.reportString>casting a shadow bolt.</TM_SpiritShadowBolt_III.reportString>
+  <TM_SpiritShadowStep.reportString>stepping to a bonded ally.</TM_SpiritShadowStep.reportString>
+  <TM_SpiritShadowCall.reportString>calling a bonded ally.</TM_SpiritShadowCall.reportString>
+  <TM_SpiritDominate.reportString>casting dominate.</TM_SpiritDominate.reportString>
+  <TM_SpiritRepulsion.reportString>casting repulsion.</TM_SpiritRepulsion.reportString>
+  <TM_SpiritRepulsion_I.reportString>casting repulsion.</TM_SpiritRepulsion_I.reportString>
+  <TM_SpiritRepulsion_II.reportString>casting repulsion.</TM_SpiritRepulsion_II.reportString>
+  <TM_SpiritRepulsion_III.reportString>casting repulsion.</TM_SpiritRepulsion_III.reportString>
+  <TM_SpiritAttraction.reportString>casting attraction.</TM_SpiritAttraction.reportString>
+  <TM_SpiritAttraction_I.reportString>casting attraction.</TM_SpiritAttraction_I.reportString>
+  <TM_SpiritAttraction_II.reportString>casting attraction.</TM_SpiritAttraction_II.reportString>
+  <TM_SpiritAttraction_III.reportString>casting attraction.</TM_SpiritAttraction_III.reportString>
+  <TM_SpiritPsychicShock.reportString>casting psychic shock.</TM_SpiritPsychicShock.reportString>
+  <TM_SpiritScorn.reportString>casting scorn.</TM_SpiritScorn.reportString>
+  <TM_SpiritSummonDemon.reportString>invoking a demonic pact.</TM_SpiritSummonDemon.reportString>
+</LanguageData>

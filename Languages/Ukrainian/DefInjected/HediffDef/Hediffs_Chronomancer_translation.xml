@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_AccelerateTimeHD.label>Старіння</TM_AccelerateTimeHD.label>
+  <TM_AccelerateTimeHD.description>Швидко старіє пішак. Будь-які інші умови, що впливають на пішака, також прискорять їх природні тенденції. Пішаки, які досягли віку, що перевищує їхню звичайну тривалість життя, часто страждають від вікових захворювань або станів.</TM_AccelerateTimeHD.description>
+  <TM_AccelerateTimeHD.stages.0.label>I</TM_AccelerateTimeHD.stages.0.label>
+  <TM_AccelerateTimeHD.stages.1.label>II</TM_AccelerateTimeHD.stages.1.label>
+  <TM_AccelerateTimeHD.stages.2.label>III</TM_AccelerateTimeHD.stages.2.label>
+  <TM_AccelerateTimeHD.stages.3.label>IV</TM_AccelerateTimeHD.stages.3.label>
+
+  <TM_ReverseTimeBadHD.label>Зворотне старіння</TM_ReverseTimeBadHD.label>
+  <TM_ReverseTimeBadHD.description>Швидко змінюється вік пішаки. Будь-які інші умови, що впливають на пішака, також звернуть назад їх природні тенденції. Умови, звернені назад після того моменту часу, коли вони були придбані, перестануть існувати. Пішаки, перевернуті до того моменту часу, коли вони були породжені, також перестануть існувати.</TM_ReverseTimeBadHD.description>
+  <TM_ReverseTimeBadHD.stages.0.label>I</TM_ReverseTimeBadHD.stages.0.label>
+  <TM_ReverseTimeBadHD.stages.1.label>II</TM_ReverseTimeBadHD.stages.1.label>
+  <TM_ReverseTimeBadHD.stages.2.label>III</TM_ReverseTimeBadHD.stages.2.label>
+  <TM_ReverseTimeBadHD.stages.3.label>IV</TM_ReverseTimeBadHD.stages.3.label>
+
+  <TM_ReverseTimeHD.label>Зворотне старіння</TM_ReverseTimeHD.label>
+  <TM_ReverseTimeHD.description>Швидко змінюється вік пішаки. Будь-які інші умови, що впливають на пішака, також звернуть назад їх природні тенденції. Умови, звернені назад після того моменту часу, коли вони були придбані, перестануть існувати. Пішаки, перевернуті до того моменту часу, коли вони були породжені, також перестануть існувати.</TM_ReverseTimeHD.description>
+  <TM_ReverseTimeHD.stages.0.label>I</TM_ReverseTimeHD.stages.0.label>
+  <TM_ReverseTimeHD.stages.1.label>II</TM_ReverseTimeHD.stages.1.label>
+  <TM_ReverseTimeHD.stages.2.label>III</TM_ReverseTimeHD.stages.2.label>
+  <TM_ReverseTimeHD.stages.3.label>IV</TM_ReverseTimeHD.stages.3.label>
+
+  <TM_PredictionHD.label>Передбачення</TM_PredictionHD.label>
+  <TM_PredictionHD.description>Надає вам змогу передбачити майбутні події або дії.
+
+Примітка адміністратора: ця здатність пророкує і затримує будь-яку подію. Деякі моди використовують ці типи подій в якості тригерів для ефектів або результатів, це може призвести до помилок, якщо ситуація змінюється і певні об&apos;єкти, предмети або умови більше не дійсні, коли відбувається передбачена подія.</TM_PredictionHD.description>
+  <TM_PredictionHD.stages.0.label>I</TM_PredictionHD.stages.0.label>
+  <TM_PredictionHD.stages.1.label>II</TM_PredictionHD.stages.1.label>
+  <TM_PredictionHD.stages.2.label>III</TM_PredictionHD.stages.2.label>
+  <TM_PredictionHD.stages.3.label>IV</TM_PredictionHD.stages.3.label>
+  <TM_PredictionHD.stages.4.label>V</TM_PredictionHD.stages.4.label>
+  <TM_PredictionHD.stages.5.label>VI</TM_PredictionHD.stages.5.label>
+
+
+</LanguageData>

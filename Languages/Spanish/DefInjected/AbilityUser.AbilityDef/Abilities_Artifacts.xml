@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Artifact_Conviction.label>Convicción</TM_Artifact_Conviction.label>
+  <TM_Artifact_Conviction.description>Doblega a un peón con tu convicción para que se una a tu causa. Este poder le pasará una factura muy alta a quien lo lance.\n\nUsar la Convicción destruirá el orbe.</TM_Artifact_Conviction.description>
+
+  <TM_Artifact_TraitInfuse.label>Infundir alma</TM_Artifact_TraitInfuse.label>
+  <TM_Artifact_TraitInfuse.description>Infunde rasgos sellados en un peón de aspecto humano.</TM_Artifact_TraitInfuse.description>
+
+  <TM_Artifact_TraitThief.label>Devorar alma</TM_Artifact_TraitThief.label>
+  <TM_Artifact_TraitThief.description>Roba los rasgos de otro peón.</TM_Artifact_TraitThief.description>
+
+  <TM_Weapon_WintersFury.label>Furia del invierno</TM_Weapon_WintersFury.label>
+  <TM_Weapon_WintersFury.description>Cubre el mapa con oleadas de nubes oscuras y furiosas que traen el gélido desdén del invierno.</TM_Weapon_WintersFury.description>
+
+</LanguageData>

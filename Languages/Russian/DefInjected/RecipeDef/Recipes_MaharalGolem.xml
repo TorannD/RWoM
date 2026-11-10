@@ -1,0 +1,31 @@
+<LanguageData><!-- Maharal Golem upgrade recipes-->
+	<TM_MaharalGolem_RepairBlock.label>Восстановление деталей</TM_MaharalGolem_RepairBlock.label>
+	<TM_MaharalGolem_RepairBlock.description>Заменяет недостающие части голема, которые не требуют обновления.</TM_MaharalGolem_RepairBlock.description>
+	<TM_MaharalGolem_RepairBlock.jobString>создание части голема</TM_MaharalGolem_RepairBlock.jobString>
+	<TM_MaharalGolem_EnergyMax.label>энергетический элемент</TM_MaharalGolem_EnergyMax.label>
+	<TM_MaharalGolem_EnergyMax.description>Создает энергетическую ячейку, которая увеличивает максимальную энергию на 120 на ячейку.</TM_MaharalGolem_EnergyMax.description>
+	<TM_MaharalGolem_EnergyMax.jobString>создание энергетической ячейки</TM_MaharalGolem_EnergyMax.jobString>
+	<TM_MaharalGolem_EnergyConverter.label>преобразователь энергии</TM_MaharalGolem_EnergyConverter.label>
+	<TM_MaharalGolem_EnergyConverter.description>Увеличивает эффективность поглощения и использования энергии големом на 10%.</TM_MaharalGolem_EnergyConverter.description>
+	<TM_MaharalGolem_EnergyConverter.jobString>создание преобразователя энергии</TM_MaharalGolem_EnergyConverter.jobString>
+	<TM_MaharalGolem_EnergyRegen.label>генератор энергии</TM_MaharalGolem_EnergyRegen.label>
+	<TM_MaharalGolem_EnergyRegen.description>Увеличивает скорость регенерации энергии голема на 4 в час.</TM_MaharalGolem_EnergyRegen.description>
+	<TM_MaharalGolem_EnergyRegen.jobString>создание генератора энергии</TM_MaharalGolem_EnergyRegen.jobString>
+	<TM_MaharalGolem_Armor.label>Броня</TM_MaharalGolem_Armor.label>
+	<TM_MaharalGolem_Armor.description>Каждое обновление увеличивает броню голема на уровень [1,2,3]:
+Тупой урон: +[9,16,21]%
+Режущий урон: +[13,22,29]%
+Температура: +[8,14,18]%</TM_MaharalGolem_Armor.description>
+	<TM_MaharalGolem_Armor.jobString>создание части голема</TM_MaharalGolem_Armor.jobString>
+	<TM_MaharalGolem_LifeStage.label>каркасный слой</TM_MaharalGolem_LifeStage.label>
+	<TM_MaharalGolem_LifeStage.description>Улучшает и дорабатывает каркас голема на каждом уровне [1,2,3]:
+Движение: +[20.10/30]%
+Здоровье: +[40/70/100]%</TM_MaharalGolem_LifeStage.description>
+	<TM_MaharalGolem_LifeStage.jobString>улучшение каркаса голема</TM_MaharalGolem_LifeStage.jobString>
+	<TM_MaharalGolem_Power.label>Сила</TM_MaharalGolem_Power.label>
+	<TM_MaharalGolem_Power.description>Шем хамефораш еще более усиливается, позволяя голему Махарала производить избыток энергии.</TM_MaharalGolem_Power.description>
+	<TM_MaharalGolem_Power.jobString>изготовление обновления голема</TM_MaharalGolem_Power.jobString>
+	<TM_MaharalGolem_Heat.label>Тепло</TM_MaharalGolem_Heat.label>
+	<TM_MaharalGolem_Heat.description>Шем хамефораш дополнительно усилен, что позволяет голему Махаралу вырабатывать избыточное тепло.</TM_MaharalGolem_Heat.description>
+	<TM_MaharalGolem_Heat.jobString>изготовление обновления голема</TM_MaharalGolem_Heat.jobString>
+</LanguageData>

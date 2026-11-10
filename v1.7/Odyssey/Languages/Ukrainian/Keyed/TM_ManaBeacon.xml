@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_ManaNetworkModeOff>Вимк.</TM_ManaNetworkModeOff>
+  <TM_ManaNetworkModeSend>Надсилати</TM_ManaNetworkModeSend>
+  <TM_ManaNetworkModeReceive>Отримувати</TM_ManaNetworkModeReceive>
+  <TM_ManaNetworkManaMode>Мана: {0}</TM_ManaNetworkManaMode>
+  <TM_ManaNetworkFuelMode>Магопаливо: {0}</TM_ManaNetworkFuelMode>
+  <TM_ManaNetworkModeDesc>Виберіть, чи споруда надсилатиме, отримуватиме або ігноруватиме цей ресурс через найближчі маяки мани.</TM_ManaNetworkModeDesc>
+  <TM_ManaNetworkTarget>Ціль мани: {0}</TM_ManaNetworkTarget>
+  <TM_ManaNetworkTargetDesc>Задайте бажаний запас мани від 10% до 100% місткості.</TM_ManaNetworkTargetDesc>
+  <TM_ManaNetworkConnected>Мережа маяків: підключено</TM_ManaNetworkConnected>
+  <TM_ManaNetworkDisconnected>Мережа маяків: немає підключення</TM_ManaNetworkDisconnected>
+  <TM_ManaBeaconInspect>Поєднаних маяків: {0}\nРадіус: 5 клітин\nПередача мережі: 10 мани та 5 магопалива за секунду</TM_ManaBeaconInspect>
+  <TM_ManaNetworkUnsupportedFuel>Передача магопалива недоступна: несумісні налаштування палива.</TM_ManaNetworkUnsupportedFuel>
+  <TM_ManaNetworkManaPriority>Пріоритет мани: {0}</TM_ManaNetworkManaPriority>
+  <TM_ManaNetworkFuelPriority>Пріоритет магопалива: {0}</TM_ManaNetworkFuelPriority>
+  <TM_ManaNetworkPriorityDesc>Автоматична передача через маяки спочатку забезпечує отримувачів із високим пріоритетом. За однакового пріоритету отримувачі чергуються. Мана й магопаливо незалежні. Зміни діють із наступного імпульсу.</TM_ManaNetworkPriorityDesc>
+  <TM_ManaNetworkPriority1>1: Звичайний</TM_ManaNetworkPriority1>
+  <TM_ManaNetworkPriority2>2: Середній</TM_ManaNetworkPriority2>
+  <TM_ManaNetworkPriority3>3: Високий</TM_ManaNetworkPriority3>
+</LanguageData>

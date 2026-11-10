@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <ID_Introspection.beginLetterLabel>Вдохновение: самоанализ</ID_Introspection.beginLetterLabel>
+  <ID_Introspection.beginLetter>{0} посетило вдохновение. [PAWN_pronoun] будет учиться в 2 раза быстрее в течение следующих 48 часов.</ID_Introspection.beginLetter>
+  <ID_Introspection.endMessage>{0} больше не вдохновлён(а) (самоанализ).</ID_Introspection.endMessage>
+  <ID_Introspection.baseInspectLine>Вдохновение: самоанализ</ID_Introspection.baseInspectLine>
+  <ID_ManaRegen.beginLetterLabel>Вдохновение: восстановление маны</ID_ManaRegen.beginLetterLabel>
+  <ID_ManaRegen.beginLetter>{0} посетило вдохновение. [PAWN_pronoun] будет восстанавливать ману в 2 раза быстрее в течение следующих 72 часов.</ID_ManaRegen.beginLetter>
+  <ID_ManaRegen.endMessage>{0} больше не вдохновлён(а) (восстановление маны).</ID_ManaRegen.endMessage>
+  <ID_ManaRegen.baseInspectLine>Вдохновение: восстановление маны</ID_ManaRegen.baseInspectLine>
+  <ID_Outgoing.beginLetterLabel>Вдохновение: общительность</ID_Outgoing.beginLetterLabel>
+  <ID_Outgoing.beginLetter>{0} посетило вдохновение. [PAWN_pronoun] станет заметно общительнее и с большей вероятностью будет вступать в положительные социальные взаимодействия в течение следующих 24 часов.</ID_Outgoing.beginLetter>
+  <ID_Outgoing.endMessage>{0} больше не вдохновлён(а) (общительность).</ID_Outgoing.endMessage>
+  <ID_Outgoing.baseInspectLine>Вдохновение: общительность</ID_Outgoing.baseInspectLine>
+  <ID_MiningFrenzy.beginLetterLabel>Вдохновение: горное безумие</ID_MiningFrenzy.beginLetterLabel>
+  <ID_MiningFrenzy.beginLetter>{0} посетило вдохновение. [PAWN_pronoun] будет добывать в 2 раза быстрее и получать на 100% больше ресурсов при добыче в течение следующих 48 часов.</ID_MiningFrenzy.beginLetter>
+  <ID_MiningFrenzy.endMessage>{0} больше не вдохновлён(а) (горное безумие).</ID_MiningFrenzy.endMessage>
+  <ID_MiningFrenzy.baseInspectLine>Вдохновение: горное безумие</ID_MiningFrenzy.baseInspectLine>
+  <ID_FarmingFrenzy.beginLetterLabel>Вдохновение: земледельческий порыв</ID_FarmingFrenzy.beginLetterLabel>
+  <ID_FarmingFrenzy.beginLetter>{0} посетило вдохновение. [PAWN_pronoun] будет собирать урожай в 2 раза быстрее и получать на 50% больше урожая при работах по срезке растений в течение следующих 48 часов.</ID_FarmingFrenzy.beginLetter>
+  <ID_FarmingFrenzy.endMessage>{0} больше не вдохновлён(а) (земледельческий порыв).</ID_FarmingFrenzy.endMessage>
+  <ID_FarmingFrenzy.baseInspectLine>Вдохновение: земледельческий порыв</ID_FarmingFrenzy.baseInspectLine>
+  <ID_Champion.beginLetterLabel>Вдохновение: чемпион</ID_Champion.beginLetterLabel>
+  <ID_Champion.beginLetter>{0} героически вдохновлён(а). [PAWN_pronoun] мечтает стать чемпионом из баллад бардов и будет соответствовать этому образу в течение следующих 72 часов.</ID_Champion.beginLetter>
+  <ID_Champion.endMessage>{0} больше не вдохновлён(а) (чемпион).</ID_Champion.endMessage>
+  <ID_Champion.baseInspectLine>Вдохновение: чемпион</ID_Champion.baseInspectLine>
+  <ID_Enlightened.beginLetterLabel>Вдохновение: просветление</ID_Enlightened.beginLetterLabel>
+  <ID_Enlightened.beginLetter>{0} вступает в период просветления. Сознание [PAWN_objective] значительно расширится в течение следующих 72 часов.</ID_Enlightened.beginLetter>
+  <ID_Enlightened.endMessage>{0} больше не вдохновлён(а) (просветление).</ID_Enlightened.endMessage>
+  <ID_Enlightened.baseInspectLine>Вдохновение: просветление</ID_Enlightened.baseInspectLine>
+  <ID_ArcanePathways.beginLetterLabel>Вдохновение: арканный путь</ID_ArcanePathways.beginLetterLabel>
+  <ID_ArcanePathways.beginLetter>{0} узрел(а) видение арканного потенциала. С помощью искателя пустоты [PAWN_pronoun] может обрести силу {1}. Этот ритуал нужно провести в течение двух дней, иначе вдохновение будет утрачено.</ID_ArcanePathways.beginLetter>
+  <ID_ArcanePathways.endMessage>{0} больше не может достичь арканного пути {1} через вдохновение.</ID_ArcanePathways.endMessage>
+  <ID_ArcanePathways.baseInspectLine>Вдохновение: арканный путь</ID_ArcanePathways.baseInspectLine>
+</LanguageData>

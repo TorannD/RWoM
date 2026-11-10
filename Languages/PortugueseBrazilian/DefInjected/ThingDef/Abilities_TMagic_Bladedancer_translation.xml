@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- blade focus -->
+
+  <Projectile_BladeFocus.label>Foco da lâmina</Projectile_BladeFocus.label>
+
+
+  <!-- blade art start -->
+
+  <Projectile_BladeArt.label>Treino Corporal</Projectile_BladeArt.label>
+
+
+  <!-- BladeSpin Start -->
+
+  <Projectile_BladeSpin.label>A torcida dos Klinkoff</Projectile_BladeSpin.label>
+
+
+  <!-- Seismic Slash Start -->
+
+  <Projectile_SeismicSlash.label>Divisão sísmica</Projectile_SeismicSlash.label>
+
+
+  <!-- Phase Strike Start -->
+
+  <Projectile_PhaseStrike.label>Batida de fase</Projectile_PhaseStrike.label>
+
+
+</LanguageData>

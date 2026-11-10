@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Spirit Possession -->
+
+  <Projectile_SpiritPossession.label>оволодівати</Projectile_SpiritPossession.label>
+
+
+  <!-- Distort Spirit -->
+
+  <Projectile_DistortSpirit.label>спотворювати дух</Projectile_DistortSpirit.label>
+
+
+  <!-- Summon Spirit Animal -->
+
+  <Projectile_SummonSpiritAnimals.label>викликати тварин-парфумів</Projectile_SummonSpiritAnimals.label>
+
+
+  <!-- Spirit Storm -->
+
+  <Projectile_SpiritStorm.label>духовна буря</Projectile_SpiritStorm.label>
+  <FlyingObject_SpiritStorm.label>духовна буря</FlyingObject_SpiritStorm.label>
+
+
+</LanguageData>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_StandardRegrowth.label>Parte abandonada</TM_StandardRegrowth.label>
+  <TM_StandardRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_StandardRegrowth.description>
+  <TM_StandardRegrowth.stages.0.label>descolados</TM_StandardRegrowth.stages.0.label>
+  <TM_StandardRegrowth.stages.1.label>formação</TM_StandardRegrowth.stages.1.label>
+  <TM_StandardRegrowth.stages.2.label>Corte</TM_StandardRegrowth.stages.2.label>
+
+
+  <!-- arms -->
+
+  <TM_ArmRegrowth.label>Mão abandonada</TM_ArmRegrowth.label>
+  <TM_ArmRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_ArmRegrowth.description>
+  <TM_ArmRegrowth.comps.1.tools.0.label>Mão solta</TM_ArmRegrowth.comps.1.tools.0.label>
+  <TM_ArmRegrowth.stages.0.label>Corte</TM_ArmRegrowth.stages.0.label>
+  <TM_ArmRegrowth.stages.1.label>jovem</TM_ArmRegrowth.stages.1.label>
+  <TM_ArmRegrowth.stages.2.label>descolados</TM_ArmRegrowth.stages.2.label>
+  <TM_ArmRegrowth.stages.3.label>selvagem</TM_ArmRegrowth.stages.3.label>
+
+  <TM_HandRegrowth.label>Mão abandonada</TM_HandRegrowth.label>
+  <TM_HandRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_HandRegrowth.description>
+  <TM_HandRegrowth.comps.1.tools.0.label>Mão solta</TM_HandRegrowth.comps.1.tools.0.label>
+  <TM_HandRegrowth.stages.0.label>Corte</TM_HandRegrowth.stages.0.label>
+  <TM_HandRegrowth.stages.1.label>jovem</TM_HandRegrowth.stages.1.label>
+  <TM_HandRegrowth.stages.2.label>descolados</TM_HandRegrowth.stages.2.label>
+  <TM_HandRegrowth.stages.3.label>selvagem</TM_HandRegrowth.stages.3.label>
+
+  <TM_FingerRegrowth.label>Dedo descolado</TM_FingerRegrowth.label>
+  <TM_FingerRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_FingerRegrowth.description>
+  <TM_FingerRegrowth.stages.0.label>polegar de dedo</TM_FingerRegrowth.stages.0.label>
+  <TM_FingerRegrowth.stages.1.label>descolados</TM_FingerRegrowth.stages.1.label>
+
+  <TM_ToeRegrowth.label>O Dedo Solto do Pé</TM_ToeRegrowth.label>
+  <TM_ToeRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_ToeRegrowth.description>
+  <TM_ToeRegrowth.stages.0.label>píer do dedo do pé</TM_ToeRegrowth.stages.0.label>
+  <TM_ToeRegrowth.stages.1.label>descolados</TM_ToeRegrowth.stages.1.label>
+
+  <TM_EyeRegrowth.label>Olho descolado</TM_EyeRegrowth.label>
+  <TM_EyeRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_EyeRegrowth.description>
+  <TM_EyeRegrowth.stages.0.label>leite</TM_EyeRegrowth.stages.0.label>
+  <TM_EyeRegrowth.stages.1.label>vaga</TM_EyeRegrowth.stages.1.label>
+  <TM_EyeRegrowth.stages.2.label>transformado</TM_EyeRegrowth.stages.2.label>
+  <TM_EyeRegrowth.stages.3.label>melhorado</TM_EyeRegrowth.stages.3.label>
+
+  <TM_EarRegrowth.label>Orelha descolada</TM_EarRegrowth.label>
+  <TM_EarRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_EarRegrowth.description>
+  <TM_EarRegrowth.stages.0.label>formador</TM_EarRegrowth.stages.0.label>
+  <TM_EarRegrowth.stages.1.label>em desenvolvimento</TM_EarRegrowth.stages.1.label>
+  <TM_EarRegrowth.stages.2.label>transformado</TM_EarRegrowth.stages.2.label>
+  <TM_EarRegrowth.stages.3.label>melhorado</TM_EarRegrowth.stages.3.label>
+
+  <TM_LegRegrowth.label>Pernas soltas</TM_LegRegrowth.label>
+  <TM_LegRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_LegRegrowth.description>
+  <TM_LegRegrowth.stages.0.label>Corte</TM_LegRegrowth.stages.0.label>
+  <TM_LegRegrowth.stages.1.label>jovem</TM_LegRegrowth.stages.1.label>
+  <TM_LegRegrowth.stages.2.label>descolados</TM_LegRegrowth.stages.2.label>
+  <TM_LegRegrowth.stages.3.label>selvagem</TM_LegRegrowth.stages.3.label>
+
+  <TM_FootRegrowth.label>Os Pés Abandonados</TM_FootRegrowth.label>
+  <TM_FootRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_FootRegrowth.description>
+  <TM_FootRegrowth.stages.0.label>Corte</TM_FootRegrowth.stages.0.label>
+  <TM_FootRegrowth.stages.1.label>jovem</TM_FootRegrowth.stages.1.label>
+  <TM_FootRegrowth.stages.2.label>descolados</TM_FootRegrowth.stages.2.label>
+  <TM_FootRegrowth.stages.3.label>selvagem</TM_FootRegrowth.stages.3.label>
+
+  <TM_JawRegrowth.label>Mandíbula abandonada</TM_JawRegrowth.label>
+  <TM_JawRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_JawRegrowth.description>
+  <TM_JawRegrowth.stages.0.label>formação</TM_JawRegrowth.stages.0.label>
+  <TM_JawRegrowth.stages.1.label>desenvolvimento</TM_JawRegrowth.stages.1.label>
+  <TM_JawRegrowth.stages.2.label>descolados</TM_JawRegrowth.stages.2.label>
+  <TM_JawRegrowth.stages.3.label>reforçado</TM_JawRegrowth.stages.3.label>
+
+  <TM_HeartRegrowth.label>Coração da vida selvagem</TM_HeartRegrowth.label>
+  <TM_HeartRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_HeartRegrowth.description>
+  <TM_HeartRegrowth.stages.0.label>Reaproximação</TM_HeartRegrowth.stages.0.label>
+  <TM_HeartRegrowth.stages.1.label>novo desenvolvimento</TM_HeartRegrowth.stages.1.label>
+  <TM_HeartRegrowth.stages.2.label>combinação</TM_HeartRegrowth.stages.2.label>
+  <TM_HeartRegrowth.stages.3.label>embutido</TM_HeartRegrowth.stages.3.label>
+  <TM_HeartRegrowth.stages.4.label>coração da vida selvagem</TM_HeartRegrowth.stages.4.label>
+
+  <TM_LungRegrowth.label>Os Pulmões abandonados</TM_LungRegrowth.label>
+  <TM_LungRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_LungRegrowth.description>
+  <TM_LungRegrowth.stages.0.label>formação</TM_LungRegrowth.stages.0.label>
+  <TM_LungRegrowth.stages.1.label>desenvolvimento</TM_LungRegrowth.stages.1.label>
+  <TM_LungRegrowth.stages.2.label>descolados</TM_LungRegrowth.stages.2.label>
+  <TM_LungRegrowth.stages.3.label>reforçado</TM_LungRegrowth.stages.3.label>
+
+  <TM_KidneyRegrowth.label>Rim descolados</TM_KidneyRegrowth.label>
+  <TM_KidneyRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_KidneyRegrowth.description>
+  <TM_KidneyRegrowth.stages.0.label>formação</TM_KidneyRegrowth.stages.0.label>
+  <TM_KidneyRegrowth.stages.1.label>desenvolvimento</TM_KidneyRegrowth.stages.1.label>
+  <TM_KidneyRegrowth.stages.2.label>descolados</TM_KidneyRegrowth.stages.2.label>
+  <TM_KidneyRegrowth.stages.3.label>reforçado</TM_KidneyRegrowth.stages.3.label>
+
+  <TM_LiverRegrowth.label>Fígado descolado</TM_LiverRegrowth.label>
+  <TM_LiverRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_LiverRegrowth.description>
+  <TM_LiverRegrowth.stages.0.label>formação</TM_LiverRegrowth.stages.0.label>
+  <TM_LiverRegrowth.stages.1.label>desenvolvimento</TM_LiverRegrowth.stages.1.label>
+  <TM_LiverRegrowth.stages.2.label>descolados</TM_LiverRegrowth.stages.2.label>
+  <TM_LiverRegrowth.stages.3.label>reforçado</TM_LiverRegrowth.stages.3.label>
+
+  <TM_StomachRegrowth.label>Estômago afastado</TM_StomachRegrowth.label>
+  <TM_StomachRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_StomachRegrowth.description>
+  <TM_StomachRegrowth.stages.0.label>formação</TM_StomachRegrowth.stages.0.label>
+  <TM_StomachRegrowth.stages.1.label>desenvolvimento</TM_StomachRegrowth.stages.1.label>
+  <TM_StomachRegrowth.stages.2.label>descolados</TM_StomachRegrowth.stages.2.label>
+
+  <TM_SpineRegrowth.label>Composto da Coluna Vertebral</TM_SpineRegrowth.label>
+  <TM_SpineRegrowth.description>O entrelaçamento mágico da natureza e da carne embutirá esta parte do corpo em poucos dias.</TM_SpineRegrowth.description>
+  <TM_SpineRegrowth.stages.0.label>formação</TM_SpineRegrowth.stages.0.label>
+  <TM_SpineRegrowth.stages.1.label>novo crescimento</TM_SpineRegrowth.stages.1.label>
+  <TM_SpineRegrowth.stages.2.label>fusão</TM_SpineRegrowth.stages.2.label>
+  <TM_SpineRegrowth.stages.3.label>embutido</TM_SpineRegrowth.stages.3.label>
+
+
+  <TM_ArmRegrowth.comps.HediffComp_VerbGiver.tools.0.label>Mão solta</TM_ArmRegrowth.comps.HediffComp_VerbGiver.tools.0.label>
+  <TM_HandRegrowth.comps.HediffComp_VerbGiver.tools.0.label>Mão solta</TM_HandRegrowth.comps.HediffComp_VerbGiver.tools.0.label>
+
+</LanguageData>

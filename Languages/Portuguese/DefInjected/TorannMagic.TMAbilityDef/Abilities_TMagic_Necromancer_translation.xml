@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Raise Undead -->
+
+  <TM_RaiseUndead.label>Levantar Sem Vida</TM_RaiseUndead.label>
+  <TM_RaiseUndead.description>Levanta os corpos. Só funciona em seres biológicos que já foram vivos.
+
+A falta de vida fica sob controle dos necromantes por tempo indeterminado. Cada moradia terá custos de manutenção de 30% da regeneração básica do maná. Os animais têm um custo de manutenção de 15% para cada 100 forças de combate.
+
+Não há nenhuma restrição à quantidade de carência que o necromante pode controlar, no entanto, quando o necromante não tem mais maná para manter a falta de vida, eles serão consumidos automaticamente até que a quantidade de carência ativa diminua para a quantidade controlada.</TM_RaiseUndead.description>
+
+  <TM_DismissUndead.label>Soltar sem vida</TM_DismissUndead.label>
+  <TM_DismissUndead.description>Deixar toda a gente desaparecer.</TM_DismissUndead.description>
+
+
+  <!-- death mark -->
+
+  <TM_DeathMark.label>Marca da Morte</TM_DeathMark.label>
+  <TM_DeathMark.description>Marquem o sacrifício com uma maldição que lhes faça passar a vida à frente dos seus olhos. As malditas vítimas perderão a concentração e a vontade de lutar, reduzindo a velocidade do ataque. Os alvos marcados recebem danos aumentados de um parafuso. Não trabalha em mehanoides.
+
+Meta máxima: 4
+Tempo de aplicação: 3s
+Retrocesso: 120s
+Distância: 34</TM_DeathMark.description>
+
+  <TM_DeathMark_I.label>Marca da Morte (I)</TM_DeathMark_I.label>
+  <TM_DeathMark_I.description>Marquem o sacrifício com uma maldição que lhes faça passar a vida à frente dos seus olhos. As malditas vítimas perderão a concentração e a vontade de lutar, reduzindo a velocidade do ataque. Os alvos marcados recebem danos aumentados de um parafuso. Não trabalha em mehanoides.
+
+Objetivo máximo: 5
+Tempo de aplicação: 2.5s
+Retrocesso: 90s
+Distância: 38</TM_DeathMark_I.description>
+
+  <TM_DeathMark_II.label>Marca da Morte (II)</TM_DeathMark_II.label>
+  <TM_DeathMark_II.description>Marquem o sacrifício com uma maldição que lhes faça passar a vida à frente dos seus olhos. As malditas vítimas perderão a concentração e a vontade de lutar, reduzindo a velocidade do ataque. Os alvos marcados recebem danos aumentados de um parafuso. Não trabalha em mehanoides.
+
+Objetivo máximo: 6
+Tempo de aplicação: 2s
+Retrocesso: 60s
+Distância: 42</TM_DeathMark_II.description>
+
+  <TM_DeathMark_III.label>Marca da Morte (III)</TM_DeathMark_III.label>
+  <TM_DeathMark_III.description>Marquem o sacrifício com uma maldição que lhes faça passar a vida à frente dos seus olhos. As malditas vítimas perderão a concentração e a vontade de lutar, reduzindo a velocidade do ataque. Os alvos marcados recebem danos aumentados de um parafuso. Não trabalha em mehanoides.
+
+Objetivos máximos: 7
+Tempo de aplicação: 1,8s
+Retrocesso: 45s
+Distância: 46</TM_DeathMark_III.description>
+
+
+  <!-- fog of torment -->
+
+  <TM_FogOfTorment.label>Nevoeiro de angústia</TM_FogOfTorment.label>
+  <TM_FogOfTorment.description>Cria um nevoeiro que causa dor e sofrimento a cada ser vivo no interior. Morar no nevoeiro é lentamente curado e não recebe nenhuma punição contra a neblina.</TM_FogOfTorment.description>
+
+
+  <!-- consume corpse -->
+
+  <TM_ConsumeCorpse.label>Absorção de cadáver</TM_ConsumeCorpse.label>
+  <TM_ConsumeCorpse.description>Consumir um cadáver ou sem vida para reabastecer maná. Roupas, objetos e equipamentos permanecem, mas todos os materiais pertencentes ao cadáver são consumidos (carne/pele)
+
+Repor maná: 3%
+Distância: 50
+Retrocesso: 20s
+Tempo de aplicação: 2s</TM_ConsumeCorpse.description>
+
+  <TM_ConsumeCorpse_I.label>Absorção de cadáver (I)</TM_ConsumeCorpse_I.label>
+  <TM_ConsumeCorpse_I.description>Consumir um cadáver ou sem vida para reabastecer maná. Roupas, objetos e equipamentos permanecem, mas todos os materiais pertencentes ao cadáver são consumidos (carne/pele)
+
+Reposição de maná: 2.5%
+Distância: 60
+Retrocesso: 18s
+Tempo de aplicação: 1,8s</TM_ConsumeCorpse_I.description>
+
+  <TM_ConsumeCorpse_II.label>Absorção de cadáver (II)</TM_ConsumeCorpse_II.label>
+  <TM_ConsumeCorpse_II.description>Consumir um cadáver ou sem vida para reabastecer maná. Roupas, objetos e equipamentos permanecem, mas todos os materiais pertencentes ao cadáver são consumidos (carne/pele)
+
+Repor maná: 2%
+Distância: 70
+Retrocesso: 16s
+Tempo de aplicação: 1,5s</TM_ConsumeCorpse_II.description>
+
+  <TM_ConsumeCorpse_III.label>Absorção de cadáver (III)</TM_ConsumeCorpse_III.label>
+  <TM_ConsumeCorpse_III.description>Consumir um cadáver ou sem vida para reabastecer maná. Roupas, objetos e equipamentos permanecem, mas todos os materiais pertencentes ao cadáver são consumidos (carne/pele)
+
+Reposição de maná: 1.5%
+Distância: 80
+Retrocesso: 15s
+Tempo de aplicação: 1.2s</TM_ConsumeCorpse_III.description>
+
+  <TM_ConsumeCorpse_Mass.label>Absorção de cadáver: (IV)</TM_ConsumeCorpse_Mass.label>
+  <TM_ConsumeCorpse_Mass.description>Consumir um grupo de cadáveres ou não-mortais para repor o maná. Roupas, objetos e equipamentos permanecem, mas todos os materiais pertencentes ao cadáver são comidos (carne/pele).</TM_ConsumeCorpse_Mass.description>
+
+
+  <!-- corpse explosion -->
+
+  <TM_CorpseExplosion.label>Explosão do Cadáver</TM_CorpseExplosion.label>
+  <TM_CorpseExplosion.description>Mistura energia secreta com produtos químicos dentro de um cadáver ou um corpo não vivo para fazer explodir um corpo depois de um breve atraso. O equipamento não será destruído automaticamente pela explosão, mas pode ser destruído pela explosão.
+
+Repor maná: 20%
+Distância: 40
+Retrocesso: 10s
+Tempo de aplicação: 2s</TM_CorpseExplosion.description>
+
+  <TM_CorpseExplosion_I.label>Explosão de Cadáver (I)</TM_CorpseExplosion_I.label>
+  <TM_CorpseExplosion_I.description>Mistura energia secreta com produtos químicos dentro de um cadáver ou um corpo não vivo para fazer explodir um corpo depois de um breve atraso. O equipamento não será destruído automaticamente pela explosão, mas pode ser destruído pela explosão.
+
+Repor maná: 22%
+Distância: 50
+Retrocesso: 7s
+Tempo de aplicação: 1,5s</TM_CorpseExplosion_I.description>
+
+  <TM_CorpseExplosion_II.label>Explosão de Cadáver (II)</TM_CorpseExplosion_II.label>
+  <TM_CorpseExplosion_II.description>Mistura energia secreta com produtos químicos dentro de um cadáver ou um corpo não vivo para fazer explodir um corpo depois de um breve atraso. O equipamento não será destruído automaticamente pela explosão, mas pode ser destruído pela explosão.
+
+Repor maná: 24%
+Distância: 60
+Retrocesso: 5s
+Tempo de aplicação: 1s</TM_CorpseExplosion_II.description>
+
+  <TM_CorpseExplosion_III.label>Explosão de Cadáver (III)</TM_CorpseExplosion_III.label>
+  <TM_CorpseExplosion_III.description>Mistura energia secreta com produtos químicos dentro de um cadáver ou um corpo não vivo para fazer explodir um corpo depois de um breve atraso. O equipamento não será destruído automaticamente pela explosão, mas pode ser destruído pela explosão.
+
+Repor maná: 25%
+Distância: 70
+Retrocesso: 4s
+Tempo de aplicação: .5s</TM_CorpseExplosion_III.description>
+
+
+  <!-- Lich Form -->
+
+  <TM_LichForm.label>Forma do Leitão</TM_LichForm.label>
+  <TM_LichForm.description>Transforma o necromante em um Leitão que ganha uma existência imortal e poder secreto. Depois de ter sido usado, não há retorno.
+
+Benefícios:
+Mané máximo: + 50
+Regeneração Mana: + 50%
+Adquire imunidade contra doenças, resistência a danos, regeneração da saúde e não precisa mais de alimentos ou repouso.
+Adquire a capacidade de voar
+Adquire capacidade: O mortal Bolt
+
+Multas:
+Não pode mais fazer trabalhos relacionados com cuidados, trabalho social, pecuário, incêndio, trabalho artístico ou simples.
+Perde toda a paixão pelo trabalho, além da luta e da pesquisa.
+Redução de 40% na velocidade de treinamento e de 75% na velocidade total
+Velocidade de movimento: -2.0 para/segundo</TM_LichForm.description>
+
+
+  <!-- Death Bolt -->
+
+  <TM_DeathBolt.label>Parafuso mortal</TM_DeathBolt.label>
+  <TM_DeathBolt.description>Executa as cargas de poder que carregam o sofrimento dos mortos; Magoa muito qualquer ser vivo que esteja na zona da explosão.
+
+Raio de explosão: 1,6m
+Retrocesso: 15s
+Parafusos: 2
+Distância: 40</TM_DeathBolt.description>
+
+  <TM_DeathBolt_I.label>Parafuso mortal (I)</TM_DeathBolt_I.label>
+  <TM_DeathBolt_I.description>Executa as cargas de poder que carregam o sofrimento dos mortos; Magoa muito qualquer ser vivo que esteja na zona da explosão.
+
+Raio de explosão: 2m
+Retrocesso: 14s
+Parafusos: 2
+Distância 40</TM_DeathBolt_I.description>
+
+  <TM_DeathBolt_II.label>Parafuso mortal (II)</TM_DeathBolt_II.label>
+  <TM_DeathBolt_II.description>Executa as cargas de poder que carregam o sofrimento dos mortos; Magoa muito qualquer ser vivo que esteja na zona da explosão.
+
+Raio de explosão: 2m
+Retrocesso: 13s
+Parafusos: 3
+Distância 40</TM_DeathBolt_II.description>
+
+  <TM_DeathBolt_III.label>Parafuso mortal (III)</TM_DeathBolt_III.label>
+  <TM_DeathBolt_III.description>Executa as cargas de poder que carregam o sofrimento dos mortos; Magoa muito qualquer ser vivo que esteja na zona da explosão.
+
+Raio de explosão: 2.4m
+Retrocesso: 12s
+Parafusos: 3
+Distância: 50</TM_DeathBolt_III.description>
+
+
+  <!-- Поглощение трупа -->
+
+</LanguageData>

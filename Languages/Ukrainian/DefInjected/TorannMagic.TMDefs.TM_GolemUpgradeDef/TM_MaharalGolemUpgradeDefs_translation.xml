@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_Golem_MaharalRepair.label>відновіть частину</TM_Golem_MaharalRepair.label>
+
+  <TM_Golem_MaharalMaxEnergy.label>накопичувач енергії</TM_Golem_MaharalMaxEnergy.label>
+  <TM_Golem_MaharalMaxEnergy.description>Збільшує максимальну енергію на 100 за рівень. Початкова максимальна енергія становить 800.</TM_Golem_MaharalMaxEnergy.description>
+
+  <TM_Golem_MaharalEnergyEfficiency.label>енергоефективність</TM_Golem_MaharalEnergyEfficiency.label>
+  <TM_Golem_MaharalEnergyEfficiency.description>Підвищує енергоефективність на 10% за рівень. Початкова енергоефективність становить 50%.</TM_Golem_MaharalEnergyEfficiency.description>
+
+  <TM_Golem_MaharalEnergyRate.label>регенерація енергії</TM_Golem_MaharalEnergyRate.label>
+  <TM_Golem_MaharalEnergyRate.description>Збільшує швидкість заряду енергії на 20% за рівень. Початкова швидкість перезарядки становить 30 енерговитрат на годину.</TM_Golem_MaharalEnergyRate.description>
+
+  <TM_Golem_MaharalArmor.label>броня</TM_Golem_MaharalArmor.label>
+  <TM_Golem_MaharalArmor.description>Підвищує загальний захист:
+Тупий збиток: +[9,16,21]%
+Ріжучий збиток: +[13,22,29]%
+Температура: +[8,14,18]%</TM_Golem_MaharalArmor.description>
+
+  <TM_Golem_MaharalPower.label>Сила</TM_Golem_MaharalPower.label>
+  <TM_Golem_MaharalPower.description>Дозволяє голему виробляти надлишкову енергію в стані спокою.</TM_Golem_MaharalPower.description>
+
+  <TM_Golem_MaharalHeat.label>Спека</TM_Golem_MaharalHeat.label>
+  <TM_Golem_MaharalHeat.description>Дозволяє голему виробляти тепло в стані спокою.</TM_Golem_MaharalHeat.description>
+
+  <TM_Golem_MaharalLifeStage.label>каркасний шар</TM_Golem_MaharalLifeStage.label>
+  <TM_Golem_MaharalLifeStage.description>Збільшує статистику:
+Рух: +[20%/30%/40%]
+Здоров&apos;я: +[20%/40%/50%]</TM_Golem_MaharalLifeStage.description>
+
+
+</LanguageData>

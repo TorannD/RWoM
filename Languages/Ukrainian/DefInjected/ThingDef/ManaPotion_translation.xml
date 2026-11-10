@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ManaPotion.label>Зілля мани</ManaPotion.label>
+  <ManaPotion.description>Магічне доповнення, яке дозволяє магам швидко відновлювати ману. Зілля мани працюють, діючи як природний придушувач опорів поглинання мани тілами\n\n користувачі попереджені, що обхід природних опорів може викликати розумові і сенсорні пошкодження.</ManaPotion.description>
+  <ManaPotion.ingestible.ingestCommandString>Спожито {0}</ManaPotion.ingestible.ingestCommandString>
+  <ManaPotion.ingestible.ingestReportString>Спожито {0}.</ManaPotion.ingestible.ingestReportString>
+
+
+</LanguageData>

@@ -29,7 +29,8 @@ namespace TorannMagic.Golems
 
         protected override IntVec3 GetWanderRoot(Pawn pawn)
         {
-            return WanderUtility.BestCloseWanderRoot(pawn.TryGetComp<CompGolem>().pawnMaster.Position, pawn);
+            var master = ClassProgression.GolemancerLifecycle.MasterBody(pawn.TryGetComp<CompGolem>()?.pawnMaster);
+            return master?.Map == pawn.Map && master != null ? WanderUtility.BestCloseWanderRoot(master.Position, pawn) : pawn.Position;
         }
 
     } 

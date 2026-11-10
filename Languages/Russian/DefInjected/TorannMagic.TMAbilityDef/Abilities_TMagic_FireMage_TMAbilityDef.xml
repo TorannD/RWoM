@@ -1,0 +1,78 @@
+﻿<LanguageData><!-- v1.5\Defs\AbilityDefs\Abilities_TMagic_FireMage.xml-->
+	<!--            EN: Inner Fire-->
+	<TM_RayofHope.label>Внутренний Огонь</TM_RayofHope.label>
+	<!--                  EN: Creates an aura of warmth around the caster that periodically reinforces the spirit of an ally.
+
+Inner Fire: Arcane augmentation that kindles an inner fire, increasing a pawn's endurance and resistances.
+
+Application Frequency: 	80-90s
+Duration:  200-223s
+Rest and hunger needs: -10%
+Natural healing: +20%
+Mental break resistance: +3%
+Cold resistance: +6c
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.-->
+	<TM_RayofHope.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_RayofHope.description>
+	<!--              EN: Inner Fire-->
+	<TM_RayofHope_I.label>Внутренний Огонь</TM_RayofHope_I.label>
+	<!--                    EN: Creates an aura of warmth around the caster that periodically reinforces the spirit of an ally.
+
+Inner Fire: Arcane augmentation that kindles an inner fire, increasing a pawn's endurance and resistances.
+
+Application Frequency: 	80-90s
+Duration:  200-223s
+Rest and hunger needs: -14%
+Natural healing: +25%
+Mental break resistance: +4%
+Cold resistance: +8c
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.-->
+	<TM_RayofHope_I.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_RayofHope_I.description>
+	<!--               EN: Inner Fire-->
+	<TM_RayofHope_II.label>Внутренний Огонь</TM_RayofHope_II.label>
+	<!--                     EN: Creates an aura of warmth around the caster that periodically reinforces the spirit of an ally.
+
+Inner Fire: Arcane augmentation that kindles an inner fire, increasing a pawn's endurance and resistances.
+
+Application Frequency: 	80-90s
+Duration:  500-600s
+Rest and hunger needs: -17%
+Natural healing: +28%
+Mental break resistance: +4%
+Cold resistance: +9c
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.-->
+	<TM_RayofHope_II.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_RayofHope_II.description>
+	<!--                EN: Inner Fire-->
+	<TM_RayofHope_III.label>Внутренний Огонь</TM_RayofHope_III.label>
+	<!--                      EN: Creates an aura of warmth around the caster that periodically reinforces the spirit of an ally.
+
+Inner Fire: Arcane augmentation that kindles an inner fire, increasing a pawn's endurance and resistances.
+
+Application Frequency: 	80-90s
+Duration:  500-600
+Rest and hunger needs: -20%
+Natural healing: +30%
+Mental break resistance: +5%
+Cold resistance: +10c
+
+Requires 40 mana to maintain and reduces mana regeneration by 30%; cast again to deactivate. The caster gains xp each time an ally is buffed.-->
+	<TM_RayofHope_III.description>Требует 40 маны для поддержания и снижает восстановление маны на 30%. Повторное применение отключает заклинание. Заклинатель получает опыт всякий раз, когда союзник получает усиление.</TM_RayofHope_III.description>
+	<!-- Огненная стрела-->
+	<TM_Firebolt.label>Огненная стрела</TM_Firebolt.label>
+	<!-- Выпускает раскалённый сгусток магмы, наносящий урон и поджигающий цель.-->
+	<TM_Firebolt.description>Выпускает раскалённый сгусток магмы, наносящий урон и поджигающий цель.</TM_Firebolt.description>
+	<!--           EN: Fireball-->
+	<TM_Fireball.label>Огненный шар</TM_Fireball.label>
+	<!--                 EN: Throws a massive, slow moving fireball. Wreaks havoc and creates a fiery explosion at the target area.-->
+	<TM_Fireball.description>Бросает массивный, медленно движущийся огненный шар. Сеет хаос и создает огненный взрыв в целевой области.</TM_Fireball.description>
+	<!--           EN: Fireclaw-->
+	<TM_Fireclaw.label>Огненный коготь</TM_Fireclaw.label>
+	<!--                 EN: Create streaming tendrils of fire that rake across your enemies, leaving destruction and fire in its wake.-->
+	<TM_Fireclaw.description>Создавайте струящиеся потоки огня, которые проносятся по вашим врагам, оставляя за собой разрушения и огонь.</TM_Fireclaw.description>
+	<!--            EN: Firestorm-->
+	<TM_Firestorm.label>Огненный шторм</TM_Firestorm.label>
+	<!--                  EN: Calls forth the full fury of elemental fire in a meteor storm of death and destruction.-->
+	<TM_Firestorm.description>Вызывает всю ярость стихийного огня в метеоритном шторме смерти и разрушения.</TM_Firestorm.description>
+</LanguageData>

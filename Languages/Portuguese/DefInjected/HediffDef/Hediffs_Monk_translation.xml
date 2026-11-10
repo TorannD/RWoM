@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TM_ChiHD.label>Qi</TM_ChiHD.label>
+  <TM_ChiHD.description>Isso explica a energia única usada pelo monge.</TM_ChiHD.description>
+  <TM_ChiHD.stages.0.label></TM_ChiHD.stages.0.label>
+
+  <TM_MindOverBodyHD.label>Mente sobre o corpo</TM_MindOverBodyHD.label>
+  <TM_MindOverBodyHD.description>Aumenta a força física ao superar as limitações corporais.</TM_MindOverBodyHD.description>
+  <TM_MindOverBodyHD.stages.0.label>I</TM_MindOverBodyHD.stages.0.label>
+  <TM_MindOverBodyHD.stages.1.label>II</TM_MindOverBodyHD.stages.1.label>
+  <TM_MindOverBodyHD.stages.2.label>III</TM_MindOverBodyHD.stages.2.label>
+  <TM_MindOverBodyHD.stages.3.label>IV</TM_MindOverBodyHD.stages.3.label>
+
+
+</LanguageData>

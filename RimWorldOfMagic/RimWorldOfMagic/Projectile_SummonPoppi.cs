@@ -19,6 +19,12 @@ namespace TorannMagic
         private int verVal = 0;
         private float arcaneDmg = 1f;
 
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref initialized, "initialized");
+        }
+
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             base.Destroy(mode);            
@@ -26,6 +32,7 @@ namespace TorannMagic
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
+            if (Destroyed) return;
             Map map = base.Map;
             GenClamor.DoClamor(this, 5.1f, ClamorDefOf.Impact);
             if (initialized)
@@ -37,44 +44,46 @@ namespace TorannMagic
             {
                 this.initialized = true;
                 SpawnThings spawnThing = new SpawnThings();
-                pawn = this.launcher as Pawn;
-                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonPoppi.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonPoppi_pwr");
-                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonPoppi.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonPoppi_ver");
-                
-                pwrVal = pwr.level;
-                verVal = ver.level;
-                this.arcaneDmg = pawn.GetCompAbilityUserMagic().arcaneDmg;
-                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+                if (!ClassProgression.SpiritHostedSummons.Resolve(this, launcher as Pawn, out pawn, out var source))
+                { Destroy(); return; }
+                if (source == null)
                 {
-                    pwrVal = 1;
-                    verVal = 1;
+                    MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonPoppi.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonPoppi_pwr");
+                    MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonPoppi.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonPoppi_ver");
+
+                    pwrVal = pwr.level;
+                    verVal = ver.level;
+                    this.arcaneDmg = pawn.GetCompAbilityUserMagic().arcaneDmg;
+                    if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+                    {
+                        pwrVal = 1;
+                        verVal = 1;
+                    }
+                }
+                else
+                {
+                    pwrVal = source.Power;
+                    verVal = source.Versatility;
+                    arcaneDmg = source.Scale;
                 }
                 CellRect cellRect = CellRect.CenteredOn(this.Position, 4);
                 cellRect.ClipInsideMap(map);
 
-                IntVec3 centerCell = cellRect.CenterCell;
-                System.Random random = new System.Random();
-                random = new System.Random();
-
+                var cells = cellRect.Where(c => c.Standable(map) && !c.Fogged(map)).ToList();
+                if (cells.Count == 0) { Destroy(); return; }
                 for (int i = 0; i < 4 + pwrVal; i++)
                 {
-                    centerCell = cellRect.RandomCell;
-                    if (centerCell.IsValid && centerCell.InBoundsWithNullCheck(pawn.Map) && centerCell.Standable(pawn.Map) && !centerCell.Fogged(pawn.Map))
-                    {
-                        spawnThing.factionDef = TorannMagicDefOf.TM_ElementalFaction;
-                        spawnThing.spawnCount = 1;
-                        spawnThing.temporary = false;
+                    IntVec3 centerCell = cells.RandomElement();
+                    spawnThing.factionDef = TorannMagicDefOf.TM_ElementalFaction;
+                    spawnThing.spawnCount = 1;
+                    spawnThing.temporary = false;
 
-                        spawnThing.def = TorannMagicDefOf.TM_Poppi;
-                        spawnThing.kindDef = PawnKindDef.Named("TM_Poppi");
+                    spawnThing.def = TorannMagicDefOf.TM_Poppi;
+                    spawnThing.kindDef = PawnKindDef.Named("TM_Poppi");
 
-                        FleckMaker.ThrowSmoke(centerCell.ToVector3(), map, 1+pwrVal);
-                        SingleSpawnLoop(spawnThing, centerCell, map);
-                    }
-                    else
-                    {
-                        i--;
-                    }
+                    FleckMaker.ThrowSmoke(centerCell.ToVector3(), map, 1+pwrVal);
+                    SingleSpawnLoop(spawnThing, centerCell, map);
+
                 }
             }
             
@@ -96,9 +105,10 @@ namespace TorannMagic
                     }
                     else
                     {
+                        if (Destroyed) return;
                         newPawn = (TMPawnSummoned)PawnGenerator.GeneratePawn(spawnables.kindDef, faction);
                         newPawn.validSummoning = true;
-                        newPawn.Spawner = this.Caster;
+                        newPawn.Spawner = pawn;
                         newPawn.Temporary = true;
                         newPawn.TicksToDestroy = Mathf.RoundToInt(1800 * this.arcaneDmg);
                         if (newPawn.playerSettings != null)
@@ -109,6 +119,7 @@ namespace TorannMagic
                         try
                         {
                             Pawn p = (Pawn)GenSpawn.Spawn(newPawn, position, map);
+                            this.TryGetComp<ClassProgression.CompHostedSummon>()?.NotifySpawned(p);
                             CompLeaper comp = newPawn.GetComp<CompLeaper>();
                             comp.explosionRadius += ((verVal * .2f) * this.arcaneDmg);
                             if (p.playerSettings != null)
@@ -124,6 +135,7 @@ namespace TorannMagic
                                 this.def.defName
                                 ));
                             this.Destroy(DestroyMode.Vanish);
+                            return;
                         }
                         if (newPawn.Faction != null && newPawn.Faction != Faction.OfPlayer)
                         {

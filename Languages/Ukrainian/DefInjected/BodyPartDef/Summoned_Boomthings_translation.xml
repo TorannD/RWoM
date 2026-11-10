@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+
+  <TM_PoppiBody.label>тіло</TM_PoppiBody.label>
+  <TM_PoppiTail.label>хвіст</TM_PoppiTail.label>
+  <TM_PoppiPaw.label>лапа</TM_PoppiPaw.label>
+  <TM_PoppiHead.label>голова</TM_PoppiHead.label>
+  <TM_PoppiSkull.label>череп</TM_PoppiSkull.label>
+  <TM_PoppiBrain.label>мозок</TM_PoppiBrain.label>
+  <TM_PoppiEye.label>око</TM_PoppiEye.label>
+  <TM_PoppiEar.label>вухо</TM_PoppiEar.label>
+  <TM_PoppiNose.label>ніс</TM_PoppiNose.label>
+  <TM_PoppiAnimalJaw.label>щелепи</TM_PoppiAnimalJaw.label>
+  <TM_PoppiNeck.label>шия</TM_PoppiNeck.label>
+  <TM_PoppiRibcage.label>грудна клітина</TM_PoppiRibcage.label>
+  <TM_PoppiSpine.label>хребет</TM_PoppiSpine.label>
+  <TM_PoppiLeg.label>ноги</TM_PoppiLeg.label>
+  <TM_PoppiFoot.label>ноги</TM_PoppiFoot.label>
+  <TM_PoppiHeart.label>серце</TM_PoppiHeart.label>
+  <TM_PoppiLung.label>легенів</TM_PoppiLung.label>
+  <TM_PoppiKidney.label>нирки</TM_PoppiKidney.label>
+  <TM_PoppiLiver.label>печінка</TM_PoppiLiver.label>
+  <TM_PoppiStomach.label>шлунок</TM_PoppiStomach.label>
+
+
+</LanguageData>

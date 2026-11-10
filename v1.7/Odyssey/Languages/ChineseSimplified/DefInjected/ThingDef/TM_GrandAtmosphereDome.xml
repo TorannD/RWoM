@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TM_GrandAtmosphereDome.label>大型大气穹顶</TM_GrandAtmosphereDome.label>
+  <TM_GrandAtmosphereDome.description>在整张当前地图维持可呼吸的大气，包括开放真空。法师需要进行60秒启动仪式，完成时消耗个人最大法力的10%，并至少保留20%。每天消耗100魔法燃料，与地图面积无关；本地容量为200。可通过搬运或相连的法力信标补充燃料。每张地图仅有一个穹顶运行，其他已启动的穹顶待机且不消耗燃料。关闭、故障、失去所有权或燃料耗尽后均需要重新举行仪式。支持真空中的呼吸、植物和火焰，不提供热量、战斗防护或地面。</TM_GrandAtmosphereDome.description>
+</LanguageData>

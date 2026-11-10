@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 using AbilityUser;
@@ -51,6 +52,7 @@ namespace TorannMagic
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
+            if (Destroyed) return;
             Map map = base.Map;
             //GenClamor.DoClamor(this, 2.1f, ClamorDefOf.Impact);
             //base.Impact(hitThing);
@@ -58,34 +60,41 @@ namespace TorannMagic
             if (!initialized)
             {
                 SpawnThings spawnThing = new SpawnThings();
-                pawn = this.launcher as Pawn;
+                if (!ClassProgression.SpiritHostedSummons.Resolve(this, launcher as Pawn, out pawn, out var source))
+                { this.age = this.duration; Destroy(); return; }
                 comp = pawn.GetCompAbilityUserMagic();
-                MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonMinion_pwr");
-                MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonMinion_ver");
-                
-                pwrVal = pwr.level;
-                verVal = ver.level;
-                if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+                if (source == null)
                 {
-                    pwrVal = 3;
-                    verVal = 3;
+                    MagicPowerSkill pwr = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonMinion_pwr");
+                    MagicPowerSkill ver = pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_SummonMinion.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_SummonMinion_ver");
+
+                    pwrVal = pwr.level;
+                    verVal = ver.level;
+                    if (ModOptions.Settings.Instance.AIHardMode && !pawn.IsColonist)
+                    {
+                        pwrVal = 3;
+                        verVal = 3;
+                    }
+                    if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || (comp.customClass != null && comp.customClass.classMageAbilities.Contains(TorannMagicDefOf.TM_Cantrips)))
+                    {
+                        int tmpPwrVal = (int)((pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_pwr").level) / 5);
+                        pwrVal = (tmpPwrVal > pwrVal) ? tmpPwrVal : pwrVal;
+                        int tmpVerVal = (int)((pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level) / 5);
+                        verVal = (tmpVerVal > verVal) ? tmpVerVal : verVal;
+                    }
                 }
-                if (pawn.story.traits.HasTrait(TorannMagicDefOf.TM_Wanderer) || (comp.customClass != null && comp.customClass.classMageAbilities.Contains(TorannMagicDefOf.TM_Cantrips)))
+                else
                 {
-                    int tmpPwrVal = (int)((pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_pwr").level) / 5);
-                    pwrVal = (tmpPwrVal > pwrVal) ? tmpPwrVal : pwrVal;
-                    int tmpVerVal = (int)((pawn.GetCompAbilityUserMagic().MagicData.MagicPowerSkill_Cantrips.FirstOrDefault((MagicPowerSkill x) => x.label == "TM_Cantrips_ver").level) / 5);
-                    verVal = (tmpVerVal > verVal) ? tmpVerVal : verVal;
+                    pwrVal = source.Power;
+                    verVal = source.Versatility;
                 }
                 CellRect cellRect = CellRect.CenteredOn(this.Position, 1);
                 cellRect.ClipInsideMap(map);
 
                 IntVec3 centerCell = cellRect.CenterCell;
-                System.Random random = new System.Random();
-                random = new System.Random();
 
                 duration += (verVal * durationMultiplier);
-                duration = (int)(duration * comp.arcaneDmg);
+                duration = (int)(duration * (source?.Scale ?? comp.arcaneDmg));
                 
                 spawnThing.factionDef = TorannMagicDefOf.TM_SummonedFaction;
                 spawnThing.spawnCount = 1;
@@ -144,9 +153,10 @@ namespace TorannMagic
                     }
                     else
                     {
+                        if (Destroyed) return;
                         newPawn = (TMPawnSummoned)PawnGenerator.GeneratePawn(spawnables.kindDef, faction);
                         newPawn.validSummoning = true;
-                        newPawn.Spawner = this.Caster;
+                        newPawn.Spawner = pawn;
                         newPawn.Temporary = true;
                         newPawn.TicksToDestroy = this.duration;
                         if (newPawn.playerSettings != null)
@@ -158,39 +168,10 @@ namespace TorannMagic
                         //    newPawn.SetFaction(this.Caster.Faction, null);
                         //}
                         //newPawn.playerSettings.master = this.Caster;
-                        if (comp.summonedMinions.Count >= 4)
-                        {
-                            Thing dismissMinion = comp.summonedMinions[0];
-                            if (dismissMinion != null && dismissMinion.Position.IsValid)
-                            {
-                                FleckMaker.ThrowSmoke(dismissMinion.Position.ToVector3(), base.Map, 1);
-                                FleckMaker.ThrowHeatGlow(dismissMinion.Position, base.Map, 1);
-                            }
-                            comp.summonedMinions.Remove(comp.summonedMinions[0]);
-                            if (!dismissMinion.Destroyed)
-                            {
-                                dismissMinion.Destroy();
-                                Messages.Message("TM_SummonedCreatureLimitExceeded".Translate(
-                                    this.launcher.LabelShort
-                                ), MessageTypeDefOf.NeutralEvent);
-                            }
-                            if (comp.summonedMinions.Count > 4)
-                            {
-                                while (comp.summonedMinions.Count > 4)
-                                {
-                                    Pawn excessMinion = comp.summonedMinions[comp.summonedMinions.Count - 1] as Pawn;
-                                    comp.summonedMinions.Remove(excessMinion);
-                                    if (excessMinion != null && !excessMinion.Dead && !excessMinion.Destroyed)
-                                    {
-                                        excessMinion.Destroy();
-                                    }
-                                }
-                            }
-
-                        }
                         try
                         {
                             Pawn p = (Pawn)GenSpawn.Spawn(newPawn, position, this.Map);
+                            this.TryGetComp<ClassProgression.CompHostedSummon>()?.NotifySpawned(p);
                             if (p.playerSettings != null)
                             {
                                 p.playerSettings.hostilityResponse = HostilityResponseMode.Attack;
@@ -200,7 +181,8 @@ namespace TorannMagic
                         catch
                         {
                             this.age = this.duration;
-                            comp.Mana.CurLevel += comp.ActualManaCost(TorannMagicDefOf.TM_SummonMinion);
+                            if (this.TryGetComp<ClassProgression.CompHostedSummon>()?.Projected != true)
+                                comp.Mana.CurLevel += comp.ActualManaCost(TorannMagicDefOf.TM_SummonMinion);
                             Log.Message("TM_Exception".Translate(
                                 pawn.LabelShort,
                                 this.def.defName
@@ -208,7 +190,26 @@ namespace TorannMagic
                             this.Destroy(DestroyMode.Vanish);
                         }
                         
+                        if (!newPawn.Spawned) return;
+                        comp.summonedMinions ??= new List<Thing>();
+                        var live = new HashSet<Thing>();
+                        comp.summonedMinions.RemoveAll(t => !(t is Pawn p) || p.Dead || p.Destroyed ||
+                            (p is TMPawnSummoned summon && summon.Spawner != null && summon.Spawner != pawn) || !live.Add(p));
+                        while (comp.summonedMinions.Count >= 4)
+                        {
+                            var oldest = comp.summonedMinions[0];
+                            comp.summonedMinions.RemoveAt(0);
+                            if (oldest.Spawned)
+                            {
+                                FleckMaker.ThrowSmoke(oldest.Position.ToVector3(), oldest.Map, 1);
+                                FleckMaker.ThrowHeatGlow(oldest.Position, oldest.Map, 1);
+                            }
+                            oldest.Destroy();
+                            Messages.Message("TM_SummonedCreatureLimitExceeded".Translate(pawn.LabelShort), MessageTypeDefOf.NeutralEvent);
+                        }
                         comp.summonedMinions.Add(newPawn);
+                        comp.SyncHostedMinionDismissal();
+                        ClassProgression.SummonerTrials.Spawned(this, newPawn, ClassProgression.SummonerTrials.Spell.Minion);
                         if (newPawn.Faction != null && newPawn.Faction != Faction.OfPlayer)
                         {
                             Lord lord = null;

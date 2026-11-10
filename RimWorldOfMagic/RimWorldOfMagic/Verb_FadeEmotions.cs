@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace TorannMagic
 {
-    public class Verb_FadeEmotions : Verb_UseAbility
+    public class Verb_FadeEmotions : ClassProgression.Verb_SpiritTargetable
     {
 
         bool validTarg;
@@ -36,36 +36,35 @@ namespace TorannMagic
             return validTarg;
         }
 
+        internal static bool CanFade(Pawn body, Pawn target)
+        {
+            return body?.Spawned == true && target?.Spawned == true && target != body && !target.Dead &&
+                target.Map == body.Map && target.Faction == body.Faction && target.RaceProps.Humanlike &&
+                !TM_Calc.IsUndead(target) && target.needs?.mood?.thoughts?.memories?.Memories.Any(m => m.MoodOffset() < 0f) == true;
+        }
+
         protected override bool TryCastShot()
         {
-            bool flag = false;
-            Pawn caster = this.CasterPawn;
-            Pawn hitPawn = this.currentTarget.Thing as Pawn;
+            bool applied = ApplyHostedEffect();
+            if (!applied) Messages.Message("TM_InvalidTarget".Translate(CasterPawn.LabelShort, Ability.Def.label), MessageTypeDefOf.RejectInput);
+            PostCastShot(applied,out var fired);
+            return fired;
+        }
 
-            if(hitPawn != null && hitPawn.RaceProps != null && hitPawn.needs != null && hitPawn.needs.mood != null && hitPawn.needs.mood.thoughts != null && 
-                hitPawn.RaceProps.Humanlike && !TM_Calc.IsUndead(hitPawn) && hitPawn.Faction == caster.Faction)
+        protected override bool ApplyHostedEffect()
+        {
+            var target = currentTarget.Pawn;
+            if (!CanFade(CasterPawn,target)) return false;
+            var mood = target.needs.mood;
+            var memories = mood.thoughts.memories;
+            foreach (var memory in memories.Memories.Where(m => m.MoodOffset() < 0f).ToList())
             {
-                List<Thought_Memory> thoughts = hitPawn.needs.mood.thoughts.memories.Memories;
-                Need n = hitPawn.needs.mood;
-                for (int i = 0; i < thoughts.Count; i++)
-                {
-                    hitPawn.needs.mood.thoughts.memories.RemoveMemory(thoughts[i]);
-                    n.CurLevel -= .3f;
-                    i--;
-                    if(n.CurLevel < .3f)
-                    {
-                        break;
-                    }
-                }
-                Effects(hitPawn.Position);                                        
+                memories.RemoveMemory(memory);
+                mood.CurLevel -= .3f;
+                if (mood.CurLevel < .3f) break;
             }
-            else
-            {
-                Messages.Message("TM_InvalidTarget".Translate(CasterPawn.LabelShort, this.Ability.Def.label), MessageTypeDefOf.RejectInput);
-            }
-
-            this.PostCastShot(flag, out flag);
-            return flag;
+            Effects(target.Position);
+            return true;
         }
 
         public void Effects(IntVec3 position)
